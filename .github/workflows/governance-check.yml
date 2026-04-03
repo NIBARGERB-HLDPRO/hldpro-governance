@@ -1,0 +1,287 @@
+name: Governance Check (Reusable)
+
+on:
+  workflow_call:
+
+jobs:
+  governance-check:
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ── 1. Required governance docs exist ──
+      - name: Check required governance docs exist
+        run: |
+          MISSING=""
+          for doc in docs/PROGRESS.md docs/FAIL_FAST_LOG.md docs/DATA_DICTIONARY.md docs/SERVICE_REGISTRY.md; do
+            if [ ! -f "$doc" ]; then
+              MISSING="${MISSING}\n  - $doc"
+            fi
+          done
+          if [ -n "$MISSING" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: Required governance docs missing:${MISSING}"
+            echo ""
+            echo "Every repo must have these docs. Create them (even as stubs) before merging."
+            exit 1
+          fi
+          echo "✓ All required governance docs exist"
+
+      # ── Categorize changed files ──
+      - name: Get changed files
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+
+          CHANGED=$(git diff --name-only "$BASE" HEAD 2>/dev/null || git diff --name-only HEAD~1 HEAD)
+          {
+            echo "files<<EOF"
+            echo "$CHANGED"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+          # Source code changes (broad: .ts .tsx .sql .html .css .js .svg .py .sh)
+          # Exclude: docs, .claude, .github, tests, configs, lock files
+          CODE_CHANGES=$(echo "$CHANGED" | grep -E '\.(ts|tsx|sql|html|css|js|svg|py|sh)$' \
+            | grep -v '^docs/' \
+            | grep -v '^\.claude/' \
+            | grep -v '^\.github/' \
+            | grep -v '\.spec\.' \
+            | grep -v '\.test\.' \
+            | grep -v '__tests__/' \
+            | grep -v '^tests/' \
+            | grep -v '^e2e/' \
+            | grep -v 'tsconfig' \
+            | grep -v 'package-lock' \
+            | grep -v '\.config\.' \
+            | grep -v 'vite\.config' \
+            | grep -v 'vitest\.config' \
+            | grep -v 'jest\.config' \
+            | grep -v 'eslint' \
+            | grep -v 'scripts/seed-' \
+            || true)
+
+          MIGRATION_CHANGES=$(echo "$CHANGED" | grep -E '\.sql$' | grep -iE 'migration' || true)
+          FUNCTION_CHANGES=$(echo "$CHANGED" | grep -E 'functions/.*/index\.ts$' || true)
+          MARKETING_CHANGES=$(echo "$CHANGED" | grep -E '^marketing/' || true)
+          INFRA_CHANGES=$(echo "$CHANGED" | grep -E '^infrastructure/|^\.github/workflows/' || true)
+
+          PROGRESS_CHANGED=$(echo "$CHANGED" | grep -E 'docs/PROGRESS\.md' || true)
+          FAILFAST_CHANGED=$(echo "$CHANGED" | grep -E 'docs/FAIL_FAST_LOG\.md' || true)
+          DATADICT_CHANGED=$(echo "$CHANGED" | grep -E 'docs/DATA_DICTIONARY\.md' || true)
+          REGISTRY_CHANGED=$(echo "$CHANGED" | grep -E 'docs/SERVICE_REGISTRY\.md' || true)
+          MARKETING_DOC_CHANGED=$(echo "$CHANGED" | grep -E 'marketing/MARKETING_PAGE\.md' || true)
+
+          {
+            echo "code_changes<<EOF"
+            echo "$CODE_CHANGES"
+            echo "EOF"
+            echo "has_code=$([ -n "$CODE_CHANGES" ] && echo 'true' || echo 'false')"
+            echo "has_migrations=$([ -n "$MIGRATION_CHANGES" ] && echo 'true' || echo 'false')"
+            echo "has_functions=$([ -n "$FUNCTION_CHANGES" ] && echo 'true' || echo 'false')"
+            echo "has_marketing=$([ -n "$MARKETING_CHANGES" ] && echo 'true' || echo 'false')"
+            echo "has_infra=$([ -n "$INFRA_CHANGES" ] && echo 'true' || echo 'false')"
+            echo "has_progress=$([ -n "$PROGRESS_CHANGED" ] && echo 'true' || echo 'false')"
+            echo "has_failfast=$([ -n "$FAILFAST_CHANGED" ] && echo 'true' || echo 'false')"
+            echo "has_datadict=$([ -n "$DATADICT_CHANGED" ] && echo 'true' || echo 'false')"
+            echo "has_registry=$([ -n "$REGISTRY_CHANGED" ] && echo 'true' || echo 'false')"
+            echo "has_marketing_doc=$([ -n "$MARKETING_DOC_CHANGED" ] && echo 'true' || echo 'false')"
+          } >> "$GITHUB_OUTPUT"
+
+      # ── 2. PROGRESS.md co-staged with code changes ──
+      - name: Check PROGRESS.md updated with code changes
+        if: steps.changed.outputs.has_code == 'true'
+        run: |
+          if [ "${{ steps.changed.outputs.has_progress }}" != "true" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: Source files changed but docs/PROGRESS.md was not updated."
+            echo ""
+            echo "Changed source files:"
+            echo "${{ steps.changed.outputs.code_changes }}"
+            echo ""
+            echo "Rule: Every code/content change must be reflected in PROGRESS.md."
+            exit 1
+          fi
+          echo "✓ PROGRESS.md updated alongside code changes"
+
+      # ── 3. FAIL_FAST_LOG co-staged with bug fixes ──
+      - name: Check FAIL_FAST_LOG.md updated with bug fixes
+        if: steps.changed.outputs.has_code == 'true'
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          IS_BUG_FIX=""
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            if echo "$PR_TITLE" | grep -qiE 'fix|bug|patch|hotfix'; then
+              IS_BUG_FIX="true"
+            fi
+          fi
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            RANGE="${{ github.event.pull_request.base.sha }}..HEAD"
+          else
+            RANGE="${{ github.event.before }}..HEAD"
+          fi
+          if git log --oneline "$RANGE" 2>/dev/null | grep -qiE 'fix|bug|patch|hotfix'; then
+            IS_BUG_FIX="true"
+          fi
+
+          if [ "$IS_BUG_FIX" = "true" ] && [ "${{ steps.changed.outputs.has_failfast }}" != "true" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: Bug fix detected but docs/FAIL_FAST_LOG.md was not updated."
+            echo "Rule: Every bug fix must log the error pattern, root cause, and resolution."
+            exit 1
+          fi
+          echo "✓ FAIL_FAST_LOG.md check passed"
+
+      # ── 4. DATA_DICTIONARY co-staged with migrations ──
+      - name: Check DATA_DICTIONARY.md updated with migrations
+        if: steps.changed.outputs.has_migrations == 'true'
+        run: |
+          if [ "${{ steps.changed.outputs.has_datadict }}" != "true" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: Migration file(s) changed but docs/DATA_DICTIONARY.md was not updated."
+            echo "Rule: Every migration must update the DATA_DICTIONARY.md with new/modified table schemas."
+            exit 1
+          fi
+          echo "✓ DATA_DICTIONARY.md updated alongside migrations"
+
+      # ── 5. SERVICE_REGISTRY co-staged with new functions ──
+      - name: Check SERVICE_REGISTRY.md updated with new functions
+        if: steps.changed.outputs.has_functions == 'true'
+        run: |
+          if [ "${{ steps.changed.outputs.has_registry }}" != "true" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: New edge function(s) added but docs/SERVICE_REGISTRY.md was not updated."
+            echo "Rule: Every new edge function must be added to SERVICE_REGISTRY.md."
+            exit 1
+          fi
+          echo "✓ SERVICE_REGISTRY.md check passed"
+
+      # ── 6. MARKETING_PAGE co-staged with marketing changes ──
+      - name: Check MARKETING_PAGE.md updated with marketing changes
+        if: steps.changed.outputs.has_marketing == 'true'
+        run: |
+          if [ "${{ steps.changed.outputs.has_marketing_doc }}" != "true" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: marketing/ files changed but marketing/MARKETING_PAGE.md was not updated."
+            echo "Rule: Marketing page changes must be documented in MARKETING_PAGE.md."
+            exit 1
+          fi
+          echo "✓ MARKETING_PAGE.md updated alongside marketing changes"
+
+      # ── 7. Infrastructure changes → PROGRESS ──
+      - name: Check infrastructure changes documented
+        if: steps.changed.outputs.has_infra == 'true'
+        run: |
+          if [ "${{ steps.changed.outputs.has_progress }}" != "true" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: Infrastructure files changed but docs/PROGRESS.md was not updated."
+            echo "Rule: Infrastructure changes must be documented in PROGRESS.md."
+            exit 1
+          fi
+          echo "✓ Infrastructure changes documented in PROGRESS.md"
+
+      # ── 8. PENDING_ placeholder scan ──
+      - name: Check for PENDING_ placeholders
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+
+          PENDING_FILES=""
+          for f in $(git diff --name-only "$BASE" HEAD | grep -E '\.(html|ts|tsx|js|json)$' || true); do
+            if [ -f "$f" ] && grep -q 'PENDING_' "$f"; then
+              PENDING_FILES="${PENDING_FILES}\n  - $f: $(grep -n 'PENDING_' "$f" | head -3)"
+            fi
+          done
+          if [ -n "$PENDING_FILES" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: PENDING_ placeholders found in committed files:${PENDING_FILES}"
+            echo "Rule: All PENDING_ placeholders must be replaced before merging."
+            exit 1
+          fi
+          echo "✓ No PENDING_ placeholders found"
+
+      # ── 9. Migration rollback comments (warning) ──
+      - name: Check migration rollback comments
+        if: steps.changed.outputs.has_migrations == 'true'
+        run: |
+          MISSING=""
+          for f in $(echo "${{ steps.changed.outputs.files }}" | grep -E '\.sql$' | grep -iE 'migration'); do
+            if [ -f "$f" ] && ! grep -q '-- ROLLBACK:' "$f"; then
+              MISSING="${MISSING}\n  - $f"
+            fi
+          done
+          if [ -n "$MISSING" ]; then
+            echo "::warning::New migration(s) missing rollback comments:${MISSING}"
+            echo "Add '-- ROLLBACK: <steps to undo>' to each migration file."
+          else
+            echo "✓ All new migrations have rollback comments"
+          fi
+
+      # ── 10. PROGRESS.md freshness (warning) ──
+      - name: Check PROGRESS.md freshness
+        run: |
+          THIRTY_AGO=$(date -d '30 days ago' +%Y-%m-%d 2>/dev/null || date -v-30d +%Y-%m-%d)
+          RECENT=$(grep -oE '20[0-9]{2}-[0-9]{2}-[0-9]{2}' docs/PROGRESS.md | sort -r | head -1 || echo "")
+          if [ -z "$RECENT" ]; then
+            echo "::warning::PROGRESS.md has no dates — consider adding timestamps to entries"
+          elif [[ "$RECENT" < "$THIRTY_AGO" ]]; then
+            echo "::warning::PROGRESS.md appears stale — most recent date is $RECENT (>30 days old)"
+          else
+            echo "✓ PROGRESS.md is fresh (most recent: $RECENT)"
+          fi
+
+      # ── 11. FAIL_FAST_LOG quality ──
+      - name: Check FAIL_FAST_LOG.md content quality
+        if: steps.changed.outputs.has_failfast == 'true'
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+          DIFF=$(git diff "$BASE" HEAD -- docs/FAIL_FAST_LOG.md)
+          EMPTY_COLS=$(echo "$DIFF" | grep '^+|' | grep -E '\| \||\|  \|' | grep -v '^+|---' | head -3)
+          if [ -n "$EMPTY_COLS" ]; then
+            echo "::error::FAIL_FAST_LOG.md has entries with empty columns. Every entry must have: Error | Root Cause | Resolution | Date"
+            echo "$EMPTY_COLS"
+            exit 1
+          fi
+          echo "✓ FAIL_FAST_LOG.md entries have complete columns"
+
+      # ── 12. PROGRESS.md row count ──
+      - name: Check PROGRESS.md row count
+        if: steps.changed.outputs.has_progress == 'true'
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+          OLD_COUNT=$(git show "${BASE}":docs/PROGRESS.md 2>/dev/null | grep -c '^|' || echo "0")
+          NEW_COUNT=$(grep -c '^|' docs/PROGRESS.md || echo "0")
+          if [ "$NEW_COUNT" -lt "$OLD_COUNT" ]; then
+            DELTA=$(( OLD_COUNT - NEW_COUNT ))
+            echo "::warning::PROGRESS.md lost $DELTA table rows ($OLD_COUNT → $NEW_COUNT). Verify entries weren't accidentally deleted."
+          else
+            echo "✓ PROGRESS.md row count: $OLD_COUNT → $NEW_COUNT"
+          fi
+
+      # ── Summary ──
+      - name: Governance summary
+        run: |
+          echo "=== Governance Gate Summary ==="
+          echo "Code changed: ${{ steps.changed.outputs.has_code }}"
+          echo "Migrations changed: ${{ steps.changed.outputs.has_migrations }}"
+          echo "Functions changed: ${{ steps.changed.outputs.has_functions }}"
+          echo "Marketing changed: ${{ steps.changed.outputs.has_marketing }}"
+          echo "Infrastructure changed: ${{ steps.changed.outputs.has_infra }}"
+          echo "PROGRESS.md updated: ${{ steps.changed.outputs.has_progress }}"
+          echo "FAIL_FAST_LOG.md updated: ${{ steps.changed.outputs.has_failfast }}"
+          echo "DATA_DICTIONARY.md updated: ${{ steps.changed.outputs.has_datadict }}"
+          echo "SERVICE_REGISTRY.md updated: ${{ steps.changed.outputs.has_registry }}"
+          echo "MARKETING_PAGE.md updated: ${{ steps.changed.outputs.has_marketing_doc }}"
+          echo "=== All governance checks passed ==="
