@@ -1,0 +1,29 @@
+# Ephemeral / large
+history.jsonl
+sessions/
+cache/
+paste-cache/
+file-history/
+session-env/
+plans/
+downloads/
+backups/
+
+# Sensitive
+settings.json
+settings.local.json
+scheduled_tasks.lock
+
+# Per-project memory (conversation-specific, managed by auto-memory)
+projects/
+
+# Plugins (installed separately)
+plugins/
+
+# Misc ephemeral
+shell-snapshots/
+stats-cache.json
+tasks/
+
+# OS
+.DS_Store

@@ -1,0 +1,106 @@
+# HLD Pro — Shared Standards Manifest
+
+> The overlord agent checks every repo against these standards.
+> Update this file to change what the overlord enforces.
+
+## Required Files (all code repos)
+- `CLAUDE.md` at repo root (or workspace root for monorepos)
+- `docs/PROGRESS.md` — feature status tracker (uppercase filename)
+- `docs/FAIL_FAST_LOG.md` — error patterns and resolutions
+- `.gitignore` covering: `.env`, `node_modules/`, `dist/`, `.DS_Store`
+
+## Required Governance
+- `.claude/hooks/governance-check.sh` — blocks commits missing doc co-staging
+- `.claude/hooks/backlog-check.sh` — **hard gate**: blocks branch creation unless a matching `PLANNED` or `IN_PROGRESS` entry exists in `docs/PROGRESS.md` Plans table. Enforces backlog-first workflow (plan with AC before code).
+- `.claude/hooks/check-errors.sh` — PostToolUse hard gate: auto-grep FAIL_FAST_LOG on errors, 3-attempt max, then STOP and ask user
+- `.claude/settings.json` PostToolUse matcher must be `"*"` (all tools), NOT `"Bash"` — errors from MCP, Agent, Read, etc. must also trigger the 3-attempt gate
+- Conventional commits: `feat/fix/docs/chore` with scope
+- **Never push to main/master** — always branch → staging → test → deploy
+- **Never force-push** (`--force`, `--force-with-lease`) — if a branch has a merge conflict, resolve via `git merge origin/develop` into the branch (merge commit), never via rebase + force-push
+- **Stagger parallel PR merges** — when merging 2+ PRs that touch the same files, add a 10-second pause (`sleep 10`) between merges to avoid race conditions
+- `.github/workflows/ci-workflow-lint.yml` — actionlint CI: install + run on PRs/pushes (all code repos)
+- **CI runners:** All workflows must use `ubuntu-latest`. The `sase-microvm` self-hosted runner was decommissioned 2026-04-02. Do NOT add `self-hosted` runner refs.
+
+### Doc Co-Staging Rules (governance-check.sh + CI)
+- **ANY source file change** (`.ts`, `.tsx`, `.sql`, `.html`, `.css`, `.js`, `.svg`) → co-stage `docs/PROGRESS.md`
+- **Bug fix commits** (fix/bug/patch/hotfix in message) → co-stage `docs/FAIL_FAST_LOG.md`
+- **Marketing file changes** (`marketing/`) → co-stage `marketing/MARKETING_PAGE.md` (if repo has marketing dir)
+- **Infrastructure changes** (`infrastructure/`, `.github/workflows/`) → co-stage `docs/PROGRESS.md`
+- **New edge functions** → co-stage `docs/SERVICE_REGISTRY.md` (if exists)
+- **Migrations** → co-stage `docs/DATA_DICTIONARY.md` (if exists)
+- **Any schema/table/column change** → co-stage `docs/DATA_DICTIONARY.md` (mandatory, no exceptions)
+- **PENDING_ placeholders** → blocked in committed `.html`, `.ts`, `.tsx`, `.js`, `.json` files. All placeholders must be resolved before merge.
+
+### CI Governance Workflow
+- Must trigger on PRs to **both** `main` and `develop` (not just main)
+- Must check for PENDING_ placeholders across all changed files
+- Must report marketing doc sync status if marketing files changed
+
+## Monorepo Handling
+- Required governance files (CLAUDE.md, docs/PROGRESS.md, docs/FAIL_FAST_LOG.md, .claude/hooks/, .github/workflows/) go at **repo root**
+- Monorepos may have ADDITIONAL docs at workspace level (e.g., `backend/docs/`, `frontend/docs/`)
+- When checking or creating files, always `ls` the root AND workspace directories first
+- HealthcarePlatform structure: root (governance baseline) + `backend/` (agents, standards, detailed docs, .gitignore) + `frontend/` (subagent approvals, .gitignore)
+
+## HIPAA Repos (HealthcarePlatform)
+- Must have agents for: PHI redaction, break-glass gate, audit retention, RLS auditing
+- Zero-fail policy: no PHI in logs, no direct DB access from frontend
+- Subagent approval system for cross-boundary (frontend↔backend) operations
+- Detailed project tracking lives in `backend/docs/PROJECT_STATUS.md` (supplements root `docs/PROGRESS.md`)
+
+## Security Standards (Tiered)
+
+Each repo has a security tier that determines which security artifacts the overlord agents verify.
+
+### Full + PentAGI (ai-integration-services)
+- `.gitleaks.toml` at repo root
+- `.github/workflows/security.yml` with gitleaks + npm audit jobs
+- `scripts/security-audit.sh` (6-check audit: credential leak, RLS, frontend secrets, auth order, PII in logs, dependency audit)
+- `.claude/skills/hldpro-security-audit.md` installed
+- `docs/security-reports/` directory with ≥1 PentAGI report; freshest report < 30 days old
+- `docs/SECURITY_IMPLEMENTATION_PLAN.md` exists
+- `docs/INFOSEC_POLICY.md` exists with active risk register
+
+### Full + PentAGI + HIPAA (HealthcarePlatform)
+- `.gitleaks.toml` at repo root (with HIPAA patterns: SSN, MRN)
+- `.github/workflows/security.yml` with gitleaks + npm audit jobs
+- RLS auditor agent (already required under HIPAA agents)
+- PHI-in-logs guard agent (already required under HIPAA agents)
+- Dependency audit in CI (`npm audit` or equivalent)
+- `docs/security-reports/` directory with ≥1 PentAGI report; freshest report < 30 days old
+- PentAGI scope includes Caddy proxy layer and DO droplet surface (not just Supabase)
+
+### Baseline Security (knocktracker, local-ai-machine)
+- `.gitleaks.toml` at repo root
+- `.gitignore` covers `.env` (already required under general standards)
+- Dependency audit in CI (`npm audit --audit-level=high`)
+
+### Exempt (ASC-Evaluator)
+- No security checks required
+
+## Repo Registry
+
+| Repo | Type | Governance Tier | Security Tier |
+|------|------|-----------------|---------------|
+| ai-integration-services | SaaS platform (Supabase + Deno + Vite) | Full (hooks + CI + agents) | Full + PentAGI |
+| HealthcarePlatform | Monorepo (backend + frontend), HIPAA | Full + HIPAA (zero-fail) | Full + PentAGI + HIPAA |
+| local-ai-machine | AI/ML infrastructure | Full (lane-based + session locks) | Baseline |
+| knocktracker | Field operations app | Standard (rules + CI) | Baseline |
+| ASC-Evaluator | Knowledge repo (no code) | Exempt from code governance | Exempt |
+
+## Completion Verification Protocol — ENFORCED
+
+**Before claiming any cross-repo or governance task as "done":**
+
+1. **Artifact verification**: For every file the plan says to create, run `git show HEAD:<path>` on the target branch to confirm it exists in the commit (not just on disk).
+2. **Standards sweep**: Run `~/.claude/agents/verify-completion.md` against all affected repos. It checks every item in this STANDARDS.md and reports PASS/FAIL per repo.
+3. **PR verification**: If the plan says "create PR", confirm the PR exists (`gh pr view`), is on the correct base branch, and CI is running.
+4. **No hedging**: Do not use "if it exists" language for required files. If STANDARDS.md says a file is required, it must exist — create it if missing.
+5. **Session summary must match reality**: Before writing a session summary to memory, re-verify each claim. "Built" means merged to main or PR passing CI. "Created" means committed and pushed. "Planned" means neither.
+
+**Failure to verify = the task is not complete.** A plan step without artifact verification stays "in progress."
+
+## Exceptions
+- ASC-Evaluator: knowledge repo, exempt from code governance
+- Repos may have ADDITIONAL governance beyond this baseline
+- HIPAA agents must never be weakened or consolidated away
