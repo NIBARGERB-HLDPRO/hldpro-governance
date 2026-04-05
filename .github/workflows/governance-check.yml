@@ -313,5 +313,5 @@ jobs:
             -H "Authorization: Bearer $SB_SRK" \
             -H "apikey: $SB_ANON" \
             -H "Content-Type: application/json" \
-            -d "{\"contextType\":\"system_event\",\"subjectType\":\"system\",\"subjectId\":\"governance-gate\",\"content\":\"$CONTENT\",\"sourceAgent\":\"governance-check-ci\",\"relevanceTags\":[\"governance\",\"gate-failure\"]}")
+            -d "{\"contextType\":\"system_event\",\"subjectType\":\"system\",\"content\":\"$CONTENT\",\"sourceAgent\":\"governance-check-ci\",\"relevanceTags\":[\"governance\",\"gate-failure\"]}")
           echo "$RESPONSE"
