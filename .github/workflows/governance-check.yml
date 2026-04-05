@@ -2,6 +2,11 @@ name: Governance Check (Reusable)
 
 on:
   workflow_call:
+    secrets:
+      SUPABASE_ANON_KEY:
+        required: false
+      SUPABASE_SERVICE_ROLE_KEY:
+        required: false
 
 jobs:
   governance-check:
@@ -14,6 +19,7 @@ jobs:
 
       # ── 1. Required governance docs exist ──
       - name: Check required governance docs exist
+        id: check_docs_exist
         run: |
           MISSING=""
           for doc in docs/PROGRESS.md docs/FAIL_FAST_LOG.md docs/DATA_DICTIONARY.md docs/SERVICE_REGISTRY.md; do
@@ -97,6 +103,7 @@ jobs:
 
       # ── 2. PROGRESS.md co-staged with code changes ──
       - name: Check PROGRESS.md updated with code changes
+        id: check_progress
         if: steps.changed.outputs.has_code == 'true'
         run: |
           if [ "${{ steps.changed.outputs.has_progress }}" != "true" ]; then
@@ -112,6 +119,7 @@ jobs:
 
       # ── 3. FAIL_FAST_LOG co-staged with bug fixes ──
       - name: Check FAIL_FAST_LOG.md updated with bug fixes
+        id: check_failfast
         if: steps.changed.outputs.has_code == 'true'
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
@@ -141,6 +149,7 @@ jobs:
 
       # ── 4. DATA_DICTIONARY co-staged with migrations ──
       - name: Check DATA_DICTIONARY.md updated with migrations
+        id: check_datadict
         if: steps.changed.outputs.has_migrations == 'true'
         run: |
           if [ "${{ steps.changed.outputs.has_datadict }}" != "true" ]; then
@@ -152,6 +161,7 @@ jobs:
 
       # ── 5. SERVICE_REGISTRY co-staged with new functions ──
       - name: Check SERVICE_REGISTRY.md updated with new functions
+        id: check_registry
         if: steps.changed.outputs.has_functions == 'true'
         run: |
           if [ "${{ steps.changed.outputs.has_registry }}" != "true" ]; then
@@ -163,6 +173,7 @@ jobs:
 
       # ── 6. MARKETING_PAGE co-staged with marketing changes ──
       - name: Check MARKETING_PAGE.md updated with marketing changes
+        id: check_marketing
         if: steps.changed.outputs.has_marketing == 'true'
         run: |
           if [ "${{ steps.changed.outputs.has_marketing_doc }}" != "true" ]; then
@@ -174,6 +185,7 @@ jobs:
 
       # ── 7. Infrastructure changes → PROGRESS ──
       - name: Check infrastructure changes documented
+        id: check_infra
         if: steps.changed.outputs.has_infra == 'true'
         run: |
           if [ "${{ steps.changed.outputs.has_progress }}" != "true" ]; then
@@ -185,6 +197,7 @@ jobs:
 
       # ── 8. PENDING_ placeholder scan ──
       - name: Check for PENDING_ placeholders
+        id: check_pending
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             BASE="${{ github.event.pull_request.base.sha }}"
@@ -237,6 +250,7 @@ jobs:
 
       # ── 11. FAIL_FAST_LOG quality ──
       - name: Check FAIL_FAST_LOG.md content quality
+        id: check_failfast_quality
         if: steps.changed.outputs.has_failfast == 'true'
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
@@ -255,6 +269,7 @@ jobs:
 
       # ── 12. PROGRESS.md row count ──
       - name: Check PROGRESS.md row count
+        id: check_progress_rows
         if: steps.changed.outputs.has_progress == 'true'
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
@@ -286,3 +301,54 @@ jobs:
           echo "SERVICE_REGISTRY.md updated: ${{ steps.changed.outputs.has_registry }}"
           echo "MARKETING_PAGE.md updated: ${{ steps.changed.outputs.has_marketing_doc }}"
           echo "=== All governance checks passed ==="
+
+      # ── Notify memory-writer on failure ──
+      - name: Report governance failure to memory-writer
+        if: failure() && secrets.SUPABASE_SERVICE_ROLE_KEY != '' && secrets.SUPABASE_ANON_KEY != ''
+        continue-on-error: true
+        env:
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          FAILED_CHECKS=""
+          [ "${{ steps.check_docs_exist.outcome }}" = "failure" ] && FAILED_CHECKS="${FAILED_CHECKS}, required-docs-missing"
+          [ "${{ steps.check_progress.outcome }}" = "failure" ] && FAILED_CHECKS="${FAILED_CHECKS}, progress-not-updated"
+          [ "${{ steps.check_failfast.outcome }}" = "failure" ] && FAILED_CHECKS="${FAILED_CHECKS}, failfast-not-updated"
+          [ "${{ steps.check_datadict.outcome }}" = "failure" ] && FAILED_CHECKS="${FAILED_CHECKS}, data-dictionary-not-updated"
+          [ "${{ steps.check_registry.outcome }}" = "failure" ] && FAILED_CHECKS="${FAILED_CHECKS}, service-registry-not-updated"
+          [ "${{ steps.check_marketing.outcome }}" = "failure" ] && FAILED_CHECKS="${FAILED_CHECKS}, marketing-doc-not-updated"
+          [ "${{ steps.check_infra.outcome }}" = "failure" ] && FAILED_CHECKS="${FAILED_CHECKS}, infra-not-documented"
+          [ "${{ steps.check_pending.outcome }}" = "failure" ] && FAILED_CHECKS="${FAILED_CHECKS}, pending-placeholders-found"
+          [ "${{ steps.check_failfast_quality.outcome }}" = "failure" ] && FAILED_CHECKS="${FAILED_CHECKS}, failfast-quality-empty-columns"
+          # Remove leading comma+space
+          FAILED_CHECKS="${FAILED_CHECKS#, }"
+
+          if [ -z "$FAILED_CHECKS" ]; then
+            FAILED_CHECKS="unknown-check"
+          fi
+
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          if [ -z "$PR_NUMBER" ]; then
+            PR_NUMBER="${{ github.run_id }}"
+          fi
+          REPO="${{ github.repository }}"
+          CONTENT="Governance gate failed on PR #${PR_NUMBER} in ${REPO}: ${FAILED_CHECKS}"
+
+          PAYLOAD=$(jq -n \
+            --arg content "$CONTENT" \
+            '{
+              contextType: "system_event",
+              subjectType: "system",
+              subjectId: "governance-gate",
+              subjectLabel: "PR Governance Gate Failure",
+              content: $content,
+              sourceAgent: "governance-check-ci",
+              relevanceTags: ["governance", "gate-failure", "ci"]
+            }')
+
+          curl -s -o /dev/null -w "%{http_code}" \
+            -X POST "https://gyrtvzvazmvwiirnexls.supabase.co/functions/v1/memory-writer" \
+            -H "Authorization: Bearer ${SUPABASE_SERVICE_ROLE_KEY}" \
+            -H "apikey: ${SUPABASE_ANON_KEY}" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD"
