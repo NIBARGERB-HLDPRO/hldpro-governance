@@ -100,6 +100,16 @@ Each repo has a security tier that determines which security artifacts the overl
 
 **Failure to verify = the task is not complete.** A plan step without artifact verification stays "in progress."
 
+## Fail-Fast Loop Closure
+
+Repos with automated test/heal cycles must close the full failure → diagnosis → pattern → prevention loop:
+
+- **Live log access** (repos with `test-nightly.yml`): Watcher agent must query live runtime logs (Supabase Management API `/logs/explorer` or equivalent), not just static output files. The watcher needs access to edge function errors, webhook payloads, and workflow execution history to diagnose failures without manual log cross-referencing.
+- **Automated pattern write-back** (repos with `operator_context`): After a novel failure is identified and the operator confirms a fix, the watcher must write the failure pattern back to `operator_context` automatically (via `memory-writer` edge function, `context_type: failure_pattern`). Manual pattern entry breaks the loop — `heal.py` only benefits from patterns that are persisted before the next run.
+- **Gate failure surfacing** (repos using `governance-check.yml`): PR gate failures must write a `context_type: system_event` row to `operator_context` so the morning briefing surfaces them. GitHub Actions `::error::` annotations alone are insufficient — they require the operator to check GitHub notifications.
+
+**Verification**: The `overlord-sweep` agent checks that repos with `test-nightly.yml` have a watcher agent with a Bash tool call containing a log query endpoint, and that `operator_context` tables have `failure_pattern` rows less than 7 days old.
+
 ## Exceptions
 - ASC-Evaluator: knowledge repo, exempt from code governance
 - Repos may have ADDITIONAL governance beyond this baseline
