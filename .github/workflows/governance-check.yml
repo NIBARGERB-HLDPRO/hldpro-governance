@@ -2,6 +2,11 @@ name: Governance Check (Reusable)
 
 on:
   workflow_call:
+    secrets:
+      SUPABASE_ANON_KEY:
+        required: false
+      SUPABASE_SERVICE_ROLE_KEY:
+        required: false
 
 jobs:
   governance-check:
