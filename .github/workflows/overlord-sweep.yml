@@ -23,35 +23,35 @@ jobs:
         with:
           repository: NIBARGERB-HLDPRO/ai-integration-services
           path: repos/ai-integration-services
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Checkout HealthcarePlatform
         uses: actions/checkout@v4
         with:
           repository: NIBARGERB-HLDPRO/HealthcarePlatform
           path: repos/HealthcarePlatform
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Checkout local-ai-machine
         uses: actions/checkout@v4
         with:
           repository: NIBARGERB-HLDPRO/local-ai-machine
           path: repos/local-ai-machine
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Checkout knocktracker
         uses: actions/checkout@v4
         with:
           repository: NIBARGERB-HLDPRO/knocktracker
           path: repos/knocktracker
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Checkout ASC-Evaluator
         uses: actions/checkout@v4
         with:
           repository: NIBARGERB-HLDPRO/ASC-Evaluator
           path: repos/ASC-Evaluator
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
 
       # ── Run the sweep ──
       - name: Run overlord sweep audit
