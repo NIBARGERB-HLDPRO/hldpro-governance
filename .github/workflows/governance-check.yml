@@ -305,26 +305,13 @@ jobs:
             exit 0
           fi
 
-          PR_NUM="${{ github.event.pull_request.number || '' }}"
           REPO="${{ github.repository }}"
-          CONTENT="Governance gate FAILED on PR #${PR_NUM} in ${REPO}. Check the Actions tab for details."
+          CONTENT="Governance gate FAILED in ${REPO}. Check Actions tab."
 
-          curl -sS -X POST \
+          RESPONSE=$(curl -sS -w "\n%{http_code}" -X POST \
             "https://gyrtvzvazmvwiirnexls.supabase.co/functions/v1/memory-writer" \
             -H "Authorization: Bearer $SB_SRK" \
             -H "apikey: $SB_ANON" \
             -H "Content-Type: application/json" \
-            -d "$(jq -n \
-              --arg content "$CONTENT" \
-              --arg repo "$REPO" \
-              '{
-                contextType: "system_event",
-                subjectType: "system",
-                subjectId: ("governance-gate-" + $repo),
-                subjectLabel: ("PR Governance Gate Failure: " + $repo),
-                content: $content,
-                sourceAgent: "governance-check-ci",
-                relevanceTags: ["governance", "gate-failure", "ci"]
-              }'
-            )"
-          echo "✓ Governance failure reported to operator_context"
+            -d "{\"contextType\":\"system_event\",\"subjectType\":\"system\",\"subjectId\":\"governance-gate\",\"content\":\"$CONTENT\",\"sourceAgent\":\"governance-check-ci\",\"relevanceTags\":[\"governance\",\"gate-failure\"]}")
+          echo "$RESPONSE"
