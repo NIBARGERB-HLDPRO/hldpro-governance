@@ -13,7 +13,7 @@
 
 | Item | Priority | Notes |
 |------|----------|-------|
-| Fail-fast loop closure: live logs + pattern write-back + PR gate event | HIGH | 3 sprints: (1) governance-check.yml → memory-writer on gate failure (2) logs-watcher querying Supabase `/logs/explorer` (3) auto pattern write-back on fix commits |
+| Fail-fast loop closure: merge PRs | HIGH | PRs open: AIS #514 + #516 + #517, HP #611. Merge and verify operator_context receives events. |
 
 ## Done
 
