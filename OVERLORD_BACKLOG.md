@@ -9,6 +9,7 @@
 | Create `hldpro-governance` GitHub repo | MED | 3-4 | After 8-gap plan is validated (1-2 weeks). Contains: agents/, standards/, templates/, metrics/. Local ~/.claude/ symlinks from repo. Weekly sweep runs as GitHub Action cron. |
 | Schedule overlord-sweep as recurring agent | LOW | 1 | Use `claude schedule` or cron. Depends on governance repo existing. |
 | Effectiveness engine baseline metrics | LOW | 4-6 | Collect bug rate, revert rate, CI pass rate per repo per week. Store in metrics/. Requires governance repo. |
+| Fail-fast loop closure: live logs + pattern write-back + PR gate event | HIGH | 5 | Three connections to close the loop from ~60% to ~100%. (1) Wire hldpro-watcher.md to Supabase Management API `/logs/explorer` for live error logs — eliminates manual log cross-referencing (2h, AIS repo). (2) Auto-write failure patterns to operator_context via memory-writer after confirmed fix — so heal.py has the pattern on next run (2h, AIS repo). (3) governance-check.yml writes `context_type: system_event` row on gate failure so morning briefing surfaces it (1h, this repo). Depends on memory-writer edge function. Pair with prompt caching on v1.5 priority list. |
 
 ## In Progress
 
