@@ -110,6 +110,27 @@ Repos with automated test/heal cycles must close the full failure → diagnosis 
 
 **Verification**: The `overlord-sweep` agent checks that repos with `test-nightly.yml` have a watcher agent with a Bash tool call containing a log query endpoint, and that `operator_context` tables have `failure_pattern` rows less than 7 days old.
 
+## GitHub Enterprise Configuration (2026-04-05)
+
+Org-level settings applied to NIBARGERB-HLDPRO:
+
+### Security (all repos)
+- **Secret scanning**: enabled — detects leaked API keys, tokens, credentials in commits
+- **Push protection**: enabled — blocks pushes containing secrets before they reach the repo
+- **Dependabot alerts**: enabled — CVE tracking for all dependencies
+- **Dependabot security updates**: enabled — auto-PRs for vulnerable dependencies
+- **Dependency graph**: enabled — required for Dependabot
+- **Web commit signoff**: required
+
+### Branch Protection (org-level rulesets)
+- **Protect main branches** (all repos except ASC-Evaluator): no deletion, no force-push, require PR
+- **Protect develop branches** (all repos except ASC-Evaluator, hldpro-governance): no deletion, no force-push
+
+### Requires Web UI Setup
+- **Verified domains**: `hldpro.com`, `ascsurvey.com`, `hldpro.dev` — add at github.com/organizations/NIBARGERB-HLDPRO/settings/domains
+- **2FA requirement**: enable at github.com/organizations/NIBARGERB-HLDPRO/settings/security
+- **CodeQL code scanning**: enable at github.com/organizations/NIBARGERB-HLDPRO/settings/security_products
+
 ## Exceptions
 - ASC-Evaluator: knowledge repo, exempt from code governance
 - Repos may have ADDITIONAL governance beyond this baseline
