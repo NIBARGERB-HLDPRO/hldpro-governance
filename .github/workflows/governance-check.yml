@@ -178,7 +178,7 @@ jobs:
 
       # ── 7. Infrastructure changes → PROGRESS ──
       - name: Check infrastructure changes documented
-        if: steps.changed.outputs.has_infra == 'true'
+        if: steps.changed.outputs.has_infra == 'true' && github.actor != 'dependabot[bot]'
         run: |
           if [ "${{ steps.changed.outputs.has_progress }}" != "true" ]; then
             echo "::error::GOVERNANCE GATE FAILED: Infrastructure files changed but docs/PROGRESS.md was not updated."
