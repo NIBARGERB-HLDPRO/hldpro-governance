@@ -20,7 +20,7 @@ jobs:
       - name: Check required governance docs exist
         run: |
           MISSING=""
-          for doc in docs/PROGRESS.md docs/FAIL_FAST_LOG.md docs/DATA_DICTIONARY.md docs/SERVICE_REGISTRY.md; do
+          for doc in docs/PROGRESS.md docs/FEATURE_REGISTRY.md docs/FAIL_FAST_LOG.md docs/DATA_DICTIONARY.md docs/SERVICE_REGISTRY.md; do
             if [ ! -f "$doc" ]; then
               MISSING="${MISSING}\n  - $doc"
             fi
@@ -81,6 +81,7 @@ jobs:
           FAILFAST_CHANGED=$(echo "$CHANGED" | grep -E 'docs/FAIL_FAST_LOG\.md' || true)
           DATADICT_CHANGED=$(echo "$CHANGED" | grep -E 'docs/DATA_DICTIONARY\.md' || true)
           REGISTRY_CHANGED=$(echo "$CHANGED" | grep -E 'docs/SERVICE_REGISTRY\.md' || true)
+          FEATURE_REGISTRY_CHANGED=$(echo "$CHANGED" | grep -E 'docs/FEATURE_REGISTRY\.md' || true)
           MARKETING_DOC_CHANGED=$(echo "$CHANGED" | grep -E 'marketing/MARKETING_PAGE\.md' || true)
 
           {
@@ -96,6 +97,7 @@ jobs:
             echo "has_failfast=$([ -n "$FAILFAST_CHANGED" ] && echo 'true' || echo 'false')"
             echo "has_datadict=$([ -n "$DATADICT_CHANGED" ] && echo 'true' || echo 'false')"
             echo "has_registry=$([ -n "$REGISTRY_CHANGED" ] && echo 'true' || echo 'false')"
+            echo "has_feature_registry=$([ -n "$FEATURE_REGISTRY_CHANGED" ] && echo 'true' || echo 'false')"
             echo "has_marketing_doc=$([ -n "$MARKETING_DOC_CHANGED" ] && echo 'true' || echo 'false')"
           } >> "$GITHUB_OUTPUT"
 
@@ -113,6 +115,21 @@ jobs:
             exit 1
           fi
           echo "✓ PROGRESS.md updated alongside code changes"
+
+      # ── 2b. FEATURE_REGISTRY.md co-staged with code changes ──
+      - name: Check FEATURE_REGISTRY.md updated with code changes
+        if: steps.changed.outputs.has_code == 'true'
+        run: |
+          if [ "${{ steps.changed.outputs.has_feature_registry }}" != "true" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: Source files changed but docs/FEATURE_REGISTRY.md was not updated."
+            echo ""
+            echo "Changed source files:"
+            echo "${{ steps.changed.outputs.code_changes }}"
+            echo ""
+            echo "Rule: Every governed repo must co-stage docs/FEATURE_REGISTRY.md with source changes."
+            exit 1
+          fi
+          echo "✓ FEATURE_REGISTRY.md updated alongside code changes"
 
       # ── 3. FAIL_FAST_LOG co-staged with bug fixes ──
       - name: Check FAIL_FAST_LOG.md updated with bug fixes

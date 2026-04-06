@@ -7,6 +7,7 @@
 | Item | Priority | Est. Hours | Notes |
 |------|----------|-----------|-------|
 | Effectiveness engine baseline metrics | LOW | 4-6 | Collect bug rate, revert rate, CI pass rate per repo per week. Store in metrics/. Requires governance repo. |
+| Feature registry rollout + enforcement | HIGH | 4-6 | Make `docs/FEATURE_REGISTRY.md` mandatory for all code repos, scaffold missing registries with repo-specific capability inventories, and update reusable governance/hook standards to require co-staging when source changes land. |
 
 ## In Progress
 
