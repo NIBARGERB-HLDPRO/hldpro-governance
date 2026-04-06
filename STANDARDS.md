@@ -21,6 +21,14 @@
 - `.github/workflows/ci-workflow-lint.yml` — actionlint CI: install + run on PRs/pushes (all code repos)
 - **CI runners:** All workflows must use `ubuntu-latest`. The `sase-microvm` self-hosted runner was decommissioned 2026-04-02. Do NOT add `self-hosted` runner refs.
 
+### Branch Isolation (global hook)
+- `~/.claude/hooks/branch-switch-guard.sh` — **global PreToolUse hook** that blocks `git checkout <branch>` and `git switch <branch>` in all repos
+- Prevents multi-session conflicts where one session's branch switch corrupts another session's working directory
+- **Allowed:** `git checkout -- <file>` (file restore), `git checkout .`, `git worktree add`
+- **Blocked:** `git checkout <branch>`, `git switch <branch>`, `git checkout -b <branch>`, `git checkout -`
+- **Alternative:** Use `EnterWorktree` tool or `git worktree add` for branch work in concurrent sessions
+- Configured in `~/.claude/settings.json` PreToolUse hooks (absolute path, not `~`)
+
 ### Doc Co-Staging Rules (governance-check.sh + CI)
 - **ANY source file change** (`.ts`, `.tsx`, `.sql`, `.html`, `.css`, `.js`, `.svg`) → co-stage `docs/PROGRESS.md`
 - **Bug fix commits** (fix/bug/patch/hotfix in message) → co-stage `docs/FAIL_FAST_LOG.md`
