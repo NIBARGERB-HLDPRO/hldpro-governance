@@ -6,6 +6,7 @@
 ## Required Files (all code repos)
 - `CLAUDE.md` at repo root (or workspace root for monorepos)
 - `docs/PROGRESS.md` — feature status tracker (uppercase filename)
+- `docs/FEATURE_REGISTRY.md` — detailed feature inventory and readiness matrix
 - `docs/FAIL_FAST_LOG.md` — error patterns and resolutions
 - `.gitignore` covering: `.env`, `node_modules/`, `dist/`, `.DS_Store`
 
@@ -31,6 +32,7 @@
 
 ### Doc Co-Staging Rules (governance-check.sh + CI)
 - **ANY source file change** (`.ts`, `.tsx`, `.sql`, `.html`, `.css`, `.js`, `.svg`) → co-stage `docs/PROGRESS.md`
+- **ANY source file change** (`.ts`, `.tsx`, `.sql`, `.html`, `.css`, `.js`, `.svg`) → co-stage `docs/FEATURE_REGISTRY.md`
 - **Bug fix commits** (fix/bug/patch/hotfix in message) → co-stage `docs/FAIL_FAST_LOG.md`
 - **Marketing file changes** (`marketing/`) → co-stage `marketing/MARKETING_PAGE.md` (if repo has marketing dir)
 - **Infrastructure changes** (`infrastructure/`, `.github/workflows/`) → co-stage `docs/PROGRESS.md`
