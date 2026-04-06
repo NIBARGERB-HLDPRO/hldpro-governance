@@ -14,12 +14,21 @@
 - `.claude/hooks/backlog-check.sh` — **hard gate**: blocks branch creation unless a matching `PLANNED` or `IN_PROGRESS` entry exists in `docs/PROGRESS.md` Plans table. Enforces backlog-first workflow (plan with AC before code).
 - `.claude/hooks/check-errors.sh` — PostToolUse hard gate: auto-grep FAIL_FAST_LOG on errors, 3-attempt max, then STOP and ask user
 - `.claude/settings.json` PostToolUse matcher must be `"*"` (all tools), NOT `"Bash"` — errors from MCP, Agent, Read, etc. must also trigger the 3-attempt gate
+- Session start must check `~/Developer/hldpro/.codex-ingestion/{repo}/backlog-*.md` for pending Codex findings — surface to user if any exist
 - Conventional commits: `feat/fix/docs/chore` with scope
 - **Never push to main/master** — always branch → staging → test → deploy
 - **Never force-push** (`--force`, `--force-with-lease`) — if a branch has a merge conflict, resolve via `git merge origin/develop` into the branch (merge commit), never via rebase + force-push
 - **Stagger parallel PR merges** — when merging 2+ PRs that touch the same files, add a 10-second pause (`sleep 10`) between merges to avoid race conditions
 - `.github/workflows/ci-workflow-lint.yml` — actionlint CI: install + run on PRs/pushes (all code repos)
 - **CI runners:** All workflows must use `ubuntu-latest`. The `sase-microvm` self-hosted runner was decommissioned 2026-04-02. Do NOT add `self-hosted` runner refs.
+
+### Branch Isolation (global hook)
+- `~/.claude/hooks/branch-switch-guard.sh` — **global PreToolUse hook** that blocks `git checkout <branch>` and `git switch <branch>` in all repos
+- Prevents multi-session conflicts where one session's branch switch corrupts another session's working directory
+- **Allowed:** `git checkout -- <file>` (file restore), `git checkout .`, `git worktree add`
+- **Blocked:** `git checkout <branch>`, `git switch <branch>`, `git checkout -b <branch>`, `git checkout -`
+- **Alternative:** Use `EnterWorktree` tool or `git worktree add` for branch work in concurrent sessions
+- Configured in `~/.claude/settings.json` PreToolUse hooks (absolute path, not `~`)
 
 ### Doc Co-Staging Rules (governance-check.sh + CI)
 - **ANY source file change** (`.ts`, `.tsx`, `.sql`, `.html`, `.css`, `.js`, `.svg`) → co-stage `docs/PROGRESS.md`
@@ -87,6 +96,17 @@ Each repo has a security tier that determines which security artifacts the overl
 | local-ai-machine | AI/ML infrastructure | Full (lane-based + session locks) | Baseline |
 | knocktracker | Field operations app | Standard (rules + CI) | Baseline |
 | ASC-Evaluator | Knowledge repo (no code) | Exempt from code governance | Exempt |
+
+## Cross-Model Review
+
+- Weekly overlord sweep includes Codex CLI (`codex exec review`) as a second-opinion layer
+- Codex outputs structured JSON to `~/Developer/hldpro/.codex-ingestion/{repo}/`
+- Claude (overlord-sweep) cross-references findings against existing docs and validates
+- Claude qualifies findings and generates backlog entries in the ingestion folder (`backlog-{date}.md`)
+- **Backlog entries are staged, not committed** — they surface during HITL backlog review
+- User promotes entries to `docs/PROGRESS.md` or `docs/FAIL_FAST_LOG.md` when approved
+- Entries tagged `⚠️ CODEX-FLAGGED` / `Source: Codex review` for traceability
+- Requires `OPENAI_API_KEY` in environment (or Codex Connect auth) — skips gracefully if missing
 
 ## Completion Verification Protocol — ENFORCED
 

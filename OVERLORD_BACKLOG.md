@@ -6,6 +6,7 @@
 
 | Item | Priority | Est. Hours | Notes |
 |------|----------|-----------|-------|
+| Operationalize Codex ingestion review flow | HIGH | 2-3 | Finish weekly sweep worktree-safe review generation, session-start backlog surfacing, and HITL promotion workflow. |
 | Create `hldpro-governance` GitHub repo | MED | 3-4 | After 8-gap plan is validated (1-2 weeks). Contains: agents/, standards/, templates/, metrics/. Local ~/.claude/ symlinks from repo. Weekly sweep runs as GitHub Action cron. |
 | Schedule overlord-sweep as recurring agent | LOW | 1 | Use `claude schedule` or cron. Depends on governance repo existing. |
 | Effectiveness engine baseline metrics | LOW | 4-6 | Collect bug rate, revert rate, CI pass rate per repo per week. Store in metrics/. Requires governance repo. |
