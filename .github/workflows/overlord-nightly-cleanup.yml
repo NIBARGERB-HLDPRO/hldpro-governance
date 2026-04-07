@@ -83,14 +83,8 @@ jobs:
           REPORT+="- Report stale merged remote branches older than 14 days\n"
           REPORT+="- Never auto-delete branches\n\n"
 
-          REPORT+="## Artifact Cleanup\n\n"
-          REPORT+="| Repo | Deleted Artifacts | Notes |\n"
-          REPORT+="|------|:-----------------:|-------|\n"
-
-          REPORT+="## Stale Merged Branches\n\n"
-          REPORT+="| Repo | Default Branch | Stale Merged Branches |\n"
-          REPORT+="|------|----------------|-----------------------|\n"
-
+          ARTIFACT_ROWS=""
+          STALE_BRANCH_ROWS=""
           ACTION_ITEMS=""
 
           for repo in $REPOS; do
@@ -119,7 +113,7 @@ jobs:
             else
               ARTIFACT_NOTE="No deletions needed"
             fi
-            REPORT+="| ${repo} | ${DELETED_COUNT} | ${ARTIFACT_NOTE} |\n"
+            ARTIFACT_ROWS+="| ${repo} | ${DELETED_COUNT} | ${ARTIFACT_NOTE} |\n"
 
             STALE_BRANCHES=""
             while IFS='|' read -r remote_ref commit_epoch; do
@@ -143,12 +137,22 @@ jobs:
 
             if [ -n "${STALE_BRANCHES}" ]; then
               STALE_BRANCHES="${STALE_BRANCHES%, }"
-              REPORT+="| ${repo} | ${DEFAULT_BRANCH} | ${STALE_BRANCHES} |\n"
+              STALE_BRANCH_ROWS+="| ${repo} | ${DEFAULT_BRANCH} | ${STALE_BRANCHES} |\n"
               ACTION_ITEMS+="### ${repo}\n- Review merged branches older than 14 days and delete any that are safe to remove: ${STALE_BRANCHES}\n\n"
             else
-              REPORT+="| ${repo} | ${DEFAULT_BRANCH} | None |\n"
+              STALE_BRANCH_ROWS+="| ${repo} | ${DEFAULT_BRANCH} | None |\n"
             fi
           done
+
+          REPORT+="## Artifact Cleanup\n\n"
+          REPORT+="| Repo | Deleted Artifacts | Notes |\n"
+          REPORT+="|------|:-----------------:|-------|\n"
+          REPORT+="${ARTIFACT_ROWS}\n"
+
+          REPORT+="## Stale Merged Branches\n\n"
+          REPORT+="| Repo | Default Branch | Stale Merged Branches |\n"
+          REPORT+="|------|----------------|-----------------------|\n"
+          REPORT+="${STALE_BRANCH_ROWS}\n"
 
           REPORT+="\n## Action Items\n\n"
           if [ -n "${ACTION_ITEMS}" ]; then
