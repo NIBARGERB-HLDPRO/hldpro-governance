@@ -142,10 +142,14 @@ Each repo has a security tier that determines which security artifacts the overl
 
 - Weekly overlord sweep includes Codex CLI (`codex exec review`) as a second-opinion layer
 - Codex outputs structured JSON to `~/Developer/hldpro/.codex-ingestion/{repo}/`
+- Use `python3 scripts/overlord/codex_ingestion.py generate --repo {repo} --repo-path {path}` to produce `review-{date}.json`
 - The primary sweep session cross-references findings against existing docs and validates them
+- Use `python3 scripts/overlord/codex_ingestion.py qualify --repo {repo} --repo-path {path}` to produce `qualified-{date}.json` and `backlog-{date}.md`
 - The primary sweep session qualifies findings and generates backlog entries in the ingestion folder (`backlog-{date}.md`)
 - **Backlog entries are staged, not committed** — they surface during HITL backlog review
+- Session start may surface pending backlog with `python3 scripts/overlord/codex_ingestion.py status --repo {repo}`
 - User promotes entries to `docs/PROGRESS.md` or `docs/FAIL_FAST_LOG.md` when approved
+- Promotion preview or apply path: `python3 scripts/overlord/codex_ingestion.py promote --repo {repo} --repo-path {path} [--finding-id F001] [--apply]`
 - Entries tagged `⚠️ CODEX-FLAGGED` / `Source: Codex review` for traceability
 - Requires `OPENAI_API_KEY` in environment (or Codex Connect auth) — skips gracefully if missing
 

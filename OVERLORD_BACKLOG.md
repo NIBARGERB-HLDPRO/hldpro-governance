@@ -15,6 +15,7 @@
 
 | Item | Priority | Notes |
 |------|----------|-------|
+| Operationalize Codex ingestion review flow | HIGH | Shared helper now exists on `feat/codex-ingestion-flow`; remaining work is validation, merge, and production sweep adoption. |
 | Governance doc consistency rollout — Sprint 1 | HIGH | Shared standards + reusable governance checker. Define minimum contracts, enforce section presence, and codify AIS/HP exceptions before repo-local rewrites. |
 
 ### Sprint Breakdown — Governance Doc Consistency Rollout
