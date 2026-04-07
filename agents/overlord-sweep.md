@@ -126,7 +126,7 @@ done
 ```
 
 - `--full-auto` for unattended execution
-- `-m o3` for strongest reasoning (change to `o4-mini` to save cost)
+- Helper defaults to `gpt-5.4` for ChatGPT-account compatibility; pass `--model o3` only when the account supports it
 - Failures produce a skip marker — never block the sweep
 - JSON schema is enforced by the helper before the review file is accepted
 
