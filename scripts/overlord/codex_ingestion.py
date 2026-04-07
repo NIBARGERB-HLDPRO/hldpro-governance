@@ -540,7 +540,7 @@ If there are no substantive issues, return an empty findings array.
                 "--color",
                 "never",
                 "--",
-                prompt,
+                "-",
             ]
             try:
                 completed = subprocess.run(
@@ -549,7 +549,7 @@ If there are no substantive issues, return an empty findings array.
                     check=True,
                     capture_output=True,
                     text=True,
-                    stdin=subprocess.DEVNULL,
+                    input=prompt,
                     timeout=args.timeout_seconds,
                 )
                 payload = extract_json_from_stdout(completed.stdout)
