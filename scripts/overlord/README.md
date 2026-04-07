@@ -32,3 +32,4 @@ Notes:
 - If your account supports it, pass `--model o3` for a heavier second-opinion pass.
 - `generate` uses generic `codex exec` with `--output-schema` and parses the final JSON object from stdout.
 - `generate` fails closed with a skip marker if Codex exceeds `--timeout-seconds` (default `180`).
+- In trusted CI, prefer staging `CODEX_AUTH_JSON` into `CODEX_HOME/auth.json` before running `generate`; keep `OPENAI_API_KEY` as the fallback path when the CLI supports env-only auth in that runner context.

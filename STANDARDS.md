@@ -152,7 +152,10 @@ Each repo has a security tier that determines which security artifacts the overl
 - Promotion preview or apply path: `python3 scripts/overlord/codex_ingestion.py promote --repo {repo} --repo-path {path} [--finding-id F001] [--apply]`
 - Entries tagged `⚠️ CODEX-FLAGGED` / `Source: Codex review` for traceability
 - Default helper model is `gpt-5.4` for ChatGPT-account compatibility; pass `--model o3` only when the account supports it
-- Requires `OPENAI_API_KEY` in environment (or Codex Connect auth) — skips gracefully if missing
+- Requires one supported Codex auth path in environment:
+- `CODEX_AUTH_JSON` for trusted CI/CD runners using a staged `~/.codex/auth.json`
+- or `OPENAI_API_KEY` / Codex Connect auth when the CLI supports env-only auth for the runner context
+- Sweep should prefer `CODEX_AUTH_JSON` over `OPENAI_API_KEY` when both are present, then skip gracefully if neither is configured
 
 ## Completion Verification Protocol — ENFORCED
 
