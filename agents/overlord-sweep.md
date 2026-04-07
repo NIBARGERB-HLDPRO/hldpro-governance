@@ -192,8 +192,12 @@ Read each `review-*.json` from `~/Developer/hldpro/.codex-ingestion/` for today'
 
 These backlog entries live in the ingestion folder, NOT in the repo docs.
 They are presented to the user when backlog is requested (e.g., session start,
-`/backlog` review, or explicit ask). The user decides whether to promote them
-into the actual `docs/PROGRESS.md` or `docs/FAIL_FAST_LOG.md`.
+`/backlog` review, or explicit ask). The active session should use any repo-required
+specialist agents/subagents before promoting entries. Codex sessions may satisfy that
+requirement by spawning equivalent Codex subagents/personas based on repo-local
+definitions in `CODEX.md`, `AGENTS.md`, `.agents/`, or workspace standards. The user
+decides whether to promote them into the actual `docs/PROGRESS.md` or
+`docs/FAIL_FAST_LOG.md`.
 
 ### 4. Cross-repo comparison
 - Flag repos below average on any metric

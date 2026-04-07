@@ -16,6 +16,7 @@
 - `.claude/hooks/check-errors.sh` — PostToolUse hard gate: auto-grep FAIL_FAST_LOG on errors, 3-attempt max, then STOP and ask user
 - `.claude/settings.json` PostToolUse matcher must be `"*"` (all tools), NOT `"Bash"` — errors from MCP, Agent, Read, etc. must also trigger the 3-attempt gate
 - Session start must check `~/Developer/hldpro/.codex-ingestion/{repo}/backlog-*.md` for pending Codex findings — surface to user if any exist
+- If repo governance requires specialist agents/subagents, the session must use them. Codex sessions may satisfy this by spawning equivalent Codex subagents and loading the repo's persona definitions from `CODEX.md`, `AGENTS.md`, `.agents/`, or repo-local standards instead of relying on Claude-only agent files.
 - Conventional commits: `feat/fix/docs/chore` with scope
 - **Never push to main/master** — always branch → staging → test → deploy
 - **Never force-push** (`--force`, `--force-with-lease`) — if a branch has a merge conflict, resolve via `git merge origin/develop` into the branch (merge commit), never via rebase + force-push
@@ -103,8 +104,8 @@ Each repo has a security tier that determines which security artifacts the overl
 
 - Weekly overlord sweep includes Codex CLI (`codex exec review`) as a second-opinion layer
 - Codex outputs structured JSON to `~/Developer/hldpro/.codex-ingestion/{repo}/`
-- Claude (overlord-sweep) cross-references findings against existing docs and validates
-- Claude qualifies findings and generates backlog entries in the ingestion folder (`backlog-{date}.md`)
+- The primary sweep session cross-references findings against existing docs and validates them
+- The primary sweep session qualifies findings and generates backlog entries in the ingestion folder (`backlog-{date}.md`)
 - **Backlog entries are staged, not committed** — they surface during HITL backlog review
 - User promotes entries to `docs/PROGRESS.md` or `docs/FAIL_FAST_LOG.md` when approved
 - Entries tagged `⚠️ CODEX-FLAGGED` / `Source: Codex review` for traceability
@@ -115,10 +116,11 @@ Each repo has a security tier that determines which security artifacts the overl
 **Before claiming any cross-repo or governance task as "done":**
 
 1. **Artifact verification**: For every file the plan says to create, run `git show HEAD:<path>` on the target branch to confirm it exists in the commit (not just on disk).
-2. **Standards sweep**: Run `~/.claude/agents/verify-completion.md` against all affected repos. It checks every item in this STANDARDS.md and reports PASS/FAIL per repo.
+2. **Standards sweep**: Run `~/.claude/agents/verify-completion.md` against all affected repos in isolated worktrees. It checks every item in this STANDARDS.md and reports PASS/FAIL per repo without mutating shared checkouts.
 3. **PR verification**: If the plan says "create PR", confirm the PR exists (`gh pr view`), is on the correct base branch, and CI is running.
-4. **No hedging**: Do not use "if it exists" language for required files. If STANDARDS.md says a file is required, it must exist — create it if missing.
-5. **Session summary must match reality**: Before writing a session summary to memory, re-verify each claim. "Built" means merged to main or PR passing CI. "Created" means committed and pushed. "Planned" means neither.
+4. **Specialist verification**: If repo governance required specialist agents/subagents for the task, verify the session used equivalent specialists. Codex may satisfy this with spawned Codex subagents/personas mapped from repo-local definitions; do not waive the requirement just because the repo uses Claude-era agent naming.
+5. **No hedging**: Do not use "if it exists" language for required files. If STANDARDS.md says a file is required, it must exist — create it if missing.
+6. **Session summary must match reality**: Before writing a session summary to memory, re-verify each claim. "Built" means merged to main or PR passing CI. "Created" means committed and pushed. "Planned" means neither.
 
 **Failure to verify = the task is not complete.** A plan step without artifact verification stays "in progress."
 
@@ -157,3 +159,4 @@ Org-level settings applied to NIBARGERB-HLDPRO:
 - ASC-Evaluator: knowledge repo, exempt from code governance
 - Repos may have ADDITIONAL governance beyond this baseline
 - HIPAA agents must never be weakened or consolidated away
+- Codex subagents/personas may stand in for repo-required Claude agents only when they preserve the same separation of duties and approval boundaries
