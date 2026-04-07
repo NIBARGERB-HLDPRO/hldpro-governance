@@ -21,6 +21,9 @@ DEFAULT_REPOS = [
     "local-ai-machine",
     "knocktracker",
 ]
+MAX_DIFFSTAT_CHARS = 12000
+MAX_PATCH_CHARS = 160000
+MAX_CHANGED_FILES = 200
 SEVERITY_ORDER = {"CRITICAL": 0, "HIGH": 1, "MEDIUM": 2, "LOW": 3, "INFO": 4}
 BUG_CATEGORIES = {"security", "error-handling", "testing"}
 SECTION_MAPPINGS = {
@@ -157,6 +160,41 @@ def list_backlog_files(repo: str, ingestion_root: Path) -> list[Path]:
 def git_lines(repo_path: Path, *args: str) -> list[str]:
     output = run(["git", *args], cwd=repo_path).stdout
     return [line for line in output.splitlines() if line.strip()]
+
+
+def bounded_text(value: str, limit: int) -> str:
+    text = value.strip()
+    if len(text) <= limit:
+        return text
+    return text[:limit].rstrip() + "\n...[truncated]..."
+
+
+def build_review_context(repo_path: Path, base_parent: str, head_sha: str, commit_shas: list[str]) -> str:
+    commit_subjects = git_lines(repo_path, "log", "--format=%h %s", f"{base_parent}..{head_sha}")
+    changed_files = git_lines(repo_path, "diff", "--name-only", f"{base_parent}..{head_sha}")
+    diffstat = run(["git", "diff", "--stat", f"{base_parent}..{head_sha}"], cwd=repo_path).stdout
+    patch = run(["git", "diff", "--unified=3", f"{base_parent}..{head_sha}"], cwd=repo_path).stdout
+
+    commit_block = "\n".join(commit_subjects[:50]) if commit_subjects else "(none)"
+    file_block = "\n".join(changed_files[:MAX_CHANGED_FILES]) if changed_files else "(none)"
+    if len(changed_files) > MAX_CHANGED_FILES:
+        file_block += f"\n...[+{len(changed_files) - MAX_CHANGED_FILES} more files]"
+
+    sections = [
+        "Review this precomputed git context instead of running git commands in the sandbox.",
+        "Commit subjects:",
+        commit_block,
+        "",
+        "Changed files:",
+        file_block,
+        "",
+        "Diffstat:",
+        bounded_text(diffstat or "(none)", MAX_DIFFSTAT_CHARS),
+        "",
+        "Patch excerpt:",
+        bounded_text(patch or "(none)", MAX_PATCH_CHARS),
+    ]
+    return "\n".join(sections).strip()
 
 
 def build_schema_file(temp_dir: Path) -> Path:
@@ -458,6 +496,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
     head_sha = run(["git", "rev-parse", "HEAD"], cwd=repo_path).stdout.strip()
     base_parent = run(["git", "rev-parse", f"{base_sha}^"], cwd=repo_path).stdout.strip()
     commit_count = len(commit_shas)
+    review_context = build_review_context(repo_path, base_parent, head_sha, commit_shas)
 
     with tempfile.TemporaryDirectory(prefix="codex-ingestion-") as temp_dir_name:
         temp_dir = Path(temp_dir_name)
@@ -483,6 +522,8 @@ Return only valid JSON matching the provided schema. Use exact repo metadata:
 - commits_reviewed: {commit_count}
 
 If there are no substantive issues, return an empty findings array.
+
+{review_context}
 """.strip()
 
             cmd = [
@@ -499,7 +540,7 @@ If there are no substantive issues, return an empty findings array.
                 "--color",
                 "never",
                 "--",
-                prompt,
+                "-",
             ]
             try:
                 completed = subprocess.run(
@@ -508,7 +549,7 @@ If there are no substantive issues, return an empty findings array.
                     check=True,
                     capture_output=True,
                     text=True,
-                    stdin=subprocess.DEVNULL,
+                    input=prompt,
                     timeout=args.timeout_seconds,
                 )
                 payload = extract_json_from_stdout(completed.stdout)

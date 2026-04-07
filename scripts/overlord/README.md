@@ -30,6 +30,6 @@ Notes:
 
 - `generate` defaults to `gpt-5.4`, which works on ChatGPT-backed Codex accounts.
 - If your account supports it, pass `--model o3` for a heavier second-opinion pass.
-- `generate` uses generic `codex exec` with `--output-schema` and parses the final JSON object from stdout.
+- `generate` precomputes commit subjects, changed files, diffstat, and a bounded patch excerpt outside Codex, then feeds that review context to generic `codex exec` over stdin with `--output-schema`.
 - `generate` fails closed with a skip marker if Codex exceeds `--timeout-seconds` (default `180`).
 - In trusted CI, prefer staging `CODEX_AUTH_JSON` into `CODEX_HOME/auth.json` before running `generate`; keep `OPENAI_API_KEY` as the fallback path when the CLI supports env-only auth in that runner context.
