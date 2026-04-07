@@ -84,7 +84,13 @@ jobs:
           mkdir -p "${INGESTION_ROOT}"
 
           if [ -n "${OPENAI_API_KEY:-}" ]; then
-            if npm install -g @openai/codex@0.118.0 >/tmp/codex-install.log 2>&1; then
+            AUTH_PROBE_HTTP=$(curl -sS -o /tmp/openai-auth-probe.json -w "%{http_code}" \
+              https://api.openai.com/v1/models \
+              -H "Authorization: Bearer ${OPENAI_API_KEY}" || true)
+            if [ "${AUTH_PROBE_HTTP}" != "200" ]; then
+              AUTH_PROBE_NOTE=$(tr '\n' ' ' </tmp/openai-auth-probe.json | sed 's/  */ /g' | cut -c1-180)
+              CODEX_SETUP_NOTE="OpenAI auth probe failed (HTTP ${AUTH_PROBE_HTTP:-000}): ${AUTH_PROBE_NOTE}"
+            elif npm install -g @openai/codex@0.118.0 >/tmp/codex-install.log 2>&1; then
               CODEX_AVAILABLE=true
             else
               CODEX_SETUP_NOTE=$(tail -n 5 /tmp/codex-install.log | tr '\n' ' ' | sed 's/  */ /g')
