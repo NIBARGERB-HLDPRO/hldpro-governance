@@ -6,6 +6,7 @@
 ## Required Files (all code repos)
 - `CLAUDE.md` at repo root (or workspace root for monorepos)
 - `docs/PROGRESS.md` — feature status tracker (uppercase filename)
+- `docs/FEATURE_REGISTRY.md` — detailed feature inventory and readiness matrix
 - `docs/FAIL_FAST_LOG.md` — error patterns and resolutions
 - `.gitignore` covering: `.env`, `node_modules/`, `dist/`, `.DS_Store`
 
@@ -32,6 +33,7 @@
 
 ### Doc Co-Staging Rules (governance-check.sh + CI)
 - **ANY source file change** (`.ts`, `.tsx`, `.sql`, `.html`, `.css`, `.js`, `.svg`) → co-stage `docs/PROGRESS.md`
+- **ANY source file change** (`.ts`, `.tsx`, `.sql`, `.html`, `.css`, `.js`, `.svg`) → co-stage `docs/FEATURE_REGISTRY.md`
 - **Bug fix commits** (fix/bug/patch/hotfix in message) → co-stage `docs/FAIL_FAST_LOG.md`
 - **Marketing file changes** (`marketing/`) → co-stage `marketing/MARKETING_PAGE.md` (if repo has marketing dir)
 - **Infrastructure changes** (`infrastructure/`, `.github/workflows/`) → co-stage `docs/PROGRESS.md`
@@ -119,6 +121,37 @@ Each repo has a security tier that determines which security artifacts the overl
 5. **Session summary must match reality**: Before writing a session summary to memory, re-verify each claim. "Built" means merged to main or PR passing CI. "Created" means committed and pushed. "Planned" means neither.
 
 **Failure to verify = the task is not complete.** A plan step without artifact verification stays "in progress."
+
+## Fail-Fast Loop Closure
+
+Repos with automated test/heal cycles must close the full failure → diagnosis → pattern → prevention loop:
+
+- **Live log access** (repos with `test-nightly.yml`): Watcher agent must query live runtime logs (Supabase Management API `/logs/explorer` or equivalent), not just static output files. The watcher needs access to edge function errors, webhook payloads, and workflow execution history to diagnose failures without manual log cross-referencing.
+- **Automated pattern write-back** (repos with `operator_context`): After a novel failure is identified and the operator confirms a fix, the watcher must write the failure pattern back to `operator_context` automatically (via `memory-writer` edge function, `context_type: failure_pattern`). Manual pattern entry breaks the loop — `heal.py` only benefits from patterns that are persisted before the next run.
+- **Gate failure surfacing** (repos using `governance-check.yml`): PR gate failures must write a `context_type: system_event` row to `operator_context` so the morning briefing surfaces them. GitHub Actions `::error::` annotations alone are insufficient — they require the operator to check GitHub notifications.
+
+**Verification**: The `overlord-sweep` agent checks that repos with `test-nightly.yml` have a watcher agent with a Bash tool call containing a log query endpoint, and that `operator_context` tables have `failure_pattern` rows less than 7 days old.
+
+## GitHub Enterprise Configuration (2026-04-05)
+
+Org-level settings applied to NIBARGERB-HLDPRO:
+
+### Security (all repos)
+- **Secret scanning**: enabled — detects leaked API keys, tokens, credentials in commits
+- **Push protection**: enabled — blocks pushes containing secrets before they reach the repo
+- **Dependabot alerts**: enabled — CVE tracking for all dependencies
+- **Dependabot security updates**: enabled — auto-PRs for vulnerable dependencies
+- **Dependency graph**: enabled — required for Dependabot
+- **Web commit signoff**: required
+
+### Branch Protection (org-level rulesets)
+- **Protect main branches** (all repos except ASC-Evaluator): no deletion, no force-push, require PR
+- **Protect develop branches** (all repos except ASC-Evaluator, hldpro-governance): no deletion, no force-push
+
+### Requires Web UI Setup
+- **Verified domains**: `hldpro.com`, `ascsurvey.com`, `hldpro.dev` — add at github.com/organizations/NIBARGERB-HLDPRO/settings/domains
+- **2FA requirement**: enable at github.com/organizations/NIBARGERB-HLDPRO/settings/security
+- **CodeQL code scanning**: enable at github.com/organizations/NIBARGERB-HLDPRO/settings/security_products
 
 ## Exceptions
 - ASC-Evaluator: knowledge repo, exempt from code governance
