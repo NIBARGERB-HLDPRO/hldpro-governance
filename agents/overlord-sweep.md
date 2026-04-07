@@ -111,58 +111,40 @@ If `PENTAGI_API_TOKEN` is not set, log a WARNING instead of triggering — the t
 #### 3.7a. Generate Codex reviews (per repo)
 
 For each repo (except ASC-Evaluator), run Codex CLI code review of the past week's changes,
-outputting structured JSON to the ingestion folder:
+outputting structured JSON to the ingestion folder via the shared helper:
 
 ```bash
-INGESTION_DIR=~/Developer/hldpro/.codex-ingestion
 AUDIT_ROOT=~/Developer/hldpro/_worktrees/overlord-sweep
 TODAY=$(date +%Y-%m-%d)
 
 for repo in ai-integration-services HealthcarePlatform local-ai-machine knocktracker; do
-  cd "$AUDIT_ROOT/$repo"
-  mkdir -p "$INGESTION_DIR/$repo"
-
-  BASE_SHA=$(git log --oneline --since="7 days ago" --reverse | head -1 | awk '{print $1}')
-  HEAD_SHA=$(git rev-parse HEAD)
-  COMMIT_COUNT=$(git log --oneline --since="7 days ago" | wc -l | tr -d ' ')
-
-  if [ -z "$BASE_SHA" ] || [ "$COMMIT_COUNT" = "0" ]; then
-    echo '{"repo":"'"$repo"'","date":"'"$TODAY"'","skipped":true,"reason":"no commits in last 7 days"}' \
-      > "$INGESTION_DIR/$repo/review-${TODAY}.json"
-    continue
-  fi
-
-  codex exec review \
-    --base "${BASE_SHA}~1" \
-    --full-auto \
-    -m o3 \
-    "You are reviewing a week of changes for the HLD Pro $repo repository.
-     Output ONLY valid JSON matching this schema:
-     {\"repo\":\"$repo\",\"date\":\"$TODAY\",\"model\":\"o3\",
-      \"base_sha\":\"${BASE_SHA}\",\"head_sha\":\"${HEAD_SHA}\",
-      \"commits_reviewed\":${COMMIT_COUNT},
-      \"findings\":[{\"severity\":\"HIGH|MEDIUM|LOW|INFO\",
-        \"category\":\"security|error-handling|architecture|performance|testing|docs\",
-        \"file\":\"path\",\"line\":0,\"title\":\"\",\"detail\":\"\",\"suggestion\":\"\"}]}
-
-     Focus on: OWASP top 10, credential leaks, broken error handling, missing input
-     validation, architectural regressions, untested code paths.
-     Flag anything a same-model reviewer might systematically miss.
-     Rank findings by severity. If no issues found, return empty findings array." \
-    > "$INGESTION_DIR/$repo/review-${TODAY}.json" 2>/dev/null || \
-    echo '{"repo":"'"$repo"'","date":"'"$TODAY"'","skipped":true,"reason":"codex exec failed"}' \
-      > "$INGESTION_DIR/$repo/review-${TODAY}.json"
+  python3 scripts/overlord/codex_ingestion.py generate \
+    --repo "$repo" \
+    --repo-path "$AUDIT_ROOT/$repo" \
+    --date "$TODAY"
 done
 ```
 
 - `--full-auto` for unattended execution
 - `-m o3` for strongest reasoning (change to `o4-mini` to save cost)
 - Failures produce a skip marker — never block the sweep
-- JSON schema enforced via prompt (Codex output is best-effort structured)
+- JSON schema is enforced by the helper before the review file is accepted
 
 #### 3.7b. Qualify Codex findings and generate backlog
 
-Read each `review-*.json` from `~/Developer/hldpro/.codex-ingestion/` for today's date. For each finding:
+Read each `review-*.json` from `~/Developer/hldpro/.codex-ingestion/` for today's date.
+Use the shared helper so qualification + backlog generation stay deterministic:
+
+```bash
+for repo in ai-integration-services HealthcarePlatform local-ai-machine knocktracker; do
+  python3 scripts/overlord/codex_ingestion.py qualify \
+    --repo "$repo" \
+    --repo-path "$AUDIT_ROOT/$repo" \
+    --date "$TODAY"
+done
+```
+
+For each finding, the helper applies this flow:
 
 1. **Deduplicate** — check if the issue already exists in the repo's `docs/FAIL_FAST_LOG.md`,
    `docs/PROGRESS.md`, or `docs/ERROR_PATTERNS.md`. If it does, mark as `already_tracked` and skip.

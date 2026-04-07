@@ -31,7 +31,7 @@ Your job: detect which repo the user is working in, check it against the shared 
    - .claude/hooks/governance-check.sh exists — use `Read`
    - ~/.claude/hooks/branch-switch-guard.sh exists (global hook) — use `Read`
    - ~/.claude/settings.json contains PreToolUse entry for branch-switch-guard — use `Read`
-   - `~/Developer/hldpro/.codex-ingestion/{repo}/backlog-*.md` pending entries — if present, surface count and file path in the output
+   - `~/Developer/hldpro/.codex-ingestion/{repo}/backlog-*.md` pending entries — prefer `python3 scripts/overlord/codex_ingestion.py status --repo {repo}` so count + path output stays consistent
    - Repo-required specialist/subagent definitions in `CODEX.md`, `AGENTS.md`, `.agents/required-subagents.json`, or repo-local standards — if present, remind the operator that Codex must spawn equivalent subagents/personas before governed work proceeds
    - If HIPAA repo: PHI redaction, break-glass, audit retention, RLS auditor agents exist
 
