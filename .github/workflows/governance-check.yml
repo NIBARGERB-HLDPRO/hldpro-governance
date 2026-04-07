@@ -33,6 +33,61 @@ jobs:
           fi
           echo "✓ All required governance docs exist"
 
+      - name: Check governance doc structure
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          FAILURES=""
+
+          require_pattern() {
+            local file="$1"
+            local pattern="$2"
+            local label="$3"
+            if ! grep -Eq "$pattern" "$file"; then
+              FAILURES="${FAILURES}\n  - ${file}: missing ${label}"
+            fi
+          }
+
+          # PROGRESS.md
+          if [ "$REPO_NAME" = "ai-integration-services" ]; then
+            require_pattern "docs/PROGRESS.md" '^# Backlog$|^## Backlog — Open Plans & Action Items$' 'AIS backlog section'
+            require_pattern "docs/PROGRESS.md" '^## Known Bugs$' 'Known Bugs section'
+          else
+            require_pattern "docs/PROGRESS.md" '^## Plans$' 'Plans section'
+            require_pattern "docs/PROGRESS.md" '^\| Plan \| Status \| Priority \| Est\. Hours \| Deliverables \| Notes \|$' 'Plans table header'
+            require_pattern "docs/PROGRESS.md" '^## Known Bugs$' 'Known Bugs section'
+            require_pattern "docs/PROGRESS.md" '^## Feature Requests$' 'Feature Requests section'
+            require_pattern "docs/PROGRESS.md" '^## Operational Items$' 'Operational Items section'
+          fi
+
+          # FEATURE_REGISTRY.md
+          require_pattern "docs/FEATURE_REGISTRY.md" '^# .+Feature Registry' 'Feature Registry title'
+          require_pattern "docs/FEATURE_REGISTRY.md" 'Last Updated' 'Last Updated metadata'
+          require_pattern "docs/FEATURE_REGISTRY.md" '^## Summary Table$' 'Summary Table section'
+          require_pattern "docs/FEATURE_REGISTRY.md" '^\| Feature ID \| Domain \| Feature \| Status \| Readiness \|' 'summary table header'
+
+          # DATA_DICTIONARY.md
+          require_pattern "docs/DATA_DICTIONARY.md" '^# Data Dictionary$' 'Data Dictionary title'
+          if [ "$REPO_NAME" = "HealthcarePlatform" ]; then
+            require_pattern "docs/DATA_DICTIONARY.md" 'backend/DATA_DICTIONARY\.md' 'canonical backend pointer'
+          else
+            require_pattern "docs/DATA_DICTIONARY.md" '(^## Table of Contents$)|(^\| Table \| Description \| Key Columns \|$)|(^\| Column \| Type \| Constraints \| Notes \|$)' 'dictionary body or pointer contract'
+          fi
+
+          # SERVICE_REGISTRY.md
+          require_pattern "docs/SERVICE_REGISTRY.md" '^# Service Registry' 'Service Registry title'
+          require_pattern "docs/SERVICE_REGISTRY.md" '(^\| Function \|)|(^\| Service \|)' 'service or function registry table'
+
+          if [ -n "$FAILURES" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: Governance doc structure is incomplete:${FAILURES}"
+            echo ""
+            echo "Rule: governed docs must satisfy the shared minimum contract in STANDARDS.md, including allowed repo-specific exceptions."
+            exit 1
+          fi
+
+          echo "✓ Governance doc structure check passed"
+
       # ── Categorize changed files ──
       - name: Get changed files
         id: changed

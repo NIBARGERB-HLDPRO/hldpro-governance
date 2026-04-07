@@ -9,12 +9,42 @@
 | Operationalize Codex ingestion review flow | HIGH | 2-3 | Finish weekly sweep worktree-safe review generation, session-start backlog surfacing, and HITL promotion workflow. |
 | Nightly cleanup timezone policy | LOW | 1 | Current cron is `04:00 UTC`, which is 11:00 PM America/Chicago during DST and 10:00 PM during standard time. If year-round 11:00 PM Central is required, replace with a timezone-aware guard strategy. Tracking issue: [#14](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/14). |
 | Effectiveness engine baseline metrics | LOW | 4-6 | Collect bug rate, revert rate, CI pass rate per repo per week. Store in metrics/. Requires governance repo. |
-| Feature registry rollout + enforcement | HIGH | 4-6 | Make `docs/FEATURE_REGISTRY.md` mandatory for all code repos, scaffold missing registries with repo-specific capability inventories, and update reusable governance/hook standards to require co-staging when source changes land. |
+| Governance doc consistency rollout | HIGH | 4-6 | Standardize the minimum governance-doc contract across `docs/PROGRESS.md`, `docs/FEATURE_REGISTRY.md`, `docs/DATA_DICTIONARY.md`, and `docs/SERVICE_REGISTRY.md` without flattening valid repo-specific structures. Includes explicit exceptions for AIS and HealthcarePlatform. |
 
 ## In Progress
 
 | Item | Priority | Notes |
 |------|----------|-------|
+| Governance doc consistency rollout — Sprint 1 | HIGH | Shared standards + reusable governance checker. Define minimum contracts, enforce section presence, and codify AIS/HP exceptions before repo-local rewrites. |
+
+### Sprint Breakdown — Governance Doc Consistency Rollout
+
+#### Sprint 1 — Shared Contract + Enforcement
+- Scope: update `STANDARDS.md` and reusable `governance-check.yml` so governance docs are validated by minimum contract, not just file existence.
+- AC: `docs/PROGRESS.md` contract is defined in standards with explicit allowance for AIS's existing backlog model.
+- AC: `docs/FEATURE_REGISTRY.md` contract requires metadata + summary table, while allowing repo-specific extra columns and appendices.
+- AC: `docs/DATA_DICTIONARY.md` contract allows either canonical root content or an explicit pointer to the canonical workspace-level copy.
+- AC: `docs/SERVICE_REGISTRY.md` contract requires a title and registry table without forcing one repo-wide schema.
+- AC: reusable governance CI fails when required governance-doc sections/metadata are missing.
+- AC: HealthcarePlatform monorepo pointer behavior and AIS long-form progress layout are formalized as allowed exceptions in standards.
+
+#### Sprint 2 — Low-Risk Repo Scaffolding
+- Scope: add missing `FEATURE_REGISTRY.md` files and tighten stub metadata where governance docs are present but weak.
+- AC: [local-ai-machine/docs/FEATURE_REGISTRY.md](/Users/bennibarger/Developer/hldpro/local-ai-machine/docs) exists with required summary table and metadata.
+- AC: [knocktracker/docs/FEATURE_REGISTRY.md](/Users/bennibarger/Developer/hldpro/knocktracker/docs) exists with required summary table and metadata.
+- AC: [local-ai-machine/docs/DATA_DICTIONARY.md](/Users/bennibarger/Developer/hldpro/local-ai-machine/docs/DATA_DICTIONARY.md) and [knocktracker/docs/DATA_DICTIONARY.md](/Users/bennibarger/Developer/hldpro/knocktracker/docs/DATA_DICTIONARY.md) include source-of-truth metadata, not just placeholder rows.
+- AC: repo-local PRs pass updated governance CI.
+
+#### Sprint 3 — Outlier Alignment
+- Scope: normalize backlog/control semantics in AIS and tighten HealthcarePlatform root-pointer docs without breaking their current information architecture.
+- AC: [ai-integration-services/docs/PROGRESS.md](/Users/bennibarger/Developer/hldpro/ai-integration-services/docs/PROGRESS.md) explicitly satisfies the shared backlog/control contract without flattening the full operating document.
+- AC: [HealthcarePlatform/docs/DATA_DICTIONARY.md](/Users/bennibarger/Developer/hldpro/HealthcarePlatform/docs/DATA_DICTIONARY.md) clearly identifies [HealthcarePlatform/backend/DATA_DICTIONARY.md](/Users/bennibarger/Developer/hldpro/HealthcarePlatform/backend/DATA_DICTIONARY.md) as the canonical schema source in a way the checker can validate.
+- AC: no repo loses deeper repo-specific registry/dictionary content just to match a shared template.
+
+#### Sprint 4 — Optional Deeper Normalization
+- Scope: align status taxonomies and richer doc conventions only after all repos satisfy the minimum contract.
+- AC: status taxonomy proposal documented before rollout.
+- AC: any additional normalization remains additive and does not invalidate AIS or HP exceptions.
 
 ## Done
 
