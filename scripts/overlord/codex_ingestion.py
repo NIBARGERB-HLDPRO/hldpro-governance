@@ -112,6 +112,37 @@ def extract_json_from_stdout(stdout: str) -> dict[str, Any]:
     raise json.JSONDecodeError("no JSON object found in stdout", stdout, 0)
 
 
+def summarize_failure_output(stderr: str, stdout: str) -> str:
+    ignored_prefixes = (
+        "OpenAI Codex v",
+        "workdir:",
+        "model:",
+        "provider:",
+        "approval:",
+        "sandbox:",
+        "reasoning effort:",
+        "reasoning summaries:",
+        "session id:",
+        "user",
+        "codex",
+        "tokens used",
+        "Reading additional input from stdin",
+        "--------",
+    )
+    candidates: list[str] = []
+    for stream in (stderr, stdout):
+        for raw_line in stream.splitlines():
+            line = raw_line.strip()
+            if not line:
+                continue
+            if any(line.startswith(prefix) for prefix in ignored_prefixes):
+                continue
+            candidates.append(line)
+    if candidates:
+        return " | ".join(candidates[-3:])
+    return (stderr.strip() or stdout.strip() or "codex exec failed").strip()
+
+
 def skip_payload(repo: str, date: str, reason: str) -> dict[str, Any]:
     return {"repo": repo, "date": date, "skipped": True, "reason": reason}
 
@@ -465,6 +496,9 @@ If there are no substantive issues, return an empty findings array.
                 model_name,
                 "--output-schema",
                 str(schema_path),
+                "--color",
+                "never",
+                "--",
                 prompt,
             ]
             try:
@@ -489,9 +523,9 @@ If there are no substantive issues, return an empty findings array.
             except (subprocess.CalledProcessError, json.JSONDecodeError, OSError) as exc:
                 reason = str(exc)
                 if isinstance(exc, subprocess.CalledProcessError):
-                    stderr = exc.stderr.strip()
-                    stdout = exc.stdout.strip()
-                    reason = stderr or stdout or reason
+                    reason = summarize_failure_output(exc.stderr, exc.stdout)
+                if isinstance(exc, json.JSONDecodeError):
+                    reason = summarize_failure_output("", exc.doc)
                 last_reason = reason[:240]
                 if (
                     isinstance(exc, subprocess.CalledProcessError)
