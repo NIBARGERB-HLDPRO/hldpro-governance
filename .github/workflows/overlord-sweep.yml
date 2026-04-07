@@ -100,7 +100,37 @@ jobs:
                 >/tmp/codex-canary.stdout 2>/tmp/codex-canary.stderr; then
                 CODEX_AVAILABLE=true
               else
-                CODEX_SETUP_NOTE=$(tr '\n' ' ' </tmp/codex-canary.stderr | sed 's/  */ /g' | cut -c1-240)
+                CODEX_SETUP_NOTE=$(python3 - <<'PY'
+          from pathlib import Path
+          ignored = (
+              "Reading additional input from stdin",
+              "OpenAI Codex v",
+              "--------",
+              "workdir:",
+              "model:",
+              "provider:",
+              "approval:",
+              "sandbox:",
+              "reasoning effort:",
+              "reasoning summaries:",
+              "session id:",
+              "user",
+              "codex",
+              "tokens used",
+          )
+          lines = []
+          for file_name in ("/tmp/codex-canary.stderr", "/tmp/codex-canary.stdout"):
+              path = Path(file_name)
+              if not path.exists():
+                  continue
+              for raw in path.read_text(errors="ignore").splitlines():
+                  line = raw.strip()
+                  if not line or any(line.startswith(prefix) for prefix in ignored):
+                      continue
+                  lines.append(line)
+          print(" | ".join(lines[-3:])[:240], end="")
+          PY
+                )
                 if [ -z "${CODEX_SETUP_NOTE}" ]; then
                   CODEX_SETUP_NOTE=$(tr '\n' ' ' </tmp/codex-canary.stdout | sed 's/  */ /g' | cut -c1-240)
                 fi
