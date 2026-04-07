@@ -362,7 +362,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     gen_parser = subparsers.add_parser("generate", parents=[common])
     gen_parser.add_argument("--since-days", type=int, default=7)
-    gen_parser.add_argument("--model", default="o3")
+    gen_parser.add_argument("--model", default="gpt-5.4")
 
     qualify_parser = subparsers.add_parser("qualify", parents=[common])
 
@@ -413,7 +413,17 @@ def cmd_generate(args: argparse.Namespace) -> int:
     base_parent = run(["git", "rev-parse", f"{base_sha}^"], cwd=repo_path).stdout.strip()
     commit_count = len(commit_shas)
 
-    prompt = f"""
+    with tempfile.TemporaryDirectory(prefix="codex-ingestion-") as temp_dir_name:
+        temp_dir = Path(temp_dir_name)
+        schema_path = build_schema_file(temp_dir)
+        raw_output = temp_dir / "review.json"
+        candidate_models = [args.model]
+        if args.model != "gpt-5.4":
+            candidate_models.append("gpt-5.4")
+
+        last_reason = "codex exec did not run"
+        for model_name in candidate_models:
+            prompt = f"""
 You are reviewing a week of changes for the HLD Pro repository {args.repo}.
 Review the diff from base ref {base_parent} to HEAD {head_sha}. Focus on OWASP issues,
 credential leaks, broken error handling, missing input validation, architectural regressions,
@@ -422,7 +432,7 @@ untested code paths, and gaps a same-model reviewer could miss.
 Return only valid JSON matching the provided schema. Use exact repo metadata:
 - repo: {args.repo}
 - date: {args.date}
-- model: {args.model}
+- model: {model_name}
 - base_sha: {base_sha}
 - head_sha: {head_sha}
 - commits_reviewed: {commit_count}
@@ -430,40 +440,46 @@ Return only valid JSON matching the provided schema. Use exact repo metadata:
 If there are no substantive issues, return an empty findings array.
 """.strip()
 
-    with tempfile.TemporaryDirectory(prefix="codex-ingestion-") as temp_dir_name:
-        temp_dir = Path(temp_dir_name)
-        schema_path = build_schema_file(temp_dir)
-        raw_output = temp_dir / "review.json"
-        cmd = [
-            "codex",
-            "exec",
-            "-C",
-            str(repo_path),
-            "--full-auto",
-            "--ephemeral",
-            "-m",
-            args.model,
-            "--output-schema",
-            str(schema_path),
-            "review",
-            "--base",
-            base_parent,
-            "-o",
-            str(raw_output),
-            prompt,
-        ]
-        try:
-            run(cmd)
-            payload = load_json(raw_output)
-            normalized = normalize_review(payload, args.repo, args.date, args.model, base_sha, head_sha, commit_count)
-            write_json(review_path, normalized)
-        except (subprocess.CalledProcessError, json.JSONDecodeError, OSError) as exc:
-            reason = str(exc)
-            if isinstance(exc, subprocess.CalledProcessError):
-                stderr = exc.stderr.strip()
-                reason = stderr or exc.stdout.strip() or reason
-            write_json(review_path, skip_payload(args.repo, args.date, f"codex exec failed: {reason[:240]}"))
+            cmd = [
+                "codex",
+                "exec",
+                "-C",
+                str(repo_path),
+                "--full-auto",
+                "--ephemeral",
+                "-m",
+                model_name,
+                "--output-schema",
+                str(schema_path),
+                prompt,
+                "review",
+                "--base",
+                base_parent,
+                "-o",
+                str(raw_output),
+            ]
+            try:
+                run(cmd)
+                payload = load_json(raw_output)
+                normalized = normalize_review(payload, args.repo, args.date, model_name, base_sha, head_sha, commit_count)
+                write_json(review_path, normalized)
+                print(review_path)
+                return 0
+            except (subprocess.CalledProcessError, json.JSONDecodeError, OSError) as exc:
+                reason = str(exc)
+                if isinstance(exc, subprocess.CalledProcessError):
+                    stderr = exc.stderr.strip()
+                    reason = stderr or exc.stdout.strip() or reason
+                last_reason = reason[:240]
+                if (
+                    isinstance(exc, subprocess.CalledProcessError)
+                    and model_name != "gpt-5.4"
+                    and "not supported when using Codex with a ChatGPT account" in reason
+                ):
+                    continue
+                break
 
+        write_json(review_path, skip_payload(args.repo, args.date, f"codex exec failed: {last_reason}"))
     print(review_path)
     return 0
 

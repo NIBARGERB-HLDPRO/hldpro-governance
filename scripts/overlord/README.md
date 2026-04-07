@@ -25,3 +25,8 @@ python3 scripts/overlord/codex_ingestion.py promote \
   --repo-path ~/Developer/hldpro/knocktracker \
   --finding-id F001
 ```
+
+Notes:
+
+- `generate` defaults to `gpt-5.4`, which works on ChatGPT-backed Codex accounts.
+- If your account supports it, pass `--model o3` for a heavier second-opinion pass.

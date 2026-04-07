@@ -151,6 +151,7 @@ Each repo has a security tier that determines which security artifacts the overl
 - User promotes entries to `docs/PROGRESS.md` or `docs/FAIL_FAST_LOG.md` when approved
 - Promotion preview or apply path: `python3 scripts/overlord/codex_ingestion.py promote --repo {repo} --repo-path {path} [--finding-id F001] [--apply]`
 - Entries tagged `⚠️ CODEX-FLAGGED` / `Source: Codex review` for traceability
+- Default helper model is `gpt-5.4` for ChatGPT-account compatibility; pass `--model o3` only when the account supports it
 - Requires `OPENAI_API_KEY` in environment (or Codex Connect auth) — skips gracefully if missing
 
 ## Completion Verification Protocol — ENFORCED
