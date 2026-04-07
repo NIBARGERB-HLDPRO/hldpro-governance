@@ -8,6 +8,8 @@
 - `docs/PROGRESS.md` — feature status tracker (uppercase filename)
 - `docs/FEATURE_REGISTRY.md` — detailed feature inventory and readiness matrix
 - `docs/FAIL_FAST_LOG.md` — error patterns and resolutions
+- `docs/DATA_DICTIONARY.md` — schema/source-of-truth reference (may be a validated pointer doc for monorepos)
+- `docs/SERVICE_REGISTRY.md` — service/function inventory
 - `.gitignore` covering: `.env`, `node_modules/`, `dist/`, `.DS_Store`
 
 ## Required Governance
@@ -47,6 +49,42 @@
 - Must trigger on PRs to **both** `main` and `develop` (not just main)
 - Must check for PENDING_ placeholders across all changed files
 - Must report marketing doc sync status if marketing files changed
+
+## Governance Doc Contract
+
+These files must be consistent at the contract level. They do **not** need to be structurally identical across all repos.
+
+### `docs/PROGRESS.md`
+- Must remain the repo's single source of truth for planned work, open bugs, feature requests, and operational items
+- Default required sections:
+  - `## Plans`
+  - `## Known Bugs`
+  - `## Feature Requests`
+  - `## Operational Items`
+- Default backlog table header:
+  - `| Plan | Status | Priority | Est. Hours | Deliverables | Notes |`
+- **AIS exception:** `ai-integration-services` may satisfy the backlog contract with its existing backlog model (`# Backlog` / `## Backlog — Open Plans & Action Items`) plus `## Known Bugs`
+
+### `docs/FEATURE_REGISTRY.md`
+- Must contain:
+  - a top-level title
+  - `Last Updated` metadata
+  - `## Summary Table`
+  - a summary table whose leading columns are `Feature ID`, `Domain`, `Feature`, `Status`, `Readiness`
+- Extra columns (for example test coverage) and appendices are allowed
+
+### `docs/DATA_DICTIONARY.md`
+- Must contain a top-level `# Data Dictionary` title
+- Must either:
+  - be the canonical root schema dictionary, or
+  - explicitly point to the canonical workspace-level dictionary
+- Canonical dictionaries may use detailed schema sections or a compact table format; both are acceptable
+- **HealthcarePlatform exception:** root `docs/DATA_DICTIONARY.md` may remain a pointer to `backend/DATA_DICTIONARY.md`
+
+### `docs/SERVICE_REGISTRY.md`
+- Must contain a top-level `# Service Registry` title
+- Must include at least one registry table covering services or functions
+- Repo-specific shapes are allowed (for example `Function / Method / Path` or `Service / Type / Description`)
 
 ## Monorepo Handling
 - Required governance files (CLAUDE.md, docs/PROGRESS.md, docs/FAIL_FAST_LOG.md, .claude/hooks/, .github/workflows/) go at **repo root**
