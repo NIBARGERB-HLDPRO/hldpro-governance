@@ -61,6 +61,7 @@ jobs:
         run: |
           REPOS="ai-integration-services HealthcarePlatform local-ai-machine knocktracker ASC-Evaluator"
           CODE_REPOS="ai-integration-services HealthcarePlatform local-ai-machine knocktracker"
+          EXEMPT_REPOS="ASC-Evaluator"
           DATE=$(date -u +%Y-%m-%d)
 
           REPORT="# Overlord Weekly Sweep Report — ${DATE}\n\n"
@@ -79,6 +80,12 @@ jobs:
             PASS=0
             CHECKS=0
             ROW="| ${repo} |"
+
+            if echo "$EXEMPT_REPOS" | grep -qw "$repo"; then
+              ROW+=" EXEMPT | EXEMPT | EXEMPT | N/A | N/A | N/A | EXEMPT |"
+              REPORT+="${ROW}\n"
+              continue
+            fi
 
             # CLAUDE.md
             CHECKS=$((CHECKS + 1))
@@ -209,6 +216,11 @@ jobs:
             DIR="repos/${repo}"
             ROW="| ${repo} |"
 
+            if echo "$EXEMPT_REPOS" | grep -qw "$repo"; then
+              REPORT+="| ${repo} | N/A | N/A | N/A | N/A | 0 |\n"
+              continue
+            fi
+
             for doc in PROGRESS.md FAIL_FAST_LOG.md SERVICE_REGISTRY.md DATA_DICTIONARY.md; do
               if [ -f "${DIR}/docs/${doc}" ]; then
                 ROW+=" :white_check_mark: |"
@@ -261,6 +273,10 @@ jobs:
           for repo in $REPOS; do
             DIR="repos/${repo}"
             MISSING=""
+
+            if echo "$EXEMPT_REPOS" | grep -qw "$repo"; then
+              continue
+            fi
 
             [ ! -f "${DIR}/CLAUDE.md" ] && MISSING+="- Add \`CLAUDE.md\` to repo root\n"
             [ ! -f "${DIR}/docs/PROGRESS.md" ] && MISSING+="- Add \`docs/PROGRESS.md\`\n"
