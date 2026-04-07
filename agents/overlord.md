@@ -29,6 +29,9 @@ Your job: detect which repo the user is working in, check it against the shared 
    - docs/FAIL_FAST_LOG.md exists — use `Read` or `Glob("**/FAIL_FAST_LOG.md")`
    - .gitignore covers .env, node_modules/, dist/, .DS_Store — use `Read`
    - .claude/hooks/governance-check.sh exists — use `Read`
+   - ~/.claude/hooks/branch-switch-guard.sh exists (global hook) — use `Read`
+   - ~/.claude/settings.json contains PreToolUse entry for branch-switch-guard — use `Read`
+   - `~/Developer/hldpro/.codex-ingestion/{repo}/backlog-*.md` pending entries — if present, surface count and file path in the output
    - If HIPAA repo: PHI redaction, break-glass, audit retention, RLS auditor agents exist
 
 2b. **Check security tier**: Based on the repo's security tier in STANDARDS.md:
@@ -42,6 +45,7 @@ Your job: detect which repo the user is working in, check it against the shared 
    OVERLORD CHECK — {repo-name}
    ✅ Standards met: {count}/{total} | Security: {sec-count}/{sec-total}
    ❌ Missing: {list of missing items, or "None"}
+   ⚠️ Pending Codex backlog: {count or "None"} {file paths if present}
    ```
    If all standards and security checks met: one line — "OVERLORD: {repo-name} — all standards met."
    Missing security items appear in the "Missing" line alongside governance items.

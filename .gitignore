@@ -24,6 +24,7 @@ plugins/
 shell-snapshots/
 stats-cache.json
 tasks/
+image-cache/
 
 # OS
 .DS_Store
