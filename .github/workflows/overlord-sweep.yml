@@ -155,8 +155,10 @@ jobs:
           for repo in $REPOS; do
             DIR="repos/${repo}"
             TOTAL=$(cd "${DIR}" && git log --oneline --since="7 days ago" 2>/dev/null | wc -l | tr -d ' ')
-            BUGS=$(cd "${DIR}" && git log --oneline --since="7 days ago" 2>/dev/null | grep -ciE 'fix|bug|hotfix|revert' || echo 0)
-            REVERTS=$(cd "${DIR}" && git log --oneline --since="7 days ago" 2>/dev/null | grep -ci 'revert' || echo 0)
+            BUGS=$(cd "${DIR}" && git log --oneline --since="7 days ago" 2>/dev/null | grep -ciE 'fix|bug|hotfix|revert' || true)
+            BUGS=$(printf '%s' "${BUGS:-0}" | tr -d '[:space:]')
+            REVERTS=$(cd "${DIR}" && git log --oneline --since="7 days ago" 2>/dev/null | grep -ci 'revert' || true)
+            REVERTS=$(printf '%s' "${REVERTS:-0}" | tr -d '[:space:]')
 
             if [ "$TOTAL" -gt 0 ]; then
               BUG_RATE=$(awk "BEGIN {printf \"%.0f\", ($BUGS/$TOTAL)*100}")%
@@ -179,9 +181,13 @@ jobs:
           for repo in $REPOS; do
             CI_JSON=$(gh run list --repo "NIBARGERB-HLDPRO/${repo}" --limit 10 --json conclusion 2>/dev/null || echo "[]")
             CI_PASS=$(echo "$CI_JSON" | jq '[.[] | select(.conclusion == "success")] | length' 2>/dev/null || echo 0)
+            CI_PASS=$(printf '%s' "${CI_PASS:-0}" | tr -d '[:space:]')
             CI_FAIL=$(echo "$CI_JSON" | jq '[.[] | select(.conclusion == "failure")] | length' 2>/dev/null || echo 0)
+            CI_FAIL=$(printf '%s' "${CI_FAIL:-0}" | tr -d '[:space:]')
             CI_OTHER=$(echo "$CI_JSON" | jq '[.[] | select(.conclusion != "success" and .conclusion != "failure")] | length' 2>/dev/null || echo 0)
+            CI_OTHER=$(printf '%s' "${CI_OTHER:-0}" | tr -d '[:space:]')
             CI_TOTAL=$(echo "$CI_JSON" | jq 'length' 2>/dev/null || echo 0)
+            CI_TOTAL=$(printf '%s' "${CI_TOTAL:-0}" | tr -d '[:space:]')
 
             if [ "$CI_TOTAL" -gt 0 ]; then
               CI_RATE=$(awk "BEGIN {printf \"%.0f\", ($CI_PASS/$CI_TOTAL)*100}")%
@@ -234,7 +240,8 @@ jobs:
           for repo in $REPOS; do
             DIR="repos/${repo}"
             TOTAL_MSGS=$(cd "${DIR}" && git log --oneline -10 2>/dev/null | wc -l | tr -d ' ')
-            CONVENTIONAL=$(cd "${DIR}" && git log --oneline -10 2>/dev/null | grep -cE '^[a-f0-9]+ (feat|fix|docs|chore|refactor|test|style|perf|ci|build|revert)(\(.+\))?:' || echo 0)
+            CONVENTIONAL=$(cd "${DIR}" && git log --oneline -10 2>/dev/null | grep -cE '^[a-f0-9]+ (feat|fix|docs|chore|refactor|test|style|perf|ci|build|revert)(\(.+\))?:' || true)
+            CONVENTIONAL=$(printf '%s' "${CONVENTIONAL:-0}" | tr -d '[:space:]')
             NON_CONV=$((TOTAL_MSGS - CONVENTIONAL))
 
             if [ "$TOTAL_MSGS" -gt 0 ]; then
