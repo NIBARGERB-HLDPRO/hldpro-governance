@@ -91,7 +91,23 @@ jobs:
               AUTH_PROBE_NOTE=$(tr '\n' ' ' </tmp/openai-auth-probe.json | sed 's/  */ /g' | cut -c1-180)
               CODEX_SETUP_NOTE="OpenAI auth probe failed (HTTP ${AUTH_PROBE_HTTP:-000}): ${AUTH_PROBE_NOTE}"
             elif npm install -g @openai/codex@0.118.0 >/tmp/codex-install.log 2>&1; then
-              CODEX_AVAILABLE=true
+              CANARY_SCHEMA="${RUNNER_TEMP}/codex-canary.schema.json"
+              cat > "${CANARY_SCHEMA}" <<'EOF'
+          {"type":"object","required":["ok"],"properties":{"ok":{"type":"boolean"}},"additionalProperties":false}
+          EOF
+              if codex exec -C "${GITHUB_WORKSPACE}" --full-auto --ephemeral -m "${CODEX_MODEL}" \
+                --output-schema "${CANARY_SCHEMA}" --color never -- 'Return {"ok": true} and nothing else.' \
+                >/tmp/codex-canary.stdout 2>/tmp/codex-canary.stderr; then
+                CODEX_AVAILABLE=true
+              else
+                CODEX_SETUP_NOTE=$(tr '\n' ' ' </tmp/codex-canary.stderr | sed 's/  */ /g' | cut -c1-240)
+                if [ -z "${CODEX_SETUP_NOTE}" ]; then
+                  CODEX_SETUP_NOTE=$(tr '\n' ' ' </tmp/codex-canary.stdout | sed 's/  */ /g' | cut -c1-240)
+                fi
+                if [ -z "${CODEX_SETUP_NOTE}" ]; then
+                  CODEX_SETUP_NOTE="codex canary failed without diagnostic output"
+                fi
+              fi
             else
               CODEX_SETUP_NOTE=$(tail -n 5 /tmp/codex-install.log | tr '\n' ' ' | sed 's/  */ /g')
             fi
