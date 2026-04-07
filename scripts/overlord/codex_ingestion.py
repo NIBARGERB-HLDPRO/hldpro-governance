@@ -98,6 +98,20 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
 
 
+def extract_json_from_stdout(stdout: str) -> dict[str, Any]:
+    for line in reversed(stdout.splitlines()):
+        candidate = line.strip()
+        if not candidate.startswith("{"):
+            continue
+        try:
+            payload = json.loads(candidate)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(payload, dict):
+            return payload
+    raise json.JSONDecodeError("no JSON object found in stdout", stdout, 0)
+
+
 def skip_payload(repo: str, date: str, reason: str) -> dict[str, Any]:
     return {"repo": repo, "date": date, "skipped": True, "reason": reason}
 
@@ -363,6 +377,7 @@ def build_parser() -> argparse.ArgumentParser:
     gen_parser = subparsers.add_parser("generate", parents=[common])
     gen_parser.add_argument("--since-days", type=int, default=7)
     gen_parser.add_argument("--model", default="gpt-5.4")
+    gen_parser.add_argument("--timeout-seconds", type=int, default=180)
 
     qualify_parser = subparsers.add_parser("qualify", parents=[common])
 
@@ -416,7 +431,6 @@ def cmd_generate(args: argparse.Namespace) -> int:
     with tempfile.TemporaryDirectory(prefix="codex-ingestion-") as temp_dir_name:
         temp_dir = Path(temp_dir_name)
         schema_path = build_schema_file(temp_dir)
-        raw_output = temp_dir / "review.json"
         candidate_models = [args.model]
         if args.model != "gpt-5.4":
             candidate_models.append("gpt-5.4")
@@ -452,24 +466,32 @@ If there are no substantive issues, return an empty findings array.
                 "--output-schema",
                 str(schema_path),
                 prompt,
-                "review",
-                "--base",
-                base_parent,
-                "-o",
-                str(raw_output),
             ]
             try:
-                run(cmd)
-                payload = load_json(raw_output)
+                completed = subprocess.run(
+                    cmd,
+                    cwd=repo_path,
+                    check=True,
+                    capture_output=True,
+                    text=True,
+                    stdin=subprocess.DEVNULL,
+                    timeout=args.timeout_seconds,
+                )
+                payload = extract_json_from_stdout(completed.stdout)
                 normalized = normalize_review(payload, args.repo, args.date, model_name, base_sha, head_sha, commit_count)
                 write_json(review_path, normalized)
                 print(review_path)
                 return 0
+            except subprocess.TimeoutExpired as exc:
+                partial = "; partial stdout captured" if exc.stdout else ""
+                last_reason = f"codex exec timed out after {args.timeout_seconds}s{partial}"
+                break
             except (subprocess.CalledProcessError, json.JSONDecodeError, OSError) as exc:
                 reason = str(exc)
                 if isinstance(exc, subprocess.CalledProcessError):
                     stderr = exc.stderr.strip()
-                    reason = stderr or exc.stdout.strip() or reason
+                    stdout = exc.stdout.strip()
+                    reason = stderr or stdout or reason
                 last_reason = reason[:240]
                 if (
                     isinstance(exc, subprocess.CalledProcessError)

@@ -6,7 +6,7 @@
 
 | Item | Priority | Est. Hours | Notes |
 |------|----------|-----------|-------|
-| Operationalize Codex ingestion review flow | HIGH | 2-3 | Finish weekly sweep worktree-safe review generation, session-start backlog surfacing, and HITL promotion workflow. |
+| Operationalize Codex ingestion review flow | HIGH | 2-3 | Finish weekly sweep worktree-safe review generation, session-start backlog surfacing, and HITL promotion workflow. Keep production sweep invocation disabled until bounded timeout behavior and unattended auth are both validated. |
 | Nightly cleanup timezone policy | LOW | 1 | Current cron is `04:00 UTC`, which is 11:00 PM America/Chicago during DST and 10:00 PM during standard time. If year-round 11:00 PM Central is required, replace with a timezone-aware guard strategy. Tracking issue: [#14](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/14). |
 | Effectiveness engine baseline metrics | LOW | 4-6 | Collect bug rate, revert rate, CI pass rate per repo per week. Store in metrics/. Requires governance repo. |
 | Governance doc consistency rollout | HIGH | 4-6 | Standardize the minimum governance-doc contract across `docs/PROGRESS.md`, `docs/FEATURE_REGISTRY.md`, `docs/DATA_DICTIONARY.md`, and `docs/SERVICE_REGISTRY.md` without flattening valid repo-specific structures. Includes explicit exceptions for AIS and HealthcarePlatform. |
@@ -15,7 +15,7 @@
 
 | Item | Priority | Notes |
 |------|----------|-------|
-| Operationalize Codex ingestion review flow | HIGH | Shared helper now exists on `feat/codex-ingestion-flow`; remaining work is validation, merge, and production sweep adoption. |
+| Operationalize Codex ingestion review flow | HIGH | Shared helper exists on `main`; current work is bounded-timeout hardening plus one more real governed-repo validation before enabling production sweep invocation. |
 | Governance doc consistency rollout — Sprint 1 | HIGH | Shared standards + reusable governance checker. Define minimum contracts, enforce section presence, and codify AIS/HP exceptions before repo-local rewrites. |
 
 ### Sprint Breakdown — Governance Doc Consistency Rollout
