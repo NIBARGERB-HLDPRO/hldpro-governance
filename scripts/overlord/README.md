@@ -30,3 +30,5 @@ Notes:
 
 - `generate` defaults to `gpt-5.4`, which works on ChatGPT-backed Codex accounts.
 - If your account supports it, pass `--model o3` for a heavier second-opinion pass.
+- `generate` uses generic `codex exec` with `--output-schema` and parses the final JSON object from stdout.
+- `generate` fails closed with a skip marker if Codex exceeds `--timeout-seconds` (default `180`).
