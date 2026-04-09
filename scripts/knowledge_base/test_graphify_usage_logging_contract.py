@@ -150,6 +150,7 @@ def test_measurement_outputs_query_traces() -> None:
         temp_dir = Path(tmpdir)
         scenario_file = temp_dir / "scenario.json"
         output_dir = temp_dir / "output"
+        usage_dir = temp_dir / "usage-events"
         scenario_file.write_text(json.dumps(scenario_payload, indent=2) + "\n", encoding="utf-8")
         run_command(
             [
@@ -163,12 +164,15 @@ def test_measurement_outputs_query_traces() -> None:
                 str(scenario_file),
                 "--output-dir",
                 str(output_dir),
+                "--usage-event-dir",
+                str(usage_dir),
                 "--date",
                 "2026-04-09",
             ]
         )
         json_path = output_dir / "2026-04-09-graphify-vs-search.json"
         md_path = output_dir / "2026-04-09-graphify-vs-search.md"
+        usage_path = usage_dir / "2026-04-09.jsonl"
         results = json.loads(json_path.read_text(encoding="utf-8"))
         scenario = results["scenarios"][0]
         trace = scenario["trace"]
@@ -179,6 +183,12 @@ def test_measurement_outputs_query_traces() -> None:
         markdown = md_path.read_text(encoding="utf-8")
         check("## Query Traces" in markdown, "measurement markdown includes query trace section")
         check("Find the graphify measurement logging path." in markdown, "measurement markdown includes prompt text")
+        events = [json.loads(line) for line in usage_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+        check(len(events) == 2, "measurement run emits graphify and baseline usage events by default")
+        strategies = {event["strategy"] for event in events}
+        check(strategies == {"graphify", "repo-search"}, "measurement usage events preserve graphify and baseline strategies")
+        check(all(event.get("experiment_id") == "graphify-ab-2026-04-09" for event in events), "measurement usage events share experiment id")
+        check(all(event.get("prompt") == "Find the graphify measurement logging path." for event in events), "measurement usage events include prompt trace")
 
 
 def main() -> int:

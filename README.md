@@ -155,6 +155,7 @@ Findings are tagged `CODEX-FLAGGED` for traceability. See [`scripts/overlord/REA
 - [`scripts/knowledge_base/log_graphify_usage.py`](scripts/knowledge_base/log_graphify_usage.py) appends schema-shaped usage events to `metrics/graphify-usage/events/`, including optional live prompt/query/candidate traces.
 - The first scenario corpus uses the real fail-fast issues so graphify quality and token-footprint estimates are measured on live governance work, not synthetic prompts.
 - The measurement output now includes per-scenario query traces so graphify-vs-baseline A/B runs are inspectable at the prompt and candidate-file level, not only via summary hit counts.
+- The measurement harness now emits append-only usage events by default for each graphify and baseline scenario run, so 5-10 case A/B batches automatically produce inspectable query-trace telemetry.
 
 ## Key Governance Mechanisms
 

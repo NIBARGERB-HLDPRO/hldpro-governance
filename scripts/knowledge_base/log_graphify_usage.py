@@ -7,6 +7,7 @@ import argparse
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 
 def parse_args() -> argparse.Namespace:
@@ -27,33 +28,70 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def main() -> int:
-    args = parse_args()
+def build_event(
+    *,
+    repo: str,
+    task_id: str,
+    task_type: str,
+    strategy: str,
+    artifacts: list[str],
+    estimated_tokens: int,
+    notes: str = "",
+    experiment_id: str | None = None,
+    session_id: str | None = None,
+    prompt: str | None = None,
+    query_terms: list[str] | None = None,
+    top_candidates: list[str] | None = None,
+) -> dict[str, Any]:
     timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    event = {
+    event: dict[str, Any] = {
         "timestamp": timestamp,
-        "repo": args.repo,
-        "task_id": args.task_id,
-        "task_type": args.task_type,
-        "strategy": args.strategy,
-        "artifacts": args.artifact or ["unspecified"],
-        "notes": args.notes,
-        "estimated_tokens": args.estimated_tokens,
+        "repo": repo,
+        "task_id": task_id,
+        "task_type": task_type,
+        "strategy": strategy,
+        "artifacts": artifacts or ["unspecified"],
+        "notes": notes,
+        "estimated_tokens": estimated_tokens,
     }
-    if args.experiment_id:
-        event["experiment_id"] = args.experiment_id
-    if args.session_id:
-        event["session_id"] = args.session_id
-    if args.prompt:
-        event["prompt"] = args.prompt
-    if args.query_term:
-        event["query_terms"] = args.query_term
-    if args.top_candidate:
-        event["top_candidates"] = args.top_candidate
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    event_path = args.output_dir / f"{timestamp[:10]}.jsonl"
+    if experiment_id:
+        event["experiment_id"] = experiment_id
+    if session_id:
+        event["session_id"] = session_id
+    if prompt:
+        event["prompt"] = prompt
+    if query_terms:
+        event["query_terms"] = query_terms
+    if top_candidates:
+        event["top_candidates"] = top_candidates
+    return event
+
+
+def append_event(output_dir: Path, event: dict[str, Any]) -> Path:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    event_path = output_dir / f"{str(event['timestamp'])[:10]}.jsonl"
     with event_path.open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(event, sort_keys=True) + "\n")
+    return event_path
+
+
+def main() -> int:
+    args = parse_args()
+    event = build_event(
+        repo=args.repo,
+        task_id=args.task_id,
+        task_type=args.task_type,
+        strategy=args.strategy,
+        artifacts=args.artifact,
+        estimated_tokens=args.estimated_tokens,
+        notes=args.notes,
+        experiment_id=args.experiment_id,
+        session_id=args.session_id,
+        prompt=args.prompt,
+        query_terms=args.query_term,
+        top_candidates=args.top_candidate,
+    )
+    event_path = append_event(args.output_dir, event)
     print(event_path)
     return 0
 
