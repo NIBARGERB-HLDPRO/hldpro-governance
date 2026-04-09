@@ -1,0 +1,11 @@
+{
+  "source": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/graphify-out/ai-integration-services",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/wiki/ai-integration-services",
+  "nodes": 1883,
+  "edges": 2533,
+  "communities": 111,
+  "articles": 121,
+  "html_status": "skipped",
+  "code_files": 658
+}

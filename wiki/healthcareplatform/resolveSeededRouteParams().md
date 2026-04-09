@@ -1,6 +1,6 @@
 # resolveSeededRouteParams()
 
-> God node · 11 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/hp-graphify-phase4/frontend/e2e/helpers/seeded.ts`
+> God node · 11 connections · `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/helpers/seeded.ts`
 
 ## Connections by Relation
 

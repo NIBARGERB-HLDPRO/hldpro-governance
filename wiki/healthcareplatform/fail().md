@@ -1,6 +1,6 @@
 # fail()
 
-> God node · 9 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/hp-graphify-phase4/frontend/e2e/helpers/seeded.ts`
+> God node · 9 connections · `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/helpers/seeded.ts`
 
 ## Connections by Relation
 
