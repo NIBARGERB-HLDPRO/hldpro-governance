@@ -14,8 +14,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=Path("metrics/graphify-usage/events"))
     parser.add_argument("--repo", required=True)
     parser.add_argument("--task-id", required=True)
+    parser.add_argument("--experiment-id")
+    parser.add_argument("--session-id")
     parser.add_argument("--task-type", required=True)
     parser.add_argument("--strategy", choices=["graphify", "repo-search", "hybrid"], required=True)
+    parser.add_argument("--prompt")
+    parser.add_argument("--query-term", action="append", default=[])
+    parser.add_argument("--top-candidate", action="append", default=[])
     parser.add_argument("--artifact", action="append", default=[])
     parser.add_argument("--estimated-tokens", type=int, required=True)
     parser.add_argument("--notes", default="")
@@ -26,15 +31,25 @@ def main() -> int:
     args = parse_args()
     timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     event = {
-      "timestamp": timestamp,
-      "repo": args.repo,
-      "task_id": args.task_id,
-      "task_type": args.task_type,
-      "strategy": args.strategy,
-      "artifacts": args.artifact or ["unspecified"],
-      "notes": args.notes,
-      "estimated_tokens": args.estimated_tokens,
+        "timestamp": timestamp,
+        "repo": args.repo,
+        "task_id": args.task_id,
+        "task_type": args.task_type,
+        "strategy": args.strategy,
+        "artifacts": args.artifact or ["unspecified"],
+        "notes": args.notes,
+        "estimated_tokens": args.estimated_tokens,
     }
+    if args.experiment_id:
+        event["experiment_id"] = args.experiment_id
+    if args.session_id:
+        event["session_id"] = args.session_id
+    if args.prompt:
+        event["prompt"] = args.prompt
+    if args.query_term:
+        event["query_terms"] = args.query_term
+    if args.top_candidate:
+        event["top_candidates"] = args.top_candidate
     args.output_dir.mkdir(parents=True, exist_ok=True)
     event_path = args.output_dir / f"{timestamp[:10]}.jsonl"
     with event_path.open("a", encoding="utf-8") as handle:

@@ -15,10 +15,21 @@
     "timestamp": { "type": "string" },
     "repo": { "type": "string" },
     "task_id": { "type": "string" },
+    "experiment_id": { "type": "string" },
+    "session_id": { "type": "string" },
     "task_type": { "type": "string" },
     "strategy": {
       "type": "string",
       "enum": ["graphify", "repo-search", "hybrid"]
+    },
+    "prompt": { "type": "string" },
+    "query_terms": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "top_candidates": {
+      "type": "array",
+      "items": { "type": "string" }
     },
     "artifacts": {
       "type": "array",

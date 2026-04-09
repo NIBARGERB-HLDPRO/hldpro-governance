@@ -443,6 +443,15 @@ def build_summary(scenarios: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def build_trace(scenario: Scenario, graphify: dict[str, Any], baseline: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "prompt": scenario.prompt,
+        "query_terms": scenario.query_terms,
+        "graphify_candidates": graphify["top_files"],
+        "baseline_candidates": baseline["top_files"],
+    }
+
+
 def write_outputs(output_dir: Path, date: str, results: dict[str, Any]) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     json_path = output_dir / f"{date}-graphify-vs-search.json"
@@ -483,8 +492,23 @@ def write_outputs(output_dir: Path, date: str, results: dict[str, Any]) -> None:
             "- Use graph-guided retrieval first for topology and owning-file discovery, then confirm with repo search on the returned files.",
             f"- Baseline decision: {results['summary']['second_baseline_rationale']}",
             "",
+            "## Query Traces",
+            "",
         ]
     )
+    for item in results["scenarios"]:
+        trace = item["trace"]
+        lines.extend(
+            [
+                f"### {item['id']}",
+                "",
+                f"- Prompt: {trace['prompt']}",
+                f"- Query terms: {', '.join(trace['query_terms']) if trace['query_terms'] else 'none'}",
+                f"- Graphify candidates: {', '.join(trace['graphify_candidates']) if trace['graphify_candidates'] else 'none'}",
+                f"- Baseline candidates: {', '.join(trace['baseline_candidates']) if trace['baseline_candidates'] else 'none'}",
+                "",
+            ]
+        )
     md_path.write_text("\n".join(lines) + "\n")
 
 
@@ -504,6 +528,7 @@ def main() -> int:
                 "task_type": scenario.task_type,
                 "expected_files": scenario.expected_files,
                 "expected_terms": scenario.expected_terms,
+                "trace": build_trace(scenario, graphify, baseline),
                 "graphify": graphify,
                 "baseline": baseline,
             }
