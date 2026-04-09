@@ -1,0 +1,118 @@
+{
+  "session_id": "session-20260409-issue-67-structured-plan-schema",
+  "issue_number": 67,
+  "objective": "Standardize structured agent cycle plans org-wide by moving the canonical schema and validator into governance, wiring reusable CI enforcement, and making structured JSON the shared source of truth for governed issue execution.",
+  "tier": 2,
+  "scope_boundary": [
+    "This slice is limited to governance-owned schema, validation, reusable CI enforcement, and shared standards/docs updates.",
+    "Markdown plan notes may remain as companion artifacts, but only structured JSON is treated as canonical in this slice.",
+    "This slice may create a follow-up issue if repo-level migration or rollout communication still needs explicit tracking after governance-side standardization lands."
+  ],
+  "out_of_scope": [
+    "Backfilling every historical plan artifact across all repos.",
+    "Changing product behavior outside governance, CI, and planning-contract surfaces.",
+    "Inventing a second competing schema in any product repo."
+  ],
+  "research_summary": "HealthcarePlatform already demonstrated a stronger planning pattern with structured agent cycle plans, specialist review data, and alternate-model review captured in machine-readable JSON. Governance, however, still lacked an org-wide canonical schema or reusable validator, which meant other repos could not adopt the same pattern consistently. The right org-wide move is therefore to place the schema and validator in governance, wire reusable governance CI to enforce it on issue/riskfix execution branches, and update shared standards so structured JSON becomes the canonical plan artifact across governed repos.",
+  "research_artifacts": [
+    "STANDARDS.md",
+    ".github/workflows/governance-check.yml",
+    "README.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/FAIL_FAST_LOG.md",
+    "OVERLORD_BACKLOG.md",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform-issue-743-pr-pending-module-billing-proration/backend/tools/bot/phase8-issues/issue-743-structured-agent-cycle-plan.json"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Create the governance-owned canonical schema and validator.",
+      "tasks": [
+        "Add a canonical structured-agent-cycle-plan JSON schema under docs/schemas.",
+        "Add a governance validator script that can scan repos for structured plan artifacts.",
+        "Ensure the schema captures specialist reviews, alternate-model review, and execution handoff."
+      ],
+      "acceptance_criteria": [
+        "Governance owns the canonical schema file.",
+        "The validator can pass on valid structured plan files and fail missing/malformed required fields.",
+        "The schema shape aligns with the proven HealthcarePlatform plan pattern."
+      ],
+      "file_paths": [
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py"
+      ]
+    },
+    {
+      "name": "Sprint 2",
+      "goal": "Wire reusable enforcement and shared documentation.",
+      "tasks": [
+        "Update reusable governance CI to validate structured plan files for issue/riskfix branches.",
+        "Update STANDARDS.md and README.md so structured JSON is the canonical org-wide plan artifact.",
+        "Update governance feature/fail-fast/backlog docs to reflect the new contract."
+      ],
+      "acceptance_criteria": [
+        "Reusable governance CI can validate structured plan files before execution-ready branches proceed.",
+        "The shared standards contract names structured JSON as canonical and Markdown as companion-only.",
+        "The governance repo documents the new capability and why it exists."
+      ],
+      "file_paths": [
+        ".github/workflows/governance-check.yml",
+        "STANDARDS.md",
+        "README.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/FAIL_FAST_LOG.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "schema reviewer",
+      "role": "Planning contract reviewer",
+      "focus": "Validate that the governance-owned schema captures the actual structured review/handoff fields already proven in HealthcarePlatform.",
+      "status": "accepted",
+      "summary": "The shared schema should preserve specialist_reviews, alternate_model_review, execution_handoff, and material_deviation_rules as first-class fields. Those are the useful pieces that make the plan machine-checkable instead of just another JSON wrapper.",
+      "evidence": [
+        "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform-issue-743-pr-pending-module-billing-proration/backend/tools/bot/phase8-issues/issue-743-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "reviewer": "governance reviewer",
+      "role": "Reusable enforcement reviewer",
+      "focus": "Validate that the shared workflow can enforce the new contract org-wide without requiring each repo to invent a separate validator.",
+      "status": "accepted",
+      "summary": "The correct place for the validator is governance-check.yml, with the governance repo checked out as the source of the shared validator when other repos run the reusable workflow.",
+      "evidence": [
+        ".github/workflows/governance-check.yml",
+        "STANDARDS.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-governance-standardization-slice",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This slice standardizes shared governance mechanics and does not require a separate alternate-model review to proceed.",
+    "evidence": [
+      "Issue #67 scope"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implementation is approved for governance-owned schema/validator/CI/docs changes and the minimum follow-up issue creation needed if repo rollout work remains after review.",
+    "next_execution_step": "Validate the schema and reusable workflow against this branch’s own structured plan artifact, then create any explicit rollout follow-up needed before merge.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If reusable CI cannot validate plans in non-governance repos without additional repo-specific code, stop and issue-back the rollout gap instead of hiding it.",
+    "If the schema needs repo-specific branches or shapes to fit one repo, stop and amend the shared contract rather than duplicating schemas.",
+    "If Review shows repo-adoption communication or migration still needs explicit tracking, create a follow-up issue before closing."
+  ],
+  "approved": true,
+  "approved_by": [
+    "session-agent-codex"
+  ],
+  "approved_at": "2026-04-09T11:55:00-05:00"
+}
