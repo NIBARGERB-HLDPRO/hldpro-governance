@@ -133,7 +133,6 @@ def test_measurement_outputs_query_traces() -> None:
                 "id": "live-query-trace-smoke",
                 "issue_number": 999,
                 "repo": "hldpro-governance",
-                "repo_path": str(REPO_ROOT),
                 "graph_key": "hldpro-governance",
                 "task_type": "architecture_retrieval",
                 "prompt": "Find the graphify measurement logging path.",
@@ -191,11 +190,66 @@ def test_measurement_outputs_query_traces() -> None:
         check(all(event.get("prompt") == "Find the graphify measurement logging path." for event in events), "measurement usage events include prompt trace")
 
 
+def test_measurement_falls_back_from_stale_governance_repo_path() -> None:
+    scenario_payload = {
+        "date": "2026-04-09",
+        "scenarios": [
+            {
+                "id": "stale-governance-path-smoke",
+                "issue_number": 1000,
+                "repo": "hldpro-governance",
+                "repo_path": "/tmp/does-not-exist-anymore",
+                "graph_key": "hldpro-governance",
+                "task_type": "architecture_retrieval",
+                "prompt": "Find the graphify measurement logging path.",
+                "query_terms": ["graphify", "usage", "logging"],
+                "expected_files": [
+                    "scripts/knowledge_base/log_graphify_usage.py",
+                ],
+                "expected_terms": ["query_terms", "top_candidates", "graphify-usage"],
+            }
+        ],
+    }
+    with tempfile.TemporaryDirectory() as tmpdir:
+        temp_dir = Path(tmpdir)
+        scenario_file = temp_dir / "scenario.json"
+        output_dir = temp_dir / "output"
+        usage_dir = temp_dir / "usage-events"
+        scenario_file.write_text(json.dumps(scenario_payload, indent=2) + "\n", encoding="utf-8")
+        run_command(
+            [
+                "python3",
+                str(MEASURE),
+                "--repos-root",
+                str(REPO_ROOT.parent),
+                "--graph-root",
+                str(GRAPH_ROOT),
+                "--scenario-file",
+                str(scenario_file),
+                "--output-dir",
+                str(output_dir),
+                "--usage-event-dir",
+                str(usage_dir),
+                "--date",
+                "2026-04-09",
+            ]
+        )
+        json_path = output_dir / "2026-04-09-graphify-vs-search.json"
+        usage_path = usage_dir / "2026-04-09.jsonl"
+        results = json.loads(json_path.read_text(encoding="utf-8"))
+        scenario = results["scenarios"][0]
+        events = [json.loads(line) for line in usage_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+        check(len(events) == 2, "measurement run still emits events when governance repo_path is stale")
+        check(scenario["graphify"]["file_hits"] == 1, "stale governance repo_path still resolves current checkout for expected file hits")
+        check(any("scripts/knowledge_base/log_graphify_usage.py" in event.get("top_candidates", []) for event in events), "stale governance repo_path falls back to current checkout files")
+
+
 def main() -> int:
     test_schema_shape()
     test_logger_backwards_compatible()
     test_logger_query_trace_fields()
     test_measurement_outputs_query_traces()
+    test_measurement_falls_back_from_stale_governance_repo_path()
 
     if failures:
         print(f"FAILED: {len(failures)} graphify usage logging contract checks failed")
