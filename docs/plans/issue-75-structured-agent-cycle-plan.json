@@ -1,0 +1,105 @@
+{
+  "session_id": "session-20260409-issue-75-raw-feed-redaction",
+  "issue_number": 75,
+  "objective": "Eliminate durable secondary copies of open issue bodies from governance raw feeds by switching the nightly sync to metadata-only output and sanitizing the already tracked snapshots.",
+  "tier": 1,
+  "scope_boundary": [
+    "Stop fetching or persisting GitHub issue body text in the nightly raw-feed workflow.",
+    "Use a reusable renderer so workflow output and one-time cleanup share the same metadata-only format.",
+    "Rewrite the currently tracked raw/github-issues snapshots and verify the sanitized result no longer mirrors issue body text."
+  ],
+  "out_of_scope": [
+    "Changing the overall raw-feed sync schedule or repo list.",
+    "Building PHI classification beyond removing body sync entirely.",
+    "Introducing a new storage system for full issue bodies."
+  ],
+  "research_summary": "The current raw-feed workflow fetches `body` from governed-repo issues and writes the first 500 characters into tracked markdown under raw/github-issues. Because these files are committed back into governance, any sensitive content in issue bodies becomes durable. The safest fix is to stop syncing bodies entirely and keep only metadata that still supports governance triage.",
+  "research_artifacts": [
+    ".github/workflows/raw-feed-sync.yml",
+    "raw/github-issues/2026-04-09-ai-integration-services.md",
+    "raw/github-issues/2026-04-09-HealthcarePlatform.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Switch raw-feed generation to metadata-only output.",
+      "tasks": [
+        "Add a reusable renderer for metadata-only GitHub issue feed files.",
+        "Update raw-feed-sync.yml to stop fetching issue bodies and call the renderer.",
+        "Keep issue number, title, labels, created/updated dates, and URL in the mirrored feed."
+      ],
+      "acceptance_criteria": [
+        "Nightly raw-feed sync does not request or persist issue body text.",
+        "Rendered raw issue feed files contain metadata only.",
+        "The workflow still produces useful triage summaries for governed repos."
+      ],
+      "file_paths": [
+        ".github/workflows/raw-feed-sync.yml",
+        "scripts/overlord/render_github_issue_feed.py"
+      ]
+    },
+    {
+      "name": "Sprint 2",
+      "goal": "Sanitize existing tracked raw issue snapshots and record the policy change.",
+      "tasks": [
+        "Rewrite the currently tracked raw/github-issues markdown files to the metadata-only format.",
+        "Record the issue-body mirroring failure pattern in FAIL_FAST_LOG and RAW_FEEDS feature notes.",
+        "Add governance closeout artifacts for the slice."
+      ],
+      "acceptance_criteria": [
+        "Tracked raw/github-issues files no longer contain mirrored issue body text.",
+        "Governance docs explicitly describe raw feeds as metadata-only mirrors.",
+        "The slice has canonical structured-plan and PDCA/R artifacts."
+      ],
+      "file_paths": [
+        "raw/github-issues/",
+        "docs/FAIL_FAST_LOG.md",
+        "docs/FEATURE_REGISTRY.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/plans/issue-75-structured-agent-cycle-plan.json",
+        "docs/plans/issue-75-raw-feed-redaction-pdcar.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "security reviewer",
+      "role": "Data exposure reviewer",
+      "focus": "Validate that governance should stop mirroring raw issue body content rather than trying to partially sanitize arbitrary operator text.",
+      "status": "accepted",
+      "summary": "Metadata-only retention is the durable fix. Once issue body text is in git, remediation is expensive. Removing body sync entirely is safer than trying to redact arbitrary text after the fact.",
+      "evidence": [
+        ".github/workflows/raw-feed-sync.yml",
+        "raw/github-issues/2026-04-09-ai-integration-services.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-bounded-security-fix",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This is a narrow governance workflow/data-retention fix and did not require alternate-model review.",
+    "evidence": [
+      "Issue #75 scope"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Switch the raw issue mirror to metadata-only output, sanitize the currently tracked files, and record the governance policy change.",
+    "next_execution_step": "Run the renderer against the current tracked raw issue files, audit the sanitized result, and close the issue with evidence.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any tracked raw issue file still contains mirrored issue body text after sanitization, rewrite it in the same slice before closure.",
+    "If metadata-only output proves insufficient for governance triage, create a follow-up issue instead of restoring body sync."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Benji"
+  ],
+  "approved_at": "2026-04-09T12:50:00-05:00"
+}
