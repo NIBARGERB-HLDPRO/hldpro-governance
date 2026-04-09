@@ -45,7 +45,7 @@
         "github.event.before"
       ],
       "graphify": {
-        "estimated_tokens": 209,
+        "estimated_tokens": 204,
         "file_hits": 1,
         "materially_relevant": true,
         "quality_hit": true,
@@ -79,7 +79,7 @@
             "hybrid:term:commit",
             "hybrid:term:diff"
           ],
-          "scripts/knowledge_base/measure_graphify_usage.py": [
+          "measure_graphify_usage.py": [
             "direct:measure_graphify_usage.py",
             "community:Knowledge base Measure graphify usage",
             "direct:Scenario",
@@ -88,7 +88,7 @@
           ]
         },
         "top_files": [
-          "scripts/knowledge_base/measure_graphify_usage.py",
+          "measure_graphify_usage.py",
           ".github/workflows/governance-check.yml",
           ".github/workflows/overlord-sweep.yml",
           ".github/workflows/overlord-nightly-cleanup.yml",
@@ -98,7 +98,31 @@
       "id": "ff-74-governance-diff-base",
       "issue_number": 74,
       "repo": "hldpro-governance",
-      "task_type": "workflow_bug"
+      "task_type": "workflow_bug",
+      "trace": {
+        "baseline_candidates": [
+          "docs/plans/issue-74-governance-diff-base-pdcar.md",
+          "docs/plans/issue-74-structured-agent-cycle-plan.json",
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.json",
+          "docs/FEATURE_REGISTRY.md"
+        ],
+        "graphify_candidates": [
+          "measure_graphify_usage.py",
+          ".github/workflows/governance-check.yml",
+          ".github/workflows/overlord-sweep.yml",
+          ".github/workflows/overlord-nightly-cleanup.yml",
+          ".github/workflows/raw-feed-sync.yml"
+        ],
+        "prompt": "Find why reusable governance checks only inspect the last commit in a multi-commit PR.",
+        "query_terms": [
+          "governance",
+          "workflow_call",
+          "diff",
+          "base",
+          "github.event.before"
+        ]
+      }
     },
     {
       "baseline": {
@@ -145,39 +169,78 @@
         "render_github_issue_feed"
       ],
       "graphify": {
-        "estimated_tokens": 119,
-        "file_hits": 1,
-        "materially_relevant": true,
-        "quality_hit": true,
-        "relevance_score": 4,
-        "retrieval_count": 2,
+        "estimated_tokens": 243,
+        "file_hits": 0,
+        "materially_relevant": false,
+        "quality_hit": false,
+        "relevance_score": 1,
+        "retrieval_count": 4,
         "strategy": "graphify-guided",
         "term_hits": 1,
         "top_evidence": {
-          "scripts/overlord/check_overlord_backlog_github_alignment.py": [
+          "check_overlord_backlog_github_alignment.py": [
             "direct:check_overlord_backlog_github_alignment.py",
             "community:Overlord Check overlord backlog github alignment",
             "direct:fail()",
             "community:Overlord Check overlord backlog github alignment",
             "direct:parse_markdown_row()"
           ],
-          "scripts/overlord/render_github_issue_feed.py": [
+          "check_progress_github_issue_staleness.py": [
+            "direct:check_progress_github_issue_staleness.py",
+            "community:Overlord Check progress github issue staleness",
+            "direct:IssueRef",
+            "community:Overlord Check progress github issue staleness",
+            "direct:fail()"
+          ],
+          "render_github_issue_feed.py": [
             "direct:render_github_issue_feed.py",
             "community:Overlord Render github issue feed",
             "direct:render_issue()",
             "community:Overlord Render github issue feed",
             "direct:main()"
+          ],
+          "test_progress_github_issue_staleness.py": [
+            "direct:test_progress_github_issue_staleness.py",
+            "community:Overlord Check progress github issue staleness",
+            "direct:ProgressGithubIssueStalenessTests",
+            "community:Overlord Check progress github issue staleness",
+            "direct:.test_collects_active_sections_and_ignores_done()"
           ]
         },
         "top_files": [
-          "scripts/overlord/check_overlord_backlog_github_alignment.py",
-          "scripts/overlord/render_github_issue_feed.py"
+          "check_progress_github_issue_staleness.py",
+          "check_overlord_backlog_github_alignment.py",
+          "render_github_issue_feed.py",
+          "test_progress_github_issue_staleness.py"
         ]
       },
       "id": "ff-75-raw-feed-redaction",
       "issue_number": 75,
       "repo": "hldpro-governance",
-      "task_type": "data_safety"
+      "task_type": "data_safety",
+      "trace": {
+        "baseline_candidates": [
+          "docs/plans/issue-75-structured-agent-cycle-plan.json",
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "docs/plans/issue-75-raw-feed-redaction-pdcar.md",
+          ".github/workflows/raw-feed-sync.yml",
+          "docs/FEATURE_REGISTRY.md"
+        ],
+        "graphify_candidates": [
+          "check_progress_github_issue_staleness.py",
+          "check_overlord_backlog_github_alignment.py",
+          "render_github_issue_feed.py",
+          "test_progress_github_issue_staleness.py"
+        ],
+        "prompt": "Find where nightly raw GitHub issue feeds are mirrored and whether issue bodies are being persisted.",
+        "query_terms": [
+          "raw",
+          "github",
+          "issues",
+          "body",
+          "sync"
+        ]
+      }
     },
     {
       "baseline": {
@@ -223,23 +286,23 @@
         "finding"
       ],
       "graphify": {
-        "estimated_tokens": 95,
-        "file_hits": 1,
-        "materially_relevant": true,
-        "quality_hit": true,
-        "relevance_score": 4,
+        "estimated_tokens": 89,
+        "file_hits": 0,
+        "materially_relevant": false,
+        "quality_hit": false,
+        "relevance_score": 1,
         "retrieval_count": 2,
         "strategy": "graphify-guided",
         "term_hits": 1,
         "top_evidence": {
-          "scripts/overlord/codex_ingestion.py": [
+          "codex_ingestion.py": [
             "direct:codex_ingestion.py",
             "community:Overlord Codex ingestion",
             "direct:Finding",
             "community:Overlord Codex ingestion",
             "direct:priority()"
           ],
-          "tests/test_codex_ingestion.py": [
+          "test_codex_ingestion.py": [
             "direct:test_codex_ingestion.py",
             "community:Codex ingestion Anchor",
             "direct:ValidateLocationTests",
@@ -248,14 +311,35 @@
           ]
         },
         "top_files": [
-          "scripts/overlord/codex_ingestion.py",
-          "tests/test_codex_ingestion.py"
+          "codex_ingestion.py",
+          "test_codex_ingestion.py"
         ]
       },
       "id": "ff-76-cited-code-validation",
       "issue_number": 76,
       "repo": "hldpro-governance",
-      "task_type": "qualification_logic"
+      "task_type": "qualification_logic",
+      "trace": {
+        "baseline_candidates": [
+          "tests/test_codex_ingestion.py",
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "docs/plans/issue-76-cited-code-path-validation-pdcar.md",
+          "docs/plans/issue-76-structured-agent-cycle-plan.json",
+          "graphify-out/hldpro-governance/GRAPH_REPORT.md"
+        ],
+        "graphify_candidates": [
+          "codex_ingestion.py",
+          "test_codex_ingestion.py"
+        ],
+        "prompt": "Find where Codex finding qualification validates cited file and line references.",
+        "query_terms": [
+          "codex",
+          "qualification",
+          "validate_location",
+          "finding",
+          "line"
+        ]
+      }
     },
     {
       "baseline": {
@@ -301,14 +385,14 @@
         "graphify-out"
       ],
       "graphify": {
-        "estimated_tokens": 214,
+        "estimated_tokens": 223,
         "file_hits": 1,
         "materially_relevant": true,
         "quality_hit": true,
-        "relevance_score": 5,
+        "relevance_score": 4,
         "retrieval_count": 5,
         "strategy": "hybrid",
-        "term_hits": 2,
+        "term_hits": 1,
         "top_evidence": {
           ".github/workflows/governance-check.yml": [
             "hybrid:path:.github/workflows/governance-check.yml",
@@ -324,48 +408,72 @@
             "hybrid:term:overlord",
             "hybrid:term:git"
           ],
-          ".github/workflows/raw-feed-sync.yml": [
-            "hybrid:path:.github/workflows/raw-feed-sync.yml",
-            "hybrid:term:updates",
-            "hybrid:term:push",
-            "hybrid:term:are",
-            "hybrid:term:overlord"
+          "check_progress_github_issue_staleness.py": [
+            "direct:check_progress_github_issue_staleness.py",
+            "community:Overlord Check progress github issue staleness",
+            "direct:IssueRef",
+            "community:Overlord Check progress github issue staleness",
+            "direct:fail()"
           ],
-          "scripts/knowledge_base/measure_graphify_usage.py": [
-            "direct:measure_graphify_usage.py",
-            "community:Knowledge base Measure graphify usage",
-            "direct:Scenario",
-            "community:Knowledge base Measure graphify usage",
-            "direct:GraphData"
-          ],
-          "scripts/overlord/codex_ingestion.py": [
+          "codex_ingestion.py": [
             "direct:codex_ingestion.py",
             "community:Overlord Codex ingestion",
             "direct:Finding",
             "community:Overlord Codex ingestion",
             "direct:priority()"
+          ],
+          "measure_graphify_usage.py": [
+            "direct:measure_graphify_usage.py",
+            "community:Knowledge base Measure graphify usage",
+            "direct:Scenario",
+            "community:Knowledge base Measure graphify usage",
+            "direct:GraphData"
           ]
         },
         "top_files": [
-          "scripts/overlord/codex_ingestion.py",
-          "scripts/knowledge_base/measure_graphify_usage.py",
+          "codex_ingestion.py",
+          "measure_graphify_usage.py",
+          "check_progress_github_issue_staleness.py",
           ".github/workflows/governance-check.yml",
-          ".github/workflows/overlord-sweep.yml",
-          ".github/workflows/raw-feed-sync.yml"
+          ".github/workflows/overlord-sweep.yml"
         ]
       },
       "id": "ff-77-sweep-persistence-visibility",
       "issue_number": 77,
       "repo": "hldpro-governance",
-      "task_type": "workflow_bug"
+      "task_type": "workflow_bug",
+      "trace": {
+        "baseline_candidates": [
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "docs/plans/issue-77-structured-agent-cycle-plan.json",
+          "graphify-out/hldpro-governance/GRAPH_REPORT.md",
+          "docs/FEATURE_REGISTRY.md",
+          "docs/plans/issue-77-sweep-push-failures-pdcar.md"
+        ],
+        "graphify_candidates": [
+          "codex_ingestion.py",
+          "measure_graphify_usage.py",
+          "check_progress_github_issue_staleness.py",
+          ".github/workflows/governance-check.yml",
+          ".github/workflows/overlord-sweep.yml"
+        ],
+        "prompt": "Find where the weekly sweep persists graph and metrics updates and whether push failures are being ignored.",
+        "query_terms": [
+          "overlord",
+          "sweep",
+          "graph",
+          "metrics",
+          "push"
+        ]
+      }
     }
   ],
   "summary": {
     "baseline_estimated_tokens": 4769,
     "baseline_hits": 4,
-    "graphify_estimated_tokens": 637,
-    "graphify_hits": 4,
-    "graphify_smaller_and_better_count": 3,
+    "graphify_estimated_tokens": 759,
+    "graphify_hits": 2,
+    "graphify_smaller_and_better_count": 1,
     "scenario_count": 4,
     "second_baseline_rationale": "No second non-graph baseline is recommended yet; improve graph-guided ranking against the existing repo-search baseline first.",
     "second_baseline_recommended": false
