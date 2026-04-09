@@ -1,0 +1,298 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "docs/schemas/structured-agent-cycle-plan.schema.json",
+  "title": "Structured Agent Cycle Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "session_id",
+    "issue_number",
+    "objective",
+    "tier",
+    "scope_boundary",
+    "out_of_scope",
+    "research_summary",
+    "research_artifacts",
+    "sprints",
+    "specialist_reviews",
+    "alternate_model_review",
+    "execution_handoff",
+    "material_deviation_rules",
+    "approved",
+    "approved_by",
+    "approved_at"
+  ],
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "issue_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tier": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3
+    },
+    "scope_boundary": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "out_of_scope": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "research_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "research_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "sprints": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/sprint"
+      }
+    },
+    "specialist_reviews": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/review"
+      }
+    },
+    "alternate_model_review": {
+      "$ref": "#/$defs/alternateReview"
+    },
+    "execution_handoff": {
+      "$ref": "#/$defs/executionHandoff"
+    },
+    "material_deviation_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "approved": {
+      "type": "boolean"
+    },
+    "approved_by": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "approved_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "sprint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "goal",
+        "tasks",
+        "acceptance_criteria",
+        "file_paths"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "goal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tasks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "acceptance_criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "file_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer",
+        "role",
+        "focus",
+        "status",
+        "summary",
+        "evidence"
+      ],
+      "properties": {
+        "reviewer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "focus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "accepted",
+            "accepted_with_followup",
+            "mixed",
+            "rejected"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "alternateReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "reviewer",
+        "model_family",
+        "status",
+        "summary",
+        "evidence"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "reviewer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_family": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "accepted",
+            "accepted_with_followup",
+            "mixed",
+            "not_requested",
+            "unavailable",
+            "rejected"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "executionHandoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "session_agent",
+        "execution_mode",
+        "approved_scope_summary",
+        "next_execution_step",
+        "blocked_on"
+      ],
+      "properties": {
+        "session_agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "execution_mode": {
+          "type": "string",
+          "enum": [
+            "planning_only",
+            "implementation_ready",
+            "implementation_complete",
+            "blocked"
+          ]
+        },
+        "approved_scope_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "next_execution_step": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blocked_on": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

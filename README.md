@@ -11,6 +11,7 @@ This repository is the central standards and audit hub for the HLD Pro ecosystem
 - **Reusable CI workflows** called by every repo's PR pipeline
 - **Codex integration** for AI-powered second-opinion code reviews
 - **Cross-repo dependency tracking** for shared infrastructure
+- **Structured plan schema** for machine-validatable execution planning
 
 No application code lives here — only governance policies, enforcement tooling, and audit automation.
 
@@ -50,10 +51,12 @@ hldpro-governance/
 ├── scripts/overlord/
 │   ├── codex_ingestion.py             # Codex review orchestration & backlog generation
 │   ├── check_overlord_backlog_github_alignment.py # Ensures governance backlog stays issue-backed
+│   ├── validate_structured_agent_cycle_plan.py # Validates structured planning artifacts
 │   └── README.md                      # Codex ingestion usage docs
 ├── docs/
 │   ├── FAIL_FAST_LOG.md              # Error patterns and resolutions
 │   ├── FEATURE_REGISTRY.md           # Governance repo feature inventory
+│   ├── schemas/                      # Governance-owned JSON schemas
 │   └── plans/                        # Governance plans, including Living Knowledge Base phases
 └── .github/workflows/
     ├── governance-check.yml           # Reusable PR gate (called by all repo CIs)
@@ -85,6 +88,19 @@ The canonical org-governance planning pack lives at the repo root:
 - [`GITHUB_ENTERPRISE_SPRINT1_TASKS.md`](GITHUB_ENTERPRISE_SPRINT1_TASKS.md)
 
 Use these files instead of reconstructing org-ruleset state from old PRs or ad hoc notes.
+
+### Structured Plan Schema
+
+Org-wide structured execution planning now uses:
+
+- [`docs/schemas/structured-agent-cycle-plan.schema.json`](docs/schemas/structured-agent-cycle-plan.schema.json)
+- [`scripts/overlord/validate_structured_agent_cycle_plan.py`](scripts/overlord/validate_structured_agent_cycle_plan.py)
+
+Rules:
+- JSON is the canonical plan artifact
+- Markdown is optional companion context
+- `specialist_reviews` and `alternate_model_review` are mandatory structured fields
+- reusable governance CI validates `*structured-agent-cycle-plan.json` on issue/riskfix execution branches
 
 ### Claude Agents
 

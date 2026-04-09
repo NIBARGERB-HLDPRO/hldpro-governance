@@ -26,6 +26,20 @@
 - `.github/workflows/ci-workflow-lint.yml` — actionlint CI: install + run on PRs/pushes (all code repos)
 - **CI runners:** All workflows must use `ubuntu-latest`. The `sase-microvm` self-hosted runner was decommissioned 2026-04-02. Do NOT add `self-hosted` runner refs.
 
+### Structured Agent Cycle Plans
+- Canonical plan artifacts are structured JSON, not freeform Markdown.
+- The canonical org-wide schema lives in `hldpro-governance/docs/schemas/structured-agent-cycle-plan.schema.json`.
+- Human-readable Markdown plan notes are optional companion material, not the source of truth.
+- Structured plans must capture:
+  - sprint/task/acceptance data
+  - `specialist_reviews`
+  - `alternate_model_review`
+  - `execution_handoff`
+  - `material_deviation_rules`
+- Issue-driven execution branches (`issue-*` and `riskfix/*`) must have at least one valid `*structured-agent-cycle-plan.json` file before execution is governance-ready.
+- Reusable governance CI validates structured plans through `scripts/overlord/validate_structured_agent_cycle_plan.py`.
+- Cross-model review results from `scripts/codex-review.sh claude` belong in `alternate_model_review`.
+
 ### Branch Isolation (global hook)
 - `~/.claude/hooks/branch-switch-guard.sh` — **global PreToolUse hook** that blocks `git checkout <branch>` and `git switch <branch>` in all repos
 - Prevents multi-session conflicts where one session's branch switch corrupts another session's working directory

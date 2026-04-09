@@ -16,6 +16,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Checkout governance standards repo for shared validators
+        if: github.repository != 'NIBARGERB-HLDPRO/hldpro-governance'
+        uses: actions/checkout@v6
+        with:
+          repository: NIBARGERB-HLDPRO/hldpro-governance
+          path: .governance
+          fetch-depth: 1
+
       # ── 1. Required governance docs exist ──
       - name: Check required governance docs exist
         run: |
@@ -102,6 +110,24 @@ jobs:
         if: github.repository == 'NIBARGERB-HLDPRO/hldpro-governance'
         run: |
           python3 scripts/overlord/check_overlord_backlog_github_alignment.py
+
+      - name: Validate structured agent cycle plans
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          BRANCH_NAME="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+
+          if [ "$REPO_NAME" = "hldpro-governance" ]; then
+            VALIDATOR="scripts/overlord/validate_structured_agent_cycle_plan.py"
+          else
+            VALIDATOR=".governance/scripts/overlord/validate_structured_agent_cycle_plan.py"
+          fi
+
+          python3 "$VALIDATOR" \
+            --root . \
+            --require-if-issue-branch \
+            --branch-name "$BRANCH_NAME"
 
       # ── Categorize changed files ──
       - name: Get changed files
