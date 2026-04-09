@@ -1,0 +1,221 @@
+#!/usr/bin/env python3
+"""Build reproducible weekly governance effectiveness metrics snapshots."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import subprocess
+import sys
+from dataclasses import asdict, dataclass
+from datetime import date, datetime, time, timedelta, timezone
+from pathlib import Path
+
+
+BUG_PATTERN = re.compile(r"(fix|bug|hotfix|revert)", re.IGNORECASE)
+REVERT_PATTERN = re.compile(r"revert", re.IGNORECASE)
+DEFAULT_REPOS = [
+    "ai-integration-services",
+    "HealthcarePlatform",
+    "local-ai-machine",
+    "knocktracker",
+    "ASC-Evaluator",
+]
+
+
+@dataclass
+class RepoMetrics:
+    repo: str
+    commit_count: int
+    bug_fix_commits: int
+    revert_commits: int
+    bug_rate_pct: float | None
+    revert_rate_pct: float | None
+    ci_pass: int
+    ci_fail: int
+    ci_other: int
+    ci_total: int
+    ci_pass_rate_pct: float | None
+
+
+def run(cmd: list[str], cwd: Path | None = None) -> str:
+    result = subprocess.run(
+        cmd,
+        cwd=str(cwd) if cwd else None,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return result.stdout
+
+
+def pct(numerator: int, denominator: int) -> float | None:
+    if denominator <= 0:
+        return None
+    return round((numerator / denominator) * 100, 1)
+
+
+def parse_iso(raw: str) -> datetime:
+    return datetime.fromisoformat(raw.replace("Z", "+00:00")).astimezone(timezone.utc)
+
+
+def collect_repo_metrics(
+    repo: str,
+    repo_root: Path,
+    org: str,
+    commit_since: datetime,
+    ci_since: datetime,
+) -> RepoMetrics:
+    commit_subjects = run(
+        ["git", "log", "--pretty=%s", f"--since={commit_since.isoformat()}"],
+        cwd=repo_root,
+    )
+    subjects = [line.strip() for line in commit_subjects.splitlines() if line.strip()]
+    commit_count = len(subjects)
+    bug_fix_commits = sum(1 for item in subjects if BUG_PATTERN.search(item))
+    revert_commits = sum(1 for item in subjects if REVERT_PATTERN.search(item))
+
+    ci_pass = ci_fail = ci_other = 0
+    try:
+        ci_raw = run(
+            [
+                "gh",
+                "run",
+                "list",
+                "--repo",
+                f"{org}/{repo}",
+                "--limit",
+                "20",
+                "--json",
+                "conclusion,status,createdAt",
+            ]
+        )
+        ci_runs = json.loads(ci_raw)
+    except Exception:
+        ci_runs = []
+
+    for item in ci_runs:
+        if item.get("status") != "completed":
+            continue
+        created_at = item.get("createdAt")
+        if not created_at or parse_iso(created_at) < ci_since:
+            continue
+        conclusion = item.get("conclusion")
+        if conclusion == "success":
+            ci_pass += 1
+        elif conclusion == "failure":
+            ci_fail += 1
+        else:
+            ci_other += 1
+
+    ci_total = ci_pass + ci_fail + ci_other
+    return RepoMetrics(
+        repo=repo,
+        commit_count=commit_count,
+        bug_fix_commits=bug_fix_commits,
+        revert_commits=revert_commits,
+        bug_rate_pct=pct(bug_fix_commits, commit_count),
+        revert_rate_pct=pct(revert_commits, commit_count),
+        ci_pass=ci_pass,
+        ci_fail=ci_fail,
+        ci_other=ci_other,
+        ci_total=ci_total,
+        ci_pass_rate_pct=pct(ci_pass, ci_total),
+    )
+
+
+def render_markdown(snapshot: dict) -> str:
+    lines = [
+        f"# Effectiveness Baseline — {snapshot['snapshot_date']}",
+        "",
+        f"- Commit window: last {snapshot['commit_window_days']} days",
+        f"- CI window: last {snapshot['ci_window_days']} days",
+        f"- Generated at: {snapshot['generated_at']}",
+        "",
+        "| Repo | Commits | Bug Fixes | Reverts | Bug Rate | Revert Rate | CI Pass | CI Fail | CI Other | CI Pass Rate |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+    ]
+    for repo in snapshot["repos"]:
+        bug_rate = "N/A" if repo["bug_rate_pct"] is None else f'{repo["bug_rate_pct"]:.1f}%'
+        revert_rate = "N/A" if repo["revert_rate_pct"] is None else f'{repo["revert_rate_pct"]:.1f}%'
+        ci_rate = "N/A" if repo["ci_pass_rate_pct"] is None else f'{repo["ci_pass_rate_pct"]:.1f}%'
+        lines.append(
+            "| {repo} | {commit_count} | {bug_fix_commits} | {revert_commits} | {bug_rate} | {revert_rate} | {ci_pass} | {ci_fail} | {ci_other} | {ci_rate} |".format(
+                repo=repo["repo"],
+                commit_count=repo["commit_count"],
+                bug_fix_commits=repo["bug_fix_commits"],
+                revert_commits=repo["revert_commits"],
+                bug_rate=bug_rate,
+                revert_rate=revert_rate,
+                ci_pass=repo["ci_pass"],
+                ci_fail=repo["ci_fail"],
+                ci_other=repo["ci_other"],
+                ci_rate=ci_rate,
+            )
+        )
+    lines.append("")
+    lines.append("Generated by `scripts/overlord/build_effectiveness_metrics.py`.")
+    return "\n".join(lines) + "\n"
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--repos-root", required=True)
+    parser.add_argument("--output-dir", required=True)
+    parser.add_argument("--org", default="NIBARGERB-HLDPRO")
+    parser.add_argument("--date")
+    parser.add_argument("--commit-window-days", type=int, default=7)
+    parser.add_argument("--ci-window-days", type=int, default=14)
+    parser.add_argument("--repos", nargs="*", default=DEFAULT_REPOS)
+    args = parser.parse_args()
+
+    snapshot_date = date.fromisoformat(args.date) if args.date else datetime.now(timezone.utc).date()
+    generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    commit_since = datetime.combine(snapshot_date, time.min, tzinfo=timezone.utc) - timedelta(days=args.commit_window_days)
+    ci_since = datetime.combine(snapshot_date, time.min, tzinfo=timezone.utc) - timedelta(days=args.ci_window_days)
+
+    repos_root = Path(args.repos_root)
+    output_dir = Path(args.output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    repo_metrics = []
+    for repo in args.repos:
+        repo_path = repos_root / repo
+        if not repo_path.exists():
+            print(f"missing repo path: {repo_path}", file=sys.stderr)
+            return 1
+        repo_metrics.append(
+            collect_repo_metrics(repo, repo_path, args.org, commit_since, ci_since)
+        )
+
+    snapshot = {
+        "snapshot_date": snapshot_date.isoformat(),
+        "generated_at": generated_at,
+        "commit_window_days": args.commit_window_days,
+        "ci_window_days": args.ci_window_days,
+        "repos": [asdict(item) for item in repo_metrics],
+    }
+    json_payload = json.dumps(snapshot, indent=2) + "\n"
+    markdown_payload = render_markdown(snapshot)
+
+    dated_json = output_dir / f"{snapshot_date.isoformat()}.json"
+    dated_md = output_dir / f"{snapshot_date.isoformat()}.md"
+    latest_json = output_dir / "latest.json"
+    latest_md = output_dir / "latest.md"
+
+    for target, payload in (
+        (dated_json, json_payload),
+        (dated_md, markdown_payload),
+        (latest_json, json_payload),
+        (latest_md, markdown_payload),
+    ):
+        target.write_text(payload)
+
+    print(f"wrote {dated_json}")
+    print(f"wrote {dated_md}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -12,15 +12,23 @@ jobs:
   governance-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
+
+      - name: Checkout governance standards repo for shared validators
+        if: github.repository != 'NIBARGERB-HLDPRO/hldpro-governance'
+        uses: actions/checkout@v6
+        with:
+          repository: NIBARGERB-HLDPRO/hldpro-governance
+          path: .governance
+          fetch-depth: 1
 
       # ── 1. Required governance docs exist ──
       - name: Check required governance docs exist
         run: |
           MISSING=""
-          for doc in docs/PROGRESS.md docs/FAIL_FAST_LOG.md docs/DATA_DICTIONARY.md docs/SERVICE_REGISTRY.md; do
+          for doc in docs/PROGRESS.md docs/FEATURE_REGISTRY.md docs/FAIL_FAST_LOG.md docs/DATA_DICTIONARY.md docs/SERVICE_REGISTRY.md; do
             if [ ! -f "$doc" ]; then
               MISSING="${MISSING}\n  - $doc"
             fi
@@ -32,6 +40,94 @@ jobs:
             exit 1
           fi
           echo "✓ All required governance docs exist"
+
+      - name: Check governance doc structure
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          FAILURES=""
+
+          require_pattern() {
+            local file="$1"
+            local pattern="$2"
+            local label="$3"
+            if ! grep -Eq "$pattern" "$file"; then
+              FAILURES="${FAILURES}\n  - ${file}: missing ${label}"
+            fi
+          }
+
+          # PROGRESS.md
+          if [ "$REPO_NAME" = "ai-integration-services" ]; then
+            require_pattern "docs/PROGRESS.md" '^# Backlog$|^## Backlog — Open Plans & Action Items$' 'AIS backlog section'
+            require_pattern "docs/PROGRESS.md" '^## Known Bugs$' 'Known Bugs section'
+          else
+            require_pattern "docs/PROGRESS.md" '^## Plans$' 'Plans section'
+            require_pattern "docs/PROGRESS.md" '^\| Plan \| Status \| Priority \| Est\. Hours \| Deliverables \| Notes \|$' 'Plans table header'
+            require_pattern "docs/PROGRESS.md" '^## Known Bugs$' 'Known Bugs section'
+            require_pattern "docs/PROGRESS.md" '^## Feature Requests$' 'Feature Requests section'
+            require_pattern "docs/PROGRESS.md" '^## Operational Items$' 'Operational Items section'
+          fi
+
+          # FEATURE_REGISTRY.md
+          require_pattern "docs/FEATURE_REGISTRY.md" '^# .+Feature Registry' 'Feature Registry title'
+          require_pattern "docs/FEATURE_REGISTRY.md" 'Last Updated' 'Last Updated metadata'
+          require_pattern "docs/FEATURE_REGISTRY.md" '^## Summary Table$' 'Summary Table section'
+          require_pattern "docs/FEATURE_REGISTRY.md" '^\| Feature ID \| Domain \| Feature \| Status \| Readiness \|' 'summary table header'
+
+          # DATA_DICTIONARY.md
+          require_pattern "docs/DATA_DICTIONARY.md" '^# Data Dictionary$' 'Data Dictionary title'
+          require_pattern "docs/DATA_DICTIONARY.md" 'Last [Uu]pdated' 'Last updated metadata'
+          if [ "$REPO_NAME" = "HealthcarePlatform" ]; then
+            require_pattern "docs/DATA_DICTIONARY.md" 'backend/DATA_DICTIONARY\.md' 'canonical backend pointer'
+          else
+            require_pattern "docs/DATA_DICTIONARY.md" '(Source of [Tt]ruth|canonical)' 'source-of-truth metadata'
+            require_pattern "docs/DATA_DICTIONARY.md" '(^## Table of Contents$)|(^\| Table \| Description \| Key Columns \|$)|(^\| Column \| Type \| Constraints \| Notes \|$)|(^\| Artifact \| Description \| Key Fields \|$)' 'dictionary body or pointer contract'
+            if grep -Eq '^\| \((tables|columns) will be documented here\)' "docs/DATA_DICTIONARY.md"; then
+              FAILURES="${FAILURES}\n  - docs/DATA_DICTIONARY.md: placeholder-only rows are not allowed"
+            fi
+          fi
+
+          # SERVICE_REGISTRY.md
+          require_pattern "docs/SERVICE_REGISTRY.md" '^# Service Registry' 'Service Registry title'
+          require_pattern "docs/SERVICE_REGISTRY.md" 'Last [Uu]pdated' 'Last updated metadata'
+          require_pattern "docs/SERVICE_REGISTRY.md" '(Source of [Tt]ruth|canonical)' 'source-of-truth metadata'
+          require_pattern "docs/SERVICE_REGISTRY.md" '(^\| Function \|)|(^\| Service \|)' 'service or function registry table'
+          if grep -Eq '^\| \((services|functions) will be documented here\)' "docs/SERVICE_REGISTRY.md"; then
+            FAILURES="${FAILURES}\n  - docs/SERVICE_REGISTRY.md: placeholder-only rows are not allowed"
+          fi
+
+          if [ -n "$FAILURES" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: Governance doc structure is incomplete:${FAILURES}"
+            echo ""
+            echo "Rule: governed docs must satisfy the shared minimum contract in STANDARDS.md, including allowed repo-specific exceptions."
+            exit 1
+          fi
+
+          echo "✓ Governance doc structure check passed"
+
+      - name: Check OVERLORD_BACKLOG issue alignment
+        if: github.repository == 'NIBARGERB-HLDPRO/hldpro-governance'
+        run: |
+          python3 scripts/overlord/check_overlord_backlog_github_alignment.py
+
+      - name: Validate structured agent cycle plans
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          BRANCH_NAME="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+
+          if [ "$REPO_NAME" = "hldpro-governance" ]; then
+            VALIDATOR="scripts/overlord/validate_structured_agent_cycle_plan.py"
+          else
+            VALIDATOR=".governance/scripts/overlord/validate_structured_agent_cycle_plan.py"
+          fi
+
+          python3 "$VALIDATOR" \
+            --root . \
+            --require-if-issue-branch \
+            --branch-name "$BRANCH_NAME"
 
       # ── Categorize changed files ──
       - name: Get changed files
@@ -81,6 +177,7 @@ jobs:
           FAILFAST_CHANGED=$(echo "$CHANGED" | grep -E 'docs/FAIL_FAST_LOG\.md' || true)
           DATADICT_CHANGED=$(echo "$CHANGED" | grep -E 'docs/DATA_DICTIONARY\.md' || true)
           REGISTRY_CHANGED=$(echo "$CHANGED" | grep -E 'docs/SERVICE_REGISTRY\.md' || true)
+          FEATURE_REGISTRY_CHANGED=$(echo "$CHANGED" | grep -E 'docs/FEATURE_REGISTRY\.md' || true)
           MARKETING_DOC_CHANGED=$(echo "$CHANGED" | grep -E 'marketing/MARKETING_PAGE\.md' || true)
 
           {
@@ -96,6 +193,7 @@ jobs:
             echo "has_failfast=$([ -n "$FAILFAST_CHANGED" ] && echo 'true' || echo 'false')"
             echo "has_datadict=$([ -n "$DATADICT_CHANGED" ] && echo 'true' || echo 'false')"
             echo "has_registry=$([ -n "$REGISTRY_CHANGED" ] && echo 'true' || echo 'false')"
+            echo "has_feature_registry=$([ -n "$FEATURE_REGISTRY_CHANGED" ] && echo 'true' || echo 'false')"
             echo "has_marketing_doc=$([ -n "$MARKETING_DOC_CHANGED" ] && echo 'true' || echo 'false')"
           } >> "$GITHUB_OUTPUT"
 
@@ -113,6 +211,43 @@ jobs:
             exit 1
           fi
           echo "✓ PROGRESS.md updated alongside code changes"
+
+      - name: Block product-repo graphify artifacts
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          CHANGED="${{ steps.changed.outputs.files }}"
+
+          if [ "$REPO_NAME" = "hldpro-governance" ]; then
+            echo "✓ Governance repo may track graphify artifacts"
+            exit 0
+          fi
+
+          if echo "$CHANGED" | grep -qE '^graphify-out/'; then
+            echo "::error::GOVERNANCE GATE FAILED: graphify-out/ changed in a product repo."
+            echo ""
+            echo "Rule: graphify artifacts are governance-hosted only. Product repos keep pointers/hooks, not tracked graphify-out files."
+            echo "Move the graph output to hldpro-governance and keep only CLAUDE/.claude pointer changes in the product repo."
+            exit 1
+          fi
+
+          echo "✓ No product-repo graphify artifact drift detected"
+
+      # ── 2b. FEATURE_REGISTRY.md co-staged with code changes ──
+      - name: Check FEATURE_REGISTRY.md updated with code changes
+        if: steps.changed.outputs.has_code == 'true'
+        run: |
+          if [ "${{ steps.changed.outputs.has_feature_registry }}" != "true" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: Source files changed but docs/FEATURE_REGISTRY.md was not updated."
+            echo ""
+            echo "Changed source files:"
+            echo "${{ steps.changed.outputs.code_changes }}"
+            echo ""
+            echo "Rule: Every governed repo must co-stage docs/FEATURE_REGISTRY.md with source changes."
+            exit 1
+          fi
+          echo "✓ FEATURE_REGISTRY.md updated alongside code changes"
 
       # ── 3. FAIL_FAST_LOG co-staged with bug fixes ──
       - name: Check FAIL_FAST_LOG.md updated with bug fixes
@@ -178,7 +313,7 @@ jobs:
 
       # ── 7. Infrastructure changes → PROGRESS ──
       - name: Check infrastructure changes documented
-        if: steps.changed.outputs.has_infra == 'true'
+        if: steps.changed.outputs.has_infra == 'true' && github.actor != 'dependabot[bot]'
         run: |
           if [ "${{ steps.changed.outputs.has_progress }}" != "true" ]; then
             echo "::error::GOVERNANCE GATE FAILED: Infrastructure files changed but docs/PROGRESS.md was not updated."
