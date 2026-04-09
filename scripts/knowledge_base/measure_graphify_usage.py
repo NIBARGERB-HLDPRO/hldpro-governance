@@ -25,6 +25,12 @@ TEXT_EXTENSIONS = {
     ".yaml",
     ".sh",
 }
+WORKFLOW_DOC_PREFIXES = (
+    ".github/workflows/",
+    "docs/",
+    "metrics/",
+    "raw/",
+)
 STOPWORDS = {
     "the",
     "and",
@@ -164,6 +170,96 @@ def aggregate_file_scores(file_scores: dict[str, float], evidence: dict[str, lis
     return top_files, trimmed_evidence
 
 
+def matched_terms(text: str, tokens: list[str], limit: int = 4) -> list[str]:
+    lowered = text.casefold()
+    matches: list[str] = []
+    for token in tokens:
+        if token in lowered and token not in matches:
+            matches.append(token)
+        if len(matches) == limit:
+            break
+    return matches
+
+
+def is_workflow_doc_scenario(scenario: Scenario) -> bool:
+    return scenario.task_type == "workflow_bug"
+
+
+def is_workflow_doc_candidate(rel: str) -> bool:
+    return any(rel.startswith(prefix) for prefix in WORKFLOW_DOC_PREFIXES)
+
+
+def workflow_doc_path_boost(rel: str, tokens: list[str]) -> float:
+    boost = 0.0
+    if rel.startswith(".github/workflows/"):
+        boost += 10.0
+        basename = rel.rsplit("/", 1)[-1].casefold()
+        boost += 1.5 * sum(1 for token in tokens if token in basename)
+        if "workflow" in tokens or "workflow_call" in tokens:
+            boost += 2.0
+        if "push" in tokens:
+            boost += 1.0
+    if rel.startswith("docs/plans/issue-"):
+        boost -= 3.0
+    elif rel.startswith("docs/plans/"):
+        boost += 0.5
+    elif rel.startswith("docs/"):
+        boost += 0.75
+    if rel.startswith("metrics/graphify-evals/"):
+        boost -= 6.0
+    elif rel.startswith("metrics/"):
+        boost += 1.0
+    if rel.startswith("raw/"):
+        boost += 0.5
+    if rel.endswith((".yml", ".yaml")):
+        boost += 1.0
+    if rel.endswith(".json"):
+        boost += 0.4
+    return boost
+
+
+def workflow_doc_priority_multiplier(rel: str) -> float:
+    if rel.startswith(".github/workflows/"):
+        return 1.6
+    if rel.startswith("docs/"):
+        return 1.15
+    if rel.startswith("metrics/"):
+        return 0.9
+    if rel.startswith("raw/"):
+        return 0.85
+    return 0.45
+
+
+def augment_workflow_doc_candidates(
+    repo_root: Path,
+    scenario: Scenario,
+    tokens: list[str],
+    file_scores: dict[str, float],
+    evidence: dict[str, list[str]],
+) -> None:
+    for path in iter_repo_text_files(repo_root):
+        rel = str(path.relative_to(repo_root))
+        if not is_workflow_doc_candidate(rel):
+            continue
+        if rel.startswith("metrics/graphify-evals/"):
+            continue
+        try:
+            content = path.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            continue
+        window = content[:12000]
+        text = f"{rel}\n{window}"
+        lexical_score = score_text(text, tokens)
+        path_boost = workflow_doc_path_boost(rel, tokens)
+        total_score = lexical_score + path_boost
+        if total_score <= path_boost:
+            continue
+        file_scores[rel] += total_score * 2.0
+        evidence[rel].append(f"hybrid:path:{rel}")
+        for term in matched_terms(text, tokens):
+            evidence[rel].append(f"hybrid:term:{term}")
+
+
 def evaluate_relevance(top_files: list[str], evidence_text: str, scenario: Scenario) -> dict[str, Any]:
     file_hits = sum(1 for expected in scenario.expected_files if expected in top_files)
     expected_terms = normalize_tokens(scenario.expected_terms)
@@ -247,13 +343,18 @@ def graphify_results(graph_root: Path, repos_root: Path, scenario: Scenario) -> 
             file_scores[src_file] += propagated
             evidence[src_file].append(f"edge:{relation}:{tgt_node.get('label','')}")
 
+    if is_workflow_doc_scenario(scenario):
+        augment_workflow_doc_candidates(repo_root, scenario, tokens, file_scores, evidence)
+        for rel in list(file_scores):
+            file_scores[rel] *= workflow_doc_priority_multiplier(rel)
+
     top_files, top_evidence = aggregate_file_scores(file_scores, evidence)
     evidence_text = "\n".join(
         [path + "\n" + "\n".join(items) for path, items in top_evidence.items()]
     )
     relevance = evaluate_relevance(top_files, evidence_text, scenario)
     return {
-        "strategy": "graphify-guided",
+        "strategy": "hybrid" if is_workflow_doc_scenario(scenario) else "graphify-guided",
         "top_files": top_files,
         "top_evidence": top_evidence,
         "quality_hit": relevance["materially_relevant"],

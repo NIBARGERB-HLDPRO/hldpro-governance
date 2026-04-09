@@ -1,9 +1,9 @@
 {
-  "source": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-66",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-66/graphify-out/hldpro-governance",
+  "source": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85",
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/graphify-out/hldpro-governance",
   "wiki_dir": null,
-  "nodes": 99,
-  "edges": 183,
+  "nodes": 104,
+  "edges": 195,
   "communities": 14,
   "articles": 0,
   "html_status": "skipped",

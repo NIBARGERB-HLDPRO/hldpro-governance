@@ -7,10 +7,10 @@
   "5": "Overlord Codex ingestion",
   "6": "Overlord Validate structured agent cycle plan",
   "7": "Overlord Check overlord backlog github alignment",
-  "8": "Overlord Codex ingestion",
+  "8": "Codex ingestion Anchor",
   "9": "Overlord Codex ingestion",
-  "10": "Codex ingestion Anchor",
-  "11": "Overlord Render github issue feed",
-  "12": "Knowledge base Log graphify usage",
-  "13": "Knowledge base Push graph to neo4j"
+  "10": "Overlord Render github issue feed",
+  "11": "Knowledge base Log graphify usage",
+  "12": "Knowledge base Push graph to neo4j",
+  "13": "Overlord Codex ingestion"
 }
