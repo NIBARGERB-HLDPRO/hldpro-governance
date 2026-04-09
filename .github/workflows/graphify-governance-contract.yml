@@ -22,9 +22,13 @@ jobs:
           python3 -m py_compile \
             scripts/knowledge_base/build_graph.py \
             scripts/knowledge_base/graphify_targets.py \
+            scripts/knowledge_base/log_graphify_usage.py \
+            scripts/knowledge_base/measure_graphify_usage.py \
+            scripts/knowledge_base/test_graphify_usage_logging_contract.py \
             scripts/knowledge_base/update_knowledge_index.py \
             scripts/knowledge_base/test_graphify_governance_contract.py
           python3 scripts/knowledge_base/test_graphify_governance_contract.py
+          python3 scripts/knowledge_base/test_graphify_usage_logging_contract.py
 
       - name: Validate generated wiki index is committed
         run: |
