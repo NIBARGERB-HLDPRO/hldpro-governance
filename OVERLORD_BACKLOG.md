@@ -24,6 +24,7 @@
 |------|----------|-------|
 | Operationalize Codex ingestion review flow | HIGH | Shared helper exists on `main`; current work is bounded-timeout hardening plus one more real governed-repo validation before enabling production sweep invocation. |
 | Governance doc consistency rollout — Sprint 1 | HIGH | Shared standards + reusable governance checker. Define minimum contracts, enforce section presence, and codify AIS/HP exceptions before repo-local rewrites. |
+| Living Knowledge Base — Bootstrap execution | HIGH | graphify is installed, the first AIS structural graph is built and synced into governance, raw feeds/decision seeds are populated, and the builder path is now scriptable. Remaining gap is end-to-end Stage 6 + operator_context bridge proof. |
 
 ### Sprint Breakdown — Governance Doc Consistency Rollout
 
@@ -76,3 +77,4 @@
 | Nightly overlord cleanup workflow | 2026-04-07 | Merged in PRs #13 and #15. Added nightly artifact cleanup + stale merged branch reporting. Validation issue: [#14](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/14). |
 | Codex subagent/persona routing baseline | 2026-04-07 | Updated shared standards and overlord docs so repo-required specialists can be satisfied with spawned Codex subagents/personas mapped from repo-local definitions. |
 | GitHub Actions Node 20 deprecation cleanup | 2026-04-07 | Merged in PR #18. Upgraded governance workflows from `actions/checkout@v4` to `actions/checkout@v6`; production sweep run `24059154210` completed without the prior Node 20 deprecation annotation. |
+| Living Knowledge Base — Phase 1 bootstrap | 2026-04-09 | graphify installed via Python 3.11, CLAUDE/settings pointers added in AIS, git hooks installed in the main AIS checkout, initial AIS code graph built (1883 nodes / 2533 edges / 111 communities), and graph artifacts synced into governance `graphify-out/` + `wiki/hldpro/`. |

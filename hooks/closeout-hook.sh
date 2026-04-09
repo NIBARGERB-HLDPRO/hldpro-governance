@@ -6,7 +6,26 @@ set -e
 
 CLOSEOUT_FILE="$1"
 GOVERNANCE_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-AI_INTEGRATION_ROOT="${GOVERNANCE_ROOT}/../ai-integration-services"
+SCRIPT_ROOT="${GOVERNANCE_ROOT}/scripts/knowledge_base/build_graph.py"
+
+resolve_ai_root() {
+  local candidates=(
+    "${GOVERNANCE_ROOT}/../ai-integration-services"
+    "${GOVERNANCE_ROOT}/../../ai-integration-services"
+    "$(cd "${GOVERNANCE_ROOT}/.." && pwd)/ai-integration-services"
+    "$(cd "${GOVERNANCE_ROOT}/../.." && pwd)/ai-integration-services"
+  )
+  local candidate
+  for candidate in "${candidates[@]}"; do
+    if [ -d "${candidate}" ] && [ -f "${candidate}/CLAUDE.md" ]; then
+      printf '%s\n' "${candidate}"
+      return 0
+    fi
+  done
+  return 1
+}
+
+AI_INTEGRATION_ROOT="$(resolve_ai_root || true)"
 
 if [ -z "$CLOSEOUT_FILE" ]; then
   echo "ERROR: No closeout file specified."
@@ -36,24 +55,27 @@ echo "  ✓ Template validated"
 
 # 2. Run graphify --update on ai-integration-services
 echo "[2/4] Updating knowledge graph..."
-if [ -d "$AI_INTEGRATION_ROOT" ]; then
-  cd "$AI_INTEGRATION_ROOT"
-  if command -v graphify >/dev/null 2>&1; then
-    if graphify . --update --no-viz 2>&1 | tail -5; then
+if [ -n "$AI_INTEGRATION_ROOT" ] && [ -f "$SCRIPT_ROOT" ]; then
+  if command -v python3.11 >/dev/null 2>&1 && python3.11 -c "import graphify" >/dev/null 2>&1; then
+    if python3.11 "$SCRIPT_ROOT" \
+      --source "$AI_INTEGRATION_ROOT" \
+      --output "$GOVERNANCE_ROOT/graphify-out" \
+      --wiki-dir "$GOVERNANCE_ROOT/wiki/hldpro" \
+      --no-html 2>&1 | tail -20; then
       echo "  ✓ Knowledge graph updated"
     else
-      echo "  ⚠ graphify update failed — continuing without blocking closeout"
+      echo "  ⚠ graph update failed — continuing without blocking closeout"
     fi
   else
-    echo "  ⚠ graphify not installed — skipping graph update"
+    echo "  ⚠ python3.11 + graphify not available — skipping graph update"
   fi
 else
-  echo "  ⚠ ai-integration-services not found at $AI_INTEGRATION_ROOT — skipping graph update"
+  echo "  ⚠ ai-integration-services or builder script not found — skipping graph update"
 fi
 
 # 3. Remind to create operator_context row
 echo "[3/4] operator_context check..."
-if grep -q "Yes — row ID:" "$CLOSEOUT_FILE"; then
+if grep -q "^\[x\] Yes — row ID:" "$CLOSEOUT_FILE"; then
   echo "  ✓ operator_context row confirmed in closeout"
 else
   echo "  ⚠ REMINDER: Create operator_context row for this decision"
