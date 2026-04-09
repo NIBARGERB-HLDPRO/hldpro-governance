@@ -1,73 +1,125 @@
 # GitHub Enterprise Ruleset Recommendations
 
 Prepared: 2026-04-09
-Purpose: Translate the verified required-check baseline into staged org-ruleset recommendations without applying any GitHub settings yet.
+Purpose: Convert the verified required-check baseline into an actionable org-admin rollout sequence without hiding current-state drift.
 
 Canonical inputs:
-- `OVERLORD_BACKLOG.md`
 - `GITHUB_ENTERPRISE_REQUIRED_CHECK_BASELINE.md`
+- `GITHUB_ENTERPRISE_EXCEPTION_REGISTER.md`
+- `GITHUB_ENTERPRISE_SPRINT1_TASKS.md`
+
+## Current State Snapshot
+
+Org rulesets currently active:
+- `14715976` `Protect main branches`
+- `14716006` `Protect develop branches`
+
+Current org protections in effect:
+- block deletion on `main` and `develop`
+- block non-fast-forward pushes on `main` and `develop`
+- require pull request on `main`
+- no approving-review requirement at the org level yet
+- no code-owner review requirement at the org level yet
+- no org-level required status checks yet
+
+Observed repo-level overrides:
+- `ai-integration-services`: repo ruleset `14283171` `MAIN` adds required checks on `main`, but is missing `critical-tests` from the verified baseline
+- `local-ai-machine`: repo ruleset `13152679` `Main branch PR-only policy` requires PR flow and review-thread resolution on `main`, but does not yet encode the standard-code baseline checks
+- `HealthcarePlatform`: no repo-level ruleset beyond inherited org rules
+- `knocktracker`: no repo-level ruleset beyond inherited org rules
+
+Sprint 1 repo ownership status:
+- `ai-integration-services`: `.github/CODEOWNERS` present on `main`
+- `HealthcarePlatform`: `.github/CODEOWNERS` merged on `main`
+- `knocktracker`: `.github/CODEOWNERS` merged on `main`
+- `local-ai-machine`: `.github/CODEOWNERS` merged on `main`
+- `ASC-Evaluator`: exempt from first-pass code-governance enforcement
 
 ## Rollout Principle
 
 Do not tighten org rulesets until all of the following are true:
 
 1. exact status-check names are verified from live PR data
-2. actor-conditional and path-conditional checks are explicitly excluded or reworked
-3. target repos have merged `CODEOWNERS` where code-owner enforcement is desired
-4. repo owners have been notified of the enforcement date
+2. actor-conditional and path-conditional checks are explicitly excluded or tracked as exceptions
+3. target repos have committed `CODEOWNERS` where code-owner review is desired
+4. repo owners have been notified of enforcement scope and date
 
-## Recommended Ruleset Structure
+## Target Ruleset Structure
 
-Use layered rulesets rather than one giant org-wide rule:
+Use layered rulesets:
 
 1. Global branch safety baseline
 2. Production-critical merge policy
 3. Standard-code merge policy
-4. Repo-specific overlays only where required
+4. Repo-specific overlays only where live behavior demands them
 
-## Ruleset 1: Global Branch Safety Baseline
+## Stage 0 — Preflight Validation
 
-Target:
-- all non-exempt repositories
-- branches: `main`, `develop`
+Before any GitHub UI change:
 
-Recommended protections:
-- block force pushes
-- block branch deletion
-- require pull request before merge
-- require conversation resolution before merge
+1. confirm `CODEOWNERS` is merged on the target repo default branch
+2. confirm workflow names still match `GITHUB_ENTERPRISE_REQUIRED_CHECK_BASELINE.md`
+3. confirm no skipped context is being promoted into a required check
+4. confirm any planned deviation is captured in `GITHUB_ENTERPRISE_EXCEPTION_REGISTER.md`
+5. confirm repo owner has acknowledged the staged change window
 
-Do not require status checks in this baseline.
+## Stage 1 — Keep Global Branch Safety, Do Not Expand Yet
 
-Purpose:
-- establish universal branch safety without breaking repos that still carry conditional check behavior
+Current org rulesets already satisfy this stage:
+- PR-only requirement on `main`
+- deletion/non-fast-forward protection on `main`
+- deletion/non-fast-forward protection on `develop`
 
-## Ruleset 2: Production-Critical Merge Policy
+No immediate admin change required here.
+
+## Stage 2 — Normalize Repo-Level Drift Before Broader Enforcement
+
+### ai-integration-services
+
+Current drift:
+- repo-level `MAIN` ruleset exists
+- required checks are:
+  - `governance-check / governance-check`
+  - `gitleaks`
+  - `npm-audit`
+  - `typecheck`
+- missing:
+  - `critical-tests`
+
+Recommended action:
+- update the repo-level ruleset to include `critical-tests`, or remove the repo-level ruleset once the org-level production-critical ruleset is ready to replace it
+
+### local-ai-machine
+
+Current drift:
+- repo-level `Main branch PR-only policy` exists
+- no required checks yet in that repo-level ruleset
+- stricter repo workflow contracts still exist for `riskfix/*` lanes
+
+Recommended action:
+- keep the repo-level PR-only policy in place for now
+- do not fold repo-specific `riskfix/*` contracts into the org baseline
+- add the standard-code required checks in a later admin pass only after this repo policy is explicitly accepted
+
+## Stage 3 — Apply Production-Critical Required Checks
 
 Target repos:
 - `ai-integration-services`
 - `HealthcarePlatform`
 - `knocktracker`
 
-Recommended protections:
-- require pull request before merge
-- require at least 1 approving review
-- require code-owner review once `CODEOWNERS` is merged
-- require only the stable baseline checks from `GITHUB_ENTERPRISE_REQUIRED_CHECK_BASELINE.md`
+### ai-integration-services
 
-### Recommended Required Checks by Repo
-
-#### ai-integration-services
-
+Required checks:
 - `critical-tests`
 - `gitleaks`
 - `governance-check / governance-check`
 - `npm-audit`
 - `typecheck`
 
-#### HealthcarePlatform
+### HealthcarePlatform
 
-Require now:
+Required now:
 - `actionlint`
 - `build`
 - `check-migration-order`
@@ -79,16 +131,13 @@ Require now:
 - `typecheck`
 - `unit-tests`
 
-Do not require yet:
+Keep conditional for now:
 - `governance-check / governance-check`
 - `playwright-gate`
 
-Reason:
-- both are intentionally actor-conditional today
+### knocktracker
 
-#### knocktracker
-
-Require now:
+Required now:
 - `actionlint`
 - `gitleaks`
 - `npm-audit`
@@ -96,29 +145,20 @@ Require now:
 - `validate`
 - `validate-pr`
 
-Do not require yet:
+Keep conditional for now:
 - `governance-check`
 
-Reason:
-- it intentionally skips Dependabot PRs today
+## Stage 4 — Apply Standard-Code Baseline
 
-## Ruleset 3: Standard-Code Merge Policy
-
-Target repos:
+Target repo:
 - `local-ai-machine`
 
-Recommended protections:
-- require pull request before merge
-- require at least 1 approving review
-- require code-owner review once `CODEOWNERS` is merged
-- require only stable always-on checks in the first pass
-
-Require now:
+Required now:
 - `actionlint`
 - `gitleaks`
 - `npm-audit`
 
-Do not require yet:
+Keep out of the first org pass:
 - `breaker-mcp-contract`
 - `airlock-idempotency`
 - `contract-check`
@@ -129,53 +169,70 @@ Do not require yet:
 - `SASE Gatekeeper`
 
 Reason:
-- these checks are branch-policy, actor-conditional, or path-conditional today
+- these are repo-policy, actor-conditional, or path-conditional today
 
-## Repo Exemption Handling
+## Stage 5 — Code-Owner Review Enforcement
 
-### ASC-Evaluator
+Do not enable `require_code_owner_review` globally until:
+- the repo has a merged `.github/CODEOWNERS`
+- owners agree the first-pass coverage is narrow enough
+- no repo still needs ownership-map cleanup for obvious hot paths
 
-Recommended treatment:
-- exempt from required-check and code-owner enforcement
-- branch safety rules may still be applied if desired, but no code-governance baseline is necessary
+Recommended order:
+1. `ai-integration-services`
+2. `HealthcarePlatform`
+3. `knocktracker`
+4. `local-ai-machine`
 
-## Pre-Apply Checklist
+## Exception Handling
 
-Before an admin touches the GitHub UI:
+Every non-baseline rule deferral must be logged in `GITHUB_ENTERPRISE_EXCEPTION_REGISTER.md`.
 
-1. confirm target repo has merged `CODEOWNERS` if code-owner review is being enabled
-2. confirm current workflow names still match the baseline document
-3. confirm no skipped contexts are being marked required
-4. confirm repo owner has acknowledged the enforcement date
-5. confirm open PRs will not be surprised by an immediate policy flip
+Current rollout-critical exceptions already tracked there:
+- `ASC-Evaluator` repo exemption
+- actor-conditional HealthcarePlatform checks
+- actor-conditional knocktracker governance-check
+- local-ai-machine repo-level override / standard-code deferral
 
-## Staged Application Order
+## Owner Communication Template
 
-1. Apply Global Branch Safety Baseline only
-2. Apply `ai-integration-services` required checks
-3. Apply `HealthcarePlatform` stable checks only
-4. Apply `knocktracker` stable checks only
-5. Apply `local-ai-machine` stable checks only
-6. Revisit actor-conditional and path-conditional checks after workflow-policy cleanup
+Use this notice before any admin change:
 
-## Review Gates Before Promotion of Conditional Checks
+```markdown
+Subject: GitHub governance rollout for <repo>
 
-Promote a conditional check only when all are true:
+Scope:
+- repo: <repo>
+- branch target: <main|develop>
+- planned change date: <YYYY-MM-DD>
 
-- it runs for the relevant common PR class consistently
-- it is not skipped for legitimate bot or maintenance PRs unless a separate bot policy exists
-- it has acceptable flake rate
-- it materially protects merge quality
+Changes:
+- <ruleset or required-check update>
+- <code-owner review change if applicable>
 
-## Known Risks
+No-change items:
+- no workflow file edits
+- no branch rename
+- no deploy/secrets changes
 
-- requiring skipped checks can deadlock merges
-- branch-family contract checks can block bot PRs even when code quality is otherwise acceptable
-- tightening rules mid-PR can surprise active branches
+Rollback:
+- revert the affected ruleset entry in GitHub UI/API
+- document the rollback reason in `GITHUB_ENTERPRISE_EXCEPTION_REGISTER.md` if the rollback will persist
+```
 
-## Mitigations
+## Rollback Guidance
 
-- only require stable live contexts
-- keep first enforcement pass conservative
-- announce the change before applying it
-- re-verify check names immediately before applying the ruleset
+If a rollout causes merge deadlock:
+
+1. remove or disable the newly added required check from the repo/org ruleset
+2. capture the reason as an exception if the rollback will remain in place
+3. link the rollback decision to the relevant governance issue
+4. reschedule enforcement only after the underlying workflow behavior is fixed
+
+## Definition of Done For This Planning Slice
+
+This rollout pack is complete when:
+- the current org and repo ruleset state is documented accurately
+- the staged apply order is explicit
+- the owner communication template exists
+- all known non-baseline deviations are represented in the exception register
