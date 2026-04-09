@@ -18,6 +18,8 @@ if __package__ in {None, ""}:
 
 from scripts.knowledge_base.log_graphify_usage import append_event, build_event
 
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
 
 TEXT_EXTENSIONS = {
     ".md",
@@ -71,13 +73,13 @@ class Scenario:
     id: str
     issue_number: int
     repo: str
-    repo_path: str | None
     graph_key: str
     task_type: str
     prompt: str
     query_terms: list[str]
     expected_files: list[str]
     expected_terms: list[str]
+    repo_path: str | None = None
 
 
 @dataclass
@@ -144,6 +146,18 @@ def load_graph(graph_root: Path, graph_key: str) -> GraphData:
     links = payload.get("links", [])
     node_by_id = {str(node.get("id")): node for node in nodes}
     return GraphData(nodes=nodes, links=links, community_labels=community_labels, node_by_id=node_by_id)
+
+
+def resolve_repo_root(repos_root: Path, scenario: Scenario) -> Path:
+    if scenario.repo_path:
+        candidate = Path(scenario.repo_path).expanduser()
+        if not candidate.is_absolute():
+            candidate = (repos_root / candidate).resolve()
+        if candidate.exists():
+            return candidate
+    if scenario.repo == "hldpro-governance":
+        return REPO_ROOT
+    return repos_root / scenario.repo
 
 
 def relativize_source_file(source_file: str, repo_root: Path) -> str:
@@ -284,7 +298,7 @@ def evaluate_relevance(top_files: list[str], evidence_text: str, scenario: Scena
 
 
 def graphify_results(graph_root: Path, repos_root: Path, scenario: Scenario) -> dict[str, Any]:
-    repo_root = Path(scenario.repo_path) if scenario.repo_path else repos_root / scenario.repo
+    repo_root = resolve_repo_root(repos_root, scenario)
     graph = load_graph(graph_root, scenario.graph_key)
     tokens = normalize_tokens([scenario.prompt] + scenario.query_terms + scenario.expected_terms)
 
@@ -386,7 +400,7 @@ def iter_repo_text_files(repo_root: Path) -> list[Path]:
 
 
 def baseline_results(repos_root: Path, scenario: Scenario) -> dict[str, Any]:
-    repo_root = Path(scenario.repo_path) if scenario.repo_path else repos_root / scenario.repo
+    repo_root = resolve_repo_root(repos_root, scenario)
     tokens = normalize_tokens([scenario.prompt] + scenario.query_terms + scenario.expected_terms)
     scored: list[tuple[float, str, str]] = []
     for path in iter_repo_text_files(repo_root):
