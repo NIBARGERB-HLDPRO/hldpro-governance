@@ -374,8 +374,9 @@ def extract_claim_anchors(finding: Finding) -> list[str]:
         if not text:
             continue
         anchors.extend(match.casefold() for match in re.findall(r"`([^`]+)`", text))
-        anchors.extend(match.casefold() for match in re.findall(r"\b[A-Za-z_][A-Za-z0-9_]*\b", text) if "_" in match)
-        anchors.extend(match.casefold() for match in re.findall(r"\b[A-Za-z][A-Za-z0-9]+(?:[A-Z][A-Za-z0-9]*)+\b", text))
+        word_like = re.findall(r"\b[A-Za-z_][A-Za-z0-9_]*\b", text)
+        anchors.extend(match.casefold() for match in word_like if "_" in match)
+        anchors.extend(match.casefold() for match in word_like if looks_like_camel_identifier(match))
     deduped: list[str] = []
     for anchor in anchors:
         normalized = anchor.strip().casefold()
@@ -384,6 +385,14 @@ def extract_claim_anchors(finding: Finding) -> list[str]:
         if normalized not in deduped:
             deduped.append(normalized)
     return deduped
+
+
+def looks_like_camel_identifier(value: str) -> bool:
+    if "_" in value or len(value) < 3 or not value[0].isalpha():
+        return False
+    if not any(char.isupper() for char in value[1:]):
+        return False
+    return any(char.islower() for char in value)
 
 
 def read_context_window(lines: list[str], line_number: int, radius: int = 2) -> str:
