@@ -2,12 +2,12 @@
 Date: 2026-04-09
 
 ## #142: Add CODEOWNERS baseline for GitHub Enterprise Sprint 1
-Labels: none | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: none | Created: 2026-04-07
 
 ## Summary\nAdd a minimal .github/CODEOWNERS baseline for Sprint 1 GitHub Enterprise governance rollout.\n\n## Why\n- Align knocktracker with org-wide CODEOWNERS enforcement planning\n- Prepare staged ruleset rollout without surprising active work\n- Keep ownership explicit for workflow, app, docs, and scripts paths\n\n## Scope\n- add .github/CODEOWNERS\n- keep owner mapping minimal and conservative for first pass\n- do not change GitHub branch protection or rulesets in this issue\n\n## Acceptan
 ---
 ## #138: Doc consistency scaffolding for governance docs
-Labels: none | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: none | Created: 2026-04-07
 
 ## Summary
 Bring knocktracker governance docs into the shared minimum contract without flattening repo-specific style.
@@ -23,17 +23,17 @@ Bring knocktracker governance docs into the shared minimum contract without flat
 - governance
 ---
 ## #135: Document CLAUDE.md conflict runbook and Codex contract
-Labels: none | Created: 2026-04-06 | Updated: 2026-04-06
+Labels: none | Created: 2026-04-06
 
 Docs/governance slice for adding a reusable CLAUDE.md conflict-resolution runbook, Codex contract, and aligned PR handoff requirements.
 ---
 ## #121: chore: migrate sase-microvm runner to ubuntu-latest
-Labels: none | Created: 2026-04-02 | Updated: 2026-04-02
+Labels: none | Created: 2026-04-02
 
 The self-hosted sase-microvm runner no longer exists. All workflows referencing it are stuck. Migrate to ubuntu-latest.
 ---
 ## #111: Security/documentation/gate remediation runbook and doc alignment
-Labels: none | Created: 2026-03-09 | Updated: 2026-03-09
+Labels: none | Created: 2026-03-09
 
 ## Summary
 Create a remediation runbook and align documentation around secret handling, GHL legacy status, and governance enforcement gaps identified in repository review.
@@ -46,7 +46,7 @@ Current docs and repo artifacts contain conflicting GHL secret guidance, stale p
 - Update top-level documentation to remove or quarantine insecur
 ---
 ## #108: Consolidate Routes UX Into Map Panel; Remove Bottom Routes Tab
-Labels: none | Created: 2026-02-19 | Updated: 2026-02-20
+Labels: none | Created: 2026-02-19
 
 Status: queued
 
@@ -65,7 +65,7 @@ Remove the bottom-tab Routes screen and consolidate route management into the Ma
   - hou
 ---
 ## #107: Fix Start Pin Anchor: Stop #1 Must Begin Near Selected Pin
-Labels: none | Created: 2026-02-19 | Updated: 2026-02-20
+Labels: none | Created: 2026-02-19
 
 Status: queued
 
@@ -82,7 +82,7 @@ Route numbering/order is not consistently anchored to the selected start pin; fi
 - Preserve closed-loop objectiv
 ---
 ## #106: Fix Route Numbering + Street Coverage Guard for Target Home Count
-Labels: none | Created: 2026-02-19 | Updated: 2026-02-20
+Labels: none | Created: 2026-02-19
 
 Status: queued
 
@@ -98,7 +98,7 @@ Fix route build behavior where selected routes do not show numbered house stops 
 Curren
 ---
 ## #96: Implement Hierarchical RBAC: Admin, Manager, User
-Labels: none | Created: 2026-02-19 | Updated: 2026-02-19
+Labels: none | Created: 2026-02-19
 
 Status: queued
 
@@ -113,7 +113,7 @@ Current permissions are not clearly defined for multi-level administration. We n
 - Manager: operational management
 ---
 ## #95: Manager Settings: Add Invite Users Flow
-Labels: none | Created: 2026-02-19 | Updated: 2026-02-19
+Labels: none | Created: 2026-02-19
 
 Status: queued
 
@@ -129,7 +129,7 @@ Managers currently lack a clear in-app path to invite users, and this should liv
 - Show invite status list (pending/accepted/exp
 ---
 ## #93: Add Manager Settings Section for Admin/Manager Controls
-Labels: none | Created: 2026-02-19 | Updated: 2026-02-19
+Labels: none | Created: 2026-02-19
 
 Status: queued
 
@@ -144,7 +144,7 @@ Manager features (territory assignment, routing controls, integration admin, etc
 - Group manager-only items in one location with clear labels and d
 ---
 ## #92: Document and Implement Manager Flow: Create Territories and Assign Users
-Labels: none | Created: 2026-02-19 | Updated: 2026-02-19
+Labels: none | Created: 2026-02-19
 
 Status: queued
 
@@ -160,7 +160,7 @@ The current flow is unclear for managers: how to create territories, assign reps
 - Provide a visible assignment state (who is assigned, w
 ---
 ## #89: Add Face ID / Passkey Login to Mobile App
-Labels: none | Created: 2026-02-19 | Updated: 2026-02-19
+Labels: none | Created: 2026-02-19
 
 Status: queued
 

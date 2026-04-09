@@ -2,7 +2,7 @@
 Date: 2026-04-09
 
 ## #711: Chart Audit validation corpus and route/test harness hardening
-Labels: none | Created: 2026-04-09 | Updated: 2026-04-09
+Labels: none | Created: 2026-04-09
 
 Parent epic: #706
 Source draft PR: #704
@@ -19,7 +19,7 @@ Source draft PR: #704
 - Test additions materially support the chart-audit rollout without hiding product defects inside test-only
 ---
 ## #710: Chart Audit Phase 3: QAPI feed, trends, and PIP triggers
-Labels: none | Created: 2026-04-09 | Updated: 2026-04-09
+Labels: none | Created: 2026-04-09
 
 Parent epic: #706
 Source draft PR: #704
@@ -37,7 +37,7 @@ Source draft PR: #704
 
 ---
 ## #709: Chart Audit Phase 4: portfolio, benchmarking, and scheduling
-Labels: none | Created: 2026-04-09 | Updated: 2026-04-09
+Labels: none | Created: 2026-04-09
 
 Parent epic: #706
 Source draft PR: #704
@@ -55,7 +55,7 @@ Source draft PR: #704
 
 ---
 ## #708: Chart Audit Phase 2: FHIR and CCD structured intake
-Labels: none | Created: 2026-04-09 | Updated: 2026-04-09
+Labels: none | Created: 2026-04-09
 
 Parent epic: #706
 Source draft PR: #704
@@ -72,7 +72,7 @@ Source draft PR: #704
 
 ---
 ## #707: Chart Audit Phase 1: core schema, RLS, ingestion, and reporting
-Labels: none | Created: 2026-04-09 | Updated: 2026-04-09
+Labels: none | Created: 2026-04-09
 
 Parent epic: #706
 Source draft PR: #704
@@ -90,7 +90,7 @@ Source draft PR: #704
 - Re
 ---
 ## #706: Epic: Governed intake and decomposition for Chart Audit / QAPI module
-Labels: none | Created: 2026-04-09 | Updated: 2026-04-09
+Labels: none | Created: 2026-04-09
 
 ## Summary
 Draft PR #704 contains a large multi-phase Chart Audit / QAPI implementation intended for `main`, but it is not currently issue-backed and is too large to move through the repo's governed issue lane flow as a single unit.

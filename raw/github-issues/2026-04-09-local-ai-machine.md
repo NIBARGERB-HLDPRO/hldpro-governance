@@ -2,7 +2,7 @@
 Date: 2026-04-09
 
 ## #376: Fix docs progress path casing conflict on macOS
-Labels: none | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: none | Created: 2026-04-07
 
 ## Summary
 Fix the tracked path-casing conflict between `docs/PROGRESS.md` and `docs/progress.md` so macOS worktrees can close out cleanly.
@@ -17,7 +17,7 @@ Fix the tracked path-casing conflict between `docs/PROGRESS.md` and `docs/progre
 - preserve the intended progre
 ---
 ## #374: Add CODEOWNERS baseline for GitHub Enterprise Sprint 1
-Labels: none | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: none | Created: 2026-04-07
 
 ## Summary
 Add a minimal `.github/CODEOWNERS` baseline for GitHub Enterprise Sprint 1.
@@ -35,7 +35,7 @@ Add a minimal `.github/CODEOWNERS` baseline for GitHub Enterprise Sprint 1.
 ##
 ---
 ## #373: Unblock CODEOWNERS lane by restoring Python 3.11 session-lock tooling
-Labels: none | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: none | Created: 2026-04-07
 
 ## Summary
 Restore the repo-required session lock/startup toolchain so a governed CODEOWNERS lane can be opened safely.
@@ -48,7 +48,7 @@ The repo requires `scripts/ops/session_lock.py acquire <branch-name>` before wor
 - GitHub Enterpris
 ---
 ## #369: Doc consistency scaffolding for governance docs
-Labels: none | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: none | Created: 2026-04-07
 
 ## Summary
 Bring local-ai-machine governance docs into the shared minimum contract without forcing a fake full-schema format.
@@ -64,42 +64,42 @@ Bring local-ai-machine governance docs into the shared minimum contract without 
 - PROGRESS reflects the scoped doc-consist
 ---
 ## #360: Nightly reliability failure: microvm-smoke-nightly (24024202964)
-Labels: ops, nightly-failure | Created: 2026-04-06 | Updated: 2026-04-06
+Labels: ops, nightly-failure | Created: 2026-04-06
 
 Workflow run: https://github.com/NIBARGERB-HLDPRO/local-ai-machine/actions/runs/24024202964
 Job: microvm-smoke-nightly
 Action required: run microvm smoke triage flow in OPERATIONS_TRIAGE_RUNBOOK.md
 ---
 ## #357: Nightly reliability failure: microvm-smoke-nightly (23996946804)
-Labels: ops, nightly-failure | Created: 2026-04-05 | Updated: 2026-04-05
+Labels: ops, nightly-failure | Created: 2026-04-05
 
 Workflow run: https://github.com/NIBARGERB-HLDPRO/local-ai-machine/actions/runs/23996946804
 Job: microvm-smoke-nightly
 Action required: run microvm smoke triage flow in OPERATIONS_TRIAGE_RUNBOOK.md
 ---
 ## #355: Nightly reliability failure: microvm-smoke-nightly (23974260969)
-Labels: ops, nightly-failure | Created: 2026-04-04 | Updated: 2026-04-04
+Labels: ops, nightly-failure | Created: 2026-04-04
 
 Workflow run: https://github.com/NIBARGERB-HLDPRO/local-ai-machine/actions/runs/23974260969
 Job: microvm-smoke-nightly
 Action required: run microvm smoke triage flow in OPERATIONS_TRIAGE_RUNBOOK.md
 ---
 ## #352: Nightly reliability failure: microvm-smoke-nightly (23938502777)
-Labels: ops, nightly-failure | Created: 2026-04-03 | Updated: 2026-04-03
+Labels: ops, nightly-failure | Created: 2026-04-03
 
 Workflow run: https://github.com/NIBARGERB-HLDPRO/local-ai-machine/actions/runs/23938502777
 Job: microvm-smoke-nightly
 Action required: run microvm smoke triage flow in OPERATIONS_TRIAGE_RUNBOOK.md
 ---
 ## #219: Nightly reliability failure: control-plane-and-retention (23105810428)
-Labels: ops, nightly-failure | Created: 2026-03-15 | Updated: 2026-03-15
+Labels: ops, nightly-failure | Created: 2026-03-15
 
 Workflow run: https://github.com/NIBARGERB-HLDPRO/local-ai-machine/actions/runs/23105810428
 Job: control-plane-and-retention
 Action required: inspect failed step and apply remediation from OPERATIONS_TRIAGE_RUNBOOK.md
 ---
 ## #169: Slack HITL async approvals suppressed by follow-up prompt/context mismatch
-Labels: none | Created: 2026-03-10 | Updated: 2026-03-10
+Labels: none | Created: 2026-03-10
 
 Title: Slack HITL async approvals suppressed because webhook follow-up prompt omits bridge-parsable HITL context
 

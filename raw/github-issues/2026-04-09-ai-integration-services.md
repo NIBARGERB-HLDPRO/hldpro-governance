@@ -2,7 +2,7 @@
 Date: 2026-04-09
 
 ## #807: [Test Failure] PR #806: pr-806-507
-Labels: test-failure, auto-created | Created: 2026-04-09 | Updated: 2026-04-09
+Labels: test-failure, auto-created | Created: 2026-04-09
 
 ## Test Failure — PR #806
 
@@ -24,7 +24,7 @@ Labels: test-failure, auto-created | Created: 2026-04-09 | Updated: 2026-04-09
 [PASS] STAGING_SUPABASE_URL configured
 ---
 ## #805: [Test Failure] PR #804: pr-804-506
-Labels: test-failure, auto-created | Created: 2026-04-09 | Updated: 2026-04-09
+Labels: test-failure, auto-created | Created: 2026-04-09
 
 ## Test Failure — PR #804
 
@@ -47,7 +47,7 @@ Labels: test-failure, auto-created | Created: 2026-04-09 | Updated: 2026-04-09
 
 ---
 ## #803: [Test Failure] PR #802: pr-802-505
-Labels: test-failure, auto-created | Created: 2026-04-09 | Updated: 2026-04-09
+Labels: test-failure, auto-created | Created: 2026-04-09
 
 ## Test Failure — PR #802
 
@@ -69,7 +69,7 @@ Labels: test-failure, auto-created | Created: 2026-04-09 | Updated: 2026-04-09
 [PASS] STAGING_SUPABASE_URL conf
 ---
 ## #801: [Test Failure] PR #800: pr-800-504
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #800
 
@@ -91,7 +91,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [PASS] STAGING_SUPABASE_URL configured
 ---
 ## #799: [Test Failure] PR #798: pr-798-503
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #798
 
@@ -113,7 +113,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [PASS] STAGING_SUPABASE_URL configured
 ---
 ## #797: [Test Failure] PR #794: pr-794-502
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #794
 
@@ -135,7 +135,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [PASS] STAGING_SUPABA
 ---
 ## #796: [Test Failure] PR #794: pr-794-501
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #794
 
@@ -157,7 +157,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [PASS] STAGING_SUPABA
 ---
 ## #795: [Test Failure] PR #794: pr-794-500
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #794
 
@@ -179,7 +179,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [PASS] STAGING_SUPABA
 ---
 ## #793: [Test Failure] PR #791: pr-791-499
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #791
 
@@ -202,7 +202,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [PASS] STAG
 ---
 ## #792: [Test Failure] PR #791: pr-791-498
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #791
 
@@ -225,7 +225,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [PASS] STAG
 ---
 ## #790: [Test Failure] PR #788: pr-788-497
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #788
 
@@ -247,7 +247,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [PASS] STAGING_SUPABASE_URL c
 ---
 ## #789: [Test Failure] PR #788: pr-788-496
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #788
 
@@ -269,7 +269,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [PASS] STAGING_SUPABASE_URL c
 ---
 ## #787: [Test Failure] PR #784: pr-784-495
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #784
 
@@ -291,7 +291,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [PASS] STAGING_SUPABASE_UR
 ---
 ## #786: [Test Failure] PR #785: pr-785-494
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #785
 
@@ -313,7 +313,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [PASS] STAGING_SUPABA
 ---
 ## #783: [Test Failure] PR #781: pr-781-493
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #781
 
@@ -336,7 +336,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [
 ---
 ## #782: [Test Failure] PR #781: pr-781-492
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #781
 
@@ -359,7 +359,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [
 ---
 ## #780: [Test Failure] PR #779: pr-779-491
-Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
+Labels: test-failure, auto-created | Created: 2026-04-08
 
 ## Test Failure — PR #779
 
@@ -381,7 +381,7 @@ Labels: test-failure, auto-created | Created: 2026-04-08 | Updated: 2026-04-08
 [PASS] STAGING_SUPABASE_URL configu
 ---
 ## #778: [Test Failure] PR #758: pr-758-490
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #758
 
@@ -403,7 +403,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING_SUP
 ---
 ## #777: [Test Failure] PR #681: pr-681-489
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #681
 
@@ -425,7 +425,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING_SUPABASE_URL 
 ---
 ## #776: [Test Failure] PR #681: pr-681-488
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #681
 
@@ -447,7 +447,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING_SUPABASE_URL 
 ---
 ## #775: [Test Failure] PR #681: pr-681-487
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #681
 
@@ -469,7 +469,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING_SUPABASE_URL 
 ---
 ## #774: [Test Failure] PR #681: pr-681-486
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #681
 
@@ -491,7 +491,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING_SUPABASE_URL 
 ---
 ## #773: [Test Failure] PR #772: pr-772-485
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #772
 
@@ -514,7 +514,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS
 ---
 ## #771: [Test Failure] PR #768: pr-768-484
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #768
 
@@ -536,7 +536,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING_SUPABAS
 ---
 ## #770: [Test Failure] PR #768: pr-768-483
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #768
 
@@ -558,7 +558,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING_SUPABAS
 ---
 ## #769: [Test Failure] PR #768: pr-768-482
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #768
 
@@ -580,7 +580,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING_SUPABAS
 ---
 ## #767: [Test Failure] PR #766: pr-766-481
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #766
 
@@ -602,7 +602,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STA
 ---
 ## #765: [Test Failure] PR #764: pr-764-480
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #764
 
@@ -624,7 +624,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING_SUPABASE_URL conf
 ---
 ## #763: [Test Failure] PR #762: pr-762-479
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #762
 
@@ -646,7 +646,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING
 ---
 ## #761: [Test Failure] PR #760: pr-760-478
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #760
 
@@ -668,7 +668,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING_SUPABASE_UR
 ---
 ## #759: [Test Failure] PR #757: pr-757-476
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #757
 
@@ -690,7 +690,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING_SUPABASE_URL config
 ---
 ## #756: [Test Failure] PR #755: pr-755-471
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #755
 
@@ -713,7 +713,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [
 ---
 ## #754: [Test Failure] PR #742: pr-742-470
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #742
 
@@ -736,7 +736,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PA
 ---
 ## #752: [Test Failure] PR #742: pr-742-468
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #742
 
@@ -759,7 +759,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PA
 ---
 ## #751: [Test Failure] PR #742: pr-742-467
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #742
 
@@ -782,7 +782,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PA
 ---
 ## #750: [Test Failure] PR #742: pr-742-466
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #742
 
@@ -805,7 +805,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PA
 ---
 ## #749: [Test Failure] PR #742: pr-742-465
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #742
 
@@ -828,7 +828,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PA
 ---
 ## #747: [Test Failure] PR #742: pr-742-463
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #742
 
@@ -851,7 +851,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PA
 ---
 ## #746: [Test Failure] PR #744: pr-744-462
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #744
 
@@ -874,7 +874,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PA
 ---
 ## #745: [Test Failure] PR #743: pr-743-461
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #743
 
@@ -897,7 +897,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS]
 ---
 ## #741: [Test Failure] PR #739: pr-739-459
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #739
 
@@ -920,7 +920,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGIN
 ---
 ## #740: [Test Failure] PR #739: pr-739-458
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #739
 
@@ -943,7 +943,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGIN
 ---
 ## #737: [Test Failure] PR #736: pr-736-457
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #736
 
@@ -966,7 +966,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [
 ---
 ## #735: [Test Failure] PR #733: pr-733-456
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #733
 
@@ -989,7 +989,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] 
 ---
 ## #734: [Test Failure] PR #733: pr-733-455
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #733
 
@@ -1012,7 +1012,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] 
 ---
 ## #732: [Test Failure] PR #731: pr-731-454
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #731
 
@@ -1034,7 +1034,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS] STAGING_SUPABASE_URL configured
 ---
 ## #730: [Test Failure] PR #726: pr-726-453
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #726
 
@@ -1057,7 +1057,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS]
 ---
 ## #729: [Test Failure] PR #726: pr-726-452
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #726
 
@@ -1080,7 +1080,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS]
 ---
 ## #728: [Test Failure] PR #726: pr-726-451
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #726
 
@@ -1103,7 +1103,7 @@ Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
 [PASS]
 ---
 ## #727: [Test Failure] PR #724: pr-724-450
-Labels: test-failure, auto-created | Created: 2026-04-07 | Updated: 2026-04-07
+Labels: test-failure, auto-created | Created: 2026-04-07
 
 ## Test Failure — PR #724
 
