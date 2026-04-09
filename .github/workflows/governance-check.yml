@@ -69,15 +69,25 @@ jobs:
 
           # DATA_DICTIONARY.md
           require_pattern "docs/DATA_DICTIONARY.md" '^# Data Dictionary$' 'Data Dictionary title'
+          require_pattern "docs/DATA_DICTIONARY.md" 'Last [Uu]pdated' 'Last updated metadata'
           if [ "$REPO_NAME" = "HealthcarePlatform" ]; then
             require_pattern "docs/DATA_DICTIONARY.md" 'backend/DATA_DICTIONARY\.md' 'canonical backend pointer'
           else
-            require_pattern "docs/DATA_DICTIONARY.md" '(^## Table of Contents$)|(^\| Table \| Description \| Key Columns \|$)|(^\| Column \| Type \| Constraints \| Notes \|$)' 'dictionary body or pointer contract'
+            require_pattern "docs/DATA_DICTIONARY.md" '(Source of [Tt]ruth|canonical)' 'source-of-truth metadata'
+            require_pattern "docs/DATA_DICTIONARY.md" '(^## Table of Contents$)|(^\| Table \| Description \| Key Columns \|$)|(^\| Column \| Type \| Constraints \| Notes \|$)|(^\| Artifact \| Description \| Key Fields \|$)' 'dictionary body or pointer contract'
+            if grep -Eq '^\| \((tables|columns) will be documented here\)' "docs/DATA_DICTIONARY.md"; then
+              FAILURES="${FAILURES}\n  - docs/DATA_DICTIONARY.md: placeholder-only rows are not allowed"
+            fi
           fi
 
           # SERVICE_REGISTRY.md
           require_pattern "docs/SERVICE_REGISTRY.md" '^# Service Registry' 'Service Registry title'
+          require_pattern "docs/SERVICE_REGISTRY.md" 'Last [Uu]pdated' 'Last updated metadata'
+          require_pattern "docs/SERVICE_REGISTRY.md" '(Source of [Tt]ruth|canonical)' 'source-of-truth metadata'
           require_pattern "docs/SERVICE_REGISTRY.md" '(^\| Function \|)|(^\| Service \|)' 'service or function registry table'
+          if grep -Eq '^\| \((services|functions) will be documented here\)' "docs/SERVICE_REGISTRY.md"; then
+            FAILURES="${FAILURES}\n  - docs/SERVICE_REGISTRY.md: placeholder-only rows are not allowed"
+          fi
 
           if [ -n "$FAILURES" ]; then
             echo "::error::GOVERNANCE GATE FAILED: Governance doc structure is incomplete:${FAILURES}"
