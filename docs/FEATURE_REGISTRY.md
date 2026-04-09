@@ -36,6 +36,7 @@
 | GOV-009 | CLOSEOUT | Stage 6 closeout hook and template | COMPLETE | OPS_READY |
 | GOV-010 | RAW_FEEDS | Nightly GitHub issue feed sync via GitHub Actions | COMPLETE | INTERNAL_ONLY |
 | GOV-011 | ISSUE_BACKLOG_ALIGNMENT | Governance backlog must remain GitHub-issue-backed | COMPLETE | REQUIRED |
+| GOV-012 | CODEX_INGESTION | Codex second-opinion ingestion and backlog surfacing loop | COMPLETE | OPS_READY |
 
 ---
 
@@ -76,3 +77,4 @@
 | GOV-008 | `CLAUDE.md` rewritten as pure dispatcher — routes to overlord agents, never answers directly. Pre-session reads: `wiki/index.md` + `GRAPH_REPORT.md`. |
 | GOV-009 | `hooks/closeout-hook.sh` validates Stage 6 closeout template, triggers repo-local graph rebuild logic, and prompts for `operator_context` write-back. Template at `raw/closeouts/TEMPLATE.md`. |
 | GOV-010 | `raw-feed-sync.yml` fetches open GitHub issues from all governed repos daily, writes markdown summaries to `raw/github-issues/`. Initial snapshot files have been seeded locally for the bootstrap loop. |
+| GOV-012 | `scripts/overlord/codex_ingestion.py` now supports real governed-repo `generate`, `qualify`, `status`, and `promote` flows with bounded timeouts, precomputed diff context, CI auth/canary support, and session-start backlog surfacing. |
