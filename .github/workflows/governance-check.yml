@@ -2,6 +2,10 @@ name: Governance Check (Reusable)
 
 on:
   workflow_call:
+    inputs:
+      base_sha:
+        required: false
+        type: string
     secrets:
       SUPABASE_ANON_KEY:
         required: false
@@ -129,15 +133,30 @@ jobs:
             --require-if-issue-branch \
             --branch-name "$BRANCH_NAME"
 
+      - name: Resolve diff base
+        id: diff_base
+        run: |
+          set -euo pipefail
+
+          BASE_SHA="${{ inputs.base_sha }}"
+
+          if [ -z "$BASE_SHA" ]; then
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              BASE_SHA="${{ github.event.pull_request.base.sha }}"
+            elif [ -n "${{ github.event.before }}" ] && [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+              BASE_SHA="${{ github.event.before }}"
+            else
+              BASE_SHA="$(git rev-parse HEAD~1)"
+            fi
+          fi
+
+          echo "base_sha=$BASE_SHA" >> "$GITHUB_OUTPUT"
+
       # ── Categorize changed files ──
       - name: Get changed files
         id: changed
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            BASE="${{ github.event.pull_request.base.sha }}"
-          else
-            BASE="${{ github.event.before }}"
-          fi
+          BASE="${{ steps.diff_base.outputs.base_sha }}"
 
           CHANGED=$(git diff --name-only "$BASE" HEAD 2>/dev/null || git diff --name-only HEAD~1 HEAD)
           {
@@ -262,11 +281,7 @@ jobs:
             fi
           fi
 
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            RANGE="${{ github.event.pull_request.base.sha }}..HEAD"
-          else
-            RANGE="${{ github.event.before }}..HEAD"
-          fi
+          RANGE="${{ steps.diff_base.outputs.base_sha }}..HEAD"
           if git log --oneline "$RANGE" 2>/dev/null | grep -qiE 'fix|bug|patch|hotfix'; then
             IS_BUG_FIX="true"
           fi
@@ -325,11 +340,7 @@ jobs:
       # ── 8. PENDING_ placeholder scan ──
       - name: Check for PENDING_ placeholders
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            BASE="${{ github.event.pull_request.base.sha }}"
-          else
-            BASE="${{ github.event.before }}"
-          fi
+          BASE="${{ steps.diff_base.outputs.base_sha }}"
 
           PENDING_FILES=""
           for f in $(git diff --name-only "$BASE" HEAD | grep -E '\.(html|ts|tsx|js|json)$' || true); do
@@ -378,11 +389,7 @@ jobs:
       - name: Check FAIL_FAST_LOG.md content quality
         if: steps.changed.outputs.has_failfast == 'true'
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            BASE="${{ github.event.pull_request.base.sha }}"
-          else
-            BASE="${{ github.event.before }}"
-          fi
+          BASE="${{ steps.diff_base.outputs.base_sha }}"
           DIFF=$(git diff "$BASE" HEAD -- docs/FAIL_FAST_LOG.md)
           EMPTY_COLS=$(echo "$DIFF" | grep '^+|' | grep -E '\| \||\|  \|' | grep -v '^+|---' | head -3)
           if [ -n "$EMPTY_COLS" ]; then
@@ -396,11 +403,7 @@ jobs:
       - name: Check PROGRESS.md row count
         if: steps.changed.outputs.has_progress == 'true'
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            BASE="${{ github.event.pull_request.base.sha }}"
-          else
-            BASE="${{ github.event.before }}"
-          fi
+          BASE="${{ steps.diff_base.outputs.base_sha }}"
           OLD_COUNT=$(git show "${BASE}":docs/PROGRESS.md 2>/dev/null | grep -c '^|' || echo "0")
           NEW_COUNT=$(grep -c '^|' docs/PROGRESS.md || echo "0")
           if [ "$NEW_COUNT" -lt "$OLD_COUNT" ]; then

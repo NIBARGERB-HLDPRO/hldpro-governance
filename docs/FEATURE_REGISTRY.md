@@ -55,6 +55,7 @@
 | Feature ID | Notes |
 |---|---|
 | GOV-002 | Reusable workflow enforces doc co-staging, placeholder scans, migration documentation, and other shared merge gates. |
+| GOV-002 | The reusable governance workflow now accepts a caller-provided `base_sha` and resolves one shared diff base internally so all range-based checks run against the full PR delta under `workflow_call`, not just the most recent commit. |
 | GOV-002 | Governance doc consistency rollout now requires source-of-truth metadata plus non-placeholder `DATA_DICTIONARY` and `SERVICE_REGISTRY` bodies in governed repos, while preserving repo-specific exceptions such as AIS backlog shape and the HealthcarePlatform backend pointer. |
 | GOV-006 | Current rollout adds `docs/FEATURE_REGISTRY.md` as a governed artifact and blocks stale code-only changes when the registry is not updated. |
 
