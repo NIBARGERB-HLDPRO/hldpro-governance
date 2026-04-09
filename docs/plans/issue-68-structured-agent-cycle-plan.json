@@ -1,0 +1,132 @@
+{
+  "session_id": "session-20260409-issue-68-structured-plan-rollout",
+  "issue_number": 68,
+  "objective": "Roll out the governance-owned structured agent cycle plan standard across governed repos without breaking repo-specific execution lanes, and record the landed adoption state in governance.",
+  "tier": 2,
+  "scope_boundary": [
+    "Pin governed repos to the reviewed governance-check workflow SHA that contains the canonical structured-plan validator.",
+    "Add explicit repo-level structured-plan adoption guidance where the contract was previously implicit or missing.",
+    "Document HealthcarePlatform's repo-local schema/template as a compatibility shim aligned to the governance-owned field contract.",
+    "Record rollout evidence and any newly surfaced follow-up work before closing the governance issue."
+  ],
+  "out_of_scope": [
+    "Replacing HealthcarePlatform's Phase 8 artifact path with the generic docs/plans path.",
+    "Changing the canonical governance schema fields introduced in issue #67.",
+    "Adding new repo-local schema validators to non-HealthcarePlatform repos."
+  ],
+  "research_summary": "HealthcarePlatform already enforced a repo-local structured-cycle lane whose local schema fields matched the governance-owned schema exactly, so the correct move was a documented compatibility shim instead of a disruptive migration. ai-integration-services, knocktracker, and local-ai-machine already consumed the reusable governance workflow but needed explicit structured-plan instructions and normalized workflow SHA pinning. ASC-Evaluator had no governance workflow caller yet and needed both the pinned reusable workflow and structured-plan adoption guidance. During rollout, local-ai-machine's riskfix branch contract and ai-integration-services' existing governance doc contract surfaced additional in-slice fixes that were completed before closeout.",
+  "research_artifacts": [
+    "docs/schemas/structured-agent-cycle-plan.schema.json",
+    "OVERLORD_BACKLOG.md",
+    "../HealthcarePlatform/backend/docs/schemas/structured-agent-cycle-plan.schema.json",
+    "../HealthcarePlatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js",
+    "../HealthcarePlatform/.github/workflows/governance.yml",
+    "../ai-integration-services/.github/workflows/governance.yml",
+    "../knocktracker/.github/workflows/governance.yml",
+    "../local-ai-machine/.github/workflows/governance.yml",
+    "../ASC-Evaluator/CLAUDE.md"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Roll out the shared validator caller and explicit structured-plan startup guidance in the governed repos that lacked a complete contract.",
+      "tasks": [
+        "Pin ai-integration-services, knocktracker, and local-ai-machine governance workflow callers to the reviewed governance commit containing the validator.",
+        "Add a reusable governance workflow caller to ASC-Evaluator.",
+        "Add explicit structured-plan guidance to repo startup docs for AIS, knocktracker, local-ai-machine, and ASC-Evaluator."
+      ],
+      "acceptance_criteria": [
+        "Governed repos consuming the reusable workflow point at the reviewed governance SHA containing the structured-plan validator.",
+        "ASC-Evaluator gains a reusable governance gate.",
+        "Repo startup guidance names where structured-plan artifacts should live and that the governance-owned schema is canonical."
+      ],
+      "file_paths": [
+        "../ai-integration-services/.github/workflows/governance.yml",
+        "../ai-integration-services/CLAUDE.md",
+        "../knocktracker/.github/workflows/governance.yml",
+        "../knocktracker/CLAUDE.md",
+        "../local-ai-machine/.github/workflows/governance.yml",
+        "../local-ai-machine/AGENTS.md",
+        "../ASC-Evaluator/.github/workflows/governance.yml",
+        "../ASC-Evaluator/CLAUDE.md"
+      ]
+    },
+    {
+      "name": "Sprint 2",
+      "goal": "Document HealthcarePlatform compatibility, absorb rollout-discovered fixes, and close governance with actual merged evidence.",
+      "tasks": [
+        "Document HealthcarePlatform's repo-local schema/template as a compatibility shim aligned to the governance-owned field contract.",
+        "Fix rollout-discovered blockers in ai-integration-services and local-ai-machine rather than leaving them as hidden drift.",
+        "Update governance backlog and PDCA/R closeout with the merged repo PR evidence and any additional follow-up issue."
+      ],
+      "acceptance_criteria": [
+        "HealthcarePlatform documents the compatibility shim instead of silently forking the field contract.",
+        "All targeted repo rollout PRs merge successfully.",
+        "Governance closeout records merged PR evidence and any newly surfaced follow-up issue before closure."
+      ],
+      "file_paths": [
+        "../HealthcarePlatform/CLAUDE.md",
+        "../HealthcarePlatform/backend/docs/governance/STRUCTURED_AGENT_CYCLE_RUNBOOK.md",
+        "../ai-integration-services/docs/SERVICE_REGISTRY.md",
+        "../ai-integration-services/docs/PROGRESS.md",
+        "../local-ai-machine/docs/PROGRESS.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/plans/issue-68-structured-plan-rollout-pdcar.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "governance reviewer",
+      "role": "Cross-repo rollout reviewer",
+      "focus": "Validate that the rollout should prefer workflow pinning, startup guidance, and a documented HealthcarePlatform compatibility shim instead of attempting a disruptive cross-repo process rewrite.",
+      "status": "accepted",
+      "summary": "HealthcarePlatform already matched the canonical required fields, so a compatibility shim was the lowest-risk path. The other repos only needed explicit contract adoption and reviewed workflow pins.",
+      "evidence": [
+        "../HealthcarePlatform/backend/docs/schemas/structured-agent-cycle-plan.schema.json",
+        "../HealthcarePlatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js",
+        "../ai-integration-services/.github/workflows/governance.yml",
+        "../knocktracker/.github/workflows/governance.yml",
+        "../local-ai-machine/.github/workflows/governance.yml"
+      ]
+    },
+    {
+      "reviewer": "execution reviewer",
+      "role": "Rollout verification reviewer",
+      "focus": "Ensure the slice absorbs rollout-discovered blockers instead of claiming success while repo PRs are still failing.",
+      "status": "accepted",
+      "summary": "The rollout exposed two real blockers: ai-integration-services needed existing governance doc metadata/progress alignment, and local-ai-machine required both a documented progress update and a riskfix branch to satisfy its own repo gate. Both were fixed in-slice before closeout.",
+      "evidence": [
+        "../ai-integration-services/pull/859",
+        "../local-ai-machine/pull/387"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-rollout-slice",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This slice is bounded rollout/adoption work and did not require a separate alternate-model review to proceed.",
+    "evidence": [
+      "Issue #68 scope"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implementation is approved for repo caller pinning, startup guidance updates, HealthcarePlatform compatibility documentation, and any in-slice blocker fixes required to get the rollout PRs merged.",
+    "next_execution_step": "Record merged repo PR evidence in governance, add the worktree dependency-symlink review item as a follow-up backlog issue, and merge the governance closeout branch.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any governed repo cannot consume the shared validator without additional repo-specific automation, create an explicit follow-up issue before closing.",
+    "If HealthcarePlatform local schema fields diverge from the governance-owned schema, stop and reconcile that divergence in the same slice or create a blocker issue.",
+    "If rollout testing surfaces another required repo-side fix, absorb it in the current action or create an issue-backed follow-up before closure."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Benji"
+  ],
+  "approved_at": "2026-04-09T12:05:00-05:00"
+}
