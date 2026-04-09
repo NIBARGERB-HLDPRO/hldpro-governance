@@ -1,0 +1,79 @@
+{
+  "session_id": "session-20260409-issue-77-sweep-push-failures",
+  "issue_number": 77,
+  "objective": "Make weekly sweep graph and metrics persistence failures visible instead of swallowing git push errors, while preserving the weekly report issue as the operator-facing status surface.",
+  "tier": 1,
+  "scope_boundary": [
+    "Capture commit and push outcomes in the weekly sweep persistence step.",
+    "Append baseline refresh status and detail to the weekly issue body.",
+    "Fail the workflow after issue publication when persistence fails."
+  ],
+  "out_of_scope": [
+    "Switching to a PR-based writeback flow.",
+    "Changing graph contents or metric calculations.",
+    "Reworking unrelated Codex or raw-feed sweep paths."
+  ],
+  "research_summary": "The weekly sweep currently updates graph and metrics artifacts, commits them locally, and then runs `git push || true`. That hides baseline persistence failures while the weekly issue still looks healthy. The correct behavior is to record persistence status explicitly in the weekly issue and fail the workflow after publication when persistence fails.",
+  "research_artifacts": [
+    ".github/workflows/overlord-sweep.yml",
+    "Issue #77 description"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Publish and enforce baseline persistence status in the weekly sweep.",
+      "tasks": [
+        "Capture `no_changes`, `commit_failed`, `push_failed`, and `success` outcomes in the persistence step.",
+        "Append the baseline refresh status block to the weekly issue body.",
+        "Fail the workflow after issue publication when commit or push persistence fails."
+      ],
+      "acceptance_criteria": [
+        "Push failures are surfaced instead of swallowed.",
+        "Operators can distinguish a successful refresh from a stale baseline in the issue body.",
+        "The workflow exits non-zero after issue publication when persistence fails."
+      ],
+      "file_paths": [
+        ".github/workflows/overlord-sweep.yml"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "workflow reviewer",
+      "role": "CI reliability reviewer",
+      "focus": "Validate that the issue body remains the visibility surface even when the workflow fails on persistence.",
+      "status": "accepted",
+      "summary": "Publishing the issue first and failing afterward preserves operator visibility while making stale baseline persistence actionable in CI.",
+      "evidence": [
+        ".github/workflows/overlord-sweep.yml",
+        "Issue #77 description"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-bounded-workflow-fix",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This is a narrow workflow reliability fix and does not require alternate-model review.",
+    "evidence": [
+      "Issue #77 scope"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Surface baseline persistence status in the sweep issue and fail the workflow after issue publication when commit or push persistence fails.",
+    "next_execution_step": "Patch the sweep workflow, validate the plan and backlog alignment, then package the governance PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If issue publication cannot happen before failure, create a follow-up issue rather than weakening visibility.",
+    "If another swallowed persistence path is found in the same workflow, absorb it into this slice before closure."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Benji"
+  ],
+  "approved_at": "2026-04-09T13:05:00-05:00"
+}
