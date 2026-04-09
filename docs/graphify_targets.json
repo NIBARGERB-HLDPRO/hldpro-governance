@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "root_graph_role": "compatibility_pointer",
+  "targets": [
+    {
+      "repo_slug": "hldpro-governance",
+      "display_name": "hldpro-governance",
+      "source_path": ".",
+      "output_path": "graphify-out/hldpro-governance",
+      "wiki_path": "wiki/hldpro",
+      "scheduled": true,
+      "closeout_refresh": true
+    },
+    {
+      "repo_slug": "ai-integration-services",
+      "display_name": "ai-integration-services",
+      "source_path": "repos/ai-integration-services",
+      "output_path": "graphify-out/ai-integration-services",
+      "wiki_path": "wiki/ai-integration-services",
+      "scheduled": true,
+      "closeout_refresh": false
+    },
+    {
+      "repo_slug": "healthcareplatform",
+      "display_name": "HealthcarePlatform",
+      "source_path": "repos/HealthcarePlatform",
+      "output_path": "graphify-out/healthcareplatform",
+      "wiki_path": "wiki/healthcareplatform",
+      "scheduled": true,
+      "closeout_refresh": false
+    },
+    {
+      "repo_slug": "local-ai-machine",
+      "display_name": "local-ai-machine",
+      "source_path": "repos/local-ai-machine",
+      "output_path": "graphify-out/local-ai-machine",
+      "wiki_path": "wiki/local-ai-machine",
+      "scheduled": true,
+      "closeout_refresh": false
+    },
+    {
+      "repo_slug": "knocktracker",
+      "display_name": "knocktracker",
+      "source_path": "repos/knocktracker",
+      "output_path": "graphify-out/knocktracker",
+      "wiki_path": "wiki/knocktracker",
+      "scheduled": true,
+      "closeout_refresh": false
+    },
+    {
+      "repo_slug": "asc-evaluator",
+      "display_name": "ASC-Evaluator",
+      "source_path": "repos/ASC-Evaluator",
+      "output_path": "graphify-out/asc-evaluator",
+      "wiki_path": "wiki/asc-evaluator",
+      "scheduled": true,
+      "closeout_refresh": false
+    }
+  ]
+}

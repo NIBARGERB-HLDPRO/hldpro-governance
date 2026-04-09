@@ -169,7 +169,26 @@ def infer_community_labels(G, communities: dict[int, list[str]], source_root: Pa
     return {cid: _community_label(G, source_root, nodes, cid) for cid, nodes in communities.items()}
 
 
-def build_graph(source: Path, output: Path, wiki_dir: Path | None, html: bool) -> dict[str, object]:
+def _sanitize_text_paths(text: str, source_root: Path, repo_slug: str) -> str:
+    absolute_root = str(source_root.resolve())
+    sanitized = text.replace(absolute_root + "/", repo_slug + "/")
+    sanitized = sanitized.replace(absolute_root, repo_slug)
+    return sanitized
+
+
+def _sanitize_markdown_artifacts(source_root: Path, repo_slug: str, output: Path, wiki_dir: Path | None) -> None:
+    markdown_paths = [output / "GRAPH_REPORT.md"]
+    if wiki_dir is not None and wiki_dir.exists():
+        markdown_paths.extend(sorted(wiki_dir.glob("*.md")))
+
+    for path in markdown_paths:
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        path.write_text(_sanitize_text_paths(text, source_root, repo_slug), encoding="utf-8")
+
+
+def build_graph(source: Path, output: Path, wiki_dir: Path | None, html: bool, repo_slug: str) -> dict[str, object]:
     from graphify.detect import detect
     from graphify.extract import collect_files, extract
     from graphify.build import build_from_json
@@ -207,7 +226,7 @@ def build_graph(source: Path, output: Path, wiki_dir: Path | None, html: bool) -
         surprises,
         detection,
         {"input": result.get("input_tokens", 0), "output": result.get("output_tokens", 0)},
-        str(source),
+        repo_slug,
         suggested_questions=questions,
     )
     (output / "GRAPH_REPORT.md").write_text(report, encoding="utf-8")
@@ -237,8 +256,11 @@ def build_graph(source: Path, output: Path, wiki_dir: Path | None, html: bool) -
             god_nodes_data=gods,
         )
 
+    _sanitize_markdown_artifacts(source, repo_slug, output, wiki_dir)
+
     summary = {
-        "source": str(source),
+        "repo_slug": repo_slug,
+        "source": repo_slug,
         "output": str(output),
         "wiki_dir": str(wiki_dir) if wiki_dir else None,
         "nodes": G.number_of_nodes(),
@@ -257,6 +279,7 @@ def main() -> int:
     parser.add_argument("--source", required=True, help="Source repo/folder to analyze")
     parser.add_argument("--output", required=True, help="Output graphify-out directory")
     parser.add_argument("--wiki-dir", help="Optional wiki output directory")
+    parser.add_argument("--repo-slug", required=True, help="Canonical repo slug for artifact labeling")
     parser.add_argument("--no-html", action="store_true", help="Skip graph.html generation")
     args = parser.parse_args()
 
@@ -268,7 +291,7 @@ def main() -> int:
         print(json.dumps({"error": f"Source path does not exist: {source}"}), file=sys.stderr)
         return 1
 
-    summary = build_graph(source, output, wiki_dir, html=not args.no_html)
+    summary = build_graph(source, output, wiki_dir, html=not args.no_html, repo_slug=args.repo_slug)
     print(json.dumps(summary, indent=2))
     return 0
 
