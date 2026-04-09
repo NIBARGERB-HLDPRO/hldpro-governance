@@ -1,0 +1,102 @@
+{
+  "session_id": "session-20260409-issue-74-governance-diff-base",
+  "issue_number": 74,
+  "objective": "Fix reusable governance-check diff-range handling under workflow_call so multi-commit PR governance checks cover the full change set, and propagate the explicit base SHA through governed repo callers.",
+  "tier": 1,
+  "scope_boundary": [
+    "Add an explicit base SHA input to the reusable governance-check workflow and use it for all diff/log comparisons.",
+    "Update governed repo workflow callers to pass the correct base SHA for pull_request and push events.",
+    "Record the bug fix and close the governance issue once reusable workflow and caller propagation land."
+  ],
+  "out_of_scope": [
+    "Changing unrelated governance gate rules.",
+    "Reworking repo-specific conditional skips beyond passing the correct base SHA.",
+    "Replacing reusable workflow usage with copied local workflows."
+  ],
+  "research_summary": "The reusable governance workflow runs via workflow_call, but its changed-file and commit-range logic currently depends on pull_request context or github.event.before. In workflow_call, github.event.before is often unset, so the workflow can fall back to HEAD~1 and inspect only the last commit of a multi-commit PR. The durable fix is to accept a caller-provided base SHA and use that single resolved value everywhere the reusable workflow diffs or reads commit ranges.",
+  "research_artifacts": [
+    ".github/workflows/governance-check.yml",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/.github/workflows/governance.yml",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/.github/workflows/governance.yml",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker/.github/workflows/governance.yml",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine/.github/workflows/governance.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Make the reusable governance workflow base-sha aware.",
+      "tasks": [
+        "Add a workflow_call input for base_sha.",
+        "Resolve a single diff base value inside the reusable workflow.",
+        "Use the resolved base value everywhere the workflow currently relies on pull_request context or github.event.before."
+      ],
+      "acceptance_criteria": [
+        "Reusable governance-check accepts an explicit base SHA.",
+        "Changed-file, placeholder, FAIL_FAST, and PROGRESS row-count checks use the same resolved base SHA.",
+        "The workflow no longer silently falls back to HEAD~1 when the caller can provide a real base."
+      ],
+      "file_paths": [
+        ".github/workflows/governance-check.yml"
+      ]
+    },
+    {
+      "name": "Sprint 2",
+      "goal": "Propagate the fix to governed repo callers and close governance with evidence.",
+      "tasks": [
+        "Update governed repo governance workflow callers to pass base_sha.",
+        "Record the failure pattern and closeout artifacts in governance.",
+        "Close the issue after reusable workflow and caller propagation are merged."
+      ],
+      "acceptance_criteria": [
+        "All reusable workflow callers pass the correct base SHA.",
+        "Multi-commit PR governance checks can cover the full PR diff.",
+        "Governance records the fix and closes the issue with merged evidence."
+      ],
+      "file_paths": [
+        "docs/FAIL_FAST_LOG.md",
+        "docs/FEATURE_REGISTRY.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/plans/issue-74-governance-diff-base-pdcar.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "workflow reviewer",
+      "role": "CI/reusable workflow reviewer",
+      "focus": "Validate that the right fix is caller-provided base SHA propagation, not another local fallback inside the called workflow.",
+      "status": "accepted",
+      "summary": "The reusable workflow cannot reliably infer PR base SHA under workflow_call. Passing base_sha from the caller is the correct fix, with a bounded fallback only for direct/non-PR invocation paths.",
+      "evidence": [
+        ".github/workflows/governance-check.yml",
+        "Issue #74 description"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-bounded-ci-fix",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This is a narrow reusable-workflow fix and did not require alternate-model review.",
+    "evidence": [
+      "Issue #74 scope"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Fix reusable governance-check diff-base handling and propagate the base_sha input through governed repo callers before closing the issue.",
+    "next_execution_step": "Patch the reusable workflow, then update caller repos to pass base_sha and collect merged evidence.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any caller cannot pass base_sha cleanly, create a follow-up issue before closing.",
+    "If another diff-based check is found still bypassing the resolved base value, absorb it in this slice before closure."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Benji"
+  ],
+  "approved_at": "2026-04-09T13:00:00-05:00"
+}
