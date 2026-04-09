@@ -1,6 +1,6 @@
 # SurveyOfflineStore
 
-> God node · 35 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/hp-graphify-phase4/frontend/src/lib/offline/surveyStore.ts`
+> God node · 35 connections · `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/lib/offline/surveyStore.ts`
 
 ## Connections by Relation
 

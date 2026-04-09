@@ -171,6 +171,28 @@ jobs:
           fi
           echo "✓ PROGRESS.md updated alongside code changes"
 
+      - name: Block product-repo graphify artifacts
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          CHANGED="${{ steps.changed.outputs.files }}"
+
+          if [ "$REPO_NAME" = "hldpro-governance" ]; then
+            echo "✓ Governance repo may track graphify artifacts"
+            exit 0
+          fi
+
+          if echo "$CHANGED" | grep -qE '^graphify-out/'; then
+            echo "::error::GOVERNANCE GATE FAILED: graphify-out/ changed in a product repo."
+            echo ""
+            echo "Rule: graphify artifacts are governance-hosted only. Product repos keep pointers/hooks, not tracked graphify-out files."
+            echo "Move the graph output to hldpro-governance and keep only CLAUDE/.claude pointer changes in the product repo."
+            exit 1
+          fi
+
+          echo "✓ No product-repo graphify artifact drift detected"
+
       # ── 2b. FEATURE_REGISTRY.md co-staged with code changes ──
       - name: Check FEATURE_REGISTRY.md updated with code changes
         if: steps.changed.outputs.has_code == 'true'

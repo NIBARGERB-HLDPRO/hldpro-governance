@@ -1,6 +1,6 @@
 # main()
 
-> God node · 15 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/hp-graphify-phase4/backend/scripts/ci/validate-subagent-evidence.js`
+> God node · 15 connections · `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
 
 ## Connections by Relation
 

@@ -34,6 +34,10 @@ The three tools serve distinct roles in the architecture:
 
 Everything installs into `hldpro-governance`, not into individual product repos. `ai-integration-services` gets a PreToolUse hook and `CLAUDE.md` pointer only — no structural changes to the HLD Pro codebase.
 
+> **OPERATOR RULE:** graphify outputs are governance-hosted only. Product repos keep pointers/hooks, not tracked `graphify-out/` artifacts. When you want architecture memory, dependency shape, or repo topology, start with governance `wiki/` and `graphify-out/` instead of ad hoc RAG-style repo search.
+>
+> **VIEWER RULE:** Obsidian or similar tools may be used as optional local readers over governance `wiki/`, but they are not the source of truth. Git-tracked governance docs and graph artifacts remain canonical.
+
 ---
 
 ## 2. Architecture
@@ -69,6 +73,13 @@ ai-integration-services/
 ├── CLAUDE.md                  ← MODIFIED: pointer to governance wiki/index.md
 └── .claude/settings.json      ← MODIFIED: graphify PreToolUse hook added
 ```
+
+Operational rules:
+- `graphify-out/` is tracked only in `hldpro-governance`
+- Product repos may generate local graphify artifacts transiently during rebuilds, but those are not the source of truth
+- If you need `graph.html`, open it from the governance checkout/worktree, not from a product repo
+- graphify/wiki replaces repo-level architecture-memory search; use product-repo RAG/search only for product features that intentionally implement customer-facing retrieval
+- Community labels should be post-processed into operator-readable domain names; raw `Community N` labels are acceptable only as an intermediate artifact
 
 ### 2.2 Data Flow
 

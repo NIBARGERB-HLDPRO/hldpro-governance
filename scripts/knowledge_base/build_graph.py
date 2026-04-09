@@ -3,8 +3,170 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
+from collections import Counter
 from pathlib import Path
+
+
+GENERIC_TOKENS = {
+    "app",
+    "apps",
+    "backend",
+    "build",
+    "code",
+    "component",
+    "components",
+    "config",
+    "dashboard",
+    "data",
+    "docs",
+    "e2e",
+    "edge",
+    "file",
+    "files",
+    "fn",
+    "frontend",
+    "function",
+    "functions",
+    "helper",
+    "helpers",
+    "hook",
+    "hooks",
+    "index",
+    "lib",
+    "main",
+    "marketing",
+    "md",
+    "page",
+    "pages",
+    "portal",
+    "script",
+    "scripts",
+    "service",
+    "services",
+    "shared",
+    "src",
+    "test",
+    "tests",
+    "tools",
+    "ts",
+    "tsx",
+    "ui",
+    "user",
+    "users",
+    "utils",
+    "wiki",
+    "readonly",
+    "production",
+    "staging",
+    "runbook",
+    "contract",
+    "probe",
+    "journey",
+    "context",
+    "router",
+    "layout",
+    "smoke",
+    "spec",
+    "list",
+    "get",
+    "env",
+}
+
+
+def _split_words(text: str) -> list[str]:
+    text = re.sub(r"([a-z0-9])([A-Z])", r"\1 \2", text)
+    text = text.replace("_", " ").replace("-", " ")
+    return [part.lower() for part in re.findall(r"[A-Za-z0-9]+", text)]
+
+
+def _normalize_phrase(parts: list[str]) -> str | None:
+    cleaned = [part for part in parts if part and part.lower() not in GENERIC_TOKENS]
+    if not cleaned:
+        return None
+    return " ".join(word.capitalize() for word in cleaned)
+
+
+def _derive_path_phrase(source_root: Path, source_file: str) -> str | None:
+    try:
+        rel = Path(source_file).resolve().relative_to(source_root)
+        raw_parts = list(rel.parts[:-1]) + [Path(rel.name).stem]
+    except Exception:
+        path = Path(source_file)
+        raw_parts = list(path.parts[-3:-1]) + [path.stem]
+
+    anchors = ["functions", "pages", "components", "services", "offline", "context", "e2e", "scripts", "migrations"]
+    parts = raw_parts
+    for anchor in anchors:
+        if anchor in raw_parts:
+            parts = raw_parts[raw_parts.index(anchor) + 1 :]
+            break
+
+    meaningful_parts: list[str] = []
+    for part in parts:
+        stem = Path(part).stem
+        words = [word for word in _split_words(stem) if word not in GENERIC_TOKENS]
+        if not words:
+            continue
+        meaningful_parts.append(" ".join(words))
+        if len(meaningful_parts) >= 2:
+            break
+
+    if not meaningful_parts:
+        fallback_words = [word for part in raw_parts for word in _split_words(Path(part).stem) if word not in GENERIC_TOKENS]
+        meaningful_parts = fallback_words[:2]
+
+    return _normalize_phrase(meaningful_parts[:2])
+
+
+def _derive_path_tokens(source_root: Path, source_file: str) -> list[str]:
+    try:
+        rel = Path(source_file).resolve().relative_to(source_root)
+        raw_parts = list(rel.parts[:-1]) + [Path(rel.name).stem]
+    except Exception:
+        path = Path(source_file)
+        raw_parts = list(path.parts[-3:-1]) + [path.stem]
+
+    tokens: list[str] = []
+    for part in raw_parts:
+        tokens.extend(word for word in _split_words(Path(part).stem) if word not in GENERIC_TOKENS and len(word) > 2)
+    return tokens
+
+
+def _community_label(G, source_root: Path, nodes: list[str], cid: int) -> str:
+    if not nodes:
+        return f"Community {cid}"
+
+    phrase_counts: Counter[str] = Counter()
+    token_counts: Counter[str] = Counter()
+
+    for node in nodes:
+        data = G.nodes[node]
+        label = str(data.get("label") or node)
+        for token in _split_words(label):
+            if token not in GENERIC_TOKENS and len(token) > 2:
+                token_counts[token] += 1
+
+        source_file = data.get("source_file")
+        if isinstance(source_file, str) and source_file:
+            phrase = _derive_path_phrase(source_root, source_file)
+            if phrase:
+                phrase_counts[phrase] += 2
+            for token in _derive_path_tokens(source_root, source_file):
+                token_counts[token] += 1
+
+    if phrase_counts:
+        label = phrase_counts.most_common(1)[0][0]
+        top_token = next((word.capitalize() for word, _ in token_counts.most_common(3) if word.capitalize().lower() not in label.lower()), None)
+        return f"{label} {top_token}".strip() if top_token else label
+
+    top_tokens = [word.capitalize() for word, _ in token_counts.most_common(3)]
+    return " ".join(top_tokens) if top_tokens else f"Community {cid}"
+
+
+def infer_community_labels(G, communities: dict[int, list[str]], source_root: Path) -> dict[int, str]:
+    return {cid: _community_label(G, source_root, nodes, cid) for cid, nodes in communities.items()}
 
 
 def build_graph(source: Path, output: Path, wiki_dir: Path | None, html: bool) -> dict[str, object]:
@@ -27,7 +189,7 @@ def build_graph(source: Path, output: Path, wiki_dir: Path | None, html: bool) -
     G = build_from_json(result)
     communities = cluster(G)
     cohesion = score_all(G, communities)
-    labels = {cid: f"Community {cid}" for cid in communities}
+    labels = infer_community_labels(G, communities, source)
     gods = god_nodes(G)
     surprises = surprising_connections(G, communities)
     questions = suggest_questions(G, communities, labels)
@@ -50,6 +212,10 @@ def build_graph(source: Path, output: Path, wiki_dir: Path | None, html: bool) -
     )
     (output / "GRAPH_REPORT.md").write_text(report, encoding="utf-8")
     to_json(G, communities, str(output / "graph.json"))
+    (output / "community-labels.json").write_text(
+        json.dumps({str(cid): label for cid, label in labels.items()}, indent=2),
+        encoding="utf-8",
+    )
 
     html_status = "skipped"
     if html:

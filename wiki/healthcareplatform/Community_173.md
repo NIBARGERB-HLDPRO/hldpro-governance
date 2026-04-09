@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **seed-option3-clinical-richness.ps1** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/hp-graphify-phase4/backend/scripts/testing/seed-option3-clinical-richness.ps1`
+- **staging-e2e.spec.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/staging-e2e.spec.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/hp-graphify-phase4/backend/scripts/testing/seed-option3-clinical-richness.ps1`
+- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/staging-e2e.spec.ts`
 
 ## Audit Trail
 
