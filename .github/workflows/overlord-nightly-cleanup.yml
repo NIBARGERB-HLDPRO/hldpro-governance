@@ -2,10 +2,10 @@ name: Overlord Cleanup — Nightly Repo Hygiene
 
 on:
   schedule:
-    # 04:00 UTC daily.
-    # This is 11:00 PM America/Chicago during daylight saving time.
-    # After the switch to standard time on November 1, 2026, the same cron runs at 10:00 PM America/Chicago.
+    # Run at both candidate UTC hours, then guard in-job so execution happens
+    # only at 11:00 PM America/Chicago year-round.
     - cron: "0 4 * * *"
+    - cron: "0 5 * * *"
   workflow_dispatch:
 
 permissions:
@@ -18,12 +18,27 @@ jobs:
   nightly-cleanup:
     runs-on: ubuntu-latest
     steps:
+      - name: Enforce America/Chicago 11 PM policy
+        id: local_time_guard
+        shell: bash
+        run: |
+          set -euo pipefail
+          LOCAL_HOUR=$(TZ=America/Chicago date +%H)
+          if [ "${LOCAL_HOUR}" != "23" ]; then
+            echo "Skipping run outside 11:00 PM America/Chicago policy window (current local hour: ${LOCAL_HOUR})"
+            echo "run_cleanup=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "run_cleanup=true" >> "$GITHUB_OUTPUT"
+
       - name: Checkout hldpro-governance
+        if: steps.local_time_guard.outputs.run_cleanup == 'true'
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Checkout ai-integration-services
+        if: steps.local_time_guard.outputs.run_cleanup == 'true'
         uses: actions/checkout@v6
         with:
           repository: NIBARGERB-HLDPRO/ai-integration-services
@@ -32,6 +47,7 @@ jobs:
           fetch-depth: 0
 
       - name: Checkout HealthcarePlatform
+        if: steps.local_time_guard.outputs.run_cleanup == 'true'
         uses: actions/checkout@v6
         with:
           repository: NIBARGERB-HLDPRO/HealthcarePlatform
@@ -40,6 +56,7 @@ jobs:
           fetch-depth: 0
 
       - name: Checkout local-ai-machine
+        if: steps.local_time_guard.outputs.run_cleanup == 'true'
         uses: actions/checkout@v6
         with:
           repository: NIBARGERB-HLDPRO/local-ai-machine
@@ -48,6 +65,7 @@ jobs:
           fetch-depth: 0
 
       - name: Checkout knocktracker
+        if: steps.local_time_guard.outputs.run_cleanup == 'true'
         uses: actions/checkout@v6
         with:
           repository: NIBARGERB-HLDPRO/knocktracker
@@ -56,6 +74,7 @@ jobs:
           fetch-depth: 0
 
       - name: Checkout ASC-Evaluator
+        if: steps.local_time_guard.outputs.run_cleanup == 'true'
         uses: actions/checkout@v6
         with:
           repository: NIBARGERB-HLDPRO/ASC-Evaluator
@@ -64,6 +83,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run nightly cleanup
+        if: steps.local_time_guard.outputs.run_cleanup == 'true'
         id: cleanup
         env:
           GH_TOKEN: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
@@ -167,6 +187,7 @@ jobs:
           echo "date=${DATE}" >> "${GITHUB_OUTPUT}"
 
       - name: Create or update nightly cleanup issue
+        if: steps.local_time_guard.outputs.run_cleanup == 'true'
         env:
           GH_TOKEN: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
         run: |

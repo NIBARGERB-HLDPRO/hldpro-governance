@@ -146,6 +146,25 @@ Each repo has a security tier that determines which security artifacts the overl
 
 ## Cross-Model Review
 
+### Bidirectional Agent Calls
+
+Both Claude and Codex sessions can invoke each other as specialist reviewers:
+
+| Direction | Script | When to use |
+|-----------|--------|-------------|
+| Claude → Codex | `bash scripts/codex-review.sh review <branch>` | Second-opinion code review from Codex |
+| Claude → Codex | `bash scripts/codex-review.sh audit <path>` | Codex security audit |
+| Codex → Claude | `bash scripts/codex-review.sh claude "<prompt>"` | Claude specialist review from Codex sessions |
+
+**Auth requirements:**
+- Codex sessions: `OPENAI_API_KEY` or `~/.codex/auth.json` (ChatGPT account, `gpt-5.4` default)
+- Claude calls from Codex: `CLAUDE_CODE_OAUTH_TOKEN` in repo `.env` (operator runs `claude setup-token` once, valid 1 year)
+- Codex config must inherit the token: `shell_environment_policy.inherit = "all"` in `~/.codex/config.toml`
+
+**Script contract:** Every code repo must have `scripts/codex-review.sh` with at minimum the `review` and `claude` modes. Use `hldpro-governance/scripts/codex-review-template.sh` as the canonical source.
+
+### Weekly Sweep (Codex → Repos)
+
 - Weekly overlord sweep includes Codex CLI (`codex exec review`) as a second-opinion layer
 - Codex outputs structured JSON to `~/Developer/hldpro/.codex-ingestion/{repo}/`
 - Use `python3 scripts/overlord/codex_ingestion.py generate --repo {repo} --repo-path {path}` to produce `review-{date}.json`

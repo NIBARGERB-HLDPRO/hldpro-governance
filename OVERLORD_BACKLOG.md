@@ -7,7 +7,7 @@
 
 | Item | Priority | Est. Hours | Notes |
 |------|----------|-----------|-------|
-| Nightly cleanup timezone policy | LOW | 1 | Current cron is `04:00 UTC`, which is 11:00 PM America/Chicago during DST and 10:00 PM during standard time. If year-round 11:00 PM Central is required, replace with a timezone-aware guard strategy. Tracking issue: [#14](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/14). |
+| Nightly cleanup timezone policy | LOW | 1 | Current policy is stable 11:00 PM America/Chicago year-round via dual UTC cron entries plus an in-workflow local-time guard. Tracking issue: [#58](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/58). |
 | Living Knowledge Base — Phase 7: Neo4j graph push | LOW | 4-6 | Issue [#48](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/48). `graphify --neo4j push` to local Neo4j instance. Graphiti migration. `operator_context` schema fields map to graph nodes. Gate: v2.0 local LLM milestone reached. |
 | Living Knowledge Base — Phase 8: Qwen3-32B fine-tune on wiki data | LOW | TBD | Issue [#49](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/49). Fine-tune Qwen3-32B on wiki data (Karpathy "Train a Custom Model on Wiki Data" step). Gate: wiki must have 6+ months of compounding data minimum. |
 
@@ -49,4 +49,6 @@ None currently. Active governance execution now lives in GitHub Issues; open cro
 | Effectiveness engine baseline metrics | 2026-04-09 | Issue [#43](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/43). Weekly sweep metrics now persist as reproducible dated and latest snapshots in `metrics/effectiveness-baseline/` via `scripts/overlord/build_effectiveness_metrics.py`. |
 | Staged ruleset recommendation pack rollout | 2026-04-09 | Issue [#40](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/40). The draft was replaced with an actionable rollout sequence based on live org/repo ruleset state, exact baseline checks, owner communication, rollback guidance, and current-state drift notes. |
 | GitHub governance exception register rollout | 2026-04-09 | Issue [#42](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/42). The register now has explicit approval authority, monthly review cadence, and seeded current exceptions for repo exemptions and conditional-check deferrals. |
+| Nightly cleanup timezone policy | 2026-04-09 | Issue [#58](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/58). Nightly cleanup now schedules both candidate UTC hours and only executes at 11:00 PM America/Chicago via an in-workflow timezone guard. |
 | Living Knowledge Base — Phase 6: remaining governed repos | 2026-04-09 | Issue [#47](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/47). local-ai-machine and knocktracker now follow the governance-hosted graphify pointer/hook pattern, and governance hosts their graph reports, HTML, JSON, and wiki articles. |
+>>>>>>> origin/main
