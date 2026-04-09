@@ -195,7 +195,7 @@ The Karpathy Loop is a pattern, not a package. The implementation is: a closeout
 
 | Phase | Description | Gate Condition |
 |---|---|---|
-| Phase 4 | Add HealthcarePlatform to graphify scope | Verify graphify doc extraction privacy boundary (HIPAA). Code only via tree-sitter (local). Docs need audit before enabling LLM extraction. |
+| Phase 4 | Add HealthcarePlatform to graphify scope | Approved 2026-04-09 for full-repo graph build. No HIPAA/BAA documents are stored in the repo; governance stores the resulting graph outputs. |
 | Phase 5 | Add remaining governed repos (local-ai-machine, knocktracker) | Phase 1–3 stable for 30+ days. Graph quality verified. |
 | Phase 6 | `graphify --neo4j push` to local Neo4j instance | v2.0 local LLM milestone. Graphiti migration. `operator_context` schema fields map to graph nodes. |
 | Phase 7 | Fine-tune Qwen3-32B on wiki data | Karpathy "Train a Custom Model on Wiki Data" step. Wiki must have 6 months of compounding data minimum. |
@@ -207,7 +207,7 @@ The Karpathy Loop is a pattern, not a package. The implementation is: a closeout
 | Decision | Choice | Rationale |
 |---|---|---|
 | graphify install strategy | Install as-is | Pure tool, no HLD Pro logic. 2-command install. No customization needed. |
-| graphify scope (Phase 1) | ai-integration-services only | Highest complexity, highest daily cognitive load. HealthcarePlatform deferred: HIPAA doc extraction needs privacy audit first. |
+| graphify scope (Phase 1) | ai-integration-services only | Highest complexity, highest daily cognitive load. HealthcarePlatform was deferred initially, then explicitly approved on 2026-04-09 for full-repo Phase 4 adoption. |
 | MBIF Crew strategy | Take dispatcher pattern only, no install | Personal health agents irrelevant. Scribe/sorter/connector/librarian behavior folds into extended overlord-sweep. No new agents = no new orchestration complexity for solo operator. |
 | Karpathy Loop strategy | Build our own | No single repo IS the loop. Pattern implementation takes about the same time as adapting someone else's repo. We own the logic. |
 | Raw feed sources (Phase 1) | Conversations + GitHub issues only | High signal, structured, already available. VAPI transcripts + support tickets deferred: high volume, low density, need filter layer first. |
@@ -235,7 +235,7 @@ The Karpathy Loop is a pattern, not a package. The implementation is: a closeout
 1. **Never modify `STANDARDS.md`** without explicit instruction
 2. **Never add new agents** — the four overlord agents are sufficient; extend them, don't multiply them
 3. **Never change product code** in ai-integration-services — only `CLAUDE.md` and `.claude/settings.json`
-4. **Never run graphify on HealthcarePlatform** until HIPAA doc extraction privacy boundary is verified
+4. **HealthcarePlatform graphify scope must follow the approved governance plan** — as of 2026-04-09, full-repo graph builds are approved because no HIPAA/BAA documents are stored in-repo
 5. **graphify output lives in hldpro-governance** — never commit `graphify-out/` to a product repo
 6. **`raw/` feeds are append-only** — never delete or overwrite files in `raw/`
 7. **`wiki/` is generated/maintained by agents** — never manually edit `wiki/` files (except `wiki/index.md` structure)

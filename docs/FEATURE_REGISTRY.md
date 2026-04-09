@@ -70,7 +70,7 @@
 
 | Feature ID | Notes |
 |---|---|
-| GOV-007 | Three-tool system: graphify (knowledge graph), Karpathy Loop (compounding write-back), MBIF Crew (dispatcher pattern). Infrastructure in `graphify-out/`, `wiki/`, `raw/`. Initial AIS code graph is now built and synced into governance; semantic/doc extraction and the operator-context bridge remain follow-on work. |
+| GOV-007 | Three-tool system: graphify (knowledge graph), Karpathy Loop (compounding write-back), MBIF Crew (dispatcher pattern). Infrastructure in `graphify-out/`, `wiki/`, `raw/`. AIS and HealthcarePlatform code graphs are now built and synced into governance; the multi-repo weekly sweep/read-path is the next follow-on work. |
 | GOV-008 | `CLAUDE.md` rewritten as pure dispatcher — routes to overlord agents, never answers directly. Pre-session reads: `wiki/index.md` + `GRAPH_REPORT.md`. |
 | GOV-009 | `hooks/closeout-hook.sh` validates Stage 6 closeout template, triggers repo-local graph rebuild logic, and prompts for `operator_context` write-back. Template at `raw/closeouts/TEMPLATE.md`. |
 | GOV-010 | `raw-feed-sync.yml` fetches open GitHub issues from all governed repos daily, writes markdown summaries to `raw/github-issues/`. Initial snapshot files have been seeded locally for the bootstrap loop. |
