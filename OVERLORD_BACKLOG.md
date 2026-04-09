@@ -20,7 +20,6 @@
 
 | Item | Priority | Notes |
 |------|----------|-------|
-| Operationalize Codex ingestion review flow | HIGH | Issue [#46](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/46). Shared helper exists on `main`; current work is bounded-timeout hardening plus one more real governed-repo validation before enabling production sweep invocation. |
 | Governance doc consistency rollout — Sprint 1 | HIGH | Issue [#45](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/45). Shared standards + reusable governance checker. Define minimum contracts, enforce section presence, and codify AIS/HP exceptions before repo-local rewrites. |
 
 ### Sprint Breakdown — Governance Doc Consistency Rollout
@@ -74,6 +73,7 @@
 | Nightly overlord cleanup workflow | 2026-04-07 | Merged in PRs #13 and #15. Added nightly artifact cleanup + stale merged branch reporting. Validation issue: [#14](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/14). |
 | Codex subagent/persona routing baseline | 2026-04-07 | Updated shared standards and overlord docs so repo-required specialists can be satisfied with spawned Codex subagents/personas mapped from repo-local definitions. |
 | GitHub Actions Node 20 deprecation cleanup | 2026-04-07 | Merged in PR #18. Upgraded governance workflows from `actions/checkout@v4` to `actions/checkout@v6`; production sweep run `24059154210` completed without the prior Node 20 deprecation annotation. |
+| Operationalize Codex ingestion review flow | 2026-04-09 | Shared helper, auth probe, canary gate, bounded timeout, and stdin/schema review path were already live; a fresh governed-repo validation against `knocktracker` completed successfully and wrote `review-2026-04-09.json`, `qualified-2026-04-09.json`, and `backlog-2026-04-09.md` under a bounded temporary ingestion root. |
 | Living Knowledge Base — Phase 1 bootstrap | 2026-04-09 | graphify installed via Python 3.11, CLAUDE/settings pointers added in AIS, git hooks installed in the main AIS checkout, initial AIS code graph built (1883 nodes / 2533 edges / 111 communities), and graph artifacts synced into governance `graphify-out/` + `wiki/hldpro/`. |
 | Living Knowledge Base — Phase 2 dispatcher + wiki write-back | 2026-04-09 | `CLAUDE.md` now dispatches instead of answering directly, `wiki/index.md` is the pre-session entrypoint, and overlord agents/sweep are wired for governance-hosted graph/wiki reads and write-back. |
 | Living Knowledge Base — Phase 3 Karpathy Loop + closeout hook | 2026-04-09 | `raw/`, `wiki/`, closeout template, `closeout-hook.sh`, raw-feed sync, and weekly graph refresh/write-back are now implemented in governance. |
