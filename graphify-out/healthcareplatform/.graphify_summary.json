@@ -1,0 +1,11 @@
+{
+  "source": "/Users/bennibarger/Developer/HLDPRO/_worktrees/hp-graphify-phase4",
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-hp-phase4/graphify-out/healthcareplatform",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-hp-phase4/wiki/healthcareplatform",
+  "nodes": 1549,
+  "edges": 2396,
+  "communities": 176,
+  "articles": 186,
+  "html_status": "generated",
+  "code_files": 422
+}

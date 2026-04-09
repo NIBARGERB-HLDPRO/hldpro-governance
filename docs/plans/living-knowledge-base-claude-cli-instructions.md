@@ -686,7 +686,7 @@ ls hldpro-governance/raw/closeouts/*.md | grep -v TEMPLATE
 1. **Never modify STANDARDS.md** without explicit instruction from Benji
 2. **Never add new agents** — the four overlord agents are sufficient; extend them, don't multiply them
 3. **Never change product code** in ai-integration-services — only CLAUDE.md and .claude/settings.json
-4. **Never run graphify on HealthcarePlatform** until HIPAA doc extraction privacy boundary is verified
+4. **HealthcarePlatform graphify scope must follow the approved governance plan** — as of 2026-04-09, full-repo graph builds are approved because no HIPAA/BAA documents are stored in-repo
 5. **graphify output lives in hldpro-governance** — never commit graphify-out/ to a product repo
 6. **raw/ feeds are append-only** — never delete or overwrite files in raw/
 7. **wiki/ is generated/maintained by agents** — never manually edit wiki/ files (except wiki/index.md structure)
