@@ -19,17 +19,16 @@ Canonical parent docs:
 ### CODEOWNERS Status
 
 - `ai-integration-services`: merged on default branch
-- `HealthcarePlatform`: missing on `main`; tracked by issue `#737`
-- `knocktracker`: missing on `main`; dormant draft PR `#143` exists from issue `#142`
-- `local-ai-machine`: missing on `main`; dormant draft PR `#375` exists from issue `#374`
+- `HealthcarePlatform`: merged on default branch
+- `knocktracker`: merged on default branch
+- `local-ai-machine`: merged on default branch
 - `ASC-Evaluator`: exempt from Sprint 1 repo enforcement
 
 ### Execution Notes
 
-- `ai-integration-services` no longer needs Sprint 1 repo work.
-- `HealthcarePlatform` had no repo issue or lane at all before this refresh; the older governance assumption that CODEOWNERS had already landed there was stale.
-- `knocktracker` and `local-ai-machine` both have older draft lanes, but default-branch inspection remains the source of truth until `.github/CODEOWNERS` is merged.
-- `local-ai-machine` now expects governance-only lanes to use a `riskfix/*` branch family, so the old `lane/*` CODEOWNERS PR is not the clean final merge path.
+- Sprint 1 repo ownership rollout is complete for the first-wave governed repos.
+- Default-branch inspection remains the source of truth; stale draft lanes are not governance truth once default-branch state is verified.
+- `local-ai-machine` governance-only lanes now use the repo's `riskfix/*` branch family when repo policy requires it.
 - Live required-check verification is recorded in `GITHUB_ENTERPRISE_REQUIRED_CHECK_BASELINE.md`.
 
 ## Repo Task Breakdown
@@ -45,7 +44,7 @@ Notes:
 ## HealthcarePlatform
 
 Status:
-- active rollout required
+- complete
 
 Target ownership areas:
 - `.github/`
@@ -62,7 +61,7 @@ Acceptance Criteria:
 ## knocktracker
 
 Status:
-- active rollout required
+- complete
 
 Target ownership areas:
 - `.github/`
@@ -85,7 +84,7 @@ Acceptance Criteria:
 ## local-ai-machine
 
 Status:
-- active rollout required
+- complete
 
 Target ownership areas:
 - `.github/`
@@ -112,6 +111,6 @@ Acceptance Criteria:
 
 ## Follow-On Sequencing
 
-1. Merge remaining first-wave repo CODEOWNERS lanes.
-2. Reconfirm default-branch coverage.
-3. Use that merged state as the gate for `#40` staged ruleset rollout.
+1. Reconfirm default-branch coverage when rulesets or ownership maps change materially.
+2. Use the merged Sprint 1 state as the gate for future ruleset tightening.
+3. Track future enforcement changes through issue-backed rollout slices instead of reopening Sprint 1.
