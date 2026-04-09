@@ -1,0 +1,151 @@
+{
+  "date": "2026-04-09",
+  "scenarios": [
+    {
+      "baseline": {
+        "estimated_tokens": 1042,
+        "quality_hit": true,
+        "retrieval_count": 5,
+        "strategy": "repo-search",
+        "top_files": [
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "docs/plans/issue-74-structured-agent-cycle-plan.json",
+          "docs/plans/issue-74-governance-diff-base-pdcar.md",
+          "docs/FEATURE_REGISTRY.md",
+          ".github/workflows/governance-check.yml"
+        ]
+      },
+      "expected_files": [
+        ".github/workflows/governance-check.yml"
+      ],
+      "graphify": {
+        "estimated_tokens": 834,
+        "quality_hit": false,
+        "retrieval_count": 5,
+        "strategy": "graphify",
+        "top_files": [
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/gate-checks.ts",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/n8n-client.ts",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/health-check/index.ts",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/lib/supabase.ts",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/pages/knowledge/KnowledgeBase.tsx"
+        ]
+      },
+      "id": "ff-74-governance-diff-base",
+      "issue_number": 74,
+      "repo": "hldpro-governance",
+      "task_type": "workflow_bug"
+    },
+    {
+      "baseline": {
+        "estimated_tokens": 1002,
+        "quality_hit": true,
+        "retrieval_count": 5,
+        "strategy": "repo-search",
+        "top_files": [
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "docs/plans/issue-75-structured-agent-cycle-plan.json",
+          "docs/FEATURE_REGISTRY.md",
+          "docs/plans/issue-75-raw-feed-redaction-pdcar.md",
+          ".github/workflows/raw-feed-sync.yml"
+        ]
+      },
+      "expected_files": [
+        ".github/workflows/raw-feed-sync.yml",
+        "scripts/overlord/render_github_issue_feed.py"
+      ],
+      "graphify": {
+        "estimated_tokens": 808,
+        "quality_hit": false,
+        "retrieval_count": 5,
+        "strategy": "graphify",
+        "top_files": [
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/google-calendar.ts",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/null.ts",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/servicetitan.ts"
+        ]
+      },
+      "id": "ff-75-raw-feed-redaction",
+      "issue_number": 75,
+      "repo": "hldpro-governance",
+      "task_type": "data_safety"
+    },
+    {
+      "baseline": {
+        "estimated_tokens": 1759,
+        "quality_hit": false,
+        "retrieval_count": 5,
+        "strategy": "repo-search",
+        "top_files": [
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "agents/overlord-sweep.md",
+          "README.md",
+          "STANDARDS.md",
+          "docs/FAIL_FAST_LOG.md"
+        ]
+      },
+      "expected_files": [
+        "scripts/overlord/codex_ingestion.py"
+      ],
+      "graphify": {
+        "estimated_tokens": 98,
+        "quality_hit": false,
+        "retrieval_count": 3,
+        "strategy": "graphify",
+        "top_files": [
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/pages/clients/ClientOnboard.tsx",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/n8n-client.ts",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts"
+        ]
+      },
+      "id": "ff-76-cited-code-validation",
+      "issue_number": 76,
+      "repo": "hldpro-governance",
+      "task_type": "qualification_logic"
+    },
+    {
+      "baseline": {
+        "estimated_tokens": 1241,
+        "quality_hit": false,
+        "retrieval_count": 5,
+        "strategy": "repo-search",
+        "top_files": [
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "docs/FEATURE_REGISTRY.md",
+          "docs/plans/issue-77-structured-agent-cycle-plan.json",
+          "OVERLORD_BACKLOG.md",
+          "README.md"
+        ]
+      },
+      "expected_files": [
+        ".github/workflows/overlord-sweep.yml"
+      ],
+      "graphify": {
+        "estimated_tokens": 799,
+        "quality_hit": false,
+        "retrieval_count": 5,
+        "strategy": "graphify",
+        "top_files": [
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/crm/twenty.ts",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vault.ts",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx",
+          "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/pages/support/FeatureRoadmap.tsx"
+        ]
+      },
+      "id": "ff-77-sweep-persistence-visibility",
+      "issue_number": 77,
+      "repo": "hldpro-governance",
+      "task_type": "workflow_bug"
+    }
+  ],
+  "summary": {
+    "baseline_estimated_tokens": 5044,
+    "baseline_hits": 2,
+    "graphify_estimated_tokens": 2539,
+    "graphify_hits": 0,
+    "scenario_count": 4
+  }
+}

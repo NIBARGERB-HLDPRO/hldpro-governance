@@ -1,0 +1,53 @@
+{
+  "date": "2026-04-09",
+  "scenarios": [
+    {
+      "id": "ff-74-governance-diff-base",
+      "issue_number": 74,
+      "repo": "hldpro-governance",
+      "repo_path": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-65",
+      "graph_key": "hldpro-governance",
+      "task_type": "workflow_bug",
+      "prompt": "Find why reusable governance checks only inspect the last commit in a multi-commit PR.",
+      "query_terms": ["governance", "workflow_call", "diff", "base", "github.event.before"],
+      "expected_files": [".github/workflows/governance-check.yml"],
+      "expected_terms": ["workflow_call", "base_sha", "github.event.before"]
+    },
+    {
+      "id": "ff-75-raw-feed-redaction",
+      "issue_number": 75,
+      "repo": "hldpro-governance",
+      "repo_path": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-65",
+      "graph_key": "hldpro-governance",
+      "task_type": "data_safety",
+      "prompt": "Find where nightly raw GitHub issue feeds are mirrored and whether issue bodies are being persisted.",
+      "query_terms": ["raw", "github", "issues", "body", "sync"],
+      "expected_files": [".github/workflows/raw-feed-sync.yml", "scripts/overlord/render_github_issue_feed.py"],
+      "expected_terms": ["body", "github-issues", "render_github_issue_feed"]
+    },
+    {
+      "id": "ff-76-cited-code-validation",
+      "issue_number": 76,
+      "repo": "hldpro-governance",
+      "repo_path": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-65",
+      "graph_key": "hldpro-governance",
+      "task_type": "qualification_logic",
+      "prompt": "Find where Codex finding qualification validates cited file and line references.",
+      "query_terms": ["codex", "qualification", "validate_location", "finding", "line"],
+      "expected_files": ["scripts/overlord/codex_ingestion.py"],
+      "expected_terms": ["validate_location", "qualify", "finding"]
+    },
+    {
+      "id": "ff-77-sweep-persistence-visibility",
+      "issue_number": 77,
+      "repo": "hldpro-governance",
+      "repo_path": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-65",
+      "graph_key": "hldpro-governance",
+      "task_type": "workflow_bug",
+      "prompt": "Find where the weekly sweep persists graph and metrics updates and whether push failures are being ignored.",
+      "query_terms": ["overlord", "sweep", "graph", "metrics", "push"],
+      "expected_files": [".github/workflows/overlord-sweep.yml"],
+      "expected_terms": ["git push", "metrics/effectiveness-baseline", "graphify-out"]
+    }
+  ]
+}
