@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **issue295-export-service-validation.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/issue295-export-service-validation.test.ts`
-- **assert()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/issue295-export-service-validation.test.ts`
+- **issue295-export-service-validation.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/issue295-export-service-validation.test.ts`
+- **assert()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/issue295-export-service-validation.test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/issue295-export-service-validation.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/issue295-export-service-validation.test.ts`
 
 ## Audit Trail
 

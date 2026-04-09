@@ -1,6 +1,6 @@
 # CompanyService
 
-> God node · 6 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/services/companyService.ts`
+> God node · 6 connections · `knocktracker/lib/services/companyService.ts`
 
 ## Connections by Relation
 

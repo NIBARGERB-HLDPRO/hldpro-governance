@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **roof-takeoff.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/roof-takeoff.ts`
-- **calculateTakeoff()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/roof-takeoff.ts`
-- **round2()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/roof-takeoff.ts`
+- **roof-takeoff.ts** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/roof-takeoff.ts`
+- **calculateTakeoff()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/roof-takeoff.ts`
+- **round2()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/roof-takeoff.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/roof-takeoff.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/roof-takeoff.ts`
 
 ## Audit Trail
 

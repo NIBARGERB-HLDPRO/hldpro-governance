@@ -4,21 +4,21 @@
 
 ## Key Concepts
 
-- **runpod_spot_orchestrator.py** (12 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **main()** (11 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **graphql()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **pod_start()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **pod_status()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **pod_stop()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **run_batch()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **wait_for_ollama()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **get_api_key()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **get_ollama_url()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **get_pod_id()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **load_dotenv()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **parse_args()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **Poll the Ollama HTTP endpoint until the model is loaded and ready.** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
-- **Run the inference comparison batch.** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
+- **runpod_spot_orchestrator.py** (12 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **main()** (11 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **graphql()** (4 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **pod_start()** (3 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **pod_status()** (3 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **pod_stop()** (3 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **run_batch()** (3 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **wait_for_ollama()** (3 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **get_api_key()** (2 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **get_ollama_url()** (2 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **get_pod_id()** (2 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **load_dotenv()** (2 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **parse_args()** (2 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **Poll the Ollama HTTP endpoint until the model is loaded and ready.** (1 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **Run the inference comparison batch.** (1 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
 
 ## Relationships
 
@@ -26,7 +26,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/runpod_spot_orchestrator.py`
+- `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
 
 ## Audit Trail
 

@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **audit-export-retention-validation.test.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/audit-export-retention-validation.test.ts`
-- **assert()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/audit-export-retention-validation.test.ts`
-- **readFileFromShared()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/audit-export-retention-validation.test.ts`
+- **audit-export-retention-validation.test.ts** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit-export-retention-validation.test.ts`
+- **assert()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit-export-retention-validation.test.ts`
+- **readFileFromShared()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit-export-retention-validation.test.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/audit-export-retention-validation.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/audit-export-retention-validation.test.ts`
 
 ## Audit Trail
 

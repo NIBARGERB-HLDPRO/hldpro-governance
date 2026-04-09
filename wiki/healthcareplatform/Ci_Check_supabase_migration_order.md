@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **check-supabase-migration-order.js** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-migration-order.js`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-migration-order.js`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-migration-order.js`
+- **check-supabase-migration-order.js** (2 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-migration-order.js`
+- **fail()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-migration-order.js`
+- **main()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-migration-order.js`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-migration-order.js`
+- `healthcareplatform/backend/scripts/ci/check-supabase-migration-order.js`
 
 ## Audit Trail
 

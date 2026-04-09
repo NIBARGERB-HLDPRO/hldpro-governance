@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **test_critic_api_postgres_contract.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/test_critic_api_postgres_contract.py`
-- **assert_true()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/test_critic_api_postgres_contract.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/test_critic_api_postgres_contract.py`
+- **test_critic_api_postgres_contract.py** (2 connections) — `local-ai-machine/scripts/edge/test_critic_api_postgres_contract.py`
+- **assert_true()** (2 connections) — `local-ai-machine/scripts/edge/test_critic_api_postgres_contract.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/edge/test_critic_api_postgres_contract.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/test_critic_api_postgres_contract.py`
+- `local-ai-machine/scripts/edge/test_critic_api_postgres_contract.py`
 
 ## Audit Trail
 

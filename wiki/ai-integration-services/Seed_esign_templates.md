@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **seed-esign-templates.ts** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-esign-templates.ts`
-- **buildStatutoryFields()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-esign-templates.ts`
-- **dateSigned()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-esign-templates.ts`
-- **prefilled()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-esign-templates.ts`
-- **sig()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-esign-templates.ts`
-- **text()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-esign-templates.ts`
+- **seed-esign-templates.ts** (5 connections) — `ai-integration-services/scripts/seed-esign-templates.ts`
+- **buildStatutoryFields()** (4 connections) — `ai-integration-services/scripts/seed-esign-templates.ts`
+- **dateSigned()** (2 connections) — `ai-integration-services/scripts/seed-esign-templates.ts`
+- **prefilled()** (2 connections) — `ai-integration-services/scripts/seed-esign-templates.ts`
+- **sig()** (2 connections) — `ai-integration-services/scripts/seed-esign-templates.ts`
+- **text()** (1 connections) — `ai-integration-services/scripts/seed-esign-templates.ts`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-esign-templates.ts`
+- `ai-integration-services/scripts/seed-esign-templates.ts`
 
 ## Audit Trail
 

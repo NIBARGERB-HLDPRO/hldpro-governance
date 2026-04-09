@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **validate-state-asc-sample-pack.js** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
-- **readJsonl()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
-- **isSortedBy()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
-- **parseArgs()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
+- **validate-state-asc-sample-pack.js** (5 connections) — `healthcareplatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
+- **main()** (5 connections) — `healthcareplatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
+- **fail()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
+- **readJsonl()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
+- **isSortedBy()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
+- **parseArgs()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
+- `healthcareplatform/backend/scripts/ci/validate-state-asc-sample-pack.js`
 
 ## Audit Trail
 

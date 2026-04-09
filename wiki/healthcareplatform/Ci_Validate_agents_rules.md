@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- **validate-agents-rules.js** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-agents-rules.js`
-- **main()** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-agents-rules.js`
-- **fail()** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-agents-rules.js`
-- **extractRules()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-agents-rules.js`
-- **ensureRangeReferencesResolve()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-agents-rules.js`
-- **ensureRequiredPrefixes()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-agents-rules.js`
-- **ensureRuleIndexParity()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-agents-rules.js`
-- **validateManifestShape()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-agents-rules.js`
-- **parseRuleId()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-agents-rules.js`
-- **readFileUtf8()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-agents-rules.js`
-- **toUniqueRules()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-agents-rules.js`
+- **validate-agents-rules.js** (10 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
+- **main()** (9 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
+- **fail()** (7 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
+- **extractRules()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
+- **ensureRangeReferencesResolve()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
+- **ensureRequiredPrefixes()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
+- **ensureRuleIndexParity()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
+- **validateManifestShape()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
+- **parseRuleId()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
+- **readFileUtf8()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
+- **toUniqueRules()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
 
 ## Relationships
 
@@ -22,7 +22,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-agents-rules.js`
+- `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
 
 ## Audit Trail
 

@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **check-mode-a-route-scope.js** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-mode-a-route-scope.js`
-- **extractActiveRoutes()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-mode-a-route-scope.js`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-mode-a-route-scope.js`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-mode-a-route-scope.js`
-- **normalizePath()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-mode-a-route-scope.js`
+- **check-mode-a-route-scope.js** (4 connections) — `healthcareplatform/backend/scripts/ci/check-mode-a-route-scope.js`
+- **extractActiveRoutes()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-mode-a-route-scope.js`
+- **main()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-mode-a-route-scope.js`
+- **fail()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-mode-a-route-scope.js`
+- **normalizePath()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-mode-a-route-scope.js`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-mode-a-route-scope.js`
+- `healthcareplatform/backend/scripts/ci/check-mode-a-route-scope.js`
 
 ## Audit Trail
 

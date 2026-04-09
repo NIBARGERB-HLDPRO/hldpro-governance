@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **validate-state-asc-wave1-sample-packs.js** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-state-asc-wave1-sample-packs.js`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-state-asc-wave1-sample-packs.js`
-- **runPack()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-state-asc-wave1-sample-packs.js`
+- **validate-state-asc-wave1-sample-packs.js** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-state-asc-wave1-sample-packs.js`
+- **main()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-state-asc-wave1-sample-packs.js`
+- **runPack()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-state-asc-wave1-sample-packs.js`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-state-asc-wave1-sample-packs.js`
+- `healthcareplatform/backend/scripts/ci/validate-state-asc-wave1-sample-packs.js`
 
 ## Audit Trail
 

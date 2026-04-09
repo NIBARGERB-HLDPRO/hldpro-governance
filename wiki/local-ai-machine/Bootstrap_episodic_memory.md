@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **bootstrap_episodic_memory.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/bootstrap_episodic_memory.ts`
-- **mockEmbedding()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/bootstrap_episodic_memory.ts`
-- **stableHash()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/bootstrap_episodic_memory.ts`
+- **bootstrap_episodic_memory.ts** (2 connections) — `local-ai-machine/scripts/edge/bootstrap_episodic_memory.ts`
+- **mockEmbedding()** (1 connections) — `local-ai-machine/scripts/edge/bootstrap_episodic_memory.ts`
+- **stableHash()** (1 connections) — `local-ai-machine/scripts/edge/bootstrap_episodic_memory.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/bootstrap_episodic_memory.ts`
+- `local-ai-machine/scripts/edge/bootstrap_episodic_memory.ts`
 
 ## Audit Trail
 

@@ -59,8 +59,8 @@ def main() -> int:
     check('"repo_slug": repo_slug' in builder, "builder writes repo slug into summary artifact")
 
     index = INDEX.read_text(encoding="utf-8")
-    check("hldpro-governance: 104 nodes, 195 edges, 14 communities — ../graphify-out/hldpro-governance/GRAPH_REPORT.md" in index, "knowledge index links governance-scoped report")
-    check("ai-integration-services: 1883 nodes, 2533 edges, 111 communities — ../graphify-out/ai-integration-services/GRAPH_REPORT.md" in index, "knowledge index links AIS scoped report")
+    check("hldpro-governance:" in index and "../graphify-out/hldpro-governance/GRAPH_REPORT.md" in index, "knowledge index links governance-scoped report")
+    check("ai-integration-services:" in index and "../graphify-out/ai-integration-services/GRAPH_REPORT.md" in index, "knowledge index links AIS scoped report")
     check("../graphify-out/healthcareplatform/GRAPH_REPORT.md" in index, "knowledge index links HealthcarePlatform scoped report")
     check("../graphify-out/local-ai-machine/GRAPH_REPORT.md" in index, "knowledge index links local-ai-machine scoped report")
     check("../graphify-out/knocktracker/GRAPH_REPORT.md" in index, "knowledge index links knocktracker scoped report")

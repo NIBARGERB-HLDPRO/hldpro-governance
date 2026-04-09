@@ -1,6 +1,6 @@
 # acquire()
 
-> God node · 16 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/session_lock.py`
+> God node · 16 connections · `local-ai-machine/scripts/ops/session_lock.py`
 
 ## Connections by Relation
 

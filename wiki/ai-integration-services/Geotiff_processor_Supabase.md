@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **geotiff-processor.ts** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
-- **parseDSM()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
-- **extractLinearMeasurements()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
-- **assessConfidence()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
-- **emptyResults()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
-- **getTagDoubles()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
-- **getTagValue()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
-- **parseTiffTags()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
+- **geotiff-processor.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
+- **parseDSM()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
+- **extractLinearMeasurements()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
+- **assessConfidence()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
+- **emptyResults()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
+- **getTagDoubles()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
+- **getTagValue()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
+- **parseTiffTags()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/geotiff-processor.ts`
 
 ## Audit Trail
 

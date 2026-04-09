@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **survey-cfc-import-smoke.js** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/survey-cfc-import-smoke.js`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/survey-cfc-import-smoke.js`
-- **normalizeUrl()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/survey-cfc-import-smoke.js`
-- **signIn()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/survey-cfc-import-smoke.js`
+- **survey-cfc-import-smoke.js** (3 connections) — `healthcareplatform/backend/scripts/smoke/survey-cfc-import-smoke.js`
+- **main()** (3 connections) — `healthcareplatform/backend/scripts/smoke/survey-cfc-import-smoke.js`
+- **normalizeUrl()** (3 connections) — `healthcareplatform/backend/scripts/smoke/survey-cfc-import-smoke.js`
+- **signIn()** (3 connections) — `healthcareplatform/backend/scripts/smoke/survey-cfc-import-smoke.js`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/survey-cfc-import-smoke.js`
+- `healthcareplatform/backend/scripts/smoke/survey-cfc-import-smoke.js`
 
 ## Audit Trail
 

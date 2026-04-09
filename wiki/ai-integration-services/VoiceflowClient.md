@@ -1,6 +1,6 @@
 # VoiceflowClient
 
-> God node · 14 connections · `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/voiceflow-client.ts`
+> God node · 14 connections · `ai-integration-services/backend/supabase/functions/_shared/voiceflow-client.ts`
 
 ## Connections by Relation
 

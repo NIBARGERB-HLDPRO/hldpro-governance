@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **run_cli_bridge.ps1** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_cli_bridge.ps1`
-- **Get-JwtRemainingSeconds()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_cli_bridge.ps1`
-- **Import-DotEnv()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_cli_bridge.ps1`
+- **run_cli_bridge.ps1** (2 connections) — `local-ai-machine/scripts/ops/run_cli_bridge.ps1`
+- **Get-JwtRemainingSeconds()** (1 connections) — `local-ai-machine/scripts/ops/run_cli_bridge.ps1`
+- **Import-DotEnv()** (1 connections) — `local-ai-machine/scripts/ops/run_cli_bridge.ps1`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_cli_bridge.ps1`
+- `local-ai-machine/scripts/ops/run_cli_bridge.ps1`
 
 ## Audit Trail
 

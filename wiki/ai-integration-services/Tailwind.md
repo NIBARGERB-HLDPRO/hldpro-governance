@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **tailwind.config.js** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/tailwind.config.js`
+- **tailwind.config.js** (0 connections) — `ai-integration-services/apps/marketing/tailwind.config.js`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/tailwind.config.js`
+- `ai-integration-services/apps/marketing/tailwind.config.js`
 
 ## Audit Trail
 

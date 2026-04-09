@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **standards-source-governance.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/standards-source-governance.test.ts`
-- **assertEquals()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/standards-source-governance.test.ts`
+- **standards-source-governance.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/standards-source-governance.test.ts`
+- **assertEquals()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/standards-source-governance.test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/standards-source-governance.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/standards-source-governance.test.ts`
 
 ## Audit Trail
 

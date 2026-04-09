@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **run_scavenger.ps1** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger.ps1`
-- **Import-DotEnv()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger.ps1`
-- **Publish-LearningEvent()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger.ps1`
-- **Write-RunnerSummary()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger.ps1`
+- **run_scavenger.ps1** (3 connections) — `local-ai-machine/scripts/ops/run_scavenger.ps1`
+- **Import-DotEnv()** (1 connections) — `local-ai-machine/scripts/ops/run_scavenger.ps1`
+- **Publish-LearningEvent()** (1 connections) — `local-ai-machine/scripts/ops/run_scavenger.ps1`
+- **Write-RunnerSummary()** (1 connections) — `local-ai-machine/scripts/ops/run_scavenger.ps1`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger.ps1`
+- `local-ai-machine/scripts/ops/run_scavenger.ps1`
 
 ## Audit Trail
 

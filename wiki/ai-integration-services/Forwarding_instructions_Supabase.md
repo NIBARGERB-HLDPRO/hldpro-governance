@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **forwarding-instructions.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/forwarding-instructions.ts`
-- **buildForwardingInstructionsHtml()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/forwarding-instructions.ts`
+- **forwarding-instructions.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/forwarding-instructions.ts`
+- **buildForwardingInstructionsHtml()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/forwarding-instructions.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/forwarding-instructions.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/forwarding-instructions.ts`
 
 ## Audit Trail
 

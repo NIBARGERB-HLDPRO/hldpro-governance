@@ -4,19 +4,19 @@
 
 ## Key Concepts
 
-- **society_review_loop.ts** (12 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
-- **buildSignalsFromDrift()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
-- **runOnce()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
-- **maybeInsertHitlConsultation()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
-- **assert()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
-- **confidenceForChange()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
-- **isUuid()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
-- **mapScopeToLane()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
-- **parseArgs()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
-- **severityForChange()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
-- **summarizeChange()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
-- **readJson()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
+- **society_review_loop.ts** (12 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
+- **buildSignalsFromDrift()** (6 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
+- **runOnce()** (5 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
+- **main()** (3 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
+- **maybeInsertHitlConsultation()** (3 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
+- **assert()** (2 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
+- **confidenceForChange()** (2 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
+- **isUuid()** (2 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
+- **mapScopeToLane()** (2 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
+- **parseArgs()** (2 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
+- **severityForChange()** (2 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
+- **summarizeChange()** (2 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
+- **readJson()** (1 connections) — `local-ai-machine/scripts/control_plane/society_review_loop.ts`
 
 ## Relationships
 
@@ -24,7 +24,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/society_review_loop.ts`
+- `local-ai-machine/scripts/control_plane/society_review_loop.ts`
 
 ## Audit Trail
 

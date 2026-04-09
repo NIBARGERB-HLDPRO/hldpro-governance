@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **issue500-survey-scoring-finding-capa-validation.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/issue500-survey-scoring-finding-capa-validation.test.ts`
-- **assert()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/issue500-survey-scoring-finding-capa-validation.test.ts`
+- **issue500-survey-scoring-finding-capa-validation.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/issue500-survey-scoring-finding-capa-validation.test.ts`
+- **assert()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/issue500-survey-scoring-finding-capa-validation.test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/issue500-survey-scoring-finding-capa-validation.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/issue500-survey-scoring-finding-capa-validation.test.ts`
 
 ## Audit Trail
 

@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **cors.ts** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cors.ts`
-- **getCorsHeaders()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cors.ts`
-- **getAllowedOrigins()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cors.ts`
-- **getSecurityHeaders()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cors.ts`
-- **handleCors()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cors.ts`
+- **cors.ts** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
+- **getCorsHeaders()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
+- **getAllowedOrigins()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
+- **getSecurityHeaders()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
+- **handleCors()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cors.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
 
 ## Audit Trail
 

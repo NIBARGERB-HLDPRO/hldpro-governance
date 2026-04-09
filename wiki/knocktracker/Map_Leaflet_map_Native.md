@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **LeafletMap.native.tsx** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/map/LeafletMap.native.tsx`
-- **LeafletMap()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/map/LeafletMap.native.tsx`
+- **LeafletMap.native.tsx** (1 connections) — `knocktracker/components/map/LeafletMap.native.tsx`
+- **LeafletMap()** (1 connections) — `knocktracker/components/map/LeafletMap.native.tsx`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/map/LeafletMap.native.tsx`
+- `knocktracker/components/map/LeafletMap.native.tsx`
 
 ## Audit Trail
 

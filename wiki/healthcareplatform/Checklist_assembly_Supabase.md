@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **checklist-assembly.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/checklist-assembly.ts`
-- **buildChecklistBindings()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/checklist-assembly.ts`
-- **collectStandardIds()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/checklist-assembly.ts`
+- **checklist-assembly.ts** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/checklist-assembly.ts`
+- **buildChecklistBindings()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/checklist-assembly.ts`
+- **collectStandardIds()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/checklist-assembly.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/checklist-assembly.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/checklist-assembly.ts`
 
 ## Audit Trail
 

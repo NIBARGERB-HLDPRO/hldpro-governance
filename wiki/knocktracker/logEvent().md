@@ -1,6 +1,6 @@
 # logEvent()
 
-> God node · 6 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/app/(main)/track.tsx`
+> God node · 6 connections · `knocktracker/app/(main)/track.tsx`
 
 ## Connections by Relation
 

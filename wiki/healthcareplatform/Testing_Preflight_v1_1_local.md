@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **preflight-v1_1-local.ps1** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/testing/preflight-v1_1-local.ps1`
-- **Ensure-Command()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/testing/preflight-v1_1-local.ps1`
-- **Fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/testing/preflight-v1_1-local.ps1`
+- **preflight-v1_1-local.ps1** (2 connections) — `healthcareplatform/backend/scripts/testing/preflight-v1_1-local.ps1`
+- **Ensure-Command()** (2 connections) — `healthcareplatform/backend/scripts/testing/preflight-v1_1-local.ps1`
+- **Fail()** (2 connections) — `healthcareplatform/backend/scripts/testing/preflight-v1_1-local.ps1`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/testing/preflight-v1_1-local.ps1`
+- `healthcareplatform/backend/scripts/testing/preflight-v1_1-local.ps1`
 
 ## Audit Trail
 

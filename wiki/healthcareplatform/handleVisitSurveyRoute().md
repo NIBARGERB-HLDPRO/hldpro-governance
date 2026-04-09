@@ -1,6 +1,6 @@
 # handleVisitSurveyRoute()
 
-> God node · 16 connections · `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/survey/index.ts`
+> God node · 16 connections · `healthcareplatform/backend/supabase/functions/survey/index.ts`
 
 ## Connections by Relation
 

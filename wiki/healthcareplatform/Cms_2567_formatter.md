@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **cms-2567-formatter.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/cms-2567-formatter.ts`
-- **formatCms2567()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/cms-2567-formatter.ts`
+- **cms-2567-formatter.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-2567-formatter.ts`
+- **formatCms2567()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-2567-formatter.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/cms-2567-formatter.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/cms-2567-formatter.ts`
 
 ## Audit Trail
 

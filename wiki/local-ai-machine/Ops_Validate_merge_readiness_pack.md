@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **validate_merge_readiness_pack.py** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/validate_merge_readiness_pack.py`
-- **main()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/validate_merge_readiness_pack.py`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/validate_merge_readiness_pack.py`
-- **load_json()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/validate_merge_readiness_pack.py`
-- **canonicalize_command()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/validate_merge_readiness_pack.py`
+- **validate_merge_readiness_pack.py** (4 connections) — `local-ai-machine/scripts/ops/validate_merge_readiness_pack.py`
+- **main()** (4 connections) — `local-ai-machine/scripts/ops/validate_merge_readiness_pack.py`
+- **fail()** (3 connections) — `local-ai-machine/scripts/ops/validate_merge_readiness_pack.py`
+- **load_json()** (3 connections) — `local-ai-machine/scripts/ops/validate_merge_readiness_pack.py`
+- **canonicalize_command()** (2 connections) — `local-ai-machine/scripts/ops/validate_merge_readiness_pack.py`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/validate_merge_readiness_pack.py`
+- `local-ai-machine/scripts/ops/validate_merge_readiness_pack.py`
 
 ## Audit Trail
 

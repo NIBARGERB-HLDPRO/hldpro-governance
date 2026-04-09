@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **seed-local-smoke-fixtures.ps1** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/seed-local-smoke-fixtures.ps1`
-- **Ensure-AuthUser()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/seed-local-smoke-fixtures.ps1`
-- **Query-Scalar()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/seed-local-smoke-fixtures.ps1`
-- **Exec-Sql()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/seed-local-smoke-fixtures.ps1`
-- **Parse-SupabaseEnv()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/seed-local-smoke-fixtures.ps1`
+- **seed-local-smoke-fixtures.ps1** (4 connections) — `healthcareplatform/backend/scripts/smoke/seed-local-smoke-fixtures.ps1`
+- **Ensure-AuthUser()** (2 connections) — `healthcareplatform/backend/scripts/smoke/seed-local-smoke-fixtures.ps1`
+- **Query-Scalar()** (2 connections) — `healthcareplatform/backend/scripts/smoke/seed-local-smoke-fixtures.ps1`
+- **Exec-Sql()** (1 connections) — `healthcareplatform/backend/scripts/smoke/seed-local-smoke-fixtures.ps1`
+- **Parse-SupabaseEnv()** (1 connections) — `healthcareplatform/backend/scripts/smoke/seed-local-smoke-fixtures.ps1`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/seed-local-smoke-fixtures.ps1`
+- `healthcareplatform/backend/scripts/smoke/seed-local-smoke-fixtures.ps1`
 
 ## Audit Trail
 

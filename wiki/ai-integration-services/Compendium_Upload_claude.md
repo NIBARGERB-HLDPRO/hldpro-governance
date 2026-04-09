@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **upload-claude.ts** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-claude.ts`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-claude.ts`
-- **deleteExistingFiles()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-claude.ts`
-- **getPackFiles()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-claude.ts`
-- **loadConfig()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-claude.ts`
-- **uploadFiles()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-claude.ts`
+- **upload-claude.ts** (5 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
+- **main()** (5 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
+- **deleteExistingFiles()** (2 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
+- **getPackFiles()** (2 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
+- **loadConfig()** (2 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
+- **uploadFiles()** (2 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-claude.ts`
+- `ai-integration-services/scripts/compendium/upload-claude.ts`
 
 ## Audit Trail
 

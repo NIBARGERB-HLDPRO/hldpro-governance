@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- **check-function-search-path-hardening.js** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-function-search-path-hardening.js`
-- **main()** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-function-search-path-hardening.js`
-- **getChangedMigrationFiles()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-function-search-path-hardening.js`
-- **parseAlterSearchPathSignatures()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-function-search-path-hardening.js`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-function-search-path-hardening.js`
-- **normalizeArgs()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-function-search-path-hardening.js`
-- **normalizeFunctionRef()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-function-search-path-hardening.js`
-- **findCreateFunctionBlocks()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-function-search-path-hardening.js`
-- **parseArgs()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-function-search-path-hardening.js`
-- **runGit()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-function-search-path-hardening.js`
+- **check-function-search-path-hardening.js** (9 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
+- **main()** (8 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
+- **getChangedMigrationFiles()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
+- **parseAlterSearchPathSignatures()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
+- **fail()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
+- **normalizeArgs()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
+- **normalizeFunctionRef()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
+- **findCreateFunctionBlocks()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
+- **parseArgs()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
+- **runGit()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
 
 ## Relationships
 
@@ -21,7 +21,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-function-search-path-hardening.js`
+- `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
 
 ## Audit Trail
 

@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **test_reconciliation_transport_contract.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_reconciliation_transport_contract.py`
-- **check()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_reconciliation_transport_contract.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_reconciliation_transport_contract.py`
+- **test_reconciliation_transport_contract.py** (2 connections) — `local-ai-machine/scripts/ops/test_reconciliation_transport_contract.py`
+- **check()** (2 connections) — `local-ai-machine/scripts/ops/test_reconciliation_transport_contract.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/test_reconciliation_transport_contract.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_reconciliation_transport_contract.py`
+- `local-ai-machine/scripts/ops/test_reconciliation_transport_contract.py`
 
 ## Audit Trail
 

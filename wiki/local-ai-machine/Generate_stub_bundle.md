@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **generate_stub_bundle.py** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/generate_stub_bundle.py`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/generate_stub_bundle.py`
-- **now_iso()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/generate_stub_bundle.py`
-- **sha256_hex()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/generate_stub_bundle.py`
-- **write_json()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/generate_stub_bundle.py`
-- **write_text()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/generate_stub_bundle.py`
+- **generate_stub_bundle.py** (5 connections) — `local-ai-machine/generate_stub_bundle.py`
+- **main()** (5 connections) — `local-ai-machine/generate_stub_bundle.py`
+- **now_iso()** (2 connections) — `local-ai-machine/generate_stub_bundle.py`
+- **sha256_hex()** (2 connections) — `local-ai-machine/generate_stub_bundle.py`
+- **write_json()** (2 connections) — `local-ai-machine/generate_stub_bundle.py`
+- **write_text()** (2 connections) — `local-ai-machine/generate_stub_bundle.py`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/generate_stub_bundle.py`
+- `local-ai-machine/generate_stub_bundle.py`
 
 ## Audit Trail
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **playwright.comprehensive.config.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.comprehensive.config.ts`
+- **playwright.comprehensive.config.ts** (0 connections) — `healthcareplatform/frontend/playwright.comprehensive.config.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.comprehensive.config.ts`
+- `healthcareplatform/frontend/playwright.comprehensive.config.ts`
 
 ## Audit Trail
 

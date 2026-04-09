@@ -4,15 +4,15 @@
 
 ## Key Concepts
 
-- **apply_slack_manifest.py** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/apply_slack_manifest.py`
-- **main()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/apply_slack_manifest.py`
-- **_env()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/apply_slack_manifest.py`
-- **rotate_config_token()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/apply_slack_manifest.py`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/apply_slack_manifest.py`
-- **resolve_token()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/apply_slack_manifest.py`
-- **_load_env_file()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/apply_slack_manifest.py`
-- **slack_post()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/apply_slack_manifest.py`
-- **_upsert_env_values()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/apply_slack_manifest.py`
+- **apply_slack_manifest.py** (8 connections) — `local-ai-machine/scripts/ops/apply_slack_manifest.py`
+- **main()** (6 connections) — `local-ai-machine/scripts/ops/apply_slack_manifest.py`
+- **_env()** (5 connections) — `local-ai-machine/scripts/ops/apply_slack_manifest.py`
+- **rotate_config_token()** (5 connections) — `local-ai-machine/scripts/ops/apply_slack_manifest.py`
+- **fail()** (3 connections) — `local-ai-machine/scripts/ops/apply_slack_manifest.py`
+- **resolve_token()** (3 connections) — `local-ai-machine/scripts/ops/apply_slack_manifest.py`
+- **_load_env_file()** (2 connections) — `local-ai-machine/scripts/ops/apply_slack_manifest.py`
+- **slack_post()** (2 connections) — `local-ai-machine/scripts/ops/apply_slack_manifest.py`
+- **_upsert_env_values()** (2 connections) — `local-ai-machine/scripts/ops/apply_slack_manifest.py`
 
 ## Relationships
 
@@ -20,7 +20,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/apply_slack_manifest.py`
+- `local-ai-machine/scripts/ops/apply_slack_manifest.py`
 
 ## Audit Trail
 

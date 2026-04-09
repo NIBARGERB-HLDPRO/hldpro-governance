@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **seed-staging.ts** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-staging.ts`
-- **seed()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-staging.ts`
-- **generateAuditLogs()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-staging.ts`
-- **generateInvoices()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-staging.ts`
-- **generateProvisioningSteps()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-staging.ts`
-- **generateTransactions()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-staging.ts`
+- **seed-staging.ts** (5 connections) — `ai-integration-services/scripts/seed-staging.ts`
+- **seed()** (5 connections) — `ai-integration-services/scripts/seed-staging.ts`
+- **generateAuditLogs()** (2 connections) — `ai-integration-services/scripts/seed-staging.ts`
+- **generateInvoices()** (2 connections) — `ai-integration-services/scripts/seed-staging.ts`
+- **generateProvisioningSteps()** (2 connections) — `ai-integration-services/scripts/seed-staging.ts`
+- **generateTransactions()** (2 connections) — `ai-integration-services/scripts/seed-staging.ts`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-staging.ts`
+- `ai-integration-services/scripts/seed-staging.ts`
 
 ## Audit Trail
 

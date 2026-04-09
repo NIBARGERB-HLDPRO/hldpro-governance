@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- **MetaAdConnector** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
-- **.apiGet()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
-- **.apiPost()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
-- **.healthCheck()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
-- **.listAccounts()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
-- **.pullCampaigns()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
-- **.pullPerformance()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
-- **.refreshToken()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
-- **.sendConversion()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
-- **meta.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
-- **.constructor()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- **MetaAdConnector** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- **.apiGet()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- **.apiPost()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- **.healthCheck()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- **.listAccounts()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- **.pullCampaigns()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- **.pullPerformance()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- **.refreshToken()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- **.sendConversion()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- **meta.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- **.constructor()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
 
 ## Relationships
 
@@ -22,7 +22,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
 
 ## Audit Trail
 

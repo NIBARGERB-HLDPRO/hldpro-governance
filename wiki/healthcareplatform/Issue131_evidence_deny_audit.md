@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- **issue131-evidence-list-deny-audit-smoke.js** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
-- **main()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
-- **createTenantAVisitIfNeeded()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
-- **normalizeBaseUrl()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
-- **parseJsonSafe()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
-- **signInWithPassword()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
-- **callCrossTenantEvidenceList()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
-- **fetchRecentListFailedAudits()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
-- **buildAuditUrl()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
-- **hasMatchingDenyAudit()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
-- **getEnv()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **issue131-evidence-list-deny-audit-smoke.js** (10 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **main()** (6 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **createTenantAVisitIfNeeded()** (5 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **normalizeBaseUrl()** (5 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **parseJsonSafe()** (5 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **signInWithPassword()** (5 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **callCrossTenantEvidenceList()** (4 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **fetchRecentListFailedAudits()** (4 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **buildAuditUrl()** (3 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **hasMatchingDenyAudit()** (2 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **getEnv()** (1 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
 
 ## Relationships
 
@@ -22,7 +22,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
 
 ## Audit Trail
 

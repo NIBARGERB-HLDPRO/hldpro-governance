@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **extract-tarrant-cad.ps1** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/scripts/extract-tarrant-cad.ps1`
+- **extract-tarrant-cad.ps1** (0 connections) — `knocktracker/scripts/extract-tarrant-cad.ps1`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/scripts/extract-tarrant-cad.ps1`
+- `knocktracker/scripts/extract-tarrant-cad.ps1`
 
 ## Audit Trail
 

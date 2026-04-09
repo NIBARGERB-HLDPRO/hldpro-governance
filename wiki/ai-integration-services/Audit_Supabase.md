@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **audit.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/audit.ts`
-- **emitAuditLog()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/audit.ts`
+- **audit.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/audit.ts`
+- **emitAuditLog()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/audit.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/audit.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/audit.ts`
 
 ## Audit Trail
 

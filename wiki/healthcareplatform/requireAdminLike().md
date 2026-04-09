@@ -1,6 +1,6 @@
 # requireAdminLike()
 
-> God node · 10 connections · `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/training/index.ts`
+> God node · 10 connections · `healthcareplatform/backend/supabase/functions/training/index.ts`
 
 ## Connections by Relation
 

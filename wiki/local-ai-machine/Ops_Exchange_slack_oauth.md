@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **exchange_slack_oauth_code.py** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/exchange_slack_oauth_code.py`
-- **main()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/exchange_slack_oauth_code.py`
-- **_env()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/exchange_slack_oauth_code.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/exchange_slack_oauth_code.py`
-- **_load_env_file()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/exchange_slack_oauth_code.py`
-- **_upsert_env_values()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/exchange_slack_oauth_code.py`
+- **exchange_slack_oauth_code.py** (5 connections) — `local-ai-machine/scripts/ops/exchange_slack_oauth_code.py`
+- **main()** (4 connections) — `local-ai-machine/scripts/ops/exchange_slack_oauth_code.py`
+- **_env()** (3 connections) — `local-ai-machine/scripts/ops/exchange_slack_oauth_code.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/exchange_slack_oauth_code.py`
+- **_load_env_file()** (2 connections) — `local-ai-machine/scripts/ops/exchange_slack_oauth_code.py`
+- **_upsert_env_values()** (2 connections) — `local-ai-machine/scripts/ops/exchange_slack_oauth_code.py`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/exchange_slack_oauth_code.py`
+- `local-ai-machine/scripts/ops/exchange_slack_oauth_code.py`
 
 ## Audit Trail
 

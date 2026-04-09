@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **area-code-consent.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/area-code-consent.ts`
-- **getConsentType()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/area-code-consent.ts`
+- **area-code-consent.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/area-code-consent.ts`
+- **getConsentType()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/area-code-consent.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/area-code-consent.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/area-code-consent.ts`
 
 ## Audit Trail
 

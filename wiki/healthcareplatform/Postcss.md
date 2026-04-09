@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **postcss.config.js** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/postcss.config.js`
+- **postcss.config.js** (0 connections) — `healthcareplatform/frontend/postcss.config.js`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/postcss.config.js`
+- `healthcareplatform/frontend/postcss.config.js`
 
 ## Audit Trail
 

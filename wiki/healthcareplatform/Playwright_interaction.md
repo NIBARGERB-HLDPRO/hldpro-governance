@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **playwright.interaction.config.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.interaction.config.ts`
+- **playwright.interaction.config.ts** (0 connections) — `healthcareplatform/frontend/playwright.interaction.config.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.interaction.config.ts`
+- `healthcareplatform/frontend/playwright.interaction.config.ts`
 
 ## Audit Trail
 

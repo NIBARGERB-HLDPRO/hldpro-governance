@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **cogs-export.ts** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
-- **triggerBrowserDownload()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
-- **exportCSV()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
-- **exportJSON()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
-- **csvEscape()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
-- **triggerAsyncExport()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- **cogs-export.ts** (5 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- **triggerBrowserDownload()** (3 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- **exportCSV()** (2 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- **exportJSON()** (2 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- **csvEscape()** (1 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- **triggerAsyncExport()** (1 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
 
 ## Audit Trail
 

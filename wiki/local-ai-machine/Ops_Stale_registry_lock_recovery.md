@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **test_stale_registry_lock_recovery.py** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_stale_registry_lock_recovery.py`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_stale_registry_lock_recovery.py`
-- **check()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_stale_registry_lock_recovery.py`
-- **make_lock_info()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_stale_registry_lock_recovery.py`
-- **make_registry()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_stale_registry_lock_recovery.py`
-- **make_registry_session()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_stale_registry_lock_recovery.py`
+- **test_stale_registry_lock_recovery.py** (5 connections) — `local-ai-machine/scripts/ops/test_stale_registry_lock_recovery.py`
+- **main()** (5 connections) — `local-ai-machine/scripts/ops/test_stale_registry_lock_recovery.py`
+- **check()** (2 connections) — `local-ai-machine/scripts/ops/test_stale_registry_lock_recovery.py`
+- **make_lock_info()** (2 connections) — `local-ai-machine/scripts/ops/test_stale_registry_lock_recovery.py`
+- **make_registry()** (2 connections) — `local-ai-machine/scripts/ops/test_stale_registry_lock_recovery.py`
+- **make_registry_session()** (2 connections) — `local-ai-machine/scripts/ops/test_stale_registry_lock_recovery.py`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_stale_registry_lock_recovery.py`
+- `local-ai-machine/scripts/ops/test_stale_registry_lock_recovery.py`
 
 ## Audit Trail
 

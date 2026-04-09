@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **audit.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/audit.ts`
-- **writeEvidenceAuditEvent()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/audit.ts`
-- **hashIdentifier()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/audit.ts`
-- **normalizeActorRole()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/audit.ts`
+- **audit.ts** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit.ts`
+- **writeEvidenceAuditEvent()** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit.ts`
+- **hashIdentifier()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit.ts`
+- **normalizeActorRole()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/audit.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/audit.ts`
 
 ## Audit Trail
 

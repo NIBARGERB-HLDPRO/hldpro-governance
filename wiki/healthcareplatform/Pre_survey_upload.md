@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **pre-survey-upload-contract.test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/pre-survey-upload-contract.test.ts`
+- **pre-survey-upload-contract.test.ts** (0 connections) — `healthcareplatform/backend/supabase/functions/_shared/pre-survey-upload-contract.test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/pre-survey-upload-contract.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/pre-survey-upload-contract.test.ts`
 
 ## Audit Trail
 

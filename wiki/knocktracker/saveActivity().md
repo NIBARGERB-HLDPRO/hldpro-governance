@@ -1,6 +1,6 @@
 # saveActivity()
 
-> God node · 8 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/app/(main)/track.tsx`
+> God node · 8 connections · `knocktracker/app/(main)/track.tsx`
 
 ## Connections by Relation
 

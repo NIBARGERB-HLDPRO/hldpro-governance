@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **check-survey-frontend-compat.js** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-survey-frontend-compat.js`
-- **check()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-survey-frontend-compat.js`
-- **collectFiles()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-survey-frontend-compat.js`
+- **check-survey-frontend-compat.js** (2 connections) — `healthcareplatform/backend/scripts/ci/check-survey-frontend-compat.js`
+- **check()** (1 connections) — `healthcareplatform/backend/scripts/ci/check-survey-frontend-compat.js`
+- **collectFiles()** (1 connections) — `healthcareplatform/backend/scripts/ci/check-survey-frontend-compat.js`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-survey-frontend-compat.js`
+- `healthcareplatform/backend/scripts/ci/check-survey-frontend-compat.js`
 
 ## Audit Trail
 

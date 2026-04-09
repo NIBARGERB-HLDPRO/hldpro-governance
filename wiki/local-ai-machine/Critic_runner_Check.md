@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **test_critic_runner_contract.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_runner_contract.py`
-- **check()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_runner_contract.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_runner_contract.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_runner_contract.py`
+- **test_critic_runner_contract.py** (3 connections) — `local-ai-machine/scripts/test_critic_runner_contract.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/test_critic_runner_contract.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/test_critic_runner_contract.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/test_critic_runner_contract.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_runner_contract.py`
+- `local-ai-machine/scripts/test_critic_runner_contract.py`
 
 ## Audit Trail
 

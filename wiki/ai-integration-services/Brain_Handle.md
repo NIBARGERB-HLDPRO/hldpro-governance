@@ -4,20 +4,20 @@
 
 ## Key Concepts
 
-- **DashboardBrain.tsx** (16 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
-- **loadBrainData()** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
-- **handleBulkApprove()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/DashboardBrain.tsx`
-- **handleBulkDelete()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/DashboardBrain.tsx`
-- **handleFileUpload()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
-- **handleManualSubmit()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
-- **handlePdfUpload()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
-- **handlePricingApproval()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
-- **handlePricingEdit()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
-- **handleWebScrape()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
-- **loadQbTokenStatus()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
-- **sectionLabel()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
-- **toggleDocSelection()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/DashboardBrain.tsx`
-- **toggleSelectAllDocs()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/DashboardBrain.tsx`
+- **DashboardBrain.tsx** (16 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
+- **loadBrainData()** (9 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
+- **handleBulkApprove()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardBrain.tsx`
+- **handleBulkDelete()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardBrain.tsx`
+- **handleFileUpload()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
+- **handleManualSubmit()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
+- **handlePdfUpload()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
+- **handlePricingApproval()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
+- **handlePricingEdit()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
+- **handleWebScrape()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
+- **loadQbTokenStatus()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
+- **sectionLabel()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
+- **toggleDocSelection()** (1 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardBrain.tsx`
+- **toggleSelectAllDocs()** (1 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardBrain.tsx`
 
 ## Relationships
 
@@ -25,8 +25,8 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/DashboardBrain.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBrain.tsx`
+- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardBrain.tsx`
 
 ## Audit Trail
 

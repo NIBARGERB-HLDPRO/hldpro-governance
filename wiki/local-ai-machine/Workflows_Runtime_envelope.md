@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **runtime_envelope_test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/runtime_envelope_test.ts`
+- **runtime_envelope_test.ts** (0 connections) — `local-ai-machine/src/workflows/runtime_envelope_test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/runtime_envelope_test.ts`
+- `local-ai-machine/src/workflows/runtime_envelope_test.ts`
 
 ## Audit Trail
 

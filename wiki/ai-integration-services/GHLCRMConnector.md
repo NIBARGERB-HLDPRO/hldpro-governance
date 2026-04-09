@@ -1,6 +1,6 @@
 # GHLCRMConnector
 
-> God node · 25 connections · `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+> God node · 25 connections · `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 
 ## Connections by Relation
 

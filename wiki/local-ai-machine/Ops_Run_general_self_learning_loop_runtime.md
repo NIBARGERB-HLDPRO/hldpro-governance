@@ -4,15 +4,15 @@
 
 ## Key Concepts
 
-- **test_run_general_self_learning_loop_runtime.py** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_self_learning_loop_runtime.py`
-- **main()** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_self_learning_loop_runtime.py`
-- **check()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_self_learning_loop_runtime.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_self_learning_loop_runtime.py`
-- **load_json()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_self_learning_loop_runtime.py`
-- **run_runner()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_self_learning_loop_runtime.py`
-- **write_lock()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_self_learning_loop_runtime.py`
-- **write_queue()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_self_learning_loop_runtime.py`
-- **write_registry()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_self_learning_loop_runtime.py`
+- **test_run_general_self_learning_loop_runtime.py** (8 connections) — `local-ai-machine/scripts/ops/test_run_general_self_learning_loop_runtime.py`
+- **main()** (7 connections) — `local-ai-machine/scripts/ops/test_run_general_self_learning_loop_runtime.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_run_general_self_learning_loop_runtime.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_run_general_self_learning_loop_runtime.py`
+- **load_json()** (2 connections) — `local-ai-machine/scripts/ops/test_run_general_self_learning_loop_runtime.py`
+- **run_runner()** (2 connections) — `local-ai-machine/scripts/ops/test_run_general_self_learning_loop_runtime.py`
+- **write_lock()** (2 connections) — `local-ai-machine/scripts/ops/test_run_general_self_learning_loop_runtime.py`
+- **write_queue()** (2 connections) — `local-ai-machine/scripts/ops/test_run_general_self_learning_loop_runtime.py`
+- **write_registry()** (2 connections) — `local-ai-machine/scripts/ops/test_run_general_self_learning_loop_runtime.py`
 
 ## Relationships
 
@@ -20,7 +20,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_self_learning_loop_runtime.py`
+- `local-ai-machine/scripts/ops/test_run_general_self_learning_loop_runtime.py`
 
 ## Audit Trail
 

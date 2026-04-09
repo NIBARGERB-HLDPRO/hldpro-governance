@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **storage-rls-validation.test.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/storage-rls-validation.test.ts`
-- **assert()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/storage-rls-validation.test.ts`
-- **readFileFromShared()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/storage-rls-validation.test.ts`
+- **storage-rls-validation.test.ts** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/storage-rls-validation.test.ts`
+- **assert()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/storage-rls-validation.test.ts`
+- **readFileFromShared()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/storage-rls-validation.test.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/storage-rls-validation.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/storage-rls-validation.test.ts`
 
 ## Audit Trail
 

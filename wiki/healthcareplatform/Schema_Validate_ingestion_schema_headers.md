@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **validate_ingestion_schema_headers.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/tools/schema/validate_ingestion_schema_headers.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/tools/schema/validate_ingestion_schema_headers.py`
-- **extract_header_value()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/tools/schema/validate_ingestion_schema_headers.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/tools/schema/validate_ingestion_schema_headers.py`
+- **validate_ingestion_schema_headers.py** (3 connections) — `healthcareplatform/tools/schema/validate_ingestion_schema_headers.py`
+- **main()** (3 connections) — `healthcareplatform/tools/schema/validate_ingestion_schema_headers.py`
+- **extract_header_value()** (2 connections) — `healthcareplatform/tools/schema/validate_ingestion_schema_headers.py`
+- **fail()** (2 connections) — `healthcareplatform/tools/schema/validate_ingestion_schema_headers.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/tools/schema/validate_ingestion_schema_headers.py`
+- `healthcareplatform/tools/schema/validate_ingestion_schema_headers.py`
 
 ## Audit Trail
 

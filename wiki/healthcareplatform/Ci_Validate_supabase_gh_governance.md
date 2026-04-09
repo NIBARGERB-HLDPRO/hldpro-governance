@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **validate-supabase-gh-governance.js** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-supabase-gh-governance.js`
-- **fail()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-supabase-gh-governance.js`
-- **main()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-supabase-gh-governance.js`
-- **readUtf8()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-supabase-gh-governance.js`
-- **requirePatterns()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-supabase-gh-governance.js`
+- **validate-supabase-gh-governance.js** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-supabase-gh-governance.js`
+- **fail()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-supabase-gh-governance.js`
+- **main()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-supabase-gh-governance.js`
+- **readUtf8()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-supabase-gh-governance.js`
+- **requirePatterns()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-supabase-gh-governance.js`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-supabase-gh-governance.js`
+- `healthcareplatform/backend/scripts/ci/validate-supabase-gh-governance.js`
 
 ## Audit Trail
 

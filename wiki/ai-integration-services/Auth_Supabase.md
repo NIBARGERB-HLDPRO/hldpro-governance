@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **auth.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/auth.ts`
-- **getSupabaseClient()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/auth.ts`
-- **resolveAuthContext()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/auth.ts`
-- **getSupabaseServiceClient()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/auth.ts`
+- **auth.ts** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
+- **getSupabaseClient()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
+- **resolveAuthContext()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
+- **getSupabaseServiceClient()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/auth.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
 
 ## Audit Trail
 

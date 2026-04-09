@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **pii.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/pii.ts`
-- **containsPII()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/pii.ts`
-- **stripPII()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/pii.ts`
+- **pii.ts** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/pii.ts`
+- **containsPII()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/pii.ts`
+- **stripPII()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/pii.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/pii.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/pii.ts`
 
 ## Audit Trail
 

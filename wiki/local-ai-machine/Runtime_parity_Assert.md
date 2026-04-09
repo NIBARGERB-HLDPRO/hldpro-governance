@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **test_edge_runtime_parity.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/test_edge_runtime_parity.py`
-- **assert_true()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/test_edge_runtime_parity.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/test_edge_runtime_parity.py`
+- **test_edge_runtime_parity.py** (2 connections) — `local-ai-machine/scripts/edge/test_edge_runtime_parity.py`
+- **assert_true()** (2 connections) — `local-ai-machine/scripts/edge/test_edge_runtime_parity.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/edge/test_edge_runtime_parity.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/test_edge_runtime_parity.py`
+- `local-ai-machine/scripts/edge/test_edge_runtime_parity.py`
 
 ## Audit Trail
 

@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **capa-logic.test.ts** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/corrective-actions/capa-logic.test.ts`
-- **canCreateAction()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/corrective-actions/capa-logic.test.ts`
-- **canSetVerified()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/corrective-actions/capa-logic.test.ts`
-- **canUpdateAction()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/corrective-actions/capa-logic.test.ts`
-- **isActionMutationLocked()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/corrective-actions/capa-logic.test.ts`
+- **capa-logic.test.ts** (4 connections) — `healthcareplatform/backend/supabase/functions/corrective-actions/capa-logic.test.ts`
+- **canCreateAction()** (1 connections) — `healthcareplatform/backend/supabase/functions/corrective-actions/capa-logic.test.ts`
+- **canSetVerified()** (1 connections) — `healthcareplatform/backend/supabase/functions/corrective-actions/capa-logic.test.ts`
+- **canUpdateAction()** (1 connections) — `healthcareplatform/backend/supabase/functions/corrective-actions/capa-logic.test.ts`
+- **isActionMutationLocked()** (1 connections) — `healthcareplatform/backend/supabase/functions/corrective-actions/capa-logic.test.ts`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/corrective-actions/capa-logic.test.ts`
+- `healthcareplatform/backend/supabase/functions/corrective-actions/capa-logic.test.ts`
 
 ## Audit Trail
 

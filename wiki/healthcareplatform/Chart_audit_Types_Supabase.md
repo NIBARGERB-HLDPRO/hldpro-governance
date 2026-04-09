@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **types.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/types.ts`
-- **getRuleDefinition()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/types.ts`
-- **validateAro()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/types.ts`
+- **types.ts** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/types.ts`
+- **getRuleDefinition()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/types.ts`
+- **validateAro()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/types.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/types.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/chart-audit/types.ts`
 
 ## Audit Trail
 

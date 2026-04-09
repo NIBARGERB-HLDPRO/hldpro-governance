@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **pentagi-flow.spec.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/pentagi/pentagi-flow.spec.ts`
+- **pentagi-flow.spec.ts** (0 connections) — `ai-integration-services/scripts/pentagi/pentagi-flow.spec.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/pentagi/pentagi-flow.spec.ts`
+- `ai-integration-services/scripts/pentagi/pentagi-flow.spec.ts`
 
 ## Audit Trail
 

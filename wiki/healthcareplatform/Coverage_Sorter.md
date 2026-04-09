@@ -4,20 +4,20 @@
 
 ## Key Concepts
 
-- **sorter.js** (13 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **enableUI()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **getNthColumn()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **getTableHeader()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **addSortIndicators()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **getTable()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **getTableBody()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **loadData()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **removeSortIndicators()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **loadColumns()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **loadRowData()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **sortByIndex()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **addSearchBox()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
-- **onFilterInput()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
+- **sorter.js** (13 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **enableUI()** (5 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **getNthColumn()** (5 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **getTableHeader()** (4 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **addSortIndicators()** (3 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **getTable()** (3 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **getTableBody()** (3 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **loadData()** (3 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **removeSortIndicators()** (3 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **loadColumns()** (2 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **loadRowData()** (2 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **sortByIndex()** (2 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **addSearchBox()** (1 connections) — `healthcareplatform/frontend/coverage/sorter.js`
+- **onFilterInput()** (1 connections) — `healthcareplatform/frontend/coverage/sorter.js`
 
 ## Relationships
 
@@ -25,7 +25,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/sorter.js`
+- `healthcareplatform/frontend/coverage/sorter.js`
 
 ## Audit Trail
 

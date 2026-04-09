@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **set_execution_capability_mode.ps1** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/set_execution_capability_mode.ps1`
-- **Set-DotEnvKey()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/set_execution_capability_mode.ps1`
+- **set_execution_capability_mode.ps1** (1 connections) — `local-ai-machine/scripts/ops/set_execution_capability_mode.ps1`
+- **Set-DotEnvKey()** (1 connections) — `local-ai-machine/scripts/ops/set_execution_capability_mode.ps1`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/set_execution_capability_mode.ps1`
+- `local-ai-machine/scripts/ops/set_execution_capability_mode.ps1`
 
 ## Audit Trail
 

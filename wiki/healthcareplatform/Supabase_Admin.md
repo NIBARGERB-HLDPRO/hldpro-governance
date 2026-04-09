@@ -4,31 +4,31 @@
 
 ## Key Concepts
 
-- **utils.ts** (49 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **FacilityAccess.tsx** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/pages/admin/FacilityAccess.tsx`
-- **logAuditEvent()** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **buildAuditPayload()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **AdminUserDetail.test.tsx** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/pages/admin/AdminUserDetail.test.tsx`
-- **denyTenantMismatch()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **errorResponse()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **getCorsHeaders()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **hashIdentifier()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **resolveAuthContext()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **sanitizePayload()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **getUserContext()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **logDenyEvent()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **logErrorEvent()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **logSuccessEvent()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **renderWithProviders()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/test/utils.tsx`
-- **sha256Hex()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **FacilityAccess.loading.test.tsx** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/pages/admin/FacilityAccess.loading.test.tsx`
-- **FacilityAccess.test.tsx** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/pages/admin/FacilityAccess.test.tsx`
-- **corsPreflightResponse()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **createAuthValue()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/test/utils.tsx`
-- **createQueryClient()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/test/utils.tsx`
-- **createUserClient()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **deterministicSha256Hex()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- **hasCapability()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
+- **utils.ts** (49 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **FacilityAccess.tsx** (8 connections) — `healthcareplatform/frontend/src/pages/admin/FacilityAccess.tsx`
+- **logAuditEvent()** (8 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **buildAuditPayload()** (5 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **AdminUserDetail.test.tsx** (4 connections) — `healthcareplatform/frontend/src/pages/admin/AdminUserDetail.test.tsx`
+- **denyTenantMismatch()** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **errorResponse()** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **getCorsHeaders()** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **hashIdentifier()** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **resolveAuthContext()** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **sanitizePayload()** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **getUserContext()** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **logDenyEvent()** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **logErrorEvent()** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **logSuccessEvent()** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **renderWithProviders()** (3 connections) — `healthcareplatform/frontend/src/test/utils.tsx`
+- **sha256Hex()** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **FacilityAccess.loading.test.tsx** (2 connections) — `healthcareplatform/frontend/src/pages/admin/FacilityAccess.loading.test.tsx`
+- **FacilityAccess.test.tsx** (2 connections) — `healthcareplatform/frontend/src/pages/admin/FacilityAccess.test.tsx`
+- **corsPreflightResponse()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **createAuthValue()** (2 connections) — `healthcareplatform/frontend/src/test/utils.tsx`
+- **createQueryClient()** (2 connections) — `healthcareplatform/frontend/src/test/utils.tsx`
+- **createUserClient()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **deterministicSha256Hex()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- **hasCapability()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
 - *... and 13 more nodes in this community*
 
 ## Relationships
@@ -37,12 +37,12 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/pages/admin/AdminUserDetail.test.tsx`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/pages/admin/FacilityAccess.loading.test.tsx`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/pages/admin/FacilityAccess.test.tsx`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/pages/admin/FacilityAccess.tsx`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/test/utils.tsx`
+- `healthcareplatform/backend/supabase/functions/_shared/utils.ts`
+- `healthcareplatform/frontend/src/pages/admin/AdminUserDetail.test.tsx`
+- `healthcareplatform/frontend/src/pages/admin/FacilityAccess.loading.test.tsx`
+- `healthcareplatform/frontend/src/pages/admin/FacilityAccess.test.tsx`
+- `healthcareplatform/frontend/src/pages/admin/FacilityAccess.tsx`
+- `healthcareplatform/frontend/src/test/utils.tsx`
 
 ## Audit Trail
 

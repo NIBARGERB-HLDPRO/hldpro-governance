@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **admin_mcp_server.ts** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/admin_mcp_server.ts`
-- **processConn()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/admin_mcp_server.ts`
-- **authorize()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/admin_mcp_server.ts`
-- **runAdminServer()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/admin_mcp_server.ts`
-- **validateAdminIsolationConfig()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/admin_mcp_server.ts`
-- **handleToolCall()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/admin_mcp_server.ts`
-- **isAllowedTool()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/admin_mcp_server.ts`
-- **requireEnv()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/admin_mcp_server.ts`
+- **admin_mcp_server.ts** (7 connections) — `local-ai-machine/scripts/admin_mcp_server.ts`
+- **processConn()** (4 connections) — `local-ai-machine/scripts/admin_mcp_server.ts`
+- **authorize()** (3 connections) — `local-ai-machine/scripts/admin_mcp_server.ts`
+- **runAdminServer()** (3 connections) — `local-ai-machine/scripts/admin_mcp_server.ts`
+- **validateAdminIsolationConfig()** (3 connections) — `local-ai-machine/scripts/admin_mcp_server.ts`
+- **handleToolCall()** (2 connections) — `local-ai-machine/scripts/admin_mcp_server.ts`
+- **isAllowedTool()** (2 connections) — `local-ai-machine/scripts/admin_mcp_server.ts`
+- **requireEnv()** (2 connections) — `local-ai-machine/scripts/admin_mcp_server.ts`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/admin_mcp_server.ts`
+- `local-ai-machine/scripts/admin_mcp_server.ts`
 
 ## Audit Trail
 

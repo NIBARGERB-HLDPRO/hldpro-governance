@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **check-no-stale-mirror-gate-language.js** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
-- **isExcluded()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
-- **normalizeSlash()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
-- **walkFiles()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
+- **check-no-stale-mirror-gate-language.js** (5 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
+- **fail()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
+- **isExcluded()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
+- **main()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
+- **normalizeSlash()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
+- **walkFiles()** (1 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
+- `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
 
 ## Audit Trail
 

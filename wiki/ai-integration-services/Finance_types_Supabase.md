@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **finance-types.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/finance-types.ts`
+- **finance-types.ts** (0 connections) — `ai-integration-services/backend/supabase/functions/_shared/finance-types.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/finance-types.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/finance-types.ts`
 
 ## Audit Trail
 

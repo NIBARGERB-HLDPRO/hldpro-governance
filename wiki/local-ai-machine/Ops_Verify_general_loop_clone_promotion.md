@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **verify_general_loop_clone_promotion.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/verify_general_loop_clone_promotion.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/verify_general_loop_clone_promotion.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/verify_general_loop_clone_promotion.py`
+- **verify_general_loop_clone_promotion.py** (2 connections) — `local-ai-machine/scripts/ops/verify_general_loop_clone_promotion.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/verify_general_loop_clone_promotion.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/verify_general_loop_clone_promotion.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/verify_general_loop_clone_promotion.py`
+- `local-ai-machine/scripts/ops/verify_general_loop_clone_promotion.py`
 
 ## Audit Trail
 

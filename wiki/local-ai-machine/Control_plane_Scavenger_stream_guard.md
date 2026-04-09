@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **scavenger_stream_guard.ts** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_stream_guard.ts`
-- **appendLog()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_stream_guard.ts`
-- **handlePayload()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_stream_guard.ts`
-- **killMicrovm()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_stream_guard.ts`
-- **readAllWithLimit()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_stream_guard.ts`
+- **scavenger_stream_guard.ts** (4 connections) — `local-ai-machine/scripts/control_plane/scavenger_stream_guard.ts`
+- **appendLog()** (3 connections) — `local-ai-machine/scripts/control_plane/scavenger_stream_guard.ts`
+- **handlePayload()** (2 connections) — `local-ai-machine/scripts/control_plane/scavenger_stream_guard.ts`
+- **killMicrovm()** (2 connections) — `local-ai-machine/scripts/control_plane/scavenger_stream_guard.ts`
+- **readAllWithLimit()** (1 connections) — `local-ai-machine/scripts/control_plane/scavenger_stream_guard.ts`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_stream_guard.ts`
+- `local-ai-machine/scripts/control_plane/scavenger_stream_guard.ts`
 
 ## Audit Trail
 

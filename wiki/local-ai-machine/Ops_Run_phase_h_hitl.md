@@ -4,31 +4,31 @@
 
 ## Key Concepts
 
-- **run_phase_h_hitl_e2e.py** (34 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **run()** (21 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **fail()** (14 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **dump_diagnostics()** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **assert_project_ref_alignment()** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **assert_policy_event()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **env_required()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **assert_dual_audit()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **assert_host_command_resume_link()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **assert_intent_mandate()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **assert_step_capability_issuance()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **assert_transaction_capability_issuance()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **e2e_thread_ref()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **fetch_pending_action()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **post_signed_slack_callback()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **wait_for_audit_rows()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **wait_for_policy_event()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **wait_for_transaction_capability_issuance()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **webhook_url()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **assert_command_policy_event()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **fetch_audit_rows()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **fetch_host_command_resume()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **fetch_intent_mandate()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **fetch_step_capability_issuance()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
-- **fetch_transaction_capability_issuance()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
+- **run_phase_h_hitl_e2e.py** (34 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **run()** (21 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **fail()** (14 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **dump_diagnostics()** (8 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **assert_project_ref_alignment()** (7 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **assert_policy_event()** (5 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **env_required()** (5 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **assert_dual_audit()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **assert_host_command_resume_link()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **assert_intent_mandate()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **assert_step_capability_issuance()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **assert_transaction_capability_issuance()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **e2e_thread_ref()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **fetch_pending_action()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **post_signed_slack_callback()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **wait_for_audit_rows()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **wait_for_policy_event()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **wait_for_transaction_capability_issuance()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **webhook_url()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **assert_command_policy_event()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **fetch_audit_rows()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **fetch_host_command_resume()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **fetch_intent_mandate()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **fetch_step_capability_issuance()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **fetch_transaction_capability_issuance()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - *... and 10 more nodes in this community*
 
 ## Relationships
@@ -37,7 +37,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
+- `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 
 ## Audit Trail
 

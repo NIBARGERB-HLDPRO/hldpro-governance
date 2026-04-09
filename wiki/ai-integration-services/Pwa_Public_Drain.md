@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **sw.js** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/pwa/public/sw.js`
-- **openDB()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/pwa/public/sw.js`
-- **drainQueue()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/pwa/public/sw.js`
-- **enqueue()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/pwa/public/sw.js`
-- **isAuthEndpoint()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/pwa/public/sw.js`
-- **isSupabaseMutation()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/pwa/public/sw.js`
-- **isJobsApiRequest()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/pwa/public/sw.js`
+- **sw.js** (6 connections) — `ai-integration-services/apps/pwa/public/sw.js`
+- **openDB()** (3 connections) — `ai-integration-services/apps/pwa/public/sw.js`
+- **drainQueue()** (2 connections) — `ai-integration-services/apps/pwa/public/sw.js`
+- **enqueue()** (2 connections) — `ai-integration-services/apps/pwa/public/sw.js`
+- **isAuthEndpoint()** (2 connections) — `ai-integration-services/apps/pwa/public/sw.js`
+- **isSupabaseMutation()** (2 connections) — `ai-integration-services/apps/pwa/public/sw.js`
+- **isJobsApiRequest()** (1 connections) — `ai-integration-services/apps/pwa/public/sw.js`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/pwa/public/sw.js`
+- `ai-integration-services/apps/pwa/public/sw.js`
 
 ## Audit Trail
 

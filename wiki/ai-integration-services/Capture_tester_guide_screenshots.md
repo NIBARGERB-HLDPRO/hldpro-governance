@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **capture-tester-guide-screenshots.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/capture-tester-guide-screenshots.ts`
-- **main()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/capture-tester-guide-screenshots.ts`
+- **capture-tester-guide-screenshots.ts** (1 connections) — `ai-integration-services/scripts/capture-tester-guide-screenshots.ts`
+- **main()** (1 connections) — `ai-integration-services/scripts/capture-tester-guide-screenshots.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/capture-tester-guide-screenshots.ts`
+- `ai-integration-services/scripts/capture-tester-guide-screenshots.ts`
 
 ## Audit Trail
 

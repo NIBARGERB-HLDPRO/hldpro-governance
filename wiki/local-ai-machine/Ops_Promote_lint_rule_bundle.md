@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **promote_lint_rule_bundle.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_lint_rule_bundle.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_lint_rule_bundle.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_lint_rule_bundle.py`
+- **promote_lint_rule_bundle.py** (2 connections) — `local-ai-machine/scripts/ops/promote_lint_rule_bundle.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/promote_lint_rule_bundle.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/promote_lint_rule_bundle.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_lint_rule_bundle.py`
+- `local-ai-machine/scripts/ops/promote_lint_rule_bundle.py`
 
 ## Audit Trail
 

@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- **setup-compliance-gates.ts** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- **derivePlaidGate()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- **deriveSharedSmsA2PGate()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- **nowIso()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- **buildBaseRow()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- **setGateState()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- **syncSetupComplianceGatesForClient()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- **derivePlaidDesiredTiming()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- **findA2PAssociationForNumber()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- **loadComplianceSignals()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- **gateToReadinessStep()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **setup-compliance-gates.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **derivePlaidGate()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **deriveSharedSmsA2PGate()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **nowIso()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **buildBaseRow()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **setGateState()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **syncSetupComplianceGatesForClient()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **derivePlaidDesiredTiming()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **findA2PAssociationForNumber()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **loadComplianceSignals()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **gateToReadinessStep()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
 
 ## Relationships
 
@@ -22,7 +22,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
 
 ## Audit Trail
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **vite-env.d.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/vite-env.d.ts`
+- **vite-env.d.ts** (0 connections) — `healthcareplatform/frontend/src/vite-env.d.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/vite-env.d.ts`
+- `healthcareplatform/frontend/src/vite-env.d.ts`
 
 ## Audit Trail
 

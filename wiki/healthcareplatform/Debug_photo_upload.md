@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **debug-photo-upload.spec.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/debug-photo-upload.spec.ts`
+- **debug-photo-upload.spec.ts** (0 connections) — `healthcareplatform/frontend/e2e/debug-photo-upload.spec.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/debug-photo-upload.spec.ts`
+- `healthcareplatform/frontend/e2e/debug-photo-upload.spec.ts`
 
 ## Audit Trail
 

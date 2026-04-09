@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **validate-issue-execution-governance.js** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-issue-execution-governance.js`
-- **main()** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-issue-execution-governance.js`
-- **readUtf8()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-issue-execution-governance.js`
-- **fail()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-issue-execution-governance.js`
-- **requirePatterns()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-issue-execution-governance.js`
-- **readJson()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-issue-execution-governance.js`
-- **getCurrentBranch()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-issue-execution-governance.js`
-- **getIssueNumberFromBranch()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-issue-execution-governance.js`
+- **validate-issue-execution-governance.js** (7 connections) — `healthcareplatform/backend/scripts/ci/validate-issue-execution-governance.js`
+- **main()** (7 connections) — `healthcareplatform/backend/scripts/ci/validate-issue-execution-governance.js`
+- **readUtf8()** (5 connections) — `healthcareplatform/backend/scripts/ci/validate-issue-execution-governance.js`
+- **fail()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-issue-execution-governance.js`
+- **requirePatterns()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-issue-execution-governance.js`
+- **readJson()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-issue-execution-governance.js`
+- **getCurrentBranch()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-issue-execution-governance.js`
+- **getIssueNumberFromBranch()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-issue-execution-governance.js`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-issue-execution-governance.js`
+- `healthcareplatform/backend/scripts/ci/validate-issue-execution-governance.js`
 
 ## Audit Trail
 

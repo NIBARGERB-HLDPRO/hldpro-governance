@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **state-import-adapter.ts** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/state-import-adapter.ts`
-- **buildStateStageSummary()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/state-import-adapter.ts`
-- **validateStatePayload()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/state-import-adapter.ts`
-- **hasLikelyPhi()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/state-import-adapter.ts`
-- **normalizeStatePayload()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/state-import-adapter.ts`
+- **state-import-adapter.ts** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/state-import-adapter.ts`
+- **buildStateStageSummary()** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/state-import-adapter.ts`
+- **validateStatePayload()** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/state-import-adapter.ts`
+- **hasLikelyPhi()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/state-import-adapter.ts`
+- **normalizeStatePayload()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/state-import-adapter.ts`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/state-import-adapter.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/state-import-adapter.ts`
 
 ## Audit Trail
 

@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **send_slack_notification.py** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/send_slack_notification.py`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/send_slack_notification.py`
-- **_env()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/send_slack_notification.py`
-- **_load_env_file()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/send_slack_notification.py`
-- **_post()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/send_slack_notification.py`
-- **_split_for_slack()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/send_slack_notification.py`
-- **_strip_codex_session_noise()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/send_slack_notification.py`
+- **send_slack_notification.py** (6 connections) — `local-ai-machine/scripts/ops/send_slack_notification.py`
+- **main()** (5 connections) — `local-ai-machine/scripts/ops/send_slack_notification.py`
+- **_env()** (3 connections) — `local-ai-machine/scripts/ops/send_slack_notification.py`
+- **_load_env_file()** (2 connections) — `local-ai-machine/scripts/ops/send_slack_notification.py`
+- **_post()** (2 connections) — `local-ai-machine/scripts/ops/send_slack_notification.py`
+- **_split_for_slack()** (2 connections) — `local-ai-machine/scripts/ops/send_slack_notification.py`
+- **_strip_codex_session_noise()** (2 connections) — `local-ai-machine/scripts/ops/send_slack_notification.py`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/send_slack_notification.py`
+- `local-ai-machine/scripts/ops/send_slack_notification.py`
 
 ## Audit Trail
 

@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **factory.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/factory.ts`
-- **getAdConnector()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/factory.ts`
-- **getAllAdConnectors()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/factory.ts`
-- **getServiceConnector()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/factory.ts`
+- **factory.ts** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/factory.ts`
+- **getAdConnector()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/factory.ts`
+- **getAllAdConnectors()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/factory.ts`
+- **getServiceConnector()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/factory.ts`
 
 ## Relationships
 
@@ -15,8 +15,8 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/factory.ts`
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/factory.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/factory.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/factory.ts`
 
 ## Audit Trail
 

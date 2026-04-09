@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **install_slack_bot_rotation_task.ps1** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/install_slack_bot_rotation_task.ps1`
-- **Resolve-RefreshToken()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/install_slack_bot_rotation_task.ps1`
+- **install_slack_bot_rotation_task.ps1** (1 connections) — `local-ai-machine/scripts/ops/install_slack_bot_rotation_task.ps1`
+- **Resolve-RefreshToken()** (1 connections) — `local-ai-machine/scripts/ops/install_slack_bot_rotation_task.ps1`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/install_slack_bot_rotation_task.ps1`
+- `local-ai-machine/scripts/ops/install_slack_bot_rotation_task.ps1`
 
 ## Audit Trail
 

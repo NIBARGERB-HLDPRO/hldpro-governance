@@ -130,6 +130,10 @@ Three workflows in [`.github/workflows/`](.github/workflows/):
 - **`metrics/graphify-usage/`** — Append-only graphify usage-event logs and schema-backed logging path.
 - **`overlord-nightly-cleanup.yml`** — Daily artifact cleanup and stale merged branch reporting.
 
+### Graphify Local Validation
+
+Use [`scripts/knowledge_base/prepare_local_graphify_repos.sh`](scripts/knowledge_base/prepare_local_graphify_repos.sh) to create helper-managed `repos/` symlinks from sibling HLDPRO checkouts when validating the manifest-driven graph refresh path from an isolated governance worktree.
+
 ### Hooks
 
 [`hooks/branch-switch-guard.sh`](hooks/branch-switch-guard.sh) is a global PreToolUse hook installed in `~/.claude/settings.json`. It blocks `git checkout <branch>` and `git switch <branch>` to prevent multi-session branch conflicts. Worktrees (`git worktree add`) are the safe alternative.

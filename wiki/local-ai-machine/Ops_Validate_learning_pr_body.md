@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **validate_learning_pr_body.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/validate_learning_pr_body.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/validate_learning_pr_body.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/validate_learning_pr_body.py`
+- **validate_learning_pr_body.py** (2 connections) — `local-ai-machine/scripts/ops/validate_learning_pr_body.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/validate_learning_pr_body.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/validate_learning_pr_body.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/validate_learning_pr_body.py`
+- `local-ai-machine/scripts/ops/validate_learning_pr_body.py`
 
 ## Audit Trail
 

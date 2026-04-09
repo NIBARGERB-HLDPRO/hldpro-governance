@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **link-content-phi-gate.spec.ts** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/link-content-phi-gate.spec.ts`
-- **assertNoPhiLeak()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/link-content-phi-gate.spec.ts`
-- **assertRouteOutcome()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/link-content-phi-gate.spec.ts`
-- **firstEnv()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/link-content-phi-gate.spec.ts`
-- **login()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/link-content-phi-gate.spec.ts`
+- **link-content-phi-gate.spec.ts** (4 connections) — `healthcareplatform/frontend/e2e/link-content-phi-gate.spec.ts`
+- **assertNoPhiLeak()** (1 connections) — `healthcareplatform/frontend/e2e/link-content-phi-gate.spec.ts`
+- **assertRouteOutcome()** (1 connections) — `healthcareplatform/frontend/e2e/link-content-phi-gate.spec.ts`
+- **firstEnv()** (1 connections) — `healthcareplatform/frontend/e2e/link-content-phi-gate.spec.ts`
+- **login()** (1 connections) — `healthcareplatform/frontend/e2e/link-content-phi-gate.spec.ts`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/link-content-phi-gate.spec.ts`
+- `healthcareplatform/frontend/e2e/link-content-phi-gate.spec.ts`
 
 ## Audit Trail
 

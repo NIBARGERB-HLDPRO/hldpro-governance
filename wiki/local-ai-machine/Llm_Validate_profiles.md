@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **validate_profiles.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/llm/validate_profiles.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/llm/validate_profiles.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/llm/validate_profiles.py`
-- **ok()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/llm/validate_profiles.py`
+- **validate_profiles.py** (3 connections) — `local-ai-machine/scripts/llm/validate_profiles.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/llm/validate_profiles.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/llm/validate_profiles.py`
+- **ok()** (2 connections) — `local-ai-machine/scripts/llm/validate_profiles.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/llm/validate_profiles.py`
+- `local-ai-machine/scripts/llm/validate_profiles.py`
 
 ## Audit Trail
 

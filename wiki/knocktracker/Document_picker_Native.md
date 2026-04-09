@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **documentPicker.native.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/documentPicker.native.ts`
+- **documentPicker.native.ts** (0 connections) — `knocktracker/lib/documentPicker.native.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/documentPicker.native.ts`
+- `knocktracker/lib/documentPicker.native.ts`
 
 ## Audit Trail
 

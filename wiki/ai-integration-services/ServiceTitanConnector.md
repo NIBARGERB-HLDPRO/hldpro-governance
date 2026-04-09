@@ -1,6 +1,6 @@
 # ServiceTitanConnector
 
-> God node · 11 connections · `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/servicetitan.ts`
+> God node · 11 connections · `ai-integration-services/backend/supabase/functions/_shared/connectors/service/servicetitan.ts`
 
 ## Connections by Relation
 

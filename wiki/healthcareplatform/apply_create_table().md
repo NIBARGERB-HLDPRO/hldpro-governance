@@ -1,6 +1,6 @@
 # apply_create_table()
 
-> God node · 9 connections · `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/tools/schema/generate_effective_schema.py`
+> God node · 9 connections · `healthcareplatform/tools/schema/generate_effective_schema.py`
 
 ## Connections by Relation
 

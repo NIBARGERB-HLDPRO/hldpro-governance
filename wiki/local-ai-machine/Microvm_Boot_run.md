@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **test_boot_run_contract.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/microvm/test_boot_run_contract.py`
-- **check()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/microvm/test_boot_run_contract.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/microvm/test_boot_run_contract.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/microvm/test_boot_run_contract.py`
+- **test_boot_run_contract.py** (3 connections) — `local-ai-machine/scripts/microvm/test_boot_run_contract.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/microvm/test_boot_run_contract.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/microvm/test_boot_run_contract.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/microvm/test_boot_run_contract.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/microvm/test_boot_run_contract.py`
+- `local-ai-machine/scripts/microvm/test_boot_run_contract.py`
 
 ## Audit Trail
 

@@ -4,22 +4,22 @@
 
 ## Key Concepts
 
-- **TwilioClient** (15 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.twilioFetch()** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.getCreds()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.messagingFetch()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.createBrandRegistration()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.getBrandRegistrationStatus()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.listMessagingServicePhoneNumbers()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.listMessagingServices()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.purchaseNumber()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.releaseNumber()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.searchAvailableNumbers()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.sendSMS()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.updateNumberWebhooks()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **twilio-client.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.constructor()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
-- **.validateSignature()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **TwilioClient** (15 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.twilioFetch()** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.getCreds()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.messagingFetch()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.createBrandRegistration()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.getBrandRegistrationStatus()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.listMessagingServicePhoneNumbers()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.listMessagingServices()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.purchaseNumber()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.releaseNumber()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.searchAvailableNumbers()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.sendSMS()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.updateNumberWebhooks()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **twilio-client.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.constructor()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **.validateSignature()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
 
 ## Relationships
 
@@ -27,7 +27,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
 
 ## Audit Trail
 

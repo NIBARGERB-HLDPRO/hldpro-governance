@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **accreditor-import-adapter.test.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/accreditor-import-adapter.test.ts`
-- **assertEquals()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/accreditor-import-adapter.test.ts`
-- **samplePayload()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/accreditor-import-adapter.test.ts`
+- **accreditor-import-adapter.test.ts** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/accreditor-import-adapter.test.ts`
+- **assertEquals()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/accreditor-import-adapter.test.ts`
+- **samplePayload()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/accreditor-import-adapter.test.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/accreditor-import-adapter.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/accreditor-import-adapter.test.ts`
 
 ## Audit Trail
 

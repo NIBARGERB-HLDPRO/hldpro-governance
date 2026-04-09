@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **purge_archived_branch_family.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/purge_archived_branch_family.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/purge_archived_branch_family.py`
-- **is_safe_dead_candidate()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/purge_archived_branch_family.py`
-- **run()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/purge_archived_branch_family.py`
+- **purge_archived_branch_family.py** (3 connections) — `local-ai-machine/scripts/ops/purge_archived_branch_family.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/purge_archived_branch_family.py`
+- **is_safe_dead_candidate()** (2 connections) — `local-ai-machine/scripts/ops/purge_archived_branch_family.py`
+- **run()** (2 connections) — `local-ai-machine/scripts/ops/purge_archived_branch_family.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/purge_archived_branch_family.py`
+- `local-ai-machine/scripts/ops/purge_archived_branch_family.py`
 
 ## Audit Trail
 

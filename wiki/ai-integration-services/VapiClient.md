@@ -1,6 +1,6 @@
 # VapiClient
 
-> God node · 15 connections · `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
+> God node · 15 connections · `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
 
 ## Connections by Relation
 

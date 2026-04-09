@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **CorpusLayout.tsx** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/pages/corpus/CorpusLayout.tsx`
+- **CorpusLayout.tsx** (0 connections) — `ai-integration-services/apps/dashboard/src/pages/corpus/CorpusLayout.tsx`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/dashboard/src/pages/corpus/CorpusLayout.tsx`
+- `ai-integration-services/apps/dashboard/src/pages/corpus/CorpusLayout.tsx`
 
 ## Audit Trail
 

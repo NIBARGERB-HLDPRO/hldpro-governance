@@ -1,6 +1,6 @@
 # main()
 
-> God node · 15 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_general_self_learning_loop.py`
+> God node · 15 connections · `local-ai-machine/scripts/ops/run_general_self_learning_loop.py`
 
 ## Connections by Relation
 

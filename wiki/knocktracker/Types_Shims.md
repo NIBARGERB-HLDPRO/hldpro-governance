@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **shims.d.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/types/shims.d.ts`
+- **shims.d.ts** (0 connections) — `knocktracker/types/shims.d.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/types/shims.d.ts`
+- `knocktracker/types/shims.d.ts`
 
 ## Audit Trail
 

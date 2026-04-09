@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **check-asc-evaluator-import-compat.js** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-compat.js`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-compat.js`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-compat.js`
-- **readUtf8()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-compat.js`
+- **check-asc-evaluator-import-compat.js** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-compat.js`
+- **fail()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-compat.js`
+- **main()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-compat.js`
+- **readUtf8()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-compat.js`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-compat.js`
+- `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-compat.js`
 
 ## Audit Trail
 

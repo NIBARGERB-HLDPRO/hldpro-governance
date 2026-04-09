@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **check-active-workflows.js** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-active-workflows.js`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-active-workflows.js`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-active-workflows.js`
-- **resolveWorkflowsDir()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-active-workflows.js`
+- **check-active-workflows.js** (3 connections) — `healthcareplatform/backend/scripts/ci/check-active-workflows.js`
+- **fail()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-active-workflows.js`
+- **main()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-active-workflows.js`
+- **resolveWorkflowsDir()** (1 connections) — `healthcareplatform/backend/scripts/ci/check-active-workflows.js`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-active-workflows.js`
+- `healthcareplatform/backend/scripts/ci/check-active-workflows.js`
 
 ## Audit Trail
 

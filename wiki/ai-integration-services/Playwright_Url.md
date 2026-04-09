@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **playwright.config.ts** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/playwright.config.ts`
-- **resolveAppUrl()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/playwright.config.ts`
-- **isLocalUrl()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/playwright.config.ts`
-- **resolvePortalBaseUrl()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/playwright.config.ts`
-- **env-resolution-contract.spec.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/env-resolution-contract.spec.ts`
+- **playwright.config.ts** (4 connections) — `ai-integration-services/playwright.config.ts`
+- **resolveAppUrl()** (3 connections) — `ai-integration-services/playwright.config.ts`
+- **isLocalUrl()** (2 connections) — `ai-integration-services/playwright.config.ts`
+- **resolvePortalBaseUrl()** (2 connections) — `ai-integration-services/playwright.config.ts`
+- **env-resolution-contract.spec.ts** (1 connections) — `ai-integration-services/e2e/env-resolution-contract.spec.ts`
 
 ## Relationships
 
@@ -16,8 +16,8 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/env-resolution-contract.spec.ts`
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/playwright.config.ts`
+- `ai-integration-services/e2e/env-resolution-contract.spec.ts`
+- `ai-integration-services/playwright.config.ts`
 
 ## Audit Trail
 

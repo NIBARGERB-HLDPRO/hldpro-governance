@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **run_remote_gpu_host_remediation.ps1** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_remote_gpu_host_remediation.ps1`
-- **Convert-ToLf()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_remote_gpu_host_remediation.ps1`
-- **Escape-BashDoubleQuoted()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_remote_gpu_host_remediation.ps1`
-- **Invoke-SshAndCapture()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_remote_gpu_host_remediation.ps1`
+- **run_remote_gpu_host_remediation.ps1** (3 connections) — `local-ai-machine/scripts/ops/run_remote_gpu_host_remediation.ps1`
+- **Convert-ToLf()** (1 connections) — `local-ai-machine/scripts/ops/run_remote_gpu_host_remediation.ps1`
+- **Escape-BashDoubleQuoted()** (1 connections) — `local-ai-machine/scripts/ops/run_remote_gpu_host_remediation.ps1`
+- **Invoke-SshAndCapture()** (1 connections) — `local-ai-machine/scripts/ops/run_remote_gpu_host_remediation.ps1`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_remote_gpu_host_remediation.ps1`
+- `local-ai-machine/scripts/ops/run_remote_gpu_host_remediation.ps1`
 
 ## Audit Trail
 

@@ -1,6 +1,6 @@
 # TwentyCRMConnector
 
-> God node · 29 connections · `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/crm/twenty.ts`
+> God node · 29 connections · `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/twenty.ts`
 
 ## Connections by Relation
 

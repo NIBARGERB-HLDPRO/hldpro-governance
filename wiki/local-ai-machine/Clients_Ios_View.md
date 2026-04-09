@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **ContentView** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/clients/ios/LocalWiFiImageClient/ContentView.swift`
-- **.inferredFilename()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/clients/ios/LocalWiFiImageClient/ContentView.swift`
-- **.uploadAndPoll()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/clients/ios/LocalWiFiImageClient/ContentView.swift`
-- **ContentView.swift** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/clients/ios/LocalWiFiImageClient/ContentView.swift`
-- **.loadSelectedImage()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/clients/ios/LocalWiFiImageClient/ContentView.swift`
+- **ContentView** (5 connections) — `local-ai-machine/clients/ios/LocalWiFiImageClient/ContentView.swift`
+- **.inferredFilename()** (2 connections) — `local-ai-machine/clients/ios/LocalWiFiImageClient/ContentView.swift`
+- **.uploadAndPoll()** (2 connections) — `local-ai-machine/clients/ios/LocalWiFiImageClient/ContentView.swift`
+- **ContentView.swift** (1 connections) — `local-ai-machine/clients/ios/LocalWiFiImageClient/ContentView.swift`
+- **.loadSelectedImage()** (1 connections) — `local-ai-machine/clients/ios/LocalWiFiImageClient/ContentView.swift`
 - **View** (1 connections)
 
 ## Relationships
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/clients/ios/LocalWiFiImageClient/ContentView.swift`
+- `local-ai-machine/clients/ios/LocalWiFiImageClient/ContentView.swift`
 
 ## Audit Trail
 

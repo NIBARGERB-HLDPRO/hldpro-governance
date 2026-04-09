@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **run_sprint_microvm.ps1** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_sprint_microvm.ps1`
-- **Invoke-BashScript()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_sprint_microvm.ps1`
-- **Resolve-Bash()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_sprint_microvm.ps1`
-- **Test-BashCommand()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_sprint_microvm.ps1`
+- **run_sprint_microvm.ps1** (3 connections) — `local-ai-machine/scripts/ops/run_sprint_microvm.ps1`
+- **Invoke-BashScript()** (1 connections) — `local-ai-machine/scripts/ops/run_sprint_microvm.ps1`
+- **Resolve-Bash()** (1 connections) — `local-ai-machine/scripts/ops/run_sprint_microvm.ps1`
+- **Test-BashCommand()** (1 connections) — `local-ai-machine/scripts/ops/run_sprint_microvm.ps1`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_sprint_microvm.ps1`
+- `local-ai-machine/scripts/ops/run_sprint_microvm.ps1`
 
 ## Audit Trail
 

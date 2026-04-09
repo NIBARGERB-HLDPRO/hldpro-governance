@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **tailwind.config.js** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/tailwind.config.js`
+- **tailwind.config.js** (0 connections) — `healthcareplatform/frontend/tailwind.config.js`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/tailwind.config.js`
+- `healthcareplatform/frontend/tailwind.config.js`
 
 ## Audit Trail
 

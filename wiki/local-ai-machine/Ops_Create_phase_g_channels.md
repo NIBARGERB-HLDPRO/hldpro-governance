@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **create_phase_g_channels.py** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/create_phase_g_channels.py`
-- **main()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/create_phase_g_channels.py`
-- **_env()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/create_phase_g_channels.py`
-- **_load_env_file()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/create_phase_g_channels.py`
-- **_slack_call()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/create_phase_g_channels.py`
-- **_write_env_updates()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/create_phase_g_channels.py`
+- **create_phase_g_channels.py** (5 connections) — `local-ai-machine/scripts/ops/create_phase_g_channels.py`
+- **main()** (4 connections) — `local-ai-machine/scripts/ops/create_phase_g_channels.py`
+- **_env()** (3 connections) — `local-ai-machine/scripts/ops/create_phase_g_channels.py`
+- **_load_env_file()** (2 connections) — `local-ai-machine/scripts/ops/create_phase_g_channels.py`
+- **_slack_call()** (2 connections) — `local-ai-machine/scripts/ops/create_phase_g_channels.py`
+- **_write_env_updates()** (2 connections) — `local-ai-machine/scripts/ops/create_phase_g_channels.py`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/create_phase_g_channels.py`
+- `local-ai-machine/scripts/ops/create_phase_g_channels.py`
 
 ## Audit Trail
 

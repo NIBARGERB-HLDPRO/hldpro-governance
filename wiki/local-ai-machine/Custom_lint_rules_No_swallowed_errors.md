@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **no-swallowed-errors.test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/tools/custom-lint-rules/tests/no-swallowed-errors.test.ts`
+- **no-swallowed-errors.test.ts** (0 connections) — `local-ai-machine/tools/custom-lint-rules/tests/no-swallowed-errors.test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/tools/custom-lint-rules/tests/no-swallowed-errors.test.ts`
+- `local-ai-machine/tools/custom-lint-rules/tests/no-swallowed-errors.test.ts`
 
 ## Audit Trail
 

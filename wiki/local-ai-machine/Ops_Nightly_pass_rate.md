@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **nightly_pass_rate.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/nightly_pass_rate.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/nightly_pass_rate.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/nightly_pass_rate.py`
-- **gh_get()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/nightly_pass_rate.py`
+- **nightly_pass_rate.py** (3 connections) — `local-ai-machine/scripts/ops/nightly_pass_rate.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/nightly_pass_rate.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/nightly_pass_rate.py`
+- **gh_get()** (2 connections) — `local-ai-machine/scripts/ops/nightly_pass_rate.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/nightly_pass_rate.py`
+- `local-ai-machine/scripts/ops/nightly_pass_rate.py`
 
 ## Audit Trail
 
