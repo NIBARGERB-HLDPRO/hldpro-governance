@@ -1,6 +1,6 @@
 # hldpro-governance — Feature Registry
 
-**Last Updated:** 2026-04-06
+**Last Updated:** 2026-04-09
 **Scope:** Shared governance standards, reusable CI enforcement, and cross-repo audit agents.
 
 ---
@@ -31,6 +31,10 @@
 | GOV-004 | COMPLETION_VERIFICATION | `verify-completion` agent and artifact verification protocol | COMPLETE | OPS_READY |
 | GOV-005 | BACKLOG_CONTROL | Cross-repo backlog coordination in `OVERLORD_BACKLOG.md` | COMPLETE | OPS_READY |
 | GOV-006 | FEATURE_REGISTRY_POLICY | Feature-registry requirement and co-staging enforcement | IN_PROGRESS | REQUIRED |
+| GOV-007 | KNOWLEDGE_BASE | Living Knowledge Base: graphify integration, wiki, raw feeds, Karpathy Loop | IN_PROGRESS | OPS_READY |
+| GOV-008 | DISPATCHER | Agent dispatcher CLAUDE.md (MBIF Crew pattern) | COMPLETE | OPS_READY |
+| GOV-009 | CLOSEOUT | Stage 6 closeout hook and template | COMPLETE | OPS_READY |
+| GOV-010 | RAW_FEEDS | Nightly GitHub issue feed sync via GitHub Actions | COMPLETE | INTERNAL_ONLY |
 
 ---
 
@@ -61,3 +65,12 @@
 | Feature ID | Notes |
 |---|---|
 | GOV-005 | `OVERLORD_BACKLOG.md` tracks cross-repo governance work; per-repo execution details stay in each repo’s `docs/PROGRESS.md`. |
+
+### KNOWLEDGE_BASE
+
+| Feature ID | Notes |
+|---|---|
+| GOV-007 | Three-tool system: graphify (knowledge graph), Karpathy Loop (compounding write-back), MBIF Crew (dispatcher pattern). Infrastructure in `graphify-out/`, `wiki/`, `raw/`. Phases 1-3 scaffolded; graphify initial run on AIS pending. |
+| GOV-008 | `CLAUDE.md` rewritten as pure dispatcher — routes to overlord agents, never answers directly. Pre-session reads: `wiki/index.md` + `GRAPH_REPORT.md`. |
+| GOV-009 | `hooks/closeout-hook.sh` validates Stage 6 closeout template, triggers graphify update, prompts for `operator_context` row. Template at `raw/closeouts/TEMPLATE.md`. |
+| GOV-010 | `raw-feed-sync.yml` fetches open GitHub issues from all governed repos daily, writes markdown summaries to `raw/github-issues/`. |
