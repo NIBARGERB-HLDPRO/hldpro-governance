@@ -201,6 +201,8 @@ Both Claude and Codex sessions can invoke each other as specialist reviewers:
 - Promotion preview or apply path: `python3 scripts/overlord/codex_ingestion.py promote --repo {repo} --repo-path {path} [--finding-id F001] [--apply]`
 - Entries tagged `⚠️ CODEX-FLAGGED` / `Source: Codex review` for traceability
 - Default helper model is `gpt-5.4` for ChatGPT-account compatibility; pass `--model o3` only when the account supports it
+- Graphify-first architecture retrieval is auditable, not assumed. When a governed workflow uses governance graph/wiki artifacts as primary context, log a usage event with `python3 scripts/knowledge_base/log_graphify_usage.py --repo {repo} --task-id {issue-or-task} --task-type {type} --strategy graphify|hybrid --artifact wiki/index.md --artifact graphify-out/GRAPH_REPORT.md --estimated-tokens {n}`.
+- Baseline repo-search comparisons should log `--strategy repo-search` to the same append-only event stream so graphify-vs-search adoption and retrieval footprint can be measured over time.
 - Requires one supported Codex auth path in environment:
 - `CODEX_AUTH_JSON` for trusted CI/CD runners using a staged `~/.codex/auth.json`
 - or `OPENAI_API_KEY` / Codex Connect auth when the CLI supports env-only auth for the runner context

@@ -1,0 +1,104 @@
+{
+  "session_id": "session-20260409-issue-65-graphify-measurement",
+  "issue_number": 65,
+  "objective": "Measure graphify usage and compare graphify-guided retrieval against baseline repo-search retrieval on real fail-fast scenarios, while defining an auditable event path for graphify usage across governed workflows.",
+  "tier": 2,
+  "scope_boundary": [
+    "Add a governance-hosted measurement harness for graphify-vs-baseline retrieval on real fail-fast scenarios.",
+    "Add a documented usage-event schema and logger for graphify session usage.",
+    "Persist comparable metrics and summary artifacts in governance."
+  ],
+  "out_of_scope": [
+    "Automatic interception of every Codex or Claude graphify invocation.",
+    "Model-based answer scoring or external evaluator infrastructure.",
+    "Solving graphify retrieval quality itself beyond measuring it."
+  ],
+  "research_summary": "The open fail-fast issues already provide concrete retrieval tasks: reusable workflow bug discovery, raw-feed redaction, weekly sweep persistence visibility, and Codex qualification validation. That corpus is enough to compare graphify-guided retrieval to normal repo-search retrieval in a repeatable way. The bounded first slice should produce governance-hosted scenarios, a measurement script, an auditable usage-event path, and tracked result snapshots; issue #66 remains the quality-improvement follow-up if the measured graphify strategy underperforms baseline search.",
+  "research_artifacts": [
+    "Issue #65 description",
+    "Issue #74",
+    "Issue #75",
+    "Issue #76",
+    "Issue #77",
+    "graphify-out/*/graph.json"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Create a repeatable graphify-vs-baseline retrieval harness.",
+      "tasks": [
+        "Define a scenario corpus using the real fail-fast issues.",
+        "Implement graphify-guided retrieval and baseline repo-search retrieval strategies.",
+        "Persist JSON and Markdown results with quality and token-footprint estimates."
+      ],
+      "acceptance_criteria": [
+        "Governance can run at least one repeatable graphify-vs-search comparison locally.",
+        "Results persist in tracked governance metrics/artifacts.",
+        "The harness uses real fail-fast scenarios, not synthetic prompts."
+      ],
+      "file_paths": [
+        "scripts/knowledge_base/measure_graphify_usage.py",
+        "metrics/graphify-evals/",
+        "metrics/graphify-evals/scenarios/"
+      ]
+    },
+    {
+      "name": "Sprint 2",
+      "goal": "Add an auditable path for graphify usage events.",
+      "tasks": [
+        "Define a graphify usage-event schema.",
+        "Add a simple logger that appends JSONL usage events.",
+        "Document when governed workflows should record graphify usage."
+      ],
+      "acceptance_criteria": [
+        "Governed repos have a documented path to log graphify usage events.",
+        "Usage events can be written as append-only tracked artifacts.",
+        "Docs reflect that graphify-vs-baseline measurement is now auditable."
+      ],
+      "file_paths": [
+        "docs/schemas/graphify-usage-event.schema.json",
+        "scripts/knowledge_base/log_graphify_usage.py",
+        "metrics/graphify-usage/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "measurement reviewer",
+      "role": "evaluation-method reviewer",
+      "focus": "Keep the first slice deterministic and repo-local: compare retrieval quality and estimated token footprint without requiring a model-in-the-loop grader.",
+      "status": "accepted",
+      "summary": "A deterministic harness over real fail-fast scenarios is the right first measurement step. Quality should be defined as expected-file retrieval success and retrieval footprint, with issue #66 left to improve graphify quality after baseline data exists.",
+      "evidence": [
+        "Issue #65 description",
+        "Issue #66 relationship"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-deterministic-measurement-slice",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This slice builds the measurement harness and does not require alternate-model review.",
+    "evidence": [
+      "Issue #65 scope"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Build a deterministic graphify-vs-baseline harness using the fail-fast issues, add append-only graphify usage logging, persist results, and wire docs/backlog to the new measurement contract.",
+    "next_execution_step": "Implement the scenario corpus, measurement script, usage logger, and tracked result artifacts; run the harness locally; then package the governance PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If deterministic retrieval scoring proves too weak to answer the quality question, keep this slice focused on instrumentation and open a follow-up rather than overfitting the harness.",
+    "If the results show graphify quality gaps, keep issue #66 open as the quality-improvement follow-up and reference the measured evidence."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Benji"
+  ],
+  "approved_at": "2026-04-09T13:40:00-05:00"
+}
