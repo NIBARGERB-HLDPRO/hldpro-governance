@@ -14,6 +14,8 @@ This repository is the central standards and audit hub for the HLD Pro ecosystem
 
 No application code lives here — only governance policies, enforcement tooling, and audit automation.
 
+GitHub Issues are the execution backlog/system of record for governance work. `OVERLORD_BACKLOG.md` is the governance roadmap/status mirror, not a shadow local execution backlog.
+
 ## Governed Repositories
 
 | Repo | Type | Governance Tier | Security Tier |
@@ -22,7 +24,7 @@ No application code lives here — only governance policies, enforcement tooling
 | HealthcarePlatform | Monorepo (backend + frontend), HIPAA | Full + HIPAA (zero-fail) | Full + PentAGI + HIPAA |
 | local-ai-machine | AI/ML infrastructure | Full (lane-based + session locks) | Baseline |
 | knocktracker | Field operations app | Standard (rules + CI) | Baseline |
-| ASC-Evaluator | Knowledge repo (no code) | Exempt | Exempt |
+| ASC-Evaluator | Knowledge repo (minimal graphify pointer/hook only) | Exempt + graphify pointer pattern | Exempt |
 
 ## Repository Structure
 
@@ -31,6 +33,9 @@ hldpro-governance/
 ├── STANDARDS.md                        # Shared governance contract for all repos
 ├── OVERLORD_BACKLOG.md                 # Cross-repo governance work tracking
 ├── DEPENDENCIES.md                     # Shared Supabase projects & cross-repo dependencies
+├── graphify-out/                       # Governance-hosted graph outputs (canonical)
+├── wiki/                               # Governance-hosted wiki/articles derived from graphify + sweep write-back
+├── raw/                                # Append-only raw feeds (issues, closeouts, operator context)
 ├── agents/
 │   ├── overlord.md                     # Session-start standards checker
 │   ├── overlord-sweep.md              # Weekly cross-repo audit agent
@@ -38,12 +43,15 @@ hldpro-governance/
 │   └── verify-completion.md           # Hard-gate completion verification agent
 ├── hooks/
 │   └── branch-switch-guard.sh         # Global PreToolUse hook (prevents branch conflicts)
+│   └── closeout-hook.sh               # Stage 6 closeout helper for Living Knowledge Base write-back
 ├── scripts/overlord/
 │   ├── codex_ingestion.py             # Codex review orchestration & backlog generation
+│   ├── check_overlord_backlog_github_alignment.py # Ensures governance backlog stays issue-backed
 │   └── README.md                      # Codex ingestion usage docs
 ├── docs/
 │   ├── FAIL_FAST_LOG.md              # Error patterns and resolutions
-│   └── FEATURE_REGISTRY.md           # Governance repo feature inventory
+│   ├── FEATURE_REGISTRY.md           # Governance repo feature inventory
+│   └── plans/                        # Governance plans, including Living Knowledge Base phases
 └── .github/workflows/
     ├── governance-check.yml           # Reusable PR gate (called by all repo CIs)
     ├── overlord-sweep.yml             # Weekly Monday 9 AM CT cron job
@@ -102,6 +110,7 @@ Findings are tagged `CODEX-FLAGGED` for traceability. See [`scripts/overlord/REA
 ## Key Governance Mechanisms
 
 - **Backlog-first workflow** — Hard gate blocks branch creation unless a `PLANNED` or `IN_PROGRESS` entry exists in `docs/PROGRESS.md`
+- **Issue-backed governance backlog** — GitHub Issues are the execution backlog for this repo; `OVERLORD_BACKLOG.md` is the roadmap/status mirror and CI blocks actionable rows without issue references
 - **Doc co-staging** — Source code changes must co-stage related governance docs (PROGRESS, FEATURE_REGISTRY, FAIL_FAST_LOG, etc.)
 - **Security tiers** — Tiered requirements from baseline gitleaks up to HIPAA-compliant PHI redaction agents, break-glass gates, and audit retention
 - **Fail-fast loop closure** — Repos with test/heal cycles must auto-persist failure patterns and surface gate failures
@@ -114,7 +123,7 @@ Findings are tagged `CODEX-FLAGGED` for traceability. See [`scripts/overlord/REA
 | File | Description |
 |------|-------------|
 | [`STANDARDS.md`](STANDARDS.md) | Master governance contract — what the overlord enforces |
-| [`OVERLORD_BACKLOG.md`](OVERLORD_BACKLOG.md) | Cross-repo governance work tracking (planned, in-progress, done) |
+| [`OVERLORD_BACKLOG.md`](OVERLORD_BACKLOG.md) | Cross-repo governance roadmap/status mirror; actionable work must be GitHub-issue-backed |
 | [`DEPENDENCIES.md`](DEPENDENCIES.md) | Shared Supabase projects and cross-repo edge function dependencies |
 | [`docs/FAIL_FAST_LOG.md`](docs/FAIL_FAST_LOG.md) | Error patterns and resolutions from this repo |
 | [`docs/FEATURE_REGISTRY.md`](docs/FEATURE_REGISTRY.md) | Feature inventory for the governance repo itself |

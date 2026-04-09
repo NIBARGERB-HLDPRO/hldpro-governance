@@ -1,30 +1,28 @@
 # Overlord Backlog
 
 > Cross-repo governance improvements tracked here. Per-repo work goes in each repo's docs/PROGRESS.md.
+> GitHub Issues are the execution backlog/system of record for governance work. This file is the local roadmap/status mirror for cross-repo planning, active issue-backed work, and completed-history entries that still need governance-level visibility.
 
 ## Planned
 
 | Item | Priority | Est. Hours | Notes |
 |------|----------|-----------|-------|
-| Operationalize Codex ingestion review flow | HIGH | 2-3 | Finish weekly sweep worktree-safe review generation, session-start backlog surfacing, and HITL promotion workflow. Keep production sweep invocation disabled until bounded timeout behavior and unattended auth are both validated. |
 | Nightly cleanup timezone policy | LOW | 1 | Current cron is `04:00 UTC`, which is 11:00 PM America/Chicago during DST and 10:00 PM during standard time. If year-round 11:00 PM Central is required, replace with a timezone-aware guard strategy. Tracking issue: [#14](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/14). |
-| Effectiveness engine baseline metrics | LOW | 4-6 | Collect bug rate, revert rate, CI pass rate per repo per week. Store in metrics/. Requires governance repo. |
-| Governance doc consistency rollout | HIGH | 4-6 | Standardize the minimum governance-doc contract across `docs/PROGRESS.md`, `docs/FEATURE_REGISTRY.md`, `docs/DATA_DICTIONARY.md`, and `docs/SERVICE_REGISTRY.md` without flattening valid repo-specific structures. Includes explicit exceptions for AIS and HealthcarePlatform. |
-| Living Knowledge Base — Phase 1: graphify install + initial graph build | HIGH | 2-3 | Install graphify (`pip install graphifyy`), run initial knowledge graph on ai-integration-services (131 edge functions + migrations + plan docs), move `graphify-out/` to hldpro-governance, install PreToolUse hook + git hook in AIS, generate initial `wiki/` stub. Independent of other work — do first. See `plans/living-knowledge-base-instructions.md`. |
-| Living Knowledge Base — Phase 2: dispatcher CLAUDE.md + wiki write-back | HIGH | 4-5 | Rewrite `hldpro-governance/CLAUDE.md` as pure dispatcher (MBIF Crew pattern — "NEVER RESPOND DIRECTLY, delegate to the right agent"). Create `raw/` directory structure (conversations, github-issues, closeouts, operator-context). Create `wiki/` structure (index.md, hldpro/, decisions/, patterns/). Extend `overlord-sweep.md` with wiki write-back step (Karpathy Loop). Seed `raw/conversations/` with 5-10 key architectural decisions. Add `wiki/index.md` + `GRAPH_REPORT.md` pre-session reads to all 4 overlord agents. Requires Phase 1 complete. |
-| Living Knowledge Base — Phase 3: Karpathy Loop + closeout hook | HIGH | 6-8 | Create Stage 6 closeout template (`raw/closeouts/TEMPLATE.md`) and `hooks/closeout-hook.sh`. Add closeout steps to six-stage cycle in CLAUDE.md. Create GitHub Actions `raw-feed-sync.yml` (nightly GitHub issue fetch from all governed repos). Wire `operator_context` INSERT trigger → `raw/operator-context/` via edge function + GitHub API. Add `graphify --update` to weekly `overlord-sweep.yml`. Add wiki health check to sweep (broken wikilinks, orphan pages, stale pages). End-to-end validation: one full six-stage cycle traced through closeout → graphify → wiki. Requires Phase 2 complete. |
-| Living Knowledge Base — Phase 4: HealthcarePlatform graphify scope | MEDIUM | 2-3 | Add HealthcarePlatform to graphify. Approved 2026-04-09 for full-repo graph build because no HIPAA/BAA docs are stored in-repo. Governance stores outputs under `graphify-out/healthcareplatform/`; product repo gets governance pointers only. |
-| Living Knowledge Base — Phase 5: remaining governed repos | LOW | 2-3 | Add local-ai-machine and knocktracker to graphify scope. Gate: Phases 1-3 stable for 30+ days, graph quality verified on AIS. |
-| Living Knowledge Base — Phase 6: Neo4j graph push | LOW | 4-6 | `graphify --neo4j push` to local Neo4j instance. Graphiti migration. `operator_context` schema fields map to graph nodes. Gate: v2.0 local LLM milestone reached. |
-| Living Knowledge Base — Phase 7: Qwen3-32B fine-tune on wiki data | LOW | TBD | Fine-tune Qwen3-32B on wiki data (Karpathy "Train a Custom Model on Wiki Data" step). Gate: wiki must have 6+ months of compounding data minimum. |
+| Effectiveness engine baseline metrics | LOW | 4-6 | Issue [#43](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/43). Collect bug rate, revert rate, CI pass rate per repo per week. Store in metrics/. Requires governance repo. |
+| Staged ruleset recommendation pack rollout | HIGH | 2-3 | Issue [#40](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/40). Convert the draft ruleset recommendation pack into an actionable org admin rollout sequence. |
+| GitHub governance exception register rollout | MEDIUM | 1-2 | Issue [#42](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/42). Finalize approvers, review cadence, and operational adoption of `GITHUB_ENTERPRISE_EXCEPTION_REGISTER.md`. |
+| Sprint 1 repo `CODEOWNERS` rollout | HIGH | 8-12 | Issue [#41](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/41). Finish remaining first-wave rollout blockers in `knocktracker` and `local-ai-machine`, then confirm governed repos align to the governance baseline. |
+| Required-check baseline verification | HIGH | 4-6 | Issue [#39](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/39). Resolve knocktracker skip-behavior review, local-ai-machine specialized-check policy, and the HealthcarePlatform conditional-check decision before tighter org rulesets. |
+| Living Knowledge Base — Phase 6: remaining governed repos | LOW | 2-3 | Issue [#47](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/47). Add local-ai-machine and knocktracker to graphify scope. Gate: graph quality remains useful after AIS, HealthcarePlatform, and ASC-Evaluator adoption. |
+| Living Knowledge Base — Phase 7: Neo4j graph push | LOW | 4-6 | Issue [#48](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/48). `graphify --neo4j push` to local Neo4j instance. Graphiti migration. `operator_context` schema fields map to graph nodes. Gate: v2.0 local LLM milestone reached. |
+| Living Knowledge Base — Phase 8: Qwen3-32B fine-tune on wiki data | LOW | TBD | Issue [#49](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/49). Fine-tune Qwen3-32B on wiki data (Karpathy "Train a Custom Model on Wiki Data" step). Gate: wiki must have 6+ months of compounding data minimum. |
 
 ## In Progress
 
 | Item | Priority | Notes |
 |------|----------|-------|
-| Operationalize Codex ingestion review flow | HIGH | Shared helper exists on `main`; current work is bounded-timeout hardening plus one more real governed-repo validation before enabling production sweep invocation. |
-| Governance doc consistency rollout — Sprint 1 | HIGH | Shared standards + reusable governance checker. Define minimum contracts, enforce section presence, and codify AIS/HP exceptions before repo-local rewrites. |
-| Living Knowledge Base — Bootstrap execution | HIGH | graphify is installed, the first AIS structural graph is built and synced into governance, raw feeds/decision seeds are populated, and the builder path is now scriptable. Remaining gap is end-to-end Stage 6 + operator_context bridge proof. |
+| Operationalize Codex ingestion review flow | HIGH | Issue [#46](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/46). Shared helper exists on `main`; current work is bounded-timeout hardening plus one more real governed-repo validation before enabling production sweep invocation. |
+| Governance doc consistency rollout — Sprint 1 | HIGH | Issue [#45](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/45). Shared standards + reusable governance checker. Define minimum contracts, enforce section presence, and codify AIS/HP exceptions before repo-local rewrites. |
 
 ### Sprint Breakdown — Governance Doc Consistency Rollout
 
@@ -78,4 +76,7 @@
 | Codex subagent/persona routing baseline | 2026-04-07 | Updated shared standards and overlord docs so repo-required specialists can be satisfied with spawned Codex subagents/personas mapped from repo-local definitions. |
 | GitHub Actions Node 20 deprecation cleanup | 2026-04-07 | Merged in PR #18. Upgraded governance workflows from `actions/checkout@v4` to `actions/checkout@v6`; production sweep run `24059154210` completed without the prior Node 20 deprecation annotation. |
 | Living Knowledge Base — Phase 1 bootstrap | 2026-04-09 | graphify installed via Python 3.11, CLAUDE/settings pointers added in AIS, git hooks installed in the main AIS checkout, initial AIS code graph built (1883 nodes / 2533 edges / 111 communities), and graph artifacts synced into governance `graphify-out/` + `wiki/hldpro/`. |
+| Living Knowledge Base — Phase 2 dispatcher + wiki write-back | 2026-04-09 | `CLAUDE.md` now dispatches instead of answering directly, `wiki/index.md` is the pre-session entrypoint, and overlord agents/sweep are wired for governance-hosted graph/wiki reads and write-back. |
+| Living Knowledge Base — Phase 3 Karpathy Loop + closeout hook | 2026-04-09 | `raw/`, `wiki/`, closeout template, `closeout-hook.sh`, raw-feed sync, and weekly graph refresh/write-back are now implemented in governance. |
 | Living Knowledge Base — Phase 4 slice (HealthcarePlatform) | 2026-04-09 | Full-repo HealthcarePlatform graph built on isolated worktree via repo-local builder (1549 nodes / 2396 edges / 176 communities), synced into governance `graphify-out/healthcareplatform/` + `wiki/healthcareplatform/`, and Phase 4 governance plan updated to reflect explicit full-repo approval. |
+| Living Knowledge Base — Phase 5 slice (ASC-Evaluator) | 2026-04-09 | ASC-Evaluator adopted the governance pointer/hook pattern, and governance now hosts `graphify-out/asc-evaluator/` plus `wiki/asc-evaluator/`. |
