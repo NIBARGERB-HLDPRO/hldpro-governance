@@ -486,6 +486,14 @@ jobs:
           # Store for next step
           echo "date=${DATE}" >> "$GITHUB_OUTPUT"
 
+      - name: Build effectiveness baseline snapshot
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          python3 scripts/overlord/build_effectiveness_metrics.py \
+            --repos-root repos \
+            --output-dir metrics/effectiveness-baseline \
+            --date "$DATE"
+
       # ── Update knowledge graph ──
       - name: Update knowledge graph
         run: |
@@ -504,8 +512,8 @@ jobs:
         run: |
           git config user.name "overlord-bot"
           git config user.email "overlord@hldpro.com"
-          git add graphify-out/GRAPH_REPORT.md graphify-out/graph.json 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "chore(graphify): weekly graph update $(date -u +%Y-%m-%d)"
+          git add graphify-out/GRAPH_REPORT.md graphify-out/graph.json metrics/effectiveness-baseline 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "chore(governance): weekly graph and metrics update $(date -u +%Y-%m-%d)"
           git push || true
 
       # ── Create or update GitHub Issue ──

@@ -173,6 +173,10 @@ Each repo has a security tier that determines which security artifacts the overl
 4. **Specialist verification**: If repo governance required specialist agents/subagents for the task, verify the session used equivalent specialists. Codex may satisfy this with spawned Codex subagents/personas mapped from repo-local definitions; do not waive the requirement just because the repo uses Claude-era agent naming.
 5. **No hedging**: Do not use "if it exists" language for required files. If STANDARDS.md says a file is required, it must exist — create it if missing.
 6. **Session summary must match reality**: Before writing a session summary to memory, re-verify each claim. "Built" means merged to main or PR passing CI. "Created" means committed and pushed. "Planned" means neither.
+7. **PDCA/R Adjust + Review must close the loop**: If verification or review surfaces another required action, test, cleanup, or control improvement, do not leave it implicit. Either:
+   - fold it into the current slice before closing, when it is part of the same acceptance path, or
+   - create/update the governing GitHub issue and roadmap mirror entry before closing, so the follow-up is issue-backed and visible.
+8. **Do not stop at "works now" if the acceptance path still has an unverified step**: If another validation run, rollout step, or policy update is required to make the outcome durable, it must be completed in the current slice or recorded as explicit follow-up before the task is marked done.
 
 **Failure to verify = the task is not complete.** A plan step without artifact verification stays "in progress."
 
