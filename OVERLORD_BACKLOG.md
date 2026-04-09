@@ -5,17 +5,23 @@
 
 ## Planned
 
+Execution order:
+- `Now`: `#45` Governance doc consistency rollout, `#46` Operationalize Codex ingestion review flow, `#39` Required-check baseline verification
+- `Next`: `#41` Sprint 1 repo `CODEOWNERS` rollout, `#40` Staged ruleset recommendation pack rollout, `#42` GitHub governance exception register rollout
+- `Then`: `#43` Effectiveness engine baseline metrics
+- `Later`: `#47` Living Knowledge Base remaining repos, `#48` Neo4j graph push, `#49` wiki-backed Qwen fine-tune
+- `Low urgency`: `#14` Nightly cleanup timezone policy
 | Item | Priority | Est. Hours | Notes |
 |------|----------|-----------|-------|
-| Nightly cleanup timezone policy | LOW | 1 | Current cron is `04:00 UTC`, which is 11:00 PM America/Chicago during DST and 10:00 PM during standard time. If year-round 11:00 PM Central is required, replace with a timezone-aware guard strategy. Tracking issue: [#14](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/14). |
-| Effectiveness engine baseline metrics | LOW | 4-6 | Issue [#43](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/43). Collect bug rate, revert rate, CI pass rate per repo per week. Store in metrics/. Requires governance repo. |
+| Required-check baseline verification | HIGH | 4-6 | Issue [#39](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/39). Resolve knocktracker skip-behavior review, local-ai-machine specialized-check policy, and the HealthcarePlatform conditional-check decision before tighter org rulesets. |
+| Sprint 1 repo `CODEOWNERS` rollout | HIGH | 8-12 | Issue [#41](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/41). Finish remaining first-wave rollout blockers in `knocktracker` and `local-ai-machine`, then confirm governed repos align to the governance baseline. |
 | Staged ruleset recommendation pack rollout | HIGH | 2-3 | Issue [#40](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/40). Convert the draft ruleset recommendation pack into an actionable org admin rollout sequence. |
 | GitHub governance exception register rollout | MEDIUM | 1-2 | Issue [#42](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/42). Finalize approvers, review cadence, and operational adoption of `GITHUB_ENTERPRISE_EXCEPTION_REGISTER.md`. |
-| Sprint 1 repo `CODEOWNERS` rollout | HIGH | 8-12 | Issue [#41](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/41). Finish remaining first-wave rollout blockers in `knocktracker` and `local-ai-machine`, then confirm governed repos align to the governance baseline. |
-| Required-check baseline verification | HIGH | 4-6 | Issue [#39](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/39). Resolve knocktracker skip-behavior review, local-ai-machine specialized-check policy, and the HealthcarePlatform conditional-check decision before tighter org rulesets. |
+| Effectiveness engine baseline metrics | LOW | 4-6 | Issue [#43](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/43). Collect bug rate, revert rate, CI pass rate per repo per week. Store in metrics/. Requires governance repo. |
 | Living Knowledge Base — Phase 6: remaining governed repos | LOW | 2-3 | Issue [#47](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/47). Add local-ai-machine and knocktracker to graphify scope. Gate: graph quality remains useful after AIS, HealthcarePlatform, and ASC-Evaluator adoption. |
 | Living Knowledge Base — Phase 7: Neo4j graph push | LOW | 4-6 | Issue [#48](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/48). `graphify --neo4j push` to local Neo4j instance. Graphiti migration. `operator_context` schema fields map to graph nodes. Gate: v2.0 local LLM milestone reached. |
 | Living Knowledge Base — Phase 8: Qwen3-32B fine-tune on wiki data | LOW | TBD | Issue [#49](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/49). Fine-tune Qwen3-32B on wiki data (Karpathy "Train a Custom Model on Wiki Data" step). Gate: wiki must have 6+ months of compounding data minimum. |
+| Nightly cleanup timezone policy | LOW | 1 | Current cron is `04:00 UTC`, which is 11:00 PM America/Chicago during DST and 10:00 PM during standard time. If year-round 11:00 PM Central is required, replace with a timezone-aware guard strategy. Tracking issue: [#14](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/14). |
 
 ## In Progress
 
