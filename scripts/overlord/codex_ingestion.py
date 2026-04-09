@@ -34,6 +34,33 @@ SECTION_MAPPINGS = {
     "testing": ("TEST", "BUILD", "PIPELINE"),
     "docs": ("GOVERNANCE", "INFRA", "BUILD"),
 }
+ANCHOR_STOPWORDS = {
+    "about",
+    "after",
+    "before",
+    "check",
+    "code",
+    "does",
+    "ensure",
+    "fails",
+    "file",
+    "finding",
+    "from",
+    "into",
+    "issue",
+    "line",
+    "match",
+    "missing",
+    "path",
+    "review",
+    "should",
+    "that",
+    "this",
+    "under",
+    "validate",
+    "when",
+    "with",
+}
 
 
 @dataclass
@@ -332,7 +359,44 @@ def validate_location(finding: Finding, repo_path: Path) -> str | None:
         return None
     if finding.line > len(lines):
         return f"line {finding.line} out of range"
+    anchors = extract_claim_anchors(finding)
+    if anchors:
+        context = read_context_window(lines, finding.line)
+        if not context_matches_anchors(context, anchors):
+            return f"cited code does not match claim anchors ({', '.join(anchors[:3])})"
     return None
+
+
+def extract_claim_anchors(finding: Finding) -> list[str]:
+    anchors: list[str] = []
+    texts = [finding.title, finding.detail, finding.suggestion]
+    for text in texts:
+        if not text:
+            continue
+        anchors.extend(match.casefold() for match in re.findall(r"`([^`]+)`", text))
+        anchors.extend(match.casefold() for match in re.findall(r"\b[A-Za-z_][A-Za-z0-9_]*\b", text) if "_" in match)
+        anchors.extend(match.casefold() for match in re.findall(r"\b[A-Za-z][A-Za-z0-9]+(?:[A-Z][A-Za-z0-9]*)+\b", text))
+    deduped: list[str] = []
+    for anchor in anchors:
+        normalized = anchor.strip().casefold()
+        if not normalized or normalized in ANCHOR_STOPWORDS or len(normalized) < 3:
+            continue
+        if normalized not in deduped:
+            deduped.append(normalized)
+    return deduped
+
+
+def read_context_window(lines: list[str], line_number: int, radius: int = 2) -> str:
+    start = max(0, line_number - 1 - radius)
+    end = min(len(lines), line_number + radius)
+    return "\n".join(lines[start:end]).casefold()
+
+
+def context_matches_anchors(context: str, anchors: list[str]) -> bool:
+    for anchor in anchors:
+        if anchor in context:
+            return True
+    return False
 
 
 def markdown_escape(value: str) -> str:
