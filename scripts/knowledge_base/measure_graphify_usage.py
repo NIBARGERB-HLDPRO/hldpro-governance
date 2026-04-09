@@ -7,10 +7,16 @@ import argparse
 import json
 import math
 import re
+import sys
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from scripts.knowledge_base.log_graphify_usage import append_event, build_event
 
 
 TEXT_EXTENSIONS = {
@@ -103,6 +109,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--graph-root", type=Path, default=Path("graphify-out"))
     parser.add_argument("--scenario-file", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, default=Path("metrics/graphify-evals"))
+    parser.add_argument("--usage-event-dir", type=Path, default=Path("metrics/graphify-usage/events"))
+    parser.add_argument("--no-usage-log", action="store_true")
     parser.add_argument("--date", required=True)
     return parser.parse_args()
 
@@ -452,6 +460,41 @@ def build_trace(scenario: Scenario, graphify: dict[str, Any], baseline: dict[str
     }
 
 
+def emit_usage_events(output_dir: Path, date: str, scenario: Scenario, graphify: dict[str, Any], baseline: dict[str, Any]) -> None:
+    experiment_id = f"graphify-ab-{date}"
+    session_base = f"{date}-{scenario.id}"
+    graphify_event = build_event(
+        repo=scenario.repo,
+        task_id=scenario.id,
+        task_type=scenario.task_type,
+        strategy="graphify" if graphify["strategy"] == "graphify-guided" else graphify["strategy"],
+        artifacts=graphify["top_files"] or ["unspecified"],
+        estimated_tokens=graphify["estimated_tokens"],
+        notes=f"Auto-emitted from measure_graphify_usage.py ({graphify['strategy']})",
+        experiment_id=experiment_id,
+        session_id=f"{session_base}-graphify",
+        prompt=scenario.prompt,
+        query_terms=scenario.query_terms,
+        top_candidates=graphify["top_files"],
+    )
+    baseline_event = build_event(
+        repo=scenario.repo,
+        task_id=f"{scenario.id}-baseline",
+        task_type="baseline_comparison",
+        strategy=baseline["strategy"],
+        artifacts=baseline["top_files"] or ["unspecified"],
+        estimated_tokens=baseline["estimated_tokens"],
+        notes="Auto-emitted from measure_graphify_usage.py (baseline)",
+        experiment_id=experiment_id,
+        session_id=f"{session_base}-baseline",
+        prompt=scenario.prompt,
+        query_terms=scenario.query_terms,
+        top_candidates=baseline["top_files"],
+    )
+    append_event(output_dir, graphify_event)
+    append_event(output_dir, baseline_event)
+
+
 def write_outputs(output_dir: Path, date: str, results: dict[str, Any]) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     json_path = output_dir / f"{date}-graphify-vs-search.json"
@@ -520,6 +563,8 @@ def main() -> int:
     for scenario in scenarios:
         graphify = graphify_results(args.graph_root, args.repos_root, scenario)
         baseline = baseline_results(args.repos_root, scenario)
+        if not args.no_usage_log:
+            emit_usage_events(args.usage_event_dir, args.date, scenario, graphify, baseline)
         scenario_results.append(
             {
                 "id": scenario.id,

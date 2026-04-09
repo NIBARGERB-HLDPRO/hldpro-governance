@@ -33,3 +33,9 @@ Rules:
 - use `experiment_id` and `session_id` to group 5-10 run comparisons without overloading `task_id`
 - redact or summarize prompts before logging if they include sensitive operator, customer, or secret-bearing context
 - use estimated tokens, not guessed “freeform” numbers
+
+Default measurement behavior:
+
+- `scripts/knowledge_base/measure_graphify_usage.py` now emits usage events automatically for each graphify and baseline scenario run
+- use `--no-usage-log` only when you explicitly want to skip append-only event emission for a local debugging run
+- use `--usage-event-dir <path>` in tests or scratch runs when you do not want to append into the tracked default event file
