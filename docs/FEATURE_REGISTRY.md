@@ -31,7 +31,7 @@
 | GOV-004 | COMPLETION_VERIFICATION | `verify-completion` agent and artifact verification protocol | COMPLETE | OPS_READY |
 | GOV-005 | BACKLOG_CONTROL | Cross-repo backlog coordination in `OVERLORD_BACKLOG.md` | COMPLETE | OPS_READY |
 | GOV-006 | FEATURE_REGISTRY_POLICY | Feature-registry requirement and co-staging enforcement | IN_PROGRESS | REQUIRED |
-| GOV-007 | KNOWLEDGE_BASE | Living Knowledge Base: graphify integration, wiki, raw feeds, Karpathy Loop | IN_PROGRESS | OPS_READY |
+| GOV-007 | KNOWLEDGE_BASE | Living Knowledge Base: graphify integration, wiki, raw feeds, Karpathy Loop, local graph runtime bootstrap, and Neo4j push path | IN_PROGRESS | OPS_READY |
 | GOV-008 | DISPATCHER | Agent dispatcher CLAUDE.md (MBIF Crew pattern) | COMPLETE | OPS_READY |
 | GOV-009 | CLOSEOUT | Stage 6 closeout hook and template | COMPLETE | OPS_READY |
 | GOV-010 | RAW_FEEDS | Nightly GitHub issue feed sync via GitHub Actions | COMPLETE | INTERNAL_ONLY |
@@ -76,7 +76,7 @@
 
 | Feature ID | Notes |
 |---|---|
-| GOV-007 | Three-tool system: graphify (knowledge graph), Karpathy Loop (compounding write-back), MBIF Crew (dispatcher pattern). Infrastructure in `graphify-out/`, `wiki/`, `raw/`. AIS, HealthcarePlatform, ASC-Evaluator, local-ai-machine, and knocktracker are now graphified into governance. |
+| GOV-007 | Three-tool system: graphify (knowledge graph), Karpathy Loop (compounding write-back), MBIF Crew (dispatcher pattern). Infrastructure in `graphify-out/`, `wiki/`, `raw/`. AIS, HealthcarePlatform, ASC-Evaluator, local-ai-machine, and knocktracker are now graphified into governance, `scripts/knowledge_base/bootstrap_neo4j.sh` provides the local runtime bootstrap path, and `scripts/knowledge_base/push_graph_to_neo4j.py` validates the first local Neo4j push path with scoped graph ids. |
 | GOV-008 | `CLAUDE.md` rewritten as pure dispatcher — routes to overlord agents, never answers directly. Pre-session reads: `wiki/index.md` + `GRAPH_REPORT.md`. |
 | GOV-009 | `hooks/closeout-hook.sh` validates Stage 6 closeout template, triggers repo-local graph rebuild logic, and prompts for `operator_context` write-back. Template at `raw/closeouts/TEMPLATE.md`. |
 | GOV-010 | `raw-feed-sync.yml` fetches open GitHub issues from all governed repos daily, writes markdown summaries to `raw/github-issues/`. Initial snapshot files have been seeded locally for the bootstrap loop. |
