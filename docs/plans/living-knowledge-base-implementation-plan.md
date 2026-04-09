@@ -208,7 +208,7 @@ The Karpathy Loop is a pattern, not a package. The implementation is: a closeout
 |---|---|---|
 | Phase 4 | Add HealthcarePlatform to graphify scope | Completed 2026-04-09. Governance hosts the full-repo graph outputs and wiki articles. |
 | Phase 5 | Add ASC-Evaluator to graphify scope | Completed 2026-04-09 using the same governance-hosted pointer/hook pattern as HealthcarePlatform. |
-| Phase 6 | Add remaining governed repos (local-ai-machine, knocktracker) | Next graphify expansion slice once graph quality and operator appetite are confirmed. |
+| Phase 6 | Add remaining governed repos (local-ai-machine, knocktracker) | Completed 2026-04-09. Both repos now use the governance-hosted pointer/hook pattern and have graph/wiki outputs tracked in governance. |
 | Phase 7 | `graphify --neo4j push` to local Neo4j instance | v2.0 local LLM milestone. Graphiti migration. `operator_context` schema fields map to graph nodes. |
 | Phase 8 | Fine-tune Qwen3-32B on wiki data | Karpathy "Train a Custom Model on Wiki Data" step. Wiki must have 6 months of compounding data minimum. |
 
