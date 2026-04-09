@@ -33,6 +33,8 @@ hldpro-governance/
 ├── STANDARDS.md                        # Shared governance contract for all repos
 ├── OVERLORD_BACKLOG.md                 # Cross-repo governance work tracking
 ├── DEPENDENCIES.md                     # Shared Supabase projects & cross-repo dependencies
+├── GITHUB_ENTERPRISE_ADOPTION_PLAN.md  # Canonical enterprise rollout/closeout plan
+├── GITHUB_ENTERPRISE_*.md              # Required-check baseline, ruleset pack, exception register, Sprint 1 record
 ├── graphify-out/                       # Governance-hosted graph outputs (canonical)
 ├── metrics/                            # Stored effectiveness baselines and weekly snapshots
 ├── wiki/                               # Governance-hosted wiki/articles derived from graphify + sweep write-back
@@ -71,6 +73,18 @@ hldpro-governance/
 - **Security tiers** — From baseline (gitleaks) up to Full + PentAGI + HIPAA
 - **Governance doc contracts** — Minimum structural requirements for each doc type
 - **Completion verification protocol** — Artifact verification before marking work "done"
+
+### GitHub Enterprise Governance Pack
+
+The canonical org-governance planning pack lives at the repo root:
+
+- [`GITHUB_ENTERPRISE_ADOPTION_PLAN.md`](GITHUB_ENTERPRISE_ADOPTION_PLAN.md)
+- [`GITHUB_ENTERPRISE_REQUIRED_CHECK_BASELINE.md`](GITHUB_ENTERPRISE_REQUIRED_CHECK_BASELINE.md)
+- [`GITHUB_ENTERPRISE_RULESET_RECOMMENDATIONS.md`](GITHUB_ENTERPRISE_RULESET_RECOMMENDATIONS.md)
+- [`GITHUB_ENTERPRISE_EXCEPTION_REGISTER.md`](GITHUB_ENTERPRISE_EXCEPTION_REGISTER.md)
+- [`GITHUB_ENTERPRISE_SPRINT1_TASKS.md`](GITHUB_ENTERPRISE_SPRINT1_TASKS.md)
+
+Use these files instead of reconstructing org-ruleset state from old PRs or ad hoc notes.
 
 ### Claude Agents
 
