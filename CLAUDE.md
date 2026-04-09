@@ -33,6 +33,9 @@ Before marking any governance task DONE in `OVERLORD_BACKLOG.md` or closing its 
 1. Fill in `raw/closeouts/YYYY-MM-DD-{task-slug}.md` from `raw/closeouts/TEMPLATE.md`
 2. Run `hooks/closeout-hook.sh raw/closeouts/YYYY-MM-DD-{task-slug}.md`
 3. Verify `graphify-out/GRAPH_REPORT.md` reflects the change (may take one commit cycle)
-4. Update `OVERLORD_BACKLOG.md` and the governing GitHub issue to reflect the completed state
+4. During Adjust/Review, if another required action, test, cleanup, or control improvement appears, either:
+   - absorb it into the current slice when it is part of the same acceptance path, or
+   - create/update the governing GitHub issue and `OVERLORD_BACKLOG.md` before closing
+5. Update `OVERLORD_BACKLOG.md` and the governing GitHub issue to reflect the completed state
 
-Route to `verify-completion` agent for artifact verification before step 4.
+Route to `verify-completion` agent for artifact verification before the final closeout update.

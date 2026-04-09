@@ -37,6 +37,7 @@
 | GOV-010 | RAW_FEEDS | Nightly GitHub issue feed sync via GitHub Actions | COMPLETE | INTERNAL_ONLY |
 | GOV-011 | ISSUE_BACKLOG_ALIGNMENT | Governance backlog must remain GitHub-issue-backed | COMPLETE | REQUIRED |
 | GOV-012 | CODEX_INGESTION | Codex second-opinion ingestion and backlog surfacing loop | COMPLETE | OPS_READY |
+| GOV-013 | EFFECTIVENESS_BASELINE | Reproducible weekly effectiveness metrics snapshots in `metrics/effectiveness-baseline/` | COMPLETE | OPS_READY |
 
 ---
 
@@ -62,6 +63,7 @@
 |---|---|
 | GOV-003 | Agent set performs repo sweeps, standards audits, and backlog-quality checks across the portfolio. |
 | GOV-004 | Completion verifier exists to prevent false “done” claims by checking artifacts, PR state, and standards compliance. |
+| GOV-004 | Completion verification now explicitly requires PDCA/R Adjust/Review to capture any newly discovered required action as either part of the current acceptance path or an issue-backed follow-up before closure. |
 
 ### BACKLOG_CONTROL
 
@@ -79,3 +81,4 @@
 | GOV-009 | `hooks/closeout-hook.sh` validates Stage 6 closeout template, triggers repo-local graph rebuild logic, and prompts for `operator_context` write-back. Template at `raw/closeouts/TEMPLATE.md`. |
 | GOV-010 | `raw-feed-sync.yml` fetches open GitHub issues from all governed repos daily, writes markdown summaries to `raw/github-issues/`. Initial snapshot files have been seeded locally for the bootstrap loop. |
 | GOV-012 | `scripts/overlord/codex_ingestion.py` now supports real governed-repo `generate`, `qualify`, `status`, and `promote` flows with bounded timeouts, precomputed diff context, CI auth/canary support, and session-start backlog surfacing. |
+| GOV-013 | `scripts/overlord/build_effectiveness_metrics.py` persists bug rate, revert rate, and CI pass rate baselines into governance, and `overlord-sweep.yml` refreshes the dated and latest snapshots weekly. |

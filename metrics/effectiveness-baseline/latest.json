@@ -1,0 +1,73 @@
+{
+  "snapshot_date": "2026-04-09",
+  "generated_at": "2026-04-09T15:46:49Z",
+  "commit_window_days": 7,
+  "ci_window_days": 14,
+  "repos": [
+    {
+      "repo": "ai-integration-services",
+      "commit_count": 333,
+      "bug_fix_commits": 125,
+      "revert_commits": 2,
+      "bug_rate_pct": 37.5,
+      "revert_rate_pct": 0.6,
+      "ci_pass": 13,
+      "ci_fail": 2,
+      "ci_other": 5,
+      "ci_total": 20,
+      "ci_pass_rate_pct": 65.0
+    },
+    {
+      "repo": "HealthcarePlatform",
+      "commit_count": 295,
+      "bug_fix_commits": 99,
+      "revert_commits": 1,
+      "bug_rate_pct": 33.6,
+      "revert_rate_pct": 0.3,
+      "ci_pass": 16,
+      "ci_fail": 3,
+      "ci_other": 1,
+      "ci_total": 20,
+      "ci_pass_rate_pct": 80.0
+    },
+    {
+      "repo": "local-ai-machine",
+      "commit_count": 23,
+      "bug_fix_commits": 3,
+      "revert_commits": 0,
+      "bug_rate_pct": 13.0,
+      "revert_rate_pct": 0.0,
+      "ci_pass": 18,
+      "ci_fail": 1,
+      "ci_other": 1,
+      "ci_total": 20,
+      "ci_pass_rate_pct": 90.0
+    },
+    {
+      "repo": "knocktracker",
+      "commit_count": 17,
+      "bug_fix_commits": 2,
+      "revert_commits": 0,
+      "bug_rate_pct": 11.8,
+      "revert_rate_pct": 0.0,
+      "ci_pass": 17,
+      "ci_fail": 3,
+      "ci_other": 0,
+      "ci_total": 20,
+      "ci_pass_rate_pct": 85.0
+    },
+    {
+      "repo": "ASC-Evaluator",
+      "commit_count": 2,
+      "bug_fix_commits": 0,
+      "revert_commits": 0,
+      "bug_rate_pct": 0.0,
+      "revert_rate_pct": 0.0,
+      "ci_pass": 0,
+      "ci_fail": 0,
+      "ci_other": 0,
+      "ci_total": 0,
+      "ci_pass_rate_pct": null
+    }
+  ]
+}

@@ -8,45 +8,13 @@
 | Item | Priority | Est. Hours | Notes |
 |------|----------|-----------|-------|
 | Nightly cleanup timezone policy | LOW | 1 | Current cron is `04:00 UTC`, which is 11:00 PM America/Chicago during DST and 10:00 PM during standard time. If year-round 11:00 PM Central is required, replace with a timezone-aware guard strategy. Tracking issue: [#14](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/14). |
-| Effectiveness engine baseline metrics | LOW | 4-6 | Issue [#43](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/43). Collect bug rate, revert rate, CI pass rate per repo per week. Store in metrics/. Requires governance repo. |
 | Living Knowledge Base — Phase 6: remaining governed repos | LOW | 2-3 | Issue [#47](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/47). Add local-ai-machine and knocktracker to graphify scope. Gate: graph quality remains useful after AIS, HealthcarePlatform, and ASC-Evaluator adoption. |
 | Living Knowledge Base — Phase 7: Neo4j graph push | LOW | 4-6 | Issue [#48](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/48). `graphify --neo4j push` to local Neo4j instance. Graphiti migration. `operator_context` schema fields map to graph nodes. Gate: v2.0 local LLM milestone reached. |
 | Living Knowledge Base — Phase 8: Qwen3-32B fine-tune on wiki data | LOW | TBD | Issue [#49](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/49). Fine-tune Qwen3-32B on wiki data (Karpathy "Train a Custom Model on Wiki Data" step). Gate: wiki must have 6+ months of compounding data minimum. |
 
 ## In Progress
 
-| Item | Priority | Notes |
-|------|----------|-------|
-| Governance doc consistency rollout — Sprint 1 | HIGH | Issue [#45](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/45). Shared standards + reusable governance checker. Define minimum contracts, enforce section presence, and codify AIS/HP exceptions before repo-local rewrites. |
-
-### Sprint Breakdown — Governance Doc Consistency Rollout
-
-#### Sprint 1 — Shared Contract + Enforcement
-- Scope: update `STANDARDS.md` and reusable `governance-check.yml` so governance docs are validated by minimum contract, not just file existence.
-- AC: `docs/PROGRESS.md` contract is defined in standards with explicit allowance for AIS's existing backlog model.
-- AC: `docs/FEATURE_REGISTRY.md` contract requires metadata + summary table, while allowing repo-specific extra columns and appendices.
-- AC: `docs/DATA_DICTIONARY.md` contract allows either canonical root content or an explicit pointer to the canonical workspace-level copy.
-- AC: `docs/SERVICE_REGISTRY.md` contract requires a title and registry table without forcing one repo-wide schema.
-- AC: reusable governance CI fails when required governance-doc sections/metadata are missing.
-- AC: HealthcarePlatform monorepo pointer behavior and AIS long-form progress layout are formalized as allowed exceptions in standards.
-
-#### Sprint 2 — Low-Risk Repo Scaffolding
-- Scope: add missing `FEATURE_REGISTRY.md` files and tighten stub metadata where governance docs are present but weak.
-- AC: [local-ai-machine/docs/FEATURE_REGISTRY.md](/Users/bennibarger/Developer/hldpro/local-ai-machine/docs) exists with required summary table and metadata.
-- AC: [knocktracker/docs/FEATURE_REGISTRY.md](/Users/bennibarger/Developer/hldpro/knocktracker/docs) exists with required summary table and metadata.
-- AC: [local-ai-machine/docs/DATA_DICTIONARY.md](/Users/bennibarger/Developer/hldpro/local-ai-machine/docs/DATA_DICTIONARY.md) and [knocktracker/docs/DATA_DICTIONARY.md](/Users/bennibarger/Developer/hldpro/knocktracker/docs/DATA_DICTIONARY.md) include source-of-truth metadata, not just placeholder rows.
-- AC: repo-local PRs pass updated governance CI.
-
-#### Sprint 3 — Outlier Alignment
-- Scope: normalize backlog/control semantics in AIS and tighten HealthcarePlatform root-pointer docs without breaking their current information architecture.
-- AC: [ai-integration-services/docs/PROGRESS.md](/Users/bennibarger/Developer/hldpro/ai-integration-services/docs/PROGRESS.md) explicitly satisfies the shared backlog/control contract without flattening the full operating document.
-- AC: [HealthcarePlatform/docs/DATA_DICTIONARY.md](/Users/bennibarger/Developer/hldpro/HealthcarePlatform/docs/DATA_DICTIONARY.md) clearly identifies [HealthcarePlatform/backend/DATA_DICTIONARY.md](/Users/bennibarger/Developer/hldpro/HealthcarePlatform/backend/DATA_DICTIONARY.md) as the canonical schema source in a way the checker can validate.
-- AC: no repo loses deeper repo-specific registry/dictionary content just to match a shared template.
-
-#### Sprint 4 — Optional Deeper Normalization
-- Scope: align status taxonomies and richer doc conventions only after all repos satisfy the minimum contract.
-- AC: status taxonomy proposal documented before rollout.
-- AC: any additional normalization remains additive and does not invalidate AIS or HP exceptions.
+None currently. Active governance execution now lives in GitHub Issues; open cross-repo roadmap items remain in the `Planned` table above until a new slice starts.
 
 ## Done
 
@@ -78,5 +46,7 @@
 | Living Knowledge Base — Phase 5 slice (ASC-Evaluator) | 2026-04-09 | ASC-Evaluator adopted the governance pointer/hook pattern, and governance now hosts `graphify-out/asc-evaluator/` plus `wiki/asc-evaluator/`. |
 | Required-check baseline verification | 2026-04-09 | Issue [#39](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/39). Live PR/workflow review resolved the three open policy questions: knocktracker `governance-check` skip is intentional, local-ai-machine specialized checks stay repo-specific/conditional, HealthcarePlatform `build` is baseline-safe while `playwright-gate` remains conditional. |
 | Sprint 1 repo `CODEOWNERS` rollout | 2026-04-09 | Issue [#41](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/41). Default-branch recheck completed and first-wave repo rollout is now finished: AIS was already covered; HealthcarePlatform, knocktracker, and local-ai-machine all merged `.github/CODEOWNERS` on their default branches. |
+| Governance doc consistency rollout | 2026-04-09 | Issue [#45](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/45). Shared governance checker and standards contract are now aligned with repo-specific exceptions, and the issue is closed. |
+| Effectiveness engine baseline metrics | 2026-04-09 | Issue [#43](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/43). Weekly sweep metrics now persist as reproducible dated and latest snapshots in `metrics/effectiveness-baseline/` via `scripts/overlord/build_effectiveness_metrics.py`. |
 | Staged ruleset recommendation pack rollout | 2026-04-09 | Issue [#40](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/40). The draft was replaced with an actionable rollout sequence based on live org/repo ruleset state, exact baseline checks, owner communication, rollback guidance, and current-state drift notes. |
 | GitHub governance exception register rollout | 2026-04-09 | Issue [#42](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/42). The register now has explicit approval authority, monthly review cadence, and seeded current exceptions for repo exemptions and conditional-check deferrals. |
