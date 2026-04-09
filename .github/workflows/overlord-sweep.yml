@@ -509,12 +509,36 @@ jobs:
           fi
 
       - name: Commit updated graph
+        id: persist_baseline
         run: |
+          set +e
           git config user.name "overlord-bot"
           git config user.email "overlord@hldpro.com"
           git add graphify-out/GRAPH_REPORT.md graphify-out/graph.json metrics/effectiveness-baseline 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "chore(governance): weekly graph and metrics update $(date -u +%Y-%m-%d)"
-          git push || true
+          if git diff --staged --quiet; then
+            echo "status=no_changes" >> "$GITHUB_OUTPUT"
+            echo "note=No graph or metrics changes were generated." >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          COMMIT_MESSAGE="chore(governance): weekly graph and metrics update $(date -u +%Y-%m-%d)"
+          COMMIT_OUTPUT=$(git commit -m "$COMMIT_MESSAGE" 2>&1)
+          COMMIT_STATUS=$?
+          if [ $COMMIT_STATUS -ne 0 ]; then
+            NOTE=$(printf '%s' "$COMMIT_OUTPUT" | tail -n 10 | tr '\n' ' ' | sed 's/  */ /g')
+            echo "status=commit_failed" >> "$GITHUB_OUTPUT"
+            echo "note=${NOTE}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          PUSH_OUTPUT=$(git push 2>&1)
+          PUSH_STATUS=$?
+          if [ $PUSH_STATUS -ne 0 ]; then
+            NOTE=$(printf '%s' "$PUSH_OUTPUT" | tail -n 10 | tr '\n' ' ' | sed 's/  */ /g')
+            echo "status=push_failed" >> "$GITHUB_OUTPUT"
+            echo "note=${NOTE}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "status=success" >> "$GITHUB_OUTPUT"
+          echo "note=Graph and metrics updates were committed and pushed successfully." >> "$GITHUB_OUTPUT"
 
       # ── Create or update GitHub Issue ──
       - name: Create or update overlord report issue
@@ -532,6 +556,17 @@ jobs:
             --jq '.[0].number // empty' 2>/dev/null || true)
 
           BODY=$(cat /tmp/sweep-report.md)
+          PERSIST_STATUS="${{ steps.persist_baseline.outputs.status }}"
+          PERSIST_NOTE="${{ steps.persist_baseline.outputs.note }}"
+          if [ -z "$PERSIST_STATUS" ]; then
+            PERSIST_STATUS="unknown"
+            PERSIST_NOTE="Baseline refresh step did not report a status."
+          fi
+          BODY="${BODY}
+
+## BASELINE REFRESH
+- Status: ${PERSIST_STATUS}
+- Detail: ${PERSIST_NOTE}"
 
           if [ -n "$EXISTING" ]; then
             # Update existing issue
@@ -555,3 +590,9 @@ jobs:
               --body "$BODY"
             echo "Created new overlord report issue"
           fi
+
+      - name: Fail on baseline persistence error
+        if: ${{ steps.persist_baseline.outputs.status == 'commit_failed' || steps.persist_baseline.outputs.status == 'push_failed' }}
+        run: |
+          echo "Baseline refresh did not persist successfully: ${{ steps.persist_baseline.outputs.note }}"
+          exit 1
