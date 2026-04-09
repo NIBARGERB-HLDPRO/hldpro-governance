@@ -1,6 +1,6 @@
 {
   "session_id": "session-20260409-phase1-critic-diff-mode",
-  "issue_number": 999,
+  "issue_number": 411,
   "objective": "Extend /v2/critic/evaluate with diff-mode for external consumer repos and add GitHub issue creation on REJECTED verdicts, using a synthesizer wrapper around the existing stub generator.",
   "tier": 2,
   "scope_boundary": [

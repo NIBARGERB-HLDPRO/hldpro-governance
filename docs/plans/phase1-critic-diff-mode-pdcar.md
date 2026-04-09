@@ -1,7 +1,7 @@
 # Phase 1 — Critic Evaluate Diff-Mode PDCA/R
 
 Date: 2026-04-09
-Issue: TBD (to be created in local-ai-machine)
+Issue: [#411](https://github.com/NIBARGERB-HLDPRO/local-ai-machine/issues/411)
 Owner: nibargerb
 Target Repo: local-ai-machine
 Branch: `riskfix/critic-evaluate-diff-mode-20260409`
