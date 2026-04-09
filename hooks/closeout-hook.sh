@@ -38,8 +38,15 @@ echo "  ✓ Template validated"
 echo "[2/4] Updating knowledge graph..."
 if [ -d "$AI_INTEGRATION_ROOT" ]; then
   cd "$AI_INTEGRATION_ROOT"
-  graphify . --update --no-viz 2>&1 | tail -5
-  echo "  ✓ Knowledge graph updated"
+  if command -v graphify >/dev/null 2>&1; then
+    if graphify . --update --no-viz 2>&1 | tail -5; then
+      echo "  ✓ Knowledge graph updated"
+    else
+      echo "  ⚠ graphify update failed — continuing without blocking closeout"
+    fi
+  else
+    echo "  ⚠ graphify not installed — skipping graph update"
+  fi
 else
   echo "  ⚠ ai-integration-services not found at $AI_INTEGRATION_ROOT — skipping graph update"
 fi
