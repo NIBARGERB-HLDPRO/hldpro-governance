@@ -7,6 +7,10 @@
 
 | Item | Priority | Est. Hours | Notes |
 |------|----------|-----------|-------|
+| Governance gate wrong diff range under `workflow_call` | P1 | 1-2 | Issue [#74](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/74). ⚠️ CODEX-FLAGGED. Multi-commit PRs only check last commit; base SHA must be passed as explicit input. |
+| Raw-feed sync republishes unredacted issue bodies | P1 | 1 | Issue [#75](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/75). ⚠️ CODEX-FLAGGED. Security: issue bodies may contain credentials/PHI; redact or exclude before commit. |
+| Codex finding qualification does not validate cited code | P2 | 1-2 | Issue [#76](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/76). ⚠️ CODEX-FLAGGED. `validate_location()` doesn't check code content matches the finding claim. |
+| Weekly sweep silently discards failed pushes | P2 | 1 | Issue [#77](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/77). ⚠️ CODEX-FLAGGED. `git push \|\| true` swallows failures; baseline may stay stale. |
 | Structured agent cycle plan rollout across governed repos | MEDIUM | 3-5 | Issue [#68](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/68). Converge HealthcarePlatform's repo-local schema path with the governance-owned contract and align remaining governed repos on the reusable validator/workflow expectations. |
 | Living Knowledge Base — Phase 8: Qwen3-32B fine-tune on wiki data | LOW | TBD | Issue [#49](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/49). Fine-tune Qwen3-32B on wiki data (Karpathy "Train a Custom Model on Wiki Data" step). Gate: wiki must have 6+ months of compounding data minimum. |
 
@@ -54,3 +58,4 @@ None currently. Active governance execution now lives in GitHub Issues; open cro
 | GitHub Enterprise adoption plan closeout | 2026-04-09 | Issue [#44](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/44). The missing adoption-plan artifact was restored, Sprint 1 inventory was reconciled to merged default-branch truth, and future enterprise changes are now routed through specific issue-backed rollout slices instead of a permanently open umbrella plan. |
 | Nightly cleanup timezone policy | 2026-04-09 | Issue [#58](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/58). Nightly cleanup now schedules both candidate UTC hours and only executes at 11:00 PM America/Chicago via an in-workflow timezone guard. |
 | Living Knowledge Base — Phase 6: remaining governed repos | 2026-04-09 | Issue [#47](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/47). local-ai-machine and knocktracker now follow the governance-hosted graphify pointer/hook pattern, and governance hosts their graph reports, HTML, JSON, and wiki articles. |
+| Phase 1 critic diff-mode extension | 2026-04-09 | local-ai-machine `riskfix/critic-evaluate-diff-mode-20260409`. Extended `/v2/critic/evaluate` with diff-mode for external consumer repos, added `phi_redaction_gate` mask, `caller_mask_policy.json`, SQL migration 036, synthesizer, issue creation worker, and 18 contract tests. Codex specialist review: ACCEPTED_WITH_FOLLOWUP. |
