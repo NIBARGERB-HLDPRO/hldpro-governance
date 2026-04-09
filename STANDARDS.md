@@ -75,15 +75,21 @@ These files must be consistent at the contract level. They do **not** need to be
 
 ### `docs/DATA_DICTIONARY.md`
 - Must contain a top-level `# Data Dictionary` title
+- Must include `Last updated` or `Last Updated` metadata
+- Must include explicit source-of-truth metadata or pointer language
 - Must either:
   - be the canonical root schema dictionary, or
   - explicitly point to the canonical workspace-level dictionary
 - Canonical dictionaries may use detailed schema sections or a compact table format; both are acceptable
+- Placeholder-only rows such as `(tables will be documented here)` are not acceptable
 - **HealthcarePlatform exception:** root `docs/DATA_DICTIONARY.md` may remain a pointer to `backend/DATA_DICTIONARY.md`
 
 ### `docs/SERVICE_REGISTRY.md`
 - Must contain a top-level `# Service Registry` title
+- Must include `Last updated` or `Last Updated` metadata
+- Must include explicit source-of-truth metadata or pointer language
 - Must include at least one registry table covering services or functions
+- Placeholder-only rows such as `(services will be documented here)` are not acceptable
 - Repo-specific shapes are allowed (for example `Function / Method / Path` or `Service / Type / Description`)
 
 ## Monorepo Handling
