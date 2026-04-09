@@ -51,6 +51,7 @@ hldpro-governance/
 ├── scripts/overlord/
 │   ├── codex_ingestion.py             # Codex review orchestration & backlog generation
 │   ├── check_overlord_backlog_github_alignment.py # Ensures governance backlog stays issue-backed
+│   ├── check_progress_github_issue_staleness.py   # Ensures repo PROGRESS backlog stays aligned with backlog-labeled GH issues
 │   ├── validate_structured_agent_cycle_plan.py # Validates structured planning artifacts
 │   └── README.md                      # Codex ingestion usage docs
 ├── docs/
@@ -151,6 +152,7 @@ Findings are tagged `CODEX-FLAGGED` for traceability. See [`scripts/overlord/REA
 
 - **Backlog-first workflow** — Hard gate blocks branch creation unless a `PLANNED` or `IN_PROGRESS` entry exists in `docs/PROGRESS.md`
 - **Issue-backed governance backlog** — GitHub Issues are the execution backlog for this repo; `OVERLORD_BACKLOG.md` is the roadmap/status mirror and CI blocks actionable rows without issue references
+- **PROGRESS ↔ GitHub staleness gate** — governed product repos must keep active `docs/PROGRESS.md` backlog sections aligned with backlog-labeled GitHub issues; reusable governance CI and weekly sweep now surface drift
 - **Doc co-staging** — Source code changes must co-stage related governance docs (PROGRESS, FEATURE_REGISTRY, FAIL_FAST_LOG, etc.)
 - **Security tiers** — Tiered requirements from baseline gitleaks up to HIPAA-compliant PHI redaction agents, break-glass gates, and audit retention
 - **Fail-fast loop closure** — Repos with test/heal cycles must auto-persist failure patterns and surface gate failures
