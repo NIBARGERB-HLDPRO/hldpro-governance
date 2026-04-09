@@ -28,11 +28,11 @@ Your only job: recognize intent and delegate to the right agent.
 
 ## Stage 6 — Closeout Protocol (Required for All Completed Work)
 
-Before marking any task DONE in PROGRESS.md:
+Before marking any governance task DONE in `OVERLORD_BACKLOG.md` or closing its governing GitHub issue:
 
 1. Fill in `raw/closeouts/YYYY-MM-DD-{task-slug}.md` from `raw/closeouts/TEMPLATE.md`
 2. Run `hooks/closeout-hook.sh raw/closeouts/YYYY-MM-DD-{task-slug}.md`
 3. Verify `graphify-out/GRAPH_REPORT.md` reflects the change (may take one commit cycle)
-4. Update PROGRESS.md task status to DONE
+4. Update `OVERLORD_BACKLOG.md` and the governing GitHub issue to reflect the completed state
 
 Route to `verify-completion` agent for artifact verification before step 4.

@@ -11,8 +11,8 @@
 | Date | April 2026 |
 | Primary Repo | hldpro-governance |
 | Secondary Repo | ai-integration-services (HLD Pro) |
-| Total Phases | 3 phases across 3 weeks |
-| Total Estimated Effort | 12–18 hrs |
+| Total Phases | 8 tracked phases; phases 1-5 complete |
+| Total Estimated Effort | 12–18 hrs for the initial 3-phase core, plus follow-on expansion phases |
 | Three Tools | graphify · Karpathy Loop · MBIF Crew (dispatcher pattern only) |
 | Classification | CONFIDENTIAL — Internal Use Only |
 
@@ -206,9 +206,9 @@ The Karpathy Loop is a pattern, not a package. The implementation is: a closeout
 
 | Phase | Description | Gate Condition |
 |---|---|---|
-| Phase 4 | Add HealthcarePlatform to graphify scope | Approved 2026-04-09 for full-repo graph build. No HIPAA/BAA documents are stored in the repo; governance stores the resulting graph outputs. |
-| Phase 5 | Add ASC-Evaluator to graphify scope | Approved 2026-04-09 using the HealthcarePlatform pointer/hook pattern. Governance stores full-repo graph outputs; ASC-Evaluator keeps only persona-safe pointers/hooks. |
-| Phase 6 | Add remaining governed repos (local-ai-machine, knocktracker) | Phase 1–3 stable for 30+ days. Graph quality verified. |
+| Phase 4 | Add HealthcarePlatform to graphify scope | Completed 2026-04-09. Governance hosts the full-repo graph outputs and wiki articles. |
+| Phase 5 | Add ASC-Evaluator to graphify scope | Completed 2026-04-09 using the same governance-hosted pointer/hook pattern as HealthcarePlatform. |
+| Phase 6 | Add remaining governed repos (local-ai-machine, knocktracker) | Next graphify expansion slice once graph quality and operator appetite are confirmed. |
 | Phase 7 | `graphify --neo4j push` to local Neo4j instance | v2.0 local LLM milestone. Graphiti migration. `operator_context` schema fields map to graph nodes. |
 | Phase 8 | Fine-tune Qwen3-32B on wiki data | Karpathy "Train a Custom Model on Wiki Data" step. Wiki must have 6 months of compounding data minimum. |
 
@@ -247,7 +247,7 @@ The Karpathy Loop is a pattern, not a package. The implementation is: a closeout
 1. **Never modify `STANDARDS.md`** without explicit instruction
 2. **Never add new agents** — the four overlord agents are sufficient; extend them, don't multiply them
 3. **Never change product code** in ai-integration-services — only `CLAUDE.md` and `.claude/settings.json`
-4. **HealthcarePlatform graphify scope must follow the approved governance plan** — as of 2026-04-09, full-repo graph builds are approved because no HIPAA/BAA documents are stored in-repo
+4. **HealthcarePlatform and ASC-Evaluator graphify scope must follow the approved governance plan** — as of 2026-04-09, both are approved for governance-hosted graph outputs under the documented pointer/hook pattern
 5. **graphify output lives in hldpro-governance** — never commit `graphify-out/` to a product repo
 6. **`raw/` feeds are append-only** — never delete or overwrite files in `raw/`
 7. **`wiki/` is generated/maintained by agents** — never manually edit `wiki/` files (except `wiki/index.md` structure)

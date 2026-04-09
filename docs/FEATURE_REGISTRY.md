@@ -35,6 +35,7 @@
 | GOV-008 | DISPATCHER | Agent dispatcher CLAUDE.md (MBIF Crew pattern) | COMPLETE | OPS_READY |
 | GOV-009 | CLOSEOUT | Stage 6 closeout hook and template | COMPLETE | OPS_READY |
 | GOV-010 | RAW_FEEDS | Nightly GitHub issue feed sync via GitHub Actions | COMPLETE | INTERNAL_ONLY |
+| GOV-011 | ISSUE_BACKLOG_ALIGNMENT | Governance backlog must remain GitHub-issue-backed | COMPLETE | REQUIRED |
 
 ---
 
@@ -65,6 +66,7 @@
 | Feature ID | Notes |
 |---|---|
 | GOV-005 | `OVERLORD_BACKLOG.md` tracks cross-repo governance work; per-repo execution details stay in each repo’s `docs/PROGRESS.md`. |
+| GOV-011 | `OVERLORD_BACKLOG.md` is now a roadmap/status mirror only. Actionable `Planned` and `In Progress` rows must carry GitHub issue references, and governance CI enforces that alignment. |
 
 ### KNOWLEDGE_BASE
 

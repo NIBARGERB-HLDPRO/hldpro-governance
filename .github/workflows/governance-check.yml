@@ -88,6 +88,11 @@ jobs:
 
           echo "✓ Governance doc structure check passed"
 
+      - name: Check OVERLORD_BACKLOG issue alignment
+        if: github.repository == 'NIBARGERB-HLDPRO/hldpro-governance'
+        run: |
+          python3 scripts/overlord/check_overlord_backlog_github_alignment.py
+
       # ── Categorize changed files ──
       - name: Get changed files
         id: changed
