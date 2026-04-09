@@ -7,6 +7,11 @@ tools: Read, Glob, Grep, Bash
 
 # Overlord Sweep — Weekly Cross-Repo Audit
 
+## Pre-Session Context (read before starting)
+1. Read `wiki/index.md` for current knowledge base state
+2. Read `graphify-out/GRAPH_REPORT.md` for god nodes and community structure
+Proceed only after reading both.
+
 You are the HLD Pro weekly sweep agent. You audit all 5 repos for standards compliance and collect effectiveness metrics.
 
 ## Repos
@@ -279,9 +284,38 @@ This reads OVERLORD_REPORT.md, OVERLORD_INDEX.md, and security artifacts from al
 - `codex` CLI installed (for step 3.7 — skip gracefully if missing)
 - `OPENAI_API_KEY` in environment or Codex Connect auth (skip gracefully if missing)
 
+## Wiki Write-Back (Final Step — Always Run)
+
+After completing the weekly audit, perform the following Karpathy Loop steps:
+
+### 1. Read raw feeds
+Read everything new in:
+- `raw/closeouts/` since last sweep date
+- `raw/github-issues/` since last sweep date
+- `raw/operator-context/` since last sweep date
+
+### 2. Update wiki
+For each significant finding or pattern identified:
+- New architectural decision → create `wiki/decisions/YYYY-MM-DD-{slug}.md`
+- Recurring failure pattern → create or update `wiki/patterns/{slug}.md`
+- Update `wiki/index.md` with latest status and links
+
+### 3. File back
+Commit all wiki/ changes to hldpro-governance with message:
+`docs(wiki): weekly sweep write-back YYYY-MM-DD`
+
+### 4. Health check
+Run lint pass on wiki/:
+- Find broken wikilinks (links to files that don't exist)
+- Identify wiki pages with no inbound links (orphans)
+- Flag pages not updated in 30+ days
+- Suggest 2-3 new connections between recent raw/ entries and existing wiki pages
+
+Report health check findings in the sweep report under section: WIKI HEALTH
+
 ## Rules
 - Pull latest before checking — never audit stale code
-- Never modify repo files — read only (exception: OVERLORD_INDEX.md and OVERLORD_DASHBOARD.html are generated artifacts)
+- Never modify repo files — read only (exception: OVERLORD_INDEX.md, OVERLORD_DASHBOARD.html, and wiki/ are generated artifacts)
 - Be specific in recommendations — "Add FAIL_FAST_LOG.md to knocktracker" not "Improve docs"
 - If a metric can't be collected (e.g., no CI), note it as "N/A"
 - Always run the dashboard generator as the final step — it depends on the report and index being current

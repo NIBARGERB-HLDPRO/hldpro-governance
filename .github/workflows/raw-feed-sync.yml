@@ -1,0 +1,70 @@
+name: Raw Feed Sync
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Daily 12:00 UTC (6 AM CT / 7 AM CDT)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  sync-github-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Fetch GitHub issues from governed repos
+        env:
+          GH_TOKEN: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          mkdir -p raw/github-issues
+
+          for REPO in ai-integration-services HealthcarePlatform local-ai-machine knocktracker; do
+            echo "Fetching issues from $REPO..."
+            gh issue list \
+              --repo "NIBARGERB-HLDPRO/$REPO" \
+              --state open \
+              --json number,title,body,labels,createdAt,updatedAt \
+              --limit 50 \
+              > "/tmp/issues-$REPO.json" || true
+
+            CURRENT_REPO="$REPO" DATE="$DATE" python3 - << 'PYEOF'
+          import json, sys, os
+
+          repo = os.environ.get('CURRENT_REPO', 'unknown')
+          date = os.environ.get('DATE', 'unknown')
+
+          try:
+              issues = json.load(open(f'/tmp/issues-{repo}.json'))
+              if not issues:
+                  print(f"No open issues for {repo}")
+                  sys.exit(0)
+
+              lines = [f"# GitHub Issues — {repo}\nDate: {date}\n"]
+              for i in issues:
+                  labels = ', '.join(l['name'] for l in i.get('labels', []))
+                  lines.append(f"## #{i['number']}: {i['title']}")
+                  lines.append(f"Labels: {labels or 'none'} | Created: {i['createdAt'][:10]}")
+                  lines.append("")
+                  if i.get('body'):
+                      lines.append(i['body'][:500])
+                  lines.append("---")
+
+              out_path = f'raw/github-issues/{date}-{repo}.md'
+              open(out_path, 'w').write('\n'.join(lines))
+              print(f"Written: {out_path}")
+          except Exception as e:
+              print(f"Warning: {e}")
+          PYEOF
+          done
+
+      - name: Commit raw feed updates
+        run: |
+          git config user.name "overlord-bot"
+          git config user.email "overlord@hldpro.com"
+          git add raw/github-issues/
+          git diff --staged --quiet || git commit -m "chore(raw): nightly github issues feed $(date -u +%Y-%m-%d)"
+          git push

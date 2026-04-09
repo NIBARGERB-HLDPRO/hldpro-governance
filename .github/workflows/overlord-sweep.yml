@@ -486,6 +486,28 @@ jobs:
           # Store for next step
           echo "date=${DATE}" >> "$GITHUB_OUTPUT"
 
+      # ── Update knowledge graph ──
+      - name: Update knowledge graph
+        run: |
+          pip install graphifyy -q 2>/dev/null || true
+          if command -v graphify >/dev/null 2>&1 && [ -d repos/ai-integration-services ]; then
+            cd repos/ai-integration-services
+            graphify . --update --no-viz 2>&1 | tail -5 || echo "graphify update skipped — non-fatal"
+            cd "${GITHUB_WORKSPACE}"
+            cp -r repos/ai-integration-services/graphify-out/GRAPH_REPORT.md graphify-out/ 2>/dev/null || true
+            cp -r repos/ai-integration-services/graphify-out/graph.json graphify-out/ 2>/dev/null || true
+          else
+            echo "graphify not available or ai-integration-services not checked out — skipping"
+          fi
+
+      - name: Commit updated graph
+        run: |
+          git config user.name "overlord-bot"
+          git config user.email "overlord@hldpro.com"
+          git add graphify-out/GRAPH_REPORT.md graphify-out/graph.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "chore(graphify): weekly graph update $(date -u +%Y-%m-%d)"
+          git push || true
+
       # ── Create or update GitHub Issue ──
       - name: Create or update overlord report issue
         env:

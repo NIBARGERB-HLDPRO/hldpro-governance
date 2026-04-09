@@ -26,5 +26,13 @@ stats-cache.json
 tasks/
 image-cache/
 
+# graphify (large binary outputs)
+graphify-out/graph.html
+graphify-out/cache/
+
+# raw/ large media files (append-only text files are tracked)
+raw/**/*.mp3
+raw/**/*.wav
+
 # OS
 .DS_Store
