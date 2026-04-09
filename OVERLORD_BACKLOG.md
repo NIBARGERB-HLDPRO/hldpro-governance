@@ -7,7 +7,6 @@
 
 | Item | Priority | Est. Hours | Notes |
 |------|----------|-----------|-------|
-| Shared dependency symlink helper for clean worktrees | MEDIUM | 1-2 | Issue [#72](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/72). Standardize a helper/runbook command for parity checks, safe linking, and cleanup after the manual pattern in issue #70 was approved. |
 | Living Knowledge Base — Phase 8: Qwen3-32B fine-tune on wiki data | LOW | TBD | Issue [#49](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/49). Fine-tune Qwen3-32B on wiki data (Karpathy "Train a Custom Model on Wiki Data" step). Gate: wiki must have 6+ months of compounding data minimum. |
 
 ## In Progress
@@ -30,6 +29,7 @@ None currently. Active governance execution now lives in GitHub Issues; open cro
 | Overlord-sweep cron | 2026-04-05 | Weekly Monday 9am CT via GitHub Actions. Checks all 5 repos against STANDARDS.md, posts issue report. |
 | GitHub Enterprise security | 2026-04-05 | Secret scanning, push protection, dependabot, dependency graph, org rulesets (protect main + develop). |
 | Shared dependency symlink standard for clean worktrees | 2026-04-09 | Issue [#70](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/70). Governance now explicitly allows borrowing installed dependencies from the same repo's root checkout into isolated worktrees via symlinks, but only for dependency install artifacts with same-repo + lockfile verification, post-link command proof, and local-only cleanup. Helper standardization is tracked separately in issue [#72](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/72). |
+| Shared dependency symlink helper for clean worktrees | 2026-04-09 | Issue [#72](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/72). Governance now provides `scripts/overlord/worktree_shared_dependencies.sh` as the preferred helper path for linking and cleaning approved dependency artifacts in isolated worktrees, with same-repo and lockfile parity checks plus manifest-backed cleanup. |
 | Schedule overlord-sweep as recurring agent | 2026-04-05 | Live via GitHub Actions weekly cron in `hldpro-governance`. |
 | Branch-safe overlord sweep + session-start Codex backlog surfacing | 2026-04-06 | Merged in PR #9. Added branch-switch guard, worktree-safe sweep execution, and Codex backlog surfacing. Validation issue: [#10](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/10). |
 | Overlord sweep production hardening | 2026-04-07 | Merged in PRs #11 and #12. Fixed count normalization crash and aligned ASC-Evaluator handling with exempt status in STANDARDS.md. |

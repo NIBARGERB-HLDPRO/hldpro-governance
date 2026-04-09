@@ -55,7 +55,8 @@
 - **Verification required before linking:** confirm the root checkout and worktree are the same repo, confirm the relevant lockfile/manifests match, and confirm the dependency target already exists in the root checkout.
 - **Post-link verification required:** run at least one normal repo command from the worktree that proves the borrowed toolchain actually works before treating the lane as ready.
 - **Cleanup expectation:** these symlinks are local-only lane setup. Never commit them as tracked files, and remove them when the worktree no longer needs the borrowed install.
-- **Escalation rule:** if a lane needs more than this documented manual pattern, create an issue-backed follow-up for helper/runbook work instead of normalizing hidden tribal steps.
+- **Preferred helper path:** use `bash hldpro-governance/scripts/overlord/worktree_shared_dependencies.sh link ...` and `clean ...` instead of ad hoc manual linking whenever the helper covers the lane.
+- **Escalation rule:** if a lane needs more than the documented helper path, create an issue-backed follow-up instead of normalizing hidden tribal steps.
 
 ### Doc Co-Staging Rules (governance-check.sh + CI)
 - **ANY source file change** (`.ts`, `.tsx`, `.sql`, `.html`, `.css`, `.js`, `.svg`) → co-stage `docs/PROGRESS.md`

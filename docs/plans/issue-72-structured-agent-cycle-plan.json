@@ -1,0 +1,102 @@
+{
+  "session_id": "session-20260409-issue-72-worktree-dependency-helper",
+  "issue_number": 72,
+  "objective": "Create a reusable helper for shared dependency symlink setup in clean worktrees so the approved pattern from issue #70 is safe, fast, and repeatable.",
+  "tier": 2,
+  "scope_boundary": [
+    "Add a governance-owned helper script for linking and cleaning approved dependency artifacts between a root checkout and an isolated worktree.",
+    "Enforce same-repo validation, lockfile parity checks, explicit artifact allowlisting, and safe cleanup behavior.",
+    "Document the helper as the preferred path in governance docs and close the backlog item once a real proof run succeeds."
+  ],
+  "out_of_scope": [
+    "Supporting non-dependency artifacts like build outputs or environment files.",
+    "Changing package manager layouts inside product repos.",
+    "Adding product-repo-local wrapper scripts in this slice."
+  ],
+  "research_summary": "Issue #70 approved the manual symlink pattern but explicitly left helper standardization open. The current governance repo already uses small bash/python helpers for repeatable operator tasks, so the right implementation is a narrow bash helper that manages only approved dependency artifacts, stores manifest state in the repo git-path instead of the worktree, and proves itself in a temporary AIS worktree.",
+  "research_artifacts": [
+    "STANDARDS.md",
+    "OVERLORD_BACKLOG.md",
+    "scripts/overlord/README.md",
+    "scripts/knowledge_base/bootstrap_neo4j.sh",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/72"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Implement the reusable helper.",
+      "tasks": [
+        "Add a governance helper script with link and clean commands.",
+        "Enforce same-repo validation, lockfile parity checks, and explicit artifact allowlisting.",
+        "Store cleanup manifest state outside the worktree using git-path metadata."
+      ],
+      "acceptance_criteria": [
+        "There is one documented helper path for setting up shared dependency symlinks in clean worktrees.",
+        "The helper verifies same-repo and lockfile parity before linking.",
+        "Cleanup behavior is safe and only removes symlinks created through the helper."
+      ],
+      "file_paths": [
+        "scripts/overlord/worktree_shared_dependencies.sh",
+        "scripts/overlord/README.md"
+      ]
+    },
+    {
+      "name": "Sprint 2",
+      "goal": "Document, proof, and close the governance issue.",
+      "tasks": [
+        "Update governance standards to reference the helper as the preferred path.",
+        "Run a real proof in a temporary ai-integration-services worktree.",
+        "Record the result in the backlog mirror and PDCA/R closeout."
+      ],
+      "acceptance_criteria": [
+        "Governance docs reference the helper as the preferred path for the approved pattern.",
+        "A real proof run links, verifies, and cleans successfully in a temporary worktree.",
+        "The backlog mirror records issue #72 as done once the proof succeeds."
+      ],
+      "file_paths": [
+        "STANDARDS.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/plans/issue-72-worktree-dependency-helper-pdcar.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "governance reviewer",
+      "role": "Helper scope reviewer",
+      "focus": "Confirm that the helper should stay narrowly scoped to approved dependency artifacts and should not generalize into arbitrary symlink automation.",
+      "status": "accepted",
+      "summary": "The helper should only manage approved dependency artifacts and must preserve the policy boundaries from issue #70. Same-repo and lockfile parity checks are mandatory.",
+      "evidence": [
+        "STANDARDS.md",
+        "Issue #72 acceptance criteria"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-bounded-helper-slice",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This is a narrow governance helper implementation and did not require an alternate-model review to proceed.",
+    "evidence": [
+      "Issue #72 scope"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Build the helper, proof it on a real isolated worktree, and close the governance backlog item once the behavior is verified.",
+    "next_execution_step": "Add the helper and run the real AIS worktree proof before updating the backlog mirror and closing issue #72.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If real proof requires additional safety checks, add them in the same slice before closure.",
+    "If the helper cannot safely support an allowed artifact, narrow the allowlist or create a follow-up issue before closing."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Benji"
+  ],
+  "approved_at": "2026-04-09T12:35:00-05:00"
+}
