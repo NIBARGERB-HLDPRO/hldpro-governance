@@ -207,9 +207,10 @@ The Karpathy Loop is a pattern, not a package. The implementation is: a closeout
 | Phase | Description | Gate Condition |
 |---|---|---|
 | Phase 4 | Add HealthcarePlatform to graphify scope | Approved 2026-04-09 for full-repo graph build. No HIPAA/BAA documents are stored in the repo; governance stores the resulting graph outputs. |
-| Phase 5 | Add remaining governed repos (local-ai-machine, knocktracker) | Phase 1–3 stable for 30+ days. Graph quality verified. |
-| Phase 6 | `graphify --neo4j push` to local Neo4j instance | v2.0 local LLM milestone. Graphiti migration. `operator_context` schema fields map to graph nodes. |
-| Phase 7 | Fine-tune Qwen3-32B on wiki data | Karpathy "Train a Custom Model on Wiki Data" step. Wiki must have 6 months of compounding data minimum. |
+| Phase 5 | Add ASC-Evaluator to graphify scope | Approved 2026-04-09 using the HealthcarePlatform pointer/hook pattern. Governance stores full-repo graph outputs; ASC-Evaluator keeps only persona-safe pointers/hooks. |
+| Phase 6 | Add remaining governed repos (local-ai-machine, knocktracker) | Phase 1–3 stable for 30+ days. Graph quality verified. |
+| Phase 7 | `graphify --neo4j push` to local Neo4j instance | v2.0 local LLM milestone. Graphiti migration. `operator_context` schema fields map to graph nodes. |
+| Phase 8 | Fine-tune Qwen3-32B on wiki data | Karpathy "Train a Custom Model on Wiki Data" step. Wiki must have 6 months of compounding data minimum. |
 
 ---
 
@@ -218,7 +219,7 @@ The Karpathy Loop is a pattern, not a package. The implementation is: a closeout
 | Decision | Choice | Rationale |
 |---|---|---|
 | graphify install strategy | Install as-is | Pure tool, no HLD Pro logic. 2-command install. No customization needed. |
-| graphify scope (Phase 1) | ai-integration-services only | Highest complexity, highest daily cognitive load. HealthcarePlatform was deferred initially, then explicitly approved on 2026-04-09 for full-repo Phase 4 adoption. |
+| graphify scope (Phase 1) | ai-integration-services only | Highest complexity, highest daily cognitive load. HealthcarePlatform was deferred initially, then explicitly approved on 2026-04-09 for full-repo Phase 4 adoption. ASC-Evaluator followed the same governance-hosted pattern on 2026-04-09 as Phase 5. |
 | MBIF Crew strategy | Take dispatcher pattern only, no install | Personal health agents irrelevant. Scribe/sorter/connector/librarian behavior folds into extended overlord-sweep. No new agents = no new orchestration complexity for solo operator. |
 | Karpathy Loop strategy | Build our own | No single repo IS the loop. Pattern implementation takes about the same time as adapting someone else's repo. We own the logic. |
 | Raw feed sources (Phase 1) | Conversations + GitHub issues only | High signal, structured, already available. VAPI transcripts + support tickets deferred: high volume, low density, need filter layer first. |
