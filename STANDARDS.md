@@ -29,6 +29,15 @@
 - **Alternative:** Use `EnterWorktree` tool or `git worktree add` for branch work in concurrent sessions
 - Configured in `~/.claude/settings.json` PreToolUse hooks (absolute path, not `~`)
 
+### Shared Dependency Symlinks In Clean Worktrees
+- **Allowed only in isolated worktrees** when the root checkout for the same repo already has installed workspace dependencies and repeating the install would be materially slower or wasteful.
+- **Allowed artifacts:** dependency install trees and package-manager metadata needed to consume that same install for the same repo checkout, such as `node_modules/` and matching workspace dependency metadata directories created from the current lockfile.
+- **Forbidden artifacts:** `.env*`, `.git`, build outputs (`dist/`, `build/`, `.next/`, coverage), database files, generated app data, secret-bearing caches, or any artifact borrowed from a different repo.
+- **Verification required before linking:** confirm the root checkout and worktree are the same repo, confirm the relevant lockfile/manifests match, and confirm the dependency target already exists in the root checkout.
+- **Post-link verification required:** run at least one normal repo command from the worktree that proves the borrowed toolchain actually works before treating the lane as ready.
+- **Cleanup expectation:** these symlinks are local-only lane setup. Never commit them as tracked files, and remove them when the worktree no longer needs the borrowed install.
+- **Escalation rule:** if a lane needs more than this documented manual pattern, create an issue-backed follow-up for helper/runbook work instead of normalizing hidden tribal steps.
+
 ### Doc Co-Staging Rules (governance-check.sh + CI)
 - **ANY source file change** (`.ts`, `.tsx`, `.sql`, `.html`, `.css`, `.js`, `.svg`) → co-stage `docs/PROGRESS.md`
 - **Bug fix commits** (fix/bug/patch/hotfix in message) → co-stage `docs/FAIL_FAST_LOG.md`

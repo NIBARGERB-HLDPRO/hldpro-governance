@@ -6,6 +6,9 @@ paste-cache/
 file-history/
 session-env/
 plans/
+!docs/plans/
+!docs/plans/*.json
+!docs/plans/*.md
 downloads/
 backups/
 
