@@ -204,6 +204,7 @@ Both Claude and Codex sessions can invoke each other as specialist reviewers:
 - Graphify-first architecture retrieval is auditable, not assumed. When a governed workflow uses governance graph/wiki artifacts as primary context, log a usage event with `python3 scripts/knowledge_base/log_graphify_usage.py --repo {repo} --task-id {issue-or-task} --task-type {type} --strategy graphify|hybrid --artifact wiki/index.md --artifact graphify-out/GRAPH_REPORT.md --estimated-tokens {n}`.
 - Baseline repo-search comparisons should log `--strategy repo-search` to the same append-only event stream so graphify-vs-search adoption and retrieval footprint can be measured over time.
 - For fail-fast debugging, the validated graph-guided query pattern is: symptom terms + mechanism terms + likely owner terms (function/workflow/file family). Use graph-guided retrieval first to identify owning files and adjacent components, then confirm those files with bounded repo search.
+- For workflow/doc-heavy fail-fast debugging, the validated path is `hybrid`: use graph-guided retrieval for owner/topology hints, then rank bounded workflow/doc artifacts (`.github/workflows/`, `docs/`, `metrics/`, `raw/`) with primary workflow YAML preferred over derivative plan or measurement artifacts.
 - Requires one supported Codex auth path in environment:
 - `CODEX_AUTH_JSON` for trusted CI/CD runners using a staged `~/.codex/auth.json`
 - or `OPENAI_API_KEY` / Codex Connect auth when the CLI supports env-only auth for the runner context
