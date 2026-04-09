@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **DemoCallBanner.tsx** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/components/ui/DemoCallBanner.tsx`
-- **DemoCallBanner()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/components/ui/DemoCallBanner.tsx`
+- **DemoCallBanner.tsx** (1 connections) — `ai-integration-services/apps/marketing/src/components/ui/DemoCallBanner.tsx`
+- **DemoCallBanner()** (1 connections) — `ai-integration-services/apps/marketing/src/components/ui/DemoCallBanner.tsx`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/components/ui/DemoCallBanner.tsx`
+- `ai-integration-services/apps/marketing/src/components/ui/DemoCallBanner.tsx`
 
 ## Audit Trail
 

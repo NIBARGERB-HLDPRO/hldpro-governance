@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **check-hosted-auth-matrix-classification.js** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-hosted-auth-matrix-classification.js`
-- **main()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-hosted-auth-matrix-classification.js`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-hosted-auth-matrix-classification.js`
-- **readJson()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-hosted-auth-matrix-classification.js`
-- **getInputPath()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-hosted-auth-matrix-classification.js`
+- **check-hosted-auth-matrix-classification.js** (4 connections) — `healthcareplatform/backend/scripts/ci/check-hosted-auth-matrix-classification.js`
+- **main()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-hosted-auth-matrix-classification.js`
+- **fail()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-hosted-auth-matrix-classification.js`
+- **readJson()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-hosted-auth-matrix-classification.js`
+- **getInputPath()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-hosted-auth-matrix-classification.js`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-hosted-auth-matrix-classification.js`
+- `healthcareplatform/backend/scripts/ci/check-hosted-auth-matrix-classification.js`
 
 ## Audit Trail
 

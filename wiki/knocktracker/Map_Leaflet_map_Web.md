@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **LeafletMap.web.tsx** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/map/LeafletMap.web.tsx`
-- **MapClickHandler()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/map/LeafletMap.web.tsx`
-- **stopIcon()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/map/LeafletMap.web.tsx`
+- **LeafletMap.web.tsx** (2 connections) — `knocktracker/components/map/LeafletMap.web.tsx`
+- **MapClickHandler()** (1 connections) — `knocktracker/components/map/LeafletMap.web.tsx`
+- **stopIcon()** (1 connections) — `knocktracker/components/map/LeafletMap.web.tsx`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/map/LeafletMap.web.tsx`
+- `knocktracker/components/map/LeafletMap.web.tsx`
 
 ## Audit Trail
 

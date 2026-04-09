@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **test_build_delegated_execution_envelope_runtime.py** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_build_delegated_execution_envelope_runtime.py`
-- **check()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_build_delegated_execution_envelope_runtime.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_build_delegated_execution_envelope_runtime.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_build_delegated_execution_envelope_runtime.py`
-- **write_json()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_build_delegated_execution_envelope_runtime.py`
+- **test_build_delegated_execution_envelope_runtime.py** (4 connections) — `local-ai-machine/scripts/ops/test_build_delegated_execution_envelope_runtime.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_build_delegated_execution_envelope_runtime.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/test_build_delegated_execution_envelope_runtime.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_build_delegated_execution_envelope_runtime.py`
+- **write_json()** (2 connections) — `local-ai-machine/scripts/ops/test_build_delegated_execution_envelope_runtime.py`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_build_delegated_execution_envelope_runtime.py`
+- `local-ai-machine/scripts/ops/test_build_delegated_execution_envelope_runtime.py`
 
 ## Audit Trail
 

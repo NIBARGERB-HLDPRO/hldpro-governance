@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **routing-engine.ts** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
-- **scoreWorker()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
-- **estimateDriveMinutes()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
-- **haversineKm()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
-- **rankWorkers()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
+- **routing-engine.ts** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
+- **scoreWorker()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
+- **estimateDriveMinutes()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
+- **haversineKm()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
+- **rankWorkers()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
 
 ## Audit Trail
 

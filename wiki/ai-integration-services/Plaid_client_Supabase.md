@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **plaid-client.ts** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
-- **plaidFetch()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
-- **createLinkToken()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
-- **exchangePublicToken()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
-- **getAccounts()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
-- **getBalance()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
-- **getBaseUrl()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
-- **syncTransactions()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
+- **plaid-client.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
+- **plaidFetch()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
+- **createLinkToken()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
+- **exchangePublicToken()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
+- **getAccounts()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
+- **getBalance()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
+- **getBaseUrl()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
+- **syncTransactions()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
 
 ## Audit Trail
 

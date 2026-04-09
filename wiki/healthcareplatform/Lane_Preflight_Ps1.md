@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **preflight.ps1** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/lane/preflight.ps1`
-- **Fail()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/lane/preflight.ps1`
+- **preflight.ps1** (1 connections) — `healthcareplatform/backend/scripts/lane/preflight.ps1`
+- **Fail()** (1 connections) — `healthcareplatform/backend/scripts/lane/preflight.ps1`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/lane/preflight.ps1`
+- `healthcareplatform/backend/scripts/lane/preflight.ps1`
 
 ## Audit Trail
 

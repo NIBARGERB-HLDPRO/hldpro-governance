@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **corpus.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
-- **logToCorpus()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
-- **callClaude()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
-- **getModelTier()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
+- **corpus.ts** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
+- **logToCorpus()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
+- **callClaude()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
+- **getModelTier()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
 
 ## Audit Trail
 

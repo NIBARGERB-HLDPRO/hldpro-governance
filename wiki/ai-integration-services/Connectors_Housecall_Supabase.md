@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- **HousecallProConnector** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
-- **.request()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
-- **.refreshToken()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
-- **.scheduleJob()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
-- **housecall.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
-- **.constructor()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
-- **.createClient()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
-- **.createJob()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
-- **.getAvailability()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
-- **.healthCheck()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
-- **.syncClient()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- **HousecallProConnector** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- **.request()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- **.refreshToken()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- **.scheduleJob()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- **housecall.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- **.constructor()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- **.createClient()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- **.createJob()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- **.getAvailability()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- **.healthCheck()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- **.syncClient()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
 
 ## Relationships
 
@@ -22,7 +22,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
 
 ## Audit Trail
 

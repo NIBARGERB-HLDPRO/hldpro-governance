@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **validate-structured-agent-cycle-plan-schema.js** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js`
-- **fail()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js`
-- **main()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js`
-- **readJson()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js`
-- **requireKey()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js`
+- **validate-structured-agent-cycle-plan-schema.js** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js`
+- **fail()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js`
+- **main()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js`
+- **readJson()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js`
+- **requireKey()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js`
+- `healthcareplatform/backend/scripts/ci/validate-structured-agent-cycle-plan-schema.js`
 
 ## Audit Trail
 

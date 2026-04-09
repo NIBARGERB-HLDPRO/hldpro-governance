@@ -4,18 +4,18 @@
 
 ## Key Concepts
 
-- **JobberConnector** (11 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- **.graphql()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- **.refreshToken()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- **jobber.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- **.constructor()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- **.createClient()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- **.createJob()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- **.getAvailability()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- **.healthCheck()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- **.rawGraphql()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- **.scheduleJob()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- **.syncClient()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **JobberConnector** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **.graphql()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **.refreshToken()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **jobber.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **.constructor()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **.createClient()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **.createJob()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **.getAvailability()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **.healthCheck()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **.rawGraphql()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **.scheduleJob()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **.syncClient()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
 
 ## Relationships
 
@@ -23,7 +23,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
 
 ## Audit Trail
 

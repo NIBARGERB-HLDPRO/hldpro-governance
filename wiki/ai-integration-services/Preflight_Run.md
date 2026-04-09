@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **preflight-probe.spec.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/preflight-probe.spec.ts`
-- **runPreflight()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/preflight-probe.spec.ts`
+- **preflight-probe.spec.ts** (1 connections) — `ai-integration-services/e2e/preflight-probe.spec.ts`
+- **runPreflight()** (1 connections) — `ai-integration-services/e2e/preflight-probe.spec.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/preflight-probe.spec.ts`
+- `ai-integration-services/e2e/preflight-probe.spec.ts`
 
 ## Audit Trail
 

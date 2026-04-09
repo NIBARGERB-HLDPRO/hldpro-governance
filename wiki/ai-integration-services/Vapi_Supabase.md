@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **vapi-helpers.ts** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
-- **getVapiKey()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
-- **vapiGet()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
-- **vapiPatch()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
-- **VOICE_V25()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
-- **VOICE_V3_NATIVE()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
-- **VOICE_V3_PROXY()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **vapi-helpers.ts** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **getVapiKey()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **vapiGet()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **vapiPatch()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **VOICE_V25()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **VOICE_V3_NATIVE()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **VOICE_V3_PROXY()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
 
 ## Audit Trail
 

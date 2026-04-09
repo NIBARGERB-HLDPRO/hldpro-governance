@@ -1,6 +1,6 @@
 # draw_label()
 
-> God node · 3 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py`
+> God node · 3 connections · `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py`
 
 ## Connections by Relation
 

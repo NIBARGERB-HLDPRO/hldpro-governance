@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **react-native-maps.web.tsx** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/shims/react-native-maps.web.tsx`
-- **MapView()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/shims/react-native-maps.web.tsx`
-- **ShimComponent()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/shims/react-native-maps.web.tsx`
+- **react-native-maps.web.tsx** (2 connections) — `knocktracker/shims/react-native-maps.web.tsx`
+- **MapView()** (1 connections) — `knocktracker/shims/react-native-maps.web.tsx`
+- **ShimComponent()** (1 connections) — `knocktracker/shims/react-native-maps.web.tsx`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/shims/react-native-maps.web.tsx`
+- `knocktracker/shims/react-native-maps.web.tsx`
 
 ## Audit Trail
 

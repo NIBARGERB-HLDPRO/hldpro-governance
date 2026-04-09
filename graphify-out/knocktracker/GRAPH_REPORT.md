@@ -1,7 +1,7 @@
-# Graph Report - /Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6  (2026-04-09)
+# Graph Report - knocktracker  (2026-04-09)
 
 ## Corpus Check
-- Large corpus: 246 files · ~318,385 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 246 files · ~322,410 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
 - 456 nodes · 660 edges · 38 communities detected
@@ -22,7 +22,7 @@
 
 ## Surprising Connections (you probably didn't know these)
 - `pointInPolygon()` --calls--> `normalizePolygon()`  [INFERRED]
-  /Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/routing/geo.ts → /Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/utils/routing/geo.ts
+  knocktracker/lib/routing/geo.ts → knocktracker/utils/routing/geo.ts
 
 ## Communities
 

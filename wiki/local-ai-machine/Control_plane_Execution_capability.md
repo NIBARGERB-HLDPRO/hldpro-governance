@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **execution_capability_test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/execution_capability_test.ts`
+- **execution_capability_test.ts** (0 connections) — `local-ai-machine/scripts/control_plane/execution_capability_test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/execution_capability_test.ts`
+- `local-ai-machine/scripts/control_plane/execution_capability_test.ts`
 
 ## Audit Trail
 

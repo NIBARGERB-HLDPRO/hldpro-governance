@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **recover-hosted-jwt-gateway.ps1** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/testing/recover-hosted-jwt-gateway.ps1`
+- **recover-hosted-jwt-gateway.ps1** (0 connections) — `healthcareplatform/backend/scripts/testing/recover-hosted-jwt-gateway.ps1`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/testing/recover-hosted-jwt-gateway.ps1`
+- `healthcareplatform/backend/scripts/testing/recover-hosted-jwt-gateway.ps1`
 
 ## Audit Trail
 

@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **input-validator.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/input-validator.ts`
-- **validateInputComplexity()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/input-validator.ts`
-- **walk()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/input-validator.ts`
+- **input-validator.ts** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/input-validator.ts`
+- **validateInputComplexity()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/input-validator.ts`
+- **walk()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/input-validator.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/input-validator.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/input-validator.ts`
 
 ## Audit Trail
 

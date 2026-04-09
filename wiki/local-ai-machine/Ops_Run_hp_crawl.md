@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **run_hp_frontend_crawl.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_hp_frontend_crawl.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_hp_frontend_crawl.py`
-- **load_dotenv()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_hp_frontend_crawl.py`
-- **run_crawl()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_hp_frontend_crawl.py`
+- **run_hp_frontend_crawl.py** (3 connections) — `local-ai-machine/scripts/ops/run_hp_frontend_crawl.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/run_hp_frontend_crawl.py`
+- **load_dotenv()** (2 connections) — `local-ai-machine/scripts/ops/run_hp_frontend_crawl.py`
+- **run_crawl()** (2 connections) — `local-ai-machine/scripts/ops/run_hp_frontend_crawl.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_hp_frontend_crawl.py`
+- `local-ai-machine/scripts/ops/run_hp_frontend_crawl.py`
 
 ## Audit Trail
 

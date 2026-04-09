@@ -4,19 +4,19 @@
 
 ## Key Concepts
 
-- **DashboardFinance.tsx** (15 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
-- **apiCall()** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
-- **loadData()** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
-- **handleApproveMatch()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
-- **handleCreateInvoice()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
-- **handleRejectMatch()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
-- **handleSendInvoice()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
-- **handleSyncTransactions()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
-- **handleTriggerMatching()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
-- **handleConnectAccount()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
-- **addLineItem()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
-- **removeLineItem()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
-- **updateLineItem()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **DashboardFinance.tsx** (15 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **apiCall()** (9 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **loadData()** (8 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **handleApproveMatch()** (3 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **handleCreateInvoice()** (3 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **handleRejectMatch()** (3 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **handleSendInvoice()** (3 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **handleSyncTransactions()** (3 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **handleTriggerMatching()** (3 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **handleConnectAccount()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **addLineItem()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **removeLineItem()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- **updateLineItem()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
 
 ## Relationships
 
@@ -24,7 +24,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardFinance.tsx`
 
 ## Audit Trail
 

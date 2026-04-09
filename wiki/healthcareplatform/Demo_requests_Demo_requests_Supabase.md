@@ -1,12 +1,14 @@
 # Demo requests Demo requests Supabase
 
-> 3 nodes · cohesion 0.67
+> 5 nodes · cohesion 0.50
 
 ## Key Concepts
 
-- **demo-requests.test.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/demo-requests/demo-requests.test.ts`
-- **inferTier()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/demo-requests/demo-requests.test.ts`
-- **scrubForStorage()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/demo-requests/demo-requests.test.ts`
+- **demo-requests.test.ts** (4 connections) — `healthcareplatform/backend/supabase/functions/demo-requests/demo-requests.test.ts`
+- **inferServiceType()** (2 connections) — `healthcareplatform/backend/supabase/functions/demo-requests/demo-requests.test.ts`
+- **normalizeServiceType()** (2 connections) — `healthcareplatform/backend/supabase/functions/demo-requests/demo-requests.test.ts`
+- **inferTier()** (1 connections) — `healthcareplatform/backend/supabase/functions/demo-requests/demo-requests.test.ts`
+- **scrubForStorage()** (1 connections) — `healthcareplatform/backend/supabase/functions/demo-requests/demo-requests.test.ts`
 
 ## Relationships
 
@@ -14,12 +16,12 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/demo-requests/demo-requests.test.ts`
+- `healthcareplatform/backend/supabase/functions/demo-requests/demo-requests.test.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 8 (80%)
+- INFERRED: 2 (20%)
 - AMBIGUOUS: 0 (0%)
 
 ---

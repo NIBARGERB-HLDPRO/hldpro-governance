@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **provisioning-plan.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
-- **applicableSteps()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
-- **getBilingualConfig()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
-- **stepsForTrigger()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
+- **provisioning-plan.ts** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
+- **applicableSteps()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
+- **getBilingualConfig()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
+- **stepsForTrigger()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
 
 ## Audit Trail
 

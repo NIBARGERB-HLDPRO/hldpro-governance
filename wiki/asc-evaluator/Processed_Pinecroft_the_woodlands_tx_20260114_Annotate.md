@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- **annotate_images_v3.py** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
-- **annotate()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
-- **draw_arrow()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
-- **px()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
-- **draw_circle()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
-- **get_color()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
-- **Annotate ALL 43 facility images — arrows and circles ONLY (no text on images). V** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
-- **Draw a thick arrow with filled arrowhead.** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
-- **Convert proportional coordinate (0.0-1.0) to pixel.** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
-- **annotations: list of dicts with proportional coords (0.0-1.0):       - arrow: ((** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
+- **annotate_images_v3.py** (6 connections) — `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
+- **annotate()** (6 connections) — `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
+- **draw_arrow()** (3 connections) — `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
+- **px()** (3 connections) — `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
+- **draw_circle()** (2 connections) — `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
+- **get_color()** (2 connections) — `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
+- **Annotate ALL 43 facility images — arrows and circles ONLY (no text on images). V** (1 connections) — `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
+- **Draw a thick arrow with filled arrowhead.** (1 connections) — `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
+- **Convert proportional coordinate (0.0-1.0) to pixel.** (1 connections) — `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
+- **annotations: list of dicts with proportional coords (0.0-1.0):       - arrow: ((** (1 connections) — `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
 
 ## Relationships
 
@@ -21,7 +21,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
+- `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py`
 
 ## Audit Trail
 

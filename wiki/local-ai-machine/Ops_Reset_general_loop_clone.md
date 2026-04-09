@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **reset_general_loop_clone.py** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/reset_general_loop_clone.py`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/reset_general_loop_clone.py`
-- **fail()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/reset_general_loop_clone.py`
-- **remove_worktree()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/reset_general_loop_clone.py`
-- **repo_root()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/reset_general_loop_clone.py`
-- **safe_clone_root()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/reset_general_loop_clone.py`
-- **handle_remove_readonly()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/reset_general_loop_clone.py`
+- **reset_general_loop_clone.py** (6 connections) — `local-ai-machine/scripts/ops/reset_general_loop_clone.py`
+- **main()** (5 connections) — `local-ai-machine/scripts/ops/reset_general_loop_clone.py`
+- **fail()** (4 connections) — `local-ai-machine/scripts/ops/reset_general_loop_clone.py`
+- **remove_worktree()** (4 connections) — `local-ai-machine/scripts/ops/reset_general_loop_clone.py`
+- **repo_root()** (3 connections) — `local-ai-machine/scripts/ops/reset_general_loop_clone.py`
+- **safe_clone_root()** (3 connections) — `local-ai-machine/scripts/ops/reset_general_loop_clone.py`
+- **handle_remove_readonly()** (1 connections) — `local-ai-machine/scripts/ops/reset_general_loop_clone.py`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/reset_general_loop_clone.py`
+- `local-ai-machine/scripts/ops/reset_general_loop_clone.py`
 
 ## Audit Trail
 

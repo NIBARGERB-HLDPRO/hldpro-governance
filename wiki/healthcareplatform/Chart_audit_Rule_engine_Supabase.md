@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **rule-engine.test.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/rule-engine.test.ts`
-- **findRule()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/rule-engine.test.ts`
-- **makeAro()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/rule-engine.test.ts`
-- **slot()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/rule-engine.test.ts`
+- **rule-engine.test.ts** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/rule-engine.test.ts`
+- **findRule()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/rule-engine.test.ts`
+- **makeAro()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/rule-engine.test.ts`
+- **slot()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/rule-engine.test.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/rule-engine.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/chart-audit/rule-engine.test.ts`
 
 ## Audit Trail
 

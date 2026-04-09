@@ -1,11 +1,12 @@
 {
-  "source": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/graphify-out/hldpro-governance",
-  "wiki_dir": null,
-  "nodes": 104,
-  "edges": 195,
-  "communities": 14,
-  "articles": 0,
+  "repo_slug": "hldpro-governance",
+  "source": "hldpro-governance",
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/wiki/hldpro",
+  "nodes": 140,
+  "edges": 253,
+  "communities": 18,
+  "articles": 28,
   "html_status": "skipped",
-  "code_files": 10
+  "code_files": 15
 }

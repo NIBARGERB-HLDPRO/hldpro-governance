@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **n8n-trigger.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/n8n-trigger.ts`
-- **isN8nConfigured()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/n8n-trigger.ts`
-- **triggerN8nWebhook()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/n8n-trigger.ts`
+- **n8n-trigger.ts** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/n8n-trigger.ts`
+- **isN8nConfigured()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/n8n-trigger.ts`
+- **triggerN8nWebhook()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/n8n-trigger.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/n8n-trigger.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/n8n-trigger.ts`
 
 ## Audit Trail
 

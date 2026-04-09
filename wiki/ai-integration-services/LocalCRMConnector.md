@@ -1,6 +1,6 @@
 # LocalCRMConnector
 
-> God node · 23 connections · `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/crm/local.ts`
+> God node · 23 connections · `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/local.ts`
 
 ## Connections by Relation
 

@@ -4,245 +4,245 @@
       "id": "annotate_images_v2",
       "label": "annotate_images_v2.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L1"
     },
     {
       "id": "annotate_images_v2_draw_arrow",
       "label": "draw_arrow()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L30"
     },
     {
       "id": "annotate_images_v2_draw_circle",
       "label": "draw_circle()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L40"
     },
     {
       "id": "annotate_images_v2_draw_highlight",
       "label": "draw_highlight()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L47"
     },
     {
       "id": "annotate_images_v2_get_color",
       "label": "get_color()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L51"
     },
     {
       "id": "annotate_images_v2_annotate",
       "label": "annotate()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L61"
     },
     {
       "id": "annotate_images_v2_rationale_1",
       "label": "Annotate ALL 43 facility images \u2014 arrows and highlight zones ONLY (no text on im",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L1"
     },
     {
       "id": "annotate_images_v2_rationale_31",
       "label": "Draw a thick arrow with filled arrowhead.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L31"
     },
     {
       "id": "annotate_images_v2_rationale_48",
       "label": "Draw semi-transparent rectangle highlight.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L48"
     },
     {
       "id": "annotate_images_v2_rationale_62",
       "label": "annotations: list of dicts:       - arrow: ((from_x, from_y), (to_x, to_y))",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L62"
     },
     {
       "id": "annotate_images",
       "label": "annotate_images.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L1"
     },
     {
       "id": "annotate_images_draw_arrow",
       "label": "draw_arrow()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L26"
     },
     {
       "id": "annotate_images_draw_label",
       "label": "draw_label()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L39"
     },
     {
       "id": "annotate_images_draw_circle",
       "label": "draw_circle()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L49"
     },
     {
       "id": "annotate_images_annotate",
       "label": "annotate()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L56"
     },
     {
       "id": "annotate_images_rationale_1",
       "label": "Annotate facility images with arrows, crop zones, and labels for findings. Produ",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L1"
     },
     {
       "id": "annotate_images_rationale_27",
       "label": "Draw an arrow from start to end point.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L27"
     },
     {
       "id": "annotate_images_rationale_40",
       "label": "Draw a label with semi-transparent background.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L40"
     },
     {
       "id": "annotate_images_rationale_50",
       "label": "Draw a circle highlight.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L50"
     },
     {
       "id": "annotate_images_rationale_57",
       "label": "annotations: list of dicts with:       - arrow_from: (x,y) start of arrow",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L57"
     },
     {
       "id": "annotate_images_v3",
       "label": "annotate_images_v3.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L1"
     },
     {
       "id": "annotate_images_v3_draw_arrow",
       "label": "draw_arrow()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L25"
     },
     {
       "id": "annotate_images_v3_draw_circle",
       "label": "draw_circle()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L40"
     },
     {
       "id": "annotate_images_v3_px",
       "label": "px()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L48"
     },
     {
       "id": "annotate_images_v3_get_color",
       "label": "get_color()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L53"
     },
     {
       "id": "annotate_images_v3_annotate",
       "label": "annotate()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L64"
     },
     {
       "id": "annotate_images_v3_rationale_1",
       "label": "Annotate ALL 43 facility images \u2014 arrows and circles ONLY (no text on images). V",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L1"
     },
     {
       "id": "annotate_images_v3_rationale_26",
       "label": "Draw a thick arrow with filled arrowhead.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L26"
     },
     {
       "id": "annotate_images_v3_rationale_49",
       "label": "Convert proportional coordinate (0.0-1.0) to pixel.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L49"
     },
     {
       "id": "annotate_images_v3_rationale_65",
       "label": "annotations: list of dicts with proportional coords (0.0-1.0):       - arrow: ((",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L65"
     },
     {
       "id": "generate_final_report",
       "label": "generate_final_report.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L1"
     },
     {
       "id": "generate_final_report_add_heading_styled",
       "label": "add_heading_styled()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L19"
     },
     {
       "id": "generate_final_report_add_table_row",
       "label": "add_table_row()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L25"
     },
     {
       "id": "generate_final_report_make_table",
       "label": "make_table()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L44"
     },
     {
       "id": "generate_final_report_rationale_1",
       "label": "Generate Final Report for Pinecroft Cycle 1 as a professional Word document.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L1"
     }
   ],
@@ -252,7 +252,7 @@
       "target": "pil",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -261,7 +261,7 @@
       "target": "math",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -270,7 +270,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -279,7 +279,7 @@
       "target": "annotate_images_v2_draw_arrow",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L30",
       "weight": 1.0
     },
@@ -288,7 +288,7 @@
       "target": "annotate_images_v2_draw_circle",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L40",
       "weight": 1.0
     },
@@ -297,7 +297,7 @@
       "target": "annotate_images_v2_draw_highlight",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L47",
       "weight": 1.0
     },
@@ -306,7 +306,7 @@
       "target": "annotate_images_v2_get_color",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L51",
       "weight": 1.0
     },
@@ -315,7 +315,7 @@
       "target": "annotate_images_v2_annotate",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L61",
       "weight": 1.0
     },
@@ -324,7 +324,7 @@
       "target": "annotate_images_v2_get_color",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L74",
       "weight": 0.8
     },
@@ -333,7 +333,7 @@
       "target": "annotate_images_v2_draw_highlight",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L78",
       "weight": 0.8
     },
@@ -342,7 +342,7 @@
       "target": "annotate_images_v2_draw_circle",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L81",
       "weight": 0.8
     },
@@ -351,7 +351,7 @@
       "target": "annotate_images_v2_draw_arrow",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L83",
       "weight": 0.8
     },
@@ -360,7 +360,7 @@
       "target": "annotate_images_v2",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L1",
       "weight": 1.0
     },
@@ -369,7 +369,7 @@
       "target": "annotate_images_v2_draw_arrow",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L31",
       "weight": 1.0
     },
@@ -378,7 +378,7 @@
       "target": "annotate_images_v2_draw_highlight",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L48",
       "weight": 1.0
     },
@@ -387,7 +387,7 @@
       "target": "annotate_images_v2_annotate",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
       "source_location": "L62",
       "weight": 1.0
     },
@@ -396,7 +396,7 @@
       "target": "pil",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -405,7 +405,7 @@
       "target": "math",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -414,7 +414,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -423,7 +423,7 @@
       "target": "annotate_images_draw_arrow",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L26",
       "weight": 1.0
     },
@@ -432,7 +432,7 @@
       "target": "annotate_images_draw_label",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L39",
       "weight": 1.0
     },
@@ -441,7 +441,7 @@
       "target": "annotate_images_draw_circle",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L49",
       "weight": 1.0
     },
@@ -450,7 +450,7 @@
       "target": "annotate_images_annotate",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L56",
       "weight": 1.0
     },
@@ -459,7 +459,7 @@
       "target": "annotate_images_draw_circle",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L88",
       "weight": 0.8
     },
@@ -468,7 +468,7 @@
       "target": "annotate_images_draw_arrow",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L90",
       "weight": 0.8
     },
@@ -477,7 +477,7 @@
       "target": "annotate_images_draw_label",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L92",
       "weight": 0.8
     },
@@ -486,7 +486,7 @@
       "target": "annotate_images",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L1",
       "weight": 1.0
     },
@@ -495,7 +495,7 @@
       "target": "annotate_images_draw_arrow",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L27",
       "weight": 1.0
     },
@@ -504,7 +504,7 @@
       "target": "annotate_images_draw_label",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L40",
       "weight": 1.0
     },
@@ -513,7 +513,7 @@
       "target": "annotate_images_draw_circle",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L50",
       "weight": 1.0
     },
@@ -522,7 +522,7 @@
       "target": "annotate_images_annotate",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L57",
       "weight": 1.0
     },
@@ -531,7 +531,7 @@
       "target": "pil",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -540,7 +540,7 @@
       "target": "math",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -549,7 +549,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -558,7 +558,7 @@
       "target": "annotate_images_v3_draw_arrow",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L25",
       "weight": 1.0
     },
@@ -567,7 +567,7 @@
       "target": "annotate_images_v3_draw_circle",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L40",
       "weight": 1.0
     },
@@ -576,7 +576,7 @@
       "target": "annotate_images_v3_px",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L48",
       "weight": 1.0
     },
@@ -585,7 +585,7 @@
       "target": "annotate_images_v3_get_color",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L53",
       "weight": 1.0
     },
@@ -594,7 +594,7 @@
       "target": "annotate_images_v3_annotate",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L64",
       "weight": 1.0
     },
@@ -603,7 +603,7 @@
       "target": "annotate_images_v3_get_color",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L77",
       "weight": 0.8
     },
@@ -612,7 +612,7 @@
       "target": "annotate_images_v3_draw_circle",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L82",
       "weight": 0.8
     },
@@ -621,7 +621,7 @@
       "target": "annotate_images_v3_px",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L82",
       "weight": 0.8
     },
@@ -630,7 +630,7 @@
       "target": "annotate_images_v3_draw_arrow",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L85",
       "weight": 0.8
     },
@@ -639,7 +639,7 @@
       "target": "annotate_images_v3",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L1",
       "weight": 1.0
     },
@@ -648,7 +648,7 @@
       "target": "annotate_images_v3_draw_arrow",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L26",
       "weight": 1.0
     },
@@ -657,7 +657,7 @@
       "target": "annotate_images_v3_px",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L49",
       "weight": 1.0
     },
@@ -666,7 +666,7 @@
       "target": "annotate_images_v3_annotate",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L65",
       "weight": 1.0
     },
@@ -675,7 +675,7 @@
       "target": "docx",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -684,7 +684,7 @@
       "target": "docx_shared",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -693,7 +693,7 @@
       "target": "docx_enum_text",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -702,7 +702,7 @@
       "target": "docx_enum_table",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -711,7 +711,7 @@
       "target": "docx_oxml_ns",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -720,7 +720,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -729,7 +729,7 @@
       "target": "generate_final_report_add_heading_styled",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L19",
       "weight": 1.0
     },
@@ -738,7 +738,7 @@
       "target": "generate_final_report_add_table_row",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L25",
       "weight": 1.0
     },
@@ -747,7 +747,7 @@
       "target": "generate_final_report_make_table",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L44",
       "weight": 1.0
     },
@@ -756,7 +756,7 @@
       "target": "generate_final_report",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L1",
       "weight": 1.0
     }

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **permissions.test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/test/permissions.test.ts`
+- **permissions.test.ts** (0 connections) — `healthcareplatform/frontend/src/test/permissions.test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/test/permissions.test.ts`
+- `healthcareplatform/frontend/src/test/permissions.test.ts`
 
 ## Audit Trail
 

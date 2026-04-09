@@ -4,18 +4,18 @@
 
 ## Key Concepts
 
-- **gatekeeper.py** (11 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
-- **main()** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
-- **enforce_optional_mrp_attestation()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
-- **assert_rule()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
-- **load_json()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
-- **enforce_lane_isolation_policy()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
-- **enforce_single_critic_verdict()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
-- **validate_schema()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
-- **canonicalize_command()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
-- **_critic_identity()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
-- **json_pointer_get()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
-- **load_jsonl()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
+- **gatekeeper.py** (11 connections) — `local-ai-machine/gatekeeper.py`
+- **main()** (9 connections) — `local-ai-machine/gatekeeper.py`
+- **enforce_optional_mrp_attestation()** (6 connections) — `local-ai-machine/gatekeeper.py`
+- **assert_rule()** (5 connections) — `local-ai-machine/gatekeeper.py`
+- **load_json()** (5 connections) — `local-ai-machine/gatekeeper.py`
+- **enforce_lane_isolation_policy()** (4 connections) — `local-ai-machine/gatekeeper.py`
+- **enforce_single_critic_verdict()** (4 connections) — `local-ai-machine/gatekeeper.py`
+- **validate_schema()** (4 connections) — `local-ai-machine/gatekeeper.py`
+- **canonicalize_command()** (2 connections) — `local-ai-machine/gatekeeper.py`
+- **_critic_identity()** (2 connections) — `local-ai-machine/gatekeeper.py`
+- **json_pointer_get()** (2 connections) — `local-ai-machine/gatekeeper.py`
+- **load_jsonl()** (2 connections) — `local-ai-machine/gatekeeper.py`
 
 ## Relationships
 
@@ -23,7 +23,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/gatekeeper.py`
+- `local-ai-machine/gatekeeper.py`
 
 ## Audit Trail
 

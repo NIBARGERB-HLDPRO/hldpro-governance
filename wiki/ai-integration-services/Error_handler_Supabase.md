@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **error-handler.ts** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
-- **safeErrorResponse()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
-- **sanitizeError()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
-- **honoErrorHandler()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
-- **safeHeaders()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
-- **sanitizeDetail()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
+- **error-handler.ts** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
+- **safeErrorResponse()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
+- **sanitizeError()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
+- **honoErrorHandler()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
+- **safeHeaders()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
+- **sanitizeDetail()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
 
 ## Audit Trail
 

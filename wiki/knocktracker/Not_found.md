@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **+not-found.tsx** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/app/+not-found.tsx`
+- **+not-found.tsx** (0 connections) — `knocktracker/app/+not-found.tsx`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/app/+not-found.tsx`
+- `knocktracker/app/+not-found.tsx`
 
 ## Audit Trail
 

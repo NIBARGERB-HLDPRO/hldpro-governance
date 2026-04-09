@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **run_vlm_persona_eval.py** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_vlm_persona_eval.py`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_vlm_persona_eval.py`
-- **call_vlm()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_vlm_persona_eval.py`
-- **load_dotenv()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_vlm_persona_eval.py`
-- **load_images()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_vlm_persona_eval.py`
-- **load_persona_prompt()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_vlm_persona_eval.py`
-- **parse_args()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_vlm_persona_eval.py`
-- **Load the ASC evaluator visual persona from the prompt file.** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_vlm_persona_eval.py`
+- **run_vlm_persona_eval.py** (6 connections) — `local-ai-machine/scripts/ops/run_vlm_persona_eval.py`
+- **main()** (5 connections) — `local-ai-machine/scripts/ops/run_vlm_persona_eval.py`
+- **call_vlm()** (2 connections) — `local-ai-machine/scripts/ops/run_vlm_persona_eval.py`
+- **load_dotenv()** (2 connections) — `local-ai-machine/scripts/ops/run_vlm_persona_eval.py`
+- **load_images()** (2 connections) — `local-ai-machine/scripts/ops/run_vlm_persona_eval.py`
+- **load_persona_prompt()** (2 connections) — `local-ai-machine/scripts/ops/run_vlm_persona_eval.py`
+- **parse_args()** (2 connections) — `local-ai-machine/scripts/ops/run_vlm_persona_eval.py`
+- **Load the ASC evaluator visual persona from the prompt file.** (1 connections) — `local-ai-machine/scripts/ops/run_vlm_persona_eval.py`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_vlm_persona_eval.py`
+- `local-ai-machine/scripts/ops/run_vlm_persona_eval.py`
 
 ## Audit Trail
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **gemini_watch.ps1** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/session/gemini_watch.ps1`
+- **gemini_watch.ps1** (0 connections) — `healthcareplatform/backend/scripts/session/gemini_watch.ps1`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/session/gemini_watch.ps1`
+- `healthcareplatform/backend/scripts/session/gemini_watch.ps1`
 
 ## Audit Trail
 

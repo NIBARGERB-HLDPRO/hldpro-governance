@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **test_run_general_loop_clone_integration_runtime.py** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
-- **check()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
-- **read_json()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
-- **run()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
-- **write_registry()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
+- **test_run_general_loop_clone_integration_runtime.py** (6 connections) — `local-ai-machine/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
+- **main()** (5 connections) — `local-ai-machine/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
+- **read_json()** (2 connections) — `local-ai-machine/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
+- **run()** (2 connections) — `local-ai-machine/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
+- **write_registry()** (2 connections) — `local-ai-machine/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
+- `local-ai-machine/scripts/ops/test_run_general_loop_clone_integration_runtime.py`
 
 ## Audit Trail
 

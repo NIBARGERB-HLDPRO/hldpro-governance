@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **vapi-brain-tool.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-brain-tool.ts`
-- **getBrainToolDefinition()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-brain-tool.ts`
+- **vapi-brain-tool.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-brain-tool.ts`
+- **getBrainToolDefinition()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-brain-tool.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-brain-tool.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/vapi-brain-tool.ts`
 
 ## Audit Trail
 

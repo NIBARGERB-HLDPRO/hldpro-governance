@@ -1,6 +1,6 @@
 # GHLService
 
-> God node · 13 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/ghlService.ts`
+> God node · 13 connections · `knocktracker/lib/ghlService.ts`
 
 ## Connections by Relation
 

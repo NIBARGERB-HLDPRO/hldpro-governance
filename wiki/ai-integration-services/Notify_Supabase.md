@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **notify.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/notify.ts`
-- **notifyPartyCore()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/notify.ts`
+- **notify.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/notify.ts`
+- **notifyPartyCore()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/notify.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/notify.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/notify.ts`
 
 ## Audit Trail
 

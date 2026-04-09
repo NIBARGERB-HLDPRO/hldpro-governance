@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **crypto.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/crypto.ts`
-- **hmacSha1()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/crypto.ts`
-- **hmacSha256()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/crypto.ts`
-- **timingSafeEqual()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/crypto.ts`
+- **crypto.ts** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/crypto.ts`
+- **hmacSha1()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/crypto.ts`
+- **hmacSha256()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/crypto.ts`
+- **timingSafeEqual()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/crypto.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/crypto.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/crypto.ts`
 
 ## Audit Trail
 

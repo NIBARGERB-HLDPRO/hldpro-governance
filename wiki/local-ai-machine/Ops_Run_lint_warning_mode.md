@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **run_lint_warning_mode.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_lint_warning_mode.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_lint_warning_mode.py`
-- **parse_fixture_file()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_lint_warning_mode.py`
+- **run_lint_warning_mode.py** (2 connections) — `local-ai-machine/scripts/ops/run_lint_warning_mode.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/run_lint_warning_mode.py`
+- **parse_fixture_file()** (2 connections) — `local-ai-machine/scripts/ops/run_lint_warning_mode.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_lint_warning_mode.py`
+- `local-ai-machine/scripts/ops/run_lint_warning_mode.py`
 
 ## Audit Trail
 

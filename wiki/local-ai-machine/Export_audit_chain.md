@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **export_audit_chain.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/export_audit_chain.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/export_audit_chain.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/export_audit_chain.py`
-- **stable_json_hash()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/export_audit_chain.py`
+- **export_audit_chain.py** (3 connections) — `local-ai-machine/scripts/edge/export_audit_chain.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/edge/export_audit_chain.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/edge/export_audit_chain.py`
+- **stable_json_hash()** (2 connections) — `local-ai-machine/scripts/edge/export_audit_chain.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/export_audit_chain.py`
+- `local-ai-machine/scripts/edge/export_audit_chain.py`
 
 ## Audit Trail
 

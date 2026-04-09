@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **test_prune_scavenger_teardown_telemetry_runtime.py** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
-- **check()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
-- **load_module()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
-- **make_case_dir()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
-- **touch_file()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
+- **test_prune_scavenger_teardown_telemetry_runtime.py** (6 connections) — `local-ai-machine/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
+- **main()** (5 connections) — `local-ai-machine/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
+- **fail()** (3 connections) — `local-ai-machine/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
+- **load_module()** (3 connections) — `local-ai-machine/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
+- **make_case_dir()** (2 connections) — `local-ai-machine/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
+- **touch_file()** (2 connections) — `local-ai-machine/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
+- `local-ai-machine/scripts/ops/test_prune_scavenger_teardown_telemetry_runtime.py`
 
 ## Audit Trail
 

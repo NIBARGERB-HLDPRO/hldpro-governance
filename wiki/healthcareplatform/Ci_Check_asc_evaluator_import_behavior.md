@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **check-asc-evaluator-import-behavior.js** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-behavior.js`
-- **assertBehavior()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-behavior.js`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-behavior.js`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-behavior.js`
-- **readUtf8()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-behavior.js`
+- **check-asc-evaluator-import-behavior.js** (4 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-behavior.js`
+- **assertBehavior()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-behavior.js`
+- **fail()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-behavior.js`
+- **main()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-behavior.js`
+- **readUtf8()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-behavior.js`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-behavior.js`
+- `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-behavior.js`
 
 ## Audit Trail
 

@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- **sync_agent_configs.py** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/sync_agent_configs.py`
-- **main()** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/sync_agent_configs.py`
-- **fail()** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/sync_agent_configs.py`
-- **derive_agent_role()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/sync_agent_configs.py`
-- **load_changed_files()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/sync_agent_configs.py`
-- **load_grammar_schema()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/sync_agent_configs.py`
-- **post_config()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/sync_agent_configs.py`
-- **scan_prompt_or_fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/sync_agent_configs.py`
-- **is_valid_relative_path()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/sync_agent_configs.py`
-- **ok()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/sync_agent_configs.py`
-- **truthy()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/sync_agent_configs.py`
+- **sync_agent_configs.py** (10 connections) — `local-ai-machine/scripts/ops/sync_agent_configs.py`
+- **main()** (9 connections) — `local-ai-machine/scripts/ops/sync_agent_configs.py`
+- **fail()** (7 connections) — `local-ai-machine/scripts/ops/sync_agent_configs.py`
+- **derive_agent_role()** (4 connections) — `local-ai-machine/scripts/ops/sync_agent_configs.py`
+- **load_changed_files()** (3 connections) — `local-ai-machine/scripts/ops/sync_agent_configs.py`
+- **load_grammar_schema()** (3 connections) — `local-ai-machine/scripts/ops/sync_agent_configs.py`
+- **post_config()** (3 connections) — `local-ai-machine/scripts/ops/sync_agent_configs.py`
+- **scan_prompt_or_fail()** (3 connections) — `local-ai-machine/scripts/ops/sync_agent_configs.py`
+- **is_valid_relative_path()** (2 connections) — `local-ai-machine/scripts/ops/sync_agent_configs.py`
+- **ok()** (2 connections) — `local-ai-machine/scripts/ops/sync_agent_configs.py`
+- **truthy()** (2 connections) — `local-ai-machine/scripts/ops/sync_agent_configs.py`
 
 ## Relationships
 
@@ -22,7 +22,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/sync_agent_configs.py`
+- `local-ai-machine/scripts/ops/sync_agent_configs.py`
 
 ## Audit Trail
 

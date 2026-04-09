@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **metro.config.js** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/metro.config.js`
+- **metro.config.js** (0 connections) — `knocktracker/metro.config.js`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/metro.config.js`
+- `knocktracker/metro.config.js`
 
 ## Audit Trail
 

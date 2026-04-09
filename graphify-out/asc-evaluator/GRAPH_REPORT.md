@@ -1,7 +1,7 @@
-# Graph Report - /Users/bennibarger/Developer/HLDPRO/_worktrees/asc-graphify-phase5  (2026-04-09)
+# Graph Report - asc-evaluator  (2026-04-09)
 
 ## Corpus Check
-- 20 files · ~74,002 words
+- 20 files · ~73,955 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary

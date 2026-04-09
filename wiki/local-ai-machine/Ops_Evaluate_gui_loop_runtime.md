@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **test_evaluate_frontend_gui_loop_runtime.py** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
-- **main()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
-- **check()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
-- **verdict()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
-- **write_json()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
+- **test_evaluate_frontend_gui_loop_runtime.py** (5 connections) — `local-ai-machine/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
+- **main()** (4 connections) — `local-ai-machine/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
+- **verdict()** (2 connections) — `local-ai-machine/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
+- **write_json()** (2 connections) — `local-ai-machine/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
+- `local-ai-machine/scripts/ops/test_evaluate_frontend_gui_loop_runtime.py`
 
 ## Audit Trail
 

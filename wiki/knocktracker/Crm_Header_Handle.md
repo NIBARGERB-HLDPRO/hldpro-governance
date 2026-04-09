@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **PageHeader.tsx** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/crm/PageHeader.tsx`
-- **handleSearchChange()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/crm/PageHeader.tsx`
+- **PageHeader.tsx** (1 connections) — `knocktracker/components/crm/PageHeader.tsx`
+- **handleSearchChange()** (1 connections) — `knocktracker/components/crm/PageHeader.tsx`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/crm/PageHeader.tsx`
+- `knocktracker/components/crm/PageHeader.tsx`
 
 ## Audit Trail
 

@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **test_critic_verdict_gatekeeper.py** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_verdict_gatekeeper.py`
-- **main()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_verdict_gatekeeper.py`
-- **run()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_verdict_gatekeeper.py`
-- **expect_gatekeeper_failure()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_verdict_gatekeeper.py`
-- **expect_gatekeeper_success()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_verdict_gatekeeper.py`
-- **load_json()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_verdict_gatekeeper.py`
-- **write_json()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_verdict_gatekeeper.py`
+- **test_critic_verdict_gatekeeper.py** (6 connections) — `local-ai-machine/scripts/test_critic_verdict_gatekeeper.py`
+- **main()** (6 connections) — `local-ai-machine/scripts/test_critic_verdict_gatekeeper.py`
+- **run()** (4 connections) — `local-ai-machine/scripts/test_critic_verdict_gatekeeper.py`
+- **expect_gatekeeper_failure()** (3 connections) — `local-ai-machine/scripts/test_critic_verdict_gatekeeper.py`
+- **expect_gatekeeper_success()** (3 connections) — `local-ai-machine/scripts/test_critic_verdict_gatekeeper.py`
+- **load_json()** (2 connections) — `local-ai-machine/scripts/test_critic_verdict_gatekeeper.py`
+- **write_json()** (2 connections) — `local-ai-machine/scripts/test_critic_verdict_gatekeeper.py`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_critic_verdict_gatekeeper.py`
+- `local-ai-machine/scripts/test_critic_verdict_gatekeeper.py`
 
 ## Audit Trail
 

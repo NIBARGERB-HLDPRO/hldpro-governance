@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **test_session_lock_contract.py** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_session_lock_contract.py`
-- **run()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_session_lock_contract.py`
-- **run_with_env()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_session_lock_contract.py`
-- **check()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_session_lock_contract.py`
-- **fake_run()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_session_lock_contract.py`
-- **find_lock_for_branch()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_session_lock_contract.py`
-- **load_session_lock_module()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_session_lock_contract.py`
+- **test_session_lock_contract.py** (6 connections) — `local-ai-machine/scripts/ops/test_session_lock_contract.py`
+- **run()** (2 connections) — `local-ai-machine/scripts/ops/test_session_lock_contract.py`
+- **run_with_env()** (2 connections) — `local-ai-machine/scripts/ops/test_session_lock_contract.py`
+- **check()** (1 connections) — `local-ai-machine/scripts/ops/test_session_lock_contract.py`
+- **fake_run()** (1 connections) — `local-ai-machine/scripts/ops/test_session_lock_contract.py`
+- **find_lock_for_branch()** (1 connections) — `local-ai-machine/scripts/ops/test_session_lock_contract.py`
+- **load_session_lock_module()** (1 connections) — `local-ai-machine/scripts/ops/test_session_lock_contract.py`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_session_lock_contract.py`
+- `local-ai-machine/scripts/ops/test_session_lock_contract.py`
 
 ## Audit Trail
 

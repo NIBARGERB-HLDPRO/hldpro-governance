@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- **load-test-provisioning.spec.ts** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/load-test-provisioning.spec.ts`
-- **runActivation()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/load-test-provisioning.spec.ts`
-- **seedActivateSteps()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/load-test-provisioning.spec.ts`
-- **supaRest()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/load-test-provisioning.spec.ts`
-- **waitForTerminal()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/load-test-provisioning.spec.ts`
-- **callProvision()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/load-test-provisioning.spec.ts`
-- **cleanupClient()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/load-test-provisioning.spec.ts`
-- **createTestClient()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/load-test-provisioning.spec.ts`
-- **getProfessionalPlanId()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/load-test-provisioning.spec.ts`
-- **requireEnv()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/load-test-provisioning.spec.ts`
+- **load-test-provisioning.spec.ts** (9 connections) — `ai-integration-services/e2e/load-test-provisioning.spec.ts`
+- **runActivation()** (4 connections) — `ai-integration-services/e2e/load-test-provisioning.spec.ts`
+- **seedActivateSteps()** (3 connections) — `ai-integration-services/e2e/load-test-provisioning.spec.ts`
+- **supaRest()** (3 connections) — `ai-integration-services/e2e/load-test-provisioning.spec.ts`
+- **waitForTerminal()** (3 connections) — `ai-integration-services/e2e/load-test-provisioning.spec.ts`
+- **callProvision()** (2 connections) — `ai-integration-services/e2e/load-test-provisioning.spec.ts`
+- **cleanupClient()** (1 connections) — `ai-integration-services/e2e/load-test-provisioning.spec.ts`
+- **createTestClient()** (1 connections) — `ai-integration-services/e2e/load-test-provisioning.spec.ts`
+- **getProfessionalPlanId()** (1 connections) — `ai-integration-services/e2e/load-test-provisioning.spec.ts`
+- **requireEnv()** (1 connections) — `ai-integration-services/e2e/load-test-provisioning.spec.ts`
 
 ## Relationships
 
@@ -21,7 +21,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/load-test-provisioning.spec.ts`
+- `ai-integration-services/e2e/load-test-provisioning.spec.ts`
 
 ## Audit Trail
 

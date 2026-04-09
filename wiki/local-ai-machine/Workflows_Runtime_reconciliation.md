@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **runtime_reconciliation_test.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/runtime_reconciliation_test.ts`
-- **baseAirlockResult()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/runtime_reconciliation_test.ts`
-- **baseState()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/runtime_reconciliation_test.ts`
+- **runtime_reconciliation_test.ts** (2 connections) — `local-ai-machine/src/workflows/runtime_reconciliation_test.ts`
+- **baseAirlockResult()** (1 connections) — `local-ai-machine/src/workflows/runtime_reconciliation_test.ts`
+- **baseState()** (1 connections) — `local-ai-machine/src/workflows/runtime_reconciliation_test.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/runtime_reconciliation_test.ts`
+- `local-ai-machine/src/workflows/runtime_reconciliation_test.ts`
 
 ## Audit Trail
 

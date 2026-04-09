@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **test-ghl-connection.js** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/scripts/test-ghl-connection.js`
-- **testConnection()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/scripts/test-ghl-connection.js`
+- **test-ghl-connection.js** (1 connections) — `knocktracker/scripts/test-ghl-connection.js`
+- **testConnection()** (1 connections) — `knocktracker/scripts/test-ghl-connection.js`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/scripts/test-ghl-connection.js`
+- `knocktracker/scripts/test-ghl-connection.js`
 
 ## Audit Trail
 

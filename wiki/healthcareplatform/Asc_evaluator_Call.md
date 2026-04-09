@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **asc-evaluator-functions-smoke.js** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
-- **callFunction()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
-- **signInWithPassword()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
-- **normalizeBaseUrl()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
-- **parseJsonSafe()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
-- **getEnv()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
+- **asc-evaluator-functions-smoke.js** (6 connections) — `healthcareplatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
+- **callFunction()** (4 connections) — `healthcareplatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
+- **signInWithPassword()** (4 connections) — `healthcareplatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
+- **main()** (3 connections) — `healthcareplatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
+- **normalizeBaseUrl()** (3 connections) — `healthcareplatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
+- **parseJsonSafe()** (3 connections) — `healthcareplatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
+- **getEnv()** (1 connections) — `healthcareplatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
+- `healthcareplatform/backend/scripts/smoke/asc-evaluator-functions-smoke.js`
 
 ## Audit Trail
 

@@ -6,519 +6,671 @@
     {
       "label": "test_codex_ingestion.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/tests/test_codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_codex_ingestion.py",
       "source_location": "L1",
       "id": "test_codex_ingestion",
-      "community": 8
+      "community": 12
     },
     {
       "label": "ValidateLocationTests",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/tests/test_codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_codex_ingestion.py",
       "source_location": "L15",
       "id": "test_codex_ingestion_validatelocationtests",
-      "community": 8
+      "community": 12
     },
     {
       "label": ".test_rejects_hallucinated_anchor_on_valid_line()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/tests/test_codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_codex_ingestion.py",
       "source_location": "L16",
       "id": "test_codex_ingestion_validatelocationtests_test_rejects_hallucinated_anchor_on_valid_line",
-      "community": 8
+      "community": 12
     },
     {
       "label": ".test_accepts_matching_anchor_on_valid_line()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/tests/test_codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_codex_ingestion.py",
       "source_location": "L38",
       "id": "test_codex_ingestion_validatelocationtests_test_accepts_matching_anchor_on_valid_line",
-      "community": 8
+      "community": 12
+    },
+    {
+      "label": "test_progress_github_issue_staleness.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_progress_github_issue_staleness.py",
+      "source_location": "L1",
+      "id": "test_progress_github_issue_staleness",
+      "community": 1
+    },
+    {
+      "label": "ProgressGithubIssueStalenessTests",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_progress_github_issue_staleness.py",
+      "source_location": "L16",
+      "id": "test_progress_github_issue_staleness_progressgithubissuestalenesstests",
+      "community": 1
+    },
+    {
+      "label": ".test_collects_active_sections_and_ignores_done()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_progress_github_issue_staleness.py",
+      "source_location": "L17",
+      "id": "test_progress_github_issue_staleness_progressgithubissuestalenesstests_test_collects_active_sections_and_ignores_done",
+      "community": 1
+    },
+    {
+      "label": ".test_build_summary_reports_missing_open_and_stale_closed()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_progress_github_issue_staleness.py",
+      "source_location": "L46",
+      "id": "test_progress_github_issue_staleness_progressgithubissuestalenesstests_test_build_summary_reports_missing_open_and_stale_closed",
+      "community": 1
     },
     {
       "label": "validate_structured_agent_cycle_plan.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L1",
       "id": "validate_structured_agent_cycle_plan",
-      "community": 6
+      "community": 8
     },
     {
       "label": "_load_json()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L10",
       "id": "validate_structured_agent_cycle_plan_load_json",
-      "community": 6
+      "community": 8
     },
     {
       "label": "_find_plan_files()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L14",
       "id": "validate_structured_agent_cycle_plan_find_plan_files",
-      "community": 6
+      "community": 8
     },
     {
       "label": "_require()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L18",
       "id": "validate_structured_agent_cycle_plan_require",
-      "community": 6
+      "community": 8
     },
     {
       "label": "_validate_file()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L23",
       "id": "validate_structured_agent_cycle_plan_validate_file",
-      "community": 6
+      "community": 8
     },
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L101",
       "id": "validate_structured_agent_cycle_plan_main",
-      "community": 6
+      "community": 8
     },
     {
       "label": "check_overlord_backlog_github_alignment.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L1",
       "id": "check_overlord_backlog_github_alignment",
-      "community": 7
+      "community": 9
     },
     {
       "label": "fail()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L16",
       "id": "check_overlord_backlog_github_alignment_fail",
-      "community": 7
+      "community": 9
     },
     {
       "label": "parse_markdown_row()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L21",
       "id": "check_overlord_backlog_github_alignment_parse_markdown_row",
-      "community": 7
+      "community": 9
     },
     {
       "label": "collect_section_lines()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L32",
       "id": "check_overlord_backlog_github_alignment_collect_section_lines",
-      "community": 7
+      "community": 9
     },
     {
       "label": "has_issue_ref()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L45",
       "id": "check_overlord_backlog_github_alignment_has_issue_ref",
-      "community": 7
+      "community": 9
     },
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L49",
       "id": "check_overlord_backlog_github_alignment_main",
-      "community": 7
+      "community": 9
+    },
+    {
+      "label": "check_progress_github_issue_staleness.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L1",
+      "id": "check_progress_github_issue_staleness",
+      "community": 1
+    },
+    {
+      "label": "IssueRef",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L40",
+      "id": "check_progress_github_issue_staleness_issueref",
+      "community": 1
+    },
+    {
+      "label": "fail()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L47",
+      "id": "check_progress_github_issue_staleness_fail",
+      "community": 1
+    },
+    {
+      "label": "parse_args()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L52",
+      "id": "check_progress_github_issue_staleness_parse_args",
+      "community": 1
+    },
+    {
+      "label": "current_repo_slug()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L60",
+      "id": "check_progress_github_issue_staleness_current_repo_slug",
+      "community": 1
+    },
+    {
+      "label": "gh_json()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L69",
+      "id": "check_progress_github_issue_staleness_gh_json",
+      "community": 1
+    },
+    {
+      "label": "backlog_issues()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L80",
+      "id": "check_progress_github_issue_staleness_backlog_issues",
+      "community": 1
+    },
+    {
+      "label": "normalize_heading()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L107",
+      "id": "check_progress_github_issue_staleness_normalize_heading",
+      "community": 1
+    },
+    {
+      "label": "section_state()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L111",
+      "id": "check_progress_github_issue_staleness_section_state",
+      "community": 1
+    },
+    {
+      "label": "collect_active_issue_refs()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L119",
+      "id": "check_progress_github_issue_staleness_collect_active_issue_refs",
+      "community": 1
+    },
+    {
+      "label": "build_summary()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L138",
+      "id": "check_progress_github_issue_staleness_build_summary",
+      "community": 1
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L167",
+      "id": "check_progress_github_issue_staleness_main",
+      "community": 1
     },
     {
       "label": "build_effectiveness_metrics.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L1",
       "id": "build_effectiveness_metrics",
-      "community": 4
+      "community": 6
     },
     {
       "label": "RepoMetrics",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L28",
       "id": "build_effectiveness_metrics_repometrics",
-      "community": 4
+      "community": 6
     },
     {
       "label": "run()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L42",
       "id": "build_effectiveness_metrics_run",
-      "community": 4
+      "community": 6
     },
     {
       "label": "pct()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L53",
       "id": "build_effectiveness_metrics_pct",
-      "community": 4
+      "community": 6
     },
     {
       "label": "parse_iso()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L59",
       "id": "build_effectiveness_metrics_parse_iso",
-      "community": 4
+      "community": 6
     },
     {
       "label": "collect_repo_metrics()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L63",
       "id": "build_effectiveness_metrics_collect_repo_metrics",
-      "community": 4
+      "community": 6
     },
     {
       "label": "render_markdown()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L128",
       "id": "build_effectiveness_metrics_render_markdown",
-      "community": 4
+      "community": 6
     },
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L162",
       "id": "build_effectiveness_metrics_main",
-      "community": 4
+      "community": 6
     },
     {
       "label": "codex_ingestion.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L1",
       "id": "codex_ingestion",
-      "community": 1
+      "community": 5
     },
     {
       "label": "Finding",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L67",
       "id": "codex_ingestion_finding",
-      "community": 5
+      "community": 7
     },
     {
       "label": "priority()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L78",
       "id": "codex_ingestion_priority",
-      "community": 1
+      "community": 5
     },
     {
       "label": "fail_fast_severity()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L86",
       "id": "codex_ingestion_fail_fast_severity",
-      "community": 1
+      "community": 5
     },
     {
       "label": "est_hours()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L96",
       "id": "codex_ingestion_est_hours",
-      "community": 1
+      "community": 5
     },
     {
       "label": "today_string()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L108",
       "id": "codex_ingestion_today_string",
-      "community": 13
+      "community": 10
     },
     {
       "label": "run()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L117",
       "id": "codex_ingestion_run",
-      "community": 2
+      "community": 3
     },
     {
       "label": "load_json()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L121",
       "id": "codex_ingestion_load_json",
-      "community": 5
+      "community": 7
     },
     {
       "label": "write_json()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L126",
       "id": "codex_ingestion_write_json",
-      "community": 2
+      "community": 7
     },
     {
       "label": "extract_json_from_stdout()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L131",
       "id": "codex_ingestion_extract_json_from_stdout",
-      "community": 2
+      "community": 3
     },
     {
       "label": "summarize_failure_output()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L145",
       "id": "codex_ingestion_summarize_failure_output",
-      "community": 2
+      "community": 3
     },
     {
       "label": "skip_payload()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L176",
       "id": "codex_ingestion_skip_payload",
-      "community": 2
+      "community": 3
     },
     {
       "label": "list_backlog_files()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L180",
       "id": "codex_ingestion_list_backlog_files",
-      "community": 1
+      "community": 10
     },
     {
       "label": "git_lines()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L187",
       "id": "codex_ingestion_git_lines",
-      "community": 2
+      "community": 3
     },
     {
       "label": "bounded_text()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L192",
       "id": "codex_ingestion_bounded_text",
-      "community": 2
+      "community": 3
     },
     {
       "label": "build_review_context()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L199",
       "id": "codex_ingestion_build_review_context",
-      "community": 2
+      "community": 3
     },
     {
       "label": "build_schema_file()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L227",
       "id": "codex_ingestion_build_schema_file",
-      "community": 2
+      "community": 3
     },
     {
       "label": "normalize_review()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L292",
       "id": "codex_ingestion_normalize_review",
-      "community": 2
+      "community": 3
     },
     {
       "label": "classify_finding()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L325",
       "id": "codex_ingestion_classify_finding",
-      "community": 1
+      "community": 7
     },
     {
       "label": "detect_duplicate()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L333",
       "id": "codex_ingestion_detect_duplicate",
-      "community": 5
+      "community": 7
     },
     {
       "label": "validate_location()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L349",
       "id": "codex_ingestion_validate_location",
-      "community": 1
+      "community": 5
     },
     {
       "label": "extract_claim_anchors()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L370",
       "id": "codex_ingestion_extract_claim_anchors",
-      "community": 1
+      "community": 5
     },
     {
       "label": "looks_like_camel_identifier()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L390",
       "id": "codex_ingestion_looks_like_camel_identifier",
-      "community": 1
+      "community": 5
     },
     {
       "label": "read_context_window()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L398",
       "id": "codex_ingestion_read_context_window",
-      "community": 1
+      "community": 5
     },
     {
       "label": "context_matches_anchors()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L404",
       "id": "codex_ingestion_context_matches_anchors",
-      "community": 1
+      "community": 5
     },
     {
       "label": "markdown_escape()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L411",
       "id": "codex_ingestion_markdown_escape",
-      "community": 5
+      "community": 11
     },
     {
       "label": "find_section_span()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L415",
       "id": "codex_ingestion_find_section_span",
-      "community": 9
+      "community": 11
     },
     {
       "label": "append_progress_candidate()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L426",
       "id": "codex_ingestion_append_progress_candidate",
-      "community": 5
+      "community": 7
     },
     {
       "label": "append_fail_fast_candidate()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L454",
       "id": "codex_ingestion_append_fail_fast_candidate",
-      "community": 9
+      "community": 11
     },
     {
       "label": "append_fail_fast_table_entry()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L461",
       "id": "codex_ingestion_append_fail_fast_table_entry",
-      "community": 9
+      "community": 11
     },
     {
       "label": "append_fail_fast_block_entry()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L484",
       "id": "codex_ingestion_append_fail_fast_block_entry",
-      "community": 9
+      "community": 11
     },
     {
       "label": "build_parser()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L506",
       "id": "codex_ingestion_build_parser",
-      "community": 13
+      "community": 10
     },
     {
       "label": "cmd_status()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L533",
       "id": "codex_ingestion_cmd_status",
-      "community": 1
+      "community": 10
     },
     {
       "label": "cmd_generate()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L547",
       "id": "codex_ingestion_cmd_generate",
-      "community": 2
+      "community": 3
     },
     {
       "label": "cmd_qualify()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L657",
       "id": "codex_ingestion_cmd_qualify",
-      "community": 5
+      "community": 7
     },
     {
       "label": "cmd_promote()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L831",
       "id": "codex_ingestion_cmd_promote",
-      "community": 5
+      "community": 7
     },
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L888",
       "id": "codex_ingestion_main",
-      "community": 5
+      "community": 10
     },
     {
       "label": "render_github_issue_feed.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/render_github_issue_feed.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/render_github_issue_feed.py",
       "source_location": "L1",
       "id": "render_github_issue_feed",
-      "community": 10
+      "community": 14
     },
     {
       "label": "render_issue()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/render_github_issue_feed.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/render_github_issue_feed.py",
       "source_location": "L7",
       "id": "render_github_issue_feed_render_issue",
-      "community": 10
+      "community": 14
     },
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/render_github_issue_feed.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/render_github_issue_feed.py",
       "source_location": "L22",
       "id": "render_github_issue_feed_main",
-      "community": 10
+      "community": 14
+    },
+    {
+      "label": "test_graphify_governance_contract.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/test_graphify_governance_contract.py",
+      "source_location": "L1",
+      "id": "test_graphify_governance_contract",
+      "community": 15
+    },
+    {
+      "label": "check()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/test_graphify_governance_contract.py",
+      "source_location": "L19",
+      "id": "test_graphify_governance_contract_check",
+      "community": 15
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/test_graphify_governance_contract.py",
+      "source_location": "L27",
+      "id": "test_graphify_governance_contract_main",
+      "community": 15
     },
     {
       "label": "measure_graphify_usage.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L1",
       "id": "measure_graphify_usage",
       "community": 0
@@ -526,7 +678,7 @@
     {
       "label": "Scenario",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L64",
       "id": "measure_graphify_usage_scenario",
       "community": 0
@@ -534,7 +686,7 @@
     {
       "label": "GraphData",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L78",
       "id": "measure_graphify_usage_graphdata",
       "community": 0
@@ -542,7 +694,7 @@
     {
       "label": "estimate_tokens()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L85",
       "id": "measure_graphify_usage_estimate_tokens",
       "community": 0
@@ -550,7 +702,7 @@
     {
       "label": "normalize_tokens()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L89",
       "id": "measure_graphify_usage_normalize_tokens",
       "community": 0
@@ -558,7 +710,7 @@
     {
       "label": "parse_args()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L100",
       "id": "measure_graphify_usage_parse_args",
       "community": 0
@@ -566,7 +718,7 @@
     {
       "label": "load_scenarios()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L110",
       "id": "measure_graphify_usage_load_scenarios",
       "community": 0
@@ -574,7 +726,7 @@
     {
       "label": "resolve_graph_path()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L115",
       "id": "measure_graphify_usage_resolve_graph_path",
       "community": 0
@@ -582,7 +734,7 @@
     {
       "label": "resolve_label_path()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L124",
       "id": "measure_graphify_usage_resolve_label_path",
       "community": 0
@@ -590,7 +742,7 @@
     {
       "label": "load_graph()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L129",
       "id": "measure_graphify_usage_load_graph",
       "community": 0
@@ -598,7 +750,7 @@
     {
       "label": "relativize_source_file()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L141",
       "id": "measure_graphify_usage_relativize_source_file",
       "community": 0
@@ -606,7 +758,7 @@
     {
       "label": "score_text()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L151",
       "id": "measure_graphify_usage_score_text",
       "community": 0
@@ -614,7 +766,7 @@
     {
       "label": "aggregate_file_scores()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L166",
       "id": "measure_graphify_usage_aggregate_file_scores",
       "community": 0
@@ -622,7 +774,7 @@
     {
       "label": "matched_terms()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L173",
       "id": "measure_graphify_usage_matched_terms",
       "community": 0
@@ -630,7 +782,7 @@
     {
       "label": "is_workflow_doc_scenario()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L184",
       "id": "measure_graphify_usage_is_workflow_doc_scenario",
       "community": 0
@@ -638,7 +790,7 @@
     {
       "label": "is_workflow_doc_candidate()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L188",
       "id": "measure_graphify_usage_is_workflow_doc_candidate",
       "community": 0
@@ -646,201 +798,337 @@
     {
       "label": "workflow_doc_path_boost()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L192",
       "id": "measure_graphify_usage_workflow_doc_path_boost",
       "community": 0
     },
     {
+      "label": "workflow_doc_priority_multiplier()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L221",
+      "id": "measure_graphify_usage_workflow_doc_priority_multiplier",
+      "community": 0
+    },
+    {
       "label": "augment_workflow_doc_candidates()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L215",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L233",
       "id": "measure_graphify_usage_augment_workflow_doc_candidates",
       "community": 0
     },
     {
       "label": "evaluate_relevance()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L243",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L263",
       "id": "measure_graphify_usage_evaluate_relevance",
       "community": 0
     },
     {
       "label": "graphify_results()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L258",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L278",
       "id": "measure_graphify_usage_graphify_results",
       "community": 0
     },
     {
       "label": "iter_repo_text_files()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L345",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L367",
       "id": "measure_graphify_usage_iter_repo_text_files",
       "community": 0
     },
     {
       "label": "baseline_results()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L358",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L380",
       "id": "measure_graphify_usage_baseline_results",
       "community": 0
     },
     {
       "label": "build_summary()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L396",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L418",
       "id": "measure_graphify_usage_build_summary",
       "community": 0
     },
     {
       "label": "write_outputs()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L424",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L446",
       "id": "measure_graphify_usage_write_outputs",
       "community": 0
     },
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L469",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L491",
       "id": "measure_graphify_usage_main",
       "community": 0
     },
     {
       "label": "log_graphify_usage.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/log_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L1",
       "id": "log_graphify_usage",
-      "community": 11
+      "community": 16
     },
     {
       "label": "parse_args()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/log_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L12",
       "id": "log_graphify_usage_parse_args",
-      "community": 11
+      "community": 16
     },
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/log_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L25",
       "id": "log_graphify_usage_main",
-      "community": 11
+      "community": 16
+    },
+    {
+      "label": "graphify_targets.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L1",
+      "id": "graphify_targets",
+      "community": 4
+    },
+    {
+      "label": "load_manifest()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L14",
+      "id": "graphify_targets_load_manifest",
+      "community": 4
+    },
+    {
+      "label": "target_rows()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L24",
+      "id": "graphify_targets_target_rows",
+      "community": 4
+    },
+    {
+      "label": "filtered_targets()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L30",
+      "id": "graphify_targets_filtered_targets",
+      "community": 4
+    },
+    {
+      "label": "find_target()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L39",
+      "id": "graphify_targets_find_target",
+      "community": 4
+    },
+    {
+      "label": "print_json()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L46",
+      "id": "graphify_targets_print_json",
+      "community": 4
+    },
+    {
+      "label": "print_tsv()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L51",
+      "id": "graphify_targets_print_tsv",
+      "community": 4
+    },
+    {
+      "label": "print_shell()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L67",
+      "id": "graphify_targets_print_shell",
+      "community": 4
+    },
+    {
+      "label": "print_stage_paths()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L74",
+      "id": "graphify_targets_print_stage_paths",
+      "community": 4
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L84",
+      "id": "graphify_targets_main",
+      "community": 4
     },
     {
       "label": "build_graph.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L1",
       "id": "build_graph",
-      "community": 3
+      "community": 2
     },
     {
       "label": "_split_words()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L78",
       "id": "build_graph_split_words",
-      "community": 3
+      "community": 2
     },
     {
       "label": "_normalize_phrase()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L84",
       "id": "build_graph_normalize_phrase",
-      "community": 3
+      "community": 2
     },
     {
       "label": "_derive_path_phrase()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L91",
       "id": "build_graph_derive_path_phrase",
-      "community": 3
+      "community": 2
     },
     {
       "label": "_derive_path_tokens()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L123",
       "id": "build_graph_derive_path_tokens",
-      "community": 3
+      "community": 2
     },
     {
       "label": "_community_label()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L137",
       "id": "build_graph_community_label",
-      "community": 3
+      "community": 2
     },
     {
       "label": "infer_community_labels()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L168",
       "id": "build_graph_infer_community_labels",
-      "community": 3
+      "community": 2
+    },
+    {
+      "label": "_sanitize_text_paths()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
+      "source_location": "L172",
+      "id": "build_graph_sanitize_text_paths",
+      "community": 2
+    },
+    {
+      "label": "_sanitize_markdown_artifacts()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
+      "source_location": "L179",
+      "id": "build_graph_sanitize_markdown_artifacts",
+      "community": 2
     },
     {
       "label": "build_graph()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
-      "source_location": "L172",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
+      "source_location": "L191",
       "id": "build_graph_build_graph",
-      "community": 3
+      "community": 2
     },
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
-      "source_location": "L255",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
+      "source_location": "L277",
       "id": "build_graph_main",
-      "community": 3
+      "community": 2
+    },
+    {
+      "label": "update_knowledge_index.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/update_knowledge_index.py",
+      "source_location": "L1",
+      "id": "update_knowledge_index",
+      "community": 13
+    },
+    {
+      "label": "summary_line()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/update_knowledge_index.py",
+      "source_location": "L21",
+      "id": "update_knowledge_index_summary_line",
+      "community": 13
+    },
+    {
+      "label": "replace_section()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/update_knowledge_index.py",
+      "source_location": "L29",
+      "id": "update_knowledge_index_replace_section",
+      "community": 13
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/update_knowledge_index.py",
+      "source_location": "L38",
+      "id": "update_knowledge_index_main",
+      "community": 13
     },
     {
       "label": "push_graph_to_neo4j.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/push_graph_to_neo4j.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L1",
       "id": "push_graph_to_neo4j",
-      "community": 12
+      "community": 17
     },
     {
       "label": "build_scoped_graph()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/push_graph_to_neo4j.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L15",
       "id": "push_graph_to_neo4j_build_scoped_graph",
-      "community": 12
+      "community": 17
     },
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/push_graph_to_neo4j.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L37",
       "id": "push_graph_to_neo4j_main",
-      "community": 12
+      "community": 17
     }
   ],
   "links": [
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/tests/test_codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_codex_ingestion.py",
       "source_location": "L12",
       "weight": 1.0,
       "_src": "test_codex_ingestion",
@@ -852,7 +1140,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/tests/test_codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_codex_ingestion.py",
       "source_location": "L15",
       "weight": 1.0,
       "_src": "test_codex_ingestion",
@@ -864,7 +1152,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/tests/test_codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_codex_ingestion.py",
       "source_location": "L16",
       "weight": 1.0,
       "_src": "test_codex_ingestion_validatelocationtests",
@@ -876,7 +1164,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/tests/test_codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_codex_ingestion.py",
       "source_location": "L38",
       "weight": 1.0,
       "_src": "test_codex_ingestion_validatelocationtests",
@@ -888,7 +1176,7 @@
     {
       "relation": "uses",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/tests/test_codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_codex_ingestion.py",
       "source_location": "L12",
       "weight": 0.8,
       "_src": "test_codex_ingestion_validatelocationtests",
@@ -898,9 +1186,57 @@
       "confidence_score": 0.5
     },
     {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_progress_github_issue_staleness.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "test_progress_github_issue_staleness",
+      "_tgt": "check_progress_github_issue_staleness",
+      "source": "test_progress_github_issue_staleness",
+      "target": "check_progress_github_issue_staleness",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_progress_github_issue_staleness.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "test_progress_github_issue_staleness",
+      "_tgt": "test_progress_github_issue_staleness_progressgithubissuestalenesstests",
+      "source": "test_progress_github_issue_staleness",
+      "target": "test_progress_github_issue_staleness_progressgithubissuestalenesstests",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_progress_github_issue_staleness.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "test_progress_github_issue_staleness_progressgithubissuestalenesstests",
+      "_tgt": "test_progress_github_issue_staleness_progressgithubissuestalenesstests_test_collects_active_sections_and_ignores_done",
+      "source": "test_progress_github_issue_staleness_progressgithubissuestalenesstests",
+      "target": "test_progress_github_issue_staleness_progressgithubissuestalenesstests_test_collects_active_sections_and_ignores_done",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/tests/test_progress_github_issue_staleness.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "test_progress_github_issue_staleness_progressgithubissuestalenesstests",
+      "_tgt": "test_progress_github_issue_staleness_progressgithubissuestalenesstests_test_build_summary_reports_missing_open_and_stale_closed",
+      "source": "test_progress_github_issue_staleness_progressgithubissuestalenesstests",
+      "target": "test_progress_github_issue_staleness_progressgithubissuestalenesstests_test_build_summary_reports_missing_open_and_stale_closed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L10",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
@@ -912,7 +1248,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L14",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
@@ -924,7 +1260,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L18",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
@@ -936,7 +1272,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L23",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
@@ -948,7 +1284,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L101",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
@@ -960,7 +1296,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L119",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_main",
@@ -972,7 +1308,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L109",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_main",
@@ -984,7 +1320,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L47",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_validate_file",
@@ -996,7 +1332,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L120",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_main",
@@ -1008,7 +1344,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L16",
       "weight": 1.0,
       "_src": "check_overlord_backlog_github_alignment",
@@ -1020,7 +1356,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L21",
       "weight": 1.0,
       "_src": "check_overlord_backlog_github_alignment",
@@ -1032,7 +1368,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L32",
       "weight": 1.0,
       "_src": "check_overlord_backlog_github_alignment",
@@ -1044,7 +1380,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L45",
       "weight": 1.0,
       "_src": "check_overlord_backlog_github_alignment",
@@ -1056,7 +1392,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L49",
       "weight": 1.0,
       "_src": "check_overlord_backlog_github_alignment",
@@ -1068,7 +1404,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L36",
       "weight": 0.8,
       "_src": "check_overlord_backlog_github_alignment_collect_section_lines",
@@ -1080,7 +1416,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L55",
       "weight": 0.8,
       "_src": "check_overlord_backlog_github_alignment_main",
@@ -1092,7 +1428,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L63",
       "weight": 0.8,
       "_src": "check_overlord_backlog_github_alignment_main",
@@ -1104,7 +1440,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L58",
       "weight": 0.8,
       "_src": "check_overlord_backlog_github_alignment_main",
@@ -1116,7 +1452,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/check_overlord_backlog_github_alignment.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L69",
       "weight": 0.8,
       "_src": "check_overlord_backlog_github_alignment_main",
@@ -1128,7 +1464,283 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_src": "check_progress_github_issue_staleness",
+      "_tgt": "check_progress_github_issue_staleness_issueref",
+      "source": "check_progress_github_issue_staleness",
+      "target": "check_progress_github_issue_staleness_issueref",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_src": "check_progress_github_issue_staleness",
+      "_tgt": "check_progress_github_issue_staleness_fail",
+      "source": "check_progress_github_issue_staleness",
+      "target": "check_progress_github_issue_staleness_fail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_src": "check_progress_github_issue_staleness",
+      "_tgt": "check_progress_github_issue_staleness_parse_args",
+      "source": "check_progress_github_issue_staleness",
+      "target": "check_progress_github_issue_staleness_parse_args",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_src": "check_progress_github_issue_staleness",
+      "_tgt": "check_progress_github_issue_staleness_current_repo_slug",
+      "source": "check_progress_github_issue_staleness",
+      "target": "check_progress_github_issue_staleness_current_repo_slug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_src": "check_progress_github_issue_staleness",
+      "_tgt": "check_progress_github_issue_staleness_gh_json",
+      "source": "check_progress_github_issue_staleness",
+      "target": "check_progress_github_issue_staleness_gh_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_src": "check_progress_github_issue_staleness",
+      "_tgt": "check_progress_github_issue_staleness_backlog_issues",
+      "source": "check_progress_github_issue_staleness",
+      "target": "check_progress_github_issue_staleness_backlog_issues",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_src": "check_progress_github_issue_staleness",
+      "_tgt": "check_progress_github_issue_staleness_normalize_heading",
+      "source": "check_progress_github_issue_staleness",
+      "target": "check_progress_github_issue_staleness_normalize_heading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_src": "check_progress_github_issue_staleness",
+      "_tgt": "check_progress_github_issue_staleness_section_state",
+      "source": "check_progress_github_issue_staleness",
+      "target": "check_progress_github_issue_staleness_section_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_src": "check_progress_github_issue_staleness",
+      "_tgt": "check_progress_github_issue_staleness_collect_active_issue_refs",
+      "source": "check_progress_github_issue_staleness",
+      "target": "check_progress_github_issue_staleness_collect_active_issue_refs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_src": "check_progress_github_issue_staleness",
+      "_tgt": "check_progress_github_issue_staleness_build_summary",
+      "source": "check_progress_github_issue_staleness",
+      "target": "check_progress_github_issue_staleness_build_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "_src": "check_progress_github_issue_staleness",
+      "_tgt": "check_progress_github_issue_staleness_main",
+      "source": "check_progress_github_issue_staleness",
+      "target": "check_progress_github_issue_staleness_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L133",
+      "weight": 0.8,
+      "_src": "check_progress_github_issue_staleness_collect_active_issue_refs",
+      "_tgt": "check_progress_github_issue_staleness_issueref",
+      "source": "check_progress_github_issue_staleness_issueref",
+      "target": "check_progress_github_issue_staleness_collect_active_issue_refs",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L66",
+      "weight": 0.8,
+      "_src": "check_progress_github_issue_staleness_current_repo_slug",
+      "_tgt": "check_progress_github_issue_staleness_fail",
+      "source": "check_progress_github_issue_staleness_fail",
+      "target": "check_progress_github_issue_staleness_current_repo_slug",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L73",
+      "weight": 0.8,
+      "_src": "check_progress_github_issue_staleness_gh_json",
+      "_tgt": "check_progress_github_issue_staleness_fail",
+      "source": "check_progress_github_issue_staleness_fail",
+      "target": "check_progress_github_issue_staleness_gh_json",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L180",
+      "weight": 0.8,
+      "_src": "check_progress_github_issue_staleness_main",
+      "_tgt": "check_progress_github_issue_staleness_fail",
+      "source": "check_progress_github_issue_staleness_fail",
+      "target": "check_progress_github_issue_staleness_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L168",
+      "weight": 0.8,
+      "_src": "check_progress_github_issue_staleness_main",
+      "_tgt": "check_progress_github_issue_staleness_parse_args",
+      "source": "check_progress_github_issue_staleness_parse_args",
+      "target": "check_progress_github_issue_staleness_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L169",
+      "weight": 0.8,
+      "_src": "check_progress_github_issue_staleness_main",
+      "_tgt": "check_progress_github_issue_staleness_current_repo_slug",
+      "source": "check_progress_github_issue_staleness_current_repo_slug",
+      "target": "check_progress_github_issue_staleness_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L81",
+      "weight": 0.8,
+      "_src": "check_progress_github_issue_staleness_backlog_issues",
+      "_tgt": "check_progress_github_issue_staleness_gh_json",
+      "source": "check_progress_github_issue_staleness_gh_json",
+      "target": "check_progress_github_issue_staleness_backlog_issues",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L139",
+      "weight": 0.8,
+      "_src": "check_progress_github_issue_staleness_build_summary",
+      "_tgt": "check_progress_github_issue_staleness_backlog_issues",
+      "source": "check_progress_github_issue_staleness_backlog_issues",
+      "target": "check_progress_github_issue_staleness_build_summary",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L126",
+      "weight": 0.8,
+      "_src": "check_progress_github_issue_staleness_collect_active_issue_refs",
+      "_tgt": "check_progress_github_issue_staleness_normalize_heading",
+      "source": "check_progress_github_issue_staleness_normalize_heading",
+      "target": "check_progress_github_issue_staleness_collect_active_issue_refs",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L127",
+      "weight": 0.8,
+      "_src": "check_progress_github_issue_staleness_collect_active_issue_refs",
+      "_tgt": "check_progress_github_issue_staleness_section_state",
+      "source": "check_progress_github_issue_staleness_section_state",
+      "target": "check_progress_github_issue_staleness_collect_active_issue_refs",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L140",
+      "weight": 0.8,
+      "_src": "check_progress_github_issue_staleness_build_summary",
+      "_tgt": "check_progress_github_issue_staleness_collect_active_issue_refs",
+      "source": "check_progress_github_issue_staleness_collect_active_issue_refs",
+      "target": "check_progress_github_issue_staleness_build_summary",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/check_progress_github_issue_staleness.py",
+      "source_location": "L182",
+      "weight": 0.8,
+      "_src": "check_progress_github_issue_staleness_main",
+      "_tgt": "check_progress_github_issue_staleness_build_summary",
+      "source": "check_progress_github_issue_staleness_build_summary",
+      "target": "check_progress_github_issue_staleness_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L28",
       "weight": 1.0,
       "_src": "build_effectiveness_metrics",
@@ -1140,7 +1752,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L42",
       "weight": 1.0,
       "_src": "build_effectiveness_metrics",
@@ -1152,7 +1764,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L53",
       "weight": 1.0,
       "_src": "build_effectiveness_metrics",
@@ -1164,7 +1776,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L59",
       "weight": 1.0,
       "_src": "build_effectiveness_metrics",
@@ -1176,7 +1788,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L63",
       "weight": 1.0,
       "_src": "build_effectiveness_metrics",
@@ -1188,7 +1800,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L128",
       "weight": 1.0,
       "_src": "build_effectiveness_metrics",
@@ -1200,7 +1812,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L162",
       "weight": 1.0,
       "_src": "build_effectiveness_metrics",
@@ -1212,7 +1824,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L113",
       "weight": 0.8,
       "_src": "build_effectiveness_metrics_collect_repo_metrics",
@@ -1224,7 +1836,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L70",
       "weight": 0.8,
       "_src": "build_effectiveness_metrics_collect_repo_metrics",
@@ -1236,7 +1848,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L118",
       "weight": 0.8,
       "_src": "build_effectiveness_metrics_collect_repo_metrics",
@@ -1248,7 +1860,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L102",
       "weight": 0.8,
       "_src": "build_effectiveness_metrics_collect_repo_metrics",
@@ -1260,7 +1872,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L189",
       "weight": 0.8,
       "_src": "build_effectiveness_metrics_main",
@@ -1272,7 +1884,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/build_effectiveness_metrics.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L200",
       "weight": 0.8,
       "_src": "build_effectiveness_metrics_main",
@@ -1284,7 +1896,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L67",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1296,7 +1908,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L78",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1308,7 +1920,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L86",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1320,7 +1932,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L96",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1332,7 +1944,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L108",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1344,7 +1956,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L117",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1356,7 +1968,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L121",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1368,7 +1980,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L126",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1380,7 +1992,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L131",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1392,7 +2004,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L145",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1404,7 +2016,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L176",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1416,7 +2028,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L180",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1428,7 +2040,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L187",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1440,7 +2052,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L192",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1452,7 +2064,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L199",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1464,7 +2076,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L227",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1476,7 +2088,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L292",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1488,7 +2100,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L325",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1500,7 +2112,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L333",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1512,7 +2124,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L349",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1524,7 +2136,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L370",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1536,7 +2148,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L390",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1548,7 +2160,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L398",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1560,7 +2172,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L404",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1572,7 +2184,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L411",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1584,7 +2196,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L415",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1596,7 +2208,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L426",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1608,7 +2220,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L454",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1620,7 +2232,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L461",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1632,7 +2244,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L484",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1644,7 +2256,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L506",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1656,7 +2268,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L533",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1668,7 +2280,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L547",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1680,7 +2292,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L657",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1692,7 +2304,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L831",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1704,7 +2316,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L888",
       "weight": 1.0,
       "_src": "codex_ingestion",
@@ -1716,7 +2328,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L689",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
@@ -1728,7 +2340,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L849",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_promote",
@@ -1740,7 +2352,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L109",
       "weight": 0.8,
       "_src": "codex_ingestion_today_string",
@@ -1752,7 +2364,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L513",
       "weight": 0.8,
       "_src": "codex_ingestion_build_parser",
@@ -1764,7 +2376,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L188",
       "weight": 0.8,
       "_src": "codex_ingestion_git_lines",
@@ -1776,7 +2388,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L202",
       "weight": 0.8,
       "_src": "codex_ingestion_build_review_context",
@@ -1788,7 +2400,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L569",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
@@ -1800,7 +2412,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L666",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
@@ -1812,7 +2424,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L837",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_promote",
@@ -1824,7 +2436,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L559",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
@@ -1836,7 +2448,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L676",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
@@ -1848,7 +2460,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L628",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
@@ -1860,7 +2472,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L640",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
@@ -1872,7 +2484,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L559",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
@@ -1884,7 +2496,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L534",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_status",
@@ -1896,7 +2508,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L200",
       "weight": 0.8,
       "_src": "codex_ingestion_build_review_context",
@@ -1908,7 +2520,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L557",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
@@ -1920,7 +2532,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L219",
       "weight": 0.8,
       "_src": "codex_ingestion_build_review_context",
@@ -1932,7 +2544,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L572",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
@@ -1944,7 +2556,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L576",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
@@ -1956,7 +2568,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L629",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
@@ -1968,7 +2580,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L724",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
@@ -1980,7 +2592,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L702",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
@@ -1992,7 +2604,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L362",
       "weight": 0.8,
       "_src": "codex_ingestion_validate_location",
@@ -2004,7 +2616,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L364",
       "weight": 0.8,
       "_src": "codex_ingestion_validate_location",
@@ -2016,7 +2628,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L365",
       "weight": 0.8,
       "_src": "codex_ingestion_validate_location",
@@ -2028,7 +2640,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L713",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
@@ -2040,7 +2652,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L379",
       "weight": 0.8,
       "_src": "codex_ingestion_extract_claim_anchors",
@@ -2052,7 +2664,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L475",
       "weight": 0.8,
       "_src": "codex_ingestion_append_fail_fast_table_entry",
@@ -2064,7 +2676,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L782",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
@@ -2076,7 +2688,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L862",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_promote",
@@ -2088,7 +2700,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L465",
       "weight": 0.8,
       "_src": "codex_ingestion_append_fail_fast_table_entry",
@@ -2100,7 +2712,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L488",
       "weight": 0.8,
       "_src": "codex_ingestion_append_fail_fast_block_entry",
@@ -2112,7 +2724,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L866",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_promote",
@@ -2124,7 +2736,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L457",
       "weight": 0.8,
       "_src": "codex_ingestion_append_fail_fast_candidate",
@@ -2136,7 +2748,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L458",
       "weight": 0.8,
       "_src": "codex_ingestion_append_fail_fast_candidate",
@@ -2148,7 +2760,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L875",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_promote",
@@ -2160,7 +2772,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L889",
       "weight": 0.8,
       "_src": "codex_ingestion_main",
@@ -2172,7 +2784,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L893",
       "weight": 0.8,
       "_src": "codex_ingestion_main",
@@ -2184,7 +2796,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L895",
       "weight": 0.8,
       "_src": "codex_ingestion_main",
@@ -2196,7 +2808,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L897",
       "weight": 0.8,
       "_src": "codex_ingestion_main",
@@ -2208,7 +2820,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/codex_ingestion.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/codex_ingestion.py",
       "source_location": "L899",
       "weight": 0.8,
       "_src": "codex_ingestion_main",
@@ -2220,7 +2832,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/render_github_issue_feed.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/render_github_issue_feed.py",
       "source_location": "L7",
       "weight": 1.0,
       "_src": "render_github_issue_feed",
@@ -2232,7 +2844,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/render_github_issue_feed.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/render_github_issue_feed.py",
       "source_location": "L22",
       "weight": 1.0,
       "_src": "render_github_issue_feed",
@@ -2244,7 +2856,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/overlord/render_github_issue_feed.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/overlord/render_github_issue_feed.py",
       "source_location": "L37",
       "weight": 0.8,
       "_src": "render_github_issue_feed_main",
@@ -2256,7 +2868,43 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/test_graphify_governance_contract.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "test_graphify_governance_contract",
+      "_tgt": "test_graphify_governance_contract_check",
+      "source": "test_graphify_governance_contract",
+      "target": "test_graphify_governance_contract_check",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/test_graphify_governance_contract.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "test_graphify_governance_contract",
+      "_tgt": "test_graphify_governance_contract_main",
+      "source": "test_graphify_governance_contract",
+      "target": "test_graphify_governance_contract_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/test_graphify_governance_contract.py",
+      "source_location": "L32",
+      "weight": 0.8,
+      "_src": "test_graphify_governance_contract_main",
+      "_tgt": "test_graphify_governance_contract_check",
+      "source": "test_graphify_governance_contract_check",
+      "target": "test_graphify_governance_contract_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L64",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2268,7 +2916,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L78",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2280,7 +2928,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L85",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2292,7 +2940,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L89",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2304,7 +2952,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L100",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2316,7 +2964,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L110",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2328,7 +2976,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L115",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2340,7 +2988,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L124",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2352,7 +3000,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L129",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2364,7 +3012,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L141",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2376,7 +3024,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L151",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2388,7 +3036,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L166",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2400,7 +3048,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L173",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2412,7 +3060,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L184",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2424,7 +3072,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L188",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2436,7 +3084,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L192",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
@@ -2448,8 +3096,20 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L215",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L221",
+      "weight": 1.0,
+      "_src": "measure_graphify_usage",
+      "_tgt": "measure_graphify_usage_workflow_doc_priority_multiplier",
+      "source": "measure_graphify_usage",
+      "target": "measure_graphify_usage_workflow_doc_priority_multiplier",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L233",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
       "_tgt": "measure_graphify_usage_augment_workflow_doc_candidates",
@@ -2460,8 +3120,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L243",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L263",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
       "_tgt": "measure_graphify_usage_evaluate_relevance",
@@ -2472,8 +3132,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L258",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L278",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
       "_tgt": "measure_graphify_usage_graphify_results",
@@ -2484,8 +3144,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L345",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L367",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
       "_tgt": "measure_graphify_usage_iter_repo_text_files",
@@ -2496,8 +3156,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L358",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L380",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
       "_tgt": "measure_graphify_usage_baseline_results",
@@ -2508,8 +3168,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L396",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L418",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
       "_tgt": "measure_graphify_usage_build_summary",
@@ -2520,8 +3180,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L424",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L446",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
       "_tgt": "measure_graphify_usage_write_outputs",
@@ -2532,8 +3192,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L469",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L491",
       "weight": 1.0,
       "_src": "measure_graphify_usage",
       "_tgt": "measure_graphify_usage_main",
@@ -2544,7 +3204,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L112",
       "weight": 0.8,
       "_src": "measure_graphify_usage_load_scenarios",
@@ -2556,7 +3216,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L138",
       "weight": 0.8,
       "_src": "measure_graphify_usage_load_graph",
@@ -2568,8 +3228,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L340",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L362",
       "weight": 0.8,
       "_src": "measure_graphify_usage_graphify_results",
       "_tgt": "measure_graphify_usage_estimate_tokens",
@@ -2580,8 +3240,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L391",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L413",
       "weight": 0.8,
       "_src": "measure_graphify_usage_baseline_results",
       "_tgt": "measure_graphify_usage_estimate_tokens",
@@ -2592,8 +3252,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L245",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L265",
       "weight": 0.8,
       "_src": "measure_graphify_usage_evaluate_relevance",
       "_tgt": "measure_graphify_usage_normalize_tokens",
@@ -2604,8 +3264,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L261",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L281",
       "weight": 0.8,
       "_src": "measure_graphify_usage_graphify_results",
       "_tgt": "measure_graphify_usage_normalize_tokens",
@@ -2616,8 +3276,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L360",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L382",
       "weight": 0.8,
       "_src": "measure_graphify_usage_baseline_results",
       "_tgt": "measure_graphify_usage_normalize_tokens",
@@ -2628,8 +3288,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L470",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L492",
       "weight": 0.8,
       "_src": "measure_graphify_usage_main",
       "_tgt": "measure_graphify_usage_parse_args",
@@ -2640,8 +3300,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L471",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L493",
       "weight": 0.8,
       "_src": "measure_graphify_usage_main",
       "_tgt": "measure_graphify_usage_load_scenarios",
@@ -2652,7 +3312,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L130",
       "weight": 0.8,
       "_src": "measure_graphify_usage_load_graph",
@@ -2664,7 +3324,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
       "source_location": "L131",
       "weight": 0.8,
       "_src": "measure_graphify_usage_load_graph",
@@ -2676,8 +3336,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L260",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L280",
       "weight": 0.8,
       "_src": "measure_graphify_usage_graphify_results",
       "_tgt": "measure_graphify_usage_load_graph",
@@ -2688,8 +3348,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L272",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L292",
       "weight": 0.8,
       "_src": "measure_graphify_usage_graphify_results",
       "_tgt": "measure_graphify_usage_relativize_source_file",
@@ -2700,8 +3360,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L232",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L252",
       "weight": 0.8,
       "_src": "measure_graphify_usage_augment_workflow_doc_candidates",
       "_tgt": "measure_graphify_usage_score_text",
@@ -2712,8 +3372,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L276",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L296",
       "weight": 0.8,
       "_src": "measure_graphify_usage_graphify_results",
       "_tgt": "measure_graphify_usage_score_text",
@@ -2724,8 +3384,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L369",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L391",
       "weight": 0.8,
       "_src": "measure_graphify_usage_baseline_results",
       "_tgt": "measure_graphify_usage_score_text",
@@ -2736,8 +3396,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L329",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L351",
       "weight": 0.8,
       "_src": "measure_graphify_usage_graphify_results",
       "_tgt": "measure_graphify_usage_aggregate_file_scores",
@@ -2748,8 +3408,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L239",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L259",
       "weight": 0.8,
       "_src": "measure_graphify_usage_augment_workflow_doc_candidates",
       "_tgt": "measure_graphify_usage_matched_terms",
@@ -2760,8 +3420,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L326",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L346",
       "weight": 0.8,
       "_src": "measure_graphify_usage_graphify_results",
       "_tgt": "measure_graphify_usage_is_workflow_doc_scenario",
@@ -2772,8 +3432,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L224",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L242",
       "weight": 0.8,
       "_src": "measure_graphify_usage_augment_workflow_doc_candidates",
       "_tgt": "measure_graphify_usage_is_workflow_doc_candidate",
@@ -2784,8 +3444,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L233",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L253",
       "weight": 0.8,
       "_src": "measure_graphify_usage_augment_workflow_doc_candidates",
       "_tgt": "measure_graphify_usage_workflow_doc_path_boost",
@@ -2796,8 +3456,20 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L222",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L349",
+      "weight": 0.8,
+      "_src": "measure_graphify_usage_graphify_results",
+      "_tgt": "measure_graphify_usage_workflow_doc_priority_multiplier",
+      "source": "measure_graphify_usage_workflow_doc_priority_multiplier",
+      "target": "measure_graphify_usage_graphify_results",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L240",
       "weight": 0.8,
       "_src": "measure_graphify_usage_augment_workflow_doc_candidates",
       "_tgt": "measure_graphify_usage_iter_repo_text_files",
@@ -2808,8 +3480,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L327",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L347",
       "weight": 0.8,
       "_src": "measure_graphify_usage_graphify_results",
       "_tgt": "measure_graphify_usage_augment_workflow_doc_candidates",
@@ -2820,8 +3492,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L333",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L355",
       "weight": 0.8,
       "_src": "measure_graphify_usage_graphify_results",
       "_tgt": "measure_graphify_usage_evaluate_relevance",
@@ -2832,8 +3504,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L384",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L406",
       "weight": 0.8,
       "_src": "measure_graphify_usage_baseline_results",
       "_tgt": "measure_graphify_usage_evaluate_relevance",
@@ -2844,8 +3516,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L475",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L497",
       "weight": 0.8,
       "_src": "measure_graphify_usage_main",
       "_tgt": "measure_graphify_usage_graphify_results",
@@ -2856,8 +3528,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L362",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L384",
       "weight": 0.8,
       "_src": "measure_graphify_usage_baseline_results",
       "_tgt": "measure_graphify_usage_iter_repo_text_files",
@@ -2868,8 +3540,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L476",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L498",
       "weight": 0.8,
       "_src": "measure_graphify_usage_main",
       "_tgt": "measure_graphify_usage_baseline_results",
@@ -2880,8 +3552,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L490",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L512",
       "weight": 0.8,
       "_src": "measure_graphify_usage_main",
       "_tgt": "measure_graphify_usage_build_summary",
@@ -2892,8 +3564,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/measure_graphify_usage.py",
-      "source_location": "L496",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/measure_graphify_usage.py",
+      "source_location": "L518",
       "weight": 0.8,
       "_src": "measure_graphify_usage_main",
       "_tgt": "measure_graphify_usage_write_outputs",
@@ -2904,7 +3576,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/log_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L12",
       "weight": 1.0,
       "_src": "log_graphify_usage",
@@ -2916,7 +3588,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/log_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L25",
       "weight": 1.0,
       "_src": "log_graphify_usage",
@@ -2928,7 +3600,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/log_graphify_usage.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L26",
       "weight": 0.8,
       "_src": "log_graphify_usage_main",
@@ -2940,7 +3612,211 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "graphify_targets",
+      "_tgt": "graphify_targets_load_manifest",
+      "source": "graphify_targets",
+      "target": "graphify_targets_load_manifest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "graphify_targets",
+      "_tgt": "graphify_targets_target_rows",
+      "source": "graphify_targets",
+      "target": "graphify_targets_target_rows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "graphify_targets",
+      "_tgt": "graphify_targets_filtered_targets",
+      "source": "graphify_targets",
+      "target": "graphify_targets_filtered_targets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "graphify_targets",
+      "_tgt": "graphify_targets_find_target",
+      "source": "graphify_targets",
+      "target": "graphify_targets_find_target",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "graphify_targets",
+      "_tgt": "graphify_targets_print_json",
+      "source": "graphify_targets",
+      "target": "graphify_targets_print_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_src": "graphify_targets",
+      "_tgt": "graphify_targets_print_tsv",
+      "source": "graphify_targets",
+      "target": "graphify_targets_print_tsv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_src": "graphify_targets",
+      "_tgt": "graphify_targets_print_shell",
+      "source": "graphify_targets",
+      "target": "graphify_targets_print_shell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_src": "graphify_targets",
+      "_tgt": "graphify_targets_print_stage_paths",
+      "source": "graphify_targets",
+      "target": "graphify_targets_print_stage_paths",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_src": "graphify_targets",
+      "_tgt": "graphify_targets_main",
+      "source": "graphify_targets",
+      "target": "graphify_targets_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L103",
+      "weight": 0.8,
+      "_src": "graphify_targets_main",
+      "_tgt": "graphify_targets_load_manifest",
+      "source": "graphify_targets_load_manifest",
+      "target": "graphify_targets_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L104",
+      "weight": 0.8,
+      "_src": "graphify_targets_main",
+      "_tgt": "graphify_targets_target_rows",
+      "source": "graphify_targets_target_rows",
+      "target": "graphify_targets_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L107",
+      "weight": 0.8,
+      "_src": "graphify_targets_main",
+      "_tgt": "graphify_targets_filtered_targets",
+      "source": "graphify_targets_filtered_targets",
+      "target": "graphify_targets_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L115",
+      "weight": 0.8,
+      "_src": "graphify_targets_main",
+      "_tgt": "graphify_targets_find_target",
+      "source": "graphify_targets_find_target",
+      "target": "graphify_targets_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L109",
+      "weight": 0.8,
+      "_src": "graphify_targets_main",
+      "_tgt": "graphify_targets_print_json",
+      "source": "graphify_targets_print_json",
+      "target": "graphify_targets_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L111",
+      "weight": 0.8,
+      "_src": "graphify_targets_main",
+      "_tgt": "graphify_targets_print_tsv",
+      "source": "graphify_targets_print_tsv",
+      "target": "graphify_targets_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L119",
+      "weight": 0.8,
+      "_src": "graphify_targets_main",
+      "_tgt": "graphify_targets_print_shell",
+      "source": "graphify_targets_print_shell",
+      "target": "graphify_targets_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/graphify_targets.py",
+      "source_location": "L124",
+      "weight": 0.8,
+      "_src": "graphify_targets_main",
+      "_tgt": "graphify_targets_print_stage_paths",
+      "source": "graphify_targets_print_stage_paths",
+      "target": "graphify_targets_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L78",
       "weight": 1.0,
       "_src": "build_graph",
@@ -2952,7 +3828,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L84",
       "weight": 1.0,
       "_src": "build_graph",
@@ -2964,7 +3840,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L91",
       "weight": 1.0,
       "_src": "build_graph",
@@ -2976,7 +3852,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L123",
       "weight": 1.0,
       "_src": "build_graph",
@@ -2988,7 +3864,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L137",
       "weight": 1.0,
       "_src": "build_graph",
@@ -3000,7 +3876,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L168",
       "weight": 1.0,
       "_src": "build_graph",
@@ -3012,8 +3888,32 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L172",
+      "weight": 1.0,
+      "_src": "build_graph",
+      "_tgt": "build_graph_sanitize_text_paths",
+      "source": "build_graph",
+      "target": "build_graph_sanitize_text_paths",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
+      "source_location": "L179",
+      "weight": 1.0,
+      "_src": "build_graph",
+      "_tgt": "build_graph_sanitize_markdown_artifacts",
+      "source": "build_graph",
+      "target": "build_graph_sanitize_markdown_artifacts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
+      "source_location": "L191",
       "weight": 1.0,
       "_src": "build_graph",
       "_tgt": "build_graph_build_graph",
@@ -3024,8 +3924,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
-      "source_location": "L255",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
+      "source_location": "L277",
       "weight": 1.0,
       "_src": "build_graph",
       "_tgt": "build_graph_main",
@@ -3036,7 +3936,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L109",
       "weight": 0.8,
       "_src": "build_graph_derive_path_phrase",
@@ -3048,7 +3948,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L133",
       "weight": 0.8,
       "_src": "build_graph_derive_path_tokens",
@@ -3060,7 +3960,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L147",
       "weight": 0.8,
       "_src": "build_graph_community_label",
@@ -3072,7 +3972,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L120",
       "weight": 0.8,
       "_src": "build_graph_derive_path_phrase",
@@ -3084,7 +3984,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L153",
       "weight": 0.8,
       "_src": "build_graph_community_label",
@@ -3096,7 +3996,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L156",
       "weight": 0.8,
       "_src": "build_graph_community_label",
@@ -3108,7 +4008,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
       "source_location": "L169",
       "weight": 0.8,
       "_src": "build_graph_infer_community_labels",
@@ -3120,8 +4020,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
-      "source_location": "L192",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
+      "source_location": "L211",
       "weight": 0.8,
       "_src": "build_graph_build_graph",
       "_tgt": "build_graph_infer_community_labels",
@@ -3132,8 +4032,32 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/build_graph.py",
-      "source_location": "L271",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
+      "source_location": "L188",
+      "weight": 0.8,
+      "_src": "build_graph_sanitize_markdown_artifacts",
+      "_tgt": "build_graph_sanitize_text_paths",
+      "source": "build_graph_sanitize_text_paths",
+      "target": "build_graph_sanitize_markdown_artifacts",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
+      "source_location": "L259",
+      "weight": 0.8,
+      "_src": "build_graph_build_graph",
+      "_tgt": "build_graph_sanitize_markdown_artifacts",
+      "source": "build_graph_sanitize_markdown_artifacts",
+      "target": "build_graph_build_graph",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/build_graph.py",
+      "source_location": "L294",
       "weight": 0.8,
       "_src": "build_graph_main",
       "_tgt": "build_graph_build_graph",
@@ -3144,7 +4068,67 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/push_graph_to_neo4j.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/update_knowledge_index.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "update_knowledge_index",
+      "_tgt": "update_knowledge_index_summary_line",
+      "source": "update_knowledge_index",
+      "target": "update_knowledge_index_summary_line",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/update_knowledge_index.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "update_knowledge_index",
+      "_tgt": "update_knowledge_index_replace_section",
+      "source": "update_knowledge_index",
+      "target": "update_knowledge_index_replace_section",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/update_knowledge_index.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_src": "update_knowledge_index",
+      "_tgt": "update_knowledge_index_main",
+      "source": "update_knowledge_index",
+      "target": "update_knowledge_index_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/update_knowledge_index.py",
+      "source_location": "L72",
+      "weight": 0.8,
+      "_src": "update_knowledge_index_main",
+      "_tgt": "update_knowledge_index_summary_line",
+      "source": "update_knowledge_index_summary_line",
+      "target": "update_knowledge_index_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/update_knowledge_index.py",
+      "source_location": "L86",
+      "weight": 0.8,
+      "_src": "update_knowledge_index_main",
+      "_tgt": "update_knowledge_index_replace_section",
+      "source": "update_knowledge_index_replace_section",
+      "target": "update_knowledge_index_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L15",
       "weight": 1.0,
       "_src": "push_graph_to_neo4j",
@@ -3156,7 +4140,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/push_graph_to_neo4j.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L37",
       "weight": 1.0,
       "_src": "push_graph_to_neo4j",
@@ -3168,7 +4152,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-85/scripts/knowledge_base/push_graph_to_neo4j.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L51",
       "weight": 0.8,
       "_src": "push_graph_to_neo4j_main",

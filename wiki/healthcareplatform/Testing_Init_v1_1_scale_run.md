@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **init-v1_1-scale-run.ps1** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/testing/init-v1_1-scale-run.ps1`
+- **init-v1_1-scale-run.ps1** (0 connections) — `healthcareplatform/backend/scripts/testing/init-v1_1-scale-run.ps1`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/testing/init-v1_1-scale-run.ps1`
+- `healthcareplatform/backend/scripts/testing/init-v1_1-scale-run.ps1`
 
 ## Audit Trail
 

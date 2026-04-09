@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **test_normalize_ebpf_reconciliation_stub_runtime.py** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
-- **main()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
-- **check()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
-- **envelope()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
-- **observed()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
-- **probe_input()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
-- **write_json()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
+- **test_normalize_ebpf_reconciliation_stub_runtime.py** (7 connections) — `local-ai-machine/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
+- **main()** (6 connections) — `local-ai-machine/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
+- **envelope()** (2 connections) — `local-ai-machine/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
+- **observed()** (2 connections) — `local-ai-machine/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
+- **probe_input()** (2 connections) — `local-ai-machine/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
+- **write_json()** (2 connections) — `local-ai-machine/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
+- `local-ai-machine/scripts/ops/test_normalize_ebpf_reconciliation_stub_runtime.py`
 
 ## Audit Trail
 

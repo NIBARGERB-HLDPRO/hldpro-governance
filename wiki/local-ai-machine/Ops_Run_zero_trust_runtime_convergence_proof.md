@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **run_zero_trust_runtime_convergence_proof.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_zero_trust_runtime_convergence_proof.ts`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_zero_trust_runtime_convergence_proof.ts`
-- **writeJson()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_zero_trust_runtime_convergence_proof.ts`
+- **run_zero_trust_runtime_convergence_proof.ts** (2 connections) — `local-ai-machine/scripts/ops/run_zero_trust_runtime_convergence_proof.ts`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/run_zero_trust_runtime_convergence_proof.ts`
+- **writeJson()** (2 connections) — `local-ai-machine/scripts/ops/run_zero_trust_runtime_convergence_proof.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_zero_trust_runtime_convergence_proof.ts`
+- `local-ai-machine/scripts/ops/run_zero_trust_runtime_convergence_proof.ts`
 
 ## Audit Trail
 

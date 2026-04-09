@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **interface.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/interface.ts`
+- **interface.ts** (0 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/interface.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/interface.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/interface.ts`
 
 ## Audit Trail
 

@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **runtime_resolver_activity_test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/runtime_resolver_activity_test.ts`
-- **writeJson()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/runtime_resolver_activity_test.ts`
+- **runtime_resolver_activity_test.ts** (1 connections) — `local-ai-machine/src/workflows/runtime_resolver_activity_test.ts`
+- **writeJson()** (1 connections) — `local-ai-machine/src/workflows/runtime_resolver_activity_test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/runtime_resolver_activity_test.ts`
+- `local-ai-machine/src/workflows/runtime_resolver_activity_test.ts`
 
 ## Audit Trail
 

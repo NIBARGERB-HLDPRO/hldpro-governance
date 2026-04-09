@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **prepare-local-supabase-env.ps1** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/prepare-local-supabase-env.ps1`
-- **Get-ValueFromStatus()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/prepare-local-supabase-env.ps1`
+- **prepare-local-supabase-env.ps1** (1 connections) — `healthcareplatform/backend/scripts/smoke/prepare-local-supabase-env.ps1`
+- **Get-ValueFromStatus()** (1 connections) — `healthcareplatform/backend/scripts/smoke/prepare-local-supabase-env.ps1`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/prepare-local-supabase-env.ps1`
+- `healthcareplatform/backend/scripts/smoke/prepare-local-supabase-env.ps1`
 
 ## Audit Trail
 

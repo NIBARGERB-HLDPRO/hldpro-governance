@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **get_gpu_status.ps1** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/scoped/get_gpu_status.ps1`
+- **get_gpu_status.ps1** (0 connections) — `local-ai-machine/scripts/ops/scoped/get_gpu_status.ps1`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/scoped/get_gpu_status.ps1`
+- `local-ai-machine/scripts/ops/scoped/get_gpu_status.ps1`
 
 ## Audit Trail
 

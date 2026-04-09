@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **upload_reports_to_supabase.py** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/upload_reports_to_supabase.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/upload_reports_to_supabase.py`
-- **refresh_jwt()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/upload_reports_to_supabase.py`
-- **upload_report()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/upload_reports_to_supabase.py`
-- **load_env()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/upload_reports_to_supabase.py`
-- **Minimal .env parser — no dependency on python-dotenv.** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/upload_reports_to_supabase.py`
-- **Get a fresh JWT via email/password auth.** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/upload_reports_to_supabase.py`
-- **Upload report JSON to Supabase Storage via REST API.** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/upload_reports_to_supabase.py`
+- **upload_reports_to_supabase.py** (4 connections) — `local-ai-machine/scripts/ops/upload_reports_to_supabase.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/upload_reports_to_supabase.py`
+- **refresh_jwt()** (3 connections) — `local-ai-machine/scripts/ops/upload_reports_to_supabase.py`
+- **upload_report()** (3 connections) — `local-ai-machine/scripts/ops/upload_reports_to_supabase.py`
+- **load_env()** (2 connections) — `local-ai-machine/scripts/ops/upload_reports_to_supabase.py`
+- **Minimal .env parser — no dependency on python-dotenv.** (1 connections) — `local-ai-machine/scripts/ops/upload_reports_to_supabase.py`
+- **Get a fresh JWT via email/password auth.** (1 connections) — `local-ai-machine/scripts/ops/upload_reports_to_supabase.py`
+- **Upload report JSON to Supabase Storage via REST API.** (1 connections) — `local-ai-machine/scripts/ops/upload_reports_to_supabase.py`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/upload_reports_to_supabase.py`
+- `local-ai-machine/scripts/ops/upload_reports_to_supabase.py`
 
 ## Audit Trail
 

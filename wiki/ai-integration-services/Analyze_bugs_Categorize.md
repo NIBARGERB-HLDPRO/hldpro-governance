@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **analyze-bugs.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/analyze-bugs.ts`
-- **categorizeBug()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/analyze-bugs.ts`
-- **diagnoseEdgeFunction()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/analyze-bugs.ts`
-- **main()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/analyze-bugs.ts`
+- **analyze-bugs.ts** (3 connections) — `ai-integration-services/scripts/analyze-bugs.ts`
+- **categorizeBug()** (1 connections) — `ai-integration-services/scripts/analyze-bugs.ts`
+- **diagnoseEdgeFunction()** (1 connections) — `ai-integration-services/scripts/analyze-bugs.ts`
+- **main()** (1 connections) — `ai-integration-services/scripts/analyze-bugs.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/analyze-bugs.ts`
+- `ai-integration-services/scripts/analyze-bugs.ts`
 
 ## Audit Trail
 

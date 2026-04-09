@@ -1,6 +1,6 @@
 # runCommand()
 
-> God node · 15 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/cli_bridge.ts`
+> God node · 15 connections · `local-ai-machine/scripts/control_plane/cli_bridge.ts`
 
 ## Connections by Relation
 

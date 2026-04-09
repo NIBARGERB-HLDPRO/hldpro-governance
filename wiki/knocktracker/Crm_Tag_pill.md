@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **TagPill.tsx** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/crm/TagPill.tsx`
+- **TagPill.tsx** (0 connections) — `knocktracker/components/crm/TagPill.tsx`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/crm/TagPill.tsx`
+- `knocktracker/components/crm/TagPill.tsx`
 
 ## Audit Trail
 

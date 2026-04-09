@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **embeddings.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
-- **generateEmbedding()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
-- **hashEmbedding()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
+- **embeddings.ts** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
+- **generateEmbedding()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
+- **hashEmbedding()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
 
 ## Audit Trail
 

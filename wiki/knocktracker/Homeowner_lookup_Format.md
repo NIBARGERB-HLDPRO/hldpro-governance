@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **homeownerLookup.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/utils/homeownerLookup.ts`
-- **formatPropertyValue()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/utils/homeownerLookup.ts`
-- **formatSquareFootage()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/utils/homeownerLookup.ts`
-- **lookupHomeowner()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/utils/homeownerLookup.ts`
+- **homeownerLookup.ts** (3 connections) — `knocktracker/utils/homeownerLookup.ts`
+- **formatPropertyValue()** (1 connections) — `knocktracker/utils/homeownerLookup.ts`
+- **formatSquareFootage()** (1 connections) — `knocktracker/utils/homeownerLookup.ts`
+- **lookupHomeowner()** (1 connections) — `knocktracker/utils/homeownerLookup.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/utils/homeownerLookup.ts`
+- `knocktracker/utils/homeownerLookup.ts`
 
 ## Audit Trail
 

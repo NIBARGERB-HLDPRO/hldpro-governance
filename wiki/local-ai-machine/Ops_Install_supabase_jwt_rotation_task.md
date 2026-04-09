@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **install_supabase_jwt_rotation_task.ps1** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/install_supabase_jwt_rotation_task.ps1`
+- **install_supabase_jwt_rotation_task.ps1** (0 connections) — `local-ai-machine/scripts/ops/install_supabase_jwt_rotation_task.ps1`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/install_supabase_jwt_rotation_task.ps1`
+- `local-ai-machine/scripts/ops/install_supabase_jwt_rotation_task.ps1`
 
 ## Audit Trail
 

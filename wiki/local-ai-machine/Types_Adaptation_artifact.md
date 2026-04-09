@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **adaptation_artifact.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/types/adaptation_artifact.ts`
+- **adaptation_artifact.ts** (0 connections) — `local-ai-machine/src/types/adaptation_artifact.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/types/adaptation_artifact.ts`
+- `local-ai-machine/src/types/adaptation_artifact.ts`
 
 ## Audit Trail
 

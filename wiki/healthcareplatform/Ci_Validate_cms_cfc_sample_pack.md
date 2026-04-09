@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **validate-cms-cfc-sample-pack.js** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
-- **fail()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
-- **requireAppendixLinkage()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
-- **readJsonl()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
-- **isPositiveInteger()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
-- **isSortedBy()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
+- **validate-cms-cfc-sample-pack.js** (6 connections) — `healthcareplatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
+- **main()** (5 connections) — `healthcareplatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
+- **fail()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
+- **requireAppendixLinkage()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
+- **readJsonl()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
+- **isPositiveInteger()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
+- **isSortedBy()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
+- `healthcareplatform/backend/scripts/ci/validate-cms-cfc-sample-pack.js`
 
 ## Audit Trail
 

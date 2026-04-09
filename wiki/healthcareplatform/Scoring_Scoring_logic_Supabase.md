@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **scoring-logic.test.ts** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
-- **applyGradeCap()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
-- **gradeRank()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
-- **calculateScore()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
-- **chooseGrade()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
-- **deriveCmsOutcome()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
-- **sha256Hex()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
+- **scoring-logic.test.ts** (6 connections) — `healthcareplatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
+- **applyGradeCap()** (2 connections) — `healthcareplatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
+- **gradeRank()** (2 connections) — `healthcareplatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
+- **calculateScore()** (1 connections) — `healthcareplatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
+- **chooseGrade()** (1 connections) — `healthcareplatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
+- **deriveCmsOutcome()** (1 connections) — `healthcareplatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
+- **sha256Hex()** (1 connections) — `healthcareplatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
+- `healthcareplatform/backend/supabase/functions/scoring/scoring-logic.test.ts`
 
 ## Audit Trail
 

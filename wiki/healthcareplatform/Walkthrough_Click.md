@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **walkthrough-e2e.spec.ts** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/walkthrough-e2e.spec.ts`
-- **clickIf()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/walkthrough-e2e.spec.ts`
-- **createTestImage()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/walkthrough-e2e.spec.ts`
-- **log()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/walkthrough-e2e.spec.ts`
-- **login()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/walkthrough-e2e.spec.ts`
-- **screenshot()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/walkthrough-e2e.spec.ts`
+- **walkthrough-e2e.spec.ts** (5 connections) — `healthcareplatform/frontend/e2e/walkthrough-e2e.spec.ts`
+- **clickIf()** (1 connections) — `healthcareplatform/frontend/e2e/walkthrough-e2e.spec.ts`
+- **createTestImage()** (1 connections) — `healthcareplatform/frontend/e2e/walkthrough-e2e.spec.ts`
+- **log()** (1 connections) — `healthcareplatform/frontend/e2e/walkthrough-e2e.spec.ts`
+- **login()** (1 connections) — `healthcareplatform/frontend/e2e/walkthrough-e2e.spec.ts`
+- **screenshot()** (1 connections) — `healthcareplatform/frontend/e2e/walkthrough-e2e.spec.ts`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/walkthrough-e2e.spec.ts`
+- `healthcareplatform/frontend/e2e/walkthrough-e2e.spec.ts`
 
 ## Audit Trail
 

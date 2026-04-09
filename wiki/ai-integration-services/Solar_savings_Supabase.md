@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **solar-savings.ts** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
-- **calculateIRR()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
-- **calculateSavings()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
-- **calculateITC()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
-- **environmentalImpact()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
-- **estimateProductionFromGoogle()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
-- **panelCountFromArea()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
-- **systemSizeKw()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
+- **solar-savings.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
+- **calculateIRR()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
+- **calculateSavings()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
+- **calculateITC()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
+- **environmentalImpact()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
+- **estimateProductionFromGoogle()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
+- **panelCountFromArea()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
+- **systemSizeKw()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
 
 ## Audit Trail
 

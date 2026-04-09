@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **run_scavenger_locked_loop.py** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_locked_loop.py`
-- **run_once()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_locked_loop.py`
-- **_available_memory_mb()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_locked_loop.py`
-- **_env()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_locked_loop.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_locked_loop.py`
-- **_queue_pressure_snapshot()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_locked_loop.py`
+- **run_scavenger_locked_loop.py** (5 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
+- **run_once()** (5 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
+- **_available_memory_mb()** (2 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
+- **_env()** (2 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
+- **_queue_pressure_snapshot()** (2 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_locked_loop.py`
+- `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
 
 ## Audit Trail
 

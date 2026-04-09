@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **seed_phase_e_identity_allowlist.py** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/seed_phase_e_identity_allowlist.py`
-- **_env()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/seed_phase_e_identity_allowlist.py`
-- **_resolve_subject()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/seed_phase_e_identity_allowlist.py`
-- **_database_url()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/seed_phase_e_identity_allowlist.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/seed_phase_e_identity_allowlist.py`
-- **_sub_from_jwt()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/seed_phase_e_identity_allowlist.py`
-- **_b64url_decode()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/seed_phase_e_identity_allowlist.py`
-- **_load_env_file()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/seed_phase_e_identity_allowlist.py`
+- **seed_phase_e_identity_allowlist.py** (7 connections) — `local-ai-machine/scripts/ops/seed_phase_e_identity_allowlist.py`
+- **_env()** (4 connections) — `local-ai-machine/scripts/ops/seed_phase_e_identity_allowlist.py`
+- **_resolve_subject()** (4 connections) — `local-ai-machine/scripts/ops/seed_phase_e_identity_allowlist.py`
+- **_database_url()** (3 connections) — `local-ai-machine/scripts/ops/seed_phase_e_identity_allowlist.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/seed_phase_e_identity_allowlist.py`
+- **_sub_from_jwt()** (3 connections) — `local-ai-machine/scripts/ops/seed_phase_e_identity_allowlist.py`
+- **_b64url_decode()** (2 connections) — `local-ai-machine/scripts/ops/seed_phase_e_identity_allowlist.py`
+- **_load_env_file()** (2 connections) — `local-ai-machine/scripts/ops/seed_phase_e_identity_allowlist.py`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/seed_phase_e_identity_allowlist.py`
+- `local-ai-machine/scripts/ops/seed_phase_e_identity_allowlist.py`
 
 ## Audit Trail
 

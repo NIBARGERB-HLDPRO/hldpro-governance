@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **host_telemetry_observer.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/host_telemetry_observer.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/host_telemetry_observer.py`
-- **sha256_text()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/host_telemetry_observer.py`
+- **host_telemetry_observer.py** (2 connections) — `local-ai-machine/scripts/ops/host_telemetry_observer.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/host_telemetry_observer.py`
+- **sha256_text()** (2 connections) — `local-ai-machine/scripts/ops/host_telemetry_observer.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/host_telemetry_observer.py`
+- `local-ai-machine/scripts/ops/host_telemetry_observer.py`
 
 ## Audit Trail
 

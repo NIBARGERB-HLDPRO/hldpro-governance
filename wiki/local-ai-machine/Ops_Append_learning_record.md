@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **append_learning_record.py** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/append_learning_record.py`
-- **main()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/append_learning_record.py`
+- **append_learning_record.py** (1 connections) — `local-ai-machine/scripts/ops/append_learning_record.py`
+- **main()** (1 connections) — `local-ai-machine/scripts/ops/append_learning_record.py`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/append_learning_record.py`
+- `local-ai-machine/scripts/ops/append_learning_record.py`
 
 ## Audit Trail
 

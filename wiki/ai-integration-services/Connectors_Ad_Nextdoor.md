@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- **NextdoorAdConnector** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
-- **.apiGet()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
-- **.listAccounts()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
-- **.apiPost()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
-- **.healthCheck()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
-- **.pullCampaigns()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
-- **.pullPerformance()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
-- **.sendConversion()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
-- **nextdoor.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
-- **.constructor()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
-- **.refreshToken()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
+- **NextdoorAdConnector** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
+- **.apiGet()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
+- **.listAccounts()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
+- **.apiPost()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
+- **.healthCheck()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
+- **.pullCampaigns()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
+- **.pullPerformance()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
+- **.sendConversion()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
+- **nextdoor.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
+- **.constructor()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
+- **.refreshToken()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
 
 ## Relationships
 
@@ -22,7 +22,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
 
 ## Audit Trail
 

@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **check-progress-github-alignment.js** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-progress-github-alignment.js`
-- **main()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-progress-github-alignment.js`
-- **fail()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-progress-github-alignment.js`
-- **collectSectionLines()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-progress-github-alignment.js`
-- **readUtf8()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-progress-github-alignment.js`
-- **hasIssueRef()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-progress-github-alignment.js`
-- **parseMarkdownRow()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-progress-github-alignment.js`
+- **check-progress-github-alignment.js** (6 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
+- **main()** (6 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
+- **fail()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
+- **collectSectionLines()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
+- **readUtf8()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
+- **hasIssueRef()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
+- **parseMarkdownRow()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-progress-github-alignment.js`
+- `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
 
 ## Audit Trail
 

@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **signed-url-policy.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/signed-url-policy.test.ts`
-- **assertEquals()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/signed-url-policy.test.ts`
+- **signed-url-policy.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/signed-url-policy.test.ts`
+- **assertEquals()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/signed-url-policy.test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/signed-url-policy.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/signed-url-policy.test.ts`
 
 ## Audit Trail
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **setup.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/test/setup.ts`
+- **setup.ts** (0 connections) — `healthcareplatform/frontend/src/test/setup.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/test/setup.ts`
+- `healthcareplatform/frontend/src/test/setup.ts`
 
 ## Audit Trail
 

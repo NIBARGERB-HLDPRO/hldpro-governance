@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **check-regulatory-seed-compat.js** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-regulatory-seed-compat.js`
-- **check()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-regulatory-seed-compat.js`
+- **check-regulatory-seed-compat.js** (1 connections) — `healthcareplatform/backend/scripts/ci/check-regulatory-seed-compat.js`
+- **check()** (1 connections) — `healthcareplatform/backend/scripts/ci/check-regulatory-seed-compat.js`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-regulatory-seed-compat.js`
+- `healthcareplatform/backend/scripts/ci/check-regulatory-seed-compat.js`
 
 ## Audit Trail
 

@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **check-no-raw-error-logging.js** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-raw-error-logging.js`
-- **main()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-raw-error-logging.js`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-raw-error-logging.js`
-- **lineFromIndex()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-raw-error-logging.js`
-- **walk()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-raw-error-logging.js`
+- **check-no-raw-error-logging.js** (4 connections) — `healthcareplatform/backend/scripts/ci/check-no-raw-error-logging.js`
+- **main()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-no-raw-error-logging.js`
+- **fail()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-raw-error-logging.js`
+- **lineFromIndex()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-raw-error-logging.js`
+- **walk()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-raw-error-logging.js`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-raw-error-logging.js`
+- `healthcareplatform/backend/scripts/ci/check-no-raw-error-logging.js`
 
 ## Audit Trail
 

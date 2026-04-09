@@ -4,15 +4,15 @@
 
 ## Key Concepts
 
-- **DealService** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/services/dealService.ts`
-- **.getDealsByStage()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/services/dealService.ts`
-- **.getPipelineStages()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/services/dealService.ts`
-- **.moveDealToStage()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/services/dealService.ts`
-- **.updateDeal()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/services/dealService.ts`
-- **.constructor()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/services/dealService.ts`
-- **.createDeal()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/services/dealService.ts`
-- **.getDeal()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/services/dealService.ts`
-- **.getDeals()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/services/dealService.ts`
+- **DealService** (9 connections) — `knocktracker/lib/services/dealService.ts`
+- **.getDealsByStage()** (2 connections) — `knocktracker/lib/services/dealService.ts`
+- **.getPipelineStages()** (2 connections) — `knocktracker/lib/services/dealService.ts`
+- **.moveDealToStage()** (2 connections) — `knocktracker/lib/services/dealService.ts`
+- **.updateDeal()** (2 connections) — `knocktracker/lib/services/dealService.ts`
+- **.constructor()** (1 connections) — `knocktracker/lib/services/dealService.ts`
+- **.createDeal()** (1 connections) — `knocktracker/lib/services/dealService.ts`
+- **.getDeal()** (1 connections) — `knocktracker/lib/services/dealService.ts`
+- **.getDeals()** (1 connections) — `knocktracker/lib/services/dealService.ts`
 
 ## Relationships
 
@@ -20,7 +20,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/services/dealService.ts`
+- `knocktracker/lib/services/dealService.ts`
 
 ## Audit Trail
 

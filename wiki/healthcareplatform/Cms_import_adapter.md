@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **cms-import-adapter.test.ts** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
-- **assertEquals()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
-- **canonicalize()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
-- **readFixture()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
-- **samplePayload()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
+- **cms-import-adapter.test.ts** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
+- **assertEquals()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
+- **canonicalize()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
+- **readFixture()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
+- **samplePayload()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
 
 ## Audit Trail
 

@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **simulate_survey_walkthrough.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/simulate_survey_walkthrough.py`
-- **load_dotenv()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/simulate_survey_walkthrough.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/simulate_survey_walkthrough.py`
+- **simulate_survey_walkthrough.py** (2 connections) — `local-ai-machine/scripts/ops/simulate_survey_walkthrough.py`
+- **load_dotenv()** (2 connections) — `local-ai-machine/scripts/ops/simulate_survey_walkthrough.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/simulate_survey_walkthrough.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/simulate_survey_walkthrough.py`
+- `local-ai-machine/scripts/ops/simulate_survey_walkthrough.py`
 
 ## Audit Trail
 

@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **bolt-smoke.js** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/bolt-smoke.js`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/bolt-smoke.js`
-- **isFunctionsGatewayRoot()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/bolt-smoke.js`
-- **joinFunctionUrl()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/bolt-smoke.js`
-- **normalizeEnvValue()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/bolt-smoke.js`
-- **readEnv()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/bolt-smoke.js`
-- **isValidHttpUrl()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/bolt-smoke.js`
+- **bolt-smoke.js** (6 connections) — `healthcareplatform/backend/scripts/smoke/bolt-smoke.js`
+- **main()** (3 connections) — `healthcareplatform/backend/scripts/smoke/bolt-smoke.js`
+- **isFunctionsGatewayRoot()** (2 connections) — `healthcareplatform/backend/scripts/smoke/bolt-smoke.js`
+- **joinFunctionUrl()** (2 connections) — `healthcareplatform/backend/scripts/smoke/bolt-smoke.js`
+- **normalizeEnvValue()** (2 connections) — `healthcareplatform/backend/scripts/smoke/bolt-smoke.js`
+- **readEnv()** (2 connections) — `healthcareplatform/backend/scripts/smoke/bolt-smoke.js`
+- **isValidHttpUrl()** (1 connections) — `healthcareplatform/backend/scripts/smoke/bolt-smoke.js`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/smoke/bolt-smoke.js`
+- `healthcareplatform/backend/scripts/smoke/bolt-smoke.js`
 
 ## Audit Trail
 

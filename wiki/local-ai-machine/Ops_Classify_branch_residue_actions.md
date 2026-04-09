@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **classify_branch_residue_actions.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/classify_branch_residue_actions.py`
-- **classify_action()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/classify_branch_residue_actions.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/classify_branch_residue_actions.py`
+- **classify_branch_residue_actions.py** (2 connections) — `local-ai-machine/scripts/ops/classify_branch_residue_actions.py`
+- **classify_action()** (2 connections) — `local-ai-machine/scripts/ops/classify_branch_residue_actions.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/classify_branch_residue_actions.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/classify_branch_residue_actions.py`
+- `local-ai-machine/scripts/ops/classify_branch_residue_actions.py`
 
 ## Audit Trail
 

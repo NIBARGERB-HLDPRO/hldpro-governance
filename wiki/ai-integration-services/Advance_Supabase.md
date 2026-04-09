@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **advance.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/advance.ts`
-- **advanceSigningWorkflow()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/advance.ts`
+- **advance.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/advance.ts`
+- **advanceSigningWorkflow()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/advance.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/advance.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/advance.ts`
 
 ## Audit Trail
 

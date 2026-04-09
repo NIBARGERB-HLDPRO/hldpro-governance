@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **vite.config.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/vite.config.ts`
+- **vite.config.ts** (0 connections) — `ai-integration-services/apps/marketing/vite.config.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/vite.config.ts`
+- `ai-integration-services/apps/marketing/vite.config.ts`
 
 ## Audit Trail
 

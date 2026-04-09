@@ -4,19 +4,19 @@
 
 ## Key Concepts
 
-- **promote_general_loop_clone_result.py** (12 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
-- **main()** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
-- **fail()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
-- **build_manifest()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
-- **read_registry()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
-- **registry_lock()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
-- **governance_match()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
-- **highest_accepted_sequence()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
-- **parse_json_list()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
-- **path_in_scope()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
-- **resolve_active_session()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
-- **try_parse_json_list()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
-- **write_manifest_invalid_result()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
+- **promote_general_loop_clone_result.py** (12 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
+- **main()** (10 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
+- **fail()** (5 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
+- **build_manifest()** (3 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
+- **read_registry()** (3 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
+- **registry_lock()** (3 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
+- **governance_match()** (2 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
+- **highest_accepted_sequence()** (2 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
+- **parse_json_list()** (2 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
+- **path_in_scope()** (2 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
+- **resolve_active_session()** (2 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
+- **try_parse_json_list()** (2 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
+- **write_manifest_invalid_result()** (2 connections) — `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
 
 ## Relationships
 
@@ -24,7 +24,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/promote_general_loop_clone_result.py`
+- `local-ai-machine/scripts/ops/promote_general_loop_clone_result.py`
 
 ## Audit Trail
 

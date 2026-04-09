@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **run_slack_image_processor_adapter.py** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_slack_image_processor_adapter.py`
-- **fail()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_slack_image_processor_adapter.py`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_slack_image_processor_adapter.py`
-- **build_processor_payload()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_slack_image_processor_adapter.py`
-- **parse_input()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_slack_image_processor_adapter.py`
-- **run_processor()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_slack_image_processor_adapter.py`
-- **select_single_media()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_slack_image_processor_adapter.py`
-- **emit()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_slack_image_processor_adapter.py`
+- **run_slack_image_processor_adapter.py** (7 connections) — `local-ai-machine/scripts/ops/run_slack_image_processor_adapter.py`
+- **fail()** (6 connections) — `local-ai-machine/scripts/ops/run_slack_image_processor_adapter.py`
+- **main()** (5 connections) — `local-ai-machine/scripts/ops/run_slack_image_processor_adapter.py`
+- **build_processor_payload()** (3 connections) — `local-ai-machine/scripts/ops/run_slack_image_processor_adapter.py`
+- **parse_input()** (3 connections) — `local-ai-machine/scripts/ops/run_slack_image_processor_adapter.py`
+- **run_processor()** (3 connections) — `local-ai-machine/scripts/ops/run_slack_image_processor_adapter.py`
+- **select_single_media()** (3 connections) — `local-ai-machine/scripts/ops/run_slack_image_processor_adapter.py`
+- **emit()** (2 connections) — `local-ai-machine/scripts/ops/run_slack_image_processor_adapter.py`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_slack_image_processor_adapter.py`
+- `local-ai-machine/scripts/ops/run_slack_image_processor_adapter.py`
 
 ## Audit Trail
 

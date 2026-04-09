@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- **GoogleAdsConnector** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
-- **.gaqlQuery()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
-- **.listAccounts()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
-- **.healthCheck()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
-- **.pullCampaigns()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
-- **.pullPerformance()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
-- **google.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
-- **.constructor()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
-- **.refreshToken()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
-- **.sendConversion()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
+- **GoogleAdsConnector** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
+- **.gaqlQuery()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
+- **.listAccounts()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
+- **.healthCheck()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
+- **.pullCampaigns()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
+- **.pullPerformance()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
+- **google.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
+- **.constructor()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
+- **.refreshToken()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
+- **.sendConversion()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
 
 ## Relationships
 
@@ -21,7 +21,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/google.ts`
 
 ## Audit Trail
 

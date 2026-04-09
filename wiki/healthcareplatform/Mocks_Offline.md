@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **offline.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/test/mocks/offline.ts`
-- **mockOfflineStore()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/test/mocks/offline.ts`
-- **mockSurveyStore()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/test/mocks/offline.ts`
+- **offline.ts** (2 connections) — `healthcareplatform/frontend/src/test/mocks/offline.ts`
+- **mockOfflineStore()** (1 connections) — `healthcareplatform/frontend/src/test/mocks/offline.ts`
+- **mockSurveyStore()** (1 connections) — `healthcareplatform/frontend/src/test/mocks/offline.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/test/mocks/offline.ts`
+- `healthcareplatform/frontend/src/test/mocks/offline.ts`
 
 ## Audit Trail
 

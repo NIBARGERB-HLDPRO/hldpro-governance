@@ -1,6 +1,6 @@
 # GatewayError
 
-> God node · 16 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_local_wifi_gateway.py`
+> God node · 16 connections · `local-ai-machine/scripts/ops/run_local_wifi_gateway.py`
 
 ## Connections by Relation
 

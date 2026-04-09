@@ -1,35 +1,35 @@
 # Training Supabase
 
-> 235 nodes · cohesion 0.01
+> 298 nodes · cohesion 0.01
 
 ## Key Concepts
 
-- **index.ts** (246 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/reports/index.ts`
-- **handleVisitSurveyRoute()** (16 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/survey/index.ts`
-- **requireAdminLike()** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/training/index.ts`
-- **createAiDraftFinding()** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/gpt-assist/index.ts`
-- **verifyFacilityAccess()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/prestudy-portal/index.ts`
-- **canAdminManageTenantShape()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/facilities/index.ts`
-- **createFacility()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/facilities/index.ts`
-- **handleImport()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/standards-releases/index.ts`
-- **requireReviewer()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/training/index.ts`
-- **resolveIntegrationConfig()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/integrations-manager/index.ts`
-- **runSync()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/integrations-manager/index.ts`
-- **updateFacility()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/facilities/index.ts`
-- **upsertOrganizationProfile()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/facilities/index.ts`
-- **validateImportPayload()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/standards-releases/index.ts`
-- **auditReportEvent()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/reports/index.ts`
-- **buildReleaseDiffPreview()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/standards-releases/index.ts`
-- **handleApprovePublish()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/standards-releases/index.ts`
-- **handlePublish()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/standards-releases/index.ts`
-- **isAssignedUserRole()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/reports/index.ts`
-- **loadVisitForReport()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/reports/index.ts`
-- **normalizeOptionalInteger()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/facilities/index.ts`
-- **normalizeOptionalString()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/facilities/index.ts`
-- **postInsertSync()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/demo-requests/index.ts`
-- **updateAssignment()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/training/index.ts`
-- **clearReleaseChildren()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/standards-releases/index.ts`
-- *... and 210 more nodes in this community*
+- **index.ts** (309 connections) — `healthcareplatform/backend/supabase/functions/reports/index.ts`
+- **handleVisitSurveyRoute()** (16 connections) — `healthcareplatform/backend/supabase/functions/survey/index.ts`
+- **asString()** (12 connections) — `healthcareplatform/backend/supabase/functions/billing-portal/index.ts`
+- **handleSubscriptionEvent()** (10 connections) — `healthcareplatform/backend/supabase/functions/stripe-webhook/index.ts`
+- **requireAdminLike()** (10 connections) — `healthcareplatform/backend/supabase/functions/training/index.ts`
+- **asRecord()** (8 connections) — `healthcareplatform/backend/supabase/functions/billing-modules/index.ts`
+- **createAiDraftFinding()** (7 connections) — `healthcareplatform/backend/supabase/functions/gpt-assist/index.ts`
+- **handleCheckoutCompleted()** (6 connections) — `healthcareplatform/backend/supabase/functions/stripe-webhook/index.ts`
+- **handleVerifyBatch()** (6 connections) — `healthcareplatform/backend/supabase/functions/insurance-verify/index.ts`
+- **verifyFacilityAccess()** (6 connections) — `healthcareplatform/backend/supabase/functions/prestudy-portal/index.ts`
+- **asTrimmedString()** (5 connections) — `healthcareplatform/backend/supabase/functions/public-signup/index.ts`
+- **canAdminManageTenantShape()** (5 connections) — `healthcareplatform/backend/supabase/functions/facilities/index.ts`
+- **createFacility()** (5 connections) — `healthcareplatform/backend/supabase/functions/facilities/index.ts`
+- **handleAuthWorkflowUpdate()** (5 connections) — `healthcareplatform/backend/supabase/functions/insurance-verify/index.ts`
+- **handleImport()** (5 connections) — `healthcareplatform/backend/supabase/functions/standards-releases/index.ts`
+- **listModuleBillingState()** (5 connections) — `healthcareplatform/backend/supabase/functions/billing-modules/index.ts`
+- **listVisitsWithVerification()** (5 connections) — `healthcareplatform/backend/supabase/functions/insurance-verify/index.ts`
+- **requireReviewer()** (5 connections) — `healthcareplatform/backend/supabase/functions/training/index.ts`
+- **resolveIntegrationConfig()** (5 connections) — `healthcareplatform/backend/supabase/functions/integrations-manager/index.ts`
+- **resolveTenantIdForStripeObject()** (5 connections) — `healthcareplatform/backend/supabase/functions/stripe-webhook/index.ts`
+- **runSync()** (5 connections) — `healthcareplatform/backend/supabase/functions/integrations-manager/index.ts`
+- **syncModuleProfilesFromSubscription()** (5 connections) — `healthcareplatform/backend/supabase/functions/stripe-webhook/index.ts`
+- **syncTenantTierToAuthUsers()** (5 connections) — `healthcareplatform/backend/supabase/functions/stripe-webhook/index.ts`
+- **toVerificationResponse()** (5 connections) — `healthcareplatform/backend/supabase/functions/insurance-verify/index.ts`
+- **updateFacility()** (5 connections) — `healthcareplatform/backend/supabase/functions/facilities/index.ts`
+- *... and 273 more nodes in this community*
 
 ## Relationships
 
@@ -37,31 +37,31 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/acquisition-assessments/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/admin-users/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/chart-audit/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/checklist-generate/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/corrective-actions/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/dashboards/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/demo-requests/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/evaluator-import/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/evidence/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/facilities/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/findings/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/gpt-assist/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/integrations-manager/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/notifications/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/prestudy-portal/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/reports/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/responses/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/scoring/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/standards-releases/index.ts`
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/state-regulatory-import/index.ts`
+- `healthcareplatform/backend/supabase/functions/acquisition-assessments/index.ts`
+- `healthcareplatform/backend/supabase/functions/admin-users/index.ts`
+- `healthcareplatform/backend/supabase/functions/billing-modules/index.ts`
+- `healthcareplatform/backend/supabase/functions/billing-portal/index.ts`
+- `healthcareplatform/backend/supabase/functions/chart-audit/index.ts`
+- `healthcareplatform/backend/supabase/functions/checklist-generate/index.ts`
+- `healthcareplatform/backend/supabase/functions/checkout-session/index.ts`
+- `healthcareplatform/backend/supabase/functions/corrective-actions/index.ts`
+- `healthcareplatform/backend/supabase/functions/dashboards/index.ts`
+- `healthcareplatform/backend/supabase/functions/demo-requests/index.ts`
+- `healthcareplatform/backend/supabase/functions/evaluator-import/index.ts`
+- `healthcareplatform/backend/supabase/functions/evidence/index.ts`
+- `healthcareplatform/backend/supabase/functions/facilities/index.ts`
+- `healthcareplatform/backend/supabase/functions/findings/index.ts`
+- `healthcareplatform/backend/supabase/functions/gpt-assist/index.ts`
+- `healthcareplatform/backend/supabase/functions/insurance-verify/index.ts`
+- `healthcareplatform/backend/supabase/functions/integrations-manager/index.ts`
+- `healthcareplatform/backend/supabase/functions/notifications/index.ts`
+- `healthcareplatform/backend/supabase/functions/policies/index.ts`
+- `healthcareplatform/backend/supabase/functions/prestudy-portal/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 480 (68%)
-- INFERRED: 230 (32%)
+- EXTRACTED: 606 (61%)
+- INFERRED: 380 (39%)
 - AMBIGUOUS: 0 (0%)
 
 ---

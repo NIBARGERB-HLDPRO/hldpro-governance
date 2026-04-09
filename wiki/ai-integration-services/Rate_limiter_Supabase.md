@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **rate-limiter.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
-- **checkRateLimit()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
-- **getClientIp()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
-- **isServiceRole()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
+- **rate-limiter.ts** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
+- **checkRateLimit()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
+- **getClientIp()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
+- **isServiceRole()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
 
 ## Audit Trail
 

@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **start-lane.ps1** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/lane/start-lane.ps1`
-- **Fail()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/lane/start-lane.ps1`
-- **Sanitize-Scope()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/lane/start-lane.ps1`
+- **start-lane.ps1** (2 connections) — `healthcareplatform/backend/scripts/lane/start-lane.ps1`
+- **Fail()** (1 connections) — `healthcareplatform/backend/scripts/lane/start-lane.ps1`
+- **Sanitize-Scope()** (1 connections) — `healthcareplatform/backend/scripts/lane/start-lane.ps1`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/lane/start-lane.ps1`
+- `healthcareplatform/backend/scripts/lane/start-lane.ps1`
 
 ## Audit Trail
 

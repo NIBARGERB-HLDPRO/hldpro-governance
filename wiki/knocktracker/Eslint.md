@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **eslint.config.js** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/eslint.config.js`
+- **eslint.config.js** (0 connections) — `knocktracker/eslint.config.js`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/eslint.config.js`
+- `knocktracker/eslint.config.js`
 
 ## Audit Trail
 

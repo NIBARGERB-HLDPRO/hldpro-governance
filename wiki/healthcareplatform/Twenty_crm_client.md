@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **twenty-crm-client.ts** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
-- **crmFetch()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
-- **syncDemoRequestToCrm()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
-- **createActivity()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
-- **createPerson()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
-- **findPersonByEmail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
-- **getConfig()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
-- **isCrmConfigured()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
+- **twenty-crm-client.ts** (7 connections) — `healthcareplatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
+- **crmFetch()** (5 connections) — `healthcareplatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
+- **syncDemoRequestToCrm()** (5 connections) — `healthcareplatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
+- **createActivity()** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
+- **createPerson()** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
+- **findPersonByEmail()** (3 connections) — `healthcareplatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
+- **getConfig()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
+- **isCrmConfigured()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/twenty-crm-client.ts`
 
 ## Audit Trail
 

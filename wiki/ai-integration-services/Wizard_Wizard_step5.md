@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **WizardStep5.tsx** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/wizard/WizardStep5.tsx`
-- **WizardStep5()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/wizard/WizardStep5.tsx`
+- **WizardStep5.tsx** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/wizard/WizardStep5.tsx`
+- **WizardStep5()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/wizard/WizardStep5.tsx`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/wizard/WizardStep5.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/wizard/WizardStep5.tsx`
 
 ## Audit Trail
 

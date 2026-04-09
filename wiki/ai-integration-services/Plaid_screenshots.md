@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **plaid-screenshots.spec.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/plaid-screenshots.spec.ts`
+- **plaid-screenshots.spec.ts** (0 connections) — `ai-integration-services/e2e/plaid-screenshots.spec.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/plaid-screenshots.spec.ts`
+- `ai-integration-services/e2e/plaid-screenshots.spec.ts`
 
 ## Audit Trail
 

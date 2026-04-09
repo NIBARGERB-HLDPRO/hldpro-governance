@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **marketing-portal.spec.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/marketing-portal.spec.ts`
+- **marketing-portal.spec.ts** (0 connections) — `ai-integration-services/e2e/marketing-portal.spec.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/marketing-portal.spec.ts`
+- `ai-integration-services/e2e/marketing-portal.spec.ts`
 
 ## Audit Trail
 

@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- **setup-connection-tasks.ts** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
-- **syncSetupConnectionTasksForClient()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
-- **buildInitialSetupConnectionTaskRows()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
-- **deriveIncompleteWizardResumePath()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
-- **deriveSetupResumePath()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
-- **deriveStatusFromSignals()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
-- **isStep1Incomplete()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
-- **loadIntegrationSignals()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
-- **withDefaultTaskState()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
-- **taskToReadinessStep()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
+- **setup-connection-tasks.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
+- **syncSetupConnectionTasksForClient()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
+- **buildInitialSetupConnectionTaskRows()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
+- **deriveIncompleteWizardResumePath()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
+- **deriveSetupResumePath()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
+- **deriveStatusFromSignals()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
+- **isStep1Incomplete()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
+- **loadIntegrationSignals()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
+- **withDefaultTaskState()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
+- **taskToReadinessStep()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
 
 ## Relationships
 
@@ -21,7 +21,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
 
 ## Audit Trail
 

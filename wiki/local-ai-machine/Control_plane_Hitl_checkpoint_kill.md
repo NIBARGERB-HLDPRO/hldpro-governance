@@ -4,15 +4,15 @@
 
 ## Key Concepts
 
-- **hitl_checkpoint_kill.ts** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/hitl_checkpoint_kill.ts`
-- **serviceHeaders()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/hitl_checkpoint_kill.ts`
-- **restUrl()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/hitl_checkpoint_kill.ts`
-- **writeCheckpoint()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/hitl_checkpoint_kill.ts`
-- **checkpointAndKill()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/hitl_checkpoint_kill.ts`
-- **loadResumeBundle()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/hitl_checkpoint_kill.ts`
-- **requireEnv()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/hitl_checkpoint_kill.ts`
-- **appendSigkillLog()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/hitl_checkpoint_kill.ts`
-- **getPublishableKey()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **hitl_checkpoint_kill.ts** (8 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **serviceHeaders()** (5 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **restUrl()** (4 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **writeCheckpoint()** (4 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **checkpointAndKill()** (3 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **loadResumeBundle()** (3 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **requireEnv()** (3 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **appendSigkillLog()** (2 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **getPublishableKey()** (2 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
 
 ## Relationships
 
@@ -20,7 +20,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/hitl_checkpoint_kill.ts`
+- `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
 
 ## Audit Trail
 

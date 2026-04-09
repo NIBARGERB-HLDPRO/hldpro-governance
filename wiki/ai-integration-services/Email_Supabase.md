@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **email.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/email.ts`
-- **getApiKey()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/email.ts`
-- **sendEmail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/email.ts`
-- **isEmailConfigured()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/email.ts`
+- **email.ts** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/email.ts`
+- **getApiKey()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/email.ts`
+- **sendEmail()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/email.ts`
+- **isEmailConfigured()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/email.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/email.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/email.ts`
 
 ## Audit Trail
 
