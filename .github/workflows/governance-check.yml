@@ -12,6 +12,10 @@ on:
       SUPABASE_SERVICE_ROLE_KEY:
         required: false
 
+permissions:
+  contents: read
+  issues: read
+
 jobs:
   governance-check:
     runs-on: ubuntu-latest
@@ -114,6 +118,15 @@ jobs:
         if: github.repository == 'NIBARGERB-HLDPRO/hldpro-governance'
         run: |
           python3 scripts/overlord/check_overlord_backlog_github_alignment.py
+
+      - name: Check PROGRESS.md ↔ GitHub issue staleness
+        if: github.repository != 'NIBARGERB-HLDPRO/hldpro-governance'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 .governance/scripts/overlord/check_progress_github_issue_staleness.py \
+            --repo "${GITHUB_REPOSITORY}" \
+            --progress-path docs/PROGRESS.md
 
       - name: Validate structured agent cycle plans
         run: |

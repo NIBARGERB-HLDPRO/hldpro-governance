@@ -80,6 +80,7 @@ These files must be consistent at the contract level. They do **not** need to be
 
 ### `docs/PROGRESS.md`
 - Must remain the repo's single source of truth for planned work, open bugs, feature requests, and operational items
+- For governed product repos, active backlog sections in `docs/PROGRESS.md` must stay aligned with backlog-labeled GitHub issues: open backlog issues must appear there, and closed backlog issues must not remain listed as active.
 - Default required sections:
   - `## Plans`
   - `## Known Bugs`

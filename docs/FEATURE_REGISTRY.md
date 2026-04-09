@@ -73,6 +73,7 @@
 |---|---|
 | GOV-005 | `OVERLORD_BACKLOG.md` tracks cross-repo governance work; per-repo execution details stay in each repo’s `docs/PROGRESS.md`. |
 | GOV-011 | `OVERLORD_BACKLOG.md` is now a roadmap/status mirror only. Actionable `Planned` and `In Progress` rows must carry GitHub issue references, and governance CI enforces that alignment. |
+| GOV-011 | Governed product repos now also have a `docs/PROGRESS.md` ↔ GitHub issue staleness gate: open backlog-labeled issues must appear in active backlog sections and closed backlog-labeled issues must not remain listed as active. The reusable governance workflow enforces it in CI and the weekly sweep reports drift counts per repo. |
 
 ### KNOWLEDGE_BASE
 

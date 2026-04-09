@@ -385,6 +385,55 @@ jobs:
 
           REPORT+="\n"
 
+          # ── PROGRESS.md ↔ GitHub backlog staleness ──
+          REPORT+="## PROGRESS.md ↔ GitHub Backlog Drift\n\n"
+          REPORT+="| Repo | Status | Missing Open Backlog Issues | Stale Closed Issues |\n"
+          REPORT+="|------|--------|----------------------------:|--------------------:|\n"
+
+          for repo in $REPOS; do
+            DIR="repos/${repo}"
+
+            if echo "$EXEMPT_REPOS" | grep -qw "$repo"; then
+              REPORT+="| ${repo} | EXEMPT | 0 | 0 |\n"
+              continue
+            fi
+
+            if [ ! -f "${DIR}/docs/PROGRESS.md" ]; then
+              REPORT+="| ${repo} | MISSING PROGRESS.md | 0 | 0 |\n"
+              continue
+            fi
+
+            SUMMARY_JSON=$(python3 scripts/overlord/check_progress_github_issue_staleness.py \
+              --repo "NIBARGERB-HLDPRO/${repo}" \
+              --progress-path "${DIR}/docs/PROGRESS.md" \
+              --json)
+
+            MISSING_COUNT=$(SUMMARY_JSON="$SUMMARY_JSON" python3 -c 'import json, os; print(len(json.loads(os.environ["SUMMARY_JSON"]).get("missing_open_issue_numbers", [])))')
+            STALE_COUNT=$(SUMMARY_JSON="$SUMMARY_JSON" python3 -c 'import json, os; print(len(json.loads(os.environ["SUMMARY_JSON"]).get("stale_closed_issue_numbers", [])))')
+
+            STATUS="CLEAN"
+            if [ "$MISSING_COUNT" -gt 0 ] || [ "$STALE_COUNT" -gt 0 ]; then
+              STATUS="DRIFT"
+            fi
+
+            REPORT+="| ${repo} | ${STATUS} | ${MISSING_COUNT} | ${STALE_COUNT} |\n"
+
+            if [ "$STATUS" = "DRIFT" ]; then
+              REPORT+="\n### ${repo} backlog drift\n"
+              if [ "$MISSING_COUNT" -gt 0 ]; then
+                MISSING_ISSUES=$(SUMMARY_JSON="$SUMMARY_JSON" python3 -c 'import json, os; summary=json.loads(os.environ["SUMMARY_JSON"]); print(", ".join(f"#{n}" for n in summary.get("missing_open_issue_numbers", [])))')
+                REPORT+="- Missing open backlog issues from active PROGRESS sections: ${MISSING_ISSUES}\n"
+              fi
+              if [ "$STALE_COUNT" -gt 0 ]; then
+                STALE_ISSUES=$(SUMMARY_JSON="$SUMMARY_JSON" python3 -c 'import json, os; summary=json.loads(os.environ["SUMMARY_JSON"]); print(", ".join(f"#{n}" for n in summary.get("stale_closed_issue_numbers", [])))')
+                REPORT+="- Closed backlog issues still listed as active: ${STALE_ISSUES}\n"
+              fi
+              REPORT+="\n"
+            fi
+          done
+
+          REPORT+="\n"
+
           # ── Codex Second Opinion ──
           REPORT+="## Codex Second Opinion\n\n"
           REPORT+="| Repo | Review Status | Qualified Findings | Notes |\n"
