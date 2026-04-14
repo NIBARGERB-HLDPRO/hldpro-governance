@@ -505,8 +505,8 @@ def emit_usage_events(output_dir: Path, date: str, scenario: Scenario, graphify:
         query_terms=scenario.query_terms,
         top_candidates=baseline["top_files"],
     )
-    append_event(output_dir, graphify_event)
-    append_event(output_dir, baseline_event)
+    append_event(output_dir, graphify_event, date=date)
+    append_event(output_dir, baseline_event, date=date)
 
 
 def write_outputs(output_dir: Path, date: str, results: dict[str, Any]) -> None:
