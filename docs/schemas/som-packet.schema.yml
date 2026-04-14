@@ -1,0 +1,99 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://hldpro.local/schemas/som-packet/v1
+title: SoM Handoff Packet
+description: Canonical packet for Society of Minds stage-4 deterministic handoff
+type: object
+required:
+  - packet_id
+  - prior
+  - next_tier
+  - standards_ref
+
+properties:
+  packet_id:
+    type: string
+    format: uuid
+    description: "Unique identifier for this packet (UUIDv4)"
+
+  parent_packet_id:
+    type: ["string", "null"]
+    format: uuid
+    description: "UUID of parent packet; required if prior.tier == 1 (dual-planner)"
+
+  prior:
+    type: object
+    required:
+      - tier
+      - role
+      - model_id
+      - model_family
+      - timestamp
+    properties:
+      tier:
+        type: integer
+        minimum: 1
+        maximum: 4
+        description: "Source tier (1=dual-planner, 2=tier-2, 3=tier-3, 4=gate)"
+
+      role:
+        type: string
+        enum:
+          - architect-claude
+          - architect-codex
+          - worker
+          - reviewer
+          - gate
+          - worker-lam
+          - critic-lam
+        description: "Role of sender in source tier"
+
+      model_id:
+        type: string
+        description: "Model identifier (e.g., claude-opus-4, gpt-5.3-codex-spark, qwen-coder)"
+
+      model_family:
+        type: string
+        enum:
+          - anthropic
+          - openai
+          - qwen
+          - gemma
+          - phi
+          - llama
+          - mistral
+        description: "Model family for cross-family validation"
+
+      timestamp:
+        type: string
+        format: date-time
+        description: "ISO-8601 UTC timestamp when packet was authored"
+
+  next_tier:
+    type: integer
+    minimum: 1
+    maximum: 4
+    description: "Destination tier for this handoff"
+
+  artifacts:
+    type: array
+    items:
+      type: string
+    description: "File paths or URLs of artifacts included in this packet"
+
+  standards_ref:
+    type: string
+    description: "Reference to STANDARDS.md section (e.g., 'STANDARDS.md §Society of Minds (SoT)')"
+
+  runbook_ref:
+    type: ["string", "null"]
+    description: "Optional reference to runbook URL or path"
+
+  fallback_ladder_ref:
+    type: ["string", "null"]
+    description: "Optional reference to fallback ladder for tier-down scenario"
+
+  metadata:
+    type: ["object", "null"]
+    description: "Optional freeform metadata dict"
+
+additionalProperties: false
