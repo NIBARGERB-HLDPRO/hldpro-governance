@@ -67,9 +67,11 @@ def build_event(
     return event
 
 
-def append_event(output_dir: Path, event: dict[str, Any]) -> Path:
+def append_event(output_dir: Path, event: dict[str, Any], date: str | None = None) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
-    event_path = output_dir / f"{str(event['timestamp'])[:10]}.jsonl"
+    if date is None:
+        date = str(event['timestamp'])[:10]
+    event_path = output_dir / f"{date}.jsonl"
     with event_path.open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(event, sort_keys=True) + "\n")
     return event_path

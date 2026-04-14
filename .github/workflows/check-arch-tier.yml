@@ -1,0 +1,13 @@
+name: check-arch-tier
+on:
+  workflow_call:
+permissions:
+  contents: read
+
+jobs:
+  check-arch-tier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Placeholder architecture-tier enforcement note
+        run: |
+          echo "::warning::TODO: session-model evidence capture deferred to closeout; verify-completion is primary enforcement"

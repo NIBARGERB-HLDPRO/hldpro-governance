@@ -166,6 +166,13 @@ def relativize_source_file(source_file: str, repo_root: Path) -> str:
         try:
             return str(path.relative_to(repo_root))
         except ValueError:
+            # Path doesn't belong to repo_root (e.g., stale worktree path).
+            # Try to find the file in the current repo by matching path parts.
+            parts = path.parts
+            for i in range(len(parts) - 1, -1, -1):
+                candidate = repo_root / Path(*parts[i:])
+                if candidate.exists():
+                    return str(candidate.relative_to(repo_root))
             return path.name
     return source_file
 
@@ -505,8 +512,8 @@ def emit_usage_events(output_dir: Path, date: str, scenario: Scenario, graphify:
         query_terms=scenario.query_terms,
         top_candidates=baseline["top_files"],
     )
-    append_event(output_dir, graphify_event)
-    append_event(output_dir, baseline_event)
+    append_event(output_dir, graphify_event, date=date)
+    append_event(output_dir, baseline_event, date=date)
 
 
 def write_outputs(output_dir: Path, date: str, results: dict[str, Any]) -> None:

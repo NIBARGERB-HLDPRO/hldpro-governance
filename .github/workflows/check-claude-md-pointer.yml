@@ -1,0 +1,32 @@
+name: check-claude-md-pointer
+on:
+  workflow_call:
+permissions:
+  contents: read
+
+jobs:
+  check-claude-md-pointer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Validate CLAUDE.md pointer
+        run: |
+          set -euo pipefail
+          if [ ! -f CLAUDE.md ]; then
+            echo "::error file=CLAUDE.md,line=1::[check-claude-md-pointer] CLAUDE.md not found"
+            exit 1
+          fi
+
+          if grep -Fq "STANDARDS.md §Society of Minds" CLAUDE.md; then
+            exit 0
+          fi
+
+          if grep -Eq "NIBARGERB-HLDPRO/hldpro-governance/blob/main/STANDARDS\.md" CLAUDE.md; then
+            exit 0
+          fi
+
+          echo "::error file=CLAUDE.md,line=1::[check-claude-md-pointer] CLAUDE.md must reference STANDARDS.md §Society of Minds or link to NIBARGERB-HLDPRO/hldpro-governance/blob/main/STANDARDS.md"
+          exit 1

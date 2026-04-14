@@ -7,6 +7,8 @@
 
 | Item | Priority | Est. Hours | Notes |
 |------|----------|-----------|-------|
+| SoM Stage 5: som-worker daemon (always-warm Qwen-Coder + packet queue pipeline) | LOW | 6-8 | Follow-on to Stage 3b/4. Qwen watches raw/packets/inbound/, processes to raw/packets/outbound/, Sonnet reviews async. Keeps Tier-2 Worker always warm across sessions. Enables parallel planning-while-coding. Tracked in umbrella #99 continuation. |
+| Qwen-Coder MLX driver stub-emission bug (issue #105) | MEDIUM | 2-3 | Bug filed 2026-04-14. Qwen emits placeholder stubs on >200-line full-file regeneration. Workarounds in `docs/runbooks/qwen-coder-driver.md`. Needs prompt-strategy fix or driver change. |
 | Living Knowledge Base — Phase 8: Qwen3-32B fine-tune on wiki data | LOW | TBD | Issue [#49](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/49). Fine-tune Qwen3-32B on wiki data (Karpathy "Train a Custom Model on Wiki Data" step). Gate: wiki must have 6+ months of compounding data minimum. |
 
 ## In Progress
