@@ -36,6 +36,17 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **review_cadence:** monthly
 - **status:** `active`
 
+### `SOM-EXEMPT-ASC-001` — ASC-Evaluator knowledge repo exempt from code governance CI
+
+- **rule_id:** `SOM-EXEMPT-ASC-001`
+- **repo:** `ASC-Evaluator`
+- **deferral_reason:** ASC-Evaluator is explicitly exempt from HLD Pro code governance per `STANDARDS.md §Exceptions` ("ASC-Evaluator: knowledge repo, exempt from code governance"). It has no `.github/workflows/` infrastructure and consists primarily of knowledge artifacts. Society of Minds adoption is limited to a `CLAUDE.md §Society of Minds — Model Routing (SoT pointer)` block; no CI workflows are wired.
+- **approver:** `nibargerb`
+- **approval_date:** 2026-04-14
+- **expiry_date:** 2026-07-14 (90-day review — at which point either re-approve or evaluate whether the repo has grown into code-governance scope)
+- **review_cadence:** monthly
+- **status:** `active`
+
 ## Expired or closed exceptions
 
 _(none)_
