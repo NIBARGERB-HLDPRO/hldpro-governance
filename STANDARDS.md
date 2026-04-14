@@ -268,7 +268,7 @@ Activity → model routing is codified as a society-of-minds role charter with e
 | Tier | Role | Primary | Fallback 1 | Fallback 2 | Floor |
 |---|---|---|---|---|---|
 | 1 | **Dual Planner — required pair** | Claude: `claude-opus-4-6` **AND** Codex: `gpt-5.4` @ `model_reasoning_effort=high` | Claude → `claude-sonnet-4-6`; Codex → `gpt-5.3-codex-spark` @ `high` | Codex only → `gpt-5.3-codex-spark` @ `medium` | Claude: no Haiku for planning. Codex: no below-spark for planning. Both unavailable → halt. |
-| 2 | Worker (coder) | `gpt-5.3-codex-spark` @ `high` | `gpt-5.3-codex-spark` @ `medium` | `claude-sonnet-4-6` (cost-flagged) | — |
+| 2 | Worker (coder) | `gpt-5.3-codex-spark` @ `high` | `gpt-5.3-codex-spark` @ `medium` | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (local, unlimited) → `claude-sonnet-4-6` (cost-flagged) | — |
 | 3 | Reviewer (code) | `claude-sonnet-4-6` | `claude-haiku-4-5` (review quality flagged) | — | — |
 | 3 | Reviewer (non-code long-form) | `gpt-5.4` @ `medium` | `gpt-5.4` @ `low` | `claude-sonnet-4-6` | — |
 | 4 | Gate / verifier | `claude-haiku-4-5-20251001` | `claude-sonnet-4-6` (wasteful but safe) | — | — |
@@ -280,11 +280,34 @@ LAM is lateral to the tier chain. Never plans (Tier 1), never cross-reviews (ind
 | Mind | Model ID | Role | Token cap |
 |---|---|---|---|
 | M7 Guardrail-LAM | `mlx-community/Qwen3-8B-4bit` | Pre-exec PASS/BLOCK | 64 |
-| M4 Worker-LAM | `mlx-community/Qwen3-14B-4bit` | Implementation on local lanes | 400 |
+| M4 Worker-LAM | `mlx-community/Qwen3-14B-4bit` | Implementation on local lanes (PII/bulk/offline) | 400 |
 | M6 Critic-LAM | `mlx-community/gemma-4-26b-a4b-4bit` (outlines) | Adversarial review | 256 |
+| MCP daemon | `mlx-community/Qwen3-1.7B-4bit` (primary) / `mlx-community/Phi-4-mini-instruct-4bit` (reserve) | Intent parsing + packet routing; always-warm, evictable under pressure | 128 |
+| Qwen-Coder fallback | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` | Tier-2 worker when codex-spark unavailable | 512 |
 | Auditor-Claude | `claude-sonnet-4-6` | Manifest-only review for PII, content review for non-PII | — |
 
 Reference runtime: `local-ai-machine/src/inference/mlx_runtime.py`, `LOCAL_LLM_RUNTIME_STRATEGY.md`, `SOCIETY_OF_MINDS_INTEGRATION.md`. No LAM rewrite — the canonical protocol lives in `local-ai-machine`; this standard references it.
+
+### MCP daemon (always-warm local orchestrator)
+
+Hosted in `local-ai-machine/services/som-mcp/`. Single long-running process (boot-start via launchd) that exposes the MCP protocol over stdio to all local Claude / Codex sessions.
+
+**Responsibilities:**
+- Intent parsing (fuzzy NL → structured routing decisions)
+- Packet handoff (receives, validates structurally against STANDARDS, dispatches next tier)
+- Deterministic validator sits behind MCP tools — LLM is used for intent parsing only, never as rule engine
+- Local capability endpoints: `lam.probe`, `lam.embed`, `lam.scrub_pii`, `som.log_fallback`, `som.chain`
+
+**Eviction policy (resident-memory budget):**
+- M7 Guardrail-LAM: **privileged, always resident** (4.67 GB)
+- MCP daemon model: **warm, evictable** — evicted first under memory pressure; reloaded after M6 unloads
+- M4 / M6 / Qwen-Coder: on-demand load, unload after work
+
+**Model upgrade stub:** `active` key in `.lam-config.yml mcp` block controls which MCP model loads. Primary `qwen3-1.7b`; flip to `phi-4-mini` when role_scope expands to include reviewer-lam-fallback or routing-error-rate > 5% over 1 week.
+
+**Fallback semantics:**
+- Daemon unavailable → halt for arch / standards / PII work
+- Daemon unavailable → degraded-mode allowed for implementation work (logged to `raw/model-fallbacks/`)
 
 ### Handoff chain (every architecture/standards slice)
 

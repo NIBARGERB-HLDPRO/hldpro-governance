@@ -7,6 +7,34 @@ reviewer:
 guardrail:
   model_id: mlx-community/Qwen3-8B-4bit
   model_family: qwen
+
+# MCP daemon — always-warm orchestrator (config-driven swap)
+mcp:
+  active: qwen3-1.7b
+  models:
+    qwen3-1.7b:
+      model_id: mlx-community/Qwen3-1.7B-4bit
+      model_family: qwen
+      mem_estimate_gb: 1.1
+      role_scope: [routing, intent-parsing]
+    phi-4-mini:
+      model_id: mlx-community/Phi-4-mini-instruct-4bit
+      model_family: phi
+      mem_estimate_gb: 2.7
+      role_scope: [routing, intent-parsing, reviewer-lam-fallback]
+  upgrade_triggers:
+    - routing_error_rate_gt_5_percent_over_1_week
+    - role_scope_extends_to_reviewer_lam_fallback
+    - human_operator_directive
+
+# Tier-2 Worker local fallback — loaded on-demand when codex-spark unavailable
+worker_local_fallback:
+  model_id: mlx-community/Qwen2.5-Coder-7B-Instruct-4bit
+  model_family: qwen
+  mem_estimate_gb: 4.5
+  trigger: codex-spark unavailable (quota / outage / auth)
+  role: tier-2 coder
+
 runtime:
   framework: mlx
   reference: local-ai-machine/src/inference/mlx_runtime.py
