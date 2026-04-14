@@ -38,5 +38,8 @@ graphify-out/.graphify_*.json
 raw/**/*.mp3
 raw/**/*.wav
 
+# Claude Code local tooling state (worktrees, local settings)
+.claude/
+
 # OS
 .DS_Store
