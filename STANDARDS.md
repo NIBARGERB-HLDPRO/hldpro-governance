@@ -259,8 +259,127 @@ Org-level settings applied to NIBARGERB-HLDPRO:
 - **2FA requirement**: enable at github.com/organizations/NIBARGERB-HLDPRO/settings/security
 - **CodeQL code scanning**: enable at github.com/organizations/NIBARGERB-HLDPRO/settings/security_products
 
+## Society of Minds — Model Routing Charter (2026-04-14)
+
+Activity → model routing is codified as a society-of-minds role charter with enforced handoff protocols. Every intent has a CI-verifiable enforcement artifact — no orphan rules.
+
+### Tiers
+
+| Tier | Role | Primary | Fallback 1 | Fallback 2 | Floor |
+|---|---|---|---|---|---|
+| 1 | **Dual Planner — required pair** | Claude: `claude-opus-4-6` **AND** Codex: `gpt-5.4` @ `model_reasoning_effort=high` | Claude → `claude-sonnet-4-6`; Codex → `gpt-5.3-codex-spark` @ `high` | Codex only → `gpt-5.3-codex-spark` @ `medium` | Claude: no Haiku for planning. Codex: no below-spark for planning. Both unavailable → halt. |
+| 2 | Worker (coder) | `gpt-5.3-codex-spark` @ `high` | `gpt-5.3-codex-spark` @ `medium` | `claude-sonnet-4-6` (cost-flagged) | — |
+| 3 | Reviewer (code) | `claude-sonnet-4-6` | `claude-haiku-4-5` (review quality flagged) | — | — |
+| 3 | Reviewer (non-code long-form) | `gpt-5.4` @ `medium` | `gpt-5.4` @ `low` | `claude-sonnet-4-6` | — |
+| 4 | Gate / verifier | `claude-haiku-4-5-20251001` | `claude-sonnet-4-6` (wasteful but safe) | — | — |
+
+### LAM lane (local, Apple M5 — MLX runtime)
+
+LAM is lateral to the tier chain. Never plans (Tier 1), never cross-reviews (independence requires non-local). Used for PII / bulk / embeddings / offline.
+
+| Mind | Model ID | Role | Token cap |
+|---|---|---|---|
+| M7 Guardrail-LAM | `mlx-community/Qwen3-8B-4bit` | Pre-exec PASS/BLOCK | 64 |
+| M4 Worker-LAM | `mlx-community/Qwen3-14B-4bit` | Implementation on local lanes | 400 |
+| M6 Critic-LAM | `mlx-community/gemma-4-26b-a4b-4bit` (outlines) | Adversarial review | 256 |
+| Auditor-Claude | `claude-sonnet-4-6` | Manifest-only review for PII, content review for non-PII | — |
+
+Reference runtime: `local-ai-machine/src/inference/mlx_runtime.py`, `LOCAL_LLM_RUNTIME_STRATEGY.md`, `SOCIETY_OF_MINDS_INTEGRATION.md`. No LAM rewrite — the canonical protocol lives in `local-ai-machine`; this standard references it.
+
+### Handoff chain (every architecture/standards slice)
+
+```
+Tier 1 Dual Planner (opus-4-6 ⇄ gpt-5.4 high)  →  raw/cross-review/YYYY-MM-DD-*.md
+                        ↓ dual-signed plan
+Tier 2 Worker (gpt-5.3-codex-spark high)        →  diff on PR
+                        ↓
+Tier 3 Reviewer (sonnet-4-6 for code)           →  approve / changes
+                        ↓
+Tier 4 Gate (haiku via verify-completion)       →  PASS / FAIL
+```
+
+LAM runs out-of-band for its lanes; feeds sanitized outputs into any tier that needs them.
+
+### Hard-rule invariants
+
+1. **No self-approval.** No mind reviews its own output. Drafter, reviewer, and gate identities must be distinct.
+2. **No tier skipping.** No merge without Worker → Reviewer → Gate.
+3. **Planning floor.** Tier 1 never drops below `claude-sonnet-4-6` (Claude side) or `gpt-5.3-codex-spark` (Codex side). Both unavailable → halt.
+4. **PII floor.** Content tagged or detected as PII routes through LAM only. Never sent to cloud reviewers. Violation = security incident.
+5. **Cross-family independence.** Tier 1 Planner-Claude and Planner-Codex MUST be different model families (Anthropic + OpenAI). Never both same family.
+6. **Local family diversity.** Worker-LAM and Reviewer-LAM MUST be different model families (e.g., Qwen + Gemma).
+7. **Fallback is logged.** Every fallback to a lower tier writes a schema-validated entry under `raw/model-fallbacks/YYYY-MM-DD.md`.
+
+### Cross-review artifact schema (required for arch/standards PRs)
+
+`raw/cross-review/YYYY-MM-DD-{pr-slug}.md` must begin with YAML frontmatter validated by `require-cross-review.yml`:
+
+```yaml
+---
+pr_number: <int>
+pr_scope: architecture | standards | implementation
+drafter:
+  role: architect-claude | architect-codex
+  model_id: <exact model string>
+  model_family: anthropic | openai | local
+  signature_date: YYYY-MM-DD
+reviewer:
+  role: architect-claude | architect-codex
+  model_id: <exact model string>
+  model_family: anthropic | openai | local
+  signature_date: YYYY-MM-DD
+  verdict: APPROVED | APPROVED_WITH_CHANGES | REJECTED
+invariants_checked:
+  dual_planner_pairing: true
+  no_self_approval: true
+  planning_floor: true
+  pii_floor: true
+  cross_family_independence: true
+---
+```
+
+Validator rejects if: any field missing, `drafter.model_family` == `reviewer.model_family`, `drafter.model_id` == `reviewer.model_id`, `reviewer.verdict` == `REJECTED`, or any `invariants_checked` value is false.
+
+### Enforcement index (CI-verifiable — no orphan rules)
+
+| # | Intent | Enforcement | Halt on fail |
+|---|---|---|---|
+| 1 | Agent `model:` pin | `check-agent-model-pins.yml` parses frontmatter | PR blocked |
+| 2 | Codex calls specify `-m` + reasoning | `check-codex-model-pins.yml` scans scripts/workflows | PR blocked |
+| 3 | Cross-review artifact validates schema + invariants | `require-cross-review.yml` schema validator | PR blocked |
+| 4 | No-self-approval (distinct identities) | `check-no-self-approval.yml` | PR blocked |
+| 5 | Fallback auto-logged + schema-valid | `scripts/model-fallback-log.sh` + `check-fallback-log-schema.yml` | PR blocked if malformed |
+| 6 | Fallback rate + M6-vs-Sonnet agreement metrics | `overlord-sweep` weekly | Auto-issue on threshold |
+| 7 | Arch on Haiku blocked | `check-arch-tier.yml` + `verify-completion` hard-fail | PR + closeout blocked |
+| 8 | PII never leaves machine | `check-pii-routing.yml` + `require-lam-dual-signature.sh` | PR + closeout blocked |
+| 9 | LAM family diversity | `check-lam-family-diversity.yml` reads `.lam-config.yml` | PR blocked |
+| 10 | LAM availability for PII PRs | `check-lam-availability.yml` runtime probe | PR blocked |
+| 11 | CLAUDE.md points to SoT | `check-claude-md-pointer.yml` | PR blocked |
+| 12 | Exception register covers deferrals with expiry ≤ 90d | `overlord-sweep` validates; past-expiry auto-opens issue | Sweep issue on breach |
+
+### Exception register schema
+
+`hldpro-governance/docs/exception-register.md` entries require:
+- `rule_id` (e.g., `SOM-PII-001`)
+- `repo` (repo where exception applies)
+- `deferral_reason` (cites missing artifact or repo-specific blocker)
+- `approver` (human, named)
+- `expiry_date` (max 90 days from entry)
+- `review_cadence` (monthly minimum)
+
+Overlord-sweep auto-opens issues for past-expiry entries.
+
+### Round 1 execution protocol (transitional, until M6 steady-state confidence)
+
+While M6 Critic-LAM's judgment is being calibrated against Sonnet's:
+- M6 is primary code/artifact reviewer; Sonnet runs in **shadow (A/B)** mode on the same artifact.
+- Both verdicts logged to `raw/ab-review/YYYY-MM-DD-{slug}.md` with `agreement: match | m6_only_findings | sonnet_only_findings | both`.
+- **Conservative gate:** if Sonnet REJECTED and M6 APPROVED, Sonnet wins this round; divergence flagged.
+- Overlord-sweep reports weekly M6-vs-Sonnet agreement rate. Exit Round 1 when agreement ≥ 90% for 3 consecutive weeks.
+
 ## Exceptions
 - ASC-Evaluator: knowledge repo, exempt from code governance
 - Repos may have ADDITIONAL governance beyond this baseline
 - HIPAA agents must never be weakened or consolidated away
 - Codex subagents/personas may stand in for repo-required Claude agents only when they preserve the same separation of duties and approval boundaries
+- Bootstrap exception (`SOM-BOOTSTRAP-001`): the PR introducing the Society of Minds standard cannot self-enforce `require-cross-review.yml` since the workflow is being added in the same PR. Tier 1 cross-review was completed out-of-band via `raw/cross-review/2026-04-14-society-of-minds-charter.md`. Expires on merge of this PR.

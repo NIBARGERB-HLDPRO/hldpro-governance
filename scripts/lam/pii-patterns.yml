@@ -1,0 +1,17 @@
+patterns:
+  - '\b\d{3}-\d{2}-\d{4}\b'
+  - '(?:(?:\+1[-\s]?)?(?:\(\d{3}\)|\d{3})[-\s.]?\d{3}[-\s.]?\d{4})'
+  - '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}'
+  - '\b(0[1-9]|1[0-2])[/-](0[1-9]|[12][0-9]|3[01])[/-](19|20)\d{2}\b'
+  - '\b(?:\d[ -]*?){13,19}\b'
+field_markers:
+  - ssn
+  - dob
+  - patient_name
+  - mrn
+  - medical_record_number
+  - phi
+  - pii
+pii_safe_paths:
+  - scripts/lam/pii-patterns.yml
+  - docs/**/redaction-*.md

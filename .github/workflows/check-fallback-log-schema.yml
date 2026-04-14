@@ -1,0 +1,121 @@
+name: check-fallback-log-schema
+on:
+  workflow_call:
+permissions:
+  contents: read
+
+jobs:
+  check-fallback-log-schema:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Validate model fallback log schema
+        run: |
+          set -euo pipefail
+          python3 -m pip install --quiet pyyaml
+          python3 - <<'PY'
+          import pathlib
+          import re
+          import subprocess
+          import sys
+          import yaml
+
+          base_sha = "${{ github.event.pull_request.base.sha }}"
+          head_sha = "${{ github.event.pull_request.head.sha }}"
+          if not base_sha or not head_sha:
+            print("::warning::[check-fallback-log-schema] Missing pull request context; skipping.")
+            raise SystemExit(0)
+
+          diff = subprocess.check_output(["git", "diff", "--name-only", f"{base_sha}...{head_sha}"], text=True).splitlines()
+          fallback_files = [p for p in diff if p.startswith("raw/model-fallbacks/") and p.endswith(".md")]
+          if not fallback_files:
+            raise SystemExit(0)
+
+          fail = False
+          required = {"date", "session_id", "tier", "primary_model", "fallback_model", "reason", "caller_script"}
+          valid_reasons = {"quota", "rate_limit", "auth", "network", "other"}
+          date_re = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+          def emit(path, line, msg):
+            print(f"::error file={path},line={line}::[check-fallback-log-schema] {msg}")
+
+          for file in fallback_files:
+            fp = pathlib.Path(file)
+            if not fp.exists():
+              emit(file, 1, "file missing from workspace")
+              fail = True
+              continue
+
+            content = fp.read_text(encoding="utf-8", errors="replace").splitlines()
+            if not content or content[0].strip() != "---":
+              emit(file, 1, "file must start with YAML frontmatter block '---'")
+              fail = True
+              continue
+
+            i = 0
+            while i < len(content):
+              if content[i].strip() == "":
+                i += 1
+                continue
+              if content[i].strip() != "---":
+                emit(file, i + 1, "expected frontmatter separator '---'")
+                fail = True
+                break
+
+              start = i + 1
+              i += 1
+              block_lines = []
+              while i < len(content) and content[i].strip() != "---":
+                block_lines.append(content[i])
+                i += 1
+
+              if i >= len(content):
+                emit(file, start, "frontmatter block missing closing '---'")
+                fail = True
+                break
+
+              i += 1
+              block_text = "\n".join(block_lines)
+              try:
+                data = yaml.safe_load(block_text) or {}
+              except Exception as exc:
+                emit(file, start, f"invalid YAML frontmatter: {exc}")
+                fail = True
+                continue
+
+              if not isinstance(data, dict):
+                emit(file, start, "frontmatter must be YAML mapping")
+                fail = True
+                continue
+
+              missing = sorted(required - set(data.keys()))
+              if missing:
+                emit(file, start, f"missing required fields: {', '.join(missing)}")
+                fail = True
+
+              date_value = str(data.get("date", ""))
+              if not date_re.match(date_value):
+                emit(file, start, "date must be YYYY-MM-DD")
+                fail = True
+
+              tier = data.get("tier")
+              if not isinstance(tier, int) or not (1 <= tier <= 4):
+                emit(file, start, "tier must be integer in range 1-4")
+                fail = True
+
+              reason = str(data.get("reason", ""))
+              if reason not in valid_reasons:
+                emit(file, start, f"reason must be one of {', '.join(sorted(valid_reasons))}")
+                fail = True
+
+              for key in ("primary_model", "fallback_model", "caller_script", "session_id"):
+                if not str(data.get(key, "")).strip():
+                  emit(file, start, f"{key} must be non-empty")
+                  fail = True
+
+          if fail:
+            raise SystemExit(1)
+          PY

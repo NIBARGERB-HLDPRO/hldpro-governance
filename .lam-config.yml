@@ -1,0 +1,12 @@
+worker:
+  model_id: mlx-community/Qwen3-14B-4bit
+  model_family: qwen
+reviewer:
+  model_id: mlx-community/gemma-4-26b-a4b-4bit
+  model_family: gemma
+guardrail:
+  model_id: mlx-community/Qwen3-8B-4bit
+  model_family: qwen
+runtime:
+  framework: mlx
+  reference: local-ai-machine/src/inference/mlx_runtime.py
