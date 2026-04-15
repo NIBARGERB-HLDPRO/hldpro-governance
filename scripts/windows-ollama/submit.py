@@ -39,6 +39,7 @@ import json
 import os
 import re
 import sys
+import time
 from pathlib import Path
 from typing import Any, Dict, Optional
 from urllib.error import URLError
@@ -48,6 +49,9 @@ try:
     import requests
 except ImportError:
     requests = None
+
+# Import audit writer
+from audit import AuditWriter
 
 
 class WindowsOllamaSubmitter:
@@ -172,6 +176,8 @@ class WindowsOllamaSubmitter:
         prompt: str,
         has_pii: bool = False,
         role: str = "worker",
+        principal: str = "anonymous",
+        session_jti: str = "local",
     ) -> Dict[str, Any]:
         """
         Submit a request to Windows-Ollama.
@@ -181,6 +187,8 @@ class WindowsOllamaSubmitter:
             prompt: Prompt text
             has_pii: Whether the prompt contains marked PII (hard block)
             role: Role for allowlist check (default: "worker")
+            principal: Principal identifier for audit logging
+            session_jti: Session JTI for audit logging
 
         Returns:
             Response dict from /api/generate
@@ -190,8 +198,20 @@ class WindowsOllamaSubmitter:
             ModelNotAllowedError: if model not in allowlist
             EndpointUnreachableError: if endpoint unreachable
         """
+        # Initialize audit writer
+        audit = AuditWriter()
+
         # Check explicit PII flag (invariant #8)
         if has_pii:
+            audit.write_entry(
+                principal=principal,
+                session_jti=session_jti,
+                tool="windows-ollama.submit",
+                args_dict={"model": model, "prompt": "[REDACTED]"},
+                status="rejected",
+                reject_reason="explicit_pii_flag",
+                latency_ms=0
+            )
             raise PiiDetectionError(
                 error="pii_halt",
                 reason="explicit_pii_flag",
@@ -202,6 +222,15 @@ class WindowsOllamaSubmitter:
         # Scan for PII patterns
         detected = self.detect_pii(prompt)
         if detected:
+            audit.write_entry(
+                principal=principal,
+                session_jti=session_jti,
+                tool="windows-ollama.submit",
+                args_dict={"model": model, "prompt": "[REDACTED]"},
+                status="rejected",
+                reject_reason="pii_detected",
+                latency_ms=0
+            )
             raise PiiDetectionError(
                 error="pii_detected",
                 reason=detected,
@@ -211,6 +240,15 @@ class WindowsOllamaSubmitter:
 
         # Check allowlist
         if not self.check_allowlist(model, role):
+            audit.write_entry(
+                principal=principal,
+                session_jti=session_jti,
+                tool="windows-ollama.submit",
+                args_dict={"model": model, "prompt": "[REDACTED]"},
+                status="rejected",
+                reject_reason="model_not_allowed",
+                latency_ms=0
+            )
             raise ModelNotAllowedError(
                 error="model_not_allowed",
                 model=model,
@@ -220,9 +258,31 @@ class WindowsOllamaSubmitter:
             )
 
         # Submit to /api/generate
+        start_time = time.time()
         try:
-            return self._post_generate(model, prompt)
+            result = self._post_generate(model, prompt)
+            latency_ms = int((time.time() - start_time) * 1000)
+            audit.write_entry(
+                principal=principal,
+                session_jti=session_jti,
+                tool="windows-ollama.submit",
+                args_dict={"model": model, "prompt": "[REDACTED]"},
+                status="ok",
+                reject_reason=None,
+                latency_ms=latency_ms
+            )
+            return result
         except URLError as e:
+            latency_ms = int((time.time() - start_time) * 1000)
+            audit.write_entry(
+                principal=principal,
+                session_jti=session_jti,
+                tool="windows-ollama.submit",
+                args_dict={"model": model, "prompt": "[REDACTED]"},
+                status="error",
+                reject_reason="endpoint_unreachable",
+                latency_ms=latency_ms
+            )
             raise EndpointUnreachableError(
                 error="endpoint_unreachable",
                 endpoint=self.endpoint,
