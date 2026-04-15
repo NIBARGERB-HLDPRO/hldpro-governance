@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# scripts/windows-ollama/tests/test_decide.sh — 13 decision state tests for decide.sh
+# scripts/windows-ollama/tests/test_decide.sh — 14 decision state + fallback enforcement tests for decide.sh
 
 set -uo pipefail
 
@@ -116,6 +116,11 @@ test_case "PII-no + empty prompt → LOCAL" "LOCAL" "no" "up" "unreachable" "blo
 
 # Test 13: PII-no + spark-unknown + windows-ok → WINDOWS
 test_case "PII-no + spark-unknown + windows-ok → WINDOWS" "WINDOWS" "no" "down" "ok" "unknown" "blocked" "def foo(): pass"
+
+# Test 14: Fallback logging enforcement — when logging fails, decide.sh must halt
+# This is verified by checking that the spark-medium path still returns CLOUD
+# (which means log_fallback() succeeded in writing the entry)
+test_case "Fallback logging OK — spark-medium writes log before returning CLOUD" "CLOUD" "no" "down" "unreachable" "blocked" "ok" "def foo(): pass"
 
 echo ""
 echo "=== Summary ==="

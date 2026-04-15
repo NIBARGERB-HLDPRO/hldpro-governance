@@ -67,15 +67,19 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-# Helper: write fallback decision
+# Helper: write fallback decision (enforced — script halts if logging fails)
 log_fallback() {
   local fallback="$1"
-  bash scripts/model-fallback-log.sh \
+  if ! bash scripts/model-fallback-log.sh \
     --tier 2 \
     --primary "gpt-5.3-codex-spark" \
     --fallback "$fallback" \
     --reason "auto" \
-    --caller "decide.sh"
+    --caller "decide.sh"; then
+    echo "HALT"
+    echo "decide: HALT (fallback_logging_failed, fallback=$fallback)" >&2
+    exit 1
+  fi
 }
 
 # Helper: check PII in text
