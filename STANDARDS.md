@@ -268,7 +268,7 @@ Activity → model routing is codified as a society-of-minds role charter with e
 | Tier | Role | Primary | Fallback 1 | Fallback 2 | Floor |
 |---|---|---|---|---|---|
 | 1 | **Dual Planner — required pair** | Claude: `claude-opus-4-6` **AND** Codex: `gpt-5.4` @ `model_reasoning_effort=high` | Claude → `claude-sonnet-4-6`; Codex → `gpt-5.3-codex-spark` @ `high` | Codex only → `gpt-5.3-codex-spark` @ `medium` | Claude: no Haiku for planning. Codex: no below-spark for planning. Both unavailable → halt. |
-| 2 | Worker (coder) | `gpt-5.3-codex-spark` @ `high` | `gpt-5.3-codex-spark` @ `medium` | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (local, unlimited) → `claude-sonnet-4-6` (cost-flagged) | — |
+| 2 | Worker (coder) | `gpt-5.3-codex-spark` @ `high` | `gpt-5.3-codex-spark` @ `medium` | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (local warm daemon) → **Windows Ollama** (`http://172.17.227.49:11434`, `qwen2.5-coder:7b`) → `claude-sonnet-4-6` (cost-flagged) | — |
 | 3 | Reviewer (code) | `claude-sonnet-4-6` | `claude-haiku-4-5` (review quality flagged) | — | — |
 | 3 | Reviewer (non-code long-form) | `gpt-5.4` @ `medium` | `gpt-5.4` @ `low` | `claude-sonnet-4-6` | — |
 | 4 | Gate / verifier | `claude-haiku-4-5-20251001` | `claude-sonnet-4-6` (wasteful but safe) | — | — |
@@ -332,6 +332,9 @@ LAM runs out-of-band for its lanes; feeds sanitized outputs into any tier that n
 5. **Cross-family independence.** Tier 1 Planner-Claude and Planner-Codex MUST be different model families (Anthropic + OpenAI). Never both same family.
 6. **Local family diversity.** Worker-LAM and Reviewer-LAM MUST be different model families (e.g., Qwen + Gemma).
 7. **Fallback is logged.** Every fallback to a lower tier writes a schema-validated entry under `raw/model-fallbacks/YYYY-MM-DD.md`.
+13. **Windows-Ollama PII gate.** Before submitting any payload to the Windows host endpoint, payload must pass `pii-patterns.yml` middleware (mirrors Remote MCP Bridge invariant #10). Fail-closed if patterns unavailable.
+14. **Windows-Ollama LAN-only.** The Windows host endpoint MUST NOT be exposed beyond LAN without a separate epic adding Cloudflare Access (mirrors Remote MCP Bridge invariant #11). LAN trust assumed only because Mac and Windows share the same private subnet.
+15. **Windows-Ollama audit.** Every Windows-Ollama call appends to `raw/remote-windows-audit/YYYY-MM-DD.jsonl` with hash-chain + HMAC + daily manifest (mirrors Remote MCP Bridge invariant #12). Break the chain → CI validator fails; endpoint disabled until rebuilt.
 
 ### Cross-review artifact schema (required for arch/standards PRs)
 
@@ -399,6 +402,43 @@ While M6 Critic-LAM's judgment is being calibrated against Sonnet's:
 - Both verdicts logged to `raw/ab-review/YYYY-MM-DD-{slug}.md` with `agreement: match | m6_only_findings | sonnet_only_findings | both`.
 - **Conservative gate:** if Sonnet REJECTED and M6 APPROVED, Sonnet wins this round; divergence flagged.
 - Overlord-sweep reports weekly M6-vs-Sonnet agreement rate. Exit Round 1 when agreement ≥ 90% for 3 consecutive weeks.
+
+## Windows Host Inference (Tier-2 fallback)
+
+A LAN-resident Ollama-served Windows 10 workstation (64 GB RAM, 16 GB VRAM) acts as a Tier-2 Worker fallback when the local Mac is memory-tight AND codex-spark is quota-blocked. The integration was first proven in `local-ai-machine` issue #68 (closed 2026-03-16) for HP critic work via `CRITIC_OLLAMA_URL`; this section promotes it from critic-only to general SoM Tier-2 worker.
+
+### Endpoint
+
+- URL: `http://172.17.227.49:11434` (LAN-only, vEthernet adapter `sase-switch`)
+- API: Ollama `/api/generate` (OpenAI-compatible `/v1/` available)
+- Pinned operating settings (proven in LAM #68): `keep_alive=15m`, `num_ctx<=4096`, adaptive offload ladder `99 -> 80 -> 60`, call timeout 45000ms
+
+### Pinned model roster
+
+Treat the runbook (`docs/runbooks/windows-ollama-worker.md`) as the source of truth for the live inventory. Charter-relevant baseline:
+
+| Model | Role | VRAM (~Q4) |
+|---|---|---|
+| `qwen2.5-coder:7b` | SoM Tier-2 Worker (this PR) | ~5 GB |
+| `llama3.1:8b` | HP critic (existing, see LAM #68) | ~5 GB |
+
+Operator may pull additional models (e.g. `qwen3:14b-q4_K_M`) — runbook documents the procedure.
+
+### Threat model (delta vs. local)
+
+| Attack | Mitigation |
+|---|---|
+| PII tunneled in worker prompt | Invariant #13 PII middleware before submit |
+| Endpoint exposed to internet | Invariant #14 LAN-only; Cloudflare Tunnel deferred to future epic |
+| Audit trail tampering | Invariant #15 hash-chain + HMAC + daily manifest |
+| Endpoint asleep / unreachable | Decision script falls through to next ladder rung; WoL deferred to future epic |
+| Wrong model routed for prompt | Submission script validates model name against runbook allowlist |
+
+### Future epics (stubbed; not in scope)
+
+- Cloudflare Tunnel exposure for off-LAN access (mirrors Remote MCP Bridge pattern; would require Cloudflare Access invariant)
+- Wake-on-LAN provisioning for unattended availability
+- Windows host metrics / health check workflow
 
 ## Exceptions
 - ASC-Evaluator: knowledge repo, exempt from code governance

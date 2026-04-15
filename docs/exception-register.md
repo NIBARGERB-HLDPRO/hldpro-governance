@@ -71,6 +71,15 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **status:** `active`
 - **follow-up:** reconcile SoM + riskfix/* branch conventions in a cross-repo standards discussion
 
+### `SOM-WIN-OLLAMA-PII-001` — Interim PII enforcement during Stage A
+
+- **rule_id:** `SOM-WIN-OLLAMA-PII-001`
+- **repo:** hldpro-governance
+- **deferral_reason:** Charter invariant #13 requires pii-patterns.yml middleware before every Windows-Ollama submission. Stage A (this PR) lands the standard + runbook only; the submission script with PII middleware lands in Stage B. During the interim, the runbook documents manual operator PII confirmation as the enforcement path.
+- **approver:** Operator (nibarger.ben@gmail.com)
+- **expiry_date:** 2026-05-15 (30 days; Stage B must land before then)
+- **review_cadence:** weekly during overlord-sweep
+
 ## Expired or closed exceptions
 
 _(none)_
