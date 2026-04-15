@@ -13,6 +13,7 @@
 | Reconcile SoM branch naming vs local-ai-machine riskfix/* convention | MEDIUM | 1-2 | Exception SOM-LAM-BRANCH-001 defers enforcement. Both naming schemes must co-exist cleanly or unified. Tracking issue: new, added to OVERLORD_BACKLOG. |
 | Reconcile ASC-Evaluator exemption with its pre-existing governance.yml workflow | LOW | 30min | Exception SOM-ASC-CI-001 notes conflict. Must verify exemption compatible or update governance.yml. Tracking issue: new, added to OVERLORD_BACKLOG. |
 | SoM Stage 5: som-worker daemon (always-warm Qwen-Coder + packet queue pipeline) | LOW | 6-8 | Follow-on to Stage 3b/4. Qwen watches raw/packets/inbound/, processes to raw/packets/outbound/, Sonnet reviews async. Keeps Tier-2 Worker always warm across sessions. Enables parallel planning-while-coding. Tracked in umbrella #99 continuation. |
+| SoM charter pointer in downstream CLAUDE.md (AIS, HealthcarePlatform, knocktracker) | 2026-04-15 | 3 PRs open. AIS, HealthcarePlatform, and knocktracker CLAUDE.md files now point to `STANDARDS.md §Society of Minds` with repo-appropriate tier charter. Only `hldpro-governance` + `local-ai-machine` had the pointer before; session-start rule recitation now surfaces SoM across all 5 governed repos.
 | Living Knowledge Base — Phase 8: Qwen3-32B fine-tune on wiki data | LOW | TBD | Issue [#49](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/49). Fine-tune Qwen3-32B on wiki data (Karpathy "Train a Custom Model on Wiki Data" step). Gate: wiki must have 6+ months of compounding data minimum. |
 
 ## In Progress
