@@ -69,8 +69,8 @@ MEMORY_DIR_LINK="../../.claude/projects/-Users-bennibarger-Developer-HLDPRO-${RE
 LATEST_POINTER_RE='^- \[Recent operator_context learnings\]\([^)]+\)\s*— .*\; grep operator_context for [^ ]+ to inspect$'
 
 if [ ! -f "$MEMORY_PATH" ]; then
-  echo "$SCRIPT_NAME: missing MEMORY.md at $MEMORY_PATH" >&2
-  exit 2
+  echo "$SCRIPT_NAME: missing MEMORY.md at $MEMORY_PATH"
+  exit 0
 fi
 
 get_file_epoch() {
@@ -125,7 +125,7 @@ LAST_UPDATE_DAY="${LAST_UPDATE_TS%%T*}"
 
 if [ -z "${AIS_SUPABASE_ANON_KEY:-}" ]; then
   echo "memory-writer credentials not configured; skipping consolidate"
-  exit 2
+  exit 0
 fi
 
 if [ -z "${AIS_SUPABASE_URL:-}" ]; then

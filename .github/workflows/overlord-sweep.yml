@@ -624,9 +624,9 @@ jobs:
           fi
           BODY="${BODY}
 
-          ## BASELINE REFRESH
-          - Status: ${PERSIST_STATUS}
-          - Detail: ${PERSIST_NOTE}"
+## BASELINE REFRESH
+- Status: ${PERSIST_STATUS}
+- Detail: ${PERSIST_NOTE}"
 
           if [ -n "$EXISTING" ]; then
             # Update existing issue
