@@ -13,9 +13,9 @@ downloads/
 backups/
 
 # Sensitive
-settings.json
-settings.local.json
-scheduled_tasks.lock
+.claude/worktrees/
+.claude/scheduled_tasks.lock
+.claude/settings.local.json
 
 # Per-project memory (conversation-specific, managed by auto-memory)
 projects/
