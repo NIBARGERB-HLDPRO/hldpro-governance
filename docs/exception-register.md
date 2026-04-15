@@ -71,6 +71,39 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **status:** `active`
 - **follow-up:** reconcile SoM + riskfix/* branch conventions in a cross-repo standards discussion
 
+### `SOM-WIN-OLLAMA-PII-001` — PII middleware enforcement deferred to Sprint 2
+
+- **rule_id:** `SOM-WIN-OLLAMA-PII-001`
+- **repo:** hldpro-governance
+- **deferral_reason:** Invariant #8 (PII floor) requires `pii-patterns.yml` middleware + `scripts/windows-ollama/submit.py` before Windows-Ollama payloads are accepted. Stage A (this PR) lands standards + runbook only. Submission path + middleware + CI gate land in Sprint 2 (submit.py + PII middleware) and Sprint 4 (CI validator). Windows rung remains disabled until Sprint 5.
+- **approver:** nibargerb
+- **approval_date:** 2026-04-15
+- **expiry_date:** 2026-05-15 (30 days; Stage B Sprint 2 must land before then)
+- **review_cadence:** weekly during overlord-sweep
+- **status:** active
+
+### `SOM-WIN-OLLAMA-AUDIT-001` — Audit trail + CI validation deferred to Sprints 3–4
+
+- **rule_id:** `SOM-WIN-OLLAMA-AUDIT-001`
+- **repo:** hldpro-governance
+- **deferral_reason:** Invariant #10 requires hash-chain audit + HMAC signing + daily manifest + CI schema validator. Stage A lands standards only. Audit writer (`audit.py` + `verify_audit.py`) lands in Sprint 3; CI gate (`check-windows-ollama-audit-schema.yml`) lands in Sprint 4. Windows rung remains disabled until Sprint 5.
+- **approver:** nibargerb
+- **approval_date:** 2026-04-15
+- **expiry_date:** 2026-05-15 (30 days; Sprint 3 must land before then)
+- **review_cadence:** weekly during overlord-sweep
+- **status:** active
+
+### `SOM-WIN-OLLAMA-DISABLED-001` — Windows rung documented but disabled during Phase 1
+
+- **rule_id:** `SOM-WIN-OLLAMA-DISABLED-001`
+- **repo:** hldpro-governance
+- **deferral_reason:** Invariants #8–#10 and enforcement rows 13–15 are documented in Stage A (this PR), but the Windows rung remains **disabled** in the active ladder until all hard controls land. Stage A changes the charter to "documented / disabled until Sprint 5" to prevent accidental use. PII middleware (Sprint 2), audit trail (Sprint 3), CI gates (Sprint 4), and activation gate (Sprint 5) must all pass before the rung is live.
+- **approver:** nibargerb
+- **approval_date:** 2026-04-15
+- **expiry_date:** 2026-05-15 (30 days; Sprint 5 must land activation before then)
+- **review_cadence:** weekly during overlord-sweep
+- **status:** active
+
 ## Expired or closed exceptions
 
 _(none)_

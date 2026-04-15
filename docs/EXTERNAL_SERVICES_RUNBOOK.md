@@ -226,6 +226,30 @@ pgrep -fl qwen_warm_worker.py
 
 Running both §4b and §4c concurrently is supported but tight — watch `vm_stat` during active generation; evict in order: Qwen-Coder-7B → MCP daemon (never M7).
 
+### 4e. Windows host Ollama (LAN, Tier-2 fallback)
+
+- Host: Windows 10 workstation, 64 GB RAM, 16 GB VRAM (12 GB usable envelope per LAM #68 pinned `vram_target_mb`)
+- IP: `172.17.227.49` · adapter `vEthernet (sase-switch)` · Ollama port `11434`
+- Role per SoM charter: Tier-2 Worker fallback step 3 (between local Qwen warm daemon and Sonnet cost-flagged); also serves as HP critic via `CRITIC_OLLAMA_URL` (existing integration, LAM #68)
+- Operating settings (proven, do not change without re-running LAM #68 ladder probes): `keep_alive=15m`, `num_ctx<=4096`, offload ladder `99 -> 80 -> 60`, call timeout 45000ms
+- Source-of-truth runbook: `docs/runbooks/windows-ollama-worker.md`
+- LAM #68 closeout for full integration history: `local-ai-machine/_worktrees/lam-issue-68/WINDOWS_HOST_INFERENCE_INTEGRATION_RUNBOOK.md`
+
+**Preflight (LAN reachability + model inventory):**
+```bash
+# For SoM Tier-2 Worker role (qwen2.5-coder:7b):
+bash scripts/windows-ollama/preflight.sh --worker
+
+# For HP critic role (llama3.1:8b):
+bash scripts/windows-ollama/preflight.sh --critic
+```
+
+Returns 0 if endpoint reachable and required model present; 1 if unreachable; 2 if reachable but required model absent.
+
+**Future surfaces (stubbed, not in scope):**
+- Cloudflare Tunnel for off-LAN access (epic deferred)
+- Wake-on-LAN provisioning (epic deferred)
+
 ---
 
 ## 5. GitHub (governance org & API)
