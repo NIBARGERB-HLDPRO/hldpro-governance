@@ -4,7 +4,7 @@
 # Fires on every user prompt. Injects wiki/index.md + GRAPH_REPORT.md into context
 # so agents that call Read with the wrong env-injected path still get the content.
 #
-# Root cause this works around: Claude Code session env injects "/Users/bennibarker/"
+# Root cause this works around: Claude Code session env injects "/Users/bennibarger/"
 # (wrong username, 'k') but real username is "bennibarger" ('g'). Read tool fails
 # on the injected path; this hook uses shell $HOME which resolves correctly.
 #
