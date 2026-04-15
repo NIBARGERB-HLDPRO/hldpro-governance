@@ -47,6 +47,30 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **review_cadence:** monthly
 - **status:** `active`
 
+### `SOM-ASC-CI-001` — ASC-Evaluator governance-check fails on knowledge repo
+
+- **rule_id:** `SOM-ASC-CI-001`
+- **repo:** `ASC-Evaluator`
+- **deferral_reason:** Pre-existing `governance-check` workflow in ASC-Evaluator requires governance docs (PROGRESS.md, FEATURE_REGISTRY.md, etc.) that this repo is explicitly exempt from per STANDARDS §Exceptions and SOM-EXEMPT-ASC-001. The adoption PR (NIBARGERB-HLDPRO/ASC-Evaluator#4) adds only a CLAUDE.md pointer; the CI failure is unrelated and pre-existing. Blocks merge until reconciled.
+- **approver:** `nibargerb`
+- **approval_date:** 2026-04-14
+- **expiry_date:** 2026-05-14 (30 days)
+- **review_cadence:** monthly
+- **status:** `active`
+- **follow-up:** update ASC-Evaluator's governance.yml workflow to opt out or inherit the exemption
+
+### `SOM-LAM-BRANCH-001` — SoM adoption PRs don't match local-ai-machine riskfix/* branch convention
+
+- **rule_id:** `SOM-LAM-BRANCH-001`
+- **repo:** `local-ai-machine`
+- **deferral_reason:** `breaker-mcp-contract` workflow requires PR head branch match `riskfix/*`. The Society of Minds adoption uses `chore/adopt-society-of-minds` (PR #431) and `feat/som-mcp-daemon` (PR #432) per standard SoM branch naming. Reconciling the two conventions is out of scope for the adoption. Renaming branches post-facto would force PRs closed and disrupt the audit chain.
+- **approver:** `nibargerb`
+- **approval_date:** 2026-04-14
+- **expiry_date:** 2026-05-14 (30 days)
+- **review_cadence:** monthly
+- **status:** `active`
+- **follow-up:** reconcile SoM + riskfix/* branch conventions in a cross-repo standards discussion
+
 ## Expired or closed exceptions
 
 _(none)_
