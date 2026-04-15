@@ -65,7 +65,7 @@
         "`.claude/settings.json` on merged main retains every pre-existing PreToolUse and PostToolUse hook command verbatim.",
         "New UserPromptSubmit entry invokes `.claude/hooks/pre-session-context.sh` with a 5000ms timeout.",
         "New hook is executable (chmod 755) and existence-checks every injected file path.",
-        "Local test: opening a new Claude Code session in the repo surfaces PROGRESS.md + FAIL_FAST_LOG.md + branch name."
+        "Human verification (closeout step, not codex-spark AC): opening a new Claude Code session in the repo surfaces PROGRESS.md + FAIL_FAST_LOG.md + branch name."
       ],
       "file_paths": [
         ".claude/settings.json",
@@ -162,7 +162,7 @@
     "session_agent": "codex",
     "execution_mode": "planning_only",
     "approved_scope_summary": "Plan PR only. After plan PR merges, dispatch codex-spark with a separate implementation brief that produces 4 PRs (governance .gitignore+settings commit; HP/LAM/knocktracker hook additions) using the hardened worktree-contamination guardrails.",
-    "next_execution_step": "Open PR containing this plan JSON and the companion PDCA/R markdown. After merge, codex-spark runs `scripts/codex-preflight.sh --log` then creates one worktree per sprint, each off fresh `origin/main`, with an empty `git log --oneline origin/main..HEAD` precheck before the first commit.",
+    "next_execution_step": "Open PR containing this plan JSON and the companion PDCA/R markdown. After merge, codex-spark runs `scripts/codex-preflight.sh` (default both mode: log-check then live probe) then creates one worktree per sprint, each off fresh `origin/main`, with an empty `git log --oneline origin/main..HEAD` precheck before the first commit.",
     "blocked_on": []
   },
   "material_deviation_rules": [
@@ -174,7 +174,7 @@
   ],
   "approved": false,
   "approved_by": [
-    "session-agent-claude-opus-4-6-pending-user-approval"
+    "session-agent-claude-sonnet-4-6-pending-user-approval"
   ],
   "approved_at": "2026-04-15T17:00:00-05:00"
 }
