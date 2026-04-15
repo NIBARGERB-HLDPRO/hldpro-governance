@@ -12,14 +12,13 @@ on:
       SUPABASE_SERVICE_ROLE_KEY:
         required: false
 
-permissions:
-  contents: read
-  issues: read
-  pull-requests: read
-
 jobs:
   governance-check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
     steps:
       - uses: actions/checkout@v6
         with:
