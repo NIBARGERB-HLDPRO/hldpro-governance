@@ -62,17 +62,22 @@ Update this runbook's "Pinned model roster" table after any add/remove.
 - Schema-failure response shape: `{"status":"...", "label":"...", "rationale":"<MUST be non-empty>", "findings":[]}`. Empty `rationale` will trigger the local fail-closed reject contract.
 - Single-role and dual-role critic paths both proven; SoM Tier-2 Worker uses single-call-per-job submission.
 
-## PII gate (invariant #13)
+## PII gate (invariant #8)
 
-Submission script (`scripts/windows-ollama/submit.py`, Stage B) MUST run `pii-patterns.yml` against the prompt before any HTTP call. Until Stage B lands, this runbook is the only enforcement and operator MUST manually confirm no PII for any ad-hoc test submissions. The interim period is governed by exception `SOM-WIN-OLLAMA-PII-001`.
+**WINDOWS RUNG NOT APPROVED FOR SoM ROUTING UNTIL SPRINT 5.**
 
-## Audit (invariant #15)
+Submission script (`scripts/windows-ollama/submit.py`, Sprint 2) MUST run `pii-patterns.yml` against the prompt before any HTTP call and block PII-tagged payloads entirely (route to LAM only or halt). Governed by exception `SOM-WIN-OLLAMA-PII-001` (expires 2026-05-15).
 
-Stage B will land:
-- `raw/remote-windows-audit/YYYY-MM-DD.jsonl` with hash-chain + HMAC + daily manifest
-- `.github/workflows/check-windows-ollama-audit-schema.yml` for CI validation
+## Audit (invariant #10)
 
-Until then, ad-hoc submissions are NOT audit-compliant and MUST be flagged in session notes.
+**WINDOWS RUNG NOT APPROVED FOR SoM ROUTING UNTIL SPRINT 5.**
+
+Sprint 2–3 will land:
+- `scripts/windows-ollama/audit.py` — append-only writer to `raw/remote-windows-audit/YYYY-MM-DD.jsonl` with hash-chain + HMAC + daily manifest
+- `scripts/windows-ollama/verify_audit.py` — local chain validator
+- `.github/workflows/check-windows-ollama-audit-schema.yml` (Sprint 4) — CI schema + chain validation
+
+Governed by exception `SOM-WIN-OLLAMA-AUDIT-001` (expires 2026-05-15). Until then, ad-hoc submissions are NOT audit-compliant.
 
 ## Failure response
 
@@ -84,15 +89,28 @@ Until then, ad-hoc submissions are NOT audit-compliant and MUST be flagged in se
 | Generation slow / OOM | VRAM envelope exceeded | Use fixed profile `60` as diagnostic; check `nvidia-smi` on Windows side |
 | Adaptive ladder selects fewer than 99 | Expected when other GPU work is running | None — proven behavior |
 
-## Future epics (stubbed)
+## Stage B acceptance criteria (Sprint 2–5)
 
-- **Cloudflare Tunnel exposure** — would mirror `docs/runbooks/qwen-coder-driver.md` + the (future) Remote MCP Bridge runbook; requires Cloudflare Access mandatory per invariant #14.
+Windows-Ollama rung activation (Sprint 5) requires:
+
+1. **submit.py** — Submission script with PII pattern matching + model allowlist validation (Sprint 2)
+2. **PII middleware** — `pii-patterns.yml` blocking PII-tagged payloads + hardening for Windows/cloud fallback routes (Sprint 2)
+3. **Audit writer** — `audit.py` writing hash-chained, HMAC-signed, daily-manifested audit logs (Sprint 3)
+4. **CI validator** — `verify_audit.py` + `check-windows-ollama-audit-schema.yml` enforcing chain integrity (Sprints 3–4)
+5. **Firewall allowlist** — Windows firewall binding to Mac host IP or trusted subnet (Sprint 4 CI gate)
+6. **Failover rules** — PII-tagged payloads halt instead of falling through to cloud (Sprint 5 decision.sh)
+7. **Integration tests** — End-to-end test of submit.py + audit.py + decide.sh (Sprint 5)
+
+## Future epics (Phase 3, deferred)
+
+- **Cloudflare Tunnel exposure** — would mirror `docs/runbooks/qwen-coder-driver.md`; requires Cloudflare Access mandatory per invariant #9.
 - **Wake-on-LAN provisioning** — BIOS auto-on / magic-packet sender on Mac side. Until then, expect always-on operation.
 - **Health-check workflow** — periodic CI ping to flag endpoint outages.
 
 ## Cross-references
 
-- `STANDARDS.md` §"Windows Host Inference (Tier-2 fallback)" + invariants 13–15
+- `STANDARDS.md` §"Windows Host Inference (Tier-2 fallback)" + invariants 8–10
+- `docs/exception-register.md` entries `SOM-WIN-OLLAMA-PII-001`, `SOM-WIN-OLLAMA-AUDIT-001`, `SOM-WIN-OLLAMA-DISABLED-001`
 - `docs/EXTERNAL_SERVICES_RUNBOOK.md` §4e
 - `wiki/decisions/2026-04-14-society-of-minds-charter.md`
 - LAM issue #68 closeout (full integration history)
@@ -101,4 +119,4 @@ Until then, ad-hoc submissions are NOT audit-compliant and MUST be flagged in se
 
 | Date | Change |
 |---|---|
-| 2026-04-15 | Promoted Windows host from HP-critic-only to SoM Tier-2 Worker fallback. Added invariants 13–15 to charter. |
+| 2026-04-15 | Stage A: Promoted Windows host from HP-critic-only to documented SoM Tier-2 fallback. Renumbered invariants 13–15 to 8–10. Added three exceptions covering PII middleware, audit trail, and activation gate. Windows rung marked "documented / disabled until Sprint 5." |

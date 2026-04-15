@@ -268,7 +268,7 @@ Activity → model routing is codified as a society-of-minds role charter with e
 | Tier | Role | Primary | Fallback 1 | Fallback 2 | Floor |
 |---|---|---|---|---|---|
 | 1 | **Dual Planner — required pair** | Claude: `claude-opus-4-6` **AND** Codex: `gpt-5.4` @ `model_reasoning_effort=high` | Claude → `claude-sonnet-4-6`; Codex → `gpt-5.3-codex-spark` @ `high` | Codex only → `gpt-5.3-codex-spark` @ `medium` | Claude: no Haiku for planning. Codex: no below-spark for planning. Both unavailable → halt. |
-| 2 | Worker (coder) | `gpt-5.3-codex-spark` @ `high` | `gpt-5.3-codex-spark` @ `medium` | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (local warm daemon) → **Windows Ollama** (`http://172.17.227.49:11434`, `qwen2.5-coder:7b`) → `claude-sonnet-4-6` (cost-flagged) | — |
+| 2 | Worker (coder) | `gpt-5.3-codex-spark` @ `high` | `gpt-5.3-codex-spark` @ `medium` | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (local warm daemon) → **Windows Ollama** (`http://172.17.227.49:11434`, `qwen2.5-coder:7b`, **documented / disabled until Sprint 5**) → `claude-sonnet-4-6` (cost-flagged) | — |
 | 3 | Reviewer (code) | `claude-sonnet-4-6` | `claude-haiku-4-5` (review quality flagged) | — | — |
 | 3 | Reviewer (non-code long-form) | `gpt-5.4` @ `medium` | `gpt-5.4` @ `low` | `claude-sonnet-4-6` | — |
 | 4 | Gate / verifier | `claude-haiku-4-5-20251001` | `claude-sonnet-4-6` (wasteful but safe) | — | — |
@@ -332,9 +332,9 @@ LAM runs out-of-band for its lanes; feeds sanitized outputs into any tier that n
 5. **Cross-family independence.** Tier 1 Planner-Claude and Planner-Codex MUST be different model families (Anthropic + OpenAI). Never both same family.
 6. **Local family diversity.** Worker-LAM and Reviewer-LAM MUST be different model families (e.g., Qwen + Gemma).
 7. **Fallback is logged.** Every fallback to a lower tier writes a schema-validated entry under `raw/model-fallbacks/YYYY-MM-DD.md`.
-13. **Windows-Ollama PII gate.** Before submitting any payload to the Windows host endpoint, payload must pass `pii-patterns.yml` middleware (mirrors Remote MCP Bridge invariant #10). Fail-closed if patterns unavailable.
-14. **Windows-Ollama LAN-only.** The Windows host endpoint MUST NOT be exposed beyond LAN without a separate epic adding Cloudflare Access (mirrors Remote MCP Bridge invariant #11). LAN trust assumed only because Mac and Windows share the same private subnet.
-15. **Windows-Ollama audit.** Every Windows-Ollama call appends to `raw/remote-windows-audit/YYYY-MM-DD.jsonl` with hash-chain + HMAC + daily manifest (mirrors Remote MCP Bridge invariant #12). Break the chain → CI validator fails; endpoint disabled until rebuilt.
+8. **Windows-Ollama PII floor.** PII-tagged or PII-detected payloads MUST block Windows host AND Sonnet cloud fallback. Route to LAM only or halt. Before submitting any payload to the Windows host endpoint, payload must pass `pii-patterns.yml` middleware. Fail-closed if patterns unavailable. (Enforced in Sprint 2 via `scripts/windows-ollama/submit.py`; active in Sprint 5.)
+9. **Windows-Ollama firewall binding.** The Windows host endpoint MUST NOT be exposed beyond LAN. Requires firewall binding to Mac host IP or explicit trusted subnet allowlist. No public bind or port-forwarding. Separate epic adding Cloudflare Access may extend this; until then, LAN-only via `sase-switch` vEthernet adapter on subnet `172.17.0.0/16`. (Enforced in Sprint 4 via `check-windows-ollama-exposure.yml` CI; active in Sprint 5.)
+10. **Windows-Ollama audit.** Every Windows-Ollama call appends to `raw/remote-windows-audit/YYYY-MM-DD.jsonl` with hash-chain + HMAC + daily manifest. Break the chain → CI validator fails; endpoint disabled until rebuilt. (Enforced in Sprint 3 via `check-windows-ollama-audit-schema.yml` CI; active in Sprint 5.)
 
 ### Cross-review artifact schema (required for arch/standards PRs)
 
@@ -382,6 +382,9 @@ Validator rejects if: any field missing, `drafter.model_family` == `reviewer.mod
 | 10 | LAM availability for PII PRs | `check-lam-availability.yml` runtime probe | PR blocked |
 | 11 | CLAUDE.md points to SoT | `check-claude-md-pointer.yml` | PR blocked |
 | 12 | Exception register covers deferrals with expiry ≤ 90d | `overlord-sweep` validates; past-expiry auto-opens issue | Sweep issue on breach |
+| 13 | Windows-Ollama PII floor (invariant #8) | `scripts/windows-ollama/submit.py` validates PII patterns (Sprint 2); `check-windows-ollama-pii-submission.yml` CI gate (Sprint 4) | PR blocked if PII flows to Windows or cloud |
+| 14 | Windows-Ollama firewall binding (invariant #9) | `check-windows-ollama-exposure.yml` CI gate (Sprint 4) asserts no public bind, endpoint still `172.17.227.49:11434` | PR blocked if exposure detected |
+| 15 | Windows-Ollama audit enforcement (invariant #10) | `scripts/windows-ollama/verify_audit.py` local validator (Sprint 3); `check-windows-ollama-audit-schema.yml` CI gate (Sprint 4) | PR blocked on chain break, HMAC forgery, or manifest mismatch |
 
 ### Exception register schema
 

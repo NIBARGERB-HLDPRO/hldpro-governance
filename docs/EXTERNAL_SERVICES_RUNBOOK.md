@@ -237,10 +237,14 @@ Running both §4b and §4c concurrently is supported but tight — watch `vm_sta
 
 **Preflight (LAN reachability + model inventory):**
 ```bash
-bash scripts/windows-ollama/preflight.sh
+# For SoM Tier-2 Worker role (qwen2.5-coder:7b):
+bash scripts/windows-ollama/preflight.sh --worker
+
+# For HP critic role (llama3.1:8b):
+bash scripts/windows-ollama/preflight.sh --critic
 ```
 
-Returns 0 if endpoint reachable + at least one pinned model present; 1 if unreachable; 2 if reachable but no pinned models.
+Returns 0 if endpoint reachable and required model present; 1 if unreachable; 2 if reachable but required model absent.
 
 **Future surfaces (stubbed, not in scope):**
 - Cloudflare Tunnel for off-LAN access (epic deferred)
