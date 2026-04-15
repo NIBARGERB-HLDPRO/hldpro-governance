@@ -80,7 +80,9 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **approval_date:** 2026-04-15
 - **expiry_date:** 2026-05-15 (30 days; Stage B Sprint 2 must land before then)
 - **review_cadence:** weekly during overlord-sweep
-- **status:** active
+- **status:** closed
+- **closure_reason:** PII middleware fully active via Sprint 2 `submit.py` + Sprint 5 `decide.sh` routing gate. All payloads validated against `pii_patterns.yml` before submission. Invariant #8 enforced.
+- **closure_date:** 2026-04-15
 
 ### `SOM-WIN-OLLAMA-AUDIT-001` — Audit trail + CI validation deferred to Sprints 3–4
 
@@ -91,7 +93,9 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **approval_date:** 2026-04-15
 - **expiry_date:** 2026-05-15 (30 days; Sprint 5 must land activation before then)
 - **review_cadence:** weekly during overlord-sweep
-- **status:** active
+- **status:** closed
+- **closure_reason:** Audit trail fully enforced via Sprint 3 `audit.py` + `verify_audit.py` and Sprint 4 CI gate `check-windows-ollama-audit-schema.yml`. Hash-chain, HMAC, and manifest validation live. Invariant #10 enforced.
+- **closure_date:** 2026-04-15
 
 ### `SOM-WIN-OLLAMA-DISABLED-001` — Windows rung documented but disabled during Phase 1
 
@@ -102,8 +106,20 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **approval_date:** 2026-04-15
 - **expiry_date:** 2026-05-15 (30 days; Sprint 5 must land activation before then)
 - **review_cadence:** weekly during overlord-sweep
-- **status:** active
+- **status:** closed
+- **closure_reason:** Windows-Ollama Tier-2 rung now ACTIVE. All three prerequisite controls live (PII middleware Sprint 2, audit trail Sprint 3, CI gates Sprint 4, and routing decision tree Sprint 5). Rung transitions from documented/disabled to active in Tier-2 ladder per STANDARDS.md. Invariants #8–#10 enforced.
+- **closure_date:** 2026-04-15
 
 ## Expired or closed exceptions
 
-_(none)_
+### `SOM-WIN-OLLAMA-PII-001` — CLOSED
+
+Status: closed 2026-04-15. PII middleware enforced via Sprint 2 `submit.py` + Sprint 5 `decide.sh` routing gate.
+
+### `SOM-WIN-OLLAMA-AUDIT-001` — CLOSED
+
+Status: closed 2026-04-15. Audit trail enforced via Sprint 3 writers + Sprint 4 CI gate.
+
+### `SOM-WIN-OLLAMA-DISABLED-001` — CLOSED
+
+Status: closed 2026-04-15. Rung activated in Sprint 5; transitions from documented/disabled to active.

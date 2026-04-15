@@ -268,7 +268,7 @@ Activity → model routing is codified as a society-of-minds role charter with e
 | Tier | Role | Primary | Fallback 1 | Fallback 2 | Floor |
 |---|---|---|---|---|---|
 | 1 | **Dual Planner — required pair** | Claude: `claude-opus-4-6` **AND** Codex: `gpt-5.4` @ `model_reasoning_effort=high` | Claude → `claude-sonnet-4-6`; Codex → `gpt-5.3-codex-spark` @ `high` | Codex only → `gpt-5.3-codex-spark` @ `medium` | Claude: no Haiku for planning. Codex: no below-spark for planning. Both unavailable → halt. |
-| 2 | Worker (coder) | `gpt-5.3-codex-spark` @ `high` | `gpt-5.3-codex-spark` @ `medium` | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (local warm daemon) → **Windows Ollama** (`http://172.17.227.49:11434`, `qwen2.5-coder:7b`, **documented / disabled until Sprint 5**) → `claude-sonnet-4-6` (cost-flagged) | — |
+| 2 | Worker (coder) | `gpt-5.3-codex-spark` @ `high` | `gpt-5.3-codex-spark` @ `medium` | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (local warm daemon) → **Windows Ollama** (`http://172.17.227.49:11434`, `qwen2.5-coder:7b`) → `claude-sonnet-4-6` (cost-flagged). Routed via `scripts/windows-ollama/decide.sh`; PII halts routing per invariant #8; all calls audited per invariant #10. | — |
 | 3 | Reviewer (code) | `claude-sonnet-4-6` | `claude-haiku-4-5` (review quality flagged) | — | — |
 | 3 | Reviewer (non-code long-form) | `gpt-5.4` @ `medium` | `gpt-5.4` @ `low` | `claude-sonnet-4-6` | — |
 | 4 | Gate / verifier | `claude-haiku-4-5-20251001` | `claude-sonnet-4-6` (wasteful but safe) | — | — |
