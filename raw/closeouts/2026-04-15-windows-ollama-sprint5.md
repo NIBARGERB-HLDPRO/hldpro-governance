@@ -147,3 +147,5 @@ These were planned in the original epic but deferred to Phase 3 per SoM charter.
 **Status:** EPIC COMPLETE ✓
 
 All acceptance criteria met. All 3 exceptions closed. Windows-Ollama Tier-2 rung is now ACTIVE. Epic ready for wiki write-back and memory update.
+
+*Post-merge addendum: Sprint 6 (PR #129) remediated an invariant #8 PII regression introduced in Sprint 5. See `raw/closeouts/2026-04-15-windows-ollama-sprint6.md`.*

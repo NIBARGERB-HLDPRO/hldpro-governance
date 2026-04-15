@@ -95,3 +95,5 @@ These do not block the rung activation and are deferred per SoM charter Phase 3 
 ## Status
 
 **DECISION FINAL:** Epic complete. Windows-Ollama Tier-2 rung is ACTIVE. All invariants enforced. All tests passing. Ready for production routing.
+
+*Post-merge addendum: Sprint 6 (PR #129) remediated an invariant #8 PII regression introduced in Sprint 5. See `raw/closeouts/2026-04-15-windows-ollama-sprint6.md`.*
