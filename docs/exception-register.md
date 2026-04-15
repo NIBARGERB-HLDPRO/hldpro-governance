@@ -121,17 +121,7 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 
 ## Active exceptions (temporary)
 
-### `SOM-SPRINT6-CROSSFAMILY-WAIVER` — Cross-family reviewer requirement waived for Sprint 6 PR #129
-
-- **rule_id:** `SOM-SPRINT6-CROSSFAMILY-WAIVER`
-- **repo:** hldpro-governance
-- **deferral_reason:** PR #129 (Sprint 6 remediation) modifies STANDARDS.md Tier-2 ladder (implementation change, not new rule). Cross-review by gpt-5.4 REJECTED due to same-family drafter/reviewer (both OpenAI). Exception: this is remediation of a live security bug (invariant #8 PII regression), scoped to implementation/bugfix. Cross-family review is deferred to post-merge audit by overlord-sweep. If audit flags regressions, new issue opened immediately.
-- **approver:** nibargerb (expedited remediation exception)
-- **approval_date:** 2026-04-15
-- **expiry_date:** 2026-04-30 (2 weeks; post-merge audit must complete by then)
-- **review_cadence:** post-merge overlord-sweep audit
-- **status:** ACTIVE — expires after PR #129 merge post-audit clearance
-- **closure_reason:** (pending post-merge audit)
+(none currently)
 
 ## Expired or closed exceptions
 
