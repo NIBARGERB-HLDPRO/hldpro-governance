@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   validate-fail-fast:
-    uses: NIBARGERB-HLDPRO/hldpro-governance/.github/workflows/check-fail-fast-schema.yml@main
+    uses: ./.github/workflows/check-fail-fast-schema.yml
     with:
       fail_fast_log_path: docs/FAIL_FAST_LOG.md
       error_patterns_path: docs/ERROR_PATTERNS.md
