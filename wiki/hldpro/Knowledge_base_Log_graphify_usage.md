@@ -1,11 +1,13 @@
 # Knowledge base Log graphify usage
 
-> 3 nodes · cohesion 1.00
+> 5 nodes · cohesion 0.70
 
 ## Key Concepts
 
-- **log_graphify_usage.py** (2 connections) — `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
-- **main()** (2 connections) — `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
+- **log_graphify_usage.py** (4 connections) — `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
+- **main()** (4 connections) — `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
+- **append_event()** (2 connections) — `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
+- **build_event()** (2 connections) — `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
 - **parse_args()** (2 connections) — `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
 
 ## Relationships
@@ -18,8 +20,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 4 (67%)
-- INFERRED: 2 (33%)
+- EXTRACTED: 8 (57%)
+- INFERRED: 6 (43%)
 - AMBIGUOUS: 0 (0%)
 
 ---
