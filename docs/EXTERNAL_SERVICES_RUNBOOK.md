@@ -6,7 +6,7 @@ Scope: external services that govern work in this repo depends on. Repo-local se
 
 ## 1. Codex CLI (OpenAI)
 
-**Purpose:** Tier-1 Dual-Planner partner (`gpt-5.4` high) and Tier-2 Worker (`gpt-5.3-codex-spark` high) in the Society of Minds charter. See `STANDARDS.md §Society of Minds`.
+**Purpose:** Tier-1 Dual-Planner partner (`gpt-5.4` high) and Tier-2 Worker (`gpt-5.3-codex-spark` high) in the Society of Minds charter. See `STANDARDS.md §Society of Minds` and the charter decision at `wiki/decisions/2026-04-14-society-of-minds-charter.md`.
 
 ### Install & auth
 - Binary: `~/.nvm/versions/node/v24.14.1/bin/codex` (OpenAI Codex v0.120.0)

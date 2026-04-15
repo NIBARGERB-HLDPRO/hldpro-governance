@@ -27,6 +27,7 @@ None yet. Follow-up: add a `wiki/` entry cross-linking the runbook and SoM chart
 [x] No — reason: governance-only change; no operator_context table in this repo. Memory + wiki cross-link is the equivalent surface here.
 
 ## Links To
+- `wiki/decisions/2026-04-14-society-of-minds-charter.md` — SoM charter; the runbook's §1 Codex CLI fallback ladder is the operational counterpart to the charter's Tier-2 table
 - PR #110 — https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/110
 - Commit 565d55a — runbook
 - Commit c00f24b — preflight script
