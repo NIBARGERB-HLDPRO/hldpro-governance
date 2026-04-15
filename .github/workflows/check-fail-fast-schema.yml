@@ -241,8 +241,8 @@ jobs:
                   print("✓ ERROR_PATTERNS.md has legacy marker; skipping validation")
                   return True
 
-              # Find pattern definitions (## pattern-id)
-              pattern_ids = re.findall(r'^## ([\w-]+)$', content, re.MULTILINE)
+              # Find pattern definitions (## Pattern: <pattern-id>)
+              pattern_ids = re.findall(r'^## Pattern: ([\w-]+)$', content, re.MULTILINE)
 
               if not pattern_ids:
                   print("ℹ ERROR_PATTERNS.md has no patterns defined (stub OK for Phase 1)")

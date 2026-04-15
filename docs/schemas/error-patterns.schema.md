@@ -11,7 +11,7 @@ All governed repos use this schema for `docs/ERROR_PATTERNS.md`. Patterns are re
 
 # ERROR_PATTERNS
 
-## {pattern-id}
+## Pattern: {pattern-id}
 
 ### Symptom
 [Observable failure, user-facing or internal detection; 2-3 sentences]
@@ -33,9 +33,11 @@ All governed repos use this schema for `docs/ERROR_PATTERNS.md`. Patterns are re
 
 ---
 
-## {next-pattern-id}
+## Pattern: {next-pattern-id}
 [... repeat structure ...]
 ```
+
+Each pattern header MUST be formatted `## Pattern: <kebab-case-id>`. Other `##` sections (for example `## Overview`, `## Contributing`, `## Changelog`) are treated as boilerplate and ignored by the validator.
 
 ## Section Definitions
 
@@ -76,7 +78,7 @@ New patterns MUST use the canonical structure. During Phase 1–2, legacy patter
 A pattern section can be minimal during Phase 1 if no pattern history exists yet:
 
 ```markdown
-## {pattern-id}
+## Pattern: {pattern-id}
 
 ### Symptom
 [To be populated]
