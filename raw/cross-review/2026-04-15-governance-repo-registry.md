@@ -8,10 +8,10 @@ drafter:
   signature_date: 2026-04-15
 reviewer:
   role: architect-codex
-  model_id: PENDING
+  model_id: gpt-5.3-codex-spark
   model_family: openai
-  signature_date: PENDING
-  verdict: PENDING
+  signature_date: 2026-04-15
+  verdict: APPROVED_WITH_CHANGES
 invariants_checked:
   dual_planner_pairing: true
   no_self_approval: true
@@ -44,6 +44,8 @@ invariants_checked:
 
 **Verdict:** APPROVED (drafter side). Awaiting Codex reviewer.
 
-## Reviewer Notes (PENDING — requires openai family reviewer)
+## Reviewer Notes (gpt-5.3-codex-spark, 2026-04-15)
 
-> To complete: run `codex exec -m gpt-5.3-codex-spark --reasoning-effort high` against this artifact and the diff. Add `model_id`, `signature_date`, and `verdict` to the frontmatter above.
+**Verdict:** APPROVED_WITH_CHANGES
+
+The diff matches the stated change scope — registry row, hook-path convention note, and committed hook script all consistent with change summary. One non-blocking standards/doc issue flagged: the convention note's example implies `UserPromptSubmit` hooks are always local-only, but `pre-session-context.sh` is now committed in `hooks/`. Wording updated in STANDARDS.md to clarify the distinction (session-local *invocation* wired in local `settings.json`; hook *script* committed for repo-wide discoverability). No PII/security regression. Dual-planner, self-approval, and cross-family independence invariants intact.
