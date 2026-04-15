@@ -96,7 +96,7 @@ Windows-Ollama rung activation (Sprint 5) requires:
 1. **submit.py** — Submission script with PII pattern matching + model allowlist validation (Sprint 2)
 2. **PII middleware** — `pii-patterns.yml` blocking PII-tagged payloads + hardening for Windows/cloud fallback routes (Sprint 2)
 3. **Audit writer** — `audit.py` writing hash-chained, HMAC-signed, daily-manifested audit logs (Sprint 3)
-4. **CI validator** — `verify_audit.py` + `check-windows-ollama-audit-schema.yml` enforcing chain integrity (Sprints 3–4)
+4. **CI validator** — `verify_audit.py` + `check-windows-ollama-audit-schema.yml` enforcing chain integrity (Sprints 3–4); audit schema pattern-matches against Remote MCP Bridge design per `_worktrees/gov-remote-mcp` plan
 5. **Firewall allowlist** — Windows firewall binding to Mac host IP or trusted subnet (Sprint 4 CI gate)
 6. **Failover rules** — PII-tagged payloads halt instead of falling through to cloud (Sprint 5 decision.sh)
 7. **Integration tests** — End-to-end test of submit.py + audit.py + decide.sh (Sprint 5)
