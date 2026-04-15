@@ -138,8 +138,8 @@ GitHub Actions default runner images deprecated Node.js 20 in favor of Node.js 2
 ## CI Validation
 
 The `check-fail-fast-schema.yml` workflow validates every PR touching this file. For Phase 1, the validator checks structural presence only:
-- Presence of canonical `## Pattern: <kebab-case-id>` headings (or explicit stub marker in `ERROR_PATTERNS.md`)
-- Canonical section block exists for each pattern heading in structure
+- Phase 1 validator checks: (a) legacy marker → skip; (b) otherwise, file must contain at least one `## Pattern: <kebab-case-id>` heading OR an explicit `<!-- stub: no-patterns-yet -->` marker.
+- Per-pattern section-block validation (Symptom / Root Cause / Detection / Resolution Playbook / Instances / Prevention) is documented in this schema but NOT enforced by the Phase 1 validator. Full section-level enforcement is tracked for a follow-up sprint.
 - YAML frontmatter is allowed and supports `legacy: true` to skip checks
 
 Field-level checks are deferred to a follow-up sprint (category/severity enums, character limits, kebab-case pattern regex enforcement, and cross-document pattern-reference checks).

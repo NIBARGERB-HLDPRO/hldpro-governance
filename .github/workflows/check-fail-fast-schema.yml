@@ -2,15 +2,6 @@ name: Validate FAIL_FAST_LOG and ERROR_PATTERNS schemas
 
 on:
   workflow_call:
-    inputs:
-      fail_fast_log_path:
-        description: Path to FAIL_FAST_LOG.md (relative to repo root)
-        type: string
-        default: docs/FAIL_FAST_LOG.md
-      error_patterns_path:
-        description: Path to ERROR_PATTERNS.md (relative to repo root)
-        type: string
-        default: docs/ERROR_PATTERNS.md
 
 permissions:
   contents: read

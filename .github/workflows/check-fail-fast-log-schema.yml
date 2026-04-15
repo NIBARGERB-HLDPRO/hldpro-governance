@@ -6,6 +6,7 @@ on:
     paths:
       - 'docs/FAIL_FAST_LOG.md'
       - 'docs/ERROR_PATTERNS.md'
+      - 'docs/schemas/*.md'
       - '.github/workflows/check-fail-fast-*.yml'
 
 permissions:
@@ -14,6 +15,3 @@ permissions:
 jobs:
   validate-fail-fast:
     uses: ./.github/workflows/check-fail-fast-schema.yml
-    with:
-      fail_fast_log_path: docs/FAIL_FAST_LOG.md
-      error_patterns_path: docs/ERROR_PATTERNS.md
