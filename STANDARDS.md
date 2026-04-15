@@ -385,6 +385,8 @@ Validator rejects if: any field missing, `drafter.model_family` == `reviewer.mod
 | 13 | Windows-Ollama PII floor (invariant #8) | `scripts/windows-ollama/submit.py` validates PII patterns (Sprint 2); `check-windows-ollama-pii-submission.yml` CI gate (Sprint 4) | PR blocked if PII flows to Windows or cloud |
 | 14 | Windows-Ollama firewall binding (invariant #9) | `check-windows-ollama-exposure.yml` CI gate (Sprint 4) asserts no public bind, endpoint still `172.17.227.49:11434` | PR blocked if exposure detected |
 | 15 | Windows-Ollama audit enforcement (invariant #10) | `scripts/windows-ollama/verify_audit.py` local validator (Sprint 3); `check-windows-ollama-audit-schema.yml` CI gate (Sprint 4) | PR blocked on chain break, HMAC forgery, or manifest mismatch |
+| 16 | Windows-Ollama audit schema validation | `check-windows-ollama-audit-schema.yml` verifies audit chain integrity on PRs touching audit files | PR blocked |
+| 17 | Windows-Ollama firewall exposure validation | `check-windows-ollama-exposure.yml` asserts no public bind, endpoint stability (172.17.227.49:11434), Cloudflare stub status | PR blocked |
 
 ### Exception register schema
 

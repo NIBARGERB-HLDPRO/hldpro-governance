@@ -86,10 +86,10 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 
 - **rule_id:** `SOM-WIN-OLLAMA-AUDIT-001`
 - **repo:** hldpro-governance
-- **deferral_reason:** Invariant #10 requires hash-chain audit + HMAC signing + daily manifest + CI schema validator. Stage A lands standards only. Audit writer (`audit.py` + `verify_audit.py`) lands in Sprint 3; CI gate (`check-windows-ollama-audit-schema.yml`) lands in Sprint 4. Windows rung remains disabled until Sprint 5.
+- **deferral_reason:** Invariant #10 requires hash-chain audit + HMAC signing + daily manifest + CI schema validator. Stage A lands standards only. Audit writer (`audit.py` + `verify_audit.py`) lands in Sprint 3; CI gate (`check-windows-ollama-audit-schema.yml`) lands in Sprint 4. Windows rung remains disabled until Sprint 5. **Partially closed — CI enforcement live as of Sprint 4; full close deferred to Sprint 5 activation.**
 - **approver:** nibargerb
 - **approval_date:** 2026-04-15
-- **expiry_date:** 2026-05-15 (30 days; Sprint 3 must land before then)
+- **expiry_date:** 2026-05-15 (30 days; Sprint 5 must land activation before then)
 - **review_cadence:** weekly during overlord-sweep
 - **status:** active
 

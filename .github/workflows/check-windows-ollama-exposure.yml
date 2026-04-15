@@ -1,0 +1,114 @@
+name: check-windows-ollama-exposure
+
+on:
+  pull_request:
+    paths:
+      - 'docs/runbooks/windows-ollama-worker.md'
+      - 'scripts/windows-ollama/**'
+      - 'STANDARDS.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-windows-ollama-exposure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check Windows-Ollama exposure invariants
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import re
+          import sys
+
+          fail = False
+
+          # AC (a): Assert no public-internet bind documented
+          print("Checking invariant: no public-internet bind...")
+          runbook_path = "docs/runbooks/windows-ollama-worker.md"
+          try:
+            runbook = open(runbook_path).read()
+            if "0.0.0.0" in runbook or "--host 0.0.0.0" in runbook:
+              print(f"::error file={runbook_path}::Found public bind indicator (0.0.0.0) in runbook")
+              fail = True
+            else:
+              print("✓ Runbook does not mention 0.0.0.0")
+          except FileNotFoundError:
+            print(f"::warning::{runbook_path} not found; skipping public-bind check")
+
+          # AC (b): Assert endpoint URL remains 172.17.227.49:11434
+          print("Checking invariant: endpoint URL stability...")
+          required_endpoint = "172.17.227.49:11434"
+          other_ips = set()
+
+          files_to_check = [
+            "docs/runbooks/windows-ollama-worker.md",
+            "scripts/windows-ollama/submit.py",
+            "scripts/windows-ollama/audit.py"
+          ]
+
+          for filepath in files_to_check:
+            try:
+              content = open(filepath).read()
+              # Look for IP:port patterns and check for deviations from required endpoint
+              ip_port_pattern = r"\d+\.\d+\.\d+\.\d+:\d+"
+              matches = re.findall(ip_port_pattern, content)
+              for match in matches:
+                if match != required_endpoint:
+                  other_ips.add(match)
+            except FileNotFoundError:
+              pass
+
+          if other_ips:
+            print(f"::error::Found endpoint URLs different from {required_endpoint}: {', '.join(sorted(other_ips))}")
+            fail = True
+          else:
+            print(f"✓ All endpoint URLs are {required_endpoint}")
+
+          # AC (c): Assert Cloudflare Tunnel section remains stubbed
+          print("Checking invariant: Cloudflare Tunnel remains stubbed...")
+          stubbed_markers = ["stubbed", "deferred", "not in scope"]
+          found_cloudflare = False
+          cloudflare_is_stubbed = False
+
+          try:
+            runbook = open(runbook_path).read()
+            if "cloudflare" in runbook.lower() or "tunnel" in runbook.lower():
+              found_cloudflare = True
+              # Check if the Cloudflare section has a stub marker nearby
+              lines = runbook.split("\n")
+              for i, line in enumerate(lines):
+                if "cloudflare" in line.lower() or ("tunnel" in line.lower() and "future" in line.lower()):
+                  # Check context around this line for stub markers
+                  context = " ".join(lines[max(0, i-3):min(len(lines), i+4)]).lower()
+                  if any(marker in context for marker in stubbed_markers):
+                    cloudflare_is_stubbed = True
+                    break
+
+            if found_cloudflare and not cloudflare_is_stubbed:
+              print(f"::error file={runbook_path}::Cloudflare Tunnel section found but not marked as stubbed/deferred/not-in-scope")
+              fail = True
+            elif found_cloudflare and cloudflare_is_stubbed:
+              print("✓ Cloudflare Tunnel section is properly stubbed")
+            else:
+              print("✓ No active Cloudflare Tunnel implementation found (expected)")
+          except FileNotFoundError:
+            pass
+
+          if fail:
+            print("::error::Windows-Ollama exposure invariants failed")
+            sys.exit(1)
+          else:
+            print("✓ All Windows-Ollama exposure invariants passed")
+          PY
