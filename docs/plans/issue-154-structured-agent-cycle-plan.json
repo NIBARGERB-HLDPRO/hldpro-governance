@@ -1,0 +1,180 @@
+{
+  "session_id": "session-20260415-issue-154-pre-session-hook-standardization",
+  "issue_number": 154,
+  "objective": "Standardize a committed UserPromptSubmit pre-session-context hook across HLDPRO product repos by (a) tightening hldpro-governance .gitignore so .claude/settings.json can be committed, (b) committing governance's existing UserPromptSubmit wiring, and (c) adding the same pattern to HealthcarePlatform, local-ai-machine, and knocktracker without disturbing their existing committed hook entries.",
+  "tier": 2,
+  "scope_boundary": [
+    "hldpro-governance .gitignore change MUST be surgical: replace the broad 'settings.json' ignore line with three specific volatile-file ignores (.claude/worktrees/, .claude/scheduled_tasks.lock, .claude/settings.local.json). Do NOT rewrite the full file.",
+    "hldpro-governance .claude/settings.json MUST be committed exactly as currently present on disk (UserPromptSubmit wiring to hooks/pre-session-context.sh with 5000ms timeout). No behavior change.",
+    "For HealthcarePlatform, local-ai-machine, and knocktracker: .claude/settings.json MUST be JSON-merged — parse the existing committed file, add a new UserPromptSubmit entry under the existing 'hooks' object, preserve every other key and every existing hook entry byte-for-byte. Do NOT overwrite.",
+    "For HealthcarePlatform, local-ai-machine, and knocktracker: add a new file at .claude/hooks/pre-session-context.sh authored from the AIS template (session-start-gate.sh) with repo-appropriate doc injection and a session-once guard at /tmp/.claude_session_started_${PPID}.",
+    "Per-repo injected docs (existence-checked, skip silently if absent): HealthcarePlatform → docs/PROGRESS.md + docs/FAIL_FAST_LOG.md + docs/FEATURE_REGISTRY.md + backend/docs/session/SESSION_HANDOFF_HISTORY.md + CLAUDE.md first section; local-ai-machine → docs/PROGRESS.md + docs/FAIL_FAST_LOG.md + AGENTS.md + START_SESSION.md + CLAUDE.md first section; knocktracker → docs/PROGRESS.md + docs/FAIL_FAST_LOG.md + AGENTS.md + CLAUDE.md first section.",
+    "Each hook script MUST always inject current branch name and MUST be idempotent across repeated prompts within one session (session-once guard).",
+    "Each codex-spark implementation PR MUST run the anti-contamination check: `git fetch origin main && git worktree add -b <branch> <path> origin/main` then `git log --oneline origin/main..HEAD` returns empty before first commit. Per feedback memory 2026-04-15."
+  ],
+  "out_of_scope": [
+    "ai-integration-services hook changes — its session-start-gate.sh already injects all 3 core docs and the extended template. Optional path-parameterization follow-up tracked separately if needed.",
+    "ASC-Evaluator inclusion — confirmed exempt per STANDARDS.md repo registry; knowledge repo with no PROGRESS/FAIL_FAST/session lifecycle.",
+    "Behavior changes to hldpro-governance hooks/pre-session-context.sh itself (this slice only commits the wiring).",
+    "Changes to the existing PreToolUse/PostToolUse hook entries in HP/LAM/knocktracker .claude/settings.json files.",
+    "A new Stop hook, SessionStart hook, or any event other than UserPromptSubmit.",
+    "CI workflow additions to lint settings.json across repos (could be a follow-up)."
+  ],
+  "research_summary": "Five parallel Explore-agent audits against remote main of each HLDPRO repo confirmed: AIS already has the canonical UserPromptSubmit pattern committed at .claude/hooks/session-start-gate.sh + .claude/settings.json, injecting PROGRESS.md + FAIL_FAST_LOG.md + FEATURE_REGISTRY.md + Codex backlog with a /tmp/.claude_session_started_${PPID} session-once guard. HP, LAM, and knocktracker all have the 3 core product-repo docs (PROGRESS.md, FAIL_FAST_LOG.md, CLAUDE.md) on main plus repo-specific extras (SESSION_HANDOFF_HISTORY, AGENTS.md, START_SESSION.md), all have 4-5 PreToolUse/PostToolUse hooks already committed in .claude/settings.json, but none wire UserPromptSubmit. hldpro-governance has hooks/pre-session-context.sh committed, but its .claude/settings.json wiring is invisible on remote main because the repo .gitignore has a blanket `settings.json` rule (line 16) that also matches .claude/settings.json. ASC-Evaluator has no PROGRESS/FAIL_FAST/session lifecycle and is correctly exempt.",
+  "research_artifacts": [
+    "STANDARDS.md §Repo Registry",
+    "STANDARDS.md §Society of Minds",
+    ".gitignore lines 15-18 (hldpro-governance)",
+    ".claude/settings.json (hldpro-governance, untracked)",
+    "hooks/pre-session-context.sh (hldpro-governance)",
+    ".claude/hooks/session-start-gate.sh (ai-integration-services main)",
+    ".claude/settings.json (ai-integration-services, HealthcarePlatform, local-ai-machine, knocktracker — remote main snapshots)",
+    "Memory: feedback_codex_worktree_base_contamination.md",
+    "Memory: feedback_audit_must_read_remote_head.md",
+    "Memory: feedback_codex_spark_no_network.md"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 — Governance propagation repair",
+      "goal": "Make governance's pre-session hook wiring visible to every fresh clone by tightening .gitignore and committing the existing .claude/settings.json.",
+      "tasks": [
+        "Open PR against hldpro-governance main that replaces the blanket `settings.json` line in .gitignore with three specific entries: `.claude/worktrees/`, `.claude/scheduled_tasks.lock`, `.claude/settings.local.json`. Preserve every other .gitignore line.",
+        "In the same PR, `git add .claude/settings.json` with its current on-disk content (UserPromptSubmit → bash $HOME/Developer/HLDPRO/hldpro-governance/hooks/pre-session-context.sh, timeout 5000ms). Do not edit the hook script.",
+        "Verify on fresh clone that UserPromptSubmit fires before merging."
+      ],
+      "acceptance_criteria": [
+        ".gitignore no longer contains a bare `settings.json` line; contains the three specific allow-list entries instead.",
+        "`git ls-files .claude/settings.json` returns the path (file is tracked).",
+        "`gh api repos/NIBARGERB-HLDPRO/hldpro-governance/contents/.claude/settings.json` returns 200 after merge.",
+        "Hook still fires in local session (no wiring regression)."
+      ],
+      "file_paths": [
+        ".gitignore",
+        ".claude/settings.json"
+      ]
+    },
+    {
+      "name": "Sprint 2 — HealthcarePlatform pre-session hook",
+      "goal": "Add UserPromptSubmit wiring + new pre-session hook to HealthcarePlatform without disturbing its existing committed PreToolUse/PostToolUse hooks.",
+      "tasks": [
+        "Author `.claude/hooks/pre-session-context.sh` modeled on AIS session-start-gate.sh: session-once guard at /tmp/.claude_session_started_${PPID}, inject current branch, existence-check and cat PROGRESS.md / FAIL_FAST_LOG.md / FEATURE_REGISTRY.md / backend/docs/session/SESSION_HANDOFF_HISTORY.md / head-of-CLAUDE.md, no `/hldpro/` hardcoded path — derive repo-ingestion dir from the calling repo or drop entirely.",
+        "JSON-merge a new UserPromptSubmit entry into the existing .claude/settings.json — preserve all existing PreToolUse + PostToolUse entries exactly; do not overwrite the file.",
+        "Open PR with both files. Confirm diff shows only the added UserPromptSubmit block + new hook script + (optional) PROGRESS/FAIL_FAST co-stage if repo hooks demand it."
+      ],
+      "acceptance_criteria": [
+        "`.claude/settings.json` on merged main retains every pre-existing PreToolUse and PostToolUse hook command verbatim.",
+        "New UserPromptSubmit entry invokes `.claude/hooks/pre-session-context.sh` with a 5000ms timeout.",
+        "New hook is executable (chmod 755) and existence-checks every injected file path.",
+        "Local test: opening a new Claude Code session in the repo surfaces PROGRESS.md + FAIL_FAST_LOG.md + branch name."
+      ],
+      "file_paths": [
+        ".claude/settings.json",
+        ".claude/hooks/pre-session-context.sh"
+      ]
+    },
+    {
+      "name": "Sprint 3 — local-ai-machine pre-session hook",
+      "goal": "Same pattern as Sprint 2 adapted for LAM: inject AGENTS.md (canonical authority), START_SESSION.md (checkpoint state), PROGRESS.md, FAIL_FAST_LOG.md, CLAUDE.md head.",
+      "tasks": [
+        "Author `.claude/hooks/pre-session-context.sh` with LAM-specific injection set.",
+        "JSON-merge UserPromptSubmit entry into existing .claude/settings.json preserving every existing hook.",
+        "Open PR; verify diff scope."
+      ],
+      "acceptance_criteria": [
+        "Existing LAM PreToolUse/PostToolUse hooks unchanged byte-for-byte.",
+        "Hook injects AGENTS.md + START_SESSION.md + PROGRESS.md + FAIL_FAST_LOG.md + CLAUDE.md head, each existence-checked.",
+        "Session-once guard identical pattern to AIS.",
+        "Does not touch .lam-config.yml or any MLX runtime files."
+      ],
+      "file_paths": [
+        ".claude/settings.json",
+        ".claude/hooks/pre-session-context.sh"
+      ]
+    },
+    {
+      "name": "Sprint 4 — knocktracker pre-session hook",
+      "goal": "Same pattern as Sprint 2 adapted for knocktracker: inject AGENTS.md (35 governance rules) alongside the 3 core docs + CLAUDE.md head.",
+      "tasks": [
+        "Author `.claude/hooks/pre-session-context.sh` with knocktracker injection set.",
+        "JSON-merge UserPromptSubmit entry into existing .claude/settings.json preserving every existing hook.",
+        "Open PR; verify diff scope."
+      ],
+      "acceptance_criteria": [
+        "Existing knocktracker PreToolUse/PostToolUse hooks unchanged.",
+        "Hook injects AGENTS.md + PROGRESS.md + FAIL_FAST_LOG.md + CLAUDE.md head, each existence-checked.",
+        "Session-once guard identical pattern to AIS.",
+        "Does not alter the SoM pointer section added in PR #156."
+      ],
+      "file_paths": [
+        ".claude/settings.json",
+        ".claude/hooks/pre-session-context.sh"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "scope reviewer",
+      "role": "Scope reviewer",
+      "focus": "Keep this slice mechanical-rollout only; do not widen into new hook behaviors, SessionStart/Stop events, or cross-repo CI lint work.",
+      "status": "accepted",
+      "summary": "Scope limited to governance .gitignore + settings.json commit plus 3 repo-local pre-session-context additions using the AIS template. No behavior change to AIS, ASC-E, or governance hook script itself.",
+      "evidence": [
+        "STANDARDS.md §Repo Registry",
+        "Session research findings (5 Explore agents, 2026-04-15)"
+      ]
+    },
+    {
+      "reviewer": "non-destructive-edit reviewer",
+      "role": "Destructive-edit reviewer",
+      "focus": "Ensure every modified file is JSON-merged / surgically patched, never overwritten. Target repos already have committed .claude/settings.json with 4-5 hook entries.",
+      "status": "accepted",
+      "summary": "Plan explicitly calls out JSON-merge semantics for settings.json and surgical edit semantics for .gitignore. Sprints 2/3/4 acceptance criteria require byte-for-byte preservation of existing PreToolUse/PostToolUse hooks.",
+      "evidence": [
+        ".claude/settings.json content surveyed on HP, LAM, knocktracker remote main (2026-04-15)",
+        "User directive: append/patch, not overwrite"
+      ]
+    },
+    {
+      "reviewer": "anti-contamination reviewer",
+      "role": "Worktree hygiene reviewer",
+      "focus": "Implementation PRs must not repeat today's AIS/HP contamination incidents where codex-spark worktrees carried unrelated WIP commits from dirty local parent checkouts.",
+      "status": "accepted",
+      "summary": "Implementation brief MUST require `git fetch origin main && git worktree add -b <branch> <path> origin/main` and an empty `git log --oneline origin/main..HEAD` check before the first commit. Each PR MUST touch only the files in its sprint file_paths list (max 2 files per sprint).",
+      "evidence": [
+        "Memory: feedback_codex_worktree_base_contamination.md",
+        "Memory: feedback_audit_must_read_remote_head.md",
+        "Incident PRs: AIS #1035 (closed), HP #1274+#1275 (revert merged)"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-requested-for-mechanical-rollout",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This slice executes an already-codified policy (STANDARDS.md §Society of Minds + documented Session Start checklists in each repo's CLAUDE.md). No new standard is being proposed and no architectural decision is being made. Tier 2 mechanical rollout.",
+    "evidence": [
+      "STANDARDS.md §Society of Minds (already merged)",
+      "Per-repo CLAUDE.md Session Start sections (already merged)"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "planning_only",
+    "approved_scope_summary": "Plan PR only. After plan PR merges, dispatch codex-spark with a separate implementation brief that produces 4 PRs (governance .gitignore+settings commit; HP/LAM/knocktracker hook additions) using the hardened worktree-contamination guardrails.",
+    "next_execution_step": "Open PR containing this plan JSON and the companion PDCA/R markdown. After merge, codex-spark runs `scripts/codex-preflight.sh --log` then creates one worktree per sprint, each off fresh `origin/main`, with an empty `git log --oneline origin/main..HEAD` precheck before the first commit.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If a target repo's .claude/settings.json cannot be JSON-merged cleanly (malformed JSON, conflicting UserPromptSubmit already present, etc.), halt that sprint and record the finding in the closeout; do NOT overwrite the file.",
+    "If a target repo's committed PROGRESS.md / FAIL_FAST_LOG.md path turns out to differ from what this plan asserts, update the hook script to match reality — do NOT create the missing file.",
+    "If codex-spark discovers its worktree is not cleanly based off origin/main (non-empty `git log --oneline origin/main..HEAD`), halt, delete the worktree, re-create from fresh fetch, do NOT commit.",
+    "If a sprint's PR would touch more than the 2 files in its file_paths list, halt and surface a scope question before pushing.",
+    "If AIS's hook anti-pattern (hardcoded /hldpro/ path in Codex-ingestion dir) becomes necessary to parameterize mid-rollout, open a separate follow-up issue — do NOT bundle into this slice."
+  ],
+  "approved": false,
+  "approved_by": [
+    "session-agent-claude-opus-4-6-pending-user-approval"
+  ],
+  "approved_at": "2026-04-15T17:00:00-05:00"
+}
