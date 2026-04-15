@@ -163,11 +163,14 @@ Each repo has a security tier that determines which security artifacts the overl
 
 | Repo | Type | Governance Tier | Security Tier |
 |------|------|-----------------|---------------|
+| hldpro-governance | Meta-governance repo (scripts + CI + agents) | Governance-owner (see note below) | Baseline |
 | ai-integration-services | SaaS platform (Supabase + Deno + Vite) | Full (hooks + CI + agents) | Full + PentAGI |
 | HealthcarePlatform | Monorepo (backend + frontend), HIPAA | Full + HIPAA (zero-fail) | Full + PentAGI + HIPAA |
 | local-ai-machine | AI/ML infrastructure | Full (lane-based + session locks) | Baseline |
 | knocktracker | Field operations app | Standard (rules + CI) | Baseline |
 | ASC-Evaluator | Knowledge repo (no code) | Exempt from code governance | Exempt |
+
+> **hldpro-governance hook path note:** Product repos store hooks under `.claude/hooks/` (local-only, gitignored). hldpro-governance stores its committed hooks under `hooks/` at repo root (checked in, enforced repo-wide). Both satisfy the Required Governance hook contract — the difference is scope: local session vs. repo-wide enforcement. Hook *scripts* (e.g. `hooks/pre-session-context.sh`) are committed for repo-wide discoverability; the local `settings.json` that wires them into Claude Code sessions is gitignored and set up per-developer.
 
 ## Cross-Model Review
 
