@@ -13,6 +13,7 @@ Run via: pytest scripts/windows-ollama/tests/test_submit.py
 """
 
 import json
+import os
 import sys
 import tempfile
 from pathlib import Path
@@ -30,6 +31,7 @@ from submit import (
     PiiDetectionError,
     WindowsOllamaSubmitter,
 )
+import audit
 
 
 @pytest.fixture
@@ -255,6 +257,102 @@ class TestErrorStructure:
                 assert "reason" in err_dict
                 assert "exit_code" in err_dict
                 assert err_dict["exit_code"] == 2
+
+
+class TestAuditIntegration:
+    """Verify that all submission paths write exactly one audit entry."""
+
+    @pytest.fixture
+    def audit_dir(self):
+        """Temporary audit directory for testing."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            os.environ['SOM_WINDOWS_AUDIT_HMAC_KEY'] = 'test-key-12345'
+            yield tmpdir
+
+    def test_audit_entry_on_success(self, submitter, audit_dir):
+        """Test that successful submission writes one audit entry."""
+        with patch("submit.AuditWriter") as mock_audit_class:
+            mock_writer = MagicMock()
+            mock_audit_class.return_value = mock_writer
+            mock_writer.write_entry.return_value = True
+
+            with patch.object(submitter, "_post_generate") as mock_post:
+                mock_post.return_value = {"response": "test"}
+                submitter.submit(model="qwen2.5-coder:7b", prompt="test")
+
+            # Verify one audit entry was written with status='ok'
+            mock_writer.write_entry.assert_called_once()
+            call_kwargs = mock_writer.write_entry.call_args[1]
+            assert call_kwargs['status'] == 'ok'
+            assert call_kwargs['reject_reason'] is None
+            assert call_kwargs['tool'] == 'windows-ollama.submit'
+
+    def test_audit_entry_on_pii_detection(self, submitter, audit_dir):
+        """Test that PII detection writes one audit entry with status='rejected'."""
+        with patch("submit.AuditWriter") as mock_audit_class:
+            mock_writer = MagicMock()
+            mock_audit_class.return_value = mock_writer
+            mock_writer.write_entry.return_value = True
+
+            with pytest.raises(PiiDetectionError):
+                submitter.submit(model="qwen2.5-coder:7b", prompt="SSN: 123-45-6789")
+
+            # Verify one audit entry was written with status='rejected'
+            mock_writer.write_entry.assert_called_once()
+            call_kwargs = mock_writer.write_entry.call_args[1]
+            assert call_kwargs['status'] == 'rejected'
+            assert call_kwargs['reject_reason'] == 'pii_detected'
+
+    def test_audit_entry_on_explicit_pii_flag(self, submitter, audit_dir):
+        """Test that explicit PII flag writes one audit entry."""
+        with patch("submit.AuditWriter") as mock_audit_class:
+            mock_writer = MagicMock()
+            mock_audit_class.return_value = mock_writer
+            mock_writer.write_entry.return_value = True
+
+            with pytest.raises(PiiDetectionError):
+                submitter.submit(
+                    model="qwen2.5-coder:7b", prompt="clean", has_pii=True
+                )
+
+            mock_writer.write_entry.assert_called_once()
+            call_kwargs = mock_writer.write_entry.call_args[1]
+            assert call_kwargs['status'] == 'rejected'
+            assert call_kwargs['reject_reason'] == 'explicit_pii_flag'
+
+    def test_audit_entry_on_model_not_allowed(self, submitter, audit_dir):
+        """Test that model rejection writes one audit entry."""
+        with patch("submit.AuditWriter") as mock_audit_class:
+            mock_writer = MagicMock()
+            mock_audit_class.return_value = mock_writer
+            mock_writer.write_entry.return_value = True
+
+            with pytest.raises(ModelNotAllowedError):
+                submitter.submit(model="bogus:model", prompt="test")
+
+            mock_writer.write_entry.assert_called_once()
+            call_kwargs = mock_writer.write_entry.call_args[1]
+            assert call_kwargs['status'] == 'rejected'
+            assert call_kwargs['reject_reason'] == 'model_not_allowed'
+
+    def test_audit_entry_on_endpoint_unreachable(self, submitter, audit_dir):
+        """Test that endpoint unreachability writes one audit entry."""
+        with patch("submit.AuditWriter") as mock_audit_class:
+            mock_writer = MagicMock()
+            mock_audit_class.return_value = mock_writer
+            mock_writer.write_entry.return_value = True
+
+            with patch("urllib.request.urlopen") as mock_urlopen:
+                mock_urlopen.side_effect = URLError("Connection refused")
+                with pytest.raises(EndpointUnreachableError):
+                    submitter.submit(
+                        model="qwen2.5-coder:7b", prompt="test"
+                    )
+
+            mock_writer.write_entry.assert_called_once()
+            call_kwargs = mock_writer.write_entry.call_args[1]
+            assert call_kwargs['status'] == 'error'
+            assert call_kwargs['reject_reason'] == 'endpoint_unreachable'
 
 
 if __name__ == "__main__":
