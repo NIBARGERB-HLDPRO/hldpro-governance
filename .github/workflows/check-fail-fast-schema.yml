@@ -1,0 +1,236 @@
+name: Validate FAIL_FAST_LOG and ERROR_PATTERNS schemas
+
+on:
+  workflow_call:
+    inputs:
+      fail_fast_log_path:
+        description: Path to FAIL_FAST_LOG.md (relative to repo root)
+        type: string
+        default: docs/FAIL_FAST_LOG.md
+      error_patterns_path:
+        description: Path to ERROR_PATTERNS.md (relative to repo root)
+        type: string
+        default: docs/ERROR_PATTERNS.md
+      schema_fail_fast_path:
+        description: Path to canonical FAIL_FAST schema (relative to governance repo)
+        type: string
+        default: docs/schemas/fail-fast-log.schema.md
+      schema_patterns_path:
+        description: Path to canonical ERROR_PATTERNS schema (relative to governance repo)
+        type: string
+        default: docs/schemas/error-patterns.schema.md
+
+jobs:
+  validate-schemas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout governance repo for schemas
+        uses: actions/checkout@v4
+        with:
+          repository: NIBARGERB-HLDPRO/hldpro-governance
+          path: governance-schemas
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Validate FAIL_FAST_LOG.md schema
+        run: |
+          python3 << 'VALIDATOR_EOF'
+          import re
+          import sys
+          from pathlib import Path
+
+          # Configuration
+          FAIL_FAST_PATH = "${{ inputs.fail_fast_log_path }}"
+          SCHEMA_PATH = "governance-schemas/${{ inputs.schema_fail_fast_path }}"
+
+          # Valid category values
+          VALID_CATEGORIES = {"CI", "Runtime", "Data", "Auth", "Dependency", "Config", "Deploy", "Infra", "Other"}
+          VALID_SEVERITIES = {"CRITICAL", "ERROR", "WARN"}
+
+          def validate_fail_fast():
+              if not Path(FAIL_FAST_PATH).exists():
+                  print(f"✗ FAIL_FAST_LOG.md not found at {FAIL_FAST_PATH}")
+                  return False
+
+              with open(FAIL_FAST_PATH) as f:
+                  content = f.read()
+                  lines = content.split('\n')
+
+              # Check for legacy marker
+              has_legacy = "---\nlegacy: true\n---" in content or "legacy: true" in content
+
+              # Find table header
+              header_idx = -1
+              for i, line in enumerate(lines):
+                  if "| Date |" in line and "Category" in line:
+                      header_idx = i
+                      break
+
+              if header_idx == -1:
+                  if has_legacy:
+                      print("✓ FAIL_FAST_LOG.md has legacy marker; skipping validation")
+                      return True
+                  print("✗ FAIL_FAST_LOG.md: Table header not found (format: | Date | Category | ...)")
+                  return False
+
+              # Find separator line (2nd line after header)
+              if header_idx + 1 >= len(lines):
+                  print("✗ FAIL_FAST_LOG.md: No separator line after header")
+                  return False
+
+              sep_line = lines[header_idx + 1]
+              if not re.match(r'^\|\s*[-\s|]+\s*\|$', sep_line):
+                  print("✗ FAIL_FAST_LOG.md: Separator line malformed (expected |---|---|...)")
+                  return False
+
+              # Validate each row
+              has_errors = False
+              for i in range(header_idx + 2, len(lines)):
+                  line = lines[i].strip()
+                  if not line or line.startswith('#'):
+                      break
+
+                  if not line.startswith('|'):
+                      continue
+
+                  # Parse row
+                  cells = [cell.strip() for cell in line.split('|')]
+                  cells = [c for c in cells if c]  # Remove empty cells from split
+
+                  if len(cells) != 7:
+                      print(f"✗ Line {i+1}: Expected 7 columns, got {len(cells)}")
+                      print(f"  {line}")
+                      has_errors = True
+                      continue
+
+                  date, category, severity, error, root_cause, resolution, pattern = cells
+
+                  # Validate date format (YYYY-MM-DD)
+                  if not re.match(r'^\d{4}-\d{2}-\d{2}$', date):
+                      print(f"✗ Line {i+1}: Invalid date format '{date}' (expected YYYY-MM-DD)")
+                      has_errors = True
+
+                  # Validate category
+                  if category not in VALID_CATEGORIES:
+                      print(f"✗ Line {i+1}: Invalid category '{category}' (expected one of {VALID_CATEGORIES})")
+                      has_errors = True
+
+                  # Validate severity
+                  if severity not in VALID_SEVERITIES:
+                      print(f"✗ Line {i+1}: Invalid severity '{severity}' (expected CRITICAL, ERROR, or WARN)")
+                      has_errors = True
+
+                  # Validate character limits
+                  if len(error) > 80:
+                      print(f"✗ Line {i+1}: Error description too long ({len(error)} chars, max 80)")
+                      has_errors = True
+
+                  if len(root_cause) > 60:
+                      print(f"✗ Line {i+1}: Root cause too long ({len(root_cause)} chars, max 60)")
+                      has_errors = True
+
+                  if len(resolution) > 50:
+                      print(f"✗ Line {i+1}: Resolution too long ({len(resolution)} chars, max 50)")
+                      has_errors = True
+
+                  # Validate pattern reference (should not be empty)
+                  if not pattern or pattern == "":
+                      print(f"✗ Line {i+1}: Pattern reference is empty")
+                      has_errors = True
+
+              if has_errors:
+                  return False
+
+              print("✓ FAIL_FAST_LOG.md schema validation passed")
+              return True
+
+          if validate_fail_fast():
+              sys.exit(0)
+          else:
+              sys.exit(1)
+          VALIDATOR_EOF
+
+      - name: Validate ERROR_PATTERNS.md schema
+        run: |
+          python3 << 'VALIDATOR_EOF'
+          import re
+          import sys
+          from pathlib import Path
+
+          # Configuration
+          PATTERNS_PATH = "${{ inputs.error_patterns_path }}"
+
+          def validate_error_patterns():
+              if not Path(PATTERNS_PATH).exists():
+                  print(f"ℹ ERROR_PATTERNS.md not found at {PATTERNS_PATH} (stub OK for Phase 1)")
+                  return True
+
+              with open(PATTERNS_PATH) as f:
+                  content = f.read()
+                  lines = content.split('\n')
+
+              # Check for legacy marker
+              has_legacy = "---\nlegacy: true\n---" in content or "legacy: true" in content
+
+              if has_legacy:
+                  print("✓ ERROR_PATTERNS.md has legacy marker; skipping validation")
+                  return True
+
+              # Find pattern definitions (## pattern-id)
+              pattern_ids = re.findall(r'^## ([\w-]+)$', content, re.MULTILINE)
+
+              if not pattern_ids:
+                  print("ℹ ERROR_PATTERNS.md has no patterns defined (stub OK for Phase 1)")
+                  return True
+
+              # Validate each pattern
+              has_errors = False
+              for pattern_id in pattern_ids:
+                  # Check pattern ID format (kebab-case, ≤40 chars)
+                  if not re.match(r'^[\w-]+$', pattern_id):
+                      print(f"✗ Pattern '{pattern_id}': Invalid format (expected kebab-case)")
+                      has_errors = True
+
+                  if len(pattern_id) > 40:
+                      print(f"✗ Pattern '{pattern_id}': ID too long ({len(pattern_id)} chars, max 40)")
+                      has_errors = True
+
+                  # Extract pattern section
+                  pattern_start = content.find(f"## {pattern_id}")
+                  if pattern_start == -1:
+                      continue
+
+                  next_pattern = content.find("## ", pattern_start + 1)
+                  pattern_section = content[pattern_start:next_pattern if next_pattern != -1 else None]
+
+                  # Check required sections
+                  required_sections = ["### Symptom", "### Root Cause", "### Detection", "### Resolution Playbook"]
+                  for section in required_sections:
+                      if section not in pattern_section:
+                          print(f"✗ Pattern '{pattern_id}': Missing required section '{section}'")
+                          has_errors = True
+
+              if has_errors:
+                  return False
+
+              print(f"✓ ERROR_PATTERNS.md schema validation passed ({len(pattern_ids)} patterns)")
+              return True
+
+          if validate_error_patterns():
+              sys.exit(0)
+          else:
+              sys.exit(1)
+          VALIDATOR_EOF
+
+      - name: Report validation status
+        if: always()
+        run: echo "✓ Schema validation complete"

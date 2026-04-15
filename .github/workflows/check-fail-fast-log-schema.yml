@@ -1,0 +1,16 @@
+name: Check FAIL_FAST_LOG and ERROR_PATTERNS schemas
+
+on:
+  pull_request:
+    paths:
+      - 'docs/FAIL_FAST_LOG.md'
+      - 'docs/ERROR_PATTERNS.md'
+
+jobs:
+  validate-fail-fast:
+    uses: NIBARGERB-HLDPRO/hldpro-governance/.github/workflows/check-fail-fast-schema.yml@main
+    with:
+      fail_fast_log_path: docs/FAIL_FAST_LOG.md
+      error_patterns_path: docs/ERROR_PATTERNS.md
+      schema_fail_fast_path: docs/schemas/fail-fast-log.schema.md
+      schema_patterns_path: docs/schemas/error-patterns.schema.md
