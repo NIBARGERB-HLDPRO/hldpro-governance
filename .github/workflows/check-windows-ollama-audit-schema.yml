@@ -15,6 +15,8 @@ jobs:
   check-windows-ollama-audit-schema:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    env:
+      SOM_WINDOWS_AUDIT_HMAC_KEY: ${{ secrets.SOM_WINDOWS_AUDIT_HMAC_KEY }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -28,6 +30,11 @@ jobs:
       - name: Verify Windows-Ollama audit schema
         run: |
           set -euo pipefail
+
+          if [ -z "${SOM_WINDOWS_AUDIT_HMAC_KEY:-}" ]; then
+            echo "::error::SOM_WINDOWS_AUDIT_HMAC_KEY secret is required for Windows-Ollama audit schema verification"
+            exit 1
+          fi
 
           # Check if audit directory exists; if not, emit notice and pass
           if [ ! -d "raw/remote-windows-audit" ]; then

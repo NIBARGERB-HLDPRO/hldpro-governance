@@ -382,7 +382,7 @@ Validator rejects if: any field missing, `drafter.model_family` == `reviewer.mod
 | 10 | LAM availability for PII PRs | `check-lam-availability.yml` runtime probe | PR blocked |
 | 11 | CLAUDE.md points to SoT | `check-claude-md-pointer.yml` | PR blocked |
 | 12 | Exception register covers deferrals with expiry ≤ 90d | `overlord-sweep` validates; past-expiry auto-opens issue | Sweep issue on breach |
-| 13 | Windows-Ollama PII floor (invariant #8) | `scripts/windows-ollama/submit.py` validates PII patterns (Sprint 2); `check-windows-ollama-pii-submission.yml` CI gate (Sprint 4) | PR blocked if PII flows to Windows or cloud |
+| 13 | Windows-Ollama PII floor (invariant #8) | `scripts/windows-ollama/submit.py` validates PII patterns; `scripts/windows-ollama/decide.sh` routes `PII` to HALT before all ladder steps | PR blocked if PII routes to Windows or cloud |
 | 14 | Windows-Ollama firewall binding (invariant #9) | `check-windows-ollama-exposure.yml` CI gate (Sprint 4) asserts no public bind, endpoint still `172.17.227.49:11434` | PR blocked if exposure detected |
 | 15 | Windows-Ollama audit enforcement (invariant #10) | `scripts/windows-ollama/verify_audit.py` local validator (Sprint 3); `check-windows-ollama-audit-schema.yml` CI gate (Sprint 4) | PR blocked on chain break, HMAC forgery, or manifest mismatch |
 | 16 | Windows-Ollama audit schema validation | `check-windows-ollama-audit-schema.yml` verifies audit chain integrity on PRs touching audit files | PR blocked |

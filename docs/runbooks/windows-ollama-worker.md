@@ -66,7 +66,7 @@ Update this runbook's "Pinned model roster" table after any add/remove.
 
 Windows Ollama is an **ACTIVE SoM Tier-2 Worker fallback** as of Sprint 5 merge.
 
-Submission script (`scripts/windows-ollama/submit.py`, Sprint 2) validates `pii-patterns.yml` against the prompt before any HTTP call and blocks PII-tagged payloads entirely (route to LAM only or halt). Routing decision tree (`scripts/windows-ollama/decide.sh`, Sprint 5) halts on PII detection at entry point — payloads flagged as PII will never reach Windows endpoint.
+Submission script (`scripts/windows-ollama/submit.py`, Sprint 2) validates `pii_patterns.yml` against the prompt before any HTTP call and blocks PII-tagged payloads entirely (route to LAM only or halt). Routing decision tree (`scripts/windows-ollama/decide.sh`, Sprint 5) halts on PII detection at entry point — payloads flagged as PII will never reach Windows endpoint.
 
 ## Decision routing entry point
 
@@ -77,16 +77,18 @@ bash scripts/windows-ollama/decide.sh \
   --pii-flag <yes|no> \
   --prompt-text <str> | --prompt-file <path> \
   --local-warm-daemon-status <up|down> \
-  --codex-spark-status <ok|blocked|unknown> \
+  --spark-high-status <ok|blocked|unknown> \
+  --spark-medium-status <ok|blocked|unknown> \
   --windows-status <ok|unreachable>
 ```
 
 **Decision priority (evaluated in order):**
 1. **PII halt**: If `--pii-flag yes` or inline PII detected via `pii-patterns.yml` → return `HALT` (exit 1, do not route)
-2. **Spark primary**: If `--codex-spark-status ok` → return `CLOUD` (skip ladder, use spark)
-3. **Local daemon**: If `--local-warm-daemon-status up` → return `LOCAL` (Qwen2.5 on Mac)
-4. **Windows Ollama**: If `--windows-status ok` → return `WINDOWS` (this endpoint)
-5. **Cloud fallback**: Else → return `CLOUD` (Sonnet cost-flagged final fallback)
+2. **Spark primary**: If `--spark-high-status ok` → return `CLOUD` (skip ladder, use spark-high)
+3. **Spark medium fallback**: If `--spark-medium-status ok` → return `CLOUD` (use spark-medium)
+4. **Local daemon**: If `--local-warm-daemon-status up` → return `LOCAL` (Qwen2.5 on Mac)
+5. **Windows Ollama**: If `--windows-status ok` → return `WINDOWS` (this endpoint)
+6. **Cloud fallback**: Else → return `CLOUD` (Sonnet cost-flagged final fallback)
 
 Output: single line to stdout (`HALT` | `LOCAL` | `WINDOWS` | `CLOUD`). Exit 0 for success; exit 1 for HALT. Stderr logs the decision path for observability.
 
@@ -96,6 +98,7 @@ Full audit trail enforced via:
 - `scripts/windows-ollama/audit.py` — append-only writer to `raw/remote-windows-audit/YYYY-MM-DD.jsonl` with hash-chain + HMAC + daily manifest (Sprint 3)
 - `scripts/windows-ollama/verify_audit.py` — local chain validator (Sprint 3)
 - `.github/workflows/check-windows-ollama-audit-schema.yml` — CI schema + chain validation (Sprint 4)
+- `SOM_WINDOWS_AUDIT_HMAC_KEY` secret is now required for audit schema CI validation (Sprint 6)
 
 All three enforcement layers are live. Audit compliance is required before any call is accepted.
 

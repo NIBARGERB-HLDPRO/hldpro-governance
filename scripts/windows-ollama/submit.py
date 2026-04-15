@@ -37,7 +37,6 @@ __all__ = [
 
 import json
 import os
-import re
 import sys
 import time
 from pathlib import Path
@@ -52,6 +51,8 @@ except ImportError:
 
 # Import audit writer
 from audit import AuditWriter
+from _pii import detect_pii as detect_pii_shared
+from _pii import load_pii_patterns
 
 
 class WindowsOllamaSubmitter:
@@ -85,30 +86,7 @@ class WindowsOllamaSubmitter:
     def _load_pii_patterns(self) -> Dict[str, Any]:
         """Load PII patterns from pii_patterns.yml."""
         patterns_file = self.config_dir / "pii_patterns.yml"
-        if not patterns_file.exists():
-            raise FileNotFoundError(f"pii_patterns.yml not found at {patterns_file}")
-
-        # Simple YAML parser for our specific format (no external deps)
-        patterns = {}
-        current_pattern = None
-        try:
-            with open(patterns_file) as f:
-                for line in f:
-                    line = line.rstrip()
-                    if line.startswith("  ") and ":" in line:
-                        key, val = line.strip().split(":", 1)
-                        key, val = key.strip(), val.strip().strip("'\"")
-                        if current_pattern:
-                            patterns[current_pattern][key] = val
-                    elif line and not line.startswith("#") and not line.startswith(" "):
-                        if ":" in line:
-                            name, _ = line.split(":", 1)
-                            current_pattern = name.strip()
-                            patterns[current_pattern] = {}
-        except Exception as e:
-            raise ValueError(f"Failed to parse pii_patterns.yml: {e}")
-
-        return patterns
+        return load_pii_patterns(str(patterns_file))
 
     def _load_allowlist(self) -> Dict[str, Any]:
         """Load model allowlist from model_allowlist.yml."""
@@ -143,27 +121,7 @@ class WindowsOllamaSubmitter:
 
         Returns: pattern name if detected, None otherwise
         """
-        if not text:
-            return None
-
-        # Built-in patterns (fallback if YAML load fails)
-        builtin_patterns = {
-            "ssn": r"(?:\d{3}-\d{2}-\d{4}|\d{9})",
-            "phone": r"(?:\+\d{1,3}[-.\s]?)?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})",
-            "email": r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b",
-            "dob": r"(?:0[1-9]|1[0-2])[-/](0[1-9]|[12]\d|3[01])[-/](19|20)\d{2}",
-            "credit_card": r"\b(?:\d{4}[-\s]?){3}\d{4}\b",
-            "field_marker": r"(?:ssn|social|phone|dob|date.?of.?birth|credit|password|api.?key)\s*[:=]",
-        }
-
-        for pattern_name, regex in builtin_patterns.items():
-            try:
-                if re.search(regex, text, re.IGNORECASE):
-                    return pattern_name
-            except re.error:
-                pass
-
-        return None
+        return detect_pii_shared(text, self.pii_patterns)
 
     def check_allowlist(self, model: str, role: str = "worker") -> bool:
         """Verify model is in allowlist for the specified role."""
