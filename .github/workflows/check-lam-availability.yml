@@ -21,11 +21,11 @@ jobs:
       - name: Validate LAM health endpoint when required
         env:
           LAM_PROBE_URL: ${{ inputs.lam_probe_url }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
 
-          BASE_SHA="${{ github.event.pull_request.base.sha }}"
-          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
           if [ -z "${BASE_SHA}" ] || [ -z "${HEAD_SHA}" ]; then
             echo "::warning::[check-lam-availability] Missing pull request context; skipping."
             exit 0
@@ -39,15 +39,8 @@ jobs:
 
           PII_LABEL=false
           SAFE_LABEL=false
-          LABELS="$(python3 - <<'PY'
-import json
-import os
-with open(os.environ["GITHUB_EVENT_PATH"], "r", encoding="utf-8") as f:
-    payload = json.load(f)
-pull = payload.get("pull_request", {})
-print(" ".join(l.get("name", "") for l in pull.get("labels", [])))
-PY
-)"
+          LABELS="$(python3 .github/scripts/check_lam_availability_labels.py)"
+
           case " $LABELS " in
             *" pii "*) PII_LABEL=true ;;
             *" pii-safe "*) SAFE_LABEL=true ;;

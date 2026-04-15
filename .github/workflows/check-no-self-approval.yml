@@ -13,64 +13,10 @@ jobs:
           fetch-depth: 0
 
       - name: Validate cross-review model separation
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
           python3 -m pip install --quiet pyyaml
-          python3 - <<'PY'
-          import pathlib
-          import re
-          import subprocess
-          import sys
-          import yaml
-
-          base_sha = "${{ github.event.pull_request.base.sha }}"
-          head_sha = "${{ github.event.pull_request.head.sha }}"
-          if not base_sha or not head_sha:
-            print("::warning::[check-no-self-approval] Missing pull request context; skipping.")
-            raise SystemExit(0)
-
-          diff = subprocess.check_output(["git", "diff", "--name-only", f"{base_sha}...{head_sha}"], text=True).splitlines()
-          cross_files = sorted(p for p in diff if p.startswith("raw/cross-review/") and p.endswith(".md"))
-          if not cross_files:
-            print("[check-no-self-approval] No cross-review files in diff.")
-            raise SystemExit(0)
-
-          fail = False
-          for path in cross_files:
-            fp = pathlib.Path(path)
-            if not fp.exists():
-              print(f"::error file={path},line=1::[check-no-self-approval] cross-review file missing in workspace")
-              fail = True
-              continue
-
-            raw = fp.read_text(encoding="utf-8", errors="replace")
-            if not raw.startswith("---"):
-              print(f"::error file={path},line=1::[check-no-self-approval] missing YAML frontmatter")
-              fail = True
-              continue
-
-            parts = re.split(r"^---\s*$", raw, maxsplit=2, flags=re.M)
-            if len(parts) < 3:
-              print(f"::error file={path},line=1::[check-no-self-approval] malformed YAML frontmatter")
-              fail = True
-              continue
-
-            data = yaml.safe_load(parts[1]) or {}
-            drafter = (data.get("drafter") or {})
-            reviewer = (data.get("reviewer") or {})
-
-            d_id = drafter.get("model_id")
-            r_id = reviewer.get("model_id")
-            d_family = drafter.get("model_family")
-            r_family = reviewer.get("model_family")
-
-            if d_id == r_id:
-              print(f"::error file={path},line=1::[check-no-self-approval] drafter.model_id must not equal reviewer.model_id")
-              fail = True
-            if d_family == r_family:
-              print(f"::error file={path},line=1::[check-no-self-approval] drafter.model_family must not equal reviewer.model_family")
-              fail = True
-
-          if fail:
-            raise SystemExit(1)
-          PY
+          python3 .github/scripts/check_no_self_approval.py
