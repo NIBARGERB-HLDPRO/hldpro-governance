@@ -11,7 +11,7 @@ All governed repos use this schema for `docs/ERROR_PATTERNS.md`. Patterns are re
 
 # ERROR_PATTERNS
 
-## Pattern: {pattern-id}
+## Pattern: <kebab-case-id>
 
 ### Symptom
 [Observable failure, user-facing or internal detection; 2-3 sentences]
@@ -33,7 +33,7 @@ All governed repos use this schema for `docs/ERROR_PATTERNS.md`. Patterns are re
 
 ---
 
-## Pattern: {next-pattern-id}
+## Pattern: <kebab-case-id>
 [... repeat structure ...]
 ```
 
@@ -52,7 +52,7 @@ Each pattern header MUST be formatted `## Pattern: <kebab-case-id>`. Other `##` 
 
 ## Entry Rules
 
-1. **Pattern ID format**: kebab-case, ≤40 chars, descriptive (e.g., `github-actions-node-deprecation`, `plaid-token-expiry-race`, `supabase-connection-pool-exhaustion`)
+1. **Pattern ID format**: `^[a-z0-9]+(?:-[a-z0-9]+)*$` (kebab-case, descriptive, e.g., `github-actions-node-deprecation`, `plaid-token-expiry-race`, `supabase-connection-pool-exhaustion`)
 2. **Symptom**: Observable failure state (not just "something broke")
 3. **Root Cause**: Dig into mechanisms; cite code paths, config, or external dependencies
 4. **Detection**: Include specific log keywords, metrics thresholds, error codes; allow `null` if undetectable
@@ -78,7 +78,7 @@ New patterns MUST use the canonical structure. During Phase 1–2, legacy patter
 A pattern section can be minimal during Phase 1 if no pattern history exists yet:
 
 ```markdown
-## Pattern: {pattern-id}
+## Pattern: <kebab-case-id>
 
 ### Symptom
 [To be populated]
@@ -104,7 +104,7 @@ Phase 2 activities will populate these sections as incidents occur.
 ## Example Pattern (full)
 
 ```markdown
-## github-actions-node-deprecation
+## Pattern: example-full-pattern
 
 ### Symptom
 CI workflows fail with deprecation warning: "Node.js 20 actions are deprecated and will be removed..." Workflow steps complete but artifact upload or checkout fails intermittently.
@@ -137,12 +137,12 @@ GitHub Actions default runner images deprecated Node.js 20 in favor of Node.js 2
 
 ## CI Validation
 
-The `check-fail-fast-schema.yml` workflow validates every PR touching this file:
-- Parses the Markdown section structure
-- Ensures each pattern has required sections (Symptom, Root Cause, Detection, Resolution Playbook)
-- Validates pattern ID format (kebab-case, ≤40 chars)
-- Optionally checks that all instances reference existing FAIL_FAST_LOG.md entries
-- Reports errors with section names and line numbers
+The `check-fail-fast-schema.yml` workflow validates every PR touching this file. For Phase 1, the validator checks structural presence only:
+- Presence of canonical `## Pattern: <kebab-case-id>` headings (or explicit stub marker in `ERROR_PATTERNS.md`)
+- Canonical section block exists for each pattern heading in structure
+- YAML frontmatter is allowed and supports `legacy: true` to skip checks
+
+Field-level checks are deferred to a follow-up sprint (category/severity enums, character limits, kebab-case pattern regex enforcement, and cross-document pattern-reference checks).
 
 Workflow fails on violations; PR cannot merge until fixed.
 

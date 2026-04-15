@@ -2,11 +2,14 @@
 
 Reusable solutions to recurring governance failures. See `docs/schemas/error-patterns.schema.md` for the canonical schema.
 
+<!-- stub: no-patterns-yet -->
+Stub file — patterns will be added as root causes recur. Remove the stub comment when the first `## Pattern: <id>` section is added.
+
 ## Contributing
 
 When a pattern emerges from one or more incidents in `FAIL_FAST_LOG.md`, document it here following the schema:
 
-1. Create a new `## pattern-id` section (kebab-case name, e.g., `overlord-sweep-stale-checkout`)
+1. Create a new `## Pattern: <kebab-case-id>` section (kebab-case name, e.g., `overlord-sweep-stale-checkout`)
 2. Fill in: Symptom, Root Cause, Detection, Resolution Playbook, Instances
 3. Optional: Prevention (can be empty for Phase 1)
 4. Reference the pattern in your `FAIL_FAST_LOG.md` entries

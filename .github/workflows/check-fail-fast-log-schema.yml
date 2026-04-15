@@ -17,5 +17,3 @@ jobs:
     with:
       fail_fast_log_path: docs/FAIL_FAST_LOG.md
       error_patterns_path: docs/ERROR_PATTERNS.md
-      schema_fail_fast_path: docs/schemas/fail-fast-log.schema.md
-      schema_patterns_path: docs/schemas/error-patterns.schema.md

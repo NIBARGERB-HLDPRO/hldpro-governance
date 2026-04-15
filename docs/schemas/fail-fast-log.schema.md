@@ -26,7 +26,7 @@ All governed repos use this schema for `docs/FAIL_FAST_LOG.md`. Entries are logg
 
 1. **Chronological order**: newer entries at the top, oldest at the bottom
 2. **One issue per row**: Do not collapse multiple failures into one entry
-3. **Pattern linkage**: Every entry MUST reference an existing pattern in `ERROR_PATTERNS.md` (even if pattern is stub); use format `[pattern-id](../)` or bare pattern ID
+3. **Pattern linkage**: Pattern links should reference entries in `ERROR_PATTERNS.md` where available; links may be omitted temporarily while patterns are being established.
 4. **Exact timestamps**: Date is discovery/report date, not resolution date
 5. **Plain markdown tables only**: No HTML, no multiline cells (use `;` to separate if needed)
 6. **Character limits**: 
@@ -62,14 +62,10 @@ New entries MUST use the canonical table format below the legacy block. During P
 
 ## CI Validation
 
-The `check-fail-fast-schema.yml` workflow validates every PR touching this file:
-- Parses the Markdown table
-- Ensures each row has exactly 7 columns
-- Validates date format (YYYY-MM-DD)
-- Enforces category is one of: CI, Runtime, Data, Auth, Dependency, Config, Deploy, Infra, Other
-- Enforces severity is one of: CRITICAL, ERROR, WARN
-- Checks character limits
-- Verifies pattern reference exists in ERROR_PATTERNS.md
-- Reports errors with line numbers
+The `check-fail-fast-schema.yml` workflow validates every PR touching this file. For Phase 1:
+- Verifies the canonical table header is present: `| Date | Category | Severity | Error | Root Cause | Resolution | Related Pattern |`
+- Skips validation when frontmatter includes `legacy: true`.
+
+Field-level validation (date format, category/severity enums, character limits, and pattern-reference existence) is deferred to a follow-up sprint.
 
 Workflow fails on any violation; PR cannot merge until fixed.

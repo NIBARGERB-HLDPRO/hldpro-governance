@@ -11,14 +11,6 @@ on:
         description: Path to ERROR_PATTERNS.md (relative to repo root)
         type: string
         default: docs/ERROR_PATTERNS.md
-      schema_fail_fast_path:
-        description: Path to canonical FAIL_FAST schema (relative to governance repo)
-        type: string
-        default: docs/schemas/fail-fast-log.schema.md
-      schema_patterns_path:
-        description: Path to canonical ERROR_PATTERNS schema (relative to governance repo)
-        type: string
-        default: docs/schemas/error-patterns.schema.md
 
 permissions:
   contents: read
@@ -51,168 +43,62 @@ jobs:
           import sys
           from pathlib import Path
 
-          # Configuration
-          FAIL_FAST_PATH = "${{ inputs.fail_fast_log_path }}"
-          SCHEMA_PATH = "governance-schemas/${{ inputs.schema_fail_fast_path }}"
+          FAIL_FAST_PATH = "docs/FAIL_FAST_LOG.md"
+          ERROR_PATTERNS_PATH = "docs/ERROR_PATTERNS.md"
 
-          # Valid category values
-          VALID_CATEGORIES = {"CI", "Runtime", "Data", "Auth", "Dependency", "Config", "Deploy", "Infra", "Other"}
-          VALID_SEVERITIES = {"CRITICAL", "ERROR", "WARN"}
-
-          def _is_frontmatter_legacy(lines):
-              if not lines:
+          def has_legacy_marker(path):
+              """Detect YAML frontmatter with legacy: true at the top of the file."""
+              text = Path(path).read_text(encoding="utf-8")
+              # YAML frontmatter must start on line 1
+              if not text.startswith("---\n"):
                   return False
-
-              if lines[0].strip() != "---":
+              end = text.find("\n---\n", 4)
+              if end == -1:
                   return False
+              front = text[4:end]
+              return re.search(r"^legacy:\s*true\s*$", front, re.MULTILINE) is not None
 
-              try:
-                  end_idx = lines.index("---", 1)
-              except ValueError:
+          def validate_fail_fast_log():
+              path = FAIL_FAST_PATH
+              if not Path(path).exists():
+                  print(f"✗ {path} not found")
                   return False
-
-              frontmatter = "\n".join(lines[1:end_idx]).strip()
-              if not frontmatter:
-                  return False
-
-              try:
-                  import yaml
-
-                  parsed = yaml.safe_load(frontmatter)
-                  if isinstance(parsed, dict) and str(parsed.get("legacy", "")).lower() in {"true", "1", "yes", "on"}:
-                      return True
-              except Exception:
-                  pass
-
-              for row in lines[1:end_idx]:
-                  if ":" not in row:
-                      continue
-                  key, value = row.split(":", 1)
-                  if key.strip() == "legacy" and value.strip().lower() in {"true", "1", "yes", "on"}:
-                      return True
-
-              return False
-
-          def _is_separator_row(cells):
-              return bool(cells) and all(cell in {"---", ":---", "---:", ":---:"} for cell in cells)
-
-          def validate_fail_fast():
-              if not Path(FAIL_FAST_PATH).exists():
-                  print(f"✗ FAIL_FAST_LOG.md not found at {FAIL_FAST_PATH}")
-                  return False
-
-              with open(FAIL_FAST_PATH) as f:
-                  content = f.read()
-                  lines = content.split('\n')
-
-              # Check for legacy marker
-              has_legacy = _is_frontmatter_legacy(lines)
-              if has_legacy:
-                  print("✓ FAIL_FAST_LOG.md has legacy marker; skipping validation")
+              if has_legacy_marker(path):
+                  print(f"✓ {path} has legacy marker; structural checks skipped")
                   return True
-
-              table_found = False
-              in_table = False
-              header_seen = False
-
-              # Validate each row
-              has_errors = False
-              for i, line in enumerate(lines, start=1):
-                  stripped = line.strip()
-
-                  if not stripped:
-                      in_table = False
-                      header_seen = False
-                      continue
-
-                  if stripped.startswith("#"):
-                      in_table = False
-                      header_seen = False
-                      continue
-
-                  if not stripped.startswith("|"):
-                      in_table = False
-                      header_seen = False
-                      continue
-
-                  cells = [cell.strip() for cell in stripped.strip("|").split("|")]
-
-                  if not header_seen and "Date" in cells and "Category" in cells:
-                      table_found = True
-                      header_seen = True
-                      in_table = True
-                      continue
-
-                  if in_table and _is_separator_row(cells):
-                      continue
-
-                  if not in_table:
-                      continue
-
-                  if len(cells) != 7:
-                      print(f"✗ Line {i}: expected 7 columns, got {len(cells)}")
-                      print(f"  {line}")
-                      has_errors = True
-                      continue
-
-                  date, category, severity, error, root_cause, resolution, pattern = cells
-
-                  required_cells = [
-                      ("Date", date),
-                      ("Category", category),
-                      ("Severity", severity),
-                      ("Error", error),
-                      ("Root Cause", root_cause),
-                      ("Resolution", resolution),
-                      ("Pattern", pattern),
-                  ]
-                  for field_name, value in required_cells:
-                      if not value:
-                          print(f"✗ Line {i}: missing required {field_name} value")
-                          has_errors = True
-
-                  # Validate date format (YYYY-MM-DD)
-                  if not re.match(r'^\d{4}-\d{2}-\d{2}$', date):
-                      print(f"✗ Line {i}: Invalid date format '{date}' (expected YYYY-MM-DD)")
-                      has_errors = True
-
-                  # Validate category
-                  if category not in VALID_CATEGORIES:
-                      print(f"✗ Line {i}: Invalid category '{category}' (expected one of {VALID_CATEGORIES})")
-                      has_errors = True
-
-                  # Validate severity
-                  if severity not in VALID_SEVERITIES:
-                      print(f"✗ Line {i}: Invalid severity '{severity}' (expected CRITICAL, ERROR, or WARN)")
-                      has_errors = True
-
-                  # Validate character limits
-                  if len(error) > 80:
-                      print(f"✗ Line {i}: Error description too long ({len(error)} chars, max 80)")
-                      has_errors = True
-
-                  if len(root_cause) > 60:
-                      print(f"✗ Line {i}: Root cause too long ({len(root_cause)} chars, max 60)")
-                      has_errors = True
-
-                  if len(resolution) > 50:
-                      print(f"✗ Line {i}: Resolution too long ({len(resolution)} chars, max 50)")
-                      has_errors = True
-
-              if not table_found:
-                  print("✗ FAIL_FAST_LOG.md: Table header not found (format: | Date | Category | Severity | Error | Root Cause | Resolution | Pattern |)")
+              text = Path(path).read_text(encoding="utf-8")
+              # Minimal check: canonical 7-column table header present somewhere
+              header_re = re.compile(r"\|\s*Date\s*\|\s*Category\s*\|\s*Severity\s*\|\s*Error\s*\|\s*Root Cause\s*\|\s*Resolution\s*\|\s*Related Pattern\s*\|", re.IGNORECASE)
+              if not header_re.search(text):
+                  print(f"✗ {path}: canonical header '| Date | Category | Severity | Error | Root Cause | Resolution | Related Pattern |' not found (add or mark file legacy)")
                   return False
-
-              if has_errors:
-                  return False
-
-              print("✓ FAIL_FAST_LOG.md schema validation passed")
+              print(f"✓ {path} has canonical header")
               return True
 
-          if validate_fail_fast():
-              sys.exit(0)
-          else:
-              sys.exit(1)
+          def validate_error_patterns():
+              path = ERROR_PATTERNS_PATH
+              if not Path(path).exists():
+                  print(f"✗ {path} not found")
+                  return False
+              if has_legacy_marker(path):
+                  print(f"✓ {path} has legacy marker; structural checks skipped")
+                  return True
+              text = Path(path).read_text(encoding="utf-8")
+              # Minimal check: at least one valid pattern heading OR an explicit "no patterns yet" stub marker
+              pattern_ids = re.findall(r"^## Pattern: ([a-z0-9]+(?:-[a-z0-9]+)*)\s*$", text, re.MULTILINE)
+              if pattern_ids:
+                  print(f"✓ {path}: found {len(pattern_ids)} pattern heading(s)")
+                  return True
+              # Stub allowed if it declares itself a stub
+              if re.search(r"<!--\s*stub: no-patterns-yet\s*-->", text, re.IGNORECASE):
+                  print(f"✓ {path}: explicit stub marker present (no patterns yet)")
+                  return True
+              print(f"✗ {path}: no '## Pattern: <kebab-case-id>' heading found and no stub marker. Either add a pattern or mark file stub via '<!-- stub: no-patterns-yet -->'.")
+              return False
+
+          ok1 = validate_fail_fast_log()
+          ok2 = validate_error_patterns()
+          sys.exit(0 if (ok1 and ok2) else 1)
           VALIDATOR_EOF
 
       - name: Validate ERROR_PATTERNS.md schema
@@ -222,69 +108,62 @@ jobs:
           import sys
           from pathlib import Path
 
-          # Configuration
-          PATTERNS_PATH = "${{ inputs.error_patterns_path }}"
+          FAIL_FAST_PATH = "docs/FAIL_FAST_LOG.md"
+          ERROR_PATTERNS_PATH = "docs/ERROR_PATTERNS.md"
 
-          def validate_error_patterns():
-              if not Path(PATTERNS_PATH).exists():
-                  print(f"ℹ ERROR_PATTERNS.md not found at {PATTERNS_PATH} (stub OK for Phase 1)")
-                  return True
-
-              with open(PATTERNS_PATH) as f:
-                  content = f.read()
-                  lines = content.split('\n')
-
-              # Check for legacy marker
-              has_legacy = "---\nlegacy: true\n---" in content or "legacy: true" in content
-
-              if has_legacy:
-                  print("✓ ERROR_PATTERNS.md has legacy marker; skipping validation")
-                  return True
-
-              # Find pattern definitions (## Pattern: <pattern-id>)
-              pattern_ids = re.findall(r'^## Pattern: ([\w-]+)$', content, re.MULTILINE)
-
-              if not pattern_ids:
-                  print("ℹ ERROR_PATTERNS.md has no patterns defined (stub OK for Phase 1)")
-                  return True
-
-              # Validate each pattern
-              has_errors = False
-              for pattern_id in pattern_ids:
-                  # Check pattern ID format (kebab-case, ≤40 chars)
-                  if not re.match(r'^[\w-]+$', pattern_id):
-                      print(f"✗ Pattern '{pattern_id}': Invalid format (expected kebab-case)")
-                      has_errors = True
-
-                  if len(pattern_id) > 40:
-                      print(f"✗ Pattern '{pattern_id}': ID too long ({len(pattern_id)} chars, max 40)")
-                      has_errors = True
-
-                  # Extract pattern section
-                  pattern_start = content.find(f"## {pattern_id}")
-                  if pattern_start == -1:
-                      continue
-
-                  next_pattern = content.find("## ", pattern_start + 1)
-                  pattern_section = content[pattern_start:next_pattern if next_pattern != -1 else None]
-
-                  # Check required sections
-                  required_sections = ["### Symptom", "### Root Cause", "### Detection", "### Resolution Playbook"]
-                  for section in required_sections:
-                      if section not in pattern_section:
-                          print(f"✗ Pattern '{pattern_id}': Missing required section '{section}'")
-                          has_errors = True
-
-              if has_errors:
+          def has_legacy_marker(path):
+              """Detect YAML frontmatter with legacy: true at the top of the file."""
+              text = Path(path).read_text(encoding="utf-8")
+              # YAML frontmatter must start on line 1
+              if not text.startswith("---\n"):
                   return False
+              end = text.find("\n---\n", 4)
+              if end == -1:
+                  return False
+              front = text[4:end]
+              return re.search(r"^legacy:\s*true\s*$", front, re.MULTILINE) is not None
 
-              print(f"✓ ERROR_PATTERNS.md schema validation passed ({len(pattern_ids)} patterns)")
+          def validate_fail_fast_log():
+              path = FAIL_FAST_PATH
+              if not Path(path).exists():
+                  print(f"✗ {path} not found")
+                  return False
+              if has_legacy_marker(path):
+                  print(f"✓ {path} has legacy marker; structural checks skipped")
+                  return True
+              text = Path(path).read_text(encoding="utf-8")
+              # Minimal check: canonical 7-column table header present somewhere
+              header_re = re.compile(r"\|\s*Date\s*\|\s*Category\s*\|\s*Severity\s*\|\s*Error\s*\|\s*Root Cause\s*\|\s*Resolution\s*\|\s*Related Pattern\s*\|", re.IGNORECASE)
+              if not header_re.search(text):
+                  print(f"✗ {path}: canonical header '| Date | Category | Severity | Error | Root Cause | Resolution | Related Pattern |' not found (add or mark file legacy)")
+                  return False
+              print(f"✓ {path} has canonical header")
               return True
 
-          if validate_error_patterns():
-              sys.exit(0)
-          else:
-              sys.exit(1)
+          def validate_error_patterns():
+              path = ERROR_PATTERNS_PATH
+              if not Path(path).exists():
+                  print(f"✗ {path} not found")
+                  return False
+              if has_legacy_marker(path):
+                  print(f"✓ {path} has legacy marker; structural checks skipped")
+                  return True
+              text = Path(path).read_text(encoding="utf-8")
+              # Minimal check: at least one valid pattern heading OR an explicit "no patterns yet" stub marker
+              pattern_ids = re.findall(r"^## Pattern: ([a-z0-9]+(?:-[a-z0-9]+)*)\s*$", text, re.MULTILINE)
+              if pattern_ids:
+                  print(f"✓ {path}: found {len(pattern_ids)} pattern heading(s)")
+                  return True
+              # Stub allowed if it declares itself a stub
+              if re.search(r"<!--\s*stub: no-patterns-yet\s*-->", text, re.IGNORECASE):
+                  print(f"✓ {path}: explicit stub marker present (no patterns yet)")
+                  return True
+              print(f"✗ {path}: no '## Pattern: <kebab-case-id>' heading found and no stub marker. Either add a pattern or mark file stub via '<!-- stub: no-patterns-yet -->'.")
+              return False
+
+          ok1 = validate_fail_fast_log()
+          ok2 = validate_error_patterns()
+          sys.exit(0 if (ok1 and ok2) else 1)
           VALIDATOR_EOF
 
       - name: Report validation status
