@@ -535,6 +535,10 @@ jobs:
           # Store for next step
           echo "date=${DATE}" >> "$GITHUB_OUTPUT"
 
+      - name: Memory integrity audit
+        run: python3 scripts/overlord/memory_integrity.py
+        continue-on-error: false  # memory drift should fail the sweep
+
       - name: Build effectiveness baseline snapshot
         run: |
           DATE=$(date -u +%Y-%m-%d)
