@@ -64,20 +64,40 @@ Update this runbook's "Pinned model roster" table after any add/remove.
 
 ## PII gate (invariant #8)
 
-**WINDOWS RUNG NOT APPROVED FOR SoM ROUTING UNTIL SPRINT 5.**
+Windows Ollama is an **ACTIVE SoM Tier-2 Worker fallback** as of Sprint 5 merge.
 
-Submission script (`scripts/windows-ollama/submit.py`, Sprint 2) MUST run `pii-patterns.yml` against the prompt before any HTTP call and block PII-tagged payloads entirely (route to LAM only or halt). Governed by exception `SOM-WIN-OLLAMA-PII-001` (expires 2026-05-15).
+Submission script (`scripts/windows-ollama/submit.py`, Sprint 2) validates `pii-patterns.yml` against the prompt before any HTTP call and blocks PII-tagged payloads entirely (route to LAM only or halt). Routing decision tree (`scripts/windows-ollama/decide.sh`, Sprint 5) halts on PII detection at entry point — payloads flagged as PII will never reach Windows endpoint.
+
+## Decision routing entry point
+
+The `scripts/windows-ollama/decide.sh` script decides where to route each prompt based on system state and payload characteristics:
+
+```bash
+bash scripts/windows-ollama/decide.sh \
+  --pii-flag <yes|no> \
+  --prompt-text <str> | --prompt-file <path> \
+  --local-warm-daemon-status <up|down> \
+  --codex-spark-status <ok|blocked|unknown> \
+  --windows-status <ok|unreachable>
+```
+
+**Decision priority (evaluated in order):**
+1. **PII halt**: If `--pii-flag yes` or inline PII detected via `pii-patterns.yml` → return `HALT` (exit 1, do not route)
+2. **Spark primary**: If `--codex-spark-status ok` → return `CLOUD` (skip ladder, use spark)
+3. **Local daemon**: If `--local-warm-daemon-status up` → return `LOCAL` (Qwen2.5 on Mac)
+4. **Windows Ollama**: If `--windows-status ok` → return `WINDOWS` (this endpoint)
+5. **Cloud fallback**: Else → return `CLOUD` (Sonnet cost-flagged final fallback)
+
+Output: single line to stdout (`HALT` | `LOCAL` | `WINDOWS` | `CLOUD`). Exit 0 for success; exit 1 for HALT. Stderr logs the decision path for observability.
 
 ## Audit (invariant #10)
 
-**WINDOWS RUNG NOT APPROVED FOR SoM ROUTING UNTIL SPRINT 5.**
+Full audit trail enforced via:
+- `scripts/windows-ollama/audit.py` — append-only writer to `raw/remote-windows-audit/YYYY-MM-DD.jsonl` with hash-chain + HMAC + daily manifest (Sprint 3)
+- `scripts/windows-ollama/verify_audit.py` — local chain validator (Sprint 3)
+- `.github/workflows/check-windows-ollama-audit-schema.yml` — CI schema + chain validation (Sprint 4)
 
-Sprint 2–3 will land:
-- `scripts/windows-ollama/audit.py` — append-only writer to `raw/remote-windows-audit/YYYY-MM-DD.jsonl` with hash-chain + HMAC + daily manifest
-- `scripts/windows-ollama/verify_audit.py` — local chain validator
-- `.github/workflows/check-windows-ollama-audit-schema.yml` (Sprint 4) — CI schema + chain validation
-
-Governed by exception `SOM-WIN-OLLAMA-AUDIT-001` (expires 2026-05-15). Until then, ad-hoc submissions are NOT audit-compliant.
+All three enforcement layers are live. Audit compliance is required before any call is accepted.
 
 ## Failure response
 
@@ -120,3 +140,4 @@ Windows-Ollama rung activation (Sprint 5) requires:
 | Date | Change |
 |---|---|
 | 2026-04-15 | Stage A: Promoted Windows host from HP-critic-only to documented SoM Tier-2 fallback. Renumbered invariants 13–15 to 8–10. Added three exceptions covering PII middleware, audit trail, and activation gate. Windows rung marked "documented / disabled until Sprint 5." |
+| 2026-04-15 | **Sprint 5: Windows-Ollama Tier-2 rung ACTIVATED.** Routing decision tree (`decide.sh`) implemented. All three exceptions closed (PII, audit, disabled-gate). Rung transitions from documented/disabled to active in Tier-2 ladder. Invariants #8–#10 enforced end-to-end. |
