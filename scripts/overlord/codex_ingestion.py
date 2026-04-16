@@ -567,7 +567,11 @@ def cmd_generate(args: argparse.Namespace) -> int:
 
     base_sha = commit_shas[0]
     head_sha = run(["git", "rev-parse", "HEAD"], cwd=repo_path).stdout.strip()
-    base_parent = run(["git", "rev-parse", f"{base_sha}^"], cwd=repo_path).stdout.strip()
+    try:
+        base_parent = run(["git", "rev-parse", f"{base_sha}^"], cwd=repo_path).stdout.strip()
+    except subprocess.CalledProcessError:
+        # Root commit has no parent — use the empty tree as the diff base
+        base_parent = run(["git", "hash-object", "-t", "tree", "/dev/null"], cwd=repo_path).stdout.strip()
     commit_count = len(commit_shas)
     review_context = build_review_context(repo_path, base_parent, head_sha, commit_shas)
 
