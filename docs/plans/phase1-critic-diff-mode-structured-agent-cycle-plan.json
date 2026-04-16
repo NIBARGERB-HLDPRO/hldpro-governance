@@ -1,0 +1,157 @@
+{
+  "session_id": "session-20260409-phase1-critic-diff-mode",
+  "issue_number": 411,
+  "objective": "Extend /v2/critic/evaluate with diff-mode for external consumer repos and add GitHub issue creation on REJECTED verdicts, using a synthesizer wrapper around the existing stub generator.",
+  "tier": 2,
+  "scope_boundary": [
+    "This slice adds diff-mode dispatch, synthesizer, mask policy, SQL migration, issue creation, and contract tests to local-ai-machine only.",
+    "Consumer-side CI integration (CRITIC_ENABLED flag) is documented but not wired in this slice.",
+    "PHI redaction is gated by caller_mask_policy but the actual redactor is Phase 1.5 — HP-App will fail the phi_redaction_gate until then by design."
+  ],
+  "out_of_scope": [
+    "PHI redactor implementation (Phase 1.5).",
+    "Consumer CI wiring in HealthcarePlatform or AIS repos.",
+    "SSE streaming for diff-mode jobs — polling only in Phase 1.",
+    "Changes to the existing internal pipeline flow (mode absent = legacy behavior)."
+  ],
+  "research_summary": "All dependencies verified: generate_stub_bundle.py exists and produces 9-artifact bundles, masks.json has 6 masks with a well-defined schema, test_mask_policy_contract.py validates mask governance enforcement, the critic API handler in critic_api_postgres.py already supports idempotency and async job queuing, the jobs table has 35 migrations through Phase I, and gh CLI is authed with full repo scope. The synthesizer design wraps the existing stub generator (~50-80 lines) rather than duplicating its 200+ lines of artifact generation logic. caller_mask_policy.json does not yet exist — it is a new artifact mapping caller repos to active mask sets.",
+  "research_artifacts": [
+    "local-ai-machine/generate_stub_bundle.py",
+    "local-ai-machine/masks.json",
+    "local-ai-machine/mask_attestation.schema.json",
+    "local-ai-machine/scripts/ops/test_mask_policy_contract.py",
+    "local-ai-machine/scripts/edge/critic_api_postgres.py",
+    "local-ai-machine/runtime/sql/001_v5_slm_inference_jobs.sql",
+    "local-ai-machine/runtime/sql/002_v5_idempotency_and_audit_chain.sql",
+    "local-ai-machine/audit_event.schema.json",
+    "local-ai-machine/tests/fixtures/runs/local-20260223-2135/drift_report.json",
+    "local-ai-machine/tests/fixtures/runs/local-20260223-2135/remediation_plan.json"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 — Foundation",
+      "goal": "Add phi_redaction_gate mask, caller_mask_policy, SQL migration, and diff-mode synthesizer.",
+      "tasks": [
+        "Add phi_redaction_gate mask to masks.json with required_artifacts: [redaction_attestation.json].",
+        "Create runtime/caller_mask_policy.json mapping HP-App (phi gate active) and AIS (phi gate inactive).",
+        "Create runtime/sql/036_gh_issue_url.sql adding nullable gh_issue_url text column to slm_inference_jobs.",
+        "Create scripts/edge/diff_mode_synthesizer.py wrapping generate_stub_bundle.py: import stub generator, overwrite drift_report/remediation_plan/mask_attestation per diff payload, append audit event."
+      ],
+      "acceptance_criteria": [
+        "masks.json has 7 masks and phi_redaction_gate requires redaction_attestation.json.",
+        "caller_mask_policy.json maps two callers with correct mask activation.",
+        "Migration is additive (nullable column), applies without breaking existing rows.",
+        "Synthesizer produces valid 9-artifact bundle with diff-derived overrides.",
+        "Existing test_mask_policy_contract.py still passes."
+      ],
+      "file_paths": [
+        "masks.json",
+        "runtime/caller_mask_policy.json",
+        "runtime/sql/036_gh_issue_url.sql",
+        "scripts/edge/diff_mode_synthesizer.py"
+      ]
+    },
+    {
+      "name": "Sprint 2 — Handler + Issue Creation + Tests",
+      "goal": "Wire diff-mode dispatch in the critic API, add issue creation worker, and write contract tests.",
+      "tasks": [
+        "Add mode=diff dispatch in critic_api_postgres.py do_POST: validate required diff-mode fields, call synthesizer, enqueue job.",
+        "Create scripts/edge/critic_issue_creator.py: check gh_issue_url for idempotency, create issue via gh CLI with labels, update job record.",
+        "Create tests/test_diff_mode_contract.py: test synthesizer bundle validity, diff-mode payload validation, issue creation idempotency, caller mask policy resolution.",
+        "Add test fixtures under tests/fixtures/diff_mode/ with sample diff payloads and expected artifacts."
+      ],
+      "acceptance_criteria": [
+        "/v2/critic/evaluate with mode: diff returns 202 with job_id.",
+        "Legacy calls (no mode field) continue working unchanged.",
+        "REJECTED verdict triggers gh issue create with correct labels.",
+        "Duplicate idempotency_key does not create duplicate issue.",
+        "All contract tests pass."
+      ],
+      "file_paths": [
+        "scripts/edge/critic_api_postgres.py",
+        "scripts/edge/critic_issue_creator.py",
+        "tests/test_diff_mode_contract.py",
+        "tests/fixtures/diff_mode/sample_diff_payload.json",
+        "tests/fixtures/diff_mode/expected_drift_report.json"
+      ]
+    },
+    {
+      "name": "Sprint 3 — Governance Docs",
+      "goal": "Update governance docs per co-staging rules.",
+      "tasks": [
+        "Update docs/PROGRESS.md with Phase 1 diff-mode entry.",
+        "Update docs/FEATURE_REGISTRY.md with diff-mode feature as alpha.",
+        "Update docs/SERVICE_REGISTRY.md with new scripts and endpoints.",
+        "Update docs/DATA_DICTIONARY.md with gh_issue_url column."
+      ],
+      "acceptance_criteria": [
+        "All governance docs co-staged with source file changes.",
+        "Feature registry reflects diff-mode as alpha status.",
+        "Data dictionary documents the new migration column."
+      ],
+      "file_paths": [
+        "docs/PROGRESS.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/DATA_DICTIONARY.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-security-reviewer",
+      "role": "Security specialist",
+      "focus": "Validate that diff-mode payload handling does not introduce injection vectors, that gh CLI calls are safe from command injection, and that caller_mask_policy cannot be bypassed.",
+      "status": "accepted_with_followup",
+      "summary": "WARN on command injection: gh issue create must use subprocess.run with list args (shell=False). WARN on unbounded diff size: add MAX_DIFF_BYTES=524288 guard. WARN on repo field: validate against allowlist regex. All three mitigations added to plan.",
+      "evidence": [
+        "scripts/edge/critic_api_postgres.py:2661-2693",
+        "generate_stub_bundle.py (main() not importable — refactor required)"
+      ]
+    },
+    {
+      "reviewer": "codex-schema-reviewer",
+      "role": "Schema and contract reviewer",
+      "focus": "Validate that the synthesizer output conforms to existing proof_bundle_schema.json and that the new mask does not break gatekeeper validation for existing flows.",
+      "status": "accepted",
+      "summary": "PASS: masks.json mask count not hardcoded in test_mask_policy_contract.py. proof_bundle_schema.json is mask-count-agnostic — requires mask_attestation.json exists and overall_status==pass. 7th mask safe to add. Synthesizer wraps generate_bundle() which produces schema-compliant artifacts.",
+      "evidence": [
+        "scripts/ops/test_mask_policy_contract.py",
+        "masks.json",
+        "mask_attestation.schema.json",
+        "proof_bundle_schema.json"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "claude-opus-4-6-specialist",
+    "model_family": "Claude 4.6",
+    "status": "accepted_with_followup",
+    "summary": "ACCEPTED_WITH_FOLLOWUP. Three material deviations: (1) generate_stub_bundle.py main() not importable — add commit 0 to refactor into generate_bundle(run_id, base_dir). (2) mode=diff branch must short-circuit before apply_token_budget at line ~2667. (3) Add MAX_DIFF_BYTES guard + subprocess.run shell=False + repo regex validation. All incorporated into updated plan.",
+    "evidence": [
+      "docs/plans/phase1-critic-diff-mode-pdcar.md",
+      "generate_stub_bundle.py:main() is __main__ only",
+      "scripts/edge/critic_api_postgres.py:2667 apply_token_budget",
+      "masks.json (7th mask safe — no hardcoded counts)"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-opus-4-6",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implementation approved for all 7 commits in local-ai-machine: mask addition, SQL migration, synthesizer, handler dispatch, issue creation, contract tests, governance docs. Single PR to develop.",
+    "next_execution_step": "Run Codex specialist review, then execute Sprint 1 in local-ai-machine.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If generate_stub_bundle.py cannot be imported as a module (only runs as __main__), refactor the minimum needed to expose a callable function — do not rewrite the generator.",
+    "If gh CLI cross-repo issue creation fails due to auth scope, document the gap and create a follow-up issue instead of requesting new PATs.",
+    "If existing mask contract tests have hardcoded mask counts, update the expected count rather than skipping the test.",
+    "If proof_bundle_schema.json requires redaction_attestation.json globally (not just per-mask), issue-back rather than breaking existing flows."
+  ],
+  "approved": true,
+  "approved_by": [
+    "session-agent-claude-opus-4-6"
+  ],
+  "approved_at": "2026-04-09T18:00:00-05:00"
+}
