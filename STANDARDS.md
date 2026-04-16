@@ -39,7 +39,7 @@
   - `alternate_model_review`
   - `execution_handoff`
   - `material_deviation_rules`
-- Issue-driven execution branches (`issue-*` and `riskfix/*`) must have at least one valid `*structured-agent-cycle-plan.json` file before execution is governance-ready.
+- Issue-driven execution branches (`issue-*`) and risk-fix branches (`riskfix/*`) must have at least one valid `*structured-agent-cycle-plan.json` file before execution is governance-ready. Note: `riskfix/<slug>-YYYYMMDD` (with date suffix) is the **required** implementation branch pattern for `local-ai-machine`, enforced by `edge_breaker_mcp_contract.yml`. Other repos accept `riskfix/*` as an optional prefix alongside standard `feat/fix/chore/docs` conventions but do not require it.
 - Reusable governance CI validates structured plans through `scripts/overlord/validate_structured_agent_cycle_plan.py`.
 - Cross-model review results from `scripts/codex-review.sh claude` belong in `alternate_model_review`.
 

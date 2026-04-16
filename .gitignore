@@ -43,3 +43,9 @@ raw/**/*.wav
 
 # OS
 .DS_Store
+
+# Operator secret vault — NEVER COMMIT
+.env
+.env.shared
+.env.local
+.env.*.local
