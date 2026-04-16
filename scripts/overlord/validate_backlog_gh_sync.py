@@ -178,11 +178,14 @@ def main():
             or f"row {row_count}"
         )[:60]
 
-        if has_issue_col:
-            issue_cell = row_dict.get("Issue", "")
-        else:
-            # Fallback: scan the Notes column for an issue ref
-            issue_cell = row_dict.get("Notes", "")
+        if not has_issue_col:
+            print(
+                "FAIL: ## Planned table is missing an 'Issue' column. "
+                "Add an 'Issue' column with #NNN references before adding rows."
+            )
+            sys.exit(1)
+
+        issue_cell = row_dict.get("Issue", "")
 
         issue_number = resolve_issue_number(issue_cell)
 
