@@ -17,6 +17,7 @@
 - `.claude/hooks/backlog-check.sh` — **hard gate**: blocks branch creation unless a matching `PLANNED` or `IN_PROGRESS` entry exists in `docs/PROGRESS.md` Plans table. Enforces backlog-first workflow (plan with AC before code).
 - `.claude/hooks/check-errors.sh` — PostToolUse hard gate: auto-grep FAIL_FAST_LOG on errors, 3-attempt max, then STOP and ask user
 - `check-backlog-gh-sync.yml` — **hard gate**: every `OVERLORD_BACKLOG.md` Planned entry must reference an open GitHub issue (`#NNN` in the `Issue` column). GitHub is canonical — create the issue before adding to Planned. CI validates all refs are open on every push.
+- `check-pr-commit-scope.yml` — **scope guard**: PRs to main must contain ≤ 10 commits. Excess commits indicate stale-worktree base contamination (2026-04-15 incident). Threshold configurable via `MAX_COMMITS` env var.
 - `.claude/settings.json` PostToolUse matcher must be `"*"` (all tools), NOT `"Bash"` — errors from MCP, Agent, Read, etc. must also trigger the 3-attempt gate
 - **Hook commands in `.claude/settings.json` must use absolute paths** (e.g. `bash $HOME/Developer/HLDPRO/<repo>/.claude/hooks/<hook>.sh`) — relative paths break silently when the session CWD shifts to a subdirectory, causing the hook to no-op without a hard error
 - Session start must check `~/Developer/hldpro/.codex-ingestion/{repo}/backlog-*.md` for pending Codex findings — surface to user if any exist

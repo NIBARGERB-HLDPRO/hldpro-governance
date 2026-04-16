@@ -1,0 +1,16 @@
+name: check-pr-commit-scope
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  commit-scope:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check PR commit scope
+        env:
+          MAX_COMMITS: "10"
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+        run: bash .github/scripts/check_pr_commit_scope.sh
