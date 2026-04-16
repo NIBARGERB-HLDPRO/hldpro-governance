@@ -1,0 +1,310 @@
+packet_id: som-stage4b-t2-brief
+created_at: "2026-04-16T00:00:00Z"
+prior:
+  tier: 1
+  role: dual-planner
+  drafter_model_id: claude-opus-4-6
+  drafter_model_family: anthropic
+  reviewer_model_id: gpt-5.4
+  reviewer_model_family: openai
+  verdict: APPROVED_WITH_CHANGES
+next_tier: 2
+tier_2_model: gpt-5.3-codex-spark
+tier_2_reasoning_effort: high
+fallback_ladder:
+  - gpt-5.4 (cost-flagged)
+  - mlx-community/Qwen2.5-Coder-7B-Instruct-4bit (local, cost-free)
+  - claude-sonnet-4-6 (last resort, cost-flagged)
+cross_review_artifact: raw/cross-review/2026-04-16-som-stage4b.md
+artifacts:
+  - services/som-mcp/src/som_mcp/validator.py
+  - services/som-mcp/src/som_mcp/server.py
+  - services/som-mcp/src/som_mcp/config.py
+  - services/som-mcp/tests/test_validator.py
+  - services/som-mcp/tests/test_server_tools.py
+
+---
+# Tier 2 Worker Brief — SoM Stage 4b
+
+## Repo
+local-ai-machine
+
+## Branch
+feat/som-stage4b-validator-YYYYMMDD (replace YYYYMMDD with today; use riskfix/ prefix only for security/blocking bugs)
+
+## Preflight (run before first commit)
+```bash
+git fetch origin main
+git log --oneline origin/main..HEAD  # must be empty — fresh base required
+```
+
+## Deliverables
+
+### 1. config.py — portability fix
+
+File: `services/som-mcp/src/som_mcp/config.py`
+
+Current bug (line 15):
+```python
+config_path = Path.home() / "Developer/HLDPRO/hldpro-governance/.lam-config.yml"
+```
+
+Fix: add `LAM_CONFIG_YML` env-var override so the path is not hardcoded:
+```python
+import os
+
+def get_active_model_id():
+    config_path = Path(
+        os.environ.get(
+            "LAM_CONFIG_YML",
+            str(Path.home() / "Developer/HLDPRO/hldpro-governance/.lam-config.yml")
+        )
+    )
+    ...
+```
+
+Also fix `tests/test_config.py` line 6 — hardcoded absolute path:
+```python
+# Before:
+config_path = Path("/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.lam-config.yml")
+# After:
+from som_mcp.config import _get_config_path  # extract helper, or test via env var
+```
+Preferred: extract `_get_config_path()` helper from `get_active_model_id()` and test that `LAM_CONFIG_YML` env var overrides the default. No hardcoded `/Users/bennibarger` paths in tests.
+
+---
+
+### 2. validator.py — full implementation (7 invariants + 10 required changes)
+
+File: `services/som-mcp/src/som_mcp/validator.py`
+
+Replace the stub with full implementation. All invariants are structural/deterministic — no LLM calls.
+
+**Constants block:**
+```python
+TIER_SEQUENCE = [1, 2, 3, 4]
+
+# Planning floor: valid Tier-1 models only (no gpt-5.4-codex-spark — not a real model)
+PLANNING_FLOOR_MODELS = {
+    "anthropic": {"claude-opus-4-6", "claude-sonnet-4-6"},
+    "openai":    {"gpt-5.4", "gpt-5.3-codex-spark"},
+}
+
+LAM_FAMILIES = {"lam", "mlx", "local"}  # any model family that routes through LAM
+
+class ValidationError(Exception):
+    pass
+```
+
+**Packet schema (required fields — raise ValidationError if missing, no silent defaults):**
+```python
+REQUIRED_FIELDS = [
+    "packet_id",
+    "prior",            # dict
+    "next_tier",
+    "actors",           # list of all prior actor identities
+]
+REQUIRED_PRIOR_FIELDS = ["tier", "role", "model_id", "model_family"]
+REQUIRED_ACTOR_FIELDS = ["tier", "role", "model_id", "model_family"]
+```
+
+**Function signature:**
+```python
+def validate_packet(packet_dict: dict) -> tuple[bool, str]:
+    """Returns (True, 'ok') or raises ValidationError with a descriptive message."""
+```
+
+**Invariant 1 — missing required fields (Change #7)**
+Raise `ValidationError` for any missing required key. Do NOT use `dict.get(key, default)` for required schema fields.
+
+**Invariant 2 — tier ordering (Change #3)**
+- `prior.tier` must be in `TIER_SEQUENCE`
+- `next_tier` must be in `TIER_SEQUENCE`
+- `next_tier == prior.tier + 1` (no skipping)
+
+**Invariant 3 — no-self-approval (Change #2)**
+All actor `model_id` values in `actors` list must be pairwise distinct. Do NOT use Python chained `!=`:
+```python
+# WRONG: a != b != c  (allows a == c)
+# RIGHT:
+ids = [a["model_id"] for a in actors]
+for i in range(len(ids)):
+    for j in range(i + 1, len(ids)):
+        if ids[i] == ids[j]:
+            raise ValidationError(f"self-approval: {ids[i]} appears as multiple actors")
+```
+
+**Invariant 4 — tier sequence constrained (Change #3 continued)**
+Invalid tier values (0, 5, 99, -1) must raise `ValidationError`. ONLY values in `TIER_SEQUENCE` are valid.
+
+**Invariant 5 — planning floor (Change #4 + #5)**
+- Applies to Tier 1 actors ONLY (not workers, reviewers, gates)
+- For each actor where `tier == 1`: `model_id` must be in `PLANNING_FLOOR_MODELS[model_family]`
+- `gpt-5.4-codex-spark` is NOT in the constants — if it appears, raise `ValidationError`
+
+**Invariant 6 — PII floor (Change #6)**
+- Check `packet_dict.get("pii_present", False)`
+- If `True`: every actor in the `actors` list must have `model_family` in `LAM_FAMILIES`
+- Applies at every model boundary, not just packet entry
+
+**Invariant 7 — cross-family independence (Tier 1)**
+- Among Tier 1 actors, at least two distinct `model_family` values must be present
+- (Ensures drafter and reviewer are from different model families)
+
+**Invariant 8 — LAM family diversity**
+- Among LAM-lane actors (`model_family in LAM_FAMILIES`): if there are ≥ 2 LAM actors, they must not all share the same `model_id` (prevents single-model LAM chain)
+
+**Invariant 9 — fallback log path validity (Change #8)**
+- If `fallback_log_path` key is present: it must be a non-empty string AND its parent directory must exist on the filesystem
+- `os.path.isdir(os.path.dirname(fallback_log_path))` must be True
+
+**Full function outline:**
+```python
+def validate_packet(packet_dict: dict) -> tuple[bool, str]:
+    # 1. required fields
+    # 2. tier ordering
+    # 3. no-self-approval (pairwise)
+    # 4. tier sequence constrained
+    # 5. planning floor (Tier 1 only)
+    # 6. PII floor (all actors)
+    # 7. cross-family independence (Tier 1)
+    # 8. LAM family diversity (if ≥ 2 LAM actors)
+    # 9. fallback log path validity (if present)
+    return True, "ok"
+```
+
+---
+
+### 3. server.py — add som.handoff, som.chain, som.delegate
+
+File: `services/som-mcp/src/som_mcp/server.py`
+
+Add three new tools to `list_tools()` and implement in `call_tool()`.
+
+**Import additions:**
+```python
+import uuid
+import fcntl
+from som_mcp.validator import validate_packet, ValidationError
+from som_mcp.packet_writer import write_packet, read_packet, chain_walk
+```
+
+**som.handoff** — validate a packet and write it to `raw/packets/`
+```python
+inputSchema: {
+    "type": "object",
+    "properties": {
+        "packet": {"type": "object", "description": "Full packet dict to validate and write"},
+        "repo_root": {"type": "string", "description": "Absolute path to repo root (optional; auto-detected if omitted)"}
+    },
+    "required": ["packet"]
+}
+```
+Implementation:
+1. Call `validate_packet(arguments["packet"])` — on `ValidationError`, return `{"status": "rejected", "reason": str(e)}`
+2. On pass, call `write_packet(...)` using fields from the packet dict
+3. Return `{"status": "accepted", "packet_path": str(path)}`
+
+**som.chain** — walk the parent chain from a packet_id
+```python
+inputSchema: {
+    "type": "object",
+    "properties": {
+        "packet_id": {"type": "string"},
+        "repo_root": {"type": "string", "description": "optional"}
+    },
+    "required": ["packet_id"]
+}
+```
+Implementation: call `chain_walk(packet_id, repo_root)`, return `{"chain": [...], "depth": n}`
+
+**som.delegate** — atomic append of a delegation record to a chain file (Change #9 — TOCTOU fix)
+
+The TOCTOU bug: read chain file → write modified chain — another process can write between read and write.
+
+Fix: use `fcntl.flock` for exclusive lock:
+```python
+import fcntl
+
+chain_file_path = packets_dir / f"chain-{parent_packet_id}.yml"
+with open(chain_file_path, "a+") as f:
+    fcntl.flock(f, fcntl.LOCK_EX)
+    try:
+        f.seek(0)
+        existing = yaml.safe_load(f.read()) or {"delegations": []}
+        existing["delegations"].append({
+            "delegate_packet_id": new_packet_id,
+            "timestamp": datetime.utcnow().isoformat(),
+        })
+        f.seek(0)
+        f.truncate()
+        yaml.dump(existing, f, default_flow_style=False, sort_keys=False)
+    finally:
+        fcntl.flock(f, fcntl.LOCK_UN)
+```
+
+inputSchema:
+```python
+{
+    "type": "object",
+    "properties": {
+        "parent_packet_id": {"type": "string"},
+        "new_packet_id": {"type": "string"},
+        "repo_root": {"type": "string", "description": "optional"}
+    },
+    "required": ["parent_packet_id", "new_packet_id"]
+}
+```
+
+---
+
+### 4. Tests
+
+**test_validator.py** — one positive + one negative per invariant (Change #10)
+
+Required test cases (minimum — add more if useful):
+```
+test_validate_valid_packet                  # full valid packet, all invariants pass
+test_missing_required_field_raises          # omit each required field → ValidationError
+test_invalid_tier_rejects                   # tier=0, tier=5, tier=99
+test_no_tier_skip_enforced                  # prior.tier=1, next_tier=3 → reject
+test_self_approval_chained_ne_not_pairwise  # a==c but a!=b!=c → still rejected
+test_self_approval_pairwise_passes          # all three distinct → passes
+test_planning_floor_invalid_model           # Tier-1 actor with gpt-5.4-codex-spark → reject
+test_planning_floor_non_tier1_exempt        # Tier-2 actor with any model → not checked
+test_pii_floor_all_boundaries               # pii_present=True, one actor not LAM → reject
+test_pii_floor_all_lam_passes               # pii_present=True, all actors LAM → passes
+test_cross_family_independence              # Tier-1 actors both anthropic → reject
+test_lam_diversity_single_model             # two LAM actors same model_id → reject
+test_fallback_log_empty_string_rejects      # fallback_log_path="" → reject
+test_fallback_log_nonexistent_dir_rejects   # fallback_log_path="/nonexistent/path/log.md" → reject
+test_fallback_log_valid_dir_passes          # fallback_log_path="/tmp/log.md" → passes
+```
+
+**test_server_tools.py** — integration smoke tests (no running daemon required; mock `write_packet`)
+```
+test_handoff_valid_packet_returns_accepted
+test_handoff_invalid_packet_returns_rejected
+test_chain_walk_returns_chain_list
+test_delegate_atomic_write_no_corruption    # two concurrent delegates to same chain file
+```
+
+---
+
+## Constraints
+
+- NO hardcoded `/Users/bennibarger/` paths in any file
+- NO hardcoded `/Users/bennibarker/` paths (note the typo variant — also forbidden)
+- All new paths use env-var overrides with sensible relative defaults
+- No LLM calls inside validator.py — pure structural checks only
+- fcntl.flock is macOS/Linux only — acceptable (LAM is Darwin; no Windows target for this service)
+- Existing `som.ping` and `som.log_fallback` behavior must not change
+
+## Acceptance criteria
+
+- `pytest services/som-mcp/tests/` passes with 0 failures
+- All 15 required negative tests exist and pass
+- `grep -r "bennibarger" services/som-mcp/` returns 0 results
+- `grep -r "bennibarker" services/som-mcp/` returns 0 results (typo variant also clean)
+- `grep -r "gpt-5.4-codex-spark" services/som-mcp/` returns 0 results
+- PR description references cross-review artifact: `raw/cross-review/2026-04-16-som-stage4b.md`
