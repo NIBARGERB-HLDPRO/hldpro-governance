@@ -622,11 +622,7 @@ jobs:
             PERSIST_STATUS="unknown"
             PERSIST_NOTE="Baseline refresh step did not report a status."
           fi
-          BODY="${BODY}
-
-## BASELINE REFRESH
-- Status: ${PERSIST_STATUS}
-- Detail: ${PERSIST_NOTE}"
+          BODY="${BODY}$(printf '\n\n## BASELINE REFRESH\n- Status: %s\n- Detail: %s' "${PERSIST_STATUS}" "${PERSIST_NOTE}")"
 
           if [ -n "$EXISTING" ]; then
             # Update existing issue

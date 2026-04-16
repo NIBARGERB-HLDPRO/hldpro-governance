@@ -1,11 +1,11 @@
 name: check-no-self-approval
 on:
   workflow_call:
-permissions:
-  contents: read
 
 jobs:
   check-no-self-approval:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6

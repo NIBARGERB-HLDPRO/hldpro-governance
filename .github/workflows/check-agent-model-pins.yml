@@ -1,11 +1,11 @@
 name: check-agent-model-pins
 on:
   workflow_call:
-permissions:
-  contents: read
 
 jobs:
   check-agent-model-pins:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6

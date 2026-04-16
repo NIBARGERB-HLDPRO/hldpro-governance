@@ -1,11 +1,11 @@
 name: check-fallback-log-schema
 on:
   workflow_call:
-permissions:
-  contents: read
 
 jobs:
   check-fallback-log-schema:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6

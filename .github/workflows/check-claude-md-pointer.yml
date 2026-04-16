@@ -1,11 +1,11 @@
 name: check-claude-md-pointer
 on:
   workflow_call:
-permissions:
-  contents: read
 
 jobs:
   check-claude-md-pointer:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
