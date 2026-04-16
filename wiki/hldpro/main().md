@@ -1,18 +1,21 @@
 # main()
 
-> God node · 6 connections · `hldpro-governance/scripts/overlord/codex_ingestion.py`
+> God node · 9 connections · `hldpro-governance/scripts/knowledge_base/graphify_targets.py`
 
 ## Connections by Relation
 
 ### calls
-- [[cmd_generate()]] `INFERRED`
-- [[cmd_qualify()]] `INFERRED`
-- [[cmd_promote()]] `INFERRED`
-- [[build_parser()]] `INFERRED`
-- [[cmd_status()]] `INFERRED`
+- [[load_manifest()]] `INFERRED`
+- [[target_rows()]] `INFERRED`
+- [[filtered_targets()]] `INFERRED`
+- [[print_json()]] `INFERRED`
+- [[print_tsv()]] `INFERRED`
+- [[find_target()]] `INFERRED`
+- [[print_shell()]] `INFERRED`
+- [[print_stage_paths()]] `INFERRED`
 
 ### contains
-- [[codex_ingestion.py]] `EXTRACTED`
+- [[graphify_targets.py]] `EXTRACTED`
 
 ---
 
