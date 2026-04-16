@@ -1,10 +1,10 @@
 # Graph Report - hldpro-governance  (2026-04-15)
 
 ## Corpus Check
-- Large corpus: 1246 files · ~212,479 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1247 files · ~213,118 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 380 nodes · 747 edges · 30 communities detected
+- 380 nodes · 747 edges · 31 communities detected
 - Extraction: 49% EXTRACTED · 51% INFERRED · 0% AMBIGUOUS · INFERRED: 384 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
@@ -23,14 +23,14 @@
 ## Surprising Connections (you probably didn't know these)
 - `Raised when PII is detected or explicitly marked.` --uses--> `AuditWriter`  [INFERRED]
   hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
-- `Raised when model is not in allowlist.` --uses--> `AuditWriter`  [INFERRED]
+- `Return structured error dict for JSON output.` --uses--> `AuditWriter`  [INFERRED]
   hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
-- `Raised when Windows-Ollama endpoint is unreachable.` --uses--> `AuditWriter`  [INFERRED]
+- `Raised when model is not in allowlist.` --uses--> `AuditWriter`  [INFERRED]
   hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
 - `Return structured error dict for JSON output.` --uses--> `AuditWriter`  [INFERRED]
   hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
-- `TestPiiDetection` --uses--> `WindowsOllamaSubmitter`  [INFERRED]
-  hldpro-governance/scripts/windows-ollama/tests/test_submit.py → hldpro-governance/scripts/windows-ollama/submit.py
+- `Raised when Windows-Ollama endpoint is unreachable.` --uses--> `AuditWriter`  [INFERRED]
+  hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
 
 ## Communities
 
@@ -46,17 +46,17 @@ Nodes (15): _make_parent_packet(), anthropic + openai is fine., Parent file abse
 Cohesion: 0.07
 Nodes (26): Modify first_hash in manifest and verify fails., Test that truncated file (missing last line) breaks manifest., Delete last line and verify detects entry_count mismatch., Test that duplicate line (replay) breaks seq monotonicity., Duplicate a line and verify detects non-monotonic seq., Test that tampering with a line breaks the chain., Tamper with line N and verify fails at line N+1., Test that replacing entry_hmac with wrong value fails verification. (+18 more)
 
-### Community 3 - "Windows ollama Submit"
-Cohesion: 0.11
-Nodes (17): AuditWriter, Append-only audit log writer with hash-chain and daily manifest., Scan text for PII patterns.          Returns: pattern name if detected, None oth, Verify model is in allowlist for the specified role., Submit a request to Windows-Ollama.          Args:             model: Model name, POST to /api/generate and return response., Return structured error dict for JSON output., Return structured error dict for JSON output. (+9 more)
-
-### Community 4 - "Knowledge base Measure graphify usage"
+### Community 3 - "Knowledge base Measure graphify usage"
 Cohesion: 0.16
 Nodes (28): aggregate_file_scores(), augment_workflow_doc_candidates(), baseline_results(), build_summary(), build_trace(), emit_usage_events(), estimate_tokens(), evaluate_relevance() (+20 more)
 
-### Community 5 - "Windows ollama Audit"
+### Community 4 - "Windows ollama Audit"
 Cohesion: 0.13
 Nodes (13): canonical_json(), compute_entry_hmac(), compute_sha256(), Write an audit entry. Returns True if successful, False otherwise.          Args, Return canonical JSON for HMAC computation., Write or update today's manifest., Compute SHA256 hash of bytes., Compute HMAC-SHA256 over canonical JSON of entry (without entry_hmac field). (+5 more)
+
+### Community 5 - "Windows ollama Submit"
+Cohesion: 0.18
+Nodes (11): AuditWriter, Append-only audit log writer with hash-chain and daily manifest., Scan text for PII patterns.          Returns: pattern name if detected, None oth, Verify model is in allowlist for the specified role., Submit a request to Windows-Ollama.          Args:             model: Model name, POST to /api/generate and return response., Submit requests to Windows-Ollama endpoint with PII detection and allowlist enfo, Initialize the submitter.          Args:             endpoint: Windows-Ollama en (+3 more)
 
 ### Community 6 - "Packet Validate Pii"
 Cohesion: 0.16
@@ -71,86 +71,90 @@ Cohesion: 0.19
 Nodes (9): EndpointUnreachableError, Raised when Windows-Ollama endpoint is unreachable., Verify that all submission paths write exactly one audit entry., Test that successful submission writes one audit entry., Test that PII detection writes one audit entry with status='rejected'., Test that explicit PII flag writes one audit entry., Test that model rejection writes one audit entry., Test that endpoint unreachability writes one audit entry. (+1 more)
 
 ### Community 9 - "Windows ollama Submit"
-Cohesion: 0.2
-Nodes (9): Exception, ModelNotAllowedError, Raised when model is not in allowlist., Test that clean prompt passes PII detection., Negative test: PII detection., Test that SSN pattern is detected., Test that email pattern is detected., Test that explicit has_pii=True triggers pii_halt. (+1 more)
+Cohesion: 0.19
+Nodes (9): ModelNotAllowedError, Raised when model is not in allowlist., Return structured error dict for JSON output., Negative test: unreachable endpoint., Test that unreachable endpoint raises appropriate error., Test that endpoint timeout is handled., Test that reachable endpoint succeeds., Temporary audit directory for testing. (+1 more)
 
 ### Community 10 - "Windows ollama Submit"
-Cohesion: 0.23
-Nodes (8): PiiDetectionError, Raised when PII is detected or explicitly marked., Verify error structures for JSON output., Test that PII errors have correct JSON structure., Test that model-not-allowed errors have correct JSON structure., Test that endpoint-unreachable errors have correct JSON structure., Temporary audit directory for testing., TestErrorStructure
+Cohesion: 0.21
+Nodes (8): Exception, PiiDetectionError, Raised when PII is detected or explicitly marked., Return structured error dict for JSON output., Negative test: malformed /api/generate response., Test that invalid JSON response is rejected., Test that empty response is handled., TestMalformedResponse
 
 ### Community 11 - "Knowledge base Graph"
 Cohesion: 0.38
 Nodes (10): build_graph(), _community_label(), _derive_path_phrase(), _derive_path_tokens(), infer_community_labels(), main(), _normalize_phrase(), _sanitize_markdown_artifacts() (+2 more)
 
-### Community 12 - "Knowledge base Graphify targets"
+### Community 12 - "Windows ollama Submit"
+Cohesion: 0.2
+Nodes (6): Test that clean prompt passes PII detection., Negative test: PII detection., Test that SSN pattern is detected., Test that email pattern is detected., Test that explicit has_pii=True triggers pii_halt., TestPiiDetection
+
+### Community 13 - "Knowledge base Graphify targets"
 Cohesion: 0.38
 Nodes (9): filtered_targets(), find_target(), load_manifest(), main(), print_json(), print_shell(), print_stage_paths(), print_tsv() (+1 more)
 
-### Community 13 - "Overlord Memory integrity"
+### Community 14 - "Overlord Memory integrity"
 Cohesion: 0.42
 Nodes (7): check_memory_exists(), inspect_repo(), load_memory_lines(), main(), memory_dir_for_repo(), parse_pointer_filenames(), validate_frontmatter()
 
-### Community 14 - "Windows ollama Submit"
+### Community 15 - "Windows ollama Submit"
 Cohesion: 0.25
 Nodes (4): main(), Return structured error dict for JSON output., Create a submitter with test config., submitter()
 
-### Community 15 - "Knowledge base Graphify usage logging"
+### Community 16 - "Knowledge base Graphify usage logging"
 Cohesion: 0.61
 Nodes (8): check(), main(), run_command(), test_logger_backwards_compatible(), test_logger_query_trace_fields(), test_measurement_falls_back_from_stale_governance_repo_path(), test_measurement_outputs_query_traces(), test_schema_shape()
 
-### Community 16 - "Overlord Effectiveness metrics"
+### Community 17 - "Overlord Effectiveness metrics"
 Cohesion: 0.46
 Nodes (7): collect_repo_metrics(), main(), parse_iso(), pct(), render_markdown(), RepoMetrics, run()
 
-### Community 17 - "Windows ollama Submit Endpoint"
+### Community 18 - "Windows ollama Submit"
 Cohesion: 0.25
-Nodes (5): Negative test: unreachable endpoint., Test that unreachable endpoint raises appropriate error., Test that endpoint timeout is handled., Test that reachable endpoint succeeds., TestEndpointReachability
+Nodes (5): Verify error structures for JSON output., Test that PII errors have correct JSON structure., Test that model-not-allowed errors have correct JSON structure., Test that endpoint-unreachable errors have correct JSON structure., TestErrorStructure
 
-### Community 18 - "Overlord Validate structured agent cycle plan"
+### Community 19 - "Overlord Validate structured agent cycle plan"
 Cohesion: 0.6
 Nodes (5): _find_plan_files(), _load_json(), main(), _require(), _validate_file()
 
-### Community 19 - "Overlord Check overlord backlog github alignment"
+### Community 20 - "Overlord Check overlord backlog github alignment"
 Cohesion: 0.67
 Nodes (5): collect_section_lines(), fail(), has_issue_ref(), main(), parse_markdown_row()
 
-### Community 20 - "Windows ollama Submit Response"
+### Community 21 - "Windows ollama Submit Model"
 Cohesion: 0.33
-Nodes (4): Negative test: malformed /api/generate response., Test that invalid JSON response is rejected., Test that empty response is handled., TestMalformedResponse
+Nodes (4): Negative test: non-allowlisted model., Test that non-allowlisted model is rejected., Test that allowlisted model passes allowlist check., TestModelAllowlist
 
-### Community 21 - "Windows ollama Submit Response"
+### Community 22 - "Windows ollama Submit Response"
 Cohesion: 0.33
 Nodes (4): Negative test: empty rationale from model., Test that response with missing 'response' field is handled gracefully., Test response with empty 'response' field., TestEmptyRationale
 
-### Community 22 - "Windows ollama Pii"
+### Community 23 - "Windows ollama Pii"
 Cohesion: 0.4
 Nodes (5): detect_pii(), _iter_patterns(), load_pii_patterns(), Load and validate pii patterns from pii_patterns.yml., Scan text for PII patterns from YAML patterns.      Falls back to the previous b
 
-### Community 23 - "Knowledge base Log graphify usage"
+### Community 24 - "Knowledge base Log graphify usage"
 Cohesion: 0.7
 Nodes (4): append_event(), build_event(), main(), parse_args()
 
-### Community 24 - "Knowledge base Update knowledge"
+### Community 25 - "Knowledge base Update knowledge"
 Cohesion: 0.83
 Nodes (3): main(), replace_section(), summary_line()
 
-### Community 25 - "Packet Emit Yaml"
+### Community 26 - "Packet Emit Yaml"
 Cohesion: 0.67
 Nodes (3): emit_packet(), main(), Emit a packet YAML file.     Returns: path to written file
 
-### Community 26 - "Overlord Render github issue feed"
+### Community 27 - "Overlord Render github issue feed"
 Cohesion: 1.0
 Nodes (2): main(), render_issue()
 
-### Community 27 - "Knowledge base Graphify governance"
+### Community 28 - "Knowledge base Graphify governance"
 Cohesion: 1.0
 Nodes (2): check(), main()
 
-### Community 28 - "Knowledge base Push graph to neo4j"
+### Community 29 - "Knowledge base Push graph to neo4j"
 Cohesion: 1.0
 Nodes (2): build_scoped_graph(), main()
 
-### Community 29 - "Windows ollama Init"
+### Community 30 - "Windows ollama Init"
 Cohesion: 1.0
 Nodes (0): 
 
@@ -165,9 +169,9 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `AuditWriter` connect `Windows ollama Submit` to `Windows ollama Audit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`?**
   _High betweenness centrality (0.063) - this node is a cross-community bridge._
-- **Why does `WindowsOllamaSubmitter` connect `Windows ollama Submit` to `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit Endpoint`, `Windows ollama Submit Response`, `Windows ollama Submit Response`?**
+- **Why does `WindowsOllamaSubmitter` connect `Windows ollama Submit` to `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit Model`, `Windows ollama Submit Response`?**
   _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **Why does `PiiDetectionError` connect `Windows ollama Submit` to `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit Endpoint`, `Windows ollama Submit Response`, `Windows ollama Submit Response`?**
+- **Why does `PiiDetectionError` connect `Windows ollama Submit` to `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit`, `Windows ollama Submit Model`, `Windows ollama Submit Response`?**
   _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **Are the 39 inferred relationships involving `WindowsOllamaSubmitter` (e.g. with `main()` and `AuditWriter`) actually correct?**
   _`WindowsOllamaSubmitter` has 39 INFERRED edges - model-reasoned connections that need verification._

@@ -1,0 +1,151 @@
+{
+  "session_id": "session-20260415-issue-160-audit-hardening",
+  "issue_number": 160,
+  "objective": "Harden the verify-completion agent and codex-spark dispatch pattern against stale-checkout contamination by adding a remote-reading helper script, a reusable codex-spark brief template, and a surgical patch to verify-completion.md that mandates the helper.",
+  "tier": 2,
+  "scope_boundary": [
+    "Adds exactly one new bash helper at `scripts/overlord/audit_remote.sh` that takes `<repo> <path> [ref]` and returns the current remote content via `gh api repos/NIBARGERB-HLDPRO/<repo>/contents/<path>?ref=<ref>` (default ref=main), base64-decoded. Exit non-zero with diagnostic on fetch/decode failure. No dependency on local working tree.",
+    "Adds exactly one new doc at `docs/templates/codex-spark-dispatch-brief.md` with the required template sections (quota preflight, worktree discipline, diff cap, non-destructive editing, no-push clause, reporting format) and a filled usage example referencing today's issue #154 dispatch.",
+    "Surgically patches `agents/verify-completion.md`: add a new `## Remote-reading preferred` section after the existing `## Process` section; reference `scripts/overlord/audit_remote.sh`; leave every existing section and line byte-for-byte unchanged.",
+    "Helper script MUST handle the 404-not-found case gracefully (exit 1 with `{\"error\": \"not-found\"}` payload) so callers can distinguish missing from fetch-error.",
+    "Helper script MUST NOT print raw base64 content — always decode."
+  ],
+  "out_of_scope": [
+    "CI lint to compare codex-spark PR scope against plan file_paths (expensive; needs plan-shape standardization first).",
+    "Rewriting verify-completion.md to be LLM-free (keeps Haiku-driven interpretation).",
+    "Updates to overlord.md, overlord-sweep.md, overlord-audit.md (different audit patterns, not stale-prone).",
+    "Helper script signing / sandboxing / rate-limit handling — callers deal with gh CLI auth already.",
+    "Helper script in any language other than bash (keep it simple, stdlib only)."
+  ],
+  "research_summary": "Today's SoM rollout and issue #154 rollout both suffered from stale-checkout contamination: verify-completion audits reported phantom gaps because Haiku appears to skip the documented `git worktree add --detach origin/main` pattern and fall back to plain local `Read`. Codex-spark dispatch compounded the issue: `/tmp` worktrees branched off stale local `origin/main` refs, pulling in 15 (AIS #1035) + 100 (HP #1274) unrelated WIP commits. HP #1274 squash-merged before detection; revert filed as HP #1275. Three feedback memories written today capture the lessons: `feedback_audit_must_read_remote_head.md`, `feedback_codex_worktree_base_contamination.md`, `feedback_codex_spark_no_network.md`. This slice converts those memories into enforced artifacts — a helper script the agent cannot skip, and a brief template that wraps the worktree discipline into reusable form.",
+  "research_artifacts": [
+    "agents/verify-completion.md (pre-existing, documented pattern correct but not enforced)",
+    "scripts/overlord/ (existing helper patterns: memory_integrity.py, worktree_shared_dependencies.sh)",
+    "Memory: feedback_audit_must_read_remote_head.md",
+    "Memory: feedback_codex_worktree_base_contamination.md",
+    "Memory: feedback_codex_spark_no_network.md",
+    "Incident PRs: AIS #1035 (closed), #1036 (closed); HP #1274 (merged-then-reverted via #1275); LAM #437 (closed), #438 (closed); HP #1275 (revert merged)"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 — audit_remote.sh helper",
+      "goal": "Add a minimal bash wrapper that reads remote-main file contents via `gh api`, returning decoded content on success and exit-1 with structured error on failure.",
+      "tasks": [
+        "Author `scripts/overlord/audit_remote.sh` (bash, stdlib only, +x permission). Signature: `audit_remote.sh <repo> <path> [ref]`. Default ref=main.",
+        "Behavior: call `gh api repos/NIBARGERB-HLDPRO/<repo>/contents/<path>?ref=<ref>`, extract `.content`, base64-decode, print to stdout. On 404 print `{\"error\":\"not-found\",\"repo\":\"<repo>\",\"path\":\"<path>\",\"ref\":\"<ref>\"}` to stderr and exit 1. On other failures print `{\"error\":\"fetch-failed\",\"detail\":\"<message>\"}` to stderr and exit 2.",
+        "Add a 5-line docstring header documenting usage + exit codes.",
+        "Smoke-test: call against 3 known-existing paths (e.g., `hldpro-governance STANDARDS.md`, `ai-integration-services CLAUDE.md`, `knocktracker AGENTS.md`) and 1 known-missing path. Confirm stdout content begins with expected first line for each known file, and missing case produces structured-error stderr + exit 1."
+      ],
+      "acceptance_criteria": [
+        "Script exists at `scripts/overlord/audit_remote.sh`, executable bit set.",
+        "3 known-existing smoke tests return expected content (first line match).",
+        "1 known-missing smoke test exits 1 with `{\"error\":\"not-found\"` in stderr.",
+        "Script has no network dependency beyond `gh api` (no curl, no wget).",
+        "Script is <= 40 lines including docstring."
+      ],
+      "file_paths": [
+        "scripts/overlord/audit_remote.sh"
+      ]
+    },
+    {
+      "name": "Sprint 2 — codex-spark-dispatch-brief template",
+      "goal": "Add a reusable template for future codex-spark dispatches that bakes in today's worktree + non-destructive-editing discipline.",
+      "tasks": [
+        "Author `docs/templates/codex-spark-dispatch-brief.md` with these required sections (each a markdown heading): `## Preflight`, `## Worktree discipline (HARD GATE)`, `## Non-destructive editing`, `## Diff scope cap`, `## No push / no gh`, `## Report format`.",
+        "Under `## Worktree discipline (HARD GATE)` include the exact bash snippet: `git fetch origin main && git worktree add -b <branch-name> /tmp/<worktree-name> origin/main` plus the `git log --oneline origin/main..HEAD` must-be-empty precheck.",
+        "Add a filled 'Example usage' appendix at the bottom demonstrating the template applied to today's issue #154 dispatch (abbreviated)."
+      ],
+      "acceptance_criteria": [
+        "File exists at `docs/templates/codex-spark-dispatch-brief.md`.",
+        "All 6 required H2 sections present.",
+        "Worktree discipline snippet present verbatim.",
+        "Example usage appendix present and refers to issue #154."
+      ],
+      "file_paths": [
+        "docs/templates/codex-spark-dispatch-brief.md"
+      ]
+    },
+    {
+      "name": "Sprint 3 — verify-completion agent surgical patch",
+      "goal": "Add a `Remote-reading preferred` section to the verify-completion agent that mandates the helper script, without altering any existing section or rule.",
+      "tasks": [
+        "Read current `agents/verify-completion.md`. Identify the exact line immediately after the `## Process` section's closing (before `## Output Format`).",
+        "Insert a new `## Remote-reading preferred` section: lead with rule (\"When checking a single file on remote main, ALWAYS call `scripts/overlord/audit_remote.sh <repo> <path>` instead of issuing a Read against local working tree\"), then 3-line why (today's 2026-04-15 incident reference + memory file names) and 3-line how to apply (explicit script invocation example).",
+        "Verify diff: git diff shows ONLY additions (no deletions, no modifications to existing lines); all pre-existing process bullets, worktree snippet, output format, and rules survive byte-for-byte."
+      ],
+      "acceptance_criteria": [
+        "git diff on `agents/verify-completion.md` shows only `+` lines (zero `-` lines except on insertion boundaries).",
+        "Every pre-existing section heading (`## Pre-Session Context`, `## Process`, `## Output Format`, `## Rules`) still present.",
+        "New section placed between `## Process` and `## Output Format`.",
+        "New section references both the helper script and the feedback memories by filename."
+      ],
+      "file_paths": [
+        "agents/verify-completion.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "scope reviewer",
+      "role": "Scope reviewer",
+      "focus": "Keep this slice to helper script + template + agent patch. Do not widen into CI lint, agent-rewrites, or cross-repo rollouts.",
+      "status": "accepted",
+      "summary": "Scope boundaries explicit: 3 files total, each with acceptance criteria capping behavior. Helper script <=40 lines, template has fixed section list, agent patch is surgical-insert-only.",
+      "evidence": [
+        "Issue #160",
+        "Today's 3 feedback memories written under projects/memory/"
+      ]
+    },
+    {
+      "reviewer": "non-destructive-edit reviewer",
+      "role": "Destructive-edit reviewer",
+      "focus": "verify-completion.md is user-facing agent logic. Rewriting it would risk breaking the documented worktree pattern that does work when followed. Must be surgical insert only.",
+      "status": "accepted",
+      "summary": "Sprint 3 acceptance criteria require zero deletions (except on insertion boundaries). Existing sections remain byte-for-byte.",
+      "evidence": [
+        "agents/verify-completion.md (131 lines; 10 sections)"
+      ]
+    },
+    {
+      "reviewer": "implementation-risk reviewer",
+      "role": "Risk reviewer",
+      "focus": "Helper script's gh api dependency could fail in environments without gh CLI. Verify this risk is acceptable vs alternatives (curl + GITHUB_TOKEN).",
+      "status": "accepted_with_followup",
+      "summary": "Accepted: every HLDPRO workstation already has gh CLI authenticated (every feedback memory + agent + CI artifact assumes it). If a future caller runs from a gh-less environment, open a follow-up to add a curl fallback. Not required for this slice.",
+      "evidence": [
+        "All existing scripts under scripts/overlord/ that use gh",
+        "CI workflows that use gh"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-requested-for-helper-script-slice",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "Tier 2 mechanical addition of a helper script + template + one surgical agent patch. Not a standards change (STANDARDS.md §Society of Minds already mandates enforcement via CI-verifiable artifacts — this slice makes one more rule enforceable).",
+    "evidence": [
+      "STANDARDS.md §Society of Minds",
+      "Today's feedback memories"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "planning_only",
+    "approved_scope_summary": "Plan PR only. After plan PR merges, dispatch codex-spark with a brief that produces 3 commits (one per sprint) on a single `issue-160-audit-hardening` branch with one implementation PR in hldpro-governance.",
+    "next_execution_step": "Open plan PR containing this JSON + the audit-hardening PDCAR markdown. After merge, codex-spark runs `scripts/codex-preflight.sh --log`, creates the implementation worktree off fresh `origin/main`, authors the 3 files per their file_paths, commits, reports back for dispatcher to push+PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If `agents/verify-completion.md` has been modified on main since this plan was written, rebase the surgical patch — do NOT overwrite.",
+    "If `scripts/overlord/audit_remote.sh` already exists (unlikely but possible if another session beat us), HALT and surface — do not overwrite.",
+    "If a sprint's PR would touch more than the 1 file in its file_paths list, HALT and surface a scope question.",
+    "If the helper script exceeds 40 lines, trim redundant error-handling paths rather than widening scope.",
+    "If implementation reveals that `gh api` rate-limits on large audits, do NOT add retry logic in this slice — file follow-up issue for bounded retry + backoff."
+  ],
+  "approved": true,
+  "approved_by": [
+    "session-agent-claude-opus-4-6"
+  ],
+  "approved_at": "2026-04-15T17:55:00-05:00"
+}

@@ -1,18 +1,17 @@
 # Windows ollama Submit
 
-> 9 nodes · cohesion 0.25
+> 8 nodes · cohesion 0.25
 
 ## Key Concepts
 
-- **test_submit.py** (11 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **submit.py** (8 connections) — `hldpro-governance/scripts/windows-ollama/submit.py`
-- **audit.py** (7 connections) — `hldpro-governance/scripts/windows-ollama/audit.py`
-- **Create a submitter with test config.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **main()** (4 connections) — `hldpro-governance/scripts/windows-ollama/submit.py`
-- **.to_dict()** (3 connections) — `hldpro-governance/scripts/windows-ollama/submit.py`
-- **Return structured error dict for JSON output.** (2 connections) — `hldpro-governance/scripts/windows-ollama/submit.py`
-- **submitter()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **audit_dir()** (1 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **TestErrorStructure** (9 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **Verify error structures for JSON output.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **Test that PII errors have correct JSON structure.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **Test that model-not-allowed errors have correct JSON structure.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **Test that endpoint-unreachable errors have correct JSON structure.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **.test_endpoint_unreachable_error_structure()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **.test_model_not_allowed_error_structure()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **.test_pii_error_structure()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
 
 ## Relationships
 
@@ -20,14 +19,12 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/windows-ollama/audit.py`
-- `hldpro-governance/scripts/windows-ollama/submit.py`
 - `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
 
 ## Audit Trail
 
-- EXTRACTED: 34 (79%)
-- INFERRED: 9 (21%)
+- EXTRACTED: 15 (43%)
+- INFERRED: 20 (57%)
 - AMBIGUOUS: 0 (0%)
 
 ---

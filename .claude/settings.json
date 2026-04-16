@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $HOME/Developer/HLDPRO/hldpro-governance/hooks/pre-session-context.sh",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  }
+}

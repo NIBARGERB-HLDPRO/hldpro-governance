@@ -81,6 +81,18 @@ Your job: check every repo against ~/.claude/STANDARDS.md and report PASS or FAI
 
 4. **Cross-reference with plan**: If a plan file exists in the conversation, verify every "create" or "add" line item has a corresponding artifact.
 
+## Remote-reading preferred
+
+When checking a single file on remote main, ALWAYS call the governance helper instead of reading local working tree:
+
+```bash
+bash scripts/overlord/audit_remote.sh <repo> <path>
+```
+
+**Why:** 2026-04-15 incident — verify-completion audit read stale local checkouts (AIS on dirty feature branch, knocktracker 29 behind origin/main, HP detached HEAD with 100 WIP commits) and reported phantom SoM-pointer gaps in 3 repos that already had the section. See feedback memories `feedback_audit_must_read_remote_head.md` and `feedback_codex_worktree_base_contamination.md`.
+
+**How to apply:** for every single-file compliance check (e.g., "does CLAUDE.md on repo X have section Y?"), use the helper. Keep the worktree-based pattern in `## Process` for multi-file structural audits only.
+
 ## Output Format
 
 ```
