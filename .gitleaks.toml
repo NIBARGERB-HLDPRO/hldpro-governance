@@ -1,0 +1,40 @@
+[extend]
+useDefault = true
+
+[[rules]]
+id = "anthropic-api-key"
+description = "Anthropic API Key"
+regex = '''sk-ant-[a-zA-Z0-9-]{20,}'''
+tags = ["anthropic", "api-key"]
+
+[[rules]]
+id = "openai-api-key"
+description = "OpenAI API Key"
+regex = '''sk-[a-zA-Z0-9]{20,}'''
+tags = ["openai", "api-key"]
+
+[[rules]]
+id = "github-pat"
+description = "GitHub Personal Access Token"
+regex = '''ghp_[a-zA-Z0-9]{36}'''
+tags = ["github", "pat"]
+
+[[rules]]
+id = "github-oauth"
+description = "GitHub OAuth Token"
+regex = '''gho_[a-zA-Z0-9]{36}'''
+tags = ["github", "oauth"]
+
+[[rules]]
+id = "supabase-service-role"
+description = "Supabase Service Role Key"
+regex = '''sbp_[a-zA-Z0-9]{40,}'''
+tags = ["supabase", "service-key"]
+
+[allowlist]
+description = "Governance repo allowlist"
+paths = [
+  '''graphify-out/''',
+  '''\.claude/worktrees/''',
+  '''_worktrees/''',
+]
