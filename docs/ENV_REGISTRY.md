@@ -136,7 +136,7 @@ bash scripts/bootstrap-repo-env.sh <repo>
 | `HP_STAGING_SUPABASE_DB_PASSWORD` | Done — reset via management API 2026-04-16 |
 | `HP_PROD_SUPABASE_DB_PASSWORD` | Done — reset via management API 2026-04-16 |
 | knocktracker `.gitignore` — confirm `.env.local` is gitignored | Medium |
-| Automate worktree bootstrap on `EnterWorktree` hook | Medium — see `docs/plans/` |
+| Automate worktree bootstrap on `WorktreeCreate` hook | Done — `HealthcarePlatform/.claude/hooks/worktree-env-bootstrap.sh` wired to `WorktreeCreate` event 2026-04-16 |
 
 ---
 
