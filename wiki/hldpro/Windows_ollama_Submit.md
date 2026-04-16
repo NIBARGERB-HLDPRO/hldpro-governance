@@ -1,17 +1,19 @@
 # Windows ollama Submit
 
-> 8 nodes · cohesion 0.25
+> 10 nodes · cohesion 0.20
 
 ## Key Concepts
 
-- **TestErrorStructure** (9 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Verify error structures for JSON output.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Test that PII errors have correct JSON structure.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Test that model-not-allowed errors have correct JSON structure.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Test that endpoint-unreachable errors have correct JSON structure.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **.test_endpoint_unreachable_error_structure()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **.test_model_not_allowed_error_structure()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **.test_pii_error_structure()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **test_submit.py** (11 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **TestModelAllowlist** (8 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **Negative test: non-allowlisted model.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **Test that non-allowlisted model is rejected.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **Test that allowlisted model passes allowlist check.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **Create a submitter with test config.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **submitter()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **.test_model_allowed_in_allowlist()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **.test_model_not_in_allowlist()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **audit_dir()** (1 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
 
 ## Relationships
 
@@ -23,8 +25,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 15 (43%)
-- INFERRED: 20 (57%)
+- EXTRACTED: 26 (57%)
+- INFERRED: 20 (43%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -1,9 +1,10 @@
 # Windows ollama Audit
 
-> 20 nodes · cohesion 0.13
+> 21 nodes · cohesion 0.13
 
 ## Key Concepts
 
+- **audit.py** (7 connections) — `hldpro-governance/scripts/windows-ollama/audit.py`
 - **.write_entry()** (7 connections) — `hldpro-governance/scripts/windows-ollama/audit.py`
 - **._write_manifest()** (7 connections) — `hldpro-governance/scripts/windows-ollama/audit.py`
 - **._get_prev_hash()** (6 connections) — `hldpro-governance/scripts/windows-ollama/audit.py`
@@ -35,8 +36,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 30 (50%)
-- INFERRED: 30 (50%)
+- EXTRACTED: 37 (55%)
+- INFERRED: 30 (45%)
 - AMBIGUOUS: 0 (0%)
 
 ---

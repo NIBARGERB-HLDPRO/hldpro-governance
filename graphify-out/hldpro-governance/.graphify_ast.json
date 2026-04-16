@@ -99,6 +99,76 @@
       "source_location": "L101"
     },
     {
+      "id": "validate_backlog_gh_sync",
+      "label": "validate_backlog_gh_sync.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "validate_backlog_gh_sync_find_planned_table",
+      "label": "find_planned_table()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L24"
+    },
+    {
+      "id": "validate_backlog_gh_sync_parse_columns",
+      "label": "parse_columns()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L57"
+    },
+    {
+      "id": "validate_backlog_gh_sync_resolve_issue_number",
+      "label": "resolve_issue_number()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L78"
+    },
+    {
+      "id": "validate_backlog_gh_sync_check_github_issue",
+      "label": "check_github_issue()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L95"
+    },
+    {
+      "id": "validate_backlog_gh_sync_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L138"
+    },
+    {
+      "id": "validate_backlog_gh_sync_rationale_25",
+      "label": "Return (header_line_index, list_of_data_lines) for the ## Planned table.",
+      "file_type": "rationale",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L25"
+    },
+    {
+      "id": "validate_backlog_gh_sync_rationale_58",
+      "label": "Split a markdown table row into a dict keyed by header column names.     Returns",
+      "file_type": "rationale",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L58"
+    },
+    {
+      "id": "validate_backlog_gh_sync_rationale_79",
+      "label": "Extract a #NNN from the cell value.     Returns the integer issue number, or Non",
+      "file_type": "rationale",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L79"
+    },
+    {
+      "id": "validate_backlog_gh_sync_rationale_96",
+      "label": "Call GitHub API to verify issue exists and is open.     Returns (ok: bool, title",
+      "file_type": "rationale",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L96"
+    },
+    {
       "id": "check_overlord_backlog_github_alignment",
       "label": "check_overlord_backlog_github_alignment.py",
       "file_type": "code",
@@ -586,21 +656,21 @@
       "label": "cmd_qualify()",
       "file_type": "code",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L657"
+      "source_location": "L661"
     },
     {
       "id": "codex_ingestion_cmd_promote",
       "label": "cmd_promote()",
       "file_type": "code",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L831"
+      "source_location": "L835"
     },
     {
       "id": "codex_ingestion_main",
       "label": "main()",
       "file_type": "code",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L888"
+      "source_location": "L892"
     },
     {
       "id": "render_github_issue_feed",
@@ -2933,6 +3003,168 @@
       "weight": 0.8
     },
     {
+      "source": "validate_backlog_gh_sync",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync",
+      "target": "re",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync",
+      "target": "validate_backlog_gh_sync_find_planned_table",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync",
+      "target": "validate_backlog_gh_sync_parse_columns",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync",
+      "target": "validate_backlog_gh_sync_resolve_issue_number",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync",
+      "target": "validate_backlog_gh_sync_check_github_issue",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync",
+      "target": "validate_backlog_gh_sync_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync_main",
+      "target": "validate_backlog_gh_sync_find_planned_table",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L148",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_backlog_gh_sync_main",
+      "target": "validate_backlog_gh_sync_parse_columns",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L172",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_backlog_gh_sync_main",
+      "target": "validate_backlog_gh_sync_resolve_issue_number",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L190",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_backlog_gh_sync_main",
+      "target": "validate_backlog_gh_sync_check_github_issue",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L202",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_backlog_gh_sync_rationale_25",
+      "target": "validate_backlog_gh_sync_find_planned_table",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync_rationale_58",
+      "target": "validate_backlog_gh_sync_parse_columns",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync_rationale_79",
+      "target": "validate_backlog_gh_sync_resolve_issue_number",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_backlog_gh_sync_rationale_96",
+      "target": "validate_backlog_gh_sync_check_github_issue",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
       "source": "check_overlord_backlog_github_alignment",
       "target": "re",
       "relation": "imports",
@@ -4072,7 +4304,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L657",
+      "source_location": "L661",
       "weight": 1.0
     },
     {
@@ -4081,7 +4313,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L831",
+      "source_location": "L835",
       "weight": 1.0
     },
     {
@@ -4090,7 +4322,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L888",
+      "source_location": "L892",
       "weight": 1.0
     },
     {
@@ -4279,7 +4511,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L572",
+      "source_location": "L576",
       "weight": 0.8
     },
     {
@@ -4288,7 +4520,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L576",
+      "source_location": "L580",
       "weight": 0.8
     },
     {
@@ -4297,7 +4529,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L628",
+      "source_location": "L632",
       "weight": 0.8
     },
     {
@@ -4306,7 +4538,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L629",
+      "source_location": "L633",
       "weight": 0.8
     },
     {
@@ -4315,7 +4547,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L640",
+      "source_location": "L644",
       "weight": 0.8
     },
     {
@@ -4324,7 +4556,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L666",
+      "source_location": "L670",
       "weight": 0.8
     },
     {
@@ -4333,7 +4565,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L676",
+      "source_location": "L680",
       "weight": 0.8
     },
     {
@@ -4342,7 +4574,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L689",
+      "source_location": "L693",
       "weight": 0.8
     },
     {
@@ -4351,7 +4583,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L702",
+      "source_location": "L706",
       "weight": 0.8
     },
     {
@@ -4360,7 +4592,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L713",
+      "source_location": "L717",
       "weight": 0.8
     },
     {
@@ -4369,7 +4601,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L724",
+      "source_location": "L728",
       "weight": 0.8
     },
     {
@@ -4378,7 +4610,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L782",
+      "source_location": "L786",
       "weight": 0.8
     },
     {
@@ -4387,7 +4619,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L837",
+      "source_location": "L841",
       "weight": 0.8
     },
     {
@@ -4396,7 +4628,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L849",
+      "source_location": "L853",
       "weight": 0.8
     },
     {
@@ -4405,7 +4637,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L862",
+      "source_location": "L866",
       "weight": 0.8
     },
     {
@@ -4414,7 +4646,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L866",
+      "source_location": "L870",
       "weight": 0.8
     },
     {
@@ -4423,7 +4655,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L875",
+      "source_location": "L879",
       "weight": 0.8
     },
     {
@@ -4432,7 +4664,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L889",
+      "source_location": "L893",
       "weight": 0.8
     },
     {
@@ -4441,7 +4673,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L893",
+      "source_location": "L897",
       "weight": 0.8
     },
     {
@@ -4450,7 +4682,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L895",
+      "source_location": "L899",
       "weight": 0.8
     },
     {
@@ -4459,7 +4691,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L897",
+      "source_location": "L901",
       "weight": 0.8
     },
     {
@@ -4468,7 +4700,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L899",
+      "source_location": "L903",
       "weight": 0.8
     },
     {
