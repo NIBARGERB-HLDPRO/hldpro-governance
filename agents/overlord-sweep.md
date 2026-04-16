@@ -3,6 +3,17 @@ name: overlord-sweep
 description: Weekly cross-repo audit. Pulls all 5 repos, checks standards compliance, collects effectiveness metrics, compares repos, generates report to ~/Developer/hldpro/OVERLORD_REPORT.md.
 model: sonnet
 tools: Read, Glob, Grep, Bash
+tier: 0
+max-loops: 3
+authority-scope: cross-repo-read + governance-reports-write
+self-approval: prohibited
+write-paths:
+  - ~/Developer/hldpro/OVERLORD_REPORT.md
+  - ~/Developer/hldpro/OVERLORD_INDEX.md
+  - ~/Developer/hldpro/OVERLORD_DASHBOARD.html
+  - wiki/
+policy-source: STANDARDS.md
+registry-source: AGENT_REGISTRY.md
 ---
 
 # Overlord Sweep — Weekly Cross-Repo Audit
@@ -312,6 +323,10 @@ Run lint pass on wiki/:
 - Suggest 2-3 new connections between recent raw/ entries and existing wiki pages
 
 Report health check findings in the sweep report under section: WIKI HEALTH
+
+## CI Reporting Limitation
+Cross-repo reporting is NOT available via stdout across separate GitHub Actions jobs.
+Preferred: `gh api` write to governance repo. Fallback: `[GOVERNANCE-REPORT]` stdout prefix is local debug only -- not consumed cross-repo.
 
 ## Rules
 - Pull latest before checking — never audit stale code
