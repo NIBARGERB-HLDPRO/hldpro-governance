@@ -190,10 +190,11 @@ def main():
         issue_number = resolve_issue_number(issue_cell)
 
         if issue_number is None:
+            issue_display = repr(issue_cell[:40]) if issue_cell else "(blank)"
             print(
                 f"FAIL  [line {lineno}] {item_label!r} — "
                 f"no #NNN issue reference found in Issue column "
-                f"(got: {issue_cell[:40]!r if issue_cell else '(blank)'})"
+                f"(got: {issue_display})"
             )
             all_pass = False
             continue
