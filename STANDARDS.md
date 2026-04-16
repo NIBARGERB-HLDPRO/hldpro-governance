@@ -267,6 +267,91 @@ Org-level settings applied to NIBARGERB-HLDPRO:
 - **2FA requirement**: enable at github.com/organizations/NIBARGERB-HLDPRO/settings/security
 - **CodeQL code scanning**: enable at github.com/organizations/NIBARGERB-HLDPRO/settings/security_products
 
+## §DA — Delegation and Agent Authority
+<!-- Added: April 2026 — multi-repo agent governance -->
+
+### Agent Tier Model
+
+Claude-native agents (`.claude/agents/`) operate above SoM's execution worker layer.
+They route, gate, and report. They do not replace SoM workers for code execution.
+
+| Tier | Class | Examples | Scope |
+|------|-------|----------|-------|
+| 0 | Cross-repo supervisor | overlord-sweep | All repos |
+| 1 | Repo supervisor | hldpro-watcher | Single repo |
+| 2 | Worker/reviewer | migration-validator, closeout-writer | Task-scoped |
+
+### Relationship to §Society of Minds
+
+SoM defines the **execution** worker ladder: `codex-spark → gpt-5.4 → Windows-Ollama (Qwen)`
+
+Claude-native Tier 2 agents define the **quality gate** layer:
+```
+Orchestrator → Tier 2 agent (validates/reviews) → SoM worker (implements) → Tier 2 agent (reports) → Orchestrator
+```
+
+For repos without SoM workers: Tier 2 agents are the execution layer for their registered scope.
+
+### Delegation Rule (all repos)
+
+Orchestrator ROUTES and VERIFIES. Does NOT implement tasks owned by a Tier 2 agent.
+If the orchestrator begins a task in the table below: STOP, spawn the agent, wait for report.
+
+| Task Type | Owner | Model |
+|-----------|-------|-------|
+| Migration validation | migration-validator | Sonnet |
+| Edge function review | edge-fn-reviewer | Sonnet |
+| Schema consistency | schema-reviewer | Sonnet |
+| Test writing | test-writer | Sonnet |
+| Diagram generation | diagram-writer | Sonnet |
+| Documentation | docs-writer | Sonnet |
+| Repo health aggregation | hldpro-watcher / LAM equivalent | Sonnet |
+| Cross-repo health | overlord-sweep | Sonnet |
+
+### Scope Freeze Rule (all repos)
+
+When session has `.claude/current_plan.json` with `approved_scope_paths`:
+- Out-of-scope findings → add to BACKLOG, do not act
+- governance-check.sh enforces this mechanically
+
+### Max Loop Rule (all repos)
+
+- Tier 2 workers: max-loops: 1 per invocation
+- Tier 1 supervisors: max-loops: 3 before HITL checkpoint
+- Orchestrator: same failure twice → HALT, update queue
+
+### HALT Conditions (all repos)
+
+Stop and surface to operator:
+- CRITICAL from any worker agent
+- Tool call blocked by governance-check.sh
+- Scope drift detected
+- Same error twice in session
+- Net-new scope not in current plan
+
+### Upward Reporting Protocol
+
+Each Tier 1 supervisor writes status JSON after every run.
+Path: `${GOVERNANCE_REPORTS_PATH:-../hldpro-governance/reports}/<repo>/<date>-status.json`
+CI limitation: stdout `[GOVERNANCE-REPORT]` prefix is local debug only — not consumed cross-repo.
+Cross-repo CI reporting requires `gh api` write to governance repo.
+
+```json
+{
+  "repo": "<repo-name>",
+  "date": "<YYYY-MM-DD>",
+  "overall": "HEALTHY | ATTENTION | ACTION_REQUIRED",
+  "criticals": [], "warnings": [], "scope_violations": [],
+  "next_action": "<string>"
+}
+```
+
+### Session Plan Ownership
+
+`.claude/current_plan.json` is owned by the orchestrator only.
+Worker and supervisor agents may read it, but may not create or modify it.
+Schema: `hldpro-governance/schemas/approved_scope_paths.schema.json`
+
 ## Society of Minds — Model Routing Charter (2026-04-14)
 
 Activity → model routing is codified as a society-of-minds role charter with enforced handoff protocols. Every intent has a CI-verifiable enforcement artifact — no orphan rules.
