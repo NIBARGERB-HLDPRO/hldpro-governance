@@ -8,7 +8,10 @@ max-loops: 3
 authority-scope: cross-repo-read + governance-reports-write
 self-approval: prohibited
 write-paths:
-  - reports/
+  - ~/Developer/hldpro/OVERLORD_REPORT.md
+  - ~/Developer/hldpro/OVERLORD_INDEX.md
+  - ~/Developer/hldpro/OVERLORD_DASHBOARD.html
+  - wiki/
 policy-source: STANDARDS.md
 registry-source: AGENT_REGISTRY.md
 ---
