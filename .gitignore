@@ -40,6 +40,8 @@ raw/**/*.wav
 
 # Claude Code local tooling state (worktrees, local settings)
 .claude/
+!.claude/settings.json
+!.claude/hooks/
 
 # OS
 .DS_Store
