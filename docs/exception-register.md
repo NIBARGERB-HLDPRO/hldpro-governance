@@ -68,8 +68,9 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **approval_date:** 2026-04-14
 - **expiry_date:** 2026-05-14 (30 days)
 - **review_cadence:** monthly
-- **status:** `active`
+- **status:** `closed`
 - **follow-up:** reconcile SoM + riskfix/* branch conventions in a cross-repo standards discussion
+- **status:** `closed` — 2026-04-16. STANDARDS.md updated to clarify that `riskfix/<slug>-YYYYMMDD` is the LAM-required pattern (enforced by `edge_breaker_mcp_contract.yml`); other repos accept `riskfix/*` as optional. Convention conflict resolved without CI changes.
 
 ### `SOM-WIN-OLLAMA-PII-001` — PII middleware enforcement deferred to Sprint 2
 

@@ -79,10 +79,11 @@ else
   echo "    relevance_tags: extract from closeout content"
 fi
 
-# 4. Commit closeout to governance repo
+# 4. Commit closeout to governance repo (include graphify-out + wiki if updated in step 2)
 echo "[4/4] Committing closeout..."
 cd "$GOVERNANCE_ROOT"
 git add "$CLOSEOUT_FILE"
+git add graphify-out/ wiki/ 2>/dev/null || true
 git commit -m "docs(closeout): $(basename "$CLOSEOUT_FILE" .md)"
 
 echo ""
