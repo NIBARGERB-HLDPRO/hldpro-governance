@@ -1,0 +1,17 @@
+name: Check FAIL_FAST_LOG and ERROR_PATTERNS schemas
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'docs/FAIL_FAST_LOG.md'
+      - 'docs/ERROR_PATTERNS.md'
+      - 'docs/schemas/*.md'
+      - '.github/workflows/check-fail-fast-*.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-fail-fast:
+    uses: ./.github/workflows/check-fail-fast-schema.yml

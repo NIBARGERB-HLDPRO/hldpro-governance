@@ -4,20 +4,20 @@
 
 ## Key Concepts
 
-- **CRMService** (14 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.initialize()** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.getDashboardStatsWithScope()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.buildWeeklySummaryPacket()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.createNote()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.getContactTimeline()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.getCRMStats()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.getDashboardStats()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.getWorkspaceId()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.recordManagerExportAudit()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.setTerritoryAssignment()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.exportContactsToCSV()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.exportDealsToCSV()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
-- **.parseCSVContacts()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
+- **CRMService** (14 connections) — `knocktracker/lib/crmService.ts`
+- **.initialize()** (8 connections) — `knocktracker/lib/crmService.ts`
+- **.getDashboardStatsWithScope()** (4 connections) — `knocktracker/lib/crmService.ts`
+- **.buildWeeklySummaryPacket()** (2 connections) — `knocktracker/lib/crmService.ts`
+- **.createNote()** (2 connections) — `knocktracker/lib/crmService.ts`
+- **.getContactTimeline()** (2 connections) — `knocktracker/lib/crmService.ts`
+- **.getCRMStats()** (2 connections) — `knocktracker/lib/crmService.ts`
+- **.getDashboardStats()** (2 connections) — `knocktracker/lib/crmService.ts`
+- **.getWorkspaceId()** (2 connections) — `knocktracker/lib/crmService.ts`
+- **.recordManagerExportAudit()** (2 connections) — `knocktracker/lib/crmService.ts`
+- **.setTerritoryAssignment()** (2 connections) — `knocktracker/lib/crmService.ts`
+- **.exportContactsToCSV()** (1 connections) — `knocktracker/lib/crmService.ts`
+- **.exportDealsToCSV()** (1 connections) — `knocktracker/lib/crmService.ts`
+- **.parseCSVContacts()** (1 connections) — `knocktracker/lib/crmService.ts`
 
 ## Relationships
 
@@ -25,7 +25,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/crmService.ts`
+- `knocktracker/lib/crmService.ts`
 
 ## Audit Trail
 

@@ -4,19 +4,19 @@
 
 ## Key Concepts
 
-- **test_worktree_hygiene_preflight_runtime.py** (12 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **main()** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **run()** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **write()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **add_remote_branch_worktree()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **fail()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **git_setup()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **run_checker()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **add_origin_main_tracking_worktree()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **add_session_lock()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **add_unpublished_worktree()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **build_fake_gh()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **check()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **test_worktree_hygiene_preflight_runtime.py** (12 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **main()** (9 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **run()** (7 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **write()** (5 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **add_remote_branch_worktree()** (4 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **fail()** (4 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **git_setup()** (4 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **run_checker()** (4 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **add_origin_main_tracking_worktree()** (3 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **add_session_lock()** (3 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **add_unpublished_worktree()** (3 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **build_fake_gh()** (3 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
 
 ## Relationships
 
@@ -24,7 +24,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
 
 ## Audit Trail
 

@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **check-no-canonical-mirror-staging.js** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-canonical-mirror-staging.js`
-- **main()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-canonical-mirror-staging.js`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-canonical-mirror-staging.js`
-- **isIssueLane()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-canonical-mirror-staging.js`
-- **run()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-canonical-mirror-staging.js`
+- **check-no-canonical-mirror-staging.js** (4 connections) — `healthcareplatform/backend/scripts/ci/check-no-canonical-mirror-staging.js`
+- **main()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-no-canonical-mirror-staging.js`
+- **fail()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-canonical-mirror-staging.js`
+- **isIssueLane()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-canonical-mirror-staging.js`
+- **run()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-canonical-mirror-staging.js`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-no-canonical-mirror-staging.js`
+- `healthcareplatform/backend/scripts/ci/check-no-canonical-mirror-staging.js`
 
 ## Audit Trail
 

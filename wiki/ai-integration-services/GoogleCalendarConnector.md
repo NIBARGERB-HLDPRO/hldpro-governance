@@ -1,6 +1,6 @@
 # GoogleCalendarConnector
 
-> God node · 11 connections · `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/service/google-calendar.ts`
+> God node · 11 connections · `ai-integration-services/backend/supabase/functions/_shared/connectors/service/google-calendar.ts`
 
 ## Connections by Relation
 

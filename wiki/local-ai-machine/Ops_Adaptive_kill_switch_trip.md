@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **test_adaptive_kill_switch_trip.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_adaptive_kill_switch_trip.py`
-- **check()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_adaptive_kill_switch_trip.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_adaptive_kill_switch_trip.py`
+- **test_adaptive_kill_switch_trip.py** (2 connections) — `local-ai-machine/scripts/ops/test_adaptive_kill_switch_trip.py`
+- **check()** (2 connections) — `local-ai-machine/scripts/ops/test_adaptive_kill_switch_trip.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/test_adaptive_kill_switch_trip.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_adaptive_kill_switch_trip.py`
+- `local-ai-machine/scripts/ops/test_adaptive_kill_switch_trip.py`
 
 ## Audit Trail
 

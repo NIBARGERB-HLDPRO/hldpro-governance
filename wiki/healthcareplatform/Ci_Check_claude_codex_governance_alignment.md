@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **check-claude-codex-governance-alignment.js** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-claude-codex-governance-alignment.js`
-- **requirePatterns()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-claude-codex-governance-alignment.js`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-claude-codex-governance-alignment.js`
-- **readUtf8()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-claude-codex-governance-alignment.js`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-claude-codex-governance-alignment.js`
+- **check-claude-codex-governance-alignment.js** (4 connections) — `healthcareplatform/backend/scripts/ci/check-claude-codex-governance-alignment.js`
+- **requirePatterns()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-claude-codex-governance-alignment.js`
+- **fail()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-claude-codex-governance-alignment.js`
+- **readUtf8()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-claude-codex-governance-alignment.js`
+- **main()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-claude-codex-governance-alignment.js`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-claude-codex-governance-alignment.js`
+- `healthcareplatform/backend/scripts/ci/check-claude-codex-governance-alignment.js`
 
 ## Audit Trail
 

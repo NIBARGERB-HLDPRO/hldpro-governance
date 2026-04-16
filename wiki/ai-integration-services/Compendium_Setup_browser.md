@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **setup-browser.ts** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/setup-browser.ts`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/setup-browser.ts`
-- **setupProfile()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/setup-browser.ts`
-- **loadConfig()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/setup-browser.ts`
-- **prompt()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/setup-browser.ts`
-- **saveConfig()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/setup-browser.ts`
+- **setup-browser.ts** (5 connections) — `ai-integration-services/scripts/compendium/setup-browser.ts`
+- **main()** (3 connections) — `ai-integration-services/scripts/compendium/setup-browser.ts`
+- **setupProfile()** (3 connections) — `ai-integration-services/scripts/compendium/setup-browser.ts`
+- **loadConfig()** (2 connections) — `ai-integration-services/scripts/compendium/setup-browser.ts`
+- **prompt()** (2 connections) — `ai-integration-services/scripts/compendium/setup-browser.ts`
+- **saveConfig()** (1 connections) — `ai-integration-services/scripts/compendium/setup-browser.ts`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/setup-browser.ts`
+- `ai-integration-services/scripts/compendium/setup-browser.ts`
 
 ## Audit Trail
 

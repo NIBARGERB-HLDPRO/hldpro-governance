@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- **check-lane-enforcement-regression.js** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-lane-enforcement-regression.js`
-- **main()** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-lane-enforcement-regression.js`
-- **run()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-lane-enforcement-regression.js`
-- **deleteBranch()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-lane-enforcement-regression.js`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-lane-enforcement-regression.js`
-- **removeWorktree()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-lane-enforcement-regression.js`
-- **resolveRepoRoot()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-lane-enforcement-regression.js`
-- **psArgs()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-lane-enforcement-regression.js`
-- **resolvePsCommand()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-lane-enforcement-regression.js`
-- **resolveRootCheckCwd()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-lane-enforcement-regression.js`
+- **check-lane-enforcement-regression.js** (9 connections) — `healthcareplatform/backend/scripts/ci/check-lane-enforcement-regression.js`
+- **main()** (9 connections) — `healthcareplatform/backend/scripts/ci/check-lane-enforcement-regression.js`
+- **run()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-lane-enforcement-regression.js`
+- **deleteBranch()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-lane-enforcement-regression.js`
+- **fail()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-lane-enforcement-regression.js`
+- **removeWorktree()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-lane-enforcement-regression.js`
+- **resolveRepoRoot()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-lane-enforcement-regression.js`
+- **psArgs()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-lane-enforcement-regression.js`
+- **resolvePsCommand()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-lane-enforcement-regression.js`
+- **resolveRootCheckCwd()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-lane-enforcement-regression.js`
 
 ## Relationships
 
@@ -21,7 +21,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-lane-enforcement-regression.js`
+- `healthcareplatform/backend/scripts/ci/check-lane-enforcement-regression.js`
 
 ## Audit Trail
 

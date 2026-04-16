@@ -1,0 +1,101 @@
+{
+  "session_id": "session-20260409-issue-85-workflow-doc-retrieval",
+  "issue_number": 85,
+  "objective": "Improve fail-fast retrieval for workflow/doc-heavy governance scenarios by adding a deterministic hybrid retrieval path that preserves graph-guided owner discovery while elevating workflow and documentation artifacts when the scenario depends on them.",
+  "tier": 2,
+  "scope_boundary": [
+    "This slice is limited to governance-owned retrieval/evaluation tooling, scenario corpus updates, and guidance updates for workflow/doc-heavy fail-fast issues.",
+    "This slice may add a deterministic hybrid retrieval path that combines graph-guided owner discovery with bounded workflow/doc artifact ranking.",
+    "This slice may update measured artifacts and guidance if the hybrid retrieval path materially improves at least one workflow/doc-heavy scenario versus the issue #66 result."
+  ],
+  "out_of_scope": [
+    "Upstream graphify package modifications.",
+    "Broad graph UX/reporting work such as PR comments, sweep dashboards, or adoption visualizations.",
+    "Neo4j changes, semantic extraction, or model fine-tuning."
+  ],
+  "research_summary": "Issue #66 proved graph-guided retrieval can beat bounded repo search on code-centric fail-fast debugging, but it still underperformed on workflow/doc-heavy cases such as reusable workflow debugging and sweep persistence analysis. Those misses are caused less by graph ranking and more by corpus shape: the graph is strongest on code ownership, while the decisive evidence for these scenarios lives in workflow YAML, plan docs, and metrics artifacts. The right next move is a deterministic hybrid retrieval path that keeps graph-guided retrieval first for owning-file discovery, then layers a bounded workflow/doc artifact search on top for those scenario types.",
+  "research_artifacts": [
+    "scripts/knowledge_base/measure_graphify_usage.py",
+    "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+    "metrics/graphify-evals/2026-04-09-graphify-vs-search.json",
+    "docs/plans/issue-66-graphify-retrieval-quality-pdcar.md",
+    "Issue #85"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Implement and validate a workflow/doc-aware hybrid retrieval path.",
+      "tasks": [
+        "Add a deterministic hybrid retrieval layer for workflow-heavy scenarios that ranks .github/workflows, docs/, metrics/, and related artifacts alongside graph-guided results.",
+        "Re-run the existing fail-fast corpus and verify at least one workflow/doc-heavy scenario improves versus the issue #66 result.",
+        "Update governance guidance to document when workflow/doc-heavy fail-fast work should use hybrid retrieval instead of graph-only retrieval."
+      ],
+      "acceptance_criteria": [
+        "At least one workflow/doc-heavy fail-fast scenario materially improves versus the issue #66 measurement.",
+        "Governance documents the preferred retrieval path for workflow/doc-heavy fail-fast issues.",
+        "Any remaining unresolved gap is either finished in this slice or recorded as an issue-backed follow-up before closeout."
+      ],
+      "file_paths": [
+        "scripts/knowledge_base/measure_graphify_usage.py",
+        "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+        "metrics/graphify-evals/*.json",
+        "metrics/graphify-evals/*.md",
+        "STANDARDS.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/FAIL_FAST_LOG.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "retrieval scope reviewer",
+      "role": "Scope reviewer",
+      "focus": "Keep issue #85 focused on workflow/doc-heavy fail-fast retrieval rather than broad graph UX or graph quality work.",
+      "status": "accepted",
+      "summary": "The approved direction is to keep graphify as the owner/topology layer and add a bounded deterministic hybrid retrieval path only for workflow/doc-heavy fail-fast scenarios.",
+      "evidence": [
+        "Issue #85",
+        "docs/plans/issue-66-graphify-retrieval-quality-pdcar.md"
+      ]
+    },
+    {
+      "reviewer": "measurement reviewer",
+      "role": "Harness reviewer",
+      "focus": "Reuse the issue #66 evaluator and corpus so any improvement is directly comparable to the previous measurement.",
+      "status": "accepted",
+      "summary": "The current evaluator and scenario corpus already provide a valid comparison point. The right move is to extend them with a hybrid path rather than replace the evaluation flow.",
+      "evidence": [
+        "scripts/knowledge_base/measure_graphify_usage.py",
+        "metrics/graphify-evals/2026-04-09-graphify-vs-search.json"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-requested-for-hybrid-retrieval-slice",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This slice is narrow and deterministic enough to proceed without an alternate-model review.",
+    "evidence": [
+      "Issue #85 scope"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement a deterministic workflow/doc hybrid retrieval path in governance, re-run the fail-fast corpus, and update guidance if the measured result improves.",
+    "next_execution_step": "Patch the evaluator to augment graph-guided results with bounded workflow/doc artifact ranking, then re-run the fail-fast corpus and compare against the issue #66 outputs.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If the hybrid retrieval path still cannot materially improve at least one workflow/doc-heavy scenario, do not silently widen the slice into upstream graphify or broader graph UX work; record the result and create or update a follow-up issue instead.",
+    "If new required work is discovered during Review/Adjust, either finish it in the current slice or create an issue-backed follow-up before closing issue #85.",
+    "Do not add a second non-graph baseline in this slice unless the hybrid path remains inconclusive after the direct issue #66 comparison."
+  ],
+  "approved": true,
+  "approved_by": [
+    "session-agent-codex"
+  ],
+  "approved_at": "2026-04-09T13:55:00-05:00"
+}

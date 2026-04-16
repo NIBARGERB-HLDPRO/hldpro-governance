@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **upload-notebooklm.ts** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-notebooklm.ts`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-notebooklm.ts`
-- **deleteMatchingSources()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-notebooklm.ts`
-- **getPackFiles()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-notebooklm.ts`
-- **loadConfig()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-notebooklm.ts`
-- **uploadBatch()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-notebooklm.ts`
+- **upload-notebooklm.ts** (5 connections) — `ai-integration-services/scripts/compendium/upload-notebooklm.ts`
+- **main()** (5 connections) — `ai-integration-services/scripts/compendium/upload-notebooklm.ts`
+- **deleteMatchingSources()** (2 connections) — `ai-integration-services/scripts/compendium/upload-notebooklm.ts`
+- **getPackFiles()** (2 connections) — `ai-integration-services/scripts/compendium/upload-notebooklm.ts`
+- **loadConfig()** (2 connections) — `ai-integration-services/scripts/compendium/upload-notebooklm.ts`
+- **uploadBatch()** (2 connections) — `ai-integration-services/scripts/compendium/upload-notebooklm.ts`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/compendium/upload-notebooklm.ts`
+- `ai-integration-services/scripts/compendium/upload-notebooklm.ts`
 
 ## Audit Trail
 

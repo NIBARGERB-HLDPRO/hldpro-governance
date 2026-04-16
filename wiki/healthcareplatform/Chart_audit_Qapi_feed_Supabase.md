@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **qapi-feed.test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/qapi-feed.test.ts`
+- **qapi-feed.test.ts** (0 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/qapi-feed.test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/qapi-feed.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/chart-audit/qapi-feed.test.ts`
 
 ## Audit Trail
 

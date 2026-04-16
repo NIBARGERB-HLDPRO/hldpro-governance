@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **estimate-engine.ts** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
-- **centsToUsd()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
-- **formatEstimateForPdf()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
-- **calculateLineItems()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
-- **calculateTotals()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
-- **resolveQtyField()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
+- **estimate-engine.ts** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
+- **centsToUsd()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
+- **formatEstimateForPdf()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
+- **calculateLineItems()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
+- **calculateTotals()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
+- **resolveQtyField()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
 
 ## Audit Trail
 

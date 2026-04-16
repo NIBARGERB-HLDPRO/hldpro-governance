@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **playwright.gate.config.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.gate.config.ts`
-- **resolveEnvOrDefault()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.gate.config.ts`
+- **playwright.gate.config.ts** (1 connections) — `healthcareplatform/frontend/playwright.gate.config.ts`
+- **resolveEnvOrDefault()** (1 connections) — `healthcareplatform/frontend/playwright.gate.config.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.gate.config.ts`
+- `healthcareplatform/frontend/playwright.gate.config.ts`
 
 ## Audit Trail
 

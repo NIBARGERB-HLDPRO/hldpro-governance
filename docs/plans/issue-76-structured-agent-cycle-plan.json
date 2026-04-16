@@ -1,0 +1,80 @@
+{
+  "session_id": "session-20260409-issue-76-cited-code-path-validation",
+  "issue_number": 76,
+  "objective": "Make Codex finding qualification reject drifted or hallucinated code citations by validating code context around the referenced line, with a regression test covering hallucinated-line rejection.",
+  "tier": 1,
+  "scope_boundary": [
+    "Extend `validate_location()` to read a small code window around the cited line.",
+    "Reject findings when strong claim anchors such as identifiers or backticked terms are absent from the cited context.",
+    "Add a regression test for hallucinated-line rejection."
+  ],
+  "out_of_scope": [
+    "Natural-language semantic validation of every review claim.",
+    "Changing promote/backlog writeback behavior.",
+    "Reworking Codex review prompt generation."
+  ],
+  "research_summary": "Qualification currently checks only that the file exists and the line is in range. That lets hallucinated or drifted findings survive qualification if they point at any valid file/line pair. The safe bounded fix is to enforce context matching only for strong code anchors, such as identifiers or backticked code terms, and add a regression test that proves a hallucinated cited line is rejected.",
+  "research_artifacts": [
+    "scripts/overlord/codex_ingestion.py",
+    "Issue #76 description"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Validate cited code context during finding qualification.",
+      "tasks": [
+        "Extract strong code anchors from the finding claim.",
+        "Read a small context window around the cited line.",
+        "Reject findings whose cited line does not match the claim anchors."
+      ],
+      "acceptance_criteria": [
+        "`validate_location()` reads code context around the cited line.",
+        "Drifted findings with strong code anchors are marked false positives.",
+        "At least one test covers hallucinated-line rejection."
+      ],
+      "file_paths": [
+        "scripts/overlord/codex_ingestion.py",
+        "tests/test_codex_ingestion.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "ingestion reviewer",
+      "role": "qualification-flow reviewer",
+      "focus": "Constrain the fix to strong code anchors so qualification catches obvious hallucinations without turning abstract prose findings into noisy false positives.",
+      "status": "accepted",
+      "summary": "A strong-anchor check is the right bounded fix here: it catches hallucinated identifier/path citations and avoids overreaching semantic validation.",
+      "evidence": [
+        "scripts/overlord/codex_ingestion.py",
+        "Issue #76 description"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-bounded-helper-fix",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This is a narrow qualification helper fix and does not require alternate-model review.",
+    "evidence": [
+      "Issue #76 scope"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Add strong-anchor code-context validation to finding qualification and prove hallucinated-line rejection with a test.",
+    "next_execution_step": "Patch `codex_ingestion.py`, add a unittest regression file, validate locally, and package the governance PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If the bounded anchor check proves too weak during review, create a follow-up issue for richer semantic validation rather than overloading this slice.",
+    "If more untested qualification paths surface, add only directly related regression coverage in this slice."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Benji"
+  ],
+  "approved_at": "2026-04-09T13:20:00-05:00"
+}

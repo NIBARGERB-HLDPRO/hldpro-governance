@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **AffiliateProgram.tsx** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
-- **Affiliates()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
-- **EarningsCalculator()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
+- **AffiliateProgram.tsx** (2 connections) — `ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
+- **Affiliates()** (1 connections) — `ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
+- **EarningsCalculator()** (1 connections) — `ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
+- `ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
 
 ## Audit Trail
 

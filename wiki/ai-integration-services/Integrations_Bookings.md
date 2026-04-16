@@ -4,23 +4,23 @@
 
 ## Key Concepts
 
-- **DashboardIntegrations.tsx** (11 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- **Bookings.tsx** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **callEdgeFunction()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **fetchSyncLogs()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- **getStageIndex()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **handleApprove()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **handleCancel()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **handleExecute()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **handleNewBooking()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **PipelineProgressBar()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **handleManage()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- **handleResync()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- **formatTimeAgo()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- **getConnectionForType()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- **handleConnect()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- **handleDisconnect()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- **StatusBadge()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
+- **DashboardIntegrations.tsx** (11 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
+- **Bookings.tsx** (9 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **callEdgeFunction()** (5 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **fetchSyncLogs()** (3 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
+- **getStageIndex()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **handleApprove()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **handleCancel()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **handleExecute()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **handleNewBooking()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **PipelineProgressBar()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **handleManage()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
+- **handleResync()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
+- **formatTimeAgo()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
+- **getConnectionForType()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
+- **handleConnect()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
+- **handleDisconnect()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
+- **StatusBadge()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
 
 ## Relationships
 
@@ -28,8 +28,8 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
+- `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
 
 ## Audit Trail
 

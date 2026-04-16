@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- **knowledge_integrator.ts** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/knowledge_integrator.ts`
-- **executeWithSLA()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/knowledge_integrator.ts`
-- **gatekeeperValidation()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/knowledge_integrator.ts`
-- **SingletonQueue** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/knowledge_integrator.ts`
-- **handleCrossDocQuery()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/knowledge_integrator.ts`
-- **validateParsed()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/knowledge_integrator.ts`
-- **generateFailsafeAuditHash()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/knowledge_integrator.ts`
-- **loadSchema()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/knowledge_integrator.ts`
-- **.depth()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/knowledge_integrator.ts`
-- **.push()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/knowledge_integrator.ts`
-- **.drain()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/knowledge_integrator.ts`
+- **knowledge_integrator.ts** (7 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
+- **executeWithSLA()** (5 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
+- **gatekeeperValidation()** (5 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
+- **SingletonQueue** (4 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
+- **handleCrossDocQuery()** (3 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
+- **validateParsed()** (3 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
+- **generateFailsafeAuditHash()** (2 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
+- **loadSchema()** (2 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
+- **.depth()** (2 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
+- **.push()** (2 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
+- **.drain()** (1 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
 
 ## Relationships
 
@@ -22,7 +22,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/knowledge_integrator.ts`
+- `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
 
 ## Audit Trail
 

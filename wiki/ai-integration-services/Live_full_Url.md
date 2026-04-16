@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- **live-e2e-full.spec.ts** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/live-e2e-full.spec.ts`
-- **signInAndInject()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/live-e2e-full.spec.ts`
-- **findAdminUserByEmail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/live-e2e-full.spec.ts`
-- **isLocalUrl()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/live-e2e-full.spec.ts`
-- **resolveAppUrl()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/live-e2e-full.spec.ts`
-- **signInWithPassword()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/live-e2e-full.spec.ts`
-- **callEdgeFunction()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/live-e2e-full.spec.ts`
-- **openMarketingChat()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/live-e2e-full.spec.ts`
-- **screenshot()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/live-e2e-full.spec.ts`
-- **settle()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/live-e2e-full.spec.ts`
+- **live-e2e-full.spec.ts** (9 connections) — `ai-integration-services/e2e/live-e2e-full.spec.ts`
+- **signInAndInject()** (3 connections) — `ai-integration-services/e2e/live-e2e-full.spec.ts`
+- **findAdminUserByEmail()** (2 connections) — `ai-integration-services/e2e/live-e2e-full.spec.ts`
+- **isLocalUrl()** (2 connections) — `ai-integration-services/e2e/live-e2e-full.spec.ts`
+- **resolveAppUrl()** (2 connections) — `ai-integration-services/e2e/live-e2e-full.spec.ts`
+- **signInWithPassword()** (2 connections) — `ai-integration-services/e2e/live-e2e-full.spec.ts`
+- **callEdgeFunction()** (1 connections) — `ai-integration-services/e2e/live-e2e-full.spec.ts`
+- **openMarketingChat()** (1 connections) — `ai-integration-services/e2e/live-e2e-full.spec.ts`
+- **screenshot()** (1 connections) — `ai-integration-services/e2e/live-e2e-full.spec.ts`
+- **settle()** (1 connections) — `ai-integration-services/e2e/live-e2e-full.spec.ts`
 
 ## Relationships
 
@@ -21,7 +21,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/e2e/live-e2e-full.spec.ts`
+- `ai-integration-services/e2e/live-e2e-full.spec.ts`
 
 ## Audit Trail
 

@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **log-redaction.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/log-redaction.test.ts`
-- **assertEquals()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/log-redaction.test.ts`
+- **log-redaction.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/log-redaction.test.ts`
+- **assertEquals()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/log-redaction.test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/log-redaction.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/log-redaction.test.ts`
 
 ## Audit Trail
 

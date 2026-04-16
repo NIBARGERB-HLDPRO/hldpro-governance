@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **capture-subagent-evidence.js** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/issues/capture-subagent-evidence.js`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/issues/capture-subagent-evidence.js`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/issues/capture-subagent-evidence.js`
-- **parseArgs()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/issues/capture-subagent-evidence.js`
+- **capture-subagent-evidence.js** (3 connections) — `healthcareplatform/backend/scripts/issues/capture-subagent-evidence.js`
+- **main()** (3 connections) — `healthcareplatform/backend/scripts/issues/capture-subagent-evidence.js`
+- **fail()** (2 connections) — `healthcareplatform/backend/scripts/issues/capture-subagent-evidence.js`
+- **parseArgs()** (2 connections) — `healthcareplatform/backend/scripts/issues/capture-subagent-evidence.js`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/issues/capture-subagent-evidence.js`
+- `healthcareplatform/backend/scripts/issues/capture-subagent-evidence.js`
 
 ## Audit Trail
 

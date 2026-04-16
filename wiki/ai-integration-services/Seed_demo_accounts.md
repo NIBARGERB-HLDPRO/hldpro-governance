@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **seed-demo-accounts.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-demo-accounts.ts`
-- **main()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-demo-accounts.ts`
+- **seed-demo-accounts.ts** (1 connections) — `ai-integration-services/scripts/seed-demo-accounts.ts`
+- **main()** (1 connections) — `ai-integration-services/scripts/seed-demo-accounts.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-demo-accounts.ts`
+- `ai-integration-services/scripts/seed-demo-accounts.ts`
 
 ## Audit Trail
 

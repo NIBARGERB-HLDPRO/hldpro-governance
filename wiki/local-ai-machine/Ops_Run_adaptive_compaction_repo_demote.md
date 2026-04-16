@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **run_adaptive_compaction_repo_demote_probe.py** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
-- **main()** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
-- **get()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
-- **load_latest_active_summary()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
-- **wait_for_server()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
-- **load_dotenv()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
-- **pick_free_port()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
-- **post()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
+- **run_adaptive_compaction_repo_demote_probe.py** (7 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
+- **main()** (7 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
+- **get()** (4 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
+- **load_latest_active_summary()** (3 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
+- **wait_for_server()** (3 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
+- **load_dotenv()** (2 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
+- **pick_free_port()** (2 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
+- **post()** (2 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
+- `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_demote_probe.py`
 
 ## Audit Trail
 

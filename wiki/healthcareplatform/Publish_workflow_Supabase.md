@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **publish-workflow.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/publish-workflow.test.ts`
-- **assertEquals()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/publish-workflow.test.ts`
+- **publish-workflow.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/publish-workflow.test.ts`
+- **assertEquals()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/publish-workflow.test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/publish-workflow.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/publish-workflow.test.ts`
 
 ## Audit Trail
 

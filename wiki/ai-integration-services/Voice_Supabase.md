@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **voice-config.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/voice-config.ts`
-- **mergeVoiceConfig()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/voice-config.ts`
-- **readVoiceConfig()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/voice-config.ts`
+- **voice-config.ts** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-config.ts`
+- **mergeVoiceConfig()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-config.ts`
+- **readVoiceConfig()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-config.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/voice-config.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/voice-config.ts`
 
 ## Audit Trail
 

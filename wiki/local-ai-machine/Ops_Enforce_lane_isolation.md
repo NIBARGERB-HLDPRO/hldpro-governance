@@ -4,26 +4,26 @@
 
 ## Key Concepts
 
-- **enforce_lane_isolation.py** (19 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **mode_scope()** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **mode_mirror()** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **mode_preflight()** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **fail()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **main()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **changed_files()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **run_git()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **write_json()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **now_utc()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **run_dir_for()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **current_branch()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **parse_porcelain()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **tracked_clean()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **ChangedFile** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **_in_scope()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **info()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **_load_runbook_targets()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **parse_args()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
-- **sha256_file()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
+- **enforce_lane_isolation.py** (19 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **mode_scope()** (9 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **mode_mirror()** (8 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **mode_preflight()** (8 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **fail()** (6 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **main()** (6 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **changed_files()** (5 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **run_git()** (5 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **write_json()** (5 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **now_utc()** (4 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **run_dir_for()** (4 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **current_branch()** (3 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **parse_porcelain()** (3 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **tracked_clean()** (3 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **ChangedFile** (2 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **_in_scope()** (2 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **info()** (2 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **_load_runbook_targets()** (2 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **parse_args()** (2 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
+- **sha256_file()** (2 connections) — `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
 
 ## Relationships
 
@@ -31,7 +31,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/enforce_lane_isolation.py`
+- `local-ai-machine/scripts/ops/enforce_lane_isolation.py`
 
 ## Audit Trail
 

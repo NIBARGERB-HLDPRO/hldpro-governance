@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **start_repo_learning_loop.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/start_repo_learning_loop.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/start_repo_learning_loop.py`
-- **default_run_id()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/start_repo_learning_loop.py`
-- **run()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/start_repo_learning_loop.py`
+- **start_repo_learning_loop.py** (3 connections) — `local-ai-machine/scripts/ops/start_repo_learning_loop.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/start_repo_learning_loop.py`
+- **default_run_id()** (2 connections) — `local-ai-machine/scripts/ops/start_repo_learning_loop.py`
+- **run()** (2 connections) — `local-ai-machine/scripts/ops/start_repo_learning_loop.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/start_repo_learning_loop.py`
+- `local-ai-machine/scripts/ops/start_repo_learning_loop.py`
 
 ## Audit Trail
 

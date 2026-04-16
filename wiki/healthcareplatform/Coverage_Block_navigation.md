@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **block-navigation.js** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/block-navigation.js`
-- **makeCurrent()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/block-navigation.js`
-- **goToNext()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/block-navigation.js`
-- **goToPrevious()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/block-navigation.js`
-- **toggleClass()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/block-navigation.js`
+- **block-navigation.js** (4 connections) — `healthcareplatform/frontend/coverage/block-navigation.js`
+- **makeCurrent()** (4 connections) — `healthcareplatform/frontend/coverage/block-navigation.js`
+- **goToNext()** (2 connections) — `healthcareplatform/frontend/coverage/block-navigation.js`
+- **goToPrevious()** (2 connections) — `healthcareplatform/frontend/coverage/block-navigation.js`
+- **toggleClass()** (2 connections) — `healthcareplatform/frontend/coverage/block-navigation.js`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/block-navigation.js`
+- `healthcareplatform/frontend/coverage/block-navigation.js`
 
 ## Audit Trail
 

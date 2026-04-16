@@ -1,0 +1,23 @@
+name: check-pii-routing
+on:
+  workflow_call:
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  check-pii-routing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Validate PII routing and audit evidence
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          python3 -m pip install --quiet pyyaml
+          python3 .github/scripts/check_pii_routing.py

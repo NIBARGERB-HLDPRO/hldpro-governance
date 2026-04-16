@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **edgeFunctionContracts.ts** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/contracts/edgeFunctionContracts.ts`
-- **isObject()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/contracts/edgeFunctionContracts.ts`
-- **isGenerateRouteSuccess()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/contracts/edgeFunctionContracts.ts`
-- **isImportOsmTerritorySuccess()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/contracts/edgeFunctionContracts.ts`
-- **parseGenerateRouteRequest()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/contracts/edgeFunctionContracts.ts`
-- **parseImportOsmTerritoryRequest()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/contracts/edgeFunctionContracts.ts`
-- **edgeFunctionContracts.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/tests/edgeFunctionContracts.test.ts`
+- **edgeFunctionContracts.ts** (7 connections) — `knocktracker/lib/contracts/edgeFunctionContracts.ts`
+- **isObject()** (5 connections) — `knocktracker/lib/contracts/edgeFunctionContracts.ts`
+- **isGenerateRouteSuccess()** (2 connections) — `knocktracker/lib/contracts/edgeFunctionContracts.ts`
+- **isImportOsmTerritorySuccess()** (2 connections) — `knocktracker/lib/contracts/edgeFunctionContracts.ts`
+- **parseGenerateRouteRequest()** (2 connections) — `knocktracker/lib/contracts/edgeFunctionContracts.ts`
+- **parseImportOsmTerritoryRequest()** (2 connections) — `knocktracker/lib/contracts/edgeFunctionContracts.ts`
+- **edgeFunctionContracts.test.ts** (1 connections) — `knocktracker/tests/edgeFunctionContracts.test.ts`
 
 ## Relationships
 
@@ -18,8 +18,8 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/contracts/edgeFunctionContracts.ts`
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/tests/edgeFunctionContracts.test.ts`
+- `knocktracker/lib/contracts/edgeFunctionContracts.ts`
+- `knocktracker/tests/edgeFunctionContracts.test.ts`
 
 ## Audit Trail
 

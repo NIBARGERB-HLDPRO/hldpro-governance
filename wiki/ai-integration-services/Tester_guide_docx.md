@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **build-tester-guide-docx.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/build-tester-guide-docx.py`
-- **annotate_screenshot()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/build-tester-guide-docx.py`
-- **build_docx()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/build-tester-guide-docx.py`
-- **Build HLD Pro V1 Alpha Tester Guide as .docx with annotated screenshots. Adds re** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/build-tester-guide-docx.py`
-- **Add red boxes and labels to a screenshot.** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/build-tester-guide-docx.py`
+- **build-tester-guide-docx.py** (3 connections) — `ai-integration-services/scripts/build-tester-guide-docx.py`
+- **annotate_screenshot()** (3 connections) — `ai-integration-services/scripts/build-tester-guide-docx.py`
+- **build_docx()** (2 connections) — `ai-integration-services/scripts/build-tester-guide-docx.py`
+- **Build HLD Pro V1 Alpha Tester Guide as .docx with annotated screenshots. Adds re** (1 connections) — `ai-integration-services/scripts/build-tester-guide-docx.py`
+- **Add red boxes and labels to a screenshot.** (1 connections) — `ai-integration-services/scripts/build-tester-guide-docx.py`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/build-tester-guide-docx.py`
+- `ai-integration-services/scripts/build-tester-guide-docx.py`
 
 ## Audit Trail
 

@@ -1,0 +1,18 @@
+name: check-codex-model-pins
+on:
+  workflow_call:
+permissions:
+  contents: read
+
+jobs:
+  check-codex-model-pins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Validate codex exec model pinning
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/check_codex_model_pins.py

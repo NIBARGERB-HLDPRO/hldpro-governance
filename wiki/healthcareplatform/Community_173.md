@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **staging-e2e.spec.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/staging-e2e.spec.ts`
+- **staging-e2e.spec.ts** (0 connections) — `healthcareplatform/frontend/e2e/staging-e2e.spec.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/staging-e2e.spec.ts`
+- `healthcareplatform/frontend/e2e/staging-e2e.spec.ts`
 
 ## Audit Trail
 

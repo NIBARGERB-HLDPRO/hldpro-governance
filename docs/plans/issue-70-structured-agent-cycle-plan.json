@@ -1,0 +1,100 @@
+{
+  "session_id": "session-20260409-issue-70-dependency-symlink-standard",
+  "issue_number": 70,
+  "objective": "Approve and document the governance standard for borrowing installed dependencies from a root checkout into isolated worktrees via symlinks, and issue-back any helper follow-up before closure.",
+  "tier": 2,
+  "scope_boundary": [
+    "Review existing governance standards for any documented worktree dependency-sharing guidance.",
+    "Document the approved allowlist, forbidden artifacts, verification checks, and cleanup expectations if the pattern is allowed.",
+    "Create a follow-up issue if helper automation is still needed after the manual pattern is documented."
+  ],
+  "out_of_scope": [
+    "Implementing the helper itself in this slice.",
+    "Changing product-repo package manager layouts.",
+    "Standardizing symlinks for non-dependency artifacts."
+  ],
+  "research_summary": "Governance already documented isolated worktrees and one adjacent graphify hook/worktree failure pattern, but it did not explicitly govern borrowing installed dependencies from a root checkout into a clean issue worktree. The pattern is already useful in practice, so the correct move is to approve it narrowly with same-repo and lockfile verification, then open a separate helper issue because the manual setup remains error-prone.",
+  "research_artifacts": [
+    "STANDARDS.md",
+    "OVERLORD_BACKLOG.md",
+    "agents/verify-completion.md",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/70"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Land the governance standard for the manual symlink pattern.",
+      "tasks": [
+        "Review current governance text for any existing guidance on shared dependency symlinks in clean worktrees.",
+        "Document allowed artifacts, forbidden artifacts, pre-link verification, post-link verification, and cleanup expectations in STANDARDS.md.",
+        "Record the approved policy in OVERLORD_BACKLOG.md."
+      ],
+      "acceptance_criteria": [
+        "Governance has an explicit documented position on the pattern.",
+        "The standard names allowed artifacts, forbidden artifacts, verification requirements, and cleanup expectations.",
+        "The backlog records the approved policy as completed governance work."
+      ],
+      "file_paths": [
+        "STANDARDS.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "name": "Sprint 2",
+      "goal": "Capture any remaining work before closing the issue.",
+      "tasks": [
+        "Decide whether a helper/runbook follow-up is needed after documenting the manual pattern.",
+        "Create a follow-up issue if helper work is still required.",
+        "Write the canonical structured JSON plan and PDCA/R closeout for this slice."
+      ],
+      "acceptance_criteria": [
+        "Any helper or runbook follow-up is issue-backed before issue closure.",
+        "The slice has both a canonical JSON plan and a PDCA/R closeout artifact."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/plans/issue-70-structured-agent-cycle-plan.json",
+        "docs/plans/issue-70-dependency-symlink-standard-pdcar.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "governance reviewer",
+      "role": "Standards reviewer",
+      "focus": "Validate that the symlink pattern should be approved narrowly for dependency installs only, rather than left undocumented or generalized too broadly.",
+      "status": "accepted",
+      "summary": "The pattern is already useful in isolated worktrees, but only if it is constrained to same-repo dependency artifacts with lockfile parity checks and explicit cleanup. Secrets, repo metadata, and build outputs must remain forbidden.",
+      "evidence": [
+        "STANDARDS.md",
+        "Issue #70 scope"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-governance-doc-slice",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This is a bounded governance-standard slice and did not require an alternate-model review to proceed.",
+    "evidence": [
+      "Issue #70 scope"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Proceed with the governance standard update for shared dependency symlinks in isolated worktrees and create any required helper follow-up before closure.",
+    "next_execution_step": "Proof the documented pattern on a real worktree, write the PDCA/R closeout, and merge the governance documentation update.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If worktree proof shows hidden risks, tighten the standard in the same slice or create a blocker follow-up issue before closure.",
+    "If repeated manual setup is clearly too error-prone, create the helper issue before moving the governance issue to done."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Benji"
+  ],
+  "approved_at": "2026-04-09T12:20:00-05:00"
+}

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **slack_signature_test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/supabase/functions/slack_webhook/slack_signature_test.ts`
+- **slack_signature_test.ts** (0 connections) — `local-ai-machine/supabase/functions/slack_webhook/slack_signature_test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/supabase/functions/slack_webhook/slack_signature_test.ts`
+- `local-ai-machine/supabase/functions/slack_webhook/slack_signature_test.ts`
 
 ## Audit Trail
 

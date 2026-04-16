@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **check-survey-edge-function-contract.js** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-survey-edge-function-contract.js`
-- **check()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-survey-edge-function-contract.js`
+- **check-survey-edge-function-contract.js** (1 connections) — `healthcareplatform/backend/scripts/ci/check-survey-edge-function-contract.js`
+- **check()** (1 connections) — `healthcareplatform/backend/scripts/ci/check-survey-edge-function-contract.js`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-survey-edge-function-contract.js`
+- `healthcareplatform/backend/scripts/ci/check-survey-edge-function-contract.js`
 
 ## Audit Trail
 

@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **native_orchestrator_test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/orchestrator/native_orchestrator_test.ts`
-- **baseInput()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/orchestrator/native_orchestrator_test.ts`
+- **native_orchestrator_test.ts** (1 connections) — `local-ai-machine/src/orchestrator/native_orchestrator_test.ts`
+- **baseInput()** (1 connections) — `local-ai-machine/src/orchestrator/native_orchestrator_test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/orchestrator/native_orchestrator_test.ts`
+- `local-ai-machine/src/orchestrator/native_orchestrator_test.ts`
 
 ## Audit Trail
 

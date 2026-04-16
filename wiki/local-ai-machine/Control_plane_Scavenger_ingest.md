@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **scavenger_ingest.py** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_ingest.py`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_ingest.py`
-- **parse_jsonl()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_ingest.py`
-- **persist_discoveries()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_ingest.py`
-- **redact_report()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_ingest.py`
-- **stable_hash()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_ingest.py`
+- **scavenger_ingest.py** (5 connections) — `local-ai-machine/scripts/control_plane/scavenger_ingest.py`
+- **main()** (5 connections) — `local-ai-machine/scripts/control_plane/scavenger_ingest.py`
+- **parse_jsonl()** (2 connections) — `local-ai-machine/scripts/control_plane/scavenger_ingest.py`
+- **persist_discoveries()** (2 connections) — `local-ai-machine/scripts/control_plane/scavenger_ingest.py`
+- **redact_report()** (2 connections) — `local-ai-machine/scripts/control_plane/scavenger_ingest.py`
+- **stable_hash()** (2 connections) — `local-ai-machine/scripts/control_plane/scavenger_ingest.py`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/scavenger_ingest.py`
+- `local-ai-machine/scripts/control_plane/scavenger_ingest.py`
 
 ## Audit Trail
 

@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **state-regulatory-update-check.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/state-regulatory-update-check.ts`
-- **computeUrlHash()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/state-regulatory-update-check.ts`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/state-regulatory-update-check.ts`
+- **state-regulatory-update-check.ts** (2 connections) — `healthcareplatform/backend/scripts/state-regulatory-update-check.ts`
+- **computeUrlHash()** (2 connections) — `healthcareplatform/backend/scripts/state-regulatory-update-check.ts`
+- **main()** (2 connections) — `healthcareplatform/backend/scripts/state-regulatory-update-check.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/state-regulatory-update-check.ts`
+- `healthcareplatform/backend/scripts/state-regulatory-update-check.ts`
 
 ## Audit Trail
 

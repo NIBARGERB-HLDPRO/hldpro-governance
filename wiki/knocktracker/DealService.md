@@ -1,6 +1,6 @@
 # DealService
 
-> God node · 9 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/services/dealService.ts`
+> God node · 9 connections · `knocktracker/lib/services/dealService.ts`
 
 ## Connections by Relation
 

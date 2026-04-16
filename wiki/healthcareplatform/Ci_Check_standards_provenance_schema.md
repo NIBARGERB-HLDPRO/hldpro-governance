@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **check-standards-provenance-schema.js** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-standards-provenance-schema.js`
+- **check-standards-provenance-schema.js** (0 connections) — `healthcareplatform/backend/scripts/ci/check-standards-provenance-schema.js`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-standards-provenance-schema.js`
+- `healthcareplatform/backend/scripts/ci/check-standards-provenance-schema.js`
 
 ## Audit Trail
 

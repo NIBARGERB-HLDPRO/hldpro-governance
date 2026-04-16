@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **playwright.config.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.config.ts`
-- **resolveEnvOrDefault()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.config.ts`
+- **playwright.config.ts** (1 connections) — `healthcareplatform/frontend/playwright.config.ts`
+- **resolveEnvOrDefault()** (1 connections) — `healthcareplatform/frontend/playwright.config.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.config.ts`
+- `healthcareplatform/frontend/playwright.config.ts`
 
 ## Audit Trail
 

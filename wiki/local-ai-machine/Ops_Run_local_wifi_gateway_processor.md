@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **run_local_wifi_gateway_processor.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_local_wifi_gateway_processor.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_local_wifi_gateway_processor.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_local_wifi_gateway_processor.py`
+- **run_local_wifi_gateway_processor.py** (2 connections) — `local-ai-machine/scripts/ops/run_local_wifi_gateway_processor.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/run_local_wifi_gateway_processor.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/run_local_wifi_gateway_processor.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_local_wifi_gateway_processor.py`
+- `local-ai-machine/scripts/ops/run_local_wifi_gateway_processor.py`
 
 ## Audit Trail
 

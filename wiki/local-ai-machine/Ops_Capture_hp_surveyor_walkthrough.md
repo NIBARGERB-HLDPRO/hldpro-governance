@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **capture_hp_surveyor_walkthrough.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/capture_hp_surveyor_walkthrough.py`
-- **load_dotenv()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/capture_hp_surveyor_walkthrough.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/capture_hp_surveyor_walkthrough.py`
+- **capture_hp_surveyor_walkthrough.py** (2 connections) — `local-ai-machine/scripts/ops/capture_hp_surveyor_walkthrough.py`
+- **load_dotenv()** (2 connections) — `local-ai-machine/scripts/ops/capture_hp_surveyor_walkthrough.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/capture_hp_surveyor_walkthrough.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/capture_hp_surveyor_walkthrough.py`
+- `local-ai-machine/scripts/ops/capture_hp_surveyor_walkthrough.py`
 
 ## Audit Trail
 

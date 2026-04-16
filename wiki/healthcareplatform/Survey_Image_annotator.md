@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **ImageAnnotator.tsx** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/components/survey/ImageAnnotator.tsx`
-- **ImageAnnotator()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/components/survey/ImageAnnotator.tsx`
+- **ImageAnnotator.tsx** (1 connections) — `healthcareplatform/frontend/src/components/survey/ImageAnnotator.tsx`
+- **ImageAnnotator()** (1 connections) — `healthcareplatform/frontend/src/components/survey/ImageAnnotator.tsx`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/src/components/survey/ImageAnnotator.tsx`
+- `healthcareplatform/frontend/src/components/survey/ImageAnnotator.tsx`
 
 ## Audit Trail
 

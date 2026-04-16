@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **DebugSentinel.tsx** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/DebugSentinel.tsx`
-- **DebugSentinel()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/DebugSentinel.tsx`
+- **DebugSentinel.tsx** (1 connections) — `knocktracker/components/DebugSentinel.tsx`
+- **DebugSentinel()** (1 connections) — `knocktracker/components/DebugSentinel.tsx`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/DebugSentinel.tsx`
+- `knocktracker/components/DebugSentinel.tsx`
 
 ## Audit Trail
 

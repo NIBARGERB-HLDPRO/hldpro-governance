@@ -7,8 +7,15 @@ Your only job: recognize intent and delegate to the right agent.
 
 ## Pre-Session Context (read before every session)
 1. Read `wiki/index.md` — current knowledge base state
-2. Read `graphify-out/GRAPH_REPORT.md` — god nodes and community structure
+2. Read `graphify-out/hldpro-governance/GRAPH_REPORT.md` — governance repo god nodes and community structure
 3. Read `OVERLORD_BACKLOG.md` — cross-repo governance work tracking
+4. Read `STANDARDS.md §Society of Minds` — activity → model routing, fallback ladder, enforcement
+
+## Society of Minds — SoT pointer
+
+Model routing, fallback ladder, cross-review protocol, and LAM-lane rules are defined in [`STANDARDS.md §Society of Minds`](STANDARDS.md) (Model Routing Charter, 2026-04-14). Every Claude agent file under `agents/` must have a `model:` frontmatter pin; every `codex exec` invocation must specify `-m` + `model_reasoning_effort`. Enforcement is CI-verifiable via `.github/workflows/check-*.yml`.
+
+For architecture or standards PRs, a dual-signed cross-review artifact under `raw/cross-review/YYYY-MM-DD-*.md` is required before merge — see the exact schema in STANDARDS.md.
 
 ## Routing Table
 
@@ -24,7 +31,7 @@ Your only job: recognize intent and delegate to the right agent.
 - DO NOT run audits yourself — route to overlord-sweep
 - DO NOT verify completion yourself — route to verify-completion
 - If the request doesn't match any agent: say which agent is closest and ask for clarification
-- NEVER skip pre-session context reads (wiki/index.md + GRAPH_REPORT.md)
+- NEVER skip pre-session context reads (wiki/index.md + graphify-out/hldpro-governance/GRAPH_REPORT.md)
 
 ## Stage 6 — Closeout Protocol (Required for All Completed Work)
 
@@ -32,7 +39,7 @@ Before marking any governance task DONE in `OVERLORD_BACKLOG.md` or closing its 
 
 1. Fill in `raw/closeouts/YYYY-MM-DD-{task-slug}.md` from `raw/closeouts/TEMPLATE.md`
 2. Run `hooks/closeout-hook.sh raw/closeouts/YYYY-MM-DD-{task-slug}.md`
-3. Verify `graphify-out/GRAPH_REPORT.md` reflects the change (may take one commit cycle)
+3. Verify `graphify-out/hldpro-governance/GRAPH_REPORT.md` reflects the change (may take one commit cycle)
 4. During Adjust/Review, if another required action, test, cleanup, or control improvement appears, either:
    - absorb it into the current slice when it is part of the same acceptance path, or
    - create/update the governing GitHub issue and `OVERLORD_BACKLOG.md` before closing

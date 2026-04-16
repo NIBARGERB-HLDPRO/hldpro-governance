@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **check_pat_hygiene.py** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/security/check_pat_hygiene.py`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/security/check_pat_hygiene.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/security/check_pat_hygiene.py`
-- **gh_get()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/security/check_pat_hygiene.py`
-- **ok()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/security/check_pat_hygiene.py`
-- **warn()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/security/check_pat_hygiene.py`
+- **check_pat_hygiene.py** (5 connections) — `local-ai-machine/scripts/security/check_pat_hygiene.py`
+- **main()** (5 connections) — `local-ai-machine/scripts/security/check_pat_hygiene.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/security/check_pat_hygiene.py`
+- **gh_get()** (2 connections) — `local-ai-machine/scripts/security/check_pat_hygiene.py`
+- **ok()** (2 connections) — `local-ai-machine/scripts/security/check_pat_hygiene.py`
+- **warn()** (2 connections) — `local-ai-machine/scripts/security/check_pat_hygiene.py`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/security/check_pat_hygiene.py`
+- `local-ai-machine/scripts/security/check_pat_hygiene.py`
 
 ## Audit Trail
 

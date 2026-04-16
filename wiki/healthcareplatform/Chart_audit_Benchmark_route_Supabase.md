@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **benchmark-route.test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/benchmark-route.test.ts`
+- **benchmark-route.test.ts** (0 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/benchmark-route.test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/benchmark-route.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/chart-audit/benchmark-route.test.ts`
 
 ## Audit Trail
 

@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **test_supervisor_max_loop_contract.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_supervisor_max_loop_contract.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_supervisor_max_loop_contract.py`
-- **check()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_supervisor_max_loop_contract.py`
-- **parse_max_loops()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_supervisor_max_loop_contract.py`
+- **test_supervisor_max_loop_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_contract.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_contract.py`
+- **check()** (2 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_contract.py`
+- **parse_max_loops()** (2 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_contract.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_supervisor_max_loop_contract.py`
+- `local-ai-machine/scripts/ops/test_supervisor_max_loop_contract.py`
 
 ## Audit Trail
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **vitest.config.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/vitest.config.ts`
+- **vitest.config.ts** (0 connections) — `healthcareplatform/frontend/vitest.config.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/vitest.config.ts`
+- `healthcareplatform/frontend/vitest.config.ts`
 
 ## Audit Trail
 

@@ -1,0 +1,1 @@
+FAIL — Cross-review is `REJECTED`, not `APPROVED` or `APPROVED_WITH_CHANGES`; the review identifies live regressions in PII fail-closed behavior, Tier-2 ladder ordering, fallback logging, audit enforcement, and missing CI coverage; and the 3 claimed exception closures are not earned because PII-001, DISABLED-001, and AUDIT-001 remain unsupported by the merged controls.

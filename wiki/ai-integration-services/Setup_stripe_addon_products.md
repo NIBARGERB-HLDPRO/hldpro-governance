@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **setup-stripe-addon-products.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/setup-stripe-addon-products.ts`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/setup-stripe-addon-products.ts`
-- **stripeGet()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/setup-stripe-addon-products.ts`
-- **stripeRequest()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/setup-stripe-addon-products.ts`
+- **setup-stripe-addon-products.ts** (3 connections) — `ai-integration-services/scripts/setup-stripe-addon-products.ts`
+- **main()** (3 connections) — `ai-integration-services/scripts/setup-stripe-addon-products.ts`
+- **stripeGet()** (2 connections) — `ai-integration-services/scripts/setup-stripe-addon-products.ts`
+- **stripeRequest()** (2 connections) — `ai-integration-services/scripts/setup-stripe-addon-products.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/setup-stripe-addon-products.ts`
+- `ai-integration-services/scripts/setup-stripe-addon-products.ts`
 
 ## Audit Trail
 

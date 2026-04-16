@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **purchase-access-email.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/purchase-access-email.ts`
-- **sendPortalAccessEmail()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/purchase-access-email.ts`
+- **purchase-access-email.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/purchase-access-email.ts`
+- **sendPortalAccessEmail()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/purchase-access-email.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/purchase-access-email.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/purchase-access-email.ts`
 
 ## Audit Trail
 

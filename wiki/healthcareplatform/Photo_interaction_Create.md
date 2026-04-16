@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **photo-interaction.spec.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/photo-interaction.spec.ts`
-- **createTestImage()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/photo-interaction.spec.ts`
+- **photo-interaction.spec.ts** (1 connections) — `healthcareplatform/frontend/e2e/photo-interaction.spec.ts`
+- **createTestImage()** (1 connections) — `healthcareplatform/frontend/e2e/photo-interaction.spec.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/photo-interaction.spec.ts`
+- `healthcareplatform/frontend/e2e/photo-interaction.spec.ts`
 
 ## Audit Trail
 

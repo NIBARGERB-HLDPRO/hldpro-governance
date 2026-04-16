@@ -1,6 +1,6 @@
 # json()
 
-> God node · 17 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/supabase/functions/slack_webhook/index.ts`
+> God node · 17 connections · `local-ai-machine/supabase/functions/slack_webhook/index.ts`
 
 ## Connections by Relation
 

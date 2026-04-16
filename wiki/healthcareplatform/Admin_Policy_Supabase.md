@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **policy.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/admin-users/policy.test.ts`
-- **assert()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/admin-users/policy.test.ts`
+- **policy.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/admin-users/policy.test.ts`
+- **assert()** (1 connections) — `healthcareplatform/backend/supabase/functions/admin-users/policy.test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/admin-users/policy.test.ts`
+- `healthcareplatform/backend/supabase/functions/admin-users/policy.test.ts`
 
 ## Audit Trail
 

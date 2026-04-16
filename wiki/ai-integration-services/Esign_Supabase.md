@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- **esign.ts** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **computeSha256()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **hashPdfFromUrl()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **allPartiesSigned()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **getNextParty()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **getSigningUrl()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **isExcludedDocumentType()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **logSignEvent()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **sendSigningInvitationEmail()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **sendSigningSms()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **updateDocumentStatus()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
+- **esign.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
+- **computeSha256()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
+- **hashPdfFromUrl()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
+- **allPartiesSigned()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
+- **getNextParty()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
+- **getSigningUrl()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
+- **isExcludedDocumentType()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
+- **logSignEvent()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
+- **sendSigningInvitationEmail()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
+- **sendSigningSms()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
+- **updateDocumentStatus()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
 
 ## Relationships
 
@@ -22,7 +22,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
 
 ## Audit Trail
 

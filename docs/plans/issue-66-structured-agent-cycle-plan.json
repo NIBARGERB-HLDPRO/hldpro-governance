@@ -1,0 +1,99 @@
+{
+  "session_id": "session-20260409-issue-66-graphify-retrieval-quality",
+  "issue_number": 66,
+  "objective": "Improve graphify retrieval quality for fail-fast scenarios by strengthening graph-guided ranking and evaluation while keeping the slice narrowly scoped to measurable fail-fast debugging outcomes.",
+  "tier": 2,
+  "scope_boundary": [
+    "This slice is limited to governance-owned graph retrieval and evaluation tooling, scenario corpus updates, and guidance updates tied directly to fail-fast issue retrieval quality.",
+    "This slice may update graphify measurement artifacts and guidance if the retrieval experiment produces a validated better query pattern.",
+    "This slice may create a follow-up issue if broader graph quality, report UX, or adoption work is still needed after the fail-fast retrieval target is proven or rejected."
+  ],
+  "out_of_scope": [
+    "Upstream graphify package modifications.",
+    "Repo-wide graph UX work such as PR comments, sweep report sections, or graph adoption dashboards.",
+    "Semantic extraction, Neo4j changes, or model fine-tuning."
+  ],
+  "research_summary": "Issue #65 proved that graph-guided retrieval currently uses materially fewer retrieval tokens than bounded repo search, but it underperformed on real fail-fast questions because the measurement harness only scored graph nodes by raw label/path string overlap and ignored graph links, communities, and improved evidence scoring. The right next move is to keep #66 narrow: strengthen graph-guided ranking using the actual graph structure, improve evaluation beyond simple file-hit checks, and re-run the same fail-fast corpus before expanding into broader graph UX or adoption work.",
+  "research_artifacts": [
+    "scripts/knowledge_base/measure_graphify_usage.py",
+    "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+    "metrics/graphify-evals/2026-04-09-graphify-vs-search.md",
+    "graphify-out/graph.json",
+    "docs/plans/graphify-improvement-pdcar.md",
+    "STANDARDS.md"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Improve graph-guided retrieval and evaluation for fail-fast scenarios.",
+      "tasks": [
+        "Add graph-aware ranking that uses links, community clustering, and file aggregation instead of only direct label/path string matching.",
+        "Improve evaluation scoring so relevance is measured by owning files plus expected evidence terms, not only exact top-file hits.",
+        "Decide whether a second non-graph baseline is needed based on measured outcomes and record that decision in the output guidance."
+      ],
+      "acceptance_criteria": [
+        "At least one fail-fast scenario shows graph-guided retrieval that is both smaller and materially more relevant than the existing repo-search baseline.",
+        "The measurement output clearly explains why the graph-guided result was considered more relevant.",
+        "Governance guidance records the validated query/retrieval pattern and whether a second non-graph baseline is warranted."
+      ],
+      "file_paths": [
+        "scripts/knowledge_base/measure_graphify_usage.py",
+        "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+        "metrics/graphify-evals/*.json",
+        "metrics/graphify-evals/*.md",
+        "STANDARDS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "graph retrieval reviewer",
+      "role": "Experiment scope reviewer",
+      "focus": "Keep issue #66 constrained to retrieval quality and evaluation rather than turning it into a broad graph platform rewrite.",
+      "status": "accepted",
+      "summary": "The approved direction is to focus on graph-guided ranking and evaluation against the real fail-fast corpus first. Broader graph quality, report UX, and adoption work should be follow-on issues, not folded into this acceptance path.",
+      "evidence": [
+        "Issue #66",
+        "docs/plans/graphify-improvement-pdcar.md"
+      ]
+    },
+    {
+      "reviewer": "measurement reviewer",
+      "role": "Harness reviewer",
+      "focus": "Use the existing #65 harness as the base and strengthen it with graph-structure-aware retrieval rather than replacing the measurement flow wholesale.",
+      "status": "accepted",
+      "summary": "The current harness already gives a repeatable fail-fast corpus and token estimate path. The missing piece is graph-aware ranking and better relevance scoring, not a brand-new evaluation system.",
+      "evidence": [
+        "scripts/knowledge_base/measure_graphify_usage.py",
+        "metrics/graphify-evals/2026-04-09-graphify-vs-search.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-requested-for-initial-retrieval-slice",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "The retrieval-quality slice is narrow and can proceed with the current issue evidence plus the reviewed PDCA/R draft without a separate alternate-model review.",
+    "evidence": [
+      "Issue #66 scope"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement graph-aware retrieval and better fail-fast evaluation in governance only, re-run the measurement corpus, and update guidance if the new pattern is validated.",
+    "next_execution_step": "Patch the measurement harness to use graph structure and richer relevance scoring, then run the fail-fast corpus and compare the new results against the baseline.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If the improved graph-guided retrieval still cannot beat the repo-search baseline on at least one real fail-fast scenario, do not broaden the slice silently; record that result and create or update a follow-up issue instead.",
+    "If broader graph quality or UX work becomes necessary to explain the retrieval results, issue-back that work rather than folding it into #66.",
+    "If the evaluation model needs a stronger second non-graph baseline, add it only if it remains deterministic and repo-local."
+  ],
+  "approved": true,
+  "approved_by": [
+    "session-agent-codex"
+  ],
+  "approved_at": "2026-04-09T13:40:00-05:00"
+}

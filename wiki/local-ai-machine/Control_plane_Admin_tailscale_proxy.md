@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **admin_tailscale_proxy.ts** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/admin_tailscale_proxy.ts`
-- **forwardToAdminBridge()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/admin_tailscale_proxy.ts`
-- **handleConn()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/admin_tailscale_proxy.ts`
-- **assertTailscaleIp()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/admin_tailscale_proxy.ts`
-- **requireEnv()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/admin_tailscale_proxy.ts`
+- **admin_tailscale_proxy.ts** (4 connections) — `local-ai-machine/scripts/control_plane/admin_tailscale_proxy.ts`
+- **forwardToAdminBridge()** (2 connections) — `local-ai-machine/scripts/control_plane/admin_tailscale_proxy.ts`
+- **handleConn()** (2 connections) — `local-ai-machine/scripts/control_plane/admin_tailscale_proxy.ts`
+- **assertTailscaleIp()** (1 connections) — `local-ai-machine/scripts/control_plane/admin_tailscale_proxy.ts`
+- **requireEnv()** (1 connections) — `local-ai-machine/scripts/control_plane/admin_tailscale_proxy.ts`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/admin_tailscale_proxy.ts`
+- `local-ai-machine/scripts/control_plane/admin_tailscale_proxy.ts`
 
 ## Audit Trail
 

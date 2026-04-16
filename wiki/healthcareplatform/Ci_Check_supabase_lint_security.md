@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **check-supabase-lint-security.js** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-lint-security.js`
-- **main()** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-lint-security.js`
-- **fail()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-lint-security.js`
-- **parseLintPayload()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-lint-security.js`
-- **readInputOrRunLint()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-lint-security.js`
-- **listDetails()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-lint-security.js`
-- **parseArgs()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-lint-security.js`
-- **summarize()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-lint-security.js`
+- **check-supabase-lint-security.js** (7 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
+- **main()** (7 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
+- **fail()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
+- **parseLintPayload()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
+- **readInputOrRunLint()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
+- **listDetails()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
+- **parseArgs()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
+- **summarize()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-supabase-lint-security.js`
+- `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
 
 ## Audit Trail
 

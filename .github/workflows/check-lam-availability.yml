@@ -1,0 +1,69 @@
+name: check-lam-availability
+on:
+  workflow_call:
+    inputs:
+      lam_probe_url:
+        required: false
+        type: string
+        default: "http://host.docker.internal:8080/health"
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  check-lam-availability:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Validate LAM health endpoint when required
+        env:
+          LAM_PROBE_URL: ${{ inputs.lam_probe_url }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${BASE_SHA}" ] || [ -z "${HEAD_SHA}" ]; then
+            echo "::warning::[check-lam-availability] Missing pull request context; skipping."
+            exit 0
+          fi
+
+          DIFF_FILES="$(git diff --name-only "${BASE_SHA}...${HEAD_SHA}")"
+          if [ -z "${DIFF_FILES}" ]; then
+            echo "No diff files found."
+            exit 0
+          fi
+
+          PII_LABEL=false
+          SAFE_LABEL=false
+          LABELS="$(python3 .github/scripts/check_lam_availability_labels.py)"
+
+          case " $LABELS " in
+            *" pii "*) PII_LABEL=true ;;
+            *" pii-safe "*) SAFE_LABEL=true ;;
+          esac
+
+          TOUCH=false
+          printf '%s\n' "${DIFF_FILES}" | grep -Eq '^scripts/lam/' && TOUCH=true || true
+          if [ "${PII_LABEL}" = true ]; then
+            TOUCH=true
+          fi
+
+          if [ "${TOUCH}" != true ]; then
+            echo "[check-lam-availability] LAM not required for this PR."
+            exit 0
+          fi
+
+          if [ "${SAFE_LABEL}" = true ]; then
+            echo "[check-lam-availability] pii-safe label present; skipping hard fail on non-200."
+            exit 0
+          fi
+
+          STATUS="$(curl -sS -o /tmp/lam-health.txt -w "%{http_code}" "${LAM_PROBE_URL}" || true)"
+          if [ "${STATUS}" != "200" ]; then
+            echo "::error file=.github/workflows/check-lam-availability.yml::[check-lam-availability] LAM probe failed with HTTP ${STATUS} at ${LAM_PROBE_URL}"
+            exit 1
+          fi

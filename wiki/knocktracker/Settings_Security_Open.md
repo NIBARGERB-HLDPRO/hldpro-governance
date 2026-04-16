@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **security.tsx** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/app/(main)/settings/security.tsx`
-- **openSupabaseDashboard()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/app/(main)/settings/security.tsx`
+- **security.tsx** (1 connections) — `knocktracker/app/(main)/settings/security.tsx`
+- **openSupabaseDashboard()** (1 connections) — `knocktracker/app/(main)/settings/security.tsx`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/app/(main)/settings/security.tsx`
+- `knocktracker/app/(main)/settings/security.tsx`
 
 ## Audit Trail
 

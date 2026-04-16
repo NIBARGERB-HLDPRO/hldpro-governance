@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **llm-router.ts** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
-- **routeLLM()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
-- **callClaudeAndWrap()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
-- **callLocal()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
-- **findActiveExperiment()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
-- **logRoutingDecision()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- **llm-router.ts** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- **routeLLM()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- **callClaudeAndWrap()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- **callLocal()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- **findActiveExperiment()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- **logRoutingDecision()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
 
 ## Audit Trail
 

@@ -1,12 +1,13 @@
 # fail()
 
-> God node · 9 connections · `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/helpers/seeded.ts`
+> God node · 10 connections · `healthcareplatform/frontend/e2e/helpers/seeded.ts`
 
 ## Connections by Relation
 
 ### calls
-- [[requireDeterministicId()]] `INFERRED`
 - [[readSeedValidationArtifact()]] `INFERRED`
+- [[requireDeterministicId()]] `INFERRED`
+- [[requireSeedCredential()]] `INFERRED`
 - [[requireSeededAccount()]] `INFERRED`
 - [[requireSeededReviewerArtifact()]] `INFERRED`
 - [[requireSeededReport()]] `INFERRED`

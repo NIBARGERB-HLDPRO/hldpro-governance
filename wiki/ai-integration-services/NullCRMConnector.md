@@ -1,6 +1,6 @@
 # NullCRMConnector
 
-> God node · 21 connections · `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
+> God node · 21 connections · `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
 
 ## Connections by Relation
 

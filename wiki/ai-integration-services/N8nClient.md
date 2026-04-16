@@ -1,6 +1,6 @@
 # N8nClient
 
-> God node · 15 connections · `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/n8n-client.ts`
+> God node · 15 connections · `ai-integration-services/backend/supabase/functions/_shared/n8n-client.ts`
 
 ## Connections by Relation
 

@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **route-coverage.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/route-coverage.test.ts`
-- **readSource()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/route-coverage.test.ts`
+- **route-coverage.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/route-coverage.test.ts`
+- **readSource()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/route-coverage.test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/route-coverage.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/chart-audit/route-coverage.test.ts`
 
 ## Audit Trail
 

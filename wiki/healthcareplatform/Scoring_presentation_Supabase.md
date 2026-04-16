@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **scoring-presentation.test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/scoring-presentation.test.ts`
+- **scoring-presentation.test.ts** (0 connections) — `healthcareplatform/backend/supabase/functions/_shared/scoring-presentation.test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/scoring-presentation.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/scoring-presentation.test.ts`
 
 ## Audit Trail
 

@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **frontend-gui-review-slice.spec.ts** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/frontend-gui-review-slice.spec.ts`
-- **firstEnv()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/frontend-gui-review-slice.spec.ts`
-- **login()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/frontend-gui-review-slice.spec.ts`
-- **artifactId()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/frontend-gui-review-slice.spec.ts`
-- **resolveTemplate()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/frontend-gui-review-slice.spec.ts`
+- **frontend-gui-review-slice.spec.ts** (4 connections) — `healthcareplatform/frontend/e2e/frontend-gui-review-slice.spec.ts`
+- **firstEnv()** (2 connections) — `healthcareplatform/frontend/e2e/frontend-gui-review-slice.spec.ts`
+- **login()** (2 connections) — `healthcareplatform/frontend/e2e/frontend-gui-review-slice.spec.ts`
+- **artifactId()** (1 connections) — `healthcareplatform/frontend/e2e/frontend-gui-review-slice.spec.ts`
+- **resolveTemplate()** (1 connections) — `healthcareplatform/frontend/e2e/frontend-gui-review-slice.spec.ts`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/frontend-gui-review-slice.spec.ts`
+- `healthcareplatform/frontend/e2e/frontend-gui-review-slice.spec.ts`
 
 ## Audit Trail
 

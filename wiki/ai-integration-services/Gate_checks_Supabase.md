@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **gate-checks.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/gate-checks.ts`
-- **runGateChecks()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/gate-checks.ts`
+- **gate-checks.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/gate-checks.ts`
+- **runGateChecks()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/gate-checks.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/gate-checks.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/gate-checks.ts`
 
 ## Audit Trail
 

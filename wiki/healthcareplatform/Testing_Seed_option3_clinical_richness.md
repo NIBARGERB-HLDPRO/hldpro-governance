@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **seed-option3-clinical-richness.ps1** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/testing/seed-option3-clinical-richness.ps1`
+- **seed-option3-clinical-richness.ps1** (0 connections) — `healthcareplatform/backend/scripts/testing/seed-option3-clinical-richness.ps1`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/testing/seed-option3-clinical-richness.ps1`
+- `healthcareplatform/backend/scripts/testing/seed-option3-clinical-richness.ps1`
 
 ## Audit Trail
 

@@ -1,0 +1,483 @@
+{
+  "date": "2026-04-09",
+  "scenarios": [
+    {
+      "baseline": {
+        "estimated_tokens": 1498,
+        "file_hits": 0,
+        "materially_relevant": true,
+        "quality_hit": true,
+        "relevance_score": 3,
+        "retrieval_count": 5,
+        "strategy": "repo-search",
+        "term_hits": 3,
+        "top_evidence": {
+          "docs/plans/issue-74-governance-diff-base-pdcar.md": [
+            "# Issue 74 PDCA/R \u2014 Governance Diff Base\n\nDate: 2026-04-09\nIssue: [#74](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/74)\nOwner: nibargerb\n\n## Plan\n\n- add an explicit `base_sha` input to the reusable governance workflow\n- use one resolved base value for every diff/log comparison inside the workflow\n- propagate the input through governed repo callers\n- close the issue only after reusable workflow and caller updates are merged\n\n## Do\n\n- updated the reusable governance workflow to accept and resolve `base_sha`\n- replaced pull-request-only and `github.event.before` diff logic with the resolved base value\n- prepared governance closeout artifacts for the slice\n\n## Check"
+          ],
+          "docs/plans/issue-74-structured-agent-cycle-plan.json": [
+            "{\n  \"session_id\": \"session-20260409-issue-74-governance-diff-base\",\n  \"issue_number\": 74,\n  \"objective\": \"Fix reusable governance-check diff-range handling under workflow_call so multi-commit PR governance checks cover the full change set, and propagate the explicit base SHA through governed repo callers.\",\n  \"tier\": 1,\n  \"scope_boundary\": [\n    \"Add an explicit base SHA input to the reusable governance-check workflow and use it for all diff/log comparisons.\",\n    \"Update governed repo workflow callers to pass the correct base SHA for pull_request and push events.\",\n    \"Record the bug fix and close the governance issue once reusable workflow and caller propagation land.\"\n  ],\n  \"out_of_scope\": [\n    \"Changing unrelated governance gate rules.\",\n    \"Reworking repo-specific conditional skips beyond passing the correct base SHA.\",\n    \"Replacing reusable workflow usage with copied local workflows.\"\n  ],\n  \"research_summary\": \"The reusable governance workflow runs via workflow_call, but its changed-file and commit-range logic currently depends on pull_request context or github.event.before. In workflow_call, github.event.before is often unset, so the workflow can fall back to HEAD~1 and inspect only the last commit of a multi-commit PR. The durable fix is to accept a caller-provided base SHA and use that single resolved value everywhere the reusable workflow diffs or reads commit ranges.\",\n  \"research_artifacts\": [\n    \".github/workflows/governance-check.yml\",\n    \"/Users/bennibarger/Developer/HLDPRO/ai-integration-services/.github/workflows/governance.yml\",\n    \"/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/.github/workflows/governance.yml\","
+          ],
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.json": [
+            "{\n  \"date\": \"2026-04-09\",\n  \"scenarios\": [\n    {\n      \"baseline\": {\n        \"estimated_tokens\": 1470,\n        \"file_hits\": 0,\n        \"materially_relevant\": true,\n        \"quality_hit\": true,\n        \"relevance_score\": 3,\n        \"retrieval_count\": 5,\n        \"strategy\": \"repo-search\",\n        \"term_hits\": 3,\n        \"top_evidence\": {\n          \"docs/FEATURE_REGISTRY.md\": [\n            \"# hldpro-governance \\u2014 Feature Registry\\n\\n**Last Updated:** 2026-04-09\\n**Scope:** Shared governance standards, reusable CI enforcement, and cross-repo audit agents.\\n\\n---\\n\\n## Status Taxonomy\\n\\n| Implementation Status | Meaning |\\n|---|---|\\n| `COMPLETE` | Built and in active use |\\n| `IN_PROGRESS` | Actively being changed or expanded |\\n| `PLANNED` | Intended but not yet implemented |\\n\\n| Readiness | Meaning |\\n|---|---|\\n| `REQUIRED` | Expected baseline for governed repos |\\n| `OPS_READY` | Ready for operational use by repo maintainers |\\n| `INTERNAL_ONLY` | Internal tooling, not a repo baseline |\"\n          ],\n          \"docs/plans/issue-74-governance-diff-base-pdcar.md\": [\n            \"# Issue 74 PDCA/R \\u2014 Governance Diff Base\\n\\nDate: 2026-04-09\\nIssue: [#74](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/74)\\nOwner: nibargerb\\n\\n## Plan\\n\\n- add an explicit `base_sha` input to the reusable governance workflow\\n- use one resolved base value for every diff/log comparison inside the workflow\\n- propagate the input through governed repo callers\\n- close the issue only after reusable workflow and caller updates are merged\\n\\n## Do\\n\\n- updated the reusable governance workflow to accept and resolve `base_sha`\\n- replaced pull-request-only and `github.event.before` diff logic with the resolved base value\\n- prepared governance closeout artifacts for the slice\\n\\n## Check\"\n          ],"
+          ],
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.md": [
+            "# Graphify Measurement \u2014 2026-04-09\n\n## Summary\n\n- Scenarios: 4\n- Graphify hits: 2\n- Baseline hits: 4\n- Graphify estimated tokens: 759\n- Baseline estimated tokens: 4769\n- Graphify smaller + more relevant wins: 1\n- Second non-graph baseline recommended: False\n- Baseline decision: No second non-graph baseline is recommended yet; improve graph-guided ranking against the existing repo-search baseline first.\n\n## Scenario Results\n\n| Scenario | Graphify Relevant | Baseline Relevant | Graphify Score | Baseline Score | Graphify Tokens | Baseline Tokens |\n|---|---:|---:|---:|---:|---:|---:|\n| ff-74-governance-diff-base | 1 | 1 | 4 | 3 | 204 | 1470 |\n| ff-75-raw-feed-redaction | 0 | 1 | 1 | 5 | 243 | 1058 |\n| ff-76-cited-code-validation | 0 | 1 | 1 | 3 | 89 | 1136 |"
+          ],
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json": [
+            "{\n  \"date\": \"2026-04-09\",\n  \"scenarios\": [\n    {\n      \"id\": \"ff-74-governance-diff-base\",\n      \"issue_number\": 74,\n      \"repo\": \"hldpro-governance\",\n      \"graph_key\": \"hldpro-governance\",\n      \"task_type\": \"workflow_bug\",\n      \"prompt\": \"Find why reusable governance checks only inspect the last commit in a multi-commit PR.\",\n      \"query_terms\": [\"governance\", \"workflow_call\", \"diff\", \"base\", \"github.event.before\"],\n      \"expected_files\": [\".github/workflows/governance-check.yml\"],\n      \"expected_terms\": [\"workflow_call\", \"base_sha\", \"github.event.before\"]\n    },\n    {\n      \"id\": \"ff-75-raw-feed-redaction\",\n      \"issue_number\": 75,\n      \"repo\": \"hldpro-governance\",\n      \"graph_key\": \"hldpro-governance\",\n      \"task_type\": \"data_safety\","
+          ]
+        },
+        "top_files": [
+          "docs/plans/issue-74-governance-diff-base-pdcar.md",
+          "docs/plans/issue-74-structured-agent-cycle-plan.json",
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.json",
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.md"
+        ]
+      },
+      "expected_files": [
+        ".github/workflows/governance-check.yml"
+      ],
+      "expected_terms": [
+        "workflow_call",
+        "base_sha",
+        "github.event.before"
+      ],
+      "graphify": {
+        "estimated_tokens": 227,
+        "file_hits": 1,
+        "materially_relevant": true,
+        "quality_hit": true,
+        "relevance_score": 4,
+        "retrieval_count": 5,
+        "strategy": "hybrid",
+        "term_hits": 1,
+        "top_evidence": {
+          ".github/workflows/governance-check.yml": [
+            "hybrid:path:.github/workflows/governance-check.yml",
+            "hybrid:term:reusable",
+            "hybrid:term:governance",
+            "hybrid:term:last",
+            "hybrid:term:workflow_call"
+          ],
+          ".github/workflows/graphify-governance-contract.yml": [
+            "hybrid:path:.github/workflows/graphify-governance-contract.yml",
+            "hybrid:term:governance",
+            "hybrid:term:commit",
+            "hybrid:term:diff",
+            "hybrid:term:base"
+          ],
+          ".github/workflows/overlord-nightly-cleanup.yml": [
+            "hybrid:path:.github/workflows/overlord-nightly-cleanup.yml",
+            "hybrid:term:governance",
+            "hybrid:term:commit",
+            "hybrid:term:base"
+          ],
+          ".github/workflows/overlord-sweep.yml": [
+            "hybrid:path:.github/workflows/overlord-sweep.yml",
+            "hybrid:term:governance",
+            "hybrid:term:checks",
+            "hybrid:term:last",
+            "hybrid:term:commit"
+          ],
+          "scripts/knowledge_base/measure_graphify_usage.py": [
+            "direct:measure_graphify_usage.py",
+            "community:Knowledge base Measure graphify usage",
+            "direct:Scenario",
+            "community:Knowledge base Measure graphify usage",
+            "direct:GraphData"
+          ]
+        },
+        "top_files": [
+          "scripts/knowledge_base/measure_graphify_usage.py",
+          ".github/workflows/governance-check.yml",
+          ".github/workflows/graphify-governance-contract.yml",
+          ".github/workflows/overlord-sweep.yml",
+          ".github/workflows/overlord-nightly-cleanup.yml"
+        ]
+      },
+      "id": "ff-74-governance-diff-base",
+      "issue_number": 74,
+      "repo": "hldpro-governance",
+      "task_type": "workflow_bug",
+      "trace": {
+        "baseline_candidates": [
+          "docs/plans/issue-74-governance-diff-base-pdcar.md",
+          "docs/plans/issue-74-structured-agent-cycle-plan.json",
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.json",
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.md"
+        ],
+        "graphify_candidates": [
+          "scripts/knowledge_base/measure_graphify_usage.py",
+          ".github/workflows/governance-check.yml",
+          ".github/workflows/graphify-governance-contract.yml",
+          ".github/workflows/overlord-sweep.yml",
+          ".github/workflows/overlord-nightly-cleanup.yml"
+        ],
+        "prompt": "Find why reusable governance checks only inspect the last commit in a multi-commit PR.",
+        "query_terms": [
+          "governance",
+          "workflow_call",
+          "diff",
+          "base",
+          "github.event.before"
+        ]
+      }
+    },
+    {
+      "baseline": {
+        "estimated_tokens": 1086,
+        "file_hits": 1,
+        "materially_relevant": true,
+        "quality_hit": true,
+        "relevance_score": 5,
+        "retrieval_count": 5,
+        "strategy": "repo-search",
+        "term_hits": 2,
+        "top_evidence": {
+          ".github/workflows/raw-feed-sync.yml": [
+            "name: Raw Feed Sync\n\non:\n  schedule:\n    - cron: '0 12 * * *'  # Daily 12:00 UTC (6 AM CT / 7 AM CDT)\n  workflow_dispatch:\n\npermissions:\n  contents: write\n  issues: read\n\njobs:\n  sync-github-issues:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v6\n\n      - name: Fetch GitHub issues from governed repos\n        env:\n          GH_TOKEN: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}"
+          ],
+          "docs/plans/issue-75-raw-feed-redaction-pdcar.md": [
+            "# Issue 75 PDCA/R \u2014 Raw Feed Redaction\n\nDate: 2026-04-09\nIssue: [#75](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/75)\nOwner: nibargerb\n\n## Plan\n\n- stop mirroring open issue body text into tracked governance files\n- keep raw issue feeds useful by retaining metadata only\n- sanitize the currently tracked raw issue snapshots\n- record the policy change and security rationale in governance docs\n\n## Do\n\n- added a reusable metadata-only issue feed renderer\n- updated the nightly raw-feed workflow to stop fetching issue bodies\n- rewrote the tracked raw issue snapshots to the metadata-only format\n- updated governance backlog/history and feature/fail-fast docs\n"
+          ],
+          "docs/plans/issue-75-structured-agent-cycle-plan.json": [
+            "{\n  \"session_id\": \"session-20260409-issue-75-raw-feed-redaction\",\n  \"issue_number\": 75,\n  \"objective\": \"Eliminate durable secondary copies of open issue bodies from governance raw feeds by switching the nightly sync to metadata-only output and sanitizing the already tracked snapshots.\",\n  \"tier\": 1,\n  \"scope_boundary\": [\n    \"Stop fetching or persisting GitHub issue body text in the nightly raw-feed workflow.\",\n    \"Use a reusable renderer so workflow output and one-time cleanup share the same metadata-only format.\",\n    \"Rewrite the currently tracked raw/github-issues snapshots and verify the sanitized result no longer mirrors issue body text.\"\n  ],\n  \"out_of_scope\": [\n    \"Changing the overall raw-feed sync schedule or repo list.\",\n    \"Building PHI classification beyond removing body sync entirely.\",\n    \"Introducing a new storage system for full issue bodies.\"\n  ],\n  \"research_summary\": \"The current raw-feed workflow fetches `body` from governed-repo issues and writes the first 500 characters into tracked markdown under raw/github-issues. Because these files are committed back into governance, any sensitive content in issue bodies becomes durable. The safest fix is to stop syncing bodies entirely and keep only metadata that still supports governance triage.\",\n  \"research_artifacts\": [\n    \".github/workflows/raw-feed-sync.yml\",\n    \"raw/github-issues/2026-04-09-ai-integration-services.md\",\n    \"raw/github-issues/2026-04-09-HealthcarePlatform.md\","
+          ],
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.md": [
+            "# Graphify Measurement \u2014 2026-04-09\n\n## Summary\n\n- Scenarios: 4\n- Graphify hits: 2\n- Baseline hits: 4\n- Graphify estimated tokens: 759\n- Baseline estimated tokens: 4769\n- Graphify smaller + more relevant wins: 1\n- Second non-graph baseline recommended: False\n- Baseline decision: No second non-graph baseline is recommended yet; improve graph-guided ranking against the existing repo-search baseline first.\n\n## Scenario Results\n\n| Scenario | Graphify Relevant | Baseline Relevant | Graphify Score | Baseline Score | Graphify Tokens | Baseline Tokens |\n|---|---:|---:|---:|---:|---:|---:|\n| ff-74-governance-diff-base | 1 | 1 | 4 | 3 | 204 | 1470 |\n| ff-75-raw-feed-redaction | 0 | 1 | 1 | 5 | 243 | 1058 |\n| ff-76-cited-code-validation | 0 | 1 | 1 | 3 | 89 | 1136 |"
+          ],
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json": [
+            "{\n  \"date\": \"2026-04-09\",\n  \"scenarios\": [\n    {\n      \"id\": \"ff-74-governance-diff-base\",\n      \"issue_number\": 74,\n      \"repo\": \"hldpro-governance\",\n      \"graph_key\": \"hldpro-governance\",\n      \"task_type\": \"workflow_bug\",\n      \"prompt\": \"Find why reusable governance checks only inspect the last commit in a multi-commit PR.\",\n      \"query_terms\": [\"governance\", \"workflow_call\", \"diff\", \"base\", \"github.event.before\"],\n      \"expected_files\": [\".github/workflows/governance-check.yml\"],\n      \"expected_terms\": [\"workflow_call\", \"base_sha\", \"github.event.before\"]\n    },\n    {\n      \"id\": \"ff-75-raw-feed-redaction\",\n      \"issue_number\": 75,\n      \"repo\": \"hldpro-governance\",\n      \"graph_key\": \"hldpro-governance\",\n      \"task_type\": \"data_safety\","
+          ]
+        },
+        "top_files": [
+          "docs/plans/issue-75-structured-agent-cycle-plan.json",
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "docs/plans/issue-75-raw-feed-redaction-pdcar.md",
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.md",
+          ".github/workflows/raw-feed-sync.yml"
+        ]
+      },
+      "expected_files": [
+        ".github/workflows/raw-feed-sync.yml",
+        "scripts/overlord/render_github_issue_feed.py"
+      ],
+      "expected_terms": [
+        "body",
+        "github-issues",
+        "render_github_issue_feed"
+      ],
+      "graphify": {
+        "estimated_tokens": 257,
+        "file_hits": 1,
+        "materially_relevant": true,
+        "quality_hit": true,
+        "relevance_score": 4,
+        "retrieval_count": 4,
+        "strategy": "graphify-guided",
+        "term_hits": 1,
+        "top_evidence": {
+          "scripts/overlord/check_overlord_backlog_github_alignment.py": [
+            "direct:check_overlord_backlog_github_alignment.py",
+            "community:Overlord Check overlord backlog github alignment",
+            "direct:fail()",
+            "community:Overlord Check overlord backlog github alignment",
+            "direct:parse_markdown_row()"
+          ],
+          "scripts/overlord/check_progress_github_issue_staleness.py": [
+            "direct:check_progress_github_issue_staleness.py",
+            "community:Overlord Check progress github issue staleness",
+            "direct:IssueRef",
+            "community:Overlord Check progress github issue staleness",
+            "direct:fail()"
+          ],
+          "scripts/overlord/render_github_issue_feed.py": [
+            "direct:render_github_issue_feed.py",
+            "community:Overlord Render github issue feed",
+            "direct:render_issue()",
+            "community:Overlord Render github issue feed",
+            "direct:main()"
+          ],
+          "tests/test_progress_github_issue_staleness.py": [
+            "direct:test_progress_github_issue_staleness.py",
+            "community:Overlord Check progress github issue staleness",
+            "direct:ProgressGithubIssueStalenessTests",
+            "community:Overlord Check progress github issue staleness",
+            "direct:.test_collects_active_sections_and_ignores_done()"
+          ]
+        },
+        "top_files": [
+          "scripts/overlord/check_progress_github_issue_staleness.py",
+          "scripts/overlord/check_overlord_backlog_github_alignment.py",
+          "scripts/overlord/render_github_issue_feed.py",
+          "tests/test_progress_github_issue_staleness.py"
+        ]
+      },
+      "id": "ff-75-raw-feed-redaction",
+      "issue_number": 75,
+      "repo": "hldpro-governance",
+      "task_type": "data_safety",
+      "trace": {
+        "baseline_candidates": [
+          "docs/plans/issue-75-structured-agent-cycle-plan.json",
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "docs/plans/issue-75-raw-feed-redaction-pdcar.md",
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.md",
+          ".github/workflows/raw-feed-sync.yml"
+        ],
+        "graphify_candidates": [
+          "scripts/overlord/check_progress_github_issue_staleness.py",
+          "scripts/overlord/check_overlord_backlog_github_alignment.py",
+          "scripts/overlord/render_github_issue_feed.py",
+          "tests/test_progress_github_issue_staleness.py"
+        ],
+        "prompt": "Find where nightly raw GitHub issue feeds are mirrored and whether issue bodies are being persisted.",
+        "query_terms": [
+          "raw",
+          "github",
+          "issues",
+          "body",
+          "sync"
+        ]
+      }
+    },
+    {
+      "baseline": {
+        "estimated_tokens": 1101,
+        "file_hits": 0,
+        "materially_relevant": false,
+        "quality_hit": false,
+        "relevance_score": 2,
+        "retrieval_count": 5,
+        "strategy": "repo-search",
+        "term_hits": 2,
+        "top_evidence": {
+          "docs/plans/issue-76-cited-code-path-validation-pdcar.md": [
+            "# Issue 76 PDCA/R \u2014 Cited Code Path Validation\n\nDate: 2026-04-09\nIssue: [#76](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/76)\nOwner: nibargerb\n\n## Plan\n\n- make `validate_location()` read code context around the cited line\n- reject findings whose cited line does not match strong claim anchors\n- add a regression test for hallucinated-line rejection\n\n## Do\n\n- added strong-anchor extraction for identifiers and backticked code terms\n- read a small context window around the cited line during qualification\n- reject drifted findings when the cited code window does not contain the claim anchors\n- added unittest coverage for both rejection and acceptance paths\n\n## Check"
+          ],
+          "docs/plans/issue-76-structured-agent-cycle-plan.json": [
+            "{\n  \"session_id\": \"session-20260409-issue-76-cited-code-path-validation\",\n  \"issue_number\": 76,\n  \"objective\": \"Make Codex finding qualification reject drifted or hallucinated code citations by validating code context around the referenced line, with a regression test covering hallucinated-line rejection.\",\n  \"tier\": 1,\n  \"scope_boundary\": [\n    \"Extend `validate_location()` to read a small code window around the cited line.\",\n    \"Reject findings when strong claim anchors such as identifiers or backticked terms are absent from the cited context.\",\n    \"Add a regression test for hallucinated-line rejection.\"\n  ],\n  \"out_of_scope\": [\n    \"Natural-language semantic validation of every review claim.\",\n    \"Changing promote/backlog writeback behavior.\",\n    \"Reworking Codex review prompt generation.\"\n  ],\n  \"research_summary\": \"Qualification currently checks only that the file exists and the line is in range. That lets hallucinated or drifted findings survive qualification if they point at any valid file/line pair. The safe bounded fix is to enforce context matching only for strong code anchors, such as identifiers or backticked code terms, and add a regression test that proves a hallucinated cited line is rejected.\",\n  \"research_artifacts\": [\n    \"scripts/overlord/codex_ingestion.py\",\n    \"Issue #76 description\"\n  ],"
+          ],
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.md": [
+            "# Graphify Measurement \u2014 2026-04-09\n\n## Summary\n\n- Scenarios: 4\n- Graphify hits: 2\n- Baseline hits: 4\n- Graphify estimated tokens: 759\n- Baseline estimated tokens: 4769\n- Graphify smaller + more relevant wins: 1\n- Second non-graph baseline recommended: False\n- Baseline decision: No second non-graph baseline is recommended yet; improve graph-guided ranking against the existing repo-search baseline first.\n\n## Scenario Results\n\n| Scenario | Graphify Relevant | Baseline Relevant | Graphify Score | Baseline Score | Graphify Tokens | Baseline Tokens |\n|---|---:|---:|---:|---:|---:|---:|\n| ff-74-governance-diff-base | 1 | 1 | 4 | 3 | 204 | 1470 |\n| ff-75-raw-feed-redaction | 0 | 1 | 1 | 5 | 243 | 1058 |\n| ff-76-cited-code-validation | 0 | 1 | 1 | 3 | 89 | 1136 |"
+          ],
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json": [
+            "{\n  \"date\": \"2026-04-09\",\n  \"scenarios\": [\n    {\n      \"id\": \"ff-74-governance-diff-base\",\n      \"issue_number\": 74,\n      \"repo\": \"hldpro-governance\",\n      \"graph_key\": \"hldpro-governance\",\n      \"task_type\": \"workflow_bug\",\n      \"prompt\": \"Find why reusable governance checks only inspect the last commit in a multi-commit PR.\",\n      \"query_terms\": [\"governance\", \"workflow_call\", \"diff\", \"base\", \"github.event.before\"],\n      \"expected_files\": [\".github/workflows/governance-check.yml\"],\n      \"expected_terms\": [\"workflow_call\", \"base_sha\", \"github.event.before\"]\n    },\n    {\n      \"id\": \"ff-75-raw-feed-redaction\",\n      \"issue_number\": 75,\n      \"repo\": \"hldpro-governance\",\n      \"graph_key\": \"hldpro-governance\",\n      \"task_type\": \"data_safety\","
+          ],
+          "tests/test_codex_ingestion.py": [
+            "from __future__ import annotations\n\nimport sys\nimport tempfile\nimport unittest\nfrom pathlib import Path\n\n\nREPO_ROOT = Path(__file__).resolve().parents[1]\nsys.path.insert(0, str(REPO_ROOT / \"scripts\" / \"overlord\"))\n\nfrom codex_ingestion import Finding, validate_location  # noqa: E402\n\n\nclass ValidateLocationTests(unittest.TestCase):\n    def test_rejects_hallucinated_anchor_on_valid_line(self) -> None:\n        with tempfile.TemporaryDirectory() as tmpdir:\n            repo = Path(tmpdir)\n            target = repo / \"scripts\" / \"sample.py\"\n            target.parent.mkdir(parents=True, exist_ok=True)"
+          ]
+        },
+        "top_files": [
+          "tests/test_codex_ingestion.py",
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "docs/plans/issue-76-cited-code-path-validation-pdcar.md",
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.md",
+          "docs/plans/issue-76-structured-agent-cycle-plan.json"
+        ]
+      },
+      "expected_files": [
+        "scripts/overlord/codex_ingestion.py"
+      ],
+      "expected_terms": [
+        "validate_location",
+        "qualify",
+        "finding"
+      ],
+      "graphify": {
+        "estimated_tokens": 95,
+        "file_hits": 1,
+        "materially_relevant": true,
+        "quality_hit": true,
+        "relevance_score": 4,
+        "retrieval_count": 2,
+        "strategy": "graphify-guided",
+        "term_hits": 1,
+        "top_evidence": {
+          "scripts/overlord/codex_ingestion.py": [
+            "direct:codex_ingestion.py",
+            "community:Overlord Codex ingestion",
+            "direct:Finding",
+            "community:Overlord Codex ingestion",
+            "direct:priority()"
+          ],
+          "tests/test_codex_ingestion.py": [
+            "direct:test_codex_ingestion.py",
+            "community:Codex ingestion Anchor",
+            "direct:ValidateLocationTests",
+            "community:Codex ingestion Anchor",
+            "direct:.test_rejects_hallucinated_anchor_on_valid_line()"
+          ]
+        },
+        "top_files": [
+          "scripts/overlord/codex_ingestion.py",
+          "tests/test_codex_ingestion.py"
+        ]
+      },
+      "id": "ff-76-cited-code-validation",
+      "issue_number": 76,
+      "repo": "hldpro-governance",
+      "task_type": "qualification_logic",
+      "trace": {
+        "baseline_candidates": [
+          "tests/test_codex_ingestion.py",
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "docs/plans/issue-76-cited-code-path-validation-pdcar.md",
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.md",
+          "docs/plans/issue-76-structured-agent-cycle-plan.json"
+        ],
+        "graphify_candidates": [
+          "scripts/overlord/codex_ingestion.py",
+          "tests/test_codex_ingestion.py"
+        ],
+        "prompt": "Find where Codex finding qualification validates cited file and line references.",
+        "query_terms": [
+          "codex",
+          "qualification",
+          "validate_location",
+          "finding",
+          "line"
+        ]
+      }
+    },
+    {
+      "baseline": {
+        "estimated_tokens": 1091,
+        "file_hits": 0,
+        "materially_relevant": true,
+        "quality_hit": true,
+        "relevance_score": 4,
+        "retrieval_count": 5,
+        "strategy": "repo-search",
+        "term_hits": 4,
+        "top_evidence": {
+          "docs/FEATURE_REGISTRY.md": [
+            "# hldpro-governance \u2014 Feature Registry\n\n**Last Updated:** 2026-04-09\n**Scope:** Shared governance standards, reusable CI enforcement, and cross-repo audit agents.\n\n---\n\n## Status Taxonomy\n\n| Implementation Status | Meaning |\n|---|---|\n| `COMPLETE` | Built and in active use |\n| `IN_PROGRESS` | Actively being changed or expanded |\n| `PLANNED` | Intended but not yet implemented |\n\n| Readiness | Meaning |\n|---|---|\n| `REQUIRED` | Expected baseline for governed repos |\n| `OPS_READY` | Ready for operational use by repo maintainers |\n| `INTERNAL_ONLY` | Internal tooling, not a repo baseline |"
+          ],
+          "docs/plans/issue-77-structured-agent-cycle-plan.json": [
+            "{\n  \"session_id\": \"session-20260409-issue-77-sweep-push-failures\",\n  \"issue_number\": 77,\n  \"objective\": \"Make weekly sweep graph and metrics persistence failures visible instead of swallowing git push errors, while preserving the weekly report issue as the operator-facing status surface.\",\n  \"tier\": 1,\n  \"scope_boundary\": [\n    \"Capture commit and push outcomes in the weekly sweep persistence step.\",\n    \"Append baseline refresh status and detail to the weekly issue body.\",\n    \"Fail the workflow after issue publication when persistence fails.\"\n  ],\n  \"out_of_scope\": [\n    \"Switching to a PR-based writeback flow.\",\n    \"Changing graph contents or metric calculations.\",\n    \"Reworking unrelated Codex or raw-feed sweep paths.\"\n  ],\n  \"research_summary\": \"The weekly sweep currently updates graph and metrics artifacts, commits them locally, and then runs `git push || true`. That hides baseline persistence failures while the weekly issue still looks healthy. The correct behavior is to record persistence status explicitly in the weekly issue and fail the workflow after publication when persistence fails.\",\n  \"research_artifacts\": [\n    \".github/workflows/overlord-sweep.yml\",\n    \"Issue #77 description\"\n  ],"
+          ],
+          "graphify-out/hldpro-governance/GRAPH_REPORT.md": [
+            "# Graph Report - hldpro-governance  (2026-04-09)\n\n## Corpus Check\n- Large corpus: 1127 files \u00b7 ~172,448 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.\n\n## Summary\n- 140 nodes \u00b7 253 edges \u00b7 18 communities detected\n- Extraction: 50% EXTRACTED \u00b7 50% INFERRED \u00b7 0% AMBIGUOUS \u00b7 INFERRED: 126 edges (avg confidence: 0.5)\n- Token cost: 0 input \u00b7 0 output\n\n## God Nodes (most connected - your core abstractions)\n1. `graphify_results()` - 12 edges\n2. `cmd_generate()` - 11 edges\n3. `cmd_qualify()` - 9 edges\n4. `main()` - 9 edges\n5. `cmd_promote()` - 7 edges\n6. `augment_workflow_doc_candidates()` - 7 edges\n7. `baseline_results()` - 7 edges\n8. `main()` - 7 edges\n9. `collect_repo_metrics()` - 6 edges"
+          ],
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.md": [
+            "# Graphify Measurement \u2014 2026-04-09\n\n## Summary\n\n- Scenarios: 4\n- Graphify hits: 2\n- Baseline hits: 4\n- Graphify estimated tokens: 759\n- Baseline estimated tokens: 4769\n- Graphify smaller + more relevant wins: 1\n- Second non-graph baseline recommended: False\n- Baseline decision: No second non-graph baseline is recommended yet; improve graph-guided ranking against the existing repo-search baseline first.\n\n## Scenario Results\n\n| Scenario | Graphify Relevant | Baseline Relevant | Graphify Score | Baseline Score | Graphify Tokens | Baseline Tokens |\n|---|---:|---:|---:|---:|---:|---:|\n| ff-74-governance-diff-base | 1 | 1 | 4 | 3 | 204 | 1470 |\n| ff-75-raw-feed-redaction | 0 | 1 | 1 | 5 | 243 | 1058 |\n| ff-76-cited-code-validation | 0 | 1 | 1 | 3 | 89 | 1136 |"
+          ],
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json": [
+            "{\n  \"date\": \"2026-04-09\",\n  \"scenarios\": [\n    {\n      \"id\": \"ff-74-governance-diff-base\",\n      \"issue_number\": 74,\n      \"repo\": \"hldpro-governance\",\n      \"graph_key\": \"hldpro-governance\",\n      \"task_type\": \"workflow_bug\",\n      \"prompt\": \"Find why reusable governance checks only inspect the last commit in a multi-commit PR.\",\n      \"query_terms\": [\"governance\", \"workflow_call\", \"diff\", \"base\", \"github.event.before\"],\n      \"expected_files\": [\".github/workflows/governance-check.yml\"],\n      \"expected_terms\": [\"workflow_call\", \"base_sha\", \"github.event.before\"]\n    },\n    {\n      \"id\": \"ff-75-raw-feed-redaction\",\n      \"issue_number\": 75,\n      \"repo\": \"hldpro-governance\",\n      \"graph_key\": \"hldpro-governance\",\n      \"task_type\": \"data_safety\","
+          ]
+        },
+        "top_files": [
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.md",
+          "docs/FEATURE_REGISTRY.md",
+          "docs/plans/issue-77-structured-agent-cycle-plan.json",
+          "graphify-out/hldpro-governance/GRAPH_REPORT.md"
+        ]
+      },
+      "expected_files": [
+        ".github/workflows/overlord-sweep.yml"
+      ],
+      "expected_terms": [
+        "git push",
+        "metrics/effectiveness-baseline",
+        "graphify-out"
+      ],
+      "graphify": {
+        "estimated_tokens": 237,
+        "file_hits": 1,
+        "materially_relevant": true,
+        "quality_hit": true,
+        "relevance_score": 4,
+        "retrieval_count": 5,
+        "strategy": "hybrid",
+        "term_hits": 1,
+        "top_evidence": {
+          ".github/workflows/governance-check.yml": [
+            "hybrid:path:.github/workflows/governance-check.yml",
+            "hybrid:term:graph",
+            "hybrid:term:failures",
+            "hybrid:term:are",
+            "hybrid:term:overlord"
+          ],
+          ".github/workflows/overlord-sweep.yml": [
+            "hybrid:path:.github/workflows/overlord-sweep.yml",
+            "hybrid:term:sweep",
+            "hybrid:term:are",
+            "hybrid:term:overlord",
+            "hybrid:term:git"
+          ],
+          "scripts/knowledge_base/measure_graphify_usage.py": [
+            "direct:measure_graphify_usage.py",
+            "community:Knowledge base Measure graphify usage",
+            "direct:Scenario",
+            "community:Knowledge base Measure graphify usage",
+            "direct:GraphData"
+          ],
+          "scripts/overlord/check_progress_github_issue_staleness.py": [
+            "direct:check_progress_github_issue_staleness.py",
+            "community:Overlord Check progress github issue staleness",
+            "direct:IssueRef",
+            "community:Overlord Check progress github issue staleness",
+            "direct:fail()"
+          ],
+          "scripts/overlord/codex_ingestion.py": [
+            "direct:codex_ingestion.py",
+            "community:Overlord Codex ingestion",
+            "direct:Finding",
+            "community:Overlord Codex ingestion",
+            "direct:priority()"
+          ]
+        },
+        "top_files": [
+          "scripts/overlord/codex_ingestion.py",
+          "scripts/knowledge_base/measure_graphify_usage.py",
+          "scripts/overlord/check_progress_github_issue_staleness.py",
+          ".github/workflows/governance-check.yml",
+          ".github/workflows/overlord-sweep.yml"
+        ]
+      },
+      "id": "ff-77-sweep-persistence-visibility",
+      "issue_number": 77,
+      "repo": "hldpro-governance",
+      "task_type": "workflow_bug",
+      "trace": {
+        "baseline_candidates": [
+          "metrics/graphify-evals/scenarios/fail-fast-2026-04-09.json",
+          "metrics/graphify-evals/2026-04-09-graphify-vs-search.md",
+          "docs/FEATURE_REGISTRY.md",
+          "docs/plans/issue-77-structured-agent-cycle-plan.json",
+          "graphify-out/hldpro-governance/GRAPH_REPORT.md"
+        ],
+        "graphify_candidates": [
+          "scripts/overlord/codex_ingestion.py",
+          "scripts/knowledge_base/measure_graphify_usage.py",
+          "scripts/overlord/check_progress_github_issue_staleness.py",
+          ".github/workflows/governance-check.yml",
+          ".github/workflows/overlord-sweep.yml"
+        ],
+        "prompt": "Find where the weekly sweep persists graph and metrics updates and whether push failures are being ignored.",
+        "query_terms": [
+          "overlord",
+          "sweep",
+          "graph",
+          "metrics",
+          "push"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "baseline_estimated_tokens": 4776,
+    "baseline_hits": 3,
+    "graphify_estimated_tokens": 816,
+    "graphify_hits": 4,
+    "graphify_smaller_and_better_count": 2,
+    "scenario_count": 4,
+    "second_baseline_rationale": "No second non-graph baseline is recommended yet; improve graph-guided ranking against the existing repo-search baseline first.",
+    "second_baseline_recommended": false
+  }
+}

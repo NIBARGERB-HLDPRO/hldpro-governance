@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- **prettify.js** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/prettify.js`
-- **g()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/prettify.js`
-- **D()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/prettify.js`
-- **Q()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/prettify.js`
-- **y()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/prettify.js`
-- **B()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/prettify.js`
-- **a()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/prettify.js`
-- **i()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/prettify.js`
-- **k()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/prettify.js`
-- **c()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/prettify.js`
-- **o()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/prettify.js`
+- **prettify.js** (10 connections) — `healthcareplatform/frontend/coverage/prettify.js`
+- **g()** (5 connections) — `healthcareplatform/frontend/coverage/prettify.js`
+- **D()** (4 connections) — `healthcareplatform/frontend/coverage/prettify.js`
+- **Q()** (4 connections) — `healthcareplatform/frontend/coverage/prettify.js`
+- **y()** (4 connections) — `healthcareplatform/frontend/coverage/prettify.js`
+- **B()** (3 connections) — `healthcareplatform/frontend/coverage/prettify.js`
+- **a()** (2 connections) — `healthcareplatform/frontend/coverage/prettify.js`
+- **i()** (2 connections) — `healthcareplatform/frontend/coverage/prettify.js`
+- **k()** (2 connections) — `healthcareplatform/frontend/coverage/prettify.js`
+- **c()** (1 connections) — `healthcareplatform/frontend/coverage/prettify.js`
+- **o()** (1 connections) — `healthcareplatform/frontend/coverage/prettify.js`
 
 ## Relationships
 
@@ -22,7 +22,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/coverage/prettify.js`
+- `healthcareplatform/frontend/coverage/prettify.js`
 
 ## Audit Trail
 

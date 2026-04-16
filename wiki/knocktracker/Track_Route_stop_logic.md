@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **routeStopLogic.ts** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/track/routeStopLogic.ts`
-- **selectNearbyRouteStop()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/track/routeStopLogic.ts`
-- **toCandidates()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/track/routeStopLogic.ts`
-- **buildRouteStopOptions()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/track/routeStopLogic.ts`
-- **haversineMeters()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/track/routeStopLogic.ts`
-- **getActiveRouteId()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/track/routeStopLogic.ts`
-- **normalizeRouteStop()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/track/routeStopLogic.ts`
-- **routeStopLogic.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/tests/routeStopLogic.test.ts`
+- **routeStopLogic.ts** (8 connections) — `knocktracker/lib/track/routeStopLogic.ts`
+- **selectNearbyRouteStop()** (3 connections) — `knocktracker/lib/track/routeStopLogic.ts`
+- **toCandidates()** (3 connections) — `knocktracker/lib/track/routeStopLogic.ts`
+- **buildRouteStopOptions()** (2 connections) — `knocktracker/lib/track/routeStopLogic.ts`
+- **haversineMeters()** (2 connections) — `knocktracker/lib/track/routeStopLogic.ts`
+- **getActiveRouteId()** (1 connections) — `knocktracker/lib/track/routeStopLogic.ts`
+- **normalizeRouteStop()** (1 connections) — `knocktracker/lib/track/routeStopLogic.ts`
+- **routeStopLogic.test.ts** (1 connections) — `knocktracker/tests/routeStopLogic.test.ts`
 
 ## Relationships
 
@@ -19,8 +19,8 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/track/routeStopLogic.ts`
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/tests/routeStopLogic.test.ts`
+- `knocktracker/lib/track/routeStopLogic.ts`
+- `knocktracker/tests/routeStopLogic.test.ts`
 
 ## Audit Trail
 

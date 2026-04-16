@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **cogs.ts** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
-- **emitCOGS()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
-- **trackClaudeUsage()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
-- **currentBillingPeriod()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
-- **emitCacheHit()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
-- **getModelTier()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
+- **cogs.ts** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
+- **emitCOGS()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
+- **trackClaudeUsage()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
+- **currentBillingPeriod()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
+- **emitCacheHit()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
+- **getModelTier()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
 
 ## Audit Trail
 

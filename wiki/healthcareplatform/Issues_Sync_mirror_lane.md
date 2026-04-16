@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **sync_mirror_lane.ps1** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/issues/sync_mirror_lane.ps1`
-- **Resolve-IssueNumberFromBranch()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/issues/sync_mirror_lane.ps1`
-- **Resolve-MirrorPath()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/issues/sync_mirror_lane.ps1`
+- **sync_mirror_lane.ps1** (2 connections) — `healthcareplatform/backend/scripts/issues/sync_mirror_lane.ps1`
+- **Resolve-IssueNumberFromBranch()** (1 connections) — `healthcareplatform/backend/scripts/issues/sync_mirror_lane.ps1`
+- **Resolve-MirrorPath()** (1 connections) — `healthcareplatform/backend/scripts/issues/sync_mirror_lane.ps1`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/issues/sync_mirror_lane.ps1`
+- `healthcareplatform/backend/scripts/issues/sync_mirror_lane.ps1`
 
 ## Audit Trail
 

@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **Industries.tsx** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/pages/Industries.tsx`
-- **Contact.tsx** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/pages/Contact.tsx`
-- **handleSubmit()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/pages/Contact.tsx`
-- **update()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/pages/Contact.tsx`
-- **IndustryCard()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/pages/Industries.tsx`
+- **Industries.tsx** (5 connections) — `ai-integration-services/apps/marketing/src/pages/Industries.tsx`
+- **Contact.tsx** (4 connections) — `ai-integration-services/apps/marketing/src/pages/Contact.tsx`
+- **handleSubmit()** (1 connections) — `ai-integration-services/apps/marketing/src/pages/Contact.tsx`
+- **update()** (1 connections) — `ai-integration-services/apps/marketing/src/pages/Contact.tsx`
+- **IndustryCard()** (1 connections) — `ai-integration-services/apps/marketing/src/pages/Industries.tsx`
 
 ## Relationships
 
@@ -16,8 +16,8 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/pages/Contact.tsx`
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/marketing/src/pages/Industries.tsx`
+- `ai-integration-services/apps/marketing/src/pages/Contact.tsx`
+- `ai-integration-services/apps/marketing/src/pages/Industries.tsx`
 
 ## Audit Trail
 

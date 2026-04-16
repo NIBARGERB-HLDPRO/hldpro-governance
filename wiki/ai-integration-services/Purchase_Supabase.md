@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- **portal-purchase.ts** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **finalizePortalPurchase()** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **nonEmpty()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **buildOwnerName()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **ensureReferralTracking()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **shouldReplaceBusinessName()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **shouldReplaceOwnerName()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **ensureClientProducts()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **ensureCrmConfig()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **ensureProvisioningSteps()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **triggerTrackA()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- **portal-purchase.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- **finalizePortalPurchase()** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- **nonEmpty()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- **buildOwnerName()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- **ensureReferralTracking()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- **shouldReplaceBusinessName()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- **shouldReplaceOwnerName()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- **ensureClientProducts()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- **ensureCrmConfig()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- **ensureProvisioningSteps()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- **triggerTrackA()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
 
 ## Relationships
 
@@ -22,7 +22,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
 
 ## Audit Trail
 

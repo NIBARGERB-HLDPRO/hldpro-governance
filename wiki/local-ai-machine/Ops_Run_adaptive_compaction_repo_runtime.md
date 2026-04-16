@@ -4,15 +4,15 @@
 
 ## Key Concepts
 
-- **run_adaptive_compaction_repo_runtime_probe.py** (8 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
-- **main()** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
-- **get()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
-- **run_fresh_activation()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
-- **wait_for_server()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
-- **latest_active_summary()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
-- **load_dotenv()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
-- **pick_free_port()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
-- **post()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
+- **run_adaptive_compaction_repo_runtime_probe.py** (8 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
+- **main()** (7 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
+- **get()** (3 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
+- **run_fresh_activation()** (3 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
+- **wait_for_server()** (3 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
+- **latest_active_summary()** (2 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
+- **load_dotenv()** (2 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
+- **pick_free_port()** (2 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
+- **post()** (2 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
 
 ## Relationships
 
@@ -20,7 +20,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
+- `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
 
 ## Audit Trail
 

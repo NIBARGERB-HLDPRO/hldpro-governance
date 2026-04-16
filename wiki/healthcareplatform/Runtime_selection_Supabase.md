@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **runtime-selection.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/runtime-selection.test.ts`
-- **assertEquals()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/runtime-selection.test.ts`
+- **runtime-selection.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/runtime-selection.test.ts`
+- **assertEquals()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/runtime-selection.test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/runtime-selection.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/runtime-selection.test.ts`
 
 ## Audit Trail
 

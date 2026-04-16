@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **check-edge-function-auth-contract.js** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-edge-function-auth-contract.js`
-- **main()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-edge-function-auth-contract.js`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-edge-function-auth-contract.js`
-- **readUtf8()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-edge-function-auth-contract.js`
-- **hasAuthMarkers()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-edge-function-auth-contract.js`
-- **parseFunctionVerifyJwt()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-edge-function-auth-contract.js`
+- **check-edge-function-auth-contract.js** (5 connections) — `healthcareplatform/backend/scripts/ci/check-edge-function-auth-contract.js`
+- **main()** (5 connections) — `healthcareplatform/backend/scripts/ci/check-edge-function-auth-contract.js`
+- **fail()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-edge-function-auth-contract.js`
+- **readUtf8()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-edge-function-auth-contract.js`
+- **hasAuthMarkers()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-edge-function-auth-contract.js`
+- **parseFunctionVerifyJwt()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-edge-function-auth-contract.js`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-edge-function-auth-contract.js`
+- `healthcareplatform/backend/scripts/ci/check-edge-function-auth-contract.js`
 
 ## Audit Trail
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **restart_ollama.ps1** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/scoped/restart_ollama.ps1`
+- **restart_ollama.ps1** (0 connections) — `local-ai-machine/scripts/ops/scoped/restart_ollama.ps1`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/scoped/restart_ollama.ps1`
+- `local-ai-machine/scripts/ops/scoped/restart_ollama.ps1`
 
 ## Audit Trail
 

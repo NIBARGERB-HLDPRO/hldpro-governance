@@ -1,0 +1,22 @@
+name: check-no-self-approval
+on:
+  workflow_call:
+permissions:
+  contents: read
+
+jobs:
+  check-no-self-approval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Validate cross-review model separation
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          python3 -m pip install --quiet pyyaml
+          python3 .github/scripts/check_no_self_approval.py

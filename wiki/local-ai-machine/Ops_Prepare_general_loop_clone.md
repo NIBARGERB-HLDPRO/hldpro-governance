@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **prepare_general_loop_clone.py** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/prepare_general_loop_clone.py`
-- **fail()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/prepare_general_loop_clone.py`
-- **main()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/prepare_general_loop_clone.py`
-- **current_head()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/prepare_general_loop_clone.py`
-- **parse_json_list()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/prepare_general_loop_clone.py`
-- **read_registry()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/prepare_general_loop_clone.py`
-- **resolve_active_session()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/prepare_general_loop_clone.py`
+- **prepare_general_loop_clone.py** (6 connections) — `local-ai-machine/scripts/ops/prepare_general_loop_clone.py`
+- **fail()** (6 connections) — `local-ai-machine/scripts/ops/prepare_general_loop_clone.py`
+- **main()** (6 connections) — `local-ai-machine/scripts/ops/prepare_general_loop_clone.py`
+- **current_head()** (3 connections) — `local-ai-machine/scripts/ops/prepare_general_loop_clone.py`
+- **parse_json_list()** (3 connections) — `local-ai-machine/scripts/ops/prepare_general_loop_clone.py`
+- **read_registry()** (3 connections) — `local-ai-machine/scripts/ops/prepare_general_loop_clone.py`
+- **resolve_active_session()** (3 connections) — `local-ai-machine/scripts/ops/prepare_general_loop_clone.py`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/prepare_general_loop_clone.py`
+- `local-ai-machine/scripts/ops/prepare_general_loop_clone.py`
 
 ## Audit Trail
 

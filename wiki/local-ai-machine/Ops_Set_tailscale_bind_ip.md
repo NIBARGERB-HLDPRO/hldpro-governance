@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **set_tailscale_bind_ip.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/set_tailscale_bind_ip.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/set_tailscale_bind_ip.py`
-- **_upsert_env()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/set_tailscale_bind_ip.py`
+- **set_tailscale_bind_ip.py** (2 connections) — `local-ai-machine/scripts/ops/set_tailscale_bind_ip.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/set_tailscale_bind_ip.py`
+- **_upsert_env()** (2 connections) — `local-ai-machine/scripts/ops/set_tailscale_bind_ip.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/set_tailscale_bind_ip.py`
+- `local-ai-machine/scripts/ops/set_tailscale_bind_ip.py`
 
 ## Audit Trail
 

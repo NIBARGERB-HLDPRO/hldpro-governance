@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **playwright.seeded-staging.config.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.seeded-staging.config.ts`
+- **playwright.seeded-staging.config.ts** (0 connections) — `healthcareplatform/frontend/playwright.seeded-staging.config.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.seeded-staging.config.ts`
+- `healthcareplatform/frontend/playwright.seeded-staging.config.ts`
 
 ## Audit Trail
 

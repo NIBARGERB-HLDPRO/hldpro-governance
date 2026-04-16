@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **phi-scrubber.test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/phi-scrubber.test.ts`
+- **phi-scrubber.test.ts** (0 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/phi-scrubber.test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/phi-scrubber.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/chart-audit/phi-scrubber.test.ts`
 
 ## Audit Trail
 

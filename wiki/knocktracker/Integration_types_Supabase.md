@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **integration-types.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/supabase/functions/_shared/integration-types.ts`
+- **integration-types.ts** (0 connections) — `knocktracker/supabase/functions/_shared/integration-types.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/supabase/functions/_shared/integration-types.ts`
+- `knocktracker/supabase/functions/_shared/integration-types.ts`
 
 ## Audit Trail
 

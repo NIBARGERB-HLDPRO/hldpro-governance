@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **LocalWiFiImageClientApp** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/clients/ios/LocalWiFiImageClient/LocalWiFiImageClientApp.swift`
+- **LocalWiFiImageClientApp** (2 connections) — `local-ai-machine/clients/ios/LocalWiFiImageClient/LocalWiFiImageClientApp.swift`
 - **App** (1 connections)
-- **LocalWiFiImageClientApp.swift** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/clients/ios/LocalWiFiImageClient/LocalWiFiImageClientApp.swift`
+- **LocalWiFiImageClientApp.swift** (1 connections) — `local-ai-machine/clients/ios/LocalWiFiImageClient/LocalWiFiImageClientApp.swift`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/clients/ios/LocalWiFiImageClient/LocalWiFiImageClientApp.swift`
+- `local-ai-machine/clients/ios/LocalWiFiImageClient/LocalWiFiImageClientApp.swift`
 
 ## Audit Trail
 

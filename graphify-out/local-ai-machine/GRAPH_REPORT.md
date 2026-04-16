@@ -1,11 +1,11 @@
-# Graph Report - /Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6  (2026-04-09)
+# Graph Report - local-ai-machine  (2026-04-09)
 
 ## Corpus Check
-- Large corpus: 566 files · ~410,609 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 570 files · ~822,939 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 3082 nodes · 5098 edges · 416 communities detected
-- Extraction: 53% EXTRACTED · 47% INFERRED · 0% AMBIGUOUS · INFERRED: 2415 edges (avg confidence: 0.5)
+- 3089 nodes · 5106 edges · 417 communities detected
+- Extraction: 53% EXTRACTED · 47% INFERRED · 0% AMBIGUOUS · INFERRED: 2416 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -22,13 +22,13 @@
 
 ## Surprising Connections (you probably didn't know these)
 - `mcpReadCircuitState()` --calls--> `json()`  [INFERRED]
-  /Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/supabase/functions/critic_api/index.ts → /Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/supabase/functions/slack_webhook/index.ts
+  local-ai-machine/supabase/functions/critic_api/index.ts → local-ai-machine/supabase/functions/slack_webhook/index.ts
 - `proxyJson()` --calls--> `json()`  [INFERRED]
-  /Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/supabase/functions/critic_api/index.ts → /Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/supabase/functions/slack_webhook/index.ts
+  local-ai-machine/supabase/functions/critic_api/index.ts → local-ai-machine/supabase/functions/slack_webhook/index.ts
 - `proxyStatus()` --calls--> `json()`  [INFERRED]
-  /Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/supabase/functions/critic_api/index.ts → /Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/supabase/functions/slack_webhook/index.ts
+  local-ai-machine/supabase/functions/critic_api/index.ts → local-ai-machine/supabase/functions/slack_webhook/index.ts
 - `proxyMcp()` --calls--> `json()`  [INFERRED]
-  /Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/supabase/functions/critic_api/index.ts → /Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/supabase/functions/slack_webhook/index.ts
+  local-ai-machine/supabase/functions/critic_api/index.ts → local-ai-machine/supabase/functions/slack_webhook/index.ts
 
 ## Communities
 
@@ -372,1332 +372,1336 @@ Nodes (7): load_env(), main(), Minimal .env parser — no dependency on python-d
 Cohesion: 0.46
 Nodes (7): choose_size(), detect_png_dimensions(), main(), parse_args(), run_playwright_screenshot(), wait_for_http_ready(), write_json()
 
-### Community 85 - "Validate live critic"
+### Community 85 - "Var Benchmarks Run"
+Cohesion: 0.38
+Nodes (6): BaseModel, CriticOutput, Finding, main(), Run a single generation, return metrics dict., run_one()
+
+### Community 86 - "Validate live critic"
 Cohesion: 0.52
 Nodes (6): _has_unified_panel_shape(), _load_json(), main(), _resolve_run_dir(), validate_critic_contract(), _validate_unified_panel()
 
-### Community 86 - "Critic verdict gatekeeper"
+### Community 87 - "Critic verdict gatekeeper"
 Cohesion: 0.62
 Nodes (6): expect_gatekeeper_failure(), expect_gatekeeper_success(), load_json(), main(), run(), write_json()
 
-### Community 87 - "Critic api reference"
+### Community 88 - "Critic api reference"
 Cohesion: 0.57
 Nodes (6): assert_true(), get(), main(), pick_free_port(), post(), wait_for_server()
 
-### Community 88 - "Ops Scavenger teardown status"
+### Community 89 - "Ops Scavenger teardown status"
 Cohesion: 0.52
 Nodes (6): build_parser(), build_status(), choose_path(), load_optional_json(), main(), summarize_component()
 
-### Community 89 - "Ops Reset general loop clone"
+### Community 90 - "Ops Reset general loop clone"
 Cohesion: 0.62
 Nodes (5): fail(), main(), remove_worktree(), repo_root(), safe_clone_root()
 
-### Community 90 - "Ops Resolve logical resource stub runtime"
+### Community 91 - "Ops Resolve logical resource stub runtime"
 Cohesion: 0.52
 Nodes (6): check(), fail(), main(), mapping_payload(), request_payload(), write_json()
 
-### Community 91 - "Ops Prepare general loop clone"
+### Community 92 - "Ops Prepare general loop clone"
 Cohesion: 0.71
 Nodes (6): current_head(), fail(), main(), parse_json_list(), read_registry(), resolve_active_session()
 
-### Community 92 - "Ops Send slack notification"
+### Community 93 - "Ops Send slack notification"
 Cohesion: 0.52
 Nodes (6): _env(), _load_env_file(), main(), _post(), _split_for_slack(), _strip_codex_session_noise()
 
-### Community 93 - "Ops Prune scavenger teardown object store stub runtime"
+### Community 94 - "Ops Prune scavenger teardown object store stub runtime"
 Cohesion: 0.57
 Nodes (6): check(), fail(), load_module(), main(), make_case_dir(), touch_file()
 
-### Community 94 - "Ops Run temporal verification activity stub"
+### Community 95 - "Ops Run temporal verification activity stub"
 Cohesion: 0.52
 Nodes (6): atomic_write_json(), build_parser(), build_signal(), load_json(), main(), required_str()
 
-### Community 95 - "Ops Session lock"
+### Community 96 - "Ops Session lock"
 Cohesion: 0.33
 Nodes (2): run(), run_with_env()
 
-### Community 96 - "Ops Clone promotion boundary runtime"
+### Community 97 - "Ops Clone promotion boundary runtime"
 Cohesion: 0.52
 Nodes (6): check(), fail(), main(), read_json(), run_cmd(), write_registry()
 
-### Community 97 - "Ops Run temporal verification activity stub runtime"
+### Community 98 - "Ops Run temporal verification activity stub runtime"
 Cohesion: 0.52
 Nodes (6): allowed_response(), check(), denied_response(), fail(), main(), write_json()
 
-### Community 98 - "Ops Verify delegated authorization stub runtime"
+### Community 99 - "Ops Verify delegated authorization stub runtime"
 Cohesion: 0.52
 Nodes (6): check(), fail(), main(), request_payload(), token_payload(), write_json()
 
-### Community 99 - "Ops Run general loop clone integration runtime"
+### Community 100 - "Ops Run general loop clone integration runtime"
 Cohesion: 0.52
 Nodes (6): check(), fail(), main(), read_json(), run(), write_registry()
 
-### Community 100 - "Ops Hp training doc"
+### Community 101 - "Ops Hp training doc"
 Cohesion: 0.52
 Nodes (6): both(), build_doc(), bullets(), img(), Add screenshot if it exists. Tries name-viewport.png then name.png., steps()
 
-### Community 101 - "Ops Prune scavenger teardown telemetry runtime"
+### Community 102 - "Ops Prune scavenger teardown telemetry runtime"
 Cohesion: 0.57
 Nodes (6): check(), fail(), load_module(), main(), make_case_dir(), touch_file()
 
-### Community 102 - "Ops Gui repair request runtime"
+### Community 103 - "Ops Gui repair request runtime"
 Cohesion: 0.52
 Nodes (6): check(), fail(), main(), rejected_verdict(), render_manifest(), write_json()
 
-### Community 103 - "Ops Temporal remediation signal stub"
+### Community 104 - "Ops Temporal remediation signal stub"
 Cohesion: 0.52
 Nodes (6): atomic_write_json(), build_parser(), build_signal(), load_json(), main(), validate_verification_response()
 
-### Community 104 - "Generate stub bundle"
+### Community 105 - "Generate stub bundle"
 Cohesion: 0.6
 Nodes (5): main(), now_iso(), sha256_hex(), write_json(), write_text()
 
-### Community 105 - "Clients Ios View"
+### Community 106 - "Clients Ios View"
 Cohesion: 0.4
 Nodes (2): ContentView, View
 
-### Community 106 - "Security Check pat hygiene"
+### Community 107 - "Security Check pat hygiene"
 Cohesion: 0.6
 Nodes (5): fail(), gh_get(), main(), ok(), warn()
 
-### Community 107 - "Microvm Scavenger read"
+### Community 108 - "Microvm Scavenger read"
 Cohesion: 0.67
 Nodes (5): assert_true(), find_free_port(), http_post(), main(), wait_for_server()
 
-### Community 108 - "Microvm Secure mcp server"
+### Community 109 - "Microvm Secure mcp server"
 Cohesion: 0.67
 Nodes (5): assert_true(), http_post(), load_audit_events(), main(), wait_for_server()
 
-### Community 109 - "Control plane Scavenger ingest"
+### Community 110 - "Control plane Scavenger ingest"
 Cohesion: 0.6
 Nodes (5): main(), parse_jsonl(), persist_discoveries(), redact_report(), stable_hash()
 
-### Community 110 - "Ops Append learning event"
+### Community 111 - "Ops Append learning event"
 Cohesion: 0.6
 Nodes (5): load_events(), main(), normalize_text(), now_iso(), recurrence_key()
 
-### Community 111 - "Ops Evaluate gui loop runtime"
+### Community 112 - "Ops Evaluate gui loop runtime"
 Cohesion: 0.6
 Nodes (5): check(), fail(), main(), verdict(), write_json()
 
-### Community 112 - "Ops Stale registry lock recovery"
+### Community 113 - "Ops Stale registry lock recovery"
 Cohesion: 0.6
 Nodes (5): check(), main(), make_lock_info(), make_registry(), make_registry_session()
 
-### Community 113 - "Ops Export scavenger teardown telemetry runtime"
+### Community 114 - "Ops Export scavenger teardown telemetry runtime"
 Cohesion: 0.6
 Nodes (5): check(), fail(), main(), make_case_dir(), write_pair()
 
-### Community 114 - "Ops Rotate cli bridge jwt"
+### Community 115 - "Ops Rotate cli bridge jwt"
 Cohesion: 0.53
 Nodes (4): Get-EnvValue(), Invoke-SupabaseCli(), Resolve-ProjectRef(), Sync-EdgeSecrets()
 
-### Community 115 - "Ops Create phase g channels"
+### Community 116 - "Ops Create phase g channels"
 Cohesion: 0.6
 Nodes (5): _env(), _load_env_file(), main(), _slack_call(), _write_env_updates()
 
-### Community 116 - "Ops Materialize scavenger teardown bundle runtime"
+### Community 117 - "Ops Materialize scavenger teardown bundle runtime"
 Cohesion: 0.6
 Nodes (5): check(), fail(), main(), make_case_dir(), write_json()
 
-### Community 117 - "Ops Send scavenger digest"
+### Community 118 - "Ops Send scavenger digest"
 Cohesion: 0.6
 Nodes (5): _bounded(), _env(), _load_env_file(), main(), _post_slack()
 
-### Community 118 - "Ops Scavenger teardown status runtime"
+### Community 119 - "Ops Scavenger teardown status runtime"
 Cohesion: 0.6
 Nodes (5): check(), fail(), main(), make_case_dir(), write_json()
 
-### Community 119 - "Ops Drain microvm run storage"
+### Community 120 - "Ops Drain microvm run storage"
 Cohesion: 0.67
 Nodes (5): choose_prefixes(), directory_size_bytes(), fail(), main(), parse_args()
 
-### Community 120 - "Ops Evaluate gui loop"
+### Community 121 - "Ops Evaluate gui loop"
 Cohesion: 0.6
 Nodes (5): atomic_write_json(), build_parser(), load_json(), main(), required_str()
 
-### Community 121 - "Ops Inference comparison"
+### Community 122 - "Ops Inference comparison"
 Cohesion: 0.6
 Nodes (5): check(), fail(), main(), Validate comparison function with mock data., test_compare_findings_with_mock_data()
 
-### Community 122 - "Ops Reconcile required checks"
+### Community 123 - "Ops Reconcile required checks"
 Cohesion: 0.6
 Nodes (5): fail(), gh_request(), main(), ok(), token_from_gh_cli()
 
-### Community 123 - "Ops Report var registry gaps"
+### Community 124 - "Ops Report var registry gaps"
 Cohesion: 0.67
 Nodes (5): collect_code_vars(), collect_registry_vars(), iter_text_files(), main(), read_text()
 
-### Community 124 - "Ops Temporal remediation signal stub runtime"
+### Community 125 - "Ops Temporal remediation signal stub runtime"
 Cohesion: 0.6
 Nodes (5): check(), denied_response(), fail(), main(), write_json()
 
-### Community 125 - "Ops Run scavenger locked loop"
+### Community 126 - "Ops Run scavenger locked loop"
 Cohesion: 0.6
 Nodes (5): _available_memory_mb(), _env(), main(), _queue_pressure_snapshot(), run_once()
 
-### Community 126 - "Ops Var Load"
+### Community 127 - "Ops Var Load"
 Cohesion: 0.6
 Nodes (5): check(), fail(), load_gap_report(), load_json(), main()
 
-### Community 127 - "Ops Normalize ebpf reconciliation stub"
+### Community 128 - "Ops Normalize ebpf reconciliation stub"
 Cohesion: 0.6
 Nodes (5): atomic_write_json(), build_parser(), load_json(), main(), required_str()
 
-### Community 128 - "Ops Gui repair request"
+### Community 129 - "Ops Gui repair request"
 Cohesion: 0.6
 Nodes (5): atomic_write_json(), build_parser(), load_json(), main(), required_str()
 
-### Community 129 - "Ops Exchange slack oauth"
+### Community 130 - "Ops Exchange slack oauth"
 Cohesion: 0.6
 Nodes (5): _env(), fail(), _load_env_file(), main(), _upsert_env_values()
 
-### Community 130 - "Slack webhook Supabase"
+### Community 131 - "Slack webhook Supabase"
 Cohesion: 0.7
 Nodes (4): applyFailover(), includesAnyKeyword(), normalizeText(), routeRequest()
 
-### Community 131 - "Required check workflow"
+### Community 132 - "Required check workflow"
 Cohesion: 0.8
 Nodes (4): check(), fail(), main(), read()
 
-### Community 132 - "Control plane Scavenger stream guard"
+### Community 133 - "Control plane Scavenger stream guard"
 Cohesion: 0.6
 Nodes (3): appendLog(), handlePayload(), killMicrovm()
 
-### Community 133 - "Control plane Admin tailscale proxy"
+### Community 134 - "Control plane Admin tailscale proxy"
 Cohesion: 0.5
 Nodes (2): forwardToAdminBridge(), handleConn()
 
-### Community 134 - "Ops V2 metrics report"
+### Community 135 - "Ops V2 metrics report"
 Cohesion: 0.7
 Nodes (4): fetch_metrics(), main(), now_iso(), write_outputs()
 
-### Community 135 - "Ops Delegated execution envelope runtime"
+### Community 136 - "Ops Delegated execution envelope runtime"
 Cohesion: 0.7
 Nodes (4): check(), fail(), main(), write_json()
 
-### Community 136 - "Ops Verify phase e migrations applied"
+### Community 137 - "Ops Verify phase e migrations applied"
 Cohesion: 0.7
 Nodes (4): _database_url(), fail(), _load_env_file(), main()
 
-### Community 137 - "Ops Serve temporal host adapter stdio runtime"
+### Community 138 - "Ops Serve temporal host adapter stdio runtime"
 Cohesion: 0.7
 Nodes (4): check(), fail(), main(), write_json()
 
-### Community 138 - "Ops Verify phase g migrations applied"
+### Community 139 - "Ops Verify phase g migrations applied"
 Cohesion: 0.7
 Nodes (4): _database_url(), fail(), _load_env_file(), main()
 
-### Community 139 - "Ops Run remote microvm storage drain emergency"
+### Community 140 - "Ops Run remote microvm storage drain emergency"
 Cohesion: 0.4
 Nodes (0): 
 
-### Community 140 - "Ops Run remote microvm storage drain"
+### Community 141 - "Ops Run remote microvm storage drain"
 Cohesion: 0.4
 Nodes (0): 
 
-### Community 141 - "Ops Repo learning loop start runtime"
+### Community 142 - "Ops Repo learning loop start runtime"
 Cohesion: 0.8
 Nodes (4): check(), main(), run_case(), write()
 
-### Community 142 - "Ops Run remote gpu runtime proof"
+### Community 143 - "Ops Run remote gpu runtime proof"
 Cohesion: 0.4
 Nodes (0): 
 
-### Community 143 - "Ops Run scavenger remote"
+### Community 144 - "Ops Run scavenger remote"
 Cohesion: 0.4
 Nodes (0): 
 
-### Community 144 - "Ops Run remote ollama"
+### Community 145 - "Ops Run remote ollama"
 Cohesion: 0.4
 Nodes (0): 
 
-### Community 145 - "Ops Run temporal host adapter worker runtime"
+### Community 146 - "Ops Run temporal host adapter worker runtime"
 Cohesion: 0.7
 Nodes (4): check(), fail(), main(), write_json()
 
-### Community 146 - "Ops Reconcile thread continuity"
+### Community 147 - "Ops Reconcile thread continuity"
 Cohesion: 0.7
 Nodes (4): _env(), _load_env_file(), main(), _split_thread_ref()
 
-### Community 147 - "Ops Verify phase f migrations applied"
+### Community 148 - "Ops Verify phase f migrations applied"
 Cohesion: 0.7
 Nodes (4): _database_url(), fail(), _load_env_file(), main()
 
-### Community 148 - "Ops Run slack image ingestion"
+### Community 149 - "Ops Run slack image ingestion"
 Cohesion: 0.4
 Nodes (0): 
 
-### Community 149 - "Ops Run remote host inference critic proof"
+### Community 150 - "Ops Run remote host inference critic proof"
 Cohesion: 0.4
 Nodes (0): 
 
-### Community 150 - "Ops Repo learning loop report runtime"
+### Community 151 - "Ops Repo learning loop report runtime"
 Cohesion: 0.8
 Nodes (4): check(), fail(), main(), make_event()
 
-### Community 151 - "Ops Validate merge readiness pack"
+### Community 152 - "Ops Validate merge readiness pack"
 Cohesion: 0.8
 Nodes (4): canonicalize_command(), fail(), load_json(), main()
 
-### Community 152 - "Ops Drain microvm run storage runtime"
+### Community 153 - "Ops Drain microvm run storage runtime"
 Cohesion: 0.7
 Nodes (4): check(), fail(), main(), run()
 
-### Community 153 - "Ops Run remote host inference"
+### Community 154 - "Ops Run remote host inference"
 Cohesion: 0.4
 Nodes (0): 
 
-### Community 154 - "Ops Materialize lint rule bundle"
+### Community 155 - "Ops Materialize lint rule bundle"
 Cohesion: 0.8
 Nodes (4): fail(), main(), _safe_repo_path(), _write()
 
-### Community 155 - "Verify control plane"
+### Community 156 - "Verify control plane"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 156 - "Critic runner Check"
+### Community 157 - "Critic runner Check"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 157 - "Llm Validate profiles"
+### Community 158 - "Llm Validate profiles"
 Cohesion: 0.83
 Nodes (3): fail(), main(), ok()
 
-### Community 158 - "Microvm Boot run"
+### Community 159 - "Microvm Boot run"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 159 - "Microvm Run scavenger workload"
+### Community 160 - "Microvm Run scavenger workload"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 160 - "Microvm Teardown telemetry"
+### Community 161 - "Microvm Teardown telemetry"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 161 - "Slack webhook Check"
+### Community 162 - "Slack webhook Check"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 162 - "Export audit chain"
+### Community 163 - "Export audit chain"
 Cohesion: 0.83
 Nodes (3): fail(), main(), stable_json_hash()
 
-### Community 163 - "Control plane Oracle engine"
+### Community 164 - "Control plane Oracle engine"
 Cohesion: 0.83
 Nodes (3): handleOracleRequest(), sanitizeUntrustedLog(), validateRequest()
 
-### Community 164 - "Ops Admin fs attack"
+### Community 165 - "Ops Admin fs attack"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 165 - "Ops Amps Check"
+### Community 166 - "Ops Amps Check"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 166 - "Ops Phase e tailscale proxy"
+### Community 167 - "Ops Phase e tailscale proxy"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 167 - "Ops Sync agent"
+### Community 168 - "Ops Sync agent"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 168 - "Ops Scavenger stale run watchdog"
+### Community 169 - "Ops Scavenger stale run watchdog"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 169 - "Ops Run lint warning mode"
+### Community 170 - "Ops Run lint warning mode"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 170 - "Ops Microvm runtime workflow"
+### Community 171 - "Ops Microvm runtime workflow"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 171 - "Ops Phase g8 mcp routing audit sql"
+### Community 172 - "Ops Phase g8 mcp routing audit sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 172 - "Ops Phase f migration verifier"
+### Community 173 - "Ops Phase f migration verifier"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 173 - "Ops Run remote host inference critic proof"
+### Community 174 - "Ops Run remote host inference critic proof"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 174 - "Ops Reconcile slack postbacks"
+### Community 175 - "Ops Reconcile slack postbacks"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 175 - "Ops Critic migration"
+### Community 176 - "Ops Critic migration"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 176 - "Ops Society review loop"
+### Community 177 - "Ops Society review loop"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 177 - "Ops Evaluate gui loop"
+### Community 178 - "Ops Evaluate gui loop"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 178 - "Ops General self learning loop"
+### Community 179 - "Ops General self learning loop"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 179 - "Ops Scavenger orchestrator"
+### Community 180 - "Ops Scavenger orchestrator"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 180 - "Ops Run general loop clone integration"
+### Community 181 - "Ops Run general loop clone integration"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 181 - "Ops Run general self learning loop"
+### Community 182 - "Ops Run general self learning loop"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 182 - "Ops Scavenger teardown status"
+### Community 183 - "Ops Scavenger teardown status"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 183 - "Ops Temporal host runtime adapter"
+### Community 184 - "Ops Temporal host runtime adapter"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 184 - "Ops Zero trust delegation"
+### Community 185 - "Ops Zero trust delegation"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 185 - "Ops Slack image ingestion response"
+### Community 186 - "Ops Slack image ingestion response"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 186 - "Ops Admin mcp isolation"
+### Community 187 - "Ops Admin mcp isolation"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 187 - "Ops Cli bridge task"
+### Community 188 - "Ops Cli bridge task"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 188 - "Ops Adaptive control memory budget"
+### Community 189 - "Ops Adaptive control memory budget"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 189 - "Ops Phase g host commands sql"
+### Community 190 - "Ops Phase g host commands sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 190 - "Ops Nightly pass rate"
+### Community 191 - "Ops Nightly pass rate"
 Cohesion: 0.83
 Nodes (3): fail(), gh_get(), main()
 
-### Community 191 - "Ops Phase h receipt update"
+### Community 192 - "Ops Phase h receipt update"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 192 - "Ops Mask policy"
+### Community 193 - "Ops Mask policy"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 193 - "Ops Zero trust runtime convergence"
+### Community 194 - "Ops Zero trust runtime convergence"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 194 - "Ops Var governance gap1"
+### Community 195 - "Ops Var governance gap1"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 195 - "Ops Phase e identity allowlist"
+### Community 196 - "Ops Phase e identity allowlist"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 196 - "Ops Phase g3 bridge heartbeats sql"
+### Community 197 - "Ops Phase g3 bridge heartbeats sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 197 - "Ops Slack image ingestion ingress"
+### Community 198 - "Ops Slack image ingestion ingress"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 198 - "Ops Repo learning loop"
+### Community 199 - "Ops Repo learning loop"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 199 - "Ops Delegated execution envelope"
+### Community 200 - "Ops Delegated execution envelope"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 200 - "Ops Phase g7 bridge heartbeat webhook sql"
+### Community 201 - "Ops Phase g7 bridge heartbeat webhook sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 201 - "Ops Sprint microvm task"
+### Community 202 - "Ops Sprint microvm task"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 202 - "Ops Scavenger real sink dev server"
+### Community 203 - "Ops Scavenger real sink dev server"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 203 - "Ops Pr branch residue purge"
+### Community 204 - "Ops Pr branch residue purge"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 204 - "Ops Lane isolation"
+### Community 205 - "Ops Lane isolation"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 205 - "Ops Preflight scavenger remote access"
+### Community 206 - "Ops Preflight scavenger remote access"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 206 - "Ops Agents governance"
+### Community 207 - "Ops Agents governance"
 Cohesion: 0.67
 Nodes (2): line_count(), read_text()
 
-### Community 207 - "Ops Critic unified gate"
+### Community 208 - "Ops Critic unified gate"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 208 - "Ops Slack hitl git mutation non goal"
+### Community 209 - "Ops Slack hitl git mutation non goal"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 209 - "Ops Clean working branch governance"
+### Community 210 - "Ops Clean working branch governance"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 210 - "Ops Slack image ingestion media fetch"
+### Community 211 - "Ops Slack image ingestion media fetch"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 211 - "Ops Phase g4 slack postback audit sql"
+### Community 212 - "Ops Phase g4 slack postback audit sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 212 - "Ops Runtime resolver activity"
+### Community 213 - "Ops Runtime resolver activity"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 213 - "Ops Run scavenger remote"
+### Community 214 - "Ops Run scavenger remote"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 214 - "Ops Slack image ingestion enablement"
+### Community 215 - "Ops Slack image ingestion enablement"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 215 - "Ops Temporal remediation signal stub"
+### Community 216 - "Ops Temporal remediation signal stub"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 216 - "Ops Bridge health watchdog"
+### Community 217 - "Ops Bridge health watchdog"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 217 - "Ops Phase f ast lint sql"
+### Community 218 - "Ops Phase f ast lint sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 218 - "Ops Survey calibration hitl review"
+### Community 219 - "Ops Survey calibration hitl review"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 219 - "Ops Phase h microvm isolation"
+### Community 220 - "Ops Phase h microvm isolation"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 220 - "Ops Prune scavenger teardown object store stub"
+### Community 221 - "Ops Prune scavenger teardown object store stub"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 221 - "Ops Scavenger real sink"
+### Community 222 - "Ops Scavenger real sink"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 222 - "Ops Phase g6 host command media sql"
+### Community 223 - "Ops Phase g6 host command media sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 223 - "Ops Adaptive control sql"
+### Community 224 - "Ops Adaptive control sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 224 - "Ops Adaptive control package"
+### Community 225 - "Ops Adaptive control package"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 225 - "Ops Run remote gpu host remediation"
+### Community 226 - "Ops Run remote gpu host remediation"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 226 - "Ops Materialize scavenger teardown bundle"
+### Community 227 - "Ops Materialize scavenger teardown bundle"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 227 - "Ops Verify delegated authorization stub"
+### Community 228 - "Ops Verify delegated authorization stub"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 228 - "Ops Supervisor max loop"
+### Community 229 - "Ops Supervisor max loop"
 Cohesion: 0.83
 Nodes (3): check(), main(), parse_max_loops()
 
-### Community 229 - "Ops Phase h host telemetry observer"
+### Community 230 - "Ops Phase h host telemetry observer"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 230 - "Ops Knowledge integrator schema"
+### Community 231 - "Ops Knowledge integrator schema"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 231 - "Ops Slack image processor adapter runtime"
+### Community 232 - "Ops Slack image processor adapter runtime"
 Cohesion: 1.0
 Nodes (3): check(), fail(), main()
 
-### Community 232 - "Ops Gpu wrapper enforcement"
+### Community 233 - "Ops Gpu wrapper enforcement"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 233 - "Ops Validate lint rule bundle"
+### Community 234 - "Ops Validate lint rule bundle"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 234 - "Ops Phase g migration verifier"
+### Community 235 - "Ops Phase g migration verifier"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 235 - "Ops Run remote gpu host remediation"
+### Community 236 - "Ops Run remote gpu host remediation"
 Cohesion: 0.5
 Nodes (0): 
 
-### Community 236 - "Ops Rotate cli bridge jwt"
+### Community 237 - "Ops Rotate cli bridge jwt"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 237 - "Ops Agent architecture manifest convergence"
+### Community 238 - "Ops Agent architecture manifest convergence"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 238 - "Ops Phase e runtime readiness"
+### Community 239 - "Ops Phase e runtime readiness"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 239 - "Ops Normalize ebpf reconciliation stub"
+### Community 240 - "Ops Normalize ebpf reconciliation stub"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 240 - "Ops Github update"
+### Community 241 - "Ops Github update"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 241 - "Ops Agent listener"
+### Community 242 - "Ops Agent listener"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 242 - "Ops Zero trust runtime convergence proof"
+### Community 243 - "Ops Zero trust runtime convergence proof"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 243 - "Ops Oracle bridge lifecycle"
+### Community 244 - "Ops Oracle bridge lifecycle"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 244 - "Ops Phase g2 slack ingress sql"
+### Community 245 - "Ops Phase g2 slack ingress sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 245 - "Ops Inference Check"
+### Community 246 - "Ops Inference Check"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 246 - "Ops Survey calibration hitl review runtime"
+### Community 247 - "Ops Survey calibration hitl review runtime"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 247 - "Ops Resolve logical resource stub"
+### Community 248 - "Ops Resolve logical resource stub"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 248 - "Ops Phase h5 host command resume link sql"
+### Community 249 - "Ops Phase h5 host command resume link sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 249 - "Ops Oracle engine"
+### Community 250 - "Ops Oracle engine"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 250 - "Ops Run slack image ingestion"
+### Community 251 - "Ops Run slack image ingestion"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 251 - "Ops Phase f scavenger sql"
+### Community 252 - "Ops Phase f scavenger sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 252 - "Ops Promote lint rule bundle"
+### Community 253 - "Ops Promote lint rule bundle"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 253 - "Ops Drain microvm run storage"
+### Community 254 - "Ops Drain microvm run storage"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 254 - "Ops Phase h hitl"
+### Community 255 - "Ops Phase h hitl"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 255 - "Ops Run remote host inference"
+### Community 256 - "Ops Run remote host inference"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 256 - "Ops Purge archived branch family"
+### Community 257 - "Ops Purge archived branch family"
 Cohesion: 0.83
 Nodes (3): is_safe_dead_candidate(), main(), run()
 
-### Community 257 - "Ops Publish riskfix pr"
+### Community 258 - "Ops Publish riskfix pr"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 258 - "Ops Merge readiness pack"
+### Community 259 - "Ops Merge readiness pack"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 259 - "Ops Clone promotion boundary"
+### Community 260 - "Ops Clone promotion boundary"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 260 - "Ops Run temporal verification activity stub"
+### Community 261 - "Ops Run temporal verification activity stub"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 261 - "Ops Slack image ingestion prereqs"
+### Community 262 - "Ops Slack image ingestion prereqs"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 262 - "Ops Prune scavenger teardown telemetry"
+### Community 263 - "Ops Prune scavenger teardown telemetry"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 263 - "Ops Zero trust runtime wiring"
+### Community 264 - "Ops Zero trust runtime wiring"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 264 - "Ops Worktree hygiene preflight"
+### Community 265 - "Ops Worktree hygiene preflight"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 265 - "Ops Agent sql"
+### Community 266 - "Ops Agent sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 266 - "Ops Reconcile required checks"
+### Community 267 - "Ops Reconcile required checks"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 267 - "Ops Start repo learning loop"
+### Community 268 - "Ops Start repo learning loop"
 Cohesion: 0.83
 Nodes (3): default_run_id(), main(), run()
 
-### Community 268 - "Ops Pr routing Check"
+### Community 269 - "Ops Pr routing Check"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 269 - "Ops Slack bot rotation task"
+### Community 270 - "Ops Slack bot rotation task"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 270 - "Ops Upload scavenger teardown bundles"
+### Community 271 - "Ops Upload scavenger teardown bundles"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 271 - "Ops Inference runtime"
+### Community 272 - "Ops Inference runtime"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 272 - "Ops Phase g Check"
+### Community 273 - "Ops Phase g Check"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 273 - "Ops Local wifi gateway"
+### Community 274 - "Ops Local wifi gateway"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 274 - "Ops Branch residue classification"
+### Community 275 - "Ops Branch residue classification"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 275 - "Ops Windows host inference tuning"
+### Community 276 - "Ops Windows host inference tuning"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 276 - "Ops Run temporal host adapter"
+### Community 277 - "Ops Run temporal host adapter"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 277 - "Ops Phase g5 thread continuity sql"
+### Community 278 - "Ops Phase g5 thread continuity sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 278 - "Ops Phase h2 slack receipt audit sql"
+### Community 279 - "Ops Phase h2 slack receipt audit sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 279 - "Ops Run hp crawl"
+### Community 280 - "Ops Run hp crawl"
 Cohesion: 0.83
 Nodes (3): load_dotenv(), main(), run_crawl()
 
-### Community 280 - "Ops Run sprint microvm"
+### Community 281 - "Ops Run sprint microvm"
 Cohesion: 0.5
 Nodes (0): 
 
-### Community 281 - "Ops Slack hitl transaction capability"
+### Community 282 - "Ops Slack hitl transaction capability"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 282 - "Ops Phase h4 host command hitl pause sql"
+### Community 283 - "Ops Phase h4 host command hitl pause sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 283 - "Ops Adaptive control projection"
+### Community 284 - "Ops Adaptive control projection"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 284 - "Ops Slack image processor adapter"
+### Community 285 - "Ops Slack image processor adapter"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 285 - "Ops Evaluate scavenger teardown alerts"
+### Community 286 - "Ops Evaluate scavenger teardown alerts"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 286 - "Ops Sprint microvm runner"
+### Community 287 - "Ops Sprint microvm runner"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 287 - "Ops Phase h3 capability delegation sql"
+### Community 288 - "Ops Phase h3 capability delegation sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 288 - "Ops Runtime envelope"
+### Community 289 - "Ops Runtime envelope"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 289 - "Ops Scavenger ingest"
+### Community 290 - "Ops Scavenger ingest"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 290 - "Ops Slack hitl capability closeout"
+### Community 291 - "Ops Slack hitl capability closeout"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 291 - "Ops Replay missing slack postbacks"
+### Community 292 - "Ops Replay missing slack postbacks"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 292 - "Ops Microsase hyperv gpu enablement"
+### Community 293 - "Ops Microsase hyperv gpu enablement"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 293 - "Ops Branch residue governance"
+### Community 294 - "Ops Branch residue governance"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 294 - "Ops Materialize lint rule bundle"
+### Community 295 - "Ops Materialize lint rule bundle"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 295 - "Ops Run remote ollama"
+### Community 296 - "Ops Run remote ollama"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 296 - "Ops Adaptive control runtime"
+### Community 297 - "Ops Adaptive control runtime"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 297 - "Ops Run remote microvm storage drain emergency"
+### Community 298 - "Ops Run remote microvm storage drain emergency"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 298 - "Ops Phase h6 cli bridge transaction insert sql"
+### Community 299 - "Ops Phase h6 cli bridge transaction insert sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 299 - "Ops Windows host inference integration"
+### Community 300 - "Ops Windows host inference integration"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 300 - "Ops Slack temporal branch residue purge"
+### Community 301 - "Ops Slack temporal branch residue purge"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 301 - "Ops Run scavenger"
+### Community 302 - "Ops Run scavenger"
 Cohesion: 0.5
 Nodes (0): 
 
-### Community 302 - "Ops Final merge hygiene"
+### Community 303 - "Ops Final merge hygiene"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 303 - "Ops Run gui visual loop"
+### Community 304 - "Ops Run gui visual loop"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 304 - "Ops Scavenger stream guard"
+### Community 305 - "Ops Scavenger stream guard"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 305 - "Ops Phase e checkpoint kill"
+### Community 306 - "Ops Phase e checkpoint kill"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 306 - "Ops Runtime reconciliation"
+### Community 307 - "Ops Runtime reconciliation"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 307 - "Ops Report var registry gaps"
+### Community 308 - "Ops Report var registry gaps"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 308 - "Ops Phase h safe apply"
+### Community 309 - "Ops Phase h safe apply"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 309 - "Ops Work branch residue purge"
+### Community 310 - "Ops Work branch residue purge"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 310 - "Ops Phase i pwsh scoped"
+### Community 311 - "Ops Phase i pwsh scoped"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 311 - "Ops Phase h sprint backlog sql"
+### Community 312 - "Ops Phase h sprint backlog sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 312 - "Ops Scavenger lock loop"
+### Community 313 - "Ops Scavenger lock loop"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 313 - "Ops Knowledge integrator runner"
+### Community 314 - "Ops Knowledge integrator runner"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 314 - "Ops Phase h hitl workflow"
+### Community 315 - "Ops Phase h hitl workflow"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 315 - "Ops Phase h1 slack hitl audit sql"
+### Community 316 - "Ops Phase h1 slack hitl audit sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 316 - "Ops Phase g cli bridge"
+### Community 317 - "Ops Phase g cli bridge"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 317 - "Ops Gpu upgrade"
+### Community 318 - "Ops Gpu upgrade"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 318 - "Ops Serve temporal host adapter stdio"
+### Community 319 - "Ops Serve temporal host adapter stdio"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 319 - "Ops Run remote microvm storage drain"
+### Community 320 - "Ops Run remote microvm storage drain"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 320 - "Ops Final sprint runbooks"
+### Community 321 - "Ops Final sprint runbooks"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 321 - "Ops Repo learning loop start"
+### Community 322 - "Ops Repo learning loop start"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 322 - "Ops Learning capture governance"
+### Community 323 - "Ops Learning capture governance"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 323 - "Ops Zero trust runtime resolver consumption"
+### Community 324 - "Ops Zero trust runtime resolver consumption"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 324 - "Ops Slack rotation task"
+### Community 325 - "Ops Slack rotation task"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 325 - "Ops Zero trust runtime resolver shape"
+### Community 326 - "Ops Zero trust runtime resolver shape"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 326 - "Ops Bridge watchdog task"
+### Community 327 - "Ops Bridge watchdog task"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 327 - "Ops Repo learning loop report"
+### Community 328 - "Ops Repo learning loop report"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 328 - "Ops Phase e migration verifier"
+### Community 329 - "Ops Phase e migration verifier"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 329 - "Ops Issue0 branch residue purge"
+### Community 330 - "Ops Issue0 branch residue purge"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 330 - "Ops Seed phase g channel routes"
+### Community 331 - "Ops Seed phase g channel routes"
 Cohesion: 0.83
 Nodes (3): _env(), _load_env_file(), main()
 
-### Community 331 - "Ops Scavenger task"
+### Community 332 - "Ops Scavenger task"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 332 - "Ops Queue cleanup governance"
+### Community 333 - "Ops Queue cleanup governance"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 333 - "Ops Phase e hitl sql"
+### Community 334 - "Ops Phase e hitl sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 334 - "Ops Send scavenger digest"
+### Community 335 - "Ops Send scavenger digest"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 335 - "Ops Lint rule bundle schema"
+### Community 336 - "Ops Lint rule bundle schema"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 336 - "Ops Execution capability mode switch"
+### Community 337 - "Ops Execution capability mode switch"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 337 - "Ops Reconcile thread continuity"
+### Community 338 - "Ops Reconcile thread continuity"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 338 - "Ops Phase g channel routes sql"
+### Community 339 - "Ops Phase g channel routes sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 339 - "Ops Run temporal host adapter worker"
+### Community 340 - "Ops Run temporal host adapter worker"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 340 - "Ops Run gui render"
+### Community 341 - "Ops Run gui render"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 341 - "Ops Microvm runtime proof"
+### Community 342 - "Ops Microvm runtime proof"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 342 - "Ops Gui repair request"
+### Community 343 - "Ops Gui repair request"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 343 - "Ops Fail fast governance"
+### Community 344 - "Ops Fail fast governance"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 344 - "Ops Phase h mrp gatekeeper"
+### Community 345 - "Ops Phase h mrp gatekeeper"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 345 - "Ops Github branch residue purge"
+### Community 346 - "Ops Github branch residue purge"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 346 - "Ops Windows host inference fallback"
+### Community 347 - "Ops Windows host inference fallback"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 347 - "Ops Phase e redaction airlock"
+### Community 348 - "Ops Phase e redaction airlock"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 348 - "Ops Temporal sdk dropin gate"
+### Community 349 - "Ops Temporal sdk dropin gate"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 349 - "Ops Supabase jwt rotation task"
+### Community 350 - "Ops Supabase jwt rotation task"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 350 - "Ops Run remote gpu runtime proof"
+### Community 351 - "Ops Run remote gpu runtime proof"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 351 - "Ops Zero trust runtime convergence proof runtime"
+### Community 352 - "Ops Zero trust runtime convergence proof runtime"
 Cohesion: 1.0
 Nodes (3): check(), fail(), main()
 
-### Community 352 - "Ops Phase h schema"
+### Community 353 - "Ops Phase h schema"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 353 - "Ops Completion slack"
+### Community 354 - "Ops Completion slack"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 354 - "Ops Phase h pending actions sql"
+### Community 355 - "Ops Phase h pending actions sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 355 - "Ops Local wifi iphone client"
+### Community 356 - "Ops Local wifi iphone client"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 356 - "Ops Adaptive control ingestion"
+### Community 357 - "Ops Adaptive control ingestion"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 357 - "Ops Gui visual pipeline"
+### Community 358 - "Ops Gui visual pipeline"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 358 - "Ops Export scavenger teardown telemetry"
+### Community 359 - "Ops Export scavenger teardown telemetry"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 359 - "Ops Phase g response url sql"
+### Community 360 - "Ops Phase g response url sql"
 Cohesion: 0.83
 Nodes (3): check(), fail(), main()
 
-### Community 360 - "Ops Reconcile slack postbacks"
+### Community 361 - "Ops Reconcile slack postbacks"
 Cohesion: 0.83
 Nodes (3): _env(), _load_env_file(), main()
 
-### Community 361 - "Clients Ios Local"
+### Community 362 - "Clients Ios Local"
 Cohesion: 0.67
 Nodes (2): App, LocalWiFiImageClientApp
 
-### Community 362 - "Runtime parity Assert"
+### Community 363 - "Runtime parity Assert"
 Cohesion: 1.0
 Nodes (2): assert_true(), main()
 
-### Community 363 - "Bootstrap episodic memory"
+### Community 364 - "Bootstrap episodic memory"
 Cohesion: 0.67
 Nodes (0): 
 
-### Community 364 - "Critic api postgres"
+### Community 365 - "Critic api postgres"
 Cohesion: 1.0
 Nodes (2): assert_true(), main()
 
-### Community 365 - "Supabase critic runtime"
+### Community 366 - "Supabase critic runtime"
 Cohesion: 1.0
 Nodes (2): assert_true(), main()
 
-### Community 366 - "Ops Hp suite Check"
+### Community 367 - "Ops Hp suite Check"
 Cohesion: 1.0
 Nodes (2): check(), main()
 
-### Community 367 - "Ops Host telemetry observer"
+### Community 368 - "Ops Host telemetry observer"
 Cohesion: 1.0
 Nodes (2): main(), sha256_text()
 
-### Community 368 - "Ops Validate learning pr body"
+### Community 369 - "Ops Validate learning pr body"
 Cohesion: 1.0
 Nodes (2): fail(), main()
 
-### Community 369 - "Ops Run phase g media"
+### Community 370 - "Ops Run phase g media"
 Cohesion: 0.67
 Nodes (0): 
 
-### Community 370 - "Ops Classify branch residue actions"
+### Community 371 - "Ops Classify branch residue actions"
 Cohesion: 1.0
 Nodes (2): classify_action(), main()
 
-### Community 371 - "Ops Run cli bridge"
+### Community 372 - "Ops Run cli bridge"
 Cohesion: 0.67
 Nodes (0): 
 
-### Community 372 - "Ops Promote lint rule bundle"
+### Community 373 - "Ops Promote lint rule bundle"
 Cohesion: 1.0
 Nodes (2): fail(), main()
 
-### Community 373 - "Ops Set tailscale bind ip"
+### Community 374 - "Ops Set tailscale bind ip"
 Cohesion: 1.0
 Nodes (2): main(), _upsert_env()
 
-### Community 374 - "Ops Capture hp training screenshots"
+### Community 375 - "Ops Capture hp training screenshots"
 Cohesion: 1.0
 Nodes (2): load_dotenv(), main()
 
-### Community 375 - "Ops Prestudy Check"
+### Community 376 - "Ops Prestudy Check"
 Cohesion: 1.0
 Nodes (2): check(), main()
 
-### Community 376 - "Ops Run local wifi gateway processor"
+### Community 377 - "Ops Run local wifi gateway processor"
 Cohesion: 1.0
 Nodes (2): fail(), main()
 
-### Community 377 - "Ops Run lint warning mode"
+### Community 378 - "Ops Run lint warning mode"
 Cohesion: 1.0
 Nodes (2): main(), parse_fixture_file()
 
-### Community 378 - "Ops Reconciliation transport"
+### Community 379 - "Ops Reconciliation transport"
 Cohesion: 1.0
 Nodes (2): check(), main()
 
-### Community 379 - "Ops Simulate survey walkthrough"
+### Community 380 - "Ops Simulate survey walkthrough"
 Cohesion: 1.0
 Nodes (2): load_dotenv(), main()
 
-### Community 380 - "Ops Validate lint rule bundle"
+### Community 381 - "Ops Validate lint rule bundle"
 Cohesion: 1.0
 Nodes (2): fail(), main()
 
-### Community 381 - "Ops Adaptive kill switch trip"
+### Community 382 - "Ops Adaptive kill switch trip"
 Cohesion: 1.0
 Nodes (2): check(), main()
 
-### Community 382 - "Ops Slack temporal handoff worker"
+### Community 383 - "Ops Slack temporal handoff worker"
 Cohesion: 1.0
 Nodes (2): check(), main()
 
-### Community 383 - "Ops Run zero trust runtime convergence proof"
+### Community 384 - "Ops Run zero trust runtime convergence proof"
 Cohesion: 1.0
 Nodes (2): main(), writeJson()
 
-### Community 384 - "Ops Verify general loop clone promotion"
+### Community 385 - "Ops Verify general loop clone promotion"
 Cohesion: 1.0
 Nodes (2): fail(), main()
 
-### Community 385 - "Ops Capture hp surveyor walkthrough"
+### Community 386 - "Ops Capture hp surveyor walkthrough"
 Cohesion: 1.0
 Nodes (2): load_dotenv(), main()
 
-### Community 386 - "Ops Audit retention check"
+### Community 387 - "Ops Audit retention check"
 Cohesion: 1.0
 Nodes (2): fail(), main()
 
-### Community 387 - "Ops Slack temporal handoff convergence"
+### Community 388 - "Ops Slack temporal handoff convergence"
 Cohesion: 1.0
 Nodes (2): check(), main()
 
-### Community 388 - "Workflows Runtime reconciliation"
+### Community 389 - "Workflows Runtime reconciliation"
 Cohesion: 0.67
 Nodes (0): 
 
-### Community 389 - "Workflows Durable adapter"
+### Community 390 - "Workflows Durable adapter"
 Cohesion: 0.67
 Nodes (0): 
 
-### Community 390 - "Custom lint rules No swallowed errors"
+### Community 391 - "Custom lint rules No swallowed errors"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 391 - "Ops Install slack rotation task"
+### Community 392 - "Ops Install slack rotation task"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 392 - "Ops Append learning record"
+### Community 393 - "Ops Append learning record"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 393 - "Ops Run bridge watchdog"
+### Community 394 - "Ops Run bridge watchdog"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 394 - "Ops Set execution capability mode"
+### Community 395 - "Ops Set execution capability mode"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 395 - "Ops Pinecroft findings"
+### Community 396 - "Ops Pinecroft findings"
 Cohesion: 1.0
 Nodes (1): Pinecroft E2E survey test data — 27 Phase 1 findings + 16 TJC RFIs + facility me
 
-### Community 396 - "Ops Install slack bot rotation task"
+### Community 397 - "Ops Install slack bot rotation task"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 397 - "Workflows Runtime resolver activity"
+### Community 398 - "Workflows Runtime resolver activity"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 398 - "Orchestrator Native orchestrator Base"
+### Community 399 - "Orchestrator Native orchestrator Base"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 399 - "Custom lint rules No swallowed errors"
+### Community 400 - "Custom lint rules No swallowed errors"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 400 - "Slack webhook Supabase"
+### Community 401 - "Slack webhook Supabase"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 401 - "Slack webhook Slack signature Supabase"
+### Community 402 - "Slack webhook Slack signature Supabase"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 402 - "Control plane Execution capability"
+### Community 403 - "Control plane Execution capability"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 403 - "Ops Install bridge watchdog task"
+### Community 404 - "Ops Install bridge watchdog task"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 404 - "Ops Install scavenger task"
+### Community 405 - "Ops Install scavenger task"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 405 - "Ops Install supabase jwt rotation task"
+### Community 406 - "Ops Install supabase jwt rotation task"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 406 - "Ops Install sprint microvm task"
+### Community 407 - "Ops Install sprint microvm task"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 407 - "Ops Install cli bridge task"
+### Community 408 - "Ops Install cli bridge task"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 408 - "Ops Scoped Status"
+### Community 409 - "Ops Scoped Status"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 409 - "Ops Scoped Run"
+### Community 410 - "Ops Scoped Run"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 410 - "Ops Scoped Restart"
+### Community 411 - "Ops Scoped Restart"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 411 - "Ops Scoped Disk"
+### Community 412 - "Ops Scoped Disk"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 412 - "Ops Scoped Gpu"
+### Community 413 - "Ops Scoped Gpu"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 413 - "Types Adaptation artifact"
+### Community 414 - "Types Adaptation artifact"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 414 - "Workflows Resolver gate"
+### Community 415 - "Workflows Resolver gate"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 415 - "Workflows Runtime envelope"
+### Community 416 - "Workflows Runtime envelope"
 Cohesion: 1.0
 Nodes (0): 
 
 ## Knowledge Gaps
-- **165 isolated node(s):** `invalidURL`, `invalidPort`, `invalidResponse`, `requestNeverCompleted`, `Configuration` (+160 more)
+- **166 isolated node(s):** `invalidURL`, `invalidPort`, `invalidResponse`, `requestNeverCompleted`, `Configuration` (+161 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **Thin community `Custom lint rules No swallowed errors`** (2 nodes): `no-swallowed-errors.ts`, `noSwallowedErrors()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -1768,4 +1772,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 16 inferred relationships involving `json()` (e.g. with `mcpReadCircuitState()` and `proxyJson()`) actually correct?**
   _`json()` has 16 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `invalidURL`, `invalidPort`, `invalidResponse` to the rest of the system?**
-  _165 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _166 weakly-connected nodes found - possible documentation gaps or missing edges._

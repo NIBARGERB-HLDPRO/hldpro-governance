@@ -1,0 +1,53 @@
+name: check-windows-ollama-audit-schema
+
+on:
+  pull_request:
+    paths:
+      - 'raw/remote-windows-audit/**'
+      - 'scripts/windows-ollama/audit.py'
+      - 'scripts/windows-ollama/verify_audit.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-windows-ollama-audit-schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      SOM_WINDOWS_AUDIT_HMAC_KEY: ${{ secrets.SOM_WINDOWS_AUDIT_HMAC_KEY }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify Windows-Ollama audit schema
+        run: |
+          set -euo pipefail
+
+          if [ -z "${SOM_WINDOWS_AUDIT_HMAC_KEY:-}" ]; then
+            echo "::error::SOM_WINDOWS_AUDIT_HMAC_KEY secret is required for Windows-Ollama audit schema verification"
+            exit 1
+          fi
+
+          # Check if audit directory exists; if not, emit notice and pass
+          if [ ! -d "raw/remote-windows-audit" ]; then
+            echo "::notice::no audit directory yet — Sprint 5 activation will populate"
+            exit 0
+          fi
+
+          # Run the verify_audit.py validator
+          python3 scripts/windows-ollama/verify_audit.py raw/remote-windows-audit/
+
+          if [ $? -eq 0 ]; then
+            echo "::notice::Windows-Ollama audit schema valid"
+          else
+            echo "::error::Windows-Ollama audit schema validation failed"
+            exit 1
+          fi

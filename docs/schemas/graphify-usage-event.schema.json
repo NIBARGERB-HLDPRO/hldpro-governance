@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Graphify Usage Event",
+  "type": "object",
+  "required": [
+    "timestamp",
+    "repo",
+    "task_id",
+    "task_type",
+    "strategy",
+    "artifacts",
+    "estimated_tokens"
+  ],
+  "properties": {
+    "timestamp": { "type": "string" },
+    "repo": { "type": "string" },
+    "task_id": { "type": "string" },
+    "experiment_id": { "type": "string" },
+    "session_id": { "type": "string" },
+    "task_type": { "type": "string" },
+    "strategy": {
+      "type": "string",
+      "enum": ["graphify", "repo-search", "hybrid"]
+    },
+    "prompt": { "type": "string" },
+    "query_terms": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "top_candidates": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "notes": { "type": "string" },
+    "estimated_tokens": { "type": "integer", "minimum": 0 }
+  },
+  "additionalProperties": false
+}

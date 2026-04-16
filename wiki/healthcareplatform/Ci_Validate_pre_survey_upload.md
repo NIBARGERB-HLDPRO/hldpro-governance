@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **validate-pre-survey-upload-contract.js** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-pre-survey-upload-contract.js`
-- **ensureStringArray()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-pre-survey-upload-contract.js`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-pre-survey-upload-contract.js`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-pre-survey-upload-contract.js`
+- **validate-pre-survey-upload-contract.js** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-pre-survey-upload-contract.js`
+- **ensureStringArray()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-pre-survey-upload-contract.js`
+- **fail()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-pre-survey-upload-contract.js`
+- **main()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-pre-survey-upload-contract.js`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-pre-survey-upload-contract.js`
+- `healthcareplatform/backend/scripts/ci/validate-pre-survey-upload-contract.js`
 
 ## Audit Trail
 

@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **setup-plan.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-plan.ts`
-- **createDefaultSetupPlan()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-plan.ts`
+- **setup-plan.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-plan.ts`
+- **createDefaultSetupPlan()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-plan.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-plan.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/setup-plan.ts`
 
 ## Audit Trail
 

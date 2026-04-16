@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **memory-injector.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/memory-injector.ts`
-- **fetchContext()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/memory-injector.ts`
+- **memory-injector.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/memory-injector.ts`
+- **fetchContext()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/memory-injector.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/memory-injector.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/memory-injector.ts`
 
 ## Audit Trail
 

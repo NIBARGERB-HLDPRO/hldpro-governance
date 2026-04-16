@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **vapi-owner-tools.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
-- **getOwnerBriefingTools()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
-- **getOwnerSystemPrompt()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
+- **vapi-owner-tools.ts** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
+- **getOwnerBriefingTools()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
+- **getOwnerSystemPrompt()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
 
 ## Audit Trail
 

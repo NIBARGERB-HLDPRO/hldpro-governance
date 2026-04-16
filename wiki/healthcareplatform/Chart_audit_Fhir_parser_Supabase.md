@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **fhir-parser.test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/fhir-parser.test.ts`
+- **fhir-parser.test.ts** (0 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/fhir-parser.test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/fhir-parser.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/chart-audit/fhir-parser.test.ts`
 
 ## Audit Trail
 

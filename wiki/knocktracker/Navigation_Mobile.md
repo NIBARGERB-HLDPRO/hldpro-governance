@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- **navigationConfig.ts** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/navigationConfig.ts`
-- **MobileDrawer.tsx** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/MobileDrawer.tsx`
-- **Sidebar.tsx** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/Sidebar.tsx`
-- **handleNavigation()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/MobileDrawer.tsx`
-- **toggleGroup()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/MobileDrawer.tsx`
-- **handleNavigation()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/Sidebar.tsx`
-- **toggleGroup()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/Sidebar.tsx`
-- **getActiveNavItem()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/navigationConfig.ts`
-- **getExpandedGroups()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/navigationConfig.ts`
-- **shouldExpandGroup()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/navigationConfig.ts`
+- **navigationConfig.ts** (5 connections) — `knocktracker/lib/navigationConfig.ts`
+- **MobileDrawer.tsx** (3 connections) — `knocktracker/components/MobileDrawer.tsx`
+- **Sidebar.tsx** (3 connections) — `knocktracker/components/Sidebar.tsx`
+- **handleNavigation()** (2 connections) — `knocktracker/components/MobileDrawer.tsx`
+- **toggleGroup()** (2 connections) — `knocktracker/components/MobileDrawer.tsx`
+- **handleNavigation()** (2 connections) — `knocktracker/components/Sidebar.tsx`
+- **toggleGroup()** (2 connections) — `knocktracker/components/Sidebar.tsx`
+- **getActiveNavItem()** (1 connections) — `knocktracker/lib/navigationConfig.ts`
+- **getExpandedGroups()** (1 connections) — `knocktracker/lib/navigationConfig.ts`
+- **shouldExpandGroup()** (1 connections) — `knocktracker/lib/navigationConfig.ts`
 
 ## Relationships
 
@@ -21,9 +21,9 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/MobileDrawer.tsx`
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/components/Sidebar.tsx`
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/kt-graphify-phase6/lib/navigationConfig.ts`
+- `knocktracker/components/MobileDrawer.tsx`
+- `knocktracker/components/Sidebar.tsx`
+- `knocktracker/lib/navigationConfig.ts`
 
 ## Audit Trail
 

@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- **smoke-test-simple.js** (9 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/smoke-test-simple.js`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/smoke-test-simple.js`
-- **login()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/smoke-test-simple.js`
-- **runTest()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/smoke-test-simple.js`
-- **test1_createVisitAndGetChecklist()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/smoke-test-simple.js`
-- **test2_upsertValidResponse()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/smoke-test-simple.js`
-- **test3_upsertInvalidResponse()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/smoke-test-simple.js`
-- **test4_evidenceInitOversized()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/smoke-test-simple.js`
-- **test5_evidenceUploadAndFinalizeOversized()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/smoke-test-simple.js`
-- **test6_writeToReleasedVisit()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/smoke-test-simple.js`
+- **smoke-test-simple.js** (9 connections) — `healthcareplatform/backend/smoke-test-simple.js`
+- **main()** (3 connections) — `healthcareplatform/backend/smoke-test-simple.js`
+- **login()** (2 connections) — `healthcareplatform/backend/smoke-test-simple.js`
+- **runTest()** (2 connections) — `healthcareplatform/backend/smoke-test-simple.js`
+- **test1_createVisitAndGetChecklist()** (1 connections) — `healthcareplatform/backend/smoke-test-simple.js`
+- **test2_upsertValidResponse()** (1 connections) — `healthcareplatform/backend/smoke-test-simple.js`
+- **test3_upsertInvalidResponse()** (1 connections) — `healthcareplatform/backend/smoke-test-simple.js`
+- **test4_evidenceInitOversized()** (1 connections) — `healthcareplatform/backend/smoke-test-simple.js`
+- **test5_evidenceUploadAndFinalizeOversized()** (1 connections) — `healthcareplatform/backend/smoke-test-simple.js`
+- **test6_writeToReleasedVisit()** (1 connections) — `healthcareplatform/backend/smoke-test-simple.js`
 
 ## Relationships
 
@@ -21,7 +21,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/smoke-test-simple.js`
+- `healthcareplatform/backend/smoke-test-simple.js`
 
 ## Audit Trail
 

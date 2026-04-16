@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **finalize.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/finalize.ts`
-- **finalizeDocumentCore()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/finalize.ts`
-- **getExistingFinalizeState()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/finalize.ts`
+- **finalize.ts** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/finalize.ts`
+- **finalizeDocumentCore()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/finalize.ts`
+- **getExistingFinalizeState()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/finalize.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/finalize.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/finalize.ts`
 
 ## Audit Trail
 

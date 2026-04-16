@@ -1,0 +1,91 @@
+{
+  "session_id": "session-20260409-issue-81-progress-github-staleness",
+  "issue_number": 81,
+  "objective": "Add a fleet-wide staleness gate so governed repos cannot let docs/PROGRESS.md backlog sections drift from backlog-labeled GitHub Issues, and surface that drift in the weekly overlord sweep.",
+  "tier": 2,
+  "scope_boundary": [
+    "Add a shared validator in governance that compares active PROGRESS backlog sections with backlog-labeled GitHub issues for a target repo.",
+    "Wire that validator into the reusable governance check for governed product repos.",
+    "Surface the same drift status in the weekly overlord sweep report."
+  ],
+  "out_of_scope": [
+    "Auto-editing product repo PROGRESS.md files from governance automation.",
+    "Changing the backlog model away from GitHub issues plus PROGRESS mirror sections.",
+    "Broad project-management workflow redesign outside the staleness gate."
+  ],
+  "research_summary": "Issue #81 identified a real fleet drift problem: product repos can close or open backlog-labeled GitHub issues without the active backlog sections in docs/PROGRESS.md staying in sync. Existing governance checks only validate structure and co-staging, not issue parity. The right fix is a shared issue-staleness validator that can run in repo CI and in the weekly sweep, using GitHub as the canonical issue source and active PROGRESS sections as the local mirror surface.",
+  "research_artifacts": [
+    "Issue #81",
+    ".github/workflows/governance-check.yml",
+    ".github/workflows/overlord-sweep.yml",
+    "scripts/overlord/check_overlord_backlog_github_alignment.py",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/PROGRESS.md"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Implement and validate the PROGRESS ↔ GitHub issue staleness gate.",
+      "tasks": [
+        "Create a shared validator that checks open backlog-labeled GitHub issues are present in active PROGRESS backlog sections and closed backlog-labeled issues are absent from those active sections.",
+        "Wire the validator into the reusable governance check for governed product repos.",
+        "Add the same validator to the weekly sweep report so fleet backlog drift is visible in the operator report."
+      ],
+      "acceptance_criteria": [
+        "The validator fails against the known AIS drift evidence from issue #81.",
+        "Reusable governance CI runs the new staleness gate for governed product repos.",
+        "Weekly sweep report includes per-repo PROGRESS ↔ GitHub backlog drift status."
+      ],
+      "file_paths": [
+        "scripts/overlord/check_progress_github_issue_staleness.py",
+        ".github/workflows/governance-check.yml",
+        ".github/workflows/overlord-sweep.yml",
+        "tests/test_progress_github_issue_staleness.py",
+        "README.md",
+        "STANDARDS.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/FAIL_FAST_LOG.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "governance contract reviewer",
+      "role": "Scope reviewer",
+      "focus": "Keep the fix on staleness detection and reporting, not backlog model redesign.",
+      "status": "accepted",
+      "summary": "The approved slice uses GitHub issues as canonical and PROGRESS as the governed mirror. The fix is a parity gate plus sweep visibility, not a new planning system.",
+      "evidence": [
+        "Issue #81",
+        "README.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-requested-for-governance-checker-slice",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "The staleness-gate slice is deterministic governance tooling and does not require alternate-model review.",
+    "evidence": [
+      "Issue #81 scope"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement the shared PROGRESS↔GitHub issue validator, wire it into reusable governance CI and the weekly sweep, and validate it against the known AIS drift.",
+    "next_execution_step": "Create the validator and run it against the live AIS backlog drift before wiring the reusable workflow and sweep report.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If review surfaces more required work, either finish it in this slice or record it as an issue-backed follow-up before closing.",
+    "Do not expand this issue into auto-remediation of product repo PROGRESS files; detection/reporting only.",
+    "If repo-specific exceptions are needed, document them explicitly instead of silently exempting repos from the gate."
+  ],
+  "approved": true,
+  "approved_by": [
+    "session-agent-codex"
+  ],
+  "approved_at": "2026-04-09T14:15:00-05:00"
+}

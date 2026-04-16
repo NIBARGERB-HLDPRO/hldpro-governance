@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **photo-upload-e2e.spec.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/photo-upload-e2e.spec.ts`
-- **createTestJpeg()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/photo-upload-e2e.spec.ts`
-- **login()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/photo-upload-e2e.spec.ts`
+- **photo-upload-e2e.spec.ts** (2 connections) — `healthcareplatform/frontend/e2e/photo-upload-e2e.spec.ts`
+- **createTestJpeg()** (1 connections) — `healthcareplatform/frontend/e2e/photo-upload-e2e.spec.ts`
+- **login()** (1 connections) — `healthcareplatform/frontend/e2e/photo-upload-e2e.spec.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/photo-upload-e2e.spec.ts`
+- `healthcareplatform/frontend/e2e/photo-upload-e2e.spec.ts`
 
 ## Audit Trail
 

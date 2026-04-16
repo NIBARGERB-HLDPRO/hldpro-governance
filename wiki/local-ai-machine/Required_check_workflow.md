@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **test_required_check_workflow_contract.py** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_required_check_workflow_contract.py`
-- **check()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_required_check_workflow_contract.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_required_check_workflow_contract.py`
-- **read()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_required_check_workflow_contract.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_required_check_workflow_contract.py`
+- **test_required_check_workflow_contract.py** (4 connections) — `local-ai-machine/scripts/test_required_check_workflow_contract.py`
+- **check()** (4 connections) — `local-ai-machine/scripts/test_required_check_workflow_contract.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/test_required_check_workflow_contract.py`
+- **read()** (3 connections) — `local-ai-machine/scripts/test_required_check_workflow_contract.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/test_required_check_workflow_contract.py`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/test_required_check_workflow_contract.py`
+- `local-ai-machine/scripts/test_required_check_workflow_contract.py`
 
 ## Audit Trail
 

@@ -2,6 +2,10 @@ name: Governance Check (Reusable)
 
 on:
   workflow_call:
+    inputs:
+      base_sha:
+        required: false
+        type: string
     secrets:
       SUPABASE_ANON_KEY:
         required: false
@@ -11,6 +15,10 @@ on:
 jobs:
   governance-check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
     steps:
       - uses: actions/checkout@v6
         with:
@@ -111,6 +119,15 @@ jobs:
         run: |
           python3 scripts/overlord/check_overlord_backlog_github_alignment.py
 
+      - name: Check PROGRESS.md ↔ GitHub issue staleness
+        if: github.repository != 'NIBARGERB-HLDPRO/hldpro-governance'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 .governance/scripts/overlord/check_progress_github_issue_staleness.py \
+            --repo "${GITHUB_REPOSITORY}" \
+            --progress-path docs/PROGRESS.md
+
       - name: Validate structured agent cycle plans
         run: |
           set -euo pipefail
@@ -129,15 +146,30 @@ jobs:
             --require-if-issue-branch \
             --branch-name "$BRANCH_NAME"
 
+      - name: Resolve diff base
+        id: diff_base
+        run: |
+          set -euo pipefail
+
+          BASE_SHA="${{ inputs.base_sha }}"
+
+          if [ -z "$BASE_SHA" ]; then
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              BASE_SHA="${{ github.event.pull_request.base.sha }}"
+            elif [ -n "${{ github.event.before }}" ] && [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+              BASE_SHA="${{ github.event.before }}"
+            else
+              BASE_SHA="$(git rev-parse HEAD~1)"
+            fi
+          fi
+
+          echo "base_sha=$BASE_SHA" >> "$GITHUB_OUTPUT"
+
       # ── Categorize changed files ──
       - name: Get changed files
         id: changed
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            BASE="${{ github.event.pull_request.base.sha }}"
-          else
-            BASE="${{ github.event.before }}"
-          fi
+          BASE="${{ steps.diff_base.outputs.base_sha }}"
 
           CHANGED=$(git diff --name-only "$BASE" HEAD 2>/dev/null || git diff --name-only HEAD~1 HEAD)
           {
@@ -262,11 +294,7 @@ jobs:
             fi
           fi
 
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            RANGE="${{ github.event.pull_request.base.sha }}..HEAD"
-          else
-            RANGE="${{ github.event.before }}..HEAD"
-          fi
+          RANGE="${{ steps.diff_base.outputs.base_sha }}..HEAD"
           if git log --oneline "$RANGE" 2>/dev/null | grep -qiE 'fix|bug|patch|hotfix'; then
             IS_BUG_FIX="true"
           fi
@@ -325,11 +353,7 @@ jobs:
       # ── 8. PENDING_ placeholder scan ──
       - name: Check for PENDING_ placeholders
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            BASE="${{ github.event.pull_request.base.sha }}"
-          else
-            BASE="${{ github.event.before }}"
-          fi
+          BASE="${{ steps.diff_base.outputs.base_sha }}"
 
           PENDING_FILES=""
           for f in $(git diff --name-only "$BASE" HEAD | grep -E '\.(html|ts|tsx|js|json)$' || true); do
@@ -378,11 +402,7 @@ jobs:
       - name: Check FAIL_FAST_LOG.md content quality
         if: steps.changed.outputs.has_failfast == 'true'
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            BASE="${{ github.event.pull_request.base.sha }}"
-          else
-            BASE="${{ github.event.before }}"
-          fi
+          BASE="${{ steps.diff_base.outputs.base_sha }}"
           DIFF=$(git diff "$BASE" HEAD -- docs/FAIL_FAST_LOG.md)
           EMPTY_COLS=$(echo "$DIFF" | grep '^+|' | grep -E '\| \||\|  \|' | grep -v '^+|---' | head -3)
           if [ -n "$EMPTY_COLS" ]; then
@@ -396,11 +416,7 @@ jobs:
       - name: Check PROGRESS.md row count
         if: steps.changed.outputs.has_progress == 'true'
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            BASE="${{ github.event.pull_request.base.sha }}"
-          else
-            BASE="${{ github.event.before }}"
-          fi
+          BASE="${{ steps.diff_base.outputs.base_sha }}"
           OLD_COUNT=$(git show "${BASE}":docs/PROGRESS.md 2>/dev/null | grep -c '^|' || echo "0")
           NEW_COUNT=$(grep -c '^|' docs/PROGRESS.md || echo "0")
           if [ "$NEW_COUNT" -lt "$OLD_COUNT" ]; then
@@ -409,6 +425,194 @@ jobs:
           else
             echo "✓ PROGRESS.md row count: $OLD_COUNT → $NEW_COUNT"
           fi
+
+
+      # -- SoM / Society-of-Minds governance checks --
+      - name: Install Python deps for SoM checks
+        run: python3 -m pip install --quiet pyyaml
+
+      - name: Validate CLAUDE.md SoM pointer
+        run: |
+          set -euo pipefail
+          if [ ! -f CLAUDE.md ]; then
+            echo "::error file=CLAUDE.md,line=1::[check-claude-md-pointer] CLAUDE.md not found"
+            exit 1
+          fi
+          if grep -Fq "STANDARDS.md" CLAUDE.md && grep -Fq "Society of Minds" CLAUDE.md; then
+            exit 0
+          fi
+          if grep -Eq "NIBARGERB-HLDPRO/hldpro-governance/blob/main/STANDARDS\.md" CLAUDE.md; then
+            exit 0
+          fi
+          echo "::error file=CLAUDE.md,line=1::[check-claude-md-pointer] CLAUDE.md must reference STANDARDS.md Society of Minds section or link to NIBARGERB-HLDPRO/hldpro-governance/blob/main/STANDARDS.md"
+          exit 1
+
+      - name: Validate agent model pins
+        run: |
+          set -euo pipefail
+          GOVSCRIPTS=".governance/.github/scripts"
+          [ -d "$GOVSCRIPTS" ] || GOVSCRIPTS=".github/scripts"
+          python3 "$GOVSCRIPTS/check_agent_model_pins.py"
+
+      - name: Validate codex exec model pinning
+        run: |
+          set -euo pipefail
+          GOVSCRIPTS=".governance/.github/scripts"
+          [ -d "$GOVSCRIPTS" ] || GOVSCRIPTS=".github/scripts"
+          python3 "$GOVSCRIPTS/check_codex_model_pins.py"
+
+      - name: Validate model fallback log schema
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          GOVSCRIPTS=".governance/.github/scripts"
+          [ -d "$GOVSCRIPTS" ] || GOVSCRIPTS=".github/scripts"
+          python3 "$GOVSCRIPTS/check_fallback_log_schema.py"
+
+      - name: Validate cross-review model separation
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          GOVSCRIPTS=".governance/.github/scripts"
+          [ -d "$GOVSCRIPTS" ] || GOVSCRIPTS=".github/scripts"
+          python3 "$GOVSCRIPTS/check_no_self_approval.py"
+
+      - name: Validate PII routing and audit evidence
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          GOVSCRIPTS=".governance/.github/scripts"
+          [ -d "$GOVSCRIPTS" ] || GOVSCRIPTS=".github/scripts"
+          python3 "$GOVSCRIPTS/check_pii_routing.py"
+
+      - name: Validate LAM reviewer/worker family diversity
+        run: |
+          set -euo pipefail
+          GOVSCRIPTS=".governance/.github/scripts"
+          [ -d "$GOVSCRIPTS" ] || GOVSCRIPTS=".github/scripts"
+          python3 "$GOVSCRIPTS/check_lam_family_diversity.py"
+
+      - name: Validate LAM health endpoint when required
+        env:
+          LAM_PROBE_URL: "http://host.docker.internal:8080/health"
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          GOVSCRIPTS=".governance/.github/scripts"
+          [ -d "$GOVSCRIPTS" ] || GOVSCRIPTS=".github/scripts"
+
+          if [ -z "${BASE_SHA}" ] || [ -z "${HEAD_SHA}" ]; then
+            echo "::warning::[check-lam-availability] Missing pull request context; skipping."
+            exit 0
+          fi
+
+          DIFF_FILES="$(git diff --name-only "${BASE_SHA}...${HEAD_SHA}")"
+          if [ -z "${DIFF_FILES}" ]; then
+            echo "No diff files found."
+            exit 0
+          fi
+
+          PII_LABEL=false
+          SAFE_LABEL=false
+          LABELS="$(python3 "$GOVSCRIPTS/check_lam_availability_labels.py")"
+
+          case " $LABELS " in
+            *" pii "*) PII_LABEL=true ;;
+            *" pii-safe "*) SAFE_LABEL=true ;;
+          esac
+
+          TOUCH=false
+          printf '%s\n' "${DIFF_FILES}" | grep -Eq '^scripts/lam/' && TOUCH=true || true
+          if [ "${PII_LABEL}" = true ]; then
+            TOUCH=true
+          fi
+
+          if [ "${TOUCH}" != true ]; then
+            echo "[check-lam-availability] LAM not required for this PR."
+            exit 0
+          fi
+
+          if [ "${SAFE_LABEL}" = true ]; then
+            echo "[check-lam-availability] pii-safe label present; skipping hard fail on non-200."
+            exit 0
+          fi
+
+          STATUS="$(curl -sS -o /tmp/lam-health.txt -w "%{http_code}" "${LAM_PROBE_URL}" || true)"
+          if [ "${STATUS}" != "200" ]; then
+            echo "::error file=.github/workflows/governance-check.yml::[check-lam-availability] LAM probe failed with HTTP ${STATUS} at ${LAM_PROBE_URL}"
+            exit 1
+          fi
+          echo "[check-lam-availability] LAM probe OK (HTTP 200)."
+
+      - name: Require cross-review artifact
+        run: |
+          set -euo pipefail
+          GOVSCRIPTS=".governance/.github/scripts"
+          [ -d "$GOVSCRIPTS" ] || GOVSCRIPTS=".github/scripts"
+          GOVROOT=".governance"
+          [ -d "$GOVROOT" ] || GOVROOT="."
+
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+
+          if [ -z "${BASE_SHA}" ] || [ -z "${HEAD_SHA}" ]; then
+            echo "::warning::[require-cross-review] Missing pull request context; skipping."
+            exit 0
+          fi
+
+          DIFF_FILES="$(git diff --name-only "${BASE_SHA}...${HEAD_SHA}")"
+          if [ -z "${DIFF_FILES}" ]; then
+            echo "No diff files found."
+            exit 0
+          fi
+
+          TOUCH=0
+          printf '%s\n' "${DIFF_FILES}" | grep -Eq '^STANDARDS\.md$|^docs/.*/[^/]*charter[^/]*\.md$|^docs/[^/]*charter[^/]*\.md$' && TOUCH=1 || true
+          LABELS="$(python3 "$GOVSCRIPTS/get_pr_labels.py")"
+
+          case " $LABELS " in
+            *" architecture "*|*" standards "*)
+              TOUCH=1
+              ;;
+          esac
+
+          if [ "${TOUCH}" -ne 1 ]; then
+            echo "Cross-review trigger not hit. Skipping."
+            exit 0
+          fi
+
+          RAW_CROSS_REVIEW="$(printf '%s\n' "${DIFF_FILES}" | grep -E '^raw/cross-review/.*\.md$' | sort -u || true)"
+          if [ -z "${RAW_CROSS_REVIEW}" ]; then
+            echo "::error file=raw/cross-review/::[require-cross-review] Missing raw/cross-review/*.md file in PR diff."
+            exit 1
+          fi
+
+          CROSS_FILE="$(printf '%s\n' "${RAW_CROSS_REVIEW}" | head -n 1)"
+          BOOTSTRAP_FILE="raw/cross-review/2026-04-14-society-of-minds-charter.md"
+          APPLY_EXCEPTION=false
+
+          if [ "${CROSS_FILE}" = "${BOOTSTRAP_FILE}" ]; then
+            if [ -f "docs/exception-register.md" ]; then
+              EXCEPTION_ACTIVE="$(python3 "$GOVSCRIPTS/check_som_exception.py")"
+              if [ "${EXCEPTION_ACTIVE}" = "active" ]; then
+                APPLY_EXCEPTION=true
+              fi
+            fi
+          fi
+
+          if [ "${APPLY_EXCEPTION}" = "true" ]; then
+            echo "::warning file=${BOOTSTRAP_FILE}::[require-cross-review] SOM-BOOTSTRAP-001 active; skipping REJECTED-blocks-merge check."
+            exit 0
+          fi
+
+          bash "$GOVROOT/scripts/cross-review/require-dual-signature.sh" "${CROSS_FILE}"
 
       # ── Summary ──
       - name: Governance summary

@@ -1,11 +1,12 @@
 {
-  "source": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+  "repo_slug": "ai-integration-services",
+  "source": "ai-integration-services",
   "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/graphify-out/ai-integration-services",
   "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/wiki/ai-integration-services",
-  "nodes": 1883,
-  "edges": 2533,
-  "communities": 111,
-  "articles": 121,
+  "nodes": 1902,
+  "edges": 2562,
+  "communities": 119,
+  "articles": 129,
   "html_status": "skipped",
-  "code_files": 658
+  "code_files": 661
 }

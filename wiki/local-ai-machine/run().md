@@ -1,6 +1,6 @@
 # run()
 
-> God node · 21 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_phase_h_hitl_e2e.py`
+> God node · 21 connections · `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 
 ## Connections by Relation
 

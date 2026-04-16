@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **check-asc-evaluator-import-smoke-contract.js** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
-- **readUtf8()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
+- **check-asc-evaluator-import-smoke-contract.js** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
+- **fail()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
+- **main()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
+- **readUtf8()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
+- `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
 
 ## Audit Trail
 

@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **seed-finance-demo.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-finance-demo.ts`
-- **query()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-finance-demo.ts`
-- **upsert()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-finance-demo.ts`
+- **seed-finance-demo.ts** (2 connections) — `ai-integration-services/scripts/seed-finance-demo.ts`
+- **query()** (1 connections) — `ai-integration-services/scripts/seed-finance-demo.ts`
+- **upsert()** (1 connections) — `ai-integration-services/scripts/seed-finance-demo.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/scripts/seed-finance-demo.ts`
+- `ai-integration-services/scripts/seed-finance-demo.ts`
 
 ## Audit Trail
 

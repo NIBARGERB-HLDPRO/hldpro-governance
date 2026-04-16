@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **export-service.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/export-service.test.ts`
-- **assert()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/export-service.test.ts`
+- **export-service.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/export-service.test.ts`
+- **assert()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/export-service.test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/export-service.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/export-service.test.ts`
 
 ## Audit Trail
 

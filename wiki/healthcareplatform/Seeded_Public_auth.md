@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **staging-public-auth.contract.spec.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/seeded/staging-public-auth.contract.spec.ts`
+- **staging-public-auth.contract.spec.ts** (0 connections) — `healthcareplatform/frontend/e2e/seeded/staging-public-auth.contract.spec.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/seeded/staging-public-auth.contract.spec.ts`
+- `healthcareplatform/frontend/e2e/seeded/staging-public-auth.contract.spec.ts`
 
 ## Audit Trail
 

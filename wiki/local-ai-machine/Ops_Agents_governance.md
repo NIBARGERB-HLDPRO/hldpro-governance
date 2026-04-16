@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **test_agents_governance_contract.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_agents_governance_contract.py`
-- **line_count()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_agents_governance_contract.py`
-- **read_text()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_agents_governance_contract.py`
-- **check()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_agents_governance_contract.py`
+- **test_agents_governance_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_agents_governance_contract.py`
+- **line_count()** (2 connections) — `local-ai-machine/scripts/ops/test_agents_governance_contract.py`
+- **read_text()** (2 connections) — `local-ai-machine/scripts/ops/test_agents_governance_contract.py`
+- **check()** (1 connections) — `local-ai-machine/scripts/ops/test_agents_governance_contract.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_agents_governance_contract.py`
+- `local-ai-machine/scripts/ops/test_agents_governance_contract.py`
 
 ## Audit Trail
 

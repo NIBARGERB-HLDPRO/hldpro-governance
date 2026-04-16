@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **oracle_engine.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/oracle_engine.ts`
-- **handleOracleRequest()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/oracle_engine.ts`
-- **sanitizeUntrustedLog()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/oracle_engine.ts`
-- **validateRequest()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/oracle_engine.ts`
+- **oracle_engine.ts** (3 connections) — `local-ai-machine/scripts/control_plane/oracle_engine.ts`
+- **handleOracleRequest()** (3 connections) — `local-ai-machine/scripts/control_plane/oracle_engine.ts`
+- **sanitizeUntrustedLog()** (2 connections) — `local-ai-machine/scripts/control_plane/oracle_engine.ts`
+- **validateRequest()** (2 connections) — `local-ai-machine/scripts/control_plane/oracle_engine.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/control_plane/oracle_engine.ts`
+- `local-ai-machine/scripts/control_plane/oracle_engine.ts`
 
 ## Audit Trail
 

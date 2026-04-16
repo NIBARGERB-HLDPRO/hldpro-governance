@@ -4,24 +4,24 @@
 
 ## Key Concepts
 
-- **validate-subagent-evidence.js** (17 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **main()** (15 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **fail()** (11 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **buildDecisionHelpers()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **parseJsonFile()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **validateMatrixAndDrift()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **validateMergeVerdictIfNeeded()** (4 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **computeRequiredAgents()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **ensureTriggerKeysDefined()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **findRepoRoot()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **getBackendRoot()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **normalizePathForChecks()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **runDeterministicDiff()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **selectedHasAgent()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **detectTriggers()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **normalizeString()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **parseArgs()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
-- **parseDiffNameStatus()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **validate-subagent-evidence.js** (17 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **main()** (15 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **fail()** (11 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **buildDecisionHelpers()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **parseJsonFile()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **validateMatrixAndDrift()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **validateMergeVerdictIfNeeded()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **computeRequiredAgents()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **ensureTriggerKeysDefined()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **findRepoRoot()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **getBackendRoot()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **normalizePathForChecks()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **runDeterministicDiff()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **selectedHasAgent()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **detectTriggers()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **normalizeString()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **parseArgs()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
+- **parseDiffNameStatus()** (2 connections) — `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
 
 ## Relationships
 
@@ -29,7 +29,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/scripts/ci/validate-subagent-evidence.js`
+- `healthcareplatform/backend/scripts/ci/validate-subagent-evidence.js`
 
 ## Audit Trail
 

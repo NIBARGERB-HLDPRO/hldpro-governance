@@ -1,6 +1,6 @@
 # requireDeterministicId()
 
-> God node · 10 connections · `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/e2e/helpers/seeded.ts`
+> God node · 10 connections · `healthcareplatform/frontend/e2e/helpers/seeded.ts`
 
 ## Connections by Relation
 

@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **audit_retention_check.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/audit_retention_check.py`
-- **fail()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/audit_retention_check.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/audit_retention_check.py`
+- **audit_retention_check.py** (2 connections) — `local-ai-machine/scripts/ops/audit_retention_check.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/audit_retention_check.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/audit_retention_check.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/audit_retention_check.py`
+- `local-ai-machine/scripts/ops/audit_retention_check.py`
 
 ## Audit Trail
 

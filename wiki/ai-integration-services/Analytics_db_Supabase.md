@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **analytics-db.ts** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
-- **buildHeaders()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
-- **analyticsSelect()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
-- **analyticsUpdate()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
-- **buildUrl()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
-- **analyticsInsert()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
-- **analyticsUpsert()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
+- **analytics-db.ts** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
+- **buildHeaders()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
+- **analyticsSelect()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
+- **analyticsUpdate()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
+- **buildUrl()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
+- **analyticsInsert()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
+- **analyticsUpsert()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
 
 ## Audit Trail
 

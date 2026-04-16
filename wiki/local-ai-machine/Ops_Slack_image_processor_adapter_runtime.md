@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **test_slack_image_processor_adapter_runtime.py** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_slack_image_processor_adapter_runtime.py`
-- **check()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_slack_image_processor_adapter_runtime.py`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_slack_image_processor_adapter_runtime.py`
-- **main()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_slack_image_processor_adapter_runtime.py`
+- **test_slack_image_processor_adapter_runtime.py** (3 connections) — `local-ai-machine/scripts/ops/test_slack_image_processor_adapter_runtime.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_slack_image_processor_adapter_runtime.py`
+- **fail()** (3 connections) — `local-ai-machine/scripts/ops/test_slack_image_processor_adapter_runtime.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/test_slack_image_processor_adapter_runtime.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_slack_image_processor_adapter_runtime.py`
+- `local-ai-machine/scripts/ops/test_slack_image_processor_adapter_runtime.py`
 
 ## Audit Trail
 

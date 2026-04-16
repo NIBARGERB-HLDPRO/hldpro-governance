@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **playwright.production-readonly.config.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.production-readonly.config.ts`
+- **playwright.production-readonly.config.ts** (0 connections) — `healthcareplatform/frontend/playwright.production-readonly.config.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/frontend/playwright.production-readonly.config.ts`
+- `healthcareplatform/frontend/playwright.production-readonly.config.ts`
 
 ## Audit Trail
 

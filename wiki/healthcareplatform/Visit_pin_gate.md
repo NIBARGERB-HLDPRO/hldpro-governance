@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **visit-pin-gate.test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/visit-pin-gate.test.ts`
+- **visit-pin-gate.test.ts** (0 connections) — `healthcareplatform/backend/supabase/functions/_shared/visit-pin-gate.test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/visit-pin-gate.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/visit-pin-gate.test.ts`
 
 ## Audit Trail
 

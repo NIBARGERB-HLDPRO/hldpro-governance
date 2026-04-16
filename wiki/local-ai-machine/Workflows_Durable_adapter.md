@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **durable_adapter_test.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/durable_adapter_test.ts`
-- **adapter()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/durable_adapter_test.ts`
-- **writeJson()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/durable_adapter_test.ts`
+- **durable_adapter_test.ts** (2 connections) — `local-ai-machine/src/workflows/durable_adapter_test.ts`
+- **adapter()** (1 connections) — `local-ai-machine/src/workflows/durable_adapter_test.ts`
+- **writeJson()** (1 connections) — `local-ai-machine/src/workflows/durable_adapter_test.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/src/workflows/durable_adapter_test.ts`
+- `local-ai-machine/src/workflows/durable_adapter_test.ts`
 
 ## Audit Trail
 

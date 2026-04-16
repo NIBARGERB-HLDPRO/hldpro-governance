@@ -7,14 +7,15 @@ file-history/
 session-env/
 plans/
 !docs/plans/
+!docs/plans/*.json
 !docs/plans/*.md
 downloads/
 backups/
 
 # Sensitive
-settings.json
-settings.local.json
-scheduled_tasks.lock
+.claude/worktrees/
+.claude/scheduled_tasks.lock
+.claude/settings.local.json
 
 # Per-project memory (conversation-specific, managed by auto-memory)
 projects/
@@ -36,6 +37,9 @@ graphify-out/.graphify_*.json
 # raw/ large media files (append-only text files are tracked)
 raw/**/*.mp3
 raw/**/*.wav
+
+# Claude Code local tooling state (worktrees, local settings)
+.claude/
 
 # OS
 .DS_Store

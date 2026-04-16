@@ -1,6 +1,6 @@
 # PostgresStore
 
-> God node · 41 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/edge/critic_api_postgres.py`
+> God node · 41 connections · `local-ai-machine/scripts/edge/critic_api_postgres.py`
 
 ## Connections by Relation
 

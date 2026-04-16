@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **test_prestudy_portal_contract.py** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_prestudy_portal_contract.py`
-- **check()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_prestudy_portal_contract.py`
-- **main()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_prestudy_portal_contract.py`
+- **test_prestudy_portal_contract.py** (2 connections) — `local-ai-machine/scripts/ops/test_prestudy_portal_contract.py`
+- **check()** (2 connections) — `local-ai-machine/scripts/ops/test_prestudy_portal_contract.py`
+- **main()** (2 connections) — `local-ai-machine/scripts/ops/test_prestudy_portal_contract.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/test_prestudy_portal_contract.py`
+- `local-ai-machine/scripts/ops/test_prestudy_portal_contract.py`
 
 ## Audit Trail
 

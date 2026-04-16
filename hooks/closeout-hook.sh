@@ -6,26 +6,10 @@ set -e
 
 CLOSEOUT_FILE="$1"
 GOVERNANCE_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-SCRIPT_ROOT="${GOVERNANCE_ROOT}/scripts/knowledge_base/build_graph.py"
-
-resolve_ai_root() {
-  local candidates=(
-    "${GOVERNANCE_ROOT}/../ai-integration-services"
-    "${GOVERNANCE_ROOT}/../../ai-integration-services"
-    "$(cd "${GOVERNANCE_ROOT}/.." && pwd)/ai-integration-services"
-    "$(cd "${GOVERNANCE_ROOT}/../.." && pwd)/ai-integration-services"
-  )
-  local candidate
-  for candidate in "${candidates[@]}"; do
-    if [ -d "${candidate}" ] && [ -f "${candidate}/CLAUDE.md" ]; then
-      printf '%s\n' "${candidate}"
-      return 0
-    fi
-  done
-  return 1
-}
-
-AI_INTEGRATION_ROOT="$(resolve_ai_root || true)"
+REPO_ROOT="$GOVERNANCE_ROOT"
+BUILD_SCRIPT="${GOVERNANCE_ROOT}/scripts/knowledge_base/build_graph.py"
+TARGET_SCRIPT="${GOVERNANCE_ROOT}/scripts/knowledge_base/graphify_targets.py"
+INDEX_SCRIPT="${GOVERNANCE_ROOT}/scripts/knowledge_base/update_knowledge_index.py"
 
 if [ -z "$CLOSEOUT_FILE" ]; then
   echo "ERROR: No closeout file specified."
@@ -53,16 +37,19 @@ for field in "${REQUIRED_FIELDS[@]}"; do
 done
 echo "  ✓ Template validated"
 
-# 2. Run graphify --update on ai-integration-services
+# 2. Refresh the governance graph target defined for closeout
 echo "[2/4] Updating knowledge graph..."
-if [ -n "$AI_INTEGRATION_ROOT" ] && [ -f "$SCRIPT_ROOT" ]; then
+if [ -f "$BUILD_SCRIPT" ] && [ -f "$TARGET_SCRIPT" ] && [ -f "$INDEX_SCRIPT" ]; then
   if command -v python3.11 >/dev/null 2>&1 && python3.11 -c "import graphify" >/dev/null 2>&1; then
-    if python3.11 "$SCRIPT_ROOT" \
-      --source "$AI_INTEGRATION_ROOT" \
-      --output "$GOVERNANCE_ROOT/graphify-out" \
-      --wiki-dir "$GOVERNANCE_ROOT/wiki/hldpro" \
+    eval "$(python3 "$TARGET_SCRIPT" show --repo-slug hldpro-governance --format shell)"
+    if python3.11 "$BUILD_SCRIPT" \
+      --source "${GOVERNANCE_ROOT}/${SOURCE_PATH}" \
+      --output "${GOVERNANCE_ROOT}/${OUTPUT_PATH}" \
+      --wiki-dir "${GOVERNANCE_ROOT}/${WIKI_PATH}" \
+      --repo-slug "${REPO_SLUG}" \
       --no-html 2>&1 | tail -20; then
-      echo "  ✓ Knowledge graph updated"
+      python3 "$INDEX_SCRIPT"
+      echo "  ✓ Knowledge graph updated for ${REPO_SLUG}"
     else
       echo "  ⚠ graph update failed — continuing without blocking closeout"
     fi
@@ -70,7 +57,14 @@ if [ -n "$AI_INTEGRATION_ROOT" ] && [ -f "$SCRIPT_ROOT" ]; then
     echo "  ⚠ python3.11 + graphify not available — skipping graph update"
   fi
 else
-  echo "  ⚠ ai-integration-services or builder script not found — skipping graph update"
+  echo "  ⚠ graphify helper scripts not found — skipping graph update"
+fi
+
+# Phase 3a: consolidate memory after graphify
+if [ -x "$REPO_ROOT/scripts/consolidate-memory.sh" ]; then
+  bash "$REPO_ROOT/scripts/consolidate-memory.sh" --repo hldpro-governance --dry-run && \
+    bash "$REPO_ROOT/scripts/consolidate-memory.sh" --repo hldpro-governance || \
+    echo "note: consolidate-memory non-fatal failure; continuing closeout"
 fi
 
 # 3. Remind to create operator_context row

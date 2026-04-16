@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **preference-injector.ts** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/preference-injector.ts`
-- **getPreferenceModule()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/preference-injector.ts`
-- **injectPreferences()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/preference-injector.ts`
-- **upsertPreference()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/preference-injector.ts`
+- **preference-injector.ts** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/preference-injector.ts`
+- **getPreferenceModule()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/preference-injector.ts`
+- **injectPreferences()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/preference-injector.ts`
+- **upsertPreference()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/preference-injector.ts`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/preference-injector.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/preference-injector.ts`
 
 ## Audit Trail
 

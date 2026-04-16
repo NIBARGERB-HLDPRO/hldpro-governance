@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **run_scavenger_real_sink_probe.py** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_real_sink_probe.py`
-- **main()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_real_sink_probe.py`
-- **build_probe_bundle()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_real_sink_probe.py`
-- **env_required()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_real_sink_probe.py`
-- **fail()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_real_sink_probe.py`
-- **info()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_real_sink_probe.py`
-- **make_case_dir()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_real_sink_probe.py`
-- **write_json()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_real_sink_probe.py`
+- **run_scavenger_real_sink_probe.py** (7 connections) — `local-ai-machine/scripts/ops/run_scavenger_real_sink_probe.py`
+- **main()** (6 connections) — `local-ai-machine/scripts/ops/run_scavenger_real_sink_probe.py`
+- **build_probe_bundle()** (3 connections) — `local-ai-machine/scripts/ops/run_scavenger_real_sink_probe.py`
+- **env_required()** (3 connections) — `local-ai-machine/scripts/ops/run_scavenger_real_sink_probe.py`
+- **fail()** (3 connections) — `local-ai-machine/scripts/ops/run_scavenger_real_sink_probe.py`
+- **info()** (2 connections) — `local-ai-machine/scripts/ops/run_scavenger_real_sink_probe.py`
+- **make_case_dir()** (2 connections) — `local-ai-machine/scripts/ops/run_scavenger_real_sink_probe.py`
+- **write_json()** (2 connections) — `local-ai-machine/scripts/ops/run_scavenger_real_sink_probe.py`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/run_scavenger_real_sink_probe.py`
+- `local-ai-machine/scripts/ops/run_scavenger_real_sink_probe.py`
 
 ## Audit Trail
 

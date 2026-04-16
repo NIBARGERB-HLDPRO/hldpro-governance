@@ -1,6 +1,6 @@
 # handleSlackWebhook()
 
-> God node · 52 connections · `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/supabase/functions/slack_webhook/index.ts`
+> God node · 52 connections · `local-ai-machine/supabase/functions/slack_webhook/index.ts`
 
 ## Connections by Relation
 

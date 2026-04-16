@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **issue501-report-citation-traceability-validation.test.ts** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/issue501-report-citation-traceability-validation.test.ts`
-- **assert()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/issue501-report-citation-traceability-validation.test.ts`
+- **issue501-report-citation-traceability-validation.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/issue501-report-citation-traceability-validation.test.ts`
+- **assert()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/issue501-report-citation-traceability-validation.test.ts`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/issue501-report-citation-traceability-validation.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/issue501-report-citation-traceability-validation.test.ts`
 
 ## Audit Trail
 

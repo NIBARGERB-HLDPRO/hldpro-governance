@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **ccd-parser.test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/ccd-parser.test.ts`
+- **ccd-parser.test.ts** (0 connections) — `healthcareplatform/backend/supabase/functions/_shared/chart-audit/ccd-parser.test.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/_shared/chart-audit/ccd-parser.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/chart-audit/ccd-parser.test.ts`
 
 ## Audit Trail
 

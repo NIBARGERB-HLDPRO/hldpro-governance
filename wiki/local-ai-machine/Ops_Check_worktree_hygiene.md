@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- **check_worktree_hygiene.py** (10 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/check_worktree_hygiene.py`
-- **classify_worktree()** (7 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/check_worktree_hygiene.py`
-- **main()** (6 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/check_worktree_hygiene.py`
-- **run()** (5 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/check_worktree_hygiene.py`
-- **is_anchor()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/check_worktree_hygiene.py`
-- **parse_worktrees()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/check_worktree_hygiene.py`
-- **read_branch_status()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/check_worktree_hygiene.py`
-- **read_prs()** (3 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/check_worktree_hygiene.py`
-- **has_active_session_lock()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/check_worktree_hygiene.py`
-- **render_human()** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/check_worktree_hygiene.py`
-- **WorktreeReport** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/check_worktree_hygiene.py`
+- **check_worktree_hygiene.py** (10 connections) — `local-ai-machine/scripts/ops/check_worktree_hygiene.py`
+- **classify_worktree()** (7 connections) — `local-ai-machine/scripts/ops/check_worktree_hygiene.py`
+- **main()** (6 connections) — `local-ai-machine/scripts/ops/check_worktree_hygiene.py`
+- **run()** (5 connections) — `local-ai-machine/scripts/ops/check_worktree_hygiene.py`
+- **is_anchor()** (3 connections) — `local-ai-machine/scripts/ops/check_worktree_hygiene.py`
+- **parse_worktrees()** (3 connections) — `local-ai-machine/scripts/ops/check_worktree_hygiene.py`
+- **read_branch_status()** (3 connections) — `local-ai-machine/scripts/ops/check_worktree_hygiene.py`
+- **read_prs()** (3 connections) — `local-ai-machine/scripts/ops/check_worktree_hygiene.py`
+- **has_active_session_lock()** (2 connections) — `local-ai-machine/scripts/ops/check_worktree_hygiene.py`
+- **render_human()** (2 connections) — `local-ai-machine/scripts/ops/check_worktree_hygiene.py`
+- **WorktreeReport** (2 connections) — `local-ai-machine/scripts/ops/check_worktree_hygiene.py`
 
 ## Relationships
 
@@ -22,7 +22,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/lam-graphify-phase6/scripts/ops/check_worktree_hygiene.py`
+- `local-ai-machine/scripts/ops/check_worktree_hygiene.py`
 
 ## Audit Trail
 

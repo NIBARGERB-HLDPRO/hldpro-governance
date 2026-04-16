@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **gpt-assist-phi.test.ts** (2 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/gpt-assist/gpt-assist-phi.test.ts`
-- **scrubPhi()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/gpt-assist/gpt-assist-phi.test.ts`
-- **sha256Hex()** (1 connections) — `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/gpt-assist/gpt-assist-phi.test.ts`
+- **gpt-assist-phi.test.ts** (2 connections) — `healthcareplatform/backend/supabase/functions/gpt-assist/gpt-assist-phi.test.ts`
+- **scrubPhi()** (1 connections) — `healthcareplatform/backend/supabase/functions/gpt-assist/gpt-assist-phi.test.ts`
+- **sha256Hex()** (1 connections) — `healthcareplatform/backend/supabase/functions/gpt-assist/gpt-assist-phi.test.ts`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform/backend/supabase/functions/gpt-assist/gpt-assist-phi.test.ts`
+- `healthcareplatform/backend/supabase/functions/gpt-assist/gpt-assist-phi.test.ts`
 
 ## Audit Trail
 
