@@ -6,6 +6,7 @@ set -e
 
 CLOSEOUT_FILE="$1"
 GOVERNANCE_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+REPO_ROOT="$GOVERNANCE_ROOT"
 BUILD_SCRIPT="${GOVERNANCE_ROOT}/scripts/knowledge_base/build_graph.py"
 TARGET_SCRIPT="${GOVERNANCE_ROOT}/scripts/knowledge_base/graphify_targets.py"
 INDEX_SCRIPT="${GOVERNANCE_ROOT}/scripts/knowledge_base/update_knowledge_index.py"
@@ -57,6 +58,13 @@ if [ -f "$BUILD_SCRIPT" ] && [ -f "$TARGET_SCRIPT" ] && [ -f "$INDEX_SCRIPT" ]; 
   fi
 else
   echo "  ⚠ graphify helper scripts not found — skipping graph update"
+fi
+
+# Phase 3a: consolidate memory after graphify
+if [ -x "$REPO_ROOT/scripts/consolidate-memory.sh" ]; then
+  bash "$REPO_ROOT/scripts/consolidate-memory.sh" --repo hldpro-governance --dry-run && \
+    bash "$REPO_ROOT/scripts/consolidate-memory.sh" --repo hldpro-governance || \
+    echo "note: consolidate-memory non-fatal failure; continuing closeout"
 fi
 
 # 3. Remind to create operator_context row

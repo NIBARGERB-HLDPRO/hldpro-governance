@@ -1,0 +1,162 @@
+name: Validate FAIL_FAST_LOG and ERROR_PATTERNS schemas
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-schemas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Checkout governance repo for schemas
+        uses: actions/checkout@v6
+        with:
+          repository: NIBARGERB-HLDPRO/hldpro-governance
+          path: governance-schemas
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate FAIL_FAST_LOG.md schema
+        run: |
+          python3 << 'VALIDATOR_EOF'
+          import re
+          import sys
+          from pathlib import Path
+
+          FAIL_FAST_PATH = "docs/FAIL_FAST_LOG.md"
+          ERROR_PATTERNS_PATH = "docs/ERROR_PATTERNS.md"
+
+          def has_legacy_marker(path):
+              """Detect YAML frontmatter with legacy: true at the top of the file."""
+              text = Path(path).read_text(encoding="utf-8")
+              # YAML frontmatter must start on line 1
+              if not text.startswith("---\n"):
+                  return False
+              end = text.find("\n---\n", 4)
+              if end == -1:
+                  return False
+              front = text[4:end]
+              return re.search(r"^legacy:\s*true\s*$", front, re.MULTILINE) is not None
+
+          def validate_fail_fast_log():
+              path = FAIL_FAST_PATH
+              if not Path(path).exists():
+                  print(f"✗ {path} not found")
+                  return False
+              if has_legacy_marker(path):
+                  print(f"✓ {path} has legacy marker; structural checks skipped")
+                  return True
+              text = Path(path).read_text(encoding="utf-8")
+              # Minimal check: canonical 7-column table header present somewhere
+              header_re = re.compile(r"\|\s*Date\s*\|\s*Category\s*\|\s*Severity\s*\|\s*Error\s*\|\s*Root Cause\s*\|\s*Resolution\s*\|\s*Related Pattern\s*\|", re.IGNORECASE)
+              if not header_re.search(text):
+                  print(f"✗ {path}: canonical header '| Date | Category | Severity | Error | Root Cause | Resolution | Related Pattern |' not found (add or mark file legacy)")
+                  return False
+              print(f"✓ {path} has canonical header")
+              return True
+
+          def validate_error_patterns():
+              path = ERROR_PATTERNS_PATH
+              if not Path(path).exists():
+                  print(f"✗ {path} not found")
+                  return False
+              if has_legacy_marker(path):
+                  print(f"✓ {path} has legacy marker; structural checks skipped")
+                  return True
+              text = Path(path).read_text(encoding="utf-8")
+              # Minimal check: at least one valid pattern heading OR an explicit "no patterns yet" stub marker
+              pattern_ids = re.findall(r"^## Pattern: ([a-z0-9]+(?:-[a-z0-9]+)*)\s*$", text, re.MULTILINE)
+              if pattern_ids:
+                  print(f"✓ {path}: found {len(pattern_ids)} pattern heading(s)")
+                  return True
+              # Stub allowed if it declares itself a stub
+              if re.search(r"<!--\s*stub: no-patterns-yet\s*-->", text, re.IGNORECASE):
+                  print(f"✓ {path}: explicit stub marker present (no patterns yet)")
+                  return True
+              print(f"✗ {path}: no '## Pattern: <kebab-case-id>' heading found and no stub marker. Either add a pattern or mark file stub via '<!-- stub: no-patterns-yet -->'.")
+              return False
+
+          ok1 = validate_fail_fast_log()
+          ok2 = validate_error_patterns()
+          sys.exit(0 if (ok1 and ok2) else 1)
+          VALIDATOR_EOF
+
+      - name: Validate ERROR_PATTERNS.md schema
+        run: |
+          python3 << 'VALIDATOR_EOF'
+          import re
+          import sys
+          from pathlib import Path
+
+          FAIL_FAST_PATH = "docs/FAIL_FAST_LOG.md"
+          ERROR_PATTERNS_PATH = "docs/ERROR_PATTERNS.md"
+
+          def has_legacy_marker(path):
+              """Detect YAML frontmatter with legacy: true at the top of the file."""
+              text = Path(path).read_text(encoding="utf-8")
+              # YAML frontmatter must start on line 1
+              if not text.startswith("---\n"):
+                  return False
+              end = text.find("\n---\n", 4)
+              if end == -1:
+                  return False
+              front = text[4:end]
+              return re.search(r"^legacy:\s*true\s*$", front, re.MULTILINE) is not None
+
+          def validate_fail_fast_log():
+              path = FAIL_FAST_PATH
+              if not Path(path).exists():
+                  print(f"✗ {path} not found")
+                  return False
+              if has_legacy_marker(path):
+                  print(f"✓ {path} has legacy marker; structural checks skipped")
+                  return True
+              text = Path(path).read_text(encoding="utf-8")
+              # Minimal check: canonical 7-column table header present somewhere
+              header_re = re.compile(r"\|\s*Date\s*\|\s*Category\s*\|\s*Severity\s*\|\s*Error\s*\|\s*Root Cause\s*\|\s*Resolution\s*\|\s*Related Pattern\s*\|", re.IGNORECASE)
+              if not header_re.search(text):
+                  print(f"✗ {path}: canonical header '| Date | Category | Severity | Error | Root Cause | Resolution | Related Pattern |' not found (add or mark file legacy)")
+                  return False
+              print(f"✓ {path} has canonical header")
+              return True
+
+          def validate_error_patterns():
+              path = ERROR_PATTERNS_PATH
+              if not Path(path).exists():
+                  print(f"✗ {path} not found")
+                  return False
+              if has_legacy_marker(path):
+                  print(f"✓ {path} has legacy marker; structural checks skipped")
+                  return True
+              text = Path(path).read_text(encoding="utf-8")
+              # Minimal check: at least one valid pattern heading OR an explicit "no patterns yet" stub marker
+              pattern_ids = re.findall(r"^## Pattern: ([a-z0-9]+(?:-[a-z0-9]+)*)\s*$", text, re.MULTILINE)
+              if pattern_ids:
+                  print(f"✓ {path}: found {len(pattern_ids)} pattern heading(s)")
+                  return True
+              # Stub allowed if it declares itself a stub
+              if re.search(r"<!--\s*stub: no-patterns-yet\s*-->", text, re.IGNORECASE):
+                  print(f"✓ {path}: explicit stub marker present (no patterns yet)")
+                  return True
+              print(f"✗ {path}: no '## Pattern: <kebab-case-id>' heading found and no stub marker. Either add a pattern or mark file stub via '<!-- stub: no-patterns-yet -->'.")
+              return False
+
+          ok1 = validate_fail_fast_log()
+          ok2 = validate_error_patterns()
+          sys.exit(0 if (ok1 and ok2) else 1)
+          VALIDATOR_EOF
+
+      - name: Report validation status
+        if: always()
+        run: echo "✓ Schema validation complete"

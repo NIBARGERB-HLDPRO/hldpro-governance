@@ -16,7 +16,9 @@
 - `.claude/hooks/governance-check.sh` — blocks commits missing doc co-staging
 - `.claude/hooks/backlog-check.sh` — **hard gate**: blocks branch creation unless a matching `PLANNED` or `IN_PROGRESS` entry exists in `docs/PROGRESS.md` Plans table. Enforces backlog-first workflow (plan with AC before code).
 - `.claude/hooks/check-errors.sh` — PostToolUse hard gate: auto-grep FAIL_FAST_LOG on errors, 3-attempt max, then STOP and ask user
+- `check-backlog-gh-sync.yml` — **hard gate**: every `OVERLORD_BACKLOG.md` Planned entry must reference an open GitHub issue (`#NNN` in the `Issue` column). GitHub is canonical — create the issue before adding to Planned. CI validates all refs are open on every push.
 - `.claude/settings.json` PostToolUse matcher must be `"*"` (all tools), NOT `"Bash"` — errors from MCP, Agent, Read, etc. must also trigger the 3-attempt gate
+- **Hook commands in `.claude/settings.json` must use absolute paths** (e.g. `bash $HOME/Developer/HLDPRO/<repo>/.claude/hooks/<hook>.sh`) — relative paths break silently when the session CWD shifts to a subdirectory, causing the hook to no-op without a hard error
 - Session start must check `~/Developer/hldpro/.codex-ingestion/{repo}/backlog-*.md` for pending Codex findings — surface to user if any exist
 - If repo governance requires specialist agents/subagents, the session must use them. Codex sessions may satisfy this by spawning equivalent Codex subagents and loading the repo's persona definitions from `CODEX.md`, `AGENTS.md`, `.agents/`, or repo-local standards instead of relying on Claude-only agent files.
 - Conventional commits: `feat/fix/docs/chore` with scope
@@ -163,11 +165,14 @@ Each repo has a security tier that determines which security artifacts the overl
 
 | Repo | Type | Governance Tier | Security Tier |
 |------|------|-----------------|---------------|
+| hldpro-governance | Meta-governance repo (scripts + CI + agents) | Governance-owner (see note below) | Baseline |
 | ai-integration-services | SaaS platform (Supabase + Deno + Vite) | Full (hooks + CI + agents) | Full + PentAGI |
 | HealthcarePlatform | Monorepo (backend + frontend), HIPAA | Full + HIPAA (zero-fail) | Full + PentAGI + HIPAA |
 | local-ai-machine | AI/ML infrastructure | Full (lane-based + session locks) | Baseline |
 | knocktracker | Field operations app | Standard (rules + CI) | Baseline |
 | ASC-Evaluator | Knowledge repo (no code) | Exempt from code governance | Exempt |
+
+> **hldpro-governance hook path note:** Product repos store hooks under `.claude/hooks/` (local-only, gitignored). hldpro-governance stores its committed hooks under `hooks/` at repo root (checked in, enforced repo-wide). Both satisfy the Required Governance hook contract — the difference is scope: local session vs. repo-wide enforcement. Hook *scripts* (e.g. `hooks/pre-session-context.sh`) are committed for repo-wide discoverability; the local `settings.json` that wires them into Claude Code sessions is gitignored and set up per-developer.
 
 ## Cross-Model Review
 
@@ -268,7 +273,7 @@ Activity → model routing is codified as a society-of-minds role charter with e
 | Tier | Role | Primary | Fallback 1 | Fallback 2 | Floor |
 |---|---|---|---|---|---|
 | 1 | **Dual Planner — required pair** | Claude: `claude-opus-4-6` **AND** Codex: `gpt-5.4` @ `model_reasoning_effort=high` | Claude → `claude-sonnet-4-6`; Codex → `gpt-5.3-codex-spark` @ `high` | Codex only → `gpt-5.3-codex-spark` @ `medium` | Claude: no Haiku for planning. Codex: no below-spark for planning. Both unavailable → halt. |
-| 2 | Worker (coder) | `gpt-5.3-codex-spark` @ `high` | `gpt-5.3-codex-spark` @ `medium` | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (local, unlimited) → `claude-sonnet-4-6` (cost-flagged) | — |
+| 2 | Worker (coder) | `gpt-5.3-codex-spark` @ `high` | `gpt-5.3-codex-spark` @ `medium` | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (local warm daemon) → **Windows Ollama** (`http://172.17.227.49:11434`, `qwen2.5-coder:7b`) → `claude-sonnet-4-6` (cost-flagged). Routed via `scripts/windows-ollama/decide.sh`; PII halts routing per invariant #8; all calls audited per invariant #10. | — |
 | 3 | Reviewer (code) | `claude-sonnet-4-6` | `claude-haiku-4-5` (review quality flagged) | — | — |
 | 3 | Reviewer (non-code long-form) | `gpt-5.4` @ `medium` | `gpt-5.4` @ `low` | `claude-sonnet-4-6` | — |
 | 4 | Gate / verifier | `claude-haiku-4-5-20251001` | `claude-sonnet-4-6` (wasteful but safe) | — | — |
@@ -332,6 +337,9 @@ LAM runs out-of-band for its lanes; feeds sanitized outputs into any tier that n
 5. **Cross-family independence.** Tier 1 Planner-Claude and Planner-Codex MUST be different model families (Anthropic + OpenAI). Never both same family.
 6. **Local family diversity.** Worker-LAM and Reviewer-LAM MUST be different model families (e.g., Qwen + Gemma).
 7. **Fallback is logged.** Every fallback to a lower tier writes a schema-validated entry under `raw/model-fallbacks/YYYY-MM-DD.md`.
+8. **Windows-Ollama PII floor.** PII-tagged or PII-detected payloads MUST block Windows host AND Sonnet cloud fallback. Route to LAM only or halt. Before submitting any payload to the Windows host endpoint, payload must pass `pii-patterns.yml` middleware. Fail-closed if patterns unavailable. (Enforced in Sprint 2 via `scripts/windows-ollama/submit.py`; active in Sprint 5.)
+9. **Windows-Ollama firewall binding.** The Windows host endpoint MUST NOT be exposed beyond LAN. Requires firewall binding to Mac host IP or explicit trusted subnet allowlist. No public bind or port-forwarding. Separate epic adding Cloudflare Access may extend this; until then, LAN-only via `sase-switch` vEthernet adapter on subnet `172.17.0.0/16`. (Enforced in Sprint 4 via `check-windows-ollama-exposure.yml` CI; active in Sprint 5.)
+10. **Windows-Ollama audit.** Every Windows-Ollama call appends to `raw/remote-windows-audit/YYYY-MM-DD.jsonl` with hash-chain + HMAC + daily manifest. Break the chain → CI validator fails; endpoint disabled until rebuilt. (Enforced in Sprint 3 via `check-windows-ollama-audit-schema.yml` CI; active in Sprint 5.)
 
 ### Cross-review artifact schema (required for arch/standards PRs)
 
@@ -379,6 +387,11 @@ Validator rejects if: any field missing, `drafter.model_family` == `reviewer.mod
 | 10 | LAM availability for PII PRs | `check-lam-availability.yml` runtime probe | PR blocked |
 | 11 | CLAUDE.md points to SoT | `check-claude-md-pointer.yml` | PR blocked |
 | 12 | Exception register covers deferrals with expiry ≤ 90d | `overlord-sweep` validates; past-expiry auto-opens issue | Sweep issue on breach |
+| 13 | Windows-Ollama PII floor (invariant #8) | `scripts/windows-ollama/submit.py` validates PII patterns; `scripts/windows-ollama/decide.sh` routes `PII` to HALT before all ladder steps | PR blocked if PII routes to Windows or cloud |
+| 14 | Windows-Ollama firewall binding (invariant #9) | `check-windows-ollama-exposure.yml` CI gate (Sprint 4) asserts no public bind, endpoint still `172.17.227.49:11434` | PR blocked if exposure detected |
+| 15 | Windows-Ollama audit enforcement (invariant #10) | `scripts/windows-ollama/verify_audit.py` local validator (Sprint 3); `check-windows-ollama-audit-schema.yml` CI gate (Sprint 4) | PR blocked on chain break, HMAC forgery, or manifest mismatch |
+| 16 | Windows-Ollama audit schema validation | `check-windows-ollama-audit-schema.yml` verifies audit chain integrity on PRs touching audit files | PR blocked |
+| 17 | Windows-Ollama firewall exposure validation | `check-windows-ollama-exposure.yml` asserts no public bind, endpoint stability (172.17.227.49:11434), Cloudflare stub status | PR blocked |
 
 ### Exception register schema
 
@@ -399,6 +412,43 @@ While M6 Critic-LAM's judgment is being calibrated against Sonnet's:
 - Both verdicts logged to `raw/ab-review/YYYY-MM-DD-{slug}.md` with `agreement: match | m6_only_findings | sonnet_only_findings | both`.
 - **Conservative gate:** if Sonnet REJECTED and M6 APPROVED, Sonnet wins this round; divergence flagged.
 - Overlord-sweep reports weekly M6-vs-Sonnet agreement rate. Exit Round 1 when agreement ≥ 90% for 3 consecutive weeks.
+
+## Windows Host Inference (Tier-2 fallback)
+
+A LAN-resident Ollama-served Windows 10 workstation (64 GB RAM, 16 GB VRAM) acts as a Tier-2 Worker fallback when the local Mac is memory-tight AND codex-spark is quota-blocked. The integration was first proven in `local-ai-machine` issue #68 (closed 2026-03-16) for HP critic work via `CRITIC_OLLAMA_URL`; this section promotes it from critic-only to general SoM Tier-2 worker.
+
+### Endpoint
+
+- URL: `http://172.17.227.49:11434` (LAN-only, vEthernet adapter `sase-switch`)
+- API: Ollama `/api/generate` (OpenAI-compatible `/v1/` available)
+- Pinned operating settings (proven in LAM #68): `keep_alive=15m`, `num_ctx<=4096`, adaptive offload ladder `99 -> 80 -> 60`, call timeout 45000ms
+
+### Pinned model roster
+
+Treat the runbook (`docs/runbooks/windows-ollama-worker.md`) as the source of truth for the live inventory. Charter-relevant baseline:
+
+| Model | Role | VRAM (~Q4) |
+|---|---|---|
+| `qwen2.5-coder:7b` | SoM Tier-2 Worker (this PR) | ~5 GB |
+| `llama3.1:8b` | HP critic (existing, see LAM #68) | ~5 GB |
+
+Operator may pull additional models (e.g. `qwen3:14b-q4_K_M`) — runbook documents the procedure.
+
+### Threat model (delta vs. local)
+
+| Attack | Mitigation |
+|---|---|
+| PII tunneled in worker prompt | Invariant #13 PII middleware before submit |
+| Endpoint exposed to internet | Invariant #14 LAN-only; Cloudflare Tunnel deferred to future epic |
+| Audit trail tampering | Invariant #15 hash-chain + HMAC + daily manifest |
+| Endpoint asleep / unreachable | Decision script falls through to next ladder rung; WoL deferred to future epic |
+| Wrong model routed for prompt | Submission script validates model name against runbook allowlist |
+
+### Future epics (stubbed; not in scope)
+
+- Cloudflare Tunnel exposure for off-LAN access (mirrors Remote MCP Bridge pattern; would require Cloudflare Access invariant)
+- Wake-on-LAN provisioning for unattended availability
+- Windows host metrics / health check workflow
 
 ## Exceptions
 - ASC-Evaluator: knowledge repo, exempt from code governance

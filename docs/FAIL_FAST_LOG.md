@@ -1,3 +1,9 @@
+---
+legacy: true
+grandfathered_date: 2026-04-15
+reason: Pre-2026-04-15 entries use 4-column format (Error | Root Cause | Resolution | Date). Migration to the 7-column canonical schema tracked in a future issue; validator tolerates this file via the `legacy` marker.
+---
+
 # Fail-Fast Log
 
 > Governance-repo error patterns and resolutions.

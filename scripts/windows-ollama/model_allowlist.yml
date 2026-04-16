@@ -1,0 +1,28 @@
+# Model Allowlist for Windows-Ollama Submission
+# Defines which models are permitted for SoM Tier-2 Worker role
+# Last updated: 2026-04-15
+# Version: 1.0
+
+allowlist:
+  worker:
+    # SoM Tier-2 Worker role: code-generation and reasoning
+    models:
+      - qwen2.5-coder:7b
+    description: "Primary SoM Tier-2 Worker for code-based reasoning"
+
+  # Reserved for future expansion
+  critic:
+    models:
+      - llama3.1:8b
+    description: "HP critic role (future use)"
+
+# Enforcement rule:
+# If a request specifies a model NOT in the appropriate role's allowlist,
+# submit.py rejects with:
+#   {"error": "model_not_allowed", "model": "<requested>", "role": "worker"}
+
+# To extend the allowlist:
+# 1. Add model name to the appropriate role section
+# 2. Update docs/runbooks/windows-ollama-worker.md with rationale
+# 3. File a PR against hldpro-governance with the change
+# 4. Cross-review required (security gate)

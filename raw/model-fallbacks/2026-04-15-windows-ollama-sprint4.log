@@ -1,0 +1,7 @@
+timestamp: 2026-04-15T00:00:00Z
+tier: 2
+primary_model: gpt-5.3-codex-spark
+fallback_model: claude-sonnet-4-6
+reason: spark still blocked; Sprint 4 on Sonnet
+caller: windows-ollama-sprint4
+status: fallback_in_use

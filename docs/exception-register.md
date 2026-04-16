@@ -71,6 +71,68 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **status:** `active`
 - **follow-up:** reconcile SoM + riskfix/* branch conventions in a cross-repo standards discussion
 
+### `SOM-WIN-OLLAMA-PII-001` — PII middleware enforcement deferred to Sprint 2
+
+- **rule_id:** `SOM-WIN-OLLAMA-PII-001`
+- **repo:** hldpro-governance
+- **deferral_reason:** Invariant #8 (PII floor) requires `pii-patterns.yml` middleware + `scripts/windows-ollama/submit.py` before Windows-Ollama payloads are accepted. Stage A (this PR) lands standards + runbook only. Submission path + middleware + CI gate land in Sprint 2 (submit.py + PII middleware) and Sprint 4 (CI validator). Windows rung remains disabled until Sprint 5.
+- **approver:** nibargerb
+- **approval_date:** 2026-04-15
+- **expiry_date:** 2026-05-15 (30 days; Stage B Sprint 2 must land before then)
+- **review_cadence:** weekly during overlord-sweep
+- **status:** CLOSED — Sprint 6 remediation merge (commit refs to be backfilled with actual PR merge SHA)
+- **reopen_date:** 2026-04-15
+- **reopen_reason:** Sprint 6 remediation revalidates the Windows-Ollama routing and audit controls; temporary reopen for final verification.
+- **closure_reason:** PII middleware fully active via Sprint 2 `submit.py` + Sprint 5 `decide.sh` routing gate. All payloads validated against `pii_patterns.yml` before submission. Invariant #8 enforced.
+- **reclose_reason:** Re-closed as `CLOSED` during Sprint 6 merge — all PII probes tested and passing (email, SSN, phone all correctly HALT); routing decision tree validated end-to-end.
+- **closure_date:** 2026-04-15
+
+### `SOM-WIN-OLLAMA-AUDIT-001` — Audit trail + CI validation deferred to Sprints 3–4
+
+- **rule_id:** `SOM-WIN-OLLAMA-AUDIT-001`
+- **repo:** hldpro-governance
+- **deferral_reason:** Invariant #10 requires hash-chain audit + HMAC signing + daily manifest + CI schema validator. Stage A lands standards only. Audit writer (`audit.py` + `verify_audit.py`) lands in Sprint 3; CI gate (`check-windows-ollama-audit-schema.yml`) lands in Sprint 4. Windows rung remains disabled until Sprint 5. **Partially closed — CI enforcement live as of Sprint 4; full close deferred to Sprint 5 activation.**
+- **approver:** nibargerb
+- **approval_date:** 2026-04-15
+- **expiry_date:** 2026-05-15 (30 days; Sprint 5 must land activation before then)
+- **review_cadence:** weekly during overlord-sweep
+- **status:** CLOSED — Sprint 6 remediation merge (commit refs to be backfilled with actual PR merge SHA)
+- **reopen_date:** 2026-04-15
+- **reopen_reason:** Sprint 6 remediation revalidates exception lifecycle with stronger secret-enforcement controls.
+- **closure_reason:** Audit trail fully enforced via Sprint 3 `audit.py` + `verify_audit.py` and Sprint 4 CI gate `check-windows-ollama-audit-schema.yml`. Hash-chain, HMAC, and manifest validation live. Invariant #10 enforced.
+- **reclose_reason:** Re-closed as `CLOSED` during Sprint 6 merge — HMAC secret enforcement verified live in CI workflow; audit schema validation confirmed working.
+- **closure_date:** 2026-04-15
+
+### `SOM-WIN-OLLAMA-DISABLED-001` — Windows rung documented but disabled during Phase 1
+
+- **rule_id:** `SOM-WIN-OLLAMA-DISABLED-001`
+- **repo:** hldpro-governance
+- **deferral_reason:** Invariants #8–#10 and enforcement rows 13–15 are documented in Stage A (this PR), but the Windows rung remains **disabled** in the active ladder until all hard controls land. Stage A changes the charter to "documented / disabled until Sprint 5" to prevent accidental use. PII middleware (Sprint 2), audit trail (Sprint 3), CI gates (Sprint 4), and activation gate (Sprint 5) must all pass before the rung is live.
+- **approver:** nibargerb
+- **approval_date:** 2026-04-15
+- **expiry_date:** 2026-05-15 (30 days; Sprint 5 must land activation before then)
+- **review_cadence:** weekly during overlord-sweep
+- **status:** CLOSED — Sprint 6 remediation merge (commit refs to be backfilled with actual PR merge SHA)
+- **reopen_date:** 2026-04-15
+- **reopen_reason:** Sprint 6 remediation re-checks the active rung state and related controls.
+- **closure_reason:** Windows-Ollama Tier-2 rung now ACTIVE. All three prerequisite controls live (PII middleware Sprint 2, audit trail Sprint 3, CI gates Sprint 4, and routing decision tree Sprint 5). Rung transitions from documented/disabled to active in Tier-2 ladder per STANDARDS.md. Invariants #8–#10 enforced.
+- **reclose_reason:** Re-closed as `CLOSED` during Sprint 6 merge — all 8 must-fixes from gpt-5.4 post-hoc review addressed and tested; Tier-2 routing restored to fully functional state.
+- **closure_date:** 2026-04-15
+
+## Active exceptions (temporary)
+
+(none currently)
+
 ## Expired or closed exceptions
 
-_(none)_
+### `SOM-WIN-OLLAMA-PII-001` — CLOSED
+
+Status: closed 2026-04-15. Re-opened during Sprint 6 validation and re-closed after final verification. PII middleware is enforced via Sprint 2 `submit.py` + Sprint 5 `decide.sh` routing gate.
+
+### `SOM-WIN-OLLAMA-AUDIT-001` — CLOSED
+
+Status: closed 2026-04-15. Re-opened during Sprint 6 validation and re-closed after final verification. Audit trail enforced via Sprint 3 writers + Sprint 4 CI gate.
+
+### `SOM-WIN-OLLAMA-DISABLED-001` — CLOSED
+
+Status: closed 2026-04-15. Re-opened during Sprint 6 validation and re-closed after final verification. Rung activated in Sprint 5; transitions from documented/disabled to active.
