@@ -16,21 +16,21 @@
 - [[Windows ollama Submit]] — 23 nodes
 - [[Windows ollama Audit]] — 21 nodes
 - [[Packet Validate Pii]] — 19 nodes
-- [[Windows ollama Submit]] — 18 nodes
 - [[Overlord Check progress github issue staleness]] — 16 nodes
+- [[Windows ollama Submit]] — 15 nodes
 - [[Windows ollama Submit]] — 14 nodes
-- [[Windows ollama Submit]] — 13 nodes
+- [[Windows ollama Submit]] — 12 nodes
 - [[Knowledge base Graph]] — 11 nodes
 - [[Overlord Validate backlog gh sync]] — 10 nodes
+- [[Windows ollama Submit]] — 10 nodes
 - [[Windows ollama Submit]] — 10 nodes
 - [[Knowledge base Graphify targets]] — 10 nodes
 - [[Overlord Memory integrity]] — 9 nodes
 - [[Knowledge base Graphify usage logging]] — 9 nodes
 - [[Overlord Effectiveness metrics]] — 8 nodes
-- [[Windows ollama Submit Endpoint]] — 8 nodes
+- [[Windows ollama Submit]] — 8 nodes
 - [[Overlord Validate structured agent cycle plan]] — 6 nodes
 - [[Overlord Check overlord backlog github alignment]] — 6 nodes
-- [[Windows ollama Submit Response]] — 6 nodes
 - [[Windows ollama Submit Response]] — 6 nodes
 - [[Windows ollama Pii]] — 6 nodes
 - [[Knowledge base Log graphify usage]] — 5 nodes
