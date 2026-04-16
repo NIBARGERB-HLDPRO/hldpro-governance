@@ -12,7 +12,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Checkout governance scripts
+        if: github.repository != 'NIBARGERB-HLDPRO/hldpro-governance'
+        uses: actions/checkout@v6
+        with:
+          repository: NIBARGERB-HLDPRO/hldpro-governance
+          path: .governance
+          fetch-depth: 1
+
       - name: Validate codex exec model pinning
         run: |
           set -euo pipefail
-          python3 .github/scripts/check_codex_model_pins.py
+          SCRIPTS_DIR="${GITHUB_WORKSPACE}/.github/scripts"
+          if [ -d "${GITHUB_WORKSPACE}/.governance" ]; then
+            SCRIPTS_DIR="${GITHUB_WORKSPACE}/.governance/.github/scripts"
+          fi
+          python3 "${SCRIPTS_DIR}/check_codex_model_pins.py"

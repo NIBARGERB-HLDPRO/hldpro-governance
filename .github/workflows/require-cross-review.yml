@@ -13,9 +13,24 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Checkout governance scripts
+        if: github.repository != 'NIBARGERB-HLDPRO/hldpro-governance'
+        uses: actions/checkout@v6
+        with:
+          repository: NIBARGERB-HLDPRO/hldpro-governance
+          path: .governance
+          fetch-depth: 1
+
       - name: Require cross-review artifact
         run: |
           set -euo pipefail
+
+          SCRIPTS_DIR="${GITHUB_WORKSPACE}/.github/scripts"
+          GOV_ROOT="${GITHUB_WORKSPACE}"
+          if [ -d "${GITHUB_WORKSPACE}/.governance" ]; then
+            SCRIPTS_DIR="${GITHUB_WORKSPACE}/.governance/.github/scripts"
+            GOV_ROOT="${GITHUB_WORKSPACE}/.governance"
+          fi
 
           BASE_SHA="${{ github.event.pull_request.base.sha }}"
           HEAD_SHA="${{ github.event.pull_request.head.sha }}"
@@ -33,7 +48,7 @@ jobs:
 
           TOUCH=0
           printf '%s\n' "${DIFF_FILES}" | grep -Eq '^STANDARDS\.md$|^docs/.*/[^/]*charter[^/]*\.md$|^docs/[^/]*charter[^/]*\.md$' && TOUCH=1 || true
-          LABELS="$(python3 .github/scripts/get_pr_labels.py)"
+          LABELS="$(python3 "${SCRIPTS_DIR}/get_pr_labels.py")"
 
           case " $LABELS " in
             *" architecture "*|*" standards "*)
@@ -58,7 +73,7 @@ jobs:
 
           if [ "${CROSS_FILE}" = "${BOOTSTRAP_FILE}" ]; then
             if [ -f "docs/exception-register.md" ]; then
-              EXCEPTION_ACTIVE="$(python3 .github/scripts/check_som_exception.py)"
+              EXCEPTION_ACTIVE="$(python3 "${SCRIPTS_DIR}/check_som_exception.py")"
               if [ "${EXCEPTION_ACTIVE}" = "active" ]; then
                 APPLY_EXCEPTION=true
               fi
@@ -70,4 +85,4 @@ jobs:
             exit 0
           fi
 
-          bash scripts/cross-review/require-dual-signature.sh "${CROSS_FILE}"
+          bash "${GOV_ROOT}/scripts/cross-review/require-dual-signature.sh" "${CROSS_FILE}"

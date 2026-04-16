@@ -12,11 +12,23 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Checkout governance scripts
+        if: github.repository != 'NIBARGERB-HLDPRO/hldpro-governance'
+        uses: actions/checkout@v6
+        with:
+          repository: NIBARGERB-HLDPRO/hldpro-governance
+          path: .governance
+          fetch-depth: 1
+
       - name: Validate model fallback log schema
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
+          SCRIPTS_DIR="${GITHUB_WORKSPACE}/.github/scripts"
+          if [ -d "${GITHUB_WORKSPACE}/.governance" ]; then
+            SCRIPTS_DIR="${GITHUB_WORKSPACE}/.governance/.github/scripts"
+          fi
           python3 -m pip install --quiet pyyaml
-          python3 .github/scripts/check_fallback_log_schema.py
+          python3 "${SCRIPTS_DIR}/check_fallback_log_schema.py"

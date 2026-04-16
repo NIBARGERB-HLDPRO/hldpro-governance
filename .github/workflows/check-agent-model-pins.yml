@@ -12,8 +12,20 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Checkout governance scripts
+        if: github.repository != 'NIBARGERB-HLDPRO/hldpro-governance'
+        uses: actions/checkout@v6
+        with:
+          repository: NIBARGERB-HLDPRO/hldpro-governance
+          path: .governance
+          fetch-depth: 1
+
       - name: Validate agent model pins
         run: |
           set -euo pipefail
+          SCRIPTS_DIR="${GITHUB_WORKSPACE}/.github/scripts"
+          if [ -d "${GITHUB_WORKSPACE}/.governance" ]; then
+            SCRIPTS_DIR="${GITHUB_WORKSPACE}/.governance/.github/scripts"
+          fi
           python3 -m pip install --quiet pyyaml
-          python3 .github/scripts/check_agent_model_pins.py
+          python3 "${SCRIPTS_DIR}/check_agent_model_pins.py"
