@@ -1,0 +1,48 @@
+packet_id: som-callee-cross-repo-t2-brief
+created_at: "2026-04-16T00:00:00Z"
+prior:
+  tier: 1
+  role: dual-planner
+  drafter_model_id: claude-opus-4-6
+  drafter_model_family: anthropic
+  reviewer_model_id: claude-sonnet-4-6
+  reviewer_model_family: anthropic
+  verdict: APPROVED_WITH_CORRECTION
+next_tier: 2
+tier_2_model: claude-sonnet-4-6
+correction_applied: >
+  Opus plan placed permissions at top-level (regresses PR #203 fix).
+  Corrected to job-level before implementation.
+branch: fix/som-callee-cross-repo-scripts-20260416
+target: main
+
+---
+# Tier 2 Brief — SoM Callee Cross-Repo Script Resolution Fix
+
+## Problem
+
+Seven reusable workflow callees in hldpro-governance run
+`python3 .github/scripts/check_*.py` but `actions/checkout` puts the
+CALLER's workspace on-disk. When called from HealthcarePlatform, those
+scripts don't exist and jobs fail with "No such file or directory".
+
+## Reference pattern (governance-check.yml)
+
+Add a conditional secondary checkout to `.governance/` then resolve
+SCRIPTS_DIR dynamically.
+
+## Files to modify (6 of 7 — check-claude-md-pointer.yml unchanged)
+
+1. check-agent-model-pins.yml
+2. check-codex-model-pins.yml
+3. check-no-self-approval.yml
+4. check-pii-routing.yml
+5. check-fallback-log-schema.yml
+6. require-cross-review.yml (most complex — uses GOV_ROOT for bash script)
+
+## Constraints
+
+- permissions: MUST stay at JOB level (not top-level) — top-level causes startup_failure
+- check-claude-md-pointer.yml: NO changes — it correctly checks the caller's CLAUDE.md
+- YAML validation required after each file write
+- pip install pyyaml preserved only where it existed before
