@@ -23,6 +23,8 @@
 - Session start must check `~/Developer/hldpro/.codex-ingestion/{repo}/backlog-*.md` for pending Codex findings — surface to user if any exist
 - If repo governance requires specialist agents/subagents, the session must use them. Codex sessions may satisfy this by spawning equivalent Codex subagents and loading the repo's persona definitions from `CODEX.md`, `AGENTS.md`, `.agents/`, or repo-local standards instead of relying on Claude-only agent files.
 - Conventional commits: `feat/fix/docs/chore` with scope
+- **Branch naming (all repos):** Use standard SoM prefixes: `feature/<slug>`, `fix/<slug>`, `docs/<slug>`, `chore/<slug>`. Optional `-YYYYMMDD` date suffix is allowed on any prefix.
+  - **LAM high-risk lane exception:** `riskfix/<slug>-YYYYMMDD` is the designated prefix for LAM high-risk fixes in `local-ai-machine`. The date suffix is **mandatory** and one PR per lane family is enforced by `breaker-mcp-contract`. This prefix is complementary to, not conflicting with, the standard SoM prefixes — it applies only to the `riskfix/` lane. All other work in LAM (and all work in every other repo) uses the standard SoM prefixes above. See `docs/exception-register.md §SOM-LAM-BRANCH-001` (resolved).
 - **Never push to main/master** — always branch → staging → test → deploy
 - **Never force-push** (`--force`, `--force-with-lease`) — if a branch has a merge conflict, resolve via `git merge origin/develop` into the branch (merge commit), never via rebase + force-push
 - **Stagger parallel PR merges** — when merging 2+ PRs that touch the same files, add a 10-second pause (`sleep 10`) between merges to avoid race conditions

@@ -68,9 +68,10 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **approval_date:** 2026-04-14
 - **expiry_date:** 2026-05-14 (30 days)
 - **review_cadence:** monthly
-- **status:** `closed`
-- **follow-up:** reconcile SoM + riskfix/* branch conventions in a cross-repo standards discussion
-- **status:** `closed` — 2026-04-16. STANDARDS.md updated to clarify that `riskfix/<slug>-YYYYMMDD` is the LAM-required pattern (enforced by `edge_breaker_mcp_contract.yml`); other repos accept `riskfix/*` as optional. Convention conflict resolved without CI changes.
+- **status:** `resolved`
+- **resolution_date:** 2026-04-16
+- **resolution:** The two conventions are explicitly complementary, not conflicting. `riskfix/<slug>-YYYYMMDD` is the designated LAM high-risk lane prefix in `local-ai-machine`, governed by LAM-local policy (mandatory date suffix, one PR per lane family enforced by `breaker-mcp-contract`). All other work — including in `local-ai-machine` — uses the standard SoM prefixes (`feature/`, `fix/`, `docs/`, `chore/`). `STANDARDS.md` branch naming rule now documents this explicitly. No ambiguity remains. See hldpro-governance PR #175.
+- **closed_by:** `nibargerb`
 
 ### `SOM-WIN-OLLAMA-PII-001` — PII middleware enforcement deferred to Sprint 2
 
@@ -125,6 +126,10 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 (none currently)
 
 ## Expired or closed exceptions
+
+### `SOM-LAM-BRANCH-001` — RESOLVED
+
+Status: resolved 2026-04-16 (hldpro-governance #175). The `riskfix/<slug>-YYYYMMDD` convention and the standard SoM prefixes are now documented as complementary in `STANDARDS.md`. No ambiguity remains; exception retired.
 
 ### `SOM-WIN-OLLAMA-PII-001` — CLOSED
 
