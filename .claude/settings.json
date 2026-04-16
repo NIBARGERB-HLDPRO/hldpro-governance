@@ -10,6 +10,18 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $HOME/Developer/HLDPRO/hldpro-governance/hooks/code-write-gate.sh",
+            "timeout": 5000
+          }
+        ]
+      }
     ]
   }
 }
