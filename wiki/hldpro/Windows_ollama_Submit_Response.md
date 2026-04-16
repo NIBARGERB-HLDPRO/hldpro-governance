@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **TestEmptyRationale** (8 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Negative test: empty rationale from model.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Test that response with missing 'response' field is handled gracefully.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Test response with empty 'response' field.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **.test_response_with_empty_field()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **.test_response_with_empty_response_field()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **TestMalformedResponse** (8 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **Negative test: malformed /api/generate response.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **Test that invalid JSON response is rejected.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **Test that empty response is handled.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **.test_empty_response()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- **.test_invalid_json_response()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
 
 ## Relationships
 

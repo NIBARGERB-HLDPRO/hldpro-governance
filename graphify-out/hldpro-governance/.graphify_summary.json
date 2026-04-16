@@ -1,8 +1,8 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/private/tmp/issue-154-closeout/graphify-out/hldpro-governance",
-  "wiki_dir": "/private/tmp/issue-154-closeout/wiki/hldpro",
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/wiki/hldpro",
   "nodes": 380,
   "edges": 747,
   "communities": 31,
