@@ -3,10 +3,10 @@
   "source": "hldpro-governance",
   "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/graphify-out/hldpro-governance",
   "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/wiki/hldpro",
-  "nodes": 380,
-  "edges": 747,
+  "nodes": 390,
+  "edges": 760,
   "communities": 31,
   "articles": 41,
   "html_status": "skipped",
-  "code_files": 27
+  "code_files": 28
 }

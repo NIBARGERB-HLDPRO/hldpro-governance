@@ -41,7 +41,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/tests/test_progress_github_issue_staleness.py",
       "source_location": "L1",
       "id": "test_progress_github_issue_staleness",
-      "community": 6
+      "community": 8
     },
     {
       "label": "ProgressGithubIssueStalenessTests",
@@ -49,7 +49,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/tests/test_progress_github_issue_staleness.py",
       "source_location": "L16",
       "id": "test_progress_github_issue_staleness_progressgithubissuestalenesstests",
-      "community": 6
+      "community": 8
     },
     {
       "label": ".test_collects_active_sections_and_ignores_done()",
@@ -57,7 +57,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/tests/test_progress_github_issue_staleness.py",
       "source_location": "L17",
       "id": "test_progress_github_issue_staleness_progressgithubissuestalenesstests_test_collects_active_sections_and_ignores_done",
-      "community": 6
+      "community": 8
     },
     {
       "label": ".test_build_summary_reports_missing_open_and_stale_closed()",
@@ -65,7 +65,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/tests/test_progress_github_issue_staleness.py",
       "source_location": "L46",
       "id": "test_progress_github_issue_staleness_progressgithubissuestalenesstests_test_build_summary_reports_missing_open_and_stale_closed",
-      "community": 6
+      "community": 8
     },
     {
       "label": "validate_structured_agent_cycle_plan.py",
@@ -114,6 +114,86 @@
       "source_location": "L101",
       "id": "validate_structured_agent_cycle_plan_main",
       "community": 19
+    },
+    {
+      "label": "validate_backlog_gh_sync.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L1",
+      "id": "validate_backlog_gh_sync",
+      "community": 12
+    },
+    {
+      "label": "find_planned_table()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L24",
+      "id": "validate_backlog_gh_sync_find_planned_table",
+      "community": 12
+    },
+    {
+      "label": "parse_columns()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L57",
+      "id": "validate_backlog_gh_sync_parse_columns",
+      "community": 12
+    },
+    {
+      "label": "resolve_issue_number()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L78",
+      "id": "validate_backlog_gh_sync_resolve_issue_number",
+      "community": 12
+    },
+    {
+      "label": "check_github_issue()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L95",
+      "id": "validate_backlog_gh_sync_check_github_issue",
+      "community": 12
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L138",
+      "id": "validate_backlog_gh_sync_main",
+      "community": 12
+    },
+    {
+      "label": "Return (header_line_index, list_of_data_lines) for the ## Planned table.",
+      "file_type": "rationale",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L25",
+      "id": "validate_backlog_gh_sync_rationale_25",
+      "community": 12
+    },
+    {
+      "label": "Split a markdown table row into a dict keyed by header column names.     Returns",
+      "file_type": "rationale",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L58",
+      "id": "validate_backlog_gh_sync_rationale_58",
+      "community": 12
+    },
+    {
+      "label": "Extract a #NNN from the cell value.     Returns the integer issue number, or Non",
+      "file_type": "rationale",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L79",
+      "id": "validate_backlog_gh_sync_rationale_79",
+      "community": 12
+    },
+    {
+      "label": "Call GitHub API to verify issue exists and is open.     Returns (ok: bool, title",
+      "file_type": "rationale",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L96",
+      "id": "validate_backlog_gh_sync_rationale_96",
+      "community": 12
     },
     {
       "label": "check_overlord_backlog_github_alignment.py",
@@ -169,7 +249,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L1",
       "id": "check_progress_github_issue_staleness",
-      "community": 6
+      "community": 8
     },
     {
       "label": "IssueRef",
@@ -177,7 +257,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L40",
       "id": "check_progress_github_issue_staleness_issueref",
-      "community": 6
+      "community": 8
     },
     {
       "label": "fail()",
@@ -185,7 +265,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L47",
       "id": "check_progress_github_issue_staleness_fail",
-      "community": 6
+      "community": 8
     },
     {
       "label": "parse_args()",
@@ -193,7 +273,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L52",
       "id": "check_progress_github_issue_staleness_parse_args",
-      "community": 6
+      "community": 8
     },
     {
       "label": "current_repo_slug()",
@@ -201,7 +281,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L60",
       "id": "check_progress_github_issue_staleness_current_repo_slug",
-      "community": 6
+      "community": 8
     },
     {
       "label": "gh_json()",
@@ -209,7 +289,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L69",
       "id": "check_progress_github_issue_staleness_gh_json",
-      "community": 6
+      "community": 8
     },
     {
       "label": "backlog_issues()",
@@ -217,7 +297,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L80",
       "id": "check_progress_github_issue_staleness_backlog_issues",
-      "community": 6
+      "community": 8
     },
     {
       "label": "normalize_heading()",
@@ -225,7 +305,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L107",
       "id": "check_progress_github_issue_staleness_normalize_heading",
-      "community": 6
+      "community": 8
     },
     {
       "label": "section_state()",
@@ -233,7 +313,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L111",
       "id": "check_progress_github_issue_staleness_section_state",
-      "community": 6
+      "community": 8
     },
     {
       "label": "collect_active_issue_refs()",
@@ -241,7 +321,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L119",
       "id": "check_progress_github_issue_staleness_collect_active_issue_refs",
-      "community": 6
+      "community": 8
     },
     {
       "label": "build_summary()",
@@ -249,7 +329,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L138",
       "id": "check_progress_github_issue_staleness_build_summary",
-      "community": 6
+      "community": 8
     },
     {
       "label": "main()",
@@ -257,7 +337,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L167",
       "id": "check_progress_github_issue_staleness_main",
-      "community": 6
+      "community": 8
     },
     {
       "label": "build_effectiveness_metrics.py",
@@ -329,7 +409,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/memory_integrity.py",
       "source_location": "L1",
       "id": "memory_integrity",
-      "community": 14
+      "community": 15
     },
     {
       "label": "fail()",
@@ -337,7 +417,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/memory_integrity.py",
       "source_location": "L23",
       "id": "memory_integrity_fail",
-      "community": 14
+      "community": 15
     },
     {
       "label": "memory_dir_for_repo()",
@@ -345,7 +425,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/memory_integrity.py",
       "source_location": "L28",
       "id": "memory_integrity_memory_dir_for_repo",
-      "community": 14
+      "community": 15
     },
     {
       "label": "load_memory_lines()",
@@ -353,7 +433,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/memory_integrity.py",
       "source_location": "L32",
       "id": "memory_integrity_load_memory_lines",
-      "community": 14
+      "community": 15
     },
     {
       "label": "check_memory_exists()",
@@ -361,7 +441,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/memory_integrity.py",
       "source_location": "L36",
       "id": "memory_integrity_check_memory_exists",
-      "community": 14
+      "community": 15
     },
     {
       "label": "parse_pointer_filenames()",
@@ -369,7 +449,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/memory_integrity.py",
       "source_location": "L44",
       "id": "memory_integrity_parse_pointer_filenames",
-      "community": 14
+      "community": 15
     },
     {
       "label": "validate_frontmatter()",
@@ -377,7 +457,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/memory_integrity.py",
       "source_location": "L59",
       "id": "memory_integrity_validate_frontmatter",
-      "community": 14
+      "community": 15
     },
     {
       "label": "inspect_repo()",
@@ -385,7 +465,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/memory_integrity.py",
       "source_location": "L90",
       "id": "memory_integrity_inspect_repo",
-      "community": 14
+      "community": 15
     },
     {
       "label": "main()",
@@ -393,7 +473,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/memory_integrity.py",
       "source_location": "L122",
       "id": "memory_integrity_main",
-      "community": 14
+      "community": 15
     },
     {
       "label": "codex_ingestion.py",
@@ -671,7 +751,7 @@
       "label": "cmd_qualify()",
       "file_type": "code",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L657",
+      "source_location": "L661",
       "id": "codex_ingestion_cmd_qualify",
       "community": 0
     },
@@ -679,7 +759,7 @@
       "label": "cmd_promote()",
       "file_type": "code",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L831",
+      "source_location": "L835",
       "id": "codex_ingestion_cmd_promote",
       "community": 0
     },
@@ -687,7 +767,7 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L888",
+      "source_location": "L892",
       "id": "codex_ingestion_main",
       "community": 0
     },
@@ -721,7 +801,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L1",
       "id": "submit",
-      "community": 15
+      "community": 4
     },
     {
       "label": "WindowsOllamaSubmitter",
@@ -729,7 +809,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L58",
       "id": "submit_windowsollamasubmitter",
-      "community": 10
+      "community": 4
     },
     {
       "label": ".__init__()",
@@ -737,7 +817,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L61",
       "id": "submit_windowsollamasubmitter_init",
-      "community": 10
+      "community": 4
     },
     {
       "label": "._load_pii_patterns()",
@@ -745,7 +825,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L86",
       "id": "submit_windowsollamasubmitter_load_pii_patterns",
-      "community": 10
+      "community": 4
     },
     {
       "label": "._load_allowlist()",
@@ -753,7 +833,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L91",
       "id": "submit_windowsollamasubmitter_load_allowlist",
-      "community": 10
+      "community": 4
     },
     {
       "label": ".detect_pii()",
@@ -761,7 +841,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L118",
       "id": "submit_windowsollamasubmitter_detect_pii",
-      "community": 8
+      "community": 4
     },
     {
       "label": ".check_allowlist()",
@@ -769,7 +849,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L126",
       "id": "submit_windowsollamasubmitter_check_allowlist",
-      "community": 8
+      "community": 4
     },
     {
       "label": ".submit()",
@@ -777,7 +857,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L131",
       "id": "submit_windowsollamasubmitter_submit",
-      "community": 8
+      "community": 4
     },
     {
       "label": "._post_generate()",
@@ -785,7 +865,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L251",
       "id": "submit_windowsollamasubmitter_post_generate",
-      "community": 8
+      "community": 4
     },
     {
       "label": "PiiDetectionError",
@@ -793,7 +873,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L285",
       "id": "submit_piidetectionerror",
-      "community": 9
+      "community": 7
     },
     {
       "label": "Exception",
@@ -801,7 +881,7 @@
       "source_file": "",
       "source_location": "",
       "id": "exception",
-      "community": 9
+      "community": 7
     },
     {
       "label": ".__init__()",
@@ -809,7 +889,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L288",
       "id": "submit_piidetectionerror_init",
-      "community": 9
+      "community": 7
     },
     {
       "label": ".to_dict()",
@@ -817,7 +897,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L301",
       "id": "submit_piidetectionerror_to_dict",
-      "community": 8
+      "community": 7
     },
     {
       "label": "ModelNotAllowedError",
@@ -825,7 +905,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L310",
       "id": "submit_modelnotallowederror",
-      "community": 11
+      "community": 9
     },
     {
       "label": ".__init__()",
@@ -833,7 +913,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L313",
       "id": "submit_modelnotallowederror_init",
-      "community": 11
+      "community": 9
     },
     {
       "label": ".to_dict()",
@@ -841,7 +921,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L328",
       "id": "submit_modelnotallowederror_to_dict",
-      "community": 8
+      "community": 9
     },
     {
       "label": "EndpointUnreachableError",
@@ -849,7 +929,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L339",
       "id": "submit_endpointunreachableerror",
-      "community": 7
+      "community": 10
     },
     {
       "label": ".__init__()",
@@ -857,7 +937,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L342",
       "id": "submit_endpointunreachableerror_init",
-      "community": 7
+      "community": 10
     },
     {
       "label": ".to_dict()",
@@ -865,7 +945,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L355",
       "id": "submit_endpointunreachableerror_to_dict",
-      "community": 15
+      "community": 4
     },
     {
       "label": "main()",
@@ -873,7 +953,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L365",
       "id": "submit_main",
-      "community": 15
+      "community": 4
     },
     {
       "label": "Submit requests to Windows-Ollama endpoint with PII detection and allowlist enfo",
@@ -881,7 +961,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L59",
       "id": "submit_rationale_59",
-      "community": 10
+      "community": 4
     },
     {
       "label": "Initialize the submitter.          Args:             endpoint: Windows-Ollama en",
@@ -889,7 +969,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L67",
       "id": "submit_rationale_67",
-      "community": 10
+      "community": 4
     },
     {
       "label": "Load PII patterns from pii_patterns.yml.",
@@ -897,7 +977,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L87",
       "id": "submit_rationale_87",
-      "community": 10
+      "community": 4
     },
     {
       "label": "Load model allowlist from model_allowlist.yml.",
@@ -905,7 +985,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L92",
       "id": "submit_rationale_92",
-      "community": 10
+      "community": 4
     },
     {
       "label": "Scan text for PII patterns.          Returns: pattern name if detected, None oth",
@@ -913,7 +993,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L119",
       "id": "submit_rationale_119",
-      "community": 8
+      "community": 4
     },
     {
       "label": "Verify model is in allowlist for the specified role.",
@@ -921,7 +1001,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L127",
       "id": "submit_rationale_127",
-      "community": 8
+      "community": 4
     },
     {
       "label": "Submit a request to Windows-Ollama.          Args:             model: Model name",
@@ -929,7 +1009,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L140",
       "id": "submit_rationale_140",
-      "community": 8
+      "community": 4
     },
     {
       "label": "POST to /api/generate and return response.",
@@ -937,7 +1017,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L252",
       "id": "submit_rationale_252",
-      "community": 8
+      "community": 4
     },
     {
       "label": "Raised when PII is detected or explicitly marked.",
@@ -945,7 +1025,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L286",
       "id": "submit_rationale_286",
-      "community": 9
+      "community": 7
     },
     {
       "label": "Return structured error dict for JSON output.",
@@ -953,7 +1033,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L302",
       "id": "submit_rationale_302",
-      "community": 8
+      "community": 7
     },
     {
       "label": "Raised when model is not in allowlist.",
@@ -961,7 +1041,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L311",
       "id": "submit_rationale_311",
-      "community": 11
+      "community": 9
     },
     {
       "label": "Return structured error dict for JSON output.",
@@ -969,7 +1049,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L329",
       "id": "submit_rationale_329",
-      "community": 8
+      "community": 9
     },
     {
       "label": "Raised when Windows-Ollama endpoint is unreachable.",
@@ -977,7 +1057,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L340",
       "id": "submit_rationale_340",
-      "community": 7
+      "community": 10
     },
     {
       "label": "Return structured error dict for JSON output.",
@@ -985,7 +1065,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/submit.py",
       "source_location": "L356",
       "id": "submit_rationale_356",
-      "community": 15
+      "community": 4
     },
     {
       "label": "audit.py",
@@ -993,7 +1073,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L1",
       "id": "audit",
-      "community": 15
+      "community": 5
     },
     {
       "label": "canonical_json()",
@@ -1001,7 +1081,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L16",
       "id": "audit_canonical_json",
-      "community": 4
+      "community": 5
     },
     {
       "label": "compute_sha256()",
@@ -1009,7 +1089,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L26",
       "id": "audit_compute_sha256",
-      "community": 4
+      "community": 5
     },
     {
       "label": "compute_entry_hmac()",
@@ -1017,7 +1097,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L33",
       "id": "audit_compute_entry_hmac",
-      "community": 4
+      "community": 5
     },
     {
       "label": "AuditWriter",
@@ -1025,7 +1105,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L51",
       "id": "audit_auditwriter",
-      "community": 8
+      "community": 4
     },
     {
       "label": ".__init__()",
@@ -1033,7 +1113,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L54",
       "id": "audit_auditwriter_init",
-      "community": 8
+      "community": 4
     },
     {
       "label": "._get_today_path()",
@@ -1041,7 +1121,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L60",
       "id": "audit_auditwriter_get_today_path",
-      "community": 4
+      "community": 5
     },
     {
       "label": "._get_today_manifest_path()",
@@ -1049,7 +1129,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L65",
       "id": "audit_auditwriter_get_today_manifest_path",
-      "community": 4
+      "community": 5
     },
     {
       "label": "._read_last_entry()",
@@ -1057,7 +1137,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L70",
       "id": "audit_auditwriter_read_last_entry",
-      "community": 4
+      "community": 5
     },
     {
       "label": "._get_next_seq()",
@@ -1065,7 +1145,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L88",
       "id": "audit_auditwriter_get_next_seq",
-      "community": 4
+      "community": 5
     },
     {
       "label": "._get_prev_hash()",
@@ -1073,7 +1153,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L95",
       "id": "audit_auditwriter_get_prev_hash",
-      "community": 4
+      "community": 5
     },
     {
       "label": ".write_entry()",
@@ -1081,7 +1161,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L105",
       "id": "audit_auditwriter_write_entry",
-      "community": 4
+      "community": 5
     },
     {
       "label": "._write_manifest()",
@@ -1089,7 +1169,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L174",
       "id": "audit_auditwriter_write_manifest",
-      "community": 4
+      "community": 5
     },
     {
       "label": "Return canonical JSON for HMAC computation.",
@@ -1097,7 +1177,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L17",
       "id": "audit_rationale_17",
-      "community": 4
+      "community": 5
     },
     {
       "label": "Compute SHA256 hash of bytes.",
@@ -1105,7 +1185,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L27",
       "id": "audit_rationale_27",
-      "community": 4
+      "community": 5
     },
     {
       "label": "Compute HMAC-SHA256 over canonical JSON of entry (without entry_hmac field).",
@@ -1113,7 +1193,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L34",
       "id": "audit_rationale_34",
-      "community": 4
+      "community": 5
     },
     {
       "label": "Append-only audit log writer with hash-chain and daily manifest.",
@@ -1121,7 +1201,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L52",
       "id": "audit_rationale_52",
-      "community": 8
+      "community": 4
     },
     {
       "label": "Return path to today's audit log.",
@@ -1129,7 +1209,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L61",
       "id": "audit_rationale_61",
-      "community": 4
+      "community": 5
     },
     {
       "label": "Return path to today's manifest.",
@@ -1137,7 +1217,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L66",
       "id": "audit_rationale_66",
-      "community": 4
+      "community": 5
     },
     {
       "label": "Read the last entry from today's log, or None if file doesn't exist.",
@@ -1145,7 +1225,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L71",
       "id": "audit_rationale_71",
-      "community": 4
+      "community": 5
     },
     {
       "label": "Get next sequence number for today.",
@@ -1153,7 +1233,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L89",
       "id": "audit_rationale_89",
-      "community": 4
+      "community": 5
     },
     {
       "label": "Get previous entry's hash (or zero for seq=0).",
@@ -1161,7 +1241,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L96",
       "id": "audit_rationale_96",
-      "community": 4
+      "community": 5
     },
     {
       "label": "Write an audit entry. Returns True if successful, False otherwise.          Args",
@@ -1169,7 +1249,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L107",
       "id": "audit_rationale_107",
-      "community": 4
+      "community": 5
     },
     {
       "label": "Write or update today's manifest.",
@@ -1177,7 +1257,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/audit.py",
       "source_location": "L175",
       "id": "audit_rationale_175",
-      "community": 4
+      "community": 5
     },
     {
       "label": "_pii.py",
@@ -1337,7 +1417,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L1",
       "id": "test_submit",
-      "community": 15
+      "community": 13
     },
     {
       "label": "submitter()",
@@ -1345,7 +1425,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L38",
       "id": "test_submit_submitter",
-      "community": 15
+      "community": 13
     },
     {
       "label": "TestPiiDetection",
@@ -1353,7 +1433,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L70",
       "id": "test_submit_testpiidetection",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".test_pii_ssn_detected()",
@@ -1361,7 +1441,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L73",
       "id": "test_submit_testpiidetection_test_pii_ssn_detected",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".test_pii_email_detected()",
@@ -1369,7 +1449,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L82",
       "id": "test_submit_testpiidetection_test_pii_email_detected",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".test_pii_explicit_flag()",
@@ -1377,7 +1457,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L92",
       "id": "test_submit_testpiidetection_test_pii_explicit_flag",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".test_no_pii_clean_prompt()",
@@ -1385,7 +1465,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L102",
       "id": "test_submit_testpiidetection_test_no_pii_clean_prompt",
-      "community": 9
+      "community": 10
     },
     {
       "label": "TestModelAllowlist",
@@ -1393,7 +1473,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L113",
       "id": "test_submit_testmodelallowlist",
-      "community": 10
+      "community": 13
     },
     {
       "label": ".test_model_not_in_allowlist()",
@@ -1401,7 +1481,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L116",
       "id": "test_submit_testmodelallowlist_test_model_not_in_allowlist",
-      "community": 10
+      "community": 13
     },
     {
       "label": ".test_model_allowed_in_allowlist()",
@@ -1409,7 +1489,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L126",
       "id": "test_submit_testmodelallowlist_test_model_allowed_in_allowlist",
-      "community": 10
+      "community": 13
     },
     {
       "label": "TestEndpointReachability",
@@ -1417,7 +1497,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L137",
       "id": "test_submit_testendpointreachability",
-      "community": 11
+      "community": 18
     },
     {
       "label": ".test_endpoint_unreachable()",
@@ -1425,7 +1505,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L140",
       "id": "test_submit_testendpointreachability_test_endpoint_unreachable",
-      "community": 11
+      "community": 18
     },
     {
       "label": ".test_endpoint_timeout()",
@@ -1433,7 +1513,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L151",
       "id": "test_submit_testendpointreachability_test_endpoint_timeout",
-      "community": 11
+      "community": 18
     },
     {
       "label": ".test_endpoint_reachable()",
@@ -1441,7 +1521,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L160",
       "id": "test_submit_testendpointreachability_test_endpoint_reachable",
-      "community": 11
+      "community": 18
     },
     {
       "label": "TestMalformedResponse",
@@ -1497,7 +1577,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L216",
       "id": "test_submit_testerrorstructure",
-      "community": 18
+      "community": 9
     },
     {
       "label": ".test_pii_error_structure()",
@@ -1505,7 +1585,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L219",
       "id": "test_submit_testerrorstructure_test_pii_error_structure",
-      "community": 18
+      "community": 9
     },
     {
       "label": ".test_model_not_allowed_error_structure()",
@@ -1513,7 +1593,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L232",
       "id": "test_submit_testerrorstructure_test_model_not_allowed_error_structure",
-      "community": 18
+      "community": 9
     },
     {
       "label": ".test_endpoint_unreachable_error_structure()",
@@ -1521,7 +1601,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L245",
       "id": "test_submit_testerrorstructure_test_endpoint_unreachable_error_structure",
-      "community": 18
+      "community": 9
     },
     {
       "label": "TestAuditIntegration",
@@ -1537,7 +1617,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L266",
       "id": "test_submit_audit_dir",
-      "community": 15
+      "community": 13
     },
     {
       "label": ".test_audit_entry_on_success()",
@@ -1585,7 +1665,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L39",
       "id": "test_submit_rationale_39",
-      "community": 15
+      "community": 13
     },
     {
       "label": "Negative test: PII detection.",
@@ -1593,7 +1673,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L71",
       "id": "test_submit_rationale_71",
-      "community": 9
+      "community": 10
     },
     {
       "label": "Test that SSN pattern is detected.",
@@ -1601,7 +1681,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L74",
       "id": "test_submit_rationale_74",
-      "community": 9
+      "community": 10
     },
     {
       "label": "Test that email pattern is detected.",
@@ -1609,7 +1689,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L83",
       "id": "test_submit_rationale_83",
-      "community": 9
+      "community": 10
     },
     {
       "label": "Test that explicit has_pii=True triggers pii_halt.",
@@ -1617,7 +1697,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L93",
       "id": "test_submit_rationale_93",
-      "community": 9
+      "community": 10
     },
     {
       "label": "Test that clean prompt passes PII detection.",
@@ -1625,7 +1705,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L103",
       "id": "test_submit_rationale_103",
-      "community": 9
+      "community": 10
     },
     {
       "label": "Negative test: non-allowlisted model.",
@@ -1633,7 +1713,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L114",
       "id": "test_submit_rationale_114",
-      "community": 10
+      "community": 13
     },
     {
       "label": "Test that non-allowlisted model is rejected.",
@@ -1641,7 +1721,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L117",
       "id": "test_submit_rationale_117",
-      "community": 10
+      "community": 13
     },
     {
       "label": "Test that allowlisted model passes allowlist check.",
@@ -1649,7 +1729,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L127",
       "id": "test_submit_rationale_127",
-      "community": 10
+      "community": 13
     },
     {
       "label": "Negative test: unreachable endpoint.",
@@ -1657,7 +1737,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L138",
       "id": "test_submit_rationale_138",
-      "community": 11
+      "community": 18
     },
     {
       "label": "Test that unreachable endpoint raises appropriate error.",
@@ -1665,7 +1745,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L141",
       "id": "test_submit_rationale_141",
-      "community": 11
+      "community": 18
     },
     {
       "label": "Test that endpoint timeout is handled.",
@@ -1673,7 +1753,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L152",
       "id": "test_submit_rationale_152",
-      "community": 11
+      "community": 18
     },
     {
       "label": "Test that reachable endpoint succeeds.",
@@ -1681,7 +1761,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L161",
       "id": "test_submit_rationale_161",
-      "community": 11
+      "community": 18
     },
     {
       "label": "Negative test: malformed /api/generate response.",
@@ -1737,7 +1817,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L217",
       "id": "test_submit_rationale_217",
-      "community": 18
+      "community": 9
     },
     {
       "label": "Test that PII errors have correct JSON structure.",
@@ -1745,7 +1825,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L220",
       "id": "test_submit_rationale_220",
-      "community": 18
+      "community": 9
     },
     {
       "label": "Test that model-not-allowed errors have correct JSON structure.",
@@ -1753,7 +1833,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L233",
       "id": "test_submit_rationale_233",
-      "community": 18
+      "community": 9
     },
     {
       "label": "Test that endpoint-unreachable errors have correct JSON structure.",
@@ -1761,7 +1841,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L246",
       "id": "test_submit_rationale_246",
-      "community": 18
+      "community": 9
     },
     {
       "label": "Verify that all submission paths write exactly one audit entry.",
@@ -1777,7 +1857,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L267",
       "id": "test_submit_rationale_267",
-      "community": 11
+      "community": 9
     },
     {
       "label": "Test that successful submission writes one audit entry.",
@@ -2289,7 +2369,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/graphify_targets.py",
       "source_location": "L1",
       "id": "graphify_targets",
-      "community": 13
+      "community": 14
     },
     {
       "label": "load_manifest()",
@@ -2297,7 +2377,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/graphify_targets.py",
       "source_location": "L14",
       "id": "graphify_targets_load_manifest",
-      "community": 13
+      "community": 14
     },
     {
       "label": "target_rows()",
@@ -2305,7 +2385,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/graphify_targets.py",
       "source_location": "L24",
       "id": "graphify_targets_target_rows",
-      "community": 13
+      "community": 14
     },
     {
       "label": "filtered_targets()",
@@ -2313,7 +2393,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/graphify_targets.py",
       "source_location": "L30",
       "id": "graphify_targets_filtered_targets",
-      "community": 13
+      "community": 14
     },
     {
       "label": "find_target()",
@@ -2321,7 +2401,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/graphify_targets.py",
       "source_location": "L39",
       "id": "graphify_targets_find_target",
-      "community": 13
+      "community": 14
     },
     {
       "label": "print_json()",
@@ -2329,7 +2409,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/graphify_targets.py",
       "source_location": "L46",
       "id": "graphify_targets_print_json",
-      "community": 13
+      "community": 14
     },
     {
       "label": "print_tsv()",
@@ -2337,7 +2417,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/graphify_targets.py",
       "source_location": "L51",
       "id": "graphify_targets_print_tsv",
-      "community": 13
+      "community": 14
     },
     {
       "label": "print_shell()",
@@ -2345,7 +2425,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/graphify_targets.py",
       "source_location": "L67",
       "id": "graphify_targets_print_shell",
-      "community": 13
+      "community": 14
     },
     {
       "label": "print_stage_paths()",
@@ -2353,7 +2433,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/graphify_targets.py",
       "source_location": "L74",
       "id": "graphify_targets_print_stage_paths",
-      "community": 13
+      "community": 14
     },
     {
       "label": "main()",
@@ -2361,7 +2441,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/graphify_targets.py",
       "source_location": "L84",
       "id": "graphify_targets_main",
-      "community": 13
+      "community": 14
     },
     {
       "label": "build_graph.py",
@@ -2369,7 +2449,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/build_graph.py",
       "source_location": "L1",
       "id": "build_graph",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_split_words()",
@@ -2377,7 +2457,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/build_graph.py",
       "source_location": "L78",
       "id": "build_graph_split_words",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_normalize_phrase()",
@@ -2385,7 +2465,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/build_graph.py",
       "source_location": "L84",
       "id": "build_graph_normalize_phrase",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_derive_path_phrase()",
@@ -2393,7 +2473,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/build_graph.py",
       "source_location": "L91",
       "id": "build_graph_derive_path_phrase",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_derive_path_tokens()",
@@ -2401,7 +2481,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/build_graph.py",
       "source_location": "L123",
       "id": "build_graph_derive_path_tokens",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_community_label()",
@@ -2409,7 +2489,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/build_graph.py",
       "source_location": "L137",
       "id": "build_graph_community_label",
-      "community": 12
+      "community": 11
     },
     {
       "label": "infer_community_labels()",
@@ -2417,7 +2497,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/build_graph.py",
       "source_location": "L168",
       "id": "build_graph_infer_community_labels",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_sanitize_text_paths()",
@@ -2425,7 +2505,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/build_graph.py",
       "source_location": "L172",
       "id": "build_graph_sanitize_text_paths",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_sanitize_markdown_artifacts()",
@@ -2433,7 +2513,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/build_graph.py",
       "source_location": "L179",
       "id": "build_graph_sanitize_markdown_artifacts",
-      "community": 12
+      "community": 11
     },
     {
       "label": "build_graph()",
@@ -2441,7 +2521,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/build_graph.py",
       "source_location": "L191",
       "id": "build_graph_build_graph",
-      "community": 12
+      "community": 11
     },
     {
       "label": "main()",
@@ -2449,7 +2529,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/knowledge_base/build_graph.py",
       "source_location": "L277",
       "id": "build_graph_main",
-      "community": 12
+      "community": 11
     },
     {
       "label": "test_graphify_usage_logging_contract.py",
@@ -2585,7 +2665,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L1",
       "id": "validate",
-      "community": 5
+      "community": 6
     },
     {
       "label": "_load_packet()",
@@ -2593,7 +2673,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L50",
       "id": "validate_load_packet",
-      "community": 5
+      "community": 6
     },
     {
       "label": "_find_packet_file()",
@@ -2601,7 +2681,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L58",
       "id": "validate_find_packet_file",
-      "community": 5
+      "community": 6
     },
     {
       "label": "_resolve_chain()",
@@ -2609,7 +2689,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L68",
       "id": "validate_resolve_chain",
-      "community": 5
+      "community": 6
     },
     {
       "label": "load_pii_patterns()",
@@ -2617,7 +2697,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L94",
       "id": "validate_load_pii_patterns",
-      "community": 5
+      "community": 6
     },
     {
       "label": "validate_dual_planner()",
@@ -2625,7 +2705,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L116",
       "id": "validate_validate_dual_planner",
-      "community": 5
+      "community": 6
     },
     {
       "label": "validate_no_self_approval()",
@@ -2633,7 +2713,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L159",
       "id": "validate_validate_no_self_approval",
-      "community": 5
+      "community": 6
     },
     {
       "label": "validate_planning_floor()",
@@ -2641,7 +2721,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L192",
       "id": "validate_validate_planning_floor",
-      "community": 5
+      "community": 6
     },
     {
       "label": "validate_pii_floor()",
@@ -2649,7 +2729,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L208",
       "id": "validate_validate_pii_floor",
-      "community": 5
+      "community": 6
     },
     {
       "label": "validate_packet()",
@@ -2657,7 +2737,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L245",
       "id": "validate_validate_packet",
-      "community": 5
+      "community": 6
     },
     {
       "label": "Load a YAML packet; return None if missing or malformed.",
@@ -2665,7 +2745,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L51",
       "id": "validate_rationale_51",
-      "community": 5
+      "community": 6
     },
     {
       "label": "Locate a packet file by ID (supports YYYY-MM-DD-<id>.yml naming).",
@@ -2673,7 +2753,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L59",
       "id": "validate_rationale_59",
-      "community": 5
+      "community": 6
     },
     {
       "label": "Walk parent_packet_id links backwards; return ordered list [packet, parent, ...]",
@@ -2681,7 +2761,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L69",
       "id": "validate_rationale_69",
-      "community": 5
+      "community": 6
     },
     {
       "label": "Load and compile PII patterns from pii-patterns.yml.",
@@ -2689,7 +2769,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L95",
       "id": "validate_rationale_95",
-      "community": 5
+      "community": 6
     },
     {
       "label": "Enforce cross-family independence for tier-1 dual-planner packets.      When pri",
@@ -2697,7 +2777,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L120",
       "id": "validate_rationale_120",
-      "community": 5
+      "community": 6
     },
     {
       "label": "Refuse if any consecutive pair in the parent chain shares model_id across differ",
@@ -2705,7 +2785,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L163",
       "id": "validate_rationale_163",
-      "community": 5
+      "community": 6
     },
     {
       "label": "Refuse tier-1 packets whose model is below the planning floor.",
@@ -2713,7 +2793,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L193",
       "id": "validate_rationale_193",
-      "community": 5
+      "community": 6
     },
     {
       "label": "Refuse if PII artifacts appear outside LAM-role packets, or if the pattern file",
@@ -2721,7 +2801,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L209",
       "id": "validate_rationale_209",
-      "community": 5
+      "community": 6
     },
     {
       "label": "Run all validators against a packet dict.      Returns (all_passed, list_of_fail",
@@ -2729,7 +2809,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/packet/validate.py",
       "source_location": "L249",
       "id": "validate_rationale_249",
-      "community": 5
+      "community": 6
     },
     {
       "label": "test_validate.py",
@@ -3260,6 +3340,162 @@
       "source": "validate_structured_agent_cycle_plan_validate_file",
       "target": "validate_structured_agent_cycle_plan_main",
       "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "validate_backlog_gh_sync",
+      "_tgt": "validate_backlog_gh_sync_find_planned_table",
+      "source": "validate_backlog_gh_sync",
+      "target": "validate_backlog_gh_sync_find_planned_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_src": "validate_backlog_gh_sync",
+      "_tgt": "validate_backlog_gh_sync_parse_columns",
+      "source": "validate_backlog_gh_sync",
+      "target": "validate_backlog_gh_sync_parse_columns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_src": "validate_backlog_gh_sync",
+      "_tgt": "validate_backlog_gh_sync_resolve_issue_number",
+      "source": "validate_backlog_gh_sync",
+      "target": "validate_backlog_gh_sync_resolve_issue_number",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_src": "validate_backlog_gh_sync",
+      "_tgt": "validate_backlog_gh_sync_check_github_issue",
+      "source": "validate_backlog_gh_sync",
+      "target": "validate_backlog_gh_sync_check_github_issue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_src": "validate_backlog_gh_sync",
+      "_tgt": "validate_backlog_gh_sync_main",
+      "source": "validate_backlog_gh_sync",
+      "target": "validate_backlog_gh_sync_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L148",
+      "weight": 0.8,
+      "_src": "validate_backlog_gh_sync_main",
+      "_tgt": "validate_backlog_gh_sync_find_planned_table",
+      "source": "validate_backlog_gh_sync_find_planned_table",
+      "target": "validate_backlog_gh_sync_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "validate_backlog_gh_sync_rationale_25",
+      "_tgt": "validate_backlog_gh_sync_find_planned_table",
+      "source": "validate_backlog_gh_sync_find_planned_table",
+      "target": "validate_backlog_gh_sync_rationale_25",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L172",
+      "weight": 0.8,
+      "_src": "validate_backlog_gh_sync_main",
+      "_tgt": "validate_backlog_gh_sync_parse_columns",
+      "source": "validate_backlog_gh_sync_parse_columns",
+      "target": "validate_backlog_gh_sync_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_src": "validate_backlog_gh_sync_rationale_58",
+      "_tgt": "validate_backlog_gh_sync_parse_columns",
+      "source": "validate_backlog_gh_sync_parse_columns",
+      "target": "validate_backlog_gh_sync_rationale_58",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L190",
+      "weight": 0.8,
+      "_src": "validate_backlog_gh_sync_main",
+      "_tgt": "validate_backlog_gh_sync_resolve_issue_number",
+      "source": "validate_backlog_gh_sync_resolve_issue_number",
+      "target": "validate_backlog_gh_sync_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_src": "validate_backlog_gh_sync_rationale_79",
+      "_tgt": "validate_backlog_gh_sync_resolve_issue_number",
+      "source": "validate_backlog_gh_sync_resolve_issue_number",
+      "target": "validate_backlog_gh_sync_rationale_79",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L202",
+      "weight": 0.8,
+      "_src": "validate_backlog_gh_sync_main",
+      "_tgt": "validate_backlog_gh_sync_check_github_issue",
+      "source": "validate_backlog_gh_sync_check_github_issue",
+      "target": "validate_backlog_gh_sync_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/validate_backlog_gh_sync.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "_src": "validate_backlog_gh_sync_rationale_96",
+      "_tgt": "validate_backlog_gh_sync_check_github_issue",
+      "source": "validate_backlog_gh_sync_check_github_issue",
+      "target": "validate_backlog_gh_sync_rationale_96",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4393,7 +4629,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L657",
+      "source_location": "L661",
       "weight": 1.0,
       "_src": "codex_ingestion",
       "_tgt": "codex_ingestion_cmd_qualify",
@@ -4405,7 +4641,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L831",
+      "source_location": "L835",
       "weight": 1.0,
       "_src": "codex_ingestion",
       "_tgt": "codex_ingestion_cmd_promote",
@@ -4417,7 +4653,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L888",
+      "source_location": "L892",
       "weight": 1.0,
       "_src": "codex_ingestion",
       "_tgt": "codex_ingestion_main",
@@ -4429,7 +4665,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L689",
+      "source_location": "L693",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
       "_tgt": "codex_ingestion_finding",
@@ -4441,7 +4677,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L849",
+      "source_location": "L853",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_promote",
       "_tgt": "codex_ingestion_finding",
@@ -4513,7 +4749,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L666",
+      "source_location": "L670",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
       "_tgt": "codex_ingestion_load_json",
@@ -4525,7 +4761,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L837",
+      "source_location": "L841",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_promote",
       "_tgt": "codex_ingestion_load_json",
@@ -4549,7 +4785,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L676",
+      "source_location": "L680",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
       "_tgt": "codex_ingestion_write_json",
@@ -4561,7 +4797,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L628",
+      "source_location": "L632",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
       "_tgt": "codex_ingestion_extract_json_from_stdout",
@@ -4573,7 +4809,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L640",
+      "source_location": "L644",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
       "_tgt": "codex_ingestion_summarize_failure_output",
@@ -4645,7 +4881,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L572",
+      "source_location": "L576",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
       "_tgt": "codex_ingestion_build_review_context",
@@ -4657,7 +4893,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L576",
+      "source_location": "L580",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
       "_tgt": "codex_ingestion_build_schema_file",
@@ -4669,7 +4905,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L629",
+      "source_location": "L633",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_generate",
       "_tgt": "codex_ingestion_normalize_review",
@@ -4681,7 +4917,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L724",
+      "source_location": "L728",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
       "_tgt": "codex_ingestion_classify_finding",
@@ -4693,7 +4929,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L702",
+      "source_location": "L706",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
       "_tgt": "codex_ingestion_detect_duplicate",
@@ -4741,7 +4977,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L713",
+      "source_location": "L717",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
       "_tgt": "codex_ingestion_validate_location",
@@ -4777,7 +5013,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L782",
+      "source_location": "L786",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_qualify",
       "_tgt": "codex_ingestion_markdown_escape",
@@ -4789,7 +5025,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L862",
+      "source_location": "L866",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_promote",
       "_tgt": "codex_ingestion_markdown_escape",
@@ -4825,7 +5061,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L866",
+      "source_location": "L870",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_promote",
       "_tgt": "codex_ingestion_append_progress_candidate",
@@ -4861,7 +5097,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L875",
+      "source_location": "L879",
       "weight": 0.8,
       "_src": "codex_ingestion_cmd_promote",
       "_tgt": "codex_ingestion_append_fail_fast_candidate",
@@ -4873,7 +5109,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L889",
+      "source_location": "L893",
       "weight": 0.8,
       "_src": "codex_ingestion_main",
       "_tgt": "codex_ingestion_build_parser",
@@ -4885,7 +5121,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L893",
+      "source_location": "L897",
       "weight": 0.8,
       "_src": "codex_ingestion_main",
       "_tgt": "codex_ingestion_cmd_status",
@@ -4897,7 +5133,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L895",
+      "source_location": "L899",
       "weight": 0.8,
       "_src": "codex_ingestion_main",
       "_tgt": "codex_ingestion_cmd_generate",
@@ -4909,7 +5145,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L897",
+      "source_location": "L901",
       "weight": 0.8,
       "_src": "codex_ingestion_main",
       "_tgt": "codex_ingestion_cmd_qualify",
@@ -4921,7 +5157,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/overlord/codex_ingestion.py",
-      "source_location": "L899",
+      "source_location": "L903",
       "weight": 0.8,
       "_src": "codex_ingestion_main",
       "_tgt": "codex_ingestion_cmd_promote",
