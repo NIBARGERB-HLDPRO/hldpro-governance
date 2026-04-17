@@ -2,8 +2,9 @@
 
 **Version target:** v1.4 (quality-of-life, ships alongside current bug sprint)
 **Prepared:** April 17, 2026
-**Revised:** April 17, 2026 — (1) Added Phase 6 (Selective Playwright Testing); Phase 3.2 (`@slow` tagging) superseded and removed. (2) Applied reviewer-response memo edits E1–E5: CI-authority principle (§1), Phase 0.0 issue creation, Phase 6.5 verdict-line phrasing and `--full` override clarification, Appendix A "Artifacts vs Reports" subsection, QUICKREF CI-authority line.
-**Issue number:** _Populated in Phase 0.0_
+**Revised:** April 17, 2026 — (1) Added Phase 6 (Selective Playwright Testing); Phase 3.2 (`@slow` tagging) superseded and removed. (2) Applied reviewer-response memo edits E1–E5: CI-authority principle (§1), Phase 0.0 issue creation, Phase 6.5 verdict-line phrasing and full-suite override clarification, Appendix A "Artifacts vs Reports" subsection, QUICKREF CI-authority line. (3) Added hldpro-governance target-repo implementation overlay for issue #253. (4) Added alternate-model review follow-up: governance-profile micro-slices and explicit deployer safety contract.
+**Issue number:** #253
+**Target repo:** `hldpro-governance`
 **Paired memo:** `Local_CI_Gate_Runbook_Reviewer_Response_Memo.md`
 **Owner:** Benji (solo)
 **Estimated effort:** 6–8 hours across 2–3 sittings
@@ -18,9 +19,13 @@
 **Revision 2 — Reviewer memo edits applied:** Five targeted edits applied per `Local_CI_Gate_Runbook_Reviewer_Response_Memo.md`:
 - **E1** — §1 Epic: added "CI remains authoritative" principle beneath success metric
 - **E2** — §5 Phase 0: added new micro-slice 0.0 covering GitHub issue creation, milestone assignment, and backlog row seeding before any implementation work
-- **E3** — §11 Phase 6.5: replaced resolver log-line strings with precise verdict phrasing; clarified `--full` as the single user-facing override
+- **E3** — §11 Phase 6.5: replaced resolver log-line strings with precise verdict phrasing; clarified the full-suite script as the single user-facing override
 - **E4** — §15 Appendix A: added "Artifacts vs Reports" subsection distinguishing tracked baselines, gitignored per-run reports, and closeout evidence
 - **E5** — §8 Phase 3.4 QUICKREF content: appended "CI remains authoritative" line
+
+**Revision 3 — org-level toolkit target:** Issue #253 targets `hldpro-governance` as the source-of-truth repository for reusable local CI gate tooling. Consumer repos should pull/deploy this toolkit through thin shims instead of recreating the logic. The first implementation PR should build the governance-owned toolkit and a governance-repo profile; product-repo Playwright selective testing remains a reusable downstream profile, not hand-copied per repo.
+
+**Revision 4 — implementation handoff tightened:** Alternate-model review approved the plan with follow-up changes. §1.1 now includes governance-profile implementation micro-slices and a Local CI Gate deployer contract so the next implementation PR does not need to infer those details from the downstream Playwright profile or the graphify helper analogy.
 
 **Migration from the old approach:** If you already started Phase 3.2 tagging, the `@slow` tags cause no harm — they're simply ignored. Do not add new ones. The `@covers` annotation described in Phase 6 replaces `@slow` as the authoring metadata that matters.
 
@@ -50,9 +55,17 @@
 
 ---
 
+## Applicability Note
+
+Issue #253 makes this runbook an org-level toolkit plan. The authoritative implementation path for this PR is §1.1: build the reusable toolkit in `hldpro-governance`, dogfood the governance profile, and deploy thin shims to consumers through later issue-backed rollout slices.
+
+The lefthook, Playwright, Supabase, and `pnpm` details in later phases are retained as a downstream product-repo profile pattern. They must not be implemented directly in `hldpro-governance` unless a later issue first adds that runtime surface to this repo.
+
 ## 1. Epic <a name="epic"></a>
 
 **Title:** Local CI Gate — Pre-Push Validation to Replace Redundant GitHub Actions Runs
+
+**Implementation target for issue #253:** `hldpro-governance` as the org-level source of truth for reusable local CI gate tooling.
 
 **Epic goal:** Catch all preventable CI failures on the local machine before `git push` completes, so that GitHub Actions becomes a safety net (rarely-triggered re-run) rather than a primary validation path. Staging (Cloudflare-fronted sites + staged Supabase) remains the post-push eyeball verification layer.
 
@@ -61,6 +74,69 @@
 **Principle — CI remains authoritative.** The local gate is an upstream filter that reduces avoidable failures; it never replaces required CI. No local result at any tier — skip, subset, or full — should be read as "CI will pass."
 
 **Milestone:** v1.4 (ships as a dev-velocity improvement before CoS v1.5 work begins)
+
+### 1.1 Org-Level Toolkit Implementation Plan
+
+`hldpro-governance` is the implementation target, but its role is not "one more consumer repo." It owns the reusable toolkit that other repos can pull and deploy. Implementation for issue #253 is therefore split into source-tooling and consumer-adoption tracks:
+
+| Track | Status | Purpose |
+|---|---|---|
+| **Track A — reusable toolkit source** | Issue #253 implementation target | Build the canonical local CI gate runner, profiles, and deployer in `hldpro-governance`. |
+| **Track B — governance-repo profile** | Issue #253 implementation target | Dogfood the toolkit against `hldpro-governance` using existing Python/bash governance checks. |
+| **Track C — consumer repo rollout** | Follow-up issues | Deploy thin shims into AIS, HealthcarePlatform, local-ai-machine, knocktracker, and any other governed repo. |
+| **Track D — Playwright selective testing profile** | Downstream profile | Preserve the Playwright resolver design for repos that already have `package.json`, Playwright config, and `e2e/` tests. |
+
+Toolkit architecture:
+
+- Source directory: `tools/local-ci-gate/` in `hldpro-governance`.
+- Runner: `tools/local-ci-gate/bin/hldpro-local-ci` with a Python core for deterministic check orchestration and report generation.
+- Profiles: `tools/local-ci-gate/profiles/*.yml` for repo families, starting with `hldpro-governance.yml` and later `vite-supabase-playwright.yml`, `python-governance.yml`, and `knowledge-repo.yml` as needed.
+- Deployer: `scripts/overlord/deploy_local_ci_gate.py` that installs or refreshes a thin consumer shim from a pinned governance checkout/ref.
+- Consumer shim: a small repo-local command (for example `.hldpro/local-ci.sh` or `.governance/local-ci.sh`) that delegates back to the governance toolkit instead of copying implementation logic.
+- Reports: local-only by default, under a gitignored repo-local path; tracked evidence is summarized into closeout artifacts when needed.
+
+Precedent from the service runbook and graphify helper:
+
+- `docs/EXTERNAL_SERVICES_RUNBOOK.md` is already the cross-repo SSOT and explicitly supersedes independently maintained downstream service runbooks. Local CI Gate should follow the same model: governance owns the canonical docs and implementation surface; downstream repos point back or install a shim.
+- `scripts/knowledge_base/graphify_hook_helper.py` is the closest tool precedent. It resolves a governed target from a manifest, refuses unsafe output paths, installs managed hooks with a marker, and protects unmanaged local hooks from silent overwrite. The Local CI Gate deployer should copy those safety properties.
+
+Local CI Gate deployer contract:
+
+- Managed marker: every installed shim must include a stable marker such as `# hldpro-governance local-ci gate managed`. The deployer may refresh files containing that marker.
+- Valid install targets: repo-local shim paths only, initially `.hldpro/local-ci.sh` or `.governance/local-ci.sh` under the target repo root. The deployer must refuse absolute target paths outside the target repo and must not write generated reports into consumer repo tracked paths.
+- Unmanaged overwrite behavior: if the target shim already exists without the managed marker, the deployer refuses by default. Optional `--backup-existing` may rename the old file before install; optional `--force` may overwrite only when explicitly passed and logged.
+- Refresh semantics: refresh updates only managed shim content and pinned governance ref/config metadata. It must not mutate consumer test scripts, package files, workflow files, or hooks unless a later issue adds those paths to the explicit contract.
+- Dry-run: `resolve` or `dry-run` must print the target repo, profile, shim path, governance source/ref, and planned write set before install.
+
+Governance-repo profile checks should start with the deterministic checks already used by this repo:
+
+- `python3 scripts/overlord/check_overlord_backlog_github_alignment.py`
+- `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .`
+- governance-surface validation with `--changed-files-file`
+- planner-boundary planning-only classification or `assert_execution_scope.py` when an implementation scope is present
+- `git diff --check`
+- focused `pytest` targets selected by changed paths where cheap and deterministic
+- optional import/compile checks for changed Python scripts
+
+Governance-profile implementation micro-slices for the next PR:
+
+| Slice | Purpose | Acceptance |
+|---|---|---|
+| **G1 — runner skeleton** | Add `tools/local-ci-gate/bin/hldpro-local-ci` and a Python core that loads a profile, resolves changed files, runs checks, and returns blocker/advisory status. | `--help`, `--dry-run`, and one no-op profile path work without side effects; output states that CI remains authoritative. |
+| **G2 — governance profile** | Add `tools/local-ci-gate/profiles/hldpro-governance.yml` with backlog alignment, structured-plan validation, governance-surface validation, planner-boundary checks, diff hygiene, and focused Python checks. | A governance-repo dry run prints the planned checks and a real run can execute the deterministic checks currently used by this repo. |
+| **G3 — reporting contract** | Emit local-only machine-readable and human-readable reports under a gitignored local path, with verdict fields that distinguish all-supported checks, changed-file subset, skipped advisory checks, and blockers. | Reports never claim full CI parity and can be summarized into a closeout without tracking per-run files. |
+| **G4 — deployer and shim fixture** | Add `scripts/overlord/deploy_local_ci_gate.py` plus a fixture or dry-run target that installs/refreshes only a managed shim. | Dry-run lists the write set; install refuses unmanaged files by default; refresh changes only managed shim content. |
+| **G5 — dogfood gate** | Wire the governance profile into the repo workflow as a documented local command before consumer rollout. | The implementation PR records local dogfood evidence, focused tests, and Stage 6 closeout; no consumer repo is modified in the same PR. |
+
+Acceptance for the issue #253 implementation plan:
+
+- The toolkit has one canonical runner and profile system in `hldpro-governance`; consumer repos do not receive bespoke copies of the logic.
+- The governance-repo profile exits non-zero on blocker failures and continues far enough to report all deterministic blocker failures it can collect.
+- The runner prints whether it ran all supported checks or a changed-file subset; it never claims to be a full CI replay.
+- The deployer can install or refresh a thin shim for at least one local test fixture or governed repo dry-run without writing unrelated files.
+- Reports, if any, are local-only unless summarized in a tracked closeout artifact.
+- No Playwright, Node, Supabase, or lefthook dependency is introduced into `hldpro-governance` itself unless a separate issue proves that surface exists in this repo.
+- Consumer-repo rollout remains issue-backed and staged repo-by-repo after the toolkit is dogfooded in governance.
 
 ---
 
@@ -113,26 +189,23 @@
 
 **Steps:**
 
-1. Create GitHub issue in `hldpro` repo:
-   - **Title:** `Local CI gate — lefthook pre-commit + pre-push + selective Playwright`
-   - **Labels:** `type: infra`, `area: dev-velocity`, `priority: next`
-   - **Milestone:** `v1.4`
+1. Create GitHub issue in `NIBARGERB-HLDPRO/hldpro-governance`:
+   - **Title:** `Local CI gate runbook planning artifacts`
+   - **Labels:** `governance`, `documentation`, `priority:next`
    - **Body:** Link to this runbook; paste the Epic section as the description
-2. Copy the resulting issue number into the runbook's revision banner (top of file) and into the BACKLOG.md entry template referenced by Phase 5.2.
-3. Add a Planned row to `BACKLOG.md` under the v1.4 section, referencing the issue number:
+2. Copy the resulting issue number into the runbook's revision banner (top of file) and into the `OVERLORD_BACKLOG.md` entry referenced by this planning slice.
+3. Add a Planned row to `OVERLORD_BACKLOG.md`, referencing the issue number:
 
    ```markdown
-   - [ ] **Infra: Local CI Gate** — lefthook pre-commit + pre-push, replaces redundant Actions runs (#ISSUE_NUMBER)
-     - `type: infra` `area: dev-velocity` `status: planned`
-     - See: `HLD_Pro_Local_CI_Gate_Runbook.md`
+   | Local CI Gate implementation planning for hldpro-governance | [#253](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/253) | MEDIUM | 1-2 | Define the governance-native local gate implementation plan in `docs/plans/HLD_Pro_Local_CI_Gate_Runbook.md`, with Playwright-specific material preserved as downstream pattern only. |
    ```
 
 4. If a planning-only PR is being used to land this runbook, open it now with only the runbook + memo + backlog row; hold all script/config changes for the implementation PR that follows.
 
 **Acceptance criteria:**
-- [ ] GitHub issue exists with correct title, labels, and v1.4 milestone
+- [ ] GitHub issue exists with correct title and labels
 - [ ] Issue number is recorded in the runbook revision banner
-- [ ] `BACKLOG.md` contains a Planned row under v1.4 referencing the issue
+- [ ] `OVERLORD_BACKLOG.md` contains a Planned row referencing the issue
 - [ ] Reviewer-response memo (if any) references the same issue number
 - [ ] No implementation work (Phases 0.1 onward) begins until the above are in place
 
@@ -739,10 +812,13 @@ test.describe('Leads CRM', () => {
 });
 ```
 
-**Audit step:** For each existing spec, check if convention match exists. If not, add `@covers`. Any spec that genuinely cannot map to source files (rare — e.g., health-check specs) gets `@covers *` which forces full-suite inclusion whenever the resolver is uncertain.
+**Audit step:** For each existing spec, check if convention match exists. If not, add `@covers`. Any spec that genuinely cannot map to source files (rare — e.g., health-check specs) gets `@covers *`.
+
+Resolver rule for `@covers *`: include that spec for any code diff unless a full-suite fallback has already triggered. `@covers *` does **not** mean "run the entire suite"; it means "this spec is globally relevant and should be included in selective runs whenever source code changed."
 
 **Acceptance criteria:**
 - [ ] Every `e2e/**/*.spec.ts` file matches by convention OR contains `@covers`
+- [ ] Any `@covers *` spec is included for any source-code diff and does not by itself force `FULL_SUITE`
 - [ ] A grep audit (`grep -L '@covers' e2e/**/*.spec.ts | xargs -I{} test -f src/pages/$(basename {} .spec.ts | sed ...)`) produces zero unmatched, un-annotated files
 - [ ] Every `describe` block in a multi-flow spec file has `test.describe.configure({ mode: 'serial' })` OR a comment explaining why parallel-within-file is safe
 
@@ -751,6 +827,16 @@ test.describe('Leads CRM', () => {
 ### Micro-slice 6.3 — Build the spec resolver
 
 **File:** `scripts/select-playwright-specs.sh` (new)
+
+**CLI contract:**
+
+```bash
+scripts/select-playwright-specs.sh [--explain-trigger] [diff-base]
+```
+
+- Normal mode prints one of: empty stdout (no mapped specs), `FULL_SUITE`, or a space-separated spec list.
+- `--explain-trigger` prints the first fallback reason only, such as `src/lib change`, `migration change`, or `config change`. It prints empty output when no fallback trigger matched.
+- `diff-base` defaults to `origin/main`.
 
 **Content:**
 
@@ -761,6 +847,12 @@ set -euo pipefail
 # Given a git diff range, emit a space-separated list of spec files to run.
 # Emits "FULL_SUITE" if shared code changed.
 # Emits nothing (empty stdout) if no specs match and no fallback triggered.
+
+EXPLAIN_TRIGGER=false
+if [ "${1:-}" = "--explain-trigger" ]; then
+  EXPLAIN_TRIGGER=true
+  shift
+fi
 
 DIFF_BASE="${1:-origin/main}"
 CHANGED=$(git diff --name-only "$DIFF_BASE"...HEAD)
@@ -784,10 +876,23 @@ FULL_SUITE_PATTERNS=(
 
 for pattern in "${FULL_SUITE_PATTERNS[@]}"; do
   if echo "$CHANGED" | grep -q "$pattern"; then
+    if [ "$EXPLAIN_TRIGGER" = true ]; then
+      case "$pattern" in
+        'src/lib/') echo "src/lib change" ;;
+        'supabase/functions/') echo "edge function change" ;;
+        'supabase/migrations/') echo "migration change" ;;
+        *) echo "config change" ;;
+      esac
+      exit 0
+    fi
     echo "FULL_SUITE"
     exit 0
   fi
 done
+
+if [ "$EXPLAIN_TRIGGER" = true ]; then
+  exit 0
+fi
 
 # Docs-only — handled by Phase 0 paths-ignore in CI, but belt-and-suspenders here
 CODE_CHANGED=$(echo "$CHANGED" | grep -E '\.(ts|tsx|js|jsx|sql|sh)$' || true)
@@ -809,6 +914,7 @@ node scripts/resolve-specs.mjs "$CHANGED"
 
 **Acceptance criteria:**
 - [ ] `bash scripts/select-playwright-specs.sh origin/main` returns empty when diff contains only docs
+- [ ] `bash scripts/select-playwright-specs.sh --explain-trigger origin/main` returns the fallback reason only when a full-suite pattern matches
 - [ ] Returns `FULL_SUITE` when diff includes `src/lib/*` or `supabase/migrations/*`
 - [ ] Returns a single spec path when diff touches only one mapped page
 - [ ] Returns multiple specs when diff spans multiple mapped pages
@@ -884,7 +990,7 @@ This gives per-file fail-fast (first failed test in flow causes remaining to ski
           echo "LOCAL CHECK: no mapped Playwright specs for this diff. Matched specs: 0. This is not a full-suite replay; CI remains authoritative."
           exit 0
         elif [ "$SPECS" = "FULL_SUITE" ]; then
-          TRIGGER=$(bash scripts/select-playwright-specs.sh origin/main --explain-trigger)
+          TRIGGER=$(bash scripts/select-playwright-specs.sh --explain-trigger origin/main)
           echo "LOCAL CHECK: full Playwright suite required by fallback trigger: $TRIGGER."
           pnpm playwright test
         else
@@ -906,14 +1012,22 @@ This gives per-file fail-fast (first failed test in flow causes remaining to ski
 ```json
 {
   "scripts": {
-    "test:e2e": "bash scripts/select-playwright-specs.sh origin/main | xargs -r pnpm playwright test",
+    "test:e2e": "bash scripts/run-playwright-selective.sh origin/main",
     "test:e2e:full": "pnpm playwright test",
-    "test:e2e:selective": "bash scripts/select-playwright-specs.sh origin/main | xargs -r pnpm playwright test"
+    "test:e2e:selective": "bash scripts/run-playwright-selective.sh origin/main"
   }
 }
 ```
 
-**Operator override — `--full`.** The `test:e2e:full` script is the user-facing override: when an operator wants to force a full-suite replay locally without touching resolver logic, they run `pnpm test:e2e:full`. This is a single escape lever, not a mode matrix; the resolver remains three-state internally (skip / subset / FULL_SUITE).
+**Wrapper contract:** `scripts/run-playwright-selective.sh [diff-base]` owns the three resolver outcomes:
+
+- empty resolver output: print the zero-match verdict line and exit 0
+- `FULL_SUITE`: call `scripts/select-playwright-specs.sh --explain-trigger <diff-base>`, print the fallback-trigger verdict line, then run `pnpm playwright test`
+- spec list: run `pnpm playwright test <specs>`, then print the matched-spec verdict line on success
+
+This wrapper prevents `FULL_SUITE` from being passed through `xargs` as if it were a spec path.
+
+**Operator override — full-suite script.** The `test:e2e:full` script is the user-facing override: when an operator wants to force a full-suite replay locally without touching resolver logic, they run `pnpm test:e2e:full`. This is a single escape lever, not a mode matrix; the resolver remains three-state internally (skip / subset / FULL_SUITE).
 
 **Acceptance criteria:**
 - [ ] Push with no code changes runs zero Playwright tests and prints the "Matched specs: 0" verdict line verbatim
@@ -921,6 +1035,7 @@ This gives per-file fail-fast (first failed test in flow causes remaining to ski
 - [ ] Push touching `src/lib/utils.ts` runs full suite with the "fallback trigger" verdict line naming the trigger
 - [ ] Every verdict line contains either "This is not a full-suite replay" or "full Playwright suite required" — never a bare "PASS" without qualification
 - [ ] `pnpm test:e2e:full` runs the full suite regardless of diff state (override works)
+- [ ] `pnpm test:e2e` handles empty output, `FULL_SUITE`, and spec-list resolver output through the wrapper; it never passes `FULL_SUITE` to Playwright as a path
 - [ ] Failing spec blocks push with clear output
 - [ ] Independent failures across two spec files both surface in one run (parallel-across-files confirmed)
 - [ ] Total pre-push time on a single-page diff is under 45s (Tier 2 fast + one spec)
