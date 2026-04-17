@@ -47,18 +47,30 @@ jobs:
           fi
 
           TOUCH=0
-          printf '%s\n' "${DIFF_FILES}" | grep -Eq '^STANDARDS\.md$|^docs/.*/[^/]*charter[^/]*\.md$|^docs/[^/]*charter[^/]*\.md$' && TOUCH=1 || true
+          REASONS=()
+          if printf '%s\n' "${DIFF_FILES}" | grep -Eq '^STANDARDS\.md$|^docs/.*/[^/]*charter[^/]*\.md$|^docs/[^/]*charter[^/]*\.md$'; then
+            TOUCH=1
+            REASONS+=("STANDARDS.md or charter document changed")
+          fi
           LABELS="$(python3 "${SCRIPTS_DIR}/get_pr_labels.py")"
 
           case " $LABELS " in
             *" architecture "*|*" standards "*)
               TOUCH=1
+              REASONS+=("PR has architecture/standards label")
               ;;
           esac
 
           if [ "${TOUCH}" -ne 1 ]; then
             echo "Cross-review trigger not hit. Skipping."
             exit 0
+          fi
+
+          if [ "${#REASONS[@]}" -gt 0 ]; then
+            echo "::notice file=raw/cross-review/::[require-cross-review] Cross-review enforced for this PR."
+            for reason in "${REASONS[@]}"; do
+              echo "  - $reason"
+            done
           fi
 
           RAW_CROSS_REVIEW="$(printf '%s\n' "${DIFF_FILES}" | grep -E '^raw/cross-review/.*\.md$' | sort -u || true)"
@@ -69,9 +81,20 @@ jobs:
 
           CROSS_FILE="$(printf '%s\n' "${RAW_CROSS_REVIEW}" | head -n 1)"
           BOOTSTRAP_FILE="raw/cross-review/2026-04-14-society-of-minds-charter.md"
+          BOOTSTRAP_ONLY=false
           APPLY_EXCEPTION=false
+          if echo "${RAW_CROSS_REVIEW}" | grep -Fxq "${BOOTSTRAP_FILE}"; then
+            COUNT_CROSS_FILES="$(printf '%s\n' "${RAW_CROSS_REVIEW}" | sed '/^$/d' | wc -l | tr -d ' ')"
+            if [ "${COUNT_CROSS_FILES}" -eq 1 ]; then
+              BOOTSTRAP_ONLY=true
+            else
+              echo "::error file=raw/cross-review/::[require-cross-review] BOOTSTRAP artifact cannot co-exist with non-bootstrap cross-review artifacts."
+              echo "::error file=raw/cross-review/::[require-cross-review] Update PR to reference a new standards/architecture cross-review artifact (schema v2+), or isolate bootstrap artifact-only changes."
+              exit 1
+            fi
+          fi
 
-          if [ "${CROSS_FILE}" = "${BOOTSTRAP_FILE}" ]; then
+          if [ "${BOOTSTRAP_ONLY}" = true ]; then
             if [ -f "docs/exception-register.md" ]; then
               EXCEPTION_ACTIVE="$(python3 "${SCRIPTS_DIR}/check_som_exception.py")"
               if [ "${EXCEPTION_ACTIVE}" = "active" ]; then

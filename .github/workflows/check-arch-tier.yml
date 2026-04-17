@@ -1,13 +1,163 @@
 name: check-arch-tier
 on:
   workflow_call:
-permissions:
-  contents: read
 
 jobs:
   check-arch-tier:
+    permissions:
+      contents: read
+      pull-requests: read
     runs-on: ubuntu-latest
     steps:
-      - name: Placeholder architecture-tier enforcement note
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Enforce architecture/standards tier evidence
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
-          echo "::warning::TODO: session-model evidence capture deferred to closeout; verify-completion is primary enforcement"
+          set -euo pipefail
+
+          if [ -z "${BASE_SHA}" ] || [ -z "${HEAD_SHA}" ]; then
+            echo "::warning::[check-arch-tier] Missing pull request context; skipping."
+            exit 0
+          fi
+
+          DIFF_FILES="$(git diff --name-only "${BASE_SHA}...${HEAD_SHA}" || true)"
+          if [ -z "${DIFF_FILES}" ]; then
+            echo "[check-arch-tier] No changed files detected; nothing to validate."
+            exit 0
+          fi
+
+          ARCH_SCOPE=0
+          if printf '%s\n' "${DIFF_FILES}" | grep -Eq '^STANDARDS\.md$|^raw/closeouts/TEMPLATE\.md$|^\.github/workflows/check-arch-tier\.yml$|^docs/.*/[^/]*charter[^/]*\.md$|^docs/[^/]*charter[^/]*\.md$'; then
+            ARCH_SCOPE=1
+          fi
+
+          if [ "${ARCH_SCOPE}" -ne 1 ]; then
+            echo "[check-arch-tier] PR did not touch architecture/standards-owned files; skipping."
+            exit 0
+          fi
+
+          CROSS_REVIEW_FILES="$(printf '%s\n' "${DIFF_FILES}" | grep -E '^raw/cross-review/.*\.md$' | sort -u || true)"
+          if [ -z "${CROSS_REVIEW_FILES}" ]; then
+            echo "::error file=raw/cross-review/::[check-arch-tier] Architecture/standards scope changed, but no raw/cross-review/*.md artifact is in the PR diff."
+            exit 1
+          fi
+
+          if ! printf '%s\n' "${CROSS_REVIEW_FILES}" | python3 - <<'PY'
+          import re
+          import sys
+          from pathlib import Path
+
+          try:
+              import yaml
+          except Exception as exc:  # pragma: no cover - defensive for runner bootstrap
+              print(f"::error::[check-arch-tier] PyYAML import failed: {exc}")
+              sys.exit(1)
+
+
+          def parse_schema_version(value):
+              if not isinstance(value, str):
+                  return None
+              match = re.fullmatch(r"v(\d+)(?:\.\d+)?", value.strip(), flags=re.I)
+              if not match:
+                  return None
+              return int(match.group(1))
+
+
+          def exit_fail(messages):
+              for line in messages:
+                  print(line)
+              sys.exit(1)
+
+
+          cross_files = [line.strip() for line in sys.stdin if line.strip()]
+          if not cross_files:
+              print("::error file=raw/cross-review/::[check-arch-tier] No cross-review file list provided")
+              sys.exit(1)
+
+          errors = []
+          found_proof = False
+          for rel in cross_files:
+              path = Path(rel)
+              if not path.exists():
+                  errors.append(f"::error file={rel}::[check-arch-tier] cross-review file does not exist in repo: {rel}")
+                  continue
+
+              raw = path.read_text(encoding="utf-8", errors="replace")
+              if not raw.startswith("---"):
+                  errors.append(f"::error file={rel}::[check-arch-tier] missing YAML frontmatter")
+                  continue
+              parts = re.split(r"^---\s*$", raw, maxsplit=2, flags=re.M)
+              if len(parts) < 3:
+                  errors.append(f"::error file={rel}::[check-arch-tier] malformed YAML frontmatter")
+                  continue
+
+              try:
+                  data = yaml.safe_load(parts[1]) or {}
+              except Exception as exc:
+                  errors.append(f"::error file={rel}::[check-arch-tier] YAML parse failed: {exc}")
+                  continue
+              if not isinstance(data, dict):
+                  errors.append(f"::error file={rel}::[check-arch-tier] frontmatter must be a mapping")
+                  continue
+
+              scope = str(data.get("pr_scope", "")).strip().lower()
+              if scope not in {"architecture", "standards"}:
+                  continue
+
+              schema_version = parse_schema_version(data.get("schema_version"))
+              if schema_version is None:
+                  errors.append(f"::error file={rel}::[check-arch-tier] missing or invalid schema_version; architecture/standards artifacts require schema_version >=2")
+                  continue
+              if schema_version < 2:
+                  errors.append(f"::error file={rel}::[check-arch-tier] schema_version must be v2+ for architecture/standards artifacts so gate identity is machine-checkable")
+                  continue
+
+              drafter = data.get("drafter") if isinstance(data.get("drafter"), dict) else None
+              reviewer = data.get("reviewer") if isinstance(data.get("reviewer"), dict) else None
+              gate = data.get("gate_identity") if isinstance(data.get("gate_identity"), dict) else None
+              if not all((drafter, reviewer, gate)):
+                  errors.append(f"::error file={rel}::[check-arch-tier] drafter, reviewer, and gate_identity must all be present")
+                  continue
+
+              model_ids = [
+                  str(drafter.get("model_id", "")).strip(),
+                  str(reviewer.get("model_id", "")).strip(),
+                  str(gate.get("model_id", "")).strip(),
+              ]
+              if not all(model_ids):
+                  errors.append(f"::error file={rel}::[check-arch-tier] drafter/reviewer/gate model_id values must all be non-empty")
+                  continue
+              if len(set(model_ids)) != len(model_ids):
+                  errors.append(f"::error file={rel}::[check-arch-tier] architecture/standards checks require distinct drafter/reviewer/gate model_id values")
+                  continue
+
+              gate_model = str(gate.get("model_id", "")).strip()
+              if "haiku" in gate_model.lower():
+                  errors.append(f"::error file={rel}::[check-arch-tier] gate_identity.model_id for architecture/standards work must not be a Haiku model")
+                  continue
+
+              if str(drafter.get("model_family", "")).strip() == str(reviewer.get("model_family", "")).strip():
+                  errors.append(f"::error file={rel}::[check-arch-tier] architecture/standards requires drafter and reviewer model families to differ")
+                  continue
+
+              print(f"::notice file={rel}::[check-arch-tier] Proof artifact: {rel} (schema v{schema_version}, gate={gate_model})")
+              found_proof = True
+
+          if not found_proof and not errors:
+              errors.append("::error::[check-arch-tier] PR requires an architecture/standards cross-review artifact with pr_scope architecture|standards")
+
+          if errors:
+              exit_fail(errors)
+          print("::notice file=raw/cross-review/::[check-arch-tier] Found approved architecture/standards cross-review artifact in PR diff.")
+          PY
+          then
+            echo "::error::[check-arch-tier] Architecture/standards PR lacks approved cross-review tier evidence."
+            exit 1
+          fi
+
+          echo "Architecture/standards cross-review evidence is present and tier-valid."

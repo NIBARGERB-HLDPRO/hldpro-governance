@@ -3,7 +3,10 @@
 SoM Stage 4 packet validator.
 Enforces governance rules from STANDARDS.md §Society of Minds (SoT).
 """
+import argparse
+import json
 import re
+from jsonschema import ValidationError as JsonSchemaValidationError, validate as jsonschema_validate
 import yaml
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -15,7 +18,9 @@ from typing import Any, Dict, List, Optional, Tuple
 # Repo root relative to this file: scripts/packet/ -> repo root
 _REPO_ROOT = Path(__file__).parent.parent.parent
 
+SCHEMA_PATH = _REPO_ROOT / "docs" / "schemas" / "som-packet.schema.yml"
 PII_PATTERNS_PATH = _REPO_ROOT / "scripts" / "lam" / "pii-patterns.yml"
+FALLBACK_LOG_DIR = _REPO_ROOT / "raw" / "model-fallbacks"
 
 # Models whose tier-1 planning capability is below the governance floor.
 # claude-sonnet-* and above are fine; haiku-* variants are not.
@@ -42,6 +47,8 @@ _LAM_ROLES = {"worker-lam", "critic-lam"}
 # Maximum chain depth for self-approval / parent-chain walks.
 _MAX_CHAIN_DEPTH = 20
 
+_SCHEMA = None
+
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -53,6 +60,20 @@ def _load_packet(path: Path) -> Optional[Dict[str, Any]]:
         return yaml.safe_load(path.read_text())
     except Exception:
         return None
+
+
+def _load_schema() -> Optional[Dict[str, Any]]:
+    """Load the packet schema from docs/schemas/som-packet.schema.yml."""
+    global _SCHEMA
+    if _SCHEMA is not None:
+        return _SCHEMA
+    if not SCHEMA_PATH.exists():
+        return None
+    try:
+        _SCHEMA = yaml.safe_load(SCHEMA_PATH.read_text())
+    except Exception:
+        return None
+    return _SCHEMA
 
 
 def _find_packet_file(packets_dir: Path, packet_id: str) -> Optional[Path]:
@@ -189,6 +210,102 @@ def validate_no_self_approval(
     return True, None
 
 
+def validate_tier_escalation_valid(packet: Dict[str, Any]) -> Tuple[bool, Optional[str]]:
+    """Enforce expected handoff sequence with no tier jumps."""
+    prior = packet.get("prior", {})
+    prior_tier = prior.get("tier")
+    next_tier = packet.get("next_tier")
+
+    if not isinstance(prior_tier, int) or not isinstance(next_tier, int):
+        return True, None
+
+    if prior_tier >= 1 and prior_tier < 4 and next_tier != prior_tier + 1:
+        return (
+            False,
+            f"tier escalation invalid: prior.tier={prior_tier}, next_tier={next_tier} "
+            f"(expected next_tier={prior_tier + 1} or terminal at tier 4)",
+        )
+    return True, None
+
+
+def validate_local_family_diversity(
+    packet: Dict[str, Any],
+    packets_dir: Optional[Path] = None,
+) -> Tuple[bool, Optional[str]]:
+    """Enforce LAM family diversity for LAM-only handoffs."""
+    if packets_dir is None:
+        packets_dir = _REPO_ROOT / "raw" / "packets"
+
+    chain = _resolve_chain(packet, packets_dir)
+    lam_families: List[str] = []
+    for item in chain:
+        prior = item.get("prior", {})
+        role = prior.get("role")
+        family = prior.get("model_family")
+        if role in _LAM_ROLES and isinstance(family, str):
+            lam_families.append(family)
+
+    if len(lam_families) >= 2 and len(set(lam_families)) == 1:
+        return (
+            False,
+            "local family diversity invalid: chain contains >=2 LAM roles with identical model_family",
+        )
+
+    return True, None
+
+
+def validate_fallback_logged(packet: Dict[str, Any]) -> Tuple[bool, Optional[str]]:
+    """Require explicit fallback references to resolve in raw/model-fallbacks."""
+    fallback_ref = packet.get("fallback_ladder_ref")
+    if not fallback_ref:
+        return True, None
+
+    if not isinstance(fallback_ref, str) or not fallback_ref.strip():
+        return (
+            False,
+            "fallback logging invalid: fallback_ladder_ref must be a non-empty string when present",
+        )
+
+    fallback_path = Path(fallback_ref)
+    if not fallback_path.is_absolute():
+        fallback_path = _REPO_ROOT / fallback_path
+
+    if not fallback_path.exists():
+        return (
+            False,
+            f"fallback logging invalid: no fallback log file found at {fallback_path}",
+        )
+
+    if not fallback_path.is_file():
+        return (
+            False,
+            f"fallback logging invalid: fallback reference {fallback_path} is not a file",
+        )
+
+    if fallback_path.parent != FALLBACK_LOG_DIR:
+        return (
+            False,
+            "fallback logging invalid: fallback logs must live under raw/model-fallbacks/",
+        )
+
+    return True, None
+
+
+def validate_schema(packet: Dict[str, Any]) -> Tuple[bool, Optional[str]]:
+    """Validate packet shape against docs/schemas/som-packet.schema.yml."""
+    schema = _load_schema()
+    if schema is None:
+        return False, f"schema unavailable: {SCHEMA_PATH} missing or unreadable"
+
+    try:
+        jsonschema_validate(instance=packet, schema=schema)
+    except JsonSchemaValidationError as exc:
+        return False, f"schema validation failed: {exc.message}"
+    except Exception as exc:
+        return False, f"schema validation failed: {exc}"
+    return True, None
+
+
 def validate_planning_floor(packet: Dict[str, Any]) -> Tuple[bool, Optional[str]]:
     """Refuse tier-1 packets whose model is below the planning floor."""
     prior = packet.get("prior", {})
@@ -256,10 +373,14 @@ def validate_packet(
     failures: List[str] = []
 
     checks = [
+        ("schema", validate_schema(packet)),
         ("dual_planner", validate_dual_planner(packet, packets_dir)),
         ("no_self_approval", validate_no_self_approval(packet, packets_dir)),
         ("planning_floor", validate_planning_floor(packet)),
         ("pii_floor", validate_pii_floor(packet)),
+        ("tier_escalation", validate_tier_escalation_valid(packet)),
+        ("local_family_diversity", validate_local_family_diversity(packet, packets_dir)),
+        ("fallback_logged", validate_fallback_logged(packet)),
     ]
 
     for name, (passed, reason) in checks:
@@ -267,3 +388,50 @@ def validate_packet(
             failures.append(f"[{name}] {reason}")
 
     return (len(failures) == 0, failures)
+
+
+def _run_cli(args: Optional[List[str]] = None) -> int:
+    """CLI entrypoint for validating packet files."""
+    parser = argparse.ArgumentParser(description="Validate a SoM packet YAML file")
+    parser.add_argument("packet_file", help="Path to packet YAML file")
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit structured JSON output",
+    )
+
+    parsed = parser.parse_args(args)
+    packet_path = Path(parsed.packet_file)
+    packet = _load_packet(packet_path)
+    if packet is None:
+        payload = {
+            "status": "refused",
+            "reason": f"failed to read packet file: {packet_path}",
+            "packet_id": None,
+        }
+        if parsed.json:
+            print(json.dumps(payload))
+        else:
+            print(f"::error::{payload['reason']}")
+        return 1
+
+    passed, failures = validate_packet(packet)
+    payload = {
+        "status": "ok" if passed else "refused",
+        "reason": "; ".join(failures) if failures else "ok",
+        "packet_id": packet.get("packet_id"),
+    }
+
+    if parsed.json:
+        print(json.dumps(payload))
+    else:
+        if passed:
+            print(f"packet {packet.get('packet_id')} is valid")
+        else:
+            print(f"::error::{payload['reason']}")
+
+    return 0 if passed else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(_run_cli())

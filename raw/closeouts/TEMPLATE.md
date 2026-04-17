@@ -17,6 +17,33 @@ Completed By: Benji
 ## Files Changed
 [List of key files modified]
 
+## Issue Links
+[GitHub epic, slice, PR, and follow-up issue links. Every residual item must have an issue link.]
+
+## Schema / Artifact Version
+[Name the schema or artifact contract version used, for example `raw/cross-review` schema v2 or `som-packet` schema v1.]
+
+## Model Identity
+[List model IDs, families, roles, and reasoning effort where applicable. For Codex calls, include both `-m <model>` and `model_reasoning_effort` evidence.]
+
+## Review And Gate Identity
+[Name reviewer and gate identities, including role, model ID, model family, signature date, and verdict when the artifact requires it.]
+
+## Wired Checks Run
+[List the actual workflow/script/test checks wired and run. Do not claim enforcement from documentation alone.]
+
+## Execution Scope / Write Boundary
+[When work is delegated to workers, sweep/status writers, or sibling worktrees, name the execution-scope JSON artifact and the `assert_execution_scope.py` command used to prove the checkout root, branch, changed paths, and forbidden roots.]
+
+## Validation Commands
+[Commands run for this closeout and PASS/FAIL/SKIP result. Include why any expected check was skipped.]
+
+## Tier Evidence Used
+[For architecture or standards scope, name the committed artifact that proves the gate model/tier used (for example `raw/cross-review/YYYY-MM-DD-<slug>.md`).]
+
+## Residual Risks / Follow-Up
+[Issue-backed residual risks, deferrals, or rollback/fix-forward notes. If none, state "None."]
+
 ## Wiki Pages Updated
 [List of wiki/ pages this closeout should update. If none exist yet, note what should be created.]
 

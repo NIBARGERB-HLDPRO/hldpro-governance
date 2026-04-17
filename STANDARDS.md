@@ -283,7 +283,7 @@ They route, gate, and report. They do not replace SoM workers for code execution
 
 ### Relationship to §Society of Minds
 
-SoM defines the **execution** worker ladder: `codex-spark → gpt-5.4 → Windows-Ollama (Qwen)`
+SoM defines the **execution** worker ladder in §Society of Minds (Tier 2). The Worker fallback chain is defined there; `gpt-5.4` is not a Worker fallback model and is used only outside Worker execution.
 
 Claude-native Tier 2 agents define the **quality gate** layer:
 ```
@@ -457,7 +457,7 @@ invariants_checked:
 ---
 ```
 
-Validator rejects if: any field missing, `drafter.model_family` == `reviewer.model_family`, `drafter.model_id` == `reviewer.model_id`, `reviewer.verdict` == `REJECTED`, or any `invariants_checked` value is false.
+Validator rejects if: any required field missing, `drafter.model_family` == `reviewer.model_family`, `drafter.model_id` == `reviewer.model_id`, `reviewer.verdict` == `REJECTED`, any `invariants_checked` value is false, and for `schema_version: v2+`, `gate_identity` must be present with a distinct non-empty `model_id`.
 
 ### Enforcement index (CI-verifiable — no orphan rules)
 
@@ -469,7 +469,7 @@ Validator rejects if: any field missing, `drafter.model_family` == `reviewer.mod
 | 4 | No-self-approval (distinct identities) | `check-no-self-approval.yml` | PR blocked |
 | 5 | Fallback auto-logged + schema-valid | `scripts/model-fallback-log.sh` + `check-fallback-log-schema.yml` | PR blocked if malformed |
 | 6 | Fallback rate + M6-vs-Sonnet agreement metrics | `overlord-sweep` weekly | Auto-issue on threshold |
-| 7 | Arch on Haiku blocked | `check-arch-tier.yml` + `verify-completion` hard-fail | PR + closeout blocked |
+| 7 | Arch on Haiku blocked | `check-arch-tier.yml` checks PR-scoped raw `raw/cross-review/` artifacts and rejects schema v2+ gates using Haiku | PR + closeout blocked |
 | 8 | PII never leaves machine | `check-pii-routing.yml` + `require-lam-dual-signature.sh` | PR + closeout blocked |
 | 9 | LAM family diversity | `check-lam-family-diversity.yml` reads `.lam-config.yml` | PR blocked |
 | 10 | LAM availability for PII PRs | `check-lam-availability.yml` runtime probe | PR blocked |

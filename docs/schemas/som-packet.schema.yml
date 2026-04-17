@@ -90,7 +90,7 @@ properties:
 
   fallback_ladder_ref:
     type: ["string", "null"]
-    description: "Optional reference to fallback ladder for tier-down scenario"
+    description: "Optional fallback log path (must resolve under raw/model-fallbacks when present)"
 
   metadata:
     type: ["object", "null"]

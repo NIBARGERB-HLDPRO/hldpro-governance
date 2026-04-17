@@ -86,7 +86,7 @@ def main() -> int:
     text = replace_section(text, "Platform Status", platform_status)
     text = replace_section(text, "Knowledge Graph Summary", knowledge_summary)
     text = replace_section(text, "Navigation", navigation)
-    index_path.write_text(text, encoding="utf-8")
+    index_path.write_text(text.rstrip() + "\n", encoding="utf-8")
     return 0
 
 

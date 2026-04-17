@@ -67,6 +67,8 @@ Write your findings to docs/codex-reviews/${DATE}-audit.md using the format desc
 
     cd "$REPO_ROOT"
     codex exec \
+      -m gpt-5.4 \
+      -c model_reasoning_effort=high \
       --full-auto \
       --add-dir "$OUTPUT_DIR" \
       --output-schema "$SCHEMA" \
@@ -99,6 +101,8 @@ Write your findings to docs/codex-reviews/${DATE}-critique.md using the format d
 
     cd "$REPO_ROOT"
     codex exec \
+      -m gpt-5.4 \
+      -c model_reasoning_effort=high \
       --full-auto \
       --add-dir "$OUTPUT_DIR" \
       --output-schema "$SCHEMA" \

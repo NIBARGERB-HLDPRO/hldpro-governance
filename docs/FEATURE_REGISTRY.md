@@ -1,6 +1,6 @@
 # hldpro-governance — Feature Registry
 
-**Last Updated:** 2026-04-09
+**Last Updated:** 2026-04-17
 **Scope:** Shared governance standards, reusable CI enforcement, and cross-repo audit agents.
 
 ---
@@ -39,6 +39,8 @@
 | GOV-012 | CODEX_INGESTION | Codex second-opinion ingestion and backlog surfacing loop | COMPLETE | OPS_READY |
 | GOV-013 | EFFECTIVENESS_BASELINE | Reproducible weekly effectiveness metrics snapshots in `metrics/effectiveness-baseline/` | COMPLETE | OPS_READY |
 | GOV-014 | STRUCTURED_PLAN_SCHEMA | Governance-owned structured plan schema and validator for issue execution | COMPLETE | REQUIRED |
+| GOV-015 | GRAPHIFY_MEASUREMENT | Graphify retrieval measurement and usage-event telemetry | IN_PROGRESS | OPS_READY |
+| GOV-016 | SOM_ENFORCEMENT | Society of Minds routing, review, packet, and closeout enforcement | IN_PROGRESS | REQUIRED |
 
 ---
 
@@ -95,3 +97,10 @@
 | GOV-015 | The graphify measurement outputs now surface per-scenario query traces (`prompt`, `query_terms`, graphify candidates, baseline candidates) so 5-10 run comparisons can be reviewed at retrieval-input level instead of only through aggregate hit-rate summaries. |
 | GOV-015 | `measure_graphify_usage.py` now emits append-only usage events by default for each scenario and retrieval strategy, so current-work A/B runs automatically leave auditable query-trace telemetry instead of relying on separate manual logger calls. |
 | GOV-015 | The fail-fast scenario corpus no longer depends on stale absolute governance worktree paths. `measure_graphify_usage.py` now resolves governance scenarios from the current checkout by default and falls back safely when an explicit `repo_path` no longer exists, so refreshed A/B evidence reflects current runs instead of abandoned-worktree noise. |
+
+### SOCIETY_OF_MINDS
+
+| Feature ID | Notes |
+|---|---|
+| GOV-016 | The original SoM charter landed under umbrella #99; enforcement-drift closure now runs under epic #214 with issue-backed slices #215-#221. Active enforcement work covers Codex model/reasoning pin checks, ladder consistency, cross-review gate identity, architecture tier evidence, packet schema/runtime-boundary accuracy, operational closeout evidence, and execution-root/write-scope validation. |
+| GOV-016 | Future SoM closeouts must identify the wired checks actually run, schema/artifact version, model identities, reviewer and gate identity, issue links, validation commands, and residual risks or deferrals. The closeout contract lives in `raw/closeouts/TEMPLATE.md`, with the current Slice 6 record under `raw/closeouts/2026-04-17-som-enforcement-drift-closeout-loop.md`. |

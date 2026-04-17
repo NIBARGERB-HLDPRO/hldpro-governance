@@ -12,66 +12,163 @@ if [ ! -f "${FILE}" ]; then
   exit 1
 fi
 
-export PY_DATA
-PY_DATA="$(python3 -c "import yaml,sys,json; doc=open(sys.argv[1]).read(); fm=doc.split('---')[1]; data=yaml.safe_load(fm); print(json.dumps(data, default=str))" "${FILE}")"
-if [ -z "${PY_DATA}" ] || [ "${PY_DATA}" = "null" ]; then
-  echo "::error file=${FILE},line=1::[require-dual-signature] failed to parse YAML frontmatter"
-  exit 1
-fi
-
-python3 - "$FILE" "$PY_DATA" <<'PY'
-import json
+python3 - "$FILE" <<'PY'
+import re
 import sys
+import yaml
+
 
 path = sys.argv[1]
-text = sys.argv[2]
-data = json.loads(text) if text else {}
 
-required = {
-    "pr_number",
-    "pr_scope",
-    "drafter",
-    "reviewer",
-    "invariants_checked",
-}
+with open(path, "r", encoding="utf-8", errors="replace") as handle:
+    raw = handle.read()
+
+if not raw.startswith("---"):
+    print(f"::error file={path},line=1::[require-dual-signature] missing YAML frontmatter")
+    sys.exit(1)
+
+parts = re.split(r"^---\s*$", raw, maxsplit=2, flags=re.M)
+if len(parts) < 3:
+    print(f"::error file={path},line=1::[require-dual-signature] malformed YAML frontmatter")
+    sys.exit(1)
+
+try:
+    data = yaml.safe_load(parts[1]) or {}
+except Exception as exc:
+    print(f"::error file={path},line=1::[require-dual-signature] failed to parse YAML frontmatter: {exc}")
+    sys.exit(1)
 
 if not isinstance(data, dict):
     print(f"::error file={path},line=1::[require-dual-signature] frontmatter must be a mapping")
     sys.exit(1)
 
+
+def parse_schema_version(value):
+    if not isinstance(value, str):
+        return None
+    match = re.fullmatch(r"v(\d+)(?:\.\d+)?", value.strip(), flags=re.I)
+    if not match:
+        return None
+    return int(match.group(1))
+
+
+schema_version = data.get("schema_version")
+schema_version_num = parse_schema_version(schema_version)
+if schema_version_num is None:
+    print(
+        f"::error file={path},line=1::[require-dual-signature] schema_version missing/invalid; historical artifacts must set schema_version: v1 and new artifacts must set v2+"
+    )
+    sys.exit(1)
+
+required_v1 = {"pr_number", "pr_scope", "drafter", "reviewer", "invariants_checked"}
+required_v2 = required_v1 | {"gate_identity"}
+
+if schema_version_num == 1:
+    required = required_v1
+else:
+    required = required_v2
+
 missing = sorted(required - set(data.keys()))
 if missing:
-    print(f"::error file={path},line=1::[require-dual-signature] missing required keys: {', '.join(missing)}")
+    print(
+        f"::error file={path},line=1::[require-dual-signature] missing required keys for schema_version {schema_version}: {', '.join(missing)}"
+    )
     sys.exit(1)
 
-drafter = data.get("drafter") or {}
-reviewer = data.get("reviewer") or {}
-if not isinstance(drafter, dict) or not isinstance(reviewer, dict):
-    print(f"::error file={path},line=1::[require-dual-signature] drafter and reviewer must be objects")
-    sys.exit(1)
 
-drafter_required = {"role", "model_id", "model_family", "signature_date"}
-reviewer_required = {"role", "model_id", "model_family", "signature_date", "verdict"}
-missing_drafter = sorted(drafter_required - set(drafter.keys()))
-missing_reviewer = sorted(reviewer_required - set(reviewer.keys()))
-if missing_drafter:
-    print(f"::error file={path},line=1::[require-dual-signature] missing drafter fields: {', '.join(missing_drafter)}")
-    sys.exit(1)
-if missing_reviewer:
-    print(f"::error file={path},line=1::[require-dual-signature] missing reviewer fields: {', '.join(missing_reviewer)}")
-    sys.exit(1)
+def validate_identity(entity_path, payload, *, require_verdict=False):
+    if not isinstance(payload, dict):
+        print(f"::error file={path},line=1::[require-dual-signature] {entity_path} must be an object")
+        sys.exit(1)
+
+    required_fields = {"role", "model_id", "model_family", "signature_date"}
+    if require_verdict:
+        required_fields.add("verdict")
+
+    missing_fields = sorted(required_fields - set(payload.keys()))
+    if missing_fields:
+        print(
+            f"::error file={path},line=1::[require-dual-signature] {entity_path} missing fields: {', '.join(missing_fields)}"
+        )
+        sys.exit(1)
+
+    verdict = (payload.get("verdict") or "").upper()
+    if require_verdict and verdict not in {"APPROVED", "APPROVED_WITH_CHANGES"}:
+        print(
+            f"::error file={path},line=1::[require-dual-signature] {entity_path}.verdict must be APPROVED or APPROVED_WITH_CHANGES"
+        )
+        sys.exit(1)
+
+    signature_date = payload.get("signature_date")
+    if signature_date is None:
+        print(
+            f"::error file={path},line=1::[require-dual-signature] {entity_path}.signature_date must be a non-empty string"
+        )
+        sys.exit(1)
+    if isinstance(signature_date, str) and not signature_date.strip():
+        print(
+            f"::error file={path},line=1::[require-dual-signature] {entity_path}.signature_date must not be empty"
+        )
+        sys.exit(1)
+
+    model_id = payload.get("model_id")
+    if model_id is None:
+        print(
+            f"::error file={path},line=1::[require-dual-signature] {entity_path}.model_id must be a non-empty string"
+        )
+        sys.exit(1)
+
+    if isinstance(model_id, str) and not model_id.strip():
+        print(
+            f"::error file={path},line=1::[require-dual-signature] {entity_path}.model_id must not be empty"
+        )
+        sys.exit(1)
+
+    model_family = payload.get("model_family")
+    if model_family is None:
+        print(
+            f"::error file={path},line=1::[require-dual-signature] {entity_path}.model_family must be a non-empty string"
+        )
+        sys.exit(1)
+
+    if isinstance(model_family, str) and not model_family.strip():
+        print(
+            f"::error file={path},line=1::[require-dual-signature] {entity_path}.model_family must not be empty"
+        )
+        sys.exit(1)
+
+
+drafter = data.get("drafter")
+reviewer = data.get("reviewer")
+validate_identity("drafter", drafter)
+validate_identity("reviewer", reviewer, require_verdict=True)
+
+gate_identity = data.get("gate_identity")
+if schema_version_num >= 2:
+    validate_identity("gate_identity", gate_identity)
+elif "gate_identity" in data:
+    validate_identity("gate_identity", gate_identity)
+
+model_ids = [drafter.get("model_id"), reviewer.get("model_id")]
 
 if drafter.get("model_id") == reviewer.get("model_id"):
-    print(f"::error file={path},line=1::[require-dual-signature] drafter.model_id must differ from reviewer.model_id")
-    sys.exit(1)
-if drafter.get("model_family") == reviewer.get("model_family"):
-    print(f"::error file={path},line=1::[require-dual-signature] drafter.model_family must differ from reviewer.model_family")
+    print(
+        f"::error file={path},line=1::[require-dual-signature] drafter.model_id must differ from reviewer.model_id"
+    )
     sys.exit(1)
 
-verdict = (reviewer.get("verdict") or "").upper()
-if verdict not in {"APPROVED", "APPROVED_WITH_CHANGES"}:
+if drafter.get("model_family") == reviewer.get("model_family"):
     print(
-        f"::error file={path},line=1::[require-dual-signature] verdict must be APPROVED or APPROVED_WITH_CHANGES"
+        f"::error file={path},line=1::[require-dual-signature] drafter.model_family must differ from reviewer.model_family"
+    )
+    sys.exit(1)
+
+if schema_version_num >= 2:
+    model_ids.append(gate_identity.get("model_id"))
+
+if len(set(model_ids)) != len(model_ids):
+    print(
+        f"::error file={path},line=1::[require-dual-signature] drafter/reviewer/gate model_id values must be distinct"
     )
     sys.exit(1)
 
