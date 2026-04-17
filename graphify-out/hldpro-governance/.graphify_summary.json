@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-228-model-runtime-20260417/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-228-model-runtime-20260417/wiki/hldpro",
-  "nodes": 550,
-  "edges": 1058,
-  "communities": 33,
-  "articles": 43,
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-229-packet-queue-20260417/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-229-packet-queue-20260417/wiki/hldpro",
+  "nodes": 582,
+  "edges": 1124,
+  "communities": 35,
+  "articles": 45,
   "html_status": "skipped",
-  "code_files": 38
+  "code_files": 40
 }

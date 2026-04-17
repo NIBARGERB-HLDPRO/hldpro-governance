@@ -1,0 +1,139 @@
+{
+  "session_id": "session-20260417-issue-229-packet-queue",
+  "issue_number": 229,
+  "objective": "Implement the packet queue and controlled orchestration slice from epic #224 by defining filesystem queue states, atomic packet movement, dispatch validation, PII halt behavior, and replayable audit records without executing packet payloads.",
+  "tier": 1,
+  "scope_boundary": [
+    "Extend the governance packet schema compatibly with issue-backed dispatch metadata.",
+    "Implement a filesystem-first packet queue under raw/packets/queue with inbound, dispatched, review, gate, done, and halted states.",
+    "Validate packets before dispatch using existing SoM packet checks plus issue-backed structured plan approval.",
+    "Require model identity, validation commands, review artifacts, PII mode, and fallback log metadata before dispatch.",
+    "Record auditable, replayable state transitions and support dry-run movement without executing code."
+  ],
+  "out_of_scope": [
+    "Executing packet payloads or spawning workers from the queue.",
+    "Starting an always-on daemon or launchd job for packet dispatch.",
+    "Changing local-ai-machine runtime code from this governance slice.",
+    "Sending packet contents to cloud or Windows model endpoints.",
+    "Granting autonomous write authority outside explicit approved issue-backed plans."
+  ],
+  "research_summary": "Issue #229 requires deterministic packet queue semantics for epic #224. Existing packet validation in scripts/packet/validate.py already enforces schema shape, model family independence, no self-approval, planning floor, PII path checks, tier escalation, local family diversity, and fallback log resolution. This slice layers queue-state controls on top of that validator so existing packets remain compatible while dispatch-ready packets must carry explicit governance metadata. The read-only observer from #227 intentionally records packet_enqueue_enabled: false, and #228 keeps model runtime probing metadata-only, so #229 must remain dry-run/control-plane only.",
+  "research_artifacts": [
+    "Issue #224",
+    "Issue #229",
+    "docs/schemas/som-packet.schema.yml",
+    "scripts/packet/validate.py",
+    "scripts/packet/test_validate.py",
+    "docs/plans/issue-224-structured-agent-cycle-plan.json",
+    "docs/plans/issue-224-always-on-governance-orchestrator-pdcar.md",
+    "raw/cross-review/2026-04-17-always-on-governance-orchestrator-plan.md",
+    "STANDARDS.md §Society of Minds"
+  ],
+  "sprints": [
+    {
+      "name": "Queue Contract",
+      "goal": "Define packet queue metadata and governance-surface planning coverage.",
+      "tasks": [
+        "Extend som-packet schema with optional governance dispatch metadata.",
+        "Classify packet queue paths as governance surface for issue-backed plan enforcement.",
+        "Document packet queue states and audit fields in registry docs."
+      ],
+      "acceptance_criteria": [
+        "Existing packets remain schema-compatible.",
+        "Dispatch-ready packets can declare issue, plan, scope, validation, review, fallback, PII, and authorization metadata.",
+        "Packet queue files cannot change without a matching implementation-ready plan."
+      ],
+      "file_paths": [
+        "docs/schemas/som-packet.schema.yml",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/DATA_DICTIONARY.md"
+      ]
+    },
+    {
+      "name": "Queue State Machine",
+      "goal": "Implement deterministic packet movement and dispatch checks.",
+      "tasks": [
+        "Add scripts/orchestrator/packet_queue.py with queue initialization, transition, and replay commands.",
+        "Use atomic write-then-rename semantics for packet writes and state moves.",
+        "Require approved issue-backed structured plans before dispatch.",
+        "Halt or refuse PII-tagged packets before non-LAM dispatch."
+      ],
+      "acceptance_criteria": [
+        "A dry-run packet can move through queue states without execution.",
+        "Invalid packets fail schema validation before dispatch.",
+        "PII packets cannot dispatch to cloud or Windows roles.",
+        "Audit logs replay into deterministic latest states."
+      ],
+      "file_paths": [
+        "scripts/orchestrator/packet_queue.py",
+        "scripts/orchestrator/test_packet_queue.py",
+        "raw/packets/queue/"
+      ]
+    },
+    {
+      "name": "Review And Closeout",
+      "goal": "Complete reviewed evidence and closeout for issue #229.",
+      "tasks": [
+        "Add PDCAR, cross-review, and closeout artifacts.",
+        "Run packet, orchestrator, planning gate, model pin, graph, and compendium validations.",
+        "Open, verify, and merge the issue-specific implementation PR."
+      ],
+      "acceptance_criteria": [
+        "Alternate-family review is recorded before merge.",
+        "Validation commands are captured in closeout.",
+        "Compendium, graph, and wiki outputs are current after closeout."
+      ],
+      "file_paths": [
+        "docs/plans/issue-229-packet-queue-pdcar.md",
+        "raw/cross-review/2026-04-17-packet-queue.md",
+        "raw/closeouts/2026-04-17-packet-queue.md",
+        "docs/ORG_GOVERNANCE_COMPENDIUM.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex implementation agent",
+      "role": "packet queue implementer",
+      "focus": "Filesystem state machine, dispatch validation, dry-run behavior, PII halt behavior, and audit replay.",
+      "status": "accepted",
+      "summary": "The slice adds queue control-plane validation and auditability only. It does not execute code or start autonomous dispatch.",
+      "evidence": [
+        "scripts/orchestrator/packet_queue.py",
+        "scripts/orchestrator/test_packet_queue.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Alternate-family review is required for Tier 1 orchestration and PII-routing controls. Findings are recorded in the #229 cross-review artifact and must be resolved or explicitly accepted before merge.",
+    "evidence": [
+      "raw/cross-review/2026-04-17-packet-queue.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement #229 packet queue schema metadata, dry-run state machine, dispatch gate, PII halt behavior, audit replay, tests, docs, review, and closeout only.",
+    "next_execution_step": "Build queue controls, run validators, obtain alternate-family review, close out, open PR, and merge after checks pass.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If dispatch validation would need to execute packet payloads, stop and defer execution to a later issue.",
+    "If packet metadata conflicts with the issue-backed structured plan, refuse dispatch.",
+    "If PII mode is tagged, detected, or LAM-only and the prior role is not a LAM role, halt or refuse before dispatch.",
+    "If existing packet schema compatibility would break, keep governance metadata optional and enforce stricter rules in the queue layer."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: proceed, loop through, no HITL",
+    "Codex implementation agent"
+  ],
+  "approved_at": "2026-04-17T13:30:00-05:00"
+}

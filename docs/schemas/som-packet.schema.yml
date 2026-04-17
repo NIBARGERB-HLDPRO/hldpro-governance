@@ -92,6 +92,57 @@ properties:
     type: ["string", "null"]
     description: "Optional fallback log path (must resolve under raw/model-fallbacks when present)"
 
+  governance:
+    type: object
+    description: "Issue-backed dispatch controls required by the packet queue before execution"
+    required:
+      - issue_number
+      - structured_plan_ref
+      - execution_scope_ref
+      - validation_commands
+      - review_artifacts
+      - fallback_log_ref
+      - pii_mode
+      - dispatch_authorized
+    properties:
+      issue_number:
+        type: integer
+        minimum: 1
+        description: "GitHub issue number authorizing this packet"
+      structured_plan_ref:
+        type: string
+        description: "Repo-relative path to the canonical structured agent cycle plan"
+      execution_scope_ref:
+        type: ["string", "null"]
+        description: "Repo-relative path to execution scope evidence, or null when captured in the structured plan"
+      validation_commands:
+        type: array
+        minItems: 1
+        items:
+          type: string
+        description: "Commands required before the packet can close"
+      review_artifacts:
+        type: array
+        minItems: 1
+        items:
+          type: string
+        description: "Review or gate artifacts required by the packet"
+      fallback_log_ref:
+        type: ["string", "null"]
+        description: "Fallback log path under raw/model-fallbacks, or null when no fallback occurred"
+      pii_mode:
+        type: string
+        enum:
+          - none
+          - tagged
+          - detected
+          - lam_only
+        description: "PII routing mode declared before dispatch"
+      dispatch_authorized:
+        type: boolean
+        description: "True only after issue-backed plan approval and scope review"
+    additionalProperties: false
+
   metadata:
     type: ["object", "null"]
     description: "Optional freeform metadata dict"
