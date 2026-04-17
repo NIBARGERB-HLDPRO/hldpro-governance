@@ -81,6 +81,7 @@
 | Script | Path | Purpose |
 |--------|------|---------|
 | build_graph.py | `scripts/knowledge_base/build_graph.py` | Builds graphify knowledge graph for a repo |
+| graphify_hook_helper.py | `scripts/knowledge_base/graphify_hook_helper.py` | Resolves manifest-defined graphify paths, dry-runs refresh commands, and installs managed graphify refresh hooks into governed repo checkouts |
 | log_graphify_usage.py | `scripts/knowledge_base/log_graphify_usage.py` | Appends graphify usage events to JSONL log |
 | measure_graphify_usage.py | `scripts/knowledge_base/measure_graphify_usage.py` | A/B comparison: graphify vs repo-search retrieval |
 | update_knowledge_index.py | `scripts/knowledge_base/update_knowledge_index.py` | Regenerates wiki/index.md from graph summaries |

@@ -137,6 +137,30 @@ Three workflows in [`.github/workflows/`](.github/workflows/):
 
 Use [`scripts/knowledge_base/prepare_local_graphify_repos.sh`](scripts/knowledge_base/prepare_local_graphify_repos.sh) to create helper-managed `repos/` symlinks from sibling HLDPRO checkouts when validating the manifest-driven graph refresh path from an isolated governance worktree.
 
+### Graphify Hook Helper
+
+Use [`scripts/knowledge_base/graphify_hook_helper.py`](scripts/knowledge_base/graphify_hook_helper.py) to install governed graph refresh hooks into product repo checkouts. This is the governed path for AIS and knocktracker adoption; raw `graphify hook install` output is not acceptable because it can call graphify internals with the product checkout as the write context.
+
+Dry-run before install:
+
+```bash
+python3 scripts/knowledge_base/graphify_hook_helper.py dry-run \
+  --target-repo ../ai-integration-services \
+  --repo-slug ai-integration-services \
+  --no-html
+```
+
+Install managed hooks after reviewing the dry-run:
+
+```bash
+python3 scripts/knowledge_base/graphify_hook_helper.py install \
+  --target-repo ../ai-integration-services \
+  --repo-slug ai-integration-services \
+  --backup-existing
+```
+
+Adoption PRs must prove pre-existing raw graphify hooks are removed or absent, record the dry-run output, and confirm managed hooks route through this helper rather than `graphify.watch._rebuild_code(Path('.'))`.
+
 ### Graphify Artifact Contract
 
 - `docs/graphify_targets.json` is the source of truth for canonical output directories under `graphify-out/<repo>/`.
