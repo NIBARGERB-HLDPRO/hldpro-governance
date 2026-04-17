@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "organization": "NIBARGERB-HLDPRO",
+  "repos_root_env": "HLDPRO_REPOS_ROOT",
+  "default_repos_root": "~/Developer/HLDPRO",
+  "repositories": [
+    {
+      "repo_slug": "hldpro-governance",
+      "display_name": "hldpro-governance",
+      "repo_dir_name": "hldpro-governance",
+      "github_repo": "NIBARGERB-HLDPRO/hldpro-governance",
+      "local_path": "hldpro-governance",
+      "ci_checkout_path": ".",
+      "graph_output_path": "graphify-out/hldpro-governance",
+      "wiki_path": "wiki/hldpro",
+      "project_path": "projects/hldpro-governance",
+      "governance_tier": "full",
+      "security_tier": "baseline",
+      "description": "Governance standards, reusable CI, agents, and cross-repo audit tooling",
+      "enabled_subsystems": {
+        "graphify": true,
+        "sweep": false,
+        "metrics": false,
+        "memory_integrity": true,
+        "codex_ingestion": false,
+        "compendium": true,
+        "raw_feed_sync": false,
+        "code_governance": false
+      }
+    },
+    {
+      "repo_slug": "ai-integration-services",
+      "display_name": "ai-integration-services",
+      "repo_dir_name": "ai-integration-services",
+      "github_repo": "NIBARGERB-HLDPRO/ai-integration-services",
+      "local_path": "ai-integration-services",
+      "ci_checkout_path": "repos/ai-integration-services",
+      "graph_output_path": "graphify-out/ai-integration-services",
+      "wiki_path": "wiki/ai-integration-services",
+      "project_path": "projects/ai-integration-services",
+      "governance_tier": "full",
+      "security_tier": "full-pentagi",
+      "description": "AIS SaaS platform governance, CI, hooks, and specialist agents",
+      "enabled_subsystems": {
+        "graphify": true,
+        "sweep": true,
+        "metrics": true,
+        "memory_integrity": true,
+        "codex_ingestion": true,
+        "compendium": true,
+        "raw_feed_sync": true,
+        "code_governance": true
+      }
+    },
+    {
+      "repo_slug": "healthcareplatform",
+      "display_name": "HealthcarePlatform",
+      "repo_dir_name": "HealthcarePlatform",
+      "github_repo": "NIBARGERB-HLDPRO/HealthcarePlatform",
+      "local_path": "HealthcarePlatform",
+      "ci_checkout_path": "repos/HealthcarePlatform",
+      "graph_output_path": "graphify-out/healthcareplatform",
+      "wiki_path": "wiki/healthcareplatform",
+      "project_path": "projects/healthcareplatform",
+      "governance_tier": "full-hipaa",
+      "security_tier": "full-pentagi-hipaa",
+      "description": "HIPAA platform governance, CI, hooks, and specialist agents",
+      "enabled_subsystems": {
+        "graphify": true,
+        "sweep": true,
+        "metrics": true,
+        "memory_integrity": true,
+        "codex_ingestion": true,
+        "compendium": true,
+        "raw_feed_sync": true,
+        "code_governance": true
+      }
+    },
+    {
+      "repo_slug": "local-ai-machine",
+      "display_name": "local-ai-machine",
+      "repo_dir_name": "local-ai-machine",
+      "github_repo": "NIBARGERB-HLDPRO/local-ai-machine",
+      "local_path": "local-ai-machine",
+      "ci_checkout_path": "repos/local-ai-machine",
+      "graph_output_path": "graphify-out/local-ai-machine",
+      "wiki_path": "wiki/local-ai-machine",
+      "project_path": "projects/local-ai-machine",
+      "governance_tier": "full-lane-based",
+      "security_tier": "baseline",
+      "description": "Local AI runtime governance, packet controls, lane rules, and schemas",
+      "enabled_subsystems": {
+        "graphify": true,
+        "sweep": true,
+        "metrics": true,
+        "memory_integrity": true,
+        "codex_ingestion": true,
+        "compendium": true,
+        "raw_feed_sync": true,
+        "code_governance": true
+      }
+    },
+    {
+      "repo_slug": "knocktracker",
+      "display_name": "knocktracker",
+      "repo_dir_name": "knocktracker",
+      "github_repo": "NIBARGERB-HLDPRO/knocktracker",
+      "local_path": "knocktracker",
+      "ci_checkout_path": "repos/knocktracker",
+      "graph_output_path": "graphify-out/knocktracker",
+      "wiki_path": "wiki/knocktracker",
+      "project_path": "projects/knocktracker",
+      "governance_tier": "standard",
+      "security_tier": "baseline",
+      "description": "Field app governance, issue controls, security/privacy agents, and CI",
+      "enabled_subsystems": {
+        "graphify": true,
+        "sweep": true,
+        "metrics": true,
+        "memory_integrity": true,
+        "codex_ingestion": true,
+        "compendium": true,
+        "raw_feed_sync": true,
+        "code_governance": true
+      }
+    },
+    {
+      "repo_slug": "asc-evaluator",
+      "display_name": "ASC-Evaluator",
+      "repo_dir_name": "ASC-Evaluator",
+      "github_repo": "NIBARGERB-HLDPRO/ASC-Evaluator",
+      "local_path": "ASC-Evaluator",
+      "ci_checkout_path": "repos/ASC-Evaluator",
+      "graph_output_path": "graphify-out/asc-evaluator",
+      "wiki_path": "wiki/asc-evaluator",
+      "project_path": "projects/asc-evaluator",
+      "governance_tier": "exempt-graphify-pointer",
+      "security_tier": "exempt",
+      "description": "Knowledge/evaluation repo with limited governance and graph coverage",
+      "enabled_subsystems": {
+        "graphify": true,
+        "sweep": true,
+        "metrics": true,
+        "memory_integrity": false,
+        "codex_ingestion": false,
+        "compendium": true,
+        "raw_feed_sync": false,
+        "code_governance": false
+      }
+    }
+  ]
+}

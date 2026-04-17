@@ -7,13 +7,11 @@ from collections import Counter
 from pathlib import Path
 
 
-REPO_SLUGS = (
-    "ai-integration-services",
-    "HealthcarePlatform",
-    "local-ai-machine",
-    "knocktracker",
-    "hldpro-governance",
-)
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from scripts.overlord.governed_repos import DEFAULT_REGISTRY, repo_names_enabled_for
 
 MEMORY_ROOT_PREFIX = Path.home() / ".claude/projects"
 POINTER_RE = re.compile(r"^\s*-\s*\[[^\]]+\]\(([^)]+\.md)\)(?:\s*[—-].*)?$")
@@ -121,7 +119,7 @@ def inspect_repo(repo_slug: str) -> tuple[bool, list[str], int]:
 
 def main() -> None:
     all_pass = True
-    for repo_slug in REPO_SLUGS:
+    for repo_slug in repo_names_enabled_for("memory_integrity", DEFAULT_REGISTRY):
         passed, issues, entries = inspect_repo(repo_slug)
         status = "PASS" if passed else "FAIL"
         print(f"{repo_slug}: {status} ({entries} entries, {len(issues)} issues)")

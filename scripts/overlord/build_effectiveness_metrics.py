@@ -13,15 +13,15 @@ from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
 
 
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from scripts.overlord.governed_repos import DEFAULT_REGISTRY, repo_names_enabled_for
+
+
 BUG_PATTERN = re.compile(r"(fix|bug|hotfix|revert)", re.IGNORECASE)
 REVERT_PATTERN = re.compile(r"revert", re.IGNORECASE)
-DEFAULT_REPOS = [
-    "ai-integration-services",
-    "HealthcarePlatform",
-    "local-ai-machine",
-    "knocktracker",
-    "ASC-Evaluator",
-]
 
 
 @dataclass
@@ -167,7 +167,8 @@ def main() -> int:
     parser.add_argument("--date")
     parser.add_argument("--commit-window-days", type=int, default=7)
     parser.add_argument("--ci-window-days", type=int, default=14)
-    parser.add_argument("--repos", nargs="*", default=DEFAULT_REPOS)
+    parser.add_argument("--registry", type=Path, default=DEFAULT_REGISTRY)
+    parser.add_argument("--repos", nargs="*", help="Override registry metrics repo list")
     args = parser.parse_args()
 
     snapshot_date = date.fromisoformat(args.date) if args.date else datetime.now(timezone.utc).date()
@@ -179,8 +180,9 @@ def main() -> int:
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    selected_repos = args.repos or repo_names_enabled_for("metrics", args.registry)
     repo_metrics = []
-    for repo in args.repos:
+    for repo in selected_repos:
         repo_path = repos_root / repo
         if not repo_path.exists():
             print(f"missing repo path: {repo_path}", file=sys.stderr)

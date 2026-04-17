@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "docs/schemas/governed-repos.schema.json",
+  "title": "Governed Repositories Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "organization",
+    "repos_root_env",
+    "default_repos_root",
+    "repositories"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "organization": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repos_root_env": {
+      "type": "string",
+      "minLength": 1
+    },
+    "default_repos_root": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repositories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/repository"
+      }
+    }
+  },
+  "$defs": {
+    "repository": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repo_slug",
+        "display_name",
+        "repo_dir_name",
+        "github_repo",
+        "local_path",
+        "ci_checkout_path",
+        "graph_output_path",
+        "wiki_path",
+        "project_path",
+        "governance_tier",
+        "security_tier",
+        "description",
+        "enabled_subsystems"
+      ],
+      "properties": {
+        "repo_slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repo_dir_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "github_repo": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"
+        },
+        "local_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ci_checkout_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "graph_output_path": {
+          "type": "string",
+          "pattern": "^graphify-out/[A-Za-z0-9_.-]+$"
+        },
+        "wiki_path": {
+          "type": "string",
+          "pattern": "^wiki/[A-Za-z0-9_.-]+$"
+        },
+        "project_path": {
+          "type": "string",
+          "pattern": "^projects/[A-Za-z0-9_.-]+$"
+        },
+        "governance_tier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "security_tier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "enabled_subsystems": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "graphify",
+            "sweep",
+            "metrics",
+            "memory_integrity",
+            "codex_ingestion",
+            "compendium",
+            "raw_feed_sync",
+            "code_governance"
+          ],
+          "properties": {
+            "graphify": {
+              "type": "boolean"
+            },
+            "sweep": {
+              "type": "boolean"
+            },
+            "metrics": {
+              "type": "boolean"
+            },
+            "memory_integrity": {
+              "type": "boolean"
+            },
+            "codex_ingestion": {
+              "type": "boolean"
+            },
+            "compendium": {
+              "type": "boolean"
+            },
+            "raw_feed_sync": {
+              "type": "boolean"
+            },
+            "code_governance": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}

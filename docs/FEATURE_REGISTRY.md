@@ -42,6 +42,7 @@
 | GOV-015 | GRAPHIFY_MEASUREMENT | Graphify retrieval measurement and usage-event telemetry | IN_PROGRESS | OPS_READY |
 | GOV-016 | SOM_ENFORCEMENT | Society of Minds routing, review, packet, and closeout enforcement | IN_PROGRESS | REQUIRED |
 | GOV-017 | ORG_GOVERNANCE_COMPENDIUM | Org-level governance rules compendium generated from governed repo rule files and graph nodes | COMPLETE | OPS_READY |
+| GOV-018 | GOVERNED_REPO_REGISTRY | Executable governed repository registry and validator | COMPLETE | REQUIRED |
 
 ---
 
@@ -104,6 +105,13 @@
 | Feature ID | Notes |
 |---|---|
 | GOV-017 | `scripts/overlord/build_org_governance_compendium.py` generates `docs/ORG_GOVERNANCE_COMPENDIUM.md` from canonical governed repo rule files, graphify node summaries, workflows, hooks, agents, schemas, and PDCA/R docs. `overlord-sweep.yml` refreshes and stages it with weekly graph and metrics updates. |
+
+### GOVERNED_REPO_REGISTRY
+
+| Feature ID | Notes |
+|---|---|
+| GOV-018 | `docs/governed_repos.json` is the executable source of truth for governed repo metadata, including GitHub repo, local and CI paths, graph/wiki/project paths, tiers, and enabled subsystems. |
+| GOV-018 | `scripts/overlord/validate_governed_repos.py` validates the registry and reconciles graphify targets; `scripts/overlord/governed_repos.py` is the shared adapter used by sweep metrics, memory integrity, and the org governance compendium. |
 
 ### SOCIETY_OF_MINDS
 
