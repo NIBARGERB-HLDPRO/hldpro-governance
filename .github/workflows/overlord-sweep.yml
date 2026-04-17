@@ -60,6 +60,11 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
 
+      - name: Validate codex and agent model pins
+        run: |
+          python3 .github/scripts/check_codex_model_pins.py
+          python3 .github/scripts/check_agent_model_pins.py
+
       # ── Run the sweep ──
       - name: Run overlord sweep audit
         id: sweep
@@ -96,6 +101,7 @@ jobs:
           {"type":"object","required":["ok"],"properties":{"ok":{"type":"boolean"}},"additionalProperties":false}
           EOF
               if codex exec -C "${GITHUB_WORKSPACE}" --full-auto --ephemeral -m "${CODEX_MODEL}" \
+                -c model_reasoning_effort=high \
                 --output-schema "${CANARY_SCHEMA}" --color never -- 'Return {"ok": true} and nothing else.' \
                 >/tmp/codex-canary.stdout 2>/tmp/codex-canary.stderr; then
                 CODEX_AVAILABLE=true
@@ -154,6 +160,7 @@ jobs:
           {"type":"object","required":["ok"],"properties":{"ok":{"type":"boolean"}},"additionalProperties":false}
           EOF
               if codex exec -C "${GITHUB_WORKSPACE}" --full-auto --ephemeral -m "${CODEX_MODEL}" \
+                -c model_reasoning_effort=high \
                 --output-schema "${CANARY_SCHEMA}" --color never -- 'Return {"ok": true} and nothing else.' \
                 >/tmp/codex-canary.stdout 2>/tmp/codex-canary.stderr; then
                 CODEX_AVAILABLE=true

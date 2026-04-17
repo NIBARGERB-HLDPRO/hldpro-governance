@@ -1,0 +1,40 @@
+{
+  "expected_execution_root": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-som-enforcement-20260417",
+  "expected_branch": "fix/som-enforcement-drift-20260417",
+  "allowed_write_paths": [
+    ".github/scripts/check_codex_model_pins.py",
+    ".github/scripts/check_no_self_approval.py",
+    ".github/workflows/check-arch-tier.yml",
+    ".github/workflows/governance-check.yml",
+    ".github/workflows/overlord-sweep.yml",
+    ".github/workflows/require-cross-review.yml",
+    "OVERLORD_BACKLOG.md",
+    "STANDARDS.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/exception-register.md",
+    "docs/plans/2026-04-17-som-enforcement-drift-pdcar.md",
+    "docs/schemas/README.md",
+    "docs/schemas/som-packet.schema.yml",
+    "raw/closeouts/2026-04-14-packet-schema-stage4.md",
+    "raw/closeouts/2026-04-16-som-stage4b.md",
+    "raw/closeouts/2026-04-17-som-enforcement-drift-closeout-loop.md",
+    "raw/closeouts/TEMPLATE.md",
+    "raw/cross-review/2026-04-17-som-enforcement-drift-plan.md",
+    "raw/cross-review/2026-04-17-som-execution-scope-slice7-plan.md",
+    "raw/execution-scopes/2026-04-17-som-enforcement-drift-pr.json",
+    "raw/execution-scopes/2026-04-17-som-enforcement-drift-slice7.json",
+    "scripts/codex-review-template.sh",
+    "scripts/cross-review/require-dual-signature.sh",
+    "scripts/knowledge_base/update_knowledge_index.py",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/codex_ingestion.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "scripts/packet/test_validate.py",
+    "scripts/packet/validate.py",
+    "wiki/index.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
+  ]
+}

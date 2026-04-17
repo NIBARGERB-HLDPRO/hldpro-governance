@@ -28,6 +28,12 @@ A JSON Schema YAML describing the canonical handoff packet shape:
 
 **File:** `scripts/packet/validate.py`
 
+### Runtime boundary
+
+Governance enforcement in this repository validates packet metadata and invariants.
+MCP runtime execution of these checks is implemented in **local-ai-machine**
+(`services/som-mcp`), with this repo supplying the schema and validation policy.
+
 Deterministic validator (no LLM). Enforces:
 
 1. **Schema Validation**: Structural checks via jsonschema
@@ -35,6 +41,9 @@ Deterministic validator (no LLM). Enforces:
 3. **No-Self-Approval**: Walk parent chain; prevent consecutive same-model in opposite-tier roles
 4. **Planning Floor**: Refuse weak models (claude-haiku-4-5, gpt-4-mini, etc.) for tier 1 dual-planner
 5. **PII Floor**: Artifacts matching `scripts/lam/pii-patterns.yml` require worker-lam or critic-lam roles
+6. **Tier Escalation**: Enforce no tier skipping (`prior.tier + 1 == next_tier` for active tiers)
+7. **LAM Family Diversity**: Enforce diverse LAM handoff families when multiple LAM roles appear in chain
+8. **Fallback Logging**: If `fallback_ladder_ref` exists, it must resolve to a file under `raw/model-fallbacks/`
 
 ### Usage
 
@@ -45,7 +54,7 @@ python3 scripts/packet/validate.py <packet-file.yml> --json
 
 Exit codes:
 - `0`: Packet valid
-- `1`: Validation failed (error message printed to stderr with `::error::` annotation)
+- `1`: Validation failed (error message printed with `::error::` annotation)
 
 JSON output format:
 ```json

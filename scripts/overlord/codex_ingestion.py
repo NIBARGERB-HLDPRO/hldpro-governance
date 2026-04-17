@@ -612,6 +612,8 @@ If there are no substantive issues, return an empty findings array.
                 "--ephemeral",
                 "-m",
                 model_name,
+                "-c",
+                "model_reasoning_effort=medium",
                 "--output-schema",
                 str(schema_path),
                 "--color",

@@ -59,20 +59,6 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **status:** `active`
 - **follow-up:** update ASC-Evaluator's governance.yml workflow to opt out or inherit the exemption
 
-### `SOM-LAM-BRANCH-001` — SoM adoption PRs don't match local-ai-machine riskfix/* branch convention
-
-- **rule_id:** `SOM-LAM-BRANCH-001`
-- **repo:** `local-ai-machine`
-- **deferral_reason:** `breaker-mcp-contract` workflow requires PR head branch match `riskfix/*`. The Society of Minds adoption uses `chore/adopt-society-of-minds` (PR #431) and `feat/som-mcp-daemon` (PR #432) per standard SoM branch naming. Reconciling the two conventions is out of scope for the adoption. Renaming branches post-facto would force PRs closed and disrupt the audit chain.
-- **approver:** `nibargerb`
-- **approval_date:** 2026-04-14
-- **expiry_date:** 2026-05-14 (30 days)
-- **review_cadence:** monthly
-- **status:** `resolved`
-- **resolution_date:** 2026-04-16
-- **resolution:** The two conventions are explicitly complementary, not conflicting. `riskfix/<slug>-YYYYMMDD` is the designated LAM high-risk lane prefix in `local-ai-machine`, governed by LAM-local policy (mandatory date suffix, one PR per lane family enforced by `breaker-mcp-contract`). All other work — including in `local-ai-machine` — uses the standard SoM prefixes (`feature/`, `fix/`, `docs/`, `chore/`). `STANDARDS.md` branch naming rule now documents this explicitly. No ambiguity remains. See hldpro-governance PR #175.
-- **closed_by:** `nibargerb`
-
 ### `SOM-WIN-OLLAMA-PII-001` — PII middleware enforcement deferred to Sprint 2
 
 - **rule_id:** `SOM-WIN-OLLAMA-PII-001`

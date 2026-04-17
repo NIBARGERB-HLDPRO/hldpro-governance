@@ -1,0 +1,12 @@
+{
+  "expected_execution_root": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-som-enforcement-20260417",
+  "expected_branch": "fix/som-enforcement-drift-20260417",
+  "allowed_write_paths": [
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "raw/execution-scopes/2026-04-17-som-enforcement-drift-slice7.json"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
+  ]
+}

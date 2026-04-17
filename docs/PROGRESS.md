@@ -1,6 +1,6 @@
 # hldpro-governance — Progress & Backlog
 
-**Last Updated:** 2026-04-16
+**Last Updated:** 2026-04-17
 **Scope:** Cross-repo governance standards, CI enforcement, audit agents, and knowledge base infrastructure.
 
 > This file is the single source of truth for planned work, open bugs, feature requests, and operational items in hldpro-governance.
@@ -10,8 +10,14 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
-| Harden verify-completion + codex-spark dispatch briefs against stale-checkout contamination | #174 | IN PROGRESS | HIGH | 2-3 | `check-pr-commit-scope.yml`, `check_pr_commit_scope.sh`, STANDARDS.md update | 2026-04-15 incident; (a)+(b) already on main; (c) PR #182 |
-| Reconcile SoM branch naming vs local-ai-machine riskfix/* convention | #175 | PLANNED | MEDIUM | 1-2 | STANDARDS.md update, exception register update | Exception SOM-LAM-BRANCH-001 defers enforcement |
+| SoM enforcement drift closure epic | #214 | IN PROGRESS | HIGH | TBD | Reviewed PDCAR plan, Claude review artifact, issues #215-#221 | Plan: docs/plans/2026-04-17-som-enforcement-drift-pdcar.md; closeout loop tracked by #220; execution-scope guard tracked by #221 |
+| SoM Slice 1: Codex model pin enforcement | #215 | IN PROGRESS | HIGH | TBD | Codex model/reasoning checker, overlord-sweep wiring | Part of #214 |
+| SoM Slice 2: ladder and standards consistency | #216 | IN PROGRESS | HIGH | TBD | STANDARDS, exception, progress, registry alignment | Part of #214 |
+| SoM Slice 3: cross-review and gate identity enforcement | #217 | IN PROGRESS | HIGH | TBD | v2 gate identity validation and no-self-approval coverage | Part of #214 |
+| SoM Slice 4: architecture tier enforcement | #218 | IN PROGRESS | HIGH | TBD | Checkable architecture tier evidence path | Part of #214 |
+| SoM Slice 5: packet schema and runtime boundary | #219 | IN PROGRESS | HIGH | TBD | Schema/validator docs, packet tests, runtime boundary correction | Part of #214 |
+| SoM Slice 6: operational status and closeout loop | #220 | IN PROGRESS | HIGH | TBD | Progress/backlog/registry/wiki mirrors and closeout evidence contract | This slice |
+| SoM Slice 7: execution root and write-scope enforcement | #221 | IN PROGRESS | HIGH | TBD | Execution-scope checker, tests, and PR/slice scope artifacts | Part of #214 |
 | Stage 5+ som-worker launchd boot-start integration | #104 | PLANNED | MEDIUM | 2-3 | launchd plist, service docs | Gate: local-ai-machine #431, #432 adopt |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
@@ -38,5 +44,12 @@
 | Item | Issue | Status | Notes |
 |------|-------|--------|-------|
 | hldpro-governance missing docs: SERVICE_REGISTRY.md, DATA_DICTIONARY.md | #172 #173 | IN PROGRESS | Being created in this PR |
-| Weekly overlord sweep write-back to wiki/index.md | — | PENDING | Last sweep was 2026-04-09; needs live GH Actions run |
+| Weekly overlord sweep write-back to wiki/index.md | — | ACTIVE / AWAITING NEXT RUN | Workflow and graph/index write-back path are wired; last committed index remains the 2026-04-09 bootstrap until the next scheduled or manual sweep refreshes generated counts |
 | LAM env-var-docs contract debt: SOM_* variables unclassified | #145 | OPEN | local-ai-machine env vars need classification |
+
+## Done
+
+| Item | Issue | Date | Notes |
+|------|-------|------|-------|
+| Harden verify-completion + codex-spark dispatch briefs against stale-checkout contamination | #174 | 2026-04-17 | GitHub issue is closed; moved out of active Plans to keep the local mirror aligned with canonical issue state |
+| Reconcile SoM branch naming vs local-ai-machine riskfix/* convention | #175 | 2026-04-17 | Branch-policy drift resolved by PR #175; active docs now describe the SoM and `riskfix/*` conventions as complementary rather than blocked |
