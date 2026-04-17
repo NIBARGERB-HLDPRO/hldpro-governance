@@ -1,0 +1,95 @@
+profile:
+  name: hldpro-governance
+  description: Governance-repo local CI gate for deterministic checks and local-only reporting.
+  report_root: cache/local-ci-gate/reports
+  changed_files:
+    base_ref: origin/main
+    head_ref: HEAD
+    include_untracked: true
+  checks:
+    - id: overlord-backlog-alignment
+      title: Overlord backlog issue alignment
+      severity: blocker
+      scope: always
+      command:
+        - python3
+        - scripts/overlord/check_overlord_backlog_github_alignment.py
+
+    - id: structured-agent-cycle-plans
+      title: Structured agent cycle plan validation
+      severity: blocker
+      scope: always
+      command:
+        - python3
+        - scripts/overlord/validate_structured_agent_cycle_plan.py
+        - --root
+        - .
+
+    - id: governance-surface-planning
+      title: Governance-surface planning gate
+      severity: blocker
+      scope: changed
+      paths:
+        - .github/
+        - agents/
+        - docs/
+        - hooks/
+        - launchd/
+        - metrics/
+        - raw/
+        - scripts/
+        - wiki/
+        - OVERLORD_BACKLOG.md
+      command:
+        - python3
+        - scripts/overlord/validate_structured_agent_cycle_plan.py
+        - --root
+        - .
+        - --branch-name
+        - "{branch_name}"
+        - --changed-files-file
+        - "{changed_files_file}"
+        - --enforce-governance-surface
+
+    - id: planner-boundary
+      title: Planner boundary execution scope
+      severity: blocker
+      scope: changed
+      paths:
+        - CLAUDE.md
+        - README.md
+        - STANDARDS.md
+        - OVERLORD_BACKLOG.md
+        - docs/
+        - raw/
+        - scripts/overlord/
+      command:
+        - python3
+        - scripts/overlord/assert_execution_scope.py
+        - --scope
+        - raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-implementation.json
+        - --changed-files-file
+        - "{changed_files_file}"
+
+    - id: diff-hygiene
+      title: Git diff whitespace hygiene
+      severity: blocker
+      scope: changed
+      paths:
+        - "*"
+      command:
+        - git
+        - diff
+        - --check
+
+    - id: local-tool-tests
+      title: Local CI gate focused Python tests
+      severity: advisory
+      scope: changed
+      paths:
+        - tools/local-ci-gate/
+      command:
+        - python3
+        - -m
+        - pytest
+        - tools/local-ci-gate/tests
