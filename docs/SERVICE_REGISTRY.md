@@ -58,6 +58,14 @@
 
 ---
 
+## Local Runtime Scripts
+
+| Script | Path | Purpose |
+|--------|------|---------|
+| runtime_inventory.py | `scripts/lam/runtime_inventory.py` | No-payload Mac/Windows model runtime and PII guardrail inventory |
+
+---
+
 ## launchd Templates
 
 | Label | File | Purpose |

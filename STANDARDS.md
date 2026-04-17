@@ -503,7 +503,7 @@ While M6 Critic-LAM's judgment is being calibrated against Sonnet's:
 
 ## Windows Host Inference (Tier-2 fallback)
 
-A LAN-resident Ollama-served Windows 10 workstation (64 GB RAM, 16 GB VRAM) acts as a Tier-2 Worker fallback when the local Mac is memory-tight AND codex-spark is quota-blocked. The integration was first proven in `local-ai-machine` issue #68 (closed 2026-03-16) for HP critic work via `CRITIC_OLLAMA_URL`; this section promotes it from critic-only to general SoM Tier-2 worker.
+A LAN-resident Ollama-served Windows 10 workstation (64 GB RAM by prior/operator report; discrete VRAM unverified as of 2026-04-17) may act only as Tier-2 fallback/batch/health infrastructure when the local Mac is memory-tight AND codex-spark is quota-blocked. The previous 16 GB VRAM assertion is not active model-placement evidence until direct host telemetry is captured. The integration was first proven in `local-ai-machine` issue #68 (closed 2026-03-16) for HP critic work via `CRITIC_OLLAMA_URL`; current governance placement remains conservative and LAN-only.
 
 ### Endpoint
 
@@ -536,7 +536,7 @@ Operator may pull additional models (e.g. `qwen3:14b-q4_K_M`) — runbook docume
 
 - Cloudflare Tunnel exposure for off-LAN access (mirrors Remote MCP Bridge pattern; would require Cloudflare Access invariant)
 - Wake-on-LAN provisioning for unattended availability
-- Windows host metrics / health check workflow
+- Windows host metrics / health check workflow and direct hardware telemetry capture
 
 ## Exceptions
 - ASC-Evaluator: knowledge repo, exempt from code governance

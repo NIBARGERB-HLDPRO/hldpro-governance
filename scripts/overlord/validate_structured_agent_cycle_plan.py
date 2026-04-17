@@ -18,6 +18,7 @@ GOVERNANCE_SURFACE_PREFIXES = (
     "raw/closeouts/",
     "raw/cross-review/",
     "scripts/knowledge_base/",
+    "scripts/lam/",
     "scripts/orchestrator/",
     "scripts/overlord/",
     "wiki/",
