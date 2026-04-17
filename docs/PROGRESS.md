@@ -18,7 +18,7 @@
 | SoM Slice 5: packet schema and runtime boundary | #219 | IN PROGRESS | HIGH | TBD | Schema/validator docs, packet tests, runtime boundary correction | Part of #214 |
 | SoM Slice 6: operational status and closeout loop | #220 | IN PROGRESS | HIGH | TBD | Progress/backlog/registry/wiki mirrors and closeout evidence contract | This slice |
 | SoM Slice 7: execution root and write-scope enforcement | #221 | IN PROGRESS | HIGH | TBD | Execution-scope checker, tests, and PR/slice scope artifacts | Part of #214 |
-| Knocktracker Local CI Gate profile | #260 | IN REVIEW | HIGH | 1-2 | Knocktracker profile, focused profile tests, runbook update, closeout | Adds live-profile support for the managed shim adopted by knocktracker PR #172; consumer shim update remains separate knocktracker PR work |
+| AI Integration Services Local CI Gate profile | #264 | IN REVIEW | HIGH | 1-2 | AIS profile, focused profile tests, runbook update, closeout | Adds the second governance-owned consumer profile after knocktracker; AIS shim rollout remains separate issue-backed work |
 | Stage 5+ som-worker launchd boot-start integration | #104 | PLANNED | MEDIUM | 2-3 | launchd plist, service docs | Gate: local-ai-machine #431, #432 adopt |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
@@ -52,6 +52,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Knocktracker Local CI Gate live profile rollout | #260 | 2026-04-17 | Governance PR #262 added the `knocktracker` profile; knocktracker PR #174 switched the managed shim to live `knocktracker` profile mode. CI remains authoritative. |
 | Org-level Local CI Gate toolkit | #253 | 2026-04-17 | PRs #256 and #259 landed the planning package, reusable runner, governance profile, managed shim deployer, runbook, tests, and closeout. Follow-up consumer live enforcement is tracked by #260. |
 | Clarify graphify-out artifact contract and ignored-cache noise | #241 | 2026-04-17 | PR #243 clarified canonical tracked graphify artifacts versus local-only cache/OS noise, updated docs and `.gitignore` comments, and expanded the graphify governance contract tests. |
 | Enforce planner write-boundary for governance-surface edits | #242 | 2026-04-17 | PRs #244 and #245 split trusted execution-scope bootstrap from implementation. Reusable governance CI now enforces planner-boundary execution scopes from base, `assert_execution_scope.py` validates `execution_mode` and accepted handoff evidence, and the local write gate provides early warnings. |

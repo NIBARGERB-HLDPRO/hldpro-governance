@@ -1,0 +1,146 @@
+{
+  "session_id": "session-20260417-issue-264-ais-local-ci-profile",
+  "issue_number": 264,
+  "objective": "Add an implementation-ready plan for an ai-integration-services Local CI Gate profile owned by hldpro-governance so AIS can become the second live consumer of the reusable profile/deployer model.",
+  "tier": 2,
+  "scope_boundary": [
+    "Keep hldpro-governance as the canonical source for Local CI Gate runner logic and repo-specific profiles.",
+    "Add an ai-integration-services profile under tools/local-ci-gate/profiles/ that invokes commands already present in AIS.",
+    "Keep reports local-only under cache/local-ci-gate/reports/ in consumer repos.",
+    "Document the AIS profile and future managed-shim update path in the governance runbook.",
+    "Validate the profile against an isolated AIS worktree before proposing consumer rollout."
+  ],
+  "out_of_scope": [
+    "Changing ai-integration-services product behavior in this governance issue.",
+    "Copying Local CI Gate runner code into AIS.",
+    "Adding new AIS npm scripts from this governance PR.",
+    "Replacing GitHub Actions or claiming local checks are a full CI replay.",
+    "Installing a managed AIS shim before the governance profile is merged and dogfooded."
+  ],
+  "research_summary": "AIS was selected as the next consumer after knocktracker because it has a different repo shape and existing deterministic root scripts. Read-only inspection found candidate commands including typecheck, preflight, probe:push, audit:error-handlers, app builds, smoke, and test. The shared AIS checkout is dirty, so implementation must use an isolated AIS worktree before live dogfood.",
+  "research_artifacts": [
+    "tools/local-ci-gate/local_ci_gate.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "tools/local-ci-gate/profiles/knocktracker.yml",
+    "tools/local-ci-gate/tests/test_local_ci_gate.py",
+    "docs/runbooks/local-ci-gate-toolkit.md",
+    "raw/closeouts/2026-04-17-knocktracker-local-ci-profile.md",
+    "GitHub issue #264",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/package.json",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/AGENTS.md"
+  ],
+  "sprints": [
+    {
+      "name": "Planning and Scope Bootstrap",
+      "goal": "Land trusted planning and implementation scope artifacts before any AIS Local CI Gate profile implementation.",
+      "tasks": [
+        "Create an issue-backed structured plan for #264.",
+        "Add planning and implementation execution-scope artifacts.",
+        "Add PDCA/R and planning cross-review artifacts for traceability.",
+        "Update OVERLORD_BACKLOG.md and docs/PROGRESS.md so #260 is no longer active and #264 is visible.",
+        "Validate structured plans, backlog alignment, diff hygiene, and execution-scope write boundaries."
+      ],
+      "acceptance_criteria": [
+        "GitHub issue #264 is open and referenced by governance roadmap/progress mirrors.",
+        "Planning PR contains only planning/scope/cross-review/status artifacts.",
+        "Implementation branch and allowed write paths are declared before implementation starts.",
+        "The planning PR does not change runner behavior, deployer behavior, profile behavior, or downstream repos."
+      ],
+      "file_paths": [
+        "docs/plans/issue-264-structured-agent-cycle-plan.json",
+        "docs/plans/issue-264-ai-integration-services-local-ci-profile-pdcar.md",
+        "raw/cross-review/2026-04-17-issue-264-ai-integration-services-local-ci-profile-plan.md",
+        "raw/execution-scopes/2026-04-17-issue-264-ai-integration-services-local-ci-profile-planning.json",
+        "raw/execution-scopes/2026-04-17-issue-264-ai-integration-services-local-ci-profile-implementation.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Profile Implementation",
+      "goal": "Add and validate the AIS Local CI Gate profile without changing AIS code.",
+      "tasks": [
+        "Create tools/local-ci-gate/profiles/ai-integration-services.yml with changed-file scoped checks mapped to existing AIS commands.",
+        "Add profile validation coverage so bundled profiles stay parseable and preserve the report/disclaimer contract.",
+        "Document how AIS can install a managed shim after the profile lands.",
+        "Create or use an isolated AIS worktree for dry-run and live dogfood."
+      ],
+      "acceptance_criteria": [
+        "The AIS profile loads through the existing runner.",
+        "Dry-run output prints planned AIS checks and the CI-authoritative disclaimer.",
+        "Live run executes deterministic checks that exist in AIS when dependencies are installed.",
+        "Heavy builds/tests are changed-file scoped where practical.",
+        "A follow-up AIS PR can install a managed shim using the AIS profile."
+      ],
+      "file_paths": [
+        "tools/local-ci-gate/profiles/ai-integration-services.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py",
+        "docs/runbooks/local-ci-gate-toolkit.md",
+        "docs/PROGRESS.md",
+        "raw/closeouts/2026-04-17-ai-integration-services-local-ci-profile.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex",
+      "role": "repository command-surface reviewer",
+      "focus": "Read-only inspection of AIS package scripts and governance rules before profile planning.",
+      "status": "accepted",
+      "summary": "AIS exposes enough existing deterministic root scripts for a profile, but the shared checkout is dirty and must not be used for writes.",
+      "evidence": [
+        "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/package.json",
+        "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/AGENTS.md",
+        "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/PROGRESS.md"
+      ]
+    },
+    {
+      "reviewer": "Codex",
+      "role": "governance workflow reviewer",
+      "focus": "Mirror the issue #260 planning-to-implementation flow for issue #264.",
+      "status": "accepted",
+      "summary": "The same two-PR pattern applies: trusted planning/scope first, then implementation branch.",
+      "evidence": [
+        "docs/plans/issue-260-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-17-issue-260-knocktracker-local-ci-profile-implementation.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/assert_execution_scope.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Operator-approved governance issue flow",
+    "model_family": "operator-review",
+    "status": "accepted",
+    "summary": "This slice extends an already approved Local CI Gate architecture to a second consumer profile. If implementation changes the toolkit contract, add a fresh cross-family architecture review before merge.",
+    "evidence": [
+      "raw/cross-review/2026-04-17-issue-253-local-ci-gate-toolkit-plan.md",
+      "raw/cross-review/2026-04-17-issue-260-knocktracker-local-ci-gate-profile-plan.md",
+      "raw/cross-review/2026-04-17-issue-264-ai-integration-services-local-ci-profile-plan.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #264 may add an AIS Local CI Gate profile, focused profile tests, runbook documentation, progress/closeout evidence, and no downstream product changes.",
+    "next_execution_step": "Merge this planning/scope branch so the implementation execution scope is trusted from main, then implement on branch feat/issue-264-ai-integration-services-local-ci-profile.",
+    "blocked_on": [
+      "planning PR merged so implementation scope is trusted from main"
+    ]
+  },
+  "material_deviation_rules": [
+    "If implementation requires changes outside the declared implementation scope, update the scope through a planning PR before continuing.",
+    "If AIS lacks a required command or dependency state, keep the profile check out or mark it scoped rather than adding downstream scripts from governance.",
+    "If live dogfood requires AIS product-repo edits, open a separate AIS issue-backed PR.",
+    "If the profile changes the Local CI Gate runner contract, add cross-family review evidence before merge.",
+    "Do not alter dirty shared hldpro-governance or AIS checkouts."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #264",
+    "operator instruction: create GH issue and upload the code / files needed to implement",
+    "operator instruction: go"
+  ],
+  "approved_at": "2026-04-17T23:55:00Z"
+}
