@@ -1,0 +1,18 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "docs/issue-264-ais-local-ci-profile-plan",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-264-structured-agent-cycle-plan.json",
+    "docs/plans/issue-264-ai-integration-services-local-ci-profile-pdcar.md",
+    "raw/cross-review/2026-04-17-issue-264-ai-integration-services-local-ci-profile-plan.md",
+    "raw/execution-scopes/2026-04-17-issue-264-ai-integration-services-local-ci-profile-planning.json",
+    "raw/execution-scopes/2026-04-17-issue-264-ai-integration-services-local-ci-profile-implementation.json"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
+  ]
+}
