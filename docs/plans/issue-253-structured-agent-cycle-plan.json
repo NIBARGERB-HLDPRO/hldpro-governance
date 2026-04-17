@@ -1,0 +1,154 @@
+{
+  "session_id": "session-20260417-issue-253-org-local-ci-toolkit-plan",
+  "issue_number": 253,
+  "objective": "Define an implementation-ready planning package for an org-level Local CI Gate toolkit sourced from hldpro-governance and deployable to governed repos through thin shims, without adding implementation files in this PR.",
+  "tier": 2,
+  "scope_boundary": [
+    "Make hldpro-governance the source-of-truth repo for reusable Local CI Gate tooling.",
+    "Keep PR #256 planning-only: docs/plans artifacts, raw/cross-review planning review, raw/execution-scopes planning scope, and OVERLORD_BACKLOG mirror only.",
+    "Define the toolkit architecture, deployment model, worker/reviewer/gate handoffs, and downstream consumer boundary.",
+    "Preserve Playwright selective testing as a downstream product-repo profile pattern, not as hldpro-governance core implementation.",
+    "Use service-runbook SSOT and graphify hook helper patterns as precedents for cross-repo ownership and safe deployment."
+  ],
+  "out_of_scope": [
+    "Adding implementation files under tools/, scripts/, hooks/, workflows, package files, or product repos in PR #256.",
+    "Installing lefthook, Playwright, Node scripts, Supabase dependencies, or product-repo test runners in hldpro-governance.",
+    "Copying Local CI Gate logic into consumer repos.",
+    "Closing issue #253 before Stage 6 closeout evidence exists.",
+    "Merging consumer rollout into this planning PR."
+  ],
+  "research_summary": "Subagent review found the initial planning package was syntactically valid but split between planning intake and implementation planning. The plan is now explicit: hldpro-governance owns the org-level toolkit; consumer repos receive thin shims through later issue-backed rollout slices. The service runbook establishes the SSOT precedent for cross-repo runbooks, and the graphify hook helper establishes the managed-deployer precedent: resolve from governance, preflight safety before writes, and refuse unmanaged overwrite by default. The runbook also resolves prior technical ambiguities in the downstream Playwright profile by replacing xargs passthrough with a wrapper contract, defining --explain-trigger semantics, and specifying @covers * behavior.",
+  "research_artifacts": [
+    "docs/plans/HLD_Pro_Local_CI_Gate_Runbook.md",
+    "docs/plans/Local_CI_Gate_Runbook_Reviewer_Response_Memo.md",
+    "docs/plans/issue-253-local-ci-gate-runbook-pdcar.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "scripts/knowledge_base/graphify_hook_helper.py",
+    "raw/cross-review/2026-04-17-issue-250-graphify-hook-helper.md",
+    "raw/cross-review/2026-04-17-issue-253-local-ci-gate-toolkit-plan.md",
+    "raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-planning.json",
+    "raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-implementation.json",
+    "OVERLORD_BACKLOG.md",
+    "GitHub issue #253"
+  ],
+  "sprints": [
+    {
+      "name": "Planning Package Alignment",
+      "goal": "Make PR #256 coherent as the planning-only package for an org-level Local CI Gate toolkit.",
+      "tasks": [
+        "Create the governing GitHub issue before adding the backlog row.",
+        "Import the runbook and reviewer-response memo under docs/plans.",
+        "Reframe the runbook around hldpro-governance as toolkit source-of-truth.",
+        "Record service-runbook SSOT and graphify-helper deployment precedents.",
+        "Add subagent planning review findings and alternate-model review evidence.",
+        "Keep all implementation files out of PR #256."
+      ],
+      "acceptance_criteria": [
+        "GitHub issue #253 is open and referenced by OVERLORD_BACKLOG.md.",
+        "The runbook, PDCA/R, structured plan, backlog row, and PR body all describe the same planning-only org-level toolkit scope.",
+        "The runbook states that consumer repos receive thin shims and that consumer rollout is separately issue-backed.",
+        "The runbook marks Playwright selective testing as a downstream product-repo profile pattern, not hldpro-governance core implementation.",
+        "Backlog alignment, structured-plan validation, diff hygiene, and PR checks pass."
+      ],
+      "file_paths": [
+        "docs/plans/HLD_Pro_Local_CI_Gate_Runbook.md",
+        "docs/plans/Local_CI_Gate_Runbook_Reviewer_Response_Memo.md",
+        "docs/plans/issue-253-local-ci-gate-runbook-pdcar.md",
+        "docs/plans/issue-253-structured-agent-cycle-plan.json",
+        "raw/cross-review/2026-04-17-issue-253-local-ci-gate-toolkit-plan.md",
+        "raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-planning.json",
+        "raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-implementation.json",
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "name": "Future Implementation Handoff",
+      "goal": "Define the next implementation slice without executing it in PR #256.",
+      "tasks": [
+        "Create an implementation execution-scope artifact before touching tools or scripts.",
+        "Assign a pinned Tier 2 worker for toolkit implementation.",
+        "Implement canonical toolkit source under tools/local-ci-gate/ with profile-driven checks.",
+        "Add a deployer that installs thin consumer shims from a pinned governance checkout/ref.",
+        "Dogfood the governance profile locally before consumer rollout.",
+        "Open separate issue-backed consumer rollout slices after governance dogfood passes."
+      ],
+      "acceptance_criteria": [
+        "Implementation changes occur in a separate PR with accepted execution-scope evidence.",
+        "The toolkit has one canonical source in hldpro-governance.",
+        "The deployer refuses unmanaged overwrites and unsafe paths by default.",
+        "At least one governance-repo profile dry run proves the runner reports blocker/advisory/subset/full-scope behavior without claiming CI parity.",
+        "Consumer rollout issues exist before any downstream repo shim is installed."
+      ],
+      "file_paths": [
+        "tools/local-ci-gate/",
+        "scripts/overlord/deploy_local_ci_gate.py",
+        "docs/runbooks/local-ci-gate-toolkit.md",
+        "raw/execution-scopes/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Fermat",
+      "role": "explorer: reusable-governance-tooling-pattern reviewer",
+      "focus": "Existing reusable workflow, .governance checkout, service-runbook SSOT, graphify helper, and deployment patterns.",
+      "status": "accepted",
+      "summary": "Recommended making hldpro-governance the source-of-truth toolkit repo with a governance-owned runner, repo-family profiles, a deployer that installs thin consumer shims, and reusable workflow/deployer patterns rather than duplicated per-repo logic.",
+      "evidence": [
+        ".github/workflows/governance-check.yml",
+        ".github/workflows/check-no-self-approval.yml",
+        ".github/workflows/require-cross-review.yml",
+        "scripts/knowledge_base/graphify_hook_helper.py",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md"
+      ]
+    },
+    {
+      "reviewer": "Popper",
+      "role": "worker: planning-coherence reviewer",
+      "focus": "Ensure PR #256 has one authoritative story and that worker/reviewer/gate handoffs are defined before implementation.",
+      "status": "accepted",
+      "summary": "Found the package valid but split-brained: the runbook had moved toward org-level toolkit implementation while the PDCA/R and structured plan still described planning intake. Recommended aligning every artifact around planning-only org-level toolkit scope and deferring implementation to a pinned worker handoff.",
+      "evidence": [
+        "docs/plans/HLD_Pro_Local_CI_Gate_Runbook.md",
+        "docs/plans/issue-253-local-ci-gate-runbook-pdcar.md",
+        "docs/plans/issue-253-structured-agent-cycle-plan.json",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6 via Claude Code CLI",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Claude returned APPROVED_WITH_CHANGES with no blocking findings. Required follow-ups were applied: §1.1 now includes governance-profile implementation micro-slices G1-G5 and an explicit Local CI Gate deployer safety contract.",
+    "evidence": [
+      "raw/cross-review/2026-04-17-issue-253-local-ci-gate-toolkit-plan.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Planning-only org-level Local CI Gate toolkit package for issue #253: runbook, memo, PDCA/R, structured plan, cross-review, planning execution-scope artifact, and issue-backed OVERLORD_BACKLOG row. No implementation files in PR #256.",
+    "next_execution_step": "Merge planning package after review so the implementation execution scope is trusted from main, then implement on branch feat/issue-253-local-ci-gate-toolkit.",
+    "blocked_on": [
+      "planning PR merged so implementation scope is trusted from main"
+    ]
+  },
+  "material_deviation_rules": [
+    "If implementation files become part of PR #256, remove them and create a separate issue-backed implementation branch.",
+    "If consumer rollout is requested, open separate issue-backed adoption slices rather than adding downstream repo changes to this PR.",
+    "If alternate-model review rejects the plan, update the planning artifacts before implementation begins.",
+    "If the toolkit architecture diverges from the service-runbook SSOT or graphify-helper managed-deployer precedent, record the reason in PDCA/R and cross-review.",
+    "Do not alter the dirty shared main checkout while this isolated worktree remains the active workspace."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: add these files to repo for planning purposes, pdcar this and follow repo workflow rules exactly",
+    "operator instruction: in an isolated clean branch, let's begin this",
+    "operator instruction: loop through, no hitl",
+    "operator instruction: create an org-level set of tools that can be pulled and deployed by other repos",
+    "operator instruction: use repo workflow, plan review alt LLM, subagent workers"
+  ],
+  "approved_at": "2026-04-17T16:25:00-05:00"
+}

@@ -9,6 +9,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Org-level Local CI Gate toolkit planning | [#253](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/253) | HIGH | 1-2 | Planning-only package for governance-owned reusable local CI gate tooling that other repos can pull/deploy through thin shims as a v1.4 dev-velocity improvement. PR #256 defines toolkit architecture, deployer/profile model, subagent review, and alternate-model review; implementation remains deferred to a pinned-worker execution slice. |
 | Stage 5+ som-worker launchd boot-start integration | [#104](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/104) | MEDIUM | 2-3 | MCP daemon live as manual service; convert to `launchd` agent for system boot. Gate: local-ai-machine #431, #432 adopt. |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | [#177](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/177) | LOW-MEDIUM | 2-3 | Post-outage code review. Gate: live-fallback rate < 2% for 2 weeks post-merge (window now passed). |
 | Qwen-Coder MLX driver stub-emission bug | [#105](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/105) | LOW | 1-2 | Qwen2.5-Coder-7B throws truncated output on edge cases (>200 lines). Workarounds in `docs/runbooks/qwen-coder-driver.md`. |
