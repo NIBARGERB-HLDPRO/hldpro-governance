@@ -1,0 +1,136 @@
+{
+  "session_id": "session-20260417-issue-231-e2e-pilot",
+  "issue_number": 231,
+  "objective": "Pilot the always-on governance orchestrator operator experience on a low-risk governance-repo artifact slice, carrying the work from issue-backed plan through packet, validation, alternate review, gate, closeout, PR checks, and merge readiness without expanding autonomous execution authority.",
+  "tier": 1,
+  "scope_boundary": [
+    "Use hldpro-governance issue #231 as the low-risk pilot target.",
+    "Create issue-backed plan, PDCAR, packet, metrics, cross-review, gate, and closeout artifacts before merge.",
+    "Run the packet queue in dry-run/control-plane mode only.",
+    "Tie every acceptance criterion to commands, CI, PR state, or tracked artifacts.",
+    "Conclude whether the system is ready for broader autonomous execution."
+  ],
+  "out_of_scope": [
+    "Granting broader autonomous write authority.",
+    "Executing packet payloads or spawning workers from packet contents.",
+    "Changing product repos during the pilot.",
+    "Sending packet contents to cloud or Windows model endpoints.",
+    "Treating graphify inference as evidence without direct file validation."
+  ],
+  "research_summary": "Issues #223 through #230 are closed and provide the Phase 0 repair, registry, planning gate, read-only observer, local model guardrail lane, packet queue, and self-learning loop. Issue #231 is the final pilot slice. The operator instruction for this run is `proceed, loop through, no HITL`, which serves as the plan-boundary approval for this low-risk governance-repo pilot while preserving strict HALT behavior after the plan boundary.",
+  "research_artifacts": [
+    "Issue #224",
+    "Issue #231",
+    "docs/plans/issue-224-structured-agent-cycle-plan.json",
+    "docs/plans/issue-224-always-on-governance-orchestrator-pdcar.md",
+    "raw/cross-review/2026-04-17-always-on-governance-orchestrator-plan.md",
+    "raw/closeouts/2026-04-17-packet-queue.md",
+    "raw/closeouts/2026-04-17-self-learning.md",
+    "scripts/orchestrator/packet_queue.py",
+    "scripts/orchestrator/self_learning.py"
+  ],
+  "sprints": [
+    {
+      "name": "Pilot Artifacts",
+      "goal": "Create the complete issue-backed pilot artifact chain.",
+      "tasks": [
+        "Create the #231 structured plan and PDCAR.",
+        "Create a dry-run SoM packet with issue, plan, scope, validation, review, fallback, and known-failure context fields.",
+        "Create pilot metrics and gate artifacts."
+      ],
+      "acceptance_criteria": [
+        "The pilot creates issue-backed plan artifacts before code or artifact execution.",
+        "Packet metadata references the plan, validation commands, review artifacts, and gate evidence.",
+        "The packet queue remains dry-run/control-plane only."
+      ],
+      "file_paths": [
+        "docs/plans/issue-231-structured-agent-cycle-plan.json",
+        "docs/plans/issue-231-e2e-pilot-pdcar.md",
+        "raw/packets/2026-04-17-issue-231-e2e-pilot.yml",
+        "metrics/pilot/issue-231-e2e-pilot.json",
+        "metrics/pilot/issue-231-e2e-pilot.md"
+      ]
+    },
+    {
+      "name": "Review Gate",
+      "goal": "Record independent review, completion gate, and closeout evidence.",
+      "tasks": [
+        "Run alternate-family review and record findings.",
+        "Record gate evidence with commands, PR/CI expectations, and residual risks.",
+        "Run closeout hook, graph/wiki refresh, and compendium refresh."
+      ],
+      "acceptance_criteria": [
+        "Independent review and completion gate pass before closeout.",
+        "All acceptance criteria have evidence tied to commands, CI, PRs, or artifacts.",
+        "Pilot closeout states readiness for broader autonomous execution."
+      ],
+      "file_paths": [
+        "raw/cross-review/2026-04-17-e2e-pilot.md",
+        "raw/gate/2026-04-17-e2e-pilot.md",
+        "raw/closeouts/2026-04-17-e2e-pilot.md"
+      ]
+    },
+    {
+      "name": "Registry And Validation",
+      "goal": "Document pilot metrics and governance-surface coverage.",
+      "tasks": [
+        "Classify pilot gate and metrics paths as governance surface.",
+        "Update registry and data dictionary documentation.",
+        "Run local validators and rely on PR checks before merge."
+      ],
+      "acceptance_criteria": [
+        "Pilot artifacts cannot change without issue-backed plan coverage.",
+        "Local validators pass.",
+        "PR checks pass before merge."
+      ],
+      "file_paths": [
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/DATA_DICTIONARY.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex implementation agent",
+      "role": "pilot executor",
+      "focus": "Artifact completeness, dry-run packet queue behavior, gate evidence, validation coverage, and readiness conclusion.",
+      "status": "accepted",
+      "summary": "The pilot uses tracked governance artifacts and does not execute packet payloads or grant broader authority.",
+      "evidence": [
+        "metrics/pilot/issue-231-e2e-pilot.json",
+        "raw/gate/2026-04-17-e2e-pilot.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Alternate-family review is required for the end-to-end pilot and readiness conclusion. Findings are recorded in the #231 cross-review artifact.",
+    "evidence": [
+      "raw/cross-review/2026-04-17-e2e-pilot.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Run #231 as a low-risk governance-repo pilot producing plan, packet, metrics, review, gate, closeout, PR, CI, and merge evidence only.",
+    "next_execution_step": "Complete pilot artifacts, validate locally, obtain alternate-family review, close out, open PR, and merge after checks pass.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If the pilot requires executing packet payloads, halt and defer worker execution to a later issue.",
+    "If independent review or PR checks fail, do not claim broader readiness.",
+    "If any artifact lacks cited command, CI, PR, or file evidence, add evidence before closeout.",
+    "If broader autonomous execution appears desirable, record it as a readiness conclusion, not as authority granted by this PR."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: proceed, loop through, no HITL",
+    "Codex implementation agent"
+  ],
+  "approved_at": "2026-04-17T14:20:00-05:00"
+}

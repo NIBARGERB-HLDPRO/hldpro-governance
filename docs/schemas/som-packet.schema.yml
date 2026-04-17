@@ -141,6 +141,9 @@ properties:
       dispatch_authorized:
         type: boolean
         description: "True only after issue-backed plan approval and scope review"
+      dry_run_authorized:
+        type: boolean
+        description: "True when a packet may dry-run through dispatch validation without live dispatch authority"
       known_failure_context:
         type: array
         description: "Cited prior mistake patterns injected before worker dispatch"

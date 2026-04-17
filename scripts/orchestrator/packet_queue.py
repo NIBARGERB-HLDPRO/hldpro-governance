@@ -135,6 +135,7 @@ def validate_for_dispatch(
     packet_path: Path,
     *,
     repo_root: Path = REPO_ROOT,
+    dry_run: bool = False,
 ) -> QueueDecision:
     packets_dir = repo_root / "raw" / "packets"
     schema_ok, schema_failures = _PACKET_VALIDATOR.validate_packet(packet, packets_dir=packets_dir)
@@ -177,7 +178,7 @@ def validate_for_dispatch(
         return QueueDecision(False, "refused", "validation_commands must be non-empty")
     if not review_artifacts:
         return QueueDecision(False, "refused", "review_artifacts must be non-empty")
-    if dispatch_authorized is not True:
+    if dispatch_authorized is not True and not (dry_run and governance.get("dry_run_authorized") is True):
         return QueueDecision(False, "refused", "dispatch_authorized must be true before dispatch")
 
     role = packet.get("prior", {}).get("role")
@@ -237,7 +238,7 @@ def transition_packet(
         return decision
 
     if to_state == "dispatched":
-        decision = validate_for_dispatch(packet, source, repo_root=repo_root)
+        decision = validate_for_dispatch(packet, source, repo_root=repo_root, dry_run=dry_run)
         if not decision.allowed:
             _write_transition_audit(queue_root, source, None, from_state, to_state, dry_run, decision, packet_hash, packet_id)
             return decision

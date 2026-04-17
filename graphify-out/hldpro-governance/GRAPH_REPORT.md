@@ -1,11 +1,11 @@
 # Graph Report - hldpro-governance  (2026-04-17)
 
 ## Corpus Check
-- Large corpus: 1355 files · ~289,021 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1361 files · ~290,867 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 618 nodes · 1212 edges · 37 communities detected
-- Extraction: 49% EXTRACTED · 51% INFERRED · 0% AMBIGUOUS · INFERRED: 624 edges (avg confidence: 0.5)
+- 620 nodes · 1217 edges · 37 communities detected
+- Extraction: 48% EXTRACTED · 52% INFERRED · 0% AMBIGUOUS · INFERRED: 627 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -15,28 +15,28 @@
 4. `EndpointUnreachableError` - 44 edges
 5. `_tier1_packet()` - 29 edges
 6. `AuditWriter` - 28 edges
-7. `TestGovernanceSurfacePlanGate` - 16 edges
+7. `TestGovernanceSurfacePlanGate` - 17 edges
 8. `describe_file()` - 14 edges
 9. `graphify_results()` - 13 edges
-10. `cmd_generate()` - 11 edges
+10. `TestPacketQueue` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Submit requests to Windows-Ollama endpoint with PII detection and allowlist enfo` --uses--> `AuditWriter`  [INFERRED]
   hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
+- `Initialize the submitter.          Args:             endpoint: Windows-Ollama en` --uses--> `AuditWriter`  [INFERRED]
+  hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
+- `Load PII patterns from pii_patterns.yml.` --uses--> `AuditWriter`  [INFERRED]
+  hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
+- `Load model allowlist from model_allowlist.yml.` --uses--> `AuditWriter`  [INFERRED]
+  hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
 - `Scan text for PII patterns.          Returns: pattern name if detected, None oth` --uses--> `AuditWriter`  [INFERRED]
-  hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
-- `Verify model is in allowlist for the specified role.` --uses--> `AuditWriter`  [INFERRED]
-  hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
-- `Submit a request to Windows-Ollama.          Args:             model: Model name` --uses--> `AuditWriter`  [INFERRED]
-  hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
-- `POST to /api/generate and return response.` --uses--> `AuditWriter`  [INFERRED]
   hldpro-governance/scripts/windows-ollama/submit.py → hldpro-governance/scripts/windows-ollama/audit.py
 
 ## Communities
 
 ### Community 0 - "Windows ollama Submit"
-Cohesion: 0.07
-Nodes (53): Exception, EndpointUnreachableError, main(), ModelNotAllowedError, PiiDetectionError, Scan text for PII patterns.          Returns: pattern name if detected, None oth, Verify model is in allowlist for the specified role., Submit a request to Windows-Ollama.          Args:             model: Model name (+45 more)
+Cohesion: 0.06
+Nodes (60): AuditWriter, Append-only audit log writer with hash-chain and daily manifest., Exception, EndpointUnreachableError, main(), ModelNotAllowedError, PiiDetectionError, Scan text for PII patterns.          Returns: pattern name if detected, None oth (+52 more)
 
 ### Community 1 - "Packet Validate Passes"
 Cohesion: 0.07
@@ -47,39 +47,39 @@ Cohesion: 0.1
 Nodes (34): append_fail_fast_block_entry(), append_fail_fast_candidate(), append_fail_fast_table_entry(), append_progress_candidate(), bounded_text(), build_parser(), build_review_context(), build_schema_file() (+26 more)
 
 ### Community 3 - "Windows ollama Audit"
-Cohesion: 0.09
-Nodes (20): AuditWriter, canonical_json(), compute_entry_hmac(), compute_sha256(), Write an audit entry. Returns True if successful, False otherwise.          Args, Return canonical JSON for HMAC computation., Write or update today's manifest., Compute SHA256 hash of bytes. (+12 more)
-
-### Community 4 - "Windows ollama Audit"
 Cohesion: 0.07
 Nodes (26): Modify first_hash in manifest and verify fails., Test that truncated file (missing last line) breaks manifest., Delete last line and verify detects entry_count mismatch., Test that duplicate line (replay) breaks seq monotonicity., Duplicate a line and verify detects non-monotonic seq., Test that tampering with a line breaks the chain., Tamper with line N and verify fails at line N+1., Test that replacing entry_hmac with wrong value fails verification. (+18 more)
 
-### Community 5 - "Packet Validate Load"
+### Community 4 - "Packet Validate Load"
 Cohesion: 0.1
 Nodes (30): _find_packet_file(), _load_packet(), load_pii_patterns(), _load_schema(), Load and compile PII patterns from pii-patterns.yml., Enforce cross-family independence for tier-1 dual-planner packets.      When pri, Refuse if any consecutive pair in the parent chain shares model_id across differ, Enforce expected handoff sequence with no tier jumps. (+22 more)
 
-### Community 6 - "Knowledge base Measure graphify usage"
+### Community 5 - "Knowledge base Measure graphify usage"
 Cohesion: 0.16
 Nodes (28): aggregate_file_scores(), augment_workflow_doc_candidates(), baseline_results(), build_summary(), build_trace(), emit_usage_events(), estimate_tokens(), evaluate_relevance() (+20 more)
 
-### Community 7 - "Orchestrator Read only observer"
+### Community 6 - "Orchestrator Read only observer"
 Cohesion: 0.15
 Nodes (24): _expand_home(), governed_repos(), GovernedRepo, load_registry(), repo_names_enabled_for(), repos_enabled_for(), repos_root(), _artifact() (+16 more)
 
-### Community 8 - "Orchestrator Self learning"
+### Community 7 - "Orchestrator Self learning"
 Cohesion: 0.23
 Nodes (24): atomic_write_yaml(), build_report(), _date_from_text(), duplicate_counts(), enrich_packet(), _entry_id(), LearningEntry, LearningMatch (+16 more)
 
-### Community 9 - "Overlord Org governance compendium"
+### Community 8 - "Overlord Org governance compendium"
 Cohesion: 0.19
 Nodes (21): build(), category_for(), describe_file(), esc(), FileInfo, first_comment(), first_heading(), frontmatter_field() (+13 more)
+
+### Community 9 - "Windows ollama Audit"
+Cohesion: 0.13
+Nodes (13): canonical_json(), compute_entry_hmac(), compute_sha256(), Write an audit entry. Returns True if successful, False otherwise.          Args, Return canonical JSON for HMAC computation., Write or update today's manifest., Compute SHA256 hash of bytes., Compute HMAC-SHA256 over canonical JSON of entry (without entry_hmac field). (+5 more)
 
 ### Community 10 - "Orchestrator Packet queue"
 Cohesion: 0.21
 Nodes (17): append_audit(), _audit_path(), ensure_queue(), load_packet(), _load_plan(), QueueDecision, Replay audit events into logical latest states.      `latest_states` includes ac, replay_audit() (+9 more)
 
 ### Community 11 - "Overlord Validate structured agent cycle plan"
-Cohesion: 0.23
+Cohesion: 0.22
 Nodes (2): _plan(), TestGovernanceSurfacePlanGate
 
 ### Community 12 - "Overlord Check progress github issue staleness"
@@ -91,7 +91,7 @@ Cohesion: 0.36
 Nodes (4): _git(), RepoFixture, TestAssertExecutionScope, _working_directory()
 
 ### Community 14 - "Orchestrator Packet queue"
-Cohesion: 0.38
+Cohesion: 0.36
 Nodes (2): _packet(), TestPacketQueue
 
 ### Community 15 - "Overlord Assert execution scope"
@@ -191,12 +191,8 @@ Nodes (0):
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `AuditWriter` connect `Windows ollama Audit` to `Windows ollama Submit`?**
+- **Why does `AuditWriter` connect `Windows ollama Submit` to `Windows ollama Audit`?**
   _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **Why does `WindowsOllamaSubmitter` connect `Windows ollama Submit` to `Windows ollama Audit`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Why does `PiiDetectionError` connect `Windows ollama Submit` to `Windows ollama Audit`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **Are the 39 inferred relationships involving `WindowsOllamaSubmitter` (e.g. with `main()` and `AuditWriter`) actually correct?**
   _`WindowsOllamaSubmitter` has 39 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 39 inferred relationships involving `PiiDetectionError` (e.g. with `.submit()` and `AuditWriter`) actually correct?**
@@ -205,3 +201,7 @@ _Questions this graph is uniquely positioned to answer:_
   _`ModelNotAllowedError` has 39 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 39 inferred relationships involving `EndpointUnreachableError` (e.g. with `.submit()` and `AuditWriter`) actually correct?**
   _`EndpointUnreachableError` has 39 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 28 inferred relationships involving `_tier1_packet()` (e.g. with `.test_tier1_without_parent_passes()` and `.test_same_family_dual_planner_refused()`) actually correct?**
+  _`_tier1_packet()` has 28 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `Return (header_line_index, list_of_data_lines) for the ## Planned table.`, `Split a markdown table row into a dict keyed by header column names.     Returns`, `Extract a #NNN from the cell value.     Returns the integer issue number, or Non` to the rest of the system?**
+  _56 weakly-connected nodes found - possible documentation gaps or missing edges._

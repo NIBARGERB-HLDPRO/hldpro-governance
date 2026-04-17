@@ -19,7 +19,7 @@ This file is the single org-level index of governance rules, enforcement files, 
 
 | Repo | Purpose | Rule Files | Graph Nodes | Graph Edges |
 |------|---------|-----------:|------------:|------------:|
-| `hldpro-governance` | Governance standards, reusable CI, agents, and cross-repo audit tooling | 172 | 618 | 1212 |
+| `hldpro-governance` | Governance standards, reusable CI, agents, and cross-repo audit tooling | 174 | 620 | 1217 |
 | `ai-integration-services` | AIS SaaS platform governance, CI, hooks, and specialist agents | 165 | 1902 | 2562 |
 | `HealthcarePlatform` | HIPAA platform governance, CI, hooks, and specialist agents | 92 | 1924 | 3033 |
 | `local-ai-machine` | Local AI runtime governance, packet controls, lane rules, and schemas | 138 | 3089 | 5106 |
@@ -44,9 +44,9 @@ Governance standards, reusable CI, agents, and cross-repo audit tooling
 ### Graph Nodes And Communities
 
 - Graph report: `graphify-out/hldpro-governance/GRAPH_REPORT.md`
-- Nodes / edges / hyperedges: `618` / `1212` / `0`
+- Nodes / edges / hyperedges: `620` / `1217` / `0`
 - Top nodes: `WindowsOllamaSubmitter (48)`, `PiiDetectionError (44)`, `ModelNotAllowedError (44)`, `EndpointUnreachableError (44)`, `codex_ingestion.py (37)`, `_tier1_packet() (29)`, `AuditWriter (28)`, `measure_graphify_usage.py (28)`
-- Top communities: `Windows ollama Submit`, `Packet Validate Passes`, `Overlord Codex ingestion`, `Windows ollama Audit`, `Windows ollama Audit`, `Packet Validate Load`, `Knowledge base Measure graphify usage`, `Orchestrator Read only observer`
+- Top communities: `Windows ollama Submit`, `Packet Validate Passes`, `Overlord Codex ingestion`, `Windows ollama Audit`, `Packet Validate Load`, `Knowledge base Measure graphify usage`, `Orchestrator Read only observer`, `Orchestrator Self learning`
 
 ### Governance File Index
 
@@ -126,6 +126,8 @@ Governance standards, reusable CI, agents, and cross-repo audit tooling
 | `docs/plans/issue-228-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | References docs/runbooks/local-model-runtime.md, docs/runbooks/windows-ollama.md |
 | `docs/plans/issue-229-packet-queue-pdcar.md` | pdcar-plan | Issue #229 — Packet Queue and Controlled Orchestration PDCA/R | Sections: Plan, Do, Check, Adjust, Review | References docs/schemas/som-packet.schema.yml, python3 -m py_compile scripts/orchestrator/packet_queue.py scripts/orchestrator/test_packet_queue.py scripts/packet/validate.py scripts/overlord/validate_structured_agent_cycle_plan.py scripts/ |
 | `docs/plans/issue-229-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | No explicit file references detected |
+| `docs/plans/issue-230-self-learning-pdcar.md` | pdcar-plan | Issue #230 — Self-Learning and Self-Healing Loop PDCA/R | Sections: Plan, Do, Check, Adjust, Review | References overlord-sweep.yml, python3 scripts/orchestrator/self_learning.py report --output-json metrics/self-learning/latest.json --output-md metrics/self-learning/latest.md, python3 scripts/orchestrator/test_packet_queue.py, python3 scri |
+| `docs/plans/issue-230-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | References latest.md, metrics/self-learning/latest.json, scripts/orchestrator/self_learning.py |
 | `docs/plans/issue-39-required-check-baseline-pdcar.md` | pdcar-plan | Issue #39 — Required-Check Baseline Verification PDCA/R | Sections: Plan, Do, Check, Adjust, Review | No explicit file references detected |
 | `docs/plans/issue-40-42-ruleset-exception-rollout-pdcar.md` | pdcar-plan | Issues #40 and #42 — Ruleset Rollout + Exception Register PDCA/R | Sections: Plan, Do, Check, Adjust, Review | No explicit file references detected |
 | `docs/plans/issue-41-codeowners-rollout-pdcar.md` | pdcar-plan | Issue #41 — Sprint 1 CODEOWNERS Rollout PDCA/R | Sections: Plan, Do, Check, Adjust, Review | No explicit file references detected |
