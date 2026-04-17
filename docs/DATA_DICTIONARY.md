@@ -118,3 +118,18 @@ Contract:
 - The matching plan must be approved and have `execution_handoff.execution_mode` set to `implementation_ready` or `implementation_complete`.
 - If `alternate_model_review.required` is true, status must be `accepted` or `accepted_with_followup`.
 - Local execution scope validation declares expected checkout root, branch, allowed write paths, and forbidden dirty roots.
+
+---
+
+### Read-Only Governance Observer Report
+**Generator:** `scripts/orchestrator/read_only_observer.py`
+**Default storage:** `projects/<repo_slug>/reports/latest.json` and `projects/<repo_slug>/reports/latest.md`
+**launchd template:** `launchd/com.hldpro.governance-observer.plist`
+
+Contract:
+- One report per governed repo listed in `docs/governed_repos.json`.
+- Writes only under `projects/<repo_slug>/reports/` by default.
+- Does not write to `raw/packets/` and records `packet_enqueue_enabled: false`.
+- Includes `repo_slug`, `display_name`, `generated_at`, `source_commit`, `health`, `stale_knowledge`, `planning_gate`, `daemon_readiness`, and `artifacts`.
+- Artifact entries include relative path, existence, SHA-256 hash when present, and detail text.
+- Reports use local metadata-only issue feed files from `raw/github-issues/` when present; issue bodies are not read.

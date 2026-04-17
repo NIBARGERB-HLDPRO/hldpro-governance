@@ -119,6 +119,13 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn(".github/workflows/governance-check.yml", result.stdout)
 
+    def test_launchd_and_orchestrator_paths_are_governance_surface(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            result = self._run(Path(raw), "main", ["launchd/com.hldpro.governance-observer.plist", "scripts/orchestrator/read_only_observer.py"])
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("launchd/com.hldpro.governance-observer.plist", result.stdout)
+        self.assertIn("scripts/orchestrator/read_only_observer.py", result.stdout)
+
     def test_riskfix_branch_without_issue_number_gets_specific_issue_hint(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             result = self._run(Path(raw), "riskfix/scope-gate", ["STANDARDS.md"])

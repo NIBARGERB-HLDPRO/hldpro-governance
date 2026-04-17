@@ -50,6 +50,22 @@
 
 ---
 
+## Orchestrator Scripts
+
+| Script | Path | Purpose |
+|--------|------|---------|
+| read_only_observer.py | `scripts/orchestrator/read_only_observer.py` | Generates deterministic read-only governance health reports under `projects/<repo_slug>/reports/` |
+
+---
+
+## launchd Templates
+
+| Label | File | Purpose |
+|-------|------|---------|
+| com.hldpro.governance-observer | `launchd/com.hldpro.governance-observer.plist` | Optional macOS user-agent template for periodic read-only observer runs |
+
+---
+
 ## Knowledge Base Scripts
 
 | Script | Path | Purpose |

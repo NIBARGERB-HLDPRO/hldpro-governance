@@ -14,9 +14,11 @@ GOVERNANCE_SURFACE_PREFIXES = (
     "agents/",
     "docs/schemas/",
     "hooks/",
+    "launchd/",
     "raw/closeouts/",
     "raw/cross-review/",
     "scripts/knowledge_base/",
+    "scripts/orchestrator/",
     "scripts/overlord/",
     "wiki/",
 )
