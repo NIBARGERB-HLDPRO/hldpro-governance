@@ -1,0 +1,191 @@
+{
+  "session_id": "session-20260417-issue-242-planner-write-boundary",
+  "issue_number": 242,
+  "objective": "Enforce the planner write-boundary so Tier 1 planning roles may create planning, review, and handoff artifacts only, while non-planning diffs require accepted pinned-agent handoff evidence and active exceptions for same-model or same-family implementers.",
+  "tier": 1,
+  "scope_boundary": [
+    "Implement a machine-checkable planning artifact allowlist using execution-scope allowed write paths.",
+    "Extend execution-scope validation with diff-file input for CI and optional pinned-agent handoff evidence.",
+    "Require accepted handoff evidence for non-planning diffs and active exception references for same-model or same-family implementers.",
+    "Wire strict enforcement into governance CI while keeping local hook behavior early-warning only for the planner-boundary checker.",
+    "Document delegated mode, local mirror mode, handoff evidence, and exception behavior.",
+    "Add regression tests for planning-only pass, non-planning fail without handoff, accepted handoff pass, planner-model implementer fail without exception, and exception pass."
+  ],
+  "out_of_scope": [
+    "Reopening the #241 graphify artifact contract implementation.",
+    "Adding required fields to historical structured agent cycle plans.",
+    "Cryptographically proving who typed a diff.",
+    "Replacing GitHub Issues as the canonical execution backlog.",
+    "Changing unrelated Society of Minds packet validation invariants.",
+    "Popping or applying the mixed shared-checkout stash into this branch."
+  ],
+  "research_summary": "Issue #242 is the narrow follow-up from #241. Research found that #226 already added a governance-surface branch gate requiring issue-specific structured plans, implementation-ready handoff, and accepted alternate review for governance-surface paths. The remaining gap is file-scope planner/non-planning enforcement: prose rules say planners should not implement, but no strict CI gate yet requires accepted pinned-agent handoff evidence for non-planning diffs. The lowest-risk implementation is to extend `scripts/overlord/assert_execution_scope.py`, because it already owns expected root, expected branch, forbidden roots, and allowed write paths. Historical structured-plan compatibility is preserved by leaving `docs/schemas/structured-agent-cycle-plan.schema.json` unchanged and putting optional `execution_mode` plus `handoff_evidence` in execution-scope JSON.",
+  "research_artifacts": [
+    "Issue #242",
+    "Issue #241",
+    "Issue #226",
+    "docs/plans/issue-242-planner-write-boundary-pdcar.md",
+    "raw/cross-review/2026-04-17-issue-242-planner-write-boundary-plan.md",
+    "raw/cross-review/2026-04-17-issue-241-242-planning-review.md",
+    "raw/execution-scopes/2026-04-17-issue-242-planner-write-boundary-implementation.json",
+    "docs/plans/issue-241-graphify-out-artifact-contract-structured-agent-cycle-plan.json",
+    "docs/plans/issue-226-planning-scope-gatekeeper-pdcar.md",
+    "raw/closeouts/2026-04-17-planning-scope-gatekeeper.md",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    ".github/workflows/governance-check.yml",
+    "hooks/code-write-gate.sh",
+    "docs/schemas/structured-agent-cycle-plan.schema.json",
+    "docs/schemas/som-packet.schema.yml",
+    "scripts/orchestrator/packet_queue.py"
+  ],
+  "sprints": [
+    {
+      "name": "Execution-Scope Contract",
+      "goal": "Make execution-scope artifacts encode the planner write-boundary and accepted pinned-agent handoff evidence without breaking historical structured plans.",
+      "tasks": [
+        "Add optional execution-mode parsing to execution-scope payloads.",
+        "Add optional handoff evidence with planner model, implementer model, status, accepted timestamp, evidence paths, active exception reference, and exception expiry.",
+        "Treat missing execution mode as the current dirty-tree scope mode for backward compatibility.",
+        "Require accepted handoff evidence for non-planning execution modes.",
+        "Require active exception evidence when planner and implementer model or family are the same."
+      ],
+      "acceptance_criteria": [
+        "Existing execution-scope JSON artifacts still validate unchanged.",
+        "Planning-only scopes only permit paths in `allowed_write_paths`.",
+        "Non-planning scopes fail without accepted handoff evidence.",
+        "Same-model or same-family planner/implementer evidence fails without active exception."
+      ],
+      "file_paths": [
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py",
+        "raw/execution-scopes/2026-04-17-issue-242-planner-write-boundary-planning.json",
+        "raw/execution-scopes/2026-04-17-issue-242-planner-write-boundary-implementation.json"
+      ]
+    },
+    {
+      "name": "CI and Hook Wiring",
+      "goal": "Make CI authoritative for planner-boundary enforcement while local hooks surface early warnings.",
+      "tasks": [
+        "Add `--changed-files-file` support to `assert_execution_scope.py` for PR diff enforcement.",
+        "Wire governance CI to call the checker after changed-file resolution.",
+        "Keep hook warnings non-authoritative for this boundary while preserving existing new-code routing blocks.",
+        "Ensure diff-mode and dirty-tree mode share path normalization and allowed-path semantics."
+      ],
+      "acceptance_criteria": [
+        "PR CI blocks non-planning diffs that lack accepted pinned-agent handoff evidence.",
+        "Local hook output identifies planner-boundary drift without being the authoritative merge gate.",
+        "Renames and copied paths are normalized consistently with dirty-tree mode."
+      ],
+      "file_paths": [
+        ".github/workflows/governance-check.yml",
+        "hooks/code-write-gate.sh",
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py"
+      ]
+    },
+    {
+      "name": "Documentation and Audit Evidence",
+      "goal": "Record the rule, the process gap, and the operator-facing handoff path.",
+      "tasks": [
+        "Document delegated mode versus local mirror mode.",
+        "Document planning allowlist, handoff evidence fields, exception reference, and expiry behavior.",
+        "Register the gate in feature, service, and data dictionary docs.",
+        "Update issue #242 with research findings, accepted plan, and validation evidence."
+      ],
+      "acceptance_criteria": [
+        "Docs state planners may create planning/review/handoff artifacts only.",
+        "Docs state non-planning diffs require accepted pinned-agent handoff evidence.",
+        "Audit findings identify why the earlier issue was not gated.",
+        "Issue #242 contains the implementation plan and evidence links."
+      ],
+      "file_paths": [
+        "STANDARDS.md",
+        "README.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/plans/issue-242-planner-write-boundary-pdcar.md",
+        "raw/cross-review/2026-04-17-issue-242-planner-write-boundary-plan.md",
+        "docs/PROGRESS.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Banach",
+      "role": "enforcement-surface research agent",
+      "focus": "Existing validator, PR gate, hook, SoM packet, and execution-scope enforcement map.",
+      "status": "accepted",
+      "summary": "The active #226 enforcement spine exists, but #242 should put true file-scope planner-boundary enforcement in `assert_execution_scope.py` and wire it into CI.",
+      "evidence": [
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        ".github/workflows/governance-check.yml",
+        "hooks/code-write-gate.sh",
+        "scripts/overlord/assert_execution_scope.py",
+        "docs/schemas/som-packet.schema.yml",
+        "scripts/orchestrator/packet_queue.py"
+      ]
+    },
+    {
+      "reviewer": "Dewey",
+      "role": "minimal implementation design agent",
+      "focus": "Patch shape, schema compatibility, CI/hook wiring, and required test cases.",
+      "status": "accepted",
+      "summary": "Recommended extending execution-scope artifacts and checker behavior instead of structured-plan schema, keeping CI strict and hooks warning-only for the new boundary.",
+      "evidence": [
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py",
+        ".github/workflows/governance-check.yml",
+        "hooks/code-write-gate.sh"
+      ]
+    },
+    {
+      "reviewer": "James",
+      "role": "process-gap audit agent",
+      "focus": "Why the planner/non-planning issue was not previously gated and where repo rules deviated from enforcement.",
+      "status": "accepted",
+      "summary": "Found the root gap was prose-only planner boundary plus narrow local hook behavior that blocked new code files but allowed existing-file and docs/config/data edits.",
+      "evidence": [
+        "hooks/code-write-gate.sh",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "docs/plans/issue-226-planning-scope-gatekeeper-pdcar.md",
+        "raw/closeouts/2026-04-17-planning-scope-gatekeeper.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Prior alternate-family review approved keeping #242 separate from #241 with required changes: planning allowlist, exception mechanism, warning-to-strict transition, handoff evidence schema, and strict hook/PR enforcement. This plan incorporates those requirements while keeping local hooks warning-only for the new boundary and CI authoritative.",
+    "evidence": [
+      "raw/cross-review/2026-04-17-issue-241-242-planning-review.md",
+      "raw/cross-review/2026-04-17-issue-242-planner-write-boundary-plan.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex planning session",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement #242 only: execution-scope planner-boundary enforcement, CI strict gate, hook warning path, focused tests, docs, and tracker updates. Do not include #241 graphify changes or shared-checkout stash content.",
+    "next_execution_step": "Hand implementation to pinned worker agents with write ownership for assert_execution_scope/tests, CI/hook wiring, and docs. Run validation gates before review and PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If structured-plan schema changes appear necessary, stop and produce an alternate-family review update before implementation because historical plans must remain valid.",
+    "If active exception behavior cannot be made concrete with reference and expiry, fail closed rather than accepting freeform exception text.",
+    "If hook and CI behavior diverge, CI remains authoritative and the hook must be documented as warning-only for this boundary.",
+    "If #241 graphify contract files become part of the diff, remove them unless the change is a tracker-only closeout repair explicitly approved for this branch.",
+    "If the shared checkout stash is needed, extract only reviewed files into a separate issue-backed branch; do not pop it into #242."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: proceed to #242 after #241",
+    "Codex planning session",
+    "spawned research agents: Banach, Dewey, James"
+  ],
+  "approved_at": "2026-04-17T13:45:00-05:00"
+}

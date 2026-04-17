@@ -1,0 +1,16 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-242-planner-write-boundary",
+  "allowed_write_paths": [
+    "docs/plans/issue-242-planner-write-boundary-pdcar.md",
+    "docs/plans/issue-242-planner-write-boundary-structured-agent-cycle-plan.json",
+    "raw/cross-review/2026-04-17-issue-242-planner-write-boundary-plan.md",
+    "raw/execution-scopes/2026-04-17-issue-242-planner-write-boundary-planning.json",
+    "raw/execution-scopes/2026-04-17-issue-242-planner-write-boundary-implementation.json",
+    "docs/PROGRESS.md",
+    "OVERLORD_BACKLOG.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
+  ]
+}
