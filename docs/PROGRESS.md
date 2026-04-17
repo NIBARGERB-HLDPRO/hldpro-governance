@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| Clarify graphify-out artifact contract and ignored-cache noise | #241 | IN_PROGRESS | MEDIUM | 1-2 | `.gitignore` contract clarification, graphify contract test update, docs alignment | Scope excludes planner write-boundary enforcement; tracked separately in #242 |
 | SoM enforcement drift closure epic | #214 | IN PROGRESS | HIGH | TBD | Reviewed PDCAR plan, Claude review artifact, issues #215-#221 | Plan: docs/plans/2026-04-17-som-enforcement-drift-pdcar.md; closeout loop tracked by #220; execution-scope guard tracked by #221 |
 | SoM Slice 1: Codex model pin enforcement | #215 | IN PROGRESS | HIGH | TBD | Codex model/reasoning checker, overlord-sweep wiring | Part of #214 |
 | SoM Slice 2: ladder and standards consistency | #216 | IN PROGRESS | HIGH | TBD | STANDARDS, exception, progress, registry alignment | Part of #214 |
