@@ -125,6 +125,7 @@
 |---|---|
 | GOV-019 | `scripts/overlord/validate_structured_agent_cycle_plan.py` classifies governance-surface paths and requires issue-specific canonical structured plans with implementation-ready handoff and accepted alternate review before those paths can change. |
 | GOV-019 | `.github/workflows/governance-check.yml` and `hooks/code-write-gate.sh` call the shared validator so CI and local write-time enforcement use the same governance-surface planning gate. |
+| GOV-019 | `scripts/overlord/validate_structured_agent_cycle_plan.py --enforce-planner-boundary-scope` provides a local E2E simulation of CI planner-boundary scope resolution by requiring issue-matching execution-scope JSON under `raw/execution-scopes/` whenever planner-boundary files change. |
 | GOV-019 | `scripts/overlord/assert_execution_scope.py` remains the root/branch/write-scope guard, with tests proving wrong checkout roots, dirty forbidden roots, and out-of-scope paths fail locally. |
 | GOV-019 | Planner write-boundary enforcement now treats Tier 1 sessions as planning-only by default (`execution_mode: planning_only`), with `allowed_write_paths` as the planning artifact allowlist. |
 | GOV-019 | Non-planning diffs now require accepted pinned-agent handoff evidence, and same-model or same-family planner/implementer pairs require an active exception reference with expiry. |
@@ -152,6 +153,7 @@
 |---|---|
 | GOV-022 | `scripts/orchestrator/packet_queue.py` creates queue states under `raw/packets/queue/` and supports `inbound`, `dispatched`, `review`, `gate`, `done`, and `halted` transitions. |
 | GOV-022 | Dispatch requires the existing SoM packet validator plus governance metadata: issue number, structured plan reference, execution scope reference, model identity, fallback log field, validation commands, review artifacts, PII mode, and explicit dispatch authorization. |
+| GOV-022 | Dispatch scope evidence is fail-closed: when `governance.execution_scope_ref` is present, it must be a JSON artifact under `raw/execution-scopes/`; PDCAR Markdown and other arbitrary files are refused. |
 | GOV-022 | State changes are recorded in `raw/packets/queue/audit.jsonl` with timestamp, source, destination, packet id, SHA-256, dry-run flag, allowed flag, status, and reason so queue movement can be replayed without executing packet payloads. |
 
 ### SELF_LEARNING_LOOP

@@ -90,6 +90,43 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
             text=True,
         )
 
+    def _run_with_scope_gate(self, root: Path, branch: str, changed: list[str]) -> subprocess.CompletedProcess[str]:
+        changed_file = root / "changed.txt"
+        changed_file.write_text("\n".join(changed) + "\n", encoding="utf-8")
+        return subprocess.run(
+            [
+                "python3",
+                str(VALIDATOR),
+                "--root",
+                str(root),
+                "--branch-name",
+                branch,
+                "--changed-files-file",
+                str(changed_file),
+                "--enforce-governance-surface",
+                "--enforce-planner-boundary-scope",
+            ],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+
+    def _write_scope(self, root: Path, issue_number: int, mode: str = "implementation") -> None:
+        scope_path = root / "raw" / "execution-scopes" / f"2026-04-17-issue-{issue_number}-test-{mode}.json"
+        scope_path.parent.mkdir(parents=True)
+        scope_path.write_text(
+            json.dumps(
+                {
+                    "expected_execution_root": ".",
+                    "expected_branch": f"issue-{issue_number}-test",
+                    "execution_mode": "planning_only",
+                    "allowed_write_paths": ["docs/plans/"],
+                    "forbidden_roots": [],
+                }
+            ),
+            encoding="utf-8",
+        )
+
     def test_non_issue_branch_with_governance_surface_change_fails(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             result = self._run(Path(raw), "main", ["CLAUDE.md"])
@@ -200,6 +237,42 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
             plan_path.parent.mkdir(parents=True)
             plan_path.write_text(json.dumps(_plan(226)), encoding="utf-8")
             result = self._run(root, "issue-226-test", ["scripts/overlord/tool.py"])
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def test_planner_boundary_scope_gate_requires_issue_specific_scope(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-231-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(json.dumps(_plan(231)), encoding="utf-8")
+            result = self._run_with_scope_gate(
+                root,
+                "issue-231-e2e-pilot",
+                [
+                    "raw/packets/2026-04-17-issue-231-e2e-pilot.yml",
+                    "scripts/orchestrator/packet_queue.py",
+                    "docs/plans/issue-231-structured-agent-cycle-plan.json",
+                ],
+            )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("require an issue-specific execution scope for issue #231", result.stdout)
+
+    def test_planner_boundary_scope_gate_accepts_matching_scope(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-231-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(json.dumps(_plan(231)), encoding="utf-8")
+            self._write_scope(root, 231)
+            result = self._run_with_scope_gate(
+                root,
+                "issue-231-test",
+                [
+                    "raw/packets/2026-04-17-issue-231-e2e-pilot.yml",
+                    "scripts/orchestrator/packet_queue.py",
+                    "docs/plans/issue-231-structured-agent-cycle-plan.json",
+                ],
+            )
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def test_matching_plan_must_be_implementation_ready(self) -> None:

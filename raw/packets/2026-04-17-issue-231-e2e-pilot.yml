@@ -17,7 +17,7 @@ fallback_ladder_ref: null
 governance:
   issue_number: 231
   structured_plan_ref: docs/plans/issue-231-structured-agent-cycle-plan.json
-  execution_scope_ref: docs/plans/issue-231-e2e-pilot-pdcar.md
+  execution_scope_ref: raw/execution-scopes/2026-04-17-issue-231-e2e-pilot-planning.json
   validation_commands:
     - python3 scripts/packet/validate.py raw/packets/2026-04-17-issue-231-e2e-pilot.yml
     - python3 scripts/overlord/test_validate_structured_agent_cycle_plan.py
