@@ -162,6 +162,7 @@
       "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-226-scope-gatekeeper-20260417/wiki/hldpro/Knowledge_base_Measure_graphify_usage.md",
       "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-226-scope-gatekeeper-20260417/wiki/hldpro/Overlord_Assert_execution_scope.md",
       "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-226-scope-gatekeeper-20260417/wiki/hldpro/Community_59.md",
+      "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-226-scope-gatekeeper-20260417/wiki/hldpro/TestGovernanceSurfacePlanGate.md",
       "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-226-scope-gatekeeper-20260417/wiki/hldpro/Community_106.md",
       "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-226-scope-gatekeeper-20260417/wiki/hldpro/Community_18.md",
       "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-226-scope-gatekeeper-20260417/wiki/hldpro/Community_49.md",
@@ -1334,10 +1335,10 @@
     "paper": [],
     "image": []
   },
-  "total_files": 1327,
-  "total_words": 275602,
+  "total_files": 1328,
+  "total_words": 275728,
   "needs_graph": true,
-  "warning": "Large corpus: 1327 files \u00b7 ~275,602 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
+  "warning": "Large corpus: 1328 files \u00b7 ~275,728 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
   "skipped_sensitive": [],
   "graphifyignore_patterns": 0
 }
