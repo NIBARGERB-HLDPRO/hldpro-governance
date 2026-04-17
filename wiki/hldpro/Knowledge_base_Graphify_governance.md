@@ -1,12 +1,13 @@
 # Knowledge base Graphify governance
 
-> 3 nodes · cohesion 1.00
+> 4 nodes · cohesion 0.83
 
 ## Key Concepts
 
-- **test_graphify_governance_contract.py** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_governance_contract.py`
+- **test_graphify_governance_contract.py** (3 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_governance_contract.py`
+- **main()** (3 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_governance_contract.py`
 - **check()** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_governance_contract.py`
-- **main()** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_governance_contract.py`
+- **is_ignored()** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_governance_contract.py`
 
 ## Relationships
 
@@ -18,8 +19,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 4 (67%)
-- INFERRED: 2 (33%)
+- EXTRACTED: 6 (60%)
+- INFERRED: 4 (40%)
 - AMBIGUOUS: 0 (0%)
 
 ---
