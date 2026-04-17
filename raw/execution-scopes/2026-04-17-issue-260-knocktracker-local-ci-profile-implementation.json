@@ -1,0 +1,32 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "feat/issue-260-knocktracker-local-ci-profile",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/PROGRESS.md",
+    "docs/runbooks/local-ci-gate-toolkit.md",
+    "raw/closeouts/2026-04-17-knocktracker-local-ci-profile.md",
+    "raw/execution-scopes/2026-04-17-issue-260-knocktracker-local-ci-profile-implementation.json",
+    "tools/local-ci-gate/profiles/knocktracker.yml",
+    "tools/local-ci-gate/tests/test_local_ci_gate.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker"
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-approved-issue-plan",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-17T23:20:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-260-structured-agent-cycle-plan.json",
+      "docs/plans/issue-260-knocktracker-local-ci-gate-profile-pdcar.md",
+      "raw/cross-review/2026-04-17-issue-260-knocktracker-local-ci-gate-profile-plan.md",
+      "docs/runbooks/local-ci-gate-toolkit.md",
+      "GitHub issue #260"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

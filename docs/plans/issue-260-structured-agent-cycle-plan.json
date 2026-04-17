@@ -1,0 +1,145 @@
+{
+  "session_id": "session-20260417-issue-260-knocktracker-local-ci-profile",
+  "issue_number": 260,
+  "objective": "Add an implementation-ready plan for a knocktracker-specific Local CI Gate profile owned by hldpro-governance so the existing knocktracker shim can move from dry-run adoption to live local enforcement without copying runner logic.",
+  "tier": 2,
+  "scope_boundary": [
+    "Keep hldpro-governance as the canonical source for Local CI Gate runner logic and repo-specific profiles.",
+    "Add a knocktracker profile under tools/local-ci-gate/profiles/ that invokes commands already present in knocktracker.",
+    "Keep reports local-only under cache/local-ci-gate/reports/ in consumer repos.",
+    "Document the knocktracker profile and live-shim update path in the governance runbook.",
+    "Validate the profile against an isolated knocktracker worktree before proposing consumer live enforcement."
+  ],
+  "out_of_scope": [
+    "Changing knocktracker product behavior in this governance issue.",
+    "Copying Local CI Gate runner code into knocktracker.",
+    "Adding new knocktracker npm scripts from this governance PR.",
+    "Replacing GitHub Actions or claiming local checks are a full CI replay.",
+    "Closing the knocktracker live-shim follow-up before this profile is merged and dogfooded."
+  ],
+  "research_summary": "Issue #260 follows the first consumer rollout in knocktracker PR #172. That rollout installed the managed shim in dry-run mode because hldpro-governance only had the governance repo profile. The next slice adds a knocktracker-specific profile in the governance toolkit, using knocktracker's existing npm gates and file-index validation while preserving the CI-authoritative disclaimer and local-only report contract.",
+  "research_artifacts": [
+    "docs/plans/issue-260-knocktracker-local-ci-gate-profile-pdcar.md",
+    "raw/cross-review/2026-04-17-issue-260-knocktracker-local-ci-gate-profile-plan.md",
+    "tools/local-ci-gate/local_ci_gate.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "tools/local-ci-gate/tests/test_local_ci_gate.py",
+    "scripts/overlord/deploy_local_ci_gate.py",
+    "docs/runbooks/local-ci-gate-toolkit.md",
+    "raw/closeouts/2026-04-17-local-ci-gate-toolkit.md",
+    "GitHub issue #260",
+    "NIBARGERB-HLDPRO/knocktracker#172"
+  ],
+  "sprints": [
+    {
+      "name": "Planning and Scope Bootstrap",
+      "goal": "Land trusted planning and implementation scope artifacts before any Local CI Gate profile implementation.",
+      "tasks": [
+        "Create an issue-backed structured plan for #260.",
+        "Add planning and implementation execution-scope artifacts.",
+        "Add PDCA/R and planning cross-review artifacts for traceability.",
+        "Update OVERLORD_BACKLOG.md so closed #253 is no longer under Planned and #260 is visible as active work.",
+        "Validate structured plans, backlog alignment, diff hygiene, and execution-scope write boundaries."
+      ],
+      "acceptance_criteria": [
+        "GitHub issue #260 is open and referenced by OVERLORD_BACKLOG.md.",
+        "Planning PR contains only planning/scope/backlog artifacts.",
+        "Implementation branch and allowed write paths are declared before implementation starts.",
+        "The planning PR does not change runner behavior, deployer behavior, or downstream repos."
+      ],
+      "file_paths": [
+        "docs/plans/issue-260-structured-agent-cycle-plan.json",
+        "docs/plans/issue-260-knocktracker-local-ci-gate-profile-pdcar.md",
+        "raw/cross-review/2026-04-17-issue-260-knocktracker-local-ci-gate-profile-plan.md",
+        "raw/execution-scopes/2026-04-17-issue-260-knocktracker-local-ci-profile-planning.json",
+        "raw/execution-scopes/2026-04-17-issue-260-knocktracker-local-ci-profile-implementation.json",
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "name": "Profile Implementation",
+      "goal": "Add and validate the knocktracker Local CI Gate profile without changing knocktracker code.",
+      "tasks": [
+        "Create tools/local-ci-gate/profiles/knocktracker.yml with changed-file scoped checks mapped to existing knocktracker commands.",
+        "Add profile validation coverage so bundled profiles stay parseable and preserve the report/disclaimer contract.",
+        "Document how knocktracker can switch its managed shim from dry-run governance profile to live knocktracker profile.",
+        "Dogfood dry-run and live runner invocations against an isolated knocktracker worktree."
+      ],
+      "acceptance_criteria": [
+        "The knocktracker profile loads through the existing runner.",
+        "Dry-run output prints planned knocktracker checks and the CI-authoritative disclaimer.",
+        "Live run executes deterministic checks that exist in knocktracker when dependencies are installed.",
+        "Changed-file scoped checks report skip/subset/full behavior without implying CI equivalence.",
+        "A follow-up knocktracker PR can safely remove --dry-run or switch profile to knocktracker."
+      ],
+      "file_paths": [
+        "tools/local-ci-gate/profiles/knocktracker.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py",
+        "docs/runbooks/local-ci-gate-toolkit.md",
+        "docs/PROGRESS.md",
+        "raw/closeouts/2026-04-17-knocktracker-local-ci-profile.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Erdos",
+      "role": "explorer: knocktracker command-surface reviewer",
+      "focus": "Inspect knocktracker package scripts, docs, and current managed shim to recommend exact profile checks and changed-path scopes.",
+      "status": "requested",
+      "summary": "Explorer review requested during planning; implementation will adopt only commands verified to exist in knocktracker.",
+      "evidence": [
+        "/Users/bennibarger/Developer/HLDPRO/_worktrees/knocktracker-issue-171-local-ci-shim-20260417/package.json",
+        "/Users/bennibarger/Developer/HLDPRO/_worktrees/knocktracker-issue-171-local-ci-shim-20260417/.hldpro/local-ci.sh"
+      ]
+    },
+    {
+      "reviewer": "McClintock",
+      "role": "explorer: governance workflow reviewer",
+      "focus": "Confirm #260 planning and implementation artifacts required by the governance validators.",
+      "status": "accepted",
+      "summary": "Confirmed the issue #260 planning package should mirror the issue #253 shape: structured plan, PDCA/R, cross-review, planning scope, implementation scope, and backlog mirror before implementation starts.",
+      "evidence": [
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/assert_execution_scope.py",
+        "raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-implementation.json"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Operator-provided reviewer response memo and issue #260 acceptance notes",
+    "model_family": "operator-review",
+    "status": "accepted",
+    "summary": "The current slice stays within the previously reviewed org-level Local CI Gate toolkit architecture and narrows implementation to a consumer profile plus docs/tests. If implementation changes the toolkit contract, add a new cross-family architecture review before merge.",
+    "evidence": [
+      "raw/cross-review/2026-04-17-issue-253-local-ci-gate-toolkit-plan.md",
+      "raw/cross-review/2026-04-17-issue-260-knocktracker-local-ci-gate-profile-plan.md",
+      "docs/runbooks/local-ci-gate-toolkit.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #260 may add a knocktracker Local CI Gate profile, focused profile tests, runbook documentation, progress/closeout evidence, and no downstream product changes.",
+    "next_execution_step": "Merge this planning/scope branch so the implementation execution scope is trusted from main, then implement on branch feat/issue-260-knocktracker-local-ci-profile.",
+    "blocked_on": [
+      "planning PR merged so implementation scope is trusted from main"
+    ]
+  },
+  "material_deviation_rules": [
+    "If implementation requires changes outside the declared implementation scope, update the scope through a planning PR before continuing.",
+    "If knocktracker lacks a required command, keep the profile check out rather than adding downstream scripts from governance.",
+    "If live dogfood requires product-repo edits, open a separate knocktracker issue-backed PR.",
+    "If the profile changes the Local CI Gate runner contract, add cross-family review evidence before merge.",
+    "Do not alter the dirty shared hldpro-governance or knocktracker checkouts."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #260",
+    "operator instruction: stay in this isolated worktree and implement e2e, no hitl",
+    "operator instruction: create an org level set of tools that can be pulled and deployed by the other repos",
+    "operator instruction: go"
+  ],
+  "approved_at": "2026-04-17T23:20:00Z"
+}
