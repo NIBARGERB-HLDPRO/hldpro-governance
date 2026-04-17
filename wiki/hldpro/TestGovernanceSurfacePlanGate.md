@@ -1,6 +1,6 @@
 # TestGovernanceSurfacePlanGate
 
-> God node · 17 connections · `hldpro-governance/scripts/overlord/test_validate_structured_agent_cycle_plan.py`
+> God node · 21 connections · `hldpro-governance/scripts/overlord/test_validate_structured_agent_cycle_plan.py`
 
 ## Connections by Relation
 
@@ -9,10 +9,14 @@
 
 ### method
 - [[._run()]] `EXTRACTED`
+- [[.test_planner_boundary_scope_gate_accepts_matching_scope()]] `EXTRACTED`
+- [[._run_with_scope_gate()]] `EXTRACTED`
 - [[.test_non_issue_branch_does_not_validate_unmatched_plans_for_readiness()]] `EXTRACTED`
 - [[.test_issue_branch_matching_approved_plan_passes()]] `EXTRACTED`
+- [[.test_planner_boundary_scope_gate_requires_issue_specific_scope()]] `EXTRACTED`
 - [[.test_matching_plan_must_be_implementation_ready()]] `EXTRACTED`
 - [[.test_required_alternate_review_must_be_accepted()]] `EXTRACTED`
+- [[._write_scope()]] `EXTRACTED`
 - [[.test_non_issue_branch_with_governance_surface_change_fails()]] `EXTRACTED`
 - [[.test_github_scripts_are_governance_surface()]] `EXTRACTED`
 - [[.test_github_workflows_with_leading_dot_are_governance_surface()]] `EXTRACTED`
