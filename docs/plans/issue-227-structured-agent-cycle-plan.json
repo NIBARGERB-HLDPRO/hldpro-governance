@@ -1,0 +1,147 @@
+{
+  "session_id": "session-20260417-issue-227-readonly-observer",
+  "issue_number": 227,
+  "objective": "Implement the read-only always-on observer slice from epic #224 so governance can produce deterministic per-repo health reports under project report paths without enqueuing work packets or mutating governed repos.",
+  "tier": 1,
+  "scope_boundary": [
+    "Create a repo-local read-only observer that loads the governed repo registry, rule artifacts, graphify summaries, compendium, closeouts, backlog, and raw issue feed metadata.",
+    "Write observer output only under `projects/<repo_slug>/reports/` by default, with explicit override support for tests.",
+    "Include source commit SHAs and SHA-256 artifact hashes for registry, graph, wiki, compendium, backlog, closeouts, and issue feed inputs.",
+    "Report per-repo health, stale knowledge signals, planning-gate gaps, and daemon readiness without making LLM-only pass/fail decisions.",
+    "Add launchd SOPs, a launchd plist template, tests, registry documentation, cross-review, and closeout evidence."
+  ],
+  "out_of_scope": [
+    "Installing or bootstrapping the launchd agent on the operator machine.",
+    "Enqueuing packets, dispatching workers, mutating governed repositories, or starting a daemon process.",
+    "Adding local model runtime, PII classifier services, or packet queue state machines from later #224 phases.",
+    "Reading or storing raw issue bodies; the observer may use metadata-only raw issue feed files.",
+    "Writing to the shared dirty main checkout."
+  ],
+  "research_summary": "Issue #227 follows the #224 Phase 3 design: introduce read-only observation before daemon or queue authority. Existing #225 registry metadata provides project paths, graph/wiki paths, repo local paths, and enabled subsystem flags. Existing #226 planning-scope gate requires this governance-surface work to have an issue-specific structured plan and accepted review. The implementation uses a stdlib Python observer that inspects committed governance artifacts and local git state, computes content hashes, writes deterministic JSON/Markdown reports to project report directories, and leaves `raw/packets/` untouched. The launchd template is not installed by this slice; the runbook documents bootstrap, kickstart, bootout, and kill/disable commands for a later operator action.",
+  "research_artifacts": [
+    "Issue #224",
+    "Issue #227",
+    "docs/plans/issue-224-structured-agent-cycle-plan.json",
+    "docs/plans/issue-224-always-on-governance-orchestrator-pdcar.md",
+    "raw/cross-review/2026-04-17-always-on-governance-orchestrator-plan.md",
+    "docs/governed_repos.json",
+    "scripts/overlord/governed_repos.py",
+    "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+    "raw/closeouts/",
+    "raw/github-issues/",
+    "graphify-out/",
+    "wiki/",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/assert_execution_scope.py",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/SERVICE_REGISTRY.md",
+    "docs/DATA_DICTIONARY.md"
+  ],
+  "sprints": [
+    {
+      "name": "Observer Core",
+      "goal": "Produce deterministic read-only governance health reports from existing committed artifacts.",
+      "tasks": [
+        "Add `scripts/orchestrator/read_only_observer.py` using only Python stdlib and the governed repo registry.",
+        "Load graph reports, wiki index state, compendium, closeouts, backlog, and raw issue metadata where available.",
+        "Compute artifact hashes and source commit SHAs for each repository.",
+        "Write JSON and Markdown reports under `projects/<repo_slug>/reports/`.",
+        "Ensure no packet queue writes happen in this slice."
+      ],
+      "acceptance_criteria": [
+        "Observer writes reports only under approved report paths by default.",
+        "Reports include source commit SHAs and artifact hashes.",
+        "Reports include stale knowledge, planning-gate, and daemon readiness sections.",
+        "No files are created under `raw/packets/`."
+      ],
+      "file_paths": [
+        "scripts/orchestrator/read_only_observer.py",
+        "scripts/orchestrator/test_read_only_observer.py",
+        "projects/"
+      ]
+    },
+    {
+      "name": "launchd SOP",
+      "goal": "Document a disabled-by-default local launchd path for reboot-survivable read-only observation.",
+      "tasks": [
+        "Add a launchd plist template with explicit repo root, report root, log paths, and interval.",
+        "Document bootstrap, kickstart, health check, bootout, and kill/disable commands.",
+        "Validate the plist with local syntax checks."
+      ],
+      "acceptance_criteria": [
+        "The launchd template is syntactically valid.",
+        "The runbook documents after-reboot behavior and kill/disable SOP.",
+        "The slice does not install the plist automatically."
+      ],
+      "file_paths": [
+        "launchd/com.hldpro.governance-observer.plist",
+        "docs/runbooks/always-on-governance.md"
+      ]
+    },
+    {
+      "name": "Governance Evidence",
+      "goal": "Record the observer in governance registries and closeout artifacts.",
+      "tasks": [
+        "Register the feature, service, and data contract.",
+        "Add PDCAR, cross-review, and closeout artifacts.",
+        "Refresh graph/wiki and compendium after closeout."
+      ],
+      "acceptance_criteria": [
+        "Feature, service, and data dictionary docs describe the observer and report contract.",
+        "Alternate-family review passes or required findings are resolved.",
+        "Closeout hook completes and graph/wiki/compendium are current."
+      ],
+      "file_paths": [
+        "docs/FEATURE_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/plans/issue-227-readonly-observer-pdcar.md",
+        "raw/cross-review/2026-04-17-readonly-observer.md",
+        "raw/closeouts/2026-04-17-readonly-observer.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex implementation agent",
+      "role": "deterministic observer implementer",
+      "focus": "Read-only file access, bounded report write paths, packet non-interference, launchd SOPs, and validation coverage.",
+      "status": "accepted",
+      "summary": "The implementation is constrained to report generation and launchd documentation. It does not dispatch packets or mutate governed repos.",
+      "evidence": [
+        "scripts/orchestrator/read_only_observer.py",
+        "scripts/orchestrator/test_read_only_observer.py",
+        "docs/runbooks/always-on-governance.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Alternate-family review required for Tier 1 governance automation. Findings are recorded in the #227 cross-review artifact and must be resolved or explicitly accepted before merge.",
+    "evidence": [
+      "raw/cross-review/2026-04-17-readonly-observer.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement #227 read-only observer, launchd template/runbook, tests, report directories, documentation, review, and closeout only.",
+    "next_execution_step": "Build observer and docs, run tests and validators, obtain alternate-family review, close out, open PR, and merge after CI passes.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If observer needs issue bodies or live GitHub API calls, defer to a follow-up issue; this slice uses metadata-only local artifacts.",
+    "If launchd installation is required, stop and create a separate operator-run task; this slice only provides a template and SOP.",
+    "If a report cannot read a source artifact, record the missing artifact in the report instead of inventing a status.",
+    "If any packet queue write is needed, halt because packet enqueue authority belongs to a later #224 phase."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: proceed, loop through, no HITL",
+    "Codex implementation agent"
+  ],
+  "approved_at": "2026-04-17T12:30:00-05:00"
+}

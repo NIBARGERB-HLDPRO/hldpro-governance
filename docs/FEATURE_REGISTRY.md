@@ -44,6 +44,7 @@
 | GOV-017 | ORG_GOVERNANCE_COMPENDIUM | Org-level governance rules compendium generated from governed repo rule files and graph nodes | COMPLETE | OPS_READY |
 | GOV-018 | GOVERNED_REPO_REGISTRY | Executable governed repository registry and validator | COMPLETE | REQUIRED |
 | GOV-019 | PLANNING_SCOPE_GATEKEEPER | Issue-backed governance-surface planning and execution-scope gatekeeper | COMPLETE | REQUIRED |
+| GOV-020 | READ_ONLY_GOVERNANCE_OBSERVER | Deterministic per-repo governance observer reports without packet enqueue authority | COMPLETE | OPS_READY |
 
 ---
 
@@ -121,6 +122,14 @@
 | GOV-019 | `scripts/overlord/validate_structured_agent_cycle_plan.py` classifies governance-surface paths and requires issue-specific canonical structured plans with implementation-ready handoff and accepted alternate review before those paths can change. |
 | GOV-019 | `.github/workflows/governance-check.yml` and `hooks/code-write-gate.sh` call the shared validator so CI and local write-time enforcement use the same governance-surface planning gate. |
 | GOV-019 | `scripts/overlord/assert_execution_scope.py` remains the root/branch/write-scope guard, with tests proving wrong checkout roots, dirty forbidden roots, and out-of-scope paths fail locally. |
+
+### READ_ONLY_GOVERNANCE_OBSERVER
+
+| Feature ID | Notes |
+|---|---|
+| GOV-020 | `scripts/orchestrator/read_only_observer.py` reads registry, graphify, wiki, compendium, closeout, backlog, and raw issue metadata artifacts, then writes per-repo JSON/Markdown reports under `projects/<repo_slug>/reports/`. |
+| GOV-020 | `launchd/com.hldpro.governance-observer.plist` and `docs/runbooks/always-on-governance.md` define the disabled-by-default macOS user-agent path, health checks, logs, and kill/disable SOP. |
+| GOV-020 | The observer reports source commit SHAs, artifact SHA-256 hashes, stale knowledge signals, planning-gate state, and daemon readiness while keeping `packet_enqueue_enabled: false`. |
 
 ### SOCIETY_OF_MINDS
 
