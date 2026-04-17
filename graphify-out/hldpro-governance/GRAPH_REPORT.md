@@ -1,11 +1,11 @@
 # Graph Report - hldpro-governance  (2026-04-17)
 
 ## Corpus Check
-- Large corpus: 1321 files · ~272,915 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1327 files · ~275,602 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 482 nodes · 939 edges · 29 communities detected
-- Extraction: 49% EXTRACTED · 51% INFERRED · 0% AMBIGUOUS · INFERRED: 480 edges (avg confidence: 0.5)
+- 501 nodes · 978 edges · 30 communities detected
+- Extraction: 49% EXTRACTED · 51% INFERRED · 0% AMBIGUOUS · INFERRED: 501 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -17,8 +17,8 @@
 6. `AuditWriter` - 28 edges
 7. `describe_file()` - 14 edges
 8. `graphify_results()` - 13 edges
-9. `cmd_generate()` - 11 edges
-10. `TestAuditIntegration` - 11 edges
+9. `TestGovernanceSurfacePlanGate` - 12 edges
+10. `cmd_generate()` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Submit requests to Windows-Ollama endpoint with PII detection and allowlist enfo` --uses--> `AuditWriter`  [INFERRED]
@@ -74,79 +74,83 @@ Nodes (12): backlog_issues(), build_summary(), collect_active_issue_refs(), curr
 Cohesion: 0.36
 Nodes (4): _git(), RepoFixture, TestAssertExecutionScope, _working_directory()
 
-### Community 10 - "Overlord Assert execution scope"
+### Community 10 - "Overlord Validate structured agent cycle plan"
+Cohesion: 0.3
+Nodes (2): _plan(), TestGovernanceSurfacePlanGate
+
+### Community 11 - "Overlord Assert execution scope"
 Cohesion: 0.36
 Nodes (11): _changed_paths(), check_scope(), _current_branch(), ExecutionScope, _format_path(), _git_root(), _load_scope(), main() (+3 more)
 
-### Community 11 - "Knowledge base Graph"
+### Community 12 - "Overlord Validate structured agent cycle plan"
+Cohesion: 0.38
+Nodes (10): _branch_issue_number(), _find_plan_files(), _is_governance_surface(), _load_json(), main(), _matching_plan_payloads(), _read_changed_files(), _require() (+2 more)
+
+### Community 13 - "Knowledge base Graph"
 Cohesion: 0.38
 Nodes (10): build_graph(), _community_label(), _derive_path_phrase(), _derive_path_tokens(), infer_community_labels(), main(), _normalize_phrase(), _sanitize_markdown_artifacts() (+2 more)
 
-### Community 12 - "Overlord Validate backlog gh sync"
+### Community 14 - "Overlord Validate backlog gh sync"
 Cohesion: 0.29
 Nodes (9): check_github_issue(), find_planned_table(), main(), parse_columns(), Return (header_line_index, list_of_data_lines) for the ## Planned table., Split a markdown table row into a dict keyed by header column names.     Returns, Extract a #NNN from the cell value.     Returns the integer issue number, or Non, Call GitHub API to verify issue exists and is open.     Returns (ok: bool, title (+1 more)
 
-### Community 13 - "Knowledge base Graphify targets"
+### Community 15 - "Knowledge base Graphify targets"
 Cohesion: 0.38
 Nodes (9): filtered_targets(), find_target(), load_manifest(), main(), print_json(), print_shell(), print_stage_paths(), print_tsv() (+1 more)
 
-### Community 14 - "Overlord Governed repos"
+### Community 16 - "Overlord Governed repos"
 Cohesion: 0.42
 Nodes (7): _expand_home(), governed_repos(), GovernedRepo, load_registry(), repo_names_enabled_for(), repos_enabled_for(), repos_root()
 
-### Community 15 - "Overlord Memory integrity"
+### Community 17 - "Overlord Memory integrity"
 Cohesion: 0.42
 Nodes (7): check_memory_exists(), inspect_repo(), load_memory_lines(), main(), memory_dir_for_repo(), parse_pointer_filenames(), validate_frontmatter()
 
-### Community 16 - "Knowledge base Graphify usage logging"
+### Community 18 - "Knowledge base Graphify usage logging"
 Cohesion: 0.61
 Nodes (8): check(), main(), run_command(), test_logger_backwards_compatible(), test_logger_query_trace_fields(), test_measurement_falls_back_from_stale_governance_repo_path(), test_measurement_outputs_query_traces(), test_schema_shape()
 
-### Community 17 - "Overlord Effectiveness metrics"
+### Community 19 - "Overlord Effectiveness metrics"
 Cohesion: 0.46
 Nodes (7): collect_repo_metrics(), main(), parse_iso(), pct(), render_markdown(), RepoMetrics, run()
 
-### Community 18 - "Overlord Validate governed repos"
+### Community 20 - "Overlord Validate governed repos"
 Cohesion: 0.67
 Nodes (6): check(), fail(), load_json(), main(), validate_graphify_reconciliation(), validate_registry_shape()
 
-### Community 19 - "Overlord Validate structured agent cycle plan"
-Cohesion: 0.6
-Nodes (5): _find_plan_files(), _load_json(), main(), _require(), _validate_file()
-
-### Community 20 - "Overlord Check overlord backlog github alignment"
+### Community 21 - "Overlord Check overlord backlog github alignment"
 Cohesion: 0.67
 Nodes (5): collect_section_lines(), fail(), has_issue_ref(), main(), parse_markdown_row()
 
-### Community 21 - "Windows ollama Pii"
+### Community 22 - "Windows ollama Pii"
 Cohesion: 0.4
 Nodes (5): detect_pii(), _iter_patterns(), load_pii_patterns(), Load and validate pii patterns from pii_patterns.yml., Scan text for PII patterns from YAML patterns.      Falls back to the previous b
 
-### Community 22 - "Knowledge base Log graphify usage"
+### Community 23 - "Knowledge base Log graphify usage"
 Cohesion: 0.7
 Nodes (4): append_event(), build_event(), main(), parse_args()
 
-### Community 23 - "Knowledge base Update knowledge"
+### Community 24 - "Knowledge base Update knowledge"
 Cohesion: 0.83
 Nodes (3): main(), replace_section(), summary_line()
 
-### Community 24 - "Packet Emit Yaml"
+### Community 25 - "Packet Emit Yaml"
 Cohesion: 0.67
 Nodes (3): emit_packet(), main(), Emit a packet YAML file.     Returns: path to written file
 
-### Community 25 - "Overlord Render github issue feed"
+### Community 26 - "Overlord Render github issue feed"
 Cohesion: 1.0
 Nodes (2): main(), render_issue()
 
-### Community 26 - "Knowledge base Graphify governance"
+### Community 27 - "Knowledge base Graphify governance"
 Cohesion: 1.0
 Nodes (2): check(), main()
 
-### Community 27 - "Knowledge base Push graph to neo4j"
+### Community 28 - "Knowledge base Push graph to neo4j"
 Cohesion: 1.0
 Nodes (2): build_scoped_graph(), main()
 
-### Community 28 - "Windows ollama Init"
+### Community 29 - "Windows ollama Init"
 Cohesion: 1.0
 Nodes (0): 
 
@@ -160,7 +164,7 @@ Nodes (0):
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `AuditWriter` connect `Windows ollama Submit` to `Windows ollama Audit`?**
-  _High betweenness centrality (0.039) - this node is a cross-community bridge._
+  _High betweenness centrality (0.036) - this node is a cross-community bridge._
 - **Are the 39 inferred relationships involving `WindowsOllamaSubmitter` (e.g. with `main()` and `AuditWriter`) actually correct?**
   _`WindowsOllamaSubmitter` has 39 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 39 inferred relationships involving `PiiDetectionError` (e.g. with `.submit()` and `AuditWriter`) actually correct?**
