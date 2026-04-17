@@ -56,6 +56,7 @@
 |--------|------|---------|
 | read_only_observer.py | `scripts/orchestrator/read_only_observer.py` | Generates deterministic read-only governance health reports under `projects/<repo_slug>/reports/` |
 | packet_queue.py | `scripts/orchestrator/packet_queue.py` | Validates and transitions governance packets through auditable filesystem queue states without executing payloads |
+| self_learning.py | `scripts/orchestrator/self_learning.py` | Looks up cited prior mistake patterns, enriches packets, records novel failures append-only, and builds weekly learning reports |
 
 ---
 

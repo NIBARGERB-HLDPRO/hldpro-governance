@@ -1,0 +1,142 @@
+{
+  "session_id": "session-20260417-issue-230-self-learning",
+  "issue_number": 230,
+  "objective": "Implement the self-learning and self-healing loop slice from epic #224 by making documented mistake patterns available before worker dispatch, halting repeated known failures, capturing novel failures append-only, and surfacing stale or duplicate learning entries in the weekly sweep.",
+  "tier": 1,
+  "scope_boundary": [
+    "Build deterministic pre-dispatch lookup from fail-fast logs, error patterns, closeouts, operator context, graphify attention, and the org compendium.",
+    "Allow worker packets to carry cited known-failure context with direct evidence paths.",
+    "Halt dispatch when known-failure context indicates a repeated mistake.",
+    "Add issue-backed append-only write-back for novel failure patterns without overwriting human-authored logs.",
+    "Add weekly duplicate and stale learning reporting."
+  ],
+  "out_of_scope": [
+    "Calling cloud models or local models for semantic inference.",
+    "Automatically editing human-authored FAIL_FAST_LOG.md, ERROR_PATTERNS.md, or MEMORY.md.",
+    "Executing worker packets.",
+    "Replacing graphify or compendium claims as evidence sources.",
+    "Changing product repos from this governance slice."
+  ],
+  "research_summary": "Issue #230 requires known-failure context before workers repeat mistakes. Existing governance already has FAIL_FAST_LOG.md, ERROR_PATTERNS.md, raw closeouts, raw operator context, graphify outputs, compendium generation, memory integrity checks, and the packet queue from #229. This slice adds deterministic lexical lookup and append-only write-back around those sources. Graphify and compendium text are used only as attention/routing signals; packet context cites direct source files.",
+  "research_artifacts": [
+    "Issue #224",
+    "Issue #230",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/ERROR_PATTERNS.md",
+    "raw/closeouts/",
+    "raw/operator-context/",
+    "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+    "graphify-out/hldpro-governance/GRAPH_REPORT.md",
+    "scripts/orchestrator/packet_queue.py",
+    ".github/workflows/overlord-sweep.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Learning Lookup",
+      "goal": "Index prior mistake artifacts and inject cited context into packets.",
+      "tasks": [
+        "Add `scripts/orchestrator/self_learning.py`.",
+        "Parse fail-fast logs, error patterns, closeouts, and operator context as direct evidence sources.",
+        "Use graphify and compendium tokens only for attention scoring.",
+        "Add packet enrichment with `governance.known_failure_context`."
+      ],
+      "acceptance_criteria": [
+        "Known failure lookups include cited prior mistake paths.",
+        "Worker packets can carry known-failure context before dispatch.",
+        "Graphify inference does not become the evidence source for claims."
+      ],
+      "file_paths": [
+        "scripts/orchestrator/self_learning.py",
+        "scripts/orchestrator/test_self_learning.py",
+        "docs/schemas/som-packet.schema.yml"
+      ]
+    },
+    {
+      "name": "Halt And Write-Back",
+      "goal": "Prevent repeated mistakes and capture novel failures append-only.",
+      "tasks": [
+        "Update packet dispatch validation to halt repeated known failures.",
+        "Add `record-failure` append-only write-back under `raw/operator-context/self-learning/`.",
+        "Extend governance-surface planning classification for self-learning outputs."
+      ],
+      "acceptance_criteria": [
+        "The same documented mistake twice halts dispatch or escalates planning.",
+        "Novel failures are captured without overwriting existing human-authored logs.",
+        "Self-learning output paths require issue-backed planning."
+      ],
+      "file_paths": [
+        "scripts/orchestrator/packet_queue.py",
+        "scripts/orchestrator/test_packet_queue.py",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py"
+      ]
+    },
+    {
+      "name": "Weekly Reporting",
+      "goal": "Surface stale and duplicate learning entries in the weekly sweep.",
+      "tasks": [
+        "Generate `metrics/self-learning/latest.json` and `latest.md`.",
+        "Append the self-learning markdown report to the overlord sweep issue.",
+        "Register docs, PDCAR, cross-review, closeout, graph/wiki, and compendium updates."
+      ],
+      "acceptance_criteria": [
+        "Weekly sweep reports stale or duplicate learning entries.",
+        "Registries and data dictionary document the self-learning contract.",
+        "Alternate-family review is recorded before merge."
+      ],
+      "file_paths": [
+        ".github/workflows/overlord-sweep.yml",
+        "metrics/self-learning/latest.json",
+        "metrics/self-learning/latest.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/plans/issue-230-self-learning-pdcar.md",
+        "raw/cross-review/2026-04-17-self-learning.md",
+        "raw/closeouts/2026-04-17-self-learning.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex implementation agent",
+      "role": "self-learning loop implementer",
+      "focus": "Deterministic lookup, cited evidence paths, repeated-failure halt, append-only write-back, weekly reporting, and no model/payload execution.",
+      "status": "accepted",
+      "summary": "The implementation uses local deterministic parsing and reporting. It does not invoke model inference or overwrite existing human-authored learning logs.",
+      "evidence": [
+        "scripts/orchestrator/self_learning.py",
+        "scripts/orchestrator/test_self_learning.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Alternate-family review is required for Tier 1 governance dispatch and self-healing controls. Findings are recorded in the #230 cross-review artifact and must be resolved or accepted before merge.",
+    "evidence": [
+      "raw/cross-review/2026-04-17-self-learning.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement #230 deterministic self-learning lookup, packet context injection, repeated-failure halt, append-only novel failure write-back, weekly reporting, tests, docs, review, and closeout only.",
+    "next_execution_step": "Build self-learning controls, run validators, obtain alternate-family review, close out, open PR, and merge after checks pass.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If model inference is required to classify a mistake, defer that behavior to a later issue.",
+    "If a learning write-back would overwrite human-authored logs, stop and write a new issue-backed artifact instead.",
+    "If graphify or compendium text is the only evidence for a claim, do not inject that claim into packets.",
+    "If repeated known failures are detected, halt dispatch or escalate to planning rather than proceeding."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: proceed, loop through, no HITL",
+    "Codex implementation agent"
+  ],
+  "approved_at": "2026-04-17T14:00:00-05:00"
+}

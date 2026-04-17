@@ -157,6 +157,73 @@ class TestPacketQueue(unittest.TestCase):
             self.assertIn("requires LAM role", decision.reason)
             self.assertTrue(packet_path.exists())
 
+    def test_repeated_known_failure_context_halts_dispatch(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            queue_root = Path(raw)
+            packet_path = self._write_inbound(
+                queue_root,
+                _packet(
+                    governance={
+                        "known_failure_context": [
+                            {
+                                "title": "stale graph update",
+                                "summary": "Repeated stale generated artifact",
+                                "source_path": "docs/FAIL_FAST_LOG.md",
+                                "evidence_paths": ["docs/FAIL_FAST_LOG.md"],
+                                "repeat_count": 2,
+                            }
+                        ]
+                    }
+                ),
+            )
+
+            decision = packet_queue.transition_packet(
+                packet_path,
+                "inbound",
+                "dispatched",
+                queue_root=queue_root,
+                repo_root=REPO_ROOT,
+                dry_run=False,
+            )
+
+            self.assertFalse(decision.allowed)
+            self.assertEqual(decision.status, "halted")
+            self.assertIn("known failure", decision.reason)
+
+    def test_pii_halt_reason_takes_precedence_over_known_failure_halt(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            queue_root = Path(raw)
+            packet_path = self._write_inbound(
+                queue_root,
+                _packet(
+                    governance={
+                        "pii_mode": "detected",
+                        "known_failure_context": [
+                            {
+                                "title": "repeated failure",
+                                "summary": "Repeated failure",
+                                "source_path": "docs/FAIL_FAST_LOG.md",
+                                "evidence_paths": ["docs/FAIL_FAST_LOG.md"],
+                                "repeat_count": 2,
+                            }
+                        ],
+                    }
+                ),
+            )
+
+            decision = packet_queue.transition_packet(
+                packet_path,
+                "inbound",
+                "dispatched",
+                queue_root=queue_root,
+                repo_root=REPO_ROOT,
+                dry_run=False,
+            )
+
+            self.assertFalse(decision.allowed)
+            self.assertEqual(decision.status, "halted")
+            self.assertIn("PII mode detected requires LAM role", decision.reason)
+
     def test_dispatch_requires_approved_issue_backed_plan(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             queue_root = Path(raw)

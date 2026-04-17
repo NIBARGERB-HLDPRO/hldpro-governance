@@ -546,6 +546,13 @@ jobs:
         run: python3 scripts/overlord/memory_integrity.py
         continue-on-error: false  # memory drift should fail the sweep
 
+      - name: Build self-learning knowledge report
+        run: |
+          python3 scripts/orchestrator/self_learning.py report \
+            --output-json metrics/self-learning/latest.json \
+            --output-md metrics/self-learning/latest.md
+          cat metrics/self-learning/latest.md >> /tmp/sweep-report.md
+
       - name: Build effectiveness baseline snapshot
         run: |
           DATE=$(date -u +%Y-%m-%d)
@@ -585,7 +592,7 @@ jobs:
           git config user.name "overlord-bot"
           git config user.email "overlord@hldpro.com"
           python3 scripts/knowledge_base/graphify_targets.py stage-paths --scheduled | xargs git add 2>/dev/null || true
-          git add wiki/index.md metrics/effectiveness-baseline docs/ORG_GOVERNANCE_COMPENDIUM.md 2>/dev/null || true
+          git add wiki/index.md metrics/effectiveness-baseline metrics/self-learning docs/ORG_GOVERNANCE_COMPENDIUM.md 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "status=no_changes" >> "$GITHUB_OUTPUT"
             echo "note=No graph or metrics changes were generated." >> "$GITHUB_OUTPUT"

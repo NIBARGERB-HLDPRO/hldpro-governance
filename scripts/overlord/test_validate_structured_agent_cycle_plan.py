@@ -148,6 +148,20 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
         self.assertIn("raw/packets/queue/inbound/example.yml", result.stdout)
         self.assertIn("raw/model-fallbacks/2026-04-17.md", result.stdout)
 
+    def test_self_learning_paths_are_governance_surface(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            result = self._run(
+                Path(raw),
+                "main",
+                [
+                    "raw/operator-context/self-learning/2026-04-17-issue-230-example.md",
+                    "metrics/self-learning/latest.json",
+                ],
+            )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("raw/operator-context/self-learning/2026-04-17-issue-230-example.md", result.stdout)
+        self.assertIn("metrics/self-learning/latest.json", result.stdout)
+
     def test_riskfix_branch_without_issue_number_gets_specific_issue_hint(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             result = self._run(Path(raw), "riskfix/scope-gate", ["STANDARDS.md"])

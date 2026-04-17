@@ -56,6 +56,7 @@ Key fields:
 | `fallback_log_ref` | string or null | yes | Queue-level fallback log reference, or null when no fallback occurred |
 | `pii_mode` | enum | yes | `none`, `tagged`, `detected`, or `lam_only` |
 | `dispatch_authorized` | boolean | yes | True only after issue-backed plan approval and scope review |
+| `known_failure_context` | array | no | Prior mistake patterns injected by `scripts/orchestrator/self_learning.py` |
 
 The schema keeps `governance` optional so existing stage-4 packets remain valid. `scripts/orchestrator/packet_queue.py` requires and enforces the full governance object before dispatch.
 
@@ -97,8 +98,31 @@ Contract:
 - Packet schema validation runs before any state move.
 - `inbound -> dispatched` additionally requires an approved issue-backed structured plan with implementation-ready handoff.
 - PII modes `tagged`, `detected`, and `lam_only` require `worker-lam` or `critic-lam` role before dispatch.
+- `known_failure_context` entries with `repeat_count >= 2` halt dispatch for planning-gate escalation.
 - Dry-run transitions write audit events and never execute packet payloads.
 - Replay reads the audit log and reconstructs latest accepted packet states.
+
+---
+
+### Self-Learning Knowledge Report
+**Generator:** `scripts/orchestrator/self_learning.py`
+**Default storage:** `metrics/self-learning/latest.json` and `metrics/self-learning/latest.md`
+**Weekly workflow:** `.github/workflows/overlord-sweep.yml`
+
+Indexed source paths:
+- `docs/FAIL_FAST_LOG.md`
+- `docs/ERROR_PATTERNS.md`
+- `raw/closeouts/*.md`
+- `raw/operator-context/**/*.md`
+- `docs/ORG_GOVERNANCE_COMPENDIUM.md`
+- `graphify-out/hldpro-governance/GRAPH_REPORT.md`
+
+Contract:
+- Graphify and compendium tokens are used for routing attention only.
+- Packet-enriched claims cite direct source files through `evidence_paths`.
+- Novel failure write-back creates new issue-backed files under `raw/operator-context/self-learning/` and does not edit existing human-authored logs.
+- Weekly report JSON includes `generated_at`, `entry_count`, `duplicate_groups`, `stale_entries`, `sources`, and `graphify_attention_only`.
+- Weekly markdown is appended to the overlord sweep issue so stale or duplicate learning entries are visible during the sweep.
 
 ---
 

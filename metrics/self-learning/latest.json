@@ -1,0 +1,12 @@
+{
+  "duplicate_groups": {},
+  "entry_count": 62,
+  "generated_at": "2026-04-17T17:06:01Z",
+  "graphify_attention_only": true,
+  "sources": [
+    "closeout",
+    "fail_fast",
+    "operator_context"
+  ],
+  "stale_entries": []
+}
