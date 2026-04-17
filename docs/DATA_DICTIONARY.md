@@ -1,6 +1,6 @@
 # Data Dictionary
 
-**Last Updated:** 2026-04-16
+**Last Updated:** 2026-04-17
 **Scope:** hldpro-governance — meta-governance repo
 **Source of truth:** This file documents the canonical schemas, file formats, and data contracts owned or enforced by hldpro-governance. Schema JSON/YAML source files live in `docs/schemas/`.
 
@@ -72,3 +72,17 @@ Contract: Every Planned row must reference an open GitHub issue (`#NNN`). GH is 
 **Schema:** `docs/schemas/fail-fast-log.schema.md`, `docs/schemas/error-patterns.schema.md`
 
 Standard columns: `Date`, `Repo`, `Error`, `Root Cause`, `Fix`, `Prevention`
+
+---
+
+### Org Governance Compendium
+**File:** `docs/ORG_GOVERNANCE_COMPENDIUM.md`
+**Generator:** `scripts/overlord/build_org_governance_compendium.py`
+**Refresh path:** weekly `overlord-sweep.yml`
+
+Contract:
+- Generated from canonical governed repos only.
+- Excludes `_worktrees/` and issue-specific local clones.
+- Indexes governance/rules files by repo with category, description, logic, and detected interactions.
+- Includes graphify node/community summaries from `graphify-out/<repo>/`.
+- `--check` mode fails when the generated markdown is stale.

@@ -1,0 +1,215 @@
+{
+  "session_id": "session-20260417-issue-223-org-governance-compendium-repair",
+  "issue_number": 223,
+  "objective": "Repair the governance sequencing break for the org governance compendium work, create the canonical issue-backed plan before implementation resumes, decide under review whether to adopt or rework the existing dirty draft, and produce a deterministic generated compendium only from an isolated worktree with validation and closeout evidence.",
+  "tier": 1,
+  "scope_boundary": [
+    "Use issue #223 as the governing issue for org governance compendium repair and the corrective-action record for the implementation-first sequencing break.",
+    "Treat the dirty shared-main compendium diff as unapproved draft source material until this plan is reviewed.",
+    "Create the canonical structured JSON plan, PDCAR companion, and process finding before adopting or implementing compendium changes.",
+    "Run alternate-family review before marking implementation ready.",
+    "If implementation proceeds, use only the isolated issue worktree and commit no files from the dirty shared main checkout.",
+    "Coordinate with issue #224 as Phase 0 dependency and route the broader governance-surface planning-gate hardening into #226 unless completed here as a narrow corrective slice."
+  ],
+  "out_of_scope": [
+    "Mutating the shared main checkout at /Users/bennibarger/Developer/HLDPRO/hldpro-governance.",
+    "Treating docs/plans/org-governance-compendium-pdcar.md as canonical planning evidence.",
+    "Committing the dirty draft before alternate-family review and explicit adoption under this plan.",
+    "Implementing the full always-on orchestrator, governed-repo registry, launchd observer, packet queue, or model runtime from issue #223.",
+    "Replacing GitHub Issues as the canonical execution tracker.",
+    "Relaxing Society of Minds no-self-approval, tier, cross-family, fallback, or PII constraints."
+  ],
+  "research_summary": "Issue #223 documents that compendium implementation began before the required governance planning package existed. The dirty shared main checkout contains a draft generator, generated compendium, Markdown-only PDCAR, sweep integration, and registry documentation updates. Issue #224 now treats #223 as the separate Phase 0 dependency for the always-on orchestrator. The correct repair is to preserve the process finding, create canonical structured planning artifacts, add #223 to the backlog mirror, obtain alternate-family review, and only then decide whether the existing draft satisfies the approved plan or needs rework. The broader mechanical control gap is that structured-plan enforcement is branch-name-sensitive; the fix belongs either as a narrow corrective slice here or, preferably, in #226 planning/scope gatekeeper.",
+  "research_artifacts": [
+    "Issue #223",
+    "Issue #224",
+    "Issue #226",
+    "CLAUDE.md",
+    "README.md",
+    "STANDARDS.md",
+    "OVERLORD_BACKLOG.md",
+    "docs/schemas/structured-agent-cycle-plan.schema.json",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "docs/plans/issue-224-structured-agent-cycle-plan.json",
+    "docs/plans/issue-224-always-on-governance-orchestrator-pdcar.md",
+    "raw/cross-review/2026-04-17-always-on-governance-orchestrator-plan.md",
+    "Shared-main draft: scripts/overlord/build_org_governance_compendium.py",
+    "Shared-main draft: docs/ORG_GOVERNANCE_COMPENDIUM.md",
+    "Shared-main draft: docs/plans/org-governance-compendium-pdcar.md",
+    "Shared-main draft: docs/plans/2026-04-17-governance-path-repair-findings.md",
+    "Shared-main draft: .github/workflows/overlord-sweep.yml",
+    "Shared-main draft: agents/overlord-sweep.md",
+    "Shared-main draft: docs/FEATURE_REGISTRY.md, docs/SERVICE_REGISTRY.md, docs/DATA_DICTIONARY.md"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 - Planning repair package",
+      "goal": "Create the issue-backed canonical planning package before any compendium implementation resumes.",
+      "tasks": [
+        "Add the governance path repair findings document.",
+        "Add the canonical structured JSON plan for issue #223.",
+        "Add the PDCAR companion for issue #223.",
+        "Add issue #223 to OVERLORD_BACKLOG.md as active Phase 0 repair work.",
+        "Validate the structured plan and cross-check it against issue #223 acceptance criteria."
+      ],
+      "acceptance_criteria": [
+        "docs/plans/issue-223-structured-agent-cycle-plan.json exists and passes the structured plan validator.",
+        "docs/plans/issue-223-org-governance-compendium-pdcar.md exists and does not contradict the JSON plan.",
+        "docs/plans/2026-04-17-governance-path-repair-findings.md records the sequencing break and repair path.",
+        "OVERLORD_BACKLOG.md references open issue #223.",
+        "No compendium implementation files are adopted in this sprint."
+      ],
+      "file_paths": [
+        "docs/plans/2026-04-17-governance-path-repair-findings.md",
+        "docs/plans/issue-223-structured-agent-cycle-plan.json",
+        "docs/plans/issue-223-org-governance-compendium-pdcar.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "name": "Sprint 2 - Alternate-family review and adoption decision",
+      "goal": "Get independent architecture/standards review and decide whether the dirty draft can be adopted, needs rework, or should be discarded.",
+      "tasks": [
+        "Run Claude alternate-family review against the canonical plan, PDCAR, repair finding, issue #223, and dirty draft inventory.",
+        "Record required changes in raw/cross-review/ if the plan is approved or approved with changes.",
+        "Apply required planning changes before implementation resumes.",
+        "Classify the existing draft as adopt, rework, or discard, with rationale.",
+        "Keep any implementation handoff blocked if review rejects the plan."
+      ],
+      "acceptance_criteria": [
+        "raw/cross-review/ contains a schema-valid artifact for issue #223 if review approves or approves with changes.",
+        "The structured plan alternate_model_review field records the actual review result.",
+        "The adoption decision names the exact dirty draft files and whether each is adopted, reworked, or discarded.",
+        "Implementation handoff remains blocked if the review verdict is rejected or unavailable.",
+        "The Sprint 2 to Sprint 3 implementation boundary has explicit operator approval recorded before dirty draft adoption begins."
+      ],
+      "file_paths": [
+        "raw/cross-review/2026-04-17-org-governance-compendium-repair-plan.md",
+        "docs/plans/issue-223-structured-agent-cycle-plan.json",
+        "docs/plans/issue-223-org-governance-compendium-pdcar.md"
+      ]
+    },
+    {
+      "name": "Sprint 3 - Compendium generator and generated artifact",
+      "goal": "Adopt or rework the compendium generator and generated markdown only after reviewed planning approval.",
+      "tasks": [
+        "Review the dirty draft generator as source material, not as approved code.",
+        "Implement or rework scripts/overlord/build_org_governance_compendium.py in the isolated issue worktree.",
+        "Generate docs/ORG_GOVERNANCE_COMPENDIUM.md from canonical governed repos.",
+        "Ensure worktree clones and issue-specific local clones are excluded.",
+        "Run compile and check-mode validation."
+      ],
+      "acceptance_criteria": [
+        "scripts/overlord/build_org_governance_compendium.py compiles under python3.",
+        "docs/ORG_GOVERNANCE_COMPENDIUM.md is generated deterministically.",
+        "python3 scripts/overlord/build_org_governance_compendium.py --check passes.",
+        "The compendium indexes all governed repos named in the repo registry and issue #223.",
+        "Generated output clearly states it is generated and should be refreshed by the generator."
+      ],
+      "file_paths": [
+        "scripts/overlord/build_org_governance_compendium.py",
+        "docs/ORG_GOVERNANCE_COMPENDIUM.md"
+      ]
+    },
+    {
+      "name": "Sprint 4 - Sweep and registry integration",
+      "goal": "Wire the compendium into weekly governance knowledge refresh only if the generator is stable in local and CI layouts.",
+      "tasks": [
+        "Update overlord-sweep workflow only after the generator supports CI checkout paths.",
+        "Update the sweep agent instructions to refresh the compendium.",
+        "Update feature, service, and data dictionary entries for the implemented compendium behavior.",
+        "Route any registry dependency that requires #225 into issue #225 instead of hardcoding around it.",
+        "Run relevant validation and prepare Stage 6 closeout."
+      ],
+      "acceptance_criteria": [
+        "Weekly sweep integration works with the workflow's repos/ checkout layout.",
+        "agents/overlord-sweep.md describes the compendium refresh without contradicting read/write scope.",
+        "docs/FEATURE_REGISTRY.md, docs/SERVICE_REGISTRY.md, and docs/DATA_DICTIONARY.md describe only implemented behavior.",
+        "Any remaining duplicate governed-repo discovery risk is tracked in #225 or #226 before #223 closes.",
+        "Stage 6 closeout exists under raw/closeouts/ before #223 is closed."
+      ],
+      "file_paths": [
+        ".github/workflows/overlord-sweep.yml",
+        "agents/overlord-sweep.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/DATA_DICTIONARY.md",
+        "raw/closeouts/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex governance-path reviewer",
+      "role": "Planning compliance reviewer",
+      "focus": "Identify the sequencing break and required repair artifacts before compendium implementation resumes.",
+      "status": "accepted",
+      "summary": "The compendium work touched cross-repo governance docs, weekly sweep behavior, generated org indexes, and registry surfaces, so issue-backed planning and alternate-family review are required before adoption.",
+      "evidence": [
+        "Issue #223",
+        "docs/plans/2026-04-17-governance-path-repair-findings.md",
+        "STANDARDS.md",
+        "README.md"
+      ]
+    },
+    {
+      "reviewer": "Codex worktree hygiene reviewer",
+      "role": "Execution isolation reviewer",
+      "focus": "Prevent contamination from the dirty shared main checkout while still preserving useful draft source material.",
+      "status": "accepted",
+      "summary": "The dirty draft may be read as source material, but implementation must occur in an isolated issue worktree from origin/main. No files should be committed directly from the shared main checkout.",
+      "evidence": [
+        "Shared main git status on 2026-04-17",
+        "Issue #223 dirty draft file inventory",
+        "Branch issue-223-compendium-repair-20260417 from origin/main"
+      ]
+    },
+    {
+      "reviewer": "Codex scope reviewer",
+      "role": "Scope decomposition reviewer",
+      "focus": "Separate planning repair, review/adoption decision, compendium implementation, sweep integration, and validator hardening.",
+      "status": "accepted_with_followup",
+      "summary": "The plan separates the corrective planning package from implementation and routes the broader planning-gate hardening into #226 unless a narrow #223 fix is explicitly reviewed.",
+      "evidence": [
+        "Issue #224 Phase 0 dependency notes",
+        "Issue #226 planning/scope gatekeeper scope",
+        "docs/plans/issue-224-structured-agent-cycle-plan.json"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Claude Opus 4.6 returned APPROVED_WITH_CHANGES. Blocking changes were to make approval metadata consistent and add an explicit Sprint 2 to Sprint 3 operator approval boundary. The current operator instruction on 2026-04-17 to proceed, loop through, and use no further HITL is recorded as approval for issue #223 implementation in this isolated worktree only. Recommended changes: keep the broader planning-gate bypass fix in #226, make closeout evidence explicit, and preserve model identity traceability within schema constraints.",
+    "evidence": [
+      "STANDARDS.md Society of Minds cross-review requirements",
+      "Issue #223 requires specialist and alternate-family review before implementation resumes",
+      "raw/cross-review/2026-04-17-org-governance-compendium-repair-plan.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "This branch may add the #223 planning repair package, record review artifacts, and proceed to adopt or rework the dirty compendium draft in this isolated worktree only. The shared main checkout remains read-only source material.",
+    "next_execution_step": "Adopt or rework the dirty draft files in the isolated issue worktree, then run generator, compile, check-mode, plan, cross-review, and relevant sweep validation before PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Do not write to or clean up the dirty shared main checkout.",
+    "If Claude review rejects the plan, do not implement compendium changes; update the plan or close the draft as rejected.",
+    "If the generator cannot support both local and CI checkout layouts, do not wire it into weekly sweep.",
+    "If the validator bypass fix grows beyond a narrow #223 corrective control, move it to #226 before closing #223.",
+    "If any file outside the sprint file_paths list needs edits, update the plan and review disposition before continuing.",
+    "If generated compendium output cannot be reproduced by --check, do not mark #223 complete.",
+    "Do not close #223 without Stage 6 closeout evidence.",
+    "Operator approval for the Sprint 2 to Sprint 3 boundary is recorded by the 2026-04-17 instruction to proceed, loop through, and use no further HITL for this repair sequence; any future expansion outside #223 scope still requires plan update."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Claude Opus 4.6 APPROVED_WITH_CHANGES",
+    "Operator instruction 2026-04-17: proceed, loop through, no HITL"
+  ],
+  "approved_at": "2026-04-17T10:43:00-05:00"
+}

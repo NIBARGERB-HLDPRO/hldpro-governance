@@ -41,6 +41,7 @@
 | GOV-014 | STRUCTURED_PLAN_SCHEMA | Governance-owned structured plan schema and validator for issue execution | COMPLETE | REQUIRED |
 | GOV-015 | GRAPHIFY_MEASUREMENT | Graphify retrieval measurement and usage-event telemetry | IN_PROGRESS | OPS_READY |
 | GOV-016 | SOM_ENFORCEMENT | Society of Minds routing, review, packet, and closeout enforcement | IN_PROGRESS | REQUIRED |
+| GOV-017 | ORG_GOVERNANCE_COMPENDIUM | Org-level governance rules compendium generated from governed repo rule files and graph nodes | COMPLETE | OPS_READY |
 
 ---
 
@@ -97,6 +98,12 @@
 | GOV-015 | The graphify measurement outputs now surface per-scenario query traces (`prompt`, `query_terms`, graphify candidates, baseline candidates) so 5-10 run comparisons can be reviewed at retrieval-input level instead of only through aggregate hit-rate summaries. |
 | GOV-015 | `measure_graphify_usage.py` now emits append-only usage events by default for each scenario and retrieval strategy, so current-work A/B runs automatically leave auditable query-trace telemetry instead of relying on separate manual logger calls. |
 | GOV-015 | The fail-fast scenario corpus no longer depends on stale absolute governance worktree paths. `measure_graphify_usage.py` now resolves governance scenarios from the current checkout by default and falls back safely when an explicit `repo_path` no longer exists, so refreshed A/B evidence reflects current runs instead of abandoned-worktree noise. |
+
+### ORG_GOVERNANCE_COMPENDIUM
+
+| Feature ID | Notes |
+|---|---|
+| GOV-017 | `scripts/overlord/build_org_governance_compendium.py` generates `docs/ORG_GOVERNANCE_COMPENDIUM.md` from canonical governed repo rule files, graphify node summaries, workflows, hooks, agents, schemas, and PDCA/R docs. `overlord-sweep.yml` refreshes and stages it with weekly graph and metrics updates. |
 
 ### SOCIETY_OF_MINDS
 
