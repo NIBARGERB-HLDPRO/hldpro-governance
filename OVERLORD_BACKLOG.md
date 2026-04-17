@@ -20,6 +20,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Org governance compendium and planning-path repair | [#223](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/223) | HIGH | TBD | Phase 0 dependency for #224. Repair sequencing break before adopting dirty compendium draft; canonical plan at `docs/plans/issue-223-structured-agent-cycle-plan.json`. |
 | Org-wide always-on governance orchestrator epic | [#224](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/224) | HIGH | TBD | Planning-only package in progress at `docs/plans/issue-224-structured-agent-cycle-plan.json` and `docs/plans/issue-224-always-on-governance-orchestrator-pdcar.md`; separate Phase 0 dependency is compendium/path repair issue [#223](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/223). |
 | SoM enforcement drift closure epic | [#214](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/214) | HIGH | TBD | Reviewed PDCAR plan created at `docs/plans/2026-04-17-som-enforcement-drift-pdcar.md`; Claude review artifacts at `raw/cross-review/2026-04-17-som-enforcement-drift-plan.md` and `raw/cross-review/2026-04-17-som-execution-scope-slice7-plan.md`; child slices [#215](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/215)-[#221](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/221) are the active enforcement-drift closure work. |
 

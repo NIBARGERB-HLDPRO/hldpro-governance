@@ -1,6 +1,6 @@
 # Service Registry
 
-**Last Updated:** 2026-04-16
+**Last Updated:** 2026-04-17
 **Scope:** hldpro-governance — meta-governance repo
 **Source of truth:** This file inventories the scripts, agents, CI workflows, and hooks that constitute the active "services" enforced or provided by hldpro-governance across the governed org.
 
@@ -41,6 +41,7 @@
 | validate_structured_agent_cycle_plan.py | `scripts/overlord/validate_structured_agent_cycle_plan.py` | Validates structured plan JSON against org schema |
 | codex_ingestion.py | `scripts/overlord/codex_ingestion.py` | Codex review ingestion: generate, qualify, promote |
 | build_effectiveness_metrics.py | `scripts/overlord/build_effectiveness_metrics.py` | Weekly effectiveness baseline snapshots |
+| build_org_governance_compendium.py | `scripts/overlord/build_org_governance_compendium.py` | Generates the org-level governance rules compendium from canonical governed repos |
 | worktree_shared_dependencies.sh | `scripts/overlord/worktree_shared_dependencies.sh` | Approved dependency symlink helper for worktrees |
 | audit_remote.sh | `scripts/overlord/audit_remote.sh` | Reads a file from any repo's remote HEAD via GH API |
 

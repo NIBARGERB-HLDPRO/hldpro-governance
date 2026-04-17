@@ -310,6 +310,7 @@ For each significant finding or pattern identified:
 - New architectural decision → create `wiki/decisions/YYYY-MM-DD-{slug}.md`
 - Recurring failure pattern → create or update `wiki/patterns/{slug}.md`
 - Update `wiki/index.md` with latest status and links
+- Refresh the org governance compendium with `python3 scripts/overlord/build_org_governance_compendium.py --repos-root ~/Developer/HLDPRO --governance-root . --output docs/ORG_GOVERNANCE_COMPENDIUM.md` from the governance checkout so changed repo rules are indexed with the sweep
 
 ### 3. File back
 Commit all wiki/ changes to hldpro-governance with message:
