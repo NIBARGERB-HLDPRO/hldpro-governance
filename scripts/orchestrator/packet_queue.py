@@ -121,6 +121,29 @@ def _validate_fallback_ref(repo_root: Path, fallback_ref: str | None) -> None:
         raise ValueError(f"fallback log not found: {fallback_ref}")
 
 
+def _validate_execution_scope_ref(repo_root: Path, execution_scope_ref: str | None) -> None:
+    if execution_scope_ref is None:
+        return
+    scope_path = _repo_relative_path(repo_root, execution_scope_ref)
+    scope_dir = repo_root / "raw" / "execution-scopes"
+    if scope_path.parent != scope_dir:
+        raise ValueError("execution_scope_ref must resolve under raw/execution-scopes/")
+    if scope_path.suffix != ".json":
+        raise ValueError("execution_scope_ref must be a JSON execution-scope artifact")
+    if not scope_path.is_file():
+        raise ValueError(f"execution scope not found: {execution_scope_ref}")
+    try:
+        payload = json.loads(scope_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        raise ValueError(f"execution scope is not valid JSON: {execution_scope_ref}: {exc}") from exc
+    if not isinstance(payload, dict):
+        raise ValueError(f"execution scope must be a JSON object: {execution_scope_ref}")
+    required = {"expected_execution_root", "expected_branch", "allowed_write_paths", "forbidden_roots"}
+    missing = sorted(required - set(payload))
+    if missing:
+        raise ValueError(f"execution scope missing required field(s): {', '.join(missing)}")
+
+
 def _validate_local_refs(repo_root: Path, field_name: str, refs: list[str]) -> None:
     for ref in refs:
         if ref.startswith(("http://", "https://")):
@@ -160,8 +183,7 @@ def validate_for_dispatch(
 
     try:
         _validate_fallback_ref(repo_root, fallback_ref)
-        if execution_scope_ref is not None:
-            _validate_local_refs(repo_root, "execution_scope_ref", [str(execution_scope_ref)])
+        _validate_execution_scope_ref(repo_root, execution_scope_ref)
         _validate_local_refs(repo_root, "review_artifacts", [str(ref) for ref in review_artifacts])
         plan = _load_plan(repo_root, str(plan_ref))
     except ValueError as exc:

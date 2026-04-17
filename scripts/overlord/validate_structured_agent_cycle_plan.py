@@ -13,10 +13,12 @@ GOVERNANCE_SURFACE_PREFIXES = (
     ".github/workflows/",
     "agents/",
     "docs/schemas/",
+    "docs/plans/",
     "hooks/",
     "launchd/",
     "raw/closeouts/",
     "raw/cross-review/",
+    "raw/execution-scopes/",
     "raw/gate/",
     "raw/model-fallbacks/",
     "raw/operator-context/",
@@ -89,6 +91,47 @@ def _matching_plan_payloads(files: list[Path], root: Path, issue_number: int | N
         if isinstance(payload, dict) and payload.get("issue_number") == issue_number:
             matches.append((file_path.relative_to(root), payload))
     return matches
+
+
+def _matching_execution_scopes(root: Path, issue_number: int | None, mode: str) -> list[Path]:
+    if issue_number is None:
+        return []
+    scope_root = root / "raw" / "execution-scopes"
+    if not scope_root.is_dir():
+        return []
+    return sorted(scope_root.glob(f"*issue-{issue_number}*{mode}*.json"))
+
+
+def _validate_planner_boundary_scope_presence(
+    root: Path,
+    branch_name: str,
+    changed_files: list[str],
+    failures: list[str],
+) -> None:
+    boundary_changes = [path for path in changed_files if _is_governance_surface(path)]
+    if not boundary_changes:
+        return
+
+    issue_number = _branch_issue_number(branch_name)
+    if issue_number is None:
+        failures.append(
+            "planner-boundary changes require a branch name containing `issue-<number>` so execution-scope evidence can be resolved; changed paths: "
+            + ", ".join(boundary_changes)
+        )
+        return
+
+    implementation_scopes = _matching_execution_scopes(root, issue_number, "implementation")
+    planning_scopes = _matching_execution_scopes(root, issue_number, "planning")
+    if len(implementation_scopes) > 1:
+        failures.append(f"multiple implementation execution scopes match issue #{issue_number}")
+    if len(planning_scopes) > 1:
+        failures.append(f"multiple planning execution scopes match issue #{issue_number}")
+    if not implementation_scopes and not planning_scopes:
+        failures.append(
+            f"planner-boundary changes require an issue-specific execution scope for issue #{issue_number}; "
+            f"expected raw/execution-scopes/*issue-{issue_number}*implementation*.json or *issue-{issue_number}*planning*.json; "
+            "changed paths: " + ", ".join(boundary_changes)
+        )
 
 
 def _validate_implementation_ready_plan(path: Path, payload: object, failures: list[str]) -> None:
@@ -201,6 +244,7 @@ def main() -> int:
     parser.add_argument("--branch-name", default="", help="Optional branch name for enforcement decisions.")
     parser.add_argument("--changed-files-file", type=Path, help="Optional newline-delimited changed file list for governance-surface enforcement.")
     parser.add_argument("--enforce-governance-surface", action="store_true", help="Require an approved issue-specific plan when governance-surface files changed.")
+    parser.add_argument("--enforce-planner-boundary-scope", action="store_true", help="Require issue-specific execution-scope evidence when planner-boundary files changed.")
     args = parser.parse_args()
 
     root = Path(args.root).resolve()
@@ -231,6 +275,9 @@ def main() -> int:
             )
         for rel_path, payload in matches:
             _validate_implementation_ready_plan(rel_path, payload, failures)
+
+    if args.enforce_planner_boundary_scope:
+        _validate_planner_boundary_scope_presence(root, args.branch_name, changed_files, failures)
 
     for file_path in files:
         payload = _load_json(file_path)

@@ -50,7 +50,7 @@ Key fields:
 |-------|------|------------------------------------|-------------|
 | `issue_number` | integer | yes | GitHub issue authorizing dispatch |
 | `structured_plan_ref` | string | yes | Repo-relative structured plan path |
-| `execution_scope_ref` | string or null | yes | Scope evidence path, or null when scope is captured in the plan |
+| `execution_scope_ref` | string or null | yes | Scope evidence path under `raw/execution-scopes/*.json`, or null when scope is captured in the plan |
 | `validation_commands` | array | yes | Commands required before packet closeout |
 | `review_artifacts` | array | yes | Review or gate artifacts required by the packet |
 | `fallback_log_ref` | string or null | yes | Queue-level fallback log reference, or null when no fallback occurred |
@@ -98,6 +98,7 @@ Audit event fields:
 Contract:
 - Packet schema validation runs before any state move.
 - `inbound -> dispatched` additionally requires an approved issue-backed structured plan with implementation-ready handoff.
+- When `governance.execution_scope_ref` is present, it must resolve to a JSON execution-scope artifact under `raw/execution-scopes/`; arbitrary existing files such as PDCAR Markdown do not satisfy dispatch scope evidence.
 - Packets with `dry_run_authorized: true` and `dispatch_authorized: false` may pass dry-run dispatch validation only; live dispatch still refuses.
 - PII modes `tagged`, `detected`, and `lam_only` require `worker-lam` or `critic-lam` role before dispatch.
 - `known_failure_context` entries with `repeat_count >= 2` halt dispatch for planning-gate escalation.
@@ -243,6 +244,7 @@ Contract:
 - The repo must contain a matching canonical `*structured-agent-cycle-plan.json` whose `issue_number` equals that branch issue number.
 - The matching plan must be approved and have `execution_handoff.execution_mode` set to `implementation_ready` or `implementation_complete`.
 - If `alternate_model_review.required` is true, status must be `accepted` or `accepted_with_followup`.
+- Local E2E simulation can require issue-specific execution-scope evidence with `--enforce-planner-boundary-scope`; planner-boundary changes then require exactly one issue-matching implementation scope or planning scope under `raw/execution-scopes/`.
 - Local execution scope validation declares expected checkout root, branch, allowed write paths, and forbidden dirty roots.
 - Tier 1 planner-boundary mode uses execution scope `execution_mode: planning_only`; `allowed_write_paths` is the planning artifact allowlist.
 - Non-planning diffs require `handoff_evidence.status: accepted` and pinned planner/implementer metadata before scope assertion passes.

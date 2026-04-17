@@ -4,6 +4,7 @@ from __future__ import annotations
 import sys
 import tempfile
 import unittest
+import json
 from pathlib import Path
 
 import yaml
@@ -36,7 +37,7 @@ def _packet(**overrides):
         "governance": {
             "issue_number": 229,
             "structured_plan_ref": "docs/plans/issue-229-structured-agent-cycle-plan.json",
-            "execution_scope_ref": "docs/plans/issue-229-packet-queue-pdcar.md",
+            "execution_scope_ref": None,
             "validation_commands": [
                 "python3 scripts/orchestrator/test_packet_queue.py",
             ],
@@ -63,6 +64,24 @@ class TestPacketQueue(unittest.TestCase):
         path = inbound / name
         path.write_text(yaml.safe_dump(payload, sort_keys=False), encoding="utf-8")
         return path
+
+    def _write_execution_scope(self, repo_root: Path, name: str = "2026-04-17-issue-229-test-implementation.json") -> str:
+        rel_path = Path("raw/execution-scopes") / name
+        path = repo_root / rel_path
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            json.dumps(
+                {
+                    "expected_execution_root": ".",
+                    "expected_branch": "issue-229-packet-queue-20260417",
+                    "execution_mode": "planning_only",
+                    "allowed_write_paths": ["raw/packets/"],
+                    "forbidden_roots": [],
+                }
+            ),
+            encoding="utf-8",
+        )
+        return rel_path.as_posix()
 
     def test_valid_packet_dry_run_replays_through_queue_without_moving(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -265,6 +284,58 @@ class TestPacketQueue(unittest.TestCase):
             self.assertFalse(decision.allowed)
             self.assertEqual(decision.status, "refused")
             self.assertIn("review_artifacts reference not found", decision.reason)
+
+    def test_dispatch_refuses_markdown_execution_scope_ref(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            queue_root = Path(raw)
+            packet_path = self._write_inbound(
+                queue_root,
+                _packet(governance={"execution_scope_ref": "docs/plans/issue-229-packet-queue-pdcar.md"}),
+            )
+
+            decision = packet_queue.transition_packet(
+                packet_path,
+                "inbound",
+                "dispatched",
+                queue_root=queue_root,
+                repo_root=REPO_ROOT,
+                dry_run=False,
+            )
+
+            self.assertFalse(decision.allowed)
+            self.assertEqual(decision.status, "refused")
+            self.assertIn("execution_scope_ref must resolve under raw/execution-scopes", decision.reason)
+
+    def test_dispatch_accepts_json_execution_scope_ref(self) -> None:
+        with tempfile.TemporaryDirectory() as raw, tempfile.TemporaryDirectory() as repo:
+            queue_root = Path(raw)
+            repo_root = Path(repo)
+            (repo_root / "docs/plans").mkdir(parents=True)
+            (repo_root / "raw/cross-review").mkdir(parents=True)
+            (repo_root / "docs/plans/issue-229-structured-agent-cycle-plan.json").write_text(
+                (REPO_ROOT / "docs/plans/issue-229-structured-agent-cycle-plan.json").read_text(encoding="utf-8"),
+                encoding="utf-8",
+            )
+            (repo_root / "raw/cross-review/2026-04-17-packet-queue.md").write_text(
+                "review artifact\n",
+                encoding="utf-8",
+            )
+            scope_ref = self._write_execution_scope(repo_root)
+            packet_path = self._write_inbound(
+                queue_root,
+                _packet(governance={"execution_scope_ref": scope_ref}),
+            )
+
+            decision = packet_queue.transition_packet(
+                packet_path,
+                "inbound",
+                "dispatched",
+                queue_root=queue_root,
+                repo_root=repo_root,
+                dry_run=False,
+            )
+
+            self.assertTrue(decision.allowed, decision.reason)
 
     def test_replay_counts_refused_events_deterministically(self) -> None:
         with tempfile.TemporaryDirectory() as raw:

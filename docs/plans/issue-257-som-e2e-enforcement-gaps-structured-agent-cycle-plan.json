@@ -1,0 +1,115 @@
+{
+  "session_id": "session-20260417-issue-257-som-e2e-enforcement-gaps",
+  "issue_number": 257,
+  "objective": "Plan the closure of Society of Minds E2E enforcement gaps found between packet dry-run success, execution-scope evidence, planner-boundary CI, dirty checkout handling, and cross-repo MCP natural-language handoff coverage.",
+  "tier": 1,
+  "scope_boundary": [
+    "Create an issue-backed planning artifact for issue #257.",
+    "Define the implementation path for enforcing packet execution-scope evidence.",
+    "Define tests that connect packet queue dispatch readiness to execution-scope and planner-boundary gate readiness.",
+    "Define the repo-local boundary for natural-language MCP intent parsing, which lives in local-ai-machine.",
+    "Do not implement code changes in this planning slice."
+  ],
+  "out_of_scope": [
+    "Changing packet queue runtime behavior in this planning slice.",
+    "Adding or editing execution-scope enforcement code before implementation handoff.",
+    "Starting, mocking, or modifying the local-ai-machine MCP daemon from this repo.",
+    "Rewriting historical #231 closeout conclusions.",
+    "Touching unrelated dirty files in the shared main checkout."
+  ],
+  "research_summary": "A local E2E exercise showed packet validation and dry-run queue dispatch pass, but the full governance waterfall breaks at integration boundaries. The current shared checkout is on main with a governance-surface change, #231 packet execution_scope_ref points at a PDCAR Markdown file, the current planner-boundary CI simulation would reject the #231 changed-file set because there is no issue-specific execution scope, and natural-language MCP parsing is external to this repository.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/257",
+    "raw/packets/2026-04-17-issue-231-e2e-pilot.yml",
+    "scripts/orchestrator/packet_queue.py",
+    "scripts/orchestrator/test_packet_queue.py",
+    "scripts/packet/validate.py",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    ".github/workflows/governance-check.yml",
+    "raw/closeouts/2026-04-17-e2e-pilot.md"
+  ],
+  "sprints": [
+    {
+      "name": "Planning Artifact",
+      "goal": "Record the issue-backed PDCAR and structured plan for the enforcement gap closure.",
+      "tasks": [
+        "Create the issue #257 PDCAR.",
+        "Create the issue #257 structured-agent-cycle plan.",
+        "Keep the shared main checkout untouched by using an isolated worktree."
+      ],
+      "acceptance_criteria": [
+        "PDCAR identifies every observed break and the intended implementation path.",
+        "Structured plan validates under the existing plan validator.",
+        "No unrelated dirty files from the shared checkout are modified."
+      ],
+      "file_paths": [
+        "docs/plans/issue-257-som-e2e-enforcement-gaps-pdcar.md",
+        "docs/plans/issue-257-som-e2e-enforcement-gaps-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "name": "Implementation Handoff",
+      "goal": "Define the follow-up implementation scope without changing runtime behavior in the planning slice.",
+      "tasks": [
+        "Specify packet queue validation changes for execution_scope_ref.",
+        "Specify regression tests for Markdown PDCAR refs, valid execution-scope JSON refs, and missing pilot scope simulation.",
+        "Specify documentation updates for the local-vs-MCP E2E boundary."
+      ],
+      "acceptance_criteria": [
+        "Follow-up implementation can proceed without rediscovering the failure modes.",
+        "Tests are named and tied to the observed breaks.",
+        "Dry-run safety remains an explicit invariant."
+      ],
+      "file_paths": [
+        "scripts/orchestrator/packet_queue.py",
+        "scripts/orchestrator/test_packet_queue.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "docs/DATA_DICTIONARY.md",
+        "docs/FEATURE_REGISTRY.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex planning session",
+      "role": "governance gap planner",
+      "focus": "Translate observed SoM E2E breakpoints into an issue-backed PDCAR and implementation handoff plan.",
+      "status": "accepted",
+      "summary": "The plan preserves dry-run safety, requires enforceable execution-scope JSON evidence, and separates repo-local packet validation from cross-repo MCP natural-language parsing.",
+      "evidence": [
+        "docs/plans/issue-257-som-e2e-enforcement-gaps-pdcar.md",
+        "docs/plans/issue-257-som-e2e-enforcement-gaps-structured-agent-cycle-plan.json"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "Not required for planning-only artifact creation",
+    "model_family": "none",
+    "status": "accepted",
+    "summary": "This slice creates planning artifacts only. Implementation will require the normal review and gate chain before merge.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/257"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Planning-only issue #257 artifact creation under docs/plans, with implementation deferred to a follow-up branch that updates packet queue validation, regression tests, and documentation.",
+    "next_execution_step": "Run structured plan validation for the planning artifacts, then hand off implementation to a separate issue #257 implementation slice with an execution-scope JSON.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If implementation code changes are needed, stop this planning slice and create an implementation execution-scope artifact first.",
+    "If historical #231 repair is included, scope it explicitly and do not imply live dispatch authority was granted by the original pilot.",
+    "If MCP natural-language E2E is required, coordinate with local-ai-machine and require a handoff artifact instead of adding an unowned mock here.",
+    "If dry-run authorization becomes live dispatch authorization at any point, halt and treat it as a governance regression."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator request to create GitHub issue and PDCAR a solution",
+    "Codex planning session"
+  ],
+  "approved_at": "2026-04-17T16:55:00-05:00"
+}
