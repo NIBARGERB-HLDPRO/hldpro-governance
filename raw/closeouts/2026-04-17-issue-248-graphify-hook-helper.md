@@ -73,6 +73,7 @@ No contradiction. This narrows the graphify pointer pattern by stating that raw 
 - `scripts/cross-review/require-dual-signature.sh` for MS1 and MS2 cross-review artifacts.
 - `scripts/knowledge_base/test_graphify_hook_helper.py`.
 - `scripts/knowledge_base/test_graphify_governance_contract.py`.
+- `scripts/knowledge_base/test_graphify_usage_logging_contract.py`.
 - `scripts/overlord/validate_structured_agent_cycle_plan.py --root .`.
 
 ## Execution Scope / Write Boundary
@@ -85,6 +86,7 @@ No separate execution-scope JSON was created for #248. The approved scope bounda
 - `bash scripts/cross-review/require-dual-signature.sh raw/cross-review/2026-04-17-issue-248-graphify-hook-helper-plan.md` — PASS
 - `python3 scripts/knowledge_base/test_graphify_hook_helper.py` — PASS
 - `python3 scripts/knowledge_base/test_graphify_governance_contract.py` — PASS
+- `python3 scripts/knowledge_base/test_graphify_usage_logging_contract.py` — PASS
 - `python3 -m py_compile scripts/knowledge_base/graphify_hook_helper.py scripts/knowledge_base/test_graphify_hook_helper.py` — PASS
 - `bash scripts/cross-review/require-dual-signature.sh raw/cross-review/2026-04-17-issue-250-graphify-hook-helper.md` — PASS
 - `python3 scripts/knowledge_base/graphify_hook_helper.py dry-run --target-repo /Users/bennibarger/Developer/HLDPRO/ai-integration-services --repo-slug ai-integration-services --no-html` — PASS
