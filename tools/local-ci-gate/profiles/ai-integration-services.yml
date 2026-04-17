@@ -1,0 +1,119 @@
+profile:
+  name: ai-integration-services
+  description: AI Integration Services local CI gate profile for existing deterministic workspace checks.
+  report_root: cache/local-ci-gate/reports
+  changed_files:
+    base_ref: origin/main
+    head_ref: HEAD
+    include_untracked: true
+  checks:
+    - id: typecheck
+      title: Workspace TypeScript check
+      severity: blocker
+      scope: always
+      command:
+        - npm
+        - run
+        - typecheck
+
+    - id: error-handler-audit
+      title: Edge function shared error handler audit
+      severity: advisory
+      scope: changed
+      paths:
+        - backend/supabase/functions/**
+        - scripts/audit-error-handlers.mjs
+      command:
+        - npm
+        - run
+        - audit:error-handlers
+
+    - id: preflight-probe
+      title: Environment preflight probe
+      severity: advisory
+      scope: changed
+      paths:
+        - scripts/preflight-probe.sh
+        - scripts/pre-push-probe.sh
+        - e2e/**
+        - playwright.config.ts
+        - docs/runbooks/**
+      command:
+        - npm
+        - run
+        - preflight
+
+    - id: dashboard-build
+      title: Dashboard build
+      severity: blocker
+      scope: changed
+      paths:
+        - apps/dashboard/**
+        - packages/**
+        - backend/supabase/functions/**
+        - package.json
+        - package-lock.json
+        - tsconfig.json
+      command:
+        - npm
+        - run
+        - build:dashboard
+
+    - id: marketing-build
+      title: Marketing build
+      severity: blocker
+      scope: changed
+      paths:
+        - apps/marketing/**
+        - scripts/build-marketing.sh
+        - packages/**
+        - package.json
+        - package-lock.json
+        - tsconfig.json
+      command:
+        - npm
+        - run
+        - build:marketing
+
+    - id: reseller-build
+      title: Reseller app build
+      severity: blocker
+      scope: changed
+      paths:
+        - apps/reseller/**
+        - packages/**
+        - package.json
+        - package-lock.json
+        - tsconfig.json
+      command:
+        - npm
+        - run
+        - build:reseller
+
+    - id: pwa-build
+      title: PWA build
+      severity: blocker
+      scope: changed
+      paths:
+        - apps/pwa/**
+        - packages/**
+        - package.json
+        - package-lock.json
+        - tsconfig.json
+      command:
+        - npm
+        - run
+        - build:pwa
+
+    - id: playwright-smoke
+      title: Playwright smoke suite
+      severity: advisory
+      scope: changed
+      paths:
+        - e2e/smoke-test.spec.ts
+        - playwright.config.ts
+        - scripts/preflight-probe.sh
+      command:
+        - npm
+        - run
+        - smoke
