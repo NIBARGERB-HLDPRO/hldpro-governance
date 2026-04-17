@@ -1,0 +1,370 @@
+{
+  "session_id": "session-20260417-issue-224-always-on-governance-orchestrator",
+  "issue_number": 224,
+  "objective": "Plan an org-wide always-on governance orchestrator and gatekeeper system that centralizes governance in hldpro-governance, routes each governed repo through repo-specific project folders, enforces issue-backed structured planning before implementation, uses Society of Minds model routing and alternate-family review, and eventually lets the operator hand approved work to a local orchestrator for tested, reviewed, closeout-ready delivery.",
+  "tier": 1,
+  "scope_boundary": [
+    "Create the canonical planning package for issue #224 before any implementation work starts.",
+    "Coordinate issue #223 as the Phase 0 compendium/planning-path repair dependency so the always-on system does not build on an implementation-first diff.",
+    "Define an org-wide governance control plane, local runtime plane, and per-repo execution plane that fit current repo rules and SoM constraints.",
+    "Define phases, slices, microslice acceptance criteria, review gates, validation commands, and closeout expectations for implementation.",
+    "Design for MacBook Pro Apple M5 Pro 18-core 48 GB local runtime capacity and the retired Windows local-ai-machine auxiliary node; operator reports 64 GB RAM with no VRAM, while current STANDARDS.md still documents 64 GB RAM with 16 GB VRAM, so Phase 4 must verify and reconcile the hardware contract before model-placement decisions.",
+    "Prefer deterministic validators, issue state, git state, CI, packet schemas, graphify artifacts, and closeouts over LLM-only decisions."
+  ],
+  "out_of_scope": [
+    "Implementing the daemon, registry, hooks, launchd plists, packet queue, model router, or compendium repair in this planning slice.",
+    "Mutating the current dirty shared main checkout or adopting its compendium diff without a separate approved plan.",
+    "Changing local-ai-machine runtime code directly from this governance planning branch.",
+    "Relaxing Society of Minds rules: no self-approval, no tier skipping, no unlogged fallback, no PII to cloud or Windows-Ollama.",
+    "Replacing GitHub Issues as the canonical execution tracker.",
+    "Introducing third-party routing infrastructure such as LiteLLM or Olla into the critical path before repo-native packet and health contracts are stable."
+  ],
+  "research_summary": "Research found strong agreement between Codex research agents and a separate Claude Opus 4.6 planning pass. The target system should be org-wide from hldpro-governance but route each repo through repo-specific project folders. It should use multiple gatekeepers rather than one large agent: deterministic planning/branch/scope gates, a PII/local guardrail, review/no-self-approval gates, CI gates, and eventually a local launchd-managed MCP/orchestrator daemon. The main sequencing correction is that daemon work must not start first. Current repo discovery is duplicated across graphify, sweep, metrics, memory, Codex ingestion, and the unapproved compendium generator, so Phase 0 must repair the compendium planning break and Phase 1 must create a unified governed-repo registry before always-on execution. The M5 Pro 48 GB Mac can host always-warm small MLX guardrail/intent models and on-demand worker/critic models. The Windows auxiliary node must be hardware-verified in Phase 4 because the operator reports 64 GB RAM with no VRAM while STANDARDS.md currently documents 64 GB RAM with 16 GB VRAM; until reconciled, it should remain LAN-only Ollama/batch/fallback/health infrastructure, not a primary interactive lane. Ollama is not installed in the current shell, while mlx_lm.server is available. Official Ollama docs confirm API base URL localhost:11434/api, context-length configuration, and /api/ps running-model inspection. Claude Code docs confirm hooks and subagents exist but hooks run with full user permissions, so local hooks must be deterministic and conservative.",
+  "research_artifacts": [
+    "Issue #224",
+    "Issue #223",
+    "Issue #225",
+    "Issue #226",
+    "Issue #227",
+    "Issue #228",
+    "Issue #229",
+    "Issue #230",
+    "Issue #231",
+    "CLAUDE.md",
+    "README.md",
+    "STANDARDS.md",
+    "OVERLORD_BACKLOG.md",
+    "docs/schemas/structured-agent-cycle-plan.schema.json",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "docs/plans/2026-04-17-governance-path-repair-findings.md",
+    "raw/closeouts/2026-04-14-society-of-minds-epic.md",
+    "raw/closeouts/2026-04-14-mcp-daemon-stage3.md",
+    "raw/closeouts/2026-04-16-som-stage4b.md",
+    "docs/graphify_targets.json",
+    "scripts/knowledge_base/graphify_targets.py",
+    "scripts/knowledge_base/build_graph.py",
+    "scripts/knowledge_base/update_knowledge_index.py",
+    "scripts/overlord/build_effectiveness_metrics.py",
+    "scripts/overlord/memory_integrity.py",
+    "scripts/overlord/codex_ingestion.py",
+    "system_profiler SPHardwareDataType on 2026-04-17: MacBook Pro Mac17,8, Apple M5 Pro, 18 cores, 48 GB memory",
+    "Claude Opus 4.6 planning memo, 2026-04-17, planning-only",
+    "Codex research agents Hegel, Einstein, and Euclid, 2026-04-17, read-only",
+    "Ollama API docs: https://docs.ollama.com/api",
+    "Ollama context length docs: https://docs.ollama.com/context-length",
+    "Ollama running model inspection docs: https://docs.ollama.com/api/ps",
+    "MLX LM repository: https://github.com/ml-explore/mlx-lm",
+    "Claude Code hooks docs: https://docs.anthropic.com/en/docs/claude-code/hooks",
+    "Claude Code subagents docs: https://docs.anthropic.com/en/docs/claude-code/sub-agents",
+    "Claude Code settings docs: https://docs.anthropic.com/en/docs/claude-code/settings",
+    "LiteLLM docs: https://docs.litellm.ai/",
+    "Olla health checking docs: https://thushan.github.io/olla/concepts/health-checking/"
+  ],
+  "sprints": [
+    {
+      "name": "Phase 0 — Governance path repair and compendium decision",
+      "goal": "Repair or isolate the existing implementation-first compendium work before building any always-on governance automation on top of it.",
+      "tasks": [
+        "Use issue #223 as the governing compendium repair issue or explicitly make it a child slice of issue #224.",
+        "Inventory the dirty compendium files in the shared main checkout and decide under review whether to adopt, rework, or discard that draft.",
+        "Create or validate the missing canonical structured JSON plan and review artifacts for compendium repair before further compendium implementation.",
+        "Add dispatcher planning-gate wording to CLAUDE.md only after review confirms exact wording.",
+        "Create an issue-backed validator improvement to close the non-issue-branch governance-surface bypass."
+      ],
+      "acceptance_criteria": [
+        "Issue #223 is linked from issue #224 as the separate Phase 0 dependency.",
+        "No compendium implementation files are committed from the dirty shared main checkout without an approved structured plan.",
+        "The compendium work has a canonical structured JSON plan or is explicitly discarded as unapproved draft work.",
+        "The repair plan states whether Phase 1 may proceed before compendium implementation merges.",
+        "A planned validator change exists to require structured plans for governance-surface edits regardless of branch name."
+      ],
+      "file_paths": [
+        "docs/plans/2026-04-17-governance-path-repair-findings.md",
+        "docs/plans/issue-223-structured-agent-cycle-plan.json",
+        "docs/plans/issue-223-org-governance-compendium-pdcar.md",
+        "CLAUDE.md",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Phase 1 — Unified governed-repo registry",
+      "goal": "Create one executable source of truth for governed repo discovery and routing before daemon work begins.",
+      "tasks": [
+        "Design `docs/governed_repos.json` with repo slug, display name, GitHub repo, local path, CI checkout path, graph output, wiki path, project path, governance tier, security tier, and enabled subsystems.",
+        "Add schema and validator for governed repo registry.",
+        "Migrate graphify, sweep, metrics, memory integrity, Codex ingestion, and compendium planning to derive repo discovery from the registry or a single adapter.",
+        "Document which hardcoded repo lists remain temporarily exempt and why."
+      ],
+      "acceptance_criteria": [
+        "`docs/governed_repos.json` validates against schema.",
+        "Graphify target data can be generated from or reconciled with the registry.",
+        "No production script has an unapproved duplicate governed repo list.",
+        "CI/local path differences are represented explicitly.",
+        "Each repo has a declared `projects/<repo_slug>/` path for future orchestration state."
+      ],
+      "file_paths": [
+        "docs/governed_repos.json",
+        "docs/schemas/governed-repos.schema.json",
+        "scripts/overlord/validate_governed_repos.py",
+        "docs/graphify_targets.json",
+        "scripts/knowledge_base/graphify_targets.py",
+        "scripts/overlord/build_effectiveness_metrics.py",
+        "scripts/overlord/memory_integrity.py",
+        "scripts/overlord/codex_ingestion.py",
+        "scripts/overlord/build_org_governance_compendium.py"
+      ]
+    },
+    {
+      "name": "Phase 2 — Planning and scope gatekeeper",
+      "goal": "Prevent implementation-first governance work and wrong-checkout writes before any autonomous orchestrator can execute.",
+      "tasks": [
+        "Strengthen planning validation so governance-surface edits require a GitHub issue, structured JSON plan, review status, and execution handoff regardless of branch name.",
+        "Classify governance-surface paths such as CLAUDE.md, STANDARDS.md, agents, workflows, registries, sweep scripts, graphify, closeouts, and cross-review artifacts.",
+        "Extend execution-scope validation so issue worktrees declare expected root, branch, allowed paths, and forbidden dirty roots.",
+        "Wire the gate into hooks and CI in warning or blocking mode as approved by review."
+      ],
+      "acceptance_criteria": [
+        "A governance-surface edit on main or a non-issue branch fails or requires an explicit exception.",
+        "Markdown PDCAR without required canonical JSON plan fails for governed work.",
+        "Wrong checkout root and out-of-scope dirty paths fail locally before closeout.",
+        "The gate emits actionable failure messages with the missing issue/plan/review requirement.",
+        "Unit tests cover governed and non-governed path classifications."
+      ],
+      "file_paths": [
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py",
+        "hooks/governance-check.sh",
+        ".github/workflows/governance-check.yml",
+        ".github/workflows/check-arch-tier.yml",
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "CLAUDE.md",
+        "STANDARDS.md"
+      ]
+    },
+    {
+      "name": "Phase 3 — Read-only always-on observers",
+      "goal": "Introduce launchd-managed read-only local services that classify, observe, and report without enqueuing or mutating work.",
+      "tasks": [
+        "Define launchd SOPs for macOS user agents, health checks, logs, restart policy, and failure handling.",
+        "Create a read-only governance observer that loads the registry, repo rules, graphify summaries, compendium, closeouts, backlog, and open issue state.",
+        "Create health/status reports under `projects/<repo_slug>/reports/` or another reviewed location.",
+        "Validate that observer output is deterministic, auditable, and does not make LLM-only pass/fail decisions."
+      ],
+      "acceptance_criteria": [
+        "Observer can run under launchd and after reboot without writing outside approved report paths.",
+        "Observer reports per-repo health, stale knowledge, planning-gate gaps, and daemon readiness.",
+        "Reports include source commit SHAs and artifact hashes for graphify/compendium/wiki inputs.",
+        "No work packets are enqueued by this phase.",
+        "A kill/disable SOP exists and is tested."
+      ],
+      "file_paths": [
+        "launchd/",
+        "scripts/orchestrator/",
+        "projects/",
+        "docs/runbooks/always-on-governance.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/FEATURE_REGISTRY.md"
+      ]
+    },
+    {
+      "name": "Phase 4 — Local model runtime and guardrail lane",
+      "goal": "Stand up local Mac and Windows model/runtime inventory without granting autonomous write authority.",
+      "tasks": [
+        "Inventory installed local inference backends and models: MLX on Mac, Ollama on Windows, and optional Ollama/LiteLLM/Olla candidates.",
+        "Define model placement for always-resident guardrail/intent models and on-demand worker/critic models.",
+        "Add health probes for Mac MLX and Windows Ollama endpoints.",
+        "Define PII/local-only routing boundaries and audit expectations before any payload can leave the Mac."
+      ],
+      "acceptance_criteria": [
+        "Mac M5 Pro 48 GB memory budget is documented with steady-state and on-demand model budgets.",
+        "Windows hardware is verified and the conflict between operator report (64 GB RAM, no VRAM) and STANDARDS.md (64 GB RAM, 16 GB VRAM) is resolved before model placement is finalized.",
+        "Windows role remains LAN-only fallback/batch/health infrastructure unless a later issue expands it.",
+        "Health probes can report installed/running model state without sending sensitive payloads.",
+        "PII routing fails closed if patterns or local guardrail service are unavailable.",
+        "No cloud fallback is allowed for PII-tagged or PII-detected packets."
+      ],
+      "file_paths": [
+        "scripts/lam/",
+        "scripts/windows-ollama/",
+        "docs/runbooks/local-model-runtime.md",
+        "docs/runbooks/windows-ollama.md",
+        "docs/exception-register.md",
+        "STANDARDS.md"
+      ]
+    },
+    {
+      "name": "Phase 5 — Packet queue and controlled orchestration",
+      "goal": "Add a filesystem-first packet queue and orchestrator state machine that can process approved microslices without losing auditability.",
+      "tasks": [
+        "Define packet queue directories and atomic write-then-rename semantics.",
+        "Extend or reconcile the governance packet schema with local-ai-machine production packet validator.",
+        "Implement deterministic state transitions for inbound, dispatched, review, gate, done, and halted packets.",
+        "Require issue, plan, scope, model identity, fallback log, validation commands, and review artifacts on every packet."
+      ],
+      "acceptance_criteria": [
+        "A test packet can move through the queue in dry-run mode without executing code.",
+        "Invalid packets fail with schema errors before dispatch.",
+        "PII packets halt or route LAM-only before any cloud/Windows path.",
+        "Packet state changes are auditable and replayable.",
+        "No packet can dispatch without an approved issue-backed structured plan."
+      ],
+      "file_paths": [
+        "raw/packets/",
+        "docs/schemas/som-packet.schema.yml",
+        "scripts/packet/",
+        "scripts/orchestrator/",
+        "projects/",
+        "raw/model-fallbacks/"
+      ]
+    },
+    {
+      "name": "Phase 6 — Self-learning and self-healing loop",
+      "goal": "Make documented mistakes available to future planning and dispatch gates before workers repeat them.",
+      "tasks": [
+        "Build pre-dispatch pattern lookup from FAIL_FAST_LOG.md, ERROR_PATTERNS.md, MEMORY.md, raw closeouts, operator context, graphify, and compendium.",
+        "Inject relevant known-failure context into structured plans and worker packets with cited evidence paths.",
+        "Add post-failure write-back for novel failure patterns with issue-backed follow-up rules.",
+        "Add weekly dedupe/staleness reporting for knowledge artifacts."
+      ],
+      "acceptance_criteria": [
+        "A worker packet for a known failure area includes cited prior mistake patterns.",
+        "The same mistake twice triggers a HALT or planning-gate escalation.",
+        "Novel failures are captured without overwriting existing human-authored logs.",
+        "Weekly sweep reports stale or duplicate learning entries.",
+        "Graphify inference is used for routing attention only; direct files validate claims."
+      ],
+      "file_paths": [
+        "docs/FAIL_FAST_LOG.md",
+        "docs/ERROR_PATTERNS.md",
+        "MEMORY.md",
+        "raw/closeouts/",
+        "raw/operator-context/",
+        "scripts/overlord/memory_integrity.py",
+        "scripts/consolidate-memory.sh",
+        "scripts/orchestrator/",
+        ".github/workflows/overlord-sweep.yml"
+      ]
+    },
+    {
+      "name": "Phase 7 — End-to-end autonomous delivery pilot",
+      "goal": "Pilot the desired operator experience on a low-risk issue: outcome intake through plan, issues, packets, code, QA, review, gate, closeout, and merge-ready PR.",
+      "tasks": [
+        "Select a low-risk repo and issue with clear validation.",
+        "Run the full workflow with human approval at the plan boundary and strict HALT behavior afterward.",
+        "Measure plan quality, queue correctness, validation coverage, review findings, and time-to-PR.",
+        "Document residual risks and decide whether to expand autonomous authority."
+      ],
+      "acceptance_criteria": [
+        "The pilot creates issue-backed plan artifacts before code.",
+        "The orchestrator uses isolated worktrees and declared execution scopes.",
+        "All ACs have evidence tied to commands, CI, PRs, or artifacts.",
+        "Independent review and completion gate pass before closeout.",
+        "The pilot closeout states whether the system is ready for broader autonomous execution."
+      ],
+      "file_paths": [
+        "docs/plans/",
+        "raw/packets/",
+        "raw/cross-review/",
+        "raw/gate/",
+        "raw/closeouts/",
+        "projects/",
+        "metrics/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex explorer Hegel",
+      "role": "Repo and SoM constraints researcher",
+      "focus": "Current repo rules, required gates, reusable validators, and always-on gatekeeper non-violation boundaries.",
+      "status": "accepted",
+      "summary": "Research confirmed the central governance repo role, issue-backed planning, canonical JSON plan requirement, SoM no-self-approval/tier/fallback/PII constraints, Stage 6 closeout requirements, reusable validators, and control gaps around branch-name-only structured plan enforcement and compendium implementation-first drift.",
+      "evidence": [
+        "CLAUDE.md",
+        "README.md",
+        "STANDARDS.md",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "docs/plans/2026-04-17-governance-path-repair-findings.md"
+      ]
+    },
+    {
+      "reviewer": "Codex explorer Einstein",
+      "role": "Repo integration and data-flow researcher",
+      "focus": "Overlord sweep, graphify, compendium, governed repo discovery, per-repo project folders, and daemon data flow.",
+      "status": "accepted",
+      "summary": "Research found governed repo discovery duplicated across sweep, graphify, compendium, metrics, memory, Codex ingestion, and local symlink helpers. It recommended a unified governed-repo registry before daemon work and durable per-repo orchestration state under projects/<repo_slug>/.",
+      "evidence": [
+        "docs/graphify_targets.json",
+        "scripts/knowledge_base/graphify_targets.py",
+        "scripts/overlord/build_effectiveness_metrics.py",
+        "scripts/overlord/memory_integrity.py",
+        "scripts/overlord/codex_ingestion.py",
+        "scripts/overlord/build_org_governance_compendium.py"
+      ]
+    },
+    {
+      "reviewer": "Codex explorer Euclid",
+      "role": "End-to-end orchestration workflow researcher",
+      "focus": "Outcome intake, GitHub epic/phase/microslice decomposition, structured plan/PDCAR, alt-family review, packet handoff, coding, QA, review, gate, closeout, and hallucination minimization.",
+      "status": "accepted",
+      "summary": "Research proposed artifact-first orchestration where model outputs must cite files, issues, commands, PRs, or schema fields, and workflow advancement depends on machine-checkable gates rather than LLM-only claims.",
+      "evidence": [
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "raw/closeouts/TEMPLATE.md",
+        "docs/plans/issue-154-structured-agent-cycle-plan.json",
+        "docs/schemas/som-packet.schema.yml",
+        "STANDARDS.md"
+      ]
+    },
+    {
+      "reviewer": "Claude Opus 4.6",
+      "role": "Alternate planning researcher",
+      "focus": "Independent architecture proposal for always-on gatekeepers, local orchestrator, self-learning loop, Mac/Windows runtime placement, risks, and implementation phases.",
+      "status": "accepted_with_followup",
+      "summary": "Claude Opus converged on multiple gatekeepers, launchd local services, packet queue orchestration, self-learning from FAIL_FAST/closeouts/memory/graphify, and a phased rollout. The main follow-up incorporated in this plan is to move unified governed-repo registry and planning-gate repair before launchd daemon bootstrap.",
+      "evidence": [
+        "Claude Opus 4.6 planning memo, 2026-04-17"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Claude Opus provided an independent planning memo that agrees on the target architecture and multiple-gatekeeper model. This Codex plan incorporates the key correction from repo integration research: Phase 0 and Phase 1 must repair governance-path and registry drift before daemon execution begins. Claude Opus reviewed the written plan as APPROVED_WITH_CHANGES; the required execution_mode, HITL, backlog, and Windows hardware-discrepancy changes were applied. Claude Sonnet then returned GATE_PASSED for planning readiness and phase/slice issue creation. Phase/slice issues #225-#231 were created after the gate passed.",
+    "evidence": [
+      "Claude Opus 4.6 planning memo, 2026-04-17",
+      "raw/cross-review/2026-04-17-always-on-governance-orchestrator-plan.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "planning_only",
+    "approved_scope_summary": "This branch may only add planning artifacts and issue-backed review/decomposition metadata for issue #224. Planning review is complete, but implementation remains blocked until phase/slice issues exist and a later implementation handoff is approved.",
+    "next_execution_step": "Create the next phase-specific implementation handoff only after operator approval. Phase 0 issue #223 remains the separate compendium/planning-path repair dependency for issue #224.",
+    "blocked_on": [
+      "Operator approval for a phase-specific implementation handoff",
+      "Issue #223 repair before any implementation depends on compendium outputs"
+    ]
+  },
+  "material_deviation_rules": [
+    "Do not implement daemon, launchd, registry, packet queue, validator, compendium, or model-runtime changes from this planning branch.",
+    "If review finds that #223 must be pulled into #224, update both issues and the plan before any implementation branch starts.",
+    "If any phase needs to touch local-ai-machine runtime code, create a separate repo-specific issue and plan before editing that repo.",
+    "If a proposed gate would rely on LLM judgment alone, replace it with deterministic validation or mark it as advisory only.",
+    "Default HITL boundary: Phases 0-6 require operator approval at the whole-plan or phase-plan boundary before execution; Phase 7 pilot must define its own microslice-level HALT/approval granularity under review before autonomous execution.",
+    "If hardware assumptions differ from measured local state, update the model/runtime placement plan before creating implementation packets.",
+    "If the dirty shared main checkout contains useful draft work, salvage it only under an approved issue-backed structured plan in an isolated worktree."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Claude Opus 4.6 APPROVED_WITH_CHANGES",
+    "Claude Sonnet 4.6 GATE_PASSED"
+  ],
+  "approved_at": "2026-04-17T10:14:19-05:00"
+}
