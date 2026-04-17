@@ -35,7 +35,7 @@ No contradiction. `docs/graphify_targets.json` remains the graphify manifest con
 - Governing issue: #225
 - Parent epic: #224
 - Phase 0 dependency resolved by #223 / PR #233
-- PR: pending
+- PR: [#234](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/234)
 - Follow-up planning/scope hardening: #226
 
 ## Schema / Artifact Version
