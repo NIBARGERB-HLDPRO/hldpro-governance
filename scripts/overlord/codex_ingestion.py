@@ -15,12 +15,6 @@ from typing import Any
 
 
 DEFAULT_INGESTION_ROOT = Path.home() / "Developer" / "hldpro" / ".codex-ingestion"
-DEFAULT_REPOS = [
-    "ai-integration-services",
-    "HealthcarePlatform",
-    "local-ai-machine",
-    "knocktracker",
-]
 MAX_DIFFSTAT_CHARS = 12000
 MAX_PATCH_CHARS = 160000
 MAX_CHANGED_FILES = 200

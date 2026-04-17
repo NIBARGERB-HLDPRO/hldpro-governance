@@ -39,6 +39,8 @@
 |--------|------|---------|
 | validate_backlog_gh_sync.py | `scripts/overlord/validate_backlog_gh_sync.py` | Validates OVERLORD_BACKLOG.md Planned rows reference open GH issues |
 | validate_structured_agent_cycle_plan.py | `scripts/overlord/validate_structured_agent_cycle_plan.py` | Validates structured plan JSON against org schema |
+| validate_governed_repos.py | `scripts/overlord/validate_governed_repos.py` | Validates `docs/governed_repos.json` and reconciles it with graphify targets |
+| governed_repos.py | `scripts/overlord/governed_repos.py` | Shared adapter for executable governed repo registry consumers |
 | codex_ingestion.py | `scripts/overlord/codex_ingestion.py` | Codex review ingestion: generate, qualify, promote |
 | build_effectiveness_metrics.py | `scripts/overlord/build_effectiveness_metrics.py` | Weekly effectiveness baseline snapshots |
 | build_org_governance_compendium.py | `scripts/overlord/build_org_governance_compendium.py` | Generates the org-level governance rules compendium from canonical governed repos |

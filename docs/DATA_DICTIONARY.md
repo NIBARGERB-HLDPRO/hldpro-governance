@@ -86,3 +86,18 @@ Contract:
 - Indexes governance/rules files by repo with category, description, logic, and detected interactions.
 - Includes graphify node/community summaries from `graphify-out/<repo>/`.
 - `--check` mode fails when the generated markdown is stale.
+
+---
+
+### Governed Repo Registry
+**File:** `docs/governed_repos.json`
+**Schema:** `docs/schemas/governed-repos.schema.json`
+**Validator:** `scripts/overlord/validate_governed_repos.py`
+
+Contract:
+- One row per governed repository.
+- Required identity fields: `repo_slug`, `display_name`, `repo_dir_name`, and `github_repo`.
+- Required path fields: `local_path`, `ci_checkout_path`, `graph_output_path`, `wiki_path`, and `project_path`.
+- Required classification fields: `governance_tier`, `security_tier`, and `enabled_subsystems`.
+- Graphify targets must reconcile with registry graph output, wiki path, display name, and CI checkout path.
+- Temporary duplicate-list exemptions are documented in `docs/governed_repos_exemptions.md`.

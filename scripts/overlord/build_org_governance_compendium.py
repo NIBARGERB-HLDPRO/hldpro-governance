@@ -19,17 +19,15 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from scripts.overlord.governed_repos import DEFAULT_REGISTRY, repos_enabled_for
+
+
 DEFAULT_REPOS_ROOT = Path(os.environ.get("HLDPRO_REPOS_ROOT", str(Path.home() / "Developer" / "HLDPRO")))
 DEFAULT_OUTPUT = Path("docs/ORG_GOVERNANCE_COMPENDIUM.md")
-
-REPOS = [
-    ("hldpro-governance", "hldpro-governance", "Governance standards, reusable CI, agents, and cross-repo audit tooling"),
-    ("ai-integration-services", "ai-integration-services", "AIS SaaS platform governance, CI, hooks, and specialist agents"),
-    ("HealthcarePlatform", "healthcareplatform", "HIPAA platform governance, CI, hooks, and specialist agents"),
-    ("local-ai-machine", "local-ai-machine", "Local AI runtime governance, packet controls, lane rules, and schemas"),
-    ("knocktracker", "knocktracker", "Field app governance, issue controls, security/privacy agents, and CI"),
-    ("ASC-Evaluator", "asc-evaluator", "Knowledge/evaluation repo with limited governance and graph coverage"),
-]
 
 ROOT_RULE_FILES = {
     "AGENT_REGISTRY.md",
@@ -349,16 +347,16 @@ def graph_summary(governance_root: Path, graph_slug: str) -> dict[str, object]:
     return summary
 
 
-def build(repos_root: Path, governance_root: Path, output: Path) -> str:
+def build(repos_root: Path, governance_root: Path, output: Path, registry: Path = DEFAULT_REGISTRY) -> str:
     today = dt.date.today().isoformat()
     repo_infos = [
         RepoInfo(
-            name,
-            slug,
-            purpose,
-            governance_root if name == "hldpro-governance" else repos_root / name,
+            repo.repo_dir_name,
+            repo.repo_slug,
+            repo.description,
+            governance_root if repo.repo_slug == "hldpro-governance" else repos_root / repo.local_path,
         )
-        for name, slug, purpose in REPOS
+        for repo in repos_enabled_for("compendium", registry)
     ]
     lines: list[str] = []
     lines.append("# HLD Pro Org Governance Rules Compendium")
@@ -436,6 +434,7 @@ def build(repos_root: Path, governance_root: Path, output: Path) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build org governance compendium")
     parser.add_argument("--repos-root", type=Path, default=DEFAULT_REPOS_ROOT)
+    parser.add_argument("--registry", type=Path, default=DEFAULT_REGISTRY)
     parser.add_argument(
         "--governance-root",
         type=Path,
@@ -452,7 +451,7 @@ def main() -> int:
     governance_root = args.governance_root or Path.cwd()
     if not governance_root.is_absolute():
         governance_root = Path.cwd() / governance_root
-    content = build(args.repos_root, governance_root, output)
+    content = build(args.repos_root, governance_root, output, args.registry)
     if args.check:
         existing = output.read_text(errors="ignore") if output.exists() else ""
         if existing != content:

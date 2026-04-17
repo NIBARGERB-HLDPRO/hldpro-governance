@@ -73,9 +73,9 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CODEX_AUTH_JSON: ${{ secrets.CODEX_AUTH_JSON }}
         run: |
-          REPOS="ai-integration-services HealthcarePlatform local-ai-machine knocktracker ASC-Evaluator"
-          CODE_REPOS="ai-integration-services HealthcarePlatform local-ai-machine knocktracker"
-          EXEMPT_REPOS="ASC-Evaluator"
+          REPOS=$(python3 scripts/overlord/validate_governed_repos.py --print-subsystem sweep)
+          CODE_REPOS=$(python3 scripts/overlord/validate_governed_repos.py --print-subsystem code_governance)
+          EXEMPT_REPOS=$(python3 scripts/overlord/validate_governed_repos.py --print-exempt)
           DATE=$(date -u +%Y-%m-%d)
           CI_CUTOFF=$(date -u -d '14 days ago' +%Y-%m-%dT%H:%M:%SZ)
           INGESTION_ROOT="${RUNNER_TEMP}/codex-ingestion"
