@@ -49,6 +49,7 @@
 | GOV-022 | PACKET_QUEUE_ORCHESTRATOR | Filesystem packet queue with dispatch gate, PII halt, and replayable audit log | COMPLETE | REQUIRED |
 | GOV-023 | SELF_LEARNING_LOOP | Pre-dispatch mistake lookup, packet context injection, append-only failure write-back, and weekly learning drift report | COMPLETE | REQUIRED |
 | GOV-024 | E2E_AUTONOMOUS_DELIVERY_PILOT | Low-risk governance pilot from issue-backed plan through packet, review, gate, closeout, PR checks, and readiness conclusion | COMPLETE | REQUIRED |
+| GOV-025 | GRAPHIFY_HOOK_HELPER | Governance-owned graphify hook helper and installer for governed repo graph refresh hooks | COMPLETE | OPS_READY |
 
 ---
 
@@ -91,6 +92,7 @@
 | Feature ID | Notes |
 |---|---|
 | GOV-007 | Three-tool system: graphify (knowledge graph), Karpathy Loop (compounding write-back), MBIF Crew (dispatcher pattern). Infrastructure in `graphify-out/`, `wiki/`, `raw/`. AIS, HealthcarePlatform, ASC-Evaluator, local-ai-machine, and knocktracker are now graphified into governance, `docs/graphify_targets.json` is the executable refresh-target manifest, `scripts/knowledge_base/bootstrap_neo4j.sh` provides the local runtime bootstrap path, and `scripts/knowledge_base/push_graph_to_neo4j.py` validates the first local Neo4j push path with scoped graph ids. |
+| GOV-007 | `scripts/knowledge_base/graphify_hook_helper.py` is the governed hook installer/runner. It resolves repo slug, source/output/wiki paths, and hook locations through the governance root and `docs/graphify_targets.json`; refuses product-checkout graph outputs before `build_graph.py`; and installs managed hooks only after refusing or backing up unmanaged hooks. AIS and knocktracker adoption PRs must prove raw graphify hooks are removed or absent and record helper dry-run output. |
 | GOV-008 | `CLAUDE.md` rewritten as pure dispatcher — routes to overlord agents, never answers directly. Pre-session reads now point to `wiki/index.md` plus the governance repo’s scoped report at `graphify-out/hldpro-governance/GRAPH_REPORT.md` instead of the legacy root compatibility report. |
 | GOV-009 | `hooks/closeout-hook.sh` validates Stage 6 closeout template, refreshes the manifest-defined closeout graph target through the repo-local builder, rebuilds `wiki/index.md`, and prompts for `operator_context` write-back. Template at `raw/closeouts/TEMPLATE.md`. |
 | GOV-010 | `raw-feed-sync.yml` fetches open GitHub issues from all governed repos daily and writes metadata-only markdown summaries to `raw/github-issues/` (issue number, title, labels, created/updated dates, URL). Issue bodies are intentionally excluded so raw feeds do not create durable secondary copies of sensitive ticket content. |

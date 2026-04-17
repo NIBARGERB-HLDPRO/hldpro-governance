@@ -162,6 +162,27 @@ Key fields:
 
 ---
 
+### Graphify Hook Helper Resolution
+**File:** `scripts/knowledge_base/graphify_hook_helper.py`
+**Used by:** governed repo graphify hook adoption and operator dry-runs
+**Storage:** not persisted by default; adoption PRs should paste or attach dry-run output as issue/PR evidence
+
+Key fields in `resolve` / `dry-run` JSON:
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `repo_slug` | string | yes | `docs/graphify_targets.json` target slug |
+| `target_repo` | string | yes | Product or governed repo checkout where hooks are installed |
+| `governance_root` | string | yes | Governance checkout that owns the helper and manifest |
+| `source_path` | string | yes | Manifest `source_path` resolved relative to `governance_root` |
+| `output_path` | string | yes | Manifest `output_path` resolved relative to `governance_root`; product-repo output paths are refused before build |
+| `wiki_path` | string | yes | Manifest `wiki_path` resolved relative to `governance_root` |
+| `hook_paths` | object | yes | Git-resolved `post-commit` and `post-checkout` hook paths for the target repo |
+| `refresh_command` | array | dry-run only | Exact command the managed hook would run |
+
+Adoption evidence for AIS and knocktracker must prove raw graphify hooks are removed or absent and that managed hooks call this helper rather than raw `graphify hook install` output.
+
+---
+
 ### OVERLORD_BACKLOG.md Planned Table
 **Owner:** hldpro-governance root
 **Enforced by:** `check-backlog-gh-sync.yml`

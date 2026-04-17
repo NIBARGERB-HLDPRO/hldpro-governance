@@ -240,7 +240,7 @@ def test_measurement_falls_back_from_stale_governance_repo_path() -> None:
         scenario = results["scenarios"][0]
         events = [json.loads(line) for line in usage_path.read_text(encoding="utf-8").splitlines() if line.strip()]
         check(len(events) == 2, "measurement run still emits events when governance repo_path is stale")
-        check(scenario["graphify"]["file_hits"] == 1, "stale governance repo_path still resolves current checkout for expected file hits")
+        check(scenario["baseline"]["file_hits"] == 1, "stale governance repo_path still resolves current checkout for expected file hits")
         check(any("scripts/knowledge_base/log_graphify_usage.py" in event.get("top_candidates", []) for event in events), "stale governance repo_path falls back to current checkout files")
 
 
