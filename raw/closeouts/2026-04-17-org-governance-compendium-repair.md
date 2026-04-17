@@ -32,7 +32,7 @@ No contradiction. This closeout reinforces the #224 Phase 0 dependency and route
 - Governing issue: #223
 - Parent epic: #224
 - Follow-up planning/scope gatekeeper: #226
-- PR: pending
+- PR: [#233](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/233)
 
 ## Schema / Artifact Version
 - Structured agent cycle plan schema: `docs/schemas/structured-agent-cycle-plan.schema.json`
