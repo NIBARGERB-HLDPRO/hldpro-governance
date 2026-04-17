@@ -126,6 +126,9 @@
 | GOV-019 | `scripts/overlord/validate_structured_agent_cycle_plan.py` classifies governance-surface paths and requires issue-specific canonical structured plans with implementation-ready handoff and accepted alternate review before those paths can change. |
 | GOV-019 | `.github/workflows/governance-check.yml` and `hooks/code-write-gate.sh` call the shared validator so CI and local write-time enforcement use the same governance-surface planning gate. |
 | GOV-019 | `scripts/overlord/assert_execution_scope.py` remains the root/branch/write-scope guard, with tests proving wrong checkout roots, dirty forbidden roots, and out-of-scope paths fail locally. |
+| GOV-019 | Planner write-boundary enforcement now treats Tier 1 sessions as planning-only by default (`execution_mode: planning_only`), with `allowed_write_paths` as the planning artifact allowlist. |
+| GOV-019 | Non-planning diffs now require accepted pinned-agent handoff evidence, and same-model or same-family planner/implementer pairs require an active exception reference with expiry. |
+| GOV-019 | For planner-boundary enforcement, CI in `.github/workflows/governance-check.yml` is authoritative while local `hooks/code-write-gate.sh` output is warning/early-signal only. |
 
 ### READ_ONLY_GOVERNANCE_OBSERVER
 

@@ -104,6 +104,9 @@ Rules:
 - Markdown is optional companion context
 - `specialist_reviews` and `alternate_model_review` are mandatory structured fields
 - reusable governance CI validates `*structured-agent-cycle-plan.json` on issue/riskfix execution branches
+- Tier 1 planner writes are restricted to planning/review/handoff artifacts via execution-scope `allowed_write_paths`
+- Non-planning diffs require accepted pinned-agent handoff evidence; same-model/family implementers need an active exception reference with expiry
+- CI is authoritative for this planner boundary; local hook warnings are early signal only
 
 ### Claude Agents
 
@@ -170,6 +173,7 @@ Findings are tagged `CODEX-FLAGGED` for traceability. See [`scripts/overlord/REA
 - **Issue-backed governance backlog** — GitHub Issues are the execution backlog for this repo; `OVERLORD_BACKLOG.md` is the roadmap/status mirror and CI blocks actionable rows without issue references
 - **PROGRESS ↔ GitHub staleness gate** — governed product repos must keep active `docs/PROGRESS.md` backlog sections aligned with backlog-labeled GitHub issues; reusable governance CI and weekly sweep now surface drift
 - **Doc co-staging** — Source code changes must co-stage related governance docs (PROGRESS, FEATURE_REGISTRY, FAIL_FAST_LOG, etc.)
+- **Planner write-boundary** — Tier 1 planners may write planning/review/handoff artifacts only; non-planning changes require accepted pinned-agent handoff evidence and active exceptions for same-model/family implementers
 - **Security tiers** — Tiered requirements from baseline gitleaks up to HIPAA-compliant PHI redaction agents, break-glass gates, and audit retention
 - **Fail-fast loop closure** — Repos with test/heal cycles must auto-persist failure patterns and surface gate failures
 - **Completion verification** — Creates isolated worktrees and runs `git show HEAD:<path>` to verify artifacts exist before allowing "done" status

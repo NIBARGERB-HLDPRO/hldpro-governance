@@ -5,11 +5,13 @@ import contextlib
 import importlib.util
 import io
 import json
+import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from typing import Any
 
 
 MODULE_PATH = Path(__file__).with_name("assert_execution_scope.py")
@@ -54,10 +56,12 @@ class TestAssertExecutionScope(unittest.TestCase):
     def _scope_file(
         self,
         tmpdir: Path,
-        expected_root: Path,
+        expected_root: Path | str,
         branch: str = "scope-test",
         allowed: list[str] | None = None,
         forbidden_roots: list[Path] | None = None,
+        execution_mode: str | None = None,
+        handoff_evidence: dict[str, Any] | None = None,
     ) -> Path:
         scope = {
             "expected_execution_root": str(expected_root),
@@ -65,17 +69,51 @@ class TestAssertExecutionScope(unittest.TestCase):
             "allowed_write_paths": allowed or ["allowed.txt", "allowed-dir/"],
             "forbidden_roots": [str(path) for path in forbidden_roots or []],
         }
+        if execution_mode is not None:
+            scope["execution_mode"] = execution_mode
+        if handoff_evidence is not None:
+            scope["handoff_evidence"] = handoff_evidence
         path = tmpdir / "scope.json"
         path.write_text(json.dumps(scope), encoding="utf-8")
         return path
 
-    def _run_main(self, repo: Path, scope: Path) -> tuple[int, str]:
+    def _run_main(self, repo: Path, scope: Path, changed_files_file: Path | None = None) -> tuple[int, str]:
+        args = ["--scope", str(scope)]
+        if changed_files_file is not None:
+            args.extend(["--changed-files-file", str(changed_files_file)])
         stdout = io.StringIO()
         with contextlib.redirect_stdout(stdout), _working_directory(repo):
-            code = assert_execution_scope.main(["--scope", str(scope)])
+            code = assert_execution_scope.main(args)
         return code, stdout.getvalue()
 
-    def test_allows_changes_in_allowed_paths(self) -> None:
+    def _changed_files_file(self, tmpdir: Path, paths: list[str], name: str = "changed-files.txt") -> Path:
+        path = tmpdir / name
+        path.write_text("\n".join(paths) + "\n", encoding="utf-8")
+        return path
+
+    def _write_exception_file(self, repo: RepoFixture, relative_path: str) -> None:
+        repo.write(relative_path, "approved exception\n")
+
+    def _handoff(
+        self,
+        *,
+        planner_model: str,
+        implementer_model: str,
+        status: str = "accepted",
+        active_exception_ref: str | None = None,
+        active_exception_expires_at: str | None = None,
+    ) -> dict[str, Any]:
+        return {
+            "status": status,
+            "planner_model": planner_model,
+            "implementer_model": implementer_model,
+            "accepted_at": "2026-04-17T00:00:00Z",
+            "evidence_paths": ["raw/closeouts/issue-242-handoff.md"],
+            "active_exception_ref": active_exception_ref,
+            "active_exception_expires_at": active_exception_expires_at,
+        }
+
+    def test_allows_changes_in_allowed_paths_dirty_tree_mode(self) -> None:
         with tempfile.TemporaryDirectory() as raw_tmpdir:
             tmpdir = Path(raw_tmpdir)
             repo = RepoFixture(tmpdir / "repo")
@@ -84,6 +122,222 @@ class TestAssertExecutionScope(unittest.TestCase):
             scope = self._scope_file(tmpdir, repo.root)
 
             code, output = self._run_main(repo.root, scope)
+
+        self.assertEqual(code, 0, output)
+        self.assertIn("PASS execution scope", output)
+
+    def test_planning_only_diff_inside_allowed_paths_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["./allowed-dir/nested.txt"])
+            scope = self._scope_file(tmpdir, repo.root, execution_mode="planning_only")
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertEqual(code, 0, output)
+        self.assertIn("PASS execution scope", output)
+
+    def test_planning_only_diff_outside_allowed_paths_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["./not-allowed.txt"])
+            scope = self._scope_file(tmpdir, repo.root, execution_mode="planning_only")
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("changed paths outside allowed_write_paths", output)
+        self.assertIn("not-allowed.txt", output)
+
+    def test_non_planning_without_handoff_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            scope = self._scope_file(tmpdir, repo.root, execution_mode="implementation_ready")
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("requires `handoff_evidence.status` == 'accepted'", output)
+
+    def test_non_planning_with_accepted_handoff_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="implementation_ready",
+                handoff_evidence=self._handoff(
+                    planner_model="gpt-5",
+                    implementer_model="claude-3-7-sonnet",
+                ),
+            )
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertEqual(code, 0, output)
+        self.assertIn("PASS execution scope", output)
+
+    def test_same_model_or_family_without_active_exception_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="implementation_ready",
+                handoff_evidence=self._handoff(
+                    planner_model="gpt-5",
+                    implementer_model="gpt-5-mini",
+                ),
+            )
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("active_exception_ref", output)
+
+    def test_gpt_major_decimal_variants_without_active_exception_fail(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="implementation_ready",
+                handoff_evidence=self._handoff(
+                    planner_model="gpt-5.3-codex",
+                    implementer_model="openai/gpt-5.4",
+                ),
+            )
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("active_exception_ref", output)
+
+    def test_gpt_major_decimal_variants_with_active_exception_pass(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            self._write_exception_file(repo, "raw/exceptions/issue-242-gpt5-major-line.md")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="implementation_ready",
+                handoff_evidence=self._handoff(
+                    planner_model="gpt-5.3-codex",
+                    implementer_model="openai/gpt-5.4",
+                    active_exception_ref="raw/exceptions/issue-242-gpt5-major-line.md",
+                    active_exception_expires_at="2999-01-01T00:00:00Z",
+                ),
+            )
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertEqual(code, 0, output)
+        self.assertIn("PASS execution scope", output)
+
+    def test_active_exception_with_expiry_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            self._write_exception_file(repo, "raw/exceptions/issue-242-gpt5-exception.md")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="implementation_ready",
+                handoff_evidence=self._handoff(
+                    planner_model="gpt-5",
+                    implementer_model="gpt-5-mini",
+                    active_exception_ref="raw/exceptions/issue-242-gpt5-exception.md",
+                    active_exception_expires_at="2999-01-01T00:00:00Z",
+                ),
+            )
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertEqual(code, 0, output)
+        self.assertIn("PASS execution scope", output)
+
+    def test_active_exception_ref_nonexistent_file_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="implementation_ready",
+                handoff_evidence=self._handoff(
+                    planner_model="gpt-5",
+                    implementer_model="gpt-5-mini",
+                    active_exception_ref="raw/exceptions/missing.md",
+                    active_exception_expires_at="2999-01-01T00:00:00Z",
+                ),
+            )
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("active_exception_ref must reference an existing repo file path", output)
+        self.assertIn("raw/exceptions/missing.md", output)
+
+    def test_active_exception_ref_existing_file_with_anchor_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            self._write_exception_file(repo, "raw/exceptions/issue-242-anchor.md")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="implementation_ready",
+                handoff_evidence=self._handoff(
+                    planner_model="gpt-5",
+                    implementer_model="gpt-5-mini",
+                    active_exception_ref="raw/exceptions/issue-242-anchor.md#issue-242",
+                    active_exception_expires_at="2999-01-01T00:00:00Z",
+                ),
+            )
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertEqual(code, 0, output)
+        self.assertIn("PASS execution scope", output)
+
+    def test_diff_mode_and_dirty_tree_mode_share_path_normalization(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            repo.write("allowed-dir/nested.txt")
+            changed = self._changed_files_file(tmpdir, ["./allowed-dir/nested.txt"])
+            scope = self._scope_file(tmpdir, repo.root)
+
+            dirty_code, dirty_output = self._run_main(repo.root, scope)
+            diff_code, diff_output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertEqual(dirty_code, 0, dirty_output)
+        self.assertEqual(diff_code, 0, diff_output)
+
+    def test_portable_expected_root_sentinel_passes_in_copied_checkout(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            source_repo = RepoFixture(tmpdir / "source")
+            copied_repo_root = tmpdir / "copied"
+            shutil.copytree(source_repo.root, copied_repo_root)
+            scope = self._scope_file(tmpdir, "{repo_root}")
+
+            code, output = self._run_main(copied_repo_root, scope)
 
         self.assertEqual(code, 0, output)
         self.assertIn("PASS execution scope", output)

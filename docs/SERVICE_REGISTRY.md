@@ -21,7 +21,7 @@
 
 | Workflow | File | Trigger | Purpose |
 |----------|------|---------|---------|
-| governance-check | `.github/workflows/governance-check.yml` | PR / push | Doc co-staging, structured planning, governance-surface, and registry gates |
+| governance-check | `.github/workflows/governance-check.yml` | PR / push | Doc co-staging, structured planning, governance-surface, planner write-boundary, and registry gates |
 | check-backlog-gh-sync | `.github/workflows/check-backlog-gh-sync.yml` | PR / push (OVERLORD_BACKLOG.md) | Backlog ↔ GH issue sync gate |
 | check-pr-commit-scope | `.github/workflows/check-pr-commit-scope.yml` | PR to main | Stale-worktree contamination guard |
 | overlord-sweep | `.github/workflows/overlord-sweep.yml` | Weekly (Mon 9am CT) | Cross-repo standards sweep |
@@ -39,7 +39,7 @@
 |--------|------|---------|
 | validate_backlog_gh_sync.py | `scripts/overlord/validate_backlog_gh_sync.py` | Validates OVERLORD_BACKLOG.md Planned rows reference open GH issues |
 | validate_structured_agent_cycle_plan.py | `scripts/overlord/validate_structured_agent_cycle_plan.py` | Validates structured plan JSON against org schema |
-| assert_execution_scope.py | `scripts/overlord/assert_execution_scope.py` | Asserts issue work runs from the declared root, branch, allowed write paths, and clean forbidden roots |
+| assert_execution_scope.py | `scripts/overlord/assert_execution_scope.py` | Asserts issue work runs from the declared root/branch, enforces planning-only `allowed_write_paths`, and requires accepted pinned-agent handoff evidence for non-planning diffs |
 | validate_governed_repos.py | `scripts/overlord/validate_governed_repos.py` | Validates `docs/governed_repos.json` and reconciles it with graphify targets |
 | governed_repos.py | `scripts/overlord/governed_repos.py` | Shared adapter for executable governed repo registry consumers |
 | codex_ingestion.py | `scripts/overlord/codex_ingestion.py` | Codex review ingestion: generate, qualify, promote |
@@ -91,5 +91,5 @@
 
 | Hook | Path | Scope | Purpose |
 |------|------|-------|---------|
-| code-write-gate.sh | `hooks/code-write-gate.sh` | Local Claude Code write hook | Blocks unplanned governance-surface writes and enforces SoM new-code routing |
+| code-write-gate.sh | `hooks/code-write-gate.sh` | Local Claude Code write hook | Blocks unplanned governance-surface writes, enforces SoM new-code routing, and surfaces planner-boundary drift as early warning (CI is authoritative) |
 | closeout-hook.sh | `hooks/closeout-hook.sh` | Repo-wide | Validates closeout artifact on Stage 6 completion |
