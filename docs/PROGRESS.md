@@ -10,7 +10,6 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
-| Enforce planner write-boundary for governance-surface edits | #242 | IN_PROGRESS | HIGH | 2-4 | Execution-scope planner-boundary gate, CI strict enforcement, hook warning path, docs/tests | Follow-up from #241 and #226; implementation must be handed to pinned worker agents |
 | Clarify graphify-out artifact contract and ignored-cache noise | #241 | IN_PROGRESS | MEDIUM | 1-2 | `.gitignore` contract clarification, graphify contract test update, docs alignment | Scope excludes planner write-boundary enforcement; tracked separately in #242 |
 | SoM enforcement drift closure epic | #214 | IN PROGRESS | HIGH | TBD | Reviewed PDCAR plan, Claude review artifact, issues #215-#221 | Plan: docs/plans/2026-04-17-som-enforcement-drift-pdcar.md; closeout loop tracked by #220; execution-scope guard tracked by #221 |
 | SoM Slice 1: Codex model pin enforcement | #215 | IN PROGRESS | HIGH | TBD | Codex model/reasoning checker, overlord-sweep wiring | Part of #214 |
@@ -53,5 +52,6 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Enforce planner write-boundary for governance-surface edits | #242 | 2026-04-17 | PRs #244 and #245 split trusted execution-scope bootstrap from implementation. Reusable governance CI now enforces planner-boundary execution scopes from base, `assert_execution_scope.py` validates `execution_mode` and accepted handoff evidence, and the local write gate provides early warnings. |
 | Harden verify-completion + codex-spark dispatch briefs against stale-checkout contamination | #174 | 2026-04-17 | GitHub issue is closed; moved out of active Plans to keep the local mirror aligned with canonical issue state |
 | Reconcile SoM branch naming vs local-ai-machine riskfix/* convention | #175 | 2026-04-17 | Branch-policy drift resolved by PR #175; active docs now describe the SoM and `riskfix/*` conventions as complementary rather than blocked |
