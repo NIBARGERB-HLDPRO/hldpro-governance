@@ -1,0 +1,141 @@
+{
+  "session_id": "session-20260417-issue-228-model-runtime",
+  "issue_number": 228,
+  "objective": "Implement the local model runtime and guardrail lane slice from epic #224 by documenting Mac/Windows runtime inventory, adding no-payload health probes, defining fail-closed PII routing boundaries, and resolving the stale Windows VRAM assumption without granting autonomous write authority.",
+  "tier": 1,
+  "scope_boundary": [
+    "Inventory Mac hardware and local inference availability without sending payloads to model endpoints.",
+    "Probe Windows Ollama health through metadata-only `/api/tags` reachability and model-list checks.",
+    "Document Mac M5 Pro 48 GB memory budgets for always-resident guardrail/intent models and on-demand worker/critic models.",
+    "Resolve the Windows hardware conflict by removing the unverified 16 GB VRAM assertion from the active standard and marking Windows VRAM as unverified until direct host evidence exists.",
+    "Keep Windows LAN-only fallback/batch/health infrastructure unless a later issue expands authority.",
+    "Ensure PII routing fails closed when patterns or local guardrail readiness are unavailable."
+  ],
+  "out_of_scope": [
+    "Installing, starting, or downloading local models.",
+    "Sending real prompts, PII, or synthetic payloads to cloud, Windows, or local model endpoints.",
+    "Granting autonomous packet dispatch or write authority.",
+    "Adding Cloudflare/off-LAN Windows exposure, Wake-on-LAN, or remote host management.",
+    "Changing local-ai-machine runtime code from this governance slice."
+  ],
+  "research_summary": "Local checks on 2026-04-17 show this Mac is a MacBook Pro Mac17,8 with Apple M5 Pro, 18 cores, and 48 GB memory. `mlx_lm` is importable, while `ollama` was not found on PATH in this shell. The Windows Ollama endpoint `http://172.17.227.49:11434/api/tags` timed out from the Mac, so the Windows host cannot be treated as live or hardware-verified in this slice. Existing STANDARDS.md still claimed a Windows workstation with 64 GB RAM and 16 GB VRAM; issue #224 notes the operator report conflicts with that. This slice resolves the conflict conservatively: Windows has 64 GB RAM by prior/operator report, no verified discrete VRAM in governance evidence, and remains LAN-only fallback/batch/health infrastructure until direct hardware telemetry is captured. Health probes are metadata-only and PII guardrail checks use local pattern files only.",
+  "research_artifacts": [
+    "Issue #224",
+    "Issue #228",
+    "STANDARDS.md §Society of Minds",
+    "docs/runbooks/windows-ollama-worker.md",
+    "scripts/windows-ollama/preflight.sh",
+    "scripts/windows-ollama/submit.py",
+    "scripts/windows-ollama/decide.sh",
+    "scripts/windows-ollama/pii_patterns.yml",
+    "scripts/lam/pii-patterns.yml",
+    "system_profiler SPHardwareDataType on 2026-04-17",
+    "`python3 -c import mlx_lm` on 2026-04-17",
+    "`curl --max-time 2 http://172.17.227.49:11434/api/tags` timeout on 2026-04-17"
+  ],
+  "sprints": [
+    {
+      "name": "Runtime Inventory Probe",
+      "goal": "Add no-payload runtime inventory and guardrail health probes.",
+      "tasks": [
+        "Add a stdlib runtime inventory script under `scripts/lam/`.",
+        "Report Mac hardware, MLX availability, local Ollama CLI availability, Windows Ollama metadata reachability, and local PII pattern readiness.",
+        "Ensure probes do not send prompt payloads to model endpoints.",
+        "Add tests for fail-closed PII behavior and Windows timeout handling."
+      ],
+      "acceptance_criteria": [
+        "Health probes report installed/running model state without sending sensitive payloads.",
+        "PII guardrail readiness fails closed when patterns cannot load.",
+        "Windows timeout/unreachable state does not route work."
+      ],
+      "file_paths": [
+        "scripts/lam/runtime_inventory.py",
+        "scripts/lam/test_runtime_inventory.py"
+      ]
+    },
+    {
+      "name": "Runtime Placement Docs",
+      "goal": "Document Mac/Windows model placement and routing boundaries.",
+      "tasks": [
+        "Add `docs/runbooks/local-model-runtime.md` with memory budgets and model placement.",
+        "Add `docs/runbooks/windows-ollama.md` with current Windows verification status and LAN-only role.",
+        "Update STANDARDS.md to replace the stale Windows 16 GB VRAM assertion with unverified hardware status."
+      ],
+      "acceptance_criteria": [
+        "Mac M5 Pro 48 GB memory budget is documented.",
+        "Windows hardware conflict is resolved conservatively before model placement is finalized.",
+        "Windows remains LAN-only fallback/batch/health infrastructure."
+      ],
+      "file_paths": [
+        "docs/runbooks/local-model-runtime.md",
+        "docs/runbooks/windows-ollama.md",
+        "STANDARDS.md"
+      ]
+    },
+    {
+      "name": "Governance Evidence",
+      "goal": "Register the runtime inventory and complete reviewed closeout.",
+      "tasks": [
+        "Update feature, service, and data dictionary docs.",
+        "Add PDCAR, cross-review, and closeout artifacts.",
+        "Refresh graph/wiki and compendium after closeout."
+      ],
+      "acceptance_criteria": [
+        "Registry docs describe runtime inventory outputs and PII fail-closed contract.",
+        "Alternate-family review passes or findings are resolved.",
+        "Closeout hook completes and compendium is current."
+      ],
+      "file_paths": [
+        "docs/FEATURE_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/plans/issue-228-model-runtime-pdcar.md",
+        "raw/cross-review/2026-04-17-model-runtime.md",
+        "raw/closeouts/2026-04-17-model-runtime.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex implementation agent",
+      "role": "runtime inventory and guardrail implementer",
+      "focus": "No-payload probes, PII fail-closed behavior, conservative Windows hardware resolution, and documentation accuracy.",
+      "status": "accepted",
+      "summary": "The slice adds inventory/reporting and documentation only. It does not install models, send prompts, or grant autonomous routing authority.",
+      "evidence": [
+        "scripts/lam/runtime_inventory.py",
+        "docs/runbooks/local-model-runtime.md",
+        "docs/runbooks/windows-ollama.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Alternate-family review required for Tier 1 model-routing and PII boundary changes. Findings are recorded in the #228 cross-review artifact and must be resolved or explicitly accepted before merge.",
+    "evidence": [
+      "raw/cross-review/2026-04-17-model-runtime.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement #228 runtime inventory, no-payload health probes, local/Windows runbooks, conservative STANDARDS update, tests, review, and closeout only.",
+    "next_execution_step": "Build probe and docs, run tests and validators, obtain alternate-family review, close out, open PR, and merge after CI passes.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If Windows hardware telemetry cannot be read directly, record it as unverified and do not finalize Windows model placement beyond LAN-only fallback/batch/health.",
+    "If any probe would send prompt content, remove or defer that probe.",
+    "If PII pattern files are missing or malformed, guardrail readiness must report fail-closed.",
+    "If local model installation is needed, defer to a separate operator-run issue."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: proceed, loop through, no HITL",
+    "Codex implementation agent"
+  ],
+  "approved_at": "2026-04-17T12:45:00-05:00"
+}

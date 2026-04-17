@@ -45,6 +45,7 @@
 | GOV-018 | GOVERNED_REPO_REGISTRY | Executable governed repository registry and validator | COMPLETE | REQUIRED |
 | GOV-019 | PLANNING_SCOPE_GATEKEEPER | Issue-backed governance-surface planning and execution-scope gatekeeper | COMPLETE | REQUIRED |
 | GOV-020 | READ_ONLY_GOVERNANCE_OBSERVER | Deterministic per-repo governance observer reports without packet enqueue authority | COMPLETE | OPS_READY |
+| GOV-021 | LOCAL_MODEL_RUNTIME_INVENTORY | No-payload local/Windows model runtime inventory and PII guardrail readiness | COMPLETE | REQUIRED |
 
 ---
 
@@ -130,6 +131,14 @@
 | GOV-020 | `scripts/orchestrator/read_only_observer.py` reads registry, graphify, wiki, compendium, closeout, backlog, and raw issue metadata artifacts, then writes per-repo JSON/Markdown reports under `projects/<repo_slug>/reports/`. |
 | GOV-020 | `launchd/com.hldpro.governance-observer.plist` and `docs/runbooks/always-on-governance.md` define the disabled-by-default macOS user-agent path, health checks, logs, and kill/disable SOP. |
 | GOV-020 | The observer reports source commit SHAs, artifact SHA-256 hashes, stale knowledge signals, planning-gate state, and daemon readiness while keeping `packet_enqueue_enabled: false`. |
+
+### LOCAL_MODEL_RUNTIME_INVENTORY
+
+| Feature ID | Notes |
+|---|---|
+| GOV-021 | `scripts/lam/runtime_inventory.py` reports Mac hardware, MLX availability, Windows Ollama metadata reachability, PII pattern readiness, memory budgets, and fail-closed routing boundaries without sending prompt payloads. |
+| GOV-021 | `docs/runbooks/local-model-runtime.md` defines the Mac M5 Pro 48 GB steady-state and on-demand model budget. |
+| GOV-021 | `docs/runbooks/windows-ollama.md` resolves the prior Windows VRAM assumption as unverified and keeps Windows LAN-only fallback/batch/health until direct host telemetry exists. |
 
 ### SOCIETY_OF_MINDS
 

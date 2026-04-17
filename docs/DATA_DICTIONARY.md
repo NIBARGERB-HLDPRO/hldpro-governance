@@ -133,3 +133,18 @@ Contract:
 - Includes `repo_slug`, `display_name`, `generated_at`, `source_commit`, `health`, `stale_knowledge`, `planning_gate`, `daemon_readiness`, and `artifacts`.
 - Artifact entries include relative path, existence, SHA-256 hash when present, and detail text.
 - Reports use local metadata-only issue feed files from `raw/github-issues/` when present; issue bodies are not read.
+
+---
+
+### Local Model Runtime Inventory
+**Generator:** `scripts/lam/runtime_inventory.py`
+**Optional storage:** reviewed caller path via `--output`, for example `metrics/runtime-inventory/latest.json`
+
+Contract:
+- Probes Mac hardware and local runtime availability without sending prompt payloads.
+- Probes Windows Ollama metadata through `/api/tags` only.
+- Reports `probe_payloads_sent: false`.
+- Reports PII guardrail readiness from local pattern files.
+- Missing or malformed PII patterns must produce `fail_closed: true`.
+- Reports routing boundaries: no PII to cloud, no PII to Windows, halt when patterns are missing, halt for PII/architecture/standards if local guardrail is unavailable.
+- Reports memory budgets for Mac steady-state guardrail/intent models and one-at-a-time on-demand worker/critic models.

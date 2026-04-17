@@ -19,7 +19,7 @@ This file is the single org-level index of governance rules, enforcement files, 
 
 | Repo | Purpose | Rule Files | Graph Nodes | Graph Edges |
 |------|---------|-----------:|------------:|------------:|
-| `hldpro-governance` | Governance standards, reusable CI, agents, and cross-repo audit tooling | 164 | 527 | 1026 |
+| `hldpro-governance` | Governance standards, reusable CI, agents, and cross-repo audit tooling | 164 | 550 | 1058 |
 | `ai-integration-services` | AIS SaaS platform governance, CI, hooks, and specialist agents | 156 | 1902 | 2562 |
 | `HealthcarePlatform` | HIPAA platform governance, CI, hooks, and specialist agents | 92 | 1924 | 3033 |
 | `local-ai-machine` | Local AI runtime governance, packet controls, lane rules, and schemas | 138 | 3089 | 5106 |
@@ -44,7 +44,7 @@ Governance standards, reusable CI, agents, and cross-repo audit tooling
 ### Graph Nodes And Communities
 
 - Graph report: `graphify-out/hldpro-governance/GRAPH_REPORT.md`
-- Nodes / edges / hyperedges: `527` / `1026` / `0`
+- Nodes / edges / hyperedges: `550` / `1058` / `0`
 - Top nodes: `WindowsOllamaSubmitter (48)`, `PiiDetectionError (44)`, `ModelNotAllowedError (44)`, `EndpointUnreachableError (44)`, `codex_ingestion.py (37)`, `_tier1_packet() (29)`, `AuditWriter (28)`, `measure_graphify_usage.py (28)`
 - Top communities: `Windows ollama Submit`, `Packet Validate Passes`, `Windows ollama Audit`, `Overlord Codex ingestion`, `Windows ollama Audit`, `Packet Validate Load`, `Knowledge base Measure graphify usage`, `Orchestrator Read only observer`
 
@@ -97,7 +97,7 @@ Governance standards, reusable CI, agents, and cross-repo audit tooling
 | `docs/FAIL_FAST_LOG.md` | policy-doc | Fail-Fast Log | Sections: Format, Category: TOOLING — Codex CLI, scripts, and operator helpers | References CODEX_HOME/auth.json, DATA_DICTIONARY.md, GITHUB_ENTERPRISE_ADOPTION_PLAN.md, OVERLORD_BACKLOG.md, SERVICE_REGISTRY.md, auth.json, codex_ingestion.py, docs/PROGRESS.md |
 | `docs/FEATURE_REGISTRY.md` | policy-doc | hldpro-governance — Feature Registry | Sections: Status Taxonomy, Summary Table, Domain Notes | References .github/workflows/governance-check.yml, CLAUDE.md, OVERLORD_BACKLOG.md, STANDARDS.md, docs/FEATURE_REGISTRY.md, docs/ORG_GOVERNANCE_COMPENDIUM.md, docs/PROGRESS.md, docs/governed_repos.json |
 | `docs/PROGRESS.md` | policy-doc | hldpro-governance — Progress & Backlog | Sections: Plans, Known Bugs, Feature Requests, Operational Items, Done | References OVERLORD_BACKLOG.md |
-| `docs/SERVICE_REGISTRY.md` | policy-doc | Service Registry | Sections: Agents, CI Workflows (Reusable / Governance), Overlord Scripts, Orchestrator Scripts, launchd Templates, Knowledge Base Scripts | References .github/workflows/check-agent-model-pins.yml, .github/workflows/check-backlog-gh-sync.yml, .github/workflows/check-no-self-approval.yml, .github/workflows/check-pr-commit-scope.yml, .github/workflows/governance-check.yml, .github |
+| `docs/SERVICE_REGISTRY.md` | policy-doc | Service Registry | Sections: Agents, CI Workflows (Reusable / Governance), Overlord Scripts, Orchestrator Scripts, Local Runtime Scripts, launchd Templates | References .github/workflows/check-agent-model-pins.yml, .github/workflows/check-backlog-gh-sync.yml, .github/workflows/check-no-self-approval.yml, .github/workflows/check-pr-commit-scope.yml, .github/workflows/governance-check.yml, .github |
 | `docs/exception-register.md` | policy-doc | Society of Minds — Exception Register | Sections: Purpose, Entry schema (required fields), Approval authority, Active exceptions, Active exceptions (temporary), Expired or closed exceptions | References STANDARDS.md, audit.py, check-windows-ollama-audit-schema.yml, decide.sh, pii-patterns.yml, pii_patterns.yml, raw/cross-review/2026-04-14-society-of-minds-charter.md, require-cross-review.yml |
 | `docs/graphify_targets.json` | governance-file | governance-file file | Governance support artifact | No explicit interactions detected |
 | `docs/plans/2026-04-15-worktree-hygiene-pdcar.md` | pdcar-plan | Worktree Hygiene + Backlog Refresh — PDCAR | Sections: Problem, Data, Change, Assess (gates), Remediate (routing) | References OVERLORD_BACKLOG.md, hooks/closeout-hook.sh, raw/closeouts/2026-04-15-worktree-hygiene.md |
