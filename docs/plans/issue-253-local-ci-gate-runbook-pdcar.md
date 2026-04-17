@@ -17,6 +17,7 @@ This slice is intentionally limited to the planning surface:
 - `docs/plans/issue-253-structured-agent-cycle-plan.json`
 - `raw/cross-review/2026-04-17-issue-253-local-ci-gate-toolkit-plan.md`
 - `raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-planning.json`
+- `raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-implementation.json`
 - `OVERLORD_BACKLOG.md`
 
 The governing GitHub issue is the system of record for this planning intake and implementation planning. Implementation files remain out of scope for this PR; the next slice should build the governance-owned toolkit and deployer, then roll out thin consumer shims through separate issue-backed adoption slices.
@@ -50,6 +51,7 @@ Acceptance checks for this slice:
 - [x] Subagent planning review findings are incorporated into the runbook and structured plan.
 - [x] Alternate-model review is recorded under `raw/cross-review/`.
 - [x] The planning-only execution scope is recorded under `raw/execution-scopes/`.
+- [x] The follow-up implementation execution scope is recorded under `raw/execution-scopes/` before implementation files are changed.
 
 Recommended validation commands:
 
@@ -81,7 +83,7 @@ The implementation plan now resolves the previously identified runbook correctio
 
 Remaining execution gates before implementation:
 
-- Add a pinned Tier 2 worker execution scope for the implementation PR.
+- Merge this planning PR so the implementation execution scope is trusted from `main`.
 - Carry forward the alternate-model review follow-ups into the future implementation PR: start from the G1-G5 micro-slices and enforce the deployer contract before any consumer rollout.
 - Keep consumer-repo rollout as separate issue-backed adoption work after the toolkit is dogfooded in governance.
 

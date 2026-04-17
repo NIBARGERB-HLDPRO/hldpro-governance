@@ -1,0 +1,30 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "feat/issue-253-local-ci-gate-toolkit",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/PROGRESS.md",
+    "docs/runbooks/local-ci-gate-toolkit.md",
+    "raw/closeouts/2026-04-17-local-ci-gate-toolkit.md",
+    "raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-implementation.json",
+    "scripts/overlord/deploy_local_ci_gate.py",
+    "scripts/overlord/test_deploy_local_ci_gate.py",
+    "tools/local-ci-gate/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-opus-4-6",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-17T21:55:00Z",
+    "evidence_paths": [
+      "docs/plans/HLD_Pro_Local_CI_Gate_Runbook.md",
+      "docs/plans/issue-253-structured-agent-cycle-plan.json",
+      "raw/cross-review/2026-04-17-issue-253-local-ci-gate-toolkit-plan.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

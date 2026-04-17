@@ -9,6 +9,7 @@
     "docs/plans/issue-253-local-ci-gate-runbook-pdcar.md",
     "docs/plans/issue-253-structured-agent-cycle-plan.json",
     "raw/cross-review/2026-04-17-issue-253-local-ci-gate-toolkit-plan.md",
+    "raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-implementation.json",
     "raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-planning.json"
   ],
   "forbidden_roots": [

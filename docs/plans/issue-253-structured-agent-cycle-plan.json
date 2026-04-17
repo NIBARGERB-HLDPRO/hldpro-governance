@@ -27,6 +27,7 @@
     "raw/cross-review/2026-04-17-issue-250-graphify-hook-helper.md",
     "raw/cross-review/2026-04-17-issue-253-local-ci-gate-toolkit-plan.md",
     "raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-planning.json",
+    "raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-implementation.json",
     "OVERLORD_BACKLOG.md",
     "GitHub issue #253"
   ],
@@ -56,6 +57,7 @@
         "docs/plans/issue-253-structured-agent-cycle-plan.json",
         "raw/cross-review/2026-04-17-issue-253-local-ci-gate-toolkit-plan.md",
         "raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-planning.json",
+        "raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-implementation.json",
         "OVERLORD_BACKLOG.md"
       ]
     },
@@ -128,9 +130,9 @@
     "session_agent": "Codex",
     "execution_mode": "implementation_ready",
     "approved_scope_summary": "Planning-only org-level Local CI Gate toolkit package for issue #253: runbook, memo, PDCA/R, structured plan, cross-review, planning execution-scope artifact, and issue-backed OVERLORD_BACKLOG row. No implementation files in PR #256.",
-    "next_execution_step": "Merge planning package after review. Implementation begins only after a pinned Tier 2 worker execution-scope artifact exists.",
+    "next_execution_step": "Merge planning package after review so the implementation execution scope is trusted from main, then implement on branch feat/issue-253-local-ci-gate-toolkit.",
     "blocked_on": [
-      "pinned Tier 2 worker execution-scope artifact for implementation PR"
+      "planning PR merged so implementation scope is trusted from main"
     ]
   },
   "material_deviation_rules": [
