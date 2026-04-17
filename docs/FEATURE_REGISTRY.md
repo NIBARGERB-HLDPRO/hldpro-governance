@@ -47,6 +47,7 @@
 | GOV-020 | READ_ONLY_GOVERNANCE_OBSERVER | Deterministic per-repo governance observer reports without packet enqueue authority | COMPLETE | OPS_READY |
 | GOV-021 | LOCAL_MODEL_RUNTIME_INVENTORY | No-payload local/Windows model runtime inventory and PII guardrail readiness | COMPLETE | REQUIRED |
 | GOV-022 | PACKET_QUEUE_ORCHESTRATOR | Filesystem packet queue with dispatch gate, PII halt, and replayable audit log | COMPLETE | REQUIRED |
+| GOV-023 | SELF_LEARNING_LOOP | Pre-dispatch mistake lookup, packet context injection, append-only failure write-back, and weekly learning drift report | COMPLETE | REQUIRED |
 
 ---
 
@@ -148,6 +149,16 @@
 | GOV-022 | `scripts/orchestrator/packet_queue.py` creates queue states under `raw/packets/queue/` and supports `inbound`, `dispatched`, `review`, `gate`, `done`, and `halted` transitions. |
 | GOV-022 | Dispatch requires the existing SoM packet validator plus governance metadata: issue number, structured plan reference, execution scope reference, model identity, fallback log field, validation commands, review artifacts, PII mode, and explicit dispatch authorization. |
 | GOV-022 | State changes are recorded in `raw/packets/queue/audit.jsonl` with timestamp, source, destination, packet id, SHA-256, dry-run flag, allowed flag, status, and reason so queue movement can be replayed without executing packet payloads. |
+
+### SELF_LEARNING_LOOP
+
+| Feature ID | Notes |
+|---|---|
+| GOV-023 | `scripts/orchestrator/self_learning.py` indexes `docs/FAIL_FAST_LOG.md`, `docs/ERROR_PATTERNS.md`, raw closeouts, raw operator context, graphify attention, and the org compendium before dispatch. |
+| GOV-023 | Worker packets can be enriched with `governance.known_failure_context`, including cited direct evidence paths and repeat counts. |
+| GOV-023 | `packet_queue.py` halts dispatch when known-failure context reports `repeat_count >= 2`, forcing planning-gate escalation before repeating a documented mistake. |
+| GOV-023 | `record-failure` writes novel failures to `raw/operator-context/self-learning/` as new issue-backed files and never overwrites human-authored logs. |
+| GOV-023 | `overlord-sweep.yml` builds `metrics/self-learning/latest.json` and `latest.md`, appends the markdown report to the weekly issue, and persists the metric with other weekly generated artifacts. |
 
 ### SOCIETY_OF_MINDS
 

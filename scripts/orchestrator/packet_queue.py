@@ -184,6 +184,11 @@ def validate_for_dispatch(
     if pii_mode in {"tagged", "detected", "lam_only"} and role not in LAM_ROLES:
         return QueueDecision(False, "halted", f"PII mode {pii_mode} requires LAM role before dispatch")
 
+    known_failure_context = governance.get("known_failure_context") or []
+    for item in known_failure_context:
+        if isinstance(item, dict) and item.get("repeat_count", 0) >= 2:
+            return QueueDecision(False, "halted", "known failure context repeated; planning-gate escalation required")
+
     return QueueDecision(True, "ok", f"packet {packet_path.name} is dispatch-ready")
 
 
