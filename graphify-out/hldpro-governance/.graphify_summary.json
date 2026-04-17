@@ -1,8 +1,8 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-242-closeout-20260417/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-242-closeout-20260417/wiki/hldpro",
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-241-closeout-20260417/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-241-closeout-20260417/wiki/hldpro",
   "nodes": 647,
   "edges": 1318,
   "communities": 37,
