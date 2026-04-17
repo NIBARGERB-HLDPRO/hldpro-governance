@@ -285,6 +285,34 @@ class TestPacketQueue(unittest.TestCase):
             self.assertEqual(replay["refused_events"], 1)
             self.assertEqual(replay["accepted_transitions"], 0)
 
+    def test_dry_run_authorization_does_not_allow_real_dispatch(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            queue_root = Path(raw)
+            packet_path = self._write_inbound(
+                queue_root,
+                _packet(governance={"dispatch_authorized": False, "dry_run_authorized": True}),
+            )
+            dry_run_decision = packet_queue.transition_packet(
+                packet_path,
+                "inbound",
+                "dispatched",
+                queue_root=queue_root,
+                repo_root=REPO_ROOT,
+                dry_run=True,
+            )
+            live_decision = packet_queue.transition_packet(
+                packet_path,
+                "inbound",
+                "dispatched",
+                queue_root=queue_root,
+                repo_root=REPO_ROOT,
+                dry_run=False,
+            )
+
+            self.assertTrue(dry_run_decision.allowed, dry_run_decision.reason)
+            self.assertFalse(live_decision.allowed)
+            self.assertEqual(live_decision.status, "refused")
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

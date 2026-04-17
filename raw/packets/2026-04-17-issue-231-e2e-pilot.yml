@@ -1,0 +1,41 @@
+packet_id: 4818f3aa-e549-4053-b23d-3ca4426c684e
+prior:
+  tier: 1
+  role: architect-codex
+  model_id: gpt-5.4
+  model_family: openai
+  timestamp: "2026-04-17T19:20:00Z"
+next_tier: 2
+artifacts:
+  - docs/plans/issue-231-structured-agent-cycle-plan.json
+  - docs/plans/issue-231-e2e-pilot-pdcar.md
+  - metrics/pilot/issue-231-e2e-pilot.json
+  - raw/cross-review/2026-04-17-e2e-pilot.md
+  - raw/gate/2026-04-17-e2e-pilot.md
+standards_ref: "STANDARDS.md §Society of Minds (SoT)"
+fallback_ladder_ref: null
+governance:
+  issue_number: 231
+  structured_plan_ref: docs/plans/issue-231-structured-agent-cycle-plan.json
+  execution_scope_ref: docs/plans/issue-231-e2e-pilot-pdcar.md
+  validation_commands:
+    - python3 scripts/packet/validate.py raw/packets/2026-04-17-issue-231-e2e-pilot.yml
+    - python3 scripts/overlord/test_validate_structured_agent_cycle_plan.py
+    - python3 scripts/knowledge_base/test_graphify_governance_contract.py
+  review_artifacts:
+    - raw/cross-review/2026-04-17-e2e-pilot.md
+    - raw/gate/2026-04-17-e2e-pilot.md
+  fallback_log_ref: null
+  pii_mode: none
+  dispatch_authorized: false
+  dry_run_authorized: true
+  known_failure_context:
+    - title: "PDCA/R closeout could stop after a local fix without capturing newly discovered required follow-up work"
+      summary: "The pilot explicitly keeps residual authority expansion as a follow-up decision instead of granting it in the closeout."
+      source_path: docs/FAIL_FAST_LOG.md
+      evidence_paths:
+        - docs/FAIL_FAST_LOG.md
+      repeat_count: 1
+metadata:
+  pilot_scope: "low-risk governance artifact chain only"
+  execution_mode: "dry_run_packet_queue"

@@ -48,6 +48,7 @@
 | GOV-021 | LOCAL_MODEL_RUNTIME_INVENTORY | No-payload local/Windows model runtime inventory and PII guardrail readiness | COMPLETE | REQUIRED |
 | GOV-022 | PACKET_QUEUE_ORCHESTRATOR | Filesystem packet queue with dispatch gate, PII halt, and replayable audit log | COMPLETE | REQUIRED |
 | GOV-023 | SELF_LEARNING_LOOP | Pre-dispatch mistake lookup, packet context injection, append-only failure write-back, and weekly learning drift report | COMPLETE | REQUIRED |
+| GOV-024 | E2E_AUTONOMOUS_DELIVERY_PILOT | Low-risk governance pilot from issue-backed plan through packet, review, gate, closeout, PR checks, and readiness conclusion | COMPLETE | REQUIRED |
 
 ---
 
@@ -159,6 +160,14 @@
 | GOV-023 | `packet_queue.py` halts dispatch when known-failure context reports `repeat_count >= 2`, forcing planning-gate escalation before repeating a documented mistake. |
 | GOV-023 | `record-failure` writes novel failures to `raw/operator-context/self-learning/` as new issue-backed files and never overwrites human-authored logs. |
 | GOV-023 | `overlord-sweep.yml` builds `metrics/self-learning/latest.json` and `latest.md`, appends the markdown report to the weekly issue, and persists the metric with other weekly generated artifacts. |
+
+### E2E_AUTONOMOUS_DELIVERY_PILOT
+
+| Feature ID | Notes |
+|---|---|
+| GOV-024 | Issue #231 records the first low-risk end-to-end pilot of the always-on governance orchestrator flow using governance-owned artifacts only. |
+| GOV-024 | Pilot artifacts include structured plan, PDCAR, SoM packet, metrics, alternate-family review, completion gate, closeout, PR checks, and merge evidence. |
+| GOV-024 | The pilot conclusion is readiness for a follow-up planning issue to define broader autonomous execution authority; this slice does not grant that authority. |
 
 ### SOCIETY_OF_MINDS
 

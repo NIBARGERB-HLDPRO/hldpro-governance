@@ -1,0 +1,20 @@
+{
+  "issue_number": 231,
+  "generated_at": "2026-04-17T19:20:00Z",
+  "pilot_repo": "hldpro-governance",
+  "pilot_scope": "low-risk governance artifact chain",
+  "operator_approval_boundary": "operator instruction: proceed, loop through, no HITL",
+  "isolated_worktree": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-231-e2e-pilot-20260417",
+  "packet_id": "4818f3aa-e549-4053-b23d-3ca4426c684e",
+  "packet_queue_mode": "dry_run",
+  "plan_artifacts_created_before_execution": true,
+  "validation_steps_planned": 10,
+  "independent_review_required": true,
+  "completion_gate_required": true,
+  "readiness_conclusion": "ready_for_broader_autonomous_execution_planning_only",
+  "authority_expansion_granted": false,
+  "residual_risks": [
+    "Worker execution remains unpiloted beyond dry-run packet queue behavior.",
+    "Broader autonomous execution needs a separate issue with explicit authority boundaries and rollback criteria."
+  ]
+}
