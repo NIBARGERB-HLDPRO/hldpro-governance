@@ -1,0 +1,39 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-242-planner-write-boundary",
+  "allowed_write_paths": [
+    ".github/workflows/governance-check.yml",
+    "OVERLORD_BACKLOG.md",
+    "README.md",
+    "STANDARDS.md",
+    "docs/DATA_DICTIONARY.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/SERVICE_REGISTRY.md",
+    "docs/plans/issue-242-planner-write-boundary-pdcar.md",
+    "docs/plans/issue-242-planner-write-boundary-structured-agent-cycle-plan.json",
+    "hooks/code-write-gate.sh",
+    "raw/cross-review/2026-04-17-issue-242-planner-write-boundary-plan.md",
+    "raw/execution-scopes/2026-04-17-issue-242-planner-write-boundary-implementation.json",
+    "raw/execution-scopes/2026-04-17-issue-242-planner-write-boundary-planning.json",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/test_assert_execution_scope.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
+  ],
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-opus-4-6",
+    "implementer_model": "gpt-5-codex",
+    "accepted_at": "2026-04-17T14:30:00-05:00",
+    "evidence_paths": [
+      "docs/plans/issue-242-planner-write-boundary-structured-agent-cycle-plan.json",
+      "raw/cross-review/2026-04-17-issue-242-planner-write-boundary-plan.md",
+      "raw/execution-scopes/2026-04-17-issue-242-planner-write-boundary-planning.json"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

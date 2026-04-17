@@ -20,6 +20,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Enforce planner write-boundary for governance-surface edits | [#242](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/242) | HIGH | 2-4 | File-scope planner/non-planning boundary: planning allowlist, pinned-agent handoff evidence, active exception path, strict CI gate, hook warning path. |
 | Clarify graphify-out artifact contract and ignored-cache noise | [#241](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/241) | MEDIUM | 1-2 | `graphify-out/` is canonical, but ignored `graphify-out/cache/` and `.DS_Store` appear as noise under ignored-status scans. Scope excludes planner write-boundary enforcement, tracked separately in #242. |
 | Org governance compendium and planning-path repair | [#223](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/223) | HIGH | TBD | Phase 0 dependency for #224. Repair sequencing break before adopting dirty compendium draft; canonical plan at `docs/plans/issue-223-structured-agent-cycle-plan.json`. |
 | Org-wide always-on governance orchestrator epic | [#224](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/224) | HIGH | TBD | Planning-only package in progress at `docs/plans/issue-224-structured-agent-cycle-plan.json` and `docs/plans/issue-224-always-on-governance-orchestrator-pdcar.md`; separate Phase 0 dependency is compendium/path repair issue [#223](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/223). |
