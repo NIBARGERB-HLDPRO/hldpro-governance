@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-223-compendium-repair-20260417/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-223-compendium-repair-20260417/wiki/hldpro",
-  "nodes": 466,
-  "edges": 910,
-  "communities": 27,
-  "articles": 37,
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-225-registry-20260417/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-225-registry-20260417/wiki/hldpro",
+  "nodes": 482,
+  "edges": 939,
+  "communities": 29,
+  "articles": 39,
   "html_status": "skipped",
-  "code_files": 31
+  "code_files": 33
 }
