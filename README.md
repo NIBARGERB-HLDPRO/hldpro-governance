@@ -134,6 +134,13 @@ Three workflows in [`.github/workflows/`](.github/workflows/):
 
 Use [`scripts/knowledge_base/prepare_local_graphify_repos.sh`](scripts/knowledge_base/prepare_local_graphify_repos.sh) to create helper-managed `repos/` symlinks from sibling HLDPRO checkouts when validating the manifest-driven graph refresh path from an isolated governance worktree.
 
+### Graphify Artifact Contract
+
+- `docs/graphify_targets.json` is the source of truth for canonical output directories under `graphify-out/<repo>/`.
+- Canonical per-repo artifacts are `GRAPH_REPORT.md`, `graph.json`, `community-labels.json`, `.graphify_summary.json`, `.graphify_detect.json`, and `.graphify_ast.json`.
+- Nested `graphify-out/<repo>/graph.html` files are optional and not required by the governance contract.
+- Local-only exceptions remain ignored: root `graphify-out/cache/`, `graphify-out/.DS_Store`, `graphify-out/.graphify_tmp.json`, `graphify-out/graph.html`, and repo-wide nested `cache/` or `.DS_Store` noise.
+
 ### Hooks
 
 [`hooks/branch-switch-guard.sh`](hooks/branch-switch-guard.sh) is a global PreToolUse hook installed in `~/.claude/settings.json`. It blocks `git checkout <branch>` and `git switch <branch>` to prevent multi-session branch conflicts. Worktrees (`git worktree add`) are the safe alternative.

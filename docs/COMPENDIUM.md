@@ -331,7 +331,7 @@ The wiki contains 619 markdown articles across 7 directories. Articles are auto-
 
 | Directory | Description |
 |-----------|-------------|
-| `graphify-out/` | Canonical knowledge graph outputs (GRAPH_REPORT.md, nodes, edges, communities) |
+| `graphify-out/` | Canonical scoped outputs live under `graphify-out/<repo>/` (`GRAPH_REPORT.md`, `graph.json`, `community-labels.json`, `.graphify_summary.json`, `.graphify_detect.json`, `.graphify_ast.json`); local cache, `.DS_Store`, root `.graphify_tmp.json`, and root `graph.html` noise remain ignored. |
 | `graphify-out/healthcareplatform/` | HealthcarePlatform graph artifacts |
 | `graphify-out/asc-evaluator/` | ASC-Evaluator graph artifacts |
 

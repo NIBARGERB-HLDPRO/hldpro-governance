@@ -1,0 +1,144 @@
+{
+  "session_id": "session-20260417-issue-241-graphify-out-artifact-contract",
+  "issue_number": 241,
+  "objective": "Clarify and enforce the graphify-out artifact contract so canonical graph outputs are committed during graph creation while local cache and OS noise remain explicit exceptions.",
+  "tier": 2,
+  "scope_boundary": [
+    "This slice is limited to hldpro-governance planning and the future governance-side artifact contract for graphify-out.",
+    "The implementation handoff may update .gitignore comments or rules, graphify governance contract tests, and documentation that defines canonical graphify artifacts.",
+    "The implementation handoff must preserve the distinction between canonical scoped graph artifacts and local-only runtime cache unless issue #241 explicitly changes cache policy.",
+    "Planner write-boundary enforcement is explicitly excluded from #241 and tracked in issue #242."
+  ],
+  "out_of_scope": [
+    "Changing upstream graphify behavior.",
+    "Graph retrieval ranking, graph quality heuristics, Neo4j work, or model fine-tuning.",
+    "Committing graphify runtime cache files without an explicit policy decision.",
+    "Product-repo graphify artifact storage changes.",
+    "Planner write-boundary enforcement, pinned-agent handoff gates, or branch/worktree policy changes."
+  ],
+  "research_summary": "Repo research found that graphify-out is correctly documented and used as the canonical governance-hosted graph output root, with 46 tracked graph artifacts already present. The current noise comes from ignored runtime children inside that root: .gitignore ignores any cache directory and explicitly ignores graphify-out/cache, while .DS_Store is globally ignored. Weekly and closeout staging use broad directory staging, and the graphify contract test verifies manifest outputs live under graphify-out but does not explicitly assert which generated files are canonical or that manifest-defined outputs remain stageable. Specialty debug review recommended the smallest #241 fix: update .gitignore wording, README/COMPENDIUM artifact-contract docs, and graphify governance contract tests using git check-ignore against manifest-defined canonical artifacts and allowed local-only exceptions. Planner write-boundary enforcement is separate issue #242.",
+  "research_artifacts": [
+    ".gitignore",
+    "README.md",
+    "docs/graphify_targets.json",
+    "scripts/knowledge_base/graphify_targets.py",
+    "scripts/knowledge_base/test_graphify_governance_contract.py",
+    "scripts/knowledge_base/build_graph.py",
+    ".github/workflows/overlord-sweep.yml",
+    "hooks/closeout-hook.sh",
+    "GitHub issue #241",
+    "GitHub issue #242",
+    "raw/cross-review/2026-04-17-issue-241-242-planning-review.md"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "goal": "Make the graphify-out artifact contract explicit and testable.",
+      "tasks": [
+        "Document which graphify-out paths are canonical tracked artifacts and which paths are local-only exceptions.",
+        "Align .gitignore wording and rules with the explicit artifact contract.",
+        "Extend graphify governance contract validation so manifest-defined output paths are not accidentally ignored and expected canonical artifacts remain stageable.",
+        "Confirm status commands distinguish canonical graph changes from ignored cache and OS files.",
+        "Update issue #241, docs/PROGRESS.md, and OVERLORD_BACKLOG.md before closeout.",
+        "Keep planner write-boundary enforcement in issue #242."
+      ],
+      "acceptance_criteria": [
+        "The repo states whether graphify-out/cache is local-only or canonical.",
+        "Manifest-defined graphify output paths under graphify-out/<repo>/ are not fully ignored.",
+        "Canonical graph artifacts remain commit-ready during graph creation or refresh.",
+        "Ignored cache and .DS_Store files are not treated as completion evidence.",
+        "Planner write-boundary enforcement remains out of scope and linked to issue #242.",
+        "Any newly discovered required cleanup is completed in-scope or recorded as issue-backed follow-up before closeout."
+      ],
+      "file_paths": [
+        ".gitignore",
+        "README.md",
+        "docs/COMPENDIUM.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "OVERLORD_BACKLOG.md",
+        "scripts/knowledge_base/test_graphify_governance_contract.py",
+        "scripts/knowledge_base/graphify_targets.py",
+        "docs/plans/issue-241-graphify-out-artifact-contract-pdcar.md",
+        "docs/plans/issue-241-graphify-out-artifact-contract-structured-agent-cycle-plan.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "governance-planning-research-agent",
+      "role": "Repo rules reviewer",
+      "focus": "Confirm issue-backed planning, tracker requirements, and structured-plan requirements before creating planning artifacts.",
+      "status": "accepted",
+      "summary": "The repo requires issue-backed backlog rows, treats structured JSON as the canonical planning artifact, and allows Markdown PDCAR as companion context.",
+      "evidence": [
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md",
+        "STANDARDS.md",
+        "README.md",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py"
+      ]
+    },
+    {
+      "reviewer": "graphify-contract-research-agent",
+      "role": "Artifact contract reviewer",
+      "focus": "Identify why graphify-out/cache appears as noise and whether graphify-out canonical artifacts are actually tracked.",
+      "status": "accepted",
+      "summary": "graphify-out/cache is ignored runtime cache inside a canonical graph root. Canonical scoped graph artifacts are tracked, while current validation does not explicitly encode the artifact allowlist/local-only split.",
+      "evidence": [
+        ".gitignore",
+        "git status --ignored --short graphify-out",
+        "git ls-files graphify-out",
+        "docs/graphify_targets.json",
+        "scripts/knowledge_base/test_graphify_governance_contract.py"
+      ]
+    }
+    ,
+    {
+      "reviewer": "process-debug-agent",
+      "role": "Official process reviewer",
+      "focus": "Keep #241 scoped to graphify artifact contract and route planner write-boundary enforcement into a separate issue-backed control slice.",
+      "status": "accepted",
+      "summary": "Recommended keeping #241 narrow, creating #242 for the planner write-boundary gap, adding tracker rows for both, and requiring pinned-agent implementation from a fresh issue worktree.",
+      "evidence": [
+        "Issue #241",
+        "Issue #242",
+        "docs/plans/issue-241-graphify-out-artifact-contract-pdcar.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "claude-opus-4-6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Claude alternate-family review returned APPROVED_WITH_CHANGES: keep #241 and #242 separate, ship #241 first, and resolve #242 planner-boundary design details before implementation.",
+    "evidence": [
+      "Claude CLI planning review on 2026-04-17",
+      "raw/cross-review/2026-04-17-issue-241-242-planning-review.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-planning-only",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement only the #241 graphify artifact-contract fix: docs and contract-test updates that distinguish canonical graphify-out/<repo> artifacts from local-only cache/OS exceptions.",
+    "next_execution_step": "Hand #241 implementation to a pinned Tier 2 governance worker from a fresh issue worktree; do not implement planner write-boundary controls in this slice.",
+    "blocked_on": [
+      "Pinned execution-agent assignment for implementation.",
+      "Fresh issue worktree based on current origin/main."
+    ]
+  },
+  "material_deviation_rules": [
+    "Do not implement .gitignore, contract-test, or documentation changes directly from the planning role.",
+    "Do not commit graphify-out/cache unless issue #241 explicitly changes cache policy.",
+    "Do not absorb planner write-boundary enforcement into #241; use issue #242.",
+    "If implementation reveals stale legacy root graph references outside this issue's acceptance path, create an issue-backed follow-up instead of widening silently.",
+    "If any required action is found during Adjust or Review, finish it in this slice or record it as issue-backed follow-up before closeout."
+  ],
+  "approved": true,
+  "approved_by": [
+    "planning-session-codex",
+    "claude-opus-4-6"
+  ],
+  "approved_at": "2026-04-17T00:00:00-05:00"
+}
