@@ -1,0 +1,150 @@
+{
+  "session_id": "session-20260417-issue-226-planning-scope-gatekeeper",
+  "issue_number": 226,
+  "objective": "Implement the planning and scope gatekeeper slice from epic #224 so governance-surface edits require an issue-backed canonical structured JSON plan, accepted review state, implementation-ready handoff, and declared execution scope before implementation or closeout proceeds.",
+  "tier": 1,
+  "scope_boundary": [
+    "Strengthen `scripts/overlord/validate_structured_agent_cycle_plan.py` so governance-surface path changes trigger issue-branch and issue-specific structured-plan enforcement regardless of branch name.",
+    "Classify governance-surface paths covering repo rules, standards, agents, workflows, hooks, graphify, sweep/overlord scripts, registries, closeouts, cross-review artifacts, schemas, and wiki outputs.",
+    "Wire the governance-surface planning gate into reusable governance CI and the local code-write hook path.",
+    "Preserve existing execution-scope validation and add tests proving wrong checkout roots, dirty forbidden roots, and out-of-scope changes fail.",
+    "Document the new gate in feature, service, data dictionary, PDCAR, cross-review, and closeout artifacts."
+  ],
+  "out_of_scope": [
+    "Implementing the always-on daemon, packet queue, launchd observers, or local model router from later #224 phases.",
+    "Replacing GitHub Issues as the canonical tracker.",
+    "Relaxing Society of Minds no-self-approval, alternate-family review, or tier evidence requirements.",
+    "Writing to the shared dirty main checkout.",
+    "Adding broad new schema engines or external dependencies when the repo-local Python validator already covers the contract."
+  ],
+  "research_summary": "Issue #226 requires closing the governance-surface bypass where implementation could proceed on a non-issue branch or with only a Markdown PDCAR. Existing validators already cover canonical structured-plan shape and execution-scope root/branch/write-path assertions, but the structured-plan validator only required a plan for issue/riskfix branch names and did not inspect changed governance-surface paths. The implementation therefore extends the existing validator with a deterministic path classifier, issue-number extraction, changed-file input, implementation-ready handoff checks, and accepted alternate-review checks. CI writes the PR diff file list to a temp file and calls the same validator. The local code-write gate calls the same validator for the file being written, so interactive governance-surface writes fail early when no issue-backed plan/review/handoff exists. Unit tests cover governed and non-governed path classifications, issue-specific plan matching, review readiness, and the existing execution-scope dirty-root protections.",
+  "research_artifacts": [
+    "Issue #224",
+    "Issue #226",
+    "docs/plans/issue-224-structured-agent-cycle-plan.json",
+    "docs/plans/issue-224-always-on-governance-orchestrator-pdcar.md",
+    "raw/cross-review/2026-04-17-always-on-governance-orchestrator-plan.md",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    ".github/workflows/governance-check.yml",
+    "hooks/code-write-gate.sh",
+    "docs/schemas/structured-agent-cycle-plan.schema.json",
+    "CLAUDE.md",
+    "STANDARDS.md",
+    "OVERLORD_BACKLOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/SERVICE_REGISTRY.md",
+    "docs/DATA_DICTIONARY.md"
+  ],
+  "sprints": [
+    {
+      "name": "Classifier and Plan Gate",
+      "goal": "Make changed governance-surface paths require issue-backed canonical planning and implementation-ready review state.",
+      "tasks": [
+        "Add deterministic governance-surface file and prefix classification to the structured-plan validator.",
+        "Accept a newline-delimited changed-file list and branch name as validator inputs.",
+        "Require governance-surface changes to run on an issue branch with a matching `issue_number` structured plan.",
+        "Require matching plans to be approved and `implementation_ready` or `implementation_complete`.",
+        "Require required alternate-model review to be `accepted` or `accepted_with_followup` before implementation."
+      ],
+      "acceptance_criteria": [
+        "A governance-surface edit on `main` or a non-issue branch fails with an actionable message.",
+        "A governance-surface edit on an issue branch without a matching structured JSON plan fails.",
+        "A Markdown PDCAR without the canonical JSON plan is insufficient for governed work.",
+        "An approved matching implementation-ready plan passes the governance-surface gate."
+      ],
+      "file_paths": [
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py"
+      ]
+    },
+    {
+      "name": "Hook and CI Wiring",
+      "goal": "Run the same deterministic governance-surface gate in reusable CI and local write-time enforcement.",
+      "tasks": [
+        "Persist CI changed-file lists before downstream categorization outputs are computed.",
+        "Run the structured-plan validator with governance-surface enforcement in `governance-check.yml`.",
+        "Invoke the validator from `hooks/code-write-gate.sh` for repo-local write paths.",
+        "Keep hook behavior fail-closed only for validator-confirmed governance-surface writes and otherwise degrade gracefully."
+      ],
+      "acceptance_criteria": [
+        "Reusable governance CI blocks governance-surface changes missing issue/plan/review/handoff readiness.",
+        "The local hook blocks governance-surface writes before closeout when the plan gate is not satisfied.",
+        "Non-governance writes are not forced into issue-plan flow by this slice."
+      ],
+      "file_paths": [
+        ".github/workflows/governance-check.yml",
+        "hooks/code-write-gate.sh"
+      ]
+    },
+    {
+      "name": "Scope Evidence and Documentation",
+      "goal": "Keep #226 auditable through execution-scope tests, registries, PDCAR, cross-review, and closeout artifacts.",
+      "tasks": [
+        "Retain and run execution-scope tests for wrong root, wrong branch, dirty forbidden roots, and out-of-scope paths.",
+        "Add #226 PDCAR and cross-review artifacts.",
+        "Register the gate in feature, service, and data dictionary documents.",
+        "Run closeout graph/wiki refresh and record validation evidence."
+      ],
+      "acceptance_criteria": [
+        "Unit tests cover governed and non-governed path classifications.",
+        "Execution-scope tests prove wrong checkout root and out-of-scope dirty paths fail locally.",
+        "Registry and closeout artifacts cite the implemented gate and validations."
+      ],
+      "file_paths": [
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/plans/issue-226-planning-scope-gatekeeper-pdcar.md",
+        "raw/cross-review/2026-04-17-planning-scope-gatekeeper.md",
+        "raw/closeouts/2026-04-17-planning-scope-gatekeeper.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex implementation agent",
+      "role": "deterministic governance validator maintainer",
+      "focus": "Validator behavior, CI/local hook wiring, and tests for issue-backed governance-surface planning enforcement.",
+      "status": "accepted",
+      "summary": "The implementation uses the existing structured-plan validator as the shared enforcement point instead of introducing a second policy engine. Scope checks remain in the existing execution-scope validator and tests.",
+      "evidence": [
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_assert_execution_scope.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Alternate-family review required for Tier 1 governance enforcement. Findings are recorded in the #226 cross-review artifact and must be resolved or explicitly accepted before merge.",
+    "evidence": [
+      "raw/cross-review/2026-04-17-planning-scope-gatekeeper.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement #226 planning/scope gatekeeper only: structured-plan validator enforcement, local/CI wiring, focused tests, and governance documentation.",
+    "next_execution_step": "Run validator, hook, CI workflow syntax, execution-scope, compendium, graphify, and model-pin checks; then close out, open PR, and merge only after checks pass.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If CI cannot provide changed files, fail with a missing changed-file input error instead of silently allowing governance-surface edits.",
+    "If a governance-surface path is disputed, classify it as governed until a later issue narrows the list with review.",
+    "If alternate-model review raises blocking findings, update the implementation and cross-review artifact before merge.",
+    "If the shared main checkout is dirty, do not write to it; prove forbidden-root behavior through tests and isolated worktree validation instead."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: proceed, loop through, no HITL",
+    "Codex implementation agent"
+  ],
+  "approved_at": "2026-04-17T12:00:00-05:00"
+}

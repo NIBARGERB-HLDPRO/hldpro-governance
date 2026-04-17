@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-225-registry-20260417/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-225-registry-20260417/wiki/hldpro",
-  "nodes": 482,
-  "edges": 939,
-  "communities": 29,
-  "articles": 39,
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-226-scope-gatekeeper-20260417/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-226-scope-gatekeeper-20260417/wiki/hldpro",
+  "nodes": 501,
+  "edges": 978,
+  "communities": 30,
+  "articles": 40,
   "html_status": "skipped",
-  "code_files": 33
+  "code_files": 34
 }
