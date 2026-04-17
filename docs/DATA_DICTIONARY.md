@@ -101,3 +101,20 @@ Contract:
 - Required classification fields: `governance_tier`, `security_tier`, and `enabled_subsystems`.
 - Graphify targets must reconcile with registry graph output, wiki path, display name, and CI checkout path.
 - Temporary duplicate-list exemptions are documented in `docs/governed_repos_exemptions.md`.
+
+---
+
+### Governance-Surface Planning Gate
+**Validator:** `scripts/overlord/validate_structured_agent_cycle_plan.py`
+**CI:** `.github/workflows/governance-check.yml`
+**Local hook:** `hooks/code-write-gate.sh`
+**Execution scope guard:** `scripts/overlord/assert_execution_scope.py`
+
+Governance-surface paths include repo rules, standards, workflow files, hooks, agent definitions, schemas, registries, closeouts, cross-review artifacts, graphify/wiki outputs, and overlord/knowledge-base scripts.
+
+Contract:
+- Changed governance-surface paths require an issue branch whose branch name contains `issue-<number>`.
+- The repo must contain a matching canonical `*structured-agent-cycle-plan.json` whose `issue_number` equals that branch issue number.
+- The matching plan must be approved and have `execution_handoff.execution_mode` set to `implementation_ready` or `implementation_complete`.
+- If `alternate_model_review.required` is true, status must be `accepted` or `accepted_with_followup`.
+- Local execution scope validation declares expected checkout root, branch, allowed write paths, and forbidden dirty roots.

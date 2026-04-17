@@ -178,6 +178,8 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
+          printf '%s\n' "$CHANGED" > /tmp/governance-changed-files.txt
+
           # Source code changes (broad: .ts .tsx .sql .html .css .js .svg .py .sh)
           # Exclude: docs, .claude (hooks/settings/config), .github, tests, configs, lock files
           CODE_CHANGES=$(echo "$CHANGED" | grep -E '\.(ts|tsx|sql|html|css|js|svg|py|sh)$' \
@@ -230,6 +232,25 @@ jobs:
             echo "has_feature_registry=$([ -n "$FEATURE_REGISTRY_CHANGED" ] && echo 'true' || echo 'false')"
             echo "has_marketing_doc=$([ -n "$MARKETING_DOC_CHANGED" ] && echo 'true' || echo 'false')"
           } >> "$GITHUB_OUTPUT"
+
+      - name: Enforce governance-surface planning gate
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          BRANCH_NAME="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+
+          if [ "$REPO_NAME" = "hldpro-governance" ]; then
+            VALIDATOR="scripts/overlord/validate_structured_agent_cycle_plan.py"
+          else
+            VALIDATOR=".governance/scripts/overlord/validate_structured_agent_cycle_plan.py"
+          fi
+
+          python3 "$VALIDATOR" \
+            --root . \
+            --branch-name "$BRANCH_NAME" \
+            --changed-files-file /tmp/governance-changed-files.txt \
+            --enforce-governance-surface
 
       # ── 2. PROGRESS.md co-staged with code changes ──
       - name: Check PROGRESS.md updated with code changes

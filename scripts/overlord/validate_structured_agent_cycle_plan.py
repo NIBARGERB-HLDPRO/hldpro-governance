@@ -3,8 +3,38 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
+
+
+GOVERNANCE_SURFACE_PREFIXES = (
+    ".github/scripts/",
+    ".github/workflows/",
+    "agents/",
+    "docs/schemas/",
+    "hooks/",
+    "raw/closeouts/",
+    "raw/cross-review/",
+    "scripts/knowledge_base/",
+    "scripts/overlord/",
+    "wiki/",
+)
+GOVERNANCE_SURFACE_FILES = {
+    "CLAUDE.md",
+    "README.md",
+    "STANDARDS.md",
+    "OVERLORD_BACKLOG.md",
+    "docs/DATA_DICTIONARY.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+    "docs/PROGRESS.md",
+    "docs/SERVICE_REGISTRY.md",
+    "docs/governed_repos.json",
+    "docs/graphify_targets.json",
+}
+IMPLEMENTATION_READY_MODES = {"implementation_ready", "implementation_complete"}
+ACCEPTED_REVIEW_STATES = {"accepted", "accepted_with_followup"}
 
 
 def _load_json(path: Path) -> object:
@@ -18,6 +48,62 @@ def _find_plan_files(root: Path) -> list[Path]:
 def _require(condition: bool, message: str, failures: list[str]) -> None:
     if not condition:
         failures.append(message)
+
+
+def _branch_issue_number(branch_name: str) -> int | None:
+    match = re.search(r"(?:^|/)issue-(\d+)(?:[-_/]|$)", branch_name)
+    return int(match.group(1)) if match else None
+
+
+def _is_governance_surface(path: str) -> bool:
+    normalized = path
+    while normalized.startswith("./"):
+        normalized = normalized[2:]
+    return normalized in GOVERNANCE_SURFACE_FILES or any(
+        normalized.startswith(prefix) for prefix in GOVERNANCE_SURFACE_PREFIXES
+    )
+
+
+def _read_changed_files(path: Path | None) -> list[str]:
+    if path is None:
+        return []
+    return [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def _matching_plan_payloads(files: list[Path], root: Path, issue_number: int | None) -> list[tuple[Path, object]]:
+    if issue_number is None:
+        return []
+    matches: list[tuple[Path, object]] = []
+    for file_path in files:
+        payload = _load_json(file_path)
+        if isinstance(payload, dict) and payload.get("issue_number") == issue_number:
+            matches.append((file_path.relative_to(root), payload))
+    return matches
+
+
+def _validate_implementation_ready_plan(path: Path, payload: object, failures: list[str]) -> None:
+    if not isinstance(payload, dict):
+        failures.append(f"{path}: implementation gate plan must be a JSON object")
+        return
+    _require(payload.get("approved") is True, f"{path}: governance-surface plan must have `approved: true`", failures)
+    handoff = payload.get("execution_handoff")
+    if not isinstance(handoff, dict):
+        failures.append(f"{path}: governance-surface plan must include `execution_handoff`")
+    else:
+        mode = handoff.get("execution_mode")
+        _require(
+            mode in IMPLEMENTATION_READY_MODES,
+            f"{path}: governance-surface plan execution_mode must be one of {sorted(IMPLEMENTATION_READY_MODES)}, got {mode!r}",
+            failures,
+        )
+    review = payload.get("alternate_model_review")
+    if isinstance(review, dict) and review.get("required") is True:
+        status = review.get("status")
+        _require(
+            status in ACCEPTED_REVIEW_STATES,
+            f"{path}: required alternate_model_review must be accepted before governance-surface implementation, got {status!r}",
+            failures,
+        )
 
 
 def _validate_file(path: Path, payload: object, failures: list[str]) -> None:
@@ -103,6 +189,8 @@ def main() -> int:
     parser.add_argument("--root", default=".", help="Repo root to scan.")
     parser.add_argument("--require-if-issue-branch", action="store_true", help="Fail if on an issue/riskfix branch and no structured plan file exists.")
     parser.add_argument("--branch-name", default="", help="Optional branch name for enforcement decisions.")
+    parser.add_argument("--changed-files-file", type=Path, help="Optional newline-delimited changed file list for governance-surface enforcement.")
+    parser.add_argument("--enforce-governance-surface", action="store_true", help="Require an approved issue-specific plan when governance-surface files changed.")
     args = parser.parse_args()
 
     root = Path(args.root).resolve()
@@ -114,6 +202,25 @@ def main() -> int:
         branch_requires_plan = branch.startswith("issue-") or branch.startswith("riskfix/")
         if branch_requires_plan and not files:
             failures.append(f"{branch}: requires at least one `*structured-agent-cycle-plan.json` file before execution.")
+
+    changed_files = _read_changed_files(args.changed_files_file)
+    governance_surface_changes = [path for path in changed_files if _is_governance_surface(path)]
+    if args.enforce_governance_surface and governance_surface_changes:
+        issue_number = _branch_issue_number(args.branch_name)
+        if issue_number is None:
+            failures.append(
+                "governance-surface changes require a branch name containing `issue-<number>` and a matching canonical structured plan; changed paths: "
+                + ", ".join(governance_surface_changes)
+            )
+        matches = _matching_plan_payloads(files, root, issue_number)
+        if not matches:
+            issue_label = f"issue #{issue_number}" if issue_number is not None else "this branch"
+            failures.append(
+                f"governance-surface changes require a canonical structured plan for {issue_label}; changed paths: "
+                + ", ".join(governance_surface_changes)
+            )
+        for rel_path, payload in matches:
+            _validate_implementation_ready_plan(rel_path, payload, failures)
 
     for file_path in files:
         payload = _load_json(file_path)

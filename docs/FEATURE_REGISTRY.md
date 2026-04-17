@@ -43,6 +43,7 @@
 | GOV-016 | SOM_ENFORCEMENT | Society of Minds routing, review, packet, and closeout enforcement | IN_PROGRESS | REQUIRED |
 | GOV-017 | ORG_GOVERNANCE_COMPENDIUM | Org-level governance rules compendium generated from governed repo rule files and graph nodes | COMPLETE | OPS_READY |
 | GOV-018 | GOVERNED_REPO_REGISTRY | Executable governed repository registry and validator | COMPLETE | REQUIRED |
+| GOV-019 | PLANNING_SCOPE_GATEKEEPER | Issue-backed governance-surface planning and execution-scope gatekeeper | COMPLETE | REQUIRED |
 
 ---
 
@@ -112,6 +113,14 @@
 |---|---|
 | GOV-018 | `docs/governed_repos.json` is the executable source of truth for governed repo metadata, including GitHub repo, local and CI paths, graph/wiki/project paths, tiers, and enabled subsystems. |
 | GOV-018 | `scripts/overlord/validate_governed_repos.py` validates the registry and reconciles graphify targets; `scripts/overlord/governed_repos.py` is the shared adapter used by sweep metrics, memory integrity, and the org governance compendium. |
+
+### PLANNING_SCOPE_GATEKEEPER
+
+| Feature ID | Notes |
+|---|---|
+| GOV-019 | `scripts/overlord/validate_structured_agent_cycle_plan.py` classifies governance-surface paths and requires issue-specific canonical structured plans with implementation-ready handoff and accepted alternate review before those paths can change. |
+| GOV-019 | `.github/workflows/governance-check.yml` and `hooks/code-write-gate.sh` call the shared validator so CI and local write-time enforcement use the same governance-surface planning gate. |
+| GOV-019 | `scripts/overlord/assert_execution_scope.py` remains the root/branch/write-scope guard, with tests proving wrong checkout roots, dirty forbidden roots, and out-of-scope paths fail locally. |
 
 ### SOCIETY_OF_MINDS
 

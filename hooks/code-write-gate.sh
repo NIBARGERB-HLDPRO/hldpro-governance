@@ -27,6 +27,43 @@ if [ -z "$file_path" ]; then
   exit 0
 fi
 
+file_dir="$(dirname "$file_path")"
+while [ ! -d "$file_dir" ] && [ "$file_dir" != "/" ] && [ "$file_dir" != "." ]; do
+  file_dir="$(dirname "$file_dir")"
+done
+repo_root="$(git -C "$file_dir" rev-parse --show-toplevel 2>/dev/null || true)"
+if [ -n "$repo_root" ]; then
+  validator="$repo_root/scripts/overlord/validate_structured_agent_cycle_plan.py"
+  if [ -f "$validator" ]; then
+    # If relpath calculation fails for an unusual hook payload, keep the hook's historical graceful-degradation behavior.
+    rel_path="$(python3 - "$repo_root" "$file_path" <<'PY' 2>/dev/null || true
+import os
+import sys
+
+root, path = sys.argv[1], sys.argv[2]
+print(os.path.relpath(path, root))
+PY
+)"
+    if [ -n "$rel_path" ]; then
+      branch_name="$(git -C "$repo_root" branch --show-current 2>/dev/null || true)"
+      changed_file="$(mktemp "${TMPDIR:-/tmp}/governance-surface-change.XXXXXX")"
+      printf '%s\n' "$rel_path" > "$changed_file"
+      gate_output="$(python3 "$validator" \
+        --root "$repo_root" \
+        --branch-name "$branch_name" \
+        --changed-files-file "$changed_file" \
+        --enforce-governance-surface 2>&1)"
+      gate_status=$?
+      rm -f "$changed_file"
+      if [ "$gate_status" -ne 0 ]; then
+        reason="$(printf '%s' "$gate_output" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read())[1:-1])')"
+        printf '%s' "{\"decision\":\"block\",\"reason\":\"BLOCKED: Governance-surface writes require an issue-backed structured JSON plan, accepted review status, and implementation-ready execution handoff.\\n\\n${reason}\"}"
+        exit 2
+      fi
+    fi
+  fi
+fi
+
 # Bootstrapping exemption: paths inside /.claude/ are always allowed
 # (hook scripts must be able to write their own files)
 if printf '%s' "$file_path" | grep -q '/.claude/'; then
