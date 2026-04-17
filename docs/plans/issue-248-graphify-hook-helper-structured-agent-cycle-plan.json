@@ -1,0 +1,183 @@
+{
+  "session_id": "session-20260417-issue-248-graphify-hook-helper",
+  "issue_number": 248,
+  "objective": "Create a governance-owned graphify hook helper and installer so governed repos route graph refreshes through hldpro-governance manifest-defined output paths instead of raw graphify hooks that write into product checkouts.",
+  "tier": 1,
+  "scope_boundary": [
+    "This plan covers governance issue #248 and child microslices #249, #250, and #251.",
+    "The implementation may add governance-owned helper scripts under scripts/knowledge_base, focused tests, documentation, closeout artifacts, and tracker updates.",
+    "The helper must resolve graph targets through docs/graphify_targets.json and must preflight output paths before invoking scripts/knowledge_base/build_graph.py.",
+    "Product repo adoption happens in separate AIS and knocktracker issues and PRs after the governance helper exists."
+  ],
+  "out_of_scope": [
+    "Editing AIS or knocktracker source files from this governance plan.",
+    "Salvaging or approving the contaminated AIS remediation branch tracked in AIS #1101.",
+    "Changing upstream graphify behavior or graphify extraction semantics.",
+    "Treating local untracked .git/hooks containment as durable completion evidence.",
+    "Adding graph retrieval ranking, Neo4j, fine-tuning, or graph quality changes."
+  ],
+  "research_summary": "AIS #1099 identified that raw graphify-installed hooks can call graphify.watch._rebuild_code(Path('.')), which writes graphify-out into the current product checkout. Governance already has the durable graph target manifest at docs/graphify_targets.json and the canonical builder at scripts/knowledge_base/build_graph.py. Issue #248 therefore needs a governance-owned installer/helper that resolves the governance root, governed repo slug, manifest paths, and hook targets before any build runs. Claude alternate review approved this approach with changes: add #248 to OVERLORD_BACKLOG.md before implementation, treat the cross-review as architecture scope, resolve manifest paths relative to governance root, preflight output paths before build_graph.py, pin MS2 handoff to gpt-5.3-codex-spark high, require Stage 6 closeout, and require AIS/knocktracker adoption to prove raw graphify hooks are removed or absent.",
+  "research_artifacts": [
+    "GitHub issue #248",
+    "GitHub issue #249",
+    "GitHub issue #250",
+    "GitHub issue #251",
+    "NIBARGERB-HLDPRO/ai-integration-services#1099",
+    "NIBARGERB-HLDPRO/ai-integration-services#1101",
+    "NIBARGERB-HLDPRO/ai-integration-services#1100",
+    "NIBARGERB-HLDPRO/ai-integration-services#1045",
+    "NIBARGERB-HLDPRO/knocktracker#160",
+    "docs/graphify_targets.json",
+    "scripts/knowledge_base/build_graph.py",
+    "scripts/knowledge_base/graphify_targets.py",
+    "scripts/knowledge_base/test_graphify_governance_contract.py",
+    "STANDARDS.md",
+    "OVERLORD_BACKLOG.md",
+    "Claude alternate review output on 2026-04-17",
+    "GitHub issue #248 comment 4271135715"
+  ],
+  "sprints": [
+    {
+      "name": "MS1 - Planning and Control Artifacts",
+      "goal": "Make #248 issue-backed, reviewed, and ready for implementation without hidden local work.",
+      "tasks": [
+        "Mirror #248 in OVERLORD_BACKLOG.md before helper implementation begins.",
+        "Create the #248 structured plan JSON and PDCAR companion.",
+        "Record alternate-model review status and required changes.",
+        "Define child microslices #249, #250, and #251 with acceptance criteria.",
+        "Defer the architecture cross-review artifact until a real PR number exists."
+      ],
+      "acceptance_criteria": [
+        "OVERLORD_BACKLOG.md includes an In Progress row for #248.",
+        "docs/plans/issue-248-graphify-hook-helper-structured-agent-cycle-plan.json validates.",
+        "docs/plans/issue-248-graphify-hook-helper-pdcar.md exists and matches the JSON plan.",
+        "alternate_model_review.status is accepted_with_followup and cites the Claude review.",
+        "execution_handoff names gpt-5.3-codex-spark with model_reasoning_effort=high for MS2.",
+        "Cross-review is documented as architecture scope and must use a real PR number before commit."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/plans/issue-248-graphify-hook-helper-structured-agent-cycle-plan.json",
+        "docs/plans/issue-248-graphify-hook-helper-pdcar.md"
+      ]
+    },
+    {
+      "name": "MS2 - Managed Runner and Installer",
+      "goal": "Implement the governance-owned helper that installs managed hooks and routes graph refreshes through manifest-defined governance output paths.",
+      "tasks": [
+        "Add a helper script under scripts/knowledge_base with resolve, dry-run, refresh, and install behavior.",
+        "Resolve governance root and repo slug safely from explicit flags or target repo root.",
+        "Resolve source_path, output_path, and wiki_path relative to the governance root and docs/graphify_targets.json.",
+        "Preflight output paths before calling build_graph.py so product repo graphify-out writes are refused.",
+        "Install managed post-commit and post-checkout hooks while refusing unmanaged hook overwrite unless explicit backup or force mode is selected.",
+        "Add focused tests for resolution, preflight refusal, existing-hook handling, and generated hook body content."
+      ],
+      "acceptance_criteria": [
+        "Dry-run output includes repo slug, governance root, source path, output path, wiki path, and hook targets.",
+        "Manifest paths resolve relative to governance root rather than product repo CWD.",
+        "AIS and knocktracker can be inferred or passed explicitly by repo slug.",
+        "Unsafe product-repo output paths abort before build_graph.py is called.",
+        "Generated managed hooks do not contain graphify.watch._rebuild_code(Path('.')) or raw graphify hook install behavior.",
+        "Tests cover the helper contract."
+      ],
+      "file_paths": [
+        "scripts/knowledge_base/graphify_hook_helper.py",
+        "scripts/knowledge_base/test_graphify_hook_helper.py",
+        "scripts/knowledge_base/test_graphify_governance_contract.py"
+      ]
+    },
+    {
+      "name": "MS3 - Docs, Adoption Handoff, and Closeout",
+      "goal": "Document the helper, record adoption requirements, and complete Stage 6 closeout for #248.",
+      "tasks": [
+        "Document install, dry-run, refresh, and adoption commands.",
+        "State that raw graphify hook install output is not the governed AIS/knocktracker path.",
+        "Update #248 with validation evidence and child issue status.",
+        "Record AIS and knocktracker adoption requirements: raw graphify hooks removed or absent, and helper dry-run evidence captured.",
+        "Create and validate the Stage 6 closeout artifact."
+      ],
+      "acceptance_criteria": [
+        "Docs show helper commands for governed repos.",
+        "AIS and knocktracker adoption handoffs require raw hook removal or documented absence plus dry-run evidence.",
+        "#248 has validation evidence and adoption links.",
+        "raw/closeouts/YYYY-MM-DD-issue-248-graphify-hook-helper.md exists.",
+        "hooks/closeout-hook.sh exits 0 for the closeout artifact.",
+        "Newly discovered required work is completed in-scope or captured as issue-backed follow-up before #248 closes."
+      ],
+      "file_paths": [
+        "README.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/DATA_DICTIONARY.md",
+        "raw/closeouts/2026-04-17-issue-248-graphify-hook-helper.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "governance-workflow-research",
+      "role": "Workflow and standards reviewer",
+      "focus": "Confirm issue-backed structured plan, PDCAR, alternate review, and closeout workflow before implementation.",
+      "status": "accepted",
+      "summary": "The active workflow requires GitHub issue backing, a canonical structured JSON plan, PDCAR companion context, accepted alternate review for governance-surface implementation, and Stage 6 closeout before issue closure.",
+      "evidence": [
+        "STANDARDS.md",
+        "README.md",
+        "CLAUDE.md",
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py"
+      ]
+    },
+    {
+      "reviewer": "graphify-helper-research",
+      "role": "Graphify path and hook reviewer",
+      "focus": "Identify the unsafe raw-hook behavior and the governance-owned manifest/build path.",
+      "status": "accepted",
+      "summary": "The raw-hook failure mode writes into product checkouts. The governance helper must resolve docs/graphify_targets.json paths relative to the governance root and must refuse unsafe output paths before build_graph.py can mkdir them.",
+      "evidence": [
+        "NIBARGERB-HLDPRO/ai-integration-services#1099",
+        "docs/graphify_targets.json",
+        "scripts/knowledge_base/build_graph.py",
+        "scripts/knowledge_base/graphify_targets.py",
+        "scripts/knowledge_base/test_graphify_governance_contract.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Claude alternate review returned APPROVED_WITH_CHANGES. Required changes are incorporated into this plan: backlog row before implementation, architecture-scope cross-review with real PR number, governance-root manifest resolution, output preflight before build_graph.py, pinned gpt-5.3-codex-spark high implementation handoff, Stage 6 closeout, and adoption proof that raw graphify hooks are removed or absent.",
+    "evidence": [
+      "Claude alternate review output on 2026-04-17",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/248#issuecomment-4271135715"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex planning/control session",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "After MS1 lands, MS2 may implement only the governance-owned graphify hook helper/installer and focused tests. The worker handoff is pinned to gpt-5.3-codex-spark with model_reasoning_effort=high.",
+    "next_execution_step": "Run MS2 from issue #250 with model gpt-5.3-codex-spark and model_reasoning_effort=high; do not edit AIS or knocktracker in the governance implementation branch.",
+    "blocked_on": [
+      "MS1 artifacts merged or otherwise accepted.",
+      "Architecture cross-review artifact must be added with a real PR number before merge if the PR touches architecture-scope helper behavior."
+    ]
+  },
+  "material_deviation_rules": [
+    "If the helper cannot determine governance root, repo slug, or manifest target deterministically, halt and update #248 before implementation continues.",
+    "If output-path safety cannot be checked before build_graph.py invocation, halt MS2 and request another alternate-family review.",
+    "If implementation requires editing AIS or knocktracker, create or update the relevant product-repo issue and stop governance-repo edits.",
+    "If existing unmanaged hook handling would silently preserve raw graphify writers, fail closed and require explicit backup or force behavior.",
+    "If a cross-review artifact is committed, it must use pr_scope: architecture and a real integer pr_number.",
+    "If Stage 6 closeout reveals additional required cleanup, complete it in scope or create an issue-backed follow-up before closing #248."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction on 2026-04-17",
+    "Claude alternate review APPROVED_WITH_CHANGES",
+    "Codex planning/control session"
+  ],
+  "approved_at": "2026-04-17T16:00:00-05:00"
+}
