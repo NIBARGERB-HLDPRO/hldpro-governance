@@ -252,6 +252,129 @@ jobs:
             --changed-files-file /tmp/governance-changed-files.txt \
             --enforce-governance-surface
 
+      - name: Enforce issue execution scope for planner boundary
+        if: github.event_name == 'pull_request'
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          BRANCH_NAME="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+
+          if [ "$REPO_NAME" = "hldpro-governance" ]; then
+            ASSERT_SCOPE="scripts/overlord/assert_execution_scope.py"
+          else
+            ASSERT_SCOPE=".governance/scripts/overlord/assert_execution_scope.py"
+          fi
+
+          if [ ! -f "$ASSERT_SCOPE" ]; then
+            echo "::warning::Planner-boundary scope gate skipped: validator missing at ${ASSERT_SCOPE}."
+            exit 0
+          fi
+
+          BOUNDARY_REGEX='^(CLAUDE\.md|README\.md|STANDARDS\.md|OVERLORD_BACKLOG\.md|docs/(DATA_DICTIONARY|FEATURE_REGISTRY|PROGRESS|SERVICE_REGISTRY)\.md|\.github/workflows/|\.github/scripts/|agents/|docs/schemas/|hooks/|launchd/|raw/(closeouts|cross-review|execution-scopes|gate|model-fallbacks|operator-context|packets)/|metrics/|scripts/(knowledge_base|lam|orchestrator|overlord|packet)/|wiki/|docs/plans/)'
+          BOUNDARY_CHANGES="$(grep -E "$BOUNDARY_REGEX" /tmp/governance-changed-files.txt || true)"
+          if [ -z "$BOUNDARY_CHANGES" ]; then
+            echo "✓ No planner-boundary/governance-surface paths changed; execution-scope gate skipped"
+            exit 0
+          fi
+
+          ISSUE_TOKEN="$(printf '%s\n' "$BRANCH_NAME" | grep -oE 'issue-[0-9]+' | head -n 1 || true)"
+          ISSUE_NUMBER="${ISSUE_TOKEN#issue-}"
+          if [ -z "$ISSUE_NUMBER" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: planner-boundary changes require an issue branch name like issue-<number>-... so CI can resolve raw/execution-scopes/*issue-<number>*implementation*.json (fallback: *planning*.json)."
+            echo "Changed boundary paths:"
+            echo "$BOUNDARY_CHANGES"
+            exit 1
+          fi
+
+          if [ ! -d raw/execution-scopes ]; then
+            echo "::error::GOVERNANCE GATE FAILED: planner-boundary changes detected but raw/execution-scopes/ is missing."
+            echo "Add an issue-specific execution scope, e.g. raw/execution-scopes/*issue-${ISSUE_NUMBER}*implementation*.json."
+            exit 1
+          fi
+
+          mapfile -t IMPLEMENTATION_SCOPES < <(find raw/execution-scopes -maxdepth 1 -type f -name "*issue-${ISSUE_NUMBER}*implementation*.json" | sort)
+          mapfile -t PLANNING_SCOPES < <(find raw/execution-scopes -maxdepth 1 -type f -name "*issue-${ISSUE_NUMBER}*planning*.json" | sort)
+
+          if [ "${#IMPLEMENTATION_SCOPES[@]}" -gt 1 ]; then
+            echo "::error::GOVERNANCE GATE FAILED: multiple implementation execution scopes match issue-${ISSUE_NUMBER}."
+            printf '  - %s\n' "${IMPLEMENTATION_SCOPES[@]}"
+            echo "Keep one canonical implementation scope file per issue."
+            exit 1
+          fi
+
+          if [ "${#PLANNING_SCOPES[@]}" -gt 1 ]; then
+            echo "::error::GOVERNANCE GATE FAILED: multiple planning execution scopes match issue-${ISSUE_NUMBER}."
+            printf '  - %s\n' "${PLANNING_SCOPES[@]}"
+            echo "Keep one canonical planning scope fallback per issue."
+            exit 1
+          fi
+
+          SCOPE_PATH=""
+          if [ "${#IMPLEMENTATION_SCOPES[@]}" -eq 1 ]; then
+            SCOPE_PATH="${IMPLEMENTATION_SCOPES[0]}"
+          elif [ "${#PLANNING_SCOPES[@]}" -eq 1 ]; then
+            SCOPE_PATH="${PLANNING_SCOPES[0]}"
+          fi
+
+          if [ -z "$SCOPE_PATH" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: planner-boundary changes detected but no issue-specific execution scope exists for issue-${ISSUE_NUMBER}."
+            echo "Expected naming: raw/execution-scopes/*issue-${ISSUE_NUMBER}*implementation*.json (preferred) or *issue-${ISSUE_NUMBER}*planning*.json (fallback)."
+            echo "Changed boundary paths:"
+            echo "$BOUNDARY_CHANGES"
+            exit 1
+          fi
+
+          BASE="${{ steps.diff_base.outputs.base_sha }}"
+          if [ -z "$BASE" ]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+          fi
+          if [ -z "$BASE" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: unable to resolve base commit for trusted execution-scope validation."
+            exit 1
+          fi
+
+          TRUSTED_SCOPE_PATH="$SCOPE_PATH"
+          TRUSTED_SCOPE_TMP=""
+          cleanup_trusted_scope() {
+            if [ -n "$TRUSTED_SCOPE_TMP" ] && [ -f "$TRUSTED_SCOPE_TMP" ]; then
+              rm -f "$TRUSTED_SCOPE_TMP"
+            fi
+          }
+          trap cleanup_trusted_scope EXIT
+
+          if grep -Fxq "$SCOPE_PATH" /tmp/governance-changed-files.txt; then
+            echo "Execution scope changed in PR: ${SCOPE_PATH}"
+            TRUSTED_SCOPE_TMP="$(mktemp "${TMPDIR:-/tmp}/trusted-execution-scope.XXXXXX.json")"
+            if git show "${BASE}:${SCOPE_PATH}" > "$TRUSTED_SCOPE_TMP" 2>/dev/null; then
+              TRUSTED_SCOPE_PATH="$TRUSTED_SCOPE_TMP"
+              echo "Using trusted execution scope from base commit ${BASE}:${SCOPE_PATH}"
+            else
+              rm -f "$TRUSTED_SCOPE_TMP"
+              TRUSTED_SCOPE_TMP=""
+
+              NON_PLANNING_BOUNDARY_CHANGES="$(printf '%s\n' "$BOUNDARY_CHANGES" | grep -Ev '^(docs/plans/|raw/cross-review/|raw/execution-scopes/|OVERLORD_BACKLOG\.md$|docs/PROGRESS\.md$)' || true)"
+              if [ -n "$NON_PLANNING_BOUNDARY_CHANGES" ]; then
+                echo "::error::GOVERNANCE GATE FAILED: ${SCOPE_PATH} is new or modified in this PR and has no trusted base copy."
+                echo "This PR also changes non-planning planner-boundary files, so strict execution-scope authorization cannot trust head-authored scope changes."
+                echo "Action: merge the issue-specific execution scope in a planning-only PR first, then open a follow-up implementation PR."
+                echo "Non-planning planner-boundary changes:"
+                echo "$NON_PLANNING_BOUNDARY_CHANGES"
+                exit 1
+              fi
+
+              echo "::notice::Planner-boundary strict execution-scope assertion skipped: ${SCOPE_PATH} is new/modified with no base copy, and boundary changes are planning-only artifacts."
+              echo "Planning-only scope changes may proceed through structured-plan and cross-review gates."
+              echo "Implementation file authorization must happen in a follow-up PR after that scope lands on base."
+              exit 0
+            fi
+          fi
+
+          echo "Using execution scope: ${TRUSTED_SCOPE_PATH}"
+          python3 "$ASSERT_SCOPE" \
+            --scope "$TRUSTED_SCOPE_PATH" \
+            --changed-files-file /tmp/governance-changed-files.txt
+
       # ── 2. PROGRESS.md co-staged with code changes ──
       - name: Check PROGRESS.md updated with code changes
         if: steps.changed.outputs.has_code == 'true'

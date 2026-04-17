@@ -45,6 +45,13 @@
 - Reusable governance CI validates structured plans through `scripts/overlord/validate_structured_agent_cycle_plan.py`.
 - Cross-model review results from `scripts/codex-review.sh claude` belong in `alternate_model_review`.
 
+### Planner Write-Boundary (Tier 1)
+- Tier 1 planner sessions may create planning, review, and handoff artifacts only.
+- Planning execution scope must declare this boundary with `execution_mode: planning_only` and `allowed_write_paths`; that allowlist is the authoritative planning write surface.
+- Non-planning diffs require accepted pinned-agent handoff evidence (`handoff_evidence.status: accepted`) before merge.
+- If planner and implementer are the same model or model family, handoff evidence must include an active exception reference and concrete expiry (`active_exception_ref`, `active_exception_expires_at`).
+- CI is authoritative for this boundary (`.github/workflows/governance-check.yml`); local hook output from `hooks/code-write-gate.sh` is warning/early-signal only for planner-boundary drift.
+
 ### Branch Isolation (global hook)
 - `~/.claude/hooks/branch-switch-guard.sh` — **global PreToolUse hook** that blocks `git checkout <branch>` and `git switch <branch>` in all repos
 - Prevents multi-session conflicts where one session's branch switch corrupts another session's working directory

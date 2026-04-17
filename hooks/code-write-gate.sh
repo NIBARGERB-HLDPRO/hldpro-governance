@@ -60,6 +60,55 @@ PY
         printf '%s' "{\"decision\":\"block\",\"reason\":\"BLOCKED: Governance-surface writes require an issue-backed structured JSON plan, accepted review status, and implementation-ready execution handoff.\\n\\n${reason}\"}"
         exit 2
       fi
+
+      # Planner-boundary execution-scope enforcement is warning-only in local hooks.
+      boundary_scope_candidate=false
+      case "$rel_path" in
+        CLAUDE.md|README.md|STANDARDS.md|OVERLORD_BACKLOG.md|docs/DATA_DICTIONARY.md|docs/FEATURE_REGISTRY.md|docs/PROGRESS.md|docs/SERVICE_REGISTRY.md|\
+        .github/workflows/*|.github/scripts/*|agents/*|docs/schemas/*|hooks/*|launchd/*|raw/closeouts/*|raw/cross-review/*|raw/execution-scopes/*|\
+        raw/gate/*|raw/model-fallbacks/*|raw/operator-context/*|raw/packets/*|metrics/*|scripts/knowledge_base/*|scripts/lam/*|scripts/orchestrator/*|\
+        scripts/overlord/*|scripts/packet/*|wiki/*|docs/plans/*)
+          boundary_scope_candidate=true
+          ;;
+      esac
+
+      if [ "$boundary_scope_candidate" = true ]; then
+        scope_validator="$repo_root/scripts/overlord/assert_execution_scope.py"
+        issue_token="$(printf '%s\n' "$branch_name" | grep -oE 'issue-[0-9]+' | head -n 1 || true)"
+        issue_number="${issue_token#issue-}"
+
+        if [ -f "$scope_validator" ] && [ -n "$issue_number" ] && [ -d "$repo_root/raw/execution-scopes" ]; then
+          mapfile -t implementation_scopes < <(find "$repo_root/raw/execution-scopes" -maxdepth 1 -type f -name "*issue-${issue_number}*implementation*.json" | sort)
+          mapfile -t planning_scopes < <(find "$repo_root/raw/execution-scopes" -maxdepth 1 -type f -name "*issue-${issue_number}*planning*.json" | sort)
+
+          selected_scope=""
+          if [ "${#implementation_scopes[@]}" -eq 1 ]; then
+            selected_scope="${implementation_scopes[0]}"
+          elif [ "${#planning_scopes[@]}" -eq 1 ]; then
+            selected_scope="${planning_scopes[0]}"
+          fi
+
+          if [ -z "$selected_scope" ]; then
+            if [ "${#implementation_scopes[@]}" -gt 1 ] || [ "${#planning_scopes[@]}" -gt 1 ]; then
+              echo "WARN planner-boundary execution-scope check skipped: multiple matching scope files for issue-${issue_number}" >&2
+            else
+              echo "WARN planner-boundary execution-scope check skipped: no scope file matched issue-${issue_number}" >&2
+            fi
+          else
+            scope_changed_file="$(mktemp "${TMPDIR:-/tmp}/planner-boundary-change.XXXXXX")"
+            printf '%s\n' "$rel_path" > "$scope_changed_file"
+            scope_output="$(python3 "$scope_validator" \
+              --scope "$selected_scope" \
+              --changed-files-file "$scope_changed_file" 2>&1)"
+            scope_status=$?
+            rm -f "$scope_changed_file"
+            if [ "$scope_status" -ne 0 ]; then
+              echo "WARN planner-boundary drift detected (warning-only in local hook):" >&2
+              echo "$scope_output" >&2
+            fi
+          fi
+        fi
+      fi
     fi
   fi
 fi

@@ -223,6 +223,10 @@ Contract:
 - The matching plan must be approved and have `execution_handoff.execution_mode` set to `implementation_ready` or `implementation_complete`.
 - If `alternate_model_review.required` is true, status must be `accepted` or `accepted_with_followup`.
 - Local execution scope validation declares expected checkout root, branch, allowed write paths, and forbidden dirty roots.
+- Tier 1 planner-boundary mode uses execution scope `execution_mode: planning_only`; `allowed_write_paths` is the planning artifact allowlist.
+- Non-planning diffs require `handoff_evidence.status: accepted` and pinned planner/implementer metadata before scope assertion passes.
+- If planner and implementer use the same model id or model family, handoff evidence must include `active_exception_ref` plus non-expired `active_exception_expires_at`.
+- For planner-boundary enforcement, CI (`governance-check.yml`) is authoritative; the local hook is warning/early-signal only.
 
 ---
 
