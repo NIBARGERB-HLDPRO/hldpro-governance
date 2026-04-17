@@ -46,6 +46,34 @@ It runs or plans:
 
 The runner continues through all checks it can run and exits non-zero only for blocker failures. Advisory failures are reported but do not block by default.
 
+## Knocktracker Profile
+
+The consumer profile is `tools/local-ci-gate/profiles/knocktracker.yml`.
+
+It runs existing knocktracker commands only:
+
+- Always-on: `npm run brand:verify`, `npm run lint`, `npm run typecheck`, and `npm run file-index:check`.
+- Changed-file scoped: `npm run test:routing`, `npm run test:track-logic`, `npm run test:contracts`, `npm run test:manager-dashboard`, and `npm run build:web`.
+
+Use the profile from a knocktracker checkout:
+
+```bash
+python3 /path/to/hldpro-governance/tools/local-ci-gate/bin/hldpro-local-ci run \
+  --repo-root /path/to/knocktracker \
+  --profile knocktracker
+```
+
+Preview without executing npm commands:
+
+```bash
+python3 /path/to/hldpro-governance/tools/local-ci-gate/bin/hldpro-local-ci run \
+  --repo-root /path/to/knocktracker \
+  --profile knocktracker \
+  --dry-run
+```
+
+The current knocktracker dry-run shim can move to live enforcement after the governance profile lands by switching `--profile hldpro-governance --dry-run` to `--profile knocktracker`. That consumer edit must happen in a separate knocktracker issue-backed PR.
+
 ## Managed Shim Deployer
 
 Preview a shim install:
