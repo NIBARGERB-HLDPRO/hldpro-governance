@@ -72,7 +72,7 @@ No delegated worker wrote files. The shared dirty main checkout at `/Users/benni
 - PASS: `python3 .github/scripts/check_codex_model_pins.py`
 - PASS: `python3 .github/scripts/check_agent_model_pins.py`
 - PASS: `python3 scripts/knowledge_base/test_graphify_governance_contract.py`
-- PENDING: `python3 scripts/overlord/build_org_governance_compendium.py --check` after closeout/compendium refresh
+- PASS: `python3 scripts/overlord/build_org_governance_compendium.py --check`
 
 ## Tier Evidence Used
 - `docs/plans/issue-229-structured-agent-cycle-plan.json`

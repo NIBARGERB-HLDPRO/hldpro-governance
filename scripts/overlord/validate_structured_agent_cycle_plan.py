@@ -17,10 +17,13 @@ GOVERNANCE_SURFACE_PREFIXES = (
     "launchd/",
     "raw/closeouts/",
     "raw/cross-review/",
+    "raw/model-fallbacks/",
+    "raw/packets/",
     "scripts/knowledge_base/",
     "scripts/lam/",
     "scripts/orchestrator/",
     "scripts/overlord/",
+    "scripts/packet/",
     "wiki/",
 )
 GOVERNANCE_SURFACE_FILES = {

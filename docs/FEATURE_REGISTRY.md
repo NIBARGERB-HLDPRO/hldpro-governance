@@ -46,6 +46,7 @@
 | GOV-019 | PLANNING_SCOPE_GATEKEEPER | Issue-backed governance-surface planning and execution-scope gatekeeper | COMPLETE | REQUIRED |
 | GOV-020 | READ_ONLY_GOVERNANCE_OBSERVER | Deterministic per-repo governance observer reports without packet enqueue authority | COMPLETE | OPS_READY |
 | GOV-021 | LOCAL_MODEL_RUNTIME_INVENTORY | No-payload local/Windows model runtime inventory and PII guardrail readiness | COMPLETE | REQUIRED |
+| GOV-022 | PACKET_QUEUE_ORCHESTRATOR | Filesystem packet queue with dispatch gate, PII halt, and replayable audit log | COMPLETE | REQUIRED |
 
 ---
 
@@ -139,6 +140,14 @@
 | GOV-021 | `scripts/lam/runtime_inventory.py` reports Mac hardware, MLX availability, Windows Ollama metadata reachability, PII pattern readiness, memory budgets, and fail-closed routing boundaries without sending prompt payloads. |
 | GOV-021 | `docs/runbooks/local-model-runtime.md` defines the Mac M5 Pro 48 GB steady-state and on-demand model budget. |
 | GOV-021 | `docs/runbooks/windows-ollama.md` resolves the prior Windows VRAM assumption as unverified and keeps Windows LAN-only fallback/batch/health until direct host telemetry exists. |
+
+### PACKET_QUEUE_ORCHESTRATOR
+
+| Feature ID | Notes |
+|---|---|
+| GOV-022 | `scripts/orchestrator/packet_queue.py` creates queue states under `raw/packets/queue/` and supports `inbound`, `dispatched`, `review`, `gate`, `done`, and `halted` transitions. |
+| GOV-022 | Dispatch requires the existing SoM packet validator plus governance metadata: issue number, structured plan reference, execution scope reference, model identity, fallback log field, validation commands, review artifacts, PII mode, and explicit dispatch authorization. |
+| GOV-022 | State changes are recorded in `raw/packets/queue/audit.jsonl` with timestamp, source, destination, packet id, SHA-256, dry-run flag, allowed flag, status, and reason so queue movement can be replayed without executing packet payloads. |
 
 ### SOCIETY_OF_MINDS
 

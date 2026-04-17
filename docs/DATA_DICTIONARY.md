@@ -30,7 +30,75 @@ Key fields:
 **File:** `docs/schemas/som-packet.schema.yml`
 **Used by:** MCP daemon (local-ai-machine), all tier handoffs in the Society of Minds routing chain.
 
-Key fields: `tier`, `model_id`, `model_family`, `payload`, `pii_cleared`, `audit_ref`
+Key fields:
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `packet_id` | string (UUID) | yes | Unique packet identifier |
+| `parent_packet_id` | string or null | no | Parent packet identifier for chain validation |
+| `prior.tier` | integer | yes | Source tier |
+| `prior.role` | string | yes | Source role, including LAM worker/critic roles |
+| `prior.model_id` | string | yes | Exact model identifier |
+| `prior.model_family` | string | yes | Model family used for cross-family and LAM diversity checks |
+| `next_tier` | integer | yes | Destination tier |
+| `artifacts` | array | no | Packet artifact references |
+| `standards_ref` | string | yes | Standards section governing the handoff |
+| `fallback_ladder_ref` | string or null | no | Existing fallback log reference under `raw/model-fallbacks/` when present |
+| `governance` | object | no | Optional dispatch metadata required by the packet queue before execution |
+
+`governance` dispatch fields:
+| Field | Type | Required when `governance` exists | Description |
+|-------|------|------------------------------------|-------------|
+| `issue_number` | integer | yes | GitHub issue authorizing dispatch |
+| `structured_plan_ref` | string | yes | Repo-relative structured plan path |
+| `execution_scope_ref` | string or null | yes | Scope evidence path, or null when scope is captured in the plan |
+| `validation_commands` | array | yes | Commands required before packet closeout |
+| `review_artifacts` | array | yes | Review or gate artifacts required by the packet |
+| `fallback_log_ref` | string or null | yes | Queue-level fallback log reference, or null when no fallback occurred |
+| `pii_mode` | enum | yes | `none`, `tagged`, `detected`, or `lam_only` |
+| `dispatch_authorized` | boolean | yes | True only after issue-backed plan approval and scope review |
+
+The schema keeps `governance` optional so existing stage-4 packets remain valid. `scripts/orchestrator/packet_queue.py` requires and enforces the full governance object before dispatch.
+
+---
+
+### Packet Queue State And Audit
+**Generator:** `scripts/orchestrator/packet_queue.py`
+**Storage:** `raw/packets/queue/`
+**Audit log:** `raw/packets/queue/audit.jsonl`
+
+Queue states:
+| State | Description |
+|-------|-------------|
+| `inbound` | Validated packet is waiting for dispatch eligibility checks |
+| `dispatched` | Packet has passed dispatch validation and can be handled by the next controlled worker layer |
+| `review` | Packet output is ready for review |
+| `gate` | Packet output passed review and is awaiting gate decision |
+| `done` | Packet lifecycle is complete |
+| `halted` | Packet is stopped before dispatch or completion |
+
+Allowed transitions: `inbound -> dispatched`, `inbound -> halted`, `dispatched -> review`, `dispatched -> halted`, `review -> gate`, `review -> halted`, `gate -> done`, and `gate -> halted`.
+
+Audit event fields:
+| Field | Type | Description |
+|-------|------|-------------|
+| `timestamp` | string | UTC event timestamp |
+| `packet_id` | string or null | Packet identifier when readable |
+| `from_state` | string | Source queue state |
+| `to_state` | string | Requested destination state |
+| `dry_run` | boolean | True when no packet file was moved |
+| `allowed` | boolean | Whether the transition was accepted |
+| `status` | string | `dry_run`, `moved`, `refused`, or `halted` |
+| `reason` | string | Human-readable decision reason |
+| `source` | string | Source packet path |
+| `destination` | string or null | Destination packet path |
+| `sha256` | string or null | Source packet hash when readable |
+
+Contract:
+- Packet schema validation runs before any state move.
+- `inbound -> dispatched` additionally requires an approved issue-backed structured plan with implementation-ready handoff.
+- PII modes `tagged`, `detected`, and `lam_only` require `worker-lam` or `critic-lam` role before dispatch.
+- Dry-run transitions write audit events and never execute packet payloads.
+- Replay reads the audit log and reconstructs latest accepted packet states.
 
 ---
 

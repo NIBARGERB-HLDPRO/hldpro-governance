@@ -132,6 +132,22 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("scripts/lam/runtime_inventory.py", result.stdout)
 
+    def test_packet_paths_are_governance_surface(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            result = self._run(
+                Path(raw),
+                "main",
+                [
+                    "scripts/packet/validate.py",
+                    "raw/packets/queue/inbound/example.yml",
+                    "raw/model-fallbacks/2026-04-17.md",
+                ],
+            )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("scripts/packet/validate.py", result.stdout)
+        self.assertIn("raw/packets/queue/inbound/example.yml", result.stdout)
+        self.assertIn("raw/model-fallbacks/2026-04-17.md", result.stdout)
+
     def test_riskfix_branch_without_issue_number_gets_specific_issue_hint(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             result = self._run(Path(raw), "riskfix/scope-gate", ["STANDARDS.md"])
