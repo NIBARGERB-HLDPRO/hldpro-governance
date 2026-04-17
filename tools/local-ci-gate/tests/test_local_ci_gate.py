@@ -13,6 +13,7 @@ import local_ci_gate as gate
 
 
 BIN = Path(__file__).resolve().parents[1] / "bin" / "hldpro-local-ci"
+PROFILES_DIR = Path(__file__).resolve().parents[1] / "profiles"
 
 
 class TestLocalCiGate(unittest.TestCase):
@@ -191,6 +192,40 @@ profile:
 
         self.assertEqual(changed.source, f"file:{changed_files}")
         self.assertEqual(changed.files, ("scripts/example.py", "tools/local-ci-gate/example.py"))
+
+    def test_bundled_profiles_load(self) -> None:
+        profile_paths = sorted(PROFILES_DIR.glob("*.yml"))
+
+        self.assertGreaterEqual(len(profile_paths), 2)
+        profiles = [gate.load_profile(path) for path in profile_paths]
+
+        self.assertIn("hldpro-governance", {profile.name for profile in profiles})
+        self.assertIn("knocktracker", {profile.name for profile in profiles})
+        for profile in profiles:
+            self.assertTrue(profile.checks)
+            self.assertEqual(profile.report_root, Path("cache/local-ci-gate/reports"))
+
+    def test_knocktracker_profile_scopes_heavy_checks_to_matching_files(self) -> None:
+        profile = gate.load_profile(PROFILES_DIR / "knocktracker.yml")
+        changed = gate.resolve_changed_files(
+            self.root,
+            explicit_files=["app/(main)/map.web.tsx"],
+            include_untracked=False,
+        )
+
+        report = gate.run_checks(self.root, profile, changed, dry_run=True, report_dir=self.root / "reports")
+        statuses = {result.check.id: result.status for result in report.results}
+
+        self.assertEqual(statuses["brand-verify"], "planned")
+        self.assertEqual(statuses["lint"], "planned")
+        self.assertEqual(statuses["typecheck"], "planned")
+        self.assertEqual(statuses["file-index-check"], "planned")
+        self.assertEqual(statuses["routing-tests"], "planned")
+        self.assertEqual(statuses["web-build"], "planned")
+        self.assertEqual(statuses["track-logic-tests"], "skipped")
+        self.assertEqual(statuses["edge-contract-tests"], "skipped")
+        self.assertEqual(statuses["manager-dashboard-contract-tests"], "skipped")
+        self.assertIn("CI remains authoritative", report.summary)
 
 
 if __name__ == "__main__":

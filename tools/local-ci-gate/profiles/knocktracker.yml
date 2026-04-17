@@ -1,0 +1,124 @@
+profile:
+  name: knocktracker
+  description: Knocktracker local CI gate profile for existing deterministic npm checks.
+  report_root: cache/local-ci-gate/reports
+  changed_files:
+    base_ref: origin/main
+    head_ref: HEAD
+    include_untracked: true
+  checks:
+    - id: brand-verify
+      title: Brand asset verification
+      severity: blocker
+      scope: always
+      paths:
+        - app.json
+        - assets/brand/**
+      command:
+        - npm
+        - run
+        - brand:verify
+
+    - id: lint
+      title: ESLint
+      severity: blocker
+      scope: always
+      command:
+        - npm
+        - run
+        - lint
+
+    - id: typecheck
+      title: TypeScript check
+      severity: blocker
+      scope: always
+      command:
+        - npm
+        - run
+        - typecheck
+
+    - id: file-index-check
+      title: File index drift check
+      severity: blocker
+      scope: always
+      command:
+        - npm
+        - run
+        - file-index:check
+
+    - id: routing-tests
+      title: Routing tests
+      severity: blocker
+      scope: changed
+      paths:
+        - utils/routing/**
+        - lib/routing/**
+        - lib/routingService.ts
+        - utils/routeOptimizer.ts
+        - app/**
+        - components/Sidebar.tsx
+        - components/MobileDrawer.tsx
+        - lib/navigationConfig.ts
+      command:
+        - npm
+        - run
+        - test:routing
+
+    - id: track-logic-tests
+      title: Track logic tests
+      severity: blocker
+      scope: changed
+      paths:
+        - lib/track/**
+        - app/(main)/track.tsx
+      command:
+        - npm
+        - run
+        - test:track-logic
+
+    - id: edge-contract-tests
+      title: Edge function contract tests
+      severity: blocker
+      scope: changed
+      paths:
+        - lib/contracts/edgeFunctionContracts.ts
+        - supabase/functions/**
+        - app/(main)/map.tsx
+        - app/(tabs)/ghl-sync.tsx
+      command:
+        - npm
+        - run
+        - test:contracts
+
+    - id: manager-dashboard-contract-tests
+      title: Manager dashboard contract tests
+      severity: blocker
+      scope: changed
+      paths:
+        - lib/contracts/managerDashboardContracts.ts
+        - lib/crmService.ts
+        - app/(main)/dashboard.tsx
+      command:
+        - npm
+        - run
+        - test:manager-dashboard
+
+    - id: web-build
+      title: Expo web build
+      severity: blocker
+      scope: changed
+      paths:
+        - app/(main)/map.web.tsx
+        - app/(tabs)/map.web.tsx
+        - components/WebMap.tsx
+        - components/map/*web.tsx
+        - components/routes/*web.tsx
+        - hooks/useGoogleMapsLoader.ts
+        - lib/documentPicker.web.ts
+        - shims/react-native-maps.web.tsx
+        - app.json
+        - assets/brand/**
+      command:
+        - npm
+        - run
+        - build:web
