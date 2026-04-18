@@ -31,6 +31,11 @@ No contradiction. This adds the package-level deployer above the existing Local 
 - `raw/cross-review/2026-04-18-issue-292-governance-tooling-deployer-plan.md`
 - `raw/exceptions/2026-04-18-issue-292-same-family-deployer.md`
 - `raw/execution-scopes/2026-04-18-issue-292-governance-tooling-deployer-implementation.json`
+- `graphify-out/GRAPH_REPORT.md`
+- `graphify-out/graph.json`
+- `graphify-out/hldpro-governance/`
+- `wiki/hldpro/`
+- `wiki/index.md`
 - `OVERLORD_BACKLOG.md`
 - `docs/PROGRESS.md`
 
@@ -76,6 +81,7 @@ No contradiction. This adds the package-level deployer above the existing Local 
 - Local preflight command:
   - `python3 scripts/overlord/check_execution_environment.py --scope raw/execution-scopes/2026-04-18-issue-292-governance-tooling-deployer-implementation.json --changed-files-file /tmp/issue-292-changed-files.txt`
 - Result: PASS with four warnings for declared active parallel roots.
+- Post-commit scope update: added root `graphify-out/GRAPH_REPORT.md` and `graphify-out/graph.json` after the commit hook generated them from the new deployer code.
 
 ## Validation Commands
 
