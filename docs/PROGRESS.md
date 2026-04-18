@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| Org-wide active repository governance coverage epic | #298 | IN PROGRESS | HIGH | TBD | Active org repo registry policy, live inventory drift detector, seek-and-ponder intake, EmailAssistant discovery, registry-driven surface reconciliation, final e2e closeout gate | Plan: docs/plans/issue-298-structured-agent-cycle-plan.json; PDCAR: docs/plans/issue-298-org-repo-governance-coverage-pdcar.md |
 | Org-level governance tooling distribution epic | #288 | IN PROGRESS | HIGH | TBD | Versioned governance package contract, pull/deploy mechanism, verification matrix, downstream e2e proof | Plan: docs/plans/issue-288-structured-agent-cycle-plan.json; PDCAR: docs/plans/issue-288-org-governance-tooling-distribution-pdcar.md |
 | Downstream governance tooling pilot planning | #294 | IN PROGRESS | HIGH | 1-2 | local-ai-machine pilot plan, clean worktree contract, negative-control proof, downstream GH Actions proof, rollback/uninstall proof | Phase 3 child of #288; planning package only, downstream edits require separate issue/scope |
 | SoM enforcement drift closure epic | #214 | IN PROGRESS | HIGH | TBD | Reviewed PDCAR plan, Claude review artifact, issues #215-#221 | Plan: docs/plans/2026-04-17-som-enforcement-drift-pdcar.md; closeout loop tracked by #220; execution-scope guard tracked by #221 |

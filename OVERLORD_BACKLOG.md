@@ -20,6 +20,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Org-wide active repository governance coverage epic | [#298](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/298) | HIGH | TBD | Planning package defines all-active-repo registry policy, seek-and-ponder intake, EmailAssistant discovery, registry-driven surface reconciliation, and final live org inventory e2e gate. |
 | Org-level governance tooling distribution epic | [#288](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/288) | HIGH | TBD | Planning package in progress at `docs/plans/issue-288-structured-agent-cycle-plan.json` and `docs/plans/issue-288-org-governance-tooling-distribution-pdcar.md`; final epic AC requires downstream repo e2e pull/deploy/use proof. |
 | Downstream governance tooling pilot planning | [#294](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/294) | HIGH | 1-2 | Phase 3 child of #288. Defines local-ai-machine pilot selection, clean worktree/e2e ACs, negative-control proof, GitHub Actions proof, and rollback/uninstall proof before downstream implementation starts. |
 | Org governance compendium and planning-path repair | [#223](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/223) | HIGH | TBD | Phase 0 dependency for #224. Repair sequencing break before adopting dirty compendium draft; canonical plan at `docs/plans/issue-223-structured-agent-cycle-plan.json`. |
