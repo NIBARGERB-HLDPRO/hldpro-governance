@@ -1,0 +1,20 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "docs/issue-275-local-ci-enforcement-remediation-plan",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-275-structured-agent-cycle-plan.json",
+    "docs/plans/issue-275-local-ci-enforcement-remediation-pdcar.md",
+    "raw/cross-review/2026-04-18-issue-275-local-ci-enforcement-remediation-plan.md",
+    "raw/execution-scopes/2026-04-18-issue-275-local-ci-enforcement-remediation-planning.json",
+    "raw/execution-scopes/2026-04-18-issue-275-local-ci-enforcement-remediation-implementation.json"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
+  ]
+}
