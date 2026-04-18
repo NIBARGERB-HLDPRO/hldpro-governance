@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-290-governance-tooling-contract/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-290-governance-tooling-contract/wiki/hldpro",
-  "nodes": 838,
-  "edges": 1531,
-  "communities": 44,
-  "articles": 54,
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/wiki/hldpro",
+  "nodes": 887,
+  "edges": 1668,
+  "communities": 47,
+  "articles": 57,
   "html_status": "skipped",
-  "code_files": 53
+  "code_files": 55
 }

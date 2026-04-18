@@ -120,7 +120,20 @@ Forbidden overrides:
 
 ## Pull And Deploy Contract
 
-Phase 2 will implement the broader pull/deploy mechanism. That mechanism must satisfy this contract:
+The package-level deployer is:
+
+```bash
+python3 scripts/overlord/deploy_governance_tooling.py <command>
+```
+
+Supported commands:
+
+- `dry-run`: print the planned write set and rollback set without writing files.
+- `apply`: write the managed Local CI shim and `.hldpro/governance-tooling.json`.
+- `verify`: verify the managed shim and consumer record match the requested governance ref and package version.
+- `rollback`: remove managed package files, refusing unmanaged files by default.
+
+The mechanism must satisfy this contract:
 
 1. Resolve a governance package version by git SHA.
 2. Verify the target repo and execution scope before writes.
@@ -131,16 +144,30 @@ Phase 2 will implement the broader pull/deploy mechanism. That mechanism must sa
 7. Prove idempotency with tests.
 8. Prove rollback or uninstall with tests.
 
-The existing Local CI shim deployer is the nearest current pattern:
+Example dry-run:
 
 ```bash
-python3 scripts/overlord/deploy_local_ci_gate.py dry-run \
+python3 scripts/overlord/deploy_governance_tooling.py dry-run \
   --target-repo /path/to/consumer-repo \
   --profile <profile> \
   --governance-ref "$(git rev-parse HEAD)"
 ```
 
-Phase 2 may generalize that deployer, but it must keep the refusal, marker, and preview behavior.
+Example apply and verify:
+
+```bash
+python3 scripts/overlord/deploy_governance_tooling.py apply \
+  --target-repo /path/to/consumer-repo \
+  --profile <profile> \
+  --governance-ref "$(git rev-parse HEAD)"
+
+python3 scripts/overlord/deploy_governance_tooling.py verify \
+  --target-repo /path/to/consumer-repo \
+  --profile <profile> \
+  --governance-ref "$(git rev-parse HEAD)"
+```
+
+The deployer refuses dirty target repos and unmanaged managed-path files by default. The existing Local CI shim deployer remains the compatibility surface for rendering the managed shim body.
 
 ## Verification Matrix
 
@@ -151,7 +178,8 @@ Phase 2 may generalize that deployer, but it must keep the refusal, marker, and 
 | Execution scope | `python3 scripts/overlord/check_execution_environment.py --scope <scope> --changed-files-file <files>` | `governance-check.yml` planner-boundary |
 | Local CI Gate | `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | `local-ci-gate.yml` |
 | Workflow coverage | `python3 scripts/overlord/check_workflow_local_coverage.py --root .` | `graphify-governance-contract.yml` and `local-ci-gate.yml` |
-| Shim deployer | `python3 scripts/overlord/test_deploy_local_ci_gate.py` | `local-ci-gate.yml` when deployer paths change |
+| Package deployer | `python3 scripts/overlord/test_deploy_governance_tooling.py` | `local-ci-gate.yml` when deployer paths change |
+| Shim deployer compatibility | `python3 scripts/overlord/test_deploy_local_ci_gate.py` | `local-ci-gate.yml` when deployer paths change |
 
 When changed-file selection skips a check, the report must say whether it ran zero specs, a subset, or full coverage. A skipped local surface is not proof that CI will pass.
 

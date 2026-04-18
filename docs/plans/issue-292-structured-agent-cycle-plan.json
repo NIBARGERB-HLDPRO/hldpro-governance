@@ -1,0 +1,178 @@
+{
+  "session_id": "session-20260418-issue-292-governance-tooling-deployer",
+  "issue_number": 292,
+  "objective": "Implement the Phase 2 governance tooling deployer under parent epic #288, with dry-run, apply, verify, rollback, consumer-record writes, safety refusals, and real in-repo e2e fixture tests.",
+  "tier": 1,
+  "scope_boundary": [
+    "Implement package-level deployer behavior defined by issue #290.",
+    "Preserve the existing Local CI shim deployer as a compatibility surface.",
+    "Write `.hldpro/governance-tooling.json` as the downstream consumed-version record.",
+    "Refuse dirty target repos and unmanaged managed-path overwrites by default.",
+    "Verify behavior with subprocess-backed temporary git repo tests.",
+    "Keep parent epic #288 open for downstream pilot and final e2e proof."
+  ],
+  "out_of_scope": [
+    "Editing downstream governed repos.",
+    "Closing parent epic #288.",
+    "Replacing GitHub Actions or CI-required checks.",
+    "Changing Local CI Gate runner semantics beyond adding the deployer test gate.",
+    "Adding semver release automation.",
+    "Claiming downstream repo adoption proof from temp fixture tests."
+  ],
+  "research_summary": "Issue #290 created the package manifest and runbook contract. Subagent review confirmed the existing `deploy_local_ci_gate.py` is a narrow managed-shim installer and recommended adding a package-level deployer that reads the manifest, writes the consumer record, supports dry-run/apply/verify/rollback, and proves behavior through real temporary git repo e2e tests while preserving the compatibility shim surface.",
+  "research_artifacts": [
+    "GitHub issue #288",
+    "GitHub issue #290",
+    "GitHub issue #292",
+    "docs/governance-tooling-package.json",
+    "docs/runbooks/org-governance-tooling-distribution.md",
+    "scripts/overlord/deploy_local_ci_gate.py",
+    "scripts/overlord/test_deploy_local_ci_gate.py",
+    "Subagent Cicero review notification"
+  ],
+  "sprints": [
+    {
+      "name": "Planning And Scope",
+      "goal": "Create issue-backed scope and review artifacts before implementation closeout.",
+      "tasks": [
+        "Create issue #292 under parent epic #288.",
+        "Add PDCAR, structured plan, cross-review memo, same-family exception, and execution scope.",
+        "Declare active parallel sibling lanes without cleaning them.",
+        "Update status mirrors."
+      ],
+      "acceptance_criteria": [
+        "Issue #292 exists before backlog/progress edits.",
+        "Structured plan validates.",
+        "Execution scope preflight passes.",
+        "Parent issue #288 remains open."
+      ],
+      "file_paths": [
+        "docs/plans/issue-292-structured-agent-cycle-plan.json",
+        "docs/plans/issue-292-governance-tooling-deployer-pdcar.md",
+        "raw/cross-review/2026-04-18-issue-292-governance-tooling-deployer-plan.md",
+        "raw/exceptions/2026-04-18-issue-292-same-family-deployer.md",
+        "raw/execution-scopes/2026-04-18-issue-292-governance-tooling-deployer-implementation.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Deployer Implementation",
+      "goal": "Add package-level deployer behavior without breaking existing shim deployer compatibility.",
+      "tasks": [
+        "Add `scripts/overlord/deploy_governance_tooling.py`.",
+        "Read `docs/governance-tooling-package.json` for package version and consumer record path.",
+        "Implement `dry-run`, `apply`, `verify`, and `rollback` commands.",
+        "Delegate Local CI shim rendering to `deploy_local_ci_gate.py`.",
+        "Write `.hldpro/governance-tooling.json` on apply.",
+        "Refuse unmanaged shim and consumer-record overwrites by default.",
+        "Refuse dirty target repos by default."
+      ],
+      "acceptance_criteria": [
+        "Dry-run prints planned write set and rollback set without writing files.",
+        "Apply writes the managed shim and consumer record.",
+        "Verify fails before apply and passes after apply.",
+        "Rollback removes managed files.",
+        "Existing Local CI shim deployer tests still pass."
+      ],
+      "file_paths": [
+        "scripts/overlord/deploy_governance_tooling.py",
+        "docs/governance-tooling-package.json",
+        "docs/runbooks/org-governance-tooling-distribution.md"
+      ]
+    },
+    {
+      "name": "Real In-Repo E2E Tests",
+      "goal": "Prove deployer behavior against temporary git repo fixtures inside repo tests.",
+      "tasks": [
+        "Add `scripts/overlord/test_deploy_governance_tooling.py`.",
+        "Create temporary git repos in tests.",
+        "Run dry-run, apply, verify, and rollback against the fixture.",
+        "Test idempotency, unmanaged overwrite refusal, unmanaged record refusal, dirty target refusal, and missing-record verify failure.",
+        "Wire the test into the Local CI Gate profile."
+      ],
+      "acceptance_criteria": [
+        "Real fixture e2e test runs dry-run -> apply -> verify -> rollback.",
+        "Dirty target refusal includes staged, unstaged, or untracked changes through git porcelain status.",
+        "Unmanaged files are not overwritten by default.",
+        "Local CI Gate runs the deployer tests when deployer or contract files change."
+      ],
+      "file_paths": [
+        "scripts/overlord/test_deploy_governance_tooling.py",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml"
+      ]
+    },
+    {
+      "name": "Validation And Closeout",
+      "goal": "Prove locally and in GitHub that the deployer works before closing issue #292.",
+      "tasks": [
+        "Run deployer tests and compatibility shim tests.",
+        "Run execution-scope preflight, structured-plan validation, backlog alignment, and Local CI Gate.",
+        "Run closeout hook.",
+        "Open PR, watch checks, and close #292 after merge."
+      ],
+      "acceptance_criteria": [
+        "Local deployer and compatibility tests pass.",
+        "Local CI Gate passes and includes `governance-tooling-deployer-tests`.",
+        "GitHub Actions pass before merge.",
+        "Closeout records real test commands.",
+        "Parent issue #288 remains open."
+      ],
+      "file_paths": [
+        "raw/closeouts/2026-04-18-issue-292-governance-tooling-deployer.md",
+        "graphify-out/hldpro-governance/",
+        "wiki/hldpro/",
+        "wiki/index.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Cicero",
+      "role": "deployer design explorer",
+      "focus": "Minimal Phase 2 implementation design and edge cases for package-level governance tooling deployer.",
+      "status": "accepted",
+      "summary": "Recommended a package-level deployer that reads the manifest, writes `.hldpro/governance-tooling.json`, supports dry-run/apply/verify/rollback, refuses unmanaged overwrites and dirty targets, and proves behavior with temporary git repo e2e tests.",
+      "evidence": [
+        "Subagent Cicero review notification",
+        "docs/governance-tooling-package.json",
+        "scripts/overlord/deploy_local_ci_gate.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family-deployer-fallback",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "True alternate-family review was unavailable in this Codex lane. Same-family exception is scoped to the Phase 2 deployer implementation and mitigated by subagent design review, real e2e fixture tests, deterministic validation, Local CI Gate, and GitHub Actions.",
+    "evidence": [
+      "raw/cross-review/2026-04-18-issue-292-governance-tooling-deployer-plan.md",
+      "raw/exceptions/2026-04-18-issue-292-same-family-deployer.md",
+      "Subagent Cicero review notification"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #292 may add the package-level deployer, deployer tests, contract/runbook updates, Local CI Gate profile wiring, planning/review/scope artifacts, status mirrors, and closeout evidence. It may not edit downstream repos or close parent epic #288.",
+    "next_execution_step": "Validate, PR, watch checks, close issue #292, and leave parent epic #288 open for downstream pilot and final e2e proof.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If downstream repo edits are needed, stop and create a downstream issue and execution scope first.",
+    "If the deployer overwrites unmanaged files by default, stop and revise.",
+    "If the deployer allows dirty target writes by default, stop and revise.",
+    "If real fixture e2e tests are removed or skipped, do not close #292.",
+    "If final downstream e2e proof is implied complete, stop and revise because #288 must remain open."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #292",
+    "GitHub issue #288",
+    "operator instruction: create GH epic, PDCAR, loop e2e, no HITL, include real test runs as AC",
+    "Subagent Cicero review notification",
+    "raw/exceptions/2026-04-18-issue-292-same-family-deployer.md"
+  ],
+  "approved_at": "2026-04-18T22:27:43Z"
+}

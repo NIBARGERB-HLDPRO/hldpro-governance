@@ -52,6 +52,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Governance tooling deployer implementation | #292 | 2026-04-18 | PR #293 added the Phase 2 package deployer, consumer record writes, dry-run/apply/verify/rollback, managed-path safety refusals, Local CI blocker wiring, real temp-repo e2e tests, and generated graph/wiki evidence. Parent epic #288 remains open for downstream pilot and final e2e proof. Closeout: raw/closeouts/2026-04-18-issue-292-governance-tooling-deployer.md. |
 | Governance tooling distribution contract | #290 | 2026-04-18 | PR #291 added the Phase 1 package manifest, org distribution runbook, managed-file/override/rollback contract, validation evidence, and closeout. Parent epic #288 remains open for deployer, downstream pilot, and final e2e proof. Closeout: raw/closeouts/2026-04-18-issue-290-governance-tooling-contract.md. |
 | Execution environment preflight for active parallel lanes | #286 | 2026-04-18 | PR #287 added active parallel root declarations, a preflight wrapper, and tests proving declared sibling lanes warn while undeclared dirty roots still fail. Closeout: raw/closeouts/2026-04-18-issue-286-execution-environment-preflight.md. |
 | Local-first coverage for governance GitHub workflows | #284 | 2026-04-18 | PR #285 added the workflow coverage inventory, deterministic validator, negative-control tests, Local CI Gate wiring, and independent contract workflow coverage. Closeout: raw/closeouts/2026-04-18-issue-284-local-first-workflow-coverage.md. |
