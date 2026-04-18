@@ -168,3 +168,45 @@ The runner invocation records the resolved governance root with `--governance-ro
 ## Consumer Rollout
 
 Consumer rollout remains separate issue-backed work. Do not install shims in downstream repos from the governance implementation PR.
+
+Use this checklist for each consumer repo:
+
+1. Create a consumer-repo GitHub issue before editing files.
+2. Confirm the consumer repo is not already owned by another active lane.
+3. Create an isolated clean worktree or branch for the consumer rollout.
+4. Run the deployer in `dry-run` mode from this governance checkout and record the planned write set:
+
+```bash
+python3 scripts/overlord/deploy_local_ci_gate.py dry-run \
+  --target-repo /path/to/consumer-repo \
+  --profile <profile-name> \
+  --governance-ref "$(git rev-parse HEAD)"
+```
+
+5. Install or refresh only the managed shim path, normally `.hldpro/local-ci.sh`:
+
+```bash
+python3 scripts/overlord/deploy_local_ci_gate.py install \
+  --target-repo /path/to/consumer-repo \
+  --profile <profile-name> \
+  --governance-ref "$(git rev-parse HEAD)"
+```
+
+6. Add `cache/local-ci-gate/reports/` to the consumer repo `.gitignore` if it is not already ignored.
+7. Run the consumer profile in dry-run mode before installing or refreshing live enforcement:
+
+```bash
+python3 /path/to/hldpro-governance/tools/local-ci-gate/bin/hldpro-local-ci run \
+  --repo-root /path/to/consumer-repo \
+  --profile <profile-name> \
+  --dry-run
+```
+
+8. Run the installed shim live only when the repo lane owner confirms the local dependency state is ready:
+
+```bash
+.hldpro/local-ci.sh
+```
+
+9. Open a consumer-repo PR that includes only the shim, ignore-rule, and any repo-local usage note required by that repo.
+10. Merge only after required CI is green; CI remains authoritative.
