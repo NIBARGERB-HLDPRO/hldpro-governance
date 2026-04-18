@@ -61,7 +61,14 @@ No contradiction. This extends the Local CI Gate toolkit contract into a broader
 - Local CI Gate `planner-boundary` resolved and ran `raw/execution-scopes/2026-04-18-issue-290-governance-tooling-contract-implementation.json`.
 - Local CI Gate `governance-surface-planning` validated the issue #290 structured plan.
 - Package manifest JSON parse passed.
-- PR GitHub Actions evidence will be added after PR checks complete.
+- GitHub Actions PR #291 evidence:
+  - `local-ci-gate`: pass, run `24615161836`, job `71976075694`
+  - `validate`: pass, run `24615161839`, job `71976075696`
+  - `contract`: pass, run `24615161845`, job `71976075708`
+  - `commit-scope`: pass, run `24615161837`, job `71976075673`
+  - `Analyze (actions)`: pass, run `24615161360`, job `71976075010`
+  - `Analyze (python)`: pass, run `24615161360`, job `71976075007`
+  - `CodeQL`: pass, run `71976105749`
 
 ## Execution Scope / Write Boundary
 
