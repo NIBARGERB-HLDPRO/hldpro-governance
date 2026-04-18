@@ -107,6 +107,26 @@ Contract:
 
 ---
 
+### HITL Relay Queue
+**Generator:** `scripts/orchestrator/hitl_relay_queue.py`
+**Storage:** `raw/hitl-relay/queue/`
+**Audit log:** `raw/hitl-relay/queue/audit/events.jsonl`
+
+Queue directories:
+| Directory | Description |
+|-----------|-------------|
+| `requests` | Valid local CLI checkpoint HITL request packets |
+| `responses` | Verified local operator response packets |
+| `decisions` | Normalized bounded decision packets |
+| `session-inbox` | Validated session instruction packets addressed to one local CLI session |
+| `session-resume` | Resume packets for stale, blocked, or missing sessions |
+| `dead-letter` | Invalid packets with explicit validation reasons |
+| `audit` | JSONL replay evidence for the request, response, decision, validation, instruction, and resume path |
+
+Every packet emitted by the relay queue is validated with `scripts/packet/validate_hitl_relay.py` before it is written outside `dead-letter`.
+
+---
+
 ### Self-Learning Knowledge Report
 **Generator:** `scripts/orchestrator/self_learning.py`
 **Default storage:** `metrics/self-learning/latest.json` and `metrics/self-learning/latest.md`

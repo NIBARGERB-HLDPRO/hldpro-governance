@@ -1,0 +1,61 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-301-hitl-queue-prototype",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-18T23:33:18Z",
+    "evidence_paths": [
+      "docs/plans/issue-301-structured-agent-cycle-plan.json",
+      "docs/plans/issue-301-hitl-queue-prototype-pdcar.md",
+      "raw/cross-review/2026-04-18-issue-301-hitl-queue-prototype.md",
+      "raw/exceptions/2026-04-18-issue-301-same-family-queue-prototype.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-18-issue-301-same-family-queue-prototype.md",
+    "active_exception_expires_at": "2026-04-19T23:33:18Z"
+  },
+  "allowed_write_paths": [
+    "scripts/orchestrator/hitl_relay_queue.py",
+    "scripts/orchestrator/test_hitl_relay_queue.py",
+    "docs/schemas/README.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/DATA_DICTIONARY.md",
+    "docs/plans/issue-301-structured-agent-cycle-plan.json",
+    "docs/plans/issue-301-hitl-queue-prototype-pdcar.md",
+    "raw/cross-review/2026-04-18-issue-301-hitl-queue-prototype.md",
+    "raw/exceptions/2026-04-18-issue-301-same-family-queue-prototype.md",
+    "raw/execution-scopes/2026-04-18-issue-301-hitl-queue-prototype-implementation.json"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout may contain operator or parallel work and is not the issue #301 execution root."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Sibling repo owns MCP/session runtime work and is not edited by this slice."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Sibling repo owns AIS transport work and is not edited by this slice."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Sibling repo has unrelated work and is not edited by this slice."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Sibling repo has unrelated work and is not edited by this slice."
+    }
+  ]
+}

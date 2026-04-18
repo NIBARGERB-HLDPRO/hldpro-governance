@@ -1,0 +1,103 @@
+{
+  "session_id": "session-20260418-issue-301-hitl-queue-prototype",
+  "issue_number": 301,
+  "objective": "Implement the queue-first local HITL relay prototype so finished-work and checkpoint packets can be validated, transformed, audited, and routed locally before AIS transport or MCP session control slices consume the contract.",
+  "tier": 1,
+  "scope_boundary": [
+    "Add a governance-owned local HITL relay queue prototype under scripts/orchestrator.",
+    "Use dedicated local queue directories for requests, responses, decisions, session inbox, session resume, dead-letter, and audit records.",
+    "Validate emitted HITL relay packets with scripts/packet/validate_hitl_relay.py.",
+    "Add focused tests for approval, request-changes, ambiguity, stale session, dead-letter, and replay behavior.",
+    "Keep this slice inside hldpro-governance."
+  ],
+  "out_of_scope": [
+    "Implementing AIS SMS, Slack, email, or webhook transport.",
+    "Implementing MCP runtime orchestration or live local terminal/session control.",
+    "Changing sibling repositories.",
+    "Closing parent epic #296.",
+    "Running final cross-repo E2E proof."
+  ],
+  "research_summary": "Issue #299 added HITL relay packet contracts, issue #302 added security/data-handling policy, and issue #300 added deterministic validation. Issue #301 now proves the local queue path that downstream AIS, MCP, and CLI adapter slices must consume.",
+  "research_artifacts": [
+    "GitHub issue #296",
+    "GitHub issue #301",
+    "docs/schemas/hitl-relay-packet.schema.json",
+    "docs/runbooks/hitl-relay-security.md",
+    "scripts/packet/validate_hitl_relay.py",
+    "scripts/orchestrator/packet_queue.py",
+    "raw/cross-review/2026-04-18-issue-301-hitl-queue-prototype.md"
+  ],
+  "sprints": [
+    {
+      "name": "Queue-First Relay Prototype",
+      "goal": "Add deterministic local queue behavior for HITL request, response, decision, instruction, resume, dead-letter, and audit paths.",
+      "tasks": [
+        "Create scripts/orchestrator/hitl_relay_queue.py.",
+        "Add tests for request creation, approval instruction, request-changes instruction, clarification, stale-session resume, invalid dead-letter, and audit replay.",
+        "Document the queue surface in docs/schemas/README.md, docs/FEATURE_REGISTRY.md, and docs/DATA_DICTIONARY.md.",
+        "Record issue-backed PDCAR, execution scope, exception, and cross-review evidence."
+      ],
+      "acceptance_criteria": [
+        "A local CLI checkpoint fixture creates a valid HITL request packet.",
+        "A valid local approval response fixture produces a bounded session instruction packet.",
+        "A request-changes response fixture preserves feedback without treating it as approval.",
+        "An ambiguous response fixture produces a clarification request and no instruction packet.",
+        "A stale-session fixture produces a resume packet instead of targeting another session.",
+        "Invalid packets land in dead-letter with explicit validation errors.",
+        "Replay reconstructs request, response, normalized decision, validation, and instruction evidence."
+      ],
+      "file_paths": [
+        "scripts/orchestrator/hitl_relay_queue.py",
+        "scripts/orchestrator/test_hitl_relay_queue.py",
+        "docs/schemas/README.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/plans/issue-301-structured-agent-cycle-plan.json",
+        "docs/plans/issue-301-hitl-queue-prototype-pdcar.md",
+        "raw/cross-review/2026-04-18-issue-301-hitl-queue-prototype.md",
+        "raw/exceptions/2026-04-18-issue-301-same-family-queue-prototype.md",
+        "raw/execution-scopes/2026-04-18-issue-301-hitl-queue-prototype-implementation.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Dewey subagent",
+      "role": "queue-pattern reviewer",
+      "focus": "Existing queue atomic write and audit patterns, placement of the HITL queue prototype, and governance artifact requirements.",
+      "status": "accepted_with_followup",
+      "summary": "The prototype should live under scripts/orchestrator, reuse temp-file-then-rename and replayable JSONL audit patterns, and keep AIS/MCP/session runtime work out of scope.",
+      "evidence": [
+        "raw/cross-review/2026-04-18-issue-301-hitl-queue-prototype.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family-implementation-fallback",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "True alternate-family review is not available in this no-HITL Codex lane. This slice is deterministic local queue work with focused tests and a same-family exception recorded.",
+    "evidence": [
+      "raw/exceptions/2026-04-18-issue-301-same-family-queue-prototype.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #301 may add local HITL queue prototype code/tests, update queue/schema registry documentation, and add planning/scope artifacts. It may not implement live transport, MCP runtime behavior, local terminal/session adapters, or sibling repo changes.",
+    "next_execution_step": "Validate tests, publish PR, and keep parent #296 open for transport, runtime, adapter, and final E2E slices.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Implementing AIS or MCP runtime behavior in this queue slice is a material deviation.",
+    "Writing directly to live terminal/session control surfaces is a material deviation.",
+    "Allowing unvalidated HITL packets into session-inbox or session-resume is a material deviation.",
+    "Editing sibling repos from this branch is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator no-HITL instruction 2026-04-18"
+  ],
+  "approved_at": "2026-04-18T23:33:18Z"
+}
