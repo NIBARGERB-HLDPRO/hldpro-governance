@@ -158,6 +158,14 @@
 | GOV-022 | Dispatch scope evidence is fail-closed: when `governance.execution_scope_ref` is present, it must be a JSON artifact under `raw/execution-scopes/`; PDCAR Markdown and other arbitrary files are refused. |
 | GOV-022 | State changes are recorded in `raw/packets/queue/audit.jsonl` with timestamp, source, destination, packet id, SHA-256, dry-run flag, allowed flag, status, and reason so queue movement can be replayed without executing packet payloads. |
 
+### HITL_RELAY_QUEUE
+
+| Feature ID | Notes |
+|---|---|
+| GOV-025 | `scripts/orchestrator/hitl_relay_queue.py` provides the queue-first HITL relay prototype for issue #301, using local request, response, decision, session-inbox, session-resume, dead-letter, and audit directories under `raw/hitl-relay/queue/`. |
+| GOV-025 | The prototype writes packets with temp-file-then-rename semantics and validates every emitted HITL packet through `scripts/packet/validate_hitl_relay.py` before it reaches a session inbox or resume queue. |
+| GOV-025 | Approval, request-changes, clarification, stale-session, duplicate, expired, dead-letter, and replay paths are covered by `scripts/orchestrator/test_hitl_relay_queue.py`; live AIS transport and MCP session control remain separate repo slices. |
+
 ### SELF_LEARNING_LOOP
 
 | Feature ID | Notes |

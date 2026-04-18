@@ -50,6 +50,8 @@ The deterministic policy validator lives at `scripts/packet/validate_hitl_relay.
 - stale sessions require resume packets instead of session instructions;
 - instruction targets must match the exact local session ID.
 
+The queue-first local prototype lives at `scripts/orchestrator/hitl_relay_queue.py`. It consumes local request/response fixtures, emits validated HITL relay packets into dedicated queue directories under `raw/hitl-relay/queue/`, and records replayable JSONL audit evidence. This prototype deliberately stops at local queues; AIS transport, MCP orchestration, and terminal/session adapters are owned by downstream repository slices.
+
 ## Validator
 
 **File:** `scripts/packet/validate.py`
