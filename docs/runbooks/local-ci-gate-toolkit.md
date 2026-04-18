@@ -38,6 +38,7 @@ Reports are local-only by default under `cache/local-ci-gate/reports/`, which is
 | `hldpro-governance` | `hldpro-governance` | `python3`, `git` | Runs deterministic governance checks, planner-boundary checks, diff hygiene, and focused toolkit tests. |
 | `knocktracker` | `knocktracker` | `npm` | Adopted by knocktracker issue #173 / PR #174 as the live managed-shim profile. |
 | `ai-integration-services` | `ai-integration-services` | `npm` | Governance profile is available; consumer shim rollout is tracked separately by ai-integration-services issue #1113. |
+| `local-ai-machine` | `local-ai-machine` | `python3`, `deno`, `bash` | Governance profile is available; consumer shim rollout must happen separately in local-ai-machine. |
 
 Profiles declare their dependency metadata in `profile.requires_dependencies`. The runner validates that metadata shape and rejects duplicate check IDs at profile-load time. Dependency metadata is descriptive; each command still fails normally if the target repo has not installed its own dependencies.
 
@@ -112,6 +113,37 @@ python3 /path/to/hldpro-governance/tools/local-ci-gate/bin/hldpro-local-ci run \
 ```
 
 An AIS managed shim rollout must happen in a separate AIS issue-backed PR after the governance profile lands.
+
+## Local AI Machine Profile
+
+The LAM consumer profile is `tools/local-ci-gate/profiles/local-ai-machine.yml`.
+
+It runs existing LAM commands only:
+
+- Always-on static governance contracts: agent governance, env-var docs, clean-branch governance, and fail-fast governance.
+- Changed-file scoped blocker checks: required-check reconciliation, PR routing, edge critic reference, MicroVM boot command, inference router, and critic runner contracts.
+- Changed-file scoped advisory check: Deno durable workflow test for workflow/orchestrator changes.
+
+Use the profile from a LAM checkout:
+
+```bash
+python3 /path/to/hldpro-governance/tools/local-ci-gate/bin/hldpro-local-ci run \
+  --repo-root /path/to/local-ai-machine \
+  --profile local-ai-machine
+```
+
+Preview without executing LAM commands:
+
+```bash
+python3 /path/to/hldpro-governance/tools/local-ci-gate/bin/hldpro-local-ci run \
+  --repo-root /path/to/local-ai-machine \
+  --profile local-ai-machine \
+  --dry-run
+```
+
+LAM currently uses direct Python, Deno, and bash workflow commands rather than `package.json` scripts. Do not add wrapper scripts in governance; if LAM needs wrapper commands, create a separate LAM issue-backed PR.
+
+LAM managed shim rollout must happen in a separate LAM issue-backed PR after the governance profile lands.
 
 ## Managed Shim Deployer
 
