@@ -1,0 +1,145 @@
+{
+  "session_id": "session-20260418-issue-309-org-inventory-drift",
+  "issue_number": 309,
+  "objective": "Implement the first #298 child slice: a deterministic org repository inventory drift detector that compares live or fixture GitHub org inventory with docs/governed_repos.json and reports current active repo coverage gaps.",
+  "tier": 2,
+  "scope_boundary": [
+    "Add a focused org inventory drift checker under scripts/overlord.",
+    "Add fixture-backed unit tests for exact match, missing active repo, stale registry repo, warn-only mode, and archived repo cases.",
+    "Wire weekly overlord sweep to surface org inventory drift in warn-only mode.",
+    "Add issue-backed planning, exception, execution-scope, backlog, and progress artifacts for #309.",
+    "Do not add seek-and-ponder or EmailAssistant to the registry in this slice."
+  ],
+  "out_of_scope": [
+    "Changing docs/governed_repos.json coverage.",
+    "Extending the registry schema classification model, which is tracked by #310.",
+    "Editing downstream repositories.",
+    "Closing parent epic #298.",
+    "Claiming final org-wide governance e2e completion."
+  ],
+  "research_summary": "Issue #298 established that every active org repo must be present in governance and that live org inventory currently includes seek-and-ponder and EmailAssistant beyond the six canonical governed repos. This slice implements the detector and sweep surfacing only, leaving schema-classification enforcement to #310 and intake to #311/#312.",
+  "research_artifacts": [
+    "GitHub issue #298",
+    "GitHub issue #309",
+    "docs/plans/issue-298-structured-agent-cycle-plan.json",
+    "docs/governed_repos.json",
+    "scripts/overlord/validate_governed_repos.py",
+    ".github/workflows/overlord-sweep.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Detector And Fixtures",
+      "goal": "Create a deterministic checker that can run from fixtures locally and from GitHub CLI in sweep.",
+      "tasks": [
+        "Add scripts/overlord/check_org_repo_inventory.py.",
+        "Support --inventory-file fixture mode and --live GitHub CLI mode.",
+        "Report missing active repos, stale registry repos, archived registry repos, and archived unregistered repos.",
+        "Add text, markdown, and JSON output modes.",
+        "Add --warn-only for weekly sweep surfacing before enforcement."
+      ],
+      "acceptance_criteria": [
+        "Exact fixture match exits 0.",
+        "Missing active repo exits 1 unless --warn-only is set.",
+        "Stale registry repo exits 1.",
+        "Archived unregistered repos are notice-only.",
+        "Archived registry repos are blocking until #310 adds explicit classification semantics."
+      ],
+      "file_paths": [
+        "scripts/overlord/check_org_repo_inventory.py",
+        "scripts/overlord/test_check_org_repo_inventory.py"
+      ]
+    },
+    {
+      "name": "Sweep Surfacing",
+      "goal": "Surface org inventory drift in weekly sweep without failing the scheduled run while current gaps remain open.",
+      "tasks": [
+        "Add an Org Repository Inventory Drift section to overlord-sweep.",
+        "Run the checker in --live --warn-only --format markdown mode.",
+        "Keep hard enforcement out of sweep until current known gaps are classified by #310-#312."
+      ],
+      "acceptance_criteria": [
+        "Sweep report contains org inventory drift section.",
+        "Known active omissions are visible in report output.",
+        "Drift detection failure does not prevent weekly reporting while warn-only mode is active.",
+        "Unexpected checker execution errors still fail the workflow."
+      ],
+      "file_paths": [
+        ".github/workflows/overlord-sweep.yml"
+      ]
+    },
+    {
+      "name": "Final E2E Proof",
+      "goal": "Prove this slice catches the current #298 gap and records the command output.",
+      "tasks": [
+        "Run unit tests.",
+        "Run fixture negative-control checks.",
+        "Run live GitHub org inventory command locally.",
+        "Run Local CI Gate for the changed files.",
+        "Post evidence to #309 and link it from #298."
+      ],
+      "acceptance_criteria": [
+        "Final AC: unit tests pass.",
+        "Final AC: live org drift command reports seek-and-ponder and EmailAssistant as missing active repos while registry is unchanged.",
+        "Final AC: warn-only live mode exits 0 with markdown report.",
+        "Final AC: Local CI Gate passes for changed paths.",
+        "Final AC: #309 remains open unless PR and e2e evidence are linked."
+      ],
+      "file_paths": [
+        "docs/plans/issue-309-structured-agent-cycle-plan.json",
+        "docs/plans/issue-309-org-inventory-drift-pdcar.md",
+        "raw/exceptions/2026-04-18-issue-309-same-family-implementation.md",
+        "raw/execution-scopes/2026-04-18-issue-309-org-inventory-drift-implementation.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Carver",
+      "role": "inventory-drift-reviewer",
+      "focus": "Detector behavior, fixture coverage, sweep warn-only semantics, and #298 final e2e alignment.",
+      "status": "accepted",
+      "summary": "No blockers or high-risk gaps found. Review confirmed docs/governed_repos.json remains unchanged, fixture tests pass, live blocking mode reports EmailAssistant and seek-and-ponder as missing active repos, and warn-only markdown mode exits successfully while reporting both repos.",
+      "evidence": [
+        "Subagent notification 019da2f0-d8d2-76a0-a716-cc9478fcd24d",
+        "python3 scripts/overlord/check_org_repo_inventory.py --live --format text",
+        "python3 scripts/overlord/check_org_repo_inventory.py --live --warn-only --format markdown",
+        "python3 scripts/overlord/test_check_org_repo_inventory.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not requested for focused implementation slice",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This slice adds focused tooling/tests and does not change standards semantics. Cross-family review remains required for standards/schema semantics changes in #310 or later.",
+    "evidence": [
+      "GitHub issue #309",
+      "docs/plans/issue-298-structured-agent-cycle-plan.json"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #309 may add the inventory drift checker, tests, sweep report wiring, planning/status artifacts, same-family exception, and implementation execution scope. It may not alter registry coverage or downstream repos.",
+    "next_execution_step": "Implement detector, tests, sweep surfacing, run final e2e commands, then open PR for #309.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If registry schema changes are needed, stop and move that work to #310.",
+    "If seek-and-ponder or EmailAssistant intake is needed, stop and move that work to #311 or #312.",
+    "If live GitHub CLI inventory cannot run, keep fixture tests and record the live-mode blocker on #309.",
+    "If sweep hard-fails due expected current drift, revert to warn-only mode until #310-#312 classify known gaps.",
+    "If final live command does not report the current missing active repos, do not publish."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #309",
+    "Parent epic #298",
+    "operator instruction: follow repo rules, no HITL, e2e testing as final AC",
+    "raw/exceptions/2026-04-18-issue-309-same-family-implementation.md"
+  ],
+  "approved_at": "2026-04-18T23:35:00Z"
+}
