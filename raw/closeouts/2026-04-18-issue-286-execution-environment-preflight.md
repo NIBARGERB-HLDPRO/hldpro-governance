@@ -66,6 +66,14 @@ No contradiction. This keeps the issue #242 planner-boundary enforcement strict 
   - `Analyze (actions)`: pass, run `24611863543`, job `71967563456`
   - `Analyze (python)`: pass, run `24611863543`, job `71967563450`
   - `CodeQL`: pass, run `71967596398`
+- GitHub Actions final PR #287 evidence after closeout/status commits:
+  - `local-ci-gate`: pass, run `24611930117`, job `71967732168`
+  - `contract`: pass, run `24611930115`, job `71967732137`
+  - `validate`: pass, run `24611930119`, job `71967732143`
+  - `commit-scope`: pass, run `24611930118`, job `71967732162`
+  - `Analyze (actions)`: pass, run `24611929364`, job `71967731418`
+  - `Analyze (python)`: pass, run `24611929364`, job `71967731422`
+  - `CodeQL`: pass, run `71967765203`
 
 ## Execution Scope / Write Boundary
 
