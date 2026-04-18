@@ -1,0 +1,73 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-309-org-inventory-drift-20260418",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-18T23:35:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-309-structured-agent-cycle-plan.json",
+      "docs/plans/issue-309-org-inventory-drift-pdcar.md",
+      "raw/exceptions/2026-04-18-issue-309-same-family-implementation.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-18-issue-309-same-family-implementation.md",
+    "active_exception_expires_at": "2026-04-19T23:35:00Z"
+  },
+  "allowed_write_paths": [
+    "scripts/overlord/check_org_repo_inventory.py",
+    "scripts/overlord/test_check_org_repo_inventory.py",
+    ".github/workflows/overlord-sweep.yml",
+    "docs/plans/issue-309-structured-agent-cycle-plan.json",
+    "docs/plans/issue-309-org-inventory-drift-pdcar.md",
+    "raw/exceptions/2026-04-18-issue-309-same-family-implementation.md",
+    "raw/execution-scopes/2026-04-18-issue-309-org-inventory-drift-implementation.json",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout has pre-existing unrelated local CI gate files and must not be edited by issue #309."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Issue #309 detects inventory drift only; seek-and-ponder intake is #311."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+      "reason": "Issue #309 detects inventory drift only; EmailAssistant discovery is #312."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Existing governed repo remains out of scope except as live inventory comparison context."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Existing governed repo remains out of scope except as live inventory comparison context."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Existing governed repo remains out of scope except as live inventory comparison context."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Existing governed repo remains out of scope except as live inventory comparison context."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Existing governed repo remains out of scope except as live inventory comparison context."
+    }
+  ]
+}

@@ -92,6 +92,10 @@ jobs:
           mkdir -p "${CODEX_HOME}"
           export CODEX_HOME
 
+          REPORT+="## Org Repository Inventory Drift\n\n"
+          ORG_INVENTORY_REPORT=$(python3 scripts/overlord/check_org_repo_inventory.py --live --warn-only --format markdown)
+          REPORT+="${ORG_INVENTORY_REPORT}\n\n"
+
           if [ -n "${CODEX_AUTH_JSON:-}" ]; then
             printf '%s' "${CODEX_AUTH_JSON}" > "${CODEX_HOME}/auth.json"
             chmod 600 "${CODEX_HOME}/auth.json"
