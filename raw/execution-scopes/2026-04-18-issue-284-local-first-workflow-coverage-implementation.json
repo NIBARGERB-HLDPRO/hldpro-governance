@@ -9,6 +9,7 @@
     "docs/plans/issue-284-structured-agent-cycle-plan.json",
     "docs/plans/issue-284-local-first-workflow-coverage-pdcar.md",
     "docs/workflow-local-coverage-inventory.json",
+    "graphify-out/hldpro-governance/",
     "raw/closeouts/2026-04-18-issue-284-local-first-workflow-coverage.md",
     "raw/cross-review/2026-04-18-issue-284-local-first-workflow-coverage-plan.md",
     "raw/exceptions/2026-04-18-issue-284-same-family-implementation.md",
@@ -16,7 +17,9 @@
     "raw/execution-scopes/2026-04-18-issue-284-local-first-workflow-coverage-implementation.json",
     "scripts/overlord/check_workflow_local_coverage.py",
     "scripts/overlord/test_workflow_local_coverage.py",
-    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "wiki/hldpro/",
+    "wiki/index.md"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",

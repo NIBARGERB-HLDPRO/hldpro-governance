@@ -30,6 +30,9 @@ No contradiction. This extends the Local CI Gate hardgate work from issues #277 
 - `raw/execution-scopes/2026-04-18-issue-284-local-first-workflow-coverage-implementation.json`
 - `raw/execution-scopes/2026-04-18-issue-284-local-first-workflow-coverage-planning.json`
 - `raw/exceptions/2026-04-18-issue-284-same-family-implementation.md`
+- `graphify-out/hldpro-governance/`
+- `wiki/hldpro/`
+- `wiki/index.md`
 - `OVERLORD_BACKLOG.md`
 - `docs/PROGRESS.md`
 
@@ -70,6 +73,10 @@ No contradiction. This extends the Local CI Gate hardgate work from issues #277 
   - `Analyze (actions)`: pass, run `24610974602`, job `71965209230`
   - `Analyze (python)`: pass, run `24610974602`, job `71965209229`
   - `CodeQL`: pass, run `71965244471`
+- Final closeout commit first exposed a scope defect:
+  - `local-ci-gate`: fail, run `24611027148`, job `71965352285`
+  - Cause: Stage 6 closeout hook generated graph/wiki artifacts, but the implementation execution scope did not allow `graphify-out/hldpro-governance/`, `wiki/hldpro/`, or `wiki/index.md`.
+  - Fix: add those closeout-hook outputs to the issue #284 implementation execution scope.
 
 ## Execution Scope / Write Boundary
 
