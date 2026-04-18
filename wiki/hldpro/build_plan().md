@@ -1,6 +1,6 @@
 # build_plan()
 
-> God node · 13 connections · `hldpro-governance/scripts/overlord/deploy_governance_tooling.py`
+> God node · 13 connections · `scripts/overlord/deploy_governance_tooling.py`
 
 ## Connections by Relation
 

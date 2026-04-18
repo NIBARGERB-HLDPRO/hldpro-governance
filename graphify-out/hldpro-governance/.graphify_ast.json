@@ -795,14 +795,14 @@
       "id": "deploy_governance_tooling",
       "label": "deploy_governance_tooling.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L1"
     },
     {
       "id": "deploy_governance_tooling_governancedeployerror",
       "label": "GovernanceDeployError",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L22"
     },
     {
@@ -816,189 +816,189 @@
       "id": "deploy_governance_tooling_toolingplan",
       "label": "ToolingPlan",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L27"
     },
     {
       "id": "deploy_governance_tooling_toolingplan_managed_files",
       "label": ".managed_files()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L40"
     },
     {
       "id": "deploy_governance_tooling_toolingplan_planned_write_set",
       "label": ".planned_write_set()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L54"
     },
     {
       "id": "deploy_governance_tooling_toolingplan_planned_rollback_set",
       "label": ".planned_rollback_set()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L57"
     },
     {
       "id": "deploy_governance_tooling_toolingplan_to_json",
       "label": ".to_json()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L60"
     },
     {
       "id": "deploy_governance_tooling_fail",
       "label": "_fail()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L79"
     },
     {
       "id": "deploy_governance_tooling_run_git",
       "label": "_run_git()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L83"
     },
     {
       "id": "deploy_governance_tooling_git_root",
       "label": "_git_root()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L87"
     },
     {
       "id": "deploy_governance_tooling_git_is_dirty",
       "label": "_git_is_dirty()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L94"
     },
     {
       "id": "deploy_governance_tooling_git_head",
       "label": "_git_head()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L101"
     },
     {
       "id": "deploy_governance_tooling_load_manifest",
       "label": "_load_manifest()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L108"
     },
     {
       "id": "deploy_governance_tooling_consumer_record_relpath",
       "label": "_consumer_record_relpath()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L118"
     },
     {
       "id": "deploy_governance_tooling_package_version",
       "label": "_package_version()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L127"
     },
     {
       "id": "deploy_governance_tooling_record_state",
       "label": "_record_state()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L138"
     },
     {
       "id": "deploy_governance_tooling_ensure_relative_to",
       "label": "_ensure_relative_to()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L152"
     },
     {
       "id": "deploy_governance_tooling_build_local_ci_plan",
       "label": "_build_local_ci_plan()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L159"
     },
     {
       "id": "deploy_governance_tooling_build_plan",
       "label": "build_plan()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L170"
     },
     {
       "id": "deploy_governance_tooling_refuse_dirty",
       "label": "_refuse_dirty()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L201"
     },
     {
       "id": "deploy_governance_tooling_refuse_unmanaged_record",
       "label": "_refuse_unmanaged_record()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L206"
     },
     {
       "id": "deploy_governance_tooling_consumer_record",
       "label": "_consumer_record()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L211"
     },
     {
       "id": "deploy_governance_tooling_apply",
       "label": "apply()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L238"
     },
     {
       "id": "deploy_governance_tooling_verify",
       "label": "verify()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L248"
     },
     {
       "id": "deploy_governance_tooling_required_record_fields",
       "label": "_required_record_fields()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L277"
     },
     {
       "id": "deploy_governance_tooling_rollback",
       "label": "rollback()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L299"
     },
     {
       "id": "deploy_governance_tooling_print_json",
       "label": "print_json()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L327"
     },
     {
       "id": "deploy_governance_tooling_add_common_args",
       "label": "add_common_args()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L332"
     },
     {
       "id": "deploy_governance_tooling_main",
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L342"
     },
     {
@@ -1768,140 +1768,140 @@
       "id": "test_deploy_governance_tooling",
       "label": "test_deploy_governance_tooling.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L1"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling",
       "label": "TestDeployGovernanceTooling",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L25"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_setup",
       "label": ".setUp()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L26"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_teardown",
       "label": ".tearDown()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L39"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "label": "._invoke()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L42"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "label": "._base_args()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L49"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_record",
       "label": "._record()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L61"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_shim",
       "label": "._shim()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L64"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_dry_run_plans_managed_files_without_writing",
       "label": ".test_dry_run_plans_managed_files_without_writing()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L67"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_writes_managed_shim_and_consumer_record",
       "label": ".test_apply_writes_managed_shim_and_consumer_record()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L81"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_verify_passes_after_apply",
       "label": ".test_verify_passes_after_apply()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L98"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_rollback_removes_managed_files",
       "label": ".test_rollback_removes_managed_files()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L109"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_is_idempotent_for_managed_files",
       "label": ".test_apply_is_idempotent_for_managed_files()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L121"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_refuses_unmanaged_shim_by_default",
       "label": ".test_apply_refuses_unmanaged_shim_by_default()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L132"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_refuses_unmanaged_consumer_record_by_default",
       "label": ".test_apply_refuses_unmanaged_consumer_record_by_default()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L143"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_refuses_dirty_target_by_default",
       "label": ".test_apply_refuses_dirty_target_by_default()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L153"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_verify_fails_when_record_is_missing",
       "label": ".test_verify_fails_when_record_is_missing()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L164"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_verify_fails_when_managed_shim_body_is_tampered",
       "label": ".test_verify_fails_when_managed_shim_body_is_tampered()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L173"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_rollback_refuses_unmanaged_record_before_removing_shim",
       "label": ".test_rollback_refuses_unmanaged_record_before_removing_shim()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L189"
     },
     {
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_real_e2e_apply_verify_rollback_against_temp_git_repo",
       "label": ".test_real_e2e_apply_verify_rollback_against_temp_git_repo()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L202"
     },
     {
@@ -8496,7 +8496,7 @@
       "target": "argparse",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -8505,7 +8505,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -8514,7 +8514,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -8523,7 +8523,7 @@
       "target": "sys",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -8532,7 +8532,7 @@
       "target": "dataclasses",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -8541,7 +8541,7 @@
       "target": "datetime",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -8550,7 +8550,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L10",
       "weight": 1.0
     },
@@ -8559,7 +8559,7 @@
       "target": "deploy_local_ci_gate",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L12",
       "weight": 1.0
     },
@@ -8568,7 +8568,7 @@
       "target": "deploy_governance_tooling_governancedeployerror",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L22",
       "weight": 1.0
     },
@@ -8577,7 +8577,7 @@
       "target": "runtimeerror",
       "relation": "inherits",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L22",
       "weight": 1.0
     },
@@ -8586,7 +8586,7 @@
       "target": "deploy_governance_tooling_toolingplan",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L27",
       "weight": 1.0
     },
@@ -8595,7 +8595,7 @@
       "target": "deploy_governance_tooling_toolingplan_managed_files",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L40",
       "weight": 1.0
     },
@@ -8604,7 +8604,7 @@
       "target": "deploy_governance_tooling_toolingplan_planned_write_set",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L54",
       "weight": 1.0
     },
@@ -8613,7 +8613,7 @@
       "target": "deploy_governance_tooling_toolingplan_planned_rollback_set",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L57",
       "weight": 1.0
     },
@@ -8622,7 +8622,7 @@
       "target": "deploy_governance_tooling_toolingplan_to_json",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L60",
       "weight": 1.0
     },
@@ -8631,7 +8631,7 @@
       "target": "deploy_governance_tooling_fail",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L79",
       "weight": 1.0
     },
@@ -8640,7 +8640,7 @@
       "target": "deploy_governance_tooling_run_git",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L83",
       "weight": 1.0
     },
@@ -8649,7 +8649,7 @@
       "target": "deploy_governance_tooling_git_root",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L87",
       "weight": 1.0
     },
@@ -8658,7 +8658,7 @@
       "target": "deploy_governance_tooling_git_is_dirty",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L94",
       "weight": 1.0
     },
@@ -8667,7 +8667,7 @@
       "target": "deploy_governance_tooling_git_head",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L101",
       "weight": 1.0
     },
@@ -8676,7 +8676,7 @@
       "target": "deploy_governance_tooling_load_manifest",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L108",
       "weight": 1.0
     },
@@ -8685,7 +8685,7 @@
       "target": "deploy_governance_tooling_consumer_record_relpath",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L118",
       "weight": 1.0
     },
@@ -8694,7 +8694,7 @@
       "target": "deploy_governance_tooling_package_version",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L127",
       "weight": 1.0
     },
@@ -8703,7 +8703,7 @@
       "target": "deploy_governance_tooling_record_state",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L138",
       "weight": 1.0
     },
@@ -8712,7 +8712,7 @@
       "target": "deploy_governance_tooling_ensure_relative_to",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L152",
       "weight": 1.0
     },
@@ -8721,7 +8721,7 @@
       "target": "deploy_governance_tooling_build_local_ci_plan",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L159",
       "weight": 1.0
     },
@@ -8730,7 +8730,7 @@
       "target": "deploy_governance_tooling_build_plan",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L170",
       "weight": 1.0
     },
@@ -8739,7 +8739,7 @@
       "target": "deploy_governance_tooling_refuse_dirty",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L201",
       "weight": 1.0
     },
@@ -8748,7 +8748,7 @@
       "target": "deploy_governance_tooling_refuse_unmanaged_record",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L206",
       "weight": 1.0
     },
@@ -8757,7 +8757,7 @@
       "target": "deploy_governance_tooling_consumer_record",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L211",
       "weight": 1.0
     },
@@ -8766,7 +8766,7 @@
       "target": "deploy_governance_tooling_apply",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L238",
       "weight": 1.0
     },
@@ -8775,7 +8775,7 @@
       "target": "deploy_governance_tooling_verify",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L248",
       "weight": 1.0
     },
@@ -8784,7 +8784,7 @@
       "target": "deploy_governance_tooling_required_record_fields",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L277",
       "weight": 1.0
     },
@@ -8793,7 +8793,7 @@
       "target": "deploy_governance_tooling_rollback",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L299",
       "weight": 1.0
     },
@@ -8802,7 +8802,7 @@
       "target": "deploy_governance_tooling_print_json",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L327",
       "weight": 1.0
     },
@@ -8811,7 +8811,7 @@
       "target": "deploy_governance_tooling_add_common_args",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L332",
       "weight": 1.0
     },
@@ -8820,7 +8820,7 @@
       "target": "deploy_governance_tooling_main",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L342",
       "weight": 1.0
     },
@@ -8829,7 +8829,7 @@
       "target": "deploy_governance_tooling_toolingplan_managed_files",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L73",
       "weight": 0.8
     },
@@ -8838,7 +8838,7 @@
       "target": "deploy_governance_tooling_toolingplan_planned_write_set",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L74",
       "weight": 0.8
     },
@@ -8847,7 +8847,7 @@
       "target": "deploy_governance_tooling_toolingplan_planned_rollback_set",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L75",
       "weight": 0.8
     },
@@ -8856,7 +8856,7 @@
       "target": "deploy_governance_tooling_governancedeployerror",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L80",
       "weight": 0.8
     },
@@ -8865,7 +8865,7 @@
       "target": "deploy_governance_tooling_run_git",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L88",
       "weight": 0.8
     },
@@ -8874,7 +8874,7 @@
       "target": "deploy_governance_tooling_fail",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L90",
       "weight": 0.8
     },
@@ -8883,7 +8883,7 @@
       "target": "deploy_governance_tooling_run_git",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L95",
       "weight": 0.8
     },
@@ -8892,7 +8892,7 @@
       "target": "deploy_governance_tooling_fail",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L97",
       "weight": 0.8
     },
@@ -8901,7 +8901,7 @@
       "target": "deploy_governance_tooling_run_git",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L102",
       "weight": 0.8
     },
@@ -8910,7 +8910,7 @@
       "target": "deploy_governance_tooling_fail",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L112",
       "weight": 0.8
     },
@@ -8919,7 +8919,7 @@
       "target": "deploy_governance_tooling_fail",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L142",
       "weight": 0.8
     },
@@ -8928,7 +8928,7 @@
       "target": "deploy_governance_tooling_fail",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L156",
       "weight": 0.8
     },
@@ -8937,7 +8937,7 @@
       "target": "deploy_governance_tooling_build_plan",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L167",
       "weight": 0.8
     },
@@ -8946,7 +8946,7 @@
       "target": "deploy_governance_tooling_fail",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L173",
       "weight": 0.8
     },
@@ -8955,7 +8955,7 @@
       "target": "deploy_governance_tooling_load_manifest",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L175",
       "weight": 0.8
     },
@@ -8964,7 +8964,7 @@
       "target": "deploy_governance_tooling_git_root",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L177",
       "weight": 0.8
     },
@@ -8973,7 +8973,7 @@
       "target": "deploy_governance_tooling_git_head",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L178",
       "weight": 0.8
     },
@@ -8982,7 +8982,7 @@
       "target": "deploy_governance_tooling_package_version",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L179",
       "weight": 0.8
     },
@@ -8991,7 +8991,7 @@
       "target": "deploy_governance_tooling_consumer_record_relpath",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L183",
       "weight": 0.8
     },
@@ -9000,7 +9000,7 @@
       "target": "deploy_governance_tooling_ensure_relative_to",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L184",
       "weight": 0.8
     },
@@ -9009,7 +9009,7 @@
       "target": "deploy_governance_tooling_toolingplan",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L186",
       "weight": 0.8
     },
@@ -9018,7 +9018,7 @@
       "target": "deploy_governance_tooling_git_is_dirty",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L195",
       "weight": 0.8
     },
@@ -9027,7 +9027,7 @@
       "target": "deploy_governance_tooling_record_state",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L197",
       "weight": 0.8
     },
@@ -9036,7 +9036,7 @@
       "target": "deploy_governance_tooling_fail",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L203",
       "weight": 0.8
     },
@@ -9045,7 +9045,7 @@
       "target": "deploy_governance_tooling_fail",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L208",
       "weight": 0.8
     },
@@ -9054,7 +9054,7 @@
       "target": "deploy_governance_tooling_toolingplan_managed_files",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L220",
       "weight": 0.8
     },
@@ -9063,7 +9063,7 @@
       "target": "deploy_governance_tooling_refuse_dirty",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L239",
       "weight": 0.8
     },
@@ -9072,7 +9072,7 @@
       "target": "deploy_governance_tooling_refuse_unmanaged_record",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L240",
       "weight": 0.8
     },
@@ -9081,7 +9081,7 @@
       "target": "deploy_governance_tooling_build_local_ci_plan",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L241",
       "weight": 0.8
     },
@@ -9090,7 +9090,7 @@
       "target": "deploy_governance_tooling_consumer_record",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L244",
       "weight": 0.8
     },
@@ -9099,7 +9099,7 @@
       "target": "deploy_governance_tooling_toolingplan_to_json",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L245",
       "weight": 0.8
     },
@@ -9108,7 +9108,7 @@
       "target": "deploy_governance_tooling_build_local_ci_plan",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L253",
       "weight": 0.8
     },
@@ -9117,7 +9117,7 @@
       "target": "deploy_governance_tooling_required_record_fields",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L261",
       "weight": 0.8
     },
@@ -9126,7 +9126,7 @@
       "target": "deploy_governance_tooling_toolingplan_to_json",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L273",
       "weight": 0.8
     },
@@ -9135,7 +9135,7 @@
       "target": "deploy_governance_tooling_load_manifest",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L278",
       "weight": 0.8
     },
@@ -9144,7 +9144,7 @@
       "target": "deploy_governance_tooling_refuse_dirty",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L300",
       "weight": 0.8
     },
@@ -9153,7 +9153,7 @@
       "target": "deploy_governance_tooling_record_state",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L309",
       "weight": 0.8
     },
@@ -9162,7 +9162,7 @@
       "target": "deploy_governance_tooling_fail",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L315",
       "weight": 0.8
     },
@@ -9171,7 +9171,7 @@
       "target": "deploy_governance_tooling_toolingplan_to_json",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L324",
       "weight": 0.8
     },
@@ -9180,7 +9180,7 @@
       "target": "deploy_governance_tooling_add_common_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L347",
       "weight": 0.8
     },
@@ -9189,7 +9189,7 @@
       "target": "deploy_governance_tooling_build_plan",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L364",
       "weight": 0.8
     },
@@ -9198,7 +9198,7 @@
       "target": "deploy_governance_tooling_print_json",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L366",
       "weight": 0.8
     },
@@ -9207,7 +9207,7 @@
       "target": "deploy_governance_tooling_toolingplan_to_json",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L366",
       "weight": 0.8
     },
@@ -9216,7 +9216,7 @@
       "target": "deploy_governance_tooling_apply",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L369",
       "weight": 0.8
     },
@@ -9225,7 +9225,7 @@
       "target": "deploy_governance_tooling_verify",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L372",
       "weight": 0.8
     },
@@ -9234,7 +9234,7 @@
       "target": "deploy_governance_tooling_rollback",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/deploy_governance_tooling.py",
       "source_location": "L376",
       "weight": 0.8
     },
@@ -12195,7 +12195,7 @@
       "target": "contextlib",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -12204,7 +12204,7 @@
       "target": "importlib_util",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -12213,7 +12213,7 @@
       "target": "io",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -12222,7 +12222,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -12231,7 +12231,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -12240,7 +12240,7 @@
       "target": "tempfile",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -12249,7 +12249,7 @@
       "target": "unittest",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L10",
       "weight": 1.0
     },
@@ -12258,7 +12258,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L11",
       "weight": 1.0
     },
@@ -12267,7 +12267,7 @@
       "target": "sys",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L12",
       "weight": 1.0
     },
@@ -12276,7 +12276,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L25",
       "weight": 1.0
     },
@@ -12285,7 +12285,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_setup",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L26",
       "weight": 1.0
     },
@@ -12294,7 +12294,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_teardown",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L39",
       "weight": 1.0
     },
@@ -12303,7 +12303,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L42",
       "weight": 1.0
     },
@@ -12312,7 +12312,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L49",
       "weight": 1.0
     },
@@ -12321,7 +12321,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_record",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L61",
       "weight": 1.0
     },
@@ -12330,7 +12330,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_shim",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L64",
       "weight": 1.0
     },
@@ -12339,7 +12339,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_test_dry_run_plans_managed_files_without_writing",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L67",
       "weight": 1.0
     },
@@ -12348,7 +12348,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_writes_managed_shim_and_consumer_record",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L81",
       "weight": 1.0
     },
@@ -12357,7 +12357,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_test_verify_passes_after_apply",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L98",
       "weight": 1.0
     },
@@ -12366,7 +12366,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_test_rollback_removes_managed_files",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L109",
       "weight": 1.0
     },
@@ -12375,7 +12375,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_is_idempotent_for_managed_files",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L121",
       "weight": 1.0
     },
@@ -12384,7 +12384,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_refuses_unmanaged_shim_by_default",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L132",
       "weight": 1.0
     },
@@ -12393,7 +12393,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_refuses_unmanaged_consumer_record_by_default",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L143",
       "weight": 1.0
     },
@@ -12402,7 +12402,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_refuses_dirty_target_by_default",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L153",
       "weight": 1.0
     },
@@ -12411,7 +12411,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_test_verify_fails_when_record_is_missing",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L164",
       "weight": 1.0
     },
@@ -12420,7 +12420,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_test_verify_fails_when_managed_shim_body_is_tampered",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L173",
       "weight": 1.0
     },
@@ -12429,7 +12429,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_test_rollback_refuses_unmanaged_record_before_removing_shim",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L189",
       "weight": 1.0
     },
@@ -12438,7 +12438,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_test_real_e2e_apply_verify_rollback_against_temp_git_repo",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L202",
       "weight": 1.0
     },
@@ -12447,7 +12447,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L68",
       "weight": 0.8
     },
@@ -12456,7 +12456,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L68",
       "weight": 0.8
     },
@@ -12465,7 +12465,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_shim",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L76",
       "weight": 0.8
     },
@@ -12474,7 +12474,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_record",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L77",
       "weight": 0.8
     },
@@ -12483,7 +12483,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L82",
       "weight": 0.8
     },
@@ -12492,7 +12492,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L82",
       "weight": 0.8
     },
@@ -12501,7 +12501,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_shim",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L87",
       "weight": 0.8
     },
@@ -12510,7 +12510,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_record",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L88",
       "weight": 0.8
     },
@@ -12519,7 +12519,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L99",
       "weight": 0.8
     },
@@ -12528,7 +12528,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L99",
       "weight": 0.8
     },
@@ -12537,7 +12537,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L110",
       "weight": 0.8
     },
@@ -12546,7 +12546,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L110",
       "weight": 0.8
     },
@@ -12555,7 +12555,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_shim",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L118",
       "weight": 0.8
     },
@@ -12564,7 +12564,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_record",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L119",
       "weight": 0.8
     },
@@ -12573,7 +12573,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L122",
       "weight": 0.8
     },
@@ -12582,7 +12582,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L122",
       "weight": 0.8
     },
@@ -12591,7 +12591,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_shim",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L129",
       "weight": 0.8
     },
@@ -12600,7 +12600,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_record",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L130",
       "weight": 0.8
     },
@@ -12609,7 +12609,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_shim",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L133",
       "weight": 0.8
     },
@@ -12618,7 +12618,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L136",
       "weight": 0.8
     },
@@ -12627,7 +12627,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L136",
       "weight": 0.8
     },
@@ -12636,7 +12636,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_record",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L141",
       "weight": 0.8
     },
@@ -12645,7 +12645,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_record",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L144",
       "weight": 0.8
     },
@@ -12654,7 +12654,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L147",
       "weight": 0.8
     },
@@ -12663,7 +12663,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L147",
       "weight": 0.8
     },
@@ -12672,7 +12672,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L156",
       "weight": 0.8
     },
@@ -12681,7 +12681,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L156",
       "weight": 0.8
     },
@@ -12690,7 +12690,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_shim",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L161",
       "weight": 0.8
     },
@@ -12699,7 +12699,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_record",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L162",
       "weight": 0.8
     },
@@ -12708,7 +12708,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L165",
       "weight": 0.8
     },
@@ -12717,7 +12717,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L165",
       "weight": 0.8
     },
@@ -12726,7 +12726,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L174",
       "weight": 0.8
     },
@@ -12735,7 +12735,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L174",
       "weight": 0.8
     },
@@ -12744,7 +12744,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_shim",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L176",
       "weight": 0.8
     },
@@ -12753,7 +12753,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L190",
       "weight": 0.8
     },
@@ -12762,7 +12762,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L190",
       "weight": 0.8
     },
@@ -12771,7 +12771,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_record",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L192",
       "weight": 0.8
     },
@@ -12780,7 +12780,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_shim",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L199",
       "weight": 0.8
     },
@@ -12789,7 +12789,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L203",
       "weight": 0.8
     },
@@ -12798,7 +12798,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L203",
       "weight": 0.8
     },
@@ -12807,7 +12807,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_shim",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L218",
       "weight": 0.8
     },
@@ -12816,7 +12816,7 @@
       "target": "test_deploy_governance_tooling_testdeploygovernancetooling_record",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-292-governance-tooling-deployer/scripts/overlord/test_deploy_governance_tooling.py",
+      "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L219",
       "weight": 0.8
     },
