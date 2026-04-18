@@ -1,6 +1,6 @@
 {
   "expected_execution_root": "{repo_root}",
-  "expected_branch": "issue-296-som-hitl-relay-planning-20260418",
+  "expected_branch": "issue-296-child-map-20260418",
   "execution_mode": "planning",
   "handoff_evidence": {
     "status": "accepted",

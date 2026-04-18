@@ -157,18 +157,28 @@ The final E2E suite must include:
 - request-changes path: feedback is routed back without being treated as approval;
 - ambiguous-response path: clarification is requested and no instruction is emitted;
 - stale-session path: a resume packet is created instead of injecting into the wrong session;
-- audit replay path: the decision can be reconstructed from packet, AIS, normalization, validation, and session evidence.
+- duplicate/replay or expired-notification path: repeated, replayed, or expired responses are idempotent or refused with evidence;
+- audit replay path: the same session ID is traceable through HITL request, notification ID, sender verification, inbound event, normalized decision, validator result, instruction or resume packet, and local session evidence.
+
+At least one AIS-backed real or sandboxed transport must be proven for initial epic acceptance. SMS and Slack are not both mandatory for the first closeout unless a later child issue makes both mandatory. Any unproven channel must remain disabled or be tracked as follow-up.
 
 ## Initial Child Issue Map
 
-Child issues should be created after planning review or explicit operator approval:
+Child issues created after operator no-HITL continuation approval:
 
-| Slice | Repo | Purpose | Final AC |
-|---|---|---|---|
-| HITL packet contracts | `hldpro-governance` | Define request/response/decision/audit/instruction schemas | Contract fixtures validate and reject malformed packets |
-| HITL validators | `hldpro-governance` | Enforce allowed action, provenance, no-self-approval, ambiguity, stale-session, and PII/channel policy | Negative-control tests fail closed |
-| Queue-first prototype | `hldpro-governance` / `local-ai-machine` | Prove local queue relay without external messaging | Local fixture path emits instruction/resume/clarification packets |
-| AIS outbound/inbound bridge | `ai-integration-services` | Deliver notifications and receive correlated replies | Sender/correlation/retry/expired/duplicate paths tested |
-| SoM/MCP normalizer | `local-ai-machine` | Normalize replies into bounded decisions and emit instruction packets | Low-confidence and disallowed actions refused |
-| Local CLI adapter | governed CLI/session layer | Emit checkpoints and consume addressed instruction packets | Raw text is never executed; stale sessions resume safely |
-| E2E HITL relay proof | cross-repo | Full local-to-human-to-local run | All final E2E paths pass with evidence |
+| Slice | Repo | Issue | Purpose | Final AC |
+|---|---|---:|---|---|
+| HITL packet contracts | `hldpro-governance` | [#299](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/299) | Define request/response/decision/audit/instruction schemas | Contract fixtures validate and reject malformed packets |
+| HITL validators | `hldpro-governance` | [#300](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/300) | Enforce allowed action, provenance, no-self-approval, ambiguity, stale-session, and PII/channel policy | Negative-control tests fail closed |
+| Queue-first prototype | `hldpro-governance` | [#301](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/301) | Prove local queue relay before external messaging | Local fixture path emits instruction/resume/clarification packets |
+| AIS outbound/inbound bridge | `ai-integration-services` | [#1144](https://github.com/NIBARGERB-HLDPRO/ai-integration-services/issues/1144) | Deliver notifications and receive correlated replies | Sender/correlation/retry/expired/duplicate paths tested |
+| SoM/MCP normalizer | `local-ai-machine` | [#462](https://github.com/NIBARGERB-HLDPRO/local-ai-machine/issues/462) | Normalize replies into bounded decisions and emit instruction packets | Low-confidence and disallowed actions refused |
+| Local CLI adapter | `local-ai-machine` | [#463](https://github.com/NIBARGERB-HLDPRO/local-ai-machine/issues/463) | Emit checkpoints and consume addressed instruction packets | Raw text is never executed; stale sessions resume safely |
+| Security/data policy | `hldpro-governance` | [#302](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/302) | Define minimization, redaction, retention, sender verification, token scope, replay, and channel PII rules | Sensitive paths fail closed and audit replay avoids unnecessary raw content |
+| E2E HITL relay proof | cross-repo | [#303](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/303) | Full local-to-human-to-local run | All final E2E paths pass with evidence |
+
+Repo boundary:
+
+- `hldpro-governance` owns contracts, validators, planning, security policy, queue-first governance prototype, evidence, and final epic closeout.
+- `ai-integration-services` owns transport delivery, inbound webhook handling, sender verification, notification correlation, retry/dead-letter behavior, and transport audit.
+- `local-ai-machine` owns MCP/orchestrator runtime, LLM normalizer execution, session registry, local queue watching, CLI adapter behavior, and session resume mechanics.
