@@ -18,7 +18,7 @@
 | SoM Slice 5: packet schema and runtime boundary | #219 | IN PROGRESS | HIGH | TBD | Schema/validator docs, packet tests, runtime boundary correction | Part of #214 |
 | SoM Slice 6: operational status and closeout loop | #220 | IN PROGRESS | HIGH | TBD | Progress/backlog/registry/wiki mirrors and closeout evidence contract | This slice |
 | SoM Slice 7: execution root and write-scope enforcement | #221 | IN PROGRESS | HIGH | TBD | Execution-scope checker, tests, and PR/slice scope artifacts | Part of #214 |
-| AI Integration Services Local CI Gate profile | #264 | IN REVIEW | HIGH | 1-2 | AIS profile, focused profile tests, runbook update, closeout | Adds the second governance-owned consumer profile after knocktracker; AIS shim rollout remains separate issue-backed work |
+| Local CI Gate contract hardening | #265 | IN REVIEW | HIGH | 1-2 | Profile validation, shim root override, runbook profile catalog, tests, closeout | Hardens toolkit contracts before more consumer rollout; AIS shim rollout remains separate issue-backed work |
 | Stage 5+ som-worker launchd boot-start integration | #104 | PLANNED | MEDIUM | 2-3 | launchd plist, service docs | Gate: local-ai-machine #431, #432 adopt |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
@@ -52,6 +52,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| AI Integration Services Local CI Gate profile | #264 | 2026-04-17 | PRs #266 and #267 added the planning package, `ai-integration-services` profile, focused profile tests, runbook docs, and closeout. AIS consumer shim rollout is tracked by ai-integration-services #1113. |
 | Knocktracker Local CI Gate live profile rollout | #260 | 2026-04-17 | Governance PR #262 added the `knocktracker` profile; knocktracker PR #174 switched the managed shim to live `knocktracker` profile mode. CI remains authoritative. |
 | Org-level Local CI Gate toolkit | #253 | 2026-04-17 | PRs #256 and #259 landed the planning package, reusable runner, governance profile, managed shim deployer, runbook, tests, and closeout. Follow-up consumer live enforcement is tracked by #260. |
 | Clarify graphify-out artifact contract and ignored-cache noise | #241 | 2026-04-17 | PR #243 clarified canonical tracked graphify artifacts versus local-only cache/OS noise, updated docs and `.gitignore` comments, and expanded the graphify governance contract tests. |

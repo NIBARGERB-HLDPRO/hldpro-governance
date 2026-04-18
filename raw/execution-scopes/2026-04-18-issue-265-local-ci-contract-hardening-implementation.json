@@ -1,0 +1,35 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "feat/issue-265-local-ci-contract-hardening",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/PROGRESS.md",
+    "docs/runbooks/local-ci-gate-toolkit.md",
+    "raw/closeouts/2026-04-18-local-ci-contract-hardening.md",
+    "raw/execution-scopes/2026-04-18-issue-265-local-ci-contract-hardening-implementation.json",
+    "scripts/overlord/deploy_local_ci_gate.py",
+    "scripts/overlord/test_deploy_local_ci_gate.py",
+    "tools/local-ci-gate/local_ci_gate.py",
+    "tools/local-ci-gate/profiles/",
+    "tools/local-ci-gate/tests/test_local_ci_gate.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-approved-issue-plan",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-18T00:08:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-265-structured-agent-cycle-plan.json",
+      "docs/plans/issue-265-local-ci-contract-hardening-pdcar.md",
+      "raw/cross-review/2026-04-18-issue-265-local-ci-contract-hardening-plan.md",
+      "docs/runbooks/local-ci-gate-toolkit.md",
+      "GitHub issue #265"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}
