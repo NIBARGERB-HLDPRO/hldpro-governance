@@ -1,7 +1,7 @@
 # Graph Report - hldpro-governance  (2026-04-18)
 
 ## Corpus Check
-- Large corpus: 1451 files · ~342,393 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1462 files · ~344,476 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
 - 887 nodes · 1668 edges · 47 communities detected
@@ -24,7 +24,7 @@
 - `GateError` --inherits--> `RuntimeError`  [EXTRACTED]
   tools/local-ci-gate/local_ci_gate.py →   _Bridges community 4 → community 21_
 - `GovernanceDeployError` --inherits--> `RuntimeError`  [EXTRACTED]
-  hldpro-governance/scripts/overlord/deploy_governance_tooling.py →   _Bridges community 21 → community 10_
+  scripts/overlord/deploy_governance_tooling.py →   _Bridges community 21 → community 10_
 - `HelperError` --inherits--> `RuntimeError`  [EXTRACTED]
   scripts/knowledge_base/graphify_hook_helper.py →   _Bridges community 21 → community 8_
 

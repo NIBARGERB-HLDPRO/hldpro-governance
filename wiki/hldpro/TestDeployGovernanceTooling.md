@@ -1,6 +1,6 @@
 # TestDeployGovernanceTooling
 
-> God node · 19 connections · `hldpro-governance/scripts/overlord/test_deploy_governance_tooling.py`
+> God node · 19 connections · `scripts/overlord/test_deploy_governance_tooling.py`
 
 ## Connections by Relation
 
