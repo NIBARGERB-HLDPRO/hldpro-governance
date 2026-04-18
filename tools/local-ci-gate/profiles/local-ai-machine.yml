@@ -1,0 +1,137 @@
+profile:
+  name: local-ai-machine
+  description: Local AI Machine local CI gate profile for existing deterministic Python, Deno, and bash contract checks.
+  report_root: cache/local-ci-gate/reports
+  requires_dependencies:
+    - python3
+    - deno
+    - bash
+  changed_files:
+    base_ref: origin/main
+    head_ref: HEAD
+    include_untracked: true
+  checks:
+    - id: agents-governance-contract
+      title: Agent governance contract
+      severity: blocker
+      scope: always
+      command:
+        - python3
+        - scripts/ops/test_agents_governance_contract.py
+
+    - id: env-var-docs-contract
+      title: Environment variable documentation contract
+      severity: blocker
+      scope: always
+      command:
+        - python3
+        - scripts/ops/test_env_var_docs_contract.py
+
+    - id: clean-branch-governance-contract
+      title: Clean branch governance contract
+      severity: blocker
+      scope: always
+      command:
+        - python3
+        - scripts/ops/test_clean_working_branch_governance_contract.py
+
+    - id: fail-fast-governance-contract
+      title: Fail-fast governance contract
+      severity: blocker
+      scope: always
+      command:
+        - python3
+        - scripts/ops/test_fail_fast_governance_contract.py
+
+    - id: required-checks-contract
+      title: Required checks reconciliation contract
+      severity: blocker
+      scope: changed
+      paths:
+        - .github/workflows/**
+        - scripts/ops/reconcile_required_checks.py
+        - scripts/ops/test_reconcile_required_checks_contract.py
+        - scripts/test_required_check_workflow_contract.py
+      command:
+        - python3
+        - scripts/ops/test_reconcile_required_checks_contract.py
+
+    - id: pr-routing-contract
+      title: PR routing contract
+      severity: blocker
+      scope: changed
+      paths:
+        - .github/workflows/pr_risk_label_sync.yml
+        - .github/workflows/riskfix_merge_closeout.yml
+        - scripts/ops/test_pr_routing_contract.py
+        - AGENTS.md
+        - AGENT.md
+      command:
+        - python3
+        - scripts/ops/test_pr_routing_contract.py
+
+    - id: edge-critic-contract
+      title: Edge critic reference contract
+      severity: blocker
+      scope: changed
+      paths:
+        - scripts/edge/**
+        - supabase/functions/**
+        - runtime/caller_mask_policy.json
+        - masks.json
+      command:
+        - python3
+        - scripts/edge/test_critic_api_reference.py
+
+    - id: microvm-boot-contract
+      title: MicroVM boot command contract
+      severity: blocker
+      scope: changed
+      paths:
+        - scripts/microvm/**
+        - microvms/**
+        - MICROVM_RUNTIME_BACKEND_PROOF_RUNBOOK.md
+      command:
+        - python3
+        - scripts/microvm/test_boot_run_contract.py
+
+    - id: inference-router-contract
+      title: Inference router contract
+      severity: blocker
+      scope: changed
+      paths:
+        - scripts/ops/inference_router.py
+        - scripts/ops/test_inference_router_contract.py
+        - scripts/ops/test_inference_router_runtime.py
+        - docs/INFERENCE_ROUTER_RUNBOOK.md
+      command:
+        - python3
+        - scripts/ops/test_inference_router_contract.py
+
+    - id: critic-runner-contract
+      title: Critic runner contract
+      severity: blocker
+      scope: changed
+      paths:
+        - scripts/critic_runner.ts
+        - scripts/test_critic_runner_contract.py
+        - scripts/validate_live_critic_contract.py
+        - gatekeeper.py
+        - critic_verdict.schema.json
+      command:
+        - python3
+        - scripts/test_critic_runner_contract.py
+
+    - id: durable-workflow-tests
+      title: Deno durable workflow tests
+      severity: advisory
+      scope: changed
+      paths:
+        - src/workflows/**
+        - src/orchestrator/**
+      command:
+        - deno
+        - test
+        - --no-check
+        - --sloppy-imports
+        - src/workflows/runtime_envelope_test.ts

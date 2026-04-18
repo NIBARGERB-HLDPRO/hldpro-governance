@@ -254,6 +254,7 @@ profile:
         self.assertIn("ai-integration-services", {profile.name for profile in profiles})
         self.assertIn("hldpro-governance", {profile.name for profile in profiles})
         self.assertIn("knocktracker", {profile.name for profile in profiles})
+        self.assertIn("local-ai-machine", {profile.name for profile in profiles})
         for profile in profiles:
             self.assertTrue(profile.checks)
             self.assertEqual(profile.report_root, Path("cache/local-ci-gate/reports"))
@@ -302,6 +303,28 @@ profile:
         self.assertEqual(statuses["error-handler-audit"], "skipped")
         self.assertEqual(statuses["preflight-probe"], "skipped")
         self.assertEqual(statuses["playwright-smoke"], "skipped")
+        self.assertIn("CI remains authoritative", report.summary)
+
+    def test_local_ai_machine_profile_scopes_contract_checks(self) -> None:
+        profile = gate.load_profile(PROFILES_DIR / "local-ai-machine.yml")
+        changed = gate.resolve_changed_files(
+            self.root,
+            explicit_files=["scripts/microvm/boot_run.sh", "src/workflows/runtime_envelope.ts"],
+            include_untracked=False,
+        )
+
+        report = gate.run_checks(self.root, profile, changed, dry_run=True, report_dir=self.root / "reports")
+        statuses = {result.check.id: result.status for result in report.results}
+
+        self.assertEqual(statuses["agents-governance-contract"], "planned")
+        self.assertEqual(statuses["env-var-docs-contract"], "planned")
+        self.assertEqual(statuses["clean-branch-governance-contract"], "planned")
+        self.assertEqual(statuses["fail-fast-governance-contract"], "planned")
+        self.assertEqual(statuses["microvm-boot-contract"], "planned")
+        self.assertEqual(statuses["durable-workflow-tests"], "planned")
+        self.assertEqual(statuses["edge-critic-contract"], "skipped")
+        self.assertEqual(statuses["inference-router-contract"], "skipped")
+        self.assertEqual(statuses["critic-runner-contract"], "skipped")
         self.assertIn("CI remains authoritative", report.summary)
 
 
