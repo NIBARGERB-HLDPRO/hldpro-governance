@@ -1,0 +1,97 @@
+{
+  "session_id": "session-20260418-issue-302-hitl-security-policy",
+  "issue_number": 302,
+  "objective": "Implement the security and data-handling policy slice for the always-on SoM HITL relay so AIS, MCP, validator, and session-adapter implementation issues have concrete rules for minimization, redaction, retention, sender verification, token scope, replay protection, and channel-specific PII handling.",
+  "tier": 1,
+  "scope_boundary": [
+    "Add a governance-owned HITL relay security and data-handling runbook.",
+    "Define payload minimization, redaction, retention, sender verification, token scope, replay protection, and channel policy.",
+    "Keep the slice policy-only.",
+    "Do not implement AIS, MCP, or local CLI runtime behavior."
+  ],
+  "out_of_scope": [
+    "Implementing validators, transport, webhook handlers, MCP runtime, or local CLI session adapters.",
+    "Enabling production SMS, Slack, email, or other channels.",
+    "Changing sibling repos.",
+    "Closing parent epic #296."
+  ],
+  "research_summary": "Subagent review of the #296 planning package found that security/privacy needed a concrete data-handling policy before messaging or runtime work starts. The policy must make payload minimization, redaction, retention/deletion, sender verification, webhook replay protection, token scope, and channel-specific PII rules explicit. This slice satisfies that prerequisite and feeds the later validator, AIS, MCP, and final E2E issues.",
+  "research_artifacts": [
+    "GitHub issue #296",
+    "GitHub issue #302",
+    "GitHub issue #299",
+    "docs/plans/issue-296-structured-agent-cycle-plan.json",
+    "docs/plans/issue-296-som-hitl-relay-pdcar.md",
+    "docs/schemas/hitl-relay-packet.schema.json",
+    "STANDARDS.md"
+  ],
+  "sprints": [
+    {
+      "name": "Security And Data Policy",
+      "goal": "Define the policy that every HITL relay transport and runtime slice must cite before moving session data across boundaries.",
+      "tasks": [
+        "Create docs/runbooks/hitl-relay-security.md.",
+        "Define classification and channel rules.",
+        "Define minimization and redaction requirements.",
+        "Define raw message retention/deletion and audit reference requirements.",
+        "Define sender verification, replay, duplicate, expiration, and token scope requirements."
+      ],
+      "acceptance_criteria": [
+        "Policy states what data may leave local control for each classification and channel.",
+        "Policy requires redaction or summary minimization before AIS receives HITL notification content when source artifacts may contain sensitive data.",
+        "Policy defines raw message retention/deletion and audit-reference rules.",
+        "Policy defines sender verification, webhook signature, replay, duplicate, and expiration requirements.",
+        "Policy defines token/secret scope expectations.",
+        "Policy states PII-tagged or PII-detected packets fail closed unless a local-only route is explicitly available."
+      ],
+      "file_paths": [
+        "docs/runbooks/hitl-relay-security.md",
+        "docs/plans/issue-302-structured-agent-cycle-plan.json",
+        "docs/plans/issue-302-hitl-security-policy-pdcar.md",
+        "raw/exceptions/2026-04-18-issue-302-same-family-policy.md",
+        "raw/execution-scopes/2026-04-18-issue-302-hitl-security-policy-implementation.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex implementation session",
+      "role": "governance policy implementer",
+      "focus": "HITL relay data handling, channel policy, audit replay, and fail-closed security rules.",
+      "status": "accepted_with_followup",
+      "summary": "The policy slice can proceed under the operator's no-HITL instruction. Later AIS/MCP/validator slices must cite and enforce it.",
+      "evidence": [
+        "GitHub issue #302",
+        "docs/runbooks/hitl-relay-security.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family-implementation-fallback",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "True alternate-family review is not available in this no-HITL Codex lane. This slice is policy-only, with a same-family exception recorded. Runtime and transport slices still require their own review evidence.",
+    "evidence": [
+      "raw/exceptions/2026-04-18-issue-302-same-family-policy.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #302 may add HITL relay security/data policy docs plus planning and execution-scope artifacts. It may not implement validators, transport, MCP, local CLI adapters, or sibling repo changes.",
+    "next_execution_step": "Validate the policy package, publish PR, and keep parent #296 open for enforcement and E2E slices.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Enabling production messaging channels in this policy slice is a material deviation.",
+    "Allowing PII-tagged or PII-detected packets to leave local control by default is a material deviation.",
+    "Allowing raw human text to become terminal input is a material deviation.",
+    "Editing sibling repos from this branch is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator no-HITL instruction 2026-04-18"
+  ],
+  "approved_at": "2026-04-18T23:19:00Z"
+}

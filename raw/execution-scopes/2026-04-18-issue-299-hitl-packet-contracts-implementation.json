@@ -1,0 +1,58 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-299-hitl-packet-contracts",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-18T23:13:15Z",
+    "evidence_paths": [
+      "docs/plans/issue-299-structured-agent-cycle-plan.json",
+      "docs/plans/issue-299-hitl-packet-contracts-pdcar.md",
+      "raw/exceptions/2026-04-18-issue-299-same-family-contracts.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-18-issue-299-same-family-contracts.md",
+    "active_exception_expires_at": "2026-04-19T23:13:15Z"
+  },
+  "allowed_write_paths": [
+    "docs/schemas/hitl-relay-packet.schema.json",
+    "docs/schemas/examples/hitl-relay/",
+    "docs/schemas/README.md",
+    "scripts/packet/test_hitl_relay_schema.py",
+    "docs/plans/issue-299-structured-agent-cycle-plan.json",
+    "docs/plans/issue-299-hitl-packet-contracts-pdcar.md",
+    "raw/exceptions/2026-04-18-issue-299-same-family-contracts.md",
+    "raw/execution-scopes/2026-04-18-issue-299-hitl-packet-contracts-implementation.json"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout contains pre-existing operator/parallel planning files and is not the issue #299 execution root."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Sibling repo has active unrelated runtime work; issue #299 does not edit it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Sibling repo has active unrelated transport work; issue #299 does not edit it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Sibling repo has active unrelated work; issue #299 does not edit it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Sibling repo has active unrelated work; issue #299 does not edit it."
+    }
+  ]
+}

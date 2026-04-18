@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "packet_id": "22222222-2222-4222-8222-222222222222",
+  "packet_type": "session_instruction",
+  "created_at": "2026-04-18T23:14:15Z",
+  "issue_number": 296,
+  "repo": {
+    "owner": "NIBARGERB-HLDPRO",
+    "name": "hldpro-governance"
+  },
+  "session": {
+    "session_id": "codex-20260418-issue-296",
+    "cli": "codex",
+    "state": "waiting_hitl"
+  },
+  "correlation": {
+    "request_id": "hitl-20260418-001",
+    "parent_packet_id": "11111111-1111-4111-8111-111111111111",
+    "notification_id": "ais-notify-20260418-001",
+    "response_id": "ais-inbound-20260418-001"
+  },
+  "policy": {
+    "pii_mode": "none",
+    "data_classification": "internal",
+    "channel_policy_ref": "docs/runbooks/hitl-relay-security.md",
+    "retention_policy_ref": "docs/runbooks/hitl-relay-security.md#retention"
+  },
+  "operator_reply": {
+    "channel": "local_fixture",
+    "sender_ref": "operator:ben",
+    "message_id": "local-message-001",
+    "received_at": "2026-04-18T23:14:00Z",
+    "raw_message_ref": "raw/hitl-responses/ais-inbound-20260418-001.json",
+    "sender_verified": true
+  },
+  "normalized_decision": {
+    "action": "merge_when_green",
+    "confidence": 0.98,
+    "model_id": "gpt-5.4",
+    "model_family": "openai",
+    "raw_message_ref": "raw/hitl-responses/ais-inbound-20260418-001.json",
+    "validation_required": true
+  },
+  "instruction": {
+    "action": "merge_when_green",
+    "target_session_id": "codex-20260418-issue-296",
+    "constraints": [
+      "require_ci_green",
+      "require_closeout"
+    ],
+    "audit_refs": [
+      "raw/hitl-requests/hitl-20260418-001.json",
+      "raw/hitl-responses/ais-inbound-20260418-001.json",
+      "raw/gate/2026-04-18-hitl-validation.md"
+    ]
+  }
+}

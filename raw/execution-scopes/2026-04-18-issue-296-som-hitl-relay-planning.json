@@ -1,0 +1,61 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-296-child-map-20260418",
+  "execution_mode": "planning",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "none-planning-only",
+    "accepted_at": "2026-04-18T22:54:11Z",
+    "evidence_paths": [
+      "docs/plans/issue-296-structured-agent-cycle-plan.json",
+      "docs/plans/issue-296-som-hitl-relay-pdcar.md",
+      "raw/exceptions/2026-04-18-issue-296-same-family-planning.md",
+      "raw/execution-scopes/2026-04-18-issue-296-som-hitl-relay-planning.json"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-18-issue-296-same-family-planning.md",
+    "active_exception_expires_at": "2026-04-19T22:54:11Z"
+  },
+  "allowed_write_paths": [
+    "docs/plans/issue-296-structured-agent-cycle-plan.json",
+    "docs/plans/issue-296-som-hitl-relay-pdcar.md",
+    "raw/exceptions/2026-04-18-issue-296-same-family-planning.md",
+    "raw/execution-scopes/2026-04-18-issue-296-som-hitl-relay-planning.json",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout contains pre-existing operator/parallel planning files and is not the issue #296 execution root."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Future implementation target for MCP/orchestrator runtime; issue #296 planning slice does not edit it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Future implementation target for messaging transport; issue #296 planning slice does not edit it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Sibling repo has active unrelated work; issue #296 planning slice does not edit it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Sibling repo has active unrelated work; issue #296 planning slice does not edit it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Sibling repo is outside the issue #296 planning scope."
+    }
+  ]
+}

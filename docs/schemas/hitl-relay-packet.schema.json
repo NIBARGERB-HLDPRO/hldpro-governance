@@ -1,0 +1,578 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "docs/schemas/hitl-relay-packet.schema.json",
+  "title": "HITL Relay Packet",
+  "description": "Governance-owned packet contract for always-on Society of Minds human-in-the-loop relay events, responses, decisions, instructions, resumes, and audit records.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "packet_id",
+    "packet_type",
+    "created_at",
+    "issue_number",
+    "repo",
+    "session",
+    "correlation",
+    "policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "packet_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "packet_type": {
+      "type": "string",
+      "enum": [
+        "session_event",
+        "hitl_request",
+        "hitl_response",
+        "normalized_decision",
+        "session_instruction",
+        "session_resume",
+        "audit_record"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "issue_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "repo": {
+      "$ref": "#/$defs/repo"
+    },
+    "session": {
+      "$ref": "#/$defs/session"
+    },
+    "correlation": {
+      "$ref": "#/$defs/correlation"
+    },
+    "policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "session_started",
+        "epic_completed",
+        "hitl_checkpoint",
+        "governance_gate_failed",
+        "pr_ready",
+        "merge_ready",
+        "blocked",
+        "user_input_required",
+        "session_stale"
+      ]
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "requested_decision": {
+      "$ref": "#/$defs/requestedDecision"
+    },
+    "operator_reply": {
+      "$ref": "#/$defs/operatorReply"
+    },
+    "normalized_decision": {
+      "$ref": "#/$defs/normalizedDecision"
+    },
+    "instruction": {
+      "$ref": "#/$defs/instruction"
+    },
+    "resume": {
+      "$ref": "#/$defs/resume"
+    },
+    "audit": {
+      "$ref": "#/$defs/audit"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "packet_type": {
+            "const": "session_event"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "event_type",
+          "artifacts"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "packet_type": {
+            "const": "hitl_request"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "event_type",
+          "artifacts",
+          "requested_decision"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "packet_type": {
+            "const": "hitl_response"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "operator_reply"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "packet_type": {
+            "const": "normalized_decision"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "operator_reply",
+          "normalized_decision"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "packet_type": {
+            "const": "session_instruction"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "normalized_decision",
+          "instruction"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "packet_type": {
+            "const": "session_resume"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "resume"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "packet_type": {
+            "const": "audit_record"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "audit"
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "repo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner",
+        "name"
+      ],
+      "properties": {
+        "owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "session": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "session_id",
+        "cli",
+        "state"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cli": {
+          "type": "string",
+          "enum": [
+            "codex",
+            "claude",
+            "som-worker",
+            "other"
+          ]
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "active",
+            "waiting_hitl",
+            "completed",
+            "blocked",
+            "stale",
+            "resumed"
+          ]
+        }
+      }
+    },
+    "correlation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_id"
+      ],
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parent_packet_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "notification_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "response_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pii_mode",
+        "data_classification",
+        "channel_policy_ref"
+      ],
+      "properties": {
+        "pii_mode": {
+          "type": "string",
+          "enum": [
+            "none",
+            "tagged",
+            "detected",
+            "lam_only"
+          ]
+        },
+        "data_classification": {
+          "type": "string",
+          "enum": [
+            "public",
+            "internal",
+            "sensitive",
+            "pii"
+          ]
+        },
+        "channel_policy_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retention_policy_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "ref"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "plan",
+            "execution_scope",
+            "pr",
+            "check",
+            "closeout",
+            "packet",
+            "audit",
+            "other"
+          ]
+        },
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "requestedDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_type",
+        "allowed_actions"
+      ],
+      "properties": {
+        "decision_type": {
+          "type": "string",
+          "enum": [
+            "approval",
+            "feedback",
+            "clarification",
+            "escalation"
+          ]
+        },
+        "allowed_actions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/action"
+          }
+        },
+        "prompt_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "operatorReply": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "channel",
+        "sender_ref",
+        "message_id",
+        "received_at",
+        "raw_message_ref",
+        "sender_verified"
+      ],
+      "properties": {
+        "channel": {
+          "type": "string",
+          "enum": [
+            "sms",
+            "slack",
+            "email",
+            "local_fixture",
+            "other"
+          ]
+        },
+        "sender_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "received_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "raw_message_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sender_verified": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "normalizedDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action",
+        "confidence",
+        "model_id",
+        "model_family",
+        "raw_message_ref",
+        "validation_required"
+      ],
+      "properties": {
+        "action": {
+          "$ref": "#/$defs/action"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_family": {
+          "type": "string",
+          "minLength": 1
+        },
+        "raw_message_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "validation_required": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "instruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action",
+        "target_session_id",
+        "audit_refs"
+      ],
+      "properties": {
+        "action": {
+          "$ref": "#/$defs/action"
+        },
+        "target_session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "audit_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "resume": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reason",
+        "resume_context_refs"
+      ],
+      "properties": {
+        "reason": {
+          "type": "string",
+          "enum": [
+            "session_stale",
+            "session_missing",
+            "session_refused_wrong_target"
+          ]
+        },
+        "resume_context_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_packet_ids",
+        "evidence_refs",
+        "decision_trace"
+      ],
+      "properties": {
+        "subject_packet_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "decision_trace": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "hitl_request",
+              "notification_delivery",
+              "sender_verification",
+              "inbound_response",
+              "normalization",
+              "governance_validation",
+              "session_instruction",
+              "session_consumption",
+              "session_resume"
+            ]
+          }
+        }
+      }
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "approve",
+        "request_changes",
+        "pause",
+        "details",
+        "merge_when_green",
+        "create_followup_issue",
+        "resume_session",
+        "escalate",
+        "clarify"
+      ]
+    }
+  }
+}
