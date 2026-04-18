@@ -1,0 +1,163 @@
+{
+  "session_id": "session-20260418-issue-284-local-first-workflow-coverage",
+  "issue_number": 284,
+  "objective": "Add local-first coverage inventory and enforcement for governance GitHub Actions workflows so deterministic runner failures are caught before push and GitHub-only jobs have explicit exemptions.",
+  "tier": 2,
+  "scope_boundary": [
+    "Classify every `.github/workflows/*.yml` file by local coverage strategy.",
+    "Add deterministic enforcement that fails when workflow coverage inventory drifts.",
+    "Prioritize `governance-check.yml`, `check-pr-commit-scope.yml`, and reusable deterministic governance workflows.",
+    "Keep CI authoritative; local-first coverage is an upstream filter and contract guard, not a full Actions replay.",
+    "Verify with real local command runs and GitHub Actions evidence before closeout."
+  ],
+  "out_of_scope": [
+    "Replaying all GitHub Actions workflows with `act`.",
+    "Running scheduled, token-writing, or side-effecting jobs locally as normal pre-push checks.",
+    "Changing consumer repository workflows or branch protection.",
+    "Changing GitHub rulesets unless the implementation proves local coverage needs a required-status update.",
+    "Touching dirty sibling checkouts outside this isolated worktree."
+  ],
+  "research_summary": "After Local CI Gate hardgate wiring (#277/#282), adjacent governance workflows still need a local-first coverage map. The repo has deterministic workflow validators, reusable gates, and scheduled/side-effecting jobs mixed together; the next control is an inventory plus validator that prevents silent drift and documents exemptions.",
+  "research_artifacts": [
+    "GitHub issue #284",
+    "GitHub issues #277 and #282",
+    ".github/workflows/local-ci-gate.yml",
+    ".github/workflows/governance-check.yml",
+    ".github/workflows/check-pr-commit-scope.yml",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "scripts/overlord/check_local_ci_gate_workflow_contract.py",
+    "scripts/overlord/test_local_ci_gate_workflow_contract.py",
+    "docs/SERVICE_REGISTRY.md"
+  ],
+  "sprints": [
+    {
+      "name": "Plan And Scope",
+      "goal": "Land issue-backed planning, cross-review, and execution-scope artifacts before implementation edits.",
+      "tasks": [
+        "Create the GitHub epic with PDCAR acceptance criteria.",
+        "Add structured plan, PDCAR, cross-review, execution scope, and same-family implementation exception artifacts.",
+        "Mirror the active issue in `OVERLORD_BACKLOG.md` and `docs/PROGRESS.md`."
+      ],
+      "acceptance_criteria": [
+        "Issue #284 exists before backlog edits.",
+        "The structured plan validates.",
+        "The execution scope allows only issue #284 implementation paths.",
+        "Subagent review findings are represented in the plan evidence."
+      ],
+      "file_paths": [
+        "docs/plans/issue-284-structured-agent-cycle-plan.json",
+        "docs/plans/issue-284-local-first-workflow-coverage-pdcar.md",
+        "raw/cross-review/2026-04-18-issue-284-local-first-workflow-coverage-plan.md",
+        "raw/exceptions/2026-04-18-issue-284-same-family-implementation.md",
+        "raw/execution-scopes/2026-04-18-issue-284-local-first-workflow-coverage-planning.json",
+        "raw/execution-scopes/2026-04-18-issue-284-local-first-workflow-coverage-implementation.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Inventory And Enforcement",
+      "goal": "Add a tracked workflow coverage inventory and a deterministic validator for drift.",
+      "tasks": [
+        "Create a structured inventory covering every workflow file.",
+        "Implement a validator that compares the inventory to `.github/workflows/*.yml`.",
+        "Require deterministic workflows to declare local, contract, or script/dry-run coverage.",
+        "Require GitHub-only workflows to declare explicit exemption rationale.",
+        "Add unit tests for missing inventory entries, missing workflow files, missing coverage commands, and accepted exemptions."
+      ],
+      "acceptance_criteria": [
+        "The validator passes for the repository inventory.",
+        "A new workflow without inventory coverage fails tests.",
+        "A deterministic workflow without a coverage command fails tests.",
+        "Side-effecting workflows are documented with explicit rationale instead of replayed."
+      ],
+      "file_paths": [
+        "docs/workflow-local-coverage-inventory.json",
+        "scripts/overlord/check_workflow_local_coverage.py",
+        "scripts/overlord/test_workflow_local_coverage.py",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        ".github/workflows/graphify-governance-contract.yml"
+      ]
+    },
+    {
+      "name": "E2E Verification",
+      "goal": "Prove the new enforcement locally and in GitHub Actions with real runs.",
+      "tasks": [
+        "Run local unit and contract tests.",
+        "Run the Local CI Gate profile against the implementation diff.",
+        "Create a PR and let GitHub Actions run the new coverage checks.",
+        "If a check fails, fix forward and rerun until green.",
+        "Record issue, branch, commit, run IDs, and check names in closeout evidence."
+      ],
+      "acceptance_criteria": [
+        "Local tests include a negative-control unit test for missing workflow inventory.",
+        "Local CI Gate runs the workflow coverage check.",
+        "GitHub Actions passes the updated contract workflow and Local CI Gate.",
+        "Closeout evidence cites real command output and Actions run identifiers."
+      ],
+      "file_paths": [
+        "raw/closeouts/2026-04-18-issue-284-local-first-workflow-coverage.md",
+        "docs/PROGRESS.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "James",
+      "role": "local-ci tooling explorer",
+      "focus": "Existing local gate profile, execution-scope contract, and likely extension points.",
+      "status": "accepted_with_caveat",
+      "summary": "Use the existing profile and direct Python test entrypoints; treat generated reports as local-only. One finding about missing local-ci-gate workflow was stale against current origin/main after #277.",
+      "evidence": [
+        "Subagent James review notification",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "scripts/overlord/assert_execution_scope.py"
+      ]
+    },
+    {
+      "reviewer": "Pauli",
+      "role": "workflow coverage explorer",
+      "focus": "Workflow classification and high-risk local-first coverage candidates.",
+      "status": "accepted_with_caveat",
+      "summary": "Recommended split coverage for mixed workflows, with `governance-check.yml`, `check-pr-commit-scope.yml`, and `require-cross-review.yml` as highest-risk. The review counted 20 workflows, while the current branch has 22; the implementation therefore treats filesystem inventory as authoritative.",
+      "evidence": [
+        "Subagent Pauli review notification",
+        ".github/workflows/"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "subagent-review",
+    "model_family": "openai-mini",
+    "status": "accepted_with_followup",
+    "summary": "Subagent review is required by session instruction; tooling and workflow classification reviews accepted the inventory/validator approach with caveats that the implementation resolves through filesystem-backed completeness checks.",
+    "evidence": [
+      "Subagent James review notification",
+      "Subagent Pauli review notification",
+      "GitHub issue #284"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #284 may add workflow coverage inventory, validator/tests, local profile wiring, contract workflow wiring, planning/status artifacts, and closeout evidence inside hldpro-governance only.",
+    "next_execution_step": "Implement the workflow local coverage inventory and validator, then run local and GitHub Actions E2E verification.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If a workflow requires secrets, schedule context, or write side effects, classify it as script/dry-run or GitHub-only rather than adding a local replay.",
+    "If inventory enforcement would require changing consumer repos, stop and create a separate issue.",
+    "If Local CI Gate cannot run because sibling roots are dirty, record the blocker and rely on focused tests plus GitHub Actions evidence.",
+    "If GitHub Actions fails, fix forward on the same branch and rerun before closeout."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #284",
+    "operator instruction: PDCAR, follow repo rules, loop e2e, no HITL",
+    "subagent James review notification",
+    "subagent Pauli review notification"
+  ],
+  "approved_at": "2026-04-18T18:30:00Z"
+}

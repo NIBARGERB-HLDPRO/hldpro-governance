@@ -85,6 +85,20 @@ profile:
         - diff
         - --check
 
+    - id: workflow-local-coverage
+      title: GitHub workflow local-first coverage inventory
+      severity: blocker
+      scope: changed
+      paths:
+        - .github/workflows/
+        - .github/scripts/
+        - docs/workflow-local-coverage-inventory.json
+        - scripts/overlord/check_workflow_local_coverage.py
+        - scripts/overlord/test_workflow_local_coverage.py
+      command:
+        - python3
+        - scripts/overlord/test_workflow_local_coverage.py
+
     - id: local-tool-tests
       title: Local CI gate focused Python tests
       severity: advisory
