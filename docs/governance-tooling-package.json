@@ -69,15 +69,18 @@
       "classification": "package_core",
       "owner": "hldpro-governance",
       "paths": [
+        "scripts/overlord/deploy_governance_tooling.py",
+        "scripts/overlord/test_deploy_governance_tooling.py",
         "scripts/overlord/deploy_local_ci_gate.py",
         "scripts/overlord/test_deploy_local_ci_gate.py"
       ],
       "consumer_mode": "operator_invoked_from_governance_checkout",
       "version_rule": "pin by governance git SHA",
       "verification": [
+        "python3 scripts/overlord/test_deploy_governance_tooling.py",
         "python3 scripts/overlord/test_deploy_local_ci_gate.py"
       ],
-      "notes": "Phase 2 may generalize this into a broader package deployer."
+      "notes": "Package-level deployer writes the consumer record and delegates Local CI shim rendering to the compatibility deployer."
     },
     {
       "id": "execution-scope-validation",
@@ -204,6 +207,7 @@
       "Refuse dirty target repos unless the execution scope explicitly allows the active lane.",
       "Refuse unmanaged file overwrite by default."
     ],
+    "phase_2_status": "implemented by scripts/overlord/deploy_governance_tooling.py in issue #292",
     "phase_4_pilot_default": "local-ai-machine",
     "phase_4_pilot_fallback_rule": "A replacement repo may be selected only if the Phase 4 issue proves local-ai-machine cannot create a clean adoption worktree or cannot run package deployment prerequisites.",
     "phase_5_final_e2e_required": true
