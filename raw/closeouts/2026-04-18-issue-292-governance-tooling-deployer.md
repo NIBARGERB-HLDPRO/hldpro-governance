@@ -74,6 +74,14 @@ No contradiction. This adds the package-level deployer above the existing Local 
 - Local CI Gate profile `hldpro-governance` now includes blocker check `governance-tooling-deployer-tests`.
 - The blocker check runs `python3 scripts/overlord/test_deploy_governance_tooling.py` when deployer, package manifest, runbook, compatibility deployer, or deployer-test files change.
 - Local CI Gate run on this branch selected and passed `governance-tooling-deployer-tests`.
+- GitHub Actions PR #293 evidence:
+  - `local-ci-gate`: pass, run `24615465056`, job `71976849162`
+  - `validate`: pass, run `24615465049`, job `71976849160`
+  - `contract`: pass, run `24615465051`, job `71976849138`
+  - `commit-scope`: pass, run `24615465052`, job `71976849105`
+  - `Analyze (actions)`: pass, run `24615464177`, job `71976847924`
+  - `Analyze (python)`: pass, run `24615464177`, job `71976847926`
+  - `CodeQL`: pass, run `71976874028`
 
 ## Execution Scope / Write Boundary
 
