@@ -70,7 +70,7 @@ profile:
         - python3
         - scripts/overlord/assert_execution_scope.py
         - --scope
-        - raw/execution-scopes/2026-04-17-issue-253-local-ci-gate-toolkit-implementation.json
+        - "{execution_scope}"
         - --changed-files-file
         - "{changed_files_file}"
 

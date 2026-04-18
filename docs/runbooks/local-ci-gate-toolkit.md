@@ -174,7 +174,9 @@ python3 scripts/overlord/deploy_local_ci_gate.py refresh \
   --governance-ref "$(git rev-parse HEAD)"
 ```
 
-Managed shims embed the governance checkout path used at install time, but operators can override that root without editing the consumer repo:
+Managed shims embed only the governance checkout path used at install time. They do not embed the consumer repo root or the installed shim path. At runtime, the shim resolves its own path and asks git for the target repo root, so copied or moved checkouts report the live checkout instead of the original deploy target.
+
+Operators can override the governance root without editing the consumer repo:
 
 ```bash
 HLDPRO_GOVERNANCE_ROOT=/path/to/hldpro-governance .hldpro/local-ci.sh
@@ -184,8 +186,24 @@ The generated shim resolves:
 
 1. `HLDPRO_GOVERNANCE_ROOT` when set.
 2. The embedded install-time governance root otherwise.
+3. The target repo root from `git rev-parse --show-toplevel` at the live shim location.
+4. The shim path from `BASH_SOURCE[0]` at invocation time.
 
-The runner invocation records the resolved governance root with `--governance-root`, so local reports keep showing which governance checkout supplied the profile and runner.
+The runner invocation records the resolved governance root, governance ref, shim path, argv, cwd, and runner path in JSON reports, so local evidence shows which governance checkout supplied the profile and runner.
+
+## Enforcement Taxonomy
+
+Use these labels when discussing rollout status:
+
+| Status | Meaning | Merge claim allowed |
+|--------|---------|---------------------|
+| Profile available | A governance-owned profile exists and loads in `hldpro-governance`. | The repo has a reusable check definition only. |
+| Shim installed | A consumer repo has a managed `.hldpro/local-ci.sh` or `.governance/local-ci.sh`. | The repo can invoke the governance runner through the shim. |
+| Manual local live gate | Operators run the installed shim manually and blocker failures exit non-zero. | Manual local enforcement works when invoked. |
+| Pre-push hook gate | The consumer repo wires the shim into a local pre-push hook or equivalent repo-local hook. | Local push attempts are filtered on machines with hooks installed. |
+| CI required gate | Branch protection, rulesets, or workflow status checks require the gate or an equivalent CI check before merge. | Repository-level enforcement is mandatory for protected branches. |
+
+Do not collapse these states. A dry-run is mapping evidence only. A live manual shim run is not proof of pre-push hook wiring. A local hook is not proof of GitHub branch-protection or ruleset enforcement. CI remains authoritative.
 
 ## Safety Contract
 

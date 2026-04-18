@@ -5,6 +5,7 @@ import argparse
 import fnmatch
 import json
 import os
+import re
 import subprocess
 import sys
 from dataclasses import dataclass
@@ -85,6 +86,12 @@ class RunReport:
     verdict: str
     summary: str
     report_dir: Path
+    governance_root: str = ""
+    governance_ref: str = ""
+    shim_path: str = ""
+    argv: tuple[str, ...] = ()
+    cwd: str = ""
+    runner_path: str = ""
 
 
 def _load_yaml(path: Path) -> Any:
@@ -135,11 +142,11 @@ def _changed_files_from_git(repo_root: Path, base_ref: str | None, head_ref: str
         if result.returncode != 0:
             raise GateError(result.stderr.strip() or f"could not resolve changed files from {base_ref}")
         files.update(_normalize_path(line) for line in result.stdout.splitlines() if line.strip())
-    else:
-        result = _git(repo_root, "diff", "--name-only", "--diff-filter=ACMR")
-        if result.returncode != 0:
-            raise GateError(result.stderr.strip() or "could not resolve unstaged changed files")
-        files.update(_normalize_path(line) for line in result.stdout.splitlines() if line.strip())
+
+    unstaged = _git(repo_root, "diff", "--name-only", "--diff-filter=ACMR")
+    if unstaged.returncode != 0:
+        raise GateError(unstaged.stderr.strip() or "could not resolve unstaged changed files")
+    files.update(_normalize_path(line) for line in unstaged.stdout.splitlines() if line.strip())
 
     staged = _git(repo_root, "diff", "--cached", "--name-only", "--diff-filter=ACMR")
     if staged.returncode != 0:
@@ -330,12 +337,33 @@ def _format_command(command: tuple[str, ...], context: dict[str, str]) -> tuple[
     return tuple(part.format_map(context) for part in command)
 
 
+def _branch_issue_number(branch_name: str) -> str:
+    match = re.search(r"(?:^|/)issue-(\d+)(?:[-_/]|$)", branch_name)
+    return match.group(1) if match else ""
+
+
+def _resolve_execution_scope(repo_root: Path, branch_name: str) -> str:
+    issue_number = _branch_issue_number(branch_name)
+    if not issue_number:
+        return ""
+    scope_root = repo_root / "raw" / "execution-scopes"
+    implementation_matches = sorted(scope_root.glob(f"*issue-{issue_number}*implementation*.json"))
+    planning_matches = sorted(scope_root.glob(f"*issue-{issue_number}*planning*.json"))
+    matches = implementation_matches or planning_matches
+    if len(matches) > 1:
+        raise GateError(f"multiple execution scopes match issue-{issue_number}: {', '.join(str(item) for item in matches)}")
+    if not matches:
+        return ""
+    return matches[0].relative_to(repo_root).as_posix()
+
+
 def _command_context(
     repo_root: Path,
     profile: Profile,
     changed_files: ChangedFiles,
     report_dir: Path,
 ) -> dict[str, str]:
+    branch_name = _current_branch(repo_root)
     return {
         "repo_root": str(repo_root),
         "tool_root": str(TOOL_ROOT),
@@ -345,7 +373,8 @@ def _command_context(
         "changed_files_count": str(len(changed_files.files)),
         "changed_files_source": changed_files.source,
         "profile_name": profile.name,
-        "branch_name": _current_branch(repo_root),
+        "branch_name": branch_name,
+        "execution_scope": _resolve_execution_scope(repo_root, branch_name),
         "base_ref": changed_files.base_ref or profile.changed_files_base_ref or "",
         "head_ref": changed_files.head_ref or profile.changed_files_head_ref or "HEAD",
     }
@@ -362,6 +391,12 @@ def run_checks(
     *,
     dry_run: bool,
     report_dir: Path | None = None,
+    governance_root: str = "",
+    governance_ref: str = "",
+    shim_path: str = "",
+    argv: tuple[str, ...] = (),
+    cwd: str = "",
+    runner_path: str = "",
 ) -> RunReport:
     output_dir = report_dir or _default_report_dir(repo_root, profile, changed_files)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -425,6 +460,12 @@ def run_checks(
         verdict=verdict,
         summary=summary,
         report_dir=output_dir,
+        governance_root=governance_root,
+        governance_ref=governance_ref,
+        shim_path=shim_path,
+        argv=argv,
+        cwd=cwd,
+        runner_path=runner_path,
     )
     _write_report(report)
     return report
@@ -488,6 +529,14 @@ def _write_report(report: RunReport) -> None:
             ],
         },
         "repo_root": str(report.repo_root),
+        "invocation": {
+            "governance_root": report.governance_root,
+            "governance_ref": report.governance_ref,
+            "shim_path": report.shim_path,
+            "argv": list(report.argv),
+            "cwd": report.cwd,
+            "runner_path": report.runner_path,
+        },
         "dry_run": report.dry_run,
         "changed_files": {
             "source": report.changed_files.source,
@@ -529,6 +578,13 @@ def render_report(report: RunReport) -> str:
         f"Mode: {'dry-run' if report.dry_run else 'run'}",
         f"Changed files ({len(report.changed_files.files)}, source={report.changed_files.source}):",
     ]
+    if report.governance_root or report.governance_ref or report.shim_path:
+        lines.append("Invocation:")
+        lines.append(f"  governance_root: {report.governance_root or '<unset>'}")
+        lines.append(f"  governance_ref: {report.governance_ref or '<unset>'}")
+        lines.append(f"  shim_path: {report.shim_path or '<unset>'}")
+        lines.append(f"  cwd: {report.cwd or '<unset>'}")
+        lines.append(f"  runner_path: {report.runner_path or '<unset>'}")
     if report.changed_files.files:
         lines.extend(f"  - {item}" for item in report.changed_files.files)
     else:
@@ -615,7 +671,19 @@ def main(argv: list[str] | None = None) -> int:
             include_untracked=profile.include_untracked,
         )
         report_dir = Path(args.report_dir).expanduser().resolve() if args.report_dir else None
-        report = run_checks(repo_root, profile, changed_files, dry_run=args.dry_run, report_dir=report_dir)
+        report = run_checks(
+            repo_root,
+            profile,
+            changed_files,
+            dry_run=args.dry_run,
+            report_dir=report_dir,
+            governance_root=args.governance_root or "",
+            governance_ref=args.governance_ref or "",
+            shim_path=args.shim_path or "",
+            argv=tuple(effective_argv),
+            cwd=os.getcwd(),
+            runner_path=str(Path(sys.argv[0]).resolve()),
+        )
 
         _print_report(report)
         if args.json:
@@ -626,6 +694,14 @@ def main(argv: list[str] | None = None) -> int:
                     "summary": report.summary,
                     "changed_files": list(changed_files.files),
                     "report_dir": str(report.report_dir),
+                    "invocation": {
+                        "governance_root": report.governance_root,
+                        "governance_ref": report.governance_ref,
+                        "shim_path": report.shim_path,
+                        "argv": list(report.argv),
+                        "cwd": report.cwd,
+                        "runner_path": report.runner_path,
+                    },
                 },
                 indent=2,
             ))

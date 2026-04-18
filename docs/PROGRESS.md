@@ -1,6 +1,6 @@
 # hldpro-governance — Progress & Backlog
 
-**Last Updated:** 2026-04-17
+**Last Updated:** 2026-04-18
 **Scope:** Cross-repo governance standards, CI enforcement, audit agents, and knowledge base infrastructure.
 
 > This file is the single source of truth for planned work, open bugs, feature requests, and operational items in hldpro-governance.
@@ -18,7 +18,7 @@
 | SoM Slice 5: packet schema and runtime boundary | #219 | IN PROGRESS | HIGH | TBD | Schema/validator docs, packet tests, runtime boundary correction | Part of #214 |
 | SoM Slice 6: operational status and closeout loop | #220 | IN PROGRESS | HIGH | TBD | Progress/backlog/registry/wiki mirrors and closeout evidence contract | This slice |
 | SoM Slice 7: execution root and write-scope enforcement | #221 | IN PROGRESS | HIGH | TBD | Execution-scope checker, tests, and PR/slice scope artifacts | Part of #214 |
-| Local CI Gate enforcement remediation | #275 | IN REVIEW | HIGH | 2-3 | Portable shim targeting, live enforcement proof, governance scope fix, evidence taxonomy, retrospective audit | Consumer rollout frozen until P0 remediation lands |
+| Local CI Gate enforcement remediation | #275 | IN PROGRESS | HIGH | 2-3 | Portable shim targeting, live enforcement proof, governance scope fix, evidence taxonomy, retrospective audit | Implementation branch active; repo-level hardgate wiring follow-up tracked by #277; consumer rollout frozen until P0 remediation lands |
 | Stage 5+ som-worker launchd boot-start integration | #104 | PLANNED | MEDIUM | 2-3 | launchd plist, service docs | Gate: local-ai-machine #431, #432 adopt |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |

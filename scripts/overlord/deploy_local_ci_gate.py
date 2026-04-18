@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shlex
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -118,20 +119,31 @@ def build_plan(args: argparse.Namespace) -> DeployPlan:
 
 
 def managed_shim_body(plan: DeployPlan) -> str:
+    governance_root = shlex.quote(str(plan.governance_root))
+    profile = shlex.quote(plan.profile)
+    governance_ref = shlex.quote(plan.governance_ref)
     return f"""#!/usr/bin/env bash
 {MANAGED_MARKER}
 set -euo pipefail
 
-EMBEDDED_GOVERNANCE_ROOT="{plan.governance_root}"
+SHIM_SOURCE="${{BASH_SOURCE[0]}}"
+SHIM_DIR="$(cd "$(dirname "${{SHIM_SOURCE}}")" && pwd -P)"
+SHIM_PATH="${{SHIM_DIR}}/$(basename "${{SHIM_SOURCE}}")"
+if ! REPO_ROOT="$(git -C "${{SHIM_DIR}}" rev-parse --show-toplevel 2>/dev/null)"; then
+  echo "ERROR: could not resolve target repo root from shim path: ${{SHIM_PATH}}" >&2
+  exit 1
+fi
+
+EMBEDDED_GOVERNANCE_ROOT={governance_root}
 GOVERNANCE_ROOT="${{HLDPRO_GOVERNANCE_ROOT:-$EMBEDDED_GOVERNANCE_ROOT}}"
 RUNNER_PATH="${{GOVERNANCE_ROOT}}/tools/local-ci-gate/bin/hldpro-local-ci"
 
 exec python3 "${{RUNNER_PATH}}" run \\
-  --profile "{plan.profile}" \\
+  --profile {profile} \\
   --governance-root "${{GOVERNANCE_ROOT}}" \\
-  --governance-ref "{plan.governance_ref}" \\
-  --repo-root "{plan.target_repo}" \\
-  --shim-path "{plan.shim_path}"
+  --governance-ref {governance_ref} \\
+  --repo-root "${{REPO_ROOT}}" \\
+  --shim-path "${{SHIM_PATH}}"
 """
 
 
