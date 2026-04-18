@@ -1,0 +1,153 @@
+{
+  "session_id": "session-20260418-issue-310-classification-schema",
+  "issue_number": 310,
+  "objective": "Implement the second #298 child slice: make governed repository lifecycle and governance classifications machine-checkable in the registry schema and validator.",
+  "tier": 2,
+  "scope_boundary": [
+    "Extend docs/governed_repos.json with explicit lifecycle_status, governance_status, and classification evidence for existing registry entries.",
+    "Extend docs/schemas/governed-repos.schema.json to require the classification contract.",
+    "Update governed repo loader and validator code to enforce classification fields without relying on prose.",
+    "Update org inventory drift logic so explicitly archived registry rows are no longer reported as unclassified drift.",
+    "Add focused validator tests for valid, missing, and malformed classifications.",
+    "Update registry contract documentation for the new classification fields.",
+    "Add issue-backed planning, exception, execution-scope, backlog, and progress artifacts for #310."
+  ],
+  "out_of_scope": [
+    "Adding seek-and-ponder or EmailAssistant to the registry, which remains #311 and #312.",
+    "Reconciling README or STANDARDS generated/manual repository surfaces, which remains #313.",
+    "Changing downstream repositories.",
+    "Closing parent epic #298.",
+    "Claiming final org-wide governance e2e completion."
+  ],
+  "research_summary": "Issue #298 established that every active org repository must be represented in governance and that omission cannot be used as an exemption mechanism. Issue #309 made live inventory drift visible. This slice adds the missing machine-readable classification layer so governed, limited, exempt, adoption-blocked, and archived states are explicit registry data with owner, rationale, review date, and issue evidence.",
+  "research_artifacts": [
+    "GitHub issue #298",
+    "GitHub issue #310",
+    "docs/plans/issue-298-structured-agent-cycle-plan.json",
+    "docs/governed_repos.json",
+    "docs/schemas/governed-repos.schema.json",
+    "scripts/overlord/validate_governed_repos.py",
+    "scripts/overlord/governed_repos.py"
+  ],
+  "sprints": [
+    {
+      "name": "Classification Contract",
+      "goal": "Represent lifecycle and governance state as required registry data rather than prose-only notes.",
+      "tasks": [
+        "Add lifecycle_status enum values active and archived.",
+        "Add governance_status enum values governed, limited, exempt, and adoption_blocked.",
+        "Require classification.owner, classification.rationale, classification.review_date, and classification.issue_refs.",
+        "Populate the existing six registry entries without adding new repositories."
+      ],
+      "acceptance_criteria": [
+        "All current registry entries include explicit lifecycle and governance classification fields.",
+        "ASC-Evaluator remains limited rather than silently absent or fully governed.",
+        "The registry schema rejects entries missing classification evidence."
+      ],
+      "file_paths": [
+        "docs/governed_repos.json",
+        "docs/schemas/governed-repos.schema.json"
+      ]
+    },
+    {
+      "name": "Validator Enforcement",
+      "goal": "Make local and CI validation fail closed when registry classifications are missing or malformed.",
+      "tasks": [
+        "Update scripts/overlord/governed_repos.py to expose classification fields.",
+        "Update scripts/overlord/validate_governed_repos.py with enum, date, and issue-ref checks.",
+        "Update scripts/overlord/check_org_repo_inventory.py to consume archived lifecycle classification.",
+        "Add focused tests for missing classification, invalid status values, empty issue refs, bad review dates, non-boolean subsystems, unknown properties, and archived inventory classification."
+      ],
+      "acceptance_criteria": [
+        "Final AC: validator tests pass.",
+        "Final AC: org inventory drift tests pass after fixture classification updates.",
+        "Final AC: docs/governed_repos.json passes validate_governed_repos.py.",
+        "Final AC: negative-control fixture tests fail for missing or malformed classification data."
+      ],
+      "file_paths": [
+        "scripts/overlord/governed_repos.py",
+        "scripts/overlord/validate_governed_repos.py",
+        "scripts/overlord/test_validate_governed_repos.py",
+        "scripts/overlord/check_org_repo_inventory.py",
+        "scripts/overlord/test_check_org_repo_inventory.py"
+      ]
+    },
+    {
+      "name": "Final E2E Proof",
+      "goal": "Prove #310 is compatible with #298's live-org governance loop before PR publication.",
+      "tasks": [
+        "Run governed repo validator tests.",
+        "Run the governed repo validator against the real registry.",
+        "Run live org inventory drift in warn-only mode to prove this slice does not claim intake completion.",
+        "Run structured plan, execution-scope, backlog sync, Local CI Gate, py_compile, and diff hygiene checks.",
+        "Open a PR for #310 with validation evidence."
+      ],
+      "acceptance_criteria": [
+        "Final AC: Local CI Gate passes for changed paths.",
+        "Final AC: live org inventory warn-only output still reports seek-and-ponder and EmailAssistant pending #311/#312.",
+        "Final AC: #310 remains open unless PR and e2e evidence are linked.",
+        "Final AC: parent #298 remains open until final #314 e2e closeout."
+      ],
+      "file_paths": [
+        "docs/plans/issue-310-structured-agent-cycle-plan.json",
+        "docs/plans/issue-310-governed-repo-classification-schema-pdcar.md",
+        "raw/exceptions/2026-04-18-issue-310-same-family-schema.md",
+        "raw/execution-scopes/2026-04-18-issue-310-classification-schema-implementation.json",
+        "raw/cross-review/2026-04-18-issue-310-claude-review.md",
+        "docs/DATA_DICTIONARY.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "pending",
+      "role": "classification-schema-reviewer",
+      "focus": "Registry schema semantics, validator fail-closed behavior, test coverage, and #298/#309/#311/#312 boundary alignment.",
+      "status": "accepted_with_followup",
+      "summary": "Initial review found blockers in #309 fixture compatibility, schema/validator equivalence, raw boolean validation, archived-repo detector behavior, and registry contract documentation. The implementation was revised to address them before PR publication.",
+      "evidence": [
+        "Subagent notification 019da2fa-1949-7f90-ae1e-0926bb3b7803",
+        "raw/cross-review/2026-04-18-issue-310-claude-review.md",
+        "python3 scripts/overlord/test_check_org_repo_inventory.py",
+        "python3 scripts/overlord/test_validate_governed_repos.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude CLI",
+    "model_family": "claude",
+    "status": "accepted_with_followup",
+    "summary": "Claude working-tree re-review accepted the schema/validator/inventory/doc scope with follow-up notes. The loader type-safety note was fixed immediately; the schema additionalProperties note was verified against the current schema and is already satisfied.",
+    "evidence": [
+      "raw/cross-review/2026-04-18-issue-310-claude-review.md",
+      "docs/plans/issue-298-structured-agent-cycle-plan.json",
+      "python3 scripts/overlord/test_validate_governed_repos.py",
+      "python3 scripts/overlord/test_check_org_repo_inventory.py"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #310 may add registry classification fields for existing entries, schema and validator enforcement, focused tests, planning/status artifacts, same-family exception, and implementation execution scope. It may not add missing org repos or edit downstream repositories.",
+    "next_execution_step": "Implement classification schema enforcement, run final e2e commands, complete alternate-family review, then open PR for #310.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If seek-and-ponder or EmailAssistant registry intake is needed, stop and move that work to #311 or #312.",
+    "If README or STANDARDS governed repo surfaces need reconciliation, stop and move that work to #313.",
+    "If alternate-family review rejects the classification contract, revise before PR publication.",
+    "If live inventory drift unexpectedly clears, verify #311/#312 landed on main before updating #310 evidence.",
+    "If final e2e commands are skipped, do not publish."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #310",
+    "Parent epic #298",
+    "operator instruction: follow repo rules, no HITL, e2e testing as final AC",
+    "raw/exceptions/2026-04-18-issue-310-same-family-schema.md"
+  ],
+  "approved_at": "2026-04-18T23:55:00Z"
+}

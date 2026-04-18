@@ -16,6 +16,17 @@
       "project_path": "projects/hldpro-governance",
       "governance_tier": "full",
       "security_tier": "baseline",
+      "lifecycle_status": "active",
+      "governance_status": "governed",
+      "classification": {
+        "owner": "governance",
+        "rationale": "Governance standards and reusable tooling source repository.",
+        "review_date": "2026-04-18",
+        "issue_refs": [
+          "#298",
+          "#310"
+        ]
+      },
       "description": "Governance standards, reusable CI, agents, and cross-repo audit tooling",
       "enabled_subsystems": {
         "graphify": true,
@@ -40,6 +51,18 @@
       "project_path": "projects/ai-integration-services",
       "governance_tier": "full",
       "security_tier": "full-pentagi",
+      "lifecycle_status": "active",
+      "governance_status": "governed",
+      "classification": {
+        "owner": "governance",
+        "rationale": "Active product repository with full governance, CI, memory, graph, metrics, and code governance coverage.",
+        "review_date": "2026-04-18",
+        "issue_refs": [
+          "#68",
+          "#298",
+          "#310"
+        ]
+      },
       "description": "AIS SaaS platform governance, CI, hooks, and specialist agents",
       "enabled_subsystems": {
         "graphify": true,
@@ -64,6 +87,18 @@
       "project_path": "projects/healthcareplatform",
       "governance_tier": "full-hipaa",
       "security_tier": "full-pentagi-hipaa",
+      "lifecycle_status": "active",
+      "governance_status": "governed",
+      "classification": {
+        "owner": "governance",
+        "rationale": "Active HIPAA platform repository with full governance, CI, memory, graph, metrics, and code governance coverage.",
+        "review_date": "2026-04-18",
+        "issue_refs": [
+          "#68",
+          "#298",
+          "#310"
+        ]
+      },
       "description": "HIPAA platform governance, CI, hooks, and specialist agents",
       "enabled_subsystems": {
         "graphify": true,
@@ -88,6 +123,18 @@
       "project_path": "projects/local-ai-machine",
       "governance_tier": "full-lane-based",
       "security_tier": "baseline",
+      "lifecycle_status": "active",
+      "governance_status": "governed",
+      "classification": {
+        "owner": "governance",
+        "rationale": "Active local runtime repository with lane-based governance, CI, memory, graph, metrics, and code governance coverage.",
+        "review_date": "2026-04-18",
+        "issue_refs": [
+          "#68",
+          "#298",
+          "#310"
+        ]
+      },
       "description": "Local AI runtime governance, packet controls, lane rules, and schemas",
       "enabled_subsystems": {
         "graphify": true,
@@ -112,6 +159,18 @@
       "project_path": "projects/knocktracker",
       "governance_tier": "standard",
       "security_tier": "baseline",
+      "lifecycle_status": "active",
+      "governance_status": "governed",
+      "classification": {
+        "owner": "governance",
+        "rationale": "Active field application repository with standard governance, CI, memory, graph, metrics, and code governance coverage.",
+        "review_date": "2026-04-18",
+        "issue_refs": [
+          "#68",
+          "#298",
+          "#310"
+        ]
+      },
       "description": "Field app governance, issue controls, security/privacy agents, and CI",
       "enabled_subsystems": {
         "graphify": true,
@@ -136,6 +195,18 @@
       "project_path": "projects/asc-evaluator",
       "governance_tier": "exempt-graphify-pointer",
       "security_tier": "exempt",
+      "lifecycle_status": "active",
+      "governance_status": "limited",
+      "classification": {
+        "owner": "governance",
+        "rationale": "Active knowledge and evaluation repository with limited governance: graph, sweep, metrics, and compendium coverage remain enabled while code-governance controls are exempt pending issue #176 reconciliation.",
+        "review_date": "2026-04-18",
+        "issue_refs": [
+          "#176",
+          "#298",
+          "#310"
+        ]
+      },
       "description": "Knowledge/evaluation repo with limited governance and graph coverage",
       "enabled_subsystems": {
         "graphify": true,
