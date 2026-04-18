@@ -205,6 +205,13 @@ Use these labels when discussing rollout status:
 
 Do not collapse these states. A dry-run is mapping evidence only. A live manual shim run is not proof of pre-push hook wiring. A local hook is not proof of GitHub branch-protection or ruleset enforcement. CI remains authoritative.
 
+Current governance-repo status for #277:
+
+- `.github/workflows/local-ci-gate.yml` provides a CI-visible Local CI Gate workflow for `hldpro-governance` pull requests and `main` pushes.
+- The workflow/job name is `local-ci-gate`; it runs the live `hldpro-governance` profile without `--dry-run` and uploads local reports from `cache/local-ci-gate/reports/`.
+- `.github/workflows/graphify-governance-contract.yml` independently runs the workflow contract test so accidental dry-run, shallow-checkout, or missing-main-fetch regressions fail in CI.
+- This is not yet a protected-branch required gate. As of the #277 implementation pass, classic branch protection for `hldpro-governance/main` returned 404 and org ruleset `14715976` did not include a required-status-check rule. Do not claim CI required gate status until the required check is added to branch protection or a ruleset and verified through GitHub API evidence.
+
 ## Safety Contract
 
 - Managed shim marker: `# hldpro-governance local-ci gate managed`.

@@ -285,6 +285,16 @@ Never disable without pairing every change with a restore-from-backup command. S
 | ai-integration-services | 14283171 | MAIN |
 | local-ai-machine | 13152679 | Main branch PR-only policy |
 
+### hldpro-governance Local CI Gate enforcement status
+Issue #277 adds a CI-visible `local-ci-gate` workflow for `hldpro-governance`, but it does not by itself prove protected-branch required enforcement.
+
+Observed on 2026-04-18:
+
+- Classic branch protection for `NIBARGERB-HLDPRO/hldpro-governance` `main` returned 404 from `/repos/:owner/:repo/branches/main/protection`.
+- Org ruleset `14715976` (`Protect main branches`) is active and applies deletion, non-fast-forward, and pull-request rules.
+- Org ruleset `14715976` did not include a required-status-check rule at inspection time.
+- Until a required-status rule or classic protection context explicitly includes the Local CI Gate workflow/job, record the governance repo status as CI-visible gate only, not CI required gate.
+
 ### Classic branch protection (legacy)
 Some repos (e.g., `local-ai-machine`) still use classic `/repos/:o/:r/branches/main/protection`. Inventory via:
 ```bash
@@ -301,6 +311,7 @@ gh api /repos/NIBARGERB-HLDPRO/<repo>/branches/main/protection --jq '.required_s
 |---|---|---|
 | 2026-04-05 | Org rulesets created + secret scanning enabled | OK |
 | 2026-04-14 | Admin API usable for emergency ruleset toggle | OK (restore confirmed) |
+| 2026-04-18 | hldpro-governance Local CI Gate hardgate evidence | CI-visible workflow added by #277; required-status enforcement not yet present in classic branch protection or org ruleset evidence |
 
 ---
 
