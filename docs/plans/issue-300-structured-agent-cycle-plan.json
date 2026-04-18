@@ -1,0 +1,100 @@
+{
+  "session_id": "session-20260418-issue-300-hitl-validators",
+  "issue_number": 300,
+  "objective": "Implement deterministic HITL relay validators and policy gates that enforce the merged #299 packet contracts and #302 security/data-handling policy before AIS or MCP runtime paths can emit session instructions.",
+  "tier": 1,
+  "scope_boundary": [
+    "Add a governance-owned HITL relay validator under scripts/packet.",
+    "Enforce schema, correlation, operator provenance, allowed action, confidence, stale-session, duplicate/replay/expired, and PII/channel policy gates.",
+    "Add focused tests covering valid and fail-closed negative controls.",
+    "Keep this slice inside hldpro-governance."
+  ],
+  "out_of_scope": [
+    "Implementing queue processing, AIS transport, MCP runtime, or local CLI adapters.",
+    "Changing sibling repos.",
+    "Closing parent epic #296.",
+    "Running final cross-repo E2E proof."
+  ],
+  "research_summary": "Issue #299 added HITL relay packet schemas and fixtures. Issue #302 added security/data-handling policy. Issue #300 now adds deterministic validation that ties those contracts to enforceable behavior before downstream queue, AIS, MCP, and CLI adapter slices proceed.",
+  "research_artifacts": [
+    "GitHub issue #296",
+    "GitHub issue #299",
+    "GitHub issue #300",
+    "GitHub issue #302",
+    "docs/schemas/hitl-relay-packet.schema.json",
+    "docs/runbooks/hitl-relay-security.md",
+    "scripts/packet/test_hitl_relay_schema.py"
+  ],
+  "sprints": [
+    {
+      "name": "Validator And Negative Controls",
+      "goal": "Add deterministic policy validation for HITL relay packets.",
+      "tasks": [
+        "Create scripts/packet/validate_hitl_relay.py.",
+        "Add tests for valid examples and invalid schema examples.",
+        "Add tests for wrong session, low confidence, duplicate, expired, PII external channel, stale session, and missing notification correlation.",
+        "Document validator responsibilities in docs/schemas/README.md."
+      ],
+      "acceptance_criteria": [
+        "Invalid HITL request/response/instruction packets fail before notification or instruction dispatch.",
+        "Self-approval/provenance gaps are refused by requiring verified operator provenance for approval-like actions.",
+        "Ambiguous/low-confidence replies cannot produce executable instructions.",
+        "PII-sensitive packets fail closed for external channels.",
+        "Stale sessions require resume packets.",
+        "Duplicate/replayed/expired replies cannot produce instructions."
+      ],
+      "file_paths": [
+        "scripts/packet/validate_hitl_relay.py",
+        "scripts/packet/test_validate_hitl_relay.py",
+        "docs/schemas/hitl-relay-packet.schema.json",
+        "docs/schemas/README.md",
+        "docs/plans/issue-300-structured-agent-cycle-plan.json",
+        "docs/plans/issue-300-hitl-validators-pdcar.md",
+        "raw/exceptions/2026-04-18-issue-300-same-family-validators.md",
+        "raw/execution-scopes/2026-04-18-issue-300-hitl-validators-implementation.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex implementation session",
+      "role": "governance validator implementer",
+      "focus": "HITL relay deterministic validation, policy gates, negative controls, and final E2E prerequisites.",
+      "status": "accepted_with_followup",
+      "summary": "The validator slice can proceed under the operator's no-HITL instruction. Queue/AIS/MCP/runtime slices remain separate and must consume this validator.",
+      "evidence": [
+        "GitHub issue #300",
+        "scripts/packet/validate_hitl_relay.py",
+        "scripts/packet/test_validate_hitl_relay.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family-implementation-fallback",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "True alternate-family review is not available in this no-HITL Codex lane. This slice is deterministic validator work with focused tests and a same-family exception recorded.",
+    "evidence": [
+      "raw/exceptions/2026-04-18-issue-300-same-family-validators.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #300 may add HITL relay validator code/tests, update the HITL schema for validator metadata, document validator responsibilities, and add planning/scope artifacts. It may not implement queue processing, AIS transport, MCP runtime, local CLI adapters, or sibling repo changes.",
+    "next_execution_step": "Validate tests, publish PR, and keep parent #296 open for queue, transport, runtime, adapter, and final E2E slices.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Implementing AIS or MCP runtime behavior in this validator slice is a material deviation.",
+    "Allowing duplicate/replayed/expired replies to produce instructions is a material deviation.",
+    "Allowing PII external-channel routing by default is a material deviation.",
+    "Editing sibling repos from this branch is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator no-HITL instruction 2026-04-18"
+  ],
+  "approved_at": "2026-04-18T23:23:46Z"
+}

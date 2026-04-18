@@ -415,6 +415,15 @@
         "sender_verified": {
           "type": "boolean",
           "const": true
+        },
+        "duplicate": {
+          "type": "boolean"
+        },
+        "replayed": {
+          "type": "boolean"
+        },
+        "expired": {
+          "type": "boolean"
         }
       }
     },

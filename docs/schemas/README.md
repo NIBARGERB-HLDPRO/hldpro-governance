@@ -40,6 +40,16 @@ A JSON Schema describing the always-on SoM HITL relay packet contract:
 
 Examples live under `docs/schemas/examples/hitl-relay/`. Valid examples must pass schema validation; invalid examples must fail closed.
 
+The deterministic policy validator lives at `scripts/packet/validate_hitl_relay.py`. It layers issue #300 governance rules on top of the schema:
+
+- response and instruction packets require notification/response correlation;
+- approval-like decisions require verified operator provenance;
+- duplicate, replayed, or expired replies cannot produce instructions;
+- low-confidence replies must normalize to `clarify`;
+- PII-tagged/detected packets fail closed for external channels;
+- stale sessions require resume packets instead of session instructions;
+- instruction targets must match the exact local session ID.
+
 ## Validator
 
 **File:** `scripts/packet/validate.py`
