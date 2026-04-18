@@ -1,0 +1,138 @@
+{
+  "session_id": "session-20260418-issue-272-local-ai-machine-profile",
+  "issue_number": 272,
+  "objective": "Add a governance-owned Local CI Gate profile for local-ai-machine without modifying the LAM repo.",
+  "tier": 2,
+  "scope_boundary": [
+    "Design the profile from local-ai-machine origin/main and read-only workflow inspection.",
+    "Add a bundled Local CI Gate profile for local-ai-machine using deterministic commands that already exist in LAM.",
+    "Add focused tests proving the profile loads and scopes heavier checks to matching paths.",
+    "Update the Local CI Gate toolkit runbook profile catalog.",
+    "Do not install or modify a LAM managed shim in this governance issue."
+  ],
+  "out_of_scope": [
+    "Editing the dirty local-ai-machine shared checkout.",
+    "Installing a managed shim in local-ai-machine.",
+    "Changing LAM GitHub Actions semantics.",
+    "Adding npm scripts to LAM.",
+    "Running environment-sensitive LAM runtime or remote host checks locally.",
+    "Cleaning dirty shared checkouts outside the isolated governance worktree."
+  ],
+  "research_summary": "LAM is the next Local CI Gate consumer candidate after knocktracker and AIS. Its shared checkout is dirty and behind origin/main, so the profile must be based on origin/main read-only inspection. LAM has no package.json scripts and uses direct Python, Deno, and bash workflow commands, so the profile should call stable existing commands directly and scope expensive/runtime-sensitive checks by path.",
+  "research_artifacts": [
+    "GitHub issue #272",
+    "docs/runbooks/local-ci-gate-toolkit.md",
+    "docs/governed_repos.json",
+    "local-ai-machine origin/main:package.json",
+    "local-ai-machine origin/main:.github/workflows/governance.yml",
+    "local-ai-machine origin/main:.github/workflows/edge_breaker_mcp_contract.yml",
+    "local-ai-machine origin/main:.github/workflows/security.yml",
+    "local-ai-machine origin/main:.github/workflows/microvm_*",
+    "tools/local-ci-gate/local_ci_gate.py",
+    "tools/local-ci-gate/tests/test_local_ci_gate.py"
+  ],
+  "sprints": [
+    {
+      "name": "Planning and Scope Bootstrap",
+      "goal": "Land trusted planning and implementation scope artifacts before profile implementation.",
+      "tasks": [
+        "Create issue-backed structured plan for #272.",
+        "Add planning and implementation execution-scope artifacts.",
+        "Add PDCA/R and planning cross-review artifacts.",
+        "Update governance mirrors so #265 is no longer active and #272 is active.",
+        "Validate structured plans, backlog alignment, diff hygiene, and planner-boundary scope."
+      ],
+      "acceptance_criteria": [
+        "GitHub issue #272 is open and referenced by governance mirrors.",
+        "Planning PR contains only planning/scope/cross-review/status artifacts.",
+        "Implementation branch and allowed write paths are declared before implementation starts.",
+        "The planning PR does not change runner behavior, profile behavior, or downstream repos."
+      ],
+      "file_paths": [
+        "docs/plans/issue-272-structured-agent-cycle-plan.json",
+        "docs/plans/issue-272-local-ai-machine-profile-pdcar.md",
+        "raw/cross-review/2026-04-18-issue-272-local-ai-machine-profile-plan.md",
+        "raw/execution-scopes/2026-04-18-issue-272-local-ai-machine-profile-planning.json",
+        "raw/execution-scopes/2026-04-18-issue-272-local-ai-machine-profile-implementation.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "LAM Profile Implementation",
+      "goal": "Add a reusable profile that lets LAM adopt the managed Local CI Gate shim in a later repo-local PR.",
+      "tasks": [
+        "Add tools/local-ci-gate/profiles/local-ai-machine.yml with dependency metadata.",
+        "Use direct existing LAM commands rather than creating npm wrappers.",
+        "Scope runtime-sensitive or heavier checks to matching changed files.",
+        "Add bundled-profile and changed-file scope tests.",
+        "Update the Local CI Gate toolkit profile catalog and closeout evidence."
+      ],
+      "acceptance_criteria": [
+        "The LAM profile loads with unique check IDs and dependency metadata.",
+        "A docs-only or unrelated diff plans only always-on/lightweight checks.",
+        "LAM script or workflow changes plan matching focused checks.",
+        "Runbook catalog lists local-ai-machine and notes consumer shim rollout is separate.",
+        "No local-ai-machine repo files are modified."
+      ],
+      "file_paths": [
+        "docs/PROGRESS.md",
+        "docs/runbooks/local-ci-gate-toolkit.md",
+        "raw/closeouts/2026-04-18-local-ai-machine-local-ci-profile.md",
+        "tools/local-ci-gate/profiles/local-ai-machine.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex",
+      "role": "LAM profile planner",
+      "focus": "Map LAM origin/main workflows into a safe Local CI Gate profile without editing LAM.",
+      "status": "accepted",
+      "summary": "The profile should use direct Python/Deno/bash commands already present in LAM workflows and keep heavy checks path-scoped. Downstream shim adoption is a separate issue.",
+      "evidence": [
+        "local-ai-machine origin/main:.github/workflows/edge_breaker_mcp_contract.yml",
+        "local-ai-machine origin/main:.github/workflows/security.yml",
+        "local-ai-machine origin/main:.github/workflows/microvm_airlock_idempotency.yml",
+        "local-ai-machine origin/main:.github/workflows/microvm_boot_contract.yml",
+        "GitHub issue #272"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Operator-approved governance issue flow",
+    "model_family": "operator-review",
+    "status": "accepted",
+    "summary": "The existing Local CI Gate profile pattern is approved for LAM with the constraint that this issue only adds the governance-owned profile. Consumer shim installation must be tracked separately in local-ai-machine.",
+    "evidence": [
+      "raw/cross-review/2026-04-17-issue-253-local-ci-gate-toolkit-plan.md",
+      "raw/cross-review/2026-04-17-issue-260-knocktracker-local-ci-gate-profile-plan.md",
+      "raw/cross-review/2026-04-17-issue-264-ai-integration-services-local-ci-profile-plan.md",
+      "raw/cross-review/2026-04-18-issue-272-local-ai-machine-profile-plan.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #272 may add a local-ai-machine Local CI Gate profile, focused tests, runbook catalog docs, progress mirror updates, and closeout evidence in governance only. It must not modify the LAM repo.",
+    "next_execution_step": "Merge this planning/scope branch so the implementation execution scope is trusted from main, then implement on branch feat/issue-272-local-ai-machine-profile.",
+    "blocked_on": [
+      "planning PR merged so implementation scope is trusted from main"
+    ]
+  },
+  "material_deviation_rules": [
+    "If implementation needs local-ai-machine repo changes, stop and open a separate LAM issue.",
+    "If profile commands require new LAM wrapper scripts, stop and re-plan in LAM rather than adding them here.",
+    "If runtime-sensitive checks cannot be made dry-run safe, keep them scoped and document CI as authoritative.",
+    "Do not alter dirty shared checkouts outside this isolated governance worktree."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #272",
+    "operator instruction: then we can work on LAM",
+    "operator instruction: go"
+  ],
+  "approved_at": "2026-04-18T00:56:00Z"
+}

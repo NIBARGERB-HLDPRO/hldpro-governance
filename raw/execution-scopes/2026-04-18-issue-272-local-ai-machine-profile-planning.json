@@ -1,0 +1,19 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "docs/issue-272-local-ai-machine-profile-plan",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-272-structured-agent-cycle-plan.json",
+    "docs/plans/issue-272-local-ai-machine-profile-pdcar.md",
+    "raw/cross-review/2026-04-18-issue-272-local-ai-machine-profile-plan.md",
+    "raw/execution-scopes/2026-04-18-issue-272-local-ai-machine-profile-planning.json",
+    "raw/execution-scopes/2026-04-18-issue-272-local-ai-machine-profile-implementation.json"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
+  ]
+}
