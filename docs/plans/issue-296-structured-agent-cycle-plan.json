@@ -19,7 +19,7 @@
     "Making AIS the owner of governance policy decisions.",
     "Starting with tmux/live terminal injection as the primary resume mechanism.",
     "Editing sibling repos from this hldpro-governance planning branch.",
-    "Closing issue #296 before an evidence-backed E2E test proves approval, request-changes, ambiguous-response, stale-session, and audit replay paths."
+    "Closing issue #296 before an evidence-backed E2E test proves approval, request-changes, ambiguous-response, stale-session, duplicate/replay or expired-notification, and audit replay paths."
   ],
   "research_summary": "The existing org-wide always-on governance orchestrator epic (#224) proved the need for packet queues, local runtime boundaries, deterministic gates, and human approval boundaries, but it is closed and did not define a concrete operator messaging relay. Recent SoM enforcement work also showed that packets must reference enforceable execution scope evidence and that governance gates should fail closed on ambiguous or malformed references. The requested capability should therefore be planned as a new issue #296 epic: a queue-first HITL relay where local CLI sessions emit governed checkpoint packets, the SoM/MCP orchestrator validates and summarizes them, AIS sends and receives operator messages, an LLM normalizes replies only into bounded allowed decisions, and the local session consumes structured instruction packets or creates a resume packet if stale. The final acceptance bar must be a full E2E proof, not merely successful notification delivery.",
   "research_artifacts": [
@@ -70,13 +70,14 @@
       "tasks": [
         "Design canonical packet shapes for local CLI session conclusions, HITL checkpoints, blocked sessions, PR-ready states, merge-ready states, and stale/disconnected sessions.",
         "Design the normalized decision vocabulary for approve, request_changes, pause, details, merge_when_green, create_followup_issue, resume_session, and escalate.",
-        "Define approval provenance fields including operator identity, channel, message ID, received timestamp, raw-message reference, normalized decision, confidence, and orchestrator version.",
+        "Define approval provenance fields including operator identity, channel, notification ID, message ID, received timestamp, raw-message reference, normalized decision, confidence, and orchestrator version.",
         "Define how session instruction packets reference the original request, target session, allowed action, constraints, and audit evidence."
       ],
       "acceptance_criteria": [
         "Every packet contract has required fields, owner repo, and validation expectations.",
         "Human replies can only become bounded decisions, not terminal input.",
         "Approval provenance is mandatory for approval-like decisions.",
+        "The same session ID can be correlated through request, notification, response, normalized decision, validation, and instruction/resume evidence.",
         "Low-confidence or ambiguous replies cannot produce executable instructions.",
         "Contracts distinguish active-session continuation from stale-session resume packet creation."
       ],
@@ -96,7 +97,7 @@
         "Reject no-self-approval violations and tier-skipping attempts.",
         "Fail closed when PII or channel policy is unknown or cannot be evaluated.",
         "Require ambiguity handling and clarification packets for low-confidence replies.",
-        "Add negative-control tests for forged sender, mismatched notification ID, stale session, disallowed action, and missing audit evidence."
+        "Add negative-control tests for forged sender, mismatched notification ID, stale session, duplicate/replay reply, expired notification, disallowed action, and missing audit evidence."
       ],
       "acceptance_criteria": [
         "Invalid HITL request packets fail before notification dispatch.",
@@ -143,15 +144,15 @@
       "goal": "Define the AIS-owned transport contract for sending operator notifications and receiving correlated replies.",
       "tasks": [
         "Create AIS issue(s) for outbound SMS/Slack/other notification delivery using governance-supplied HITL request payloads.",
-        "Create AIS issue(s) for inbound webhook handling, sender verification, notification correlation, retries, and delivery audit.",
-        "Define channel-specific limits and message templates without giving AIS governance authority.",
+        "Create AIS issue(s) for inbound webhook handling, sender verification, notification correlation, retries, duplicate/replay/expired handling, and delivery audit.",
+        "Define channel-specific limits, payload minimization, message templates, and retention rules without giving AIS governance authority.",
         "Define callback shape from AIS back to the SoM/MCP orchestrator."
       ],
       "acceptance_criteria": [
         "AIS outbound contract accepts a validated notification request and records delivery evidence.",
         "AIS inbound contract verifies sender identity and correlates replies to notification IDs.",
         "AIS never emits executable session instructions; it emits inbound response events only.",
-        "Transport failure, duplicate reply, expired notification, and unknown sender paths are specified.",
+        "Transport failure, duplicate reply, replayed webhook, expired notification, and unknown sender paths are specified.",
         "Sensitive packet summaries obey PII/channel policy before leaving the local system."
       ],
       "file_paths": [
@@ -167,7 +168,7 @@
       "tasks": [
         "Create local-ai-machine issue(s) for always-on MCP/orchestrator runtime ownership.",
         "Define session registry fields, liveness checks, target session selection, and stale-session handling.",
-        "Define LLM normalizer prompt/contract with allowed actions, confidence, ambiguity, and refusal behavior.",
+        "Define LLM normalizer prompt/contract with allowed actions, confidence, ambiguity, idempotency, and refusal behavior.",
         "Require deterministic validation after normalization and before instruction emission."
       ],
       "acceptance_criteria": [
@@ -210,11 +211,33 @@
       ]
     },
     {
+      "name": "Security - Data Handling And Channel Policy",
+      "goal": "Define the privacy, retention, minimization, redaction, sender verification, token scope, replay protection, and channel-specific PII rules before production messaging carries session content.",
+      "tasks": [
+        "Create governance issue #302 for HITL relay security and data-handling policy.",
+        "Define what data may leave local control per channel.",
+        "Define raw message retention/deletion rules and audit-reference strategy.",
+        "Define webhook signing, sender verification, replay protection, duplicate handling, and token/secret scope requirements."
+      ],
+      "acceptance_criteria": [
+        "Policy states payload minimization and redaction requirements before AIS or AI hops.",
+        "Policy states retention and deletion requirements for raw inbound/outbound message text.",
+        "PII-tagged or PII-detected packets fail closed unless a local-only route is available.",
+        "Final E2E audit replay can reconstruct the decision without exposing unnecessary raw message content."
+      ],
+      "file_paths": [
+        "docs/runbooks/",
+        "docs/ENV_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/exception-register.md"
+      ]
+    },
+    {
       "name": "Phase 7 - Final E2E HITL Relay Proof",
       "goal": "Close the epic only after the full local-to-human-to-local relay is proven with evidence.",
       "tasks": [
         "Run a full E2E path from local CLI checkpoint packet through orchestrator validation, AIS notification, operator reply, inbound response, normalization, governance gate, instruction packet, and local session consumption.",
-        "Run negative-control paths for request changes, ambiguous reply, stale session, and audit replay/provenance.",
+        "Run negative-control paths for request changes, ambiguous reply, stale session, duplicate/replay reply, expired notification, and audit replay/provenance.",
         "Record evidence paths, command outputs, notification IDs, normalized decisions, validation results, and closeout artifacts.",
         "Use the E2E findings to decide whether MCP push can be planned after queue-first relay is stable."
       ],
@@ -223,7 +246,9 @@
         "Final AC: request-changes path proves feedback is routed back without being treated as approval.",
         "Final AC: ambiguous-response path proves clarification is requested and no instruction is emitted.",
         "Final AC: stale-session path proves a resume packet is created instead of injecting into the wrong session.",
-        "Final AC: audit replay path proves the decision can be reconstructed from packet, AIS, normalization, validation, and session evidence.",
+        "Final AC: duplicate/replay or expired-notification path proves repeated, replayed, or expired responses are idempotent or refused with evidence.",
+        "Final AC: audit replay path proves the same session ID is traceable through HITL request, notification ID, sender verification, inbound event, normalized decision, validator result, instruction or resume packet, and local session evidence.",
+        "Final AC: at least one AIS-backed real or sandboxed transport is proven; unproven transports remain disabled or tracked as follow-up.",
         "Final AC: issue #296 remains open until all E2E evidence links are recorded."
       ],
       "file_paths": [
@@ -279,7 +304,7 @@
     "Any proposal to let the always-on LLM approve, waive, or bypass governance gates is a material deviation and must halt.",
     "Any non-queue-first live terminal or MCP push path before the queue-first E2E proof is a material deviation and must halt.",
     "Any sibling repo implementation from this hldpro-governance planning branch is a material deviation and must halt.",
-    "Any attempt to close issue #296 without E2E approval, request-changes, ambiguity, stale-session, and audit replay evidence is a material deviation and must halt."
+    "Any attempt to close issue #296 without E2E approval, request-changes, ambiguity, stale-session, duplicate/replay or expired-notification, and audit replay evidence is a material deviation and must halt."
   ],
   "approved": true,
   "approved_by": [
