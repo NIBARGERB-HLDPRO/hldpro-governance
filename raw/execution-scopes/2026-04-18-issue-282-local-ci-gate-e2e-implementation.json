@@ -1,0 +1,30 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "test/issue-282-local-ci-hardgate-e2e",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/plans/issue-282-structured-agent-cycle-plan.json",
+    "raw/closeouts/2026-04-18-local-ci-gate-e2e-hardgate-test.md",
+    "raw/execution-scopes/2026-04-18-issue-282-local-ci-gate-e2e-implementation.json"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "human-operator",
+    "reviewer_model": "github-actions",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-18T18:00:00Z",
+    "evidence_paths": [
+      "GitHub issue #282",
+      "PR #283",
+      "docs/plans/issue-282-structured-agent-cycle-plan.json"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

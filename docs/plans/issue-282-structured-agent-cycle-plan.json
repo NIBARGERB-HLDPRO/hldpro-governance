@@ -1,0 +1,111 @@
+{
+  "session_id": "session-20260418-issue-282-local-ci-gate-e2e",
+  "issue_number": 282,
+  "objective": "Run a real hldpro-governance E2E proof that Local CI Gate hardgate wiring catches governance-surface edits before merge and passes after proper issue scope is added.",
+  "tier": 2,
+  "scope_boundary": [
+    "Exercise the existing Local CI Gate workflow and required status check in hldpro-governance only.",
+    "Use a negative-control PR state first, then repair the same PR with the required plan and execution-scope artifacts.",
+    "Record GitHub Actions evidence for both the failing and passing states.",
+    "Keep the test scoped to documentation, plan, scope, and closeout artifacts."
+  ],
+  "out_of_scope": [
+    "Changing Local CI Gate implementation code.",
+    "Changing GitHub ruleset configuration beyond verifying ruleset 15241047 remains active.",
+    "Changing consumer repos or Local CI Gate shims.",
+    "Bypassing the required local-ci-gate check."
+  ],
+  "research_summary": "Issue #277 and PRs #280/#281 installed and required the hldpro-governance Local CI Gate workflow. This issue verifies the wiring end to end by proving a governance-surface edit fails before scope exists and passes after the proper artifacts are added.",
+  "research_artifacts": [
+    "GitHub issue #282",
+    "GitHub issue #277",
+    "PR #280",
+    "PR #281",
+    "repo ruleset 15241047",
+    ".github/workflows/local-ci-gate.yml",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Negative-control proof",
+      "goal": "Show the required Local CI Gate check catches a governance-surface edit without an issue-specific plan and execution scope.",
+      "tasks": [
+        "Create the #282 E2E branch from current main.",
+        "Add a governance-surface closeout artifact without a matching plan or execution scope.",
+        "Open a draft PR and observe the required local-ci-gate check fail.",
+        "Record the failing check name, run, and failure reason."
+      ],
+      "acceptance_criteria": [
+        "The first PR check run has `local-ci-gate` failing.",
+        "Failure reason includes missing governance-surface plan and planner-boundary execution scope.",
+        "Other unrelated checks are not used as the proof."
+      ],
+      "file_paths": [
+        "raw/closeouts/2026-04-18-local-ci-gate-e2e-hardgate-test.md"
+      ]
+    },
+    {
+      "name": "Positive-control repair",
+      "goal": "Add the missing issue-specific governance artifacts and prove the required Local CI Gate check turns green.",
+      "tasks": [
+        "Add the #282 structured plan.",
+        "Add the #282 implementation execution scope.",
+        "Update the closeout artifact with negative and positive evidence.",
+        "Verify the same PR passes the required local-ci-gate check."
+      ],
+      "acceptance_criteria": [
+        "The final PR check run has `local-ci-gate` passing.",
+        "Ruleset 15241047 still requires `local-ci-gate` on `main`.",
+        "The closeout records both the negative and positive E2E results."
+      ],
+      "file_paths": [
+        "docs/plans/issue-282-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-18-issue-282-local-ci-gate-e2e-implementation.json",
+        "raw/closeouts/2026-04-18-local-ci-gate-e2e-hardgate-test.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "GitHub Actions",
+      "role": "required status check",
+      "focus": "Validate that the live Local CI Gate workflow catches and later accepts the #282 PR.",
+      "status": "accepted",
+      "summary": "The E2E proof is based on real GitHub Actions check state rather than static inspection.",
+      "evidence": [
+        "PR #283",
+        "local-ci-gate check"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "operator",
+    "model_family": "human",
+    "status": "accepted",
+    "summary": "Operator requested a real E2E test in hldpro-governance to verify hooks and hardgate wiring catch from the start.",
+    "evidence": [
+      "User instruction: Let's do an e2e test in hldpro gov repo, create Gh issue, and test that the wiring / hooks are catching from the get go.",
+      "GitHub issue #282"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #282 may add the E2E proof plan, execution scope, and closeout artifact needed to prove Local CI Gate required-status behavior.",
+    "next_execution_step": "Add the missing #282 governance artifacts and verify PR #283 moves from failing to passing local-ci-gate.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If the first PR run does not fail local-ci-gate, stop and inspect the required-status wiring.",
+    "If the final PR run does not pass local-ci-gate after adding the issue scope, stop and fix the workflow or scope contract.",
+    "Do not close #282 without both negative and positive GitHub Actions evidence.",
+    "Do not modify consumer repositories."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #282",
+    "operator instruction"
+  ],
+  "approved_at": "2026-04-18T18:00:00Z"
+}
