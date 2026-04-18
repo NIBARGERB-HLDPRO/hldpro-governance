@@ -18,7 +18,7 @@
 | SoM Slice 5: packet schema and runtime boundary | #219 | IN PROGRESS | HIGH | TBD | Schema/validator docs, packet tests, runtime boundary correction | Part of #214 |
 | SoM Slice 6: operational status and closeout loop | #220 | IN PROGRESS | HIGH | TBD | Progress/backlog/registry/wiki mirrors and closeout evidence contract | This slice |
 | SoM Slice 7: execution root and write-scope enforcement | #221 | IN PROGRESS | HIGH | TBD | Execution-scope checker, tests, and PR/slice scope artifacts | Part of #214 |
-| Local CI Gate enforcement remediation | #275 | IN PROGRESS | HIGH | 2-3 | Portable shim targeting, live enforcement proof, governance scope fix, evidence taxonomy, retrospective audit | Implementation branch active; repo-level hardgate wiring follow-up tracked by #277; consumer rollout frozen until P0 remediation lands |
+| Local CI Gate repo-level hardgate enforcement | #277 | IN PROGRESS | HIGH | 2-3 | GitHub Actions Local CI Gate check, workflow contract test, required-status evidence boundary, runbook/closeout updates | Planning branch active; do not claim protected-branch enforcement without ruleset or branch-protection evidence |
 | Stage 5+ som-worker launchd boot-start integration | #104 | PLANNED | MEDIUM | 2-3 | launchd plist, service docs | Gate: local-ai-machine #431, #432 adopt |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
@@ -52,6 +52,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Local CI Gate enforcement remediation | #275 | 2026-04-18 | PR #278 repaired portable shim targeting, live enforcement proof, governance scope fix, changed-file detection, evidence taxonomy, and retrospective audit. Repo-level hardgate wiring is tracked by #277. |
 | Local AI Machine Local CI Gate profile | #272 | 2026-04-18 | Added governance-owned `local-ai-machine` profile, focused changed-file scope tests, runbook catalog docs, and closeout. LAM shim rollout remains separate issue-backed work. |
 | Local CI Gate consumer rollout checklist | #270 | 2026-04-18 | PR #271 added the standard issue-backed consumer rollout sequence to the Local CI Gate toolkit runbook. |
 | Local CI Gate contract hardening | #265 | 2026-04-18 | Added profile dependency metadata, duplicate check-id validation, managed shim `HLDPRO_GOVERNANCE_ROOT` override, deployer/runner tests, runbook catalog, and closeout. |

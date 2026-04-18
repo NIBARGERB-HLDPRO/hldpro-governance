@@ -1,0 +1,176 @@
+{
+  "session_id": "session-20260418-issue-277-local-ci-hardgate-enforcement",
+  "issue_number": 277,
+  "objective": "Define and implement repo-level Local CI Gate hardgate wiring so the gate is required where claimed, not merely runnable.",
+  "tier": 2,
+  "scope_boundary": [
+    "Plan the enforcement surface before changing workflows, hooks, or ruleset documentation.",
+    "Treat CI as authoritative and keep Local CI Gate evidence subordinate to protected-branch checks.",
+    "Differentiate manual local invocation, pre-push hook enforcement, GitHub Actions enforcement, and branch-protection or ruleset-required enforcement.",
+    "Implement only governance-repo hardgate wiring in this issue; consumer repo rollout remains separate issue-backed work.",
+    "Require explicit proof before the closeout claims any enforcement state."
+  ],
+  "out_of_scope": [
+    "Installing or refreshing Local CI Gate shims in knocktracker, AIS, LAM, HealthcarePlatform, or ASC-Evaluator.",
+    "Changing consumer repo branch protection or local hooks.",
+    "Claiming protected-branch enforcement without GitHub ruleset or branch-protection evidence.",
+    "Using dry-run output as live enforcement proof.",
+    "Editing dirty shared checkouts outside this isolated governance worktree."
+  ],
+  "research_summary": "Issue #275 repaired portable shim behavior, runner invocation evidence, and active execution-scope handling, but intentionally left repo-level hardgate wiring to #277 because workflow and hook files were outside #275 scope. The next slice must add a required invocation path for hldpro-governance and record exactly which enforcement layer is live.",
+  "research_artifacts": [
+    "GitHub issue #277",
+    "GitHub issue #275",
+    "PR #278",
+    "docs/runbooks/local-ci-gate-toolkit.md",
+    "raw/closeouts/2026-04-18-local-ci-enforcement-remediation.md",
+    "tools/local-ci-gate/local_ci_gate.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    ".github/workflows/governance-check.yml",
+    "hooks/code-write-gate.sh"
+  ],
+  "sprints": [
+    {
+      "name": "Planning and Enforcement Decision",
+      "goal": "Land a trusted plan that defines which hardgate layer issue #277 will implement.",
+      "tasks": [
+        "Record the selected enforcement target for this repo: GitHub Actions Local CI Gate check first, with ruleset requirement evidence handled explicitly.",
+        "Declare the implementation write scope for workflow, validation script, runbook, status, closeout, and execution-scope artifacts.",
+        "Clarify that pre-push hooks are not the first #277 implementation target unless explicitly added by a later approved slice.",
+        "Update backlog and progress mirrors so #275 is closed and #277 is the active Local CI hardgate lane."
+      ],
+      "acceptance_criteria": [
+        "The planning PR contains only planning, scope, cross-review, and status artifacts.",
+        "Implementation branch is declared as feature/issue-277-local-ci-hardgate-enforcement.",
+        "The plan states which enforcement layer can be claimed after implementation and which layer remains external or follow-up.",
+        "Consumer rollout remains out of scope."
+      ],
+      "file_paths": [
+        "docs/plans/issue-277-structured-agent-cycle-plan.json",
+        "docs/plans/issue-277-local-ci-hardgate-enforcement-pdcar.md",
+        "raw/cross-review/2026-04-18-issue-277-local-ci-hardgate-enforcement-plan.md",
+        "raw/exceptions/2026-04-18-issue-277-same-family-implementation.md",
+        "raw/execution-scopes/2026-04-18-issue-277-local-ci-hardgate-enforcement-planning.json",
+        "raw/execution-scopes/2026-04-18-issue-277-local-ci-hardgate-enforcement-implementation.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "GitHub Actions Gate Wiring",
+      "goal": "Add a governance-repo GitHub Actions workflow that runs Local CI Gate as a PR check.",
+      "tasks": [
+        "Add a dedicated workflow for Local CI Gate on pull requests to main and pushes to main.",
+        "Run the live hldpro-governance profile, not dry-run mode.",
+        "Use full git history (`fetch-depth: 0`) or an explicit changed-files file so the profile's `origin/main...HEAD` resolution is reliable.",
+        "Upload or expose local report evidence without committing per-run report artifacts.",
+        "Add a workflow contract test that fails if the workflow drifts to dry-run-only, loses PR coverage, uses shallow checkout without explicit changed files, or stops invoking the hldpro-governance profile.",
+        "Wire the workflow contract test into an existing independent CI-visible workflow so the Local CI Gate workflow cannot silently remove both the live invocation and its own contract check.",
+        "Ensure workflow failure blocks the workflow job when Local CI Gate returns a blocker exit."
+      ],
+      "acceptance_criteria": [
+        "A PR touching Local CI Gate surfaces shows a Local CI Gate status check.",
+        "The workflow invokes `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance` without `--dry-run`.",
+        "The workflow uses full checkout history or passes an explicit changed-files file.",
+        "The workflow contract test passes locally and in CI.",
+        "An independent existing PR check runs the workflow contract test.",
+        "The closeout records exact GitHub check names and links."
+      ],
+      "file_paths": [
+        ".github/workflows/local-ci-gate.yml",
+        ".github/workflows/graphify-governance-contract.yml",
+        "scripts/overlord/check_local_ci_gate_workflow_contract.py",
+        "scripts/overlord/test_local_ci_gate_workflow_contract.py",
+        "docs/runbooks/local-ci-gate-toolkit.md",
+        "docs/PROGRESS.md",
+        "raw/closeouts/2026-04-18-local-ci-hardgate-enforcement.md"
+      ]
+    },
+    {
+      "name": "Required-Status Evidence Boundary",
+      "goal": "Record whether the new GitHub Actions gate is required by branch protection or rulesets.",
+      "tasks": [
+        "Inspect current hldpro-governance branch protection and org/repo rulesets for required status checks.",
+        "If Local CI Gate can be made required through available GitHub API permissions, update the canonical required-check and ruleset records alongside the exact ruleset/protection change and backup evidence.",
+        "If external configuration cannot be changed safely in this slice, document the limitation and leave the workflow check as CI-visible but not protected-branch-required; keep issue #277 open.",
+        "Update the runbook taxonomy so future operators do not confuse a visible PR check with a branch-protection-required check."
+      ],
+      "acceptance_criteria": [
+        "Closeout states one of: CI-visible workflow check only, or branch-protection/ruleset-required check with evidence.",
+        "Any external ruleset change is backed by a captured before/after artifact or API output summary.",
+        "Any external ruleset change updates `GITHUB_ENTERPRISE_REQUIRED_CHECK_BASELINE.md`, `GITHUB_ENTERPRISE_RULESET_RECOMMENDATIONS.md`, and the exception register if applicable.",
+        "No claim of protected-branch enforcement is made without evidence.",
+        "Issue #277 remains open if protected-branch enforcement is not completed."
+      ],
+      "file_paths": [
+        "GITHUB_ENTERPRISE_EXCEPTION_REGISTER.md",
+        "GITHUB_ENTERPRISE_REQUIRED_CHECK_BASELINE.md",
+        "GITHUB_ENTERPRISE_RULESET_RECOMMENDATIONS.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "docs/runbooks/local-ci-gate-toolkit.md",
+        "raw/closeouts/2026-04-18-local-ci-hardgate-enforcement.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Turing",
+      "role": "independent implementation reviewer for #275",
+      "focus": "Verified that #275 repaired shim portability, active execution-scope selection, changed-file detection, invocation metadata, and boundary language.",
+      "status": "accepted",
+      "summary": "No #275 merge blockers remained; #277 is the intentionally separated hardgate-wiring follow-up.",
+      "evidence": [
+        "PR #278 independent review",
+        "raw/closeouts/2026-04-18-local-ci-enforcement-remediation.md"
+      ]
+    },
+    {
+      "reviewer": "Nietzsche",
+      "role": "QA evidence reviewer for #275",
+      "focus": "Checked that #275 acceptance evidence was sufficient and that CI/hook hardgate claims were not overstated.",
+      "status": "accepted",
+      "summary": "Accepted #275 evidence with the caveat that dirty forbidden roots kept local scope assertion blocked. Confirmed #277 tracks the remaining hardgate layer.",
+      "evidence": [
+        "PR #278 QA review",
+        "GitHub issue #277"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "operator-approved-follow-up",
+    "model_family": "human",
+    "status": "accepted_with_followup",
+    "summary": "Operator approved moving from #275 remediation to the #277 hardgate planning lane after PR #278 merge.",
+    "evidence": [
+      "User instruction: go",
+      "GitHub issue #277",
+      "PR #278 merged"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "After planning PR merge, issue #277 may add governance-repo Local CI Gate workflow wiring, workflow contract validation, runbook/status updates, and closeout evidence. Consumer repo rollout remains out of scope.",
+    "next_execution_step": "Merge the planning/scope PR, then implement on branch feature/issue-277-local-ci-hardgate-enforcement.",
+    "blocked_on": [
+      "planning PR merged so implementation scope is trusted from main",
+      "independent review of the hardgate enforcement plan"
+    ]
+  },
+  "material_deviation_rules": [
+    "If implementation needs consumer repo changes, stop and create the consumer issue first.",
+    "If protected-branch enforcement requires external ruleset changes that cannot be safely verified, document the limitation, keep issue #277 open, and do not claim protected enforcement.",
+    "If the Local CI workflow is only visible but not required, call it CI-visible, not branch-protection-required.",
+    "If local scope assertion fails because forbidden roots are dirty, record it as locally blocked and do not treat it as passing.",
+    "If the workflow must run dry-run only for stability, stop and revise acceptance criteria before merge."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #277",
+    "PR #278 closeout",
+    "operator instruction: go"
+  ],
+  "approved_at": "2026-04-18T14:20:00Z"
+}

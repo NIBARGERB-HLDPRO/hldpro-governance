@@ -1,0 +1,45 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "feature/issue-277-local-ci-hardgate-enforcement",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    ".github/workflows/local-ci-gate.yml",
+    ".github/workflows/graphify-governance-contract.yml",
+    "GITHUB_ENTERPRISE_EXCEPTION_REGISTER.md",
+    "GITHUB_ENTERPRISE_REQUIRED_CHECK_BASELINE.md",
+    "GITHUB_ENTERPRISE_RULESET_RECOMMENDATIONS.md",
+    "OVERLORD_BACKLOG.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/PROGRESS.md",
+    "docs/runbooks/local-ci-gate-toolkit.md",
+    "raw/closeouts/2026-04-18-local-ci-hardgate-enforcement.md",
+    "raw/execution-scopes/2026-04-18-issue-277-local-ci-hardgate-enforcement-implementation.json",
+    "scripts/overlord/check_local_ci_gate_workflow_contract.py",
+    "scripts/overlord/test_local_ci_gate_workflow_contract.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "reviewer_model": "subagents-turing-nietzsche",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-18T14:20:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-277-structured-agent-cycle-plan.json",
+      "docs/plans/issue-277-local-ci-hardgate-enforcement-pdcar.md",
+      "raw/cross-review/2026-04-18-issue-277-local-ci-hardgate-enforcement-plan.md",
+      "GitHub issue #277",
+      "PR #278",
+      "Subagent review Turing",
+      "Subagent review Nietzsche",
+      "raw/exceptions/2026-04-18-issue-277-same-family-implementation.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-18-issue-277-same-family-implementation.md#exception",
+    "active_exception_expires_at": "2026-04-19T14:20:00Z"
+  }
+}
