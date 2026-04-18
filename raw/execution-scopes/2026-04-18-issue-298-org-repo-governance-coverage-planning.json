@@ -1,0 +1,56 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-298-org-repo-governance-coverage-20260418",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "docs/plans/issue-298-structured-agent-cycle-plan.json",
+    "docs/plans/issue-298-org-repo-governance-coverage-pdcar.md",
+    "raw/execution-scopes/2026-04-18-issue-298-org-repo-governance-coverage-planning.json",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout has pre-existing unrelated issue #253 local CI gate files and must not be edited by issue #298."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Issue #298 may inspect seek-and-ponder for planning context, but downstream edits require a separate repo-local issue and execution scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+      "reason": "Issue #298 may classify EmailAssistant, but this planning slice must not create or edit a downstream checkout."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Existing governed repo remains out of scope for this planning slice except as registry comparison context."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Existing governed repo remains out of scope for this planning slice except as registry comparison context."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Existing governed repo remains out of scope for this planning slice except as registry comparison context."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Existing governed repo remains out of scope for this planning slice except as registry comparison context."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Existing governed repo remains out of scope for this planning slice except as registry comparison context."
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "session_id": "session-20260418-issue-298-org-repo-governance-coverage",
+  "issue_number": 298,
+  "objective": "Plan the org-wide active repository governance coverage epic so every active NIBARGERB-HLDPRO repository is represented in governance, explicitly classified, and covered by an end-to-end validation gate before closeout.",
+  "tier": 1,
+  "scope_boundary": [
+    "Create the issue-backed planning package for epic #298 before implementation starts.",
+    "Define the canonical policy that active org repos must be present in the governed repository registry even when exempt or limited-scope.",
+    "Define acceptance criteria for registry expansion, live org drift detection, seek-and-ponder intake, EmailAssistant discovery, dependent surface reconciliation, and final e2e proof.",
+    "Keep this slice planning-only except for status mirror updates in governance.",
+    "Do not edit downstream repositories from this planning slice."
+  ],
+  "out_of_scope": [
+    "Editing seek-and-ponder, EmailAssistant, or any other downstream repo in this slice.",
+    "Adding implementation code for drift detection in this planning package.",
+    "Changing STANDARDS.md tier semantics before alternate-family review and implementation scope are accepted.",
+    "Claiming governance coverage complete before live org inventory e2e proof exists.",
+    "Closing epic #298 from this planning package."
+  ],
+  "research_summary": "Live GitHub org inventory on 2026-04-18 returned eight active repos: hldpro-governance, ai-integration-services, HealthcarePlatform, knocktracker, ASC-Evaluator, local-ai-machine, seek-and-ponder, and EmailAssistant. Current governance registry, standards, README, graphify targets, and sweep surfaces cover only six canonical repos. seek-and-ponder already has local governance-front-door files and core docs, while EmailAssistant is visible in GitHub but not present as a local checkout under ~/Developer/HLDPRO. The durable fix is to make registry presence mandatory for every active org repo and treat exemption as an explicit classification rather than absence.",
+  "research_artifacts": [
+    "GitHub issue #298",
+    "gh repo list NIBARGERB-HLDPRO --limit 200 --json name,isPrivate,isArchived,defaultBranchRef,description,url,pushedAt,repositoryTopics",
+    "docs/governed_repos.json",
+    "docs/schemas/governed-repos.schema.json",
+    "docs/graphify_targets.json",
+    "STANDARDS.md",
+    "README.md",
+    "OVERLORD_BACKLOG.md",
+    "../seek-and-ponder/CLAUDE.md",
+    "../seek-and-ponder/AGENTS.md"
+  ],
+  "sprints": [
+    {
+      "name": "Epic Planning And Policy",
+      "goal": "Create the canonical issue-backed plan and acceptance criteria for org-wide active repo governance coverage.",
+      "tasks": [
+        "Create GitHub epic #298 before local planning artifacts.",
+        "Record the policy that all active org repos must be present in docs/governed_repos.json.",
+        "Define tier options for full, standard, infra/runtime, knowledge, archived, and exempt repositories.",
+        "Add planning artifacts and status mirror rows.",
+        "Validate the planning package locally."
+      ],
+      "acceptance_criteria": [
+        "GitHub issue #298 exists and is labeled as an epic governance issue.",
+        "Structured plan and PDCA/R companion cite #298.",
+        "Acceptance criteria include live org inventory, registry coverage, intake, dependent surface reconciliation, and final e2e testing.",
+        "Planning scope forbids downstream repo edits.",
+        "Backlog and progress mirrors reference #298 while active."
+      ],
+      "file_paths": [
+        "docs/plans/issue-298-structured-agent-cycle-plan.json",
+        "docs/plans/issue-298-org-repo-governance-coverage-pdcar.md",
+        "raw/execution-scopes/2026-04-18-issue-298-org-repo-governance-coverage-planning.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Org Inventory Drift Detector",
+      "goal": "Make live GitHub org inventory drift mechanically visible against the governed repository registry.",
+      "tasks": [
+        "Add a validator that compares active non-archived NIBARGERB-HLDPRO repos with docs/governed_repos.json.",
+        "Extend the governed repo registry schema and validator so lifecycle and exemption classifications are machine-checkable.",
+        "Fail or warn when an active repo is absent from the registry.",
+        "Fail or warn when a registry entry points to a missing or archived repo without an accepted exemption.",
+        "Add tests for missing active repo, archived repo, and exact-match cases.",
+        "Wire the detector into weekly sweep first, then make CI enforcement explicit once current known gaps are closed."
+      ],
+      "acceptance_criteria": [
+        "Live org inventory can be captured with repo name, archived state, default branch, privacy, URL, and pushedAt.",
+        "Registry schema can represent active, archived, exempt, limited-scope, and adoption-blocked states without relying on prose-only notes.",
+        "Exempt or adoption-blocked entries require owner, rationale, review date, and issue-backed deferral evidence.",
+        "Known active repo omissions are reported deterministically.",
+        "Archived and intentionally exempt repos are classified, not silently ignored.",
+        "Weekly sweep surfaces drift with enough detail to open issue-backed intake work.",
+        "CI or Local CI has a stable offline fixture path for tests."
+      ],
+      "file_paths": [
+        "scripts/overlord/",
+        "scripts/overlord/test_*",
+        ".github/workflows/overlord-sweep.yml",
+        "docs/governed_repos.json",
+        "docs/schemas/governed-repos.schema.json"
+      ]
+    },
+    {
+      "name": "seek-and-ponder Intake",
+      "goal": "Classify seek-and-ponder and add it to governance coverage without changing product behavior.",
+      "tasks": [
+        "Classify seek-and-ponder governance and security tiers.",
+        "Add seek-and-ponder to docs/governed_repos.json with explicit subsystem flags.",
+        "Reconcile graphify target, wiki path, project path, compendium, raw feed, metrics, Codex ingestion, and memory integrity expectations.",
+        "Verify existing CLAUDE.md, AGENTS.md, CODEX.md, PROGRESS, FAIL_FAST_LOG, FEATURE_REGISTRY, DATA_DICTIONARY, and SERVICE_REGISTRY against the shared contract.",
+        "Create downstream issue(s) before any seek-and-ponder repo edits are needed."
+      ],
+      "acceptance_criteria": [
+        "seek-and-ponder is present in docs/governed_repos.json with governance tier, security tier, GitHub repo, local path, graph output path, wiki path, project path, and subsystem flags.",
+        "seek-and-ponder is represented in README/STANDARDS governed repo surfaces or those surfaces are generated/validated from the registry.",
+        "seek-and-ponder graphify and wiki coverage is either produced or explicitly deferred with an issue-backed reason.",
+        "Baseline security and governance doc checks are run against seek-and-ponder.",
+        "No downstream seek-and-ponder edits happen without a downstream issue and execution scope."
+      ],
+      "file_paths": [
+        "docs/governed_repos.json",
+        "docs/graphify_targets.json",
+        "README.md",
+        "STANDARDS.md",
+        "wiki/index.md",
+        "graphify-out/seek-and-ponder/"
+      ]
+    },
+    {
+      "name": "EmailAssistant Discovery And Classification",
+      "goal": "Inspect EmailAssistant and decide its governance tier before adoption work starts.",
+      "tasks": [
+        "Clone or inspect EmailAssistant default branch in an isolated worktree.",
+        "Identify stack, data sensitivity, repo activity, CI state, and existing governance docs.",
+        "Classify governance and security tiers.",
+        "Create a downstream adoption issue if repo-local governance files or CI need changes.",
+        "Add registry coverage once classification is accepted."
+      ],
+      "acceptance_criteria": [
+        "EmailAssistant is no longer absent from governance by accident.",
+        "EmailAssistant is either added to docs/governed_repos.json or has an issue-backed classification blocker with owner, rationale, and next step.",
+        "Municipal/email data sensitivity is considered before security tier selection.",
+        "Any missing local checkout or authentication blocker is captured as evidence, not treated as exemption.",
+        "No EmailAssistant edits happen without a downstream issue and execution scope."
+      ],
+      "file_paths": [
+        "docs/governed_repos.json",
+        "docs/plans/",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Registry-Driven Surface Reconciliation",
+      "goal": "Remove or guard hardcoded repo lists so future active org repos cannot silently fall out of governance coverage.",
+      "tasks": [
+        "Reconcile README and STANDARDS governed repo tables with docs/governed_repos.json.",
+        "Reconcile docs/graphify_targets.json with registry graphify-enabled repos or document a generated path.",
+        "Reconcile overlord-sweep, overlord-nightly-cleanup, raw-feed-sync, metrics, compendium, and memory-integrity consumers with registry-driven repo selection.",
+        "Reconcile org ruleset, branch protection, default branch, and required-check expectations for newly included active repos.",
+        "Add tests that catch registry/graphify/sweep selection drift.",
+        "Document accepted exceptions where workflow checkout mechanics still require explicit entries."
+      ],
+      "acceptance_criteria": [
+        "Every duplicate repo list is either generated from the registry, validated against it, or documented as an intentional workflow limitation.",
+        "Graphify target reconciliation passes for all graphify-enabled repos.",
+        "Sweep, metrics, compendium, and raw-feed repo selection are tested against the expanded registry.",
+        "Newly included active repos have branch protection, default branch, org ruleset applicability, and required-check coverage validated or explicitly deferred by issue.",
+        "README and STANDARDS cannot drift silently from the registry.",
+        "Any deferred hardcoded surface has an issue-backed follow-up."
+      ],
+      "file_paths": [
+        "README.md",
+        "STANDARDS.md",
+        "docs/governed_repos.json",
+        "docs/graphify_targets.json",
+        ".github/workflows/overlord-sweep.yml",
+        ".github/workflows/overlord-nightly-cleanup.yml",
+        ".github/workflows/raw-feed-sync.yml",
+        "scripts/overlord/",
+        "scripts/knowledge_base/"
+      ]
+    },
+    {
+      "name": "Final E2E Governance Coverage Gate",
+      "goal": "Make e2e testing the final acceptance criterion before epic #298 can close.",
+      "tasks": [
+        "Run live GitHub org inventory drift detection against docs/governed_repos.json.",
+        "Run governed repo registry schema validation.",
+        "Run graphify target reconciliation.",
+        "Run registry-backed sweep or a faithful local sweep selection simulation.",
+        "Run compendium/metrics/raw-feed selection tests for the expanded repo set.",
+        "Run the final e2e command matrix and attach exact output to the closeout.",
+        "Run baseline governance checks against newly included repos or record accepted deferrals.",
+        "Create closeout evidence and attach links/results to #298."
+      ],
+      "acceptance_criteria": [
+        "Final AC: live GitHub org inventory and docs/governed_repos.json agree on every active repo or list explicit accepted classifications.",
+        "Final AC: docs/governed_repos.json validates against docs/schemas/governed-repos.schema.json.",
+        "Final AC: lifecycle/exemption/adoption-blocked classifications are schema-valid and include owner, rationale, review date, and issue evidence when required.",
+        "Final AC: graphify target reconciliation passes for all graphify-enabled repos.",
+        "Final AC: sweep, metrics, compendium, raw-feed, memory-integrity, and Codex-ingestion selection paths are registry-driven or have documented accepted exceptions.",
+        "Final AC: branch protection, default branch, org ruleset applicability, and required checks are validated for every newly included active repo or deferred by linked issue.",
+        "Final AC: a named command matrix covers live org inventory, registry/schema validation, graphify reconciliation, sweep selection, compendium generation/check, raw-feed selection, memory integrity selection, Codex-ingestion selection, required-check/ruleset validation, and baseline governance checks for new repos.",
+        "Final AC: seek-and-ponder governance baseline passes or has issue-backed deferrals.",
+        "Final AC: EmailAssistant classification is complete and adoption blockers are issue-backed.",
+        "Final AC: final closeout cites e2e command output, GitHub issue links, and any remaining accepted deferrals."
+      ],
+      "file_paths": [
+        "raw/closeouts/",
+        "metrics/",
+        "wiki/index.md",
+        "docs/governed_repos.json",
+        "docs/graphify_targets.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex registry planning review",
+      "role": "governance-registry-planner",
+      "focus": "Ensure the epic handles active org repo coverage as a registry policy problem rather than a one-off seek-and-ponder patch.",
+      "status": "accepted_with_followup",
+      "summary": "The plan should make registry presence mandatory for active org repos, classify exemption explicitly, and require final live inventory e2e proof before closure. Follow-up implementation must still obtain any required alternate-family review for standards changes.",
+      "evidence": [
+        "GitHub issue #298",
+        "gh repo list NIBARGERB-HLDPRO output from 2026-04-18",
+        "docs/governed_repos.json",
+        "docs/graphify_targets.json"
+      ]
+    },
+    {
+      "reviewer": "Zeno",
+      "role": "planning-package-reviewer",
+      "focus": "Repo-rule compliance, truthful alternate-review state, schema-enforced classification, branch/ruleset ACs, and final e2e command matrix.",
+      "status": "accepted_with_followup",
+      "summary": "Flagged that the first draft overstated alternate-family review acceptance and lacked explicit machine-checkable classification, branch/ruleset/required-check ACs, and a concrete final e2e command matrix. This revision incorporates those corrections and leaves true alternate-family review as a future implementation/standards gate.",
+      "evidence": [
+        "Subagent notification 019da2d8-0e1f-7ec0-948f-2947890ce4df",
+        "docs/plans/issue-298-structured-agent-cycle-plan.json",
+        "docs/plans/issue-298-org-repo-governance-coverage-pdcar.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "pending alternate-family standards reviewer",
+    "model_family": "anthropic-or-other-non-openai",
+    "status": "unavailable",
+    "summary": "No true alternate-family review is claimed for this planning package. Implementation PRs that change standards, registry enforcement, schema semantics, or org-wide workflow behavior must carry the required cross-family review artifact before merge.",
+    "evidence": [
+      "Operator instruction on 2026-04-18 to proceed through PDCA/R, GitHub epic, ACs, and e2e final AC",
+      "GitHub issue #298",
+      "Planning-only scope boundary in this structured plan",
+      "Zeno subagent finding that alternate-review acceptance must remain truthful until real evidence exists"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #298 may add this planning package, execution-scope artifact, and governance status mirror rows only. This readiness authorizes child issue planning, not registry/workflow/downstream implementation.",
+    "next_execution_step": "Review and merge this planning package, then open child issue-backed implementation slices for drift detection, seek-and-ponder intake, EmailAssistant discovery, registry-driven workflow reconciliation, and final e2e closeout.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If another active org repo appears during live inventory, add it to #298 scope before closeout or create an issue-backed classification follow-up.",
+    "If seek-and-ponder requires product-repo edits, stop and create a downstream issue and execution scope before writing there.",
+    "If EmailAssistant cannot be inspected, record the authentication or checkout blocker and keep #298 open.",
+    "If a workflow cannot be registry-driven because of GitHub Actions checkout constraints, document the exception and add a validator that catches drift.",
+    "If registry classification remains prose-only, do not claim the active-repo coverage policy is enforceable.",
+    "If branch protection, default branch, ruleset, or required-check coverage is skipped for newly included repos, record a linked deferral before closeout.",
+    "If no final e2e command matrix exists, do not close #298.",
+    "If final e2e live inventory proof is skipped, do not mark #298 done.",
+    "If standards semantics change, require cross-family review before merge."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #298",
+    "operator instruction: follow repo rules and loop through pdcar, gh epic, ACs, e2e testing as final AC"
+  ],
+  "approved_at": "2026-04-18T23:20:00Z"
+}
