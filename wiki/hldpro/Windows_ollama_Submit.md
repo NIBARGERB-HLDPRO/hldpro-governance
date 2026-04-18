@@ -1,35 +1,35 @@
 # Windows ollama Submit
 
-> 99 nodes · cohesion 0.06
+> 40 nodes · cohesion 0.07
 
 ## Key Concepts
 
-- **WindowsOllamaSubmitter** (48 connections) — `hldpro-governance/scripts/windows-ollama/submit.py`
-- **EndpointUnreachableError** (44 connections) — `hldpro-governance/scripts/windows-ollama/submit.py`
-- **ModelNotAllowedError** (44 connections) — `hldpro-governance/scripts/windows-ollama/submit.py`
-- **PiiDetectionError** (44 connections) — `hldpro-governance/scripts/windows-ollama/submit.py`
-- **AuditWriter** (28 connections) — `hldpro-governance/scripts/windows-ollama/audit.py`
-- **test_submit.py** (11 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **TestAuditIntegration** (11 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **TestPiiDetection** (10 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **.submit()** (9 connections) — `hldpro-governance/scripts/windows-ollama/submit.py`
-- **TestEndpointReachability** (9 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **TestErrorStructure** (9 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **submit.py** (8 connections) — `hldpro-governance/scripts/windows-ollama/submit.py`
-- **TestEmptyRationale** (8 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **TestMalformedResponse** (8 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **TestModelAllowlist** (8 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **audit.py** (7 connections) — `hldpro-governance/scripts/windows-ollama/audit.py`
-- **Test that clean prompt passes PII detection.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Negative test: non-allowlisted model.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Test that non-allowlisted model is rejected.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Test that allowlisted model passes allowlist check.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Negative test: unreachable endpoint.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Test that unreachable endpoint raises appropriate error.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Test that endpoint timeout is handled.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Test that reachable endpoint succeeds.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- **Negative test: malformed /api/generate response.** (5 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
-- *... and 74 more nodes in this community*
+- **WindowsOllamaSubmitter** (10 connections) — `scripts/windows-ollama/submit.py`
+- **.submit()** (9 connections) — `scripts/windows-ollama/submit.py`
+- **submit.py** (8 connections) — `scripts/windows-ollama/submit.py`
+- **EndpointUnreachableError** (6 connections) — `scripts/windows-ollama/submit.py`
+- **ModelNotAllowedError** (6 connections) — `scripts/windows-ollama/submit.py`
+- **PiiDetectionError** (6 connections) — `scripts/windows-ollama/submit.py`
+- **_pii.py** (4 connections) — `scripts/windows-ollama/_pii.py`
+- **main()** (4 connections) — `scripts/windows-ollama/submit.py`
+- **.__init__()** (4 connections) — `scripts/windows-ollama/submit.py`
+- **Exception** (3 connections)
+- **detect_pii()** (3 connections) — `scripts/windows-ollama/_pii.py`
+- **.__init__()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **.to_dict()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **.check_allowlist()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **.detect_pii()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **._load_allowlist()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **._load_pii_patterns()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **._post_generate()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **_iter_patterns()** (2 connections) — `scripts/windows-ollama/_pii.py`
+- **load_pii_patterns()** (2 connections) — `scripts/windows-ollama/_pii.py`
+- **.__init__()** (2 connections) — `scripts/windows-ollama/submit.py`
+- **.to_dict()** (2 connections) — `scripts/windows-ollama/submit.py`
+- **.__init__()** (2 connections) — `scripts/windows-ollama/submit.py`
+- **.to_dict()** (2 connections) — `scripts/windows-ollama/submit.py`
+- **Load and validate pii patterns from pii_patterns.yml.** (1 connections) — `scripts/windows-ollama/_pii.py`
+- *... and 15 more nodes in this community*
 
 ## Relationships
 
@@ -37,14 +37,13 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/windows-ollama/audit.py`
-- `hldpro-governance/scripts/windows-ollama/submit.py`
-- `hldpro-governance/scripts/windows-ollama/tests/test_submit.py`
+- `scripts/windows-ollama/_pii.py`
+- `scripts/windows-ollama/submit.py`
 
 ## Audit Trail
 
-- EXTRACTED: 212 (37%)
-- INFERRED: 358 (63%)
+- EXTRACTED: 84 (75%)
+- INFERRED: 28 (25%)
 - AMBIGUOUS: 0 (0%)
 
 ---

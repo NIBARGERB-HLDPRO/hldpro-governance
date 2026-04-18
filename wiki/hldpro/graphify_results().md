@@ -1,6 +1,6 @@
 # graphify_results()
 
-> God node · 13 connections · `hldpro-governance/scripts/knowledge_base/measure_graphify_usage.py`
+> God node · 13 connections · `scripts/knowledge_base/measure_graphify_usage.py`
 
 ## Connections by Relation
 

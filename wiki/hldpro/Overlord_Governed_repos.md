@@ -4,15 +4,15 @@
 
 ## Key Concepts
 
-- **governed_repos.py** (7 connections) — `hldpro-governance/scripts/overlord/governed_repos.py`
-- **governed_repos()** (4 connections) — `hldpro-governance/scripts/overlord/governed_repos.py`
-- **repos_enabled_for()** (4 connections) — `hldpro-governance/scripts/overlord/governed_repos.py`
-- **GovernedRepo** (3 connections) — `hldpro-governance/scripts/overlord/governed_repos.py`
-- **load_registry()** (3 connections) — `hldpro-governance/scripts/overlord/governed_repos.py`
-- **repos_root()** (3 connections) — `hldpro-governance/scripts/overlord/governed_repos.py`
-- **_expand_home()** (2 connections) — `hldpro-governance/scripts/overlord/governed_repos.py`
-- **.enabled()** (2 connections) — `hldpro-governance/scripts/overlord/governed_repos.py`
-- **repo_names_enabled_for()** (2 connections) — `hldpro-governance/scripts/overlord/governed_repos.py`
+- **governed_repos.py** (7 connections) — `scripts/overlord/governed_repos.py`
+- **governed_repos()** (4 connections) — `scripts/overlord/governed_repos.py`
+- **repos_enabled_for()** (4 connections) — `scripts/overlord/governed_repos.py`
+- **GovernedRepo** (3 connections) — `scripts/overlord/governed_repos.py`
+- **load_registry()** (3 connections) — `scripts/overlord/governed_repos.py`
+- **repos_root()** (3 connections) — `scripts/overlord/governed_repos.py`
+- **_expand_home()** (2 connections) — `scripts/overlord/governed_repos.py`
+- **.enabled()** (2 connections) — `scripts/overlord/governed_repos.py`
+- **repo_names_enabled_for()** (2 connections) — `scripts/overlord/governed_repos.py`
 
 ## Relationships
 
@@ -20,7 +20,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/overlord/governed_repos.py`
+- `scripts/overlord/governed_repos.py`
 
 ## Audit Trail
 

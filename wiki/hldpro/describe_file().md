@@ -1,6 +1,6 @@
 # describe_file()
 
-> God node · 14 connections · `hldpro-governance/scripts/overlord/build_org_governance_compendium.py`
+> God node · 14 connections · `scripts/overlord/build_org_governance_compendium.py`
 
 ## Connections by Relation
 

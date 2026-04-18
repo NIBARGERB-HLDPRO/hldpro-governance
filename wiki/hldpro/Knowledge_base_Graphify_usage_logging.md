@@ -4,15 +4,15 @@
 
 ## Key Concepts
 
-- **test_graphify_usage_logging_contract.py** (8 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_usage_logging_contract.py`
-- **check()** (6 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_usage_logging_contract.py`
-- **main()** (6 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_usage_logging_contract.py`
-- **run_command()** (5 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_usage_logging_contract.py`
-- **test_logger_backwards_compatible()** (4 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_usage_logging_contract.py`
-- **test_logger_query_trace_fields()** (4 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_usage_logging_contract.py`
-- **test_measurement_falls_back_from_stale_governance_repo_path()** (4 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_usage_logging_contract.py`
-- **test_measurement_outputs_query_traces()** (4 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_usage_logging_contract.py`
-- **test_schema_shape()** (3 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_usage_logging_contract.py`
+- **test_graphify_usage_logging_contract.py** (8 connections) — `scripts/knowledge_base/test_graphify_usage_logging_contract.py`
+- **check()** (6 connections) — `scripts/knowledge_base/test_graphify_usage_logging_contract.py`
+- **main()** (6 connections) — `scripts/knowledge_base/test_graphify_usage_logging_contract.py`
+- **run_command()** (5 connections) — `scripts/knowledge_base/test_graphify_usage_logging_contract.py`
+- **test_logger_backwards_compatible()** (4 connections) — `scripts/knowledge_base/test_graphify_usage_logging_contract.py`
+- **test_logger_query_trace_fields()** (4 connections) — `scripts/knowledge_base/test_graphify_usage_logging_contract.py`
+- **test_measurement_falls_back_from_stale_governance_repo_path()** (4 connections) — `scripts/knowledge_base/test_graphify_usage_logging_contract.py`
+- **test_measurement_outputs_query_traces()** (4 connections) — `scripts/knowledge_base/test_graphify_usage_logging_contract.py`
+- **test_schema_shape()** (3 connections) — `scripts/knowledge_base/test_graphify_usage_logging_contract.py`
 
 ## Relationships
 
@@ -20,7 +20,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/knowledge_base/test_graphify_usage_logging_contract.py`
+- `scripts/knowledge_base/test_graphify_usage_logging_contract.py`
 
 ## Audit Trail
 

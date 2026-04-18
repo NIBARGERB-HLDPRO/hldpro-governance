@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **render_github_issue_feed.py** (2 connections) — `hldpro-governance/scripts/overlord/render_github_issue_feed.py`
-- **main()** (2 connections) — `hldpro-governance/scripts/overlord/render_github_issue_feed.py`
-- **render_issue()** (2 connections) — `hldpro-governance/scripts/overlord/render_github_issue_feed.py`
+- **render_github_issue_feed.py** (2 connections) — `scripts/overlord/render_github_issue_feed.py`
+- **main()** (2 connections) — `scripts/overlord/render_github_issue_feed.py`
+- **render_issue()** (2 connections) — `scripts/overlord/render_github_issue_feed.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/overlord/render_github_issue_feed.py`
+- `scripts/overlord/render_github_issue_feed.py`
 
 ## Audit Trail
 

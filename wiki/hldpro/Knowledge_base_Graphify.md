@@ -1,21 +1,35 @@
 # Knowledge base Graphify
 
-> 12 nodes · cohesion 0.26
+> 32 nodes · cohesion 0.13
 
 ## Key Concepts
 
-- **TestGraphifyHookHelper** (11 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- **.args()** (6 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- **test_graphify_hook_helper.py** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- **.setUp()** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- **.test_accepts_explicit_knocktracker_slug()** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- **.test_dry_run_payload_includes_command_and_hook_targets()** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- **.test_infers_repo_slug_and_resolves_manifest_paths_from_governance_root()** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- **.test_install_backs_up_unmanaged_hook_and_writes_managed_body()** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- **.test_install_refuses_unmanaged_existing_hooks()** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- **.write_manifest()** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- **.tearDown()** (1 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- **.test_unsafe_product_repo_output_aborts_before_builder_call()** (1 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
+- **graphify_hook_helper.py** (19 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **TestGraphifyHookHelper** (11 connections) — `scripts/knowledge_base/test_graphify_hook_helper.py`
+- **HelperError** (10 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **build_plan()** (9 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **main()** (9 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **.args()** (6 connections) — `scripts/knowledge_base/test_graphify_hook_helper.py`
+- **preflight_safe_output()** (5 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **execute_refresh()** (4 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **install_hooks()** (4 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **build_refresh_command()** (3 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **find_target()** (3 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **git_hook_paths()** (3 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **HookPlan** (3 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **infer_repo_slug()** (3 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **load_manifest()** (3 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **resolve_under()** (3 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **target_rows()** (3 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **add_common_args()** (2 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **.to_json()** (2 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **is_relative_to()** (2 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **managed_hook_body()** (2 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **print_json()** (2 connections) — `scripts/knowledge_base/graphify_hook_helper.py`
+- **test_graphify_hook_helper.py** (2 connections) — `scripts/knowledge_base/test_graphify_hook_helper.py`
+- **.setUp()** (2 connections) — `scripts/knowledge_base/test_graphify_hook_helper.py`
+- **.test_accepts_explicit_knocktracker_slug()** (2 connections) — `scripts/knowledge_base/test_graphify_hook_helper.py`
+- *... and 7 more nodes in this community*
 
 ## Relationships
 
@@ -23,12 +37,13 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
+- `scripts/knowledge_base/graphify_hook_helper.py`
+- `scripts/knowledge_base/test_graphify_hook_helper.py`
 
 ## Audit Trail
 
-- EXTRACTED: 23 (66%)
-- INFERRED: 12 (34%)
+- EXTRACTED: 63 (49%)
+- INFERRED: 66 (51%)
 - AMBIGUOUS: 0 (0%)
 
 ---

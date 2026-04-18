@@ -4,15 +4,15 @@
 
 ## Key Concepts
 
-- **memory_integrity.py** (8 connections) — `hldpro-governance/scripts/overlord/memory_integrity.py`
-- **inspect_repo()** (7 connections) — `hldpro-governance/scripts/overlord/memory_integrity.py`
-- **check_memory_exists()** (3 connections) — `hldpro-governance/scripts/overlord/memory_integrity.py`
-- **memory_dir_for_repo()** (3 connections) — `hldpro-governance/scripts/overlord/memory_integrity.py`
-- **load_memory_lines()** (2 connections) — `hldpro-governance/scripts/overlord/memory_integrity.py`
-- **main()** (2 connections) — `hldpro-governance/scripts/overlord/memory_integrity.py`
-- **parse_pointer_filenames()** (2 connections) — `hldpro-governance/scripts/overlord/memory_integrity.py`
-- **validate_frontmatter()** (2 connections) — `hldpro-governance/scripts/overlord/memory_integrity.py`
-- **fail()** (1 connections) — `hldpro-governance/scripts/overlord/memory_integrity.py`
+- **memory_integrity.py** (8 connections) — `scripts/overlord/memory_integrity.py`
+- **inspect_repo()** (7 connections) — `scripts/overlord/memory_integrity.py`
+- **check_memory_exists()** (3 connections) — `scripts/overlord/memory_integrity.py`
+- **memory_dir_for_repo()** (3 connections) — `scripts/overlord/memory_integrity.py`
+- **load_memory_lines()** (2 connections) — `scripts/overlord/memory_integrity.py`
+- **main()** (2 connections) — `scripts/overlord/memory_integrity.py`
+- **parse_pointer_filenames()** (2 connections) — `scripts/overlord/memory_integrity.py`
+- **validate_frontmatter()** (2 connections) — `scripts/overlord/memory_integrity.py`
+- **fail()** (1 connections) — `scripts/overlord/memory_integrity.py`
 
 ## Relationships
 
@@ -20,7 +20,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/overlord/memory_integrity.py`
+- `scripts/overlord/memory_integrity.py`
 
 ## Audit Trail
 
