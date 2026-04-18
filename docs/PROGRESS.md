@@ -10,7 +10,6 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
-| Local-first coverage for governance GitHub workflows | #284 | IN PROGRESS | HIGH | 2-4 | Workflow coverage inventory, validator/tests, Local CI Gate wiring, GitHub Actions evidence | Plan: docs/plans/issue-284-structured-agent-cycle-plan.json |
 | SoM enforcement drift closure epic | #214 | IN PROGRESS | HIGH | TBD | Reviewed PDCAR plan, Claude review artifact, issues #215-#221 | Plan: docs/plans/2026-04-17-som-enforcement-drift-pdcar.md; closeout loop tracked by #220; execution-scope guard tracked by #221 |
 | SoM Slice 1: Codex model pin enforcement | #215 | IN PROGRESS | HIGH | TBD | Codex model/reasoning checker, overlord-sweep wiring | Part of #214 |
 | SoM Slice 2: ladder and standards consistency | #216 | IN PROGRESS | HIGH | TBD | STANDARDS, exception, progress, registry alignment | Part of #214 |
@@ -52,6 +51,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Local-first coverage for governance GitHub workflows | #284 | 2026-04-18 | PR #285 added the workflow coverage inventory, deterministic validator, negative-control tests, Local CI Gate wiring, and independent contract workflow coverage. Closeout: raw/closeouts/2026-04-18-issue-284-local-first-workflow-coverage.md. |
 | Local CI Gate enforcement remediation | #275 | 2026-04-18 | PR #278 repaired portable shim targeting, live enforcement proof, governance scope fix, changed-file detection, evidence taxonomy, and retrospective audit. Repo-level hardgate wiring is tracked by #277. |
 | Local CI Gate repo-level hardgate enforcement | #277 | 2026-04-18 | PR #280 added the CI-visible `local-ci-gate` workflow, YAML-parsed workflow contract tests, and independent graphify-contract coverage. Repo ruleset `15241047` now requires `local-ci-gate` on `main`. |
 | Local AI Machine Local CI Gate profile | #272 | 2026-04-18 | Added governance-owned `local-ai-machine` profile, focused changed-file scope tests, runbook catalog docs, and closeout. LAM shim rollout remains separate issue-backed work. |
