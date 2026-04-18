@@ -908,154 +908,203 @@
       "label": "._run_main()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L80"
+      "source_location": "L83"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "label": "._changed_files_file()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L89"
+      "source_location": "L93"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_write_exception_file",
       "label": "._write_exception_file()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L94"
+      "source_location": "L98"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "label": "._handoff()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L97"
+      "source_location": "L101"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_allows_changes_in_allowed_paths_dirty_tree_mode",
       "label": ".test_allows_changes_in_allowed_paths_dirty_tree_mode()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L116"
+      "source_location": "L120"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
       "label": ".test_planning_only_diff_inside_allowed_paths_passes()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L129"
+      "source_location": "L133"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
       "label": ".test_planning_only_diff_outside_allowed_paths_fails()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L141"
+      "source_location": "L145"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_without_handoff_fails",
       "label": ".test_non_planning_without_handoff_fails()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L154"
+      "source_location": "L158"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_with_accepted_handoff_passes",
       "label": ".test_non_planning_with_accepted_handoff_passes()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L166"
+      "source_location": "L170"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_same_model_or_family_without_active_exception_fails",
       "label": ".test_same_model_or_family_without_active_exception_fails()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L186"
+      "source_location": "L190"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_without_active_exception_fail",
       "label": ".test_gpt_major_decimal_variants_without_active_exception_fail()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L206"
+      "source_location": "L210"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_with_active_exception_pass",
       "label": ".test_gpt_major_decimal_variants_with_active_exception_pass()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L226"
+      "source_location": "L230"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_with_expiry_passes",
       "label": ".test_active_exception_with_expiry_passes()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L249"
+      "source_location": "L253"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_nonexistent_file_fails",
       "label": ".test_active_exception_ref_nonexistent_file_fails()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L272"
+      "source_location": "L276"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_existing_file_with_anchor_passes",
       "label": ".test_active_exception_ref_existing_file_with_anchor_passes()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L295"
+      "source_location": "L299"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_diff_mode_and_dirty_tree_mode_share_path_normalization",
       "label": ".test_diff_mode_and_dirty_tree_mode_share_path_normalization()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L318"
+      "source_location": "L322"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_portable_expected_root_sentinel_passes_in_copied_checkout",
       "label": ".test_portable_expected_root_sentinel_passes_in_copied_checkout()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L332"
+      "source_location": "L336"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_root",
       "label": ".test_refuses_wrong_root()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L345"
+      "source_location": "L349"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_branch",
       "label": ".test_refuses_wrong_branch()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L357"
+      "source_location": "L361"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_refuses_dirty_forbidden_root",
       "label": ".test_refuses_dirty_forbidden_root()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L368"
+      "source_location": "L372"
+    },
+    {
+      "id": "test_assert_execution_scope_testassertexecutionscope_test_declared_active_parallel_root_warns_instead_of_failing",
+      "label": ".test_declared_active_parallel_root_warns_instead_of_failing()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L386"
+    },
+    {
+      "id": "test_assert_execution_scope_testassertexecutionscope_test_active_parallel_root_does_not_hide_inactive_dirty_root",
+      "label": ".test_active_parallel_root_does_not_hide_inactive_dirty_root()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L411"
+    },
+    {
+      "id": "test_assert_execution_scope_testassertexecutionscope_test_clean_active_parallel_root_does_not_warn",
+      "label": ".test_clean_active_parallel_root_does_not_warn()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L438"
+    },
+    {
+      "id": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_not_in_forbidden_roots",
+      "label": ".test_refuses_active_parallel_root_not_in_forbidden_roots()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L460"
+    },
+    {
+      "id": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_without_reason",
+      "label": ".test_refuses_active_parallel_root_without_reason()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L482"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_refuses_out_of_scope_changes",
       "label": ".test_refuses_out_of_scope_changes()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L382"
+      "source_location": "L504"
     },
     {
       "id": "test_assert_execution_scope_working_directory",
       "label": "_working_directory()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L397"
+      "source_location": "L519"
+    },
+    {
+      "id": "check_execution_environment",
+      "label": "check_execution_environment.py",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_execution_environment.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "check_execution_environment_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_execution_environment.py",
+      "source_location": "L12"
     },
     {
       "id": "check_progress_github_issue_staleness",
@@ -1307,140 +1356,140 @@
       "label": "_run_git()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
       "id": "assert_execution_scope_normalize_repo_path",
       "label": "_normalize_repo_path()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L44"
+      "source_location": "L45"
     },
     {
       "id": "assert_execution_scope_normalize_repo_relative_file_path",
       "label": "_normalize_repo_relative_file_path()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L50"
+      "source_location": "L51"
     },
     {
       "id": "assert_execution_scope_normalize_active_exception_ref",
       "label": "_normalize_active_exception_ref()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L67"
+      "source_location": "L68"
     },
     {
       "id": "assert_execution_scope_parse_iso8601_timestamp",
       "label": "_parse_iso8601_timestamp()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L81"
+      "source_location": "L82"
     },
     {
       "id": "assert_execution_scope_load_handoff_evidence",
       "label": "_load_handoff_evidence()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L96"
+      "source_location": "L97"
     },
     {
       "id": "assert_execution_scope_load_scope",
       "label": "_load_scope()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L159"
+      "source_location": "L160"
     },
     {
       "id": "assert_execution_scope_git_root",
       "label": "_git_root()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L208"
+      "source_location": "L233"
     },
     {
       "id": "assert_execution_scope_current_branch",
       "label": "_current_branch()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L215"
+      "source_location": "L240"
     },
     {
       "id": "assert_execution_scope_changed_paths",
       "label": "_changed_paths()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L222"
+      "source_location": "L247"
     },
     {
       "id": "assert_execution_scope_changed_paths_from_file",
       "label": "_changed_paths_from_file()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L250"
+      "source_location": "L275"
     },
     {
       "id": "assert_execution_scope_path_allowed",
       "label": "_path_allowed()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L261"
+      "source_location": "L286"
     },
     {
       "id": "assert_execution_scope_model_family",
       "label": "_model_family()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L265"
+      "source_location": "L290"
     },
     {
       "id": "assert_execution_scope_same_model_or_family",
       "label": "_same_model_or_family()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L286"
+      "source_location": "L311"
     },
     {
       "id": "assert_execution_scope_validate_execution_mode",
       "label": "_validate_execution_mode()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L292"
+      "source_location": "L317"
     },
     {
       "id": "assert_execution_scope_format_path",
       "label": "_format_path()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L322"
+      "source_location": "L347"
     },
     {
       "id": "assert_execution_scope_resolve_expected_execution_root",
       "label": "_resolve_expected_execution_root()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L326"
+      "source_location": "L351"
     },
     {
       "id": "assert_execution_scope_validate_active_exception_ref",
       "label": "_validate_active_exception_ref()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L332"
+      "source_location": "L357"
     },
     {
       "id": "assert_execution_scope_check_scope",
       "label": "check_scope()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L347"
+      "source_location": "L372"
     },
     {
       "id": "assert_execution_scope_main",
       "label": "main()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L425"
+      "source_location": "L454"
     },
     {
       "id": "memory_integrity",
@@ -8431,7 +8480,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L80",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -8440,7 +8489,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L89",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -8449,7 +8498,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L94",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -8458,7 +8507,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L97",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -8467,7 +8516,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L116",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -8476,7 +8525,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L129",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -8485,7 +8534,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L141",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -8494,7 +8543,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L154",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -8503,7 +8552,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L166",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -8512,7 +8561,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L186",
+      "source_location": "L190",
       "weight": 1.0
     },
     {
@@ -8521,7 +8570,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L206",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -8530,7 +8579,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L226",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -8539,7 +8588,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L249",
+      "source_location": "L253",
       "weight": 1.0
     },
     {
@@ -8548,7 +8597,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L272",
+      "source_location": "L276",
       "weight": 1.0
     },
     {
@@ -8557,7 +8606,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L295",
+      "source_location": "L299",
       "weight": 1.0
     },
     {
@@ -8566,7 +8615,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L318",
+      "source_location": "L322",
       "weight": 1.0
     },
     {
@@ -8575,7 +8624,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L332",
+      "source_location": "L336",
       "weight": 1.0
     },
     {
@@ -8584,7 +8633,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L345",
+      "source_location": "L349",
       "weight": 1.0
     },
     {
@@ -8593,7 +8642,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L357",
+      "source_location": "L361",
       "weight": 1.0
     },
     {
@@ -8602,7 +8651,52 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L368",
+      "source_location": "L372",
+      "weight": 1.0
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope",
+      "target": "test_assert_execution_scope_testassertexecutionscope_test_declared_active_parallel_root_warns_instead_of_failing",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L386",
+      "weight": 1.0
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope",
+      "target": "test_assert_execution_scope_testassertexecutionscope_test_active_parallel_root_does_not_hide_inactive_dirty_root",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L411",
+      "weight": 1.0
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope",
+      "target": "test_assert_execution_scope_testassertexecutionscope_test_clean_active_parallel_root_does_not_warn",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L438",
+      "weight": 1.0
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope",
+      "target": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_not_in_forbidden_roots",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L460",
+      "weight": 1.0
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope",
+      "target": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_without_reason",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L482",
       "weight": 1.0
     },
     {
@@ -8611,7 +8705,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L382",
+      "source_location": "L504",
       "weight": 1.0
     },
     {
@@ -8620,7 +8714,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L397",
+      "source_location": "L519",
       "weight": 1.0
     },
     {
@@ -8638,7 +8732,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L85",
+      "source_location": "L89",
       "weight": 0.8
     },
     {
@@ -8647,7 +8741,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L95",
+      "source_location": "L99",
       "weight": 0.8
     },
     {
@@ -8656,7 +8750,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L119",
+      "source_location": "L123",
       "weight": 0.8
     },
     {
@@ -8665,7 +8759,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L120",
+      "source_location": "L124",
       "weight": 0.8
     },
     {
@@ -8674,7 +8768,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L122",
+      "source_location": "L126",
       "weight": 0.8
     },
     {
@@ -8683,39 +8777,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L124",
+      "source_location": "L128",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L132",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L133",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L134",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -8723,35 +8790,35 @@
       "weight": 0.8
     },
     {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
-      "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L144",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
       "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L145",
+      "source_location": "L137",
       "weight": 0.8
     },
     {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
       "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L146",
+      "source_location": "L138",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
+      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L140",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
-      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "target": "test_assert_execution_scope_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -8759,12 +8826,39 @@
       "weight": 0.8
     },
     {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L149",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L150",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
+      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L152",
+      "weight": 0.8
+    },
+    {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_without_handoff_fails",
       "target": "test_assert_execution_scope_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L157",
+      "source_location": "L161",
       "weight": 0.8
     },
     {
@@ -8773,7 +8867,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L158",
+      "source_location": "L162",
       "weight": 0.8
     },
     {
@@ -8782,7 +8876,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L159",
+      "source_location": "L163",
       "weight": 0.8
     },
     {
@@ -8791,7 +8885,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L161",
+      "source_location": "L165",
       "weight": 0.8
     },
     {
@@ -8800,7 +8894,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L169",
+      "source_location": "L173",
       "weight": 0.8
     },
     {
@@ -8809,21 +8903,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L170",
+      "source_location": "L174",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_with_accepted_handoff_passes",
       "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L171",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_with_accepted_handoff_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -8832,11 +8917,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_with_accepted_handoff_passes",
+      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L179",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_with_accepted_handoff_passes",
       "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L181",
+      "source_location": "L185",
       "weight": 0.8
     },
     {
@@ -8845,7 +8939,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L189",
+      "source_location": "L193",
       "weight": 0.8
     },
     {
@@ -8854,21 +8948,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L190",
+      "source_location": "L194",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_same_model_or_family_without_active_exception_fails",
       "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L191",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_same_model_or_family_without_active_exception_fails",
-      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -8877,11 +8962,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_same_model_or_family_without_active_exception_fails",
+      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L199",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_same_model_or_family_without_active_exception_fails",
       "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L201",
+      "source_location": "L205",
       "weight": 0.8
     },
     {
@@ -8890,7 +8984,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L209",
+      "source_location": "L213",
       "weight": 0.8
     },
     {
@@ -8899,21 +8993,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L210",
+      "source_location": "L214",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_without_active_exception_fail",
       "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L211",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_without_active_exception_fail",
-      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -8922,11 +9007,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_without_active_exception_fail",
+      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L219",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_without_active_exception_fail",
       "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L221",
+      "source_location": "L225",
       "weight": 0.8
     },
     {
@@ -8935,7 +9029,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L229",
+      "source_location": "L233",
       "weight": 0.8
     },
     {
@@ -8944,7 +9038,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L230",
+      "source_location": "L234",
       "weight": 0.8
     },
     {
@@ -8953,21 +9047,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L231",
+      "source_location": "L235",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_with_active_exception_pass",
       "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L232",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_with_active_exception_pass",
-      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -8976,11 +9061,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_with_active_exception_pass",
+      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L240",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_with_active_exception_pass",
       "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L244",
+      "source_location": "L248",
       "weight": 0.8
     },
     {
@@ -8989,7 +9083,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L252",
+      "source_location": "L256",
       "weight": 0.8
     },
     {
@@ -8998,7 +9092,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L253",
+      "source_location": "L257",
       "weight": 0.8
     },
     {
@@ -9007,21 +9101,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L254",
+      "source_location": "L258",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_with_expiry_passes",
       "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L255",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_with_expiry_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -9030,11 +9115,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_with_expiry_passes",
+      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L263",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_with_expiry_passes",
       "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L267",
+      "source_location": "L271",
       "weight": 0.8
     },
     {
@@ -9043,7 +9137,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L275",
+      "source_location": "L279",
       "weight": 0.8
     },
     {
@@ -9052,21 +9146,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L276",
+      "source_location": "L280",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_nonexistent_file_fails",
       "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L277",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_nonexistent_file_fails",
-      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -9075,11 +9160,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_nonexistent_file_fails",
+      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L285",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_nonexistent_file_fails",
       "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L289",
+      "source_location": "L293",
       "weight": 0.8
     },
     {
@@ -9088,7 +9182,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L298",
+      "source_location": "L302",
       "weight": 0.8
     },
     {
@@ -9097,7 +9191,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L299",
+      "source_location": "L303",
       "weight": 0.8
     },
     {
@@ -9106,21 +9200,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L300",
+      "source_location": "L304",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_existing_file_with_anchor_passes",
       "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L301",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_existing_file_with_anchor_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -9129,11 +9214,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_existing_file_with_anchor_passes",
+      "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L309",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_existing_file_with_anchor_passes",
       "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L313",
+      "source_location": "L317",
       "weight": 0.8
     },
     {
@@ -9142,7 +9236,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L321",
+      "source_location": "L325",
       "weight": 0.8
     },
     {
@@ -9151,7 +9245,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L322",
+      "source_location": "L326",
       "weight": 0.8
     },
     {
@@ -9160,7 +9254,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L323",
+      "source_location": "L327",
       "weight": 0.8
     },
     {
@@ -9169,7 +9263,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L324",
+      "source_location": "L328",
       "weight": 0.8
     },
     {
@@ -9178,7 +9272,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L326",
+      "source_location": "L330",
       "weight": 0.8
     },
     {
@@ -9187,7 +9281,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L335",
+      "source_location": "L339",
       "weight": 0.8
     },
     {
@@ -9196,7 +9290,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L338",
+      "source_location": "L342",
       "weight": 0.8
     },
     {
@@ -9205,30 +9299,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L340",
+      "source_location": "L344",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_root",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L348",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_root",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L350",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_root",
-      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -9236,12 +9312,30 @@
       "weight": 0.8
     },
     {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_root",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L354",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_root",
+      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L356",
+      "weight": 0.8
+    },
+    {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_branch",
       "target": "test_assert_execution_scope_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L360",
+      "source_location": "L364",
       "weight": 0.8
     },
     {
@@ -9250,7 +9344,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L361",
+      "source_location": "L365",
       "weight": 0.8
     },
     {
@@ -9259,7 +9353,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L363",
+      "source_location": "L367",
       "weight": 0.8
     },
     {
@@ -9268,7 +9362,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L371",
+      "source_location": "L375",
       "weight": 0.8
     },
     {
@@ -9277,7 +9371,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L373",
+      "source_location": "L377",
       "weight": 0.8
     },
     {
@@ -9286,7 +9380,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L374",
+      "source_location": "L378",
       "weight": 0.8
     },
     {
@@ -9295,44 +9389,251 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L376",
+      "source_location": "L380",
       "weight": 0.8
     },
     {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_out_of_scope_changes",
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_declared_active_parallel_root_warns_instead_of_failing",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L385",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_out_of_scope_changes",
-      "target": "test_assert_execution_scope_repofixture_write",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L386",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_out_of_scope_changes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L387",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_out_of_scope_changes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
       "source_location": "L389",
       "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_declared_active_parallel_root_warns_instead_of_failing",
+      "target": "test_assert_execution_scope_repofixture_write",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L391",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_declared_active_parallel_root_warns_instead_of_failing",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L392",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_declared_active_parallel_root_warns_instead_of_failing",
+      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L404",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_parallel_root_does_not_hide_inactive_dirty_root",
+      "target": "test_assert_execution_scope_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L414",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_parallel_root_does_not_hide_inactive_dirty_root",
+      "target": "test_assert_execution_scope_repofixture_write",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L417",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_parallel_root_does_not_hide_inactive_dirty_root",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L419",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_parallel_root_does_not_hide_inactive_dirty_root",
+      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L431",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_clean_active_parallel_root_does_not_warn",
+      "target": "test_assert_execution_scope_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L441",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_clean_active_parallel_root_does_not_warn",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L443",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_clean_active_parallel_root_does_not_warn",
+      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L455",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_not_in_forbidden_roots",
+      "target": "test_assert_execution_scope_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L463",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_not_in_forbidden_roots",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L465",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_not_in_forbidden_roots",
+      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L477",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_without_reason",
+      "target": "test_assert_execution_scope_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L485",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_without_reason",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L487",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_without_reason",
+      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L499",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_out_of_scope_changes",
+      "target": "test_assert_execution_scope_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L507",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_out_of_scope_changes",
+      "target": "test_assert_execution_scope_repofixture_write",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L508",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_out_of_scope_changes",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L509",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_out_of_scope_changes",
+      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L511",
+      "weight": 0.8
+    },
+    {
+      "source": "check_execution_environment",
+      "target": "argparse",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_execution_environment.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "check_execution_environment",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_execution_environment.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "check_execution_environment",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_execution_environment.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "check_execution_environment",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_execution_environment.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "check_execution_environment",
+      "target": "assert_execution_scope",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_execution_environment.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "check_execution_environment",
+      "target": "check_execution_environment_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_execution_environment.py",
+      "source_location": "L12",
+      "weight": 1.0
     },
     {
       "source": "check_progress_github_issue_staleness",
@@ -10195,7 +10496,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -10204,7 +10505,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L44",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -10213,7 +10514,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -10222,7 +10523,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L67",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -10231,7 +10532,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L81",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -10240,7 +10541,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L96",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -10249,7 +10550,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L159",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -10258,7 +10559,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L208",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -10267,7 +10568,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L215",
+      "source_location": "L240",
       "weight": 1.0
     },
     {
@@ -10276,7 +10577,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L222",
+      "source_location": "L247",
       "weight": 1.0
     },
     {
@@ -10285,30 +10586,12 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L250",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
       "source": "assert_execution_scope",
       "target": "assert_execution_scope_path_allowed",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L261",
-      "weight": 1.0
-    },
-    {
-      "source": "assert_execution_scope",
-      "target": "assert_execution_scope_model_family",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L265",
-      "weight": 1.0
-    },
-    {
-      "source": "assert_execution_scope",
-      "target": "assert_execution_scope_same_model_or_family",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
@@ -10317,43 +10600,34 @@
     },
     {
       "source": "assert_execution_scope",
+      "target": "assert_execution_scope_model_family",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/assert_execution_scope.py",
+      "source_location": "L290",
+      "weight": 1.0
+    },
+    {
+      "source": "assert_execution_scope",
+      "target": "assert_execution_scope_same_model_or_family",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/assert_execution_scope.py",
+      "source_location": "L311",
+      "weight": 1.0
+    },
+    {
+      "source": "assert_execution_scope",
       "target": "assert_execution_scope_validate_execution_mode",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L292",
+      "source_location": "L317",
       "weight": 1.0
     },
     {
       "source": "assert_execution_scope",
       "target": "assert_execution_scope_format_path",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L322",
-      "weight": 1.0
-    },
-    {
-      "source": "assert_execution_scope",
-      "target": "assert_execution_scope_resolve_expected_execution_root",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L326",
-      "weight": 1.0
-    },
-    {
-      "source": "assert_execution_scope",
-      "target": "assert_execution_scope_validate_active_exception_ref",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L332",
-      "weight": 1.0
-    },
-    {
-      "source": "assert_execution_scope",
-      "target": "assert_execution_scope_check_scope",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
@@ -10362,11 +10636,38 @@
     },
     {
       "source": "assert_execution_scope",
+      "target": "assert_execution_scope_resolve_expected_execution_root",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/assert_execution_scope.py",
+      "source_location": "L351",
+      "weight": 1.0
+    },
+    {
+      "source": "assert_execution_scope",
+      "target": "assert_execution_scope_validate_active_exception_ref",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/assert_execution_scope.py",
+      "source_location": "L357",
+      "weight": 1.0
+    },
+    {
+      "source": "assert_execution_scope",
+      "target": "assert_execution_scope_check_scope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/assert_execution_scope.py",
+      "source_location": "L372",
+      "weight": 1.0
+    },
+    {
+      "source": "assert_execution_scope",
       "target": "assert_execution_scope_main",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L425",
+      "source_location": "L454",
       "weight": 1.0
     },
     {
@@ -10375,7 +10676,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L51",
+      "source_location": "L52",
       "weight": 0.8
     },
     {
@@ -10384,7 +10685,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L69",
+      "source_location": "L70",
       "weight": 0.8
     },
     {
@@ -10393,7 +10694,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L135",
+      "source_location": "L136",
       "weight": 0.8
     },
     {
@@ -10402,7 +10703,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L146",
+      "source_location": "L147",
       "weight": 0.8
     },
     {
@@ -10411,7 +10712,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L148",
+      "source_location": "L149",
       "weight": 0.8
     },
     {
@@ -10420,7 +10721,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L153",
+      "source_location": "L154",
       "weight": 0.8
     },
     {
@@ -10429,7 +10730,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L196",
+      "source_location": "L220",
       "weight": 0.8
     },
     {
@@ -10438,7 +10739,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L198",
+      "source_location": "L222",
       "weight": 0.8
     },
     {
@@ -10447,7 +10748,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L201",
+      "source_location": "L225",
       "weight": 0.8
     },
     {
@@ -10456,7 +10757,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L209",
+      "source_location": "L234",
       "weight": 0.8
     },
     {
@@ -10465,7 +10766,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L216",
+      "source_location": "L241",
       "weight": 0.8
     },
     {
@@ -10474,7 +10775,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L223",
+      "source_location": "L248",
       "weight": 0.8
     },
     {
@@ -10483,7 +10784,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L240",
+      "source_location": "L265",
       "weight": 0.8
     },
     {
@@ -10492,7 +10793,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L257",
+      "source_location": "L282",
       "weight": 0.8
     },
     {
@@ -10501,7 +10802,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L289",
+      "source_location": "L314",
       "weight": 0.8
     },
     {
@@ -10510,7 +10811,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L304",
+      "source_location": "L329",
       "weight": 0.8
     },
     {
@@ -10519,7 +10820,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L360",
+      "source_location": "L385",
       "weight": 0.8
     },
     {
@@ -10528,7 +10829,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L364",
+      "source_location": "L389",
       "weight": 0.8
     },
     {
@@ -10537,7 +10838,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L368",
+      "source_location": "L393",
       "weight": 0.8
     },
     {
@@ -10546,7 +10847,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L371",
+      "source_location": "L396",
       "weight": 0.8
     },
     {
@@ -10555,7 +10856,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L377",
+      "source_location": "L402",
       "weight": 0.8
     },
     {
@@ -10564,7 +10865,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L378",
+      "source_location": "L403",
       "weight": 0.8
     },
     {
@@ -10573,7 +10874,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L382",
+      "source_location": "L407",
       "weight": 0.8
     },
     {
@@ -10582,7 +10883,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L387",
+      "source_location": "L412",
       "weight": 0.8
     },
     {
@@ -10591,7 +10892,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L392",
+      "source_location": "L417",
       "weight": 0.8
     },
     {
@@ -10600,7 +10901,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L432",
+      "source_location": "L461",
       "weight": 0.8
     },
     {
@@ -10609,7 +10910,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L438",
+      "source_location": "L467",
       "weight": 0.8
     },
     {
