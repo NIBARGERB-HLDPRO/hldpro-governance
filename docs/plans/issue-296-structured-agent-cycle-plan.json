@@ -1,0 +1,289 @@
+{
+  "session_id": "session-20260418-issue-296-som-hitl-relay",
+  "issue_number": 296,
+  "objective": "Plan a governed always-on Society of Minds human-in-the-loop relay that receives local CLI session conclusion/checkpoint packets, notifies the operator through AIS-backed messaging channels, normalizes operator replies into bounded instructions, and routes those instructions back to the correct local CLI session through the SoM/MCP path.",
+  "tier": 1,
+  "scope_boundary": [
+    "Create the issue-backed planning package for issue #296 before implementation starts.",
+    "Define the cross-repo HITL relay architecture across hldpro-governance, local-ai-machine, and ai-integration-services.",
+    "Keep hldpro-governance responsible for packet contracts, deterministic validators, acceptance criteria, and closeout evidence.",
+    "Keep local-ai-machine responsible for the always-on SoM/MCP runtime, session registry, queue watcher, and local resume path.",
+    "Keep ai-integration-services responsible for outbound messaging, inbound webhooks, sender verification, correlation, retries, and delivery audit.",
+    "Require queue-first packet flow before MCP push or any live terminal adapter.",
+    "Make end-to-end local-to-human-to-local proof the final acceptance criterion."
+  ],
+  "out_of_scope": [
+    "Implementing HITL schemas, validators, AIS transport, MCP daemon code, session registry code, or CLI adapters in this planning slice.",
+    "Sending raw SMS, Slack, or other freeform message text directly into a terminal or local CLI process.",
+    "Allowing the always-on LLM to approve its own work, waive gates, or bypass Society of Minds no-self-approval rules.",
+    "Making AIS the owner of governance policy decisions.",
+    "Starting with tmux/live terminal injection as the primary resume mechanism.",
+    "Editing sibling repos from this hldpro-governance planning branch.",
+    "Closing issue #296 before an evidence-backed E2E test proves approval, request-changes, ambiguous-response, stale-session, and audit replay paths."
+  ],
+  "research_summary": "The existing org-wide always-on governance orchestrator epic (#224) proved the need for packet queues, local runtime boundaries, deterministic gates, and human approval boundaries, but it is closed and did not define a concrete operator messaging relay. Recent SoM enforcement work also showed that packets must reference enforceable execution scope evidence and that governance gates should fail closed on ambiguous or malformed references. The requested capability should therefore be planned as a new issue #296 epic: a queue-first HITL relay where local CLI sessions emit governed checkpoint packets, the SoM/MCP orchestrator validates and summarizes them, AIS sends and receives operator messages, an LLM normalizes replies only into bounded allowed decisions, and the local session consumes structured instruction packets or creates a resume packet if stale. The final acceptance bar must be a full E2E proof, not merely successful notification delivery.",
+  "research_artifacts": [
+    "GitHub issue #296",
+    "GitHub issue #224",
+    "docs/plans/issue-224-structured-agent-cycle-plan.json",
+    "docs/plans/issue-224-always-on-governance-orchestrator-pdcar.md",
+    "docs/plans/issue-288-structured-agent-cycle-plan.json",
+    "docs/schemas/som-packet.schema.yml",
+    "docs/schemas/structured-agent-cycle-plan.schema.json",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/assert_execution_scope.py",
+    "STANDARDS.md",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "raw/exceptions/2026-04-18-issue-296-same-family-planning.md",
+    "raw/closeouts/2026-04-17-e2e-pilot.md"
+  ],
+  "sprints": [
+    {
+      "name": "Phase 0 - Planning Package And Epic Contract",
+      "goal": "Create the reviewed issue-backed plan that defines the HITL relay before any runtime implementation starts.",
+      "tasks": [
+        "Create GitHub epic issue #296.",
+        "Add structured plan, PDCAR companion, execution-scope evidence, and backlog/progress mirrors.",
+        "Define phase decomposition, acceptance criteria, and final E2E proof requirements.",
+        "Record that child implementation issues must wait for cross-review or explicit operator approval."
+      ],
+      "acceptance_criteria": [
+        "Issue #296 exists and is labeled as a governance epic.",
+        "Structured plan validates under the repo validator.",
+        "PDCAR names Plan, Do, Check, Act, and Review loop expectations.",
+        "Backlog and progress mirrors reference issue #296 as active planning work.",
+        "No runtime code or sibling repo files are changed in this planning slice."
+      ],
+      "file_paths": [
+        "docs/plans/issue-296-structured-agent-cycle-plan.json",
+        "docs/plans/issue-296-som-hitl-relay-pdcar.md",
+        "raw/exceptions/2026-04-18-issue-296-same-family-planning.md",
+        "raw/execution-scopes/2026-04-18-issue-296-som-hitl-relay-planning.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Phase 1 - Governance HITL Packet Contracts",
+      "goal": "Define governance-owned session event, HITL request, HITL response, normalized decision, audit, and session instruction contracts.",
+      "tasks": [
+        "Design canonical packet shapes for local CLI session conclusions, HITL checkpoints, blocked sessions, PR-ready states, merge-ready states, and stale/disconnected sessions.",
+        "Design the normalized decision vocabulary for approve, request_changes, pause, details, merge_when_green, create_followup_issue, resume_session, and escalate.",
+        "Define approval provenance fields including operator identity, channel, message ID, received timestamp, raw-message reference, normalized decision, confidence, and orchestrator version.",
+        "Define how session instruction packets reference the original request, target session, allowed action, constraints, and audit evidence."
+      ],
+      "acceptance_criteria": [
+        "Every packet contract has required fields, owner repo, and validation expectations.",
+        "Human replies can only become bounded decisions, not terminal input.",
+        "Approval provenance is mandatory for approval-like decisions.",
+        "Low-confidence or ambiguous replies cannot produce executable instructions.",
+        "Contracts distinguish active-session continuation from stale-session resume packet creation."
+      ],
+      "file_paths": [
+        "docs/schemas/",
+        "docs/DATA_DICTIONARY.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/runbooks/",
+        "raw/packets/"
+      ]
+    },
+    {
+      "name": "Phase 2 - Governance Validators And Policy Gates",
+      "goal": "Define and implement deterministic validation rules before any messaging channel can drive session behavior.",
+      "tasks": [
+        "Validate issue, branch, execution scope, target repo, session identity, allowed action, and approval provenance.",
+        "Reject no-self-approval violations and tier-skipping attempts.",
+        "Fail closed when PII or channel policy is unknown or cannot be evaluated.",
+        "Require ambiguity handling and clarification packets for low-confidence replies.",
+        "Add negative-control tests for forged sender, mismatched notification ID, stale session, disallowed action, and missing audit evidence."
+      ],
+      "acceptance_criteria": [
+        "Invalid HITL request packets fail before notification dispatch.",
+        "Invalid inbound replies fail before instruction packet emission.",
+        "Self-approval and policy-waiver attempts are refused deterministically.",
+        "PII-sensitive packets cannot route through cloud or Windows paths when policy disallows it.",
+        "Validator tests include passing and failing examples for each required policy."
+      ],
+      "file_paths": [
+        "scripts/overlord/",
+        "scripts/packet/",
+        "docs/schemas/",
+        ".github/workflows/governance-check.yml",
+        "raw/model-fallbacks/"
+      ]
+    },
+    {
+      "name": "Phase 3 - Queue-First Local Relay Prototype",
+      "goal": "Prove the local request/response/instruction queue flow without AIS, live terminal injection, or external messaging dependencies.",
+      "tasks": [
+        "Define queue directories for HITL requests, HITL responses, session inbox, session resume, dead-letter, and audit artifacts.",
+        "Require atomic write-then-rename semantics and replayable state transitions.",
+        "Build a dry-run watcher or MCP tool that validates packets and writes instruction packets.",
+        "Simulate operator replies locally with fixture payloads."
+      ],
+      "acceptance_criteria": [
+        "A local CLI checkpoint fixture can create a valid HITL request packet.",
+        "A valid local response fixture produces a structured instruction packet.",
+        "An ambiguous response fixture produces a clarification request, not an instruction.",
+        "A stale-session fixture produces a resume packet.",
+        "Queue transitions are auditable and replayable."
+      ],
+      "file_paths": [
+        "raw/hitl-requests/",
+        "raw/hitl-responses/",
+        "raw/session-inbox/",
+        "raw/session-resume/",
+        "scripts/orchestrator/",
+        "scripts/packet/"
+      ]
+    },
+    {
+      "name": "Phase 4 - AIS Outbound And Inbound Messaging Bridge",
+      "goal": "Define the AIS-owned transport contract for sending operator notifications and receiving correlated replies.",
+      "tasks": [
+        "Create AIS issue(s) for outbound SMS/Slack/other notification delivery using governance-supplied HITL request payloads.",
+        "Create AIS issue(s) for inbound webhook handling, sender verification, notification correlation, retries, and delivery audit.",
+        "Define channel-specific limits and message templates without giving AIS governance authority.",
+        "Define callback shape from AIS back to the SoM/MCP orchestrator."
+      ],
+      "acceptance_criteria": [
+        "AIS outbound contract accepts a validated notification request and records delivery evidence.",
+        "AIS inbound contract verifies sender identity and correlates replies to notification IDs.",
+        "AIS never emits executable session instructions; it emits inbound response events only.",
+        "Transport failure, duplicate reply, expired notification, and unknown sender paths are specified.",
+        "Sensitive packet summaries obey PII/channel policy before leaving the local system."
+      ],
+      "file_paths": [
+        "docs/runbooks/",
+        "raw/github-issues/",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/ENV_REGISTRY.md"
+      ]
+    },
+    {
+      "name": "Phase 5 - SoM/MCP Orchestrator And LLM Normalizer",
+      "goal": "Define the local-ai-machine runtime slice that watches packets, asks AIS to notify the operator, normalizes replies, and emits gated instruction packets.",
+      "tasks": [
+        "Create local-ai-machine issue(s) for always-on MCP/orchestrator runtime ownership.",
+        "Define session registry fields, liveness checks, target session selection, and stale-session handling.",
+        "Define LLM normalizer prompt/contract with allowed actions, confidence, ambiguity, and refusal behavior.",
+        "Require deterministic validation after normalization and before instruction emission."
+      ],
+      "acceptance_criteria": [
+        "The normalizer cannot create actions outside the allowed vocabulary.",
+        "Low-confidence replies produce clarification requests.",
+        "The orchestrator records raw reply reference, normalized decision, model identity, and validation result.",
+        "Disconnected sessions are routed to resume packets instead of the wrong active session.",
+        "No instruction packet is emitted without passing governance validation."
+      ],
+      "file_paths": [
+        "raw/github-issues/",
+        "docs/runbooks/always-on-governance.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/schemas/",
+        "raw/model-fallbacks/"
+      ]
+    },
+    {
+      "name": "Phase 6 - Local CLI Adapter And Session Consumption",
+      "goal": "Define how local CLI sessions emit checkpoints and consume structured instructions without accepting freeform external input.",
+      "tasks": [
+        "Define the local CLI session adapter contract for checkpoint emission and inbox polling.",
+        "Define supported instruction actions and refusal behavior when current session state does not match the instruction.",
+        "Define session conclusion closeout requirements and evidence handoff.",
+        "Define timeout, session-gone, duplicate-instruction, and replay behavior."
+      ],
+      "acceptance_criteria": [
+        "Local sessions can emit governed checkpoint packets at epic completion and HITL boundaries.",
+        "Local sessions consume only structured instruction packets addressed to their session ID.",
+        "Raw human text is preserved as audit evidence but never executed.",
+        "Replay and duplicate instructions are idempotent or refused with evidence.",
+        "Session-gone behavior creates a resume packet with enough context to restart safely."
+      ],
+      "file_paths": [
+        "docs/runbooks/",
+        "docs/schemas/",
+        "raw/session-inbox/",
+        "raw/session-resume/",
+        "raw/closeouts/"
+      ]
+    },
+    {
+      "name": "Phase 7 - Final E2E HITL Relay Proof",
+      "goal": "Close the epic only after the full local-to-human-to-local relay is proven with evidence.",
+      "tasks": [
+        "Run a full E2E path from local CLI checkpoint packet through orchestrator validation, AIS notification, operator reply, inbound response, normalization, governance gate, instruction packet, and local session consumption.",
+        "Run negative-control paths for request changes, ambiguous reply, stale session, and audit replay/provenance.",
+        "Record evidence paths, command outputs, notification IDs, normalized decisions, validation results, and closeout artifacts.",
+        "Use the E2E findings to decide whether MCP push can be planned after queue-first relay is stable."
+      ],
+      "acceptance_criteria": [
+        "Final AC: approval path proves a validated operator reply can produce a bounded instruction consumed by the correct local session.",
+        "Final AC: request-changes path proves feedback is routed back without being treated as approval.",
+        "Final AC: ambiguous-response path proves clarification is requested and no instruction is emitted.",
+        "Final AC: stale-session path proves a resume packet is created instead of injecting into the wrong session.",
+        "Final AC: audit replay path proves the decision can be reconstructed from packet, AIS, normalization, validation, and session evidence.",
+        "Final AC: issue #296 remains open until all E2E evidence links are recorded."
+      ],
+      "file_paths": [
+        "raw/closeouts/",
+        "raw/gate/",
+        "raw/hitl-requests/",
+        "raw/hitl-responses/",
+        "raw/session-inbox/",
+        "raw/session-resume/",
+        "docs/runbooks/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex planning session",
+      "role": "repo governance planner",
+      "focus": "Translate operator-requested HITL relay capability into issue-backed PDCAR phases, ACs, and final E2E proof requirements without implementation changes.",
+      "status": "accepted_with_followup",
+      "summary": "The plan is ready for governance planning-package validation. Follow-up required before implementation: obtain alternate-family/cross-review and decompose implementation child issues only after the planning package is accepted.",
+      "evidence": [
+        "GitHub issue #296",
+        "docs/plans/issue-296-som-hitl-relay-pdcar.md",
+        "docs/plans/issue-296-structured-agent-cycle-plan.json",
+        "raw/exceptions/2026-04-18-issue-296-same-family-planning.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "pending-alternate-family-review",
+    "model_family": "pending",
+    "status": "accepted_with_followup",
+    "summary": "Alternate-family review remains required before implementation issues modify shared governance, AIS, MCP, or CLI runtime surfaces. This planning package may be created under operator instruction to begin the PDCAR loop, but implementation must not start until review requirements are satisfied or an explicit exception is recorded.",
+    "evidence": [
+      "GitHub issue #296",
+      "docs/plans/issue-296-som-hitl-relay-pdcar.md",
+      "raw/exceptions/2026-04-18-issue-296-same-family-planning.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #296 may add the governance planning package, execution-scope evidence, and backlog/progress mirrors for the always-on SoM HITL relay epic. It may not implement runtime code, alter AIS/local-ai-machine, or create child implementation issues until review/approval gates are satisfied.",
+    "next_execution_step": "Validate the planning package, update GitHub issue #296 with artifact links, and hold implementation decomposition for cross-review or explicit operator approval.",
+    "blocked_on": [
+      "Alternate-family/cross-review before implementation slices modify governed runtime or transport surfaces.",
+      "Child issue decomposition approval after planning package validation."
+    ]
+  },
+  "material_deviation_rules": [
+    "Any proposal to send raw external message text into a CLI session is a material deviation and must halt.",
+    "Any proposal to let the always-on LLM approve, waive, or bypass governance gates is a material deviation and must halt.",
+    "Any non-queue-first live terminal or MCP push path before the queue-first E2E proof is a material deviation and must halt.",
+    "Any sibling repo implementation from this hldpro-governance planning branch is a material deviation and must halt.",
+    "Any attempt to close issue #296 without E2E approval, request-changes, ambiguity, stale-session, and audit replay evidence is a material deviation and must halt."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction 2026-04-18: follow repo rules and loop through pdcar, gh epic, ACs, e2e testing as final AC"
+  ],
+  "approved_at": "2026-04-18T22:54:11Z"
+}
