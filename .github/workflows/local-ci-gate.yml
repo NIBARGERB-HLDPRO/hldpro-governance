@@ -1,0 +1,59 @@
+name: local-ci-gate
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+
+jobs:
+  local-ci-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Local CI Gate dependencies
+        run: |
+          python3 -m pip install --quiet pyyaml pytest
+
+      - name: Fetch main for changed-file resolution
+        run: |
+          git fetch origin main --prune --no-tags
+
+      - name: Normalize PR branch name for Local CI Gate
+        if: github.event_name == 'pull_request'
+        run: |
+          git checkout -B "${{ github.head_ref }}" HEAD
+
+      - name: Validate Local CI Gate workflow contract
+        run: |
+          python3 scripts/overlord/test_local_ci_gate_workflow_contract.py
+
+      - name: Run Local CI Gate
+        run: |
+          python3 tools/local-ci-gate/bin/hldpro-local-ci run \
+            --profile hldpro-governance \
+            --report-dir cache/local-ci-gate/reports \
+            --json
+
+      - name: Upload Local CI Gate reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: local-ci-gate-reports
+          path: cache/local-ci-gate/reports/
+          if-no-files-found: ignore

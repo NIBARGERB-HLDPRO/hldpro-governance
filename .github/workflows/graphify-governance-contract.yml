@@ -7,6 +7,9 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+
 jobs:
   contract:
     runs-on: ubuntu-latest
@@ -17,6 +20,10 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install contract dependencies
+        run: |
+          python3 -m pip install --quiet pyyaml
+
       - name: Validate graphify governance contract
         run: |
           python3 -m py_compile \
@@ -26,9 +33,12 @@ jobs:
             scripts/knowledge_base/measure_graphify_usage.py \
             scripts/knowledge_base/test_graphify_usage_logging_contract.py \
             scripts/knowledge_base/update_knowledge_index.py \
-            scripts/knowledge_base/test_graphify_governance_contract.py
+            scripts/knowledge_base/test_graphify_governance_contract.py \
+            scripts/overlord/check_local_ci_gate_workflow_contract.py \
+            scripts/overlord/test_local_ci_gate_workflow_contract.py
           python3 scripts/knowledge_base/test_graphify_governance_contract.py
           python3 scripts/knowledge_base/test_graphify_usage_logging_contract.py
+          python3 scripts/overlord/test_local_ci_gate_workflow_contract.py
 
       - name: Validate generated wiki index is committed
         run: |
