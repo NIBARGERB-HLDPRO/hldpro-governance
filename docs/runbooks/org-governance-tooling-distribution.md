@@ -1,0 +1,181 @@
+# Org Governance Tooling Distribution Runbook
+
+## Purpose
+
+`hldpro-governance` is the source of truth for shared governance tooling. Governed repos consume a pinned version of that tooling instead of copying runner logic, validators, hook helpers, and workflow contracts by hand.
+
+CI remains authoritative. Local gates are upstream filters for preventable failures before push; a local pass is not a full GitHub Actions replay.
+
+## Package Contract
+
+The machine-readable contract lives at `docs/governance-tooling-package.json`.
+
+The initial package contract defines:
+
+- package owner: `NIBARGERB-HLDPRO/hldpro-governance`
+- initial package version: `0.1.0-contract`
+- required downstream pin: governance git SHA
+- optional future pin: semver tag plus git SHA
+- consumer record path: `.hldpro/governance-tooling.json`
+- final epic gate: downstream end-to-end pull, deploy, local enforcement, GitHub enforcement, and rollback or uninstall proof
+
+Downstream repos must record the governance SHA they consume. A semver tag can improve readability later, but it cannot replace the exact SHA in the consumer record.
+
+## Surface Classes
+
+| Class | Meaning | Examples |
+|---|---|---|
+| Package core | Shared logic owned by `hldpro-governance` | Local CI Gate runner, execution-scope checker, structured-plan validator |
+| Repo profile | Centrally owned repo command mapping | `tools/local-ci-gate/profiles/local-ai-machine.yml` |
+| Managed file | Consumer repo file written by a deployer and marked as managed | `.hldpro/local-ci.sh` |
+| Repo-local override | Consumer-owned deviation from package defaults | temporary profile exception, repo-specific hook note |
+| Tracked baseline | Committed evidence or generated artifact | workflow coverage inventory, scoped graph/wiki outputs |
+| Per-run report | Local or CI output not committed by default | `cache/local-ci-gate/reports/` |
+
+Do not collapse these classes. A profile is not a runner fork. A generated baseline is not a per-run report. A local hook is not GitHub branch protection.
+
+## Package Core
+
+The current package-core surfaces are:
+
+- `tools/local-ci-gate/bin/hldpro-local-ci`
+- `tools/local-ci-gate/local_ci_gate.py`
+- `scripts/overlord/deploy_local_ci_gate.py`
+- `scripts/overlord/assert_execution_scope.py`
+- `scripts/overlord/check_execution_environment.py`
+- `scripts/overlord/validate_structured_agent_cycle_plan.py`
+- `scripts/overlord/check_workflow_local_coverage.py`
+- supporting tests and schemas named in `docs/governance-tooling-package.json`
+
+Consumers should reference these from a pinned governance checkout or through a managed shim. They should not copy and edit package-core logic in place.
+
+## Repo Profiles
+
+Repo profiles are centrally owned but repo-specific:
+
+- `hldpro-governance`
+- `ai-integration-services`
+- `knocktracker`
+- `local-ai-machine`
+
+Profiles map each repo's existing commands into shared runner semantics. A repo can request profile changes through an issue, but local profile forks require a repo-local override entry and an expiry or review cadence.
+
+## Managed Files
+
+Managed files must be identifiable and reversible.
+
+Current managed paths:
+
+- `.hldpro/local-ci.sh`
+- `.governance/local-ci.sh`
+- `.hldpro/governance-tooling.json`
+
+The Local CI shim marker is:
+
+```text
+# hldpro-governance local-ci gate managed
+```
+
+Unmanaged files at managed paths are refused by default. A deployer may support backup or force modes, but those modes require issue evidence.
+
+## Consumer Record
+
+Every downstream deployment must write or update `.hldpro/governance-tooling.json`.
+
+Required fields:
+
+- `schema_version`
+- `consumer_repo`
+- `governance_repo`
+- `governance_ref`
+- `package_version`
+- `deployed_at`
+- `managed_files`
+- `profile`
+- `local_verification`
+- `github_verification`
+- `overrides`
+
+This record is the downstream repo's answer to: "Which governance tooling did this repo consume, from where, and how was it verified?"
+
+## Overrides
+
+Repo-local overrides are allowed only when explicit.
+
+An override must include:
+
+- GitHub issue
+- reason
+- owner
+- affected file or profile
+- expiry or review cadence
+- verification command that still proves the repo is safe
+
+Forbidden overrides:
+
+- forking package-core logic without an issue-backed exception
+- disabling a CI-required gate through local package configuration
+- treating dry-run output as live enforcement evidence
+- hiding generated or per-run artifacts as if they were source-controlled baselines
+
+## Pull And Deploy Contract
+
+Phase 2 will implement the broader pull/deploy mechanism. That mechanism must satisfy this contract:
+
+1. Resolve a governance package version by git SHA.
+2. Verify the target repo and execution scope before writes.
+3. Support `dry-run`, `apply`, `verify`, and `rollback`.
+4. Print the planned write set before apply.
+5. Refuse unmanaged file overwrite by default.
+6. Write the consumer record.
+7. Prove idempotency with tests.
+8. Prove rollback or uninstall with tests.
+
+The existing Local CI shim deployer is the nearest current pattern:
+
+```bash
+python3 scripts/overlord/deploy_local_ci_gate.py dry-run \
+  --target-repo /path/to/consumer-repo \
+  --profile <profile> \
+  --governance-ref "$(git rev-parse HEAD)"
+```
+
+Phase 2 may generalize that deployer, but it must keep the refusal, marker, and preview behavior.
+
+## Verification Matrix
+
+| Surface | Local verification | GitHub verification |
+|---|---|---|
+| Package manifest | `python3 -m json.tool docs/governance-tooling-package.json` | `validate` / Local CI Gate |
+| Structured plans | `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .` | `governance-check.yml` |
+| Execution scope | `python3 scripts/overlord/check_execution_environment.py --scope <scope> --changed-files-file <files>` | `governance-check.yml` planner-boundary |
+| Local CI Gate | `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | `local-ci-gate.yml` |
+| Workflow coverage | `python3 scripts/overlord/check_workflow_local_coverage.py --root .` | `graphify-governance-contract.yml` and `local-ci-gate.yml` |
+| Shim deployer | `python3 scripts/overlord/test_deploy_local_ci_gate.py` | `local-ci-gate.yml` when deployer paths change |
+
+When changed-file selection skips a check, the report must say whether it ran zero specs, a subset, or full coverage. A skipped local surface is not proof that CI will pass.
+
+## Downstream Pilot Rule
+
+`local-ai-machine` is the default pilot repo for the downstream adoption slice.
+
+A different pilot may be selected only if the Phase 4 child issue proves one of these blockers:
+
+- LAM cannot create a clean adoption worktree.
+- LAM cannot run package deployment prerequisites.
+
+The replacement repo must be named before deployment starts.
+
+## Final Epic Gate
+
+Issue #288 must remain open until the final e2e slice proves all of the following in a downstream repo:
+
+- package pull from a pinned governance version
+- managed deploy without manual copying
+- deliberate blocker caught before push
+- local pass after remediation
+- GitHub Actions pass after push
+- rollback or uninstall path tested or mechanically proven
+- closeout links in both governance and the downstream repo
+
+Documentation alone cannot satisfy the final AC.

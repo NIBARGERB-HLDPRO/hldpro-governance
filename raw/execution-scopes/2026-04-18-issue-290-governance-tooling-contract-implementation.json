@@ -1,0 +1,58 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "codex/issue-290-governance-tooling-contract",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-18T22:12:21Z",
+    "evidence_paths": [
+      "docs/plans/issue-290-structured-agent-cycle-plan.json",
+      "docs/plans/issue-290-governance-tooling-contract-pdcar.md",
+      "raw/cross-review/2026-04-18-issue-290-governance-tooling-contract-plan.md",
+      "raw/exceptions/2026-04-18-issue-290-same-family-contract.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-18-issue-290-same-family-contract.md",
+    "active_exception_expires_at": "2026-04-19T22:12:21Z"
+  },
+  "allowed_write_paths": [
+    "docs/governance-tooling-package.json",
+    "docs/runbooks/org-governance-tooling-distribution.md",
+    "docs/plans/issue-290-structured-agent-cycle-plan.json",
+    "docs/plans/issue-290-governance-tooling-contract-pdcar.md",
+    "raw/cross-review/2026-04-18-issue-290-governance-tooling-contract-plan.md",
+    "raw/exceptions/2026-04-18-issue-290-same-family-contract.md",
+    "raw/execution-scopes/2026-04-18-issue-290-governance-tooling-contract-implementation.json",
+    "raw/closeouts/2026-04-18-issue-290-governance-tooling-contract.md",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "graphify-out/hldpro-governance/",
+    "wiki/hldpro/",
+    "wiki/index.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout contains pre-existing operator/download planning files and is not the issue #290 execution root."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Sibling repo has an active unrelated lane; issue #290 must not clean or modify it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "LAM has an active parallel implementation lane; issue #290 only defines the governance contract and does not touch it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "AIS has an active unrelated lane; issue #290 must not clean or modify it."
+    }
+  ]
+}

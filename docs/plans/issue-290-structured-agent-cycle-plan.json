@@ -1,0 +1,157 @@
+{
+  "session_id": "session-20260418-issue-290-governance-tooling-contract",
+  "issue_number": 290,
+  "objective": "Define the Phase 1 distribution contract for org-level governance tooling under parent epic #288.",
+  "tier": 1,
+  "scope_boundary": [
+    "Create an issue-backed PDCAR and structured plan for Phase 1.",
+    "Add the org governance tooling distribution runbook.",
+    "Add a machine-readable governance tooling package manifest.",
+    "Define version pinning, managed-file boundaries, repo-local override policy, compatibility expectations, verification surfaces, and rollback contract.",
+    "Keep downstream e2e proof as the final acceptance criterion for parent epic #288.",
+    "Do not implement the Phase 2 deployer in this slice."
+  ],
+  "out_of_scope": [
+    "Editing downstream repos.",
+    "Implementing a generalized pull/deploy command.",
+    "Changing Local CI Gate runner behavior.",
+    "Weakening existing hardgates or CI requirements.",
+    "Closing parent epic #288.",
+    "Treating this contract as downstream adoption proof."
+  ],
+  "research_summary": "Issue #288 established that governance tooling should be consumed from a pinned hldpro-governance package instead of recreated per repo. Existing surfaces include Local CI Gate runner/profiles, managed shim deployer, execution-scope validation, structured-plan validation, workflow coverage inventory, graphify hook helpers, and closeout evidence conventions. Phase 1 turns those into a documented and machine-readable distribution contract while leaving deployment implementation and downstream pilot proof to later child slices.",
+  "research_artifacts": [
+    "GitHub issue #288",
+    "GitHub issue #290",
+    "docs/plans/issue-288-structured-agent-cycle-plan.json",
+    "docs/plans/issue-288-org-governance-tooling-distribution-pdcar.md",
+    "docs/runbooks/local-ci-gate-toolkit.md",
+    "docs/workflow-local-coverage-inventory.json",
+    "docs/governed_repos.json",
+    "scripts/overlord/deploy_local_ci_gate.py",
+    "tools/local-ci-gate/",
+    "Subagent Planck review notification"
+  ],
+  "sprints": [
+    {
+      "name": "Planning And Scope",
+      "goal": "Create issue-backed planning and execution-scope evidence before contract edits.",
+      "tasks": [
+        "Create issue #290 under parent epic #288.",
+        "Create PDCAR, structured plan, cross-review memo, exception, and execution scope.",
+        "Declare active parallel sibling lanes without cleaning them.",
+        "Update backlog and progress mirrors."
+      ],
+      "acceptance_criteria": [
+        "Issue #290 exists before backlog/progress edits.",
+        "Structured plan validates.",
+        "Execution scope preflight passes from the isolated worktree.",
+        "Parent issue #288 remains open."
+      ],
+      "file_paths": [
+        "docs/plans/issue-290-structured-agent-cycle-plan.json",
+        "docs/plans/issue-290-governance-tooling-contract-pdcar.md",
+        "raw/cross-review/2026-04-18-issue-290-governance-tooling-contract-plan.md",
+        "raw/exceptions/2026-04-18-issue-290-same-family-contract.md",
+        "raw/execution-scopes/2026-04-18-issue-290-governance-tooling-contract-implementation.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Distribution Contract",
+      "goal": "Define the package contract and runbook for reusable governance tooling.",
+      "tasks": [
+        "Classify reusable surfaces as package core, repo profile, managed file, repo-local override, tracked baseline, or per-run report.",
+        "Add the machine-readable package manifest.",
+        "Add the operator runbook for consuming, verifying, and rolling back shared tooling.",
+        "Specify Phase 2 deployer requirements and Phase 4/5 downstream proof gates."
+      ],
+      "acceptance_criteria": [
+        "The runbook names included and excluded surfaces.",
+        "The manifest is valid JSON and machine-readable.",
+        "Every shared tool in the manifest has an owner, version rule, consumer mode, and verification command.",
+        "Managed-file and override rules are explicit.",
+        "Rollback/uninstall contract is specific enough for Phase 2 implementation.",
+        "Final downstream e2e remains mandatory for #288 closure."
+      ],
+      "file_paths": [
+        "docs/runbooks/org-governance-tooling-distribution.md",
+        "docs/governance-tooling-package.json"
+      ]
+    },
+    {
+      "name": "Validation And Closeout",
+      "goal": "Prove the contract artifacts validate locally and in GitHub before closing issue #290.",
+      "tasks": [
+        "Run JSON validation for the package manifest and structured plan.",
+        "Run execution-environment preflight.",
+        "Run structured plan validation and backlog alignment.",
+        "Run Local CI Gate.",
+        "Open PR, watch GitHub Actions, and close issue #290 only after checks pass."
+      ],
+      "acceptance_criteria": [
+        "Local validation commands pass.",
+        "PR GitHub Actions pass.",
+        "Closeout records evidence and keeps #288 open.",
+        "Issue #290 closes via PR; #288 remains open for Phase 2-5."
+      ],
+      "file_paths": [
+        "raw/closeouts/2026-04-18-issue-290-governance-tooling-contract.md",
+        "graphify-out/hldpro-governance/",
+        "wiki/hldpro/",
+        "wiki/index.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Planck",
+      "role": "tooling surface explorer",
+      "focus": "Identify package-core candidates, repo-profile candidates, generated/report artifacts, managed shim surfaces, and validation risks.",
+      "status": "accepted_with_followup",
+      "summary": "Subagent review informed the manifest/runbook surface classification and recommended keeping deployment implementation out of Phase 1.",
+      "evidence": [
+        "Subagent Planck review notification",
+        "docs/runbooks/local-ci-gate-toolkit.md",
+        "docs/workflow-local-coverage-inventory.json",
+        "scripts/overlord/deploy_local_ci_gate.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family-contract-fallback",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "True alternate-family review was unavailable in this Codex lane. Same-family exception is scoped to contract documentation and manifest only, mitigated by subagent review, deterministic validation, Local CI Gate, and GitHub Actions.",
+    "evidence": [
+      "raw/cross-review/2026-04-18-issue-290-governance-tooling-contract-plan.md",
+      "raw/exceptions/2026-04-18-issue-290-same-family-contract.md",
+      "Subagent Planck review notification"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #290 may add the Phase 1 distribution contract runbook, package manifest, planning/review/scope artifacts, status mirrors, and closeout evidence. It may not implement deployer code or edit downstream repos.",
+    "next_execution_step": "Validate, PR, watch checks, close issue #290, and leave parent epic #288 open for Phase 2.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If deployer code changes are needed, stop and create the Phase 2 issue first.",
+    "If downstream repo edits are needed, stop and create a downstream issue and execution scope first.",
+    "If the contract permits unpinned consumption, stop and revise it.",
+    "If rollback is not represented, do not close issue #290.",
+    "If final downstream e2e proof is implied complete, stop and revise because #288 must remain open."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #290",
+    "GitHub issue #288 planning package",
+    "operator instruction: follow repo rules and loop through PDCAR, GH epic, ACs, e2e testing as final AC",
+    "Subagent Planck review notification",
+    "raw/exceptions/2026-04-18-issue-290-same-family-contract.md"
+  ],
+  "approved_at": "2026-04-18T22:12:21Z"
+}

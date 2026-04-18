@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "package_name": "hldpro-governance-tooling",
+  "package_owner_repo": "NIBARGERB-HLDPRO/hldpro-governance",
+  "contract_issue": 290,
+  "parent_epic": 288,
+  "updated_at": "2026-04-18",
+  "versioning": {
+    "initial_version": "0.1.0-contract",
+    "pinning_required": true,
+    "pinning_format": "git_sha_required; semver_tag_optional_after_release",
+    "consumer_record_path": ".hldpro/governance-tooling.json",
+    "compatibility_policy": "A consumer repo must record the governance package git SHA it deploys. Semver tags may be added later, but tags do not replace the SHA record."
+  },
+  "principles": [
+    "CI remains authoritative; local gates are upstream filters.",
+    "Governed repos consume pinned tooling instead of copying shared logic by hand.",
+    "Repo-local overrides must be explicit, reviewable, and visible in the consumer record.",
+    "Managed files must be identifiable and reversible.",
+    "Issue #288 cannot close until a downstream repo proves pull, deploy, local enforcement, GitHub enforcement, and rollback or uninstall behavior end to end."
+  ],
+  "surfaces": [
+    {
+      "id": "local-ci-gate-runner",
+      "classification": "package_core",
+      "owner": "hldpro-governance",
+      "paths": [
+        "tools/local-ci-gate/bin/hldpro-local-ci",
+        "tools/local-ci-gate/local_ci_gate.py"
+      ],
+      "consumer_mode": "referenced_by_managed_shim",
+      "version_rule": "pin by governance git SHA",
+      "verification": [
+        "python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json"
+      ],
+      "notes": "Runner logic is shared. Consumer repos should not fork this logic."
+    },
+    {
+      "id": "local-ci-gate-profiles",
+      "classification": "repo_profile",
+      "owner": "hldpro-governance",
+      "paths": [
+        "tools/local-ci-gate/profiles/*.yml"
+      ],
+      "consumer_mode": "selected_by_profile_name",
+      "version_rule": "pin with runner by governance git SHA",
+      "verification": [
+        "python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile <profile> --repo-root <consumer> --dry-run"
+      ],
+      "notes": "Profiles encode repo-specific command mappings while keeping runner behavior shared."
+    },
+    {
+      "id": "managed-local-ci-shim",
+      "classification": "managed_file",
+      "owner": "hldpro-governance",
+      "paths": [
+        ".hldpro/local-ci.sh",
+        ".governance/local-ci.sh"
+      ],
+      "consumer_mode": "written_to_consumer_repo_by_deployer",
+      "version_rule": "shim records governance ref supplied at deploy time",
+      "verification": [
+        "python3 scripts/overlord/deploy_local_ci_gate.py dry-run --target-repo <consumer> --profile <profile> --governance-ref <sha>"
+      ],
+      "notes": "Managed shims must include the managed marker and must not overwrite unmanaged files without explicit backup or force."
+    },
+    {
+      "id": "local-ci-shim-deployer",
+      "classification": "package_core",
+      "owner": "hldpro-governance",
+      "paths": [
+        "scripts/overlord/deploy_local_ci_gate.py",
+        "scripts/overlord/test_deploy_local_ci_gate.py"
+      ],
+      "consumer_mode": "operator_invoked_from_governance_checkout",
+      "version_rule": "pin by governance git SHA",
+      "verification": [
+        "python3 scripts/overlord/test_deploy_local_ci_gate.py"
+      ],
+      "notes": "Phase 2 may generalize this into a broader package deployer."
+    },
+    {
+      "id": "execution-scope-validation",
+      "classification": "package_core",
+      "owner": "hldpro-governance",
+      "paths": [
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/check_execution_environment.py",
+        "scripts/overlord/test_assert_execution_scope.py"
+      ],
+      "consumer_mode": "local_preflight_and_planner_boundary_gate",
+      "version_rule": "pin by governance git SHA when consumed outside governance",
+      "verification": [
+        "python3 scripts/overlord/test_assert_execution_scope.py",
+        "python3 scripts/overlord/check_execution_environment.py --scope <scope> --changed-files-file <changed-files>"
+      ],
+      "notes": "Active parallel roots warn only when declared; undeclared dirty roots still block."
+    },
+    {
+      "id": "structured-plan-validation",
+      "classification": "package_core",
+      "owner": "hldpro-governance",
+      "paths": [
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py"
+      ],
+      "consumer_mode": "governance_surface_gate",
+      "version_rule": "pin by governance git SHA when used by governed repos",
+      "verification": [
+        "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root ."
+      ],
+      "notes": "Governance-surface changes require issue-backed structured planning."
+    },
+    {
+      "id": "workflow-local-coverage",
+      "classification": "package_core",
+      "owner": "hldpro-governance",
+      "paths": [
+        "docs/workflow-local-coverage-inventory.json",
+        "scripts/overlord/check_workflow_local_coverage.py",
+        "scripts/overlord/test_workflow_local_coverage.py"
+      ],
+      "consumer_mode": "governance_workflow_contract_guard",
+      "version_rule": "pin by governance git SHA",
+      "verification": [
+        "python3 scripts/overlord/check_workflow_local_coverage.py --root .",
+        "python3 scripts/overlord/test_workflow_local_coverage.py"
+      ],
+      "notes": "Inventory distinguishes local commands, workflow contracts, script dry-runs, and GitHub-only surfaces."
+    },
+    {
+      "id": "graphify-hook-helper",
+      "classification": "package_core_with_generated_outputs",
+      "owner": "hldpro-governance",
+      "paths": [
+        "hooks/graphify-autocommit.sh",
+        "scripts/knowledge_base/",
+        "graphify-out/<repo>/",
+        "wiki/<repo>/"
+      ],
+      "consumer_mode": "repo_specific_adoption_issue_required",
+      "version_rule": "pin by governance git SHA for helper changes; generated outputs are committed as scoped artifacts",
+      "verification": [
+        "python3 scripts/knowledge_base/test_graphify_governance_contract.py"
+      ],
+      "notes": "Scoped graph/wiki outputs are tracked baselines. Cache and per-run scratch files remain local-only."
+    }
+  ],
+  "artifact_classes": {
+    "package_core": "Shared logic owned by hldpro-governance. Consumers reference or deploy it from a pinned governance version.",
+    "repo_profile": "Repo-specific command mapping owned centrally but selected per consumer.",
+    "managed_file": "A file written into a consumer repo by a deployer and marked as managed.",
+    "repo_local_override": "Consumer-owned deviation that must be recorded in the consumer manifest and reviewed in that repo.",
+    "tracked_baseline": "Committed measurement or generated artifact used as evidence.",
+    "per_run_report": "Local or CI run output that is ignored unless summarized into a closeout or issue comment."
+  },
+  "managed_file_contract": {
+    "marker_required": true,
+    "markers": [
+      "# hldpro-governance local-ci gate managed"
+    ],
+    "allowed_paths": [
+      ".hldpro/local-ci.sh",
+      ".governance/local-ci.sh",
+      ".hldpro/governance-tooling.json"
+    ],
+    "overwrite_policy": "Refuse unmanaged files by default; require backup or force with issue evidence.",
+    "rollback_policy": "Managed-file rollback must either restore the previous managed version, remove the managed file, or restore an explicit backup. Phase 2 deployer must expose dry-run rollback preview before apply."
+  },
+  "repo_local_override_contract": {
+    "allowed": true,
+    "requires_issue": true,
+    "requires_reason": true,
+    "requires_owner": true,
+    "requires_expiry_or_review_cadence": true,
+    "forbidden": [
+      "Forking package core logic without an issue-backed exception.",
+      "Disabling CI-required gates through local package configuration.",
+      "Treating a dry-run as live enforcement evidence."
+    ]
+  },
+  "consumer_record_contract": {
+    "path": ".hldpro/governance-tooling.json",
+    "required_fields": [
+      "schema_version",
+      "consumer_repo",
+      "governance_repo",
+      "governance_ref",
+      "package_version",
+      "deployed_at",
+      "managed_files",
+      "profile",
+      "local_verification",
+      "github_verification",
+      "overrides"
+    ]
+  },
+  "phase_gate": {
+    "phase_2_deployer_requires": [
+      "Read this manifest.",
+      "Support dry-run, apply, verify, and rollback modes.",
+      "Write or update the consumer record.",
+      "Refuse dirty target repos unless the execution scope explicitly allows the active lane.",
+      "Refuse unmanaged file overwrite by default."
+    ],
+    "phase_4_pilot_default": "local-ai-machine",
+    "phase_4_pilot_fallback_rule": "A replacement repo may be selected only if the Phase 4 issue proves local-ai-machine cannot create a clean adoption worktree or cannot run package deployment prerequisites.",
+    "phase_5_final_e2e_required": true
+  }
+}
