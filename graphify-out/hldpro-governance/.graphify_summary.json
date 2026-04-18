@@ -1,8 +1,8 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-286-execution-environment-preflight/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-286-execution-environment-preflight/wiki/hldpro",
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-290-governance-tooling-contract/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-290-governance-tooling-contract/wiki/hldpro",
   "nodes": 838,
   "edges": 1531,
   "communities": 44,

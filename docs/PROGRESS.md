@@ -52,6 +52,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Governance tooling distribution contract | #290 | 2026-04-18 | PR #291 added the Phase 1 package manifest, org distribution runbook, managed-file/override/rollback contract, validation evidence, and closeout. Parent epic #288 remains open for deployer, downstream pilot, and final e2e proof. Closeout: raw/closeouts/2026-04-18-issue-290-governance-tooling-contract.md. |
 | Execution environment preflight for active parallel lanes | #286 | 2026-04-18 | PR #287 added active parallel root declarations, a preflight wrapper, and tests proving declared sibling lanes warn while undeclared dirty roots still fail. Closeout: raw/closeouts/2026-04-18-issue-286-execution-environment-preflight.md. |
 | Local-first coverage for governance GitHub workflows | #284 | 2026-04-18 | PR #285 added the workflow coverage inventory, deterministic validator, negative-control tests, Local CI Gate wiring, and independent contract workflow coverage. Closeout: raw/closeouts/2026-04-18-issue-284-local-first-workflow-coverage.md. |
 | Local CI Gate enforcement remediation | #275 | 2026-04-18 | PR #278 repaired portable shim targeting, live enforcement proof, governance scope fix, changed-file detection, evidence taxonomy, and retrospective audit. Repo-level hardgate wiring is tracked by #277. |
