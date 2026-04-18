@@ -60,6 +60,7 @@ class TestAssertExecutionScope(unittest.TestCase):
         branch: str = "scope-test",
         allowed: list[str] | None = None,
         forbidden_roots: list[Path] | None = None,
+        active_parallel_roots: list[dict[str, str]] | None = None,
         execution_mode: str | None = None,
         handoff_evidence: dict[str, Any] | None = None,
     ) -> Path:
@@ -69,6 +70,8 @@ class TestAssertExecutionScope(unittest.TestCase):
             "allowed_write_paths": allowed or ["allowed.txt", "allowed-dir/"],
             "forbidden_roots": [str(path) for path in forbidden_roots or []],
         }
+        if active_parallel_roots is not None:
+            scope["active_parallel_roots"] = active_parallel_roots
         if execution_mode is not None:
             scope["execution_mode"] = execution_mode
         if handoff_evidence is not None:
@@ -82,9 +85,10 @@ class TestAssertExecutionScope(unittest.TestCase):
         if changed_files_file is not None:
             args.extend(["--changed-files-file", str(changed_files_file)])
         stdout = io.StringIO()
-        with contextlib.redirect_stdout(stdout), _working_directory(repo):
+        stderr = io.StringIO()
+        with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr), _working_directory(repo):
             code = assert_execution_scope.main(args)
-        return code, stdout.getvalue()
+        return code, stdout.getvalue() + stderr.getvalue()
 
     def _changed_files_file(self, tmpdir: Path, paths: list[str], name: str = "changed-files.txt") -> Path:
         path = tmpdir / name
@@ -378,6 +382,124 @@ class TestAssertExecutionScope(unittest.TestCase):
         self.assertNotEqual(code, 0)
         self.assertIn("forbidden root is dirty", output)
         self.assertIn("leak.txt", output)
+
+    def test_declared_active_parallel_root_warns_instead_of_failing(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            forbidden = RepoFixture(tmpdir / "forbidden")
+            forbidden.write("active-lane.txt")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                forbidden_roots=[forbidden.root],
+                active_parallel_roots=[
+                    {
+                        "path": str(forbidden.root),
+                        "reason": "parallel lane under test",
+                    }
+                ],
+            )
+
+            code, output = self._run_main(repo.root, scope)
+
+        self.assertEqual(code, 0, output)
+        self.assertIn("WARN active parallel root declared", output)
+        self.assertIn("active-lane.txt", output)
+        self.assertIn("PASS execution scope", output)
+
+    def test_active_parallel_root_does_not_hide_inactive_dirty_root(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            active = RepoFixture(tmpdir / "active")
+            inactive = RepoFixture(tmpdir / "inactive")
+            active.write("active-lane.txt")
+            inactive.write("inactive-lane.txt")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                forbidden_roots=[active.root, inactive.root],
+                active_parallel_roots=[
+                    {
+                        "path": str(active.root),
+                        "reason": "parallel lane under test",
+                    }
+                ],
+            )
+
+            code, output = self._run_main(repo.root, scope)
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("WARN active parallel root declared", output)
+        self.assertIn("inactive-lane.txt", output)
+        self.assertIn("FAIL forbidden root is dirty", output)
+
+    def test_clean_active_parallel_root_does_not_warn(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            forbidden = RepoFixture(tmpdir / "forbidden")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                forbidden_roots=[forbidden.root],
+                active_parallel_roots=[
+                    {
+                        "path": str(forbidden.root),
+                        "reason": "parallel lane under test",
+                    }
+                ],
+            )
+
+            code, output = self._run_main(repo.root, scope)
+
+        self.assertEqual(code, 0, output)
+        self.assertNotIn("WARN active parallel root declared", output)
+
+    def test_refuses_active_parallel_root_not_in_forbidden_roots(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            other = RepoFixture(tmpdir / "other")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                forbidden_roots=[],
+                active_parallel_roots=[
+                    {
+                        "path": str(other.root),
+                        "reason": "parallel lane under test",
+                    }
+                ],
+            )
+
+            code, output = self._run_main(repo.root, scope)
+
+        self.assertEqual(code, 2)
+        self.assertIn("must also appear in `forbidden_roots`", output)
+
+    def test_refuses_active_parallel_root_without_reason(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            forbidden = RepoFixture(tmpdir / "forbidden")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                forbidden_roots=[forbidden.root],
+                active_parallel_roots=[
+                    {
+                        "path": str(forbidden.root),
+                        "reason": "",
+                    }
+                ],
+            )
+
+            code, output = self._run_main(repo.root, scope)
+
+        self.assertEqual(code, 2)
+        self.assertIn("reason` must be a non-empty string", output)
 
     def test_refuses_out_of_scope_changes(self) -> None:
         with tempfile.TemporaryDirectory() as raw_tmpdir:

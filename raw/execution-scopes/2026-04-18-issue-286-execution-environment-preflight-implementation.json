@@ -1,0 +1,62 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "codex/issue-286-execution-environment-preflight",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-286-structured-agent-cycle-plan.json",
+    "docs/plans/issue-286-execution-environment-preflight-pdcar.md",
+    "graphify-out/hldpro-governance/",
+    "raw/closeouts/2026-04-18-issue-286-execution-environment-preflight.md",
+    "raw/cross-review/2026-04-18-issue-286-execution-environment-preflight-plan.md",
+    "raw/exceptions/2026-04-18-issue-286-same-family-implementation.md",
+    "raw/execution-scopes/2026-04-18-issue-286-execution-environment-preflight-planning.json",
+    "raw/execution-scopes/2026-04-18-issue-286-execution-environment-preflight-implementation.json",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/check_execution_environment.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "wiki/hldpro/",
+    "wiki/index.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Main checkout has pre-existing issue #253 planning import work outside this isolated worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Knocktracker has active parallel lane artifacts and graph cache churn outside this governance slice."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "LAM is active on another lane per operator instruction."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "AIS is active on another lane per operator instruction."
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "reviewer_model": "subagent-singer",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-18T19:00:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-286-structured-agent-cycle-plan.json",
+      "docs/plans/issue-286-execution-environment-preflight-pdcar.md",
+      "raw/cross-review/2026-04-18-issue-286-execution-environment-preflight-plan.md",
+      "GitHub issue #286",
+      "Subagent review Singer"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-18-issue-286-same-family-implementation.md#exception",
+    "active_exception_expires_at": "2026-04-19T19:00:00Z"
+  }
+}

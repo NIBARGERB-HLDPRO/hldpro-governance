@@ -1,6 +1,6 @@
 # RepoFixture
 
-> God node · 20 connections · `scripts/overlord/test_assert_execution_scope.py`
+> God node · 25 connections · `scripts/overlord/test_assert_execution_scope.py`
 
 ## Connections by Relation
 
@@ -18,10 +18,13 @@
 - [[.test_planning_only_diff_outside_allowed_paths_fails()]] `INFERRED`
 - [[.test_non_planning_without_handoff_fails()]] `INFERRED`
 - [[.test_refuses_dirty_forbidden_root()]] `INFERRED`
+- [[.test_declared_active_parallel_root_warns_instead_of_failing()]] `INFERRED`
+- [[.test_active_parallel_root_does_not_hide_inactive_dirty_root()]] `INFERRED`
 - [[.test_refuses_out_of_scope_changes()]] `INFERRED`
 - [[.test_portable_expected_root_sentinel_passes_in_copied_checkout()]] `INFERRED`
 - [[.test_refuses_wrong_root()]] `INFERRED`
 - [[.test_refuses_wrong_branch()]] `INFERRED`
+- [[.test_clean_active_parallel_root_does_not_warn()]] `INFERRED`
 
 ### contains
 - [[test_assert_execution_scope.py]] `EXTRACTED`

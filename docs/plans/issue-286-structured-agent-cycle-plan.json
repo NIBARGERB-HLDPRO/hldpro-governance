@@ -1,0 +1,142 @@
+{
+  "session_id": "session-20260418-issue-286-execution-environment-preflight",
+  "issue_number": 286,
+  "objective": "Add an execution-environment preflight and active parallel root declarations so local gates remain strict without being blocked by intentionally active sibling lanes.",
+  "tier": 2,
+  "scope_boundary": [
+    "Keep target worktree root, branch, and write-boundary enforcement strict.",
+    "Keep undeclared dirty forbidden roots as blockers.",
+    "Allow explicitly declared active parallel roots to warn instead of block.",
+    "Require every active parallel root declaration to include a non-empty reason.",
+    "Verify the behavior with focused local tests, Local CI Gate, and GitHub Actions."
+  ],
+  "out_of_scope": [
+    "Cleaning or reverting dirty sibling repos.",
+    "Weakening write-boundary enforcement for the target worktree.",
+    "Changing consumer repository gate behavior.",
+    "Making GitHub Actions ignore dirty roots; clean runners should remain authoritative.",
+    "Adding broad machine-local state files outside issue-scoped artifacts."
+  ],
+  "research_summary": "Issue #284 exposed a repeated local blocker: `assert_execution_scope.py` correctly failed on dirty sibling roots, but those roots can be intentionally active in parallel lanes. The missing contract is a declared active-parallel-root list that preserves strict defaults while making active lanes explicit.",
+  "research_artifacts": [
+    "GitHub issue #286",
+    "raw/closeouts/2026-04-18-issue-284-local-first-workflow-coverage.md",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Planning And Scope",
+      "goal": "Add issue-backed planning and implementation scope before code edits.",
+      "tasks": [
+        "Create issue #286.",
+        "Add structured plan, PDCAR, cross-review, same-family exception, and execution scopes.",
+        "Update backlog/progress mirrors while issue #286 is active."
+      ],
+      "acceptance_criteria": [
+        "Issue #286 exists before backlog edits.",
+        "Structured plan validates.",
+        "Implementation scope declares script, test, docs, status, closeout, graph, and wiki write paths."
+      ],
+      "file_paths": [
+        "docs/plans/issue-286-structured-agent-cycle-plan.json",
+        "docs/plans/issue-286-execution-environment-preflight-pdcar.md",
+        "raw/cross-review/2026-04-18-issue-286-execution-environment-preflight-plan.md",
+        "raw/exceptions/2026-04-18-issue-286-same-family-implementation.md",
+        "raw/execution-scopes/2026-04-18-issue-286-execution-environment-preflight-planning.json",
+        "raw/execution-scopes/2026-04-18-issue-286-execution-environment-preflight-implementation.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Active Parallel Root Enforcement",
+      "goal": "Extend execution-scope validation so declared active parallel roots warn instead of blocking.",
+      "tasks": [
+        "Add `active_parallel_roots` parsing to execution-scope loading.",
+        "Require active parallel root entries to include repo path and reason.",
+        "Make dirty forbidden roots block unless their git root matches a declared active parallel root.",
+        "Emit warnings for declared active dirty roots.",
+        "Add focused tests for undeclared dirty roots, declared active roots, invalid declarations, and target worktree dirtiness."
+      ],
+      "acceptance_criteria": [
+        "Undeclared dirty forbidden root still fails.",
+        "Declared active parallel root returns a warning and does not fail.",
+        "Target worktree out-of-scope changes still fail.",
+        "Malformed active root declarations fail at scope load."
+      ],
+      "file_paths": [
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py"
+      ]
+    },
+    {
+      "name": "Preflight And Evidence",
+      "goal": "Add operator-friendly preflight and prove behavior locally and in CI.",
+      "tasks": [
+        "Add `scripts/overlord/check_execution_environment.py` as a thin preflight wrapper.",
+        "Wire local tests and Local CI Gate evidence.",
+        "Record final GitHub Actions run evidence in closeout."
+      ],
+      "acceptance_criteria": [
+        "Preflight reports PASS for clean/declared-active environment and returns nonzero for blockers.",
+        "Local CI Gate can pass this issue branch by declaring currently active parallel lanes.",
+        "GitHub Actions passes on the PR.",
+        "Closeout records command output and run IDs."
+      ],
+      "file_paths": [
+        "scripts/overlord/check_execution_environment.py",
+        "raw/closeouts/2026-04-18-issue-286-execution-environment-preflight.md",
+        "graphify-out/hldpro-governance/",
+        "wiki/hldpro/",
+        "wiki/index.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Singer",
+      "role": "execution-scope implementation explorer",
+      "focus": "Minimal implementation approach and test edge cases for active parallel roots.",
+      "status": "accepted",
+      "summary": "Recommended a local change: add optional `active_parallel_roots`, validate it as a subset of `forbidden_roots`, and convert only declared dirty sibling roots from failures to warnings.",
+      "evidence": [
+        "Subagent Singer review notification",
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "subagent-review",
+    "model_family": "openai-mini",
+    "status": "accepted_with_followup",
+    "summary": "Subagent review accepted the minimal implementation approach and edge cases; tests cover those cases.",
+    "evidence": [
+      "GitHub issue #286",
+      "Subagent Singer review notification"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #286 may modify execution-scope validation, add an execution-environment preflight wrapper, update focused tests, update status artifacts, and record closeout evidence.",
+    "next_execution_step": "Implement active parallel root support and focused tests.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If target worktree dirtiness is made non-blocking, stop and revise the plan.",
+    "If undeclared dirty forbidden roots stop blocking, stop and revise the implementation.",
+    "If consumer repo changes are needed, create a separate issue first.",
+    "If Local CI Gate still blocks for reasons other than undeclared sibling roots, fix forward before closeout."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #286",
+    "operator instruction: proceed",
+    "subagent Singer review notification"
+  ],
+  "approved_at": "2026-04-18T19:00:00Z"
+}

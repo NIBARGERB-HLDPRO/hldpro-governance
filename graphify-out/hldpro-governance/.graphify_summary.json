@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-284-local-first-workflow-coverage/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-284-local-first-workflow-coverage/wiki/hldpro",
-  "nodes": 831,
-  "edges": 1507,
-  "communities": 45,
-  "articles": 55,
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-286-execution-environment-preflight/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-286-execution-environment-preflight/wiki/hldpro",
+  "nodes": 838,
+  "edges": 1531,
+  "communities": 44,
+  "articles": 54,
   "html_status": "skipped",
-  "code_files": 52
+  "code_files": 53
 }

@@ -27,6 +27,7 @@ class ExecutionScope:
     expected_branch: str
     allowed_write_paths: tuple[str, ...]
     forbidden_roots: tuple[Path, ...]
+    active_parallel_roots: tuple[Path, ...] = ()
     execution_mode: str = "planning_only"
     handoff_evidence: HandoffEvidence | None = None
 
@@ -175,6 +176,7 @@ def _load_scope(path: Path) -> ExecutionScope:
     expected_branch = payload["expected_branch"]
     allowed_write_paths = payload["allowed_write_paths"]
     forbidden_roots = payload["forbidden_roots"]
+    active_parallel_roots = payload.get("active_parallel_roots", [])
     execution_mode = payload.get("execution_mode", "planning_only")
     handoff_evidence_payload = payload.get("handoff_evidence")
 
@@ -186,10 +188,32 @@ def _load_scope(path: Path) -> ExecutionScope:
         raise ValueError(f"{path}: `allowed_write_paths` must be an array of non-empty strings")
     if not isinstance(forbidden_roots, list) or not all(isinstance(item, str) and item for item in forbidden_roots):
         raise ValueError(f"{path}: `forbidden_roots` must be an array of non-empty strings")
+    if not isinstance(active_parallel_roots, list):
+        raise ValueError(f"{path}: `active_parallel_roots` must be an array when provided")
     if not isinstance(execution_mode, str) or not execution_mode:
         raise ValueError(f"{path}: `execution_mode` must be a non-empty string when provided")
     if handoff_evidence_payload is not None and not isinstance(handoff_evidence_payload, dict):
         raise ValueError(f"{path}: `handoff_evidence` must be an object when provided")
+
+    normalized_forbidden_roots = tuple(Path(item).expanduser().resolve(strict=False) for item in forbidden_roots)
+    normalized_active_roots: list[Path] = []
+    for index, item in enumerate(active_parallel_roots, start=1):
+        if not isinstance(item, dict):
+            raise ValueError(f"{path}: `active_parallel_roots[{index}]` must be an object")
+        active_path = item.get("path")
+        reason = item.get("reason")
+        if not isinstance(active_path, str) or not active_path:
+            raise ValueError(f"{path}: `active_parallel_roots[{index}].path` must be a non-empty string")
+        if not isinstance(reason, str) or not reason.strip():
+            raise ValueError(f"{path}: `active_parallel_roots[{index}].reason` must be a non-empty string")
+        normalized_active = Path(active_path).expanduser().resolve(strict=False)
+        if normalized_active not in normalized_forbidden_roots:
+            raise ValueError(
+                f"{path}: `active_parallel_roots[{index}].path` must also appear in `forbidden_roots`: "
+                f"{normalized_active}"
+            )
+        if normalized_active not in normalized_active_roots:
+            normalized_active_roots.append(normalized_active)
 
     handoff_evidence = None
     if isinstance(handoff_evidence_payload, dict):
@@ -199,7 +223,8 @@ def _load_scope(path: Path) -> ExecutionScope:
         expected_execution_root=expected_execution_root,
         expected_branch=expected_branch,
         allowed_write_paths=tuple(_normalize_repo_path(item) for item in allowed_write_paths),
-        forbidden_roots=tuple(Path(item).expanduser().resolve(strict=False) for item in forbidden_roots),
+        forbidden_roots=normalized_forbidden_roots,
+        active_parallel_roots=tuple(normalized_active_roots),
         execution_mode=execution_mode,
         handoff_evidence=handoff_evidence,
     )
@@ -413,11 +438,15 @@ def check_scope(
         if forbidden_changes is None:
             failures.append(f"forbidden root status unreadable: {_format_path(forbidden_git_root)}")
         elif forbidden_changes:
-            failures.append(
+            message = (
                 "forbidden root is dirty: "
                 f"{_format_path(forbidden_git_root)} has changed paths: "
                 + ", ".join(forbidden_changes)
             )
+            if forbidden_git_root in scope.active_parallel_roots:
+                warnings.append("active parallel root declared; " + message)
+            else:
+                failures.append(message)
 
     return failures, warnings
 
