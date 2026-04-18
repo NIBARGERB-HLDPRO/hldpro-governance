@@ -21,8 +21,8 @@
     "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
   ],
   "handoff_evidence": {
-    "status": "accepted_with_followup",
-    "planner_model": "gpt-5.4",
+    "status": "accepted",
+    "planner_model": "operator-reviewed-remediation-plan",
     "audit_reviewer": "Descartes",
     "debug_reviewer": "Einstein",
     "implementer_model": "gpt-5.4",

@@ -14,6 +14,7 @@ import sys
 
 
 MODULE_PATH = Path(__file__).with_name("deploy_local_ci_gate.py")
+REPO_ROOT = MODULE_PATH.resolve().parents[2]
 SPEC = importlib.util.spec_from_file_location("deploy_local_ci_gate", MODULE_PATH)
 assert SPEC is not None
 assert SPEC.loader is not None
@@ -30,6 +31,7 @@ class TestDeployLocalCIGate(unittest.TestCase):
         self.gov.mkdir()
         self.product = self.root / "knocktracker"
         self.product.mkdir()
+        subprocess.run(["git", "init"], cwd=self.product, check=True, capture_output=True, text=True)
 
     def tearDown(self) -> None:
         self.tmp.cleanup()
@@ -44,11 +46,11 @@ class TestDeployLocalCIGate(unittest.TestCase):
     def _shim(self, relative_path: str = ".hldpro/local-ci.sh") -> Path:
         return self.product / relative_path
 
-    def _write_fake_runner(self, root: Path) -> None:
+    def _write_fake_runner(self, root: Path, *, exit_code: int = 0) -> None:
         runner = root / "tools" / "local-ci-gate" / "bin" / "hldpro-local-ci"
         runner.parent.mkdir(parents=True, exist_ok=True)
         runner.write_text(
-            "import json, sys\nprint(json.dumps({'argv': sys.argv[1:]}))\n",
+            f"import json, sys\nprint(json.dumps({{'argv': sys.argv[1:]}}))\nsys.exit({exit_code})\n",
             encoding="utf-8",
         )
 
@@ -92,11 +94,15 @@ class TestDeployLocalCIGate(unittest.TestCase):
         self.assertIn(deploy_local_ci_gate.MANAGED_MARKER, payload["shim_body"])
         self.assertIn("--governance-ref", payload["shim_body"])
         self.assertIn("HLDPRO_GOVERNANCE_ROOT", payload["shim_body"])
-        self.assertIn('EMBEDDED_GOVERNANCE_ROOT="', payload["shim_body"])
+        self.assertIn("EMBEDDED_GOVERNANCE_ROOT=", payload["shim_body"])
         self.assertIn('RUNNER_PATH="${GOVERNANCE_ROOT}/tools/local-ci-gate/bin/hldpro-local-ci"', payload["shim_body"])
         self.assertIn('exec python3 "${RUNNER_PATH}" run', payload["shim_body"])
         self.assertIn('--governance-root "${GOVERNANCE_ROOT}"', payload["shim_body"])
+        self.assertIn('--repo-root "${REPO_ROOT}"', payload["shim_body"])
+        self.assertIn('--shim-path "${SHIM_PATH}"', payload["shim_body"])
         self.assertIn(str(self.gov.resolve()), payload["shim_body"])
+        self.assertNotIn(str(self.product.resolve()), payload["shim_body"])
+        self.assertNotIn(str(self._shim().resolve()), payload["shim_body"])
         self.assertEqual(payload["planned_write_set"], [str(self._shim().resolve())])
         self.assertEqual(payload["command_preview"][0], deploy_local_ci_gate.sys.executable)
 
@@ -167,6 +173,8 @@ class TestDeployLocalCIGate(unittest.TestCase):
         self.assertEqual(fallback.returncode, 0, fallback.stderr)
         fallback_payload = json.loads(fallback.stdout)
         self.assertIn(str(self.gov.resolve()), fallback_payload["argv"])
+        self.assertEqual(fallback_payload["argv"][fallback_payload["argv"].index("--repo-root") + 1], str(self.product.resolve()))
+        self.assertEqual(fallback_payload["argv"][fallback_payload["argv"].index("--shim-path") + 1], str(self._shim().resolve()))
 
         env = os.environ.copy()
         env["HLDPRO_GOVERNANCE_ROOT"] = str(override.resolve())
@@ -174,6 +182,91 @@ class TestDeployLocalCIGate(unittest.TestCase):
         self.assertEqual(overridden.returncode, 0, overridden.stderr)
         overridden_payload = json.loads(overridden.stdout)
         self.assertIn(str(override.resolve()), overridden_payload["argv"])
+
+    def test_installed_shim_remains_portable_when_copied_to_another_repo(self) -> None:
+        second_product = self.root / "second-product"
+        second_product.mkdir()
+        subprocess.run(["git", "init"], cwd=second_product, check=True, capture_output=True, text=True)
+        self._write_fake_runner(self.gov)
+
+        code, stdout, stderr = self._invoke(
+            "install",
+            "--governance-root",
+            str(self.gov),
+            "--target-repo",
+            str(self.product),
+            "--governance-ref",
+            "abc123",
+        )
+        self.assertEqual(code, 0, stderr)
+        self.assertIn("installed managed shim", stdout)
+
+        copied = second_product / ".hldpro" / "local-ci.sh"
+        copied.parent.mkdir(parents=True, exist_ok=True)
+        copied.write_text(self._shim().read_text(encoding="utf-8"), encoding="utf-8")
+        copied.chmod(0o755)
+
+        result = subprocess.run([str(copied)], cwd=second_product, capture_output=True, text=True, check=False)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertEqual(payload["argv"][payload["argv"].index("--repo-root") + 1], str(second_product.resolve()))
+        self.assertEqual(payload["argv"][payload["argv"].index("--shim-path") + 1], str(copied.resolve()))
+
+    def test_installed_shim_propagates_runner_failure(self) -> None:
+        self._write_fake_runner(self.gov, exit_code=1)
+
+        code, stdout, stderr = self._invoke(
+            "install",
+            "--governance-root",
+            str(self.gov),
+            "--target-repo",
+            str(self.product),
+        )
+        self.assertEqual(code, 0, stderr)
+        self.assertIn("installed managed shim", stdout)
+
+        result = subprocess.run([str(self._shim())], cwd=self.product, capture_output=True, text=True, check=False)
+        self.assertEqual(result.returncode, 1)
+
+    def test_installed_shim_propagates_real_runner_blocker_failure(self) -> None:
+        profile = self.product / "failing-profile.yml"
+        profile.write_text(
+            """
+profile:
+  name: failing-profile
+  description: Failing profile for shim enforcement proof
+  report_root: reports
+  changed_files:
+    include_untracked: true
+  checks:
+    - id: live-blocker
+      title: Live blocker
+      severity: blocker
+      scope: always
+      command:
+        - python3
+        - -c
+        - "import sys; sys.exit(1)"
+""".strip()
+            + "\n",
+            encoding="utf-8",
+        )
+
+        code, stdout, stderr = self._invoke(
+            "install",
+            "--governance-root",
+            str(REPO_ROOT),
+            "--target-repo",
+            str(self.product),
+            "--profile",
+            str(profile),
+        )
+        self.assertEqual(code, 0, stderr)
+        self.assertIn("installed managed shim", stdout)
+
+        result = subprocess.run([str(self._shim())], cwd=self.product, capture_output=True, text=True, check=False)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("Verdict: BLOCKER", result.stdout)
 
     def test_refresh_updates_managed_shim_content(self) -> None:
         shim = self._shim()
