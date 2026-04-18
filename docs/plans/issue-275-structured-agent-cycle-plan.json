@@ -1,0 +1,176 @@
+{
+  "session_id": "session-20260418-issue-275-local-ci-enforcement-remediation",
+  "issue_number": 275,
+  "objective": "Repair Local CI Gate enforcement wiring, portable shim behavior, and session-compliance evidence before any further consumer rollout.",
+  "tier": 2,
+  "scope_boundary": [
+    "Stop consumer rollout work until this remediation is planned and implemented.",
+    "Record retrospective audit findings for Local CI Gate issues #265, #270, and #272.",
+    "Plan portable shim fixes so committed consumer shims do not embed absolute consumer worktree paths.",
+    "Plan live enforcement tests that prove blocker failures exit non-zero through an installed shim.",
+    "Plan governance profile execution-scope handling so it no longer hardcodes issue #253.",
+    "Plan runbook language that distinguishes profile-only, shim-installed, manual live gate, pre-push hook gate, and CI-required gate."
+  ],
+  "out_of_scope": [
+    "Installing or refreshing knocktracker, AIS, or LAM consumer shims in this issue.",
+    "Editing dirty shared checkouts outside this isolated governance worktree.",
+    "Changing Local CI Gate profile command coverage except where required for the remediation.",
+    "Claiming hardgate status before a required invocation path is visibly wired and tested.",
+    "Closing retrospective compliance gaps without a recorded independent review artifact."
+  ],
+  "research_summary": "Two read-only specialist reviews found that Local CI Gate profile dry-runs and profile availability were treated as stronger evidence than they are. The runner can fail blocker checks when invoked, but the hardgate path is not yet visibly wired as a required governance check, generated consumer shims can embed absolute target worktree paths, the governance profile references an old #253 execution scope, and closeout evidence did not sufficiently distinguish mapping proof from live enforcement proof.",
+  "research_artifacts": [
+    "GitHub issue #275",
+    "Subagent audit report Descartes, 2026-04-18",
+    "Subagent debug-specialist report Einstein, 2026-04-18",
+    "tools/local-ci-gate/local_ci_gate.py",
+    "scripts/overlord/deploy_local_ci_gate.py",
+    "scripts/overlord/test_deploy_local_ci_gate.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "docs/runbooks/local-ci-gate-toolkit.md",
+    "raw/closeouts/2026-04-18-local-ci-contract-hardening.md",
+    "raw/closeouts/2026-04-18-local-ai-machine-local-ci-profile.md"
+  ],
+  "sprints": [
+    {
+      "name": "Planning and Audit Record",
+      "goal": "Land trusted planning and scope artifacts before any remediation implementation.",
+      "tasks": [
+        "Create issue-backed structured plan for #275.",
+        "Add PDCA/R and planning cross-review artifacts using the specialist audit/debug findings.",
+        "Add planning and implementation execution scopes.",
+        "Update governance mirrors to show #275 as the active Local CI Gate remediation lane.",
+        "Validate structured plans, backlog alignment, diff hygiene, dual-signature metadata, and planner-boundary scope."
+      ],
+      "acceptance_criteria": [
+        "GitHub issue #275 is open and referenced by governance mirrors.",
+        "Planning PR contains only planning/scope/cross-review/status artifacts.",
+        "Implementation branch and allowed write paths are declared before implementation starts.",
+        "Consumer rollout remains explicitly frozen until P0 remediation is complete."
+      ],
+      "file_paths": [
+        "docs/plans/issue-275-structured-agent-cycle-plan.json",
+        "docs/plans/issue-275-local-ci-enforcement-remediation-pdcar.md",
+        "raw/cross-review/2026-04-18-issue-275-local-ci-enforcement-remediation-plan.md",
+        "raw/execution-scopes/2026-04-18-issue-275-local-ci-enforcement-remediation-planning.json",
+        "raw/execution-scopes/2026-04-18-issue-275-local-ci-enforcement-remediation-implementation.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Portable Shim and Enforcement Evidence",
+      "goal": "Make the Local CI Gate deployer and evidence model match the actual enforcement contract.",
+      "tasks": [
+        "Change generated shims so target repo root and shim path are resolved at runtime.",
+        "Keep `HLDPRO_GOVERNANCE_ROOT` for governance root override while removing embedded consumer worktree paths.",
+        "Add deployer tests proving a shim run from a copied/clean repo targets that repo.",
+        "Add live shim failure test proving blocker failures exit non-zero through the shim.",
+        "Add runner report fields for governance root/ref and shim path when provided."
+      ],
+      "acceptance_criteria": [
+        "Generated shim body contains no absolute consumer repo path.",
+        "Installed shim run from a second clean repo targets that second repo.",
+        "A forced blocker failure exits non-zero through the shim.",
+        "Dry-run evidence is labeled mapping-only and cannot satisfy live-enforcement acceptance criteria."
+      ],
+      "file_paths": [
+        "scripts/overlord/deploy_local_ci_gate.py",
+        "scripts/overlord/test_deploy_local_ci_gate.py",
+        "tools/local-ci-gate/local_ci_gate.py",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py"
+      ]
+    },
+    {
+      "name": "Governance Scope and Status Taxonomy",
+      "goal": "Remove stale governance-profile scope wiring and make runbook/closeout language precise.",
+      "tasks": [
+        "Replace the hardcoded #253 execution scope in the governance profile with active issue-scope discovery or explicit scope override support.",
+        "Add tests for active branch issue scope resolution or explicit scope selection.",
+        "Update the Local CI Gate runbook with status taxonomy: profile-only, shim-installed, manual live gate, pre-push hook gate, CI-required gate.",
+        "Add retrospective audit artifact for #268/#269/#273/#274 session deviations.",
+        "Update closeout evidence expectations so exact PR check names and scope assertion status are recorded."
+      ],
+      "acceptance_criteria": [
+        "Governance profile no longer hardcodes issue #253 execution scope.",
+        "Runbook states AIS and LAM are profile-only until their consumer rollout PRs land.",
+        "Knocktracker is marked as needing portable-shim refresh until a separate consumer PR fixes it.",
+        "Retrospective audit records self-approval, branch naming, dry-run evidence, and completion-protocol deviations."
+      ],
+      "file_paths": [
+        "docs/runbooks/local-ci-gate-toolkit.md",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py",
+        "raw/audits/2026-04-18-local-ci-session-compliance.md",
+        "raw/closeouts/2026-04-18-local-ci-enforcement-remediation.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Descartes",
+      "role": "session compliance auditor",
+      "focus": "Audit session conduct against repo workflow rules and user instructions.",
+      "status": "accepted_with_followup",
+      "summary": "The session collapsed planner, implementer, reviewer, merger, and closer roles; overstated hardgate coverage; normalized failed local scope assertions; used disallowed feat/ branch prefixes; and skipped adequately evidenced verify-completion.",
+      "evidence": [
+        "Subagent notification 019d9e29-a554-74b0-b4a6-612986459112",
+        "PR #269",
+        "PR #274",
+        "raw/closeouts/2026-04-18-local-ci-contract-hardening.md",
+        "raw/closeouts/2026-04-18-local-ai-machine-local-ci-profile.md"
+      ]
+    },
+    {
+      "reviewer": "Einstein",
+      "role": "hardgate and wiring debug specialist",
+      "focus": "Review Local CI Gate deployer, runner, profiles, and consumer wiring for hardgating gaps.",
+      "status": "accepted_with_followup",
+      "summary": "The current toolkit is profile-ready but not fully enforcement-ready. Generated shims can embed stale consumer worktree paths, Local CI Gate is not visibly wired as a required hardgate, the governance profile has stale #253 scope wiring, and dry-run evidence was overused.",
+      "evidence": [
+        "Subagent notification 019d9e29-d925-7323-8f05-3cb37b4eec37",
+        "scripts/overlord/deploy_local_ci_gate.py",
+        "tools/local-ci-gate/local_ci_gate.py",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "docs/runbooks/local-ci-gate-toolkit.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "operator-reviewed-remediation-plan",
+    "model_family": "human",
+    "status": "accepted_with_followup",
+    "summary": "Operator requested audit and debug-specialist review, then approved moving into a planning-only remediation issue. Implementation remains blocked until this planning PR is reviewed and merged.",
+    "evidence": [
+      "User request: spawn audit agent and debug specialist, present for review",
+      "Subagent audit report Descartes",
+      "Subagent debug-specialist report Einstein",
+      "User approval: go"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #275 may remediate Local CI Gate portable shim generation, live enforcement tests, governance execution-scope handling, evidence taxonomy docs, retrospective audit artifacts, and closeout evidence. It must not modify consumer repos.",
+    "next_execution_step": "Merge this planning/scope branch so the implementation execution scope is trusted from main, then implement on branch feature/issue-275-local-ci-enforcement-remediation.",
+    "blocked_on": [
+      "planning PR merged so implementation scope is trusted from main"
+    ]
+  },
+  "material_deviation_rules": [
+    "If implementation needs consumer repo changes, stop and open the relevant consumer issue.",
+    "If hardgate wiring requires branch protection or GitHub ruleset changes outside repo files, record the blocker and do not claim completion.",
+    "If local scope assertion fails, classify it as locally blocked or rerun from a clean verification root; do not call it pass-equivalent.",
+    "If independent review cannot be evidenced, do not merge implementation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #275",
+    "Subagent audit report Descartes",
+    "Subagent debug-specialist report Einstein",
+    "operator instruction: go"
+  ],
+  "approved_at": "2026-04-18T01:25:00Z"
+}

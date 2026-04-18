@@ -1,0 +1,41 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "feature/issue-275-local-ci-enforcement-remediation",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/PROGRESS.md",
+    "docs/runbooks/local-ci-gate-toolkit.md",
+    "raw/audits/2026-04-18-local-ci-session-compliance.md",
+    "raw/closeouts/2026-04-18-local-ci-enforcement-remediation.md",
+    "raw/execution-scopes/2026-04-18-issue-275-local-ci-enforcement-remediation-implementation.json",
+    "scripts/overlord/deploy_local_ci_gate.py",
+    "scripts/overlord/test_deploy_local_ci_gate.py",
+    "tools/local-ci-gate/local_ci_gate.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "tools/local-ci-gate/tests/test_local_ci_gate.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
+  ],
+  "handoff_evidence": {
+    "status": "accepted_with_followup",
+    "planner_model": "gpt-5.4",
+    "audit_reviewer": "Descartes",
+    "debug_reviewer": "Einstein",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-18T01:25:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-275-structured-agent-cycle-plan.json",
+      "docs/plans/issue-275-local-ci-enforcement-remediation-pdcar.md",
+      "raw/cross-review/2026-04-18-issue-275-local-ci-enforcement-remediation-plan.md",
+      "GitHub issue #275",
+      "Subagent audit report Descartes",
+      "Subagent debug-specialist report Einstein"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}
