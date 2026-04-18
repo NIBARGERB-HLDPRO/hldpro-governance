@@ -1,0 +1,236 @@
+{
+  "session_id": "session-20260418-issue-288-org-governance-tooling-distribution",
+  "issue_number": 288,
+  "objective": "Plan an org-level governance tooling distribution model so shared local gates, hooks, validators, runbooks, profiles, and deployment wrappers can be pulled and deployed by governed repos instead of being recreated per repo.",
+  "tier": 1,
+  "scope_boundary": [
+    "Create the canonical planning package for issue #288 before implementation slices start.",
+    "Define a versioned governance tooling distribution owned by hldpro-governance.",
+    "Define how governed repos pull, pin, deploy, verify, roll back, and override shared tooling.",
+    "Make downstream e2e pull/deploy/use proof a final hard acceptance criterion.",
+    "Keep CI authoritative; local gates remain upstream filters and cannot replace required GitHub Actions.",
+    "Preserve repo-local hardgates and execution-scope enforcement while centralizing reusable tooling."
+  ],
+  "out_of_scope": [
+    "Migrating every governed repo in this planning slice.",
+    "Changing downstream repo code before child implementation issues exist.",
+    "Weakening Local CI Gate, planner-boundary, commit-scope, or GitHub ruleset enforcement.",
+    "Creating a hidden global install that bypasses repo-local version pinning.",
+    "Replacing repo-specific profiles where repo-local behavior is genuinely required.",
+    "Treating a documentation-only rollout as proof that the distributed tools work."
+  ],
+  "research_summary": "Recent local gate and profile work has repeatedly copied governance patterns across repos: Local CI Gate profiles, managed shim deployment, execution-scope validation, graphify hooks, runbooks, and workflow coverage checks. Issue #253 established an org-level Local CI Gate toolkit; issues #260, #264, #272, #275, #277, #284, and #286 then proved that each consumer rollout still needs repeatable packaging, pinning, clean-environment preflight, and live enforcement evidence. The next step is an org-level distribution plan that treats hldpro-governance as the source of versioned governance tools and requires a downstream repo e2e proof before the epic can close.",
+  "research_artifacts": [
+    "GitHub issue #288",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-224-structured-agent-cycle-plan.json",
+    "docs/plans/issue-224-always-on-governance-orchestrator-pdcar.md",
+    "docs/plans/issue-286-structured-agent-cycle-plan.json",
+    "docs/plans/issue-286-execution-environment-preflight-pdcar.md",
+    "raw/closeouts/2026-04-17-local-ci-gate-toolkit.md",
+    "raw/closeouts/2026-04-18-issue-286-execution-environment-preflight.md",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/check_execution_environment.py",
+    "tools/local-ci-gate/"
+  ],
+  "sprints": [
+    {
+      "name": "Phase 0 - Planning Package And Epic Contract",
+      "goal": "Create the reviewed issue-backed planning package that defines the distribution epic before shared tooling implementation starts.",
+      "tasks": [
+        "Create GitHub epic issue #288.",
+        "Add structured plan, PDCAR, review/exception artifact, and execution scope.",
+        "Mirror the active epic in backlog and progress documents.",
+        "Validate the plan and execution environment from the isolated worktree."
+      ],
+      "acceptance_criteria": [
+        "Issue #288 exists and is labeled as a governance epic.",
+        "Structured plan validates under the repo validator.",
+        "PDCAR names package shape, distribution mechanism, adoption flow, rollback path, ownership boundaries, and downstream e2e proof.",
+        "Backlog and progress mirrors reference issue #288 as active governance work.",
+        "Execution scope preflight passes while declared active sibling lanes warn instead of blocking."
+      ],
+      "file_paths": [
+        "docs/plans/issue-288-structured-agent-cycle-plan.json",
+        "docs/plans/issue-288-org-governance-tooling-distribution-pdcar.md",
+        "raw/cross-review/2026-04-18-issue-288-org-governance-tooling-distribution-plan.md",
+        "raw/exceptions/2026-04-18-issue-288-same-family-planning-package.md",
+        "raw/execution-scopes/2026-04-18-issue-288-org-governance-tooling-distribution-planning.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Phase 1 - Distribution Contract",
+      "goal": "Define the versioned package contract and source-of-truth boundaries for org governance tools.",
+      "tasks": [
+        "Inventory reusable governance tools and classify them as package core, repo profile, generated artifact, or repo-local override.",
+        "Choose a distribution shape: versioned governance tool bundle under hldpro-governance with pinned downstream references.",
+        "Define package metadata: version, compatibility matrix, required profiles, deployable files, generated files, checks, rollback instructions, and owner.",
+        "Define semver and deprecation rules for tooling changes."
+      ],
+      "acceptance_criteria": [
+        "A package contract document names included and excluded surfaces.",
+        "Every shared tool has an owner, versioning rule, and downstream compatibility statement.",
+        "Repo-local overrides are explicit and do not fork shared enforcement logic silently.",
+        "The contract distinguishes tracked baselines from per-run reports and generated artifacts.",
+        "The contract states CI remains authoritative."
+      ],
+      "file_paths": [
+        "docs/runbooks/org-governance-tooling-distribution.md",
+        "docs/governance-tooling-package.json",
+        "tools/local-ci-gate/",
+        "scripts/overlord/",
+        "hooks/",
+        ".github/workflows/"
+      ]
+    },
+    {
+      "name": "Phase 2 - Pull And Deploy Mechanism",
+      "goal": "Create a repeatable downstream pull/deploy workflow that installs shared tools without hand-copying files.",
+      "tasks": [
+        "Design a consumer command that can resolve a pinned governance repo version and deploy managed shims/profiles into a target repo.",
+        "Define idempotency, dry-run, diff preview, and rollback behavior.",
+        "Require target repo execution-scope preflight before deployment.",
+        "Add tests proving deployment refuses dirty target or undeclared active sibling blockers."
+      ],
+      "acceptance_criteria": [
+        "Deploy command supports dry-run, apply, verify, and rollback modes.",
+        "Deploy command records the governance package version consumed by the downstream repo.",
+        "Managed files are clearly marked and repo-local files are not overwritten without an explicit migration plan.",
+        "Dirty environment blockers are caught before writes.",
+        "Unit tests cover idempotency and refusal paths."
+      ],
+      "file_paths": [
+        "tools/governance-tooling/",
+        "tools/local-ci-gate/",
+        "scripts/overlord/",
+        "docs/runbooks/org-governance-tooling-distribution.md"
+      ]
+    },
+    {
+      "name": "Phase 3 - Local And GitHub Verification Matrix",
+      "goal": "Make local-first verification match the GitHub Actions surfaces that the shared tooling claims to protect.",
+      "tasks": [
+        "Map shared tools to local commands and GitHub workflows.",
+        "Extend the workflow coverage inventory where needed.",
+        "Define standard evidence names for local preflight, local gate, PR checks, and downstream adoption checks.",
+        "Require each implementation slice to update the verification matrix before closeout."
+      ],
+      "acceptance_criteria": [
+        "Every distributed enforcement surface has a local verification command or an explicit reason it is CI-only.",
+        "Local commands and GitHub workflows have stable check identifiers.",
+        "Changed-file-only checks report zero, subset, or full-suite execution unambiguously.",
+        "Evidence format is usable in closeouts and GitHub issue comments.",
+        "A regression in workflow coverage fails locally before PR closeout."
+      ],
+      "file_paths": [
+        "docs/workflow-local-coverage-inventory.json",
+        "scripts/overlord/check_workflow_local_coverage.py",
+        "tools/local-ci-gate/",
+        "docs/runbooks/org-governance-tooling-distribution.md"
+      ]
+    },
+    {
+      "name": "Phase 4 - Downstream Pilot",
+      "goal": "Adopt the org-level tooling package in one downstream repo through the new pull/deploy path.",
+      "tasks": [
+        "Use local-ai-machine as the default pilot repo unless the Phase 4 child issue proves LAM cannot create a clean adoption worktree or cannot run the package deployment prerequisites.",
+        "Create a downstream issue and execution scope before writes.",
+        "Pull a pinned governance package version into the downstream repo.",
+        "Run the deployed local gates and GitHub Actions in that downstream repo.",
+        "Record rollback proof or a reversible deployment plan."
+      ],
+      "acceptance_criteria": [
+        "Pilot repo selection is deterministic: local-ai-machine by default, or a documented Phase 4 blocker with replacement repo named before deployment.",
+        "Pilot repo has an issue-backed adoption branch.",
+        "Pilot uses the package pull/deploy mechanism rather than manual file copying.",
+        "Local preflight and local gate pass in the pilot repo.",
+        "Pilot PR GitHub Actions pass with the deployed governance tooling.",
+        "Pilot closeout links back to issue #288 and records consumed governance package version."
+      ],
+      "file_paths": [
+        "docs/runbooks/org-governance-tooling-distribution.md",
+        "tools/governance-tooling/",
+        "tools/local-ci-gate/",
+        "raw/closeouts/"
+      ]
+    },
+    {
+      "name": "Phase 5 - Final E2E Proof And Epic Closeout",
+      "goal": "Close the epic only after a real downstream repo proves pull, deploy, local enforcement, GitHub enforcement, and rollback semantics.",
+      "tasks": [
+        "Run the full downstream e2e path from a clean issue worktree.",
+        "Create a deliberate negative-control violation that the deployed hook or gate catches from the beginning.",
+        "Fix the violation and prove the local gate then passes.",
+        "Push the downstream PR and watch required GitHub Actions to completion.",
+        "Record final evidence in the governance epic closeout and downstream closeout."
+      ],
+      "acceptance_criteria": [
+        "Final AC: e2e test proves a downstream repo can pull, deploy, and use the org governance tooling package without manual copying.",
+        "Final AC: local hooks or gates catch a deliberate blocker before push.",
+        "Final AC: the same downstream branch passes local gates after remediation.",
+        "Final AC: downstream GitHub Actions pass after the deployed tooling is pushed.",
+        "Final AC: rollback or uninstall path is tested or mechanically proven.",
+        "Final AC: issue #288 is not closed until the downstream e2e evidence links are recorded."
+      ],
+      "file_paths": [
+        "raw/closeouts/",
+        "docs/runbooks/org-governance-tooling-distribution.md",
+        "docs/governance-tooling-package.json",
+        "tools/governance-tooling/",
+        "tools/local-ci-gate/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Mendel",
+      "role": "repo workflow explorer",
+      "focus": "Required repo workflow artifacts, validators, backlog/progress conventions, execution-scope requirements, and closeout expectations.",
+      "status": "accepted",
+      "summary": "Confirmed the planning package must be issue-backed, use a canonical structured plan, include review evidence and execution-scope artifacts, keep backlog mirrors aligned, and validate before PR closeout.",
+      "evidence": [
+        "Subagent Mendel review notification",
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "OVERLORD_BACKLOG.md",
+        "raw/closeouts/TEMPLATE.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family-planning-fallback",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "True alternate-family review was unavailable in this Codex-only lane. The plan is accepted for issue-backed planning package creation with same-family exception, subagent review, deterministic validation, Local CI Gate, GitHub Actions, and a later alternate-family review requirement before implementation slices modify shared tooling code.",
+    "evidence": [
+      "raw/cross-review/2026-04-18-issue-288-org-governance-tooling-distribution-plan.md",
+      "raw/exceptions/2026-04-18-issue-288-same-family-planning-package.md",
+      "Subagent Mendel review notification"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #288 may add planning, review, exception, execution-scope, backlog, and progress artifacts for the org governance tooling distribution epic. It may not implement the package or edit downstream repos in this slice.",
+    "next_execution_step": "Validate the planning package, update GitHub issue #288 with artifact links, open a PR, and keep issue #288 open for implementation slices.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If this slice needs shared tooling code changes, stop and create a child implementation issue first.",
+    "If a downstream repo must be edited, stop and create a downstream issue and execution scope first.",
+    "If local gates are weakened to make packaging easier, stop and revise the plan.",
+    "If a package distribution path cannot be rolled back or pinned, implementation cannot proceed past Phase 2.",
+    "If final downstream e2e proof cannot be produced, issue #288 remains open."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #288",
+    "operator instruction: follow repo rules and loop through PDCAR, GH epic, ACs, e2e testing as final AC",
+    "Subagent Mendel review notification",
+    "raw/exceptions/2026-04-18-issue-288-same-family-planning-package.md"
+  ],
+  "approved_at": "2026-04-18T19:30:00Z"
+}

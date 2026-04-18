@@ -1,0 +1,38 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "codex/issue-288-org-governance-tooling-distribution",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "docs/plans/issue-288-structured-agent-cycle-plan.json",
+    "docs/plans/issue-288-org-governance-tooling-distribution-pdcar.md",
+    "raw/cross-review/2026-04-18-issue-288-org-governance-tooling-distribution-plan.md",
+    "raw/exceptions/2026-04-18-issue-288-same-family-planning-package.md",
+    "raw/execution-scopes/2026-04-18-issue-288-org-governance-tooling-distribution-planning.json",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout contains pre-existing operator/download planning files and is not the issue #288 execution root."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Sibling repo has an active unrelated lane; issue #288 must not clean or modify it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "LAM has an active parallel implementation lane; issue #288 planning only declares it and does not touch it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "AIS has an active unrelated lane; issue #288 must not clean or modify it."
+    }
+  ]
+}
