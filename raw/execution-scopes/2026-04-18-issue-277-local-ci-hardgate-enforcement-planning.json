@@ -1,0 +1,21 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "docs/issue-277-local-ci-hardgate-enforcement-plan",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-277-structured-agent-cycle-plan.json",
+    "docs/plans/issue-277-local-ci-hardgate-enforcement-pdcar.md",
+    "raw/cross-review/2026-04-18-issue-277-local-ci-hardgate-enforcement-plan.md",
+    "raw/exceptions/2026-04-18-issue-277-same-family-implementation.md",
+    "raw/execution-scopes/2026-04-18-issue-277-local-ci-hardgate-enforcement-planning.json",
+    "raw/execution-scopes/2026-04-18-issue-277-local-ci-hardgate-enforcement-implementation.json"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
+  ]
+}
