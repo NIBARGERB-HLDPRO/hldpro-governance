@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **update_knowledge_index.py** (3 connections) — `hldpro-governance/scripts/knowledge_base/update_knowledge_index.py`
-- **main()** (3 connections) — `hldpro-governance/scripts/knowledge_base/update_knowledge_index.py`
-- **replace_section()** (2 connections) — `hldpro-governance/scripts/knowledge_base/update_knowledge_index.py`
-- **summary_line()** (2 connections) — `hldpro-governance/scripts/knowledge_base/update_knowledge_index.py`
+- **update_knowledge_index.py** (3 connections) — `scripts/knowledge_base/update_knowledge_index.py`
+- **main()** (3 connections) — `scripts/knowledge_base/update_knowledge_index.py`
+- **replace_section()** (2 connections) — `scripts/knowledge_base/update_knowledge_index.py`
+- **summary_line()** (2 connections) — `scripts/knowledge_base/update_knowledge_index.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/knowledge_base/update_knowledge_index.py`
+- `scripts/knowledge_base/update_knowledge_index.py`
 
 ## Audit Trail
 

@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **test_graphify_governance_contract.py** (3 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_governance_contract.py`
-- **main()** (3 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_governance_contract.py`
-- **check()** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_governance_contract.py`
-- **is_ignored()** (2 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_governance_contract.py`
+- **test_graphify_governance_contract.py** (3 connections) — `scripts/knowledge_base/test_graphify_governance_contract.py`
+- **main()** (3 connections) — `scripts/knowledge_base/test_graphify_governance_contract.py`
+- **check()** (2 connections) — `scripts/knowledge_base/test_graphify_governance_contract.py`
+- **is_ignored()** (2 connections) — `scripts/knowledge_base/test_graphify_governance_contract.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/knowledge_base/test_graphify_governance_contract.py`
+- `scripts/knowledge_base/test_graphify_governance_contract.py`
 
 ## Audit Trail
 

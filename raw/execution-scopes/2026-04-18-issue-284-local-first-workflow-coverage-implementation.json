@@ -1,0 +1,47 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "codex/issue-284-local-first-workflow-coverage",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    ".github/workflows/graphify-governance-contract.yml",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-284-structured-agent-cycle-plan.json",
+    "docs/plans/issue-284-local-first-workflow-coverage-pdcar.md",
+    "docs/workflow-local-coverage-inventory.json",
+    "graphify-out/hldpro-governance/",
+    "raw/closeouts/2026-04-18-issue-284-local-first-workflow-coverage.md",
+    "raw/cross-review/2026-04-18-issue-284-local-first-workflow-coverage-plan.md",
+    "raw/exceptions/2026-04-18-issue-284-same-family-implementation.md",
+    "raw/execution-scopes/2026-04-18-issue-284-local-first-workflow-coverage-planning.json",
+    "raw/execution-scopes/2026-04-18-issue-284-local-first-workflow-coverage-implementation.json",
+    "scripts/overlord/check_workflow_local_coverage.py",
+    "scripts/overlord/test_workflow_local_coverage.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "wiki/hldpro/",
+    "wiki/index.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services"
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "reviewer_model": "subagents-james-pauli",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-18T18:30:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-284-structured-agent-cycle-plan.json",
+      "docs/plans/issue-284-local-first-workflow-coverage-pdcar.md",
+      "raw/cross-review/2026-04-18-issue-284-local-first-workflow-coverage-plan.md",
+      "GitHub issue #284",
+      "Subagent review James",
+      "Subagent review Pauli"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-18-issue-284-same-family-implementation.md#exception",
+    "active_exception_expires_at": "2026-04-19T18:30:00Z"
+  }
+}

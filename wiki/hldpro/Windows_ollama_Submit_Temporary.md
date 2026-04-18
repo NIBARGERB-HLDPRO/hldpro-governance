@@ -1,10 +1,10 @@
-# Windows ollama Init
+# Windows ollama Submit Temporary
 
 > 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- **__init__.py** (0 connections) — `scripts/windows-ollama/tests/__init__.py`
+- **Temporary audit directory for testing.** (0 connections) — `scripts/windows-ollama/tests/test_submit.py`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `scripts/windows-ollama/tests/__init__.py`
+- `scripts/windows-ollama/tests/test_submit.py`
 
 ## Audit Trail
 

@@ -4,14 +4,14 @@
 
 ## Key Concepts
 
-- **build_effectiveness_metrics.py** (7 connections) — `hldpro-governance/scripts/overlord/build_effectiveness_metrics.py`
-- **collect_repo_metrics()** (6 connections) — `hldpro-governance/scripts/overlord/build_effectiveness_metrics.py`
-- **main()** (3 connections) — `hldpro-governance/scripts/overlord/build_effectiveness_metrics.py`
-- **parse_iso()** (2 connections) — `hldpro-governance/scripts/overlord/build_effectiveness_metrics.py`
-- **pct()** (2 connections) — `hldpro-governance/scripts/overlord/build_effectiveness_metrics.py`
-- **render_markdown()** (2 connections) — `hldpro-governance/scripts/overlord/build_effectiveness_metrics.py`
-- **RepoMetrics** (2 connections) — `hldpro-governance/scripts/overlord/build_effectiveness_metrics.py`
-- **run()** (2 connections) — `hldpro-governance/scripts/overlord/build_effectiveness_metrics.py`
+- **build_effectiveness_metrics.py** (7 connections) — `scripts/overlord/build_effectiveness_metrics.py`
+- **collect_repo_metrics()** (6 connections) — `scripts/overlord/build_effectiveness_metrics.py`
+- **main()** (3 connections) — `scripts/overlord/build_effectiveness_metrics.py`
+- **parse_iso()** (2 connections) — `scripts/overlord/build_effectiveness_metrics.py`
+- **pct()** (2 connections) — `scripts/overlord/build_effectiveness_metrics.py`
+- **render_markdown()** (2 connections) — `scripts/overlord/build_effectiveness_metrics.py`
+- **RepoMetrics** (2 connections) — `scripts/overlord/build_effectiveness_metrics.py`
+- **run()** (2 connections) — `scripts/overlord/build_effectiveness_metrics.py`
 
 ## Relationships
 
@@ -19,7 +19,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/overlord/build_effectiveness_metrics.py`
+- `scripts/overlord/build_effectiveness_metrics.py`
 
 ## Audit Trail
 

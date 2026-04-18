@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-04-18",
+  "principle": "CI remains authoritative. Local-first coverage is an upstream filter and workflow contract guard, not a full GitHub Actions replay.",
+  "coverage_types": [
+    "local_command",
+    "workflow_contract",
+    "script_dry_run",
+    "github_only"
+  ],
+  "workflows": [
+    {
+      "path": ".github/workflows/check-agent-model-pins.yml",
+      "risk": "deterministic",
+      "coverage": [
+        {
+          "type": "local_command",
+          "command": ["python3", ".github/scripts/check_agent_model_pins.py"]
+        }
+      ],
+      "required_snippets": ["python3 \"${SCRIPTS_DIR}/check_agent_model_pins.py\""],
+      "rationale": "Python validator is deterministic and can run locally with PyYAML installed."
+    },
+    {
+      "path": ".github/workflows/check-arch-tier.yml",
+      "risk": "deterministic-pr-context",
+      "coverage": [
+        {
+          "type": "workflow_contract",
+          "command": ["python3", "scripts/overlord/check_workflow_local_coverage.py", "--root", "."]
+        }
+      ],
+      "required_snippets": ["Enforce architecture/standards tier evidence", "raw/cross-review", "python3 - <<'PY'"],
+      "rationale": "Inline PR-context policy is pinned by workflow contract first; deeper fixture extraction is a follow-up."
+    },
+    {
+      "path": ".github/workflows/check-backlog-gh-sync.yml",
+      "risk": "github-api",
+      "coverage": [
+        {
+          "type": "script_dry_run",
+          "command": ["bash", ".github/scripts/validate_backlog_gh_sync.sh"]
+        }
+      ],
+      "required_snippets": ["bash .github/scripts/validate_backlog_gh_sync.sh"],
+      "rationale": "The shell entrypoint is local-runnable but live issue validation depends on `gh` auth and network."
+    },
+    {
+      "path": ".github/workflows/check-claude-md-pointer.yml",
+      "risk": "deterministic",
+      "coverage": [
+        {
+          "type": "workflow_contract",
+          "command": ["python3", "scripts/overlord/check_workflow_local_coverage.py", "--root", "."]
+        }
+      ],
+      "required_snippets": ["Validate CLAUDE.md pointer", "STANDARDS.md"],
+      "rationale": "Inline deterministic pointer check is pinned by workflow contract."
+    },
+    {
+      "path": ".github/workflows/check-codex-model-pins.yml",
+      "risk": "deterministic",
+      "coverage": [
+        {
+          "type": "local_command",
+          "command": ["python3", ".github/scripts/check_codex_model_pins.py"]
+        }
+      ],
+      "required_snippets": ["python3 \"${SCRIPTS_DIR}/check_codex_model_pins.py\""],
+      "rationale": "Python validator is deterministic and can run locally."
+    },
+    {
+      "path": ".github/workflows/check-fail-fast-log-schema.yml",
+      "risk": "workflow-wrapper",
+      "coverage": [
+        {
+          "type": "workflow_contract",
+          "command": ["python3", "scripts/overlord/check_workflow_local_coverage.py", "--root", "."]
+        }
+      ],
+      "required_snippets": ["uses: ./.github/workflows/check-fail-fast-schema.yml"],
+      "rationale": "Thin caller workflow must keep delegating to the reusable schema workflow."
+    },
+    {
+      "path": ".github/workflows/check-fail-fast-schema.yml",
+      "risk": "deterministic-inline",
+      "coverage": [
+        {
+          "type": "workflow_contract",
+          "command": ["python3", "scripts/overlord/check_workflow_local_coverage.py", "--root", "."]
+        }
+      ],
+      "required_snippets": ["Validate FAIL_FAST_LOG.md schema", "Validate ERROR_PATTERNS.md schema"],
+      "rationale": "The reusable workflow currently embeds validators inline; contract coverage pins the expected validation steps until extraction."
+    },
+    {
+      "path": ".github/workflows/check-fallback-log-schema.yml",
+      "risk": "deterministic-pr-context",
+      "coverage": [
+        {
+          "type": "local_command",
+          "command": ["python3", ".github/scripts/check_fallback_log_schema.py"]
+        }
+      ],
+      "required_snippets": ["python3 \"${SCRIPTS_DIR}/check_fallback_log_schema.py\""],
+      "rationale": "Python validator is deterministic with PR diff environment variables supplied by the caller."
+    },
+    {
+      "path": ".github/workflows/check-lam-availability.yml",
+      "risk": "environment-dependent",
+      "coverage": [
+        {
+          "type": "script_dry_run",
+          "command": ["python3", ".github/scripts/check_lam_availability_labels.py"]
+        }
+      ],
+      "required_snippets": ["check_lam_availability_labels.py", "LAM_PROBE_URL"],
+      "rationale": "Label/env decision is deterministic; live LAM health is environment-dependent and should not hardgate every local run."
+    },
+    {
+      "path": ".github/workflows/check-lam-family-diversity.yml",
+      "risk": "deterministic",
+      "coverage": [
+        {
+          "type": "local_command",
+          "command": ["python3", ".github/scripts/check_lam_family_diversity.py"]
+        }
+      ],
+      "required_snippets": ["python3 .github/scripts/check_lam_family_diversity.py"],
+      "rationale": "Python validator is deterministic and can run locally."
+    },
+    {
+      "path": ".github/workflows/check-no-self-approval.yml",
+      "risk": "deterministic-pr-context",
+      "coverage": [
+        {
+          "type": "local_command",
+          "command": ["python3", ".github/scripts/check_no_self_approval.py"]
+        }
+      ],
+      "required_snippets": ["python3 \"${SCRIPTS_DIR}/check_no_self_approval.py\""],
+      "rationale": "Python validator is deterministic with PR diff environment variables supplied by the caller."
+    },
+    {
+      "path": ".github/workflows/check-pii-routing.yml",
+      "risk": "deterministic-pr-context",
+      "coverage": [
+        {
+          "type": "local_command",
+          "command": ["python3", ".github/scripts/check_pii_routing.py"]
+        }
+      ],
+      "required_snippets": ["python3 \"${SCRIPTS_DIR}/check_pii_routing.py\""],
+      "rationale": "Python validator is deterministic with PR diff environment variables supplied by the caller."
+    },
+    {
+      "path": ".github/workflows/check-pr-commit-scope.yml",
+      "risk": "deterministic-pr-context",
+      "coverage": [
+        {
+          "type": "script_dry_run",
+          "command": ["bash", ".github/scripts/check_pr_commit_scope.sh"]
+        }
+      ],
+      "required_snippets": ["fetch-depth: 0", "PR_BASE: ${{ github.event.pull_request.base.sha }}", "bash .github/scripts/check_pr_commit_scope.sh"],
+      "rationale": "Shell validator is local-runnable when `PR_BASE` or `origin/main` is available."
+    },
+    {
+      "path": ".github/workflows/check-windows-ollama-audit-schema.yml",
+      "risk": "deterministic",
+      "coverage": [
+        {
+          "type": "local_command",
+          "command": ["python3", "scripts/windows-ollama/verify_audit.py", "raw/remote-windows-audit/"]
+        }
+      ],
+      "required_snippets": ["python3 scripts/windows-ollama/verify_audit.py raw/remote-windows-audit/"],
+      "rationale": "Audit-chain verifier is deterministic and no-ops when the audit directory is absent."
+    },
+    {
+      "path": ".github/workflows/check-windows-ollama-exposure.yml",
+      "risk": "deterministic-inline",
+      "coverage": [
+        {
+          "type": "workflow_contract",
+          "command": ["python3", "scripts/overlord/check_workflow_local_coverage.py", "--root", "."]
+        }
+      ],
+      "required_snippets": ["Check Windows-Ollama exposure invariants", "172.17.227.49:11434"],
+      "rationale": "Inline deterministic exposure invariant is pinned by workflow contract."
+    },
+    {
+      "path": ".github/workflows/governance-check.yml",
+      "risk": "mixed-reusable-critical",
+      "coverage": [
+        {
+          "type": "workflow_contract",
+          "command": ["python3", "scripts/overlord/check_workflow_local_coverage.py", "--root", "."]
+        },
+        {
+          "type": "local_command",
+          "command": ["python3", "scripts/overlord/validate_structured_agent_cycle_plan.py", "--root", "."]
+        },
+        {
+          "type": "local_command",
+          "command": ["python3", "scripts/overlord/assert_execution_scope.py", "--scope", "raw/execution-scopes/2026-04-18-issue-284-local-first-workflow-coverage-implementation.json"]
+        }
+      ],
+      "required_snippets": ["Check OVERLORD_BACKLOG issue alignment", "Validate structured agent cycle plans", "Enforce governance-surface planning gate", "Enforce issue execution scope for planner boundary", "Require cross-review artifact", "Report governance failure to operator_context"],
+      "rationale": "Reusable workflow has local-testable deterministic checks plus GitHub-only PR/reporting context; contract coverage pins the broad runner surface."
+    },
+    {
+      "path": ".github/workflows/graphify-governance-contract.yml",
+      "risk": "contract-workflow",
+      "coverage": [
+        {
+          "type": "workflow_contract",
+          "command": ["python3", "scripts/overlord/test_workflow_local_coverage.py"]
+        }
+      ],
+      "required_snippets": ["python3 scripts/overlord/test_workflow_local_coverage.py"],
+      "rationale": "Independent contract workflow runs the workflow coverage tests."
+    },
+    {
+      "path": ".github/workflows/local-ci-gate.yml",
+      "risk": "contract-workflow",
+      "coverage": [
+        {
+          "type": "workflow_contract",
+          "command": ["python3", "scripts/overlord/test_local_ci_gate_workflow_contract.py"]
+        }
+      ],
+      "required_snippets": ["python3 scripts/overlord/test_local_ci_gate_workflow_contract.py", "python3 tools/local-ci-gate/bin/hldpro-local-ci run"],
+      "rationale": "Local CI Gate workflow already has a dedicated contract test and required status enforcement."
+    },
+    {
+      "path": ".github/workflows/overlord-nightly-cleanup.yml",
+      "risk": "github-only-side-effecting",
+      "coverage": [
+        {
+          "type": "github_only",
+          "rationale": "Nightly multi-repo cleanup deletes Actions artifacts and creates/edits issues through `gh`; local full replay would be side-effecting."
+        }
+      ],
+      "required_snippets": ["gh api -X DELETE", "Create or update nightly cleanup issue"],
+      "rationale": "Only non-destructive subcomponents should be tested locally; the workflow itself remains GitHub-only."
+    },
+    {
+      "path": ".github/workflows/overlord-sweep.yml",
+      "risk": "github-only-scheduled-operational",
+      "coverage": [
+        {
+          "type": "github_only",
+          "rationale": "Weekly cross-repo sweep uses multiple checkouts, `gh`, Codex, graph refresh, issue updates, commits, and pushes."
+        }
+      ],
+      "required_snippets": ["Run overlord sweep audit", "Commit updated graph", "Create or update overlord report issue"],
+      "rationale": "Local coverage belongs to the scripts it invokes, not full scheduled workflow replay."
+    },
+    {
+      "path": ".github/workflows/raw-feed-sync.yml",
+      "risk": "github-only-side-effecting",
+      "coverage": [
+        {
+          "type": "github_only",
+          "rationale": "Scheduled raw feed sync reads remote issues and commits/pushes generated feed updates."
+        }
+      ],
+      "required_snippets": ["gh issue list", "render_github_issue_feed.py", "git push"],
+      "rationale": "Renderer can be tested locally; scheduled fetch and push remain GitHub-only."
+    },
+    {
+      "path": ".github/workflows/require-cross-review.yml",
+      "risk": "deterministic-pr-context",
+      "coverage": [
+        {
+          "type": "script_dry_run",
+          "command": ["bash", "scripts/cross-review/require-dual-signature.sh", "raw/cross-review/2026-04-18-issue-284-local-first-workflow-coverage-plan.md"]
+        }
+      ],
+      "required_snippets": ["Require cross-review artifact", "get_pr_labels.py", "require-dual-signature.sh"],
+      "rationale": "Dual-signature script is local-runnable; label and diff selection remain PR-context dependent."
+    }
+  ]
+}

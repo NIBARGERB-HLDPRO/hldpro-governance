@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **check_overlord_backlog_github_alignment.py** (5 connections) — `hldpro-governance/scripts/overlord/check_overlord_backlog_github_alignment.py`
-- **main()** (5 connections) — `hldpro-governance/scripts/overlord/check_overlord_backlog_github_alignment.py`
-- **collect_section_lines()** (3 connections) — `hldpro-governance/scripts/overlord/check_overlord_backlog_github_alignment.py`
-- **fail()** (3 connections) — `hldpro-governance/scripts/overlord/check_overlord_backlog_github_alignment.py`
-- **has_issue_ref()** (2 connections) — `hldpro-governance/scripts/overlord/check_overlord_backlog_github_alignment.py`
-- **parse_markdown_row()** (2 connections) — `hldpro-governance/scripts/overlord/check_overlord_backlog_github_alignment.py`
+- **check_overlord_backlog_github_alignment.py** (5 connections) — `scripts/overlord/check_overlord_backlog_github_alignment.py`
+- **main()** (5 connections) — `scripts/overlord/check_overlord_backlog_github_alignment.py`
+- **collect_section_lines()** (3 connections) — `scripts/overlord/check_overlord_backlog_github_alignment.py`
+- **fail()** (3 connections) — `scripts/overlord/check_overlord_backlog_github_alignment.py`
+- **has_issue_ref()** (2 connections) — `scripts/overlord/check_overlord_backlog_github_alignment.py`
+- **parse_markdown_row()** (2 connections) — `scripts/overlord/check_overlord_backlog_github_alignment.py`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/overlord/check_overlord_backlog_github_alignment.py`
+- `scripts/overlord/check_overlord_backlog_github_alignment.py`
 
 ## Audit Trail
 

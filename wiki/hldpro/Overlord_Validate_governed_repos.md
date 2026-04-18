@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **validate_governed_repos.py** (6 connections) — `hldpro-governance/scripts/overlord/validate_governed_repos.py`
-- **check()** (5 connections) — `hldpro-governance/scripts/overlord/validate_governed_repos.py`
-- **load_json()** (4 connections) — `hldpro-governance/scripts/overlord/validate_governed_repos.py`
-- **validate_graphify_reconciliation()** (4 connections) — `hldpro-governance/scripts/overlord/validate_governed_repos.py`
-- **fail()** (3 connections) — `hldpro-governance/scripts/overlord/validate_governed_repos.py`
-- **main()** (3 connections) — `hldpro-governance/scripts/overlord/validate_governed_repos.py`
-- **validate_registry_shape()** (3 connections) — `hldpro-governance/scripts/overlord/validate_governed_repos.py`
+- **validate_governed_repos.py** (6 connections) — `scripts/overlord/validate_governed_repos.py`
+- **check()** (5 connections) — `scripts/overlord/validate_governed_repos.py`
+- **load_json()** (4 connections) — `scripts/overlord/validate_governed_repos.py`
+- **validate_graphify_reconciliation()** (4 connections) — `scripts/overlord/validate_governed_repos.py`
+- **fail()** (3 connections) — `scripts/overlord/validate_governed_repos.py`
+- **main()** (3 connections) — `scripts/overlord/validate_governed_repos.py`
+- **validate_registry_shape()** (3 connections) — `scripts/overlord/validate_governed_repos.py`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/overlord/validate_governed_repos.py`
+- `scripts/overlord/validate_governed_repos.py`
 
 ## Audit Trail
 
