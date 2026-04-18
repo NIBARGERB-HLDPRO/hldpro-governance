@@ -24,6 +24,22 @@ A JSON Schema YAML describing the canonical handoff packet shape:
 - **runbook_ref** (string, optional): Runbook URL or path
 - **fallback_ladder_ref** (string, optional): Fallback tier-down scenario reference
 
+**File:** `hitl-relay-packet.schema.json`
+
+A JSON Schema describing the always-on SoM HITL relay packet contract:
+
+- **packet_type**: One of `session_event`, `hitl_request`, `hitl_response`, `normalized_decision`, `session_instruction`, `session_resume`, or `audit_record`
+- **session**: CLI session identity, CLI type, and current state
+- **correlation**: Request, notification, response, and parent packet IDs for end-to-end traceability
+- **policy**: PII mode, data classification, channel policy reference, and optional retention policy reference
+- **operator_reply**: Sender/channel/message metadata plus a raw message reference; raw message bodies are not allowed in the packet
+- **normalized_decision**: Bounded action, confidence, model identity, raw message reference, and validation-required marker
+- **instruction**: Bounded action addressed to an exact target session with audit references
+- **resume**: Stale/missing/wrong-target session recovery context
+- **audit**: Evidence references and decision trace steps used by the final E2E proof
+
+Examples live under `docs/schemas/examples/hitl-relay/`. Valid examples must pass schema validation; invalid examples must fail closed.
+
 ## Validator
 
 **File:** `scripts/packet/validate.py`
