@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| Execution environment preflight for active parallel lanes | #286 | IN PROGRESS | HIGH | 1-2 | Active parallel root scope contract, preflight wrapper, focused tests, Local CI Gate evidence | Plan: docs/plans/issue-286-structured-agent-cycle-plan.json |
 | SoM enforcement drift closure epic | #214 | IN PROGRESS | HIGH | TBD | Reviewed PDCAR plan, Claude review artifact, issues #215-#221 | Plan: docs/plans/2026-04-17-som-enforcement-drift-pdcar.md; closeout loop tracked by #220; execution-scope guard tracked by #221 |
 | SoM Slice 1: Codex model pin enforcement | #215 | IN PROGRESS | HIGH | TBD | Codex model/reasoning checker, overlord-sweep wiring | Part of #214 |
 | SoM Slice 2: ladder and standards consistency | #216 | IN PROGRESS | HIGH | TBD | STANDARDS, exception, progress, registry alignment | Part of #214 |
