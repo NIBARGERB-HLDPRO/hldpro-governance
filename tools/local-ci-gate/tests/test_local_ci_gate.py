@@ -35,6 +35,8 @@ profile:
   name: test-profile
   description: Test profile
   report_root: local-reports
+  requires_dependencies:
+    - python3
   changed_files:
     base_ref: HEAD
     head_ref: HEAD
@@ -181,8 +183,58 @@ profile:
         data = json.loads(payload)
 
         self.assertEqual(data["profile"]["name"], "test-profile")
+        self.assertEqual(data["profile"]["requires_dependencies"], ["python3"])
         self.assertEqual(data["verdict"], "planned")
         self.assertEqual(data["changed_files"]["files"], ["tools/local-ci-gate/example.py"])
+
+    def test_profile_rejects_duplicate_check_ids(self) -> None:
+        duplicate = self.root / "duplicate.yml"
+        duplicate.write_text(
+            """
+profile:
+  name: duplicate
+  description: Duplicate check ids
+  checks:
+    - id: same
+      title: First
+      severity: blocker
+      command:
+        - python3
+        - -c
+        - "print('first')"
+    - id: same
+      title: Second
+      severity: blocker
+      command:
+        - python3
+        - -c
+        - "print('second')"
+""".strip()
+            + "\n",
+            encoding="utf-8",
+        )
+
+        with self.assertRaisesRegex(gate.GateError, "duplicate check id: same"):
+            gate.load_profile(duplicate)
+
+    def test_profile_rejects_malformed_dependency_metadata(self) -> None:
+        invalid = self.root / "invalid-dependencies.yml"
+        invalid.write_text(
+            """
+profile:
+  name: invalid-dependencies
+  description: Invalid dependency metadata
+  requires_dependencies:
+    - npm
+    - ""
+  checks: []
+""".strip()
+            + "\n",
+            encoding="utf-8",
+        )
+
+        with self.assertRaisesRegex(gate.GateError, "requires_dependencies"):
+            gate.load_profile(invalid)
 
     def test_changed_files_file_accepts_null_separated_entries(self) -> None:
         changed_files = self.root / "changed-files.txt"
@@ -205,6 +257,7 @@ profile:
         for profile in profiles:
             self.assertTrue(profile.checks)
             self.assertEqual(profile.report_root, Path("cache/local-ci-gate/reports"))
+            self.assertTrue(profile.requires_dependencies)
             check_ids = [check.id for check in profile.checks]
             self.assertEqual(len(check_ids), len(set(check_ids)))
 

@@ -31,6 +31,16 @@ python3 tools/local-ci-gate/bin/hldpro-local-ci run \
 
 Reports are local-only by default under `cache/local-ci-gate/reports/`, which is ignored by the repo root `.gitignore`.
 
+## Profile Catalog
+
+| Profile | Intended repo | Required local dependencies | Notes |
+|---------|---------------|-----------------------------|-------|
+| `hldpro-governance` | `hldpro-governance` | `python3`, `git` | Runs deterministic governance checks, planner-boundary checks, diff hygiene, and focused toolkit tests. |
+| `knocktracker` | `knocktracker` | `npm` | Adopted by knocktracker issue #173 / PR #174 as the live managed-shim profile. |
+| `ai-integration-services` | `ai-integration-services` | `npm` | Governance profile is available; consumer shim rollout is tracked separately by ai-integration-services issue #1113. |
+
+Profiles declare their dependency metadata in `profile.requires_dependencies`. The runner validates that metadata shape and rejects duplicate check IDs at profile-load time. Dependency metadata is descriptive; each command still fails normally if the target repo has not installed its own dependencies.
+
 ## Governance Profile
 
 The initial profile is `tools/local-ci-gate/profiles/hldpro-governance.yml`.
@@ -132,6 +142,19 @@ python3 scripts/overlord/deploy_local_ci_gate.py refresh \
   --governance-ref "$(git rev-parse HEAD)"
 ```
 
+Managed shims embed the governance checkout path used at install time, but operators can override that root without editing the consumer repo:
+
+```bash
+HLDPRO_GOVERNANCE_ROOT=/path/to/hldpro-governance .hldpro/local-ci.sh
+```
+
+The generated shim resolves:
+
+1. `HLDPRO_GOVERNANCE_ROOT` when set.
+2. The embedded install-time governance root otherwise.
+
+The runner invocation records the resolved governance root with `--governance-root`, so local reports keep showing which governance checkout supplied the profile and runner.
+
 ## Safety Contract
 
 - Managed shim marker: `# hldpro-governance local-ci gate managed`.
@@ -140,6 +163,7 @@ python3 scripts/overlord/deploy_local_ci_gate.py refresh \
 - `--backup-existing` renames an unmanaged shim to `local-ci.sh.pre-local-ci-gate` before install.
 - `--force` overwrites an unmanaged shim only when explicitly passed.
 - `resolve` and `dry-run` print the target repo, profile, shim path, governance source/ref, command preview, and planned write set before install.
+- Generated shims honor `HLDPRO_GOVERNANCE_ROOT` as an operator override and fall back to the embedded root.
 
 ## Consumer Rollout
 

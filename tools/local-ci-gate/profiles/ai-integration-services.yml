@@ -2,6 +2,8 @@ profile:
   name: ai-integration-services
   description: AI Integration Services local CI gate profile for existing deterministic workspace checks.
   report_root: cache/local-ci-gate/reports
+  requires_dependencies:
+    - npm
   changed_files:
     base_ref: origin/main
     head_ref: HEAD

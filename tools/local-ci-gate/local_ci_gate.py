@@ -55,6 +55,7 @@ class Profile:
     name: str
     description: str
     report_root: Path
+    requires_dependencies: tuple[str, ...]
     changed_files_base_ref: str | None
     changed_files_head_ref: str | None
     include_untracked: bool
@@ -229,6 +230,7 @@ def _load_checks(items: Any, path: Path) -> tuple[CheckSpec, ...]:
     if not isinstance(items, list):
         raise GateError(f"{path}: `checks` must be a list")
     checks: list[CheckSpec] = []
+    seen_ids: set[str] = set()
     for index, item in enumerate(items, start=1):
         if not isinstance(item, dict):
             raise GateError(f"{path}: checks[{index}] must be a mapping")
@@ -243,6 +245,9 @@ def _load_checks(items: Any, path: Path) -> tuple[CheckSpec, ...]:
         paths = item.get("paths", [])
         if not isinstance(check_id, str) or not check_id:
             raise GateError(f"{path}: checks[{index}].id must be a non-empty string")
+        if check_id in seen_ids:
+            raise GateError(f"{path}: duplicate check id: {check_id}")
+        seen_ids.add(check_id)
         if not isinstance(title, str) or not title:
             raise GateError(f"{path}: checks[{index}].title must be a non-empty string")
         if severity not in {"blocker", "advisory"}:
@@ -264,6 +269,15 @@ def _load_checks(items: Any, path: Path) -> tuple[CheckSpec, ...]:
             )
         )
     return tuple(checks)
+
+
+def _load_requires_dependencies(profile: dict[str, Any], path: Path) -> tuple[str, ...]:
+    raw = profile.get("requires_dependencies", [])
+    if not isinstance(raw, list) or not all(isinstance(item, str) and item for item in raw):
+        raise GateError(f"{path}: profile.requires_dependencies must be a list of non-empty strings when provided")
+    if len(raw) != len(set(raw)):
+        raise GateError(f"{path}: profile.requires_dependencies must not contain duplicates")
+    return tuple(raw)
 
 
 def load_profile(path: Path) -> Profile:
@@ -304,6 +318,7 @@ def load_profile(path: Path) -> Profile:
         name=name,
         description=description,
         report_root=Path(report_root_raw),
+        requires_dependencies=_load_requires_dependencies(profile, path),
         changed_files_base_ref=base_ref,
         changed_files_head_ref=head_ref,
         include_untracked=include_untracked,
@@ -457,6 +472,7 @@ def _write_report(report: RunReport) -> None:
             "name": report.profile.name,
             "description": report.profile.description,
             "report_root": str(report.profile.report_root),
+            "requires_dependencies": list(report.profile.requires_dependencies),
             "changed_files_base_ref": report.profile.changed_files_base_ref,
             "changed_files_head_ref": report.profile.changed_files_head_ref,
             "include_untracked": report.profile.include_untracked,

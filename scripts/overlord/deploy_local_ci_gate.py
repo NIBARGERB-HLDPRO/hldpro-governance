@@ -122,9 +122,13 @@ def managed_shim_body(plan: DeployPlan) -> str:
 {MANAGED_MARKER}
 set -euo pipefail
 
-exec python3 "{plan.runner_path}" run \\
+EMBEDDED_GOVERNANCE_ROOT="{plan.governance_root}"
+GOVERNANCE_ROOT="${{HLDPRO_GOVERNANCE_ROOT:-$EMBEDDED_GOVERNANCE_ROOT}}"
+RUNNER_PATH="${{GOVERNANCE_ROOT}}/tools/local-ci-gate/bin/hldpro-local-ci"
+
+exec python3 "${{RUNNER_PATH}}" run \\
   --profile "{plan.profile}" \\
-  --governance-root "{plan.governance_root}" \\
+  --governance-root "${{GOVERNANCE_ROOT}}" \\
   --governance-ref "{plan.governance_ref}" \\
   --repo-root "{plan.target_repo}" \\
   --shim-path "{plan.shim_path}"
