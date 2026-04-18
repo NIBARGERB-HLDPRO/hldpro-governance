@@ -1,0 +1,191 @@
+{
+  "session_id": "session-20260418-issue-294-downstream-governance-pilot",
+  "issue_number": 294,
+  "objective": "Plan the first downstream governance tooling package pilot under parent epic #288, with hard acceptance criteria for clean worktree setup, managed deploy, negative-control enforcement, local pass, GitHub Actions pass, and rollback or uninstall proof.",
+  "tier": 1,
+  "scope_boundary": [
+    "Create the planning package for issue #294 before downstream consumer edits start.",
+    "Select the default downstream pilot and define fallback rules.",
+    "Define downstream issue, worktree, execution-scope, deploy, verify, negative-control, remediation, GitHub Actions, and rollback proof requirements.",
+    "Keep parent epic #288 open until real downstream e2e evidence is attached.",
+    "Avoid editing downstream repos in this planning slice."
+  ],
+  "out_of_scope": [
+    "Editing local-ai-machine or any other downstream repo in this slice.",
+    "Claiming final downstream e2e proof from governance-only planning artifacts.",
+    "Bypassing repo-local governance or required GitHub Actions.",
+    "Manual copying of managed governance tooling into a consumer repo.",
+    "Adding a new repo profile for a fallback target in this slice.",
+    "Closing parent epic #288."
+  ],
+  "research_summary": "Issue #288 established the org governance tooling distribution epic. Issue #290 defined the package contract and issue #292 implemented the package-level deployer with dry-run/apply/verify/rollback and in-repo temporary git-repo e2e tests. The remaining parent-epic risk is downstream proof. The package contract names local-ai-machine as the default pilot, but its main checkout is actively dirty, so the pilot must use a clean isolated downstream worktree and record dirty sibling roots as active parallel lanes rather than cleaning them.",
+  "research_artifacts": [
+    "GitHub issue #288",
+    "GitHub issue #290",
+    "GitHub issue #292",
+    "GitHub issue #294",
+    "docs/governance-tooling-package.json",
+    "docs/runbooks/org-governance-tooling-distribution.md",
+    "docs/plans/issue-288-structured-agent-cycle-plan.json",
+    "docs/plans/issue-292-structured-agent-cycle-plan.json",
+    "raw/closeouts/2026-04-18-issue-292-governance-tooling-deployer.md",
+    "scripts/overlord/deploy_governance_tooling.py",
+    "tools/local-ci-gate/profiles/local-ai-machine.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Planning Package And Scope",
+      "goal": "Create the issue-backed Phase 3 planning package without touching downstream repos.",
+      "tasks": [
+        "Create issue #294 under parent epic #288.",
+        "Add PDCAR, structured plan, review/exception artifact, and execution scope.",
+        "Declare active dirty sibling roots as active parallel lanes.",
+        "Update backlog and progress mirrors.",
+        "Validate the planning package locally and in GitHub Actions."
+      ],
+      "acceptance_criteria": [
+        "Issue #294 exists before backlog/progress edits.",
+        "Structured plan validates.",
+        "Execution scope preflight passes from the isolated governance worktree.",
+        "Backlog and progress mirrors reference #294 while active.",
+        "Parent issue #288 remains open."
+      ],
+      "file_paths": [
+        "docs/plans/issue-294-structured-agent-cycle-plan.json",
+        "docs/plans/issue-294-downstream-governance-pilot-pdcar.md",
+        "raw/cross-review/2026-04-18-issue-294-downstream-governance-pilot-plan.md",
+        "raw/exceptions/2026-04-18-issue-294-same-family-planning.md",
+        "raw/execution-scopes/2026-04-18-issue-294-downstream-governance-pilot-planning.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Pilot Target Selection",
+      "goal": "Choose a deterministic downstream target and define fallback rules before implementation.",
+      "tasks": [
+        "Use local-ai-machine as the default pilot because the package contract names it and a governance-owned profile exists.",
+        "Require a clean local-ai-machine worktree from its remote default branch before writes.",
+        "Define fallback criteria if local-ai-machine cannot create a clean worktree or run deployment prerequisites.",
+        "Forbid selecting a repo without a governance-owned Local CI profile unless a separate profile issue lands first."
+      ],
+      "acceptance_criteria": [
+        "Default target is local-ai-machine.",
+        "Fallback requires documented blocker evidence before deployment starts.",
+        "Fallback order prefers ai-integration-services then knocktracker only if clean isolated worktree and current profile are available.",
+        "Dirty main checkout state is treated as an active parallel lane, not a blocker when a clean worktree can be created.",
+        "Fallback target must already have a governance-owned Local CI profile, or a separate profile issue must land before pilot deployment."
+      ],
+      "file_paths": [
+        "docs/plans/issue-294-downstream-governance-pilot-pdcar.md",
+        "docs/governance-tooling-package.json",
+        "docs/runbooks/org-governance-tooling-distribution.md"
+      ]
+    },
+    {
+      "name": "Downstream Implementation Contract",
+      "goal": "Define the exact implementation sequence the downstream pilot must follow.",
+      "tasks": [
+        "Create or confirm a downstream issue before consumer repo edits.",
+        "Create a clean downstream worktree from the consumer remote default branch.",
+        "Create a downstream execution scope before writes.",
+        "Run deployer dry-run, apply, and verify from a pinned governance ref.",
+        "Verify the generated consumer record and managed shim.",
+        "Run the managed shim from the downstream repo."
+      ],
+      "acceptance_criteria": [
+        "No downstream writes happen without a downstream issue and execution scope.",
+        "Deployer dry-run/apply/verify are run with a pinned governance ref.",
+        "Consumer record contains governance repo, ref, package version, profile, managed files, local verification, GitHub verification, and overrides.",
+        "Managed shim invocation is captured as evidence.",
+        "Pilot uses the deployer, not manual copying."
+      ],
+      "file_paths": [
+        "scripts/overlord/deploy_governance_tooling.py",
+        "docs/runbooks/org-governance-tooling-distribution.md",
+        "docs/governance-tooling-package.json"
+      ]
+    },
+    {
+      "name": "Final E2E Proof",
+      "goal": "Make downstream e2e testing the hard gate for parent-epic closeout.",
+      "tasks": [
+        "Introduce a deliberate negative-control violation in the downstream worktree.",
+        "Prove the deployed local gate or shim catches the blocker before push.",
+        "Remove or remediate the violation.",
+        "Prove the local gate passes after remediation.",
+        "Push a downstream PR and watch GitHub Actions to completion.",
+        "Prove rollback or uninstall on a separate test branch/worktree or fixture.",
+        "Record evidence on #288, #294, and downstream closeout."
+      ],
+      "acceptance_criteria": [
+        "Final AC: clean consumer worktree evidence exists.",
+        "Final AC: deployer dry-run/apply/verify evidence exists.",
+        "Final AC: generated consumer record evidence exists.",
+        "Final AC: managed shim invocation evidence exists.",
+        "Final AC: deliberate local blocker failure evidence exists.",
+        "Final AC: local pass after remediation evidence exists.",
+        "Final AC: downstream GitHub Actions pass evidence exists.",
+        "Final AC: rollback or uninstall proof exists.",
+        "Final AC: #288 remains open until all evidence links are attached."
+      ],
+      "file_paths": [
+        "raw/closeouts/",
+        "docs/runbooks/org-governance-tooling-distribution.md",
+        "docs/governance-tooling-package.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Socrates",
+      "role": "downstream-pilot-planning-explorer",
+      "focus": "Target selection, downstream ACs, execution-scope requirements, validation commands, and risks for issue #294.",
+      "status": "accepted",
+      "summary": "Confirmed local-ai-machine should remain the default pilot, replacement must be named before deployment, downstream work must be issue-backed with execution scope, deployer flow must be used instead of manual copying, consumer record must pin exact governance SHA, and final evidence must include local pass, GitHub Actions pass, rollback proof, and deliberate negative-control blocker.",
+      "evidence": [
+        "Subagent Socrates review notification",
+        "Subagent Poincare QA notification",
+        "docs/governance-tooling-package.json",
+        "docs/runbooks/org-governance-tooling-distribution.md",
+        "raw/closeouts/2026-04-18-issue-292-governance-tooling-deployer.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family-planning-fallback",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "True alternate-family review is unavailable in this Codex lane. This planning slice is accepted with a same-family exception, subagent review, deterministic validation, Local CI Gate, GitHub Actions, and a requirement that downstream implementation creates its own issue and execution scope before consumer writes.",
+    "evidence": [
+      "raw/cross-review/2026-04-18-issue-294-downstream-governance-pilot-plan.md",
+      "raw/exceptions/2026-04-18-issue-294-same-family-planning.md",
+      "Subagent Poincare QA notification",
+      "Subagent Socrates review notification"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #294 may add planning, review, exception, execution-scope, backlog, and progress artifacts for the downstream governance tooling pilot. It may not edit downstream repos or claim final e2e proof.",
+    "next_execution_step": "Validate and merge the planning package, then create the downstream implementation issue/worktree for the local-ai-machine pilot.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If local-ai-machine cannot create a clean isolated worktree, document the blocker and select a profiled fallback before writes.",
+    "If downstream edits are required, stop and create a downstream issue and execution scope first.",
+    "If the pilot uses manual copying instead of deploy_governance_tooling.py, do not claim #294 acceptance.",
+    "If negative-control failure is skipped, do not claim final e2e readiness.",
+    "If GitHub Actions do not pass in the downstream repo, keep #288 open.",
+    "If rollback or uninstall proof is deferred, record a linked follow-up before parent closeout."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #294",
+    "GitHub issue #288",
+    "operator instruction: follow repo rules, loop through PDCAR, GH epic, ACs, e2e testing as final AC",
+    "raw/exceptions/2026-04-18-issue-294-same-family-planning.md"
+  ],
+  "approved_at": "2026-04-18T23:03:00Z"
+}
