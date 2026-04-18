@@ -74,6 +74,35 @@ python3 /path/to/hldpro-governance/tools/local-ci-gate/bin/hldpro-local-ci run \
 
 The current knocktracker dry-run shim can move to live enforcement after the governance profile lands by switching `--profile hldpro-governance --dry-run` to `--profile knocktracker`. That consumer edit must happen in a separate knocktracker issue-backed PR.
 
+## AI Integration Services Profile
+
+The second consumer profile is `tools/local-ci-gate/profiles/ai-integration-services.yml`.
+
+It runs existing AIS commands only:
+
+- Always-on: `npm run typecheck`.
+- Changed-file scoped blocker builds: `npm run build:dashboard`, `npm run build:marketing`, `npm run build:reseller`, and `npm run build:pwa`.
+- Changed-file scoped advisory checks: `npm run audit:error-handlers`, `npm run preflight`, and `npm run smoke`.
+
+Use the profile from an AIS checkout:
+
+```bash
+python3 /path/to/hldpro-governance/tools/local-ci-gate/bin/hldpro-local-ci run \
+  --repo-root /path/to/ai-integration-services \
+  --profile ai-integration-services
+```
+
+Preview without executing npm commands:
+
+```bash
+python3 /path/to/hldpro-governance/tools/local-ci-gate/bin/hldpro-local-ci run \
+  --repo-root /path/to/ai-integration-services \
+  --profile ai-integration-services \
+  --dry-run
+```
+
+An AIS managed shim rollout must happen in a separate AIS issue-backed PR after the governance profile lands.
+
 ## Managed Shim Deployer
 
 Preview a shim install:

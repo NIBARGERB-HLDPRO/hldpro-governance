@@ -199,11 +199,14 @@ profile:
         self.assertGreaterEqual(len(profile_paths), 2)
         profiles = [gate.load_profile(path) for path in profile_paths]
 
+        self.assertIn("ai-integration-services", {profile.name for profile in profiles})
         self.assertIn("hldpro-governance", {profile.name for profile in profiles})
         self.assertIn("knocktracker", {profile.name for profile in profiles})
         for profile in profiles:
             self.assertTrue(profile.checks)
             self.assertEqual(profile.report_root, Path("cache/local-ci-gate/reports"))
+            check_ids = [check.id for check in profile.checks]
+            self.assertEqual(len(check_ids), len(set(check_ids)))
 
     def test_knocktracker_profile_scopes_heavy_checks_to_matching_files(self) -> None:
         profile = gate.load_profile(PROFILES_DIR / "knocktracker.yml")
@@ -225,6 +228,27 @@ profile:
         self.assertEqual(statuses["track-logic-tests"], "skipped")
         self.assertEqual(statuses["edge-contract-tests"], "skipped")
         self.assertEqual(statuses["manager-dashboard-contract-tests"], "skipped")
+        self.assertIn("CI remains authoritative", report.summary)
+
+    def test_ai_integration_services_profile_scopes_app_builds(self) -> None:
+        profile = gate.load_profile(PROFILES_DIR / "ai-integration-services.yml")
+        changed = gate.resolve_changed_files(
+            self.root,
+            explicit_files=["apps/marketing/src/App.tsx"],
+            include_untracked=False,
+        )
+
+        report = gate.run_checks(self.root, profile, changed, dry_run=True, report_dir=self.root / "reports")
+        statuses = {result.check.id: result.status for result in report.results}
+
+        self.assertEqual(statuses["typecheck"], "planned")
+        self.assertEqual(statuses["marketing-build"], "planned")
+        self.assertEqual(statuses["dashboard-build"], "skipped")
+        self.assertEqual(statuses["reseller-build"], "skipped")
+        self.assertEqual(statuses["pwa-build"], "skipped")
+        self.assertEqual(statuses["error-handler-audit"], "skipped")
+        self.assertEqual(statuses["preflight-probe"], "skipped")
+        self.assertEqual(statuses["playwright-smoke"], "skipped")
         self.assertIn("CI remains authoritative", report.summary)
 
 
