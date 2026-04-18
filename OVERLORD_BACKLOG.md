@@ -20,6 +20,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Always-on SoM HITL relay for local CLI sessions | [#296](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/296) | HIGH | TBD | Planning package in progress at `docs/plans/issue-296-structured-agent-cycle-plan.json` and `docs/plans/issue-296-som-hitl-relay-pdcar.md`; final epic AC requires full local CLI checkpoint -> AIS notification/reply -> normalized instruction -> local session consumption E2E proof. |
 | Org-level governance tooling distribution epic | [#288](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/288) | HIGH | TBD | Planning package in progress at `docs/plans/issue-288-structured-agent-cycle-plan.json` and `docs/plans/issue-288-org-governance-tooling-distribution-pdcar.md`; final epic AC requires downstream repo e2e pull/deploy/use proof. |
 | Downstream governance tooling pilot planning | [#294](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/294) | HIGH | 1-2 | Phase 3 child of #288. Defines local-ai-machine pilot selection, clean worktree/e2e ACs, negative-control proof, GitHub Actions proof, and rollback/uninstall proof before downstream implementation starts. |
 | Org governance compendium and planning-path repair | [#223](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/223) | HIGH | TBD | Phase 0 dependency for #224. Repair sequencing break before adopting dirty compendium draft; canonical plan at `docs/plans/issue-223-structured-agent-cycle-plan.json`. |
