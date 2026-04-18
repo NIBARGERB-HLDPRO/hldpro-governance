@@ -18,6 +18,7 @@
 | SoM Slice 5: packet schema and runtime boundary | #219 | IN PROGRESS | HIGH | TBD | Schema/validator docs, packet tests, runtime boundary correction | Part of #214 |
 | SoM Slice 6: operational status and closeout loop | #220 | IN PROGRESS | HIGH | TBD | Progress/backlog/registry/wiki mirrors and closeout evidence contract | This slice |
 | SoM Slice 7: execution root and write-scope enforcement | #221 | IN PROGRESS | HIGH | TBD | Execution-scope checker, tests, and PR/slice scope artifacts | Part of #214 |
+| Local AI Machine Local CI Gate profile | #272 | IN REVIEW | HIGH | 1-2 | `local-ai-machine` profile, focused scope tests, runbook catalog, closeout | Governance-owned profile only; LAM shim rollout remains separate issue-backed work |
 | Stage 5+ som-worker launchd boot-start integration | #104 | PLANNED | MEDIUM | 2-3 | launchd plist, service docs | Gate: local-ai-machine #431, #432 adopt |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
@@ -51,6 +52,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Local CI Gate consumer rollout checklist | #270 | 2026-04-18 | PR #271 added the standard issue-backed consumer rollout sequence to the Local CI Gate toolkit runbook. |
 | Local CI Gate contract hardening | #265 | 2026-04-18 | Added profile dependency metadata, duplicate check-id validation, managed shim `HLDPRO_GOVERNANCE_ROOT` override, deployer/runner tests, runbook catalog, and closeout. |
 | AI Integration Services Local CI Gate profile | #264 | 2026-04-17 | PRs #266 and #267 added the planning package, `ai-integration-services` profile, focused profile tests, runbook docs, and closeout. AIS consumer shim rollout is tracked by ai-integration-services #1113. |
 | Knocktracker Local CI Gate live profile rollout | #260 | 2026-04-17 | Governance PR #262 added the `knocktracker` profile; knocktracker PR #174 switched the managed shim to live `knocktracker` profile mode. CI remains authoritative. |
