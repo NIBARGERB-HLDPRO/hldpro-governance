@@ -77,6 +77,14 @@ No contradiction. This extends the Local CI Gate hardgate work from issues #277 
   - `local-ci-gate`: fail, run `24611027148`, job `71965352285`
   - Cause: Stage 6 closeout hook generated graph/wiki artifacts, but the implementation execution scope did not allow `graphify-out/hldpro-governance/`, `wiki/hldpro/`, or `wiki/index.md`.
   - Fix: add those closeout-hook outputs to the issue #284 implementation execution scope.
+- Final passing PR #285 run after the fix:
+  - `local-ci-gate`: pass, run `24611054113`, job `71965425981`
+  - `contract`: pass, run `24611054152`, job `71965426138`
+  - `validate`: pass, run `24611054125`, job `71965426006`
+  - `commit-scope`: pass, run `24611054134`, job `71965426270`
+  - `Analyze (actions)`: pass, run `24611053583`, job `71965425108`
+  - `Analyze (python)`: pass, run `24611053583`, job `71965425099`
+  - `CodeQL`: pass, run `71965458792`
 
 ## Execution Scope / Write Boundary
 
