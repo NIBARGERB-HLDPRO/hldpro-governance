@@ -5,6 +5,8 @@ import contextlib
 import importlib.util
 import io
 import json
+import os
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -41,6 +43,14 @@ class TestDeployLocalCIGate(unittest.TestCase):
 
     def _shim(self, relative_path: str = ".hldpro/local-ci.sh") -> Path:
         return self.product / relative_path
+
+    def _write_fake_runner(self, root: Path) -> None:
+        runner = root / "tools" / "local-ci-gate" / "bin" / "hldpro-local-ci"
+        runner.parent.mkdir(parents=True, exist_ok=True)
+        runner.write_text(
+            "import json, sys\nprint(json.dumps({'argv': sys.argv[1:]}))\n",
+            encoding="utf-8",
+        )
 
     def test_resolve_reports_repo_local_target_and_write_set(self) -> None:
         code, stdout, stderr = self._invoke(
@@ -81,6 +91,11 @@ class TestDeployLocalCIGate(unittest.TestCase):
         payload = json.loads(stdout)
         self.assertIn(deploy_local_ci_gate.MANAGED_MARKER, payload["shim_body"])
         self.assertIn("--governance-ref", payload["shim_body"])
+        self.assertIn("HLDPRO_GOVERNANCE_ROOT", payload["shim_body"])
+        self.assertIn('EMBEDDED_GOVERNANCE_ROOT="', payload["shim_body"])
+        self.assertIn('RUNNER_PATH="${GOVERNANCE_ROOT}/tools/local-ci-gate/bin/hldpro-local-ci"', payload["shim_body"])
+        self.assertIn('exec python3 "${RUNNER_PATH}" run', payload["shim_body"])
+        self.assertIn('--governance-root "${GOVERNANCE_ROOT}"', payload["shim_body"])
         self.assertIn(str(self.gov.resolve()), payload["shim_body"])
         self.assertEqual(payload["planned_write_set"], [str(self._shim().resolve())])
         self.assertEqual(payload["command_preview"][0], deploy_local_ci_gate.sys.executable)
@@ -127,6 +142,38 @@ class TestDeployLocalCIGate(unittest.TestCase):
         body = shim.read_text(encoding="utf-8")
         self.assertIn(deploy_local_ci_gate.MANAGED_MARKER, body)
         self.assertIn("abc123", body)
+        self.assertIn("HLDPRO_GOVERNANCE_ROOT", body)
+        self.assertIn(str(self.gov.resolve()), body)
+
+    def test_installed_shim_uses_embedded_root_then_env_override(self) -> None:
+        override = self.root / "override-governance"
+        override.mkdir()
+        self._write_fake_runner(self.gov)
+        self._write_fake_runner(override)
+
+        code, stdout, stderr = self._invoke(
+            "install",
+            "--governance-root",
+            str(self.gov),
+            "--target-repo",
+            str(self.product),
+            "--governance-ref",
+            "abc123",
+        )
+        self.assertEqual(code, 0, stderr)
+        self.assertIn("installed managed shim", stdout)
+
+        fallback = subprocess.run([str(self._shim())], cwd=self.product, capture_output=True, text=True, check=False)
+        self.assertEqual(fallback.returncode, 0, fallback.stderr)
+        fallback_payload = json.loads(fallback.stdout)
+        self.assertIn(str(self.gov.resolve()), fallback_payload["argv"])
+
+        env = os.environ.copy()
+        env["HLDPRO_GOVERNANCE_ROOT"] = str(override.resolve())
+        overridden = subprocess.run([str(self._shim())], cwd=self.product, env=env, capture_output=True, text=True, check=False)
+        self.assertEqual(overridden.returncode, 0, overridden.stderr)
+        overridden_payload = json.loads(overridden.stdout)
+        self.assertIn(str(override.resolve()), overridden_payload["argv"])
 
     def test_refresh_updates_managed_shim_content(self) -> None:
         shim = self._shim()
