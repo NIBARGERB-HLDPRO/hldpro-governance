@@ -23,6 +23,7 @@ Current org protections in effect:
 - no org-level required status checks yet
 
 Observed repo-level overrides:
+- `hldpro-governance`: repo ruleset `15241047` `Require Local CI Gate on main` requires `local-ci-gate` on `refs/heads/main`
 - `ai-integration-services`: repo ruleset `14283171` `MAIN` adds required checks on `main`, but is missing `critical-tests` from the verified baseline
 - `local-ai-machine`: repo ruleset `13152679` `Main branch PR-only policy` requires PR flow and review-thread resolution on `main`, but does not yet encode the standard-code baseline checks
 - `HealthcarePlatform`: no repo-level ruleset beyond inherited org rules
@@ -73,6 +74,18 @@ Current org rulesets already satisfy this stage:
 No immediate admin change required here.
 
 ## Stage 2 — Normalize Repo-Level Drift Before Broader Enforcement
+
+### hldpro-governance
+
+Current state:
+- repo-level `Require Local CI Gate on main` ruleset exists
+- required check is:
+  - `local-ci-gate`
+- strict required status checks are enabled
+
+Recommended action:
+- keep this repo-specific hardgate in place
+- do not promote `local-ci-gate` into a broad org-level required check for repos that do not yet run the governance-owned Local CI Gate workflow
 
 ### ai-integration-services
 

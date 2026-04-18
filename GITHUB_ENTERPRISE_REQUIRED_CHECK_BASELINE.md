@@ -15,6 +15,7 @@ Sources:
 
 Verification date:
 - 2026-04-09
+- 2026-04-18 (`hldpro-governance` Local CI Gate addition)
 
 Policy rule used for this pass:
 - `Required now` means stable on common human-authored PRs and not intentionally actor- or path-conditional.
@@ -22,6 +23,21 @@ Policy rule used for this pass:
 - `Repo-policy only` means a repo-specific contract that may be valuable locally but should not be promoted into the first org baseline.
 
 ## Verified Live Check Contexts
+
+## hldpro-governance
+
+PR sampled:
+- `#280` to `main`
+
+Observed stable checks:
+- `local-ci-gate`
+
+Required now:
+- `local-ci-gate`
+
+Notes:
+- Repo ruleset `15241047` (`Require Local CI Gate on main`) requires `local-ci-gate` on `refs/heads/main` with strict required status checks enabled.
+- This is a repo-specific governance hardgate, not an org-wide baseline check for every governed repo.
 
 ## ai-integration-services
 

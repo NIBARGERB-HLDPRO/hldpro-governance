@@ -1,6 +1,6 @@
 {
   "expected_execution_root": "{repo_root}",
-  "expected_branch": "feature/issue-277-local-ci-hardgate-enforcement",
+  "expected_branch": "docs/issue-277-local-ci-required-status-evidence",
   "execution_mode": "implementation_ready",
   "allowed_write_paths": [
     ".github/workflows/local-ci-gate.yml",
@@ -26,7 +26,7 @@
   "handoff_evidence": {
     "status": "accepted",
     "planner_model": "gpt-5.4",
-    "reviewer_model": "subagents-turing-nietzsche",
+    "reviewer_model": "subagents-kepler-hubble-banach-pascal",
     "implementer_model": "gpt-5.4",
     "accepted_at": "2026-04-18T14:20:00Z",
     "evidence_paths": [
@@ -34,9 +34,12 @@
       "docs/plans/issue-277-local-ci-hardgate-enforcement-pdcar.md",
       "raw/cross-review/2026-04-18-issue-277-local-ci-hardgate-enforcement-plan.md",
       "GitHub issue #277",
-      "PR #278",
-      "Subagent review Turing",
-      "Subagent review Nietzsche",
+      "PR #280",
+      "GitHub repo ruleset 15241047",
+      "Subagent review Kepler",
+      "Subagent review Hubble",
+      "Subagent review Banach",
+      "Subagent review Pascal",
       "raw/exceptions/2026-04-18-issue-277-same-family-implementation.md"
     ],
     "active_exception_ref": "raw/exceptions/2026-04-18-issue-277-same-family-implementation.md#exception",
