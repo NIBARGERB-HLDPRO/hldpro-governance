@@ -1,0 +1,51 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-368-remote-mcp-cloudflare-access-blocker-20260419",
+  "execution_mode": "implementation_complete",
+  "allowed_write_paths": [
+    "docs/plans/issue-368-remote-mcp-cloudflare-access-blocker-pdcar.md",
+    "docs/plans/issue-368-remote-mcp-cloudflare-access-blocker-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-19-issue-368-remote-mcp-cloudflare-access-blocker-implementation.json",
+    "raw/validation/2026-04-19-issue-368-remote-mcp-cloudflare-access-blocker.md",
+    "raw/closeouts/2026-04-19-issue-368-remote-mcp-cloudflare-access-blocker.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout has pre-existing graphify changes; issue #368 uses an isolated worktree"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "primary LAM checkout has pre-existing unrelated dirty work; proof attempt used a clean detached origin/main worktree"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo has pre-existing unrelated artifacts"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo has pre-existing unrelated graphify/cache artifacts"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "github-issue-368-under-epic-109",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-19T22:00:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/368",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109",
+      "docs/plans/issue-368-remote-mcp-cloudflare-access-blocker-structured-agent-cycle-plan.json",
+      "docs/plans/issue-368-remote-mcp-cloudflare-access-blocker-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}
