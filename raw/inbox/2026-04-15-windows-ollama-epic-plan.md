@@ -161,7 +161,7 @@ Land `scripts/windows-ollama/submit.py` — the authoritative SoM Tier-2 Worker 
 You are the Tier-2 Worker implementing Sprint 2.
 Reference: scripts/windows-ollama/preflight.sh (existing) — follow the same style (stdlib + minimal deps).
 Reference: docs/runbooks/windows-ollama-worker.md (post-Sprint-1) for the endpoint contract.
-Reference: Remote MCP Bridge PII middleware design (see `_worktrees/gov-remote-mcp/raw/inbox/2026-04-14-remote-mcp-bridge-plan.md` §"Application-layer PII enforcement") for pattern.
+Reference: Remote MCP Bridge PII middleware design (see `raw/inbox/2026-04-14-remote-mcp-bridge-plan.md` §"Application-layer PII enforcement") for pattern.
 Deliver: submit.py + pii_patterns.yml + model_allowlist.yml + tests/test_submit.py.
 Use requests 2.31+. Include __all__, type hints, no bare exceptions.
 Do NOT activate the Tier-2 ladder rung — that's Sprint 5.
@@ -213,7 +213,7 @@ Land audit trail for every Windows-Ollama call per invariant #10. Hash-chained, 
 10. All standard tiers pass.
 ```
 
-**Labels, worktree, worker brief, QA, cross-review, gate, closeout:** same structure as Sprint 2. Worktree `gov-windows-ollama-sprint3`, branch `feat/windows-ollama-sprint3`. Reference Remote MCP Bridge audit design (`_worktrees/gov-remote-mcp/raw/inbox/2026-04-14-remote-mcp-bridge-plan.md` §"Audit trail — tamper-evident"). Closeout at `raw/closeouts/2026-04-15-windows-ollama-sprint3.md`.
+**Labels, worktree, worker brief, QA, cross-review, gate, closeout:** same structure as Sprint 2. Worktree `gov-windows-ollama-sprint3`, branch `feat/windows-ollama-sprint3`. Reference Remote MCP Bridge audit design (`raw/inbox/2026-04-14-remote-mcp-bridge-plan.md` §"Audit trail — tamper-evident"). Closeout at `raw/closeouts/2026-04-15-windows-ollama-sprint3.md`.
 
 ## Sprint 4 — CI workflows (audit schema + exposure check)
 

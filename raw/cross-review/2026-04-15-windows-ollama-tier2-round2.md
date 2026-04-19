@@ -1,4 +1,5 @@
 ---
+schema_version: v1
 pr_number: 112
 pr_scope: standards
 round: 2
@@ -88,7 +89,7 @@ All 13 must-fixes from round 1 have been incorporated:
 
 ## Minor observations (not blockers)
 
-1. **Remote MCP Bridge pattern matching** — Runbook stage B stub mentions "audit writer" and "CI validator" but does not explicitly state that Sprint 3 will align the audit log schema with the Remote MCP Bridge plan (`_worktrees/gov-remote-mcp/raw/inbox/2026-04-14-remote-mcp-bridge-plan.md` §"Audit trail — tamper-evident"). This is a documentation clarity issue only; the implementation will follow the correct pattern in Sprint 2–3 worker briefs.
+1. **Remote MCP Bridge pattern matching** — Runbook stage B stub mentions "audit writer" and "CI validator" but does not explicitly state that Sprint 3 will align the audit log schema with the Remote MCP Bridge plan (`raw/inbox/2026-04-14-remote-mcp-bridge-plan.md` §"Audit trail — tamper-evident"). This is a documentation clarity issue only; the implementation will follow the correct pattern in Sprint 2–3 worker briefs.
 
 2. **Firewall binding enforcement** — Invariant #9 declares the requirement but the CI gate `check-windows-ollama-exposure.yml` is marked as Sprint 4. This is correct per the plan, but it means Stage A documents the rule without runtime enforcement. This is acceptable because exceptions SOM-WIN-OLLAMA-DISABLED-001 keeps the rung offline.
 

@@ -137,7 +137,7 @@ None required for Sprint 3. Sprint 4 (PII scrubbing handler) and Sprint 5 (Tier-
 - PR: [#118](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/118) (merged commit 1cbc0c5)
 - Cross-review artifact: `raw/cross-review/2026-04-15-windows-ollama-sprint3.md`
 - Gate artifact: `raw/gate/2026-04-15-windows-ollama-sprint3.md`
-- Remote MCP Bridge spec: `_worktrees/gov-remote-mcp/raw/inbox/2026-04-14-remote-mcp-bridge-plan.md` (§107-132)
+- Remote MCP Bridge spec: `raw/inbox/2026-04-14-remote-mcp-bridge-plan.md` (§107-132)
 
 ## Success Metrics
 

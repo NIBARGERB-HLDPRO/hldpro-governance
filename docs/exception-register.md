@@ -97,7 +97,17 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 
 ## Active exceptions (temporary)
 
-(none currently)
+### `SOM-RMB-ROUND2-WAIVED-001` — Tier-1 round-2 re-signature waived for Remote MCP Bridge epic
+
+- **rule_id:** `SOM-RMB-ROUND2-WAIVED-001`
+- **repo:** `hldpro-governance`
+- **deferral_reason:** Tier-1 round 1 cross-review on the Cloud -> Local MCP Bridge plan (captured at `raw/inbox/2026-04-14-remote-mcp-bridge-plan.md`, reviewed in `raw/cross-review/2026-04-14-remote-mcp-bridge.md`) came back REJECTED from Architect-Codex (`gpt-5.4` high) with 2 CRITICAL, 3 HIGH, and 3 MEDIUM concerns. Architect-Claude (`claude-opus-4-6`) produced a revised plan v2 addressing every required change: server-stamped origin, app-layer PII middleware on every remote tool, mandatory Cloudflare Access outer auth, full JWT claims with `rotation_version`, hash-chained HMAC audit, principal-keyed rate limits, fail-closed `cloudflared`, and keyed HMAC args. Normal protocol would require a round-2 re-signature from `gpt-5.4` high before Tier-2 Worker delegation. Operator (`nibargerb`) waived this specific re-signature on 2026-04-14 to unblock implementation and accepted residual single-signature risk for this epic only.
+- **approver:** `nibargerb`
+- **approval_date:** 2026-04-14
+- **expiry_date:** 2026-05-14 (30 days; re-examine if epic is not merged by then)
+- **review_cadence:** monthly
+- **status:** `active`
+- **follow-up:** Post-merge, restore strict dual-signature protocol for subsequent epics; this waiver is one-off.
 
 ## Expired or closed exceptions
 

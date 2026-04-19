@@ -9,6 +9,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Cloud -> Local MCP Bridge planning artifact preservation | [#109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109) | HIGH | 1-2 | Preserve the Remote MCP Bridge plan, rejected cross-review/resolution artifact, operator waiver, and handoff on `main` before deleting the stale remote branch. Final implementation stages remain tracked by the same epic. |
 | Stage 5+ som-worker launchd boot-start integration | [#104](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/104) | MEDIUM | 2-3 | MCP daemon live as manual service; convert to `launchd` agent for system boot. Gate: local-ai-machine #431, #432 adopt. |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | [#177](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/177) | LOW-MEDIUM | 2-3 | Post-outage code review. Gate: live-fallback rate < 2% for 2 weeks post-merge (window now passed). |
 | Qwen-Coder MLX driver stub-emission bug | [#105](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/105) | LOW | 1-2 | Qwen2.5-Coder-7B throws truncated output on edge cases (>200 lines). Workarounds in `docs/runbooks/qwen-coder-driver.md`. |
