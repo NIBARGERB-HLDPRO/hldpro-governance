@@ -542,7 +542,7 @@
     {
       "label": "test_codex_fire.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L1",
       "id": "test_codex_fire",
       "community": 45
@@ -550,7 +550,7 @@
     {
       "label": "write_fake_codex()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L13",
       "id": "test_codex_fire_write_fake_codex",
       "community": 45
@@ -558,7 +558,7 @@
     {
       "label": "run_fire()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L27",
       "id": "test_codex_fire_run_fire",
       "community": 45
@@ -566,7 +566,7 @@
     {
       "label": "test_preflight_failure_logs_and_exits_fast()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L61",
       "id": "test_codex_fire_test_preflight_failure_logs_and_exits_fast",
       "community": 45
@@ -574,7 +574,7 @@
     {
       "label": "test_preflight_timeout_logs_and_exits_fast()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L83",
       "id": "test_codex_fire_test_preflight_timeout_logs_and_exits_fast",
       "community": 45
@@ -582,7 +582,7 @@
     {
       "label": "test_exec_failure_after_successful_preflight_logs_and_signals()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L105",
       "id": "test_codex_fire_test_exec_failure_after_successful_preflight_logs_and_signals",
       "community": 45
@@ -590,7 +590,7 @@
     {
       "label": "test_success_does_not_write_failure_log()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L137",
       "id": "test_codex_fire_test_success_does_not_write_failure_log",
       "community": 45
@@ -598,7 +598,7 @@
     {
       "label": "test_review_template_propagates_wrapper_failure()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L155",
       "id": "test_codex_fire_test_review_template_propagates_wrapper_failure",
       "community": 45
@@ -10124,7 +10124,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L13",
       "weight": 1.0,
       "_src": "test_codex_fire",
@@ -10136,7 +10136,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L27",
       "weight": 1.0,
       "_src": "test_codex_fire",
@@ -10148,7 +10148,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L61",
       "weight": 1.0,
       "_src": "test_codex_fire",
@@ -10160,7 +10160,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L83",
       "weight": 1.0,
       "_src": "test_codex_fire",
@@ -10172,7 +10172,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L105",
       "weight": 1.0,
       "_src": "test_codex_fire",
@@ -10184,7 +10184,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L137",
       "weight": 1.0,
       "_src": "test_codex_fire",
@@ -10196,7 +10196,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L155",
       "weight": 1.0,
       "_src": "test_codex_fire",
@@ -10208,7 +10208,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L62",
       "weight": 0.8,
       "_src": "test_codex_fire_test_preflight_failure_logs_and_exits_fast",
@@ -10220,7 +10220,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L84",
       "weight": 0.8,
       "_src": "test_codex_fire_test_preflight_timeout_logs_and_exits_fast",
@@ -10232,7 +10232,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L107",
       "weight": 0.8,
       "_src": "test_codex_fire_test_exec_failure_after_successful_preflight_logs_and_signals",
@@ -10244,7 +10244,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L138",
       "weight": 0.8,
       "_src": "test_codex_fire_test_success_does_not_write_failure_log",
@@ -10256,7 +10256,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L157",
       "weight": 0.8,
       "_src": "test_codex_fire_test_review_template_propagates_wrapper_failure",
@@ -10268,7 +10268,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L73",
       "weight": 0.8,
       "_src": "test_codex_fire_test_preflight_failure_logs_and_exits_fast",
@@ -10280,7 +10280,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L95",
       "weight": 0.8,
       "_src": "test_codex_fire_test_preflight_timeout_logs_and_exits_fast",
@@ -10292,7 +10292,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L128",
       "weight": 0.8,
       "_src": "test_codex_fire_test_exec_failure_after_successful_preflight_logs_and_signals",
@@ -10304,7 +10304,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/scripts/test_codex_fire.py",
+      "source_file": "scripts/test_codex_fire.py",
       "source_location": "L148",
       "weight": 0.8,
       "_src": "test_codex_fire_test_success_does_not_write_failure_log",
