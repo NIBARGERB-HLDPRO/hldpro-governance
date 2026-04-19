@@ -4,20 +4,37 @@
   "package_owner_repo": "NIBARGERB-HLDPRO/hldpro-governance",
   "contract_issue": 290,
   "parent_epic": 288,
-  "updated_at": "2026-04-18",
+  "updated_at": "2026-04-19",
   "versioning": {
     "initial_version": "0.1.0-contract",
+    "initial_release_tag": "governance-tooling-v0.1.0",
+    "release_issue": 332,
     "pinning_required": true,
-    "pinning_format": "git_sha_required; semver_tag_optional_after_release",
+    "pinning_format": "git_sha_required; release_tag_optional_but_recommended",
     "consumer_record_path": ".hldpro/governance-tooling.json",
-    "compatibility_policy": "A consumer repo must record the governance package git SHA it deploys. Semver tags may be added later, but tags do not replace the SHA record."
+    "compatibility_policy": "A consumer repo must record the governance package git SHA it deploys. Release tags improve readability and rollback communication, but tags do not replace the SHA record."
   },
+  "releases": [
+    {
+      "version": "0.1.0-contract",
+      "tag": "governance-tooling-v0.1.0",
+      "issue": 332,
+      "status": "release_tag_after_green_pr_merge",
+      "requires_sha_record": true,
+      "basis": [
+        "Package contract completed in issue #290.",
+        "Package deployer completed in issue #292.",
+        "Downstream e2e proof completed under issue #288 and mirrored by issue #329."
+      ],
+      "consumer_guidance": "Use this tag as the human-readable release coordinate, keep `0.1.0-contract` as the package version for this contract-era release, and keep the exact resolved git SHA in `.hldpro/governance-tooling.json`."
+    }
+  ],
   "principles": [
     "CI remains authoritative; local gates are upstream filters.",
     "Governed repos consume pinned tooling instead of copying shared logic by hand.",
     "Repo-local overrides must be explicit, reviewable, and visible in the consumer record.",
     "Managed files must be identifiable and reversible.",
-    "Issue #288 cannot close until a downstream repo proves pull, deploy, local enforcement, GitHub enforcement, and rollback or uninstall behavior end to end."
+    "Issue #288 proved downstream pull, deploy, local enforcement, GitHub enforcement, and rollback or uninstall behavior end to end before the first release tag."
   ],
   "surfaces": [
     {

@@ -1,0 +1,123 @@
+{
+  "session_id": "session-20260419-issue-332-governance-tooling-v0-1-0",
+  "issue_number": 332,
+  "objective": "Create the first versioned governance tooling package release tag so downstream repos can pin `governance-tooling-v0.1.0` plus the exact governance git SHA.",
+  "tier": 1,
+  "scope_boundary": [
+    "Document the first governance tooling package release tag and consumer pinning policy.",
+    "Update the package manifest and distribution runbook without changing deployer behavior.",
+    "Record issue-backed planning, execution scope, validation, and closeout evidence.",
+    "Create the annotated `governance-tooling-v0.1.0` tag only after the PR merges and GitHub Actions pass.",
+    "Verify the remote tag exists and points at the intended merge commit."
+  ],
+  "out_of_scope": [
+    "Changing package deployer behavior.",
+    "Editing downstream repositories.",
+    "Retagging or rewriting any existing tag.",
+    "Replacing SHA pinning with tag-only pinning.",
+    "Publishing a GitHub Release artifact beyond the annotated git tag."
+  ],
+  "research_summary": "The governance tooling package contract, deployer, downstream pilot, and closeout evidence are complete under #288/#290/#292/#294/#329. The package manifest currently treats semver tags as optional after release and requires consumers to record the exact governance git SHA. No existing governance tooling tags are present, so this slice defines and creates the first release tag after a green PR merge.",
+  "research_artifacts": [
+    "GitHub issue #332",
+    "GitHub issue #288",
+    "GitHub issue #329",
+    "docs/governance-tooling-package.json",
+    "docs/runbooks/org-governance-tooling-distribution.md",
+    "raw/closeouts/2026-04-19-issue-288-governance-tooling-distribution-final.md",
+    "git ls-remote --tags origin"
+  ],
+  "sprints": [
+    {
+      "name": "Release Contract Update",
+      "goal": "Make the first release tag and pinning rules explicit in committed package docs.",
+      "tasks": [
+        "Update package manifest release metadata to name `governance-tooling-v0.1.0`.",
+        "Update the runbook to describe tag-plus-SHA consumer pinning.",
+        "Add planning and execution-scope artifacts for issue #332."
+      ],
+      "acceptance_criteria": [
+        "Manifest names the first release tag.",
+        "Runbook states tags improve readability but SHA remains required in consumer records.",
+        "Plan and execution scope validate locally."
+      ],
+      "file_paths": [
+        "docs/governance-tooling-package.json",
+        "docs/runbooks/org-governance-tooling-distribution.md",
+        "docs/plans/issue-332-structured-agent-cycle-plan.json",
+        "docs/plans/issue-332-governance-tooling-v0-1-0-pdcar.md",
+        "raw/execution-scopes/2026-04-19-issue-332-governance-tooling-v0-1-0-planning.json"
+      ]
+    },
+    {
+      "name": "Validation And Tag",
+      "goal": "Prove the docs/package contract branch is green, then create the release tag on the merged commit.",
+      "tasks": [
+        "Run local validators and Local CI Gate.",
+        "Open PR and watch GitHub Actions.",
+        "Merge only after green checks.",
+        "Create and push annotated tag `governance-tooling-v0.1.0` against the merge commit.",
+        "Verify the remote tag resolves to the intended commit.",
+        "Record final evidence on issue #332."
+      ],
+      "acceptance_criteria": [
+        "Local validation passes before push.",
+        "PR GitHub Actions pass before merge.",
+        "Annotated tag exists remotely.",
+        "Remote tag points at the merge commit.",
+        "Issue #332 closeout comment records PR, merge commit, tag, and validation evidence."
+      ],
+      "file_paths": [
+        "raw/closeouts/2026-04-19-issue-332-governance-tooling-v0-1-0.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Heisenberg",
+      "role": "release-plan reviewer",
+      "focus": "Required release artifacts, tag acceptance criteria, validation commands, and scope boundaries.",
+      "status": "accepted_with_followup",
+      "summary": "Read-only review requested for first governance tooling package tag. Findings are incorporated if returned before PR closeout; deterministic local and GitHub gates remain required.",
+      "evidence": [
+        "Subagent Heisenberg review request",
+        "docs/governance-tooling-package.json",
+        "docs/runbooks/org-governance-tooling-distribution.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family-release-fallback",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "True alternate-family review is unavailable in this lane. The slice is docs/status/tag-only and uses deterministic local validation, PR GitHub Actions, and remote tag verification as gates.",
+    "evidence": [
+      "GitHub issue #332",
+      "Subagent Heisenberg review request"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #332 may update package release docs, planning/scope/closeout artifacts, backlog/progress mirrors, generated closeout graph/wiki artifacts, and create the annotated release tag after merge. It may not edit deployer behavior or downstream repos.",
+    "next_execution_step": "Validate, PR, merge after green checks, create annotated tag, verify remote tag, and comment final evidence on #332.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If deployer behavior must change, stop and create a separate implementation issue.",
+    "If downstream repos need edits, stop and create downstream issue-backed work.",
+    "If any tag named `governance-tooling-v0.1.0` already exists remotely, stop and do not retag.",
+    "If GitHub Actions fail, do not create the release tag.",
+    "If remote tag verification cannot prove the intended commit, reopen the issue and do not claim release completion."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #332",
+    "operator instruction: follow repo rules and loop through PDCAR, GH epic, ACs, e2e testing as final AC",
+    "Subagent Heisenberg review request"
+  ],
+  "approved_at": "2026-04-19T02:30:00Z"
+}
