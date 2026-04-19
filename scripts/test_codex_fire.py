@@ -152,6 +152,76 @@ def test_success_does_not_write_failure_log(tmp_path: Path) -> None:
     assert not (tmp_path / "fail-fast-log.md").exists()
 
 
+def test_review_template_default_persona_reaches_codex_fire(tmp_path: Path) -> None:
+    counter = tmp_path / "counter"
+    prompt_capture = tmp_path / "prompt.txt"
+    args_capture = tmp_path / "args.txt"
+    fake_bin = write_fake_codex(
+        tmp_path,
+        textwrap.dedent(
+            f"""
+            counter="{counter}"
+            prompt_capture="{prompt_capture}"
+            args_capture="{args_capture}"
+            count=0
+            if [ -f "$counter" ]; then
+              count="$(cat "$counter")"
+            fi
+            count=$((count + 1))
+            printf '%s' "$count" >"$counter"
+            if [ "$count" -eq 1 ]; then
+              cat >/dev/null
+              echo ok
+              exit 0
+            fi
+            printf '%s\\n' "$@" >"$args_capture"
+            cat >"$prompt_capture"
+            echo "audit complete"
+            exit 0
+            """
+        ),
+    )
+    env = os.environ.copy()
+    env.update(
+        {
+            "PATH": f"{fake_bin}{os.pathsep}{env.get('PATH', '')}",
+            "CODEX_FIRE_LOG": str(tmp_path / "template-log.md"),
+            "CODEX_FIRE_TIMEOUT_SECONDS": "1",
+        }
+    )
+    env.pop("CODEX_REVIEW_PERSONA", None)
+
+    result = subprocess.run(
+        [
+            "bash",
+            str(REPO_ROOT / "scripts" / "codex-review-template.sh"),
+            "audit",
+            "scripts/codex-fire.sh",
+        ],
+        text=True,
+        capture_output=True,
+        env=env,
+        cwd=REPO_ROOT,
+        check=False,
+    )
+
+    assert result.returncode == 0
+    assert "Audit saved to:" in result.stdout
+    assert "audit complete" in result.stdout
+    assert "CODEX_FAIL" not in result.stdout
+    assert not (tmp_path / "template-log.md").exists()
+
+    args = args_capture.read_text(encoding="utf-8")
+    prompt = prompt_capture.read_text(encoding="utf-8")
+    assert "exec" in args
+    assert "-m" in args
+    assert "gpt-5.4" in args
+    assert "model_reasoning_effort=high" in args
+    assert "docs/codex-reviews" in args
+    assert "Review Discipline" in prompt
+    assert "Focus your security audit on: scripts/codex-fire.sh" in prompt
+
+
 def test_review_template_propagates_wrapper_failure(tmp_path: Path) -> None:
     counter = tmp_path / "counter"
     fake_bin = write_fake_codex(
