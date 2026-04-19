@@ -24,10 +24,10 @@ Issue: [#200](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/200)
 | `bash -n scripts/codex-fire.sh scripts/codex-review-template.sh scripts/codex-preflight.sh` | PASS |
 | `python3 .github/scripts/check_codex_model_pins.py` | PASS |
 | `python3 -m py_compile scripts/test_codex_fire.py` | PASS |
-| `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-200-codex-fire-failfast --changed-files-file /tmp/issue-200-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope` | PASS; validated 58 structured plan files |
+| `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-200-codex-fire-failfast --changed-files-file /tmp/issue-200-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope` | PASS; validated 59 structured plan files |
 | `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-19-issue-200-codex-fire-failfast-implementation.json --changed-files-file /tmp/issue-200-changed-files.txt` | PASS; dirty sibling roots were declared as active parallel work |
 | `python3 scripts/overlord/check_overlord_backlog_github_alignment.py` | PASS |
-| `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --repo-root . --changed-files-file /tmp/issue-200-changed-files.txt --report-dir cache/local-ci-gate/reports --json` | PASS; verdict `pass`, 24 changed files, 9 checks |
+| `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --repo-root . --changed-files-file /tmp/issue-200-changed-files.txt --report-dir cache/local-ci-gate/reports --json` | PASS; verdict `pass`, 23 changed files, 9 checks |
 | `bash hooks/closeout-hook.sh raw/closeouts/2026-04-19-issue-200-codex-fire-failfast.md` | PASS; refreshed hldpro-governance graph/wiki artifacts, memory consolidation skipped because credentials were not configured |
 
 ## Notes
