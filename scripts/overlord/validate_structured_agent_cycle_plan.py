@@ -49,8 +49,19 @@ IMPLEMENTATION_READY_MODES = {"implementation_ready", "implementation_complete"}
 ACCEPTED_REVIEW_STATES = {"accepted", "accepted_with_followup"}
 
 
-def _load_json(path: Path) -> object:
-    return json.loads(path.read_text(encoding="utf-8"))
+def _display_path(path: Path, root: Path) -> Path:
+    try:
+        return path.relative_to(root)
+    except ValueError:
+        return path
+
+
+def _load_json_safe(path: Path, root: Path, failures: list[str]) -> object | None:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as exc:
+        failures.append(f"{_display_path(path, root)}: could not parse JSON: {exc}")
+        return None
 
 
 def _find_plan_files(root: Path) -> list[Path]:
@@ -82,12 +93,15 @@ def _read_changed_files(path: Path | None) -> list[str]:
     return [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
-def _matching_plan_payloads(files: list[Path], root: Path, issue_number: int | None) -> list[tuple[Path, object]]:
+def _matching_plan_payloads(
+    loaded_plans: list[tuple[Path, object | None]],
+    root: Path,
+    issue_number: int | None,
+) -> list[tuple[Path, object]]:
     if issue_number is None:
         return []
     matches: list[tuple[Path, object]] = []
-    for file_path in files:
-        payload = _load_json(file_path)
+    for file_path, payload in loaded_plans:
         if isinstance(payload, dict) and payload.get("issue_number") == issue_number:
             matches.append((file_path.relative_to(root), payload))
     return matches
@@ -250,6 +264,7 @@ def main() -> int:
     root = Path(args.root).resolve()
     files = _find_plan_files(root)
     failures: list[str] = []
+    loaded_plans = [(file_path, _load_json_safe(file_path, root, failures)) for file_path in files]
 
     if args.require_if_issue_branch:
         branch = args.branch_name
@@ -266,7 +281,7 @@ def main() -> int:
                 "governance-surface changes require a branch name containing `issue-<number>` and a matching canonical structured plan; changed paths: "
                 + ", ".join(governance_surface_changes)
             )
-        matches = _matching_plan_payloads(files, root, issue_number)
+        matches = _matching_plan_payloads(loaded_plans, root, issue_number)
         if not matches:
             issue_label = f"issue #{issue_number}" if issue_number is not None else "this branch"
             failures.append(
@@ -279,9 +294,9 @@ def main() -> int:
     if args.enforce_planner_boundary_scope:
         _validate_planner_boundary_scope_presence(root, args.branch_name, changed_files, failures)
 
-    for file_path in files:
-        payload = _load_json(file_path)
-        _validate_file(file_path.relative_to(root), payload, failures)
+    for file_path, payload in loaded_plans:
+        if payload is not None:
+            _validate_file(file_path.relative_to(root), payload, failures)
 
     if failures:
         for failure in failures:

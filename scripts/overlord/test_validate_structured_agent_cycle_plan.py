@@ -295,6 +295,50 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("required alternate_model_review must be accepted", result.stdout)
 
+    def test_malformed_json_reports_structured_fail_without_traceback(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-192-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text('{"session_id": "truncated"', encoding="utf-8")
+            result = subprocess.run(
+                ["python3", str(VALIDATOR), "--root", str(root)],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("FAIL docs/plans/issue-192-structured-agent-cycle-plan.json: could not parse JSON:", result.stdout)
+        self.assertNotIn("Traceback", result.stdout + result.stderr)
+
+    def test_malformed_matching_plan_does_not_crash_governance_surface_gate(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-192-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text('{"issue_number": 192,', encoding="utf-8")
+            result = self._run(root, "issue-192-test", ["scripts/overlord/validate_structured_agent_cycle_plan.py"])
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("FAIL docs/plans/issue-192-structured-agent-cycle-plan.json: could not parse JSON:", result.stdout)
+        self.assertEqual(result.stdout.count("could not parse JSON"), 1)
+        self.assertIn("require a canonical structured plan for issue #192", result.stdout)
+        self.assertNotIn("Traceback", result.stdout + result.stderr)
+
+    def test_plan_read_error_reports_structured_fail_without_traceback(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_dir = root / "docs" / "plans" / "issue-192-structured-agent-cycle-plan.json"
+            plan_dir.mkdir(parents=True)
+            result = subprocess.run(
+                ["python3", str(VALIDATOR), "--root", str(root)],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("FAIL docs/plans/issue-192-structured-agent-cycle-plan.json: could not parse JSON:", result.stdout)
+        self.assertNotIn("Traceback", result.stdout + result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
