@@ -15,11 +15,8 @@ Defaults:
   --base-dir <governance parent>/..  (the HLDPRO repo root that contains sibling repos)
 
 Managed repos:
-  ai-integration-services
-  HealthcarePlatform
-  local-ai-machine
-  knocktracker
-  ASC-Evaluator
+  Loaded from docs/graphify_targets.json scheduled targets whose source_path is
+  under repos/. The governance repo target (source_path ".") is skipped.
 EOF
 }
 
@@ -28,13 +25,16 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 LINK_ROOT="${REPO_ROOT}/repos"
 MANIFEST_PATH="$(git -C "${REPO_ROOT}" rev-parse --git-path graphify-local-repo-links.txt)"
 
-REPOS=(
-  "ai-integration-services"
-  "HealthcarePlatform"
-  "local-ai-machine"
-  "knocktracker"
-  "ASC-Evaluator"
-)
+scheduled_repo_names() {
+  python3 "${REPO_ROOT}/scripts/knowledge_base/graphify_targets.py" list --scheduled --format tsv |
+    while IFS=$'\t' read -r _repo_slug _display_name source_path _output_path _wiki_path; do
+      case "${source_path}" in
+        repos/*)
+          printf '%s\n' "${source_path#repos/}"
+          ;;
+      esac
+    done
+}
 
 default_base_dir() {
   if [[ "$(basename "$(dirname "${REPO_ROOT}")")" == "_worktrees" ]]; then
@@ -142,15 +142,21 @@ main() {
         esac
       done
       local repo
-      for repo in "${REPOS[@]}"; do
+      while IFS= read -r repo; do
+        [[ -n "${repo}" ]] || continue
         link_repo "${base_dir}" "${repo}"
-      done
+      done < <(scheduled_repo_names)
       ;;
     clean)
       local repo
-      for repo in "${REPOS[@]}"; do
+      if [[ ! -f "${MANIFEST_PATH}" ]]; then
+        echo "OK no helper-managed graphify repo links recorded"
+        exit 0
+      fi
+      while IFS= read -r repo; do
+        [[ -n "${repo}" ]] || continue
         clean_repo "${repo}"
-      done
+      done < "${MANIFEST_PATH}"
       ;;
     -h|--help)
       usage

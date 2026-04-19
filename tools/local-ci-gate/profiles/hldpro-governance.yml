@@ -99,6 +99,22 @@ profile:
         - python3
         - scripts/overlord/test_workflow_local_coverage.py
 
+    - id: registry-surface-reconciliation
+      title: Registry-driven governance surface reconciliation
+      severity: blocker
+      scope: changed
+      paths:
+        - .github/workflows/
+        - README.md
+        - STANDARDS.md
+        - docs/governed_repos.json
+        - docs/graphify_targets.json
+        - scripts/knowledge_base/prepare_local_graphify_repos.sh
+        - scripts/overlord/validate_registry_surfaces.py
+      command:
+        - python3
+        - scripts/overlord/validate_registry_surfaces.py
+
     - id: governance-tooling-deployer-tests
       title: Governance tooling deployer tests
       severity: blocker

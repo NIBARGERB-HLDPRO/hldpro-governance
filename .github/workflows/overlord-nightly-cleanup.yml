@@ -82,6 +82,15 @@ jobs:
           token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
+      - name: Checkout seek-and-ponder
+        if: steps.local_time_guard.outputs.run_cleanup == 'true'
+        uses: actions/checkout@v6
+        with:
+          repository: NIBARGERB-HLDPRO/seek-and-ponder
+          path: repos/seek-and-ponder
+          token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
       - name: Run nightly cleanup
         if: steps.local_time_guard.outputs.run_cleanup == 'true'
         id: cleanup
@@ -90,7 +99,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          REPOS="ai-integration-services HealthcarePlatform local-ai-machine knocktracker ASC-Evaluator"
+          REPOS=$(python3 scripts/overlord/validate_governed_repos.py --print-subsystem sweep)
           DATE=$(date -u +%Y-%m-%d)
           OWNER="NIBARGERB-HLDPRO"
           ARTIFACT_CUTOFF=$(date -u -d '14 days ago' +%Y-%m-%dT%H:%M:%SZ)
