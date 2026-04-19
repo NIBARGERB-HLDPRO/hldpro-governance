@@ -1,87 +1,87 @@
 {
   "session_id": "2026-04-19-governance-issue-337-codex-review-persona",
   "issue_number": 337,
-  "objective": "Restore the default Codex reviewer persona path used by `scripts/codex-review-template.sh` so audit and critique modes reach `codex-fire.sh` without requiring an operator override.",
+  "objective": "Restore the default Codex reviewer persona path so codex-review-template audit and critique modes reach codex-fire without requiring CODEX_REVIEW_PERSONA.",
   "tier": 2,
   "scope_boundary": [
-    "Codex review-template persona default",
-    "Fake-Codex e2e coverage for default and override persona paths",
-    "Issue #337 planning, execution-scope, review, validation, closeout, backlog, and feature-registry evidence"
+    "Codex review template default persona",
+    "Fake-Codex regression tests",
+    "Issue #337 planning, execution-scope, review, validation, closeout, and local mirrors"
   ],
   "out_of_scope": [
-    "Changing live Codex CLI authentication",
-    "Changing GitHub Actions Codex canary behavior",
+    "Changing Codex CLI behavior",
+    "Changing model selection or reasoning effort",
     "Changing downstream product repositories",
-    "Changing the local #200 fail-fast wrapper semantics beyond tests required for this default-persona bug"
+    "Implementing the LAM governance tooling adoption epic"
   ],
-  "research_summary": "Issue #200 added `CODEX_REVIEW_PERSONA` as an override while routing audit and critique modes through `codex-fire.sh`, but the template still defaults to `docs/agents/codex-reviewer.md`. The current governance checkout does not track that default file, so normal audit/critique invocations can fail before reaching the wrapper. The fix is to restore a canonical tracked persona at the default path and prove both default and override paths through fake-Codex e2e tests.",
+  "research_summary": "Issue #337 reports that scripts/codex-review-template.sh defaults CODEX_REVIEW_PERSONA to docs/agents/codex-reviewer.md, but that file is absent. The template checks the persona before constructing audit/critique prompts and before calling codex-fire.sh, so the default invocation fails at setup. Existing tests cover override failure propagation; this slice adds a tracked default persona and a default-path fake-Codex regression.",
   "research_artifacts": [
     "scripts/codex-review-template.sh",
     "scripts/codex-fire.sh",
     "scripts/test_codex_fire.py",
-    "docs/ORG_GOVERNANCE_COMPENDIUM.md",
-    "raw/validation/2026-04-19-issue-200-codex-fire-failfast.md",
+    "docs/plans/issue-200-structured-agent-cycle-plan.json",
     "raw/execution-scopes/2026-04-19-issue-337-codex-review-persona-implementation.json"
   ],
   "sprints": [
     {
       "name": "Planning and scope",
-      "goal": "Create issue-backed governance artifacts before modifying the review template support path.",
+      "goal": "Create issue-backed governance artifacts before changing the review template surface.",
       "tasks": [
-        "Create structured plan",
-        "Create PDCA/R",
+        "Create PDCAR plan",
+        "Create structured agent cycle plan",
         "Create implementation execution scope",
-        "Record same-family exception",
-        "Record backlog and feature-registry mirrors"
+        "Record same-family exception for no-HITL execution",
+        "Move #337 into active backlog/progress mirrors"
       ],
       "acceptance_criteria": [
         "Structured plan validates",
-        "Execution scope covers only issue #337 files and generated closeout artifacts",
-        "No downstream repository writes are required"
+        "Execution scope covers only issue #337 files",
+        "Same-family exception documents controls and expiry"
       ],
       "file_paths": [
-        "docs/plans/issue-337-structured-agent-cycle-plan.json",
         "docs/plans/issue-337-codex-review-persona-pdcar.md",
+        "docs/plans/issue-337-structured-agent-cycle-plan.json",
         "raw/execution-scopes/2026-04-19-issue-337-codex-review-persona-implementation.json",
         "raw/exceptions/2026-04-19-issue-337-same-family-codex-review-persona.md",
         "OVERLORD_BACKLOG.md",
-        "docs/FEATURE_REGISTRY.md"
+        "docs/PROGRESS.md"
       ]
     },
     {
-      "name": "Persona restoration and tests",
-      "goal": "Restore the tracked default persona and prove the template reaches `codex-fire.sh` without an override.",
+      "name": "Default persona repair",
+      "goal": "Restore a tracked canonical persona file for the template default path.",
       "tasks": [
-        "Add `docs/agents/codex-reviewer.md`",
-        "Add fake-Codex e2e coverage for default persona routing",
-        "Keep fake-Codex e2e coverage for `CODEX_REVIEW_PERSONA` override routing"
+        "Add docs/agents/codex-reviewer.md",
+        "Keep CODEX_REVIEW_PERSONA override behavior unchanged",
+        "Avoid unrelated review-template behavior changes"
       ],
       "acceptance_criteria": [
-        "Default audit mode no longer fails due to a missing persona file",
-        "`CODEX_REVIEW_PERSONA` override still injects override content",
-        "E2E fake-Codex tests prove both paths reach the wrapper"
+        "Default persona path exists as a tracked file",
+        "Override test still passes",
+        "Audit/critique setup can read persona content before wrapper dispatch"
       ],
       "file_paths": [
         "docs/agents/codex-reviewer.md",
-        "scripts/test_codex_fire.py"
+        "scripts/codex-review-template.sh"
       ]
     },
     {
-      "name": "Review and closeout",
-      "goal": "Validate through local tests, governance gates, Local CI, focused review, Stage 6 closeout, and GitHub checks.",
+      "name": "E2E validation and closeout",
+      "goal": "Prove the default audit path reaches codex-fire and complete Stage 6 evidence.",
       "tasks": [
-        "Record focused review",
-        "Record validation evidence",
-        "Run Stage 6 closeout hook",
-        "Merge only after PR checks pass"
+        "Add fake-Codex default-path regression test",
+        "Run targeted shell and pytest validation",
+        "Run local CI gate",
+        "Record focused review, validation, closeout, and issue comment evidence"
       ],
       "acceptance_criteria": [
-        "Focused review accepted",
-        "Local CI Gate passes",
-        "Final AC includes fake-Codex e2e proof for default and override persona paths",
-        "GitHub PR checks pass before merge"
+        "Default audit path reaches codex-fire without CODEX_REVIEW_PERSONA",
+        "CODEX_REVIEW_PERSONA override still works",
+        "Local CI Gate and GitHub checks pass",
+        "Stage 6 closeout artifact is created and hook passes"
       ],
       "file_paths": [
+        "scripts/test_codex_fire.py",
         "raw/cross-review/2026-04-19-issue-337-codex-review-persona-review.md",
         "raw/validation/2026-04-19-issue-337-codex-review-persona.md",
         "raw/closeouts/2026-04-19-issue-337-codex-review-persona.md"
@@ -90,11 +90,11 @@
   ],
   "specialist_reviews": [
     {
-      "reviewer": "codex-subagent",
+      "reviewer": "focused-reviewer",
       "role": "focused reviewer",
-      "focus": "Persona default, override behavior, and fake-Codex e2e coverage",
-      "status": "planned",
-      "summary": "Focused review required before merge because the active environment does not expose a separate Claude connector.",
+      "focus": "Default persona path, override preservation, fake-Codex e2e coverage, and scope control",
+      "status": "accepted_with_followup",
+      "summary": "Claude focused review found the fake-Codex regression design sound and identified that the new persona needed model frontmatter. The frontmatter was added. Its untracked-file note is expected before commit and is resolved by normal commit/PR flow.",
       "evidence": [
         "raw/cross-review/2026-04-19-issue-337-codex-review-persona-review.md"
       ]
@@ -102,30 +102,31 @@
   ],
   "alternate_model_review": {
     "required": true,
-    "reviewer": "same-family exception path",
-    "model_family": "gpt-5",
+    "reviewer": "claude-cli",
+    "model_family": "claude",
     "status": "accepted_with_followup",
-    "summary": "No separate Claude connector is available in this Codex session and the operator directed no HITL; same-family implementation is accepted for this narrow governance tooling bug with deterministic fake-Codex tests, local CI, GitHub checks, and focused subagent review before merge.",
+    "summary": "Claude CLI review returned FAIL with two findings: add persona model frontmatter and ensure artifacts are committed. The model frontmatter follow-up was applied; the commit/PR path resolves the pre-commit untracked artifact note. Deterministic tests, local CI, and GitHub checks remain the merge controls.",
     "evidence": [
+      "raw/cross-review/2026-04-19-issue-337-codex-review-persona-review.md",
       "raw/exceptions/2026-04-19-issue-337-same-family-codex-review-persona.md"
     ]
   },
   "execution_handoff": {
     "session_agent": "codex",
     "execution_mode": "implementation_ready",
-    "approved_scope_summary": "Proceed with issue #337 Codex review-template default persona restoration and tests.",
-    "next_execution_step": "Add the persona doc, tests, review, validation, closeout, and PR evidence.",
+    "approved_scope_summary": "Proceed with issue #337 default Codex reviewer persona repair, tests, validation, and closeout.",
+    "next_execution_step": "Add the persona file, regression test, focused review, validation, closeout, and PR.",
     "blocked_on": []
   },
   "material_deviation_rules": [
-    "Do not edit downstream repositories.",
-    "Do not remove the `CODEX_REVIEW_PERSONA` override.",
-    "Do not bypass `codex-fire.sh` for audit or critique modes.",
-    "If the default persona path changes again, update both the template and e2e tests in the same PR."
+    "Do not edit downstream product repositories.",
+    "Do not change model selection or reasoning effort for codex-fire dispatch.",
+    "Do not remove CODEX_REVIEW_PERSONA override behavior.",
+    "If another missing default artifact blocks the same invocation path, document it and either fix it in scope only when required for #337 ACs or create a follow-up issue."
   ],
   "approved": true,
   "approved_by": [
     "operator-no-hitl-directive"
   ],
-  "approved_at": "2026-04-19T00:00:00Z"
+  "approved_at": "2026-04-19T03:00:00Z"
 }

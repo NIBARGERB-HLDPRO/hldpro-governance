@@ -1,36 +1,31 @@
-# Issue #337 - Codex Review Persona PDCA/R
+# Issue #337 - Codex Review Default Persona PDCA/R
 
-Branch: `issue-337-codex-review-persona`
+Branch: `docs/issue-337-codex-review-persona`
 Issue: [#337](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/337)
 
 ## Plan
 
-Restore the tracked default persona used by `scripts/codex-review-template.sh` so normal audit and critique invocations do not fail before they reach `scripts/codex-fire.sh`. Keep the `CODEX_REVIEW_PERSONA` override for tests and operators.
+Restore the default Codex reviewer persona path used by `scripts/codex-review-template.sh` so audit and critique modes do not fail before reaching `scripts/codex-fire.sh`. Preserve `CODEX_REVIEW_PERSONA` as the operator/test override and prove both paths with fake-Codex regression coverage.
 
 ## Do
 
-- Add `docs/agents/codex-reviewer.md`.
-- Extend fake-Codex tests to cover default persona routing.
-- Extend fake-Codex tests to prove `CODEX_REVIEW_PERSONA` override content is honored.
-- Record issue #337 planning, execution scope, same-family exception, review, validation, closeout, backlog, and feature-registry evidence.
+- Add the tracked default persona at `docs/agents/codex-reviewer.md`.
+- Add a regression test that runs `bash scripts/codex-review-template.sh audit <target>` without `CODEX_REVIEW_PERSONA` and proves the request reaches `codex-fire.sh`.
+- Keep the existing override regression so tests/operators can still provide an alternate persona file.
+- Record execution scope, validation, focused review, and Stage 6 closeout evidence.
 
 ## Check
 
 Final acceptance requires:
 
-- `PYTHONDONTWRITEBYTECODE=1 python3 -m pytest scripts/test_codex_fire.py`
+- `python3 -m pytest scripts/test_codex_fire.py`
 - `bash -n scripts/codex-fire.sh scripts/codex-review-template.sh scripts/codex-preflight.sh`
-- `python3 .github/scripts/check_codex_model_pins.py`
-- `python3 -m py_compile scripts/test_codex_fire.py`
-- structured plan validation
-- execution-scope validation
-- backlog/GitHub sync validation
-- `git diff --check`
-- Local CI Gate against the changed-file list
-- focused review acceptance
-- Stage 6 closeout hook
+- `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .`
+- `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-19-issue-337-codex-review-persona-implementation.json`
+- `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --report-dir cache/local-ci-gate/reports --json`
+- Focused review acceptance
 - GitHub PR checks
 
 ## Act
 
-If validation and review pass, publish #337 as a focused PR and merge only after CI is green. The final e2e acceptance proof is the fake-Codex test suite proving that both default and override persona paths reach the fail-fast wrapper.
+If validation passes, publish the focused #337 PR and merge only after GitHub checks are green. Any broader Codex review wrapper cleanup that is not needed to satisfy the missing persona bug should become a separate issue.
