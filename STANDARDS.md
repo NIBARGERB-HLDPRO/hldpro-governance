@@ -456,6 +456,54 @@ LAM runs out-of-band for its lanes; feeds sanitized outputs into any tier that n
 8. **Windows-Ollama PII floor.** PII-tagged or PII-detected payloads MUST block Windows host AND Sonnet cloud fallback. Route to LAM only or halt. Before submitting any payload to the Windows host endpoint, payload must pass `pii-patterns.yml` middleware. Fail-closed if patterns unavailable. (Enforced in Sprint 2 via `scripts/windows-ollama/submit.py`; active in Sprint 5.)
 9. **Windows-Ollama firewall binding.** The Windows host endpoint MUST NOT be exposed beyond LAN. Requires firewall binding to Mac host IP or explicit trusted subnet allowlist. No public bind or port-forwarding. Separate epic adding Cloudflare Access may extend this; until then, LAN-only via `sase-switch` vEthernet adapter on subnet `172.17.0.0/16`. (Enforced in Sprint 4 via `check-windows-ollama-exposure.yml` CI; active in Sprint 5.)
 10. **Windows-Ollama audit.** Every Windows-Ollama call appends to `raw/remote-windows-audit/YYYY-MM-DD.jsonl` with hash-chain + HMAC + daily manifest. Break the chain → CI validator fails; endpoint disabled until rebuilt. (Enforced in Sprint 3 via `check-windows-ollama-audit-schema.yml` CI; active in Sprint 5.)
+11. **Remote MCP stdio-only boundary.** Remote-origin packets MUST NOT invoke stdio-only tools. `lam.scrub_pii` remains stdio-only; remote bridge dispatchers must refuse it and any future stdio-only tool before local MCP execution.
+12. **Remote MCP server-authoritative origin.** Remote HTTP transport MUST overwrite client-supplied `origin` after Cloudflare Access and inner-token validation. Client-supplied local origins are ignored and audited as spoof attempts.
+13. **Remote MCP PII middleware.** Every remote-exposed tool call MUST pass application-layer PII middleware before dispatch. PII matches, missing PII patterns, malformed PII patterns, schema violations, and payload-size violations fail closed.
+14. **Remote MCP Cloudflare Access identity.** Remote calls require Cloudflare Access outer identity plus an inner bridge token. Anonymous principals and unauthenticated tunnel access are forbidden.
+15. **Remote MCP audit.** Every accepted or rejected remote MCP call appends to `raw/remote-mcp-audit/YYYY-MM-DD.jsonl` with sequence, prev-hash, args HMAC, entry HMAC, and daily manifest. Chain or manifest failure disables the remote endpoint until operator trust is rebuilt.
+
+### Remote MCP Bridge
+
+Issue [#109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109) governs the Cloud -> Local MCP Bridge. The bridge may expose only a bounded remote subset of the local Society-of-Minds MCP daemon through authenticated HTTPS. It is operator-CLI infrastructure, not a SaaS surface.
+
+**Transport and identity**
+
+- Cloudflare Tunnel (`cloudflared`) is the only approved off-LAN transport.
+- Cloudflare Access is mandatory. Requests without verified Access identity are rejected before bridge-token evaluation.
+- The bridge also requires an inner bearer/JWT token with issuer, audience, subject, expiry, not-before, jti, kid, rotation version, and explicit tool scope.
+- Token rotation bumps `rotation_version`; lower-version tokens are refused on the next validation.
+- If `cloudflared` or the HTTP bridge is down, remote access fails closed. The local stdio MCP path continues without unauthenticated network fallback.
+
+**Remote tool allowlist**
+
+| Tool | Remote | Boundary |
+|---|---:|---|
+| `som.ping` | yes | Health only; no user payload. |
+| `som.handoff` | yes | PII middleware scans all string fields; server stamps origin. |
+| `som.chain` | yes | Packet-id lookups only; no free text. |
+| `som.log_fallback` | yes | Structured fields only; PII middleware and rate limit apply. |
+| `lam.probe` | yes | Runtime status only; no prompt payload. |
+| `lam.embed` | yes | PII middleware, schema allowlist, size limit, and rate limit apply. |
+| `lam.scrub_pii` | no | Stdio-only because it necessarily accepts PII-bearing input. |
+
+**Application-layer controls**
+
+- Remote dispatchers validate strict JSON schema per tool and reject unexpected fields.
+- PII scanning uses the shared LAM PII pattern set before dispatch. Missing or malformed patterns reject all remote calls.
+- Rate limits are keyed by stable principal (`sub`), not token material, and run before tool dispatch.
+- HTTP transport overwrites `origin` after authentication. Client origin values are never authoritative.
+- Error responses must not echo user payloads.
+
+**Audit contract**
+
+Remote MCP audit files live under `raw/remote-mcp-audit/`. Each JSONL entry contains `ts`, `seq`, `prev_hash`, `principal`, `session_jti`, `tool`, `args_hmac`, `status`, `reject_reason`, `latency_ms`, and `entry_hmac`. Daily manifests record first hash, last hash, entry count, and file SHA-256. `scripts/remote-mcp/verify_audit.py` and `.github/workflows/check-remote-mcp-audit-schema.yml` are the governance-owned verifier surfaces for this contract.
+
+**Stage boundaries**
+
+- Stage A (`hldpro-governance`): standards, runbook, thin client contract, audit verifier, CI workflow, local tests, validation, and closeout.
+- Stage B+C (`local-ai-machine`): HTTP server, auth, PII middleware, rate limit, audit writer, launchd/tunnel scripts, and negative security tests.
+- Stage D: remote smoke and security tests from a second machine.
+- Issue #109 remains open until downstream implementation and remote e2e proof complete.
 
 ### Cross-review artifact schema (required for arch/standards PRs)
 
@@ -508,6 +556,11 @@ Validator rejects if: any required field missing, `drafter.model_family` == `rev
 | 15 | Windows-Ollama audit enforcement (invariant #10) | `scripts/windows-ollama/verify_audit.py` local validator (Sprint 3); `check-windows-ollama-audit-schema.yml` CI gate (Sprint 4) | PR blocked on chain break, HMAC forgery, or manifest mismatch |
 | 16 | Windows-Ollama audit schema validation | `check-windows-ollama-audit-schema.yml` verifies audit chain integrity on PRs touching audit files | PR blocked |
 | 17 | Windows-Ollama firewall exposure validation | `check-windows-ollama-exposure.yml` asserts no public bind, endpoint stability (172.17.227.49:11434), Cloudflare stub status | PR blocked |
+| 18 | Remote MCP stdio-only boundary | `STANDARDS.md` allowlist + downstream `local-ai-machine` bridge tests; Stage A client exposes no `lam.scrub_pii` helper | PR blocked once downstream bridge lands |
+| 19 | Remote MCP server-authoritative origin | Stage A client omits origin authority; downstream HTTP bridge must overwrite origin and test spoofed local origin | PR blocked once downstream bridge lands |
+| 20 | Remote MCP PII middleware | `docs/runbooks/remote-mcp-bridge.md` + downstream PII middleware tests using shared patterns | PR blocked once downstream bridge lands |
+| 21 | Remote MCP Access identity | `docs/runbooks/remote-mcp-bridge.md` requires Cloudflare Access + inner token; downstream auth tests must reject anonymous calls | PR blocked once downstream bridge lands |
+| 22 | Remote MCP audit validation | `scripts/remote-mcp/verify_audit.py` + `check-remote-mcp-audit-schema.yml` validate hash chain, HMAC, and daily manifest | PR blocked if malformed |
 
 ### Exception register schema
 

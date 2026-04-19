@@ -1,10 +1,10 @@
-# Windows ollama Init
+# Som client Som client From
 
 > 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- **__init__.py** (0 connections) — `scripts/windows-ollama/tests/__init__.py`
+- **Build a client from well-known environment variables.** (0 connections) — `hldpro-governance/scripts/som-client/som_client.py`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `scripts/windows-ollama/tests/__init__.py`
+- `hldpro-governance/scripts/som-client/som_client.py`
 
 ## Audit Trail
 

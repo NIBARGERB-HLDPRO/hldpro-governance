@@ -1,6 +1,6 @@
 # Service Registry
 
-**Last Updated:** 2026-04-17
+**Last Updated:** 2026-04-19
 **Scope:** hldpro-governance — meta-governance repo
 **Source of truth:** This file inventories the scripts, agents, CI workflows, and hooks that constitute the active "services" enforced or provided by hldpro-governance across the governed org.
 
@@ -30,6 +30,7 @@
 | require-cross-review | `.github/workflows/require-cross-review.yml` | PR | Dual-planner cross-review artifact gate |
 | check-agent-model-pins | `.github/workflows/check-agent-model-pins.yml` | PR | SoM Tier enforcement: agent model pins |
 | check-no-self-approval | `.github/workflows/check-no-self-approval.yml` | PR | SoM invariant #1: no self-approval |
+| check-remote-mcp-audit-schema | `.github/workflows/check-remote-mcp-audit-schema.yml` | PR / manual | Remote MCP audit hash-chain, HMAC, and manifest validation |
 
 ---
 
@@ -65,6 +66,13 @@
 | Script | Path | Purpose |
 |--------|------|---------|
 | runtime_inventory.py | `scripts/lam/runtime_inventory.py` | No-payload Mac/Windows model runtime and PII guardrail inventory |
+
+## Remote MCP Scripts
+
+| Script | Path | Purpose |
+|--------|------|---------|
+| som_client.py | `scripts/som-client/som_client.py` | Thin Remote MCP operator client with Cloudflare Access headers, bearer auth, safe errors, and retry handling |
+| verify_audit.py | `scripts/remote-mcp/verify_audit.py` | Deterministic verifier for Remote MCP audit JSONL hash chains, HMACs, and manifests |
 
 ---
 

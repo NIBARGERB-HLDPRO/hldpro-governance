@@ -1,0 +1,85 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-109-stage-a-remote-mcp-governance-20260419",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-opus-4-6",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T19:25:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109",
+      "raw/inbox/2026-04-14-remote-mcp-bridge-plan.md",
+      "raw/cross-review/2026-04-14-remote-mcp-bridge.md",
+      "docs/plans/issue-109-stage-a-structured-agent-cycle-plan.json"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  },
+  "allowed_write_paths": [
+    ".github/workflows/check-remote-mcp-audit-schema.yml",
+    "OVERLORD_BACKLOG.md",
+    "STANDARDS.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/SERVICE_REGISTRY.md",
+    "docs/plans/issue-109-stage-a-pdcar.md",
+    "docs/plans/issue-109-stage-a-structured-agent-cycle-plan.json",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "docs/workflow-local-coverage-inventory.json",
+    "raw/closeouts/2026-04-19-issue-109-remote-mcp-stage-a.md",
+    "raw/execution-scopes/2026-04-19-issue-109-remote-mcp-artifact-preservation-implementation.json",
+    "raw/execution-scopes/2026-04-19-issue-109-remote-mcp-artifact-preservation-scope.json",
+    "raw/execution-scopes/2026-04-19-issue-109-remote-mcp-stage-a-governance-implementation.json",
+    "raw/validation/2026-04-19-issue-109-remote-mcp-stage-a.md",
+    "raw/validation/2026-04-19-issue-109-remote-mcp-artifact-preservation.md",
+    "raw/closeouts/2026-04-19-issue-109-remote-mcp-artifact-preservation.md",
+    "scripts/remote-mcp/",
+    "scripts/som-client/",
+    "graphify-out/",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Main checkout is the dispatcher context and must remain out of scope for issue #109 Stage A writes."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 Stage A."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 Stage A."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 Stage A."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 Stage A."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Downstream implementation is Stage B/C and remains out of scope for this governance Stage A slice."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 Stage A."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 Stage A."
+    }
+  ]
+}
