@@ -3666,14 +3666,14 @@
       "label": "build_inventory()",
       "file_type": "code",
       "source_file": "scripts/lam/runtime_inventory.py",
-      "source_location": "L142"
+      "source_location": "L149"
     },
     {
       "id": "runtime_inventory_main",
       "label": "main()",
       "file_type": "code",
       "source_file": "scripts/lam/runtime_inventory.py",
-      "source_location": "L167"
+      "source_location": "L174"
     },
     {
       "id": "test_runtime_inventory",
@@ -3758,6 +3758,20 @@
       "file_type": "code",
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L68"
+    },
+    {
+      "id": "test_runtime_inventory_testruntimeinventory_test_qwen36_large_worker_is_mac_mlx_on_demand_only",
+      "label": ".test_qwen36_large_worker_is_mac_mlx_on_demand_only()",
+      "file_type": "code",
+      "source_file": "scripts/lam/test_runtime_inventory.py",
+      "source_location": "L84"
+    },
+    {
+      "id": "test_runtime_inventory_testruntimeinventory_test_qwen36_config_and_inventory_budget_stay_aligned",
+      "label": ".test_qwen36_config_and_inventory_budget_stay_aligned()",
+      "file_type": "code",
+      "source_file": "scripts/lam/test_runtime_inventory.py",
+      "source_location": "L93"
     },
     {
       "id": "submit",
@@ -19774,7 +19788,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/lam/runtime_inventory.py",
-      "source_location": "L142",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -19783,7 +19797,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/lam/runtime_inventory.py",
-      "source_location": "L167",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -19819,7 +19833,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/lam/runtime_inventory.py",
-      "source_location": "L143",
+      "source_location": "L150",
       "weight": 0.8
     },
     {
@@ -19828,7 +19842,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/lam/runtime_inventory.py",
-      "source_location": "L153",
+      "source_location": "L160",
       "weight": 0.8
     },
     {
@@ -19837,7 +19851,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/lam/runtime_inventory.py",
-      "source_location": "L154",
+      "source_location": "L161",
       "weight": 0.8
     },
     {
@@ -19846,7 +19860,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/lam/runtime_inventory.py",
-      "source_location": "L155",
+      "source_location": "L162",
       "weight": 0.8
     },
     {
@@ -19855,7 +19869,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/lam/runtime_inventory.py",
-      "source_location": "L156",
+      "source_location": "L163",
       "weight": 0.8
     },
     {
@@ -19864,7 +19878,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/lam/runtime_inventory.py",
-      "source_location": "L174",
+      "source_location": "L181",
       "weight": 0.8
     },
     {
@@ -20036,6 +20050,24 @@
       "confidence": "EXTRACTED",
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "test_runtime_inventory_testruntimeinventory",
+      "target": "test_runtime_inventory_testruntimeinventory_test_qwen36_large_worker_is_mac_mlx_on_demand_only",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/lam/test_runtime_inventory.py",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "test_runtime_inventory_testruntimeinventory",
+      "target": "test_runtime_inventory_testruntimeinventory_test_qwen36_config_and_inventory_budget_stay_aligned",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/lam/test_runtime_inventory.py",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
