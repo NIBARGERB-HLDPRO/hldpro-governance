@@ -1,0 +1,42 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "docs/issue-338-lam-governance-tooling-closeout-20260419",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "raw/closeouts/2026-04-19-issue-338-lam-governance-tooling-adoption.md",
+    "raw/execution-scopes/2026-04-19-issue-338-closeout-implementation.json",
+    "graphify-out/hldpro-governance/",
+    "wiki/hldpro/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared governance main checkout has pre-existing local planning/tooling changes; issue #338 closeout uses an isolated governance worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "LAM root checkout has active unrelated SoM/MCP work; issue #475 ran in a separate isolated LAM worktree that was released after merge."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "AIS may have active unrelated work and is outside issue #338 closeout scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Knocktracker may have active unrelated work and is outside issue #338 closeout scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "HealthcarePlatform may have active unrelated work and is outside issue #338 closeout scope."
+    }
+  ]
+}

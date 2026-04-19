@@ -10,7 +10,6 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
-| LAM governance tooling v0.1.0 adoption epic | #338 | IN PROGRESS | HIGH | TBD | Governance PDCAR, LAM issue #475, managed tooling deploy, negative-control proof, remediation proof, rollback proof, LAM GitHub Actions evidence | Final AC is real downstream e2e adoption from `governance-tooling-v0.1.0` with exact SHA `8c5945e3d4f3f814dd80b4d158a9913c58a33609`; plan: docs/plans/issue-338-structured-agent-cycle-plan.json |
 | Fix execution-scope validation in detached PR checkouts | #324 | IN PROGRESS | HIGH | 1 | Branch fallback in `assert_execution_scope.py`, regression test, EmailAssistant#1 unblock | Planning scope: docs/plans/issue-324-structured-agent-cycle-plan.json |
 | Org-wide active repository governance coverage epic | #298 | IN PROGRESS | HIGH | TBD | Active org repo registry policy, live inventory drift detector, seek-and-ponder intake, EmailAssistant discovery, registry-driven surface reconciliation, final e2e closeout gate | Final closeout PR pending for #314; plan: docs/plans/issue-298-structured-agent-cycle-plan.json |
 | Always-on SoM HITL relay for local CLI sessions | #296 | IN PROGRESS | HIGH | TBD | HITL packet contracts, AIS notification bridge, SoM/MCP response normalization, structured session instruction flow, final e2e proof | Plan: docs/plans/issue-296-structured-agent-cycle-plan.json; PDCAR: docs/plans/issue-296-som-hitl-relay-pdcar.md |
@@ -55,6 +54,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| LAM governance tooling v0.1.0 adoption epic | #338 | 2026-04-19 | LAM issue #475 and PR #476 completed the real downstream consumer proof for `governance-tooling-v0.1.0`, including managed deployer verify, exact SHA pin `8c5945e3d4f3f814dd80b4d158a9913c58a33609`, negative-control failure, remediation pass, rollback/reapply, managed shim local run, GitHub Actions green, and merge commit `86149c82656884feb71e6dc113a39d06e5632115`. Closeout: raw/closeouts/2026-04-19-issue-338-lam-governance-tooling-adoption.md. |
 | Codex review template default persona path repair | #337 | 2026-04-19 | Restored `docs/agents/codex-reviewer.md`, preserved `CODEX_REVIEW_PERSONA` override coverage, added fake-Codex default-path e2e proof that audit reaches `codex-fire.sh`, and recorded validation/closeout evidence. |
 | seek-and-ponder registry memory-integrity follow-up | #331 | 2026-04-19 | `seek-and-ponder` memory_integrity is enabled in the governed repo registry after downstream seek-and-ponder#23 memory bootstrap. Validation and closeout are recorded in `raw/validation/2026-04-19-issue-331-seek-ponder-memory-registry.md` and `raw/closeouts/2026-04-19-issue-331-seek-ponder-memory-registry.md`. |
 | Governance tooling package v0.1.0 release coordinate | #332 | 2026-04-19 | Documents the first package release tag `governance-tooling-v0.1.0`, preserves mandatory SHA pinning in consumer records, validates package docs through local gates and PR GitHub Actions, and creates the annotated tag after merge. |
