@@ -1,0 +1,114 @@
+{
+  "session_id": "session-20260419-issue-212-da-hybrid-delegation-gate",
+  "issue_number": 212,
+  "objective": "Implement the governance-owned §DA Phase 2 hybrid delegation gate so orchestrator-owned tool calls are routed away from Tier 2 specialist scope before direct execution.",
+  "tier": 2,
+  "scope_boundary": [
+    "Add a versioned delegation rules artifact covering all §DA Delegation Rule task types.",
+    "Add deterministic delegation-gate logic with optional MCP endpoint fallback behavior and explicit confidence thresholds.",
+    "Integrate the gate into the committed governance PreToolUse hook for Agent/Task, Bash, and implementation-scoped Explore payloads while leaving Read ungated.",
+    "Add tests proving block, warn, allow, bypass, fail-open, and non-regression behavior.",
+    "Record validation, closeout, and GitHub issue evidence for issue #212."
+  ],
+  "out_of_scope": [
+    "Editing product repositories.",
+    "Installing or enabling the hook in user-local Claude settings.",
+    "Implementing a live Qwen classifier daemon in local-ai-machine.",
+    "Changing write-scope or planner-boundary gate semantics outside the narrow delegation-gate integration."
+  ],
+  "research_summary": "Issue #212 follows §DA Phase 1 (#208/#209), which established ownership rules but left read/explore delegation enforcement soft. The current governance repo has a committed `hooks/code-write-gate.sh` PreToolUse hook, structured-plan enforcement, and execution-scope validation. This slice adds a local deterministic gate plus optional MCP URL fail-open path so downstream repos can adopt it without requiring a live classifier on day one.",
+  "research_artifacts": [
+    "GitHub issue #212",
+    "STANDARDS.md §DA",
+    "hooks/code-write-gate.sh",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/assert_execution_scope.py",
+    "docs/delegation/delegation_rules.json",
+    "scripts/orchestrator/delegation_gate.py"
+  ],
+  "sprints": [
+    {
+      "name": "Delegation Gate Contract",
+      "goal": "Create deterministic routing rules and a reusable local gate.",
+      "tasks": [
+        "Add `docs/delegation/delegation_rules.json` for all §DA owner rows.",
+        "Add `scripts/orchestrator/delegation_gate.py` with thresholded decisions and JSON output.",
+        "Add focused runtime tests for deterministic matching, warn-only Explore, bypass, Read allow, and classifier fallback."
+      ],
+      "acceptance_criteria": [
+        "Final AC: all 8 §DA task types are represented in the rules file.",
+        "Final AC: high-confidence Agent/Bash owned-work attempts block.",
+        "Final AC: medium-confidence attempts warn.",
+        "Final AC: low-confidence or Read attempts allow."
+      ],
+      "file_paths": [
+        "docs/delegation/delegation_rules.json",
+        "scripts/orchestrator/delegation_gate.py",
+        "scripts/orchestrator/test_delegation_gate.py"
+      ]
+    },
+    {
+      "name": "Hook And E2E Proof",
+      "goal": "Wire the gate into the governance hook and prove the issue #212 live failure shape is intercepted.",
+      "tasks": [
+        "Extend `hooks/code-write-gate.sh` without removing existing governance-surface and new-code checks.",
+        "Add hook-level tests for Agent block, Explore warn, Read allow, bypass logging, and MCP timeout fail-open.",
+        "Record local and GitHub CI evidence before closing issue #212."
+      ],
+      "acceptance_criteria": [
+        "Final AC: `Explore(Audit SQL migrations for schema inconsistencies)` produces a warning before direct work proceeds.",
+        "Final AC: Agent/Task or Bash equivalents for the same migration audit block and name `migration-validator`.",
+        "Final AC: configured unavailable MCP endpoint fails open to ALLOW.",
+        "Final AC: existing write-scope checks remain covered by current tests."
+      ],
+      "file_paths": [
+        "hooks/code-write-gate.sh",
+        "scripts/orchestrator/test_delegation_hook.py",
+        "raw/validation/2026-04-19-issue-212-da-hybrid-delegation-gate.md",
+        "raw/closeouts/2026-04-19-issue-212-da-hybrid-delegation-gate.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "local gate reviewer",
+      "role": "delegation-gate-contract",
+      "focus": "Validate that the deterministic gate preserves §DA ownership without blocking read-only routing.",
+      "status": "accepted",
+      "summary": "Review is recorded in the issue #212 cross-review artifact before merge.",
+      "evidence": [
+        "raw/cross-review/2026-04-19-issue-212-da-hybrid-delegation-gate-review.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Codex isolated reviewer",
+    "model_family": "gpt",
+    "status": "accepted",
+    "summary": "Same-family review is allowed by the issue #212 exception and must run before PR publication.",
+    "evidence": [
+      "raw/cross-review/2026-04-19-issue-212-da-hybrid-delegation-gate-review.md",
+      "raw/exceptions/2026-04-19-issue-212-same-family-implementation.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #212 may add delegation-gate rules, local gate code, hook integration, tests, standards text, validation, and closeout artifacts in hldpro-governance only.",
+    "next_execution_step": "Implement the deterministic gate, run local validation, obtain review, open PR, wait for green checks, and merge.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If hook integration breaks existing write-scope behavior, revert the hook change and keep the gate as a standalone script.",
+    "If a live MCP classifier is required to satisfy acceptance, create a downstream local-ai-machine issue instead of expanding this governance slice.",
+    "If false positives hard-block Explore, downgrade Explore to warn-only and document the residual risk."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #212",
+    "operator instruction: follow repo rules, no HITL, e2e testing as final AC",
+    "raw/exceptions/2026-04-19-issue-212-same-family-implementation.md"
+  ],
+  "approved_at": "2026-04-19T01:10:00Z"
+}

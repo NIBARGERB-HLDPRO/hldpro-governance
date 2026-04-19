@@ -12,6 +12,92 @@ if [ -z "$input" ]; then
   exit 0
 fi
 
+repo_root_from_cwd="$(git rev-parse --show-toplevel 2>/dev/null || true)"
+if [ -n "$repo_root_from_cwd" ]; then
+  delegation_gate="$repo_root_from_cwd/scripts/orchestrator/delegation_gate.py"
+  if [ -f "$delegation_gate" ]; then
+    tool_payload="$(printf '%s' "$input" | python3 -c "
+import json, sys
+try:
+    data = json.load(sys.stdin)
+    tool_name = str(data.get('tool_name') or data.get('tool') or '')
+    tool_input = data.get('tool_input') if isinstance(data.get('tool_input'), dict) else {}
+    task_text = (
+        tool_input.get('description')
+        or tool_input.get('prompt')
+        or tool_input.get('command')
+        or tool_input.get('task')
+        or ''
+    )
+    print(json.dumps({'tool_name': tool_name, 'task_text': str(task_text)}))
+except Exception:
+    print(json.dumps({'tool_name': '', 'task_text': ''}))
+" 2>/dev/null || printf '%s' '{"tool_name":"","task_text":""}')"
+    tool_name="$(printf '%s' "$tool_payload" | python3 -c "import json,sys; print(json.load(sys.stdin).get('tool_name',''))" 2>/dev/null || true)"
+    task_text="$(printf '%s' "$tool_payload" | python3 -c "import json,sys; print(json.load(sys.stdin).get('task_text',''))" 2>/dev/null || true)"
+
+    case "$tool_name" in
+      Agent|Task|Bash|Explore|Read)
+        if [ -n "$task_text" ]; then
+          delegation_log="${DELEGATION_GATE_LOG:-$repo_root_from_cwd/.claude/governance.log}"
+          bypass=false
+          if printf '%s' "$task_text" | grep -qE '^[[:space:]]*--bypass-delegation-gate([[:space:]]|$)'; then
+            bypass=true
+          fi
+
+          if [ -n "$DELEGATION_GATE_URL" ]; then
+            request_json="$(python3 - "$tool_name" "$task_text" <<'PY' 2>/dev/null || printf '{}'
+import json
+import sys
+
+print(json.dumps({"tool_name": sys.argv[1], "task_description": sys.argv[2]}))
+PY
+)"
+            gate_result="$(curl -sS --max-time 2 "$DELEGATION_GATE_URL" \
+              -H 'Content-Type: application/json' \
+              -d "$request_json" 2>/dev/null || printf '%s' '{"decision":"ALLOW","owner":"","confidence":0,"reason":"delegation gate unavailable fail-open","source":"mcp-fail-open"}')"
+          else
+            bypass_arg=""
+            if [ "$bypass" = true ]; then
+              bypass_arg="--bypass"
+            fi
+            gate_result="$(python3 "$delegation_gate" \
+              --tool-name "$tool_name" \
+              --task-description "$task_text" \
+              $bypass_arg \
+              --json 2>/dev/null || printf '%s' '{"decision":"ALLOW","owner":"","confidence":0,"reason":"delegation gate script unavailable fail-open","source":"script-fail-open"}')"
+          fi
+
+          decision="$(printf '%s' "$gate_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('decision','ALLOW'))" 2>/dev/null || printf 'ALLOW')"
+          owner="$(printf '%s' "$gate_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('owner',''))" 2>/dev/null || true)"
+          confidence="$(printf '%s' "$gate_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('confidence',0))" 2>/dev/null || printf '0')"
+          reason="$(printf '%s' "$gate_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('reason',''))" 2>/dev/null || true)"
+
+          case "$decision" in
+            BLOCK)
+              mkdir -p "$(dirname "$delegation_log")" 2>/dev/null || true
+              printf '%s BLOCK %s owner=%s confidence=%s reason=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$tool_name" "$owner" "$confidence" "$reason" >> "$delegation_log" 2>/dev/null || true
+              escaped_reason="$(printf '%s' "GOVERNANCE BLOCK: This task belongs to ${owner} per §DA. Spawn that agent instead. ${reason}" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read())[1:-1])')"
+              printf '%s' "{\"decision\":\"block\",\"reason\":\"${escaped_reason}\"}"
+              exit 2
+              ;;
+            WARN)
+              mkdir -p "$(dirname "$delegation_log")" 2>/dev/null || true
+              printf '%s WARN %s owner=%s confidence=%s reason=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$tool_name" "$owner" "$confidence" "$reason" >> "$delegation_log" 2>/dev/null || true
+              ;;
+            ALLOW)
+              if [ "$bypass" = true ]; then
+                mkdir -p "$(dirname "$delegation_log")" 2>/dev/null || true
+                printf '%s BYPASS %s reason=explicit-bypass\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$tool_name" >> "$delegation_log" 2>/dev/null || true
+              fi
+              ;;
+          esac
+        fi
+        ;;
+    esac
+  fi
+fi
+
 # Extract file_path from tool_input
 file_path="$(printf '%s' "$input" | python3 -c "
 import sys, json
