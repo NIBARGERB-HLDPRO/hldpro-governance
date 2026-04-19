@@ -1,0 +1,96 @@
+{
+  "session_id": "session-20260419-issue-176-asc-exemption-reconcile",
+  "issue_number": 176,
+  "objective": "Reconcile ASC-Evaluator's knowledge-repo code-governance exemption with its existing Governance Gate workflow and close any stale active exception state.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repo documentation, exception register, planning, validation, closeout, and generated Stage 6 evidence only.",
+    "Read-only inspection of ASC-Evaluator workflow and GitHub Actions status.",
+    "No downstream ASC-Evaluator writes unless live validation proves the workflow remains incompatible."
+  ],
+  "out_of_scope": [
+    "Changing ASC-Evaluator product or knowledge artifacts.",
+    "Changing reusable governance workflow semantics.",
+    "Changing ASC-Evaluator repository classification or branch rulesets.",
+    "Cleaning unrelated dirty files in shared checkouts."
+  ],
+  "research_summary": "ASC-Evaluator currently has `.github/workflows/governance.yml` calling the reusable hldpro-governance governance-check workflow, plus the required docs stubs under `docs/`. The latest default-branch Governance Gate run on `master` succeeded for head `4d7ecdb3313c1aa9b586bf2b8ffd21caa50174a6`, so no downstream workflow edit is needed. Governance must update `SOM-EXEMPT-ASC-001` and close stale blocker `SOM-ASC-CI-001`.",
+  "research_artifacts": [
+    "NIBARGERB-HLDPRO/hldpro-governance#176",
+    "NIBARGERB-HLDPRO/ASC-Evaluator/.github/workflows/governance.yml",
+    "NIBARGERB-HLDPRO/ASC-Evaluator/actions/runs/24578334806",
+    "docs/exception-register.md",
+    "STANDARDS.md",
+    "docs/governed_repos.json"
+  ],
+  "sprints": [
+    {
+      "name": "Reconcile Exception State",
+      "goal": "Make governance exception records match current ASC-Evaluator workflow reality.",
+      "tasks": [
+        "Inspect ASC-Evaluator workflow and latest default-branch Governance Gate run.",
+        "Clarify `SOM-EXEMPT-ASC-001` as code-governance-only exemption compatible with a minimal docs gate.",
+        "Mark `SOM-ASC-CI-001` closed with live run evidence.",
+        "Update progress and backlog mirrors."
+      ],
+      "acceptance_criteria": [
+        "ASC-Evaluator workflow inspection is recorded.",
+        "Latest default-branch Governance Gate success is recorded.",
+        "`SOM-ASC-CI-001` is not active after reconciliation.",
+        "No downstream edit is made when the current workflow is compatible."
+      ],
+      "file_paths": [
+        "docs/exception-register.md",
+        "docs/plans/issue-176-asc-exemption-reconcile-pdcar.md",
+        "docs/plans/issue-176-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-19-issue-176-asc-exemption-reconcile-implementation.json",
+        "raw/exceptions/2026-04-19-issue-176-same-family-implementation.md",
+        "raw/validation/2026-04-19-issue-176-asc-exemption-reconcile.md",
+        "raw/closeouts/2026-04-19-issue-176-asc-exemption-reconcile.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-local",
+      "role": "workflow evidence investigator",
+      "focus": "Determine whether ASC-Evaluator's workflow is currently compatible with the exemption.",
+      "status": "accepted",
+      "summary": "Live ASC-Evaluator Governance Gate on master is green; governance docs are stale.",
+      "evidence": [
+        "ASC-Evaluator run 24578334806",
+        "ASC-Evaluator `.github/workflows/governance.yml`"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family fallback with deterministic gates",
+    "model_family": "gpt-5",
+    "status": "accepted_with_followup",
+    "summary": "No HITL is requested; deterministic GitHub Actions evidence and Local CI Gate constrain this documentation-only reconciliation. A read-only subagent review should be used before final publication if needed.",
+    "evidence": [
+      "raw/exceptions/2026-04-19-issue-176-same-family-implementation.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Codex may update #176 planning, exception, validation, closeout, progress/backlog mirrors, and generated Stage 6 evidence only.",
+    "next_execution_step": "Update exception register and evidence artifacts, then run local and GitHub gates.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If ASC-Evaluator Governance Gate is failing again, do not close the exception without a downstream fix or issue-backed deferral.",
+    "If reusable governance workflow code changes appear necessary, create a separate issue before editing code.",
+    "If branch/ruleset changes appear necessary, route them through the org governance ruleset issue path."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #176",
+    "operator instruction: follow repo rules and loop through PDCAR, GH epic, ACs, e2e testing as final AC, no HITL"
+  ],
+  "approved_at": "2026-04-19T03:20:00Z"
+}

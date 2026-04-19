@@ -41,6 +41,7 @@ Updates stale text in `docs/exception-register.md` that claimed ASC-Evaluator ha
 
 ## Review And Gate Identity
 - Live downstream gate: ASC-Evaluator `Governance Gate`, run `24578334806`, verdict: success.
+- Read-only reviewer checkpoint: Helmholtz, GPT-5 family subagent, verdict: no issues found.
 - Governance local gates: structured plan validation, backlog alignment, progress staleness skip-by-design, execution scope, Local CI Gate, Stage 6 closeout hook.
 
 ## Wired Checks Run
@@ -63,6 +64,7 @@ Updates stale text in `docs/exception-register.md` that claimed ASC-Evaluator ha
 - PASS: `python3 scripts/overlord/check_overlord_backlog_github_alignment.py`
 - PASS: `python3 scripts/overlord/check_progress_github_issue_staleness.py --repo NIBARGERB-HLDPRO/hldpro-governance` (skipped by design for governance repo)
 - PASS: `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-19-issue-176-asc-exemption-reconcile-implementation.json --changed-files-file /tmp/issue-176-changed-files.txt`
+- PASS: `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json`
 
 ## Tier Evidence Used
 - `docs/plans/issue-176-structured-agent-cycle-plan.json`
