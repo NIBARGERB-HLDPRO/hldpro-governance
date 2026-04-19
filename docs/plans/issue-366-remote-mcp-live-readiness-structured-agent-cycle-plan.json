@@ -1,0 +1,104 @@
+{
+  "session_id": "session-20260419-issue-366-remote-mcp-live-readiness",
+  "issue_number": 366,
+  "objective": "Preserve non-secret Stage D live-readiness evidence for the Remote MCP Bridge under epic #109 by running the merged governance harness against the real downstream local bridge.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify only issue #366 planning, validation, execution-scope, closeout, and non-secret local origin-boundary audit evidence.",
+    "Do not commit Cloudflare credentials, JWTs, HMAC keys, live hostnames, or live endpoint data.",
+    "Do not close epic #109 from local loopback evidence."
+  ],
+  "out_of_scope": [
+    "Changing Stage D proof harness code.",
+    "Changing local-ai-machine service code.",
+    "Operating a live Cloudflare tunnel.",
+    "Claiming second-machine proof without a second-machine Cloudflare run."
+  ],
+  "research_summary": "Epic #109 has Stage A merged in governance PR #360, Stage B/C merged in local-ai-machine PR #485, and Stage D harness merged in governance PR #365. The current session lacks exported live endpoint, identity, audit, HMAC, and stdio proof inputs, so this slice preserves a real local origin-boundary e2e readiness run while leaving #109 open.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/366",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/365",
+    "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/pull/485",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "scripts/remote-mcp/stage_d_smoke.py"
+  ],
+  "sprints": [
+    {
+      "name": "Origin-boundary e2e evidence",
+      "goal": "Show the merged governance Stage D harness passes against the merged downstream Remote MCP Bridge implementation on local loopback with synthetic secrets.",
+      "tasks": [
+        "Create issue #366 child evidence scope under epic #109.",
+        "Run the real downstream bridge locally from a clean local-ai-machine worktree.",
+        "Run Stage D smoke/security harness against that bridge.",
+        "Verify valid audit evidence and tamper-negative behavior.",
+        "Preserve non-secret audit JSONL and manifest evidence.",
+        "Run governance validation and CI."
+      ],
+      "acceptance_criteria": [
+        "Authenticated ping passes against real bridge.",
+        "Anonymous request is rejected.",
+        "Spoofed origin is rejected before dispatch.",
+        "PII-bearing handoff is rejected before dispatch.",
+        "Remote lam.scrub_pii request is rejected before dispatch.",
+        "Audit verifier passes valid origin-boundary evidence.",
+        "Tamper-negative check passes.",
+        "Local stdio proof command passes.",
+        "Evidence contains no raw PII, tokens, HMAC keys, or live endpoint secrets.",
+        "Epic #109 remains open for live second-machine proof."
+      ],
+      "file_paths": [
+        "docs/plans/issue-366-remote-mcp-live-readiness-pdcar.md",
+        "docs/plans/issue-366-remote-mcp-live-readiness-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-19-issue-366-remote-mcp-live-readiness-implementation.json",
+        "raw/validation/2026-04-19-issue-366-remote-mcp-live-readiness.md",
+        "raw/closeouts/2026-04-19-issue-366-remote-mcp-live-readiness.md",
+        "raw/remote-mcp-origin-boundary-e2e/2026-04-19.jsonl",
+        "raw/remote-mcp-origin-boundary-e2e/2026-04-19.manifest.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-self-review",
+      "role": "secret and scope review",
+      "focus": "Confirm evidence is non-secret, local-readiness only, and does not close #109.",
+      "status": "completed",
+      "summary": "Evidence scan found no token, HMAC key, Cloudflare credential, live endpoint, or raw PII in the preserved audit artifacts.",
+      "evidence": [
+        "raw/validation/2026-04-19-issue-366-remote-mcp-live-readiness.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not_required_for_evidence_only_slice",
+    "model_family": "n/a",
+    "status": "not_required",
+    "summary": "This slice records deterministic evidence and does not change code.",
+    "evidence": [
+      "raw/remote-mcp-origin-boundary-e2e/2026-04-19.jsonl"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_complete",
+    "approved_scope_summary": "Issue #366 may add only planning, validation, closeout, execution scope, and non-secret local origin-boundary audit evidence for epic #109.",
+    "next_execution_step": "Run local governance validation, publish PR, merge if green, and keep #109 open for live Cloudflare proof.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If live endpoint credentials become available, run the live proof separately and record redacted live evidence before closing #109.",
+    "If evidence contains a secret or raw sensitive payload, remove it and rerun with sanitized evidence.",
+    "If local origin-boundary e2e fails, do not merge readiness evidence until the failure is explained or fixed."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #366 child evidence issue",
+    "issue #109 governing epic",
+    "Stage D harness PR #365",
+    "Stage B/C local-ai-machine PR #485"
+  ],
+  "approved_at": "2026-04-19T21:40:00Z"
+}
