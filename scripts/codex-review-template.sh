@@ -12,7 +12,7 @@
 set -uo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-PERSONA="$REPO_ROOT/docs/agents/codex-reviewer.md"
+PERSONA="${CODEX_REVIEW_PERSONA:-$REPO_ROOT/docs/agents/codex-reviewer.md}"
 SCHEMA="$REPO_ROOT/docs/codex-reviews/output-schema.json"
 OUTPUT_DIR="$REPO_ROOT/docs/codex-reviews"
 DATE=$(date -u +%Y-%m-%d)
@@ -30,6 +30,34 @@ if [ ! -f "$PERSONA" ]; then
 fi
 
 OUTPUT_FILE="$OUTPUT_DIR/${DATE}-${MODE}.md"
+
+run_codex_exec_brief() {
+  local prompt="$1"
+  local brief_file
+  local rc
+
+  brief_file="$(mktemp "${TMPDIR:-/tmp}/codex-review-brief.XXXXXX")" || return 1
+  printf '%s\n' "$prompt" >"$brief_file"
+
+  bash "$REPO_ROOT/scripts/codex-fire.sh" \
+    -m gpt-5.4 \
+    -e high \
+    -w "$REPO_ROOT" \
+    -b "$brief_file" \
+    -- \
+    --full-auto \
+    --add-dir "$OUTPUT_DIR" \
+    --output-schema "$SCHEMA" \
+    -o "$OUTPUT_FILE"
+  rc=$?
+
+  if [ "$rc" -eq 0 ]; then
+    rm -f "$brief_file"
+  else
+    echo "Codex brief retained at: $brief_file" >&2
+  fi
+  return "$rc"
+}
 
 # Read persona for injection
 PERSONA_CONTENT=$(cat "$PERSONA")
@@ -66,14 +94,10 @@ Check for:
 Write your findings to docs/codex-reviews/${DATE}-audit.md using the format described in your persona doc."
 
     cd "$REPO_ROOT"
-    codex exec \
-      -m gpt-5.4 \
-      -c model_reasoning_effort=high \
-      --full-auto \
-      --add-dir "$OUTPUT_DIR" \
-      --output-schema "$SCHEMA" \
-      -o "$OUTPUT_FILE" \
-      "$PROMPT"
+    if ! run_codex_exec_brief "$PROMPT"; then
+      echo "Audit failed; see CODEX_FAIL output above." >&2
+      exit 1
+    fi
 
     echo ""
     echo "Audit saved to: $OUTPUT_FILE"
@@ -100,14 +124,10 @@ Evaluate:
 Write your findings to docs/codex-reviews/${DATE}-critique.md using the format described in your persona doc."
 
     cd "$REPO_ROOT"
-    codex exec \
-      -m gpt-5.4 \
-      -c model_reasoning_effort=high \
-      --full-auto \
-      --add-dir "$OUTPUT_DIR" \
-      --output-schema "$SCHEMA" \
-      -o "$OUTPUT_FILE" \
-      "$PROMPT"
+    if ! run_codex_exec_brief "$PROMPT"; then
+      echo "Critique failed; see CODEX_FAIL output above." >&2
+      exit 1
+    fi
 
     echo ""
     echo "Critique saved to: $OUTPUT_FILE"
