@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-19",
+  "issue": 351,
+  "model_id": "mlx-community/Qwen3.6-35B-A3B-4bit",
+  "source_model": "Qwen/Qwen3.6-35B-A3B",
+  "snapshot": {
+    "status": "success",
+    "local_path": "/Users/bennibarger/.cache/huggingface/hub/models--mlx-community--Qwen3.6-35B-A3B-4bit/snapshots/38740b847e4cb78f352aba30aa41c76e08e6eb46",
+    "file_count": 17,
+    "bytes": 20429169263,
+    "gib": 19.026,
+    "elapsed_seconds": 592.683
+  },
+  "machine": {
+    "model": "Mac17,8",
+    "chip": "Apple M5 Pro",
+    "unified_memory_bytes": 51539607552,
+    "unified_memory_gb": 48
+  },
+  "runtime": {
+    "working_python": "python3.11",
+    "mlx_lm": "0.31.2",
+    "mlx": "0.31.1",
+    "huggingface_hub": "1.11.0",
+    "blocked_python": "python3",
+    "blocked_python_mlx_lm": "0.29.1",
+    "blocked_reason": "Model type qwen3_5_moe not supported"
+  },
+  "smoke_generation": {
+    "prompt_class": "no_pii_synthetic_code",
+    "max_tokens": 16,
+    "status": "success",
+    "prompt_tokens": 26,
+    "prompt_tps": 7.04,
+    "generation_tokens": 16,
+    "generation_tps": 106.959,
+    "peak_mlx_memory_gb": 19.632,
+    "time_real_seconds": 11.42,
+    "peak_memory_footprint_bytes": 20113619512
+  },
+  "coding_generation": {
+    "prompt_class": "no_pii_synthetic_code",
+    "max_tokens": 128,
+    "status": "success",
+    "prompt_tokens": 49,
+    "prompt_tps": 40.495,
+    "generation_tokens": 128,
+    "generation_tps": 98.816,
+    "peak_mlx_memory_gb": 19.67,
+    "time_real_seconds": 6.82,
+    "peak_memory_footprint_bytes": 20119894656
+  },
+  "mlx_lm_benchmark": {
+    "prompt_tokens": 128,
+    "generation_tokens": 128,
+    "batch_size": 1,
+    "num_trials": 3,
+    "trial_1": {
+      "prompt_tps": 653.369,
+      "generation_tps": 103.153,
+      "peak_memory_gb": 19.796,
+      "total_time_seconds": 1.537
+    },
+    "trial_2": {
+      "prompt_tps": 652.757,
+      "generation_tps": 102.927,
+      "peak_memory_gb": 19.797,
+      "total_time_seconds": 1.541
+    },
+    "trial_3": {
+      "prompt_tps": 656.178,
+      "generation_tps": 102.974,
+      "peak_memory_gb": 19.797,
+      "total_time_seconds": 1.556
+    },
+    "averages": {
+      "prompt_tps": 654.101,
+      "generation_tps": 103.018,
+      "peak_memory_gb": 19.797
+    },
+    "time_real_seconds": 10.69,
+    "peak_memory_footprint_bytes": 20121385552
+  },
+  "decision": {
+    "budget_gb_24_remains_acceptable": true,
+    "active_routing_promoted": false,
+    "pii_policy_changed": false,
+    "follow_up": "Use python3.11 MLX runtime for Qwen3.6; system python3 mlx-lm 0.29.1 is insufficient."
+  }
+}

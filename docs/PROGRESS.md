@@ -41,6 +41,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Qwen3.6-35B-A3B Mac MLX benchmark | #351 | 2026-04-19 | Downloaded `mlx-community/Qwen3.6-35B-A3B-4bit`, captured the Python 3.9 `qwen3_5_moe` runtime blocker, installed the Python 3.11 MLX runtime, and benchmarked the model at 103.018 avg generation tok/s with 19.797 GB peak MLX memory on 128/128 synthetic runs. Active routing remains unchanged. |
 | hldpro-governance backlog closed-issue drift repair | #352 | 2026-04-19 | Reconciled stale closed issue refs out of actionable `OVERLORD_BACKLOG.md` and `docs/PROGRESS.md` sections, hardened the Overlord backlog validator to require open GitHub issues, and added an e2e negative test for closed issues in `In Progress`. |
 | Detached PR execution-scope validation fix | #324 | 2026-04-19 | PRs #325 and #326 added planning and implementation coverage for detached PR checkout branch fallback in `assert_execution_scope.py`, unblocking EmailAssistant#1-style validation contexts. |
 | SoM enforcement drift closure epic | #214 #215 #216 #217 #218 #219 #220 #221 | 2026-04-17 | PR #222 closed the enforcement drift epic and child slices for model pin enforcement, ladder/standards consistency, cross-review identity, architecture tier evidence, packet/runtime boundaries, operational closeout mirrors, and execution-scope enforcement. |
