@@ -1,0 +1,131 @@
+{
+  "session_id": "2026-04-19-governance-issue-337-codex-review-persona",
+  "issue_number": 337,
+  "objective": "Restore the default Codex reviewer persona path used by `scripts/codex-review-template.sh` so audit and critique modes reach `codex-fire.sh` without requiring an operator override.",
+  "tier": 2,
+  "scope_boundary": [
+    "Codex review-template persona default",
+    "Fake-Codex e2e coverage for default and override persona paths",
+    "Issue #337 planning, execution-scope, review, validation, closeout, backlog, and feature-registry evidence"
+  ],
+  "out_of_scope": [
+    "Changing live Codex CLI authentication",
+    "Changing GitHub Actions Codex canary behavior",
+    "Changing downstream product repositories",
+    "Changing the local #200 fail-fast wrapper semantics beyond tests required for this default-persona bug"
+  ],
+  "research_summary": "Issue #200 added `CODEX_REVIEW_PERSONA` as an override while routing audit and critique modes through `codex-fire.sh`, but the template still defaults to `docs/agents/codex-reviewer.md`. The current governance checkout does not track that default file, so normal audit/critique invocations can fail before reaching the wrapper. The fix is to restore a canonical tracked persona at the default path and prove both default and override paths through fake-Codex e2e tests.",
+  "research_artifacts": [
+    "scripts/codex-review-template.sh",
+    "scripts/codex-fire.sh",
+    "scripts/test_codex_fire.py",
+    "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+    "raw/validation/2026-04-19-issue-200-codex-fire-failfast.md",
+    "raw/execution-scopes/2026-04-19-issue-337-codex-review-persona-implementation.json"
+  ],
+  "sprints": [
+    {
+      "name": "Planning and scope",
+      "goal": "Create issue-backed governance artifacts before modifying the review template support path.",
+      "tasks": [
+        "Create structured plan",
+        "Create PDCA/R",
+        "Create implementation execution scope",
+        "Record same-family exception",
+        "Record backlog and feature-registry mirrors"
+      ],
+      "acceptance_criteria": [
+        "Structured plan validates",
+        "Execution scope covers only issue #337 files and generated closeout artifacts",
+        "No downstream repository writes are required"
+      ],
+      "file_paths": [
+        "docs/plans/issue-337-structured-agent-cycle-plan.json",
+        "docs/plans/issue-337-codex-review-persona-pdcar.md",
+        "raw/execution-scopes/2026-04-19-issue-337-codex-review-persona-implementation.json",
+        "raw/exceptions/2026-04-19-issue-337-same-family-codex-review-persona.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/FEATURE_REGISTRY.md"
+      ]
+    },
+    {
+      "name": "Persona restoration and tests",
+      "goal": "Restore the tracked default persona and prove the template reaches `codex-fire.sh` without an override.",
+      "tasks": [
+        "Add `docs/agents/codex-reviewer.md`",
+        "Add fake-Codex e2e coverage for default persona routing",
+        "Keep fake-Codex e2e coverage for `CODEX_REVIEW_PERSONA` override routing"
+      ],
+      "acceptance_criteria": [
+        "Default audit mode no longer fails due to a missing persona file",
+        "`CODEX_REVIEW_PERSONA` override still injects override content",
+        "E2E fake-Codex tests prove both paths reach the wrapper"
+      ],
+      "file_paths": [
+        "docs/agents/codex-reviewer.md",
+        "scripts/test_codex_fire.py"
+      ]
+    },
+    {
+      "name": "Review and closeout",
+      "goal": "Validate through local tests, governance gates, Local CI, focused review, Stage 6 closeout, and GitHub checks.",
+      "tasks": [
+        "Record focused review",
+        "Record validation evidence",
+        "Run Stage 6 closeout hook",
+        "Merge only after PR checks pass"
+      ],
+      "acceptance_criteria": [
+        "Focused review accepted",
+        "Local CI Gate passes",
+        "Final AC includes fake-Codex e2e proof for default and override persona paths",
+        "GitHub PR checks pass before merge"
+      ],
+      "file_paths": [
+        "raw/cross-review/2026-04-19-issue-337-codex-review-persona-review.md",
+        "raw/validation/2026-04-19-issue-337-codex-review-persona.md",
+        "raw/closeouts/2026-04-19-issue-337-codex-review-persona.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-subagent",
+      "role": "focused reviewer",
+      "focus": "Persona default, override behavior, and fake-Codex e2e coverage",
+      "status": "planned",
+      "summary": "Focused review required before merge because the active environment does not expose a separate Claude connector.",
+      "evidence": [
+        "raw/cross-review/2026-04-19-issue-337-codex-review-persona-review.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family exception path",
+    "model_family": "gpt-5",
+    "status": "accepted_with_followup",
+    "summary": "No separate Claude connector is available in this Codex session and the operator directed no HITL; same-family implementation is accepted for this narrow governance tooling bug with deterministic fake-Codex tests, local CI, GitHub checks, and focused subagent review before merge.",
+    "evidence": [
+      "raw/exceptions/2026-04-19-issue-337-same-family-codex-review-persona.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Proceed with issue #337 Codex review-template default persona restoration and tests.",
+    "next_execution_step": "Add the persona doc, tests, review, validation, closeout, and PR evidence.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Do not edit downstream repositories.",
+    "Do not remove the `CODEX_REVIEW_PERSONA` override.",
+    "Do not bypass `codex-fire.sh` for audit or critique modes.",
+    "If the default persona path changes again, update both the template and e2e tests in the same PR."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator-no-hitl-directive"
+  ],
+  "approved_at": "2026-04-19T00:00:00Z"
+}
