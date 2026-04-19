@@ -1,12 +1,12 @@
 # Graph Report - .  (2026-04-18)
 
 ## Corpus Check
-- 70 files · ~0 words
+- 71 files · ~0 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1081 nodes · 2265 edges · 56 communities detected
-- Extraction: 46% EXTRACTED · 54% INFERRED · 0% AMBIGUOUS · INFERRED: 1226 edges (avg confidence: 0.5)
+- 1089 nodes · 2281 edges · 57 communities detected
+- Extraction: 46% EXTRACTED · 54% INFERRED · 0% AMBIGUOUS · INFERRED: 1235 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -212,57 +212,61 @@ Cohesion: 0.46
 Nodes (7): collect_repo_metrics(), main(), parse_iso(), pct(), render_markdown(), RepoMetrics, run()
 
 ### Community 44 - "Community 44"
+Cohesion: 0.57
+Nodes (7): run_fire(), test_exec_failure_after_successful_preflight_logs_and_signals(), test_preflight_failure_logs_and_exits_fast(), test_preflight_timeout_logs_and_exits_fast(), test_review_template_propagates_wrapper_failure(), test_success_does_not_write_failure_log(), write_fake_codex()
+
+### Community 45 - "Community 45"
 Cohesion: 0.48
 Nodes (2): _copy_fixture(), TestReadOnlyObserver
 
-### Community 45 - "Community 45"
+### Community 46 - "Community 46"
 Cohesion: 0.67
 Nodes (6): check(), fail(), load_json(), main(), validate_graphify_reconciliation(), validate_registry_shape()
 
-### Community 46 - "Community 46"
+### Community 47 - "Community 47"
 Cohesion: 0.67
 Nodes (5): collect_section_lines(), fail(), has_issue_ref(), main(), parse_markdown_row()
 
-### Community 47 - "Community 47"
+### Community 48 - "Community 48"
 Cohesion: 0.4
 Nodes (5): detect_pii(), _iter_patterns(), load_pii_patterns(), Load and validate pii patterns from pii_patterns.yml., Scan text for PII patterns from YAML patterns.      Falls back to the previous b
 
-### Community 48 - "Community 48"
+### Community 49 - "Community 49"
 Cohesion: 0.7
 Nodes (4): append_event(), build_event(), main(), parse_args()
 
-### Community 49 - "Community 49"
+### Community 50 - "Community 50"
 Cohesion: 0.8
 Nodes (4): _load(), test_invalid_hitl_relay_examples_fail(), test_valid_hitl_relay_examples_pass(), _validator()
 
-### Community 50 - "Community 50"
+### Community 51 - "Community 51"
 Cohesion: 0.83
 Nodes (3): check(), is_ignored(), main()
 
-### Community 51 - "Community 51"
+### Community 52 - "Community 52"
 Cohesion: 0.83
 Nodes (3): main(), replace_section(), summary_line()
 
-### Community 52 - "Community 52"
+### Community 53 - "Community 53"
 Cohesion: 0.67
 Nodes (3): emit_packet(), main(), Emit a packet YAML file.     Returns: path to written file
 
-### Community 53 - "Community 53"
+### Community 54 - "Community 54"
 Cohesion: 1.0
 Nodes (2): build_scoped_graph(), main()
 
-### Community 54 - "Community 54"
+### Community 55 - "Community 55"
 Cohesion: 1.0
 Nodes (2): main(), render_issue()
 
-### Community 55 - "Community 55"
+### Community 56 - "Community 56"
 Cohesion: 1.0
 Nodes (0): 
 
 ## Knowledge Gaps
 - **56 isolated node(s):** `Replay audit events into logical latest states.      `latest_states` includes ac`, `Return (header_line_index, list_of_data_lines) for the ## Planned table.`, `Split a markdown table row into a dict keyed by header column names.     Returns`, `Extract a #NNN from the cell value.     Returns the integer issue number, or Non`, `Call GitHub API to verify issue exists and is open.     Returns (ok: bool, title` (+51 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 55`** (1 nodes): `__init__.py`
+- **Thin community `Community 56`** (1 nodes): `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
