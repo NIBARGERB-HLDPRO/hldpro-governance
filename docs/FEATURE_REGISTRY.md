@@ -1,6 +1,6 @@
 # hldpro-governance — Feature Registry
 
-**Last Updated:** 2026-04-17
+**Last Updated:** 2026-04-19
 **Scope:** Shared governance standards, reusable CI enforcement, and cross-repo audit agents.
 
 ---
@@ -50,6 +50,7 @@
 | GOV-023 | SELF_LEARNING_LOOP | Pre-dispatch mistake lookup, packet context injection, append-only failure write-back, and weekly learning drift report | COMPLETE | REQUIRED |
 | GOV-024 | E2E_AUTONOMOUS_DELIVERY_PILOT | Low-risk governance pilot from issue-backed plan through packet, review, gate, closeout, PR checks, and readiness conclusion | COMPLETE | REQUIRED |
 | GOV-025 | GRAPHIFY_HOOK_HELPER | Governance-owned graphify hook helper and installer for governed repo graph refresh hooks | COMPLETE | OPS_READY |
+| GOV-026 | PENTAGI_SWEEP_STATUS | Registry-aware PentAGI freshness and trigger status for overlord sweep report/dashboard source alignment | IN_PROGRESS | OPS_READY |
 
 ---
 
@@ -120,6 +121,7 @@
 |---|---|
 | GOV-018 | `docs/governed_repos.json` is the executable source of truth for governed repo metadata, including GitHub repo, local and CI paths, graph/wiki/project paths, tiers, and enabled subsystems. |
 | GOV-018 | `scripts/overlord/validate_governed_repos.py` validates the registry and reconciles graphify targets; `scripts/overlord/governed_repos.py` is the shared adapter used by sweep metrics, memory integrity, and the org governance compendium. |
+| GOV-026 | `scripts/overlord/pentagi_sweep.py` evaluates PentAGI-tier sweep repos from `docs/governed_repos.json`, emits one JSON/Markdown payload from the audited checkout root, and records explicit trigger/skip statuses for missing/stale reports, missing `PENTAGI_API_TOKEN`, and missing repo-local runners. `overlord-sweep.yml` persists the latest payload under `metrics/pentagi/latest.json` and appends the same Markdown to the weekly report. |
 
 ### PLANNING_SCOPE_GATEKEEPER
 

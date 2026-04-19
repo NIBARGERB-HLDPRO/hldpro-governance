@@ -104,23 +104,27 @@ Record pass/fail per check per repo.
 
 ### 3.6. Auto-trigger PentAGI if stale (>30 days)
 
-For repos with PentAGI tier (AIS, HP): if the freshest `docs/security-reports/pentagi-*` report is >30 days old OR no report exists, **trigger an automated PentAGI run**.
+For repos with a PentAGI security tier and sweep enabled, use the governance-owned helper against the same audited checkout root used for the sweep:
 
-**HealthcarePlatform:**
 ```bash
-cd ~/Developer/hldpro/HealthcarePlatform
-if [ -n "${PENTAGI_API_TOKEN:-}" ]; then
-  LATEST=$(ls -t docs/security-reports/pentagi-* 2>/dev/null | head -1)
-  if [ -z "$LATEST" ] || [ "$(( ($(date +%s) - $(date -j -f '%Y-%m-%d' "$(echo "$LATEST" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')" +%s 2>/dev/null || echo 0) ) / 86400 ))" -gt 30 ]; then
-    echo "PentAGI report stale or missing for HP — triggering baseline run..."
-    bash scripts/pentagi-run.sh baseline
-  fi
-fi
+AUDIT_ROOT=~/Developer/hldpro/_worktrees/overlord-sweep
+TODAY=$(date +%Y-%m-%d)
+python3 scripts/overlord/pentagi_sweep.py \
+  --repos-root "$AUDIT_ROOT" \
+  --date "$TODAY" \
+  --output-json "$AUDIT_ROOT/pentagi-status.json" \
+  --output-md "$AUDIT_ROOT/pentagi-status.md" \
+  --execute
 ```
 
-**ai-integration-services:** (same pattern with AIS-specific script if it exists)
+The helper evaluates tracked `docs/security-reports/pentagi-*` files in the audited ref. If a report is stale or missing, it records one explicit status:
 
-If `PENTAGI_API_TOKEN` is not set, log a WARNING instead of triggering — the token must be configured by the operator.
+- `SKIPPED: missing PENTAGI_API_TOKEN`
+- `SKIPPED: missing PentAGI runner: scripts/pentagi-run.sh`
+- `TRIGGERED` when the repo-local runner exists and completes
+- `FAILED` when the repo-local runner exits non-zero
+
+Do not count untracked or canonical-checkout-only PentAGI reports for sweep freshness. `OVERLORD_REPORT.md` and `OVERLORD_DASHBOARD.html` must derive PentAGI freshness from the same helper JSON/Markdown payload or explicitly state that the dashboard is reading a non-audited source.
 
 ### 3.7. Codex CLI second-opinion review
 
@@ -289,7 +293,7 @@ After steps 5 and 6 are complete, regenerate the visual dashboard:
 ~/Developer/hldpro/scripts/generate-dashboard.sh
 ```
 
-This reads OVERLORD_REPORT.md, OVERLORD_INDEX.md, and security artifacts from all repos to produce `~/Developer/hldpro/OVERLORD_DASHBOARD.html`. The dashboard is the primary visual output of the sweep — always regenerate it last.
+This reads OVERLORD_REPORT.md, OVERLORD_INDEX.md, and security artifacts from all repos to produce `~/Developer/hldpro/OVERLORD_DASHBOARD.html`. The dashboard is the primary visual output of the sweep — always regenerate it last. PentAGI freshness must come from the Step 3.6 helper output for the audited sweep root, not from canonical local checkouts.
 
 ## Prerequisites
 - `codex` CLI installed (for step 3.7 — skip gracefully if missing)

@@ -1,0 +1,136 @@
+{
+  "session_id": "2026-04-19-governance-issue-213-pentagi-sweep-source",
+  "issue_number": 213,
+  "objective": "Fix overlord sweep PentAGI freshness handling so stale or missing reports produce an explicit trigger/skip status and report/dashboard consumers share the same audited repo root/ref.",
+  "tier": 2,
+  "scope_boundary": [
+    "overlord sweep PentAGI trigger/status implementation",
+    "overlord sweep workflow wiring",
+    "overlord-sweep local agent instructions",
+    "Issue #213 planning, execution scope, validation, and closeout evidence"
+  ],
+  "out_of_scope": [
+    "Running live PentAGI against product repositories during this local implementation session",
+    "Editing downstream product repositories",
+    "Changing non-PentAGI security tier requirements",
+    "Changing Codex ingestion, graphify, or memory integrity behavior"
+  ],
+  "research_summary": "Issue #213 reports that weekly sweep freshness checks observed missing/stale PentAGI reports in detached audit worktrees but did not trigger or record a concrete skip reason, while dashboard generation read canonical local checkouts. The fix must move PentAGI status into a deterministic helper that accepts an audited repos root and produces one report/dashboard source artifact.",
+  "research_artifacts": [
+    "agents/overlord-sweep.md",
+    ".github/workflows/overlord-sweep.yml",
+    "docs/governed_repos.json",
+    "scripts/overlord/governed_repos.py",
+    "raw/execution-scopes/2026-04-19-issue-213-pentagi-sweep-source-implementation.json"
+  ],
+  "sprints": [
+    {
+      "name": "Planning and scope",
+      "goal": "Create the issue-backed governance plan, PDCAR, exception, and implementation execution scope before touching sweep code.",
+      "tasks": [
+        "Create structured plan",
+        "Create PDCAR",
+        "Create implementation execution scope",
+        "Record same-family exception",
+        "Move #213 into active backlog mirror"
+      ],
+      "acceptance_criteria": [
+        "Structured plan validates",
+        "Execution scope covers only issue #213 files",
+        "No downstream repo writes are required"
+      ],
+      "file_paths": [
+        "docs/plans/issue-213-structured-agent-cycle-plan.json",
+        "docs/plans/issue-213-pentagi-sweep-source-pdcar.md",
+        "raw/execution-scopes/2026-04-19-issue-213-pentagi-sweep-source-implementation.json",
+        "raw/exceptions/2026-04-19-issue-213-same-family-pentagi-sweep-source.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "name": "PentAGI sweep helper",
+      "goal": "Make PentAGI freshness and trigger decisions deterministic and testable.",
+      "tasks": [
+        "Add a registry-aware PentAGI sweep helper",
+        "Detect fresh, stale, missing-report, missing-token, and missing-runner states",
+        "Emit Markdown and JSON from the same audited root/ref",
+        "Add regression tests with temporary repos"
+      ],
+      "acceptance_criteria": [
+        "Repos with security_tier containing pentagi and sweep enabled are evaluated",
+        "Unset PENTAGI_API_TOKEN reports SKIPPED: missing PENTAGI_API_TOKEN",
+        "Missing runner reports SKIPPED: missing PentAGI runner with expected path",
+        "Fresh reports do not trigger",
+        "Tests simulate missing/stale PentAGI reports and verify reported trigger/skip status"
+      ],
+      "file_paths": [
+        "scripts/overlord/pentagi_sweep.py",
+        "scripts/overlord/test_pentagi_sweep.py"
+      ]
+    },
+    {
+      "name": "Sweep and docs wiring",
+      "goal": "Use the helper in CI and local sweep instructions so report/dashboard freshness uses the same audited source.",
+      "tasks": [
+        "Wire overlord-sweep workflow to call the helper",
+        "Persist PentAGI status under metrics/pentagi/latest.json",
+        "Update local overlord-sweep instructions to use the helper and audited repos root",
+        "Record dashboard source-of-truth rule"
+      ],
+      "acceptance_criteria": [
+        "CI report includes PentAGI Trigger Status",
+        "Generated metrics/pentagi/latest.json records source root and commit for each repo",
+        "Local instructions forbid counting untracked canonical checkout reports for sweep freshness",
+        "Dashboard path is documented to consume the same helper output or state when it is not doing so"
+      ],
+      "file_paths": [
+        ".github/workflows/overlord-sweep.yml",
+        "agents/overlord-sweep.md",
+        "docs/FEATURE_REGISTRY.md",
+        "raw/validation/2026-04-19-issue-213-pentagi-sweep-source.md",
+        "raw/cross-review/2026-04-19-issue-213-pentagi-sweep-source-review.md",
+        "raw/closeouts/2026-04-19-issue-213-pentagi-sweep-source.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-subagent",
+      "role": "focused reviewer",
+      "focus": "PentAGI helper semantics, workflow wiring, and test coverage",
+      "status": "accepted_with_followup",
+      "summary": "Initial review found tracked-only and execute-path gaps; implementation was patched and follow-up review found no blocking findings.",
+      "evidence": [
+        "raw/cross-review/2026-04-19-issue-213-pentagi-sweep-source-review.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family exception path",
+    "model_family": "gpt-5",
+    "status": "accepted_with_followup",
+    "summary": "No Claude connector is available in this Codex session; same-family implementation is accepted for the narrow governance slice with a focused subagent review and deterministic regression tests required before merge.",
+    "evidence": [
+      "raw/exceptions/2026-04-19-issue-213-same-family-pentagi-sweep-source.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Proceed with issue #213 PentAGI sweep source-of-truth fix.",
+    "next_execution_step": "Implement the helper, tests, workflow integration, local sweep instructions, validation evidence, and closeout.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Do not write to downstream product repos.",
+    "Do not make PentAGI skips silent.",
+    "Do not count untracked canonical checkout reports for detached audit sweep freshness.",
+    "If live PentAGI execution is introduced beyond the repo-local runner command, update the plan before implementation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator-no-hitl-directive"
+  ],
+  "approved_at": "2026-04-19T00:00:00Z"
+}

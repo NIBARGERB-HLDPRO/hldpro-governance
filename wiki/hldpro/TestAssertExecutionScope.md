@@ -1,6 +1,6 @@
 # TestAssertExecutionScope
 
-> God node · 28 connections · `scripts/overlord/test_assert_execution_scope.py`
+> God node · 29 connections · `scripts/overlord/test_assert_execution_scope.py`
 
 ## Connections by Relation
 
@@ -20,6 +20,7 @@
 - [[.test_gpt_major_decimal_variants_without_active_exception_fail()]] `EXTRACTED`
 - [[.test_active_exception_ref_nonexistent_file_fails()]] `EXTRACTED`
 - [[.test_diff_mode_and_dirty_tree_mode_share_path_normalization()]] `EXTRACTED`
+- [[.test_detached_checkout_uses_github_head_ref()]] `EXTRACTED`
 - [[._write_exception_file()]] `EXTRACTED`
 - [[.test_allows_changes_in_allowed_paths_dirty_tree_mode()]] `EXTRACTED`
 - [[.test_planning_only_diff_inside_allowed_paths_passes()]] `EXTRACTED`
@@ -27,7 +28,6 @@
 - [[.test_non_planning_without_handoff_fails()]] `EXTRACTED`
 - [[.test_refuses_dirty_forbidden_root()]] `EXTRACTED`
 - [[.test_declared_active_parallel_root_warns_instead_of_failing()]] `EXTRACTED`
-- [[.test_active_parallel_root_does_not_hide_inactive_dirty_root()]] `EXTRACTED`
 
 ---
 

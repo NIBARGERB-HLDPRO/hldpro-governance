@@ -1076,231 +1076,238 @@
       "label": "_git()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "test_assert_execution_scope_repofixture",
       "label": "RepoFixture",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L36"
+      "source_location": "L37"
     },
     {
       "id": "test_assert_execution_scope_repofixture_init",
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L37"
+      "source_location": "L38"
     },
     {
       "id": "test_assert_execution_scope_repofixture_write",
       "label": ".write()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L49"
+      "source_location": "L50"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope",
       "label": "TestAssertExecutionScope",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L55"
+      "source_location": "L56"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_scope_file",
       "label": "._scope_file()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L56"
+      "source_location": "L57"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "label": "._run_main()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L83"
+      "source_location": "L84"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "label": "._changed_files_file()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L93"
+      "source_location": "L94"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_write_exception_file",
       "label": "._write_exception_file()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L98"
+      "source_location": "L99"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "label": "._handoff()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L101"
+      "source_location": "L102"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_allows_changes_in_allowed_paths_dirty_tree_mode",
       "label": ".test_allows_changes_in_allowed_paths_dirty_tree_mode()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L120"
+      "source_location": "L121"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
       "label": ".test_planning_only_diff_inside_allowed_paths_passes()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L133"
+      "source_location": "L134"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
       "label": ".test_planning_only_diff_outside_allowed_paths_fails()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L145"
+      "source_location": "L146"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_without_handoff_fails",
       "label": ".test_non_planning_without_handoff_fails()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L158"
+      "source_location": "L159"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_with_accepted_handoff_passes",
       "label": ".test_non_planning_with_accepted_handoff_passes()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L170"
+      "source_location": "L171"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_same_model_or_family_without_active_exception_fails",
       "label": ".test_same_model_or_family_without_active_exception_fails()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L190"
+      "source_location": "L191"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_without_active_exception_fail",
       "label": ".test_gpt_major_decimal_variants_without_active_exception_fail()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L210"
+      "source_location": "L211"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_with_active_exception_pass",
       "label": ".test_gpt_major_decimal_variants_with_active_exception_pass()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L230"
+      "source_location": "L231"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_with_expiry_passes",
       "label": ".test_active_exception_with_expiry_passes()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L253"
+      "source_location": "L254"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_nonexistent_file_fails",
       "label": ".test_active_exception_ref_nonexistent_file_fails()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L276"
+      "source_location": "L277"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_existing_file_with_anchor_passes",
       "label": ".test_active_exception_ref_existing_file_with_anchor_passes()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L299"
+      "source_location": "L300"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_diff_mode_and_dirty_tree_mode_share_path_normalization",
       "label": ".test_diff_mode_and_dirty_tree_mode_share_path_normalization()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L322"
+      "source_location": "L323"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_portable_expected_root_sentinel_passes_in_copied_checkout",
       "label": ".test_portable_expected_root_sentinel_passes_in_copied_checkout()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L336"
+      "source_location": "L337"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_root",
       "label": ".test_refuses_wrong_root()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L349"
+      "source_location": "L350"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_branch",
       "label": ".test_refuses_wrong_branch()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L361"
+      "source_location": "L362"
+    },
+    {
+      "id": "test_assert_execution_scope_testassertexecutionscope_test_detached_checkout_uses_github_head_ref",
+      "label": ".test_detached_checkout_uses_github_head_ref()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L373"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_refuses_dirty_forbidden_root",
       "label": ".test_refuses_dirty_forbidden_root()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L372"
+      "source_location": "L392"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_declared_active_parallel_root_warns_instead_of_failing",
       "label": ".test_declared_active_parallel_root_warns_instead_of_failing()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L386"
+      "source_location": "L406"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_active_parallel_root_does_not_hide_inactive_dirty_root",
       "label": ".test_active_parallel_root_does_not_hide_inactive_dirty_root()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L411"
+      "source_location": "L431"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_clean_active_parallel_root_does_not_warn",
       "label": ".test_clean_active_parallel_root_does_not_warn()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L438"
+      "source_location": "L458"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_not_in_forbidden_roots",
       "label": ".test_refuses_active_parallel_root_not_in_forbidden_roots()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L460"
+      "source_location": "L480"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_without_reason",
       "label": ".test_refuses_active_parallel_root_without_reason()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L482"
+      "source_location": "L502"
     },
     {
       "id": "test_assert_execution_scope_testassertexecutionscope_test_refuses_out_of_scope_changes",
       "label": ".test_refuses_out_of_scope_changes()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L504"
+      "source_location": "L524"
     },
     {
       "id": "test_assert_execution_scope_working_directory",
       "label": "_working_directory()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L519"
+      "source_location": "L539"
     },
     {
       "id": "check_execution_environment",
@@ -1664,154 +1671,154 @@
       "label": "HandoffEvidence",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L14"
+      "source_location": "L15"
     },
     {
       "id": "assert_execution_scope_executionscope",
       "label": "ExecutionScope",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "assert_execution_scope_run_git",
       "label": "_run_git()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L35"
+      "source_location": "L36"
     },
     {
       "id": "assert_execution_scope_normalize_repo_path",
       "label": "_normalize_repo_path()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "assert_execution_scope_normalize_repo_relative_file_path",
       "label": "_normalize_repo_relative_file_path()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L51"
+      "source_location": "L52"
     },
     {
       "id": "assert_execution_scope_normalize_active_exception_ref",
       "label": "_normalize_active_exception_ref()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L68"
+      "source_location": "L69"
     },
     {
       "id": "assert_execution_scope_parse_iso8601_timestamp",
       "label": "_parse_iso8601_timestamp()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L82"
+      "source_location": "L83"
     },
     {
       "id": "assert_execution_scope_load_handoff_evidence",
       "label": "_load_handoff_evidence()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L97"
+      "source_location": "L98"
     },
     {
       "id": "assert_execution_scope_load_scope",
       "label": "_load_scope()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L160"
+      "source_location": "L161"
     },
     {
       "id": "assert_execution_scope_git_root",
       "label": "_git_root()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L233"
+      "source_location": "L234"
     },
     {
       "id": "assert_execution_scope_current_branch",
       "label": "_current_branch()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L240"
+      "source_location": "L241"
     },
     {
       "id": "assert_execution_scope_changed_paths",
       "label": "_changed_paths()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L247"
+      "source_location": "L251"
     },
     {
       "id": "assert_execution_scope_changed_paths_from_file",
       "label": "_changed_paths_from_file()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L275"
+      "source_location": "L279"
     },
     {
       "id": "assert_execution_scope_path_allowed",
       "label": "_path_allowed()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L286"
+      "source_location": "L290"
     },
     {
       "id": "assert_execution_scope_model_family",
       "label": "_model_family()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L290"
+      "source_location": "L294"
     },
     {
       "id": "assert_execution_scope_same_model_or_family",
       "label": "_same_model_or_family()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L311"
+      "source_location": "L315"
     },
     {
       "id": "assert_execution_scope_validate_execution_mode",
       "label": "_validate_execution_mode()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L317"
+      "source_location": "L321"
     },
     {
       "id": "assert_execution_scope_format_path",
       "label": "_format_path()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L347"
+      "source_location": "L351"
     },
     {
       "id": "assert_execution_scope_resolve_expected_execution_root",
       "label": "_resolve_expected_execution_root()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L351"
+      "source_location": "L355"
     },
     {
       "id": "assert_execution_scope_validate_active_exception_ref",
       "label": "_validate_active_exception_ref()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L357"
+      "source_location": "L361"
     },
     {
       "id": "assert_execution_scope_check_scope",
       "label": "check_scope()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L372"
+      "source_location": "L376"
     },
     {
       "id": "assert_execution_scope_main",
       "label": "main()",
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L454"
+      "source_location": "L458"
     },
     {
       "id": "test_check_org_repo_inventory",
@@ -2066,6 +2073,118 @@
       "source_location": "L120"
     },
     {
+      "id": "pentagi_sweep",
+      "label": "pentagi_sweep.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "pentagi_sweep_pentagistatus",
+      "label": "PentagiStatus",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L25"
+    },
+    {
+      "id": "pentagi_sweep_parse_date",
+      "label": "_parse_date()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L42"
+    },
+    {
+      "id": "pentagi_sweep_report_date",
+      "label": "_report_date()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L49"
+    },
+    {
+      "id": "pentagi_sweep_git_commit",
+      "label": "_git_commit()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L56"
+    },
+    {
+      "id": "pentagi_sweep_git_tracked_paths",
+      "label": "_git_tracked_paths()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L67"
+    },
+    {
+      "id": "pentagi_sweep_git_path_is_tracked",
+      "label": "_git_path_is_tracked()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L88"
+    },
+    {
+      "id": "pentagi_sweep_candidate_paths",
+      "label": "_candidate_paths()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L95"
+    },
+    {
+      "id": "pentagi_sweep_resolve_repo_path",
+      "label": "resolve_repo_path()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L103"
+    },
+    {
+      "id": "pentagi_sweep_latest_pentagi_report",
+      "label": "latest_pentagi_report()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L111"
+    },
+    {
+      "id": "pentagi_sweep_pentagi_repos",
+      "label": "pentagi_repos()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L128"
+    },
+    {
+      "id": "pentagi_sweep_evaluate_repo",
+      "label": "evaluate_repo()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L136"
+    },
+    {
+      "id": "pentagi_sweep_build_payload",
+      "label": "build_payload()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L210"
+    },
+    {
+      "id": "pentagi_sweep_render_markdown",
+      "label": "render_markdown()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L222"
+    },
+    {
+      "id": "pentagi_sweep_write_optional",
+      "label": "write_optional()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L244"
+    },
+    {
+      "id": "pentagi_sweep_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L252"
+    },
+    {
       "id": "test_deploy_governance_tooling",
       "label": "test_deploy_governance_tooling.py",
       "file_type": "code",
@@ -2203,6 +2322,97 @@
       "label": ".test_real_e2e_apply_verify_rollback_against_temp_git_repo()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
+      "source_location": "L202"
+    },
+    {
+      "id": "test_pentagi_sweep",
+      "label": "test_pentagi_sweep.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_pentagi_sweep_registry",
+      "label": "_registry()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L10"
+    },
+    {
+      "id": "test_pentagi_sweep_repo",
+      "label": "_repo()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L75"
+    },
+    {
+      "id": "test_pentagi_sweep_track",
+      "label": "_track()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L84"
+    },
+    {
+      "id": "test_pentagi_sweep_run",
+      "label": "_run()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L88"
+    },
+    {
+      "id": "test_pentagi_sweep_test_missing_report_skips_with_missing_token",
+      "label": "test_missing_report_skips_with_missing_token()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L107"
+    },
+    {
+      "id": "test_pentagi_sweep_test_stale_report_skips_with_missing_token",
+      "label": "test_stale_report_skips_with_missing_token()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L121"
+    },
+    {
+      "id": "test_pentagi_sweep_test_missing_runner_is_explicit_when_token_exists",
+      "label": "test_missing_runner_is_explicit_when_token_exists()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L136"
+    },
+    {
+      "id": "test_pentagi_sweep_test_fresh_report_does_not_trigger",
+      "label": "test_fresh_report_does_not_trigger()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L147"
+    },
+    {
+      "id": "test_pentagi_sweep_test_runner_would_run_without_execute",
+      "label": "test_runner_would_run_without_execute()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L161"
+    },
+    {
+      "id": "test_pentagi_sweep_test_untracked_fresh_report_does_not_count_for_audited_ref",
+      "label": "test_untracked_fresh_report_does_not_count_for_audited_ref()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L175"
+    },
+    {
+      "id": "test_pentagi_sweep_test_execute_runs_tracked_runner",
+      "label": "test_execute_runs_tracked_runner()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L188"
+    },
+    {
+      "id": "test_pentagi_sweep_test_markdown_records_same_source_root_for_dashboard_consumers",
+      "label": "test_markdown_records_same_source_root_for_dashboard_consumers()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L202"
     },
     {
@@ -6563,77 +6773,77 @@
       "id": "test_delegation_hook",
       "label": "test_delegation_hook.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L1"
     },
     {
       "id": "test_delegation_hook_run_hook",
       "label": "_run_hook()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L15"
     },
     {
       "id": "test_delegation_hook_payload",
       "label": "_payload()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L30"
     },
     {
       "id": "test_delegation_hook_test_hook_blocks_agent_owned_work_before_file_path_logic",
       "label": "test_hook_blocks_agent_owned_work_before_file_path_logic()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L39"
     },
     {
       "id": "test_delegation_hook_test_hook_warns_for_implementation_scoped_explore",
       "label": "test_hook_warns_for_implementation_scoped_explore()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L52"
     },
     {
       "id": "test_delegation_hook_test_hook_allows_read_even_when_text_matches_owned_work",
       "label": "test_hook_allows_read_even_when_text_matches_owned_work()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L65"
     },
     {
       "id": "test_delegation_hook_test_hook_bypass_allows_and_logs",
       "label": "test_hook_bypass_allows_and_logs()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L78"
     },
     {
       "id": "test_delegation_hook_test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass",
       "label": "test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L90"
     },
     {
       "id": "test_delegation_hook_test_hook_blocks_task_tool_owned_work",
       "label": "test_hook_blocks_task_tool_owned_work()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L103"
     },
     {
       "id": "test_delegation_hook_test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate",
       "label": "test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L115"
     },
     {
       "id": "test_delegation_hook_test_hook_preserves_new_code_file_block",
       "label": "test_hook_preserves_new_code_file_block()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L129"
     },
     {
@@ -6759,91 +6969,91 @@
       "id": "delegation_gate",
       "label": "delegation_gate.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L1"
     },
     {
       "id": "delegation_gate_ownerrule",
       "label": "OwnerRule",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L24"
     },
     {
       "id": "delegation_gate_gatedecision",
       "label": "GateDecision",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L32"
     },
     {
       "id": "delegation_gate_gatedecision_as_dict",
       "label": ".as_dict()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L39"
     },
     {
       "id": "delegation_gate_normalize",
       "label": "_normalize()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L49"
     },
     {
       "id": "delegation_gate_contains_term",
       "label": "_contains_term()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L53"
     },
     {
       "id": "delegation_gate_load_rules",
       "label": "load_rules()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L60"
     },
     {
       "id": "delegation_gate_deterministic_match",
       "label": "deterministic_match()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L93"
     },
     {
       "id": "delegation_gate_classifier_match",
       "label": "classifier_match()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L118"
     },
     {
       "id": "delegation_gate_apply_policy",
       "label": "apply_policy()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L132"
     },
     {
       "id": "delegation_gate_decide",
       "label": "decide()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L159"
     },
     {
       "id": "delegation_gate_load_classifier",
       "label": "_load_classifier()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L174"
     },
     {
       "id": "delegation_gate_run_cli",
       "label": "_run_cli()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L183"
     },
     {
@@ -7242,63 +7452,63 @@
       "id": "test_delegation_gate",
       "label": "test_delegation_gate.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L1"
     },
     {
       "id": "test_delegation_gate_test_rules_cover_all_da_delegation_task_types",
       "label": "test_rules_cover_all_da_delegation_task_types()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L13"
     },
     {
       "id": "test_delegation_gate_test_high_confidence_agent_owned_work_blocks",
       "label": "test_high_confidence_agent_owned_work_blocks()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L29"
     },
     {
       "id": "test_delegation_gate_test_high_confidence_bash_owned_work_blocks",
       "label": "test_high_confidence_bash_owned_work_blocks()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L40"
     },
     {
       "id": "test_delegation_gate_test_explore_is_warn_only_for_implementation_scoped_owned_work",
       "label": "test_explore_is_warn_only_for_implementation_scoped_owned_work()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L50"
     },
     {
       "id": "test_delegation_gate_test_explore_allows_non_implementation_routing_context",
       "label": "test_explore_allows_non_implementation_routing_context()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L61"
     },
     {
       "id": "test_delegation_gate_test_read_is_never_gated",
       "label": "test_read_is_never_gated()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L70"
     },
     {
       "id": "test_delegation_gate_test_bypass_flag_allows_and_records_source",
       "label": "test_bypass_flag_allows_and_records_source()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L80"
     },
     {
       "id": "test_delegation_gate_test_classifier_fallback_warns_when_rules_are_inconclusive",
       "label": "test_classifier_fallback_warns_when_rules_are_inconclusive()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L91"
     },
     {
@@ -10649,7 +10859,7 @@
     },
     {
       "source": "test_assert_execution_scope",
-      "target": "pathlib",
+      "target": "unittest",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -10658,7 +10868,7 @@
     },
     {
       "source": "test_assert_execution_scope",
-      "target": "typing",
+      "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -10667,11 +10877,20 @@
     },
     {
       "source": "test_assert_execution_scope",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "test_assert_execution_scope",
       "target": "test_assert_execution_scope_git",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -10680,7 +10899,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -10689,7 +10908,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -10698,7 +10917,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L49",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -10707,7 +10926,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L55",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -10716,7 +10935,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L56",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -10725,7 +10944,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L83",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -10734,7 +10953,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L93",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -10743,7 +10962,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L98",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -10752,7 +10971,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L101",
+      "source_location": "L102",
       "weight": 1.0
     },
     {
@@ -10761,7 +10980,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L120",
+      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -10770,7 +10989,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L133",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -10779,7 +10998,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L145",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -10788,7 +11007,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L158",
+      "source_location": "L159",
       "weight": 1.0
     },
     {
@@ -10797,7 +11016,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L170",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -10806,7 +11025,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L190",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -10815,7 +11034,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L210",
+      "source_location": "L211",
       "weight": 1.0
     },
     {
@@ -10824,7 +11043,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L230",
+      "source_location": "L231",
       "weight": 1.0
     },
     {
@@ -10833,7 +11052,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L253",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
@@ -10842,7 +11061,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L276",
+      "source_location": "L277",
       "weight": 1.0
     },
     {
@@ -10851,7 +11070,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L299",
+      "source_location": "L300",
       "weight": 1.0
     },
     {
@@ -10860,7 +11079,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L322",
+      "source_location": "L323",
       "weight": 1.0
     },
     {
@@ -10869,7 +11088,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L336",
+      "source_location": "L337",
       "weight": 1.0
     },
     {
@@ -10878,7 +11097,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L349",
+      "source_location": "L350",
       "weight": 1.0
     },
     {
@@ -10887,7 +11106,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L361",
+      "source_location": "L362",
+      "weight": 1.0
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope",
+      "target": "test_assert_execution_scope_testassertexecutionscope_test_detached_checkout_uses_github_head_ref",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L373",
       "weight": 1.0
     },
     {
@@ -10896,7 +11124,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L372",
+      "source_location": "L392",
       "weight": 1.0
     },
     {
@@ -10905,7 +11133,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L386",
+      "source_location": "L406",
       "weight": 1.0
     },
     {
@@ -10914,7 +11142,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L411",
+      "source_location": "L431",
       "weight": 1.0
     },
     {
@@ -10923,7 +11151,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L438",
+      "source_location": "L458",
       "weight": 1.0
     },
     {
@@ -10932,7 +11160,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L460",
+      "source_location": "L480",
       "weight": 1.0
     },
     {
@@ -10941,7 +11169,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L482",
+      "source_location": "L502",
       "weight": 1.0
     },
     {
@@ -10950,7 +11178,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L504",
+      "source_location": "L524",
       "weight": 1.0
     },
     {
@@ -10959,7 +11187,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L519",
+      "source_location": "L539",
       "weight": 1.0
     },
     {
@@ -10968,7 +11196,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L41",
+      "source_location": "L42",
       "weight": 0.8
     },
     {
@@ -10977,7 +11205,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L89",
+      "source_location": "L90",
       "weight": 0.8
     },
     {
@@ -10986,21 +11214,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L99",
+      "source_location": "L100",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_allows_changes_in_allowed_paths_dirty_tree_mode",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L123",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_allows_changes_in_allowed_paths_dirty_tree_mode",
-      "target": "test_assert_execution_scope_repofixture_write",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11009,11 +11228,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_allows_changes_in_allowed_paths_dirty_tree_mode",
+      "target": "test_assert_execution_scope_repofixture_write",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L125",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_allows_changes_in_allowed_paths_dirty_tree_mode",
       "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L126",
+      "source_location": "L127",
       "weight": 0.8
     },
     {
@@ -11022,21 +11250,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L136",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11045,7 +11264,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11054,25 +11273,25 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L139",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_inside_allowed_paths_passes",
       "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L140",
+      "source_location": "L141",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L148",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
-      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11081,7 +11300,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11090,25 +11309,25 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L151",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_planning_only_diff_outside_allowed_paths_fails",
       "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L152",
+      "source_location": "L153",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_without_handoff_fails",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L161",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_without_handoff_fails",
-      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11117,7 +11336,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_without_handoff_fails",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11126,25 +11345,25 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_without_handoff_fails",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L164",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_without_handoff_fails",
       "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L165",
+      "source_location": "L166",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_with_accepted_handoff_passes",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L173",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_with_accepted_handoff_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11153,7 +11372,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_with_accepted_handoff_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11162,11 +11381,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_with_accepted_handoff_passes",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L176",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_non_planning_with_accepted_handoff_passes",
       "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L179",
+      "source_location": "L180",
       "weight": 0.8
     },
     {
@@ -11175,21 +11403,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L185",
+      "source_location": "L186",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_same_model_or_family_without_active_exception_fails",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L193",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_same_model_or_family_without_active_exception_fails",
-      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11198,7 +11417,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_same_model_or_family_without_active_exception_fails",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11207,11 +11426,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_same_model_or_family_without_active_exception_fails",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L196",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_same_model_or_family_without_active_exception_fails",
       "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L199",
+      "source_location": "L200",
       "weight": 0.8
     },
     {
@@ -11220,21 +11448,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L205",
+      "source_location": "L206",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_without_active_exception_fail",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L213",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_without_active_exception_fail",
-      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11243,7 +11462,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_without_active_exception_fail",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11252,11 +11471,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_without_active_exception_fail",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L216",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_without_active_exception_fail",
       "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L219",
+      "source_location": "L220",
       "weight": 0.8
     },
     {
@@ -11265,21 +11493,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L225",
+      "source_location": "L226",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_with_active_exception_pass",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L233",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_with_active_exception_pass",
-      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11288,7 +11507,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_with_active_exception_pass",
-      "target": "test_assert_execution_scope_testassertexecutionscope_write_exception_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11297,7 +11516,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_with_active_exception_pass",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_write_exception_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11306,11 +11525,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_with_active_exception_pass",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L237",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_gpt_major_decimal_variants_with_active_exception_pass",
       "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L240",
+      "source_location": "L241",
       "weight": 0.8
     },
     {
@@ -11319,21 +11547,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L248",
+      "source_location": "L249",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_with_expiry_passes",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L256",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_with_expiry_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11342,7 +11561,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_with_expiry_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_write_exception_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11351,7 +11570,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_with_expiry_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_write_exception_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11360,11 +11579,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_with_expiry_passes",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L260",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_with_expiry_passes",
       "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L263",
+      "source_location": "L264",
       "weight": 0.8
     },
     {
@@ -11373,21 +11601,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L271",
+      "source_location": "L272",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_nonexistent_file_fails",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L279",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_nonexistent_file_fails",
-      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11396,7 +11615,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_nonexistent_file_fails",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11405,11 +11624,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_nonexistent_file_fails",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L282",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_nonexistent_file_fails",
       "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L285",
+      "source_location": "L286",
       "weight": 0.8
     },
     {
@@ -11418,21 +11646,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L293",
+      "source_location": "L294",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_existing_file_with_anchor_passes",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L302",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_existing_file_with_anchor_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11441,7 +11660,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_existing_file_with_anchor_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_write_exception_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11450,7 +11669,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_existing_file_with_anchor_passes",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_write_exception_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11459,11 +11678,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_existing_file_with_anchor_passes",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L306",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_active_exception_ref_existing_file_with_anchor_passes",
       "target": "test_assert_execution_scope_testassertexecutionscope_handoff",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L309",
+      "source_location": "L310",
       "weight": 0.8
     },
     {
@@ -11472,21 +11700,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L317",
+      "source_location": "L318",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_diff_mode_and_dirty_tree_mode_share_path_normalization",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L325",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_diff_mode_and_dirty_tree_mode_share_path_normalization",
-      "target": "test_assert_execution_scope_repofixture_write",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11495,7 +11714,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_diff_mode_and_dirty_tree_mode_share_path_normalization",
-      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
+      "target": "test_assert_execution_scope_repofixture_write",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11504,7 +11723,7 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_diff_mode_and_dirty_tree_mode_share_path_normalization",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11513,11 +11732,20 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_diff_mode_and_dirty_tree_mode_share_path_normalization",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L329",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_diff_mode_and_dirty_tree_mode_share_path_normalization",
       "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L330",
+      "source_location": "L331",
       "weight": 0.8
     },
     {
@@ -11526,7 +11754,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L339",
+      "source_location": "L340",
       "weight": 0.8
     },
     {
@@ -11535,7 +11763,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L342",
+      "source_location": "L343",
       "weight": 0.8
     },
     {
@@ -11544,7 +11772,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L344",
+      "source_location": "L345",
       "weight": 0.8
     },
     {
@@ -11553,7 +11781,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L352",
+      "source_location": "L353",
       "weight": 0.8
     },
     {
@@ -11562,7 +11790,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L354",
+      "source_location": "L355",
       "weight": 0.8
     },
     {
@@ -11571,21 +11799,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L356",
+      "source_location": "L357",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_branch",
       "target": "test_assert_execution_scope_repofixture",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L364",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_branch",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11594,25 +11813,34 @@
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_branch",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L366",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_wrong_branch",
       "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L367",
+      "source_location": "L368",
       "weight": 0.8
     },
     {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_dirty_forbidden_root",
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_detached_checkout_uses_github_head_ref",
       "target": "test_assert_execution_scope_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L375",
+      "source_location": "L376",
       "weight": 0.8
     },
     {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_dirty_forbidden_root",
-      "target": "test_assert_execution_scope_repofixture_write",
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_detached_checkout_uses_github_head_ref",
+      "target": "test_assert_execution_scope_git",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11620,17 +11848,17 @@
       "weight": 0.8
     },
     {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_dirty_forbidden_root",
-      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_detached_checkout_uses_github_head_ref",
+      "target": "test_assert_execution_scope_testassertexecutionscope_changed_files_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L378",
+      "source_location": "L379",
       "weight": 0.8
     },
     {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_dirty_forbidden_root",
-      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_detached_checkout_uses_github_head_ref",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11638,12 +11866,57 @@
       "weight": 0.8
     },
     {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_detached_checkout_uses_github_head_ref",
+      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L387",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_dirty_forbidden_root",
+      "target": "test_assert_execution_scope_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L395",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_dirty_forbidden_root",
+      "target": "test_assert_execution_scope_repofixture_write",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L397",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_dirty_forbidden_root",
+      "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L398",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_dirty_forbidden_root",
+      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L400",
+      "weight": 0.8
+    },
+    {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_declared_active_parallel_root_warns_instead_of_failing",
       "target": "test_assert_execution_scope_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L389",
+      "source_location": "L409",
       "weight": 0.8
     },
     {
@@ -11652,7 +11925,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L391",
+      "source_location": "L411",
       "weight": 0.8
     },
     {
@@ -11661,7 +11934,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L392",
+      "source_location": "L412",
       "weight": 0.8
     },
     {
@@ -11670,7 +11943,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L404",
+      "source_location": "L424",
       "weight": 0.8
     },
     {
@@ -11679,7 +11952,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L414",
+      "source_location": "L434",
       "weight": 0.8
     },
     {
@@ -11688,7 +11961,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L417",
+      "source_location": "L437",
       "weight": 0.8
     },
     {
@@ -11697,7 +11970,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L419",
+      "source_location": "L439",
       "weight": 0.8
     },
     {
@@ -11706,7 +11979,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L431",
+      "source_location": "L451",
       "weight": 0.8
     },
     {
@@ -11715,30 +11988,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L441",
+      "source_location": "L461",
       "weight": 0.8
     },
     {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_clean_active_parallel_root_does_not_warn",
       "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L443",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_clean_active_parallel_root_does_not_warn",
-      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L455",
-      "weight": 0.8
-    },
-    {
-      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_not_in_forbidden_roots",
-      "target": "test_assert_execution_scope_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
@@ -11746,12 +12001,30 @@
       "weight": 0.8
     },
     {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_clean_active_parallel_root_does_not_warn",
+      "target": "test_assert_execution_scope_testassertexecutionscope_run_main",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L475",
+      "weight": 0.8
+    },
+    {
+      "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_not_in_forbidden_roots",
+      "target": "test_assert_execution_scope_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_assert_execution_scope.py",
+      "source_location": "L483",
+      "weight": 0.8
+    },
+    {
       "source": "test_assert_execution_scope_testassertexecutionscope_test_refuses_active_parallel_root_not_in_forbidden_roots",
       "target": "test_assert_execution_scope_testassertexecutionscope_scope_file",
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L465",
+      "source_location": "L485",
       "weight": 0.8
     },
     {
@@ -11760,7 +12033,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L477",
+      "source_location": "L497",
       "weight": 0.8
     },
     {
@@ -11769,7 +12042,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L485",
+      "source_location": "L505",
       "weight": 0.8
     },
     {
@@ -11778,7 +12051,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L487",
+      "source_location": "L507",
       "weight": 0.8
     },
     {
@@ -11787,7 +12060,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L499",
+      "source_location": "L519",
       "weight": 0.8
     },
     {
@@ -11796,7 +12069,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L507",
+      "source_location": "L527",
       "weight": 0.8
     },
     {
@@ -11805,7 +12078,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L508",
+      "source_location": "L528",
       "weight": 0.8
     },
     {
@@ -11814,7 +12087,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L509",
+      "source_location": "L529",
       "weight": 0.8
     },
     {
@@ -11823,7 +12096,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_assert_execution_scope.py",
-      "source_location": "L511",
+      "source_location": "L531",
       "weight": 0.8
     },
     {
@@ -13043,7 +13316,7 @@
     },
     {
       "source": "assert_execution_scope",
-      "target": "subprocess",
+      "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
@@ -13052,7 +13325,7 @@
     },
     {
       "source": "assert_execution_scope",
-      "target": "sys",
+      "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
@@ -13061,8 +13334,8 @@
     },
     {
       "source": "assert_execution_scope",
-      "target": "dataclasses",
-      "relation": "imports_from",
+      "target": "sys",
+      "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L8",
@@ -13070,7 +13343,7 @@
     },
     {
       "source": "assert_execution_scope",
-      "target": "datetime",
+      "target": "dataclasses",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
@@ -13079,7 +13352,7 @@
     },
     {
       "source": "assert_execution_scope",
-      "target": "pathlib",
+      "target": "datetime",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
@@ -13088,11 +13361,20 @@
     },
     {
       "source": "assert_execution_scope",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/assert_execution_scope.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "assert_execution_scope",
       "target": "assert_execution_scope_handoffevidence",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -13101,7 +13383,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -13110,7 +13392,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -13119,7 +13401,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -13128,7 +13410,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L51",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -13137,7 +13419,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -13146,7 +13428,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -13155,7 +13437,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L97",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -13164,7 +13446,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L160",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
@@ -13173,7 +13455,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L233",
+      "source_location": "L234",
       "weight": 1.0
     },
     {
@@ -13182,7 +13464,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L240",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -13191,7 +13473,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L247",
+      "source_location": "L251",
       "weight": 1.0
     },
     {
@@ -13200,21 +13482,12 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L275",
+      "source_location": "L279",
       "weight": 1.0
     },
     {
       "source": "assert_execution_scope",
       "target": "assert_execution_scope_path_allowed",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L286",
-      "weight": 1.0
-    },
-    {
-      "source": "assert_execution_scope",
-      "target": "assert_execution_scope_model_family",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
@@ -13223,11 +13496,20 @@
     },
     {
       "source": "assert_execution_scope",
+      "target": "assert_execution_scope_model_family",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/assert_execution_scope.py",
+      "source_location": "L294",
+      "weight": 1.0
+    },
+    {
+      "source": "assert_execution_scope",
       "target": "assert_execution_scope_same_model_or_family",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L311",
+      "source_location": "L315",
       "weight": 1.0
     },
     {
@@ -13236,21 +13518,12 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L317",
+      "source_location": "L321",
       "weight": 1.0
     },
     {
       "source": "assert_execution_scope",
       "target": "assert_execution_scope_format_path",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L347",
-      "weight": 1.0
-    },
-    {
-      "source": "assert_execution_scope",
-      "target": "assert_execution_scope_resolve_expected_execution_root",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
@@ -13259,11 +13532,20 @@
     },
     {
       "source": "assert_execution_scope",
+      "target": "assert_execution_scope_resolve_expected_execution_root",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/assert_execution_scope.py",
+      "source_location": "L355",
+      "weight": 1.0
+    },
+    {
+      "source": "assert_execution_scope",
       "target": "assert_execution_scope_validate_active_exception_ref",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L357",
+      "source_location": "L361",
       "weight": 1.0
     },
     {
@@ -13272,7 +13554,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L372",
+      "source_location": "L376",
       "weight": 1.0
     },
     {
@@ -13281,7 +13563,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L454",
+      "source_location": "L458",
       "weight": 1.0
     },
     {
@@ -13290,7 +13572,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L52",
+      "source_location": "L53",
       "weight": 0.8
     },
     {
@@ -13299,7 +13581,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L70",
+      "source_location": "L71",
       "weight": 0.8
     },
     {
@@ -13308,7 +13590,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L136",
+      "source_location": "L137",
       "weight": 0.8
     },
     {
@@ -13317,7 +13599,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L147",
+      "source_location": "L148",
       "weight": 0.8
     },
     {
@@ -13326,7 +13608,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L149",
+      "source_location": "L150",
       "weight": 0.8
     },
     {
@@ -13335,7 +13617,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L154",
+      "source_location": "L155",
       "weight": 0.8
     },
     {
@@ -13344,7 +13626,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L220",
+      "source_location": "L221",
       "weight": 0.8
     },
     {
@@ -13353,7 +13635,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L222",
+      "source_location": "L223",
       "weight": 0.8
     },
     {
@@ -13362,7 +13644,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L225",
+      "source_location": "L226",
       "weight": 0.8
     },
     {
@@ -13371,7 +13653,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L234",
+      "source_location": "L235",
       "weight": 0.8
     },
     {
@@ -13380,7 +13662,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L241",
+      "source_location": "L242",
       "weight": 0.8
     },
     {
@@ -13389,7 +13671,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L248",
+      "source_location": "L252",
       "weight": 0.8
     },
     {
@@ -13398,7 +13680,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L265",
+      "source_location": "L269",
       "weight": 0.8
     },
     {
@@ -13407,7 +13689,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L282",
+      "source_location": "L286",
       "weight": 0.8
     },
     {
@@ -13416,7 +13698,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L314",
+      "source_location": "L318",
       "weight": 0.8
     },
     {
@@ -13425,7 +13707,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L329",
+      "source_location": "L333",
       "weight": 0.8
     },
     {
@@ -13434,7 +13716,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L385",
+      "source_location": "L389",
       "weight": 0.8
     },
     {
@@ -13443,7 +13725,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L389",
+      "source_location": "L393",
       "weight": 0.8
     },
     {
@@ -13452,7 +13734,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L393",
+      "source_location": "L397",
       "weight": 0.8
     },
     {
@@ -13461,7 +13743,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L396",
+      "source_location": "L400",
       "weight": 0.8
     },
     {
@@ -13470,7 +13752,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L402",
+      "source_location": "L406",
       "weight": 0.8
     },
     {
@@ -13479,7 +13761,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L403",
+      "source_location": "L407",
       "weight": 0.8
     },
     {
@@ -13488,7 +13770,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L407",
+      "source_location": "L411",
       "weight": 0.8
     },
     {
@@ -13497,7 +13779,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L412",
+      "source_location": "L416",
       "weight": 0.8
     },
     {
@@ -13506,7 +13788,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L417",
+      "source_location": "L421",
       "weight": 0.8
     },
     {
@@ -13515,7 +13797,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L461",
+      "source_location": "L465",
       "weight": 0.8
     },
     {
@@ -13524,7 +13806,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
-      "source_location": "L467",
+      "source_location": "L471",
       "weight": 0.8
     },
     {
@@ -14419,6 +14701,375 @@
       "weight": 0.8
     },
     {
+      "source": "pentagi_sweep",
+      "target": "argparse",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "re",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "dataclasses",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "datetime",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "governed_repos",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_pentagistatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_parse_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_report_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_git_commit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_git_tracked_paths",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_git_path_is_tracked",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_candidate_paths",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_resolve_repo_path",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_latest_pentagi_report",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_pentagi_repos",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_evaluate_repo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_build_payload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L210",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_render_markdown",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L222",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_write_optional",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L244",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep",
+      "target": "pentagi_sweep_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L252",
+      "weight": 1.0
+    },
+    {
+      "source": "pentagi_sweep_report_date",
+      "target": "pentagi_sweep_parse_date",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L53",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_git_path_is_tracked",
+      "target": "pentagi_sweep_git_tracked_paths",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L89",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_resolve_repo_path",
+      "target": "pentagi_sweep_candidate_paths",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L104",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_latest_pentagi_report",
+      "target": "pentagi_sweep_git_tracked_paths",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L113",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_latest_pentagi_report",
+      "target": "pentagi_sweep_report_date",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L119",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_evaluate_repo",
+      "target": "pentagi_sweep_resolve_repo_path",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L145",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_evaluate_repo",
+      "target": "pentagi_sweep_latest_pentagi_report",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L147",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_evaluate_repo",
+      "target": "pentagi_sweep_git_commit",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L148",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_evaluate_repo",
+      "target": "pentagi_sweep_git_path_is_tracked",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L165",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_evaluate_repo",
+      "target": "pentagi_sweep_pentagistatus",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L192",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_main",
+      "target": "pentagi_sweep_parse_date",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L263",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_main",
+      "target": "pentagi_sweep_evaluate_repo",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L273",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_main",
+      "target": "pentagi_sweep_pentagi_repos",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L281",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_main",
+      "target": "pentagi_sweep_build_payload",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L283",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_main",
+      "target": "pentagi_sweep_render_markdown",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L285",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_main",
+      "target": "pentagi_sweep_write_optional",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L287",
+      "weight": 0.8
+    },
+    {
       "source": "test_deploy_governance_tooling",
       "target": "contextlib",
       "relation": "imports",
@@ -15046,6 +15697,339 @@
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L219",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "pentagi_sweep",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "test_pentagi_sweep_registry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "test_pentagi_sweep_repo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "test_pentagi_sweep_track",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "test_pentagi_sweep_run",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "test_pentagi_sweep_test_missing_report_skips_with_missing_token",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "test_pentagi_sweep_test_stale_report_skips_with_missing_token",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "test_pentagi_sweep_test_missing_runner_is_explicit_when_token_exists",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "test_pentagi_sweep_test_fresh_report_does_not_trigger",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L147",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "test_pentagi_sweep_test_runner_would_run_without_execute",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L161",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "test_pentagi_sweep_test_untracked_fresh_report_does_not_count_for_audited_ref",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L175",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "test_pentagi_sweep_test_execute_runs_tracked_runner",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep",
+      "target": "test_pentagi_sweep_test_markdown_records_same_source_root_for_dashboard_consumers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "test_pentagi_sweep_run",
+      "target": "test_pentagi_sweep_registry",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L93",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_missing_report_skips_with_missing_token",
+      "target": "test_pentagi_sweep_repo",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L108",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_missing_report_skips_with_missing_token",
+      "target": "test_pentagi_sweep_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L111",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_stale_report_skips_with_missing_token",
+      "target": "test_pentagi_sweep_repo",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L122",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_stale_report_skips_with_missing_token",
+      "target": "test_pentagi_sweep_track",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L125",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_stale_report_skips_with_missing_token",
+      "target": "test_pentagi_sweep_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L128",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_missing_runner_is_explicit_when_token_exists",
+      "target": "test_pentagi_sweep_repo",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L137",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_missing_runner_is_explicit_when_token_exists",
+      "target": "test_pentagi_sweep_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L140",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_fresh_report_does_not_trigger",
+      "target": "test_pentagi_sweep_repo",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L148",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_fresh_report_does_not_trigger",
+      "target": "test_pentagi_sweep_track",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L151",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_fresh_report_does_not_trigger",
+      "target": "test_pentagi_sweep_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L154",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_runner_would_run_without_execute",
+      "target": "test_pentagi_sweep_repo",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L162",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_runner_would_run_without_execute",
+      "target": "test_pentagi_sweep_track",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L166",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_runner_would_run_without_execute",
+      "target": "test_pentagi_sweep_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L169",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_untracked_fresh_report_does_not_count_for_audited_ref",
+      "target": "test_pentagi_sweep_repo",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L176",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_untracked_fresh_report_does_not_count_for_audited_ref",
+      "target": "test_pentagi_sweep_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L180",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_execute_runs_tracked_runner",
+      "target": "test_pentagi_sweep_repo",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L189",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_execute_runs_tracked_runner",
+      "target": "test_pentagi_sweep_track",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L193",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_execute_runs_tracked_runner",
+      "target": "test_pentagi_sweep_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L196",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_markdown_records_same_source_root_for_dashboard_consumers",
+      "target": "test_pentagi_sweep_repo",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L203",
+      "weight": 0.8
+    },
+    {
+      "source": "test_pentagi_sweep_test_markdown_records_same_source_root_for_dashboard_consumers",
+      "target": "test_pentagi_sweep_registry",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_location": "L211",
       "weight": 0.8
     },
     {
@@ -26807,7 +27791,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -26816,7 +27800,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -26825,7 +27809,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -26834,7 +27818,7 @@
       "target": "tempfile",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -26843,7 +27827,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -26852,7 +27836,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L15",
       "weight": 1.0
     },
@@ -26861,7 +27845,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L30",
       "weight": 1.0
     },
@@ -26870,7 +27854,7 @@
       "target": "test_delegation_hook_test_hook_blocks_agent_owned_work_before_file_path_logic",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L39",
       "weight": 1.0
     },
@@ -26879,7 +27863,7 @@
       "target": "test_delegation_hook_test_hook_warns_for_implementation_scoped_explore",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L52",
       "weight": 1.0
     },
@@ -26888,7 +27872,7 @@
       "target": "test_delegation_hook_test_hook_allows_read_even_when_text_matches_owned_work",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L65",
       "weight": 1.0
     },
@@ -26897,7 +27881,7 @@
       "target": "test_delegation_hook_test_hook_bypass_allows_and_logs",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L78",
       "weight": 1.0
     },
@@ -26906,7 +27890,7 @@
       "target": "test_delegation_hook_test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L90",
       "weight": 1.0
     },
@@ -26915,7 +27899,7 @@
       "target": "test_delegation_hook_test_hook_blocks_task_tool_owned_work",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L103",
       "weight": 1.0
     },
@@ -26924,7 +27908,7 @@
       "target": "test_delegation_hook_test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L115",
       "weight": 1.0
     },
@@ -26933,7 +27917,7 @@
       "target": "test_delegation_hook_test_hook_preserves_new_code_file_block",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L129",
       "weight": 1.0
     },
@@ -26942,7 +27926,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L41",
       "weight": 0.8
     },
@@ -26951,7 +27935,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L42",
       "weight": 0.8
     },
@@ -26960,7 +27944,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L55",
       "weight": 0.8
     },
@@ -26969,7 +27953,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L56",
       "weight": 0.8
     },
@@ -26978,7 +27962,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L68",
       "weight": 0.8
     },
@@ -26987,7 +27971,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L69",
       "weight": 0.8
     },
@@ -26996,7 +27980,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L81",
       "weight": 0.8
     },
@@ -27005,7 +27989,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L82",
       "weight": 0.8
     },
@@ -27014,7 +27998,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L92",
       "weight": 0.8
     },
@@ -27023,7 +28007,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L93",
       "weight": 0.8
     },
@@ -27032,7 +28016,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L105",
       "weight": 0.8
     },
@@ -27041,7 +28025,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L106",
       "weight": 0.8
     },
@@ -27050,7 +28034,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L117",
       "weight": 0.8
     },
@@ -27059,7 +28043,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L118",
       "weight": 0.8
     },
@@ -27068,7 +28052,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L132",
       "weight": 0.8
     },
@@ -27509,7 +28493,7 @@
       "target": "argparse",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -27518,7 +28502,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -27527,7 +28511,7 @@
       "target": "re",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -27536,7 +28520,7 @@
       "target": "sys",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -27545,7 +28529,7 @@
       "target": "dataclasses",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -27554,7 +28538,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -27563,7 +28547,7 @@
       "target": "typing",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L10",
       "weight": 1.0
     },
@@ -27572,7 +28556,7 @@
       "target": "delegation_gate_ownerrule",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L24",
       "weight": 1.0
     },
@@ -27581,7 +28565,7 @@
       "target": "delegation_gate_gatedecision",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L32",
       "weight": 1.0
     },
@@ -27590,7 +28574,7 @@
       "target": "delegation_gate_gatedecision_as_dict",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L39",
       "weight": 1.0
     },
@@ -27599,7 +28583,7 @@
       "target": "delegation_gate_normalize",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L49",
       "weight": 1.0
     },
@@ -27608,7 +28592,7 @@
       "target": "delegation_gate_contains_term",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L53",
       "weight": 1.0
     },
@@ -27617,7 +28601,7 @@
       "target": "delegation_gate_load_rules",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L60",
       "weight": 1.0
     },
@@ -27626,7 +28610,7 @@
       "target": "delegation_gate_deterministic_match",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L93",
       "weight": 1.0
     },
@@ -27635,7 +28619,7 @@
       "target": "delegation_gate_classifier_match",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L118",
       "weight": 1.0
     },
@@ -27644,7 +28628,7 @@
       "target": "delegation_gate_apply_policy",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L132",
       "weight": 1.0
     },
@@ -27653,7 +28637,7 @@
       "target": "delegation_gate_decide",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L159",
       "weight": 1.0
     },
@@ -27662,7 +28646,7 @@
       "target": "delegation_gate_load_classifier",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L174",
       "weight": 1.0
     },
@@ -27671,7 +28655,7 @@
       "target": "delegation_gate_run_cli",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L183",
       "weight": 1.0
     },
@@ -27680,7 +28664,7 @@
       "target": "delegation_gate_normalize",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L54",
       "weight": 0.8
     },
@@ -27689,7 +28673,7 @@
       "target": "delegation_gate_ownerrule",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L83",
       "weight": 0.8
     },
@@ -27698,7 +28682,7 @@
       "target": "delegation_gate_normalize",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L94",
       "weight": 0.8
     },
@@ -27707,7 +28691,7 @@
       "target": "delegation_gate_contains_term",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L100",
       "weight": 0.8
     },
@@ -27716,7 +28700,7 @@
       "target": "delegation_gate_gatedecision",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L115",
       "weight": 0.8
     },
@@ -27725,7 +28709,7 @@
       "target": "delegation_gate_gatedecision",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L129",
       "weight": 0.8
     },
@@ -27734,7 +28718,7 @@
       "target": "delegation_gate_gatedecision",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L141",
       "weight": 0.8
     },
@@ -27743,7 +28727,7 @@
       "target": "delegation_gate_load_rules",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L167",
       "weight": 0.8
     },
@@ -27752,7 +28736,7 @@
       "target": "delegation_gate_deterministic_match",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L168",
       "weight": 0.8
     },
@@ -27761,7 +28745,7 @@
       "target": "delegation_gate_classifier_match",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L170",
       "weight": 0.8
     },
@@ -27770,7 +28754,7 @@
       "target": "delegation_gate_apply_policy",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L171",
       "weight": 0.8
     },
@@ -27779,7 +28763,7 @@
       "target": "delegation_gate_decide",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L194",
       "weight": 0.8
     },
@@ -27788,7 +28772,7 @@
       "target": "delegation_gate_load_classifier",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L198",
       "weight": 0.8
     },
@@ -27797,7 +28781,7 @@
       "target": "delegation_gate_gatedecision_as_dict",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/delegation_gate.py",
+      "source_file": "scripts/orchestrator/delegation_gate.py",
       "source_location": "L206",
       "weight": 0.8
     },
@@ -29084,7 +30068,7 @@
       "target": "sys",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -29093,7 +30077,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -29102,7 +30086,7 @@
       "target": "delegation_gate",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L10",
       "weight": 1.0
     },
@@ -29111,7 +30095,7 @@
       "target": "test_delegation_gate_test_rules_cover_all_da_delegation_task_types",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L13",
       "weight": 1.0
     },
@@ -29120,7 +30104,7 @@
       "target": "test_delegation_gate_test_high_confidence_agent_owned_work_blocks",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L29",
       "weight": 1.0
     },
@@ -29129,7 +30113,7 @@
       "target": "test_delegation_gate_test_high_confidence_bash_owned_work_blocks",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L40",
       "weight": 1.0
     },
@@ -29138,7 +30122,7 @@
       "target": "test_delegation_gate_test_explore_is_warn_only_for_implementation_scoped_owned_work",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L50",
       "weight": 1.0
     },
@@ -29147,7 +30131,7 @@
       "target": "test_delegation_gate_test_explore_allows_non_implementation_routing_context",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L61",
       "weight": 1.0
     },
@@ -29156,7 +30140,7 @@
       "target": "test_delegation_gate_test_read_is_never_gated",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L70",
       "weight": 1.0
     },
@@ -29165,7 +30149,7 @@
       "target": "test_delegation_gate_test_bypass_flag_allows_and_records_source",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L80",
       "weight": 1.0
     },
@@ -29174,7 +30158,7 @@
       "target": "test_delegation_gate_test_classifier_fallback_warns_when_rules_are_inconclusive",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/scripts/orchestrator/test_delegation_gate.py",
+      "source_file": "scripts/orchestrator/test_delegation_gate.py",
       "source_location": "L91",
       "weight": 1.0
     },
@@ -29446,6 +30430,15 @@
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L169",
+      "weight": 0.8
+    },
+    {
+      "source": "pentagi_sweep_pentagistatus",
+      "target": "governed_repos_governedrepo",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_location": "L16",
       "weight": 0.8
     }
   ],

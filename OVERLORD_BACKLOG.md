@@ -20,6 +20,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| PentAGI sweep trigger/source alignment | [#213](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/213) | HIGH | 2-3 | Implementation in progress on `issue-213-pentagi-sweep-source`; final AC is an e2e local/CI proof that missing/stale PentAGI reports produce explicit trigger/skip status and report/dashboard paths share audited-root evidence. |
 | §DA Phase 2 hybrid delegation gate | [#212](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/212) | HIGH | 2-3 | Implementation in progress on `issue-212-da-hybrid-delegation-gate`; final AC is hook-level proof that owned Agent/Bash work blocks, Explore warns, Read allows, bypass logs, and MCP endpoint failure opens safely. |
 | Org-wide active repository governance coverage epic | [#298](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/298) | HIGH | TBD | Final closeout PR pending for #314; active org repo registry coverage, surface reconciliation, and e2e evidence are complete in the PR branch. |
 | Always-on SoM HITL relay for local CLI sessions | [#296](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/296) | HIGH | TBD | Final E2E proof in progress under [#303](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/303) with sandbox-AIS-backed local CLI checkpoint -> notification/reply -> normalized instruction/resume -> audit replay evidence. Close #296 only after #303 PR checks pass and closeout is merged. |
