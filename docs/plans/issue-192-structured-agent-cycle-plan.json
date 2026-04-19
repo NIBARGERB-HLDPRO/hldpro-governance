@@ -1,0 +1,133 @@
+{
+  "session_id": "session-20260419-issue-192-structured-plan-json-fail",
+  "issue_number": 192,
+  "objective": "Make structured agent cycle plan validation fail with structured `FAIL` output instead of a traceback when a plan JSON file is malformed.",
+  "tier": 2,
+  "scope_boundary": [
+    "Patch `scripts/overlord/validate_structured_agent_cycle_plan.py` to catch malformed JSON and file read errors.",
+    "Add regression tests for malformed JSON in both full scan and governance-surface matching paths.",
+    "Preserve valid plan validation behavior.",
+    "Add issue-backed PDCAR, execution-scope, validation, and closeout artifacts.",
+    "Run focused tests, e2e malformed-plan proof, execution-scope validation, and Local CI Gate."
+  ],
+  "out_of_scope": [
+    "Changing the structured plan schema.",
+    "Changing governance-surface path classification.",
+    "Changing execution-scope validation.",
+    "Closing the broader Codex-spark refinement pass issue #177.",
+    "Editing downstream repositories."
+  ],
+  "research_summary": "Issue #192 identifies that the validator calls `json.loads(path.read_text(...))` without handling parse or read failures. The same unsafe loader is used when resolving issue-specific matching plans for governance-surface changes, so a malformed plan can crash before the validator reaches its structured failure reporting. The minimal fix is a safe loader shared by both call sites.",
+  "research_artifacts": [
+    "Issue #192",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+    "docs/plans/issue-192-structured-plan-json-fail-pdcar.md"
+  ],
+  "sprints": [
+    {
+      "name": "Safe JSON Load",
+      "goal": "Convert malformed structured-plan JSON into structured validator failures.",
+      "tasks": [
+        "Add a safe JSON loader that catches `json.JSONDecodeError` and `OSError`.",
+        "Use repo-relative display paths for parse failures when possible.",
+        "Skip semantic validation when a payload cannot be parsed."
+      ],
+      "acceptance_criteria": [
+        "Malformed JSON produces `FAIL <path>: could not parse JSON: ...`.",
+        "The validator exits 1 instead of emitting a traceback.",
+        "Valid JSON behavior remains unchanged."
+      ],
+      "file_paths": [
+        "scripts/overlord/validate_structured_agent_cycle_plan.py"
+      ]
+    },
+    {
+      "name": "Regression Coverage",
+      "goal": "Prove both unsafe load paths are covered.",
+      "tasks": [
+        "Add a test for malformed JSON during full repo plan validation.",
+        "Add a test for malformed JSON during governance-surface matching-plan lookup.",
+        "Keep the existing valid-plan and governance-surface tests passing."
+      ],
+      "acceptance_criteria": [
+        "Malformed full-scan plan test fails cleanly with no traceback.",
+        "Malformed matching-plan test fails cleanly with no traceback.",
+        "Existing validator tests pass."
+      ],
+      "file_paths": [
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py"
+      ]
+    },
+    {
+      "name": "Governance Evidence",
+      "goal": "Record the issue-backed implementation and final e2e proof.",
+      "tasks": [
+        "Add PDCAR and structured plan artifacts.",
+        "Add implementation execution-scope and same-family exception evidence.",
+        "Record validation and closeout artifacts.",
+        "Update local progress/backlog mirrors."
+      ],
+      "acceptance_criteria": [
+        "Execution-scope assertion passes for the changed-file set.",
+        "Local CI Gate passes.",
+        "Stage 6 closeout hook passes."
+      ],
+      "file_paths": [
+        "docs/plans/issue-192-structured-plan-json-fail-pdcar.md",
+        "docs/plans/issue-192-structured-agent-cycle-plan.json",
+        "raw/exceptions/2026-04-19-issue-192-same-family-implementation.md",
+        "raw/execution-scopes/2026-04-19-issue-192-structured-plan-json-fail-implementation.json",
+        "raw/validation/2026-04-19-issue-192-structured-plan-json-fail.md",
+        "raw/closeouts/2026-04-19-issue-192-structured-plan-json-fail.md",
+        "docs/PROGRESS.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex implementation session",
+      "role": "validator behavior analysis",
+      "focus": "Locate unsafe JSON-loading paths and define the narrow regression scope.",
+      "status": "accepted",
+      "summary": "Both full plan scanning and issue-specific matching-plan lookup need the safe loader; the fix can stay local to the validator and tests.",
+      "evidence": [
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "Issue #192"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "read-only reviewer agent after implementation",
+    "model_family": "openai",
+    "status": "not_requested",
+    "summary": "This is a narrow validator bugfix, not an architecture or standards change requiring Tier 1 alternate-family review. A read-only implementation review is planned before PR closeout.",
+    "evidence": [
+      "STANDARDS.md Society of Minds cross-review scope",
+      "docs/plans/issue-192-structured-plan-json-fail-pdcar.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex implementation session",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement issue #192 only: structured JSON parse failure handling, regression tests, governance artifacts, validation evidence, and tracker updates.",
+    "next_execution_step": "Run focused tests and e2e malformed JSON proof, request read-only review, then open a PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If schema changes appear necessary, stop and split into a separate issue.",
+    "If governance-surface matching semantics need more than parse-error handling, record a follow-up instead of expanding this bugfix.",
+    "If Local CI Gate fails outside the changed scope, record the failure and do not mask it with unrelated edits.",
+    "If downstream repos need changes, create a separate issue-backed rollout slice."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: proceed, no HITL",
+    "GitHub issue #192 acceptance criteria",
+    "Codex implementation session"
+  ],
+  "approved_at": "2026-04-19T03:41:15Z"
+}
