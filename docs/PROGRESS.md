@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| LAM governance tooling v0.1.0 adoption epic | #338 | IN PROGRESS | HIGH | TBD | Governance PDCAR, LAM issue #475, managed tooling deploy, negative-control proof, remediation proof, rollback proof, LAM GitHub Actions evidence | Final AC is real downstream e2e adoption from `governance-tooling-v0.1.0` with exact SHA `8c5945e3d4f3f814dd80b4d158a9913c58a33609`; plan: docs/plans/issue-338-structured-agent-cycle-plan.json |
 | Fix execution-scope validation in detached PR checkouts | #324 | IN PROGRESS | HIGH | 1 | Branch fallback in `assert_execution_scope.py`, regression test, EmailAssistant#1 unblock | Planning scope: docs/plans/issue-324-structured-agent-cycle-plan.json |
 | Org-wide active repository governance coverage epic | #298 | IN PROGRESS | HIGH | TBD | Active org repo registry policy, live inventory drift detector, seek-and-ponder intake, EmailAssistant discovery, registry-driven surface reconciliation, final e2e closeout gate | Final closeout PR pending for #314; plan: docs/plans/issue-298-structured-agent-cycle-plan.json |
 | Always-on SoM HITL relay for local CLI sessions | #296 | IN PROGRESS | HIGH | TBD | HITL packet contracts, AIS notification bridge, SoM/MCP response normalization, structured session instruction flow, final e2e proof | Plan: docs/plans/issue-296-structured-agent-cycle-plan.json; PDCAR: docs/plans/issue-296-som-hitl-relay-pdcar.md |
