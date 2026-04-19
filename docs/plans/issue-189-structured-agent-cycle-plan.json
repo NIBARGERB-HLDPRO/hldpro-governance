@@ -1,69 +1,71 @@
 {
   "session_id": "session-20260419-issue-189-launchd-issue-ref",
   "issue_number": 189,
-  "objective": "Correct governance mirror references so the Stage 5+ som-worker boot-start integration points to issue #189 instead of an unrelated bug issue.",
+  "objective": "Close governance issue #189 after downstream local-ai-machine PR #483 implemented som-worker launchd boot-start integration with install/uninstall docs, fake-launchctl e2e proof, reviewer checkpoints, and green GitHub Actions.",
   "tier": 2,
   "scope_boundary": [
-    "Update hldpro-governance backlog and progress mirrors for the launchd issue reference only.",
-    "Correct historical closeout prose that explicitly maps the boot-start follow-up to the stale issue.",
-    "Record PDCAR, execution scope, and validation evidence for this governance-surface doc correction."
+    "Update hldpro-governance backlog and progress mirrors so #189 moves from planned to done.",
+    "Update the governance service runbook to point at the new downstream som-worker LaunchAgent install/uninstall path.",
+    "Record PDCAR, execution scope, validation, and Stage 6 closeout evidence for the governance mirror closeout."
   ],
   "out_of_scope": [
-    "Implementing launchd boot-start integration.",
-    "Changing GitHub issue states.",
+    "Changing downstream local-ai-machine implementation after PR #483 merged.",
+    "Starting the real MLX model or loading the LaunchAgent from governance CI.",
     "Changing backlog validation semantics.",
-    "Editing downstream repositories."
+    "Editing sibling repositories from the governance closeout branch."
   ],
-  "research_summary": "Review of the three remaining stale local branches found that fix/backlog-issue-ref-20260416 contained a valid one-line correction: the boot-start follow-up should reference issue #189, while the previous issue reference points to an unrelated stale-checkout measurement bug. A broader grep found active mirrors and two historical closeouts carrying the same stale mapping.",
+  "research_summary": "Issue #189 was previously corrected to the right governance issue reference. The implementation gate is now satisfied: local-ai-machine #431 and #432 are merged, downstream local-ai-machine issue #482 was created for #189, PR #483 added the som-worker LaunchAgent plist template plus install/uninstall scripts, README docs, fake-launchctl e2e tests, reviewer checkpoints, and all PR checks passed before merge at 8ceb5e38a0dd8105c2467e48d00219b95bac28d4.",
   "research_artifacts": [
     "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/189",
     "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/104",
     "OVERLORD_BACKLOG.md",
     "docs/PROGRESS.md",
-    "raw/closeouts/2026-04-14-society-of-minds-epic.md",
-    "raw/closeouts/2026-04-17-som-enforcement-drift-closeout-loop.md"
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/issues/482",
+    "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/pull/483"
   ],
   "sprints": [
     {
-      "name": "Launchd issue reference correction",
-      "goal": "Remove the stale boot-start issue mapping from governance mirrors and evidence notes.",
+      "name": "som-worker launchd closeout",
+      "goal": "Move #189 from planned to done in governance after downstream implementation ACs are satisfied.",
       "tasks": [
-        "Update OVERLORD_BACKLOG.md launchd row to #189.",
-        "Update docs/PROGRESS.md launchd row to #189.",
-        "Update historical closeout notes that explicitly identify the stale issue as the boot-start follow-up.",
-        "Run grep verification, backlog GitHub sync, structured plan validation, and execution-scope assertion."
+        "Move #189 from Planned to Done in OVERLORD_BACKLOG.md.",
+        "Move #189 from Plans to Done in docs/PROGRESS.md.",
+        "Update docs/EXTERNAL_SERVICES_RUNBOOK.md with LaunchAgent install/uninstall commands.",
+        "Record PDCAR, validation, execution scope, and Stage 6 closeout artifacts.",
+        "Run grep verification, backlog GitHub sync, structured plan validation, execution-scope assertion, closeout hook, Local CI Gate, and PR checks."
       ],
       "acceptance_criteria": [
-        "No boot-start follow-up reference points to the stale issue.",
-        "The active backlog row points to open issue #189.",
-        "The progress mirror points to issue #189.",
+        "Downstream PR #483 is merged and downstream issue #482 is closed.",
+        "The active backlog no longer lists #189 as planned.",
+        "The progress mirror lists #189 as done.",
+        "The service runbook points at the new LaunchAgent install/uninstall path.",
         "Backlog GitHub sync passes.",
-        "Final AC: structured-plan and execution-scope gates pass."
+        "Final AC: closeout hook, structured-plan, execution-scope, Local CI Gate, and PR checks pass before #189 is closed."
       ],
       "file_paths": [
         "OVERLORD_BACKLOG.md",
         "docs/PROGRESS.md",
-        "docs/plans/issue-189-launchd-issue-ref-pdcar.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "docs/plans/issue-189-som-worker-launchd-closeout-pdcar.md",
         "docs/plans/issue-189-structured-agent-cycle-plan.json",
         "raw/execution-scopes/2026-04-19-issue-189-launchd-issue-ref-implementation.json",
-        "raw/validation/2026-04-19-issue-189-launchd-issue-ref.md",
-        "raw/closeouts/2026-04-14-society-of-minds-epic.md",
-        "raw/closeouts/2026-04-17-som-enforcement-drift-closeout-loop.md"
+        "raw/validation/2026-04-19-issue-189-som-worker-launchd.md",
+        "raw/closeouts/2026-04-19-issue-189-som-worker-launchd.md"
       ]
     }
   ],
   "specialist_reviews": [
     {
-      "reviewer": "Codex cleanup reviewer",
-      "role": "branch disposition and mirror-drift reviewer",
-      "focus": "Review the remaining stale local branches and identify whether the launchd issue-reference change should be retained.",
+      "reviewer": "Codex closeout reviewer",
+      "role": "downstream implementation evidence reviewer",
+      "focus": "Verify issue #189 acceptance criteria against downstream local-ai-machine issue #482 and PR #483.",
       "status": "accepted",
-      "summary": "Review found the old backlog-ref branch contained a valid mirror correction, the remote-MCP branch should be preserved for open epic #109, and the backlog-add branch was obsolete as-is.",
+      "summary": "Confirmed local-ai-machine PR #483 created the som-worker LaunchAgent template, install/uninstall scripts, README docs, fake-launchctl e2e coverage, and merged with green checks.",
       "evidence": [
-        "operator directive: go",
-        "git show fix/backlog-issue-ref-20260416",
-        "gh issue view 189",
-        "gh issue view 104"
+        "gh pr view 483 --repo NIBARGERB-HLDPRO/local-ai-machine",
+        "gh issue view 482 --repo NIBARGERB-HLDPRO/local-ai-machine",
+        "gh pr checks 483 --repo NIBARGERB-HLDPRO/local-ai-machine"
       ]
     }
   ],
@@ -72,22 +74,22 @@
     "reviewer": "not requested",
     "model_family": "n/a",
     "status": "not_requested",
-    "summary": "This is a bounded governance mirror correction, not a standards or architecture change requiring Tier 1 alternate-family review.",
+    "summary": "This is a governance mirror closeout for an already merged downstream deterministic launchd implementation, not a standards or architecture change requiring Tier 1 alternate-family review.",
     "evidence": [
-      "docs/plans/issue-189-launchd-issue-ref-pdcar.md"
+      "docs/plans/issue-189-som-worker-launchd-closeout-pdcar.md"
     ]
   },
   "execution_handoff": {
     "session_agent": "Codex gpt-5.4",
     "execution_mode": "implementation_ready",
-    "approved_scope_summary": "Issue #189 may update active governance mirrors and issue-specific evidence so the launchd follow-up references the correct GitHub issue.",
-    "next_execution_step": "Run validation, commit, push, and open a PR for the issue-reference correction.",
+    "approved_scope_summary": "Issue #189 may update governance mirrors, the service runbook, and issue-specific evidence so the launchd follow-up is marked complete after downstream PR #483.",
+    "next_execution_step": "Run validation, commit, push, open a closeout PR, merge after checks, then comment on and close #189.",
     "blocked_on": []
   },
   "material_deviation_rules": [
-    "If launchd implementation work is needed, stop and use a separate implementation branch for #189.",
-    "If backlog validator semantics need to change, create a separate issue instead of expanding this cleanup.",
-    "If additional stale references are unrelated to the boot-start follow-up, leave them out of this slice."
+    "If downstream PR #483 is not merged or checks are not green, do not close #189.",
+    "If backlog validator semantics need to change, create a separate issue instead of expanding this closeout.",
+    "If a live LaunchAgent start is requested, keep it as operator runtime proof and do not start the MLX model from governance CI."
   ],
   "approved": true,
   "approved_by": [

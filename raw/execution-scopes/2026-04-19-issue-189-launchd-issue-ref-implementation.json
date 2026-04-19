@@ -1,6 +1,6 @@
 {
   "expected_execution_root": "{repo_root}",
-  "expected_branch": "fix/issue-189-launchd-issue-ref-20260419",
+  "expected_branch": "plan/issue-189-som-worker-launchd-closeout-scope-20260419",
   "execution_mode": "implementation_ready",
   "handoff_evidence": {
     "status": "accepted",
@@ -10,7 +10,8 @@
     "evidence_paths": [
       "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/189",
       "docs/plans/issue-189-structured-agent-cycle-plan.json",
-      "docs/plans/issue-189-launchd-issue-ref-pdcar.md"
+      "docs/plans/issue-189-som-worker-launchd-closeout-pdcar.md",
+      "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/pull/483"
     ],
     "active_exception_ref": null,
     "active_exception_expires_at": null
@@ -18,12 +19,12 @@
   "allowed_write_paths": [
     "OVERLORD_BACKLOG.md",
     "docs/PROGRESS.md",
-    "docs/plans/issue-189-launchd-issue-ref-pdcar.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/plans/issue-189-som-worker-launchd-closeout-pdcar.md",
     "docs/plans/issue-189-structured-agent-cycle-plan.json",
     "raw/execution-scopes/2026-04-19-issue-189-launchd-issue-ref-implementation.json",
-    "raw/validation/2026-04-19-issue-189-launchd-issue-ref.md",
-    "raw/closeouts/2026-04-14-society-of-minds-epic.md",
-    "raw/closeouts/2026-04-17-som-enforcement-drift-closeout-loop.md"
+    "raw/validation/2026-04-19-issue-189-som-worker-launchd.md",
+    "raw/closeouts/2026-04-19-issue-189-som-worker-launchd.md"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
