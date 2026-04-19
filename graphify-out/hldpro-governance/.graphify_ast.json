@@ -1020,49 +1020,49 @@
       "label": ".enabled()",
       "file_type": "code",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L33"
+      "source_location": "L36"
     },
     {
       "id": "governed_repos_expand_home",
       "label": "_expand_home()",
       "file_type": "code",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L37"
+      "source_location": "L40"
     },
     {
       "id": "governed_repos_load_registry",
       "label": "load_registry()",
       "file_type": "code",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L43"
+      "source_location": "L46"
     },
     {
       "id": "governed_repos_governed_repos",
       "label": "governed_repos()",
       "file_type": "code",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L51"
+      "source_location": "L54"
     },
     {
       "id": "governed_repos_repos_enabled_for",
       "label": "repos_enabled_for()",
       "file_type": "code",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L80"
+      "source_location": "L90"
     },
     {
       "id": "governed_repos_repo_names_enabled_for",
       "label": "repo_names_enabled_for()",
       "file_type": "code",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L84"
+      "source_location": "L94"
     },
     {
       "id": "governed_repos_repos_root",
       "label": "repos_root()",
       "file_type": "code",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L88"
+      "source_location": "L98"
     },
     {
       "id": "test_assert_execution_scope",
@@ -1457,6 +1457,118 @@
       "source_location": "L162"
     },
     {
+      "id": "check_org_repo_inventory",
+      "label": "check_org_repo_inventory.py",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "check_org_repo_inventory_orgrepo",
+      "label": "OrgRepo",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L27"
+    },
+    {
+      "id": "check_org_repo_inventory_inventorydrift",
+      "label": "InventoryDrift",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L38"
+    },
+    {
+      "id": "check_org_repo_inventory_inventorydrift_has_blocking_drift",
+      "label": ".has_blocking_drift()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L44"
+    },
+    {
+      "id": "check_org_repo_inventory_load_json",
+      "label": "_load_json()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L48"
+    },
+    {
+      "id": "check_org_repo_inventory_inventory_rows_from_payload",
+      "label": "_inventory_rows_from_payload()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L52"
+    },
+    {
+      "id": "check_org_repo_inventory_default_branch_name",
+      "label": "_default_branch_name()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L64"
+    },
+    {
+      "id": "check_org_repo_inventory_parse_inventory",
+      "label": "parse_inventory()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L74"
+    },
+    {
+      "id": "check_org_repo_inventory_load_inventory_file",
+      "label": "load_inventory_file()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L95"
+    },
+    {
+      "id": "check_org_repo_inventory_load_live_inventory",
+      "label": "load_live_inventory()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L99"
+    },
+    {
+      "id": "check_org_repo_inventory_compare_inventory",
+      "label": "compare_inventory()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L114"
+    },
+    {
+      "id": "check_org_repo_inventory_render_text",
+      "label": "render_text()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L154"
+    },
+    {
+      "id": "check_org_repo_inventory_render_markdown",
+      "label": "render_markdown()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L181"
+    },
+    {
+      "id": "check_org_repo_inventory_repo_list",
+      "label": "_repo_list()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L211"
+    },
+    {
+      "id": "check_org_repo_inventory_render_json",
+      "label": "render_json()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L218"
+    },
+    {
+      "id": "check_org_repo_inventory_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L232"
+    },
+    {
       "id": "test_workflow_local_coverage",
       "label": "test_workflow_local_coverage.py",
       "file_type": "code",
@@ -1700,6 +1812,195 @@
       "file_type": "code",
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L454"
+    },
+    {
+      "id": "test_check_org_repo_inventory",
+      "label": "test_check_org_repo_inventory.py",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_check_org_repo_inventory_testorgrepoinventory",
+      "label": "TestOrgRepoInventory",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L23"
+    },
+    {
+      "id": "test_check_org_repo_inventory_testorgrepoinventory_registry",
+      "label": "._registry()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L24"
+    },
+    {
+      "id": "test_check_org_repo_inventory_testorgrepoinventory_inventory",
+      "label": "._inventory()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L73"
+    },
+    {
+      "id": "test_check_org_repo_inventory_testorgrepoinventory_repo_row",
+      "label": "._repo_row()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L78"
+    },
+    {
+      "id": "test_check_org_repo_inventory_testorgrepoinventory_run",
+      "label": "._run()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L88"
+    },
+    {
+      "id": "test_check_org_repo_inventory_testorgrepoinventory_test_exact_active_inventory_passes",
+      "label": ".test_exact_active_inventory_passes()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L95"
+    },
+    {
+      "id": "test_check_org_repo_inventory_testorgrepoinventory_test_missing_active_repo_fails",
+      "label": ".test_missing_active_repo_fails()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L109"
+    },
+    {
+      "id": "test_check_org_repo_inventory_testorgrepoinventory_test_warn_only_reports_missing_active_repo_but_passes",
+      "label": ".test_warn_only_reports_missing_active_repo_but_passes()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L124"
+    },
+    {
+      "id": "test_check_org_repo_inventory_testorgrepoinventory_test_stale_registry_repo_fails",
+      "label": ".test_stale_registry_repo_fails()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L147"
+    },
+    {
+      "id": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_unregistered_repo_is_notice_not_blocker",
+      "label": ".test_archived_unregistered_repo_is_notice_not_blocker()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L159"
+    },
+    {
+      "id": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_fails_without_archived_lifecycle_classification",
+      "label": ".test_archived_registry_repo_fails_without_archived_lifecycle_classification()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L174"
+    },
+    {
+      "id": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_passes_with_archived_lifecycle_classification",
+      "label": ".test_archived_registry_repo_passes_with_archived_lifecycle_classification()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L189"
+    },
+    {
+      "id": "test_validate_governed_repos",
+      "label": "test_validate_governed_repos.py",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests",
+      "label": "GovernedReposValidationTests",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L65"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests_write_registry",
+      "label": ".write_registry()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L66"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
+      "label": ".assert_invalid()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L73"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests_test_valid_registry_classification_passes",
+      "label": ".test_valid_registry_classification_passes()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L77"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests_test_missing_classification_fails",
+      "label": ".test_missing_classification_fails()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L80"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests_test_extra_repository_field_fails",
+      "label": ".test_extra_repository_field_fails()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L85"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests_test_extra_classification_field_fails",
+      "label": ".test_extra_classification_field_fails()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L90"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests_test_missing_root_field_fails",
+      "label": ".test_missing_root_field_fails()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L95"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests_test_invalid_lifecycle_status_fails",
+      "label": ".test_invalid_lifecycle_status_fails()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L100"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests_test_invalid_governance_status_fails",
+      "label": ".test_invalid_governance_status_fails()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L105"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests_test_empty_issue_refs_fails",
+      "label": ".test_empty_issue_refs_fails()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L110"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests_test_bad_review_date_fails",
+      "label": ".test_bad_review_date_fails()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L115"
+    },
+    {
+      "id": "test_validate_governed_repos_governedreposvalidationtests_test_non_boolean_subsystem_value_fails",
+      "label": ".test_non_boolean_subsystem_value_fails()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L120"
     },
     {
       "id": "memory_integrity",
@@ -2553,42 +2854,42 @@
       "label": "fail()",
       "file_type": "code",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L36"
+      "source_location": "L71"
     },
     {
       "id": "validate_governed_repos_check",
       "label": "check()",
       "file_type": "code",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L41"
+      "source_location": "L76"
     },
     {
       "id": "validate_governed_repos_load_json",
       "label": "load_json()",
       "file_type": "code",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L46"
+      "source_location": "L81"
     },
     {
       "id": "validate_governed_repos_validate_registry_shape",
       "label": "validate_registry_shape()",
       "file_type": "code",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L55"
+      "source_location": "L90"
     },
     {
       "id": "validate_governed_repos_validate_graphify_reconciliation",
       "label": "validate_graphify_reconciliation()",
       "file_type": "code",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L104"
+      "source_location": "L206"
     },
     {
       "id": "validate_governed_repos_main",
       "label": "main()",
       "file_type": "code",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L127"
+      "source_location": "L229"
     },
     {
       "id": "test_validate_structured_agent_cycle_plan",
@@ -2813,6 +3114,76 @@
       "file_type": "code",
       "source_file": "scripts/overlord/check_workflow_local_coverage.py",
       "source_location": "L160"
+    },
+    {
+      "id": "validate_registry_surfaces",
+      "label": "validate_registry_surfaces.py",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "validate_registry_surfaces_fail",
+      "label": "fail()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L21"
+    },
+    {
+      "id": "validate_registry_surfaces_check",
+      "label": "check()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L26"
+    },
+    {
+      "id": "validate_registry_surfaces_read_text",
+      "label": "read_text()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L31"
+    },
+    {
+      "id": "validate_registry_surfaces_repos_for_static_checkout",
+      "label": "repos_for_static_checkout()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L35"
+    },
+    {
+      "id": "validate_registry_surfaces_validate_static_checkout_workflow",
+      "label": "validate_static_checkout_workflow()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L45"
+    },
+    {
+      "id": "validate_registry_surfaces_validate_runtime_registry_consumers",
+      "label": "validate_runtime_registry_consumers()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L58"
+    },
+    {
+      "id": "validate_registry_surfaces_validate_docs_surfaces",
+      "label": "validate_docs_surfaces()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L95"
+    },
+    {
+      "id": "validate_registry_surfaces_validate_subsystem_expectations",
+      "label": "validate_subsystem_expectations()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L111"
+    },
+    {
+      "id": "validate_registry_surfaces_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L128"
     },
     {
       "id": "render_github_issue_feed",
@@ -4957,6 +5328,125 @@
       "source_location": "L37"
     },
     {
+      "id": "test_hitl_relay_schema",
+      "label": "test_hitl_relay_schema.py",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_hitl_relay_schema_validator",
+      "label": "_validator()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L15"
+    },
+    {
+      "id": "test_hitl_relay_schema_load",
+      "label": "_load()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L21"
+    },
+    {
+      "id": "test_hitl_relay_schema_test_valid_hitl_relay_examples_pass",
+      "label": "test_valid_hitl_relay_examples_pass()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L25"
+    },
+    {
+      "id": "test_hitl_relay_schema_test_invalid_hitl_relay_examples_fail",
+      "label": "test_invalid_hitl_relay_examples_fail()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L34"
+    },
+    {
+      "id": "test_validate_hitl_relay",
+      "label": "test_validate_hitl_relay.py",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_validate_hitl_relay_load",
+      "label": "_load()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L19"
+    },
+    {
+      "id": "test_validate_hitl_relay_test_valid_examples_pass_policy_validation",
+      "label": "test_valid_examples_pass_policy_validation()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L23"
+    },
+    {
+      "id": "test_validate_hitl_relay_test_invalid_examples_fail_policy_validation",
+      "label": "test_invalid_examples_fail_policy_validation()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L30"
+    },
+    {
+      "id": "test_validate_hitl_relay_test_session_instruction_requires_matching_target_session",
+      "label": "test_session_instruction_requires_matching_target_session()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L38"
+    },
+    {
+      "id": "test_validate_hitl_relay_test_low_confidence_non_clarify_decision_fails_closed",
+      "label": "test_low_confidence_non_clarify_decision_fails_closed()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L46"
+    },
+    {
+      "id": "test_validate_hitl_relay_test_low_confidence_clarify_decision_passes_without_instruction",
+      "label": "test_low_confidence_clarify_decision_passes_without_instruction()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L54"
+    },
+    {
+      "id": "test_validate_hitl_relay_test_duplicate_reply_cannot_produce_instruction",
+      "label": "test_duplicate_reply_cannot_produce_instruction()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L64"
+    },
+    {
+      "id": "test_validate_hitl_relay_test_expired_reply_cannot_produce_instruction",
+      "label": "test_expired_reply_cannot_produce_instruction()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L72"
+    },
+    {
+      "id": "test_validate_hitl_relay_test_pii_external_channel_fails_closed",
+      "label": "test_pii_external_channel_fails_closed()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L80"
+    },
+    {
+      "id": "test_validate_hitl_relay_test_stale_session_requires_resume_packet",
+      "label": "test_stale_session_requires_resume_packet()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L90"
+    },
+    {
+      "id": "test_validate_hitl_relay_test_response_requires_notification_and_response_ids",
+      "label": "test_response_requires_notification_and_response_ids()",
+      "file_type": "code",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L98"
+    },
+    {
       "id": "validate",
       "label": "validate.py",
       "file_type": "code",
@@ -5531,6 +6021,146 @@
       "source_location": "L278"
     },
     {
+      "id": "validate_hitl_relay",
+      "label": "validate_hitl_relay.py",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "validate_hitl_relay_load_packet",
+      "label": "load_packet()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L22"
+    },
+    {
+      "id": "validate_hitl_relay_schema_validator",
+      "label": "_schema_validator()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L26"
+    },
+    {
+      "id": "validate_hitl_relay_validate_schema",
+      "label": "validate_schema()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L32"
+    },
+    {
+      "id": "validate_hitl_relay_packet_type",
+      "label": "_packet_type()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L37"
+    },
+    {
+      "id": "validate_hitl_relay_correlation",
+      "label": "_correlation()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L41"
+    },
+    {
+      "id": "validate_hitl_relay_session",
+      "label": "_session()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L46"
+    },
+    {
+      "id": "validate_hitl_relay_policy",
+      "label": "_policy()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L51"
+    },
+    {
+      "id": "validate_hitl_relay_operator_reply",
+      "label": "_operator_reply()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L56"
+    },
+    {
+      "id": "validate_hitl_relay_decision",
+      "label": "_decision()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L61"
+    },
+    {
+      "id": "validate_hitl_relay_instruction",
+      "label": "_instruction()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L66"
+    },
+    {
+      "id": "validate_hitl_relay_validate_policy_refs",
+      "label": "validate_policy_refs()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L71"
+    },
+    {
+      "id": "validate_hitl_relay_validate_correlation",
+      "label": "validate_correlation()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L83"
+    },
+    {
+      "id": "validate_hitl_relay_validate_operator_reply",
+      "label": "validate_operator_reply()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L96"
+    },
+    {
+      "id": "validate_hitl_relay_validate_pii_channel_policy",
+      "label": "validate_pii_channel_policy()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L113"
+    },
+    {
+      "id": "validate_hitl_relay_validate_normalized_decision",
+      "label": "validate_normalized_decision()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L124"
+    },
+    {
+      "id": "validate_hitl_relay_validate_instruction",
+      "label": "validate_instruction()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L142"
+    },
+    {
+      "id": "validate_hitl_relay_validate_resume",
+      "label": "validate_resume()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L161"
+    },
+    {
+      "id": "validate_hitl_relay_validate_hitl_packet",
+      "label": "validate_hitl_packet()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L170"
+    },
+    {
+      "id": "validate_hitl_relay_run_cli",
+      "label": "_run_cli()",
+      "file_type": "code",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L187"
+    },
+    {
       "id": "emit",
       "label": "emit.py",
       "file_type": "code",
@@ -5732,6 +6362,146 @@
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L374"
+    },
+    {
+      "id": "hitl_relay_queue",
+      "label": "hitl_relay_queue.py",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "hitl_relay_queue_queueresult",
+      "label": "QueueResult",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L38"
+    },
+    {
+      "id": "hitl_relay_queue_utc_now",
+      "label": "utc_now()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L46"
+    },
+    {
+      "id": "hitl_relay_queue_ensure_queue",
+      "label": "ensure_queue()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L50"
+    },
+    {
+      "id": "hitl_relay_queue_packet_uuid",
+      "label": "packet_uuid()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L55"
+    },
+    {
+      "id": "hitl_relay_queue_atomic_write_json",
+      "label": "atomic_write_json()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L59"
+    },
+    {
+      "id": "hitl_relay_queue_append_audit",
+      "label": "append_audit()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L67"
+    },
+    {
+      "id": "hitl_relay_queue_load_packet",
+      "label": "load_packet()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L74"
+    },
+    {
+      "id": "hitl_relay_queue_base_packet",
+      "label": "_base_packet()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L81"
+    },
+    {
+      "id": "hitl_relay_queue_build_request",
+      "label": "build_request()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L108"
+    },
+    {
+      "id": "hitl_relay_queue_enqueue_request",
+      "label": "enqueue_request()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L147"
+    },
+    {
+      "id": "hitl_relay_queue_process_response",
+      "label": "process_response()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L152"
+    },
+    {
+      "id": "hitl_relay_queue_build_response_packet",
+      "label": "_build_response_packet()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L244"
+    },
+    {
+      "id": "hitl_relay_queue_build_decision_packet",
+      "label": "_build_decision_packet()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L291"
+    },
+    {
+      "id": "hitl_relay_queue_build_instruction_packet",
+      "label": "_build_instruction_packet()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L307"
+    },
+    {
+      "id": "hitl_relay_queue_build_resume_packet",
+      "label": "_build_resume_packet()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L326"
+    },
+    {
+      "id": "hitl_relay_queue_validated_write",
+      "label": "_validated_write()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L346"
+    },
+    {
+      "id": "hitl_relay_queue_dead_letter",
+      "label": "_dead_letter()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L366"
+    },
+    {
+      "id": "hitl_relay_queue_replay_audit",
+      "label": "replay_audit()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L384"
+    },
+    {
+      "id": "hitl_relay_queue_run_cli",
+      "label": "_run_cli()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L400"
     },
     {
       "id": "test_self_learning",
@@ -6229,6 +6999,83 @@
       "file_type": "code",
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L85"
+    },
+    {
+      "id": "test_hitl_relay_queue",
+      "label": "test_hitl_relay_queue.py",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_hitl_relay_queue_request",
+      "label": "_request()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L15"
+    },
+    {
+      "id": "test_hitl_relay_queue_process",
+      "label": "_process()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L34"
+    },
+    {
+      "id": "test_hitl_relay_queue_test_local_cli_checkpoint_fixture_creates_valid_hitl_request",
+      "label": "test_local_cli_checkpoint_fixture_creates_valid_hitl_request()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L59"
+    },
+    {
+      "id": "test_hitl_relay_queue_test_valid_approval_response_produces_bounded_session_instruction",
+      "label": "test_valid_approval_response_produces_bounded_session_instruction()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L72"
+    },
+    {
+      "id": "test_hitl_relay_queue_test_request_changes_response_preserves_feedback_path_without_approval",
+      "label": "test_request_changes_response_preserves_feedback_path_without_approval()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L92"
+    },
+    {
+      "id": "test_hitl_relay_queue_test_ambiguous_response_produces_clarification_and_no_instruction",
+      "label": "test_ambiguous_response_produces_clarification_and_no_instruction()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L107"
+    },
+    {
+      "id": "test_hitl_relay_queue_test_stale_session_fixture_produces_resume_packet",
+      "label": "test_stale_session_fixture_produces_resume_packet()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L121"
+    },
+    {
+      "id": "test_hitl_relay_queue_test_invalid_packet_lands_in_dead_letter_with_validation_errors",
+      "label": "test_invalid_packet_lands_in_dead_letter_with_validation_errors()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L137"
+    },
+    {
+      "id": "test_hitl_relay_queue_test_expired_response_fails_closed_to_dead_letter",
+      "label": "test_expired_response_fails_closed_to_dead_letter()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L151"
+    },
+    {
+      "id": "test_hitl_relay_queue_test_replay_reconstructs_decision_path",
+      "label": "test_replay_reconstructs_decision_path()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L164"
     }
   ],
   "edges": [
@@ -9298,7 +10145,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L33",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -9307,7 +10154,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L37",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -9316,7 +10163,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L43",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -9325,7 +10172,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L51",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -9334,7 +10181,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L80",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -9343,7 +10190,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L84",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -9352,7 +10199,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L88",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -9361,7 +10208,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L52",
+      "source_location": "L55",
       "weight": 0.8
     },
     {
@@ -9370,7 +10217,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L61",
+      "source_location": "L68",
       "weight": 0.8
     },
     {
@@ -9379,7 +10226,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L81",
+      "source_location": "L91",
       "weight": 0.8
     },
     {
@@ -9388,7 +10235,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L81",
+      "source_location": "L91",
       "weight": 0.8
     },
     {
@@ -9397,7 +10244,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L85",
+      "source_location": "L95",
       "weight": 0.8
     },
     {
@@ -9406,7 +10253,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L89",
+      "source_location": "L99",
       "weight": 0.8
     },
     {
@@ -9415,7 +10262,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/governed_repos.py",
-      "source_location": "L93",
+      "source_location": "L103",
       "weight": 0.8
     },
     {
@@ -11210,6 +12057,375 @@
       "weight": 0.8
     },
     {
+      "source": "check_org_repo_inventory",
+      "target": "argparse",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "dataclasses",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "scripts_overlord_governed_repos",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_orgrepo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_inventorydrift",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory_inventorydrift",
+      "target": "check_org_repo_inventory_inventorydrift_has_blocking_drift",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_load_json",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_inventory_rows_from_payload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_default_branch_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_parse_inventory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_load_inventory_file",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_load_live_inventory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_compare_inventory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_render_text",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_render_markdown",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_repo_list",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_render_json",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L218",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory",
+      "target": "check_org_repo_inventory_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L232",
+      "weight": 1.0
+    },
+    {
+      "source": "check_org_repo_inventory_parse_inventory",
+      "target": "check_org_repo_inventory_inventory_rows_from_payload",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L76",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_parse_inventory",
+      "target": "check_org_repo_inventory_orgrepo",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L82",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_parse_inventory",
+      "target": "check_org_repo_inventory_default_branch_name",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L87",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_load_inventory_file",
+      "target": "check_org_repo_inventory_parse_inventory",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L96",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_load_inventory_file",
+      "target": "check_org_repo_inventory_load_json",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L96",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_load_live_inventory",
+      "target": "check_org_repo_inventory_parse_inventory",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L111",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_compare_inventory",
+      "target": "check_org_repo_inventory_inventorydrift",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L146",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_render_text",
+      "target": "check_org_repo_inventory_inventorydrift_has_blocking_drift",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L156",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_render_markdown",
+      "target": "check_org_repo_inventory_inventorydrift_has_blocking_drift",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L182",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_render_markdown",
+      "target": "check_org_repo_inventory_repo_list",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L191",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_render_json",
+      "target": "check_org_repo_inventory_inventorydrift_has_blocking_drift",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L225",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_main",
+      "target": "check_org_repo_inventory_load_live_inventory",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L250",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_main",
+      "target": "check_org_repo_inventory_load_inventory_file",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L250",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_main",
+      "target": "check_org_repo_inventory_compare_inventory",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L251",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_main",
+      "target": "check_org_repo_inventory_render_json",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L257",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_main",
+      "target": "check_org_repo_inventory_render_markdown",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L259",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_main",
+      "target": "check_org_repo_inventory_render_text",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L261",
+      "weight": 0.8
+    },
+    {
+      "source": "check_org_repo_inventory_main",
+      "target": "check_org_repo_inventory_inventorydrift_has_blocking_drift",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/check_org_repo_inventory.py",
+      "source_location": "L263",
+      "weight": 0.8
+    },
+    {
       "source": "test_workflow_local_coverage",
       "target": "json",
       "relation": "imports",
@@ -12008,6 +13224,717 @@
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L467",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory",
+      "target": "contextlib",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory",
+      "target": "importlib_util",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory",
+      "target": "io",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory",
+      "target": "tempfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory",
+      "target": "unittest",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_registry",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_inventory",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_repo_row",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_run",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_test_exact_active_inventory_passes",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_test_missing_active_repo_fails",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_test_warn_only_reports_missing_active_repo_but_passes",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_test_stale_registry_repo_fails",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L147",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_unregistered_repo_is_notice_not_blocker",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_fails_without_archived_lifecycle_classification",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L174",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_passes_with_archived_lifecycle_classification",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L189",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_exact_active_inventory_passes",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_registry",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L98",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_exact_active_inventory_passes",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_inventory",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L99",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_exact_active_inventory_passes",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_repo_row",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L101",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_exact_active_inventory_passes",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L104",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_missing_active_repo_fails",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_registry",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L112",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_missing_active_repo_fails",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_inventory",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L113",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_missing_active_repo_fails",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_repo_row",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L115",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_missing_active_repo_fails",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L118",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_warn_only_reports_missing_active_repo_but_passes",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_registry",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L127",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_warn_only_reports_missing_active_repo_but_passes",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_inventory",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L128",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_warn_only_reports_missing_active_repo_but_passes",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_repo_row",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L130",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_warn_only_reports_missing_active_repo_but_passes",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L133",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_stale_registry_repo_fails",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_registry",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L150",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_stale_registry_repo_fails",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_inventory",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L151",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_stale_registry_repo_fails",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_repo_row",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L151",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_stale_registry_repo_fails",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L153",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_unregistered_repo_is_notice_not_blocker",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_registry",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L162",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_unregistered_repo_is_notice_not_blocker",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_inventory",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L163",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_unregistered_repo_is_notice_not_blocker",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_repo_row",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L165",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_unregistered_repo_is_notice_not_blocker",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L168",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_fails_without_archived_lifecycle_classification",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_registry",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L177",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_fails_without_archived_lifecycle_classification",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_inventory",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L178",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_fails_without_archived_lifecycle_classification",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_repo_row",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L180",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_fails_without_archived_lifecycle_classification",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L183",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_passes_with_archived_lifecycle_classification",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_registry",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L192",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_passes_with_archived_lifecycle_classification",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_inventory",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L193",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_passes_with_archived_lifecycle_classification",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_repo_row",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L195",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_passes_with_archived_lifecycle_classification",
+      "target": "test_check_org_repo_inventory_testorgrepoinventory_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
+      "source_location": "L198",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_governed_repos",
+      "target": "copy",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos",
+      "target": "tempfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos",
+      "target": "unittest",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos",
+      "target": "scripts_overlord_validate_governed_repos",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos",
+      "target": "test_validate_governed_repos_governedreposvalidationtests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_write_registry",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_test_valid_registry_classification_passes",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_test_missing_classification_fails",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_test_extra_repository_field_fails",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_test_extra_classification_field_fails",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_test_missing_root_field_fails",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_test_invalid_lifecycle_status_fails",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_test_invalid_governance_status_fails",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_test_empty_issue_refs_fails",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_test_bad_review_date_fails",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_test_non_boolean_subsystem_value_fails",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_write_registry",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L75",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests_test_valid_registry_classification_passes",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_write_registry",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L78",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests_test_missing_classification_fails",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L83",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests_test_extra_repository_field_fails",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L88",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests_test_extra_classification_field_fails",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L93",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests_test_missing_root_field_fails",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L98",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests_test_invalid_lifecycle_status_fails",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L103",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests_test_invalid_governance_status_fails",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L108",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests_test_empty_issue_refs_fails",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L113",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests_test_bad_review_date_fails",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L118",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_governed_repos_governedreposvalidationtests_test_non_boolean_subsystem_value_fails",
+      "target": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_governed_repos.py",
+      "source_location": "L123",
       "weight": 0.8
     },
     {
@@ -14824,7 +16751,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L36",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -14833,7 +16760,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L41",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -14842,7 +16769,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L46",
+      "source_location": "L81",
       "weight": 1.0
     },
     {
@@ -14851,7 +16778,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L55",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -14860,7 +16787,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L104",
+      "source_location": "L206",
       "weight": 1.0
     },
     {
@@ -14869,7 +16796,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L127",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -14878,7 +16805,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L43",
+      "source_location": "L78",
       "weight": 0.8
     },
     {
@@ -14887,7 +16814,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L50",
+      "source_location": "L85",
       "weight": 0.8
     },
     {
@@ -14896,7 +16823,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L51",
+      "source_location": "L86",
       "weight": 0.8
     },
     {
@@ -14905,7 +16832,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L57",
+      "source_location": "L93",
       "weight": 0.8
     },
     {
@@ -14914,7 +16841,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L105",
+      "source_location": "L207",
       "weight": 0.8
     },
     {
@@ -14923,7 +16850,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L107",
+      "source_location": "L209",
       "weight": 0.8
     },
     {
@@ -14932,7 +16859,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L135",
+      "source_location": "L237",
       "weight": 0.8
     },
     {
@@ -14941,7 +16868,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/validate_governed_repos.py",
-      "source_location": "L136",
+      "source_location": "L238",
       "weight": 0.8
     },
     {
@@ -15590,6 +17517,231 @@
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/check_workflow_local_coverage.py",
       "source_location": "L166",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_registry_surfaces",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_registry_surfaces",
+      "target": "scripts_overlord_governed_repos",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_registry_surfaces",
+      "target": "validate_registry_surfaces_fail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_registry_surfaces",
+      "target": "validate_registry_surfaces_check",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_registry_surfaces",
+      "target": "validate_registry_surfaces_read_text",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_registry_surfaces",
+      "target": "validate_registry_surfaces_repos_for_static_checkout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_registry_surfaces",
+      "target": "validate_registry_surfaces_validate_static_checkout_workflow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_registry_surfaces",
+      "target": "validate_registry_surfaces_validate_runtime_registry_consumers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_registry_surfaces",
+      "target": "validate_registry_surfaces_validate_docs_surfaces",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_registry_surfaces",
+      "target": "validate_registry_surfaces_validate_subsystem_expectations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_registry_surfaces",
+      "target": "validate_registry_surfaces_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_registry_surfaces_check",
+      "target": "validate_registry_surfaces_fail",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L28",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces_validate_static_checkout_workflow",
+      "target": "validate_registry_surfaces_read_text",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L46",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces_validate_static_checkout_workflow",
+      "target": "validate_registry_surfaces_repos_for_static_checkout",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L47",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces_validate_static_checkout_workflow",
+      "target": "validate_registry_surfaces_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L48",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces_validate_runtime_registry_consumers",
+      "target": "validate_registry_surfaces_read_text",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L59",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces_validate_runtime_registry_consumers",
+      "target": "validate_registry_surfaces_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L60",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces_validate_docs_surfaces",
+      "target": "validate_registry_surfaces_read_text",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L96",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces_validate_docs_surfaces",
+      "target": "validate_registry_surfaces_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L98",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces_validate_subsystem_expectations",
+      "target": "validate_registry_surfaces_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L122",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces_main",
+      "target": "validate_registry_surfaces_validate_static_checkout_workflow",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L129",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces_main",
+      "target": "validate_registry_surfaces_validate_runtime_registry_consumers",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L131",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces_main",
+      "target": "validate_registry_surfaces_validate_docs_surfaces",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L132",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_registry_surfaces_main",
+      "target": "validate_registry_surfaces_validate_subsystem_expectations",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_registry_surfaces.py",
+      "source_location": "L133",
       "weight": 0.8
     },
     {
@@ -20759,6 +22911,321 @@
       "weight": 0.8
     },
     {
+      "source": "test_hitl_relay_schema",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_schema",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_schema",
+      "target": "jsonschema",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_schema",
+      "target": "test_hitl_relay_schema_validator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_schema",
+      "target": "test_hitl_relay_schema_load",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_schema",
+      "target": "test_hitl_relay_schema_test_valid_hitl_relay_examples_pass",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_schema",
+      "target": "test_hitl_relay_schema_test_invalid_hitl_relay_examples_fail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_schema_test_valid_hitl_relay_examples_pass",
+      "target": "test_hitl_relay_schema_validator",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L26",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_schema_test_valid_hitl_relay_examples_pass",
+      "target": "test_hitl_relay_schema_load",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L30",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_schema_test_invalid_hitl_relay_examples_fail",
+      "target": "test_hitl_relay_schema_validator",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L35",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_schema_test_invalid_hitl_relay_examples_fail",
+      "target": "test_hitl_relay_schema_load",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/test_hitl_relay_schema.py",
+      "source_location": "L39",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "copy",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "validate_hitl_relay",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "test_validate_hitl_relay_load",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "test_validate_hitl_relay_test_valid_examples_pass_policy_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "test_validate_hitl_relay_test_invalid_examples_fail_policy_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "test_validate_hitl_relay_test_session_instruction_requires_matching_target_session",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "test_validate_hitl_relay_test_low_confidence_non_clarify_decision_fails_closed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "test_validate_hitl_relay_test_low_confidence_clarify_decision_passes_without_instruction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "test_validate_hitl_relay_test_duplicate_reply_cannot_produce_instruction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "test_validate_hitl_relay_test_expired_reply_cannot_produce_instruction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "test_validate_hitl_relay_test_pii_external_channel_fails_closed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "test_validate_hitl_relay_test_stale_session_requires_resume_packet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay",
+      "target": "test_validate_hitl_relay_test_response_requires_notification_and_response_ids",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "test_validate_hitl_relay_test_session_instruction_requires_matching_target_session",
+      "target": "test_validate_hitl_relay_load",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L39",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_hitl_relay_test_low_confidence_non_clarify_decision_fails_closed",
+      "target": "test_validate_hitl_relay_load",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L47",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_hitl_relay_test_low_confidence_clarify_decision_passes_without_instruction",
+      "target": "test_validate_hitl_relay_load",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L55",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_hitl_relay_test_duplicate_reply_cannot_produce_instruction",
+      "target": "test_validate_hitl_relay_load",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L65",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_hitl_relay_test_expired_reply_cannot_produce_instruction",
+      "target": "test_validate_hitl_relay_load",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L73",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_hitl_relay_test_pii_external_channel_fails_closed",
+      "target": "test_validate_hitl_relay_load",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L81",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_hitl_relay_test_stale_session_requires_resume_packet",
+      "target": "test_validate_hitl_relay_load",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L91",
+      "weight": 0.8
+    },
+    {
+      "source": "test_validate_hitl_relay_test_response_requires_notification_and_response_ids",
+      "target": "test_validate_hitl_relay_load",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/test_validate_hitl_relay.py",
+      "source_location": "L99",
+      "weight": 0.8
+    },
+    {
       "source": "validate",
       "target": "argparse",
       "relation": "imports",
@@ -22091,6 +24558,402 @@
       "weight": 1.0
     },
     {
+      "source": "validate_hitl_relay",
+      "target": "argparse",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "jsonschema",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_load_packet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_schema_validator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_validate_schema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_packet_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_correlation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_session",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_policy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_operator_reply",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_decision",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_instruction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_validate_policy_refs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_validate_correlation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_validate_operator_reply",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_validate_pii_channel_policy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_validate_normalized_decision",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_validate_instruction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_validate_resume",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L161",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_validate_hitl_packet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay",
+      "target": "validate_hitl_relay_run_cli",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "validate_hitl_relay_validate_schema",
+      "target": "validate_hitl_relay_schema_validator",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L33",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_policy_refs",
+      "target": "validate_hitl_relay_policy",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L72",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_policy_refs",
+      "target": "validate_hitl_relay_packet_type",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L77",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_correlation",
+      "target": "validate_hitl_relay_packet_type",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L84",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_correlation",
+      "target": "validate_hitl_relay_correlation",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L85",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_operator_reply",
+      "target": "validate_hitl_relay_packet_type",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L97",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_operator_reply",
+      "target": "validate_hitl_relay_operator_reply",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L101",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_pii_channel_policy",
+      "target": "validate_hitl_relay_policy",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L114",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_pii_channel_policy",
+      "target": "validate_hitl_relay_operator_reply",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L115",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_normalized_decision",
+      "target": "validate_hitl_relay_packet_type",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L125",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_normalized_decision",
+      "target": "validate_hitl_relay_decision",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L129",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_normalized_decision",
+      "target": "validate_hitl_relay_operator_reply",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L137",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_instruction",
+      "target": "validate_hitl_relay_packet_type",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L143",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_instruction",
+      "target": "validate_hitl_relay_session",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L146",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_instruction",
+      "target": "validate_hitl_relay_decision",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L147",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_instruction",
+      "target": "validate_hitl_relay_instruction",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L148",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_resume",
+      "target": "validate_hitl_relay_packet_type",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L162",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_validate_resume",
+      "target": "validate_hitl_relay_session",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L164",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_run_cli",
+      "target": "validate_hitl_relay_load_packet",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L195",
+      "weight": 0.8
+    },
+    {
+      "source": "validate_hitl_relay_run_cli",
+      "target": "validate_hitl_relay_validate_hitl_packet",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/packet/validate_hitl_relay.py",
+      "source_location": "L201",
+      "weight": 0.8
+    },
+    {
       "source": "emit",
       "target": "sys",
       "relation": "imports",
@@ -22889,6 +25752,600 @@
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L426",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "argparse",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "uuid",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "dataclasses",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "datetime",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "validate_hitl_relay",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_queueresult",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_utc_now",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_ensure_queue",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_packet_uuid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_atomic_write_json",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_append_audit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_load_packet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_base_packet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_build_request",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_enqueue_request",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L147",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_process_response",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_build_response_packet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L244",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_build_decision_packet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L291",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_build_instruction_packet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L307",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_build_resume_packet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L326",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_validated_write",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L346",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_dead_letter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L366",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_replay_audit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L384",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue",
+      "target": "hitl_relay_queue_run_cli",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L400",
+      "weight": 1.0
+    },
+    {
+      "source": "hitl_relay_queue_append_audit",
+      "target": "hitl_relay_queue_utc_now",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L71",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_base_packet",
+      "target": "hitl_relay_queue_packet_uuid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L92",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_base_packet",
+      "target": "hitl_relay_queue_utc_now",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L94",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_build_request",
+      "target": "hitl_relay_queue_base_packet",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L121",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_build_request",
+      "target": "hitl_relay_queue_packet_uuid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L131",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_enqueue_request",
+      "target": "hitl_relay_queue_ensure_queue",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L148",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_enqueue_request",
+      "target": "hitl_relay_queue_validated_write",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L149",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_process_response",
+      "target": "hitl_relay_queue_ensure_queue",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L169",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_process_response",
+      "target": "hitl_relay_queue_build_response_packet",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L170",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_process_response",
+      "target": "hitl_relay_queue_validated_write",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L183",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_process_response",
+      "target": "hitl_relay_queue_build_decision_packet",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L191",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_process_response",
+      "target": "hitl_relay_queue_append_audit",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L201",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_process_response",
+      "target": "hitl_relay_queue_queueresult",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L211",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_process_response",
+      "target": "hitl_relay_queue_build_resume_packet",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L214",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_process_response",
+      "target": "hitl_relay_queue_dead_letter",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L223",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_process_response",
+      "target": "hitl_relay_queue_build_instruction_packet",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L229",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_build_response_packet",
+      "target": "hitl_relay_queue_base_packet",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L268",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_build_response_packet",
+      "target": "hitl_relay_queue_packet_uuid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L274",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_build_response_packet",
+      "target": "hitl_relay_queue_utc_now",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L280",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_build_decision_packet",
+      "target": "hitl_relay_queue_packet_uuid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L294",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_build_decision_packet",
+      "target": "hitl_relay_queue_utc_now",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L295",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_build_instruction_packet",
+      "target": "hitl_relay_queue_packet_uuid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L311",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_build_instruction_packet",
+      "target": "hitl_relay_queue_utc_now",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L312",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_build_resume_packet",
+      "target": "hitl_relay_queue_packet_uuid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L333",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_build_resume_packet",
+      "target": "hitl_relay_queue_utc_now",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L334",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_validated_write",
+      "target": "hitl_relay_queue_dead_letter",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L349",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_validated_write",
+      "target": "hitl_relay_queue_atomic_write_json",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L350",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_validated_write",
+      "target": "hitl_relay_queue_append_audit",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L351",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_validated_write",
+      "target": "hitl_relay_queue_queueresult",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L363",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_dead_letter",
+      "target": "hitl_relay_queue_packet_uuid",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L367",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_dead_letter",
+      "target": "hitl_relay_queue_utc_now",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L367",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_dead_letter",
+      "target": "hitl_relay_queue_atomic_write_json",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L369",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_dead_letter",
+      "target": "hitl_relay_queue_append_audit",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L370",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_dead_letter",
+      "target": "hitl_relay_queue_queueresult",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L381",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_run_cli",
+      "target": "hitl_relay_queue_enqueue_request",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L422",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_run_cli",
+      "target": "hitl_relay_queue_load_packet",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L422",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_run_cli",
+      "target": "hitl_relay_queue_process_response",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L424",
+      "weight": 0.8
+    },
+    {
+      "source": "hitl_relay_queue_run_cli",
+      "target": "hitl_relay_queue_replay_audit",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/hitl_relay_queue.py",
+      "source_location": "L436",
       "weight": 0.8
     },
     {
@@ -24491,6 +27948,276 @@
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L88",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "tempfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "hitl_relay_queue",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "test_hitl_relay_queue_request",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "test_hitl_relay_queue_process",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "test_hitl_relay_queue_test_local_cli_checkpoint_fixture_creates_valid_hitl_request",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "test_hitl_relay_queue_test_valid_approval_response_produces_bounded_session_instruction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "test_hitl_relay_queue_test_request_changes_response_preserves_feedback_path_without_approval",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "test_hitl_relay_queue_test_ambiguous_response_produces_clarification_and_no_instruction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "test_hitl_relay_queue_test_stale_session_fixture_produces_resume_packet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "test_hitl_relay_queue_test_invalid_packet_lands_in_dead_letter_with_validation_errors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "test_hitl_relay_queue_test_expired_response_fails_closed_to_dead_letter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L151",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue",
+      "target": "test_hitl_relay_queue_test_replay_reconstructs_decision_path",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "test_hitl_relay_queue_test_local_cli_checkpoint_fixture_creates_valid_hitl_request",
+      "target": "test_hitl_relay_queue_request",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L62",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_valid_approval_response_produces_bounded_session_instruction",
+      "target": "test_hitl_relay_queue_request",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L75",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_valid_approval_response_produces_bounded_session_instruction",
+      "target": "test_hitl_relay_queue_process",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L78",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_request_changes_response_preserves_feedback_path_without_approval",
+      "target": "test_hitl_relay_queue_request",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L95",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_request_changes_response_preserves_feedback_path_without_approval",
+      "target": "test_hitl_relay_queue_process",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L97",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_ambiguous_response_produces_clarification_and_no_instruction",
+      "target": "test_hitl_relay_queue_request",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L110",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_ambiguous_response_produces_clarification_and_no_instruction",
+      "target": "test_hitl_relay_queue_process",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L112",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_stale_session_fixture_produces_resume_packet",
+      "target": "test_hitl_relay_queue_request",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L124",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_stale_session_fixture_produces_resume_packet",
+      "target": "test_hitl_relay_queue_process",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L126",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_invalid_packet_lands_in_dead_letter_with_validation_errors",
+      "target": "test_hitl_relay_queue_request",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L140",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_invalid_packet_lands_in_dead_letter_with_validation_errors",
+      "target": "test_hitl_relay_queue_process",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L142",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_expired_response_fails_closed_to_dead_letter",
+      "target": "test_hitl_relay_queue_request",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L154",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_expired_response_fails_closed_to_dead_letter",
+      "target": "test_hitl_relay_queue_process",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L156",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_replay_reconstructs_decision_path",
+      "target": "test_hitl_relay_queue_request",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L167",
+      "weight": 0.8
+    },
+    {
+      "source": "test_hitl_relay_queue_test_replay_reconstructs_decision_path",
+      "target": "test_hitl_relay_queue_process",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
+      "source_location": "L169",
       "weight": 0.8
     }
   ],

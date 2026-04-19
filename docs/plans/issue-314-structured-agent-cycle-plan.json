@@ -1,0 +1,119 @@
+{
+  "session_id": "session-20260419-issue-314-final-org-e2e-closeout",
+  "issue_number": 314,
+  "objective": "Perform the final #298 e2e closeout gate after active org repository intake and registry-surface reconciliation.",
+  "tier": 2,
+  "scope_boundary": [
+    "Run live org inventory drift detection.",
+    "Run registry schema/classification validation.",
+    "Run graphify target reconciliation and registry-surface validation.",
+    "Run subsystem selection checks for sweep, metrics, compendium, raw-feed, memory, Codex ingestion, and code governance.",
+    "Run compendium generation/check, memory integrity, metrics smoke, branch/ruleset evidence, Stage 6 closeout hook, and final local/CI validation.",
+    "Update #298/#314 progress and backlog mirrors only after final e2e evidence exists."
+  ],
+  "out_of_scope": [
+    "Editing downstream repositories.",
+    "Closing downstream blockers seek-and-ponder#23 or EmailAssistant#1.",
+    "Enabling EmailAssistant subsystems before repo-local bootstrap completes."
+  ],
+  "research_summary": "#309 added live inventory drift detection, #310 added classification schema, #311 intook seek-and-ponder, #312 classified EmailAssistant as adoption_blocked with downstream blocker EmailAssistant#1, and #313 reconciled registry-dependent workflow/document/helper surfaces. #314 is the final evidence and closeout slice for #298.",
+  "research_artifacts": [
+    "GitHub issue #298",
+    "GitHub issue #314",
+    "PR #315",
+    "PR #317",
+    "PR #318",
+    "PR #319",
+    "PR #320",
+    "docs/governed_repos.json",
+    "docs/graphify_targets.json",
+    "raw/closeouts/2026-04-19-issue-298-org-repo-governance-coverage.md",
+    "raw/validation/2026-04-19-issue-314-final-org-e2e-closeout.md"
+  ],
+  "sprints": [
+    {
+      "name": "Final Evidence Matrix",
+      "goal": "Prove active org repo coverage and registry-dependent governance paths pass.",
+      "tasks": [
+        "Run live inventory, registry, graphify, registry-surface, compendium, memory, metrics, branch/ruleset, and selection checks.",
+        "Regenerate stale org governance compendium.",
+        "Record exact command outcomes."
+      ],
+      "acceptance_criteria": [
+        "Final AC: live GitHub org inventory and registry agree on active repo coverage.",
+        "Final AC: registry schema/classification validation passes.",
+        "Final AC: graphify/sweep/metrics/compendium/raw-feed/memory/Codex selection paths pass or have accepted linked deferrals.",
+        "Final AC: seek-and-ponder and EmailAssistant have explicit registry classifications."
+      ],
+      "file_paths": [
+        "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+        "raw/validation/2026-04-19-issue-314-final-org-e2e-closeout.md"
+      ]
+    },
+    {
+      "name": "Stage 6 Closeout",
+      "goal": "Write closeout evidence and update governance status mirrors.",
+      "tasks": [
+        "Create Stage 6 closeout for #298/#314.",
+        "Run hooks/closeout-hook.sh.",
+        "Move #298 and #314 to Done mirrors after final e2e proof.",
+        "Keep downstream blockers linked."
+      ],
+      "acceptance_criteria": [
+        "Final AC: Stage 6 closeout exists and cites exact command output.",
+        "Final AC: #298 is not marked done until final e2e gate passes.",
+        "Final AC: Local CI Gate and GitHub PR checks pass before merge."
+      ],
+      "file_paths": [
+        "raw/closeouts/2026-04-19-issue-298-org-repo-governance-coverage.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "local final matrix",
+      "role": "final-e2e-gate",
+      "focus": "Command-backed final closeout evidence.",
+      "status": "accepted",
+      "summary": "Final gate evidence recorded in raw/validation and Stage 6 closeout.",
+      "evidence": [
+        "raw/validation/2026-04-19-issue-314-final-org-e2e-closeout.md",
+        "raw/closeouts/2026-04-19-issue-298-org-repo-governance-coverage.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Codex local validation and prior subagent reviews",
+    "model_family": "gpt",
+    "status": "accepted",
+    "summary": "Prior #311-#313 read-only reviews and final local e2e matrix support closeout.",
+    "evidence": [
+      "raw/cross-review/2026-04-19-issue-311-claude-review.md",
+      "raw/cross-review/2026-04-19-issue-312-emailassistant-review.md",
+      "raw/cross-review/2026-04-19-issue-313-registry-surface-review.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #314 may add final evidence, closeout, regenerated compendium, and status mirrors. It may not edit downstream repos.",
+    "next_execution_step": "Run closeout hook, final validation, PR, and merge.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If live org inventory drifts, stop and create issue-backed classification work.",
+    "If compendium or graph artifacts are stale, regenerate them in this closeout slice.",
+    "If downstream repo changes are needed, stop and create downstream issue-backed work."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #314",
+    "Parent epic #298",
+    "operator instruction: follow repo rules, no HITL, e2e testing as final AC",
+    "raw/exceptions/2026-04-19-issue-314-same-family-final-closeout.md"
+  ],
+  "approved_at": "2026-04-19T00:55:00Z"
+}

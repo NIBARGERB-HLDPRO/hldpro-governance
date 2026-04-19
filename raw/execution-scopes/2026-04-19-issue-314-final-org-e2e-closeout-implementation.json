@@ -1,0 +1,76 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-314-final-org-e2e-closeout-20260419",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T00:55:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-314-structured-agent-cycle-plan.json",
+      "docs/plans/issue-314-final-org-e2e-closeout-pdcar.md",
+      "raw/exceptions/2026-04-19-issue-314-same-family-final-closeout.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-19-issue-314-same-family-final-closeout.md",
+    "active_exception_expires_at": "2026-04-20T00:55:00Z"
+  },
+  "allowed_write_paths": [
+    "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+    "docs/plans/issue-314-structured-agent-cycle-plan.json",
+    "docs/plans/issue-314-final-org-e2e-closeout-pdcar.md",
+    "raw/exceptions/2026-04-19-issue-314-same-family-final-closeout.md",
+    "raw/execution-scopes/2026-04-19-issue-314-final-org-e2e-closeout-implementation.json",
+    "raw/validation/2026-04-19-issue-314-final-org-e2e-closeout.md",
+    "raw/closeouts/2026-04-19-issue-298-org-repo-governance-coverage.md",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "graphify-out/hldpro-governance/",
+    "wiki/hldpro/",
+    "wiki/index.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout has unrelated local work and must not be edited by issue #314."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+      "reason": "Downstream EmailAssistant work remains blocked behind EmailAssistant#1."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Downstream seek-and-ponder follow-up remains blocked behind seek-and-ponder#23."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Existing governed repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Existing governed repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Existing governed repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Existing governed repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Existing governed repo remains out of scope."
+    }
+  ]
+}
