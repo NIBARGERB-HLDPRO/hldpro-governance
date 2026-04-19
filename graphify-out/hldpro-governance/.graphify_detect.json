@@ -92,6 +92,10 @@
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-176-asc-exemption-reconcile/metrics/graphify-evals/2026-04-09-graphify-vs-search.md",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-176-asc-exemption-reconcile/metrics/pilot/issue-231-e2e-pilot.md",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-176-asc-exemption-reconcile/metrics/graphify-usage/README.md",
+      "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-176-asc-exemption-reconcile/cache/local-ci-gate/reports/20260419T032038Z-hldpro-governance-git/changed-files.txt",
+      "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-176-asc-exemption-reconcile/cache/local-ci-gate/reports/20260419T032038Z-hldpro-governance-git/local-ci-20260419T032039Z.txt",
+      "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-176-asc-exemption-reconcile/cache/local-ci-gate/reports/20260419T031940Z-hldpro-governance-git/local-ci-20260419T031940Z.txt",
+      "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-176-asc-exemption-reconcile/cache/local-ci-gate/reports/20260419T031940Z-hldpro-governance-git/changed-files.txt",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-176-asc-exemption-reconcile/agents/overlord-sweep.md",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-176-asc-exemption-reconcile/agents/verify-completion.md",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-176-asc-exemption-reconcile/agents/overlord.md",
@@ -1604,10 +1608,10 @@
     "paper": [],
     "image": []
   },
-  "total_files": 1597,
-  "total_words": 388022,
+  "total_files": 1601,
+  "total_words": 388454,
   "needs_graph": true,
-  "warning": "Large corpus: 1597 files \u00b7 ~388,022 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
+  "warning": "Large corpus: 1601 files \u00b7 ~388,454 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
   "skipped_sensitive": [],
   "graphifyignore_patterns": 0
 }
