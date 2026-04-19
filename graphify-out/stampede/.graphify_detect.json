@@ -1,0 +1,19 @@
+{
+  "files": {
+    "code": [],
+    "document": [
+      "/private/tmp/stampede-graph.k99IED/Stampede/Production_Spec_v0.1.1.md",
+      "/private/tmp/stampede-graph.k99IED/Stampede/CHANGELOG_v0_1_to_v0_1_1.md",
+      "/private/tmp/stampede-graph.k99IED/Stampede/docs/exception-register.md",
+      "/private/tmp/stampede-graph.k99IED/Stampede/docs/PROGRESS.md"
+    ],
+    "paper": [],
+    "image": []
+  },
+  "total_files": 4,
+  "total_words": 1717,
+  "needs_graph": false,
+  "warning": "Corpus is ~1,717 words - fits in a single context window. You may not need a graph.",
+  "skipped_sensitive": [],
+  "graphifyignore_patterns": 0
+}

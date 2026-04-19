@@ -1,0 +1,74 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "codex/issue-359-stampede-overlord-enrollment",
+  "execution_mode": "implementation",
+  "allowed_write_paths": [
+    ".github/workflows/overlord-nightly-cleanup.yml",
+    ".github/workflows/overlord-sweep.yml",
+    "README.md",
+    "STANDARDS.md",
+    "docs/governed_repos.json",
+    "docs/graphify_targets.json",
+    "graphify-out/stampede/.graphify_ast.json",
+    "graphify-out/stampede/.graphify_detect.json",
+    "graphify-out/stampede/.graphify_summary.json",
+    "graphify-out/stampede/GRAPH_REPORT.md",
+    "graphify-out/stampede/community-labels.json",
+    "graphify-out/stampede/graph.json",
+    "raw/exceptions/2026-04-19-issue-359-same-family-implementation.md",
+    "raw/execution-scopes/2026-04-19-issue-359-stampede-overlord-enrollment-implementation.json",
+    "raw/validation/2026-04-19-issue-359-stampede-overlord-enrollment.md",
+    "wiki/index.md",
+    "wiki/stampede/index.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/PHASE0",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/PHASE0",
+      "reason": "Stampede downstream repo has separate open PR/review activity; issue #359 edits only hldpro-governance registry and workflow surfaces."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Stampede local checkout path may be created or renamed separately; this implementation does not edit downstream source files."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "LAM may have unrelated active work; issue #359 does not edit downstream repos."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "AIS may have unrelated active work; issue #359 does not edit downstream repos."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Knocktracker may have unrelated active work; issue #359 does not edit downstream repos."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "HealthcarePlatform may have unrelated active work; issue #359 does not edit downstream repos."
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T19:54:09Z",
+    "evidence_paths": [
+      "docs/plans/issue-359-stampede-overlord-intake-pdcar.md",
+      "docs/plans/issue-359-structured-agent-cycle-plan.json",
+      "docs/runbooks/org-repo-intake.md",
+      "raw/exceptions/2026-04-19-issue-359-same-family-implementation.md",
+      "raw/execution-scopes/2026-04-19-issue-359-stampede-overlord-intake-planning.json",
+      "raw/validation/2026-04-19-issue-359-stampede-overlord-enrollment.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-19-issue-359-same-family-implementation.md",
+    "active_exception_expires_at": "2026-04-26T00:00:00Z"
+  }
+}

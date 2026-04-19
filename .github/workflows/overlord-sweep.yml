@@ -70,6 +70,14 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
 
+      - name: Checkout Stampede
+        uses: actions/checkout@v6
+        with:
+          repository: NIBARGERB-HLDPRO/Stampede
+          path: repos/Stampede
+          fetch-depth: 0
+          token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
+
       - name: Validate codex and agent model pins
         run: |
           python3 .github/scripts/check_codex_model_pins.py

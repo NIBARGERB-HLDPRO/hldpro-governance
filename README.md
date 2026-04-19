@@ -25,6 +25,9 @@ GitHub Issues are the execution backlog/system of record for governance work. `O
 | HealthcarePlatform | Monorepo (backend + frontend), HIPAA | Full + HIPAA (zero-fail) | Full + PentAGI + HIPAA |
 | local-ai-machine | AI/ML infrastructure | Full (lane-based + session locks) | Baseline |
 | knocktracker | Field operations app | Standard (rules + CI) | Baseline |
+| seek-and-ponder | Faith AI product repo | Full | Full + PentAGI |
+| EmailAssistant | Municipal email assistant | Full, adoption blocked pending EmailAssistant#1 | Full + PentAGI |
+| Stampede | Phase0 product repo | Standard | Baseline |
 | ASC-Evaluator | Knowledge repo (minimal graphify pointer/hook only) | Exempt + graphify pointer pattern | Exempt |
 
 ## Repository Structure

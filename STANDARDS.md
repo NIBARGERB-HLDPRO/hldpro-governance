@@ -184,6 +184,7 @@ Each repo has a security tier that determines which security artifacts the overl
 | knocktracker | Field operations app | Standard (rules + CI) | Baseline |
 | seek-and-ponder | Faith AI product repo | Full | Full + PentAGI |
 | EmailAssistant | Municipal email assistant | Full, adoption blocked pending EmailAssistant#1 | Full + PentAGI |
+| Stampede | Phase0 product repo | Standard | Baseline |
 | ASC-Evaluator | Knowledge repo (no code) | Exempt from code governance | Exempt |
 
 > **hldpro-governance hook path note:** Product repos store hooks under `.claude/hooks/` (local-only, gitignored). hldpro-governance stores its committed hooks under `hooks/` at repo root (checked in, enforced repo-wide). Both satisfy the Required Governance hook contract — the difference is scope: local session vs. repo-wide enforcement. Hook *scripts* (e.g. `hooks/pre-session-context.sh`) are committed for repo-wide discoverability; the local `settings.json` that wires them into Claude Code sessions is gitignored and set up per-developer.

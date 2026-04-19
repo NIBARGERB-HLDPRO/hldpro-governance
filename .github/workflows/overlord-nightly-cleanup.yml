@@ -91,6 +91,15 @@ jobs:
           token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
+      - name: Checkout Stampede
+        if: steps.local_time_guard.outputs.run_cleanup == 'true'
+        uses: actions/checkout@v6
+        with:
+          repository: NIBARGERB-HLDPRO/Stampede
+          path: repos/Stampede
+          token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
       - name: Run nightly cleanup
         if: steps.local_time_guard.outputs.run_cleanup == 'true'
         id: cleanup

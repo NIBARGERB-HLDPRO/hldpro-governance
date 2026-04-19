@@ -257,6 +257,41 @@
       }
     },
     {
+      "repo_slug": "stampede",
+      "display_name": "Stampede",
+      "repo_dir_name": "Stampede",
+      "github_repo": "NIBARGERB-HLDPRO/Stampede",
+      "local_path": "Stampede",
+      "ci_checkout_path": "repos/Stampede",
+      "graph_output_path": "graphify-out/stampede",
+      "wiki_path": "wiki/stampede",
+      "project_path": "projects/stampede",
+      "governance_tier": "standard",
+      "security_tier": "baseline",
+      "lifecycle_status": "active",
+      "governance_status": "governed",
+      "classification": {
+        "owner": "governance",
+        "rationale": "Active Phase0 product repository with repo-local governance files, CODEOWNERS, dependency automation, governance-check and gitleaks required checks, org/repo ruleset coverage, and Overlord registry enrollment for sweep, metrics, graph, Codex ingestion, compendium, raw feed, and code governance. Memory integrity is deferred until the Stampede memory bootstrap lands.",
+        "review_date": "2026-04-19",
+        "issue_refs": [
+          "#298",
+          "#359"
+        ]
+      },
+      "description": "Stampede Phase0 product specifications, baselines, label schema, and governance bootstrap artifacts",
+      "enabled_subsystems": {
+        "graphify": true,
+        "sweep": true,
+        "metrics": true,
+        "memory_integrity": false,
+        "codex_ingestion": true,
+        "compendium": true,
+        "raw_feed_sync": true,
+        "code_governance": true
+      }
+    },
+    {
       "repo_slug": "asc-evaluator",
       "display_name": "ASC-Evaluator",
       "repo_dir_name": "ASC-Evaluator",
