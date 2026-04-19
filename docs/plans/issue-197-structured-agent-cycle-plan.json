@@ -1,0 +1,139 @@
+{
+  "session_id": "session-20260419-issue-197-portable-hook-paths",
+  "issue_number": 197,
+  "objective": "Replace hardcoded machine-layout governance hook commands in `.claude/settings.json` with portable repo-root resolution and prove the hooks run from root and nested worktree paths.",
+  "tier": 2,
+  "scope_boundary": [
+    "Update `.claude/settings.json` hook command strings for UserPromptSubmit and PreToolUse.",
+    "Keep hook target paths under repo-root `hooks/`.",
+    "Add issue-backed PDCAR, execution-scope, validation, and closeout artifacts.",
+    "Update local governance mirrors with issue #197 completion evidence.",
+    "Validate root and nested-directory hook execution as the final e2e acceptance criterion."
+  ],
+  "out_of_scope": [
+    "Changing hook script semantics.",
+    "Editing historical raw evidence artifacts that contain machine-specific paths.",
+    "Rolling portable hook settings into downstream repositories.",
+    "Resolving unrelated open issue mirror drift in backlog/progress files.",
+    "Changing `.claude/settings.local.json` or operator-local secrets."
+  ],
+  "research_summary": "Issue #197 identifies two `.claude/settings.json` hook command strings that hardcode `$HOME/Developer/HLDPRO/hldpro-governance/hooks/*.sh`. The hook scripts themselves already derive repository context with git where needed. The correct smallest fix is to make the settings command wrapper resolve the current checkout root through `git rev-parse --show-toplevel`, preserving the repo-root `hooks/` suffix.",
+  "research_artifacts": [
+    "Issue #197",
+    ".claude/settings.json",
+    "hooks/pre-session-context.sh",
+    "hooks/code-write-gate.sh",
+    "CLAUDE.md",
+    "STANDARDS.md",
+    "docs/plans/issue-197-portable-hook-paths-pdcar.md"
+  ],
+  "sprints": [
+    {
+      "name": "Portable Settings Commands",
+      "goal": "Remove machine-specific hook path assumptions from `.claude/settings.json`.",
+      "tasks": [
+        "Replace the UserPromptSubmit hook command with the portable git-root wrapper.",
+        "Replace the PreToolUse hook command with the portable git-root wrapper.",
+        "Confirm no `$HOME/Developer/HLDPRO/hldpro-governance` literal remains in `.claude/settings.json`."
+      ],
+      "acceptance_criteria": [
+        "Both hook commands use `git rev-parse --show-toplevel`.",
+        "Both hook commands target `/hooks/*.sh` under the active checkout root.",
+        "The settings file remains valid JSON."
+      ],
+      "file_paths": [
+        ".claude/settings.json"
+      ]
+    },
+    {
+      "name": "Governance Evidence",
+      "goal": "Preserve the issue-backed governance loop for the settings change.",
+      "tasks": [
+        "Add the PDCAR artifact.",
+        "Add the structured agent cycle plan.",
+        "Add execution-scope and same-family implementation exception evidence.",
+        "Add validation and closeout artifacts."
+      ],
+      "acceptance_criteria": [
+        "Structured plan JSON parses and validates.",
+        "Execution scope allows only the intended issue #197 paths.",
+        "Closeout hook records the Stage 6 evidence."
+      ],
+      "file_paths": [
+        "docs/plans/issue-197-portable-hook-paths-pdcar.md",
+        "docs/plans/issue-197-structured-agent-cycle-plan.json",
+        "raw/exceptions/2026-04-19-issue-197-same-family-implementation.md",
+        "raw/execution-scopes/2026-04-19-issue-197-portable-hook-paths-implementation.json",
+        "raw/validation/2026-04-19-issue-197-portable-hook-paths.md",
+        "raw/closeouts/2026-04-19-issue-197-portable-hook-paths.md",
+        "docs/PROGRESS.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "name": "E2E Hook Smoke",
+      "goal": "Prove the portable commands work from repo root and nested directories.",
+      "tasks": [
+        "Parse `.claude/settings.json` and inspect hook command values.",
+        "Execute the `pre-session-context.sh` wrapper from repo root and a nested directory.",
+        "Execute the `code-write-gate.sh` wrapper from repo root and a nested directory with empty hook input.",
+        "Run repository gates including execution scope, closeout hook, and Local CI Gate."
+      ],
+      "acceptance_criteria": [
+        "Root hook smoke tests pass.",
+        "Nested hook smoke tests pass.",
+        "Local CI Gate passes before merge."
+      ],
+      "file_paths": [
+        ".claude/settings.json",
+        "raw/validation/2026-04-19-issue-197-portable-hook-paths.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex implementation session",
+      "role": "repo-rule and issue-scope analysis",
+      "focus": "Confirm the issue AC targets `.claude/settings.json` and the existing hooks live under repo-root `hooks/`.",
+      "status": "accepted",
+      "summary": "The change can stay limited to two settings command strings plus governance evidence; broader historical path cleanup is out of scope.",
+      "evidence": [
+        "Issue #197 body",
+        ".claude/settings.json",
+        "hooks/pre-session-context.sh",
+        "hooks/code-write-gate.sh"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "read-only reviewer agent after implementation",
+    "model_family": "openai",
+    "status": "not_requested",
+    "summary": "This is a narrow bugfix, not an architecture or standards change requiring Tier 1 alternate-family review. A read-only implementation review is planned before PR closeout.",
+    "evidence": [
+      "STANDARDS.md Society of Minds cross-review scope",
+      "docs/plans/issue-197-portable-hook-paths-pdcar.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex implementation session",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement issue #197 only: portable `.claude/settings.json` hook command paths, governance evidence artifacts, tracker updates, and root/nested e2e validation.",
+    "next_execution_step": "Patch settings and artifacts, run validation, request read-only review, then open a PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If downstream repo settings require edits, stop and create a separate issue-backed rollout slice.",
+    "If a hook script behavior bug appears, record it as a follow-up unless the settings command cannot work without the script fix.",
+    "If historical raw artifacts contain machine-specific paths, leave them unchanged unless they are active hook command sources.",
+    "If Local CI Gate fails outside the changed scope, record the failing check and do not mask it with unrelated edits."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: proceed, no HITL",
+    "GitHub issue #197 acceptance criteria",
+    "Codex implementation session"
+  ],
+  "approved_at": "2026-04-19T03:30:14Z"
+}
