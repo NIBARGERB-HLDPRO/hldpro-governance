@@ -116,6 +116,8 @@ jobs:
 
       - name: Check OVERLORD_BACKLOG issue alignment
         if: github.repository == 'NIBARGERB-HLDPRO/hldpro-governance'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           python3 scripts/overlord/check_overlord_backlog_github_alignment.py
 

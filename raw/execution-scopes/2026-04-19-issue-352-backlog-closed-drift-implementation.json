@@ -1,0 +1,79 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "fix/issue-352-backlog-closed-drift-20260419",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-directive",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T00:00:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/352",
+      "docs/plans/issue-352-structured-agent-cycle-plan.json",
+      "docs/plans/issue-352-backlog-closed-drift-pdcar.md",
+      "raw/exceptions/2026-04-19-issue-352-same-family-implementation.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-19-issue-352-same-family-implementation.md",
+    "active_exception_expires_at": "2026-04-26T00:00:00Z"
+  },
+  "allowed_write_paths": [
+    ".github/workflows/governance-check.yml",
+    ".github/workflows/local-ci-gate.yml",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-352-backlog-closed-drift-pdcar.md",
+    "docs/plans/issue-352-structured-agent-cycle-plan.json",
+    "raw/exceptions/2026-04-19-issue-352-same-family-implementation.md",
+    "raw/execution-scopes/2026-04-19-issue-352-backlog-closed-drift-implementation.json",
+    "raw/validation/2026-04-19-issue-352-backlog-closed-drift.md",
+    "raw/closeouts/2026-04-19-issue-352-backlog-closed-drift.md",
+    "graphify-out/",
+    "wiki/",
+    "scripts/overlord/check_overlord_backlog_github_alignment.py",
+    "scripts/overlord/test_check_overlord_backlog_github_alignment.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout has unrelated local work and must not be edited by issue #352."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #352."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #352."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #352."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #352."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #352."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #352."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #352."
+    }
+  ]
+}

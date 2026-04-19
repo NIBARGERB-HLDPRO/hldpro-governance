@@ -1,0 +1,99 @@
+{
+  "session_id": "session-20260419-issue-352-backlog-closed-drift",
+  "issue_number": 352,
+  "objective": "Reconcile closed GitHub issue drift out of actionable governance backlog mirrors and harden the Overlord backlog validator so closed issue refs fail locally and in CI.",
+  "tier": 2,
+  "scope_boundary": [
+    "Update hldpro-governance backlog/status mirrors for issue #352 only.",
+    "Harden the Overlord backlog alignment validator and focused tests.",
+    "Record PDCAR, execution scope, validation, and Stage 6 closeout evidence."
+  ],
+  "out_of_scope": [
+    "Changing GitHub issue states except issue #352 closeout.",
+    "Changing backlog policy semantics outside closed-issue enforcement.",
+    "Editing downstream repositories.",
+    "Changing product-repo PROGRESS staleness validators."
+  ],
+  "research_summary": "Issue #352 follows a real drift observation: origin/main listed closed issues in actionable OVERLORD_BACKLOG.md In Progress rows. Existing check_overlord_backlog_github_alignment.py only required a GitHub issue reference, so rows with closed issues passed. The fix is to keep GitHub as canonical, reconcile the local mirrors, and make the local/CI gate verify open issue state for Planned and In Progress rows.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/352",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "scripts/overlord/check_overlord_backlog_github_alignment.py",
+    "scripts/overlord/validate_backlog_gh_sync.py",
+    ".github/workflows/governance-check.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Backlog mirror reconciliation and validator hardening",
+      "goal": "Remove closed issue refs from actionable backlog mirrors and make the validator fail future closed issue drift.",
+      "tasks": [
+        "Move or remove stale closed issue rows from OVERLORD_BACKLOG.md actionable sections.",
+        "Reconcile docs/PROGRESS.md status mirror rows that reference closed governance issues as active work.",
+        "Update check_overlord_backlog_github_alignment.py to validate GitHub issue state for Planned and In Progress rows.",
+        "Add focused test coverage for closed In Progress issue refs.",
+        "Run local validation, Local CI Gate, Stage 6 closeout, PR checks, and issue closeout."
+      ],
+      "acceptance_criteria": [
+        "No closed GitHub issue refs remain in OVERLORD_BACKLOG.md Planned or In Progress.",
+        "Closed work is represented in Done or already has equivalent Done coverage.",
+        "A closed issue in In Progress fails the validator before merge.",
+        "Local CI Gate and GitHub PR checks pass."
+      ],
+      "file_paths": [
+        ".github/workflows/governance-check.yml",
+        ".github/workflows/local-ci-gate.yml",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md",
+        "docs/plans/issue-352-backlog-closed-drift-pdcar.md",
+        "docs/plans/issue-352-structured-agent-cycle-plan.json",
+        "raw/exceptions/2026-04-19-issue-352-same-family-implementation.md",
+        "raw/execution-scopes/2026-04-19-issue-352-backlog-closed-drift-implementation.json",
+        "raw/validation/2026-04-19-issue-352-backlog-closed-drift.md",
+        "raw/closeouts/2026-04-19-issue-352-backlog-closed-drift.md",
+        "scripts/overlord/check_overlord_backlog_github_alignment.py",
+        "scripts/overlord/test_check_overlord_backlog_github_alignment.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Pauli",
+      "role": "read-only backlog drift reviewer",
+      "focus": "Identify closed issue refs in actionable backlog rows and whether Done coverage already exists.",
+      "status": "accepted",
+      "summary": "Reviewer confirmed no Planned closed refs and identified In Progress closed refs #200, #212, #213, #214, #223, #224, #296, and #298; #298 already had Done coverage.",
+      "evidence": [
+        "subagent_notification:019da404-954b-7170-a4d7-5c050018f998"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not requested",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This is a bounded mirror/validator hygiene slice, not a standards or architecture change requiring Tier 1 alternate-family review.",
+    "evidence": [
+      "docs/plans/issue-352-backlog-closed-drift-pdcar.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex gpt-5.4",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #352 may update backlog/status mirrors, the Overlord backlog validator, focused tests, governance workflow token wiring, and issue-specific governance evidence/closeout artifacts.",
+    "next_execution_step": "Run local validation, Stage 6 closeout, PR checks, merge, and close issue #352.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If GitHub issue state lookup cannot run in CI, stop and fix workflow token wiring before merge.",
+    "If additional closed issue refs appear in actionable backlog sections, reconcile them in this slice only when they are governance mirror drift.",
+    "If a change requires broader backlog policy semantics, create a separate issue instead of expanding #352."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "Codex implementation handoff"
+  ],
+  "approved_at": "2026-04-19T00:00:00Z"
+}
