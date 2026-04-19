@@ -10,17 +10,6 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
-| Fix execution-scope validation in detached PR checkouts | #324 | IN PROGRESS | HIGH | 1 | Branch fallback in `assert_execution_scope.py`, regression test, EmailAssistant#1 unblock | Planning scope: docs/plans/issue-324-structured-agent-cycle-plan.json |
-| Org-wide active repository governance coverage epic | #298 | IN PROGRESS | HIGH | TBD | Active org repo registry policy, live inventory drift detector, seek-and-ponder intake, EmailAssistant discovery, registry-driven surface reconciliation, final e2e closeout gate | Final closeout PR pending for #314; plan: docs/plans/issue-298-structured-agent-cycle-plan.json |
-| Always-on SoM HITL relay for local CLI sessions | #296 | IN PROGRESS | HIGH | TBD | HITL packet contracts, AIS notification bridge, SoM/MCP response normalization, structured session instruction flow, final e2e proof | Plan: docs/plans/issue-296-structured-agent-cycle-plan.json; PDCAR: docs/plans/issue-296-som-hitl-relay-pdcar.md |
-| SoM enforcement drift closure epic | #214 | IN PROGRESS | HIGH | TBD | Reviewed PDCAR plan, Claude review artifact, issues #215-#221 | Plan: docs/plans/2026-04-17-som-enforcement-drift-pdcar.md; closeout loop tracked by #220; execution-scope guard tracked by #221 |
-| SoM Slice 1: Codex model pin enforcement | #215 | IN PROGRESS | HIGH | TBD | Codex model/reasoning checker, overlord-sweep wiring | Part of #214 |
-| SoM Slice 2: ladder and standards consistency | #216 | IN PROGRESS | HIGH | TBD | STANDARDS, exception, progress, registry alignment | Part of #214 |
-| SoM Slice 3: cross-review and gate identity enforcement | #217 | IN PROGRESS | HIGH | TBD | v2 gate identity validation and no-self-approval coverage | Part of #214 |
-| SoM Slice 4: architecture tier enforcement | #218 | IN PROGRESS | HIGH | TBD | Checkable architecture tier evidence path | Part of #214 |
-| SoM Slice 5: packet schema and runtime boundary | #219 | IN PROGRESS | HIGH | TBD | Schema/validator docs, packet tests, runtime boundary correction | Part of #214 |
-| SoM Slice 6: operational status and closeout loop | #220 | IN PROGRESS | HIGH | TBD | Progress/backlog/registry/wiki mirrors and closeout evidence contract | This slice |
-| SoM Slice 7: execution root and write-scope enforcement | #221 | IN PROGRESS | HIGH | TBD | Execution-scope checker, tests, and PR/slice scope artifacts | Part of #214 |
 | Stage 5+ som-worker launchd boot-start integration | #104 | PLANNED | MEDIUM | 2-3 | launchd plist, service docs | Gate: local-ai-machine #431, #432 adopt |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
@@ -45,7 +34,6 @@
 
 | Item | Issue | Status | Notes |
 |------|-------|--------|-------|
-| hldpro-governance missing docs: SERVICE_REGISTRY.md, DATA_DICTIONARY.md | #172 #173 | IN PROGRESS | Being created in this PR |
 | Weekly overlord sweep write-back to wiki/index.md | — | ACTIVE / AWAITING NEXT RUN | Workflow and graph/index write-back path are wired; last committed index remains the 2026-04-09 bootstrap until the next scheduled or manual sweep refreshes generated counts |
 | LAM env-var-docs contract debt: SOM_* variables unclassified | #145 | OPEN | local-ai-machine env vars need classification |
 
@@ -53,6 +41,11 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| hldpro-governance backlog closed-issue drift repair | #352 | 2026-04-19 | Reconciled stale closed issue refs out of actionable `OVERLORD_BACKLOG.md` and `docs/PROGRESS.md` sections, hardened the Overlord backlog validator to require open GitHub issues, and added an e2e negative test for closed issues in `In Progress`. |
+| Detached PR execution-scope validation fix | #324 | 2026-04-19 | PRs #325 and #326 added planning and implementation coverage for detached PR checkout branch fallback in `assert_execution_scope.py`, unblocking EmailAssistant#1-style validation contexts. |
+| SoM enforcement drift closure epic | #214 #215 #216 #217 #218 #219 #220 #221 | 2026-04-17 | PR #222 closed the enforcement drift epic and child slices for model pin enforcement, ladder/standards consistency, cross-review identity, architecture tier evidence, packet/runtime boundaries, operational closeout mirrors, and execution-scope enforcement. |
+| Always-on SoM HITL relay for local CLI sessions | #296 #303 | 2026-04-19 | Planning, packet contracts, security policy, validators, queue-first prototype, AIS sandbox bridge, LAM orchestrator/session adapter, and final E2E proof completed through PR #322; live SMS/Slack/direct terminal push remain future issue-backed work. |
+| hldpro-governance minimum docs creation | #172 #173 | 2026-04-16 | PR #183 created governance `docs/PROGRESS.md`, `docs/DATA_DICTIONARY.md`, and `docs/SERVICE_REGISTRY.md`, resolving the missing-docs operational item. |
 | Qwen3.6-35B-A3B Mac MLX model roster entry | #347 | 2026-04-19 | PR #349 added `mlx-community/Qwen3.6-35B-A3B-4bit` as an on-demand Mac Worker-LAM candidate, exposed it in runtime inventory with a conservative 24 GB budget, preserved PII/no-payload boundaries, and recorded PDCAR, execution-scope, validation, review, GitHub Actions, and Stage 6 closeout evidence. |
 | Root-level enforcement hooks | #186 | 2026-04-19 | Added tracked executable root hooks `hooks/governance-check.sh`, `hooks/backlog-check.sh`, and `hooks/check-errors.sh`; validation covers shell syntax, executable bits, root smoke, nested-directory smoke, governance-surface planning, execution scope, and Local CI Gate. |
 | Structured plan malformed JSON failure contract | #192 | 2026-04-19 | `validate_structured_agent_cycle_plan.py` now catches malformed plan JSON and file-read errors, emits structured `FAIL <path>: could not parse JSON: ...` output, exits 1 without a traceback, and has regression coverage for full-scan and governance-surface matching paths. |
