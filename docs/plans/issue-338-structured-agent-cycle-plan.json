@@ -1,0 +1,158 @@
+{
+  "session_id": "session-20260419-issue-338-lam-governance-tooling-adoption",
+  "issue_number": 338,
+  "objective": "Prove `local-ai-machine` can consume the released org governance tooling package `governance-tooling-v0.1.0` from `hldpro-governance` while preserving exact SHA pinning and real local/GitHub enforcement evidence.",
+  "tier": 1,
+  "scope_boundary": [
+    "Create governance-side PDCAR, structured plan, execution-scope, and closeout artifacts for the LAM adoption epic.",
+    "Create and reference the downstream LAM implementation issue #475 before any LAM repo writes.",
+    "Use clean isolated worktrees for both governance planning and LAM implementation.",
+    "Deploy managed governance tooling into LAM with the governance package deployer, not manual copying.",
+    "Require final e2e evidence: deploy, verify, negative-control blocker, remediation pass, rollback or rollback proof, PR GitHub Actions pass, and closeout links."
+  ],
+  "out_of_scope": [
+    "Changing the governance package deployer contract unless a blocker proves the package is defective.",
+    "Replacing exact governance SHA pinning with tag-only pinning.",
+    "Editing unrelated LAM SoM/MCP work already present in the dirty root checkout.",
+    "Using the dirty LAM root checkout as the implementation root.",
+    "Treating a dry-run or docs-only update as final downstream adoption proof."
+  ],
+  "research_summary": "Issue #332 released the first governance tooling tag `governance-tooling-v0.1.0`, which peels to merge commit `8c5945e3d4f3f814dd80b4d158a9913c58a33609`. The package contract still requires consumers to record the exact SHA in `.hldpro/governance-tooling.json`. LAM is the default downstream pilot repo in the distribution runbook, but the earlier LAM pilot halted before writes on unrelated root/worktree hygiene blockers, so this issue creates a clean LAM lane and makes real e2e enforcement the final AC.",
+  "research_artifacts": [
+    "GitHub issue #338",
+    "local-ai-machine issue #475",
+    "docs/governance-tooling-package.json",
+    "docs/runbooks/org-governance-tooling-distribution.md",
+    "docs/plans/issue-332-structured-agent-cycle-plan.json",
+    "raw/closeouts/2026-04-19-issue-288-governance-tooling-distribution-final.md",
+    "local-ai-machine AGENTS.md",
+    "local-ai-machine CLAUDE.md"
+  ],
+  "sprints": [
+    {
+      "name": "Governance Epic Planning",
+      "goal": "Make the LAM adoption lane issue-backed, scoped, and validated before downstream writes.",
+      "tasks": [
+        "Create governance epic #338 and downstream LAM issue #475.",
+        "Add structured plan and PDCAR for the cross-repo adoption lane.",
+        "Add execution scope for governance-side planning and closeout artifacts.",
+        "Update governance backlog/progress mirrors to show issue #338 in progress."
+      ],
+      "acceptance_criteria": [
+        "Issue #338 exists and names LAM e2e adoption as the final gate.",
+        "LAM issue #475 exists before LAM branch/worktree writes.",
+        "Governance plan and execution scope validate locally.",
+        "Backlog/progress mirrors reference open issue #338."
+      ],
+      "file_paths": [
+        "docs/plans/issue-338-structured-agent-cycle-plan.json",
+        "docs/plans/issue-338-lam-governance-tooling-adoption-pdcar.md",
+        "raw/execution-scopes/2026-04-19-issue-338-lam-governance-tooling-adoption-planning.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "LAM Managed Deployment",
+      "goal": "Deploy the released governance tooling package into a clean LAM worktree with exact SHA evidence.",
+      "tasks": [
+        "Create a clean LAM implementation worktree using the required `riskfix/issue-475-...-20260419` branch convention.",
+        "Acquire the LAM session lock and pass startup/worktree hygiene preflight before deployment writes.",
+        "Create a LAM structured plan before implementation writes.",
+        "Run governance deployer dry-run/apply/verify against the LAM worktree using profile `local-ai-machine` and governance SHA `8c5945e3d4f3f814dd80b4d158a9913c58a33609`.",
+        "Ensure the LAM consumer record also records the human-readable release coordinate `governance-tooling-v0.1.0` without weakening exact SHA pinning."
+      ],
+      "acceptance_criteria": [
+        "LAM session lock and startup/worktree hygiene preflight pass before deployer apply.",
+        "LAM managed shim exists at `.hldpro/local-ci.sh`.",
+        "LAM consumer record exists at `.hldpro/governance-tooling.json`.",
+        "Consumer record includes exact governance SHA `8c5945e3d4f3f814dd80b4d158a9913c58a33609`.",
+        "Consumer record or closeout evidence names release coordinate `governance-tooling-v0.1.0`.",
+        "Package deployer `verify` passes."
+      ],
+      "file_paths": [
+        "local-ai-machine:.hldpro/local-ci.sh",
+        "local-ai-machine:.hldpro/governance-tooling.json",
+        "local-ai-machine:docs/plans/issue-475-structured-agent-cycle-plan.json",
+        "local-ai-machine:docs/PROGRESS.md",
+        "local-ai-machine:NEXT_SPRINT_QUEUE.md"
+      ]
+    },
+    {
+      "name": "E2E Enforcement And Closeout",
+      "goal": "Prove the managed tooling catches failures before push, passes after remediation, and remains green in GitHub Actions.",
+      "tasks": [
+        "Run a negative-control local enforcement check by intentionally making the managed governance record or shim inconsistent in the LAM worktree.",
+        "Capture the expected failure output without committing the deliberate violation.",
+        "Restore/remediate the managed files and prove local enforcement passes.",
+        "Test or mechanically verify rollback, then reapply managed files for the PR.",
+        "Open LAM PR through the LAM riskfix publication path, wait for real GitHub Actions, and require green checks before closeout.",
+        "Record final evidence in both the LAM issue and governance issue #338."
+      ],
+      "acceptance_criteria": [
+        "Negative-control local run fails for the intended managed-tooling violation.",
+        "Remediated local run passes.",
+        "Rollback or rollback proof is recorded, and final PR state has managed files applied.",
+        "LAM PR GitHub Actions pass, including riskfix routing and governance checks.",
+        "Governance closeout records LAM issue, PR, merge/check evidence, local test evidence, and consumer record evidence."
+      ],
+      "file_paths": [
+        "raw/closeouts/2026-04-19-issue-338-lam-governance-tooling-adoption.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md",
+        "graphify-out/GRAPH_REPORT.md",
+        "graphify-out/graph.json",
+        "graphify-out/hldpro-governance/",
+        "wiki/hldpro/",
+        "wiki/index.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Halley",
+      "role": "LAM adoption planning reviewer",
+      "focus": "LAM repo workflow constraints, risk branch naming, hook/e2e acceptance criteria, and validation commands.",
+      "status": "accepted_with_followup",
+      "summary": "Read-only subagent review requested while the governance plan is being prepared. Deterministic local validators, LAM local enforcement, and GitHub checks remain mandatory gates even if review feedback arrives after initial drafting.",
+      "evidence": [
+        "Subagent Halley review request",
+        "local-ai-machine AGENTS.md",
+        "docs/runbooks/org-governance-tooling-distribution.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family-fallback",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "True alternate-family LLM review is unavailable in this lane. The plan compensates with a read-only specialist review, deterministic governance validators, LAM negative-control proof, LAM remediation proof, and real GitHub Actions as final gates.",
+    "evidence": [
+      "GitHub issue #338",
+      "local-ai-machine issue #475",
+      "Subagent Halley review request"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #338 may update governance planning/status/closeout artifacts and may coordinate LAM issue #475 downstream adoption in a separate clean LAM worktree. LAM implementation must stay scoped to managed governance tooling deployment, local proof, GitHub proof, and closeout evidence.",
+    "next_execution_step": "Validate governance planning artifacts, publish the governance planning PR, then execute LAM issue #475 in an isolated riskfix worktree through local negative-control/remediation and GitHub Actions proof.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If the LAM root checkout is dirty or stale, do not use it as the implementation root; create a clean worktree from origin/main.",
+    "If the governance deployer cannot apply or verify without changing package behavior, stop and create a separate package-defect issue.",
+    "If negative-control enforcement cannot produce a deterministic failure, do not claim e2e completion.",
+    "If LAM GitHub Actions do not pass, leave #338 open and record the blocker.",
+    "If exact SHA pinning is weakened or omitted, revert the downstream adoption and reopen the plan."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #338",
+    "local-ai-machine issue #475",
+    "operator instruction: follow repo rules and loop through PDCAR, GH epic, ACs, e2e testing as final AC, no HITL"
+  ],
+  "approved_at": "2026-04-19T03:00:00Z"
+}

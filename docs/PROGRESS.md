@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| LAM governance tooling v0.1.0 adoption epic | #338 | IN PROGRESS | HIGH | TBD | Governance PDCAR, LAM issue #475, managed tooling deploy, negative-control proof, remediation proof, rollback proof, LAM GitHub Actions evidence | Final AC is real downstream e2e adoption from `governance-tooling-v0.1.0` with exact SHA `8c5945e3d4f3f814dd80b4d158a9913c58a33609`; plan: docs/plans/issue-338-structured-agent-cycle-plan.json |
 | seek-and-ponder registry memory-integrity follow-up | #331 | IN PROGRESS | HIGH | 1-2 | Registry memory-integrity disposition, validation artifact, Stage 6 closeout | Downstream seek-and-ponder#23 completed memory bootstrap; this slice closes governance-side registry participation. |
 | Fix execution-scope validation in detached PR checkouts | #324 | IN PROGRESS | HIGH | 1 | Branch fallback in `assert_execution_scope.py`, regression test, EmailAssistant#1 unblock | Planning scope: docs/plans/issue-324-structured-agent-cycle-plan.json |
 | Org-wide active repository governance coverage epic | #298 | IN PROGRESS | HIGH | TBD | Active org repo registry policy, live inventory drift detector, seek-and-ponder intake, EmailAssistant discovery, registry-driven surface reconciliation, final e2e closeout gate | Final closeout PR pending for #314; plan: docs/plans/issue-298-structured-agent-cycle-plan.json |
