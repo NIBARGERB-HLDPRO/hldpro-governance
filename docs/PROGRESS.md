@@ -10,8 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
-| Org-wide active repository governance coverage epic | #298 | IN PROGRESS | HIGH | TBD | Active org repo registry policy, live inventory drift detector, seek-and-ponder intake, EmailAssistant discovery, registry-driven surface reconciliation, final e2e closeout gate | Plan: docs/plans/issue-298-structured-agent-cycle-plan.json; PDCAR: docs/plans/issue-298-org-repo-governance-coverage-pdcar.md |
-| Registry-driven surface reconciliation | #313 | IN PROGRESS | HIGH | 1-2 | Workflow/document/helper reconciliation, registry-surface drift validator, final surface e2e proof | Child of #298; implementation package at docs/plans/issue-313-structured-agent-cycle-plan.json |
+| Org-wide active repository governance coverage epic | #298 | IN PROGRESS | HIGH | TBD | Active org repo registry policy, live inventory drift detector, seek-and-ponder intake, EmailAssistant discovery, registry-driven surface reconciliation, final e2e closeout gate | Final closeout PR pending for #314; plan: docs/plans/issue-298-structured-agent-cycle-plan.json |
 | Always-on SoM HITL relay for local CLI sessions | #296 | IN PROGRESS | HIGH | TBD | HITL packet contracts, AIS notification bridge, SoM/MCP response normalization, structured session instruction flow, final e2e proof | Plan: docs/plans/issue-296-structured-agent-cycle-plan.json; PDCAR: docs/plans/issue-296-som-hitl-relay-pdcar.md |
 | Org-level governance tooling distribution epic | #288 | IN PROGRESS | HIGH | TBD | Versioned governance package contract, pull/deploy mechanism, verification matrix, downstream e2e proof | Plan: docs/plans/issue-288-structured-agent-cycle-plan.json; PDCAR: docs/plans/issue-288-org-governance-tooling-distribution-pdcar.md |
 | Downstream governance tooling pilot planning | #294 | IN PROGRESS | HIGH | 1-2 | local-ai-machine pilot plan, clean worktree contract, negative-control proof, downstream GH Actions proof, rollback/uninstall proof | Phase 3 child of #288; planning package only, downstream edits require separate issue/scope |
@@ -56,6 +55,8 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Final org repo governance e2e closeout | #298 #314 | 2026-04-19 | Final gate proved live org inventory coverage, registry validation, graphify/registry-surface reconciliation, compendium generation, subsystem selections, memory integrity, metrics smoke, branch/ruleset evidence, Stage 6 closeout, and Local CI evidence. Residual downstream work remains issue-backed by seek-and-ponder#23, EmailAssistant#1, and #176. |
+| Registry-driven surface reconciliation | #313 | 2026-04-19 | PR #320 reconciled workflow/document/helper surfaces with the governed repo registry and added `validate_registry_surfaces.py` to CI/local gates. |
 | EmailAssistant discovery and classification | #312 | 2026-04-19 | PR #319 added adoption-blocked registry coverage, sensitive municipal email classification, live inventory closure, downstream blocker EmailAssistant#1, and review/validation evidence. Parent epic #298 remains open. |
 | seek-and-ponder governance intake | #311 | 2026-04-19 | PR #318 added seek-and-ponder registry, graph/wiki artifacts, branch/ruleset/check evidence, live inventory reduction, downstream follow-up in seek-and-ponder#23, and review/validation evidence. Parent epic #298 remains open. |
 | Governed repo classification schema | #310 | 2026-04-19 | PR #317 added schema-enforced lifecycle/governance classifications, validator and inventory drift tests, archived lifecycle handling, and Claude review evidence. Parent epic #298 remains open. |
