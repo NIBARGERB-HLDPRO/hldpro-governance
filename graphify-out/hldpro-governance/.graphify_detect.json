@@ -1651,9 +1651,9 @@
     "image": []
   },
   "total_files": 1643,
-  "total_words": 404171,
+  "total_words": 404175,
   "needs_graph": true,
-  "warning": "Large corpus: 1643 files \u00b7 ~404,171 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
+  "warning": "Large corpus: 1643 files \u00b7 ~404,175 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
   "skipped_sensitive": [],
   "graphifyignore_patterns": 0
 }

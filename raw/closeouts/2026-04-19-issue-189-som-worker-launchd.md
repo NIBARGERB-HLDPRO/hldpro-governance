@@ -22,6 +22,8 @@ This updates the earlier planned/manual-service state in `OVERLORD_BACKLOG.md`, 
 - `raw/execution-scopes/2026-04-19-issue-189-launchd-issue-ref-implementation.json`
 - `raw/validation/2026-04-19-issue-189-som-worker-launchd.md`
 - `raw/closeouts/2026-04-19-issue-189-som-worker-launchd.md`
+- `graphify-out/hldpro-governance/.graphify_detect.json`
+- `graphify-out/hldpro-governance/GRAPH_REPORT.md`
 
 ## Issue Links
 - Governance issue: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/189
