@@ -1,6 +1,6 @@
 {
   "expected_execution_root": "{repo_root}",
-  "expected_branch": "docs/issue-331-seek-ponder-memory-registry",
+  "expected_branch": "docs/issue-331-seek-ponder-memory-registry-impl",
   "execution_mode": "implementation_ready",
   "allowed_write_paths": [
     "docs/governed_repos.json",
