@@ -1,0 +1,73 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-312-emailassistant-discovery-20260419",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T00:30:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-312-structured-agent-cycle-plan.json",
+      "docs/plans/issue-312-emailassistant-discovery-pdcar.md",
+      "raw/exceptions/2026-04-19-issue-312-same-family-discovery.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-19-issue-312-same-family-discovery.md",
+    "active_exception_expires_at": "2026-04-20T00:30:00Z"
+  },
+  "allowed_write_paths": [
+    "docs/governed_repos.json",
+    "raw/validation/2026-04-19-issue-312-emailassistant-discovery.md",
+    "docs/plans/issue-312-structured-agent-cycle-plan.json",
+    "docs/plans/issue-312-emailassistant-discovery-pdcar.md",
+    "raw/exceptions/2026-04-19-issue-312-same-family-discovery.md",
+    "raw/cross-review/2026-04-19-issue-312-emailassistant-review.md",
+    "raw/execution-scopes/2026-04-19-issue-312-emailassistant-discovery-implementation.json",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout has unrelated local work and must not be edited by issue #312."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+      "reason": "Issue #312 may inspect EmailAssistant, but downstream edits are tracked separately by EmailAssistant#1."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Completed #311 downstream repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Existing governed repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Existing governed repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Existing governed repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Existing governed repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Existing governed repo remains out of scope."
+    }
+  ]
+}

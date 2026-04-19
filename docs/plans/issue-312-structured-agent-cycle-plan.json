@@ -1,0 +1,144 @@
+{
+  "session_id": "session-20260419-issue-312-emailassistant-discovery",
+  "issue_number": 312,
+  "objective": "Implement the fourth #298 child slice: discover, classify, and registry-cover EmailAssistant without downstream repository edits.",
+  "tier": 2,
+  "scope_boundary": [
+    "Inspect EmailAssistant through a temporary read-only checkout and GitHub API/CLI.",
+    "Document stack, default branch, privacy/data sensitivity, CI state, governance-doc state, branch/ruleset evidence, and downstream blockers.",
+    "Add dispatcher registry coverage for EmailAssistant with adoption-blocked governance status and explicit classification.",
+    "Open repo-local EmailAssistant issue(s) before any downstream source or governance-file edits.",
+    "Add issue-backed planning, exception, cross-review, execution-scope, backlog/progress, and validation evidence for #312."
+  ],
+  "out_of_scope": [
+    "Editing the EmailAssistant repository.",
+    "Adding graphify/wiki artifacts for EmailAssistant before repo-local governance bootstrap exists.",
+    "Reconciling README/STANDARDS fleet registry surfaces, which remains #313.",
+    "Closing parent epic #298.",
+    "Claiming final org-wide governance e2e completion."
+  ],
+  "research_summary": "EmailAssistant is an active private repository on default branch main. It is a Python 3.11 Windows-oriented municipal email assistant with Flask review UI, Outlook/EWS, Microsoft Graph, SMTP, Anthropic, installer, and local JSON persistence. It has no GitHub workflows, no CODEOWNERS, no dependabot, no CLAUDE/AGENTS/CODEX front-door files, and no PROGRESS/FEATURE_REGISTRY/DATA_DICTIONARY/SERVICE_REGISTRY/FAIL_FAST_LOG docs. Org branch rulesets apply, but repo branch protection does not expose required checks. Data sensitivity is high because the app handles municipal email, credentials, PIP/personnel context, drafts, commitments, logs, and style profiles. Dispatcher-side registry coverage is added as adoption_blocked; repo-local bootstrap is tracked by EmailAssistant#1.",
+  "research_artifacts": [
+    "GitHub issue #298",
+    "GitHub issue #312",
+    "GitHub issue NIBARGERB-HLDPRO/EmailAssistant#1",
+    "docs/plans/issue-298-structured-agent-cycle-plan.json",
+    "docs/governed_repos.json",
+    "gh repo view NIBARGERB-HLDPRO/EmailAssistant",
+    "gh api repos/NIBARGERB-HLDPRO/EmailAssistant/rulesets",
+    "gh api repos/NIBARGERB-HLDPRO/EmailAssistant/actions/workflows",
+    "gh api repos/NIBARGERB-HLDPRO/EmailAssistant/branches/main/protection",
+    "/tmp/hldpro-emailassistant-inspection/README.md",
+    "/tmp/hldpro-emailassistant-inspection/requirements.txt",
+    "/tmp/hldpro-emailassistant-inspection/config.env.template",
+    "/tmp/hldpro-emailassistant-inspection/src/main.py",
+    "/tmp/hldpro-emailassistant-inspection/src/review_interface.py"
+  ],
+  "sprints": [
+    {
+      "name": "Read-Only Discovery",
+      "goal": "Establish EmailAssistant repo state, stack, governance surface, and data sensitivity without downstream edits.",
+      "tasks": [
+        "Inspect GitHub metadata, rulesets, branch protection, workflows, and default branch.",
+        "Clone EmailAssistant to a temporary inspection directory.",
+        "Inspect repo front-door files, stack files, config template, and sensitive runtime surfaces.",
+        "Spawn a read-only explorer for independent discovery review."
+      ],
+      "acceptance_criteria": [
+        "Final AC: EmailAssistant checkout/inspection evidence exists.",
+        "Final AC: stack, default branch, privacy/data sensitivity, CI, and governance-doc state are documented.",
+        "Final AC: no downstream repo files are edited."
+      ],
+      "file_paths": [
+        "raw/validation/2026-04-19-issue-312-emailassistant-discovery.md",
+        "raw/cross-review/2026-04-19-issue-312-emailassistant-review.md"
+      ]
+    },
+    {
+      "name": "Classification And Blocker",
+      "goal": "Represent EmailAssistant in governance while preserving repo-local adoption as issue-backed work.",
+      "tasks": [
+        "Classify governance tier, security tier, lifecycle status, and governance status.",
+        "Open EmailAssistant#1 for downstream bootstrap before future repo writes.",
+        "Add adoption-blocked registry coverage with subsystem flags disabled until downstream bootstrap resolves."
+      ],
+      "acceptance_criteria": [
+        "Final AC: governance/security tier classification is recorded.",
+        "Final AC: registry coverage is added or a linked blocker issue has owner/rationale/review date.",
+        "Final AC: downstream remediation is split into repo-local issue-backed work."
+      ],
+      "file_paths": [
+        "docs/governed_repos.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Final E2E Proof",
+      "goal": "Prove the #312 discovery/classification closes active-repo inventory drift without overstating governance adoption.",
+      "tasks": [
+        "Run governed repo registry validation.",
+        "Run live org inventory drift check in blocking mode.",
+        "Run structured plan, execution-scope, backlog sync, Local CI Gate, py_compile, and diff hygiene checks.",
+        "Run alternate/specialist review before PR publication."
+      ],
+      "acceptance_criteria": [
+        "Final AC: live org inventory blocking mode no longer reports EmailAssistant as missing.",
+        "Final AC: registry validation passes with EmailAssistant adoption_blocked.",
+        "Final AC: Local CI Gate passes for changed paths.",
+        "Final AC: #312 remains open unless PR and e2e evidence are linked.",
+        "Final AC: parent #298 remains open until #313 and #314 complete."
+      ],
+      "file_paths": [
+        "docs/plans/issue-312-structured-agent-cycle-plan.json",
+        "docs/plans/issue-312-emailassistant-discovery-pdcar.md",
+        "raw/exceptions/2026-04-19-issue-312-same-family-discovery.md",
+        "raw/execution-scopes/2026-04-19-issue-312-emailassistant-discovery-implementation.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Sartre",
+      "role": "emailassistant-read-only-discovery-reviewer",
+      "focus": "Repo state, workflows, rulesets, front-door governance files, sensitivity, and downstream follow-up needs.",
+      "status": "accepted",
+      "summary": "Read-only explorer confirmed EmailAssistant is active/private, has no workflows or repo-local governance docs, has org rulesets but no visible required checks, and should be classified full/full-pentagi with repo-local bootstrap before downstream writes.",
+      "evidence": [
+        "raw/cross-review/2026-04-19-issue-312-emailassistant-review.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Codex subagent",
+    "model_family": "gpt",
+    "status": "accepted",
+    "summary": "Subagent discovery accepted adoption-blocked registry coverage and repo-local downstream bootstrap as the appropriate boundary for #312.",
+    "evidence": [
+      "raw/cross-review/2026-04-19-issue-312-emailassistant-review.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #312 may inspect EmailAssistant, add dispatcher registry/planning/validation artifacts, and open repo-local EmailAssistant issue(s). It may not edit EmailAssistant source or governance files.",
+    "next_execution_step": "Complete adoption-blocked registry coverage, validation evidence, and PR for #312.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If EmailAssistant source or governance-file edits are needed, stop and move that work to EmailAssistant#1 or another downstream issue-backed scope.",
+    "If graph/wiki coverage is required, keep it disabled until downstream bootstrap creates a stable governed surface or a separate issue authorizes graph artifact generation.",
+    "If live inventory still reports EmailAssistant missing after registry coverage, do not publish.",
+    "If #313 surface reconciliation is needed, stop and leave it to #313.",
+    "If final org-wide e2e closure is needed, stop and leave it to #314."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #312",
+    "Parent epic #298",
+    "operator instruction: follow repo rules, no HITL, e2e testing as final AC",
+    "raw/exceptions/2026-04-19-issue-312-same-family-discovery.md"
+  ],
+  "approved_at": "2026-04-19T00:30:00Z"
+}
