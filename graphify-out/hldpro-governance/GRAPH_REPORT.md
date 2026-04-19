@@ -1,11 +1,11 @@
 # Graph Report - hldpro-governance  (2026-04-18)
 
 ## Corpus Check
-- Large corpus: 1571 files · ~377,573 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1570 files · ~378,787 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 1081 nodes · 2096 edges · 59 communities detected
-- Extraction: 50% EXTRACTED · 50% INFERRED · 0% AMBIGUOUS · INFERRED: 1057 edges (avg confidence: 0.5)
+- 1081 nodes · 2095 edges · 59 communities detected
+- Extraction: 50% EXTRACTED · 50% INFERRED · 0% AMBIGUOUS · INFERRED: 1056 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -21,8 +21,12 @@
 10. `build_plan()` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `PentagiStatus` --uses--> `GovernedRepo`  [INFERRED]
-  hldpro-governance/scripts/overlord/pentagi_sweep.py → scripts/overlord/governed_repos.py
+- `GateError` --inherits--> `RuntimeError`  [EXTRACTED]
+  tools/local-ci-gate/local_ci_gate.py →   _Bridges community 4 → community 25_
+- `GovernanceDeployError` --inherits--> `RuntimeError`  [EXTRACTED]
+  scripts/overlord/deploy_governance_tooling.py →   _Bridges community 25 → community 11_
+- `HelperError` --inherits--> `RuntimeError`  [EXTRACTED]
+  scripts/knowledge_base/graphify_hook_helper.py →   _Bridges community 25 → community 8_
 
 ## Communities
 
