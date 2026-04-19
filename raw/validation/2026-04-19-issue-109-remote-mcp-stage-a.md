@@ -16,10 +16,11 @@ Worktree: `/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-109-stage
 | `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-109-stage-a-remote-mcp-governance-20260419 --require-if-issue-branch` | PASS | 73 structured plans validated. |
 | `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-109-stage-a-remote-mcp-governance-20260419 --changed-files-file /tmp/issue-109-stage-a-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope` | PASS | Governance-surface plan and execution-scope presence accepted. |
 | `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-19-issue-109-remote-mcp-stage-a-governance-implementation.json --changed-files-file /tmp/issue-109-stage-a-changed-files.txt` | PASS with warnings | Declared sibling/main checkouts are dirty out-of-scope roots. Active branch root, branch, write paths, and forbidden roots match. |
-| `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | PASS | Report dir: `cache/local-ci-gate/reports/20260419T192937Z-hldpro-governance-git`. |
+| `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | PASS | Initial report dir: `cache/local-ci-gate/reports/20260419T192937Z-hldpro-governance-git`; final post-closeout report dir: `cache/local-ci-gate/reports/20260419T193219Z-hldpro-governance-git`. |
 | `bash hooks/governance-check.sh` | PASS | Structured plan, governance-surface validation, backlog alignment, and whitespace checks passed. |
 | `python3 scripts/overlord/check_overlord_backlog_github_alignment.py` | PASS | Actionable backlog remains issue-backed. |
 | `git diff --check` | PASS | No whitespace errors. |
+| `bash hooks/closeout-hook.sh raw/closeouts/2026-04-19-issue-109-remote-mcp-stage-a.md` | PASS | Template validated, graph/wiki refreshed, memory writer skipped due missing credentials, closeout committed. |
 
 ## Final E2E AC
 

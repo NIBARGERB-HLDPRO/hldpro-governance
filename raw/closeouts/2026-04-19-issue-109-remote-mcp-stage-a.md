@@ -50,7 +50,7 @@ Remote MCP audit contract v1: JSONL entries with `ts`, `seq`, `prev_hash`, `prin
 
 ## Review And Gate Identity
 - Historical architecture review: `raw/cross-review/2026-04-14-remote-mcp-bridge.md`, `gpt-5.4` high, verdict `REJECTED` round 1; round 2 waived by operator exception.
-- Gate evidence: Local CI Gate profile `hldpro-governance`, report `cache/local-ci-gate/reports/20260419T192937Z-hldpro-governance-git`, verdict PASS.
+- Gate evidence: Local CI Gate profile `hldpro-governance`, final report `cache/local-ci-gate/reports/20260419T193219Z-hldpro-governance-git`, verdict PASS.
 
 ## Wired Checks Run
 - `.github/workflows/check-remote-mcp-audit-schema.yml`
@@ -81,10 +81,11 @@ Result: PASS with declared out-of-scope dirty sibling-root warnings.
 - `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-109-stage-a-remote-mcp-governance-20260419 --require-if-issue-branch` — PASS.
 - `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-109-stage-a-remote-mcp-governance-20260419 --changed-files-file /tmp/issue-109-stage-a-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope` — PASS.
 - `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-19-issue-109-remote-mcp-stage-a-governance-implementation.json --changed-files-file /tmp/issue-109-stage-a-changed-files.txt` — PASS with warnings.
-- `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` — PASS.
+- `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` — PASS; final report `cache/local-ci-gate/reports/20260419T193219Z-hldpro-governance-git`.
 - `bash hooks/governance-check.sh` — PASS.
 - `python3 scripts/overlord/check_overlord_backlog_github_alignment.py` — PASS.
 - `git diff --check` — PASS.
+- `bash hooks/closeout-hook.sh raw/closeouts/2026-04-19-issue-109-remote-mcp-stage-a.md` — PASS; memory writer skipped because credentials are not configured.
 
 ## Tier Evidence Used
 - `raw/inbox/2026-04-14-remote-mcp-bridge-plan.md`
