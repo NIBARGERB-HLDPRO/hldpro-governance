@@ -2593,7 +2593,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L1",
       "id": "build_effectiveness_metrics",
-      "community": 43
+      "community": 44
     },
     {
       "label": "RepoMetrics",
@@ -2601,7 +2601,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L28",
       "id": "build_effectiveness_metrics_repometrics",
-      "community": 43
+      "community": 44
     },
     {
       "label": "run()",
@@ -2609,7 +2609,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L42",
       "id": "build_effectiveness_metrics_run",
-      "community": 43
+      "community": 44
     },
     {
       "label": "pct()",
@@ -2617,7 +2617,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L53",
       "id": "build_effectiveness_metrics_pct",
-      "community": 43
+      "community": 44
     },
     {
       "label": "parse_iso()",
@@ -2625,7 +2625,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L59",
       "id": "build_effectiveness_metrics_parse_iso",
-      "community": 43
+      "community": 44
     },
     {
       "label": "collect_repo_metrics()",
@@ -2633,7 +2633,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L63",
       "id": "build_effectiveness_metrics_collect_repo_metrics",
-      "community": 43
+      "community": 44
     },
     {
       "label": "render_markdown()",
@@ -2641,7 +2641,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L128",
       "id": "build_effectiveness_metrics_render_markdown",
-      "community": 43
+      "community": 44
     },
     {
       "label": "main()",
@@ -2649,7 +2649,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L162",
       "id": "build_effectiveness_metrics_main",
-      "community": 43
+      "community": 44
     },
     {
       "label": "build_org_governance_compendium.py",
@@ -6857,7 +6857,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L1",
       "id": "test_codex_fire",
-      "community": 44
+      "community": 43
     },
     {
       "label": "write_fake_codex()",
@@ -6865,7 +6865,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L13",
       "id": "test_codex_fire_write_fake_codex",
-      "community": 44
+      "community": 43
     },
     {
       "label": "run_fire()",
@@ -6873,7 +6873,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L27",
       "id": "test_codex_fire_run_fire",
-      "community": 44
+      "community": 43
     },
     {
       "label": "test_preflight_failure_logs_and_exits_fast()",
@@ -6881,7 +6881,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L61",
       "id": "test_codex_fire_test_preflight_failure_logs_and_exits_fast",
-      "community": 44
+      "community": 43
     },
     {
       "label": "test_preflight_timeout_logs_and_exits_fast()",
@@ -6889,7 +6889,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L83",
       "id": "test_codex_fire_test_preflight_timeout_logs_and_exits_fast",
-      "community": 44
+      "community": 43
     },
     {
       "label": "test_exec_failure_after_successful_preflight_logs_and_signals()",
@@ -6897,7 +6897,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L105",
       "id": "test_codex_fire_test_exec_failure_after_successful_preflight_logs_and_signals",
-      "community": 44
+      "community": 43
     },
     {
       "label": "test_success_does_not_write_failure_log()",
@@ -6905,15 +6905,23 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L137",
       "id": "test_codex_fire_test_success_does_not_write_failure_log",
-      "community": 44
+      "community": 43
+    },
+    {
+      "label": "test_review_template_default_persona_reaches_codex_fire()",
+      "file_type": "code",
+      "source_file": "scripts/test_codex_fire.py",
+      "source_location": "L155",
+      "id": "test_codex_fire_test_review_template_default_persona_reaches_codex_fire",
+      "community": 43
     },
     {
       "label": "test_review_template_propagates_wrapper_failure()",
       "file_type": "code",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L155",
+      "source_location": "L225",
       "id": "test_codex_fire_test_review_template_propagates_wrapper_failure",
-      "community": 44
+      "community": 43
     },
     {
       "label": "_pii.py",
@@ -30324,6 +30332,18 @@
       "source_location": "L155",
       "weight": 1.0,
       "_src": "test_codex_fire",
+      "_tgt": "test_codex_fire_test_review_template_default_persona_reaches_codex_fire",
+      "source": "test_codex_fire",
+      "target": "test_codex_fire_test_review_template_default_persona_reaches_codex_fire",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/test_codex_fire.py",
+      "source_location": "L225",
+      "weight": 1.0,
+      "_src": "test_codex_fire",
       "_tgt": "test_codex_fire_test_review_template_propagates_wrapper_failure",
       "source": "test_codex_fire",
       "target": "test_codex_fire_test_review_template_propagates_wrapper_failure",
@@ -30381,7 +30401,19 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L157",
+      "source_location": "L159",
+      "weight": 0.8,
+      "_src": "test_codex_fire_test_review_template_default_persona_reaches_codex_fire",
+      "_tgt": "test_codex_fire_write_fake_codex",
+      "source": "test_codex_fire_write_fake_codex",
+      "target": "test_codex_fire_test_review_template_default_persona_reaches_codex_fire",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/test_codex_fire.py",
+      "source_location": "L227",
       "weight": 0.8,
       "_src": "test_codex_fire_test_review_template_propagates_wrapper_failure",
       "_tgt": "test_codex_fire_write_fake_codex",

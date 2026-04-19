@@ -40,24 +40,12 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 
 - **rule_id:** `SOM-EXEMPT-ASC-001`
 - **repo:** `ASC-Evaluator`
-- **deferral_reason:** ASC-Evaluator is explicitly exempt from HLD Pro code governance per `STANDARDS.md §Exceptions` ("ASC-Evaluator: knowledge repo, exempt from code governance"). It has no `.github/workflows/` infrastructure and consists primarily of knowledge artifacts. Society of Minds adoption is limited to a `CLAUDE.md §Society of Minds — Model Routing (SoT pointer)` block; no CI workflows are wired.
+- **deferral_reason:** ASC-Evaluator is explicitly exempt from HLD Pro code governance per `STANDARDS.md §Exceptions` ("ASC-Evaluator: knowledge repo, exempt from code governance") because it is primarily a knowledge-artifact repository. This exemption does not prohibit a minimal governance workflow or governance docs. As of issue #176, ASC-Evaluator has `.github/workflows/governance.yml`, lightweight governance docs, and a passing default-branch Governance Gate; those docs-only controls are compatible with the code-governance exemption.
 - **approver:** `nibargerb`
 - **approval_date:** 2026-04-14
 - **expiry_date:** 2026-07-14 (90-day review — at which point either re-approve or evaluate whether the repo has grown into code-governance scope)
 - **review_cadence:** monthly
 - **status:** `active`
-
-### `SOM-ASC-CI-001` — ASC-Evaluator governance-check fails on knowledge repo
-
-- **rule_id:** `SOM-ASC-CI-001`
-- **repo:** `ASC-Evaluator`
-- **deferral_reason:** Pre-existing `governance-check` workflow in ASC-Evaluator requires governance docs (PROGRESS.md, FEATURE_REGISTRY.md, etc.) that this repo is explicitly exempt from per STANDARDS §Exceptions and SOM-EXEMPT-ASC-001. The adoption PR (NIBARGERB-HLDPRO/ASC-Evaluator#4) adds only a CLAUDE.md pointer; the CI failure is unrelated and pre-existing. Blocks merge until reconciled.
-- **approver:** `nibargerb`
-- **approval_date:** 2026-04-14
-- **expiry_date:** 2026-05-14 (30 days)
-- **review_cadence:** monthly
-- **status:** `active`
-- **follow-up:** update ASC-Evaluator's governance.yml workflow to opt out or inherit the exemption
 
 ### `SOM-WIN-OLLAMA-PII-001` — PII middleware enforcement deferred to Sprint 2
 
@@ -116,6 +104,10 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 ### `SOM-LAM-BRANCH-001` — RESOLVED
 
 Status: resolved 2026-04-16 (hldpro-governance #175). The `riskfix/<slug>-YYYYMMDD` convention and the standard SoM prefixes are now documented as complementary in `STANDARDS.md`. No ambiguity remains; exception retired.
+
+### `SOM-ASC-CI-001` — CLOSED
+
+Status: closed 2026-04-19 (hldpro-governance #176). ASC-Evaluator's existing `.github/workflows/governance.yml` is compatible with `SOM-EXEMPT-ASC-001`: the repo remains exempt from code-governance requirements, but the minimal governance docs required by the reusable docs gate now exist. Latest default-branch evidence: ASC-Evaluator `Governance Gate` run `24578334806` passed on `master` at head `4d7ecdb3313c1aa9b586bf2b8ffd21caa50174a6`.
 
 ### `SOM-WIN-OLLAMA-PII-001` — CLOSED
 

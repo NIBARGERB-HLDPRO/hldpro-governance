@@ -25,7 +25,6 @@
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
 | SoM Stage 5: som-worker daemon | #178 | PLANNED | LOW | 6-8 | Daemon implementation, queue wiring | Follow-on to Stage 3b/4 |
-| Reconcile ASC-Evaluator exemption with governance.yml | #176 | PLANNED | LOW | 0.5 | Exemption register update or governance.yml fix | Exception SOM-ASC-CI-001 |
 | Living Knowledge Base — Phase 8: Qwen3-32B fine-tune | #49 | PLANNED | LOW | TBD | Fine-tuned model, eval results | Gate: 6+ months of wiki data |
 
 ## Known Bugs
@@ -54,6 +53,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| ASC-Evaluator governance workflow exemption reconciliation | #176 | 2026-04-19 | Confirmed ASC-Evaluator's existing `.github/workflows/governance.yml` is compatible with its knowledge-repo code-governance exemption. Latest default-branch Governance Gate passed on `master` at `4d7ecdb3313c1aa9b586bf2b8ffd21caa50174a6` (run `24578334806`), so no downstream workflow edit is required. `SOM-ASC-CI-001` is closed and `SOM-EXEMPT-ASC-001` remains active with clarified scope. |
 | LAM governance tooling v0.1.0 adoption epic | #338 | 2026-04-19 | LAM issue #475 and PR #476 completed the real downstream consumer proof for `governance-tooling-v0.1.0`, including managed deployer verify, exact SHA pin `8c5945e3d4f3f814dd80b4d158a9913c58a33609`, negative-control failure, remediation pass, rollback/reapply, managed shim local run, GitHub Actions green, and merge commit `86149c82656884feb71e6dc113a39d06e5632115`. Closeout: raw/closeouts/2026-04-19-issue-338-lam-governance-tooling-adoption.md. |
 | Codex review template default persona path repair | #337 | 2026-04-19 | Restored `docs/agents/codex-reviewer.md`, preserved `CODEX_REVIEW_PERSONA` override coverage, added fake-Codex default-path e2e proof that audit reaches `codex-fire.sh`, and recorded validation/closeout evidence. |
 | seek-and-ponder registry memory-integrity follow-up | #331 | 2026-04-19 | `seek-and-ponder` memory_integrity is enabled in the governed repo registry after downstream seek-and-ponder#23 memory bootstrap. Validation and closeout are recorded in `raw/validation/2026-04-19-issue-331-seek-ponder-memory-registry.md` and `raw/closeouts/2026-04-19-issue-331-seek-ponder-memory-registry.md`. |
