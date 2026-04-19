@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/wiki/hldpro",
-  "nodes": 1018,
-  "edges": 1963,
-  "communities": 56,
-  "articles": 66,
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-212-da-hybrid-delegation-gate/wiki/hldpro",
+  "nodes": 1051,
+  "edges": 2023,
+  "communities": 58,
+  "articles": 68,
   "html_status": "skipped",
-  "code_files": 65
+  "code_files": 68
 }

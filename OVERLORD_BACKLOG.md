@@ -20,6 +20,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| §DA Phase 2 hybrid delegation gate | [#212](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/212) | HIGH | 2-3 | Implementation in progress on `issue-212-da-hybrid-delegation-gate`; final AC is hook-level proof that owned Agent/Bash work blocks, Explore warns, Read allows, bypass logs, and MCP endpoint failure opens safely. |
 | Org-wide active repository governance coverage epic | [#298](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/298) | HIGH | TBD | Final closeout PR pending for #314; active org repo registry coverage, surface reconciliation, and e2e evidence are complete in the PR branch. |
 | Always-on SoM HITL relay for local CLI sessions | [#296](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/296) | HIGH | TBD | Final E2E proof in progress under [#303](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/303) with sandbox-AIS-backed local CLI checkpoint -> notification/reply -> normalized instruction/resume -> audit replay evidence. Close #296 only after #303 PR checks pass and closeout is merged. |
 | Org-level governance tooling distribution epic | [#288](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/288) | HIGH | TBD | Planning package in progress at `docs/plans/issue-288-structured-agent-cycle-plan.json` and `docs/plans/issue-288-org-governance-tooling-distribution-pdcar.md`; final epic AC requires downstream repo e2e pull/deploy/use proof. |
