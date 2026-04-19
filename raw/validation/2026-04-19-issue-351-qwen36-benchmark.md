@@ -25,7 +25,7 @@ Issue: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/351
 | Runtime evidence includes model ID, command, prompt class, timing, token count or estimate, and memory/headroom observations | PASS |
 | No routing order, PII policy, or active model promotion is changed | PASS |
 | PDCA/R and validation artifacts record Plan, Do, Check, Adjust, Review | PASS |
-| E2E local validation passes after artifacts are written | PASS pending final local gate in this PR branch |
+| E2E local validation passes after artifacts are written | PASS - Local CI Gate passed on the final PR branch after rebase and closeout graph regeneration |
 
 ## Summary
 
