@@ -57,6 +57,15 @@
       "closeout_refresh": false
     },
     {
+      "repo_slug": "stampede",
+      "display_name": "Stampede",
+      "source_path": "repos/Stampede",
+      "output_path": "graphify-out/stampede",
+      "wiki_path": "wiki/stampede",
+      "scheduled": true,
+      "closeout_refresh": false
+    },
+    {
       "repo_slug": "asc-evaluator",
       "display_name": "ASC-Evaluator",
       "source_path": "repos/ASC-Evaluator",
