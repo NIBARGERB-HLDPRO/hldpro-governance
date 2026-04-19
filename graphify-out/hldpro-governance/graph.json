@@ -2366,7 +2366,7 @@
     {
       "label": "pentagi_sweep.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L1",
       "id": "pentagi_sweep",
       "community": 15
@@ -2374,7 +2374,7 @@
     {
       "label": "PentagiStatus",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L25",
       "id": "pentagi_sweep_pentagistatus",
       "community": 15
@@ -2382,7 +2382,7 @@
     {
       "label": "_parse_date()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L42",
       "id": "pentagi_sweep_parse_date",
       "community": 15
@@ -2390,7 +2390,7 @@
     {
       "label": "_report_date()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L49",
       "id": "pentagi_sweep_report_date",
       "community": 15
@@ -2398,7 +2398,7 @@
     {
       "label": "_git_commit()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L56",
       "id": "pentagi_sweep_git_commit",
       "community": 15
@@ -2406,7 +2406,7 @@
     {
       "label": "_git_tracked_paths()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L67",
       "id": "pentagi_sweep_git_tracked_paths",
       "community": 15
@@ -2414,7 +2414,7 @@
     {
       "label": "_git_path_is_tracked()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L88",
       "id": "pentagi_sweep_git_path_is_tracked",
       "community": 15
@@ -2422,7 +2422,7 @@
     {
       "label": "_candidate_paths()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L95",
       "id": "pentagi_sweep_candidate_paths",
       "community": 15
@@ -2430,7 +2430,7 @@
     {
       "label": "resolve_repo_path()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L103",
       "id": "pentagi_sweep_resolve_repo_path",
       "community": 15
@@ -2438,7 +2438,7 @@
     {
       "label": "latest_pentagi_report()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L111",
       "id": "pentagi_sweep_latest_pentagi_report",
       "community": 15
@@ -2446,7 +2446,7 @@
     {
       "label": "pentagi_repos()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L128",
       "id": "pentagi_sweep_pentagi_repos",
       "community": 15
@@ -2454,7 +2454,7 @@
     {
       "label": "evaluate_repo()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L136",
       "id": "pentagi_sweep_evaluate_repo",
       "community": 15
@@ -2462,7 +2462,7 @@
     {
       "label": "build_payload()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L210",
       "id": "pentagi_sweep_build_payload",
       "community": 15
@@ -2470,7 +2470,7 @@
     {
       "label": "render_markdown()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L222",
       "id": "pentagi_sweep_render_markdown",
       "community": 15
@@ -2478,7 +2478,7 @@
     {
       "label": "write_optional()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L244",
       "id": "pentagi_sweep_write_optional",
       "community": 15
@@ -2486,7 +2486,7 @@
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L252",
       "id": "pentagi_sweep_main",
       "community": 15
@@ -2654,7 +2654,7 @@
     {
       "label": "test_pentagi_sweep.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L1",
       "id": "test_pentagi_sweep",
       "community": 34
@@ -2662,7 +2662,7 @@
     {
       "label": "_registry()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L10",
       "id": "test_pentagi_sweep_registry",
       "community": 34
@@ -2670,7 +2670,7 @@
     {
       "label": "_repo()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L75",
       "id": "test_pentagi_sweep_repo",
       "community": 34
@@ -2678,7 +2678,7 @@
     {
       "label": "_track()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L84",
       "id": "test_pentagi_sweep_track",
       "community": 34
@@ -2686,7 +2686,7 @@
     {
       "label": "_run()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L88",
       "id": "test_pentagi_sweep_run",
       "community": 34
@@ -2694,7 +2694,7 @@
     {
       "label": "test_missing_report_skips_with_missing_token()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L107",
       "id": "test_pentagi_sweep_test_missing_report_skips_with_missing_token",
       "community": 34
@@ -2702,7 +2702,7 @@
     {
       "label": "test_stale_report_skips_with_missing_token()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L121",
       "id": "test_pentagi_sweep_test_stale_report_skips_with_missing_token",
       "community": 34
@@ -2710,7 +2710,7 @@
     {
       "label": "test_missing_runner_is_explicit_when_token_exists()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L136",
       "id": "test_pentagi_sweep_test_missing_runner_is_explicit_when_token_exists",
       "community": 34
@@ -2718,7 +2718,7 @@
     {
       "label": "test_fresh_report_does_not_trigger()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L147",
       "id": "test_pentagi_sweep_test_fresh_report_does_not_trigger",
       "community": 34
@@ -2726,7 +2726,7 @@
     {
       "label": "test_runner_would_run_without_execute()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L161",
       "id": "test_pentagi_sweep_test_runner_would_run_without_execute",
       "community": 34
@@ -2734,7 +2734,7 @@
     {
       "label": "test_untracked_fresh_report_does_not_count_for_audited_ref()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L175",
       "id": "test_pentagi_sweep_test_untracked_fresh_report_does_not_count_for_audited_ref",
       "community": 34
@@ -2742,7 +2742,7 @@
     {
       "label": "test_execute_runs_tracked_runner()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L188",
       "id": "test_pentagi_sweep_test_execute_runs_tracked_runner",
       "community": 34
@@ -2750,7 +2750,7 @@
     {
       "label": "test_markdown_records_same_source_root_for_dashboard_consumers()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L202",
       "id": "test_pentagi_sweep_test_markdown_records_same_source_root_for_dashboard_consumers",
       "community": 34
@@ -12088,7 +12088,7 @@
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L16",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -12119,18 +12119,6 @@
       "_tgt": "governed_repos_governedrepo",
       "source": "governed_repos_governedrepo",
       "target": "governed_repos_governed_repos",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
-      "source_location": "L16",
-      "weight": 0.8,
-      "_src": "pentagi_sweep_pentagistatus",
-      "_tgt": "governed_repos_governedrepo",
-      "source": "governed_repos_governedrepo",
-      "target": "pentagi_sweep_pentagistatus",
       "confidence_score": 0.5
     },
     {
@@ -16564,7 +16552,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L25",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16576,7 +16564,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L42",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16588,7 +16576,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L49",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16600,7 +16588,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L56",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16612,7 +16600,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L67",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16624,7 +16612,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L88",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16636,7 +16624,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L95",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16648,7 +16636,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L103",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16660,7 +16648,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L111",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16672,7 +16660,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L128",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16684,7 +16672,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L136",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16696,7 +16684,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L210",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16708,7 +16696,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L222",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16720,7 +16708,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L244",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16732,7 +16720,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L252",
       "weight": 1.0,
       "_src": "pentagi_sweep",
@@ -16744,7 +16732,7 @@
     {
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L7",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -16756,7 +16744,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L192",
       "weight": 0.8,
       "_src": "pentagi_sweep_evaluate_repo",
@@ -16768,7 +16756,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L53",
       "weight": 0.8,
       "_src": "pentagi_sweep_report_date",
@@ -16780,7 +16768,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L263",
       "weight": 0.8,
       "_src": "pentagi_sweep_main",
@@ -16792,7 +16780,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L119",
       "weight": 0.8,
       "_src": "pentagi_sweep_latest_pentagi_report",
@@ -16804,7 +16792,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L148",
       "weight": 0.8,
       "_src": "pentagi_sweep_evaluate_repo",
@@ -16816,7 +16804,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L89",
       "weight": 0.8,
       "_src": "pentagi_sweep_git_path_is_tracked",
@@ -16828,7 +16816,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L113",
       "weight": 0.8,
       "_src": "pentagi_sweep_latest_pentagi_report",
@@ -16840,7 +16828,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L165",
       "weight": 0.8,
       "_src": "pentagi_sweep_evaluate_repo",
@@ -16852,7 +16840,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L104",
       "weight": 0.8,
       "_src": "pentagi_sweep_resolve_repo_path",
@@ -16864,7 +16852,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L145",
       "weight": 0.8,
       "_src": "pentagi_sweep_evaluate_repo",
@@ -16876,7 +16864,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L147",
       "weight": 0.8,
       "_src": "pentagi_sweep_evaluate_repo",
@@ -16888,7 +16876,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L281",
       "weight": 0.8,
       "_src": "pentagi_sweep_main",
@@ -16900,7 +16888,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L273",
       "weight": 0.8,
       "_src": "pentagi_sweep_main",
@@ -16912,7 +16900,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L283",
       "weight": 0.8,
       "_src": "pentagi_sweep_main",
@@ -16924,7 +16912,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L285",
       "weight": 0.8,
       "_src": "pentagi_sweep_main",
@@ -16936,7 +16924,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/pentagi_sweep.py",
+      "source_file": "scripts/overlord/pentagi_sweep.py",
       "source_location": "L287",
       "weight": 0.8,
       "_src": "pentagi_sweep_main",
@@ -17680,7 +17668,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L10",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -17692,7 +17680,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L75",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -17704,7 +17692,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L84",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -17716,7 +17704,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L88",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -17728,7 +17716,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L107",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -17740,7 +17728,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L121",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -17752,7 +17740,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L136",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -17764,7 +17752,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L147",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -17776,7 +17764,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L161",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -17788,7 +17776,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L175",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -17800,7 +17788,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L188",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -17812,7 +17800,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L202",
       "weight": 1.0,
       "_src": "test_pentagi_sweep",
@@ -17824,7 +17812,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L93",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_run",
@@ -17836,7 +17824,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L211",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_markdown_records_same_source_root_for_dashboard_consumers",
@@ -17848,7 +17836,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L108",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_missing_report_skips_with_missing_token",
@@ -17860,7 +17848,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L122",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_stale_report_skips_with_missing_token",
@@ -17872,7 +17860,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L137",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_missing_runner_is_explicit_when_token_exists",
@@ -17884,7 +17872,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L148",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_fresh_report_does_not_trigger",
@@ -17896,7 +17884,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L162",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_runner_would_run_without_execute",
@@ -17908,7 +17896,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L176",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_untracked_fresh_report_does_not_count_for_audited_ref",
@@ -17920,7 +17908,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L189",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_execute_runs_tracked_runner",
@@ -17932,7 +17920,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L203",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_markdown_records_same_source_root_for_dashboard_consumers",
@@ -17944,7 +17932,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L125",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_stale_report_skips_with_missing_token",
@@ -17956,7 +17944,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L151",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_fresh_report_does_not_trigger",
@@ -17968,7 +17956,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L166",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_runner_would_run_without_execute",
@@ -17980,7 +17968,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L193",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_execute_runs_tracked_runner",
@@ -17992,7 +17980,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L111",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_missing_report_skips_with_missing_token",
@@ -18004,7 +17992,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L128",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_stale_report_skips_with_missing_token",
@@ -18016,7 +18004,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L140",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_missing_runner_is_explicit_when_token_exists",
@@ -18028,7 +18016,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L154",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_fresh_report_does_not_trigger",
@@ -18040,7 +18028,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L169",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_runner_would_run_without_execute",
@@ -18052,7 +18040,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L180",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_untracked_fresh_report_does_not_count_for_audited_ref",
@@ -18064,7 +18052,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-213-pentagi-sweep-source/scripts/overlord/test_pentagi_sweep.py",
+      "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L196",
       "weight": 0.8,
       "_src": "test_pentagi_sweep_test_execute_runs_tracked_runner",
