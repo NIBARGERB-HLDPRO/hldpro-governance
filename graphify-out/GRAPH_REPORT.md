@@ -5,8 +5,8 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1090 nodes · 2283 edges · 57 communities detected
-- Extraction: 46% EXTRACTED · 54% INFERRED · 0% AMBIGUOUS · INFERRED: 1236 edges (avg confidence: 0.5)
+- 1094 nodes · 2288 edges · 57 communities detected
+- Extraction: 46% EXTRACTED · 54% INFERRED · 0% AMBIGUOUS · INFERRED: 1237 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -18,7 +18,7 @@
 6. `_tier1_packet()` - 29 edges
 7. `AuditWriter` - 28 edges
 8. `RepoFixture` - 26 edges
-9. `TestGovernanceSurfacePlanGate` - 21 edges
+9. `TestGovernanceSurfacePlanGate` - 24 edges
 10. `TestDeployGovernanceTooling` - 19 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -92,12 +92,12 @@ Cohesion: 0.11
 Nodes (14): _all_executable_lines(), _all_run_commands(), check_contract(), _contains_main_branch(), _executable_lines(), _failures_for_text(), _has_executable_line_starting_with(), _load_workflow() (+6 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.17
-Nodes (22): _changed_paths(), _changed_paths_from_file(), check_scope(), _current_branch(), ExecutionScope, _format_path(), _git_root(), HandoffEvidence (+14 more)
+Cohesion: 0.15
+Nodes (2): _plan(), TestGovernanceSurfacePlanGate
 
 ### Community 15 - "Community 15"
-Cohesion: 0.18
-Nodes (2): _plan(), TestGovernanceSurfacePlanGate
+Cohesion: 0.17
+Nodes (22): _changed_paths(), _changed_paths_from_file(), check_scope(), _current_branch(), ExecutionScope, _format_path(), _git_root(), HandoffEvidence (+14 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.15
@@ -152,16 +152,16 @@ Cohesion: 0.26
 Nodes (1): GovernedReposValidationTests
 
 ### Community 29 - "Community 29"
+Cohesion: 0.31
+Nodes (13): _branch_issue_number(), _display_path(), _find_plan_files(), _is_governance_surface(), _load_json_safe(), main(), _matching_execution_scopes(), _matching_plan_payloads() (+5 more)
+
+### Community 30 - "Community 30"
 Cohesion: 0.51
 Nodes (1): TestOrgRepoInventory
 
-### Community 30 - "Community 30"
+### Community 31 - "Community 31"
 Cohesion: 0.42
 Nodes (12): _registry(), _repo(), _run(), test_execute_runs_tracked_runner(), test_fresh_report_does_not_trigger(), test_markdown_records_same_source_root_for_dashboard_consumers(), test_missing_report_skips_with_missing_token(), test_missing_runner_is_explicit_when_token_exists() (+4 more)
-
-### Community 31 - "Community 31"
-Cohesion: 0.35
-Nodes (12): _branch_issue_number(), _find_plan_files(), _is_governance_surface(), _load_json(), main(), _matching_execution_scopes(), _matching_plan_payloads(), _read_changed_files() (+4 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.18
@@ -275,7 +275,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `GateError` connect `Community 4` to `Community 23`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **Why does `HelperError` connect `Community 8` to `Community 23`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **Are the 39 inferred relationships involving `WindowsOllamaSubmitter` (e.g. with `main()` and `AuditWriter`) actually correct?**
   _`WindowsOllamaSubmitter` has 39 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 39 inferred relationships involving `PiiDetectionError` (e.g. with `.submit()` and `AuditWriter`) actually correct?**

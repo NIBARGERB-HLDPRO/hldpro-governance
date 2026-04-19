@@ -2409,7 +2409,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L1",
       "id": "assert_execution_scope",
-      "community": 14
+      "community": 15
     },
     {
       "label": "HandoffEvidence",
@@ -2417,7 +2417,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L15",
       "id": "assert_execution_scope_handoffevidence",
-      "community": 14
+      "community": 15
     },
     {
       "label": "ExecutionScope",
@@ -2425,7 +2425,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L26",
       "id": "assert_execution_scope_executionscope",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_run_git()",
@@ -2433,7 +2433,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L36",
       "id": "assert_execution_scope_run_git",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_normalize_repo_path()",
@@ -2441,7 +2441,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L46",
       "id": "assert_execution_scope_normalize_repo_path",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_normalize_repo_relative_file_path()",
@@ -2449,7 +2449,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L52",
       "id": "assert_execution_scope_normalize_repo_relative_file_path",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_normalize_active_exception_ref()",
@@ -2457,7 +2457,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L69",
       "id": "assert_execution_scope_normalize_active_exception_ref",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_parse_iso8601_timestamp()",
@@ -2465,7 +2465,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L83",
       "id": "assert_execution_scope_parse_iso8601_timestamp",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_load_handoff_evidence()",
@@ -2473,7 +2473,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L98",
       "id": "assert_execution_scope_load_handoff_evidence",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_load_scope()",
@@ -2481,7 +2481,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L161",
       "id": "assert_execution_scope_load_scope",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_git_root()",
@@ -2489,7 +2489,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L234",
       "id": "assert_execution_scope_git_root",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_current_branch()",
@@ -2497,7 +2497,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L241",
       "id": "assert_execution_scope_current_branch",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_changed_paths()",
@@ -2505,7 +2505,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L251",
       "id": "assert_execution_scope_changed_paths",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_changed_paths_from_file()",
@@ -2513,7 +2513,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L279",
       "id": "assert_execution_scope_changed_paths_from_file",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_path_allowed()",
@@ -2521,7 +2521,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L290",
       "id": "assert_execution_scope_path_allowed",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_model_family()",
@@ -2529,7 +2529,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L294",
       "id": "assert_execution_scope_model_family",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_same_model_or_family()",
@@ -2537,7 +2537,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L315",
       "id": "assert_execution_scope_same_model_or_family",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_validate_execution_mode()",
@@ -2545,7 +2545,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L321",
       "id": "assert_execution_scope_validate_execution_mode",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_format_path()",
@@ -2553,7 +2553,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L351",
       "id": "assert_execution_scope_format_path",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_resolve_expected_execution_root()",
@@ -2561,7 +2561,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L355",
       "id": "assert_execution_scope_resolve_expected_execution_root",
-      "community": 14
+      "community": 15
     },
     {
       "label": "_validate_active_exception_ref()",
@@ -2569,7 +2569,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L361",
       "id": "assert_execution_scope_validate_active_exception_ref",
-      "community": 14
+      "community": 15
     },
     {
       "label": "check_scope()",
@@ -2577,7 +2577,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L376",
       "id": "assert_execution_scope_check_scope",
-      "community": 14
+      "community": 15
     },
     {
       "label": "main()",
@@ -2585,7 +2585,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L458",
       "id": "assert_execution_scope_main",
-      "community": 14
+      "community": 15
     },
     {
       "label": "build_effectiveness_metrics.py",
@@ -2833,7 +2833,7 @@
       "source_file": "scripts/overlord/check_execution_environment.py",
       "source_location": "L1",
       "id": "check_execution_environment",
-      "community": 14
+      "community": 15
     },
     {
       "label": "main()",
@@ -2841,7 +2841,7 @@
       "source_file": "scripts/overlord/check_execution_environment.py",
       "source_location": "L12",
       "id": "check_execution_environment_main",
-      "community": 14
+      "community": 15
     },
     {
       "label": "check_local_ci_gate_workflow_contract.py",
@@ -4545,7 +4545,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L1",
       "id": "test_check_org_repo_inventory",
-      "community": 29
+      "community": 30
     },
     {
       "label": "TestOrgRepoInventory",
@@ -4553,7 +4553,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L23",
       "id": "test_check_org_repo_inventory_testorgrepoinventory",
-      "community": 29
+      "community": 30
     },
     {
       "label": "._registry()",
@@ -4561,7 +4561,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L24",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_registry",
-      "community": 29
+      "community": 30
     },
     {
       "label": "._inventory()",
@@ -4569,7 +4569,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L73",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_inventory",
-      "community": 29
+      "community": 30
     },
     {
       "label": "._repo_row()",
@@ -4577,7 +4577,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L78",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_repo_row",
-      "community": 29
+      "community": 30
     },
     {
       "label": "._run()",
@@ -4585,7 +4585,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L88",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_run",
-      "community": 29
+      "community": 30
     },
     {
       "label": ".test_exact_active_inventory_passes()",
@@ -4593,7 +4593,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L95",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_exact_active_inventory_passes",
-      "community": 29
+      "community": 30
     },
     {
       "label": ".test_missing_active_repo_fails()",
@@ -4601,7 +4601,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L109",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_missing_active_repo_fails",
-      "community": 29
+      "community": 30
     },
     {
       "label": ".test_warn_only_reports_missing_active_repo_but_passes()",
@@ -4609,7 +4609,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L124",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_warn_only_reports_missing_active_repo_but_passes",
-      "community": 29
+      "community": 30
     },
     {
       "label": ".test_stale_registry_repo_fails()",
@@ -4617,7 +4617,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L147",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_stale_registry_repo_fails",
-      "community": 29
+      "community": 30
     },
     {
       "label": ".test_archived_unregistered_repo_is_notice_not_blocker()",
@@ -4625,7 +4625,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L159",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_unregistered_repo_is_notice_not_blocker",
-      "community": 29
+      "community": 30
     },
     {
       "label": ".test_archived_registry_repo_fails_without_archived_lifecycle_classification()",
@@ -4633,7 +4633,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L174",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_fails_without_archived_lifecycle_classification",
-      "community": 29
+      "community": 30
     },
     {
       "label": ".test_archived_registry_repo_passes_with_archived_lifecycle_classification()",
@@ -4641,7 +4641,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L189",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_passes_with_archived_lifecycle_classification",
-      "community": 29
+      "community": 30
     },
     {
       "label": "test_deploy_governance_tooling.py",
@@ -5057,7 +5057,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L1",
       "id": "test_pentagi_sweep",
-      "community": 30
+      "community": 31
     },
     {
       "label": "_registry()",
@@ -5065,7 +5065,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L10",
       "id": "test_pentagi_sweep_registry",
-      "community": 30
+      "community": 31
     },
     {
       "label": "_repo()",
@@ -5073,7 +5073,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L75",
       "id": "test_pentagi_sweep_repo",
-      "community": 30
+      "community": 31
     },
     {
       "label": "_track()",
@@ -5081,7 +5081,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L84",
       "id": "test_pentagi_sweep_track",
-      "community": 30
+      "community": 31
     },
     {
       "label": "_run()",
@@ -5089,7 +5089,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L88",
       "id": "test_pentagi_sweep_run",
-      "community": 30
+      "community": 31
     },
     {
       "label": "test_missing_report_skips_with_missing_token()",
@@ -5097,7 +5097,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L107",
       "id": "test_pentagi_sweep_test_missing_report_skips_with_missing_token",
-      "community": 30
+      "community": 31
     },
     {
       "label": "test_stale_report_skips_with_missing_token()",
@@ -5105,7 +5105,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L121",
       "id": "test_pentagi_sweep_test_stale_report_skips_with_missing_token",
-      "community": 30
+      "community": 31
     },
     {
       "label": "test_missing_runner_is_explicit_when_token_exists()",
@@ -5113,7 +5113,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L136",
       "id": "test_pentagi_sweep_test_missing_runner_is_explicit_when_token_exists",
-      "community": 30
+      "community": 31
     },
     {
       "label": "test_fresh_report_does_not_trigger()",
@@ -5121,7 +5121,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L147",
       "id": "test_pentagi_sweep_test_fresh_report_does_not_trigger",
-      "community": 30
+      "community": 31
     },
     {
       "label": "test_runner_would_run_without_execute()",
@@ -5129,7 +5129,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L161",
       "id": "test_pentagi_sweep_test_runner_would_run_without_execute",
-      "community": 30
+      "community": 31
     },
     {
       "label": "test_untracked_fresh_report_does_not_count_for_audited_ref()",
@@ -5137,7 +5137,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L175",
       "id": "test_pentagi_sweep_test_untracked_fresh_report_does_not_count_for_audited_ref",
-      "community": 30
+      "community": 31
     },
     {
       "label": "test_execute_runs_tracked_runner()",
@@ -5145,7 +5145,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L188",
       "id": "test_pentagi_sweep_test_execute_runs_tracked_runner",
-      "community": 30
+      "community": 31
     },
     {
       "label": "test_markdown_records_same_source_root_for_dashboard_consumers()",
@@ -5153,7 +5153,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L202",
       "id": "test_pentagi_sweep_test_markdown_records_same_source_root_for_dashboard_consumers",
-      "community": 30
+      "community": 31
     },
     {
       "label": "test_validate_governed_repos.py",
@@ -5270,186 +5270,210 @@
     {
       "label": "test_validate_structured_agent_cycle_plan.py",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L1",
       "id": "test_validate_structured_agent_cycle_plan",
-      "community": 15
+      "community": 14
     },
     {
       "label": "_plan()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L15",
       "id": "test_validate_structured_agent_cycle_plan_plan",
-      "community": 15
+      "community": 14
     },
     {
       "label": "TestGovernanceSurfacePlanGate",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L72",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
-      "community": 15
+      "community": 14
     },
     {
       "label": "._run()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L73",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_run",
-      "community": 15
+      "community": 14
     },
     {
       "label": "._run_with_scope_gate()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L93",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_run_with_scope_gate",
-      "community": 15
+      "community": 14
     },
     {
       "label": "._write_scope()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L114",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_write_scope",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_non_issue_branch_with_governance_surface_change_fails()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L130",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_non_issue_branch_with_governance_surface_change_fails",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_non_issue_branch_does_not_validate_unmatched_plans_for_readiness()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L136",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_non_issue_branch_does_not_validate_unmatched_plans_for_readiness",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_github_scripts_are_governance_surface()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L147",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_github_scripts_are_governance_surface",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_github_workflows_with_leading_dot_are_governance_surface()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L153",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_github_workflows_with_leading_dot_are_governance_surface",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_launchd_and_orchestrator_paths_are_governance_surface()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L159",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_launchd_and_orchestrator_paths_are_governance_surface",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_lam_runtime_paths_are_governance_surface()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L166",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_lam_runtime_paths_are_governance_surface",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_packet_paths_are_governance_surface()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L172",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_packet_paths_are_governance_surface",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_self_learning_paths_are_governance_surface()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L188",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_self_learning_paths_are_governance_surface",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_pilot_gate_and_metrics_paths_are_governance_surface()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L202",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_pilot_gate_and_metrics_paths_are_governance_surface",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_riskfix_branch_without_issue_number_gets_specific_issue_hint()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L216",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_riskfix_branch_without_issue_number_gets_specific_issue_hint",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_non_governance_surface_change_without_plan_passes()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L222",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_non_governance_surface_change_without_plan_passes",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_issue_branch_requires_matching_plan()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L227",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_issue_branch_requires_matching_plan",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_issue_branch_matching_approved_plan_passes()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L233",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_issue_branch_matching_approved_plan_passes",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_planner_boundary_scope_gate_requires_issue_specific_scope()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L242",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_planner_boundary_scope_gate_requires_issue_specific_scope",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_planner_boundary_scope_gate_accepts_matching_scope()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L260",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_planner_boundary_scope_gate_accepts_matching_scope",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_matching_plan_must_be_implementation_ready()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L278",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_matching_plan_must_be_implementation_ready",
-      "community": 15
+      "community": 14
     },
     {
       "label": ".test_required_alternate_review_must_be_accepted()",
       "file_type": "code",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L288",
       "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_required_alternate_review_must_be_accepted",
-      "community": 15
+      "community": 14
+    },
+    {
+      "label": ".test_malformed_json_reports_structured_fail_without_traceback()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_location": "L298",
+      "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_malformed_json_reports_structured_fail_without_traceback",
+      "community": 14
+    },
+    {
+      "label": ".test_malformed_matching_plan_does_not_crash_governance_surface_gate()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_location": "L314",
+      "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_malformed_matching_plan_does_not_crash_governance_surface_gate",
+      "community": 14
+    },
+    {
+      "label": ".test_plan_read_error_reports_structured_fail_without_traceback()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_location": "L327",
+      "id": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_plan_read_error_reports_structured_fail_without_traceback",
+      "community": 14
     },
     {
       "label": "test_workflow_local_coverage.py",
@@ -5766,106 +5790,114 @@
     {
       "label": "validate_structured_agent_cycle_plan.py",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L1",
       "id": "validate_structured_agent_cycle_plan",
-      "community": 31
+      "community": 29
     },
     {
-      "label": "_load_json()",
+      "label": "_display_path()",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L52",
-      "id": "validate_structured_agent_cycle_plan_load_json",
-      "community": 31
+      "id": "validate_structured_agent_cycle_plan_display_path",
+      "community": 29
+    },
+    {
+      "label": "_load_json_safe()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L59",
+      "id": "validate_structured_agent_cycle_plan_load_json_safe",
+      "community": 29
     },
     {
       "label": "_find_plan_files()",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L56",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L67",
       "id": "validate_structured_agent_cycle_plan_find_plan_files",
-      "community": 31
+      "community": 29
     },
     {
       "label": "_require()",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L60",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L71",
       "id": "validate_structured_agent_cycle_plan_require",
-      "community": 31
+      "community": 29
     },
     {
       "label": "_branch_issue_number()",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L65",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L76",
       "id": "validate_structured_agent_cycle_plan_branch_issue_number",
-      "community": 31
+      "community": 29
     },
     {
       "label": "_is_governance_surface()",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L70",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L81",
       "id": "validate_structured_agent_cycle_plan_is_governance_surface",
-      "community": 31
+      "community": 29
     },
     {
       "label": "_read_changed_files()",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L79",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L90",
       "id": "validate_structured_agent_cycle_plan_read_changed_files",
-      "community": 31
+      "community": 29
     },
     {
       "label": "_matching_plan_payloads()",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L85",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L96",
       "id": "validate_structured_agent_cycle_plan_matching_plan_payloads",
-      "community": 31
+      "community": 29
     },
     {
       "label": "_matching_execution_scopes()",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L96",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L110",
       "id": "validate_structured_agent_cycle_plan_matching_execution_scopes",
-      "community": 31
+      "community": 29
     },
     {
       "label": "_validate_planner_boundary_scope_presence()",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L105",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L119",
       "id": "validate_structured_agent_cycle_plan_validate_planner_boundary_scope_presence",
-      "community": 31
+      "community": 29
     },
     {
       "label": "_validate_implementation_ready_plan()",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L137",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L151",
       "id": "validate_structured_agent_cycle_plan_validate_implementation_ready_plan",
-      "community": 31
+      "community": 29
     },
     {
       "label": "_validate_file()",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L162",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L176",
       "id": "validate_structured_agent_cycle_plan_validate_file",
-      "community": 31
+      "community": 29
     },
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L240",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L254",
       "id": "validate_structured_agent_cycle_plan_main",
-      "community": 31
+      "community": 29
     },
     {
       "label": "emit.py",
@@ -26020,7 +26052,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L15",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan",
@@ -26032,7 +26064,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L72",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan",
@@ -26044,7 +26076,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L141",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_non_issue_branch_does_not_validate_unmatched_plans_for_readiness",
@@ -26056,7 +26088,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L238",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_issue_branch_matching_approved_plan_passes",
@@ -26068,7 +26100,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L247",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_planner_boundary_scope_gate_requires_issue_specific_scope",
@@ -26080,7 +26112,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L265",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_planner_boundary_scope_gate_accepts_matching_scope",
@@ -26092,7 +26124,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L283",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_matching_plan_must_be_implementation_ready",
@@ -26104,7 +26136,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L293",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_required_alternate_review_must_be_accepted",
@@ -26116,7 +26148,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L73",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26128,7 +26160,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L93",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26140,7 +26172,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L114",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26152,7 +26184,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L130",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26164,7 +26196,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L136",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26176,7 +26208,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L147",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26188,7 +26220,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L153",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26200,7 +26232,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L159",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26212,7 +26244,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L166",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26224,7 +26256,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L172",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26236,7 +26268,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L188",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26248,7 +26280,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L202",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26260,7 +26292,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L216",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26272,7 +26304,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L222",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26284,7 +26316,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L227",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26296,7 +26328,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L233",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26308,7 +26340,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L242",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26320,7 +26352,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L260",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26332,7 +26364,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L278",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26344,7 +26376,7 @@
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L288",
       "weight": 1.0,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
@@ -26354,9 +26386,45 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_location": "L298",
+      "weight": 1.0,
+      "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
+      "_tgt": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_malformed_json_reports_structured_fail_without_traceback",
+      "source": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
+      "target": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_malformed_json_reports_structured_fail_without_traceback",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_location": "L314",
+      "weight": 1.0,
+      "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
+      "_tgt": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_malformed_matching_plan_does_not_crash_governance_surface_gate",
+      "source": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
+      "target": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_malformed_matching_plan_does_not_crash_governance_surface_gate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_location": "L327",
+      "weight": 1.0,
+      "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
+      "_tgt": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_plan_read_error_reports_structured_fail_without_traceback",
+      "source": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate",
+      "target": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_plan_read_error_reports_structured_fail_without_traceback",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L132",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_non_issue_branch_with_governance_surface_change_fails",
@@ -26368,7 +26436,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L142",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_non_issue_branch_does_not_validate_unmatched_plans_for_readiness",
@@ -26380,7 +26448,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L149",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_github_scripts_are_governance_surface",
@@ -26392,7 +26460,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L155",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_github_workflows_with_leading_dot_are_governance_surface",
@@ -26404,7 +26472,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L161",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_launchd_and_orchestrator_paths_are_governance_surface",
@@ -26416,7 +26484,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L168",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_lam_runtime_paths_are_governance_surface",
@@ -26428,7 +26496,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L174",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_packet_paths_are_governance_surface",
@@ -26440,7 +26508,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L190",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_self_learning_paths_are_governance_surface",
@@ -26452,7 +26520,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L204",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_pilot_gate_and_metrics_paths_are_governance_surface",
@@ -26464,7 +26532,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L218",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_riskfix_branch_without_issue_number_gets_specific_issue_hint",
@@ -26476,7 +26544,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L224",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_non_governance_surface_change_without_plan_passes",
@@ -26488,7 +26556,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L229",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_issue_branch_requires_matching_plan",
@@ -26500,7 +26568,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L239",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_issue_branch_matching_approved_plan_passes",
@@ -26512,7 +26580,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L284",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_matching_plan_must_be_implementation_ready",
@@ -26524,7 +26592,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L294",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_required_alternate_review_must_be_accepted",
@@ -26536,7 +26604,19 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_location": "L320",
+      "weight": 0.8,
+      "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_malformed_matching_plan_does_not_crash_governance_surface_gate",
+      "_tgt": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_run",
+      "source": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_run",
+      "target": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_malformed_matching_plan_does_not_crash_governance_surface_gate",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L248",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_planner_boundary_scope_gate_requires_issue_specific_scope",
@@ -26548,7 +26628,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L267",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_planner_boundary_scope_gate_accepts_matching_scope",
@@ -26560,7 +26640,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/test_validate_structured_agent_cycle_plan.py",
       "source_location": "L266",
       "weight": 0.8,
       "_src": "test_validate_structured_agent_cycle_plan_testgovernancesurfaceplangate_test_planner_boundary_scope_gate_accepts_matching_scope",
@@ -27496,20 +27576,32 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L52",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
-      "_tgt": "validate_structured_agent_cycle_plan_load_json",
+      "_tgt": "validate_structured_agent_cycle_plan_display_path",
       "source": "validate_structured_agent_cycle_plan",
-      "target": "validate_structured_agent_cycle_plan_load_json",
+      "target": "validate_structured_agent_cycle_plan_display_path",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L56",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_src": "validate_structured_agent_cycle_plan",
+      "_tgt": "validate_structured_agent_cycle_plan_load_json_safe",
+      "source": "validate_structured_agent_cycle_plan",
+      "target": "validate_structured_agent_cycle_plan_load_json_safe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L67",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
       "_tgt": "validate_structured_agent_cycle_plan_find_plan_files",
@@ -27520,8 +27612,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L60",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L71",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
       "_tgt": "validate_structured_agent_cycle_plan_require",
@@ -27532,8 +27624,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L65",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L76",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
       "_tgt": "validate_structured_agent_cycle_plan_branch_issue_number",
@@ -27544,8 +27636,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L70",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L81",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
       "_tgt": "validate_structured_agent_cycle_plan_is_governance_surface",
@@ -27556,8 +27648,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L79",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L90",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
       "_tgt": "validate_structured_agent_cycle_plan_read_changed_files",
@@ -27568,8 +27660,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L85",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L96",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
       "_tgt": "validate_structured_agent_cycle_plan_matching_plan_payloads",
@@ -27580,8 +27672,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L96",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L110",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
       "_tgt": "validate_structured_agent_cycle_plan_matching_execution_scopes",
@@ -27592,8 +27684,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L105",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L119",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
       "_tgt": "validate_structured_agent_cycle_plan_validate_planner_boundary_scope_presence",
@@ -27604,8 +27696,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L137",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L151",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
       "_tgt": "validate_structured_agent_cycle_plan_validate_implementation_ready_plan",
@@ -27616,8 +27708,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L162",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L176",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
       "_tgt": "validate_structured_agent_cycle_plan_validate_file",
@@ -27628,8 +27720,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L240",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L254",
       "weight": 1.0,
       "_src": "validate_structured_agent_cycle_plan",
       "_tgt": "validate_structured_agent_cycle_plan_main",
@@ -27640,32 +27732,32 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L90",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L63",
       "weight": 0.8,
-      "_src": "validate_structured_agent_cycle_plan_matching_plan_payloads",
-      "_tgt": "validate_structured_agent_cycle_plan_load_json",
-      "source": "validate_structured_agent_cycle_plan_load_json",
-      "target": "validate_structured_agent_cycle_plan_matching_plan_payloads",
+      "_src": "validate_structured_agent_cycle_plan_load_json_safe",
+      "_tgt": "validate_structured_agent_cycle_plan_display_path",
+      "source": "validate_structured_agent_cycle_plan_display_path",
+      "target": "validate_structured_agent_cycle_plan_load_json_safe",
       "confidence_score": 0.5
     },
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L283",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L267",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_main",
-      "_tgt": "validate_structured_agent_cycle_plan_load_json",
-      "source": "validate_structured_agent_cycle_plan_load_json",
+      "_tgt": "validate_structured_agent_cycle_plan_load_json_safe",
+      "source": "validate_structured_agent_cycle_plan_load_json_safe",
       "target": "validate_structured_agent_cycle_plan_main",
       "confidence_score": 0.5
     },
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L251",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L265",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_main",
       "_tgt": "validate_structured_agent_cycle_plan_find_plan_files",
@@ -27676,8 +27768,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L141",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L155",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_validate_implementation_ready_plan",
       "_tgt": "validate_structured_agent_cycle_plan_require",
@@ -27688,8 +27780,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L186",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L200",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_validate_file",
       "_tgt": "validate_structured_agent_cycle_plan_require",
@@ -27700,8 +27792,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L115",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L129",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_validate_planner_boundary_scope_presence",
       "_tgt": "validate_structured_agent_cycle_plan_branch_issue_number",
@@ -27712,8 +27804,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L263",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L278",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_main",
       "_tgt": "validate_structured_agent_cycle_plan_branch_issue_number",
@@ -27724,8 +27816,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L111",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L125",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_validate_planner_boundary_scope_presence",
       "_tgt": "validate_structured_agent_cycle_plan_is_governance_surface",
@@ -27736,8 +27828,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L261",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L276",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_main",
       "_tgt": "validate_structured_agent_cycle_plan_is_governance_surface",
@@ -27748,8 +27840,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L260",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L275",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_main",
       "_tgt": "validate_structured_agent_cycle_plan_read_changed_files",
@@ -27760,8 +27852,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L269",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L284",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_main",
       "_tgt": "validate_structured_agent_cycle_plan_matching_plan_payloads",
@@ -27772,8 +27864,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L123",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L137",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_validate_planner_boundary_scope_presence",
       "_tgt": "validate_structured_agent_cycle_plan_matching_execution_scopes",
@@ -27784,8 +27876,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L280",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L295",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_main",
       "_tgt": "validate_structured_agent_cycle_plan_validate_planner_boundary_scope_presence",
@@ -27796,8 +27888,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L277",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L292",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_main",
       "_tgt": "validate_structured_agent_cycle_plan_validate_implementation_ready_plan",
@@ -27808,8 +27900,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
-      "source_location": "L284",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/scripts/overlord/validate_structured_agent_cycle_plan.py",
+      "source_location": "L299",
       "weight": 0.8,
       "_src": "validate_structured_agent_cycle_plan_main",
       "_tgt": "validate_structured_agent_cycle_plan_validate_file",
