@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-197-portable-hook-paths/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-197-portable-hook-paths/wiki/hldpro",
-  "nodes": 1090,
-  "edges": 2113,
-  "communities": 59,
-  "articles": 69,
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-192-structured-plan-json-fail/wiki/hldpro",
+  "nodes": 1094,
+  "edges": 2118,
+  "communities": 60,
+  "articles": 70,
   "html_status": "skipped",
   "code_files": 71
 }
