@@ -545,63 +545,71 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L1",
       "id": "test_codex_fire",
-      "community": 45
+      "community": 43
     },
     {
       "label": "write_fake_codex()",
       "file_type": "code",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L13",
+      "source_location": "L14",
       "id": "test_codex_fire_write_fake_codex",
-      "community": 45
+      "community": 43
     },
     {
       "label": "run_fire()",
       "file_type": "code",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L27",
+      "source_location": "L28",
       "id": "test_codex_fire_run_fire",
-      "community": 45
+      "community": 43
     },
     {
       "label": "test_preflight_failure_logs_and_exits_fast()",
       "file_type": "code",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L61",
+      "source_location": "L62",
       "id": "test_codex_fire_test_preflight_failure_logs_and_exits_fast",
-      "community": 45
+      "community": 43
     },
     {
       "label": "test_preflight_timeout_logs_and_exits_fast()",
       "file_type": "code",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L83",
+      "source_location": "L84",
       "id": "test_codex_fire_test_preflight_timeout_logs_and_exits_fast",
-      "community": 45
+      "community": 43
     },
     {
       "label": "test_exec_failure_after_successful_preflight_logs_and_signals()",
       "file_type": "code",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L105",
+      "source_location": "L106",
       "id": "test_codex_fire_test_exec_failure_after_successful_preflight_logs_and_signals",
-      "community": 45
+      "community": 43
     },
     {
       "label": "test_success_does_not_write_failure_log()",
       "file_type": "code",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L137",
+      "source_location": "L138",
       "id": "test_codex_fire_test_success_does_not_write_failure_log",
-      "community": 45
+      "community": 43
     },
     {
       "label": "test_review_template_propagates_wrapper_failure()",
       "file_type": "code",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L155",
+      "source_location": "L156",
       "id": "test_codex_fire_test_review_template_propagates_wrapper_failure",
-      "community": 45
+      "community": 43
+    },
+    {
+      "label": "test_review_template_persona_override_reaches_wrapper()",
+      "file_type": "code",
+      "source_file": "scripts/test_codex_fire.py",
+      "source_location": "L208",
+      "id": "test_codex_fire_test_review_template_persona_override_reaches_wrapper",
+      "community": 43
     },
     {
       "label": "validate_structured_agent_cycle_plan.py",
@@ -2361,7 +2369,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L1",
       "id": "memory_integrity",
-      "community": 43
+      "community": 44
     },
     {
       "label": "fail()",
@@ -2369,7 +2377,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L21",
       "id": "memory_integrity_fail",
-      "community": 43
+      "community": 44
     },
     {
       "label": "memory_dir_for_repo()",
@@ -2377,7 +2385,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L26",
       "id": "memory_integrity_memory_dir_for_repo",
-      "community": 43
+      "community": 44
     },
     {
       "label": "load_memory_lines()",
@@ -2385,7 +2393,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L30",
       "id": "memory_integrity_load_memory_lines",
-      "community": 43
+      "community": 44
     },
     {
       "label": "check_memory_exists()",
@@ -2393,7 +2401,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L34",
       "id": "memory_integrity_check_memory_exists",
-      "community": 43
+      "community": 44
     },
     {
       "label": "parse_pointer_filenames()",
@@ -2401,7 +2409,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L42",
       "id": "memory_integrity_parse_pointer_filenames",
-      "community": 43
+      "community": 44
     },
     {
       "label": "validate_frontmatter()",
@@ -2409,7 +2417,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L57",
       "id": "memory_integrity_validate_frontmatter",
-      "community": 43
+      "community": 44
     },
     {
       "label": "inspect_repo()",
@@ -2417,7 +2425,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L88",
       "id": "memory_integrity_inspect_repo",
-      "community": 43
+      "community": 44
     },
     {
       "label": "main()",
@@ -2425,7 +2433,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L120",
       "id": "memory_integrity_main",
-      "community": 43
+      "community": 44
     },
     {
       "label": "pentagi_sweep.py",
@@ -6089,7 +6097,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L1",
       "id": "test_graphify_usage_logging_contract",
-      "community": 44
+      "community": 45
     },
     {
       "label": "check()",
@@ -6097,7 +6105,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L19",
       "id": "test_graphify_usage_logging_contract_check",
-      "community": 44
+      "community": 45
     },
     {
       "label": "run_command()",
@@ -6105,7 +6113,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L27",
       "id": "test_graphify_usage_logging_contract_run_command",
-      "community": 44
+      "community": 45
     },
     {
       "label": "test_schema_shape()",
@@ -6113,7 +6121,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L31",
       "id": "test_graphify_usage_logging_contract_test_schema_shape",
-      "community": 44
+      "community": 45
     },
     {
       "label": "test_logger_backwards_compatible()",
@@ -6121,7 +6129,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L42",
       "id": "test_graphify_usage_logging_contract_test_logger_backwards_compatible",
-      "community": 44
+      "community": 45
     },
     {
       "label": "test_logger_query_trace_fields()",
@@ -6129,7 +6137,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L74",
       "id": "test_graphify_usage_logging_contract_test_logger_query_trace_fields",
-      "community": 44
+      "community": 45
     },
     {
       "label": "test_measurement_outputs_query_traces()",
@@ -6137,7 +6145,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L128",
       "id": "test_graphify_usage_logging_contract_test_measurement_outputs_query_traces",
-      "community": 44
+      "community": 45
     },
     {
       "label": "test_measurement_falls_back_from_stale_governance_repo_path()",
@@ -6145,7 +6153,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L193",
       "id": "test_graphify_usage_logging_contract_test_measurement_falls_back_from_stale_governance_repo_path",
-      "community": 44
+      "community": 45
     },
     {
       "label": "main()",
@@ -6153,7 +6161,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L247",
       "id": "test_graphify_usage_logging_contract_main",
-      "community": 44
+      "community": 45
     },
     {
       "label": "graphify_hook_helper.py",
@@ -10125,7 +10133,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "_src": "test_codex_fire",
       "_tgt": "test_codex_fire_write_fake_codex",
@@ -10137,7 +10145,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0,
       "_src": "test_codex_fire",
       "_tgt": "test_codex_fire_run_fire",
@@ -10149,7 +10157,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0,
       "_src": "test_codex_fire",
       "_tgt": "test_codex_fire_test_preflight_failure_logs_and_exits_fast",
@@ -10161,7 +10169,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L83",
+      "source_location": "L84",
       "weight": 1.0,
       "_src": "test_codex_fire",
       "_tgt": "test_codex_fire_test_preflight_timeout_logs_and_exits_fast",
@@ -10173,7 +10181,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L105",
+      "source_location": "L106",
       "weight": 1.0,
       "_src": "test_codex_fire",
       "_tgt": "test_codex_fire_test_exec_failure_after_successful_preflight_logs_and_signals",
@@ -10185,7 +10193,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L137",
+      "source_location": "L138",
       "weight": 1.0,
       "_src": "test_codex_fire",
       "_tgt": "test_codex_fire_test_success_does_not_write_failure_log",
@@ -10197,7 +10205,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L155",
+      "source_location": "L156",
       "weight": 1.0,
       "_src": "test_codex_fire",
       "_tgt": "test_codex_fire_test_review_template_propagates_wrapper_failure",
@@ -10206,10 +10214,22 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/test_codex_fire.py",
+      "source_location": "L208",
+      "weight": 1.0,
+      "_src": "test_codex_fire",
+      "_tgt": "test_codex_fire_test_review_template_persona_override_reaches_wrapper",
+      "source": "test_codex_fire",
+      "target": "test_codex_fire_test_review_template_persona_override_reaches_wrapper",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L62",
+      "source_location": "L63",
       "weight": 0.8,
       "_src": "test_codex_fire_test_preflight_failure_logs_and_exits_fast",
       "_tgt": "test_codex_fire_write_fake_codex",
@@ -10221,7 +10241,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L84",
+      "source_location": "L85",
       "weight": 0.8,
       "_src": "test_codex_fire_test_preflight_timeout_logs_and_exits_fast",
       "_tgt": "test_codex_fire_write_fake_codex",
@@ -10233,7 +10253,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L107",
+      "source_location": "L108",
       "weight": 0.8,
       "_src": "test_codex_fire_test_exec_failure_after_successful_preflight_logs_and_signals",
       "_tgt": "test_codex_fire_write_fake_codex",
@@ -10245,7 +10265,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 0.8,
       "_src": "test_codex_fire_test_success_does_not_write_failure_log",
       "_tgt": "test_codex_fire_write_fake_codex",
@@ -10257,7 +10277,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L157",
+      "source_location": "L158",
       "weight": 0.8,
       "_src": "test_codex_fire_test_review_template_propagates_wrapper_failure",
       "_tgt": "test_codex_fire_write_fake_codex",
@@ -10269,7 +10289,19 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L73",
+      "source_location": "L211",
+      "weight": 0.8,
+      "_src": "test_codex_fire_test_review_template_persona_override_reaches_wrapper",
+      "_tgt": "test_codex_fire_write_fake_codex",
+      "source": "test_codex_fire_write_fake_codex",
+      "target": "test_codex_fire_test_review_template_persona_override_reaches_wrapper",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/test_codex_fire.py",
+      "source_location": "L74",
       "weight": 0.8,
       "_src": "test_codex_fire_test_preflight_failure_logs_and_exits_fast",
       "_tgt": "test_codex_fire_run_fire",
@@ -10281,7 +10313,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L95",
+      "source_location": "L96",
       "weight": 0.8,
       "_src": "test_codex_fire_test_preflight_timeout_logs_and_exits_fast",
       "_tgt": "test_codex_fire_run_fire",
@@ -10293,7 +10325,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 0.8,
       "_src": "test_codex_fire_test_exec_failure_after_successful_preflight_logs_and_signals",
       "_tgt": "test_codex_fire_run_fire",
@@ -10305,7 +10337,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/test_codex_fire.py",
-      "source_location": "L148",
+      "source_location": "L149",
       "weight": 0.8,
       "_src": "test_codex_fire_test_success_does_not_write_failure_log",
       "_tgt": "test_codex_fire_run_fire",

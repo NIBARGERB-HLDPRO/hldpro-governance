@@ -1,11 +1,11 @@
 # Graph Report - hldpro-governance  (2026-04-18)
 
 ## Corpus Check
-- Large corpus: 1583 files · ~382,619 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1595 files · ~386,283 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 1089 nodes · 2111 edges · 59 communities detected
-- Extraction: 50% EXTRACTED · 50% INFERRED · 0% AMBIGUOUS · INFERRED: 1065 edges (avg confidence: 0.5)
+- 1090 nodes · 2113 edges · 59 communities detected
+- Extraction: 50% EXTRACTED · 50% INFERRED · 0% AMBIGUOUS · INFERRED: 1066 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -202,17 +202,17 @@ Nodes (9): filtered_targets(), find_target(), load_manifest(), main(), print_jso
 Cohesion: 0.53
 Nodes (9): _final_request(), _load(), _process(), test_final_e2e_ambiguous_response_requests_clarification_without_instruction(), test_final_e2e_approval_path_preserves_full_identity_chain(), test_final_e2e_duplicate_replay_and_expired_replies_fail_closed(), test_final_e2e_external_channel_pii_is_refused_without_instruction(), test_final_e2e_request_changes_is_not_treated_as_approval() (+1 more)
 
-### Community 43 - "Overlord Memory integrity"
+### Community 43 - "Codex fire Failure"
+Cohesion: 0.5
+Nodes (8): run_fire(), test_exec_failure_after_successful_preflight_logs_and_signals(), test_preflight_failure_logs_and_exits_fast(), test_preflight_timeout_logs_and_exits_fast(), test_review_template_persona_override_reaches_wrapper(), test_review_template_propagates_wrapper_failure(), test_success_does_not_write_failure_log(), write_fake_codex()
+
+### Community 44 - "Overlord Memory integrity"
 Cohesion: 0.42
 Nodes (7): check_memory_exists(), inspect_repo(), load_memory_lines(), main(), memory_dir_for_repo(), parse_pointer_filenames(), validate_frontmatter()
 
-### Community 44 - "Knowledge base Graphify usage logging"
+### Community 45 - "Knowledge base Graphify usage logging"
 Cohesion: 0.61
 Nodes (8): check(), main(), run_command(), test_logger_backwards_compatible(), test_logger_query_trace_fields(), test_measurement_falls_back_from_stale_governance_repo_path(), test_measurement_outputs_query_traces(), test_schema_shape()
-
-### Community 45 - "Codex fire Failure"
-Cohesion: 0.57
-Nodes (7): run_fire(), test_exec_failure_after_successful_preflight_logs_and_signals(), test_preflight_failure_logs_and_exits_fast(), test_preflight_timeout_logs_and_exits_fast(), test_review_template_propagates_wrapper_failure(), test_success_does_not_write_failure_log(), write_fake_codex()
 
 ### Community 46 - "Overlord Effectiveness metrics"
 Cohesion: 0.46

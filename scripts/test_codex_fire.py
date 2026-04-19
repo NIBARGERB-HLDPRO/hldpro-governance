@@ -8,6 +8,7 @@ from typing import Optional
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = REPO_ROOT / "scripts" / "codex-fire.sh"
+REVIEW_TEMPLATE = REPO_ROOT / "scripts" / "codex-review-template.sh"
 
 
 def write_fake_codex(tmp_path: Path, body: str) -> Path:
@@ -180,15 +181,13 @@ def test_review_template_propagates_wrapper_failure(tmp_path: Path) -> None:
             "PATH": f"{fake_bin}{os.pathsep}{env.get('PATH', '')}",
             "CODEX_FIRE_LOG": str(tmp_path / "template-log.md"),
             "CODEX_FIRE_TIMEOUT_SECONDS": "1",
-            "CODEX_REVIEW_PERSONA": str(tmp_path / "codex-reviewer.md"),
         }
     )
-    (tmp_path / "codex-reviewer.md").write_text("Return concise review findings.\n", encoding="utf-8")
 
     result = subprocess.run(
         [
             "bash",
-            str(REPO_ROOT / "scripts" / "codex-review-template.sh"),
+            str(REVIEW_TEMPLATE),
             "audit",
             "scripts",
         ],
@@ -204,3 +203,60 @@ def test_review_template_propagates_wrapper_failure(tmp_path: Path) -> None:
     assert "Audit saved to:" not in result.stdout
     assert "Audit failed; see CODEX_FAIL output above." in result.stderr
     assert "Codex brief retained at:" in result.stderr
+
+
+def test_review_template_persona_override_reaches_wrapper(tmp_path: Path) -> None:
+    counter = tmp_path / "counter"
+    captured_prompt = tmp_path / "captured-prompt.txt"
+    fake_bin = write_fake_codex(
+        tmp_path,
+        textwrap.dedent(
+            f"""
+            counter="{counter}"
+            count=0
+            if [ -f "$counter" ]; then
+              count="$(cat "$counter")"
+            fi
+            count=$((count + 1))
+            printf '%s' "$count" >"$counter"
+            if [ "$count" -eq 1 ]; then
+              cat >/dev/null
+              echo ok
+              exit 0
+            fi
+            cat >"{captured_prompt}"
+            echo ok
+            exit 0
+            """
+        ),
+    )
+    override_persona = tmp_path / "codex-reviewer.md"
+    override_persona.write_text("OVERRIDE PERSONA MARKER\n", encoding="utf-8")
+    env = os.environ.copy()
+    env.update(
+        {
+            "PATH": f"{fake_bin}{os.pathsep}{env.get('PATH', '')}",
+            "CODEX_FIRE_LOG": str(tmp_path / "template-log.md"),
+            "CODEX_FIRE_TIMEOUT_SECONDS": "1",
+            "CODEX_REVIEW_PERSONA": str(override_persona),
+        }
+    )
+
+    result = subprocess.run(
+        [
+            "bash",
+            str(REVIEW_TEMPLATE),
+            "audit",
+            "scripts",
+        ],
+        text=True,
+        capture_output=True,
+        env=env,
+        cwd=REPO_ROOT,
+        check=False,
+    )
+
+    assert result.returncode == 0
+    assert "Audit saved to:" in result.stdout
+    assert "OVERRIDE PERSONA MARKER" in captured_prompt.read_text(encoding="utf-8")
+    assert not (tmp_path / "template-log.md").exists()

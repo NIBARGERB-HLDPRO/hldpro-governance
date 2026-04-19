@@ -93,8 +93,8 @@
       "reviewer": "codex-subagent",
       "role": "focused reviewer",
       "focus": "Persona default, override behavior, and fake-Codex e2e coverage",
-      "status": "planned",
-      "summary": "Focused review required before merge because the active environment does not expose a separate Claude connector.",
+      "status": "accepted_with_followup",
+      "summary": "Focused review found the initial implementation PR shape would fail planner-boundary CI because the execution scope was introduced in the same implementation PR. Planning-only PR #340 landed the trusted scope first; the rebuilt implementation branch uses that base and keeps the behavioral fix narrow.",
       "evidence": [
         "raw/cross-review/2026-04-19-issue-337-codex-review-persona-review.md"
       ]
