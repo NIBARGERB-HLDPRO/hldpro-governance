@@ -21,6 +21,7 @@ Branch: `fix/issue-192-structured-plan-json-fail`
 | `python3 scripts/overlord/check_overlord_backlog_github_alignment.py` | PASS |
 | `python3 scripts/overlord/check_progress_github_issue_staleness.py --repo NIBARGERB-HLDPRO/hldpro-governance` | PASS/SKIP by design because governance backlog is tracked in `OVERLORD_BACKLOG.md`, not `docs/PROGRESS.md` |
 | `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | PASS; 10 changed files, blockers 0, advisories 0 |
+| Post-closeout `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | PASS after adding `wiki/index.md` to the execution-scope allowlist for Stage 6 closeout generated index refresh |
 
 ## Final E2E AC
 
@@ -31,3 +32,5 @@ PASS. Temporary malformed `docs/plans/issue-192-structured-agent-cycle-plan.json
 Read-only reviewer `Carson` found one issue before closeout: governance-surface mode loaded the same malformed plan twice, producing duplicate parse-failure lines. The implementation now loads plan files once per run and reuses the parsed payloads for matching and full validation. Regression coverage now asserts only one `could not parse JSON` line in governance-surface mode and covers the `OSError` read-error branch with a directory that matches the structured-plan filename pattern.
 
 Reviewer re-check verdict: no issues found. The reviewer independently reran the focused suite and observed 20 tests green. Residual risk: read-error coverage exercises `IsADirectoryError`; unusual `OSError` variants remain indirectly covered by the shared exception handler.
+
+Post-closeout adjustment: the closeout hook refreshed `wiki/index.md`; the execution scope now explicitly allows that generated Stage 6 index artifact.
