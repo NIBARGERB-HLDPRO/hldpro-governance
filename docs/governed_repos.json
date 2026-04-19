@@ -220,6 +220,42 @@
       }
     },
     {
+      "repo_slug": "emailassistant",
+      "display_name": "EmailAssistant",
+      "repo_dir_name": "EmailAssistant",
+      "github_repo": "NIBARGERB-HLDPRO/EmailAssistant",
+      "local_path": "EmailAssistant",
+      "ci_checkout_path": "repos/EmailAssistant",
+      "graph_output_path": "graphify-out/emailassistant",
+      "wiki_path": "wiki/emailassistant",
+      "project_path": "projects/emailassistant",
+      "governance_tier": "full",
+      "security_tier": "full-pentagi",
+      "lifecycle_status": "active",
+      "governance_status": "adoption_blocked",
+      "classification": {
+        "owner": "governance",
+        "rationale": "Active private municipal email assistant that processes government email, PIP/personnel context, Exchange/Microsoft Graph credentials, Anthropic API calls, SMTP credentials, local drafts, commitments, and style-profile artifacts. Dispatcher registry coverage is present, but repo-local governance is blocked until EmailAssistant#1 adds front-door docs, CI, CODEOWNERS/dependency automation, no-live-secret tests, and sensitive-email security/privacy controls.",
+        "review_date": "2026-04-19",
+        "issue_refs": [
+          "#298",
+          "#312",
+          "https://github.com/NIBARGERB-HLDPRO/EmailAssistant/issues/1"
+        ]
+      },
+      "description": "Municipal email assistant for Outlook/Exchange and Anthropic-assisted drafting",
+      "enabled_subsystems": {
+        "graphify": false,
+        "sweep": false,
+        "metrics": false,
+        "memory_integrity": false,
+        "codex_ingestion": false,
+        "compendium": false,
+        "raw_feed_sync": false,
+        "code_governance": false
+      }
+    },
+    {
       "repo_slug": "asc-evaluator",
       "display_name": "ASC-Evaluator",
       "repo_dir_name": "ASC-Evaluator",
