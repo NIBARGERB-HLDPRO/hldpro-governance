@@ -184,6 +184,42 @@
       }
     },
     {
+      "repo_slug": "seek-and-ponder",
+      "display_name": "seek-and-ponder",
+      "repo_dir_name": "seek-and-ponder",
+      "github_repo": "NIBARGERB-HLDPRO/seek-and-ponder",
+      "local_path": "seek-and-ponder",
+      "ci_checkout_path": "repos/seek-and-ponder",
+      "graph_output_path": "graphify-out/seek-and-ponder",
+      "wiki_path": "wiki/seek-and-ponder",
+      "project_path": "projects/seek-and-ponder",
+      "governance_tier": "full",
+      "security_tier": "full-pentagi",
+      "lifecycle_status": "active",
+      "governance_status": "governed",
+      "classification": {
+        "owner": "governance",
+        "rationale": "Active faith AI product repository with governance front-door docs, CODEOWNERS, dependency automation, governance workflow coverage, graph/wiki coverage, metrics, raw feed, Codex ingestion, compendium, and code governance. Memory integrity and required-check hardgate follow-up are tracked in seek-and-ponder#23.",
+        "review_date": "2026-04-19",
+        "issue_refs": [
+          "#298",
+          "#311",
+          "https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/issues/23"
+        ]
+      },
+      "description": "Faith-based scripture research, AI study co-pilot, and creator network platform",
+      "enabled_subsystems": {
+        "graphify": true,
+        "sweep": true,
+        "metrics": true,
+        "memory_integrity": false,
+        "codex_ingestion": true,
+        "compendium": true,
+        "raw_feed_sync": true,
+        "code_governance": true
+      }
+    },
+    {
       "repo_slug": "asc-evaluator",
       "display_name": "ASC-Evaluator",
       "repo_dir_name": "ASC-Evaluator",

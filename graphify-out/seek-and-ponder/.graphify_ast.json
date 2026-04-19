@@ -1,0 +1,5242 @@
+{
+  "nodes": [
+    {
+      "id": "vitest_config",
+      "label": "vitest.config.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/vitest.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "index",
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/corpus-search/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "index",
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/stripe-webhook/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "index",
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/checkout-session/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "corpus",
+      "label": "corpus.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/corpus.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "corpus_getmodeltier",
+      "label": "getModelTier()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/corpus.ts",
+      "source_location": "L48"
+    },
+    {
+      "id": "corpus_callclaude",
+      "label": "callClaude()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/corpus.ts",
+      "source_location": "L84"
+    },
+    {
+      "id": "corpus_logtocorpus",
+      "label": "logToCorpus()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/corpus.ts",
+      "source_location": "L209"
+    },
+    {
+      "id": "error_handler",
+      "label": "error-handler.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "error_handler_sanitizeerror",
+      "label": "sanitizeError()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L57"
+    },
+    {
+      "id": "error_handler_sanitizedetail",
+      "label": "sanitizeDetail()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L95"
+    },
+    {
+      "id": "error_handler_safeheaders",
+      "label": "safeHeaders()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L107"
+    },
+    {
+      "id": "error_handler_safeerrorresponse",
+      "label": "safeErrorResponse()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L120"
+    },
+    {
+      "id": "error_handler_honoerrorhandler",
+      "label": "honoErrorHandler()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L138"
+    },
+    {
+      "id": "email",
+      "label": "email.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "email_sendemail",
+      "label": "sendEmail()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "email_wrapper",
+      "label": "WRAPPER()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L53"
+    },
+    {
+      "id": "email_button",
+      "label": "BUTTON()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L64"
+    },
+    {
+      "id": "email_welcomeemail",
+      "label": "welcomeEmail()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L70"
+    },
+    {
+      "id": "email_streakreminderemail",
+      "label": "streakReminderEmail()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L98"
+    },
+    {
+      "id": "email_upgradepromptemail",
+      "label": "upgradePromptEmail()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L117"
+    },
+    {
+      "id": "vault",
+      "label": "vault.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/vault.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "vault_createsecret",
+      "label": "createSecret()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/vault.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "vault_readsecret",
+      "label": "readSecret()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/vault.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "vault_updatesecret",
+      "label": "updateSecret()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/vault.ts",
+      "source_location": "L50"
+    },
+    {
+      "id": "vault_deletesecret",
+      "label": "deleteSecret()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/vault.ts",
+      "source_location": "L64"
+    },
+    {
+      "id": "vault_maskcredential",
+      "label": "maskCredential()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/vault.ts",
+      "source_location": "L77"
+    },
+    {
+      "id": "embeddings",
+      "label": "embeddings.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "embeddings_hashembedding",
+      "label": "hashEmbedding()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "embeddings_generateembedding",
+      "label": "generateEmbedding()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "crypto",
+      "label": "crypto.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/crypto.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "crypto_hmacsha256",
+      "label": "hmacSha256()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/crypto.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "crypto_timingsafeequal",
+      "label": "timingSafeEqual()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/crypto.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "crypto_hmacsha1",
+      "label": "hmacSha1()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/crypto.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "rate_limiter",
+      "label": "rate-limiter.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/rate-limiter.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "rate_limiter_checkratelimit",
+      "label": "checkRateLimit()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/rate-limiter.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "rate_limiter_getclientip",
+      "label": "getClientIp()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/rate-limiter.ts",
+      "source_location": "L51"
+    },
+    {
+      "id": "rate_limiter_isservicerole",
+      "label": "isServiceRole()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/rate-limiter.ts",
+      "source_location": "L59"
+    },
+    {
+      "id": "notify",
+      "label": "notify.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/notify.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "notify_notifypartycore",
+      "label": "notifyPartyCore()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/notify.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "cors",
+      "label": "cors.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cors.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "cors_getallowedorigins",
+      "label": "getAllowedOrigins()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cors.ts",
+      "source_location": "L25"
+    },
+    {
+      "id": "cors_getsecurityheaders",
+      "label": "getSecurityHeaders()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cors.ts",
+      "source_location": "L31"
+    },
+    {
+      "id": "cors_getcorsheaders",
+      "label": "getCorsHeaders()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cors.ts",
+      "source_location": "L47"
+    },
+    {
+      "id": "cors_handlecors",
+      "label": "handleCors()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cors.ts",
+      "source_location": "L67"
+    },
+    {
+      "id": "config",
+      "label": "config.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "cogs",
+      "label": "cogs.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "cogs_getmodeltier",
+      "label": "getModelTier()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "cogs_currentbillingperiod",
+      "label": "currentBillingPeriod()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "cogs_emitcogs",
+      "label": "emitCOGS()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L54"
+    },
+    {
+      "id": "cogs_trackclaudeusage",
+      "label": "trackClaudeUsage()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L90"
+    },
+    {
+      "id": "cogs_emitcachehit",
+      "label": "emitCacheHit()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L151"
+    },
+    {
+      "id": "audit",
+      "label": "audit.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/audit.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "audit_emitauditlog",
+      "label": "emitAuditLog()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/audit.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "input_validator",
+      "label": "input-validator.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/input-validator.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "input_validator_validateinputcomplexity",
+      "label": "validateInputComplexity()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/input-validator.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "input_validator_walk",
+      "label": "walk()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/input-validator.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "llm_router",
+      "label": "llm-router.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "llm_router_routellm",
+      "label": "routeLLM()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L59"
+    },
+    {
+      "id": "llm_router_callclaudeandwrap",
+      "label": "callClaudeAndWrap()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L163"
+    },
+    {
+      "id": "llm_router_findactiveexperiment",
+      "label": "findActiveExperiment()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L188"
+    },
+    {
+      "id": "llm_router_calllocal",
+      "label": "callLocal()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L216"
+    },
+    {
+      "id": "llm_router_logroutingdecision",
+      "label": "logRoutingDecision()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L278"
+    },
+    {
+      "id": "auth",
+      "label": "auth.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/auth.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "auth_getsupabaseclient",
+      "label": "getSupabaseClient()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/auth.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "auth_getsupabaseserviceclient",
+      "label": "getSupabaseServiceClient()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/auth.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "auth_resolveauthcontext",
+      "label": "resolveAuthContext()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/auth.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "index",
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/send-study-reminder/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "index",
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/ingest-document/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "index_chunktext",
+      "label": "chunkText()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/ingest-document/index.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "index",
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/update-interest-graph/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "index",
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/urim-query/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "index",
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/billing-portal/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "ingest_corpus",
+      "label": "ingest-corpus.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "ingest_corpus_upsertbook",
+      "label": "upsertBook()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L45"
+    },
+    {
+      "id": "ingest_corpus_insertversesbatch",
+      "label": "insertVersesBatch()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L65"
+    },
+    {
+      "id": "ingest_corpus_ingest",
+      "label": "ingest()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L98"
+    },
+    {
+      "id": "ingest_jst_lof",
+      "label": "ingest-jst-lof.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "ingest_jst_lof_upsertbook",
+      "label": "upsertBook()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L31"
+    },
+    {
+      "id": "ingest_jst_lof_insertverses",
+      "label": "insertVerses()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "ingest_jst_lof_parsejstmarkdown",
+      "label": "parseJSTMarkdown()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L53"
+    },
+    {
+      "id": "ingest_jst_lof_ingestjst",
+      "label": "ingestJST()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L82"
+    },
+    {
+      "id": "ingest_jst_lof_ingestlof",
+      "label": "ingestLOF()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L156"
+    },
+    {
+      "id": "ingest_jst_lof_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L238"
+    },
+    {
+      "id": "embed_corpus",
+      "label": "embed-corpus.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "embed_corpus_fetchverseswithoutembeddings",
+      "label": "fetchVersesWithoutEmbeddings()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L48"
+    },
+    {
+      "id": "embed_corpus_getembeddings",
+      "label": "getEmbeddings()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L57"
+    },
+    {
+      "id": "embed_corpus_updateverseembedding",
+      "label": "updateVerseEmbedding()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L79"
+    },
+    {
+      "id": "embed_corpus_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L94"
+    },
+    {
+      "id": "make_flat",
+      "label": "make-flat.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/corpus-data/scriptures-json-master/scripts/make-flat.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "make_reference",
+      "label": "make-reference.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/corpus-data/scriptures-json-master/scripts/make-reference.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "eslint_config",
+      "label": "eslint.config.js",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/eslint.config.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "vite_config",
+      "label": "vite.config.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/vite.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "app",
+      "label": "App.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_publicroute",
+      "label": "PublicRoute()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L17"
+    },
+    {
+      "id": "app_app",
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L24"
+    },
+    {
+      "id": "main",
+      "label": "main.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/main.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "protectedroute",
+      "label": "ProtectedRoute.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/components/ProtectedRoute.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "protectedroute_protectedroute",
+      "label": "ProtectedRoute()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/components/ProtectedRoute.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "layout",
+      "label": "Layout.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/components/Layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "auth",
+      "label": "auth.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/auth.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "auth_authprovider",
+      "label": "AuthProvider()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/auth.tsx",
+      "source_location": "L17"
+    },
+    {
+      "id": "auth_useauth",
+      "label": "useAuth()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/auth.tsx",
+      "source_location": "L70"
+    },
+    {
+      "id": "collections",
+      "label": "collections.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "collections_getcollections",
+      "label": "getCollections()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "collections_createcollection",
+      "label": "createCollection()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L48"
+    },
+    {
+      "id": "collections_updatecollection",
+      "label": "updateCollection()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L58"
+    },
+    {
+      "id": "collections_deletecollection",
+      "label": "deleteCollection()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L62"
+    },
+    {
+      "id": "collections_getcollectionverses",
+      "label": "getCollectionVerses()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L66"
+    },
+    {
+      "id": "collections_addversetocollection",
+      "label": "addVerseToCollection()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L99"
+    },
+    {
+      "id": "collections_removeversefromcollection",
+      "label": "removeVerseFromCollection()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L117"
+    },
+    {
+      "id": "highlights",
+      "label": "highlights.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "highlights_gethighlights",
+      "label": "getHighlights()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "highlights_sethighlight",
+      "label": "setHighlight()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "highlights_removehighlight",
+      "label": "removeHighlight()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "highlights_getnotes",
+      "label": "getNotes()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L34"
+    },
+    {
+      "id": "highlights_savenote",
+      "label": "saveNote()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L46"
+    },
+    {
+      "id": "highlights_deletenote",
+      "label": "deleteNote()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L61"
+    },
+    {
+      "id": "supabase",
+      "label": "supabase.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/supabase.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "pricing",
+      "label": "Pricing.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Pricing.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "pricing_handlecheckout",
+      "label": "handleCheckout()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Pricing.tsx",
+      "source_location": "L44"
+    },
+    {
+      "id": "login",
+      "label": "Login.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Login.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "login_login",
+      "label": "Login()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Login.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "home",
+      "label": "Home.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Home.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "home_home",
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Home.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "search",
+      "label": "Search.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Search.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "search_handlesearch",
+      "label": "handleSearch()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Search.tsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "reader",
+      "label": "Reader.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "reader_nav",
+      "label": "nav()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L72"
+    },
+    {
+      "id": "reader_handlehighlight",
+      "label": "handleHighlight()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L80"
+    },
+    {
+      "id": "reader_handlesavenote",
+      "label": "handleSaveNote()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L91"
+    },
+    {
+      "id": "reader_handledeletenote",
+      "label": "handleDeleteNote()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L99"
+    },
+    {
+      "id": "reader_handleaddtocollection",
+      "label": "handleAddToCollection()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L105"
+    },
+    {
+      "id": "reader_opencollectionpicker",
+      "label": "openCollectionPicker()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L110"
+    },
+    {
+      "id": "signup",
+      "label": "Signup.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Signup.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "signup_handlesubmit",
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Signup.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "profile",
+      "label": "Profile.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Profile.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "knowledgebase",
+      "label": "KnowledgeBase.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/KnowledgeBase.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "knowledgebase_knowledgebase",
+      "label": "KnowledgeBase()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/KnowledgeBase.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "onboarding",
+      "label": "Onboarding.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Onboarding.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "onboarding_onboarding",
+      "label": "Onboarding()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Onboarding.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "urim",
+      "label": "Urim.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Urim.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "urim_handlesend",
+      "label": "handleSend()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Urim.tsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "feedback",
+      "label": "Feedback.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Feedback.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "feedback_handlesubmit",
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Feedback.tsx",
+      "source_location": "L21"
+    },
+    {
+      "id": "collections",
+      "label": "Collections.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "collections_handlecreate",
+      "label": "handleCreate()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L38"
+    },
+    {
+      "id": "collections_handledelete",
+      "label": "handleDelete()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L51"
+    },
+    {
+      "id": "collections_handlesavenote",
+      "label": "handleSaveNote()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L56"
+    },
+    {
+      "id": "collections_handleremoveverse",
+      "label": "handleRemoveVerse()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L63"
+    },
+    {
+      "id": "app",
+      "label": "App.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/App.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_app",
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/App.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "index",
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "login",
+      "label": "login.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/login.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "login_handlelogin",
+      "label": "handleLogin()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/login.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "kb",
+      "label": "kb.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/kb.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "kb_knowledgebase",
+      "label": "KnowledgeBase()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/kb.tsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "signup",
+      "label": "signup.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/signup.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "signup_handlesignup",
+      "label": "handleSignup()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/signup.tsx",
+      "source_location": "L12"
+    },
+    {
+      "id": "layout",
+      "label": "_layout.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/_layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "bookid",
+      "label": "[bookId].tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId].tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "chapter",
+      "label": "[chapter].tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "chapter_handlehighlight",
+      "label": "handleHighlight()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L60"
+    },
+    {
+      "id": "chapter_handlesavenote",
+      "label": "handleSaveNote()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L73"
+    },
+    {
+      "id": "index",
+      "label": "index.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/index.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "search",
+      "label": "search.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/search.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "search_handlesearch",
+      "label": "handleSearch()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/search.tsx",
+      "source_location": "L17"
+    },
+    {
+      "id": "reader",
+      "label": "reader.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/reader.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "profile",
+      "label": "profile.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/profile.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "profile_togglepush",
+      "label": "togglePush()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/profile.tsx",
+      "source_location": "L23"
+    },
+    {
+      "id": "profile_togglebiometric",
+      "label": "toggleBiometric()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/profile.tsx",
+      "source_location": "L46"
+    },
+    {
+      "id": "layout",
+      "label": "_layout.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/_layout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "urim",
+      "label": "urim.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/urim.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "urim_assistantbubble",
+      "label": "AssistantBubble()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/urim.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "urim_handlesend",
+      "label": "handleSend()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/urim.tsx",
+      "source_location": "L39"
+    },
+    {
+      "id": "index",
+      "label": "index.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "index_load",
+      "label": "load()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L15"
+    },
+    {
+      "id": "index_handlecreate",
+      "label": "handleCreate()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L28"
+    },
+    {
+      "id": "index_handledelete",
+      "label": "handleDelete()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L35"
+    },
+    {
+      "id": "id",
+      "label": "[id].tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/[id].tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "id_handleremove",
+      "label": "handleRemove()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/[id].tsx",
+      "source_location": "L30"
+    },
+    {
+      "id": "offlinebanner",
+      "label": "OfflineBanner.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/components/OfflineBanner.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "offlinebanner_offlinebanner",
+      "label": "OfflineBanner()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/components/OfflineBanner.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "corpussyncprogress",
+      "label": "CorpusSyncProgress.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/components/CorpusSyncProgress.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "usetypewriter",
+      "label": "useTypewriter.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/hooks/useTypewriter.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "usetypewriter_usetypewriter",
+      "label": "useTypewriter()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/hooks/useTypewriter.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "usenetworkstatus",
+      "label": "useNetworkStatus.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/hooks/useNetworkStatus.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "usenetworkstatus_usenetworkstatus",
+      "label": "useNetworkStatus()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/hooks/useNetworkStatus.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "auth",
+      "label": "auth.tsx",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/auth.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "auth_authprovider",
+      "label": "AuthProvider()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/auth.tsx",
+      "source_location": "L22"
+    },
+    {
+      "id": "auth_useauth",
+      "label": "useAuth()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/auth.tsx",
+      "source_location": "L115"
+    },
+    {
+      "id": "supabase",
+      "label": "supabase.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/supabase.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "schema",
+      "label": "schema.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/schema.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "index",
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "sync",
+      "label": "sync.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/sync.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "sync_synccorpus",
+      "label": "syncCorpus()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/sync.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "sync_syncuserdata",
+      "label": "syncUserData()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/sync.ts",
+      "source_location": "L86"
+    },
+    {
+      "id": "note",
+      "label": "Note.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Note.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "note_note",
+      "label": "Note",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Note.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "highlight",
+      "label": "Highlight.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Highlight.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "highlight_highlight",
+      "label": "Highlight",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Highlight.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "collectionverse",
+      "label": "CollectionVerse.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/CollectionVerse.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "collectionverse_collectionverse",
+      "label": "CollectionVerse",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/CollectionVerse.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "book",
+      "label": "Book.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Book.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "book_book",
+      "label": "Book",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Book.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "collection",
+      "label": "Collection.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Collection.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "collection_collection",
+      "label": "Collection",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Collection.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "verse",
+      "label": "Verse.ts",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Verse.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "verse_verse",
+      "label": "Verse",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Verse.ts",
+      "source_location": "L4"
+    }
+  ],
+  "edges": [
+    {
+      "source": "vitest_config",
+      "target": "config",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/vitest.config.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "cors_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/corpus-search/index.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "error_handler_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/corpus-search/index.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/corpus-search/index.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "rate_limiter_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/corpus-search/index.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/stripe-webhook/index.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "error_handler_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/stripe-webhook/index.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "audit_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/stripe-webhook/index.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "crypto_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/stripe-webhook/index.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "cors_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/checkout-session/index.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "error_handler_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/checkout-session/index.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "rate_limiter_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/checkout-session/index.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "input_validator_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/checkout-session/index.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "config_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/checkout-session/index.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "corpus",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/corpus.ts",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "corpus",
+      "target": "cogs_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/corpus.ts",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "corpus",
+      "target": "corpus_getmodeltier",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/corpus.ts",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "corpus",
+      "target": "corpus_callclaude",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/corpus.ts",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "corpus",
+      "target": "corpus_logtocorpus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/corpus.ts",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "corpus_callclaude",
+      "target": "corpus_logtocorpus",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/corpus.ts",
+      "source_location": "L182",
+      "weight": 0.8
+    },
+    {
+      "source": "corpus_logtocorpus",
+      "target": "corpus_getmodeltier",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/corpus.ts",
+      "source_location": "L237",
+      "weight": 0.8
+    },
+    {
+      "source": "error_handler",
+      "target": "cors_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "error_handler",
+      "target": "error_handler_sanitizeerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "error_handler",
+      "target": "error_handler_sanitizedetail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "error_handler",
+      "target": "error_handler_safeheaders",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "error_handler",
+      "target": "error_handler_safeerrorresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "error_handler",
+      "target": "error_handler_honoerrorhandler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "error_handler_safeerrorresponse",
+      "target": "error_handler_sanitizeerror",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L127",
+      "weight": 0.8
+    },
+    {
+      "source": "error_handler_safeerrorresponse",
+      "target": "error_handler_safeheaders",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L130",
+      "weight": 0.8
+    },
+    {
+      "source": "error_handler_honoerrorhandler",
+      "target": "error_handler_sanitizeerror",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/error-handler.ts",
+      "source_location": "L141",
+      "weight": 0.8
+    },
+    {
+      "source": "email",
+      "target": "email_sendemail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "email",
+      "target": "email_wrapper",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "email",
+      "target": "email_button",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "email",
+      "target": "email_welcomeemail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "email",
+      "target": "email_streakreminderemail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "email",
+      "target": "email_upgradepromptemail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "email_welcomeemail",
+      "target": "email_button",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L74",
+      "weight": 0.8
+    },
+    {
+      "source": "email_welcomeemail",
+      "target": "email_wrapper",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L80",
+      "weight": 0.8
+    },
+    {
+      "source": "email_streakreminderemail",
+      "target": "email_wrapper",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L104",
+      "weight": 0.8
+    },
+    {
+      "source": "email_streakreminderemail",
+      "target": "email_button",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L108",
+      "weight": 0.8
+    },
+    {
+      "source": "email_upgradepromptemail",
+      "target": "email_wrapper",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L123",
+      "weight": 0.8
+    },
+    {
+      "source": "email_upgradepromptemail",
+      "target": "email_button",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/email.ts",
+      "source_location": "L132",
+      "weight": 0.8
+    },
+    {
+      "source": "vault",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/vault.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "vault",
+      "target": "vault_createsecret",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/vault.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "vault",
+      "target": "vault_readsecret",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/vault.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "vault",
+      "target": "vault_updatesecret",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/vault.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "vault",
+      "target": "vault_deletesecret",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/vault.ts",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "vault",
+      "target": "vault_maskcredential",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/vault.ts",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "embeddings",
+      "target": "embeddings_hashembedding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "embeddings",
+      "target": "embeddings_generateembedding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "embeddings_generateembedding",
+      "target": "embeddings_hashembedding",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts",
+      "source_location": "L53",
+      "weight": 0.8
+    },
+    {
+      "source": "crypto",
+      "target": "crypto_hmacsha256",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/crypto.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "crypto",
+      "target": "crypto_timingsafeequal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/crypto.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "crypto",
+      "target": "crypto_hmacsha1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/crypto.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "rate_limiter",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/rate-limiter.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "rate_limiter",
+      "target": "rate_limiter_checkratelimit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/rate-limiter.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "rate_limiter",
+      "target": "rate_limiter_getclientip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/rate-limiter.ts",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "rate_limiter",
+      "target": "rate_limiter_isservicerole",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/rate-limiter.ts",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "notify",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/notify.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "notify",
+      "target": "esign_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/notify.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "notify",
+      "target": "notify_notifypartycore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/notify.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "cors",
+      "target": "cors_getallowedorigins",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cors.ts",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "cors",
+      "target": "cors_getsecurityheaders",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cors.ts",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "cors",
+      "target": "cors_getcorsheaders",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cors.ts",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "cors",
+      "target": "cors_handlecors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cors.ts",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "cors_getcorsheaders",
+      "target": "cors_getsecurityheaders",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cors.ts",
+      "source_location": "L49",
+      "weight": 0.8
+    },
+    {
+      "source": "cors_getcorsheaders",
+      "target": "cors_getallowedorigins",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cors.ts",
+      "source_location": "L55",
+      "weight": 0.8
+    },
+    {
+      "source": "cors_handlecors",
+      "target": "cors_getcorsheaders",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cors.ts",
+      "source_location": "L69",
+      "weight": 0.8
+    },
+    {
+      "source": "cogs",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "cogs",
+      "target": "cogs_getmodeltier",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "cogs",
+      "target": "cogs_currentbillingperiod",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "cogs",
+      "target": "cogs_emitcogs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "cogs",
+      "target": "cogs_trackclaudeusage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "cogs",
+      "target": "cogs_emitcachehit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L151",
+      "weight": 1.0
+    },
+    {
+      "source": "cogs_emitcogs",
+      "target": "cogs_currentbillingperiod",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L74",
+      "weight": 0.8
+    },
+    {
+      "source": "cogs_trackclaudeusage",
+      "target": "cogs_getmodeltier",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L111",
+      "weight": 0.8
+    },
+    {
+      "source": "cogs_trackclaudeusage",
+      "target": "cogs_emitcogs",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L126",
+      "weight": 0.8
+    },
+    {
+      "source": "cogs_emitcachehit",
+      "target": "cogs_emitcogs",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/cogs.ts",
+      "source_location": "L157",
+      "weight": 0.8
+    },
+    {
+      "source": "audit",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/audit.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "audit",
+      "target": "audit_emitauditlog",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/audit.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "input_validator",
+      "target": "input_validator_validateinputcomplexity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/input-validator.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "input_validator",
+      "target": "input_validator_walk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/input-validator.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "input_validator_validateinputcomplexity",
+      "target": "input_validator_walk",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/input-validator.ts",
+      "source_location": "L23",
+      "weight": 0.8
+    },
+    {
+      "source": "llm_router",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "llm_router",
+      "target": "corpus_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "llm_router",
+      "target": "llm_router_routellm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "llm_router",
+      "target": "llm_router_callclaudeandwrap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "llm_router",
+      "target": "llm_router_findactiveexperiment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "llm_router",
+      "target": "llm_router_calllocal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "llm_router",
+      "target": "llm_router_logroutingdecision",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L278",
+      "weight": 1.0
+    },
+    {
+      "source": "llm_router_routellm",
+      "target": "llm_router_findactiveexperiment",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L72",
+      "weight": 0.8
+    },
+    {
+      "source": "llm_router_routellm",
+      "target": "llm_router_callclaudeandwrap",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L76",
+      "weight": 0.8
+    },
+    {
+      "source": "llm_router_routellm",
+      "target": "llm_router_calllocal",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L89",
+      "weight": 0.8
+    },
+    {
+      "source": "llm_router_routellm",
+      "target": "llm_router_logroutingdecision",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/llm-router.ts",
+      "source_location": "L123",
+      "weight": 0.8
+    },
+    {
+      "source": "auth",
+      "target": "supabase_js_2_39_7",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/auth.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "auth_getsupabaseclient",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/auth.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "auth_getsupabaseserviceclient",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/auth.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "auth_resolveauthcontext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/auth.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "auth_resolveauthcontext",
+      "target": "auth_getsupabaseclient",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/_shared/auth.ts",
+      "source_location": "L44",
+      "weight": 0.8
+    },
+    {
+      "source": "index",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/send-study-reminder/index.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "error_handler_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/send-study-reminder/index.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "cors_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/ingest-document/index.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "error_handler_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/ingest-document/index.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/ingest-document/index.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/ingest-document/index.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "index_chunktext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/ingest-document/index.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/update-interest-graph/index.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "error_handler_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/update-interest-graph/index.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "cors_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/urim-query/index.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "error_handler_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/urim-query/index.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/urim-query/index.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/urim-query/index.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "rate_limiter_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/urim-query/index.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "cors_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/billing-portal/index.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "error_handler_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/billing-portal/index.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "auth_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/billing-portal/index.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "config_ts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/backend/supabase/functions/billing-portal/index.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_corpus",
+      "target": "node_fs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_corpus",
+      "target": "node_path",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_corpus",
+      "target": "node_url",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_corpus",
+      "target": "dotenv",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_corpus",
+      "target": "ingest_corpus_upsertbook",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_corpus",
+      "target": "ingest_corpus_insertversesbatch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_corpus",
+      "target": "ingest_corpus_ingest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_corpus_ingest",
+      "target": "ingest_corpus_upsertbook",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L130",
+      "weight": 0.8
+    },
+    {
+      "source": "ingest_corpus_ingest",
+      "target": "ingest_corpus_insertversesbatch",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-corpus.ts",
+      "source_location": "L153",
+      "weight": 0.8
+    },
+    {
+      "source": "ingest_jst_lof",
+      "target": "node_fs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_jst_lof",
+      "target": "node_path",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_jst_lof",
+      "target": "node_url",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_jst_lof",
+      "target": "dotenv",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_jst_lof",
+      "target": "ingest_jst_lof_upsertbook",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_jst_lof",
+      "target": "ingest_jst_lof_insertverses",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_jst_lof",
+      "target": "ingest_jst_lof_parsejstmarkdown",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_jst_lof",
+      "target": "ingest_jst_lof_ingestjst",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_jst_lof",
+      "target": "ingest_jst_lof_ingestlof",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_jst_lof",
+      "target": "ingest_jst_lof_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L238",
+      "weight": 1.0
+    },
+    {
+      "source": "ingest_jst_lof_ingestjst",
+      "target": "ingest_jst_lof_parsejstmarkdown",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L116",
+      "weight": 0.8
+    },
+    {
+      "source": "ingest_jst_lof_ingestjst",
+      "target": "ingest_jst_lof_upsertbook",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L127",
+      "weight": 0.8
+    },
+    {
+      "source": "ingest_jst_lof_ingestjst",
+      "target": "ingest_jst_lof_insertverses",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L145",
+      "weight": 0.8
+    },
+    {
+      "source": "ingest_jst_lof_ingestlof",
+      "target": "ingest_jst_lof_upsertbook",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L210",
+      "weight": 0.8
+    },
+    {
+      "source": "ingest_jst_lof_ingestlof",
+      "target": "ingest_jst_lof_insertverses",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L230",
+      "weight": 0.8
+    },
+    {
+      "source": "ingest_jst_lof_main",
+      "target": "ingest_jst_lof_ingestjst",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L241",
+      "weight": 0.8
+    },
+    {
+      "source": "ingest_jst_lof_main",
+      "target": "ingest_jst_lof_ingestlof",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/ingest-jst-lof.ts",
+      "source_location": "L242",
+      "weight": 0.8
+    },
+    {
+      "source": "embed_corpus",
+      "target": "node_fs",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "embed_corpus",
+      "target": "node_path",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "embed_corpus",
+      "target": "node_url",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "embed_corpus",
+      "target": "dotenv",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "embed_corpus",
+      "target": "embed_corpus_fetchverseswithoutembeddings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "embed_corpus",
+      "target": "embed_corpus_getembeddings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "embed_corpus",
+      "target": "embed_corpus_updateverseembedding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "embed_corpus",
+      "target": "embed_corpus_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "embed_corpus_main",
+      "target": "embed_corpus_fetchverseswithoutembeddings",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L104",
+      "weight": 0.8
+    },
+    {
+      "source": "embed_corpus_main",
+      "target": "embed_corpus_getembeddings",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/embed-corpus.ts",
+      "source_location": "L108",
+      "weight": 0.8
+    },
+    {
+      "source": "make_flat",
+      "target": "datetime",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/corpus-data/scriptures-json-master/scripts/make-flat.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "make_flat",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/corpus-data/scriptures-json-master/scripts/make-flat.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "make_flat",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/corpus-data/scriptures-json-master/scripts/make-flat.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "make_reference",
+      "target": "collections",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/corpus-data/scriptures-json-master/scripts/make-reference.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "make_reference",
+      "target": "datetime",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/corpus-data/scriptures-json-master/scripts/make-reference.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "make_reference",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/corpus-data/scriptures-json-master/scripts/make-reference.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "make_reference",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/scripts/corpus-data/scriptures-json-master/scripts/make-reference.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "eslint_config",
+      "target": "js",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/eslint.config.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "eslint_config",
+      "target": "globals",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/eslint.config.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "eslint_config",
+      "target": "eslint_plugin_react_hooks",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/eslint.config.js",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "eslint_config",
+      "target": "eslint_plugin_react_refresh",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/eslint.config.js",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "eslint_config",
+      "target": "typescript_eslint",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/eslint.config.js",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "eslint_config",
+      "target": "config",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/eslint.config.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "vite_config",
+      "target": "vite",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/vite.config.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "vite_config",
+      "target": "plugin_react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/vite.config.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "vite_config",
+      "target": "vite",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/vite.config.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "react_router_dom",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "protectedroute",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "login",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "signup",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "onboarding",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "home",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "reader",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "search",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "urim",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "pricing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "collections",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "knowledgebase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "feedback",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "profile",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_publicroute",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_app",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/App.tsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "main",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/main.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "main",
+      "target": "client",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/main.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "main",
+      "target": "index_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/main.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "main",
+      "target": "app_tsx",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/main.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "protectedroute",
+      "target": "react_router_dom",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/components/ProtectedRoute.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "protectedroute",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/components/ProtectedRoute.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "protectedroute",
+      "target": "protectedroute_protectedroute",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/components/ProtectedRoute.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "layout",
+      "target": "react_router_dom",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/components/Layout.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/auth.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/auth.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "supabase_js",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/auth.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "auth_authprovider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/auth.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "auth_useauth",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/auth.tsx",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "collections_getcollections",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "collections_createcollection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "collections_updatecollection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "collections_deletecollection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "collections_getcollectionverses",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "collections_addversetocollection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "collections_removeversefromcollection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/collections.ts",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "highlights",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "highlights",
+      "target": "highlights_gethighlights",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "highlights",
+      "target": "highlights_sethighlight",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "highlights",
+      "target": "highlights_removehighlight",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "highlights",
+      "target": "highlights_getnotes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "highlights",
+      "target": "highlights_savenote",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "highlights",
+      "target": "highlights_deletenote",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/highlights.ts",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase",
+      "target": "supabase_js",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/lib/supabase.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pricing",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Pricing.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "pricing",
+      "target": "react_router_dom",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Pricing.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "pricing",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Pricing.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "pricing",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Pricing.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "pricing",
+      "target": "pricing_handlecheckout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Pricing.tsx",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "login",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Login.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "login",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Login.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "login",
+      "target": "react_router_dom",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Login.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "login",
+      "target": "login_login",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Login.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "home",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Home.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "home",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Home.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "home",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Home.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "home",
+      "target": "layout",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Home.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "home",
+      "target": "home_home",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Home.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "search",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Search.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "search",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Search.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "search",
+      "target": "layout",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Search.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "search",
+      "target": "search_handlesearch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Search.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "react_router_dom",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "highlights",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "layout",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "collections",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "reader_nav",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "reader_handlehighlight",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "reader_handlesavenote",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "reader_handledeletenote",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "reader_handleaddtocollection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "reader_opencollectionpicker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Reader.tsx",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "signup",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Signup.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "signup",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Signup.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "signup",
+      "target": "react_router_dom",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Signup.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "signup",
+      "target": "signup_handlesubmit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Signup.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "profile",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Profile.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "profile",
+      "target": "layout",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Profile.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledgebase",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/KnowledgeBase.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledgebase",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/KnowledgeBase.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledgebase",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/KnowledgeBase.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledgebase",
+      "target": "layout",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/KnowledgeBase.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledgebase",
+      "target": "knowledgebase_knowledgebase",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/KnowledgeBase.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "onboarding",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Onboarding.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "onboarding",
+      "target": "react_router_dom",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Onboarding.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "onboarding",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Onboarding.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "onboarding",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Onboarding.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "onboarding",
+      "target": "onboarding_onboarding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Onboarding.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "urim",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Urim.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "urim",
+      "target": "react_router_dom",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Urim.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "urim",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Urim.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "urim",
+      "target": "urim_handlesend",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Urim.tsx",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "feedback",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Feedback.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "feedback",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Feedback.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "feedback",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Feedback.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "feedback",
+      "target": "layout",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Feedback.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "feedback",
+      "target": "feedback_handlesubmit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Feedback.tsx",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "react_router_dom",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "collections",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "layout",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "collections_handlecreate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "collections_handledelete",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "collections_handlesavenote",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "collections",
+      "target": "collections_handleremoveverse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/web/src/pages/Collections.tsx",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "expo_status_bar",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/App.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/App.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_app",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/App.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "expo",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/index.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "app",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/index.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "login",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/login.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "login",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/login.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "login",
+      "target": "expo_router",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/login.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "login",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/login.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "login",
+      "target": "login_handlelogin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/login.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "kb",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/kb.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "kb",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/kb.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "kb",
+      "target": "expo_router",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/kb.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "kb",
+      "target": "expo_document_picker",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/kb.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "kb",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/kb.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "kb",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/kb.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "kb",
+      "target": "kb_knowledgebase",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/kb.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "signup",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/signup.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "signup",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/signup.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "signup",
+      "target": "expo_router",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/signup.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "signup",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/signup.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "signup",
+      "target": "signup_handlesignup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/signup.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "layout",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/_layout.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "layout",
+      "target": "expo_router",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/_layout.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "layout",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/_layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "layout",
+      "target": "corpussyncprogress",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/_layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "layout",
+      "target": "offlinebanner",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/_layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "bookid",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId].tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "bookid",
+      "target": "expo_router",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId].tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "chapter",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "chapter",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "chapter",
+      "target": "expo_router",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "chapter",
+      "target": "react_native_gesture_handler",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "chapter",
+      "target": "expo_haptics",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "chapter",
+      "target": "db",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "chapter",
+      "target": "watermelondb",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "chapter",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "chapter",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "chapter",
+      "target": "chapter_handlehighlight",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "chapter",
+      "target": "chapter_handlesavenote",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/reader/[bookId]/[chapter].tsx",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/index.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "expo_router",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/index.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "search",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/search.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "search",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/search.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "search",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/search.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "search",
+      "target": "db",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/search.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "search",
+      "target": "watermelondb",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/search.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "search",
+      "target": "usenetworkstatus",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/search.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "search",
+      "target": "search_handlesearch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/search.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/reader.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/reader.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "expo_router",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/reader.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "db",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/reader.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "reader",
+      "target": "watermelondb",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/reader.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "profile",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/profile.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "profile",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/profile.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "profile",
+      "target": "expo_router",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/profile.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "profile",
+      "target": "expo_notifications",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/profile.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "profile",
+      "target": "expo_device",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/profile.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "profile",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/profile.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "profile",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/profile.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "profile",
+      "target": "profile_togglepush",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/profile.tsx",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "profile",
+      "target": "profile_togglebiometric",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/profile.tsx",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "layout",
+      "target": "expo_router",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/_layout.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "urim",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/urim.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "urim",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/urim.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "urim",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/urim.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "urim",
+      "target": "usetypewriter",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/urim.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "urim",
+      "target": "urim_assistantbubble",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/urim.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "urim",
+      "target": "urim_handlesend",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/(tabs)/urim.tsx",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "expo_router",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "index_load",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "index_handlecreate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "index_handledelete",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "index_handlecreate",
+      "target": "index_load",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/index.tsx",
+      "source_location": "L32",
+      "weight": 0.8
+    },
+    {
+      "source": "id",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/[id].tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "id",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/[id].tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "id",
+      "target": "expo_router",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/[id].tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "id",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/[id].tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "id",
+      "target": "id_handleremove",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/app/collections/[id].tsx",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "offlinebanner",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/components/OfflineBanner.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "offlinebanner",
+      "target": "usenetworkstatus",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/components/OfflineBanner.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "offlinebanner",
+      "target": "offlinebanner_offlinebanner",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/components/OfflineBanner.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "corpussyncprogress",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/components/CorpusSyncProgress.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "corpussyncprogress",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/components/CorpusSyncProgress.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "corpussyncprogress",
+      "target": "sync",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/components/CorpusSyncProgress.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "usetypewriter",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/hooks/useTypewriter.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "usetypewriter",
+      "target": "usetypewriter_usetypewriter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/hooks/useTypewriter.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "usenetworkstatus",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/hooks/useNetworkStatus.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "usenetworkstatus",
+      "target": "netinfo",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/hooks/useNetworkStatus.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "usenetworkstatus",
+      "target": "usenetworkstatus_usenetworkstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/hooks/useNetworkStatus.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/auth.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "react_native",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/auth.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/auth.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "expo_apple_authentication",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/auth.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "expo_local_authentication",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/auth.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "supabase_js",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/auth.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "auth_authprovider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/auth.tsx",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "auth",
+      "target": "auth_useauth",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/auth.tsx",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase",
+      "target": "auto",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/supabase.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase",
+      "target": "supabase_js",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/supabase.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "supabase",
+      "target": "expo_secure_store",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/lib/supabase.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "schema",
+      "target": "watermelondb",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/schema.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "watermelondb",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/index.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "sqlite",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/index.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "schema",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/index.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "book",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/index.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "verse",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/index.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "highlight",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/index.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "note",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/index.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "collection",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/index.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "collectionverse",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/index.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "sync",
+      "target": "sync",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/sync.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "sync",
+      "target": "index",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/sync.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "sync",
+      "target": "supabase",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/sync.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "sync",
+      "target": "sync_synccorpus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/sync.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "sync",
+      "target": "sync_syncuserdata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/sync.ts",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "note",
+      "target": "watermelondb",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Note.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "note",
+      "target": "decorators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Note.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "note",
+      "target": "note_note",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Note.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "highlight",
+      "target": "watermelondb",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Highlight.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "highlight",
+      "target": "decorators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Highlight.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "highlight",
+      "target": "highlight_highlight",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Highlight.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "collectionverse",
+      "target": "watermelondb",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/CollectionVerse.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "collectionverse",
+      "target": "decorators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/CollectionVerse.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "collectionverse",
+      "target": "collectionverse_collectionverse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/CollectionVerse.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "book",
+      "target": "watermelondb",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Book.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "book",
+      "target": "decorators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Book.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "book",
+      "target": "book_book",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Book.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "collection",
+      "target": "watermelondb",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Collection.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "collection",
+      "target": "decorators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Collection.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "collection",
+      "target": "collection_collection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Collection.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "verse",
+      "target": "watermelondb",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Verse.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "verse",
+      "target": "decorators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Verse.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "verse",
+      "target": "verse_verse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/apps/mobile/src/db/models/Verse.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

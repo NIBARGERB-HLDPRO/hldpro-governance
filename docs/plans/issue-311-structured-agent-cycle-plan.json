@@ -1,0 +1,151 @@
+{
+  "session_id": "session-20260419-issue-311-seek-and-ponder-intake",
+  "issue_number": 311,
+  "objective": "Implement the third #298 child slice: classify and intake seek-and-ponder into governance registry, graph/wiki, and validation coverage without downstream product-repo writes.",
+  "tier": 2,
+  "scope_boundary": [
+    "Add seek-and-ponder to docs/governed_repos.json with explicit lifecycle, governance, owner, rationale, review date, and issue evidence.",
+    "Add seek-and-ponder to docs/graphify_targets.json and produce governance-hosted graph/wiki artifacts from the local checkout.",
+    "Inspect seek-and-ponder front-door docs, workflows, CODEOWNERS, default branch, branch protection, rulesets, recent check history, and open governance follow-ups.",
+    "Open downstream seek-and-ponder issue(s) before any downstream repo writes are required.",
+    "Add issue-backed planning, exception, cross-review, execution-scope, backlog, and progress artifacts for #311."
+  ],
+  "out_of_scope": [
+    "Editing the seek-and-ponder repository.",
+    "Adding EmailAssistant to the registry, which remains #312.",
+    "Reconciling all registry-driven README/STANDARDS surfaces, which remains #313.",
+    "Closing parent epic #298.",
+    "Claiming final org-wide governance e2e completion."
+  ],
+  "research_summary": "Issue #298 requires every active org repository to be represented in governance. #309 made live drift visible, and #310 made classifications machine-checkable. Live inventory shows seek-and-ponder is active, private, on default branch main, and missing from the governed repo registry. The local checkout already has CLAUDE.md, AGENTS.md, CODEX.md, progress/registry/data/service/fail-fast docs, CODEOWNERS, dependabot, and active governance workflows. Required-check hardgate and memory participation need repo-local follow-up, opened as seek-and-ponder#23.",
+  "research_artifacts": [
+    "GitHub issue #298",
+    "GitHub issue #311",
+    "GitHub issue NIBARGERB-HLDPRO/seek-and-ponder#23",
+    "docs/plans/issue-298-structured-agent-cycle-plan.json",
+    "docs/governed_repos.json",
+    "docs/graphify_targets.json",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/CLAUDE.md",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/AGENTS.md",
+    "gh repo view NIBARGERB-HLDPRO/seek-and-ponder",
+    "gh api repos/NIBARGERB-HLDPRO/seek-and-ponder/branches/main/protection",
+    "gh api 'repos/NIBARGERB-HLDPRO/seek-and-ponder/rulesets?includes_parents=true'"
+  ],
+  "sprints": [
+    {
+      "name": "Registry Intake",
+      "goal": "Represent seek-and-ponder in the governed repo registry with explicit classification data.",
+      "tasks": [
+        "Add seek-and-ponder registry row.",
+        "Classify governance tier, security tier, lifecycle status, and governance status.",
+        "Set subsystem flags for graphify, sweep, metrics, Codex ingestion, compendium, raw feed sync, and code governance.",
+        "Keep memory_integrity disabled until downstream issue #23 resolves bootstrap/adoption."
+      ],
+      "acceptance_criteria": [
+        "Final AC: seek-and-ponder has registry coverage with explicit classification fields.",
+        "Final AC: registry validation passes.",
+        "Final AC: live org inventory no longer reports seek-and-ponder as missing."
+      ],
+      "file_paths": [
+        "docs/governed_repos.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Graph And Governance Evidence",
+      "goal": "Produce governance-hosted graph/wiki coverage and record any downstream-only deferrals.",
+      "tasks": [
+        "Add seek-and-ponder graphify target.",
+        "Run graphify against the local seek-and-ponder checkout and stage graph/wiki artifacts.",
+        "Update wiki index graph coverage summary.",
+        "Record branch protection, ruleset, workflow, required-check, and memory findings.",
+        "Open downstream seek-and-ponder#23 for repo-local required-check and memory bootstrap work."
+      ],
+      "acceptance_criteria": [
+        "Final AC: graphify target reconciliation passes.",
+        "Final AC: graphify/wiki coverage exists in governance or is explicitly deferred with a linked issue.",
+        "Final AC: default branch, branch protection, rulesets, workflows, and required-check applicability are validated or deferred by issue.",
+        "Final AC: no downstream repo edits occur."
+      ],
+      "file_paths": [
+        "docs/graphify_targets.json",
+        "graphify-out/seek-and-ponder/",
+        "wiki/seek-and-ponder/",
+        "wiki/index.md",
+        "raw/validation/2026-04-19-issue-311-seek-and-ponder-intake.md"
+      ]
+    },
+    {
+      "name": "Final E2E Proof",
+      "goal": "Prove the #311 intake is compatible with the #298 live-org governance loop before merge.",
+      "tasks": [
+        "Run governed repo registry validation.",
+        "Run live org inventory drift check in blocking mode.",
+        "Run graphify target show/reconciliation checks for seek-and-ponder.",
+        "Run structured plan, execution-scope, backlog sync, Local CI Gate, py_compile, and diff hygiene checks.",
+        "Run alternate review before PR publication."
+      ],
+      "acceptance_criteria": [
+        "Final AC: live org inventory blocking mode reports only EmailAssistant as missing active repo after this slice.",
+        "Final AC: Local CI Gate passes for changed paths.",
+        "Final AC: #311 remains open unless PR and e2e evidence are linked.",
+        "Final AC: parent #298 remains open until final #314 e2e closeout."
+      ],
+      "file_paths": [
+        "docs/plans/issue-311-structured-agent-cycle-plan.json",
+        "docs/plans/issue-311-seek-and-ponder-intake-pdcar.md",
+        "raw/exceptions/2026-04-19-issue-311-same-family-intake.md",
+        "raw/cross-review/2026-04-19-issue-311-claude-review.md",
+        "raw/execution-scopes/2026-04-19-issue-311-seek-and-ponder-intake-implementation.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "pending",
+      "role": "seek-and-ponder-intake-reviewer",
+      "focus": "Registry classification, graph/wiki coverage, downstream write boundary, and #298/#312/#313/#314 sequencing.",
+      "status": "accepted_with_followup",
+      "summary": "Claude review accepted the intake with required follow-ups to write the cross-review artifact and record final e2e command outcomes before PR publication.",
+      "evidence": [
+        "raw/cross-review/2026-04-19-issue-311-claude-review.md",
+        "raw/validation/2026-04-19-issue-311-seek-and-ponder-intake.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude CLI",
+    "model_family": "claude",
+    "status": "accepted_with_followup",
+    "summary": "Claude accepted the governance intake with follow-ups that are applied before PR publication.",
+    "evidence": [
+      "raw/cross-review/2026-04-19-issue-311-claude-review.md",
+      "docs/plans/issue-298-structured-agent-cycle-plan.json",
+      "raw/validation/2026-04-19-issue-311-seek-and-ponder-intake.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #311 may add seek-and-ponder to governance registry/graphify/wiki coverage, create validation evidence and planning/scope artifacts, and open downstream seek-and-ponder issues for required repo-local follow-up. It may not edit seek-and-ponder or add EmailAssistant.",
+    "next_execution_step": "Complete registry/graph/wiki intake, run final e2e commands, complete alternate-family review, then open PR for #311.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If seek-and-ponder repo-local edits are needed, stop and move that work to seek-and-ponder#23 or another downstream issue.",
+    "If EmailAssistant intake is needed, stop and move that work to #312.",
+    "If README/STANDARDS fleet surfaces need full reconciliation, stop and move that work to #313.",
+    "If graphify cannot run from the local checkout, keep registry intake and record a linked deferral before PR publication.",
+    "If final live inventory does not reduce missing active repos to EmailAssistant only, do not publish."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #311",
+    "Parent epic #298",
+    "operator instruction: follow repo rules, no HITL, e2e testing as final AC",
+    "raw/exceptions/2026-04-19-issue-311-same-family-intake.md"
+  ],
+  "approved_at": "2026-04-19T00:20:00Z"
+}
