@@ -82,6 +82,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CODEX_AUTH_JSON: ${{ secrets.CODEX_AUTH_JSON }}
+          PENTAGI_API_TOKEN: ${{ secrets.PENTAGI_API_TOKEN }}
         run: |
           REPOS=$(python3 scripts/overlord/validate_governed_repos.py --print-subsystem sweep)
           CODE_REPOS=$(python3 scripts/overlord/validate_governed_repos.py --print-subsystem code_governance)
@@ -310,6 +311,16 @@ jobs:
           done
 
           REPORT+="\n**Overall: ${TOTAL_PASS}/${TOTAL_CHECKS} checks passing**\n\n"
+
+          # ── PentAGI trigger/freshness status ──
+          REPORT+="## PentAGI Trigger Status\n\n"
+          python3 scripts/overlord/pentagi_sweep.py \
+            --repos-root . \
+            --date "$DATE" \
+            --output-json metrics/pentagi/latest.json \
+            --output-md /tmp/pentagi-status.md \
+            --execute
+          REPORT+="$(cat /tmp/pentagi-status.md)\n"
 
           # ── Commit Activity (last 7 days) ──
           REPORT+="## Commit Activity (last 7 days)\n\n"
@@ -606,7 +617,7 @@ jobs:
           git config user.name "overlord-bot"
           git config user.email "overlord@hldpro.com"
           python3 scripts/knowledge_base/graphify_targets.py stage-paths --scheduled | xargs git add 2>/dev/null || true
-          git add wiki/index.md metrics/effectiveness-baseline metrics/self-learning docs/ORG_GOVERNANCE_COMPENDIUM.md 2>/dev/null || true
+          git add wiki/index.md metrics/effectiveness-baseline metrics/self-learning metrics/pentagi docs/ORG_GOVERNANCE_COMPENDIUM.md 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "status=no_changes" >> "$GITHUB_OUTPUT"
             echo "note=No graph or metrics changes were generated." >> "$GITHUB_OUTPUT"
