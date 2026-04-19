@@ -1,0 +1,139 @@
+{
+  "session_id": "session-20260419-issue-313-registry-surface-reconciliation",
+  "issue_number": 313,
+  "objective": "Implement the fifth #298 child slice: reconcile registry-dependent governance surfaces and add drift validation.",
+  "tier": 2,
+  "scope_boundary": [
+    "Reconcile README and STANDARDS repo-list surfaces with docs/governed_repos.json.",
+    "Reconcile explicit GitHub Actions checkout surfaces that cannot be dynamically generated.",
+    "Reconcile raw-feed, graphify helper, sweep, metrics, Codex, compendium, and memory selection paths with registry or manifest sources.",
+    "Add validator coverage so duplicate repo lists are registry-driven, validator-backed, or explicitly deferred.",
+    "Add issue-backed planning, execution-scope, exception, review, progress/backlog, and validation evidence."
+  ],
+  "out_of_scope": [
+    "Changing downstream repositories.",
+    "Enabling EmailAssistant subsystems before EmailAssistant#1 resolves repo-local bootstrap.",
+    "Closing parent epic #298.",
+    "Final org-wide e2e closeout, which remains #314."
+  ],
+  "research_summary": "After #311 and #312, the governed repo registry covers active org repos. The weekly sweep already derives sweep/code_governance/graphify/metrics/compendium/memory selections from registry or manifests, but explicit actions/checkout blocks, raw-feed sync, local graphify symlink preparation, README text, and STANDARDS repo summaries still contained static or stale repo-list surfaces. This slice adds seek-and-ponder explicit checkout where required, derives raw-feed and local graphify helper selections from registry/manifest data, updates README/STANDARDS, and adds scripts/overlord/validate_registry_surfaces.py plus local/CI wiring.",
+  "research_artifacts": [
+    "GitHub issue #298",
+    "GitHub issue #313",
+    "docs/governed_repos.json",
+    "docs/graphify_targets.json",
+    ".github/workflows/overlord-sweep.yml",
+    ".github/workflows/overlord-nightly-cleanup.yml",
+    ".github/workflows/raw-feed-sync.yml",
+    "scripts/knowledge_base/prepare_local_graphify_repos.sh",
+    "README.md",
+    "STANDARDS.md"
+  ],
+  "sprints": [
+    {
+      "name": "Surface Reconciliation",
+      "goal": "Remove or guard static repo-list drift points.",
+      "tasks": [
+        "Add seek-and-ponder checkout blocks to sweep and nightly cleanup workflows.",
+        "Drive raw-feed sync from raw_feed_sync subsystem flags.",
+        "Drive local graphify symlink preparation from scheduled graphify targets.",
+        "Update README and STANDARDS repo registry text."
+      ],
+      "acceptance_criteria": [
+        "Final AC: duplicate repo lists are registry-driven, validator-backed, or explicitly static due GitHub Actions checkout mechanics.",
+        "Final AC: README/STANDARDS cannot silently drift from registry coverage."
+      ],
+      "file_paths": [
+        ".github/workflows/overlord-sweep.yml",
+        ".github/workflows/overlord-nightly-cleanup.yml",
+        ".github/workflows/raw-feed-sync.yml",
+        "scripts/knowledge_base/prepare_local_graphify_repos.sh",
+        "README.md",
+        "STANDARDS.md"
+      ]
+    },
+    {
+      "name": "Validator Coverage",
+      "goal": "Make registry-dependent surface drift CI-visible.",
+      "tasks": [
+        "Add scripts/overlord/validate_registry_surfaces.py.",
+        "Wire validator into graphify-governance-contract and Local CI Gate.",
+        "Validate graphify target reconciliation and subsystem selections."
+      ],
+      "acceptance_criteria": [
+        "Final AC: graphify target reconciliation passes.",
+        "Final AC: sweep/metrics/compendium/raw-feed/memory/Codex selection tests pass for expanded registry entries.",
+        "Final AC: branch protection/default branch/ruleset/required-check validation remains issue-backed by #311/#312 evidence and downstream blockers."
+      ],
+      "file_paths": [
+        "scripts/overlord/validate_registry_surfaces.py",
+        ".github/workflows/graphify-governance-contract.yml",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml"
+      ]
+    },
+    {
+      "name": "Final E2E Proof",
+      "goal": "Run the focused #298 registry-dependent command matrix before merge.",
+      "tasks": [
+        "Run registry, graphify, and registry-surface validators.",
+        "Run structured plan, execution-scope, backlog sync, workflow contract, py_compile, bash syntax, diff hygiene, and Local CI Gate.",
+        "Run read-only specialist review before PR publication."
+      ],
+      "acceptance_criteria": [
+        "Final AC: Local CI Gate passes for changed paths.",
+        "Final AC: #313 remains open unless PR and e2e evidence are linked.",
+        "Final AC: parent #298 remains open until #314 complete."
+      ],
+      "file_paths": [
+        "docs/plans/issue-313-structured-agent-cycle-plan.json",
+        "docs/plans/issue-313-registry-surface-reconciliation-pdcar.md",
+        "raw/exceptions/2026-04-19-issue-313-same-family-surface-reconciliation.md",
+        "raw/execution-scopes/2026-04-19-issue-313-registry-surface-reconciliation-implementation.json",
+        "raw/validation/2026-04-19-issue-313-registry-surface-reconciliation.md",
+        "raw/cross-review/2026-04-19-issue-313-registry-surface-review.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "James",
+      "role": "registry-surface-reconciliation-reviewer",
+      "focus": "Static repo-list surfaces, workflow checkout alignment, validator coverage, and #313 acceptance criteria.",
+      "status": "accepted_with_followup",
+      "summary": "Read-only review found the validator was duplicating registry subsystem membership and README retained a fixed workflow count. Both follow-ups were applied before validation.",
+      "evidence": [
+        "raw/cross-review/2026-04-19-issue-313-registry-surface-review.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Codex subagent",
+    "model_family": "gpt",
+    "status": "accepted_with_followup",
+    "summary": "Subagent review accepted the surface reconciliation after removal of duplicate validator membership state and README count cleanup.",
+    "evidence": [
+      "raw/cross-review/2026-04-19-issue-313-registry-surface-review.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #313 may edit governance repository workflow/document/helper/validator/planning surfaces. It may not edit downstream repos or enable EmailAssistant subsystems.",
+    "next_execution_step": "Complete validators, run final e2e matrix, apply review follow-ups, then open PR for #313.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If downstream repo edits are needed, stop and create repo-local issue-backed work.",
+    "If EmailAssistant subsystem enablement is needed, stop and leave it blocked behind EmailAssistant#1.",
+    "If final epic closeout is requested, stop and leave it to #314."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #313",
+    "Parent epic #298",
+    "operator instruction: follow repo rules, no HITL, e2e testing as final AC",
+    "raw/exceptions/2026-04-19-issue-313-same-family-surface-reconciliation.md"
+  ],
+  "approved_at": "2026-04-19T00:45:00Z"
+}

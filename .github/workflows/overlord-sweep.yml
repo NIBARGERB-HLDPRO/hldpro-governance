@@ -19,7 +19,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      # ── Check out all 5 repos ──
+      # Checkout steps are explicit because actions/checkout cannot fan out
+      # dynamically from docs/governed_repos.json. The registry-surface
+      # validator keeps these static steps aligned with sweep-enabled repos.
       - name: Checkout ai-integration-services
         uses: actions/checkout@v6
         with:
@@ -57,6 +59,14 @@ jobs:
         with:
           repository: NIBARGERB-HLDPRO/ASC-Evaluator
           path: repos/ASC-Evaluator
+          fetch-depth: 0
+          token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Checkout seek-and-ponder
+        uses: actions/checkout@v6
+        with:
+          repository: NIBARGERB-HLDPRO/seek-and-ponder
+          path: repos/seek-and-ponder
           fetch-depth: 0
           token: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
 

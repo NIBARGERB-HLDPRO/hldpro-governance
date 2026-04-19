@@ -1,0 +1,81 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-313-registry-surface-reconciliation-20260419",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T00:45:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-313-structured-agent-cycle-plan.json",
+      "docs/plans/issue-313-registry-surface-reconciliation-pdcar.md",
+      "raw/exceptions/2026-04-19-issue-313-same-family-surface-reconciliation.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-19-issue-313-same-family-surface-reconciliation.md",
+    "active_exception_expires_at": "2026-04-20T00:45:00Z"
+  },
+  "allowed_write_paths": [
+    ".github/workflows/overlord-sweep.yml",
+    ".github/workflows/overlord-nightly-cleanup.yml",
+    ".github/workflows/raw-feed-sync.yml",
+    ".github/workflows/graphify-governance-contract.yml",
+    "scripts/knowledge_base/prepare_local_graphify_repos.sh",
+    "scripts/overlord/validate_registry_surfaces.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "README.md",
+    "STANDARDS.md",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-313-structured-agent-cycle-plan.json",
+    "docs/plans/issue-313-registry-surface-reconciliation-pdcar.md",
+    "raw/exceptions/2026-04-19-issue-313-same-family-surface-reconciliation.md",
+    "raw/cross-review/2026-04-19-issue-313-registry-surface-review.md",
+    "raw/execution-scopes/2026-04-19-issue-313-registry-surface-reconciliation-implementation.json",
+    "raw/validation/2026-04-19-issue-313-registry-surface-reconciliation.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout has unrelated local work and must not be edited by issue #313."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+      "reason": "Downstream EmailAssistant work remains blocked behind EmailAssistant#1."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Downstream seek-and-ponder repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Existing governed repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Existing governed repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Existing governed repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Existing governed repo remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Existing governed repo remains out of scope."
+    }
+  ]
+}

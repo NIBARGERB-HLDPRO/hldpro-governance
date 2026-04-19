@@ -22,7 +22,8 @@ jobs:
           DATE=$(date -u +%Y-%m-%d)
           mkdir -p raw/github-issues
 
-          for REPO in ai-integration-services HealthcarePlatform local-ai-machine knocktracker; do
+          REPOS=$(python3 scripts/overlord/validate_governed_repos.py --print-subsystem raw_feed_sync)
+          for REPO in $REPOS; do
             echo "Fetching issues from $REPO..."
             gh issue list \
               --repo "NIBARGERB-HLDPRO/$REPO" \

@@ -37,11 +37,13 @@ jobs:
             scripts/overlord/check_local_ci_gate_workflow_contract.py \
             scripts/overlord/test_local_ci_gate_workflow_contract.py \
             scripts/overlord/check_workflow_local_coverage.py \
+            scripts/overlord/validate_registry_surfaces.py \
             scripts/overlord/test_workflow_local_coverage.py
           python3 scripts/knowledge_base/test_graphify_governance_contract.py
           python3 scripts/knowledge_base/test_graphify_usage_logging_contract.py
           python3 scripts/overlord/test_local_ci_gate_workflow_contract.py
           python3 scripts/overlord/test_workflow_local_coverage.py
+          python3 scripts/overlord/validate_registry_surfaces.py
 
       - name: Validate generated wiki index is committed
         run: |
