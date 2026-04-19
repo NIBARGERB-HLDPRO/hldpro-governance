@@ -1,0 +1,40 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "codex/stampede-overlord-intake-runbook",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "docs/plans/issue-359-stampede-overlord-intake-pdcar.md",
+    "docs/plans/issue-359-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-19-issue-359-stampede-overlord-intake-planning.json",
+    "docs/runbooks/org-repo-intake.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/PHASE0",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/PHASE0",
+      "reason": "Stampede has open PR/review activity; issue #359 planning does not edit the downstream repo."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "LAM may have unrelated active work; issue #359 does not edit downstream repos."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "AIS may have unrelated active work; issue #359 does not edit downstream repos."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Knocktracker may have unrelated active work; issue #359 does not edit downstream repos."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "HealthcarePlatform may have unrelated active work; issue #359 does not edit downstream repos."
+    }
+  ]
+}

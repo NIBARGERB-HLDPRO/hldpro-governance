@@ -1,0 +1,127 @@
+{
+  "session_id": "session-20260419-issue-359-stampede-overlord-intake",
+  "issue_number": 359,
+  "objective": "Create the issue-backed planning and runbook surface for adding Stampede, and future org repos, to HLDPRO GitHub governance and Overlord registry coverage.",
+  "tier": 1,
+  "scope_boundary": [
+    "Document the current Stampede governance state from read-only audit evidence.",
+    "Create a PDCAR for issue #359.",
+    "Create a reusable runbook for creating or adding org-level repositories.",
+    "Separate GitHub rules, repo-local governance files, and Overlord registry enrollment.",
+    "Define validation and follow-up gates for the later Stampede registry implementation slice."
+  ],
+  "out_of_scope": [
+    "Editing the Stampede repository.",
+    "Editing docs/governed_repos.json in this planning slice.",
+    "Editing docs/graphify_targets.json in this planning slice.",
+    "Regenerating or staging graphify-out artifacts unless a later implementation scope includes them.",
+    "Changing GitHub rulesets or security settings.",
+    "Merging Stampede pull requests.",
+    "Changing Overlord workflow behavior."
+  ],
+  "research_summary": "A read-only audit confirmed that NIBARGERB-HLDPRO/Stampede exists, has repo-local governance files, active org and repo rulesets, passing required checks, Dependabot security updates, secret scanning, and push protection. The same audit confirmed the governance repo has no Stampede entry in docs/governed_repos.json or docs/graphify_targets.json, so Overlord sweep and related registry-driven activities do not include it. Issue #359 tracks the planning and repeatable runbook needed before the implementation slice enrolls Stampede.",
+  "research_artifacts": [
+    "GitHub issue #359",
+    "Read-only Stampede audit handoff from subagent 019da738-2f13-73d0-be90-dfe80cff09c3",
+    "NIBARGERB-HLDPRO/Stampede PR #2",
+    "NIBARGERB-HLDPRO/Stampede PR #3",
+    "NIBARGERB-HLDPRO/Stampede ruleset 15267782",
+    "NIBARGERB-HLDPRO org rulesets 14715976 and 14716006",
+    "docs/governed_repos.json",
+    "docs/graphify_targets.json",
+    "docs/plans/issue-298-org-repo-governance-coverage-pdcar.md"
+  ],
+  "sprints": [
+    {
+      "name": "Planning And Runbook",
+      "goal": "Produce issue #359 planning artifacts and a repeatable org repo intake runbook.",
+      "tasks": [
+        "Create issue #359 PDCAR.",
+        "Create structured agent cycle plan for #359.",
+        "Create execution-scope artifact for the docs-only planning slice.",
+        "Create org repo intake runbook with create, onboard, GitHub guard, repo-local guard, and Overlord enrollment stages."
+      ],
+      "acceptance_criteria": [
+        "PDCAR references issue #359 and the Stampede audit evidence.",
+        "Runbook distinguishes new repo creation from existing repo onboarding.",
+        "Runbook names the required GitHub, repo-local, and Overlord validation commands.",
+        "No registry or graph target edits are included in the planning slice."
+      ],
+      "file_paths": [
+        "docs/plans/issue-359-stampede-overlord-intake-pdcar.md",
+        "docs/plans/issue-359-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-19-issue-359-stampede-overlord-intake-planning.json",
+        "docs/runbooks/org-repo-intake.md"
+      ]
+    },
+    {
+      "name": "Stampede Enrollment Follow-Up",
+      "goal": "Define the next implementation slice that actually enrolls Stampede in Overlord.",
+      "tasks": [
+        "Choose Stampede governance tier and security tier.",
+        "Choose enabled_subsystems flags for sweep, metrics, memory_integrity, codex_ingestion, compendium, raw_feed_sync, code_governance, and graphify.",
+        "Add Stampede to docs/governed_repos.json.",
+        "Add Stampede to docs/graphify_targets.json if graphify is enabled.",
+        "Run registry, inventory, and generated artifact validation in a separate implementation PR."
+      ],
+      "acceptance_criteria": [
+        "Follow-up implementation scope is issue-backed before registry writes.",
+        "Registry validator passes.",
+        "Live org inventory agrees with registry or has explicit issue-backed classification.",
+        "Subsystem print commands include or exclude Stampede according to the selected flags."
+      ],
+      "file_paths": [
+        "docs/governed_repos.json",
+        "docs/graphify_targets.json",
+        "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+        "graphify-out/",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Ramanujan",
+      "role": "read-only Stampede auditor",
+      "focus": "Existing Stampede repo state, GitHub controls, check health, security settings, PR state, audit log evidence, and Overlord enrollment gaps.",
+      "status": "accepted_with_followup",
+      "summary": "Audit found GitHub and repo-local governance active, required checks passing, Dependabot and secret scanning active, and Overlord registry enrollment missing.",
+      "evidence": [
+        "Subagent 019da738-2f13-73d0-be90-dfe80cff09c3 final handoff",
+        "GitHub repo NIBARGERB-HLDPRO/Stampede",
+        "GitHub issue #359"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family-docs-fallback",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "True alternate-family review is not available in this lane. The change is docs-only planning/runbook work backed by a read-only subagent audit and deterministic validators.",
+    "evidence": [
+      "Subagent 019da738-2f13-73d0-be90-dfe80cff09c3 final handoff",
+      "Issue #359"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "planning_ready",
+    "approved_scope_summary": "Issue #359 may add planning, execution-scope, and runbook files for Stampede Overlord intake. It may not edit Stampede, governed_repos, graphify targets, or generated graph/wiki artifacts in this planning slice.",
+    "next_execution_step": "Validate the planning artifacts, open a focused PR, then schedule a separate implementation slice for actual Stampede registry enrollment.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If registry enrollment is requested in the same PR, stop and update scope before editing docs/governed_repos.json.",
+    "If graph/wiki artifacts need regeneration, stop and include generated artifact paths in a separate implementation scope.",
+    "If Stampede repo edits are needed, stop and use a downstream repo execution scope.",
+    "If solo-owner review policy changes are needed, create or update a ruleset exception/runbook entry before changing enforcement."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #359",
+    "Operator instruction: use audit handoff with #359 and follow repo rules",
+    "Read-only audit subagent handoff"
+  ],
+  "approved_at": "2026-04-19T19:30:00Z"
+}
