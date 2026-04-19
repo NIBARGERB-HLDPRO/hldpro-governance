@@ -245,7 +245,7 @@ Contract:
 - One row per governed repository.
 - Required identity fields: `repo_slug`, `display_name`, `repo_dir_name`, and `github_repo`.
 - Required path fields: `local_path`, `ci_checkout_path`, `graph_output_path`, `wiki_path`, and `project_path`.
-- Required classification fields: `governance_tier`, `security_tier`, and `enabled_subsystems`.
+- Required classification fields: `governance_tier`, `security_tier`, `lifecycle_status`, `governance_status`, `classification.owner`, `classification.rationale`, `classification.review_date`, `classification.issue_refs`, and `enabled_subsystems`.
 - Graphify targets must reconcile with registry graph output, wiki path, display name, and CI checkout path.
 - Temporary duplicate-list exemptions are documented in `docs/governed_repos_exemptions.md`.
 

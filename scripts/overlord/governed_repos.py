@@ -27,6 +27,9 @@ class GovernedRepo:
     project_path: str
     governance_tier: str
     security_tier: str
+    lifecycle_status: str
+    governance_status: str
+    classification: dict[str, Any]
     description: str
     enabled_subsystems: dict[str, bool]
 
@@ -57,6 +60,10 @@ def governed_repos(path: Path = DEFAULT_REGISTRY) -> list[GovernedRepo]:
     for row in rows:
         if not isinstance(row, dict):
             raise ValueError("repository entry must be an object")
+        enabled_subsystems = dict(row["enabled_subsystems"])
+        for key, value in enabled_subsystems.items():
+            if not isinstance(value, bool):
+                raise ValueError(f"{row['repo_slug']}.enabled_subsystems.{key} must be boolean")
         repos.append(
             GovernedRepo(
                 repo_slug=str(row["repo_slug"]),
@@ -70,8 +77,11 @@ def governed_repos(path: Path = DEFAULT_REGISTRY) -> list[GovernedRepo]:
                 project_path=str(row["project_path"]),
                 governance_tier=str(row["governance_tier"]),
                 security_tier=str(row["security_tier"]),
+                lifecycle_status=str(row["lifecycle_status"]),
+                governance_status=str(row["governance_status"]),
+                classification=dict(row["classification"]),
                 description=str(row["description"]),
-                enabled_subsystems={str(k): bool(v) for k, v in dict(row["enabled_subsystems"]).items()},
+                enabled_subsystems={str(k): v for k, v in enabled_subsystems.items()},
             )
         )
     return repos

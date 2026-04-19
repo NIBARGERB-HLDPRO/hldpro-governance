@@ -21,7 +21,8 @@ SPEC.loader.exec_module(check_org_repo_inventory)
 
 
 class TestOrgRepoInventory(unittest.TestCase):
-    def _registry(self, tmpdir: Path, repos: list[str]) -> Path:
+    def _registry(self, tmpdir: Path, repos: list[str], *, archived: set[str] | None = None) -> Path:
+        archived = archived or set()
         payload = {
             "version": 1,
             "organization": "NIBARGERB-HLDPRO",
@@ -40,6 +41,16 @@ class TestOrgRepoInventory(unittest.TestCase):
                     "project_path": f"projects/{repo.lower()}",
                     "governance_tier": "standard",
                     "security_tier": "baseline",
+                    "lifecycle_status": "archived" if repo in archived else "active",
+                    "governance_status": "exempt" if repo in archived else "governed",
+                    "classification": {
+                        "owner": "governance",
+                        "rationale": f"{repo} fixture classification.",
+                        "review_date": "2026-04-18",
+                        "issue_refs": [
+                            "#310"
+                        ],
+                    },
                     "description": f"{repo} fixture",
                     "enabled_subsystems": {
                         "graphify": True,
@@ -160,7 +171,7 @@ class TestOrgRepoInventory(unittest.TestCase):
         self.assertIn("Archived repos absent from registry", output)
         self.assertIn("NIBARGERB-HLDPRO/old-repo", output)
 
-    def test_archived_registry_repo_fails_until_classified_by_followup_schema(self) -> None:
+    def test_archived_registry_repo_fails_without_archived_lifecycle_classification(self) -> None:
         with tempfile.TemporaryDirectory() as raw_tmpdir:
             tmpdir = Path(raw_tmpdir)
             registry = self._registry(tmpdir, ["hldpro-governance", "old-repo"])
@@ -174,6 +185,20 @@ class TestOrgRepoInventory(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn("Archived repos still present in registry", output)
         self.assertIn("NIBARGERB-HLDPRO/old-repo", output)
+
+    def test_archived_registry_repo_passes_with_archived_lifecycle_classification(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            registry = self._registry(tmpdir, ["hldpro-governance", "old-repo"], archived={"old-repo"})
+            inventory = self._inventory(
+                tmpdir,
+                [self._repo_row("hldpro-governance"), self._repo_row("old-repo", archived=True)],
+            )
+
+            code, output = self._run("--registry", str(registry), "--inventory-file", str(inventory))
+
+        self.assertEqual(code, 0, output)
+        self.assertIn("PASS org inventory matches", output)
 
 
 if __name__ == "__main__":

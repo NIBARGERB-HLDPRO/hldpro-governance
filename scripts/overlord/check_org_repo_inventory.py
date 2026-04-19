@@ -114,7 +114,9 @@ def load_live_inventory(organization: str, limit: int) -> list[OrgRepo]:
 def compare_inventory(registry_path: Path, inventory: list[OrgRepo]) -> InventoryDrift:
     registry = load_registry(registry_path)
     organization = str(registry.get("organization") or "")
-    registry_full_names = {repo.github_repo for repo in governed_repos(registry_path)}
+    registry_repos = governed_repos(registry_path)
+    registry_by_full_name = {repo.github_repo: repo for repo in registry_repos}
+    registry_full_names = set(registry_by_full_name)
     live_by_full_name = {repo.full_name: repo for repo in inventory}
 
     missing_active = tuple(
@@ -132,7 +134,9 @@ def compare_inventory(registry_path: Path, inventory: list[OrgRepo]) -> Inventor
     archived_registry = tuple(
         repo
         for repo in inventory
-        if repo.archived and repo.full_name in registry_full_names
+        if repo.archived
+        and repo.full_name in registry_full_names
+        and registry_by_full_name[repo.full_name].lifecycle_status != "archived"
     )
     archived_unregistered = tuple(
         repo
