@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-329-governance-tooling-closeout-mirrors/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-329-governance-tooling-closeout-mirrors/wiki/hldpro",
-  "nodes": 1081,
-  "edges": 2095,
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-200-codex-fire-failfast/wiki/hldpro",
+  "nodes": 1089,
+  "edges": 2111,
   "communities": 59,
   "articles": 69,
   "html_status": "skipped",
-  "code_files": 70
+  "code_files": 71
 }

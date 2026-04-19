@@ -1,0 +1,91 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-200-codex-fire-failfast",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T00:00:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-200-structured-agent-cycle-plan.json",
+      "docs/plans/issue-200-codex-fire-failfast-pdcar.md",
+      "raw/exceptions/2026-04-19-issue-200-same-family-codex-fire.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-19-issue-200-same-family-codex-fire.md",
+    "active_exception_expires_at": "2026-04-20T00:00:00Z"
+  },
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/plans/issue-200-structured-agent-cycle-plan.json",
+    "docs/plans/issue-200-codex-fire-failfast-pdcar.md",
+    "raw/exceptions/2026-04-19-issue-200-same-family-codex-fire.md",
+    "raw/execution-scopes/2026-04-19-issue-200-codex-fire-failfast-implementation.json",
+    "raw/cross-review/2026-04-19-issue-200-codex-fire-failfast-review.md",
+    "raw/validation/2026-04-19-issue-200-codex-fire-failfast.md",
+    "raw/closeouts/2026-04-19-issue-200-codex-fire-failfast.md",
+    "raw/fail-fast-log.md",
+    "scripts/codex-fire.sh",
+    "scripts/codex-review-template.sh",
+    "scripts/test_codex_fire.py",
+    "graphify-out/hldpro-governance/.graphify_ast.json",
+    "graphify-out/hldpro-governance/.graphify_detect.json",
+    "graphify-out/hldpro-governance/.graphify_summary.json",
+    "graphify-out/hldpro-governance/GRAPH_REPORT.md",
+    "graphify-out/hldpro-governance/community-labels.json",
+    "graphify-out/hldpro-governance/graph.json",
+    "wiki/hldpro/Codex_fire.md",
+    "wiki/hldpro/Codex_fire_Failure.md",
+    "wiki/hldpro/Codex_review_template.md",
+    "wiki/hldpro/Overlord_Pentagi_sweep.md",
+    "wiki/hldpro/TestCodexFire.md",
+    "wiki/hldpro/Windows_ollama_Audit.md",
+    "wiki/hldpro/index.md",
+    "wiki/index.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout has unrelated local work and must not be edited by issue #200."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+      "reason": "Downstream EmailAssistant work remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Downstream seek-and-ponder work remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Downstream AIS work remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Downstream HealthcarePlatform work remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Downstream local-ai-machine work remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Downstream knocktracker work remains out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Downstream ASC-Evaluator work remains out of scope."
+    }
+  ]
+}
