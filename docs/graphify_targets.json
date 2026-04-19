@@ -48,6 +48,15 @@
       "closeout_refresh": false
     },
     {
+      "repo_slug": "seek-and-ponder",
+      "display_name": "seek-and-ponder",
+      "source_path": "repos/seek-and-ponder",
+      "output_path": "graphify-out/seek-and-ponder",
+      "wiki_path": "wiki/seek-and-ponder",
+      "scheduled": true,
+      "closeout_refresh": false
+    },
+    {
       "repo_slug": "asc-evaluator",
       "display_name": "ASC-Evaluator",
       "source_path": "repos/ASC-Evaluator",

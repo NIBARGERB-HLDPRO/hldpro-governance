@@ -1,0 +1,12 @@
+{
+  "repo_slug": "seek-and-ponder",
+  "source": "seek-and-ponder",
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-311-seek-and-ponder-intake/graphify-out/seek-and-ponder",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-311-seek-and-ponder-intake/wiki/seek-and-ponder",
+  "nodes": 180,
+  "edges": 235,
+  "communities": 27,
+  "articles": 37,
+  "html_status": "generated",
+  "code_files": 82
+}
