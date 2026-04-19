@@ -27,6 +27,7 @@ The registry rationale records that downstream `seek-and-ponder#23` completed th
 | Progress issue staleness | SKIP/PASS | `python3 scripts/overlord/check_progress_github_issue_staleness.py --repo NIBARGERB-HLDPRO/hldpro-governance` skips by design because governance backlog is tracked in `OVERLORD_BACKLOG.md` |
 | Overlord backlog issue alignment | PASS | `python3 scripts/overlord/check_overlord_backlog_github_alignment.py` |
 | Stage 6 closeout hook | PASS | `bash hooks/closeout-hook.sh raw/closeouts/2026-04-19-issue-331-seek-ponder-memory-registry.md` |
+| Local CI gate after PR #336 scope correction | PASS | `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --report-dir cache/local-ci-gate/reports --json` passed with the same 14 changed files reported by GitHub Actions. |
 
 ## Memory Integrity Output
 
