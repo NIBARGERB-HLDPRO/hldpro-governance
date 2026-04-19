@@ -3,11 +3,11 @@
 Last updated: 2026-04-19
 Owner: Operator (`nibargerb`)
 Issue: [hldpro-governance #109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109)
-Scope: Governance Stage A. Downstream HTTP bridge implementation lives in `local-ai-machine` Stage B/C.
+Scope: Governance Remote MCP Bridge contract, proof, and operator procedure.
 
 ## Current Status
 
-Remote MCP Bridge is planned and governance-ready, but not live. Stage A defines the contract, local verifier, thin client, and operator procedures. Do not expose `local-ai-machine/services/som-mcp/` over a tunnel until Stage B/C implements the HTTP bridge controls and Stage D proves remote smoke/security tests.
+Stage A governance standards, the local verifier, the thin client, and operator procedures are merged. Stage B/C downstream HTTP bridge controls are merged in `local-ai-machine`. Stage D proof tooling exists in this repository, but issue #109 is not closed until a live second-machine proof passes against the Cloudflare-protected endpoint and confirms stdio MCP still works after the tunnel is stopped.
 
 ## Approved Remote Surface
 
@@ -37,7 +37,7 @@ The Stage A client reads:
 | `CF_ACCESS_CLIENT_SECRET` | Cloudflare Access service-token client secret. |
 | `SOM_REMOTE_MCP_AUDIT_HMAC_KEY` | HMAC key used by the audit verifier when audit files exist. |
 
-Example local client smoke after Stage B/C exists:
+Example local client smoke:
 
 ```bash
 export SOM_MCP_URL="https://som-mcp.example.com"
@@ -48,6 +48,37 @@ python3 scripts/som-client/som_client.py
 ```
 
 The client deliberately does not expose `lam.scrub_pii`.
+
+## Stage D Proof Runner
+
+Use the Stage D runner for final remote-machine acceptance. A fixture run is acceptable for CI and harness regression testing, but it is not live issue-closure evidence.
+
+Fixture e2e:
+
+```bash
+python3 scripts/remote-mcp/stage_d_smoke.py \
+  --fixture \
+  --fixture-evidence-dir raw/remote-mcp-stage-d-fixture \
+  --json
+```
+
+Live second-machine proof:
+
+```bash
+export SOM_MCP_URL="https://som-mcp.example.com"
+export SOM_MCP_TOKEN="<inner-jwt>"
+export SOM_REMOTE_MCP_IDENTITY_EMAIL="<cloudflare-identity-email>"
+export SOM_REMOTE_MCP_IDENTITY_SUB="<cloudflare-identity-sub>"
+export CF_ACCESS_CLIENT_ID="<access-client-id>"
+export CF_ACCESS_CLIENT_SECRET="<access-client-secret>"
+export SOM_REMOTE_MCP_AUDIT_DIR="/path/to/copied/raw/remote-mcp-audit"
+export SOM_REMOTE_MCP_AUDIT_HMAC_KEY="<audit-hmac-key>"
+export SOM_REMOTE_MCP_STDIO_PROOF_COMMAND="<local-stdio-proof-command-after-tunnel-stop>"
+
+python3 scripts/remote-mcp/stage_d_smoke.py --json
+```
+
+The live proof fails fast when required endpoint, identity, audit, HMAC, or stdio proof inputs are missing. Do not close issue #109 from fixture-only evidence.
 
 ## Token Rotation
 
@@ -110,7 +141,7 @@ Downstream `local-ai-machine` implementation must prove:
 
 1. Cloudflare Access identity is mandatory.
 2. Inner JWT validates full claims and `rotation_version`.
-3. Client-supplied `origin` is overwritten server-side.
+3. Client-supplied `origin` is non-authoritative and rejected before dispatch when it conflicts with the server-stamped remote origin.
 4. Remote-origin packets cannot invoke stdio-only tools.
 5. PII middleware scans every string field before dispatch and fails closed when patterns are unavailable.
 6. Rate limits are keyed by principal `sub`, not token material.
@@ -124,7 +155,7 @@ Final issue #109 closure requires a remote-machine proof:
 
 1. `som.ping` succeeds with Cloudflare Access plus inner token.
 2. Anonymous request fails.
-3. Spoofed `origin: local` is overwritten and audited.
+3. Spoofed `origin: local` is rejected before dispatch and audited.
 4. PII-bearing `som.handoff` or `lam.embed` is rejected before dispatch.
 5. `lam.scrub_pii` remote call is rejected.
 6. Audit verifier passes valid calls and fails a copied tamper sample.

@@ -1,0 +1,55 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-364-remote-mcp-stage-d-proof-20260419",
+  "execution_mode": "implementation_complete",
+  "allowed_write_paths": [
+    "scripts/remote-mcp/stage_d_smoke.py",
+    "scripts/remote-mcp/tests/test_stage_d_smoke.py",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "docs/plans/issue-364-remote-mcp-stage-d-pdcar.md",
+    "docs/plans/issue-364-remote-mcp-stage-d-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-19-issue-364-remote-mcp-stage-d-proof-implementation.json",
+    "raw/validation/2026-04-19-issue-364-remote-mcp-stage-d-proof.md",
+    "raw/closeouts/2026-04-19-issue-364-remote-mcp-stage-d-proof.md",
+    "raw/remote-mcp-stage-d-fixture/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout has pre-existing graphify changes; Stage D uses an isolated worktree"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "primary LAM checkout has pre-existing unrelated dirty work; Stage D reads merged PR evidence only"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo has pre-existing unrelated artifacts"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo has pre-existing unrelated graphify/cache artifacts"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "github-issue-364-under-epic-109",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-19T20:26:12Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/364",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109",
+      "docs/plans/issue-364-remote-mcp-stage-d-structured-agent-cycle-plan.json",
+      "docs/plans/issue-364-remote-mcp-stage-d-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

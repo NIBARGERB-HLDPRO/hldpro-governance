@@ -1,0 +1,111 @@
+{
+  "session_id": "session-20260419-issue-364-stage-d",
+  "issue_number": 364,
+  "objective": "Add the governance-owned Stage D Remote MCP smoke/security proof runner, fixture e2e coverage, runbook closure rules, execution scope, and validation evidence for hldpro-governance#364 under epic #109.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify only Remote MCP Stage D proof scripts, focused tests, runbook, issue #364 planning/evidence, and fixture proof artifacts.",
+    "Do not commit Cloudflare, JWT, HMAC, or endpoint secrets.",
+    "Do not claim live Stage D completion unless the live proof runner passes against a real remote endpoint with copied audit evidence.",
+    "Keep Stage A/B/C merged evidence intact and leave downstream local-ai-machine code unchanged."
+  ],
+  "out_of_scope": [
+    "Changing local-ai-machine bridge implementation.",
+    "Installing or operating live cloudflared from this governance PR.",
+    "Closing hldpro-governance#109 without a live second-machine proof.",
+    "Adding secrets or live hostnames to repository files."
+  ],
+  "research_summary": "Issue #109 Stage A merged in governance PR #360, and Stage B/C merged downstream in local-ai-machine PR #485. The remaining Stage D need is a repeatable remote-machine smoke/security proof. The current Stage A thin client targets an earlier JSON-RPC shape, while Stage B/C exposes `/mcp/call`, so this slice adds a Stage D runner for the merged bridge contract rather than changing downstream code.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/360",
+    "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/pull/485",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "scripts/remote-mcp/verify_audit.py",
+    "scripts/som-client/som_client.py"
+  ],
+  "sprints": [
+    {
+      "name": "Stage D proof harness",
+      "goal": "Make Remote MCP Stage D live proof executable and CI-testable without exposing secrets.",
+      "tasks": [
+        "Add Stage D smoke/security proof runner for the Stage B/C `/mcp/call` bridge contract.",
+        "Add fixture e2e mode that exercises the same acceptance checks and writes audit evidence.",
+        "Add tests for fixture e2e and live-mode fail-fast behavior.",
+        "Update the runbook with live env, commands, audit copy/verify procedure, and closure rules.",
+        "Record validation and execution scope evidence.",
+        "Run local tests, fixture e2e, audit verifier, local CI, and GitHub Actions."
+      ],
+      "acceptance_criteria": [
+        "Proof runner fails fast when live Stage D config is missing.",
+        "Fixture e2e proves authenticated ping succeeds.",
+        "Fixture e2e proves anonymous request fails.",
+        "Fixture e2e proves spoofed origin is non-authoritative and rejected.",
+        "Fixture e2e proves PII-bearing request is rejected before dispatch.",
+        "Fixture e2e proves `lam.scrub_pii` remote call is rejected.",
+        "Fixture e2e writes audit JSONL and manifest evidence.",
+        "Audit verifier passes valid fixture evidence and fails a copied tamper sample.",
+        "Runbook states live Stage D closure requires real remote endpoint proof plus local stdio proof after tunnel stop.",
+        "Issue #109 remains open unless live proof passes."
+      ],
+      "file_paths": [
+        "scripts/remote-mcp/stage_d_smoke.py",
+        "scripts/remote-mcp/tests/test_stage_d_smoke.py",
+        "docs/runbooks/remote-mcp-bridge.md",
+        "docs/plans/issue-364-remote-mcp-stage-d-pdcar.md",
+        "docs/plans/issue-364-remote-mcp-stage-d-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-19-issue-364-remote-mcp-stage-d-proof-implementation.json",
+        "raw/validation/2026-04-19-issue-364-remote-mcp-stage-d-proof.md",
+        "raw/closeouts/2026-04-19-issue-364-remote-mcp-stage-d-proof.md",
+        "raw/remote-mcp-stage-d-fixture/2026-04-19.jsonl",
+        "raw/remote-mcp-stage-d-fixture/2026-04-19.manifest.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Turing",
+      "role": "read-only final diff reviewer",
+      "focus": "Stage D proof runner safety, secret handling, live/fixture distinction, audit verifier coverage, and runbook closure rules.",
+      "status": "completed_with_fixes",
+      "summary": "Found live audit bypass risk from optional missing-audit flag and fixture args_hmac not binding request arguments. Both were fixed before PR publication, and re-review found no new material issues.",
+      "evidence": [
+        "scripts/remote-mcp/stage_d_smoke.py",
+        "scripts/remote-mcp/tests/test_stage_d_smoke.py",
+        "docs/plans/issue-364-remote-mcp-stage-d-pdcar.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not_required_for_deterministic_proof_harness",
+    "model_family": "n/a",
+    "status": "not_required",
+    "summary": "This slice is deterministic Python/runbook/evidence work. The live remote proof remains an operator/environment run of the same harness.",
+    "evidence": [
+      "scripts/remote-mcp/tests/test_stage_d_smoke.py"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #364 Stage D proof harness may modify only Remote MCP proof scripts/tests, runbook, issue-specific planning/evidence, and fixture audit evidence while preserving #109 as the governing epic.",
+    "next_execution_step": "Run focused tests, fixture e2e, audit verifier, local CI, final review, then publish the proof-harness PR while leaving #109 open if live proof is not available.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If live endpoint credentials are available, run live mode and record redacted evidence before closing #109.",
+    "If live endpoint credentials are unavailable, merge only the proof harness and do not close #109.",
+    "If the downstream bridge path changes from `/mcp/call`, update the runbook and tests in the same PR.",
+    "If fixture evidence begins to contain payloads or secrets, remove the artifact and replace it with redacted validation output."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #364 child tracking issue",
+    "issue #109 governing epic",
+    "Stage A PR #360",
+    "Stage B/C local-ai-machine PR #485"
+  ],
+  "approved_at": "2026-04-19T20:26:12Z"
+}
