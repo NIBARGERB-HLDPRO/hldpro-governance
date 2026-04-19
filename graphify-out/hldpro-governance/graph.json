@@ -865,7 +865,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L1",
       "id": "check_overlord_backlog_github_alignment",
-      "community": 45
+      "community": 46
     },
     {
       "label": "fail()",
@@ -873,7 +873,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L16",
       "id": "check_overlord_backlog_github_alignment_fail",
-      "community": 45
+      "community": 46
     },
     {
       "label": "parse_markdown_row()",
@@ -881,7 +881,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L21",
       "id": "check_overlord_backlog_github_alignment_parse_markdown_row",
-      "community": 45
+      "community": 46
     },
     {
       "label": "collect_section_lines()",
@@ -889,7 +889,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L32",
       "id": "check_overlord_backlog_github_alignment_collect_section_lines",
-      "community": 45
+      "community": 46
     },
     {
       "label": "has_issue_ref()",
@@ -897,7 +897,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L45",
       "id": "check_overlord_backlog_github_alignment_has_issue_ref",
-      "community": 45
+      "community": 46
     },
     {
       "label": "main()",
@@ -905,7 +905,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L49",
       "id": "check_overlord_backlog_github_alignment_main",
-      "community": 45
+      "community": 46
     },
     {
       "label": "deploy_governance_tooling.py",
@@ -1145,7 +1145,7 @@
       "source_file": "scripts/overlord/governed_repos.py",
       "source_location": "L1",
       "id": "governed_repos",
-      "community": 39
+      "community": 40
     },
     {
       "label": "GovernedRepo",
@@ -1153,7 +1153,7 @@
       "source_file": "scripts/overlord/governed_repos.py",
       "source_location": "L18",
       "id": "governed_repos_governedrepo",
-      "community": 39
+      "community": 40
     },
     {
       "label": ".enabled()",
@@ -1161,7 +1161,7 @@
       "source_file": "scripts/overlord/governed_repos.py",
       "source_location": "L36",
       "id": "governed_repos_governedrepo_enabled",
-      "community": 39
+      "community": 40
     },
     {
       "label": "_expand_home()",
@@ -1169,7 +1169,7 @@
       "source_file": "scripts/overlord/governed_repos.py",
       "source_location": "L40",
       "id": "governed_repos_expand_home",
-      "community": 39
+      "community": 40
     },
     {
       "label": "load_registry()",
@@ -1177,7 +1177,7 @@
       "source_file": "scripts/overlord/governed_repos.py",
       "source_location": "L46",
       "id": "governed_repos_load_registry",
-      "community": 39
+      "community": 40
     },
     {
       "label": "governed_repos()",
@@ -1185,7 +1185,7 @@
       "source_file": "scripts/overlord/governed_repos.py",
       "source_location": "L54",
       "id": "governed_repos_governed_repos",
-      "community": 39
+      "community": 40
     },
     {
       "label": "repos_enabled_for()",
@@ -1193,7 +1193,7 @@
       "source_file": "scripts/overlord/governed_repos.py",
       "source_location": "L90",
       "id": "governed_repos_repos_enabled_for",
-      "community": 39
+      "community": 40
     },
     {
       "label": "repo_names_enabled_for()",
@@ -1201,7 +1201,7 @@
       "source_file": "scripts/overlord/governed_repos.py",
       "source_location": "L94",
       "id": "governed_repos_repo_names_enabled_for",
-      "community": 39
+      "community": 40
     },
     {
       "label": "repos_root()",
@@ -1209,7 +1209,7 @@
       "source_file": "scripts/overlord/governed_repos.py",
       "source_location": "L98",
       "id": "governed_repos_repos_root",
-      "community": 39
+      "community": 40
     },
     {
       "label": "test_assert_execution_scope.py",
@@ -1601,7 +1601,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L1",
       "id": "build_effectiveness_metrics",
-      "community": 42
+      "community": 43
     },
     {
       "label": "RepoMetrics",
@@ -1609,7 +1609,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L28",
       "id": "build_effectiveness_metrics_repometrics",
-      "community": 42
+      "community": 43
     },
     {
       "label": "run()",
@@ -1617,7 +1617,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L42",
       "id": "build_effectiveness_metrics_run",
-      "community": 42
+      "community": 43
     },
     {
       "label": "pct()",
@@ -1625,7 +1625,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L53",
       "id": "build_effectiveness_metrics_pct",
-      "community": 42
+      "community": 43
     },
     {
       "label": "parse_iso()",
@@ -1633,7 +1633,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L59",
       "id": "build_effectiveness_metrics_parse_iso",
-      "community": 42
+      "community": 43
     },
     {
       "label": "collect_repo_metrics()",
@@ -1641,7 +1641,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L63",
       "id": "build_effectiveness_metrics_collect_repo_metrics",
-      "community": 42
+      "community": 43
     },
     {
       "label": "render_markdown()",
@@ -1649,7 +1649,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L128",
       "id": "build_effectiveness_metrics_render_markdown",
-      "community": 42
+      "community": 43
     },
     {
       "label": "main()",
@@ -1657,7 +1657,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L162",
       "id": "build_effectiveness_metrics_main",
-      "community": 42
+      "community": 43
     },
     {
       "label": "check_org_repo_inventory.py",
@@ -2289,7 +2289,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L1",
       "id": "memory_integrity",
-      "community": 40
+      "community": 41
     },
     {
       "label": "fail()",
@@ -2297,7 +2297,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L21",
       "id": "memory_integrity_fail",
-      "community": 40
+      "community": 41
     },
     {
       "label": "memory_dir_for_repo()",
@@ -2305,7 +2305,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L26",
       "id": "memory_integrity_memory_dir_for_repo",
-      "community": 40
+      "community": 41
     },
     {
       "label": "load_memory_lines()",
@@ -2313,7 +2313,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L30",
       "id": "memory_integrity_load_memory_lines",
-      "community": 40
+      "community": 41
     },
     {
       "label": "check_memory_exists()",
@@ -2321,7 +2321,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L34",
       "id": "memory_integrity_check_memory_exists",
-      "community": 40
+      "community": 41
     },
     {
       "label": "parse_pointer_filenames()",
@@ -2329,7 +2329,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L42",
       "id": "memory_integrity_parse_pointer_filenames",
-      "community": 40
+      "community": 41
     },
     {
       "label": "validate_frontmatter()",
@@ -2337,7 +2337,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L57",
       "id": "memory_integrity_validate_frontmatter",
-      "community": 40
+      "community": 41
     },
     {
       "label": "inspect_repo()",
@@ -2345,7 +2345,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L88",
       "id": "memory_integrity_inspect_repo",
-      "community": 40
+      "community": 41
     },
     {
       "label": "main()",
@@ -2353,7 +2353,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L120",
       "id": "memory_integrity_main",
-      "community": 40
+      "community": 41
     },
     {
       "label": "test_deploy_governance_tooling.py",
@@ -3241,7 +3241,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L1",
       "id": "validate_governed_repos",
-      "community": 43
+      "community": 44
     },
     {
       "label": "fail()",
@@ -3249,7 +3249,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L71",
       "id": "validate_governed_repos_fail",
-      "community": 43
+      "community": 44
     },
     {
       "label": "check()",
@@ -3257,7 +3257,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L76",
       "id": "validate_governed_repos_check",
-      "community": 43
+      "community": 44
     },
     {
       "label": "load_json()",
@@ -3265,7 +3265,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L81",
       "id": "validate_governed_repos_load_json",
-      "community": 43
+      "community": 44
     },
     {
       "label": "validate_registry_shape()",
@@ -3273,7 +3273,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L90",
       "id": "validate_governed_repos_validate_registry_shape",
-      "community": 43
+      "community": 44
     },
     {
       "label": "validate_graphify_reconciliation()",
@@ -3281,7 +3281,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L206",
       "id": "validate_governed_repos_validate_graphify_reconciliation",
-      "community": 43
+      "community": 44
     },
     {
       "label": "main()",
@@ -3289,7 +3289,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L229",
       "id": "validate_governed_repos_main",
-      "community": 43
+      "community": 44
     },
     {
       "label": "test_validate_structured_agent_cycle_plan.py",
@@ -3633,7 +3633,7 @@
       "source_file": "scripts/overlord/render_github_issue_feed.py",
       "source_location": "L1",
       "id": "render_github_issue_feed",
-      "community": 51
+      "community": 52
     },
     {
       "label": "render_issue()",
@@ -3641,7 +3641,7 @@
       "source_file": "scripts/overlord/render_github_issue_feed.py",
       "source_location": "L7",
       "id": "render_github_issue_feed_render_issue",
-      "community": 51
+      "community": 52
     },
     {
       "label": "main()",
@@ -3649,7 +3649,7 @@
       "source_file": "scripts/overlord/render_github_issue_feed.py",
       "source_location": "L22",
       "id": "render_github_issue_feed_main",
-      "community": 51
+      "community": 52
     },
     {
       "label": "test_local_ci_gate_workflow_contract.py",
@@ -4553,7 +4553,7 @@
       "source_file": "scripts/windows-ollama/tests/__init__.py",
       "source_location": "L1",
       "id": "init",
-      "community": 53
+      "community": 54
     },
     {
       "label": "test_submit.py",
@@ -5001,7 +5001,7 @@
       "source_file": "scripts/windows-ollama/tests/test_submit.py",
       "source_location": "L267",
       "id": "test_submit_rationale_267",
-      "community": 54
+      "community": 55
     },
     {
       "label": "Test that successful submission writes one audit entry.",
@@ -5217,7 +5217,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L1",
       "id": "test_graphify_governance_contract",
-      "community": 48
+      "community": 49
     },
     {
       "label": "check()",
@@ -5225,7 +5225,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L38",
       "id": "test_graphify_governance_contract_check",
-      "community": 48
+      "community": 49
     },
     {
       "label": "is_ignored()",
@@ -5233,7 +5233,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L46",
       "id": "test_graphify_governance_contract_is_ignored",
-      "community": 48
+      "community": 49
     },
     {
       "label": "main()",
@@ -5241,7 +5241,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L64",
       "id": "test_graphify_governance_contract_main",
-      "community": 48
+      "community": 49
     },
     {
       "label": "measure_graphify_usage.py",
@@ -5481,7 +5481,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L1",
       "id": "log_graphify_usage",
-      "community": 46
+      "community": 47
     },
     {
       "label": "parse_args()",
@@ -5489,7 +5489,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L13",
       "id": "log_graphify_usage_parse_args",
-      "community": 46
+      "community": 47
     },
     {
       "label": "build_event()",
@@ -5497,7 +5497,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L31",
       "id": "log_graphify_usage_build_event",
-      "community": 46
+      "community": 47
     },
     {
       "label": "append_event()",
@@ -5505,7 +5505,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L70",
       "id": "log_graphify_usage_append_event",
-      "community": 46
+      "community": 47
     },
     {
       "label": "main()",
@@ -5513,7 +5513,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L80",
       "id": "log_graphify_usage_main",
-      "community": 46
+      "community": 47
     },
     {
       "label": "graphify_targets.py",
@@ -5785,7 +5785,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L1",
       "id": "test_graphify_usage_logging_contract",
-      "community": 41
+      "community": 42
     },
     {
       "label": "check()",
@@ -5793,7 +5793,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L19",
       "id": "test_graphify_usage_logging_contract_check",
-      "community": 41
+      "community": 42
     },
     {
       "label": "run_command()",
@@ -5801,7 +5801,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L27",
       "id": "test_graphify_usage_logging_contract_run_command",
-      "community": 41
+      "community": 42
     },
     {
       "label": "test_schema_shape()",
@@ -5809,7 +5809,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L31",
       "id": "test_graphify_usage_logging_contract_test_schema_shape",
-      "community": 41
+      "community": 42
     },
     {
       "label": "test_logger_backwards_compatible()",
@@ -5817,7 +5817,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L42",
       "id": "test_graphify_usage_logging_contract_test_logger_backwards_compatible",
-      "community": 41
+      "community": 42
     },
     {
       "label": "test_logger_query_trace_fields()",
@@ -5825,7 +5825,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L74",
       "id": "test_graphify_usage_logging_contract_test_logger_query_trace_fields",
-      "community": 41
+      "community": 42
     },
     {
       "label": "test_measurement_outputs_query_traces()",
@@ -5833,7 +5833,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L128",
       "id": "test_graphify_usage_logging_contract_test_measurement_outputs_query_traces",
-      "community": 41
+      "community": 42
     },
     {
       "label": "test_measurement_falls_back_from_stale_governance_repo_path()",
@@ -5841,7 +5841,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L193",
       "id": "test_graphify_usage_logging_contract_test_measurement_falls_back_from_stale_governance_repo_path",
-      "community": 41
+      "community": 42
     },
     {
       "label": "main()",
@@ -5849,7 +5849,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L247",
       "id": "test_graphify_usage_logging_contract_main",
-      "community": 41
+      "community": 42
     },
     {
       "label": "graphify_hook_helper.py",
@@ -6017,7 +6017,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L1",
       "id": "update_knowledge_index",
-      "community": 49
+      "community": 50
     },
     {
       "label": "summary_line()",
@@ -6025,7 +6025,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L21",
       "id": "update_knowledge_index_summary_line",
-      "community": 49
+      "community": 50
     },
     {
       "label": "replace_section()",
@@ -6033,7 +6033,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L29",
       "id": "update_knowledge_index_replace_section",
-      "community": 49
+      "community": 50
     },
     {
       "label": "main()",
@@ -6041,7 +6041,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L38",
       "id": "update_knowledge_index_main",
-      "community": 49
+      "community": 50
     },
     {
       "label": "push_graph_to_neo4j.py",
@@ -6049,7 +6049,7 @@
       "source_file": "scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L1",
       "id": "push_graph_to_neo4j",
-      "community": 52
+      "community": 53
     },
     {
       "label": "build_scoped_graph()",
@@ -6057,7 +6057,7 @@
       "source_file": "scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L15",
       "id": "push_graph_to_neo4j_build_scoped_graph",
-      "community": 52
+      "community": 53
     },
     {
       "label": "main()",
@@ -6065,7 +6065,7 @@
       "source_file": "scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L37",
       "id": "push_graph_to_neo4j_main",
-      "community": 52
+      "community": 53
     },
     {
       "label": "test_hitl_relay_schema.py",
@@ -6073,7 +6073,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L1",
       "id": "test_hitl_relay_schema",
-      "community": 47
+      "community": 48
     },
     {
       "label": "_validator()",
@@ -6081,7 +6081,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L15",
       "id": "test_hitl_relay_schema_validator",
-      "community": 47
+      "community": 48
     },
     {
       "label": "_load()",
@@ -6089,7 +6089,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L21",
       "id": "test_hitl_relay_schema_load",
-      "community": 47
+      "community": 48
     },
     {
       "label": "test_valid_hitl_relay_examples_pass()",
@@ -6097,7 +6097,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L25",
       "id": "test_hitl_relay_schema_test_valid_hitl_relay_examples_pass",
-      "community": 47
+      "community": 48
     },
     {
       "label": "test_invalid_hitl_relay_examples_fail()",
@@ -6105,7 +6105,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L34",
       "id": "test_hitl_relay_schema_test_invalid_hitl_relay_examples_fail",
-      "community": 47
+      "community": 48
     },
     {
       "label": "test_validate_hitl_relay.py",
@@ -7025,7 +7025,7 @@
       "source_file": "scripts/packet/emit.py",
       "source_location": "L1",
       "id": "emit",
-      "community": 50
+      "community": 51
     },
     {
       "label": "emit_packet()",
@@ -7033,7 +7033,7 @@
       "source_file": "scripts/packet/emit.py",
       "source_location": "L15",
       "id": "emit_emit_packet",
-      "community": 50
+      "community": 51
     },
     {
       "label": "main()",
@@ -7041,7 +7041,7 @@
       "source_file": "scripts/packet/emit.py",
       "source_location": "L74",
       "id": "emit_main",
-      "community": 50
+      "community": 51
     },
     {
       "label": "Emit a packet YAML file.     Returns: path to written file",
@@ -7049,7 +7049,7 @@
       "source_file": "scripts/packet/emit.py",
       "source_location": "L27",
       "id": "emit_rationale_27",
-      "community": 50
+      "community": 51
     },
     {
       "label": "self_learning.py",
@@ -7756,6 +7756,86 @@
       "community": 24
     },
     {
+      "label": "test_hitl_relay_final_e2e.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L1",
+      "id": "test_hitl_relay_final_e2e",
+      "community": 39
+    },
+    {
+      "label": "_final_request()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L20",
+      "id": "test_hitl_relay_final_e2e_final_request",
+      "community": 39
+    },
+    {
+      "label": "_process()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L48",
+      "id": "test_hitl_relay_final_e2e_process",
+      "community": 39
+    },
+    {
+      "label": "_load()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L79",
+      "id": "test_hitl_relay_final_e2e_load",
+      "community": 39
+    },
+    {
+      "label": "test_final_e2e_approval_path_preserves_full_identity_chain()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L83",
+      "id": "test_hitl_relay_final_e2e_test_final_e2e_approval_path_preserves_full_identity_chain",
+      "community": 39
+    },
+    {
+      "label": "test_final_e2e_request_changes_is_not_treated_as_approval()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L127",
+      "id": "test_hitl_relay_final_e2e_test_final_e2e_request_changes_is_not_treated_as_approval",
+      "community": 39
+    },
+    {
+      "label": "test_final_e2e_ambiguous_response_requests_clarification_without_instruction()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L147",
+      "id": "test_hitl_relay_final_e2e_test_final_e2e_ambiguous_response_requests_clarification_without_instruction",
+      "community": 39
+    },
+    {
+      "label": "test_final_e2e_stale_session_creates_resume_instead_of_instruction()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L166",
+      "id": "test_hitl_relay_final_e2e_test_final_e2e_stale_session_creates_resume_instead_of_instruction",
+      "community": 39
+    },
+    {
+      "label": "test_final_e2e_duplicate_replay_and_expired_replies_fail_closed()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L189",
+      "id": "test_hitl_relay_final_e2e_test_final_e2e_duplicate_replay_and_expired_replies_fail_closed",
+      "community": 39
+    },
+    {
+      "label": "test_final_e2e_external_channel_pii_is_refused_without_instruction()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L225",
+      "id": "test_hitl_relay_final_e2e_test_final_e2e_external_channel_pii_is_refused_without_instruction",
+      "community": 39
+    },
+    {
       "label": "packet_queue.py",
       "file_type": "code",
       "source_file": "scripts/orchestrator/packet_queue.py",
@@ -7929,7 +8009,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L1",
       "id": "test_read_only_observer",
-      "community": 44
+      "community": 45
     },
     {
       "label": "_copy_fixture()",
@@ -7937,7 +8017,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L26",
       "id": "test_read_only_observer_copy_fixture",
-      "community": 44
+      "community": 45
     },
     {
       "label": "TestReadOnlyObserver",
@@ -7945,7 +8025,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L35",
       "id": "test_read_only_observer_testreadonlyobserver",
-      "community": 44
+      "community": 45
     },
     {
       "label": "._fixture()",
@@ -7953,7 +8033,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L36",
       "id": "test_read_only_observer_testreadonlyobserver_fixture",
-      "community": 44
+      "community": 45
     },
     {
       "label": ".test_check_only_does_not_write_reports_or_packets()",
@@ -7961,7 +8041,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L51",
       "id": "test_read_only_observer_testreadonlyobserver_test_check_only_does_not_write_reports_or_packets",
-      "community": 44
+      "community": 45
     },
     {
       "label": ".test_writes_only_project_reports()",
@@ -7969,7 +8049,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L63",
       "id": "test_read_only_observer_testreadonlyobserver_test_writes_only_project_reports",
-      "community": 44
+      "community": 45
     },
     {
       "label": ".test_cli_check_only()",
@@ -7977,7 +8057,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L85",
       "id": "test_read_only_observer_testreadonlyobserver_test_cli_check_only",
-      "community": 44
+      "community": 45
     },
     {
       "label": "test_hitl_relay_queue.py",
@@ -28904,6 +28984,18 @@
     {
       "relation": "imports",
       "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "test_hitl_relay_final_e2e",
+      "_tgt": "hitl_relay_queue",
+      "source": "hitl_relay_queue",
+      "target": "test_hitl_relay_final_e2e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L12",
       "weight": 1.0,
@@ -30399,6 +30491,294 @@
       "_tgt": "read_only_observer_build_reports",
       "source": "read_only_observer_build_reports",
       "target": "read_only_observer_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "test_hitl_relay_final_e2e",
+      "_tgt": "test_hitl_relay_final_e2e_final_request",
+      "source": "test_hitl_relay_final_e2e",
+      "target": "test_hitl_relay_final_e2e_final_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_src": "test_hitl_relay_final_e2e",
+      "_tgt": "test_hitl_relay_final_e2e_process",
+      "source": "test_hitl_relay_final_e2e",
+      "target": "test_hitl_relay_final_e2e_process",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_src": "test_hitl_relay_final_e2e",
+      "_tgt": "test_hitl_relay_final_e2e_load",
+      "source": "test_hitl_relay_final_e2e",
+      "target": "test_hitl_relay_final_e2e_load",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_src": "test_hitl_relay_final_e2e",
+      "_tgt": "test_hitl_relay_final_e2e_test_final_e2e_approval_path_preserves_full_identity_chain",
+      "source": "test_hitl_relay_final_e2e",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_approval_path_preserves_full_identity_chain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "_src": "test_hitl_relay_final_e2e",
+      "_tgt": "test_hitl_relay_final_e2e_test_final_e2e_request_changes_is_not_treated_as_approval",
+      "source": "test_hitl_relay_final_e2e",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_request_changes_is_not_treated_as_approval",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L147",
+      "weight": 1.0,
+      "_src": "test_hitl_relay_final_e2e",
+      "_tgt": "test_hitl_relay_final_e2e_test_final_e2e_ambiguous_response_requests_clarification_without_instruction",
+      "source": "test_hitl_relay_final_e2e",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_ambiguous_response_requests_clarification_without_instruction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L166",
+      "weight": 1.0,
+      "_src": "test_hitl_relay_final_e2e",
+      "_tgt": "test_hitl_relay_final_e2e_test_final_e2e_stale_session_creates_resume_instead_of_instruction",
+      "source": "test_hitl_relay_final_e2e",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_stale_session_creates_resume_instead_of_instruction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L189",
+      "weight": 1.0,
+      "_src": "test_hitl_relay_final_e2e",
+      "_tgt": "test_hitl_relay_final_e2e_test_final_e2e_duplicate_replay_and_expired_replies_fail_closed",
+      "source": "test_hitl_relay_final_e2e",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_duplicate_replay_and_expired_replies_fail_closed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L225",
+      "weight": 1.0,
+      "_src": "test_hitl_relay_final_e2e",
+      "_tgt": "test_hitl_relay_final_e2e_test_final_e2e_external_channel_pii_is_refused_without_instruction",
+      "source": "test_hitl_relay_final_e2e",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_external_channel_pii_is_refused_without_instruction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L86",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_approval_path_preserves_full_identity_chain",
+      "_tgt": "test_hitl_relay_final_e2e_final_request",
+      "source": "test_hitl_relay_final_e2e_final_request",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_approval_path_preserves_full_identity_chain",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L130",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_request_changes_is_not_treated_as_approval",
+      "_tgt": "test_hitl_relay_final_e2e_final_request",
+      "source": "test_hitl_relay_final_e2e_final_request",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_request_changes_is_not_treated_as_approval",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L150",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_ambiguous_response_requests_clarification_without_instruction",
+      "_tgt": "test_hitl_relay_final_e2e_final_request",
+      "source": "test_hitl_relay_final_e2e_final_request",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_ambiguous_response_requests_clarification_without_instruction",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L169",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_stale_session_creates_resume_instead_of_instruction",
+      "_tgt": "test_hitl_relay_final_e2e_final_request",
+      "source": "test_hitl_relay_final_e2e_final_request",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_stale_session_creates_resume_instead_of_instruction",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L192",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_duplicate_replay_and_expired_replies_fail_closed",
+      "_tgt": "test_hitl_relay_final_e2e_final_request",
+      "source": "test_hitl_relay_final_e2e_final_request",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_duplicate_replay_and_expired_replies_fail_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L228",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_external_channel_pii_is_refused_without_instruction",
+      "_tgt": "test_hitl_relay_final_e2e_final_request",
+      "source": "test_hitl_relay_final_e2e_final_request",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_external_channel_pii_is_refused_without_instruction",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L91",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_approval_path_preserves_full_identity_chain",
+      "_tgt": "test_hitl_relay_final_e2e_process",
+      "source": "test_hitl_relay_final_e2e_process",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_approval_path_preserves_full_identity_chain",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L132",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_request_changes_is_not_treated_as_approval",
+      "_tgt": "test_hitl_relay_final_e2e_process",
+      "source": "test_hitl_relay_final_e2e_process",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_request_changes_is_not_treated_as_approval",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L152",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_ambiguous_response_requests_clarification_without_instruction",
+      "_tgt": "test_hitl_relay_final_e2e_process",
+      "source": "test_hitl_relay_final_e2e_process",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_ambiguous_response_requests_clarification_without_instruction",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L171",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_stale_session_creates_resume_instead_of_instruction",
+      "_tgt": "test_hitl_relay_final_e2e_process",
+      "source": "test_hitl_relay_final_e2e_process",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_stale_session_creates_resume_instead_of_instruction",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L194",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_duplicate_replay_and_expired_replies_fail_closed",
+      "_tgt": "test_hitl_relay_final_e2e_process",
+      "source": "test_hitl_relay_final_e2e_process",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_duplicate_replay_and_expired_replies_fail_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L230",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_external_channel_pii_is_refused_without_instruction",
+      "_tgt": "test_hitl_relay_final_e2e_process",
+      "source": "test_hitl_relay_final_e2e_process",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_external_channel_pii_is_refused_without_instruction",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L100",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_approval_path_preserves_full_identity_chain",
+      "_tgt": "test_hitl_relay_final_e2e_load",
+      "source": "test_hitl_relay_final_e2e_load",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_approval_path_preserves_full_identity_chain",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L141",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_request_changes_is_not_treated_as_approval",
+      "_tgt": "test_hitl_relay_final_e2e_load",
+      "source": "test_hitl_relay_final_e2e_load",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_request_changes_is_not_treated_as_approval",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/scripts/orchestrator/test_hitl_relay_final_e2e.py",
+      "source_location": "L183",
+      "weight": 0.8,
+      "_src": "test_hitl_relay_final_e2e_test_final_e2e_stale_session_creates_resume_instead_of_instruction",
+      "_tgt": "test_hitl_relay_final_e2e_load",
+      "source": "test_hitl_relay_final_e2e_load",
+      "target": "test_hitl_relay_final_e2e_test_final_e2e_stale_session_creates_resume_instead_of_instruction",
       "confidence_score": 0.5
     },
     {

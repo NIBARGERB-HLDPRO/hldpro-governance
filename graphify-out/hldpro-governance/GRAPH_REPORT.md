@@ -1,11 +1,11 @@
 # Graph Report - hldpro-governance  (2026-04-18)
 
 ## Corpus Check
-- Large corpus: 1536 files · ~367,768 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1549 files · ~370,801 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 1008 nodes · 1938 edges · 55 communities detected
-- Extraction: 50% EXTRACTED · 50% INFERRED · 0% AMBIGUOUS · INFERRED: 970 edges (avg confidence: 0.5)
+- 1018 nodes · 1963 edges · 56 communities detected
+- Extraction: 50% EXTRACTED · 50% INFERRED · 0% AMBIGUOUS · INFERRED: 985 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -186,67 +186,71 @@ Nodes (9): build_inventory(), import_available(), local_runtime(), mac_hardware(
 Cohesion: 0.38
 Nodes (9): filtered_targets(), find_target(), load_manifest(), main(), print_json(), print_shell(), print_stage_paths(), print_tsv() (+1 more)
 
-### Community 39 - "Overlord Governed repos"
+### Community 39 - "Orchestrator Hitl relay final"
+Cohesion: 0.53
+Nodes (9): _final_request(), _load(), _process(), test_final_e2e_ambiguous_response_requests_clarification_without_instruction(), test_final_e2e_approval_path_preserves_full_identity_chain(), test_final_e2e_duplicate_replay_and_expired_replies_fail_closed(), test_final_e2e_external_channel_pii_is_refused_without_instruction(), test_final_e2e_request_changes_is_not_treated_as_approval() (+1 more)
+
+### Community 40 - "Overlord Governed repos"
 Cohesion: 0.42
 Nodes (7): _expand_home(), governed_repos(), GovernedRepo, load_registry(), repo_names_enabled_for(), repos_enabled_for(), repos_root()
 
-### Community 40 - "Overlord Memory integrity"
+### Community 41 - "Overlord Memory integrity"
 Cohesion: 0.42
 Nodes (7): check_memory_exists(), inspect_repo(), load_memory_lines(), main(), memory_dir_for_repo(), parse_pointer_filenames(), validate_frontmatter()
 
-### Community 41 - "Knowledge base Graphify usage logging"
+### Community 42 - "Knowledge base Graphify usage logging"
 Cohesion: 0.61
 Nodes (8): check(), main(), run_command(), test_logger_backwards_compatible(), test_logger_query_trace_fields(), test_measurement_falls_back_from_stale_governance_repo_path(), test_measurement_outputs_query_traces(), test_schema_shape()
 
-### Community 42 - "Overlord Effectiveness metrics"
+### Community 43 - "Overlord Effectiveness metrics"
 Cohesion: 0.46
 Nodes (7): collect_repo_metrics(), main(), parse_iso(), pct(), render_markdown(), RepoMetrics, run()
 
-### Community 43 - "Overlord Validate governed repos"
+### Community 44 - "Overlord Validate governed repos"
 Cohesion: 0.67
 Nodes (6): check(), fail(), load_json(), main(), validate_graphify_reconciliation(), validate_registry_shape()
 
-### Community 44 - "Orchestrator Read only observer"
+### Community 45 - "Orchestrator Read only observer"
 Cohesion: 0.48
 Nodes (2): _copy_fixture(), TestReadOnlyObserver
 
-### Community 45 - "Overlord Check overlord backlog github alignment"
+### Community 46 - "Overlord Check overlord backlog github alignment"
 Cohesion: 0.67
 Nodes (5): collect_section_lines(), fail(), has_issue_ref(), main(), parse_markdown_row()
 
-### Community 46 - "Knowledge base Log graphify usage"
+### Community 47 - "Knowledge base Log graphify usage"
 Cohesion: 0.7
 Nodes (4): append_event(), build_event(), main(), parse_args()
 
-### Community 47 - "Packet Hitl relay schema"
+### Community 48 - "Packet Hitl relay schema"
 Cohesion: 0.8
 Nodes (4): _load(), test_invalid_hitl_relay_examples_fail(), test_valid_hitl_relay_examples_pass(), _validator()
 
-### Community 48 - "Knowledge base Graphify governance"
+### Community 49 - "Knowledge base Graphify governance"
 Cohesion: 0.83
 Nodes (3): check(), is_ignored(), main()
 
-### Community 49 - "Knowledge base Update knowledge"
+### Community 50 - "Knowledge base Update knowledge"
 Cohesion: 0.83
 Nodes (3): main(), replace_section(), summary_line()
 
-### Community 50 - "Packet Emit Yaml"
+### Community 51 - "Packet Emit Yaml"
 Cohesion: 0.67
 Nodes (3): emit_packet(), main(), Emit a packet YAML file.     Returns: path to written file
 
-### Community 51 - "Overlord Render github issue feed"
+### Community 52 - "Overlord Render github issue feed"
 Cohesion: 1.0
 Nodes (2): main(), render_issue()
 
-### Community 52 - "Knowledge base Push graph to neo4j"
+### Community 53 - "Knowledge base Push graph to neo4j"
 Cohesion: 1.0
 Nodes (2): build_scoped_graph(), main()
 
-### Community 53 - "Windows ollama Init"
+### Community 54 - "Windows ollama Init"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 54 - "Windows ollama Submit Temporary"
+### Community 55 - "Windows ollama Submit Temporary"
 Cohesion: 1.0
 Nodes (1): Temporary audit directory for testing.
 

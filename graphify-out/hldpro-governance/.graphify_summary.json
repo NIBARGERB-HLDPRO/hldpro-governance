@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-314-final-org-e2e-closeout/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-314-final-org-e2e-closeout/wiki/hldpro",
-  "nodes": 1008,
-  "edges": 1938,
-  "communities": 55,
-  "articles": 65,
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-303-final-e2e-proof/wiki/hldpro",
+  "nodes": 1018,
+  "edges": 1963,
+  "communities": 56,
+  "articles": 66,
   "html_status": "skipped",
-  "code_files": 64
+  "code_files": 65
 }
