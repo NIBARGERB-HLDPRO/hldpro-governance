@@ -178,6 +178,18 @@
       "rationale": "Audit-chain verifier is deterministic and no-ops when the audit directory is absent."
     },
     {
+      "path": ".github/workflows/check-remote-mcp-audit-schema.yml",
+      "risk": "deterministic",
+      "coverage": [
+        {
+          "type": "local_command",
+          "command": ["python3", "scripts/remote-mcp/verify_audit.py"]
+        }
+      ],
+      "required_snippets": ["python3 scripts/remote-mcp/verify_audit.py raw/remote-mcp-audit --require-hmac-key"],
+      "rationale": "Remote MCP audit-chain verifier is deterministic and no-ops when the audit directory is absent; strict HMAC mode is required once audit files exist."
+    },
+    {
       "path": ".github/workflows/check-windows-ollama-exposure.yml",
       "risk": "deterministic-inline",
       "coverage": [

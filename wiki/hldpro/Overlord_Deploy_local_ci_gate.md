@@ -4,23 +4,23 @@
 
 ## Key Concepts
 
-- **TestDeployLocalCIGate** (16 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **._invoke()** (11 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **._shim()** (9 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **.test_installed_shim_propagates_runner_failure()** (4 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **.test_installed_shim_remains_portable_when_copied_to_another_repo()** (4 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **.test_installed_shim_uses_embedded_root_then_env_override()** (4 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **._write_fake_runner()** (4 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **.test_dry_run_includes_managed_body_and_command_preview()** (3 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **.test_install_refuses_unmanaged_existing_shim_without_override()** (3 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **.test_install_with_backup_existing_renames_unmanaged_shim()** (3 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **.test_installed_shim_propagates_real_runner_blocker_failure()** (3 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **.test_refresh_updates_managed_shim_content()** (3 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **.test_rejects_shim_paths_outside_the_repo_local_allowlist()** (2 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **.test_resolve_reports_repo_local_target_and_write_set()** (2 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **test_deploy_local_ci_gate.py** (1 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **.setUp()** (1 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
-- **.tearDown()** (1 connections) — `scripts/overlord/test_deploy_local_ci_gate.py`
+- **deploy_local_ci_gate.py** (15 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **_fail()** (7 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **main()** (7 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **build_plan()** (6 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **DeployPlan** (4 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **.to_json()** (4 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **_existing_shim_state()** (4 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **_refuse_unmanaged_overwrite()** (4 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **_resolve_shim_path()** (4 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **_write_managed_shim()** (4 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **_common_preview_payload()** (3 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **DeployError** (3 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **managed_shim_body()** (3 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **add_common_args()** (2 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **.planned_write_set()** (2 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **_is_relative_to()** (2 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **print_json()** (2 connections) — `scripts/overlord/deploy_local_ci_gate.py`
 
 ## Relationships
 
@@ -28,12 +28,12 @@
 
 ## Source Files
 
-- `scripts/overlord/test_deploy_local_ci_gate.py`
+- `scripts/overlord/deploy_local_ci_gate.py`
 
 ## Audit Trail
 
-- EXTRACTED: 32 (43%)
-- INFERRED: 42 (57%)
+- EXTRACTED: 34 (45%)
+- INFERRED: 42 (55%)
 - AMBIGUOUS: 0 (0%)
 
 ---

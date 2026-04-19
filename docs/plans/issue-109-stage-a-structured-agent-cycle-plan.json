@@ -1,0 +1,122 @@
+{
+  "session_id": "session-20260419-issue-109-remote-mcp-stage-a",
+  "issue_number": 109,
+  "objective": "Implement Remote MCP Bridge Stage A governance controls: standards, audit schema CI, thin client contract, operator runbook, local tests, validation, and closeout evidence.",
+  "tier": 2,
+  "scope_boundary": [
+    "Add Remote MCP Bridge standards and hard-rule invariants without changing Windows-Ollama invariants.",
+    "Add governance-owned Remote MCP audit verification and CI schema workflow.",
+    "Add the thin SOM remote client contract and local tests.",
+    "Add operator runbook and governance mirrors for Stage A.",
+    "Record local e2e validation and Stage 6 closeout evidence."
+  ],
+  "out_of_scope": [
+    "Implementing the local-ai-machine HTTP bridge server.",
+    "Installing or configuring cloudflared.",
+    "Creating launchd plists for the tunnel.",
+    "Running live remote smoke tests from a second machine.",
+    "Closing issue #109 before Stage B-D are complete."
+  ],
+  "research_summary": "Issue #109 preservation is complete on main via PR #356. The preserved plan requires Stage A in hldpro-governance before downstream implementation. Current STANDARDS already uses invariants 8-10 for Windows-Ollama, so Remote MCP invariants must be appended as 11-15 rather than reusing the historical plan's 8-12 numbering.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109",
+    "raw/inbox/2026-04-14-remote-mcp-bridge-plan.md",
+    "raw/cross-review/2026-04-14-remote-mcp-bridge.md",
+    "docs/exception-register.md",
+    "raw/validation/2026-04-19-issue-109-remote-mcp-artifact-preservation.md"
+  ],
+  "sprints": [
+    {
+      "name": "Stage A governance controls",
+      "goal": "Make the Remote MCP Bridge governance contract local-testable before downstream implementation starts.",
+      "tasks": [
+        "Add standards, invariants, and enforcement rows for the Remote MCP Bridge.",
+        "Add Remote MCP audit verifier, workflow, and local tests.",
+        "Add SOM remote client contract, README, and local tests.",
+        "Add operator runbook covering setup, rotation, revocation, audit verification, fail-closed response, and downstream ACs.",
+        "Update backlog, service registry, feature registry, workflow-local coverage inventory, validation, execution scope, and closeout evidence.",
+        "Run focused tests, governance gates, Local CI Gate, and closeout hook."
+      ],
+      "acceptance_criteria": [
+        "Remote MCP invariants are added without renumbering existing Windows-Ollama invariants.",
+        "Audit verifier passes a valid hash-chained manifest and fails tampered entries.",
+        "Client tests prove bearer/Cloudflare Access headers, 429 retry, and payload-safe errors.",
+        "Workflow-local coverage inventory includes the new Remote MCP audit workflow.",
+        "Local CI Gate passes for the issue #109 branch.",
+        "Final e2e AC is recorded in raw validation evidence."
+      ],
+      "file_paths": [
+        ".github/workflows/check-remote-mcp-audit-schema.yml",
+        "OVERLORD_BACKLOG.md",
+        "STANDARDS.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/plans/issue-109-stage-a-pdcar.md",
+        "docs/plans/issue-109-stage-a-structured-agent-cycle-plan.json",
+        "docs/runbooks/remote-mcp-bridge.md",
+        "docs/workflow-local-coverage-inventory.json",
+        "raw/closeouts/2026-04-19-issue-109-remote-mcp-stage-a.md",
+        "raw/execution-scopes/2026-04-19-issue-109-remote-mcp-stage-a-governance-implementation.json",
+        "raw/validation/2026-04-19-issue-109-remote-mcp-stage-a.md",
+        "scripts/remote-mcp/verify_audit.py",
+        "scripts/remote-mcp/tests/test_verify_audit.py",
+        "scripts/som-client/README.md",
+        "scripts/som-client/som_client.py",
+        "scripts/som-client/tests/test_som_client.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex explorer subagent",
+      "role": "governance gate scout",
+      "focus": "Issue #109 preserved artifacts and local-ci gate traps.",
+      "status": "accepted_with_followup",
+      "summary": "Confirmed the preservation evidence and highlighted the issue #109 execution-scope ambiguity risk, which this slice resolves by keeping only one current implementation scope filename.",
+      "evidence": [
+        "raw/validation/2026-04-19-issue-109-remote-mcp-artifact-preservation.md"
+      ]
+    },
+    {
+      "reviewer": "Codex worker subagent",
+      "role": "Tier 2 worker",
+      "focus": "Remote MCP audit verifier and SOM client local-testable implementation.",
+      "status": "accepted",
+      "summary": "Worker implemented the scoped stdlib-only Remote MCP audit verifier and thin SOM client with focused tests passing before integration.",
+      "evidence": [
+        "scripts/remote-mcp/tests/test_verify_audit.py",
+        "scripts/som-client/tests/test_som_client.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "gpt-5.4 high historical review",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "The preserved architecture artifact records round-1 rejection and operator waiver for round 2. This Stage A slice implements governance controls from that approved plan and does not alter bridge architecture.",
+    "evidence": [
+      "raw/cross-review/2026-04-14-remote-mcp-bridge.md",
+      "docs/exception-register.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex gpt-5.4",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #109 Stage A may modify Remote MCP Bridge standards, workflow, runbook, client/audit scripts, focused tests, governance mirrors, validation, execution scope, and closeout artifacts only.",
+    "next_execution_step": "Complete local implementation, run focused and Local CI validation, then open a PR while leaving issue #109 open for Stage B-D.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Do not renumber Windows-Ollama invariants 8-10; append Remote MCP invariants as 11-15.",
+    "If live Cloudflare or local-ai-machine HTTP server work is needed, stop and defer to Stage B-D issue #109 work rather than implementing it in governance.",
+    "If local CI sees multiple issue #109 implementation scopes, preserve older scope evidence under a non-matching historical filename and keep one active implementation scope for this branch."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #109 governing epic",
+    "raw/inbox/2026-04-14-remote-mcp-bridge-plan.md"
+  ],
+  "approved_at": "2026-04-19T19:25:00Z"
+}

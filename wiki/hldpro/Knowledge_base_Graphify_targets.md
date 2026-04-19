@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- **graphify_targets.py** (9 connections) — `hldpro-governance/scripts/knowledge_base/graphify_targets.py`
-- **main()** (9 connections) — `hldpro-governance/scripts/knowledge_base/graphify_targets.py`
-- **filtered_targets()** (2 connections) — `hldpro-governance/scripts/knowledge_base/graphify_targets.py`
-- **find_target()** (2 connections) — `hldpro-governance/scripts/knowledge_base/graphify_targets.py`
-- **load_manifest()** (2 connections) — `hldpro-governance/scripts/knowledge_base/graphify_targets.py`
-- **print_json()** (2 connections) — `hldpro-governance/scripts/knowledge_base/graphify_targets.py`
-- **print_shell()** (2 connections) — `hldpro-governance/scripts/knowledge_base/graphify_targets.py`
-- **print_stage_paths()** (2 connections) — `hldpro-governance/scripts/knowledge_base/graphify_targets.py`
-- **print_tsv()** (2 connections) — `hldpro-governance/scripts/knowledge_base/graphify_targets.py`
-- **target_rows()** (2 connections) — `hldpro-governance/scripts/knowledge_base/graphify_targets.py`
+- **graphify_targets.py** (9 connections) — `scripts/knowledge_base/graphify_targets.py`
+- **main()** (9 connections) — `scripts/knowledge_base/graphify_targets.py`
+- **filtered_targets()** (2 connections) — `scripts/knowledge_base/graphify_targets.py`
+- **find_target()** (2 connections) — `scripts/knowledge_base/graphify_targets.py`
+- **load_manifest()** (2 connections) — `scripts/knowledge_base/graphify_targets.py`
+- **print_json()** (2 connections) — `scripts/knowledge_base/graphify_targets.py`
+- **print_shell()** (2 connections) — `scripts/knowledge_base/graphify_targets.py`
+- **print_stage_paths()** (2 connections) — `scripts/knowledge_base/graphify_targets.py`
+- **print_tsv()** (2 connections) — `scripts/knowledge_base/graphify_targets.py`
+- **target_rows()** (2 connections) — `scripts/knowledge_base/graphify_targets.py`
 
 ## Relationships
 
@@ -21,7 +21,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/knowledge_base/graphify_targets.py`
+- `scripts/knowledge_base/graphify_targets.py`
 
 ## Audit Trail
 

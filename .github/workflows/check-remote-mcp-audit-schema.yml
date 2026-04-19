@@ -1,0 +1,45 @@
+name: check-remote-mcp-audit-schema
+
+on:
+  pull_request:
+    paths:
+      - 'raw/remote-mcp-audit/**'
+      - 'scripts/remote-mcp/verify_audit.py'
+      - '.github/workflows/check-remote-mcp-audit-schema.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-remote-mcp-audit-schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      SOM_REMOTE_MCP_AUDIT_HMAC_KEY: ${{ secrets.SOM_REMOTE_MCP_AUDIT_HMAC_KEY }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify Remote MCP audit schema
+        run: |
+          set -euo pipefail
+
+          if [ ! -d "raw/remote-mcp-audit" ]; then
+            echo "::notice::no Remote MCP audit directory yet; Stage B/C will populate it"
+            exit 0
+          fi
+
+          if [ -z "${SOM_REMOTE_MCP_AUDIT_HMAC_KEY:-}" ]; then
+            echo "::error::SOM_REMOTE_MCP_AUDIT_HMAC_KEY secret is required when Remote MCP audit files exist"
+            exit 1
+          fi
+
+          python3 scripts/remote-mcp/verify_audit.py raw/remote-mcp-audit --require-hmac-key
+          echo "::notice::Remote MCP audit schema valid"

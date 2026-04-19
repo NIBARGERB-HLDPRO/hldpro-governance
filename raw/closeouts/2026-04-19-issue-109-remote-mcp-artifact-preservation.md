@@ -22,7 +22,7 @@ No contradiction. This strengthens the issue-backed governance history for #109 
 - `raw/closeouts/2026-04-15-windows-ollama-sprint3.md`
 - `raw/cross-review/2026-04-14-remote-mcp-bridge.md`
 - `raw/cross-review/2026-04-15-windows-ollama-tier2-round2.md`
-- `raw/execution-scopes/2026-04-19-issue-109-remote-mcp-artifact-preservation-implementation.json`
+- `raw/execution-scopes/2026-04-19-issue-109-remote-mcp-artifact-preservation-scope.json`
 - `raw/handoff/2026-04-14-session-end.md`
 - `raw/inbox/2026-04-14-remote-mcp-bridge-plan.md`
 - `raw/inbox/2026-04-15-windows-ollama-epic-plan.md`
@@ -56,7 +56,7 @@ No new architecture approval is claimed. The preserved artifact records round 1 
 - Stage 6 closeout hook.
 
 ## Execution Scope / Write Boundary
-Execution scope: `raw/execution-scopes/2026-04-19-issue-109-remote-mcp-artifact-preservation-implementation.json`.
+Execution scope: `raw/execution-scopes/2026-04-19-issue-109-remote-mcp-artifact-preservation-scope.json`.
 
 ## Validation Commands
 Validation commands and pass/fail details are recorded in `raw/validation/2026-04-19-issue-109-remote-mcp-artifact-preservation.md`.
