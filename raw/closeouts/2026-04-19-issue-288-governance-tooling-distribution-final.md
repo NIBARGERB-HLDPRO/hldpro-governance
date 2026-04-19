@@ -21,7 +21,7 @@ This updates stale mirrors that still listed #288 and #294 as active after GitHu
 
 - `docs/plans/issue-329-structured-agent-cycle-plan.json`
 - `docs/plans/issue-329-governance-tooling-closeout-mirrors-pdcar.md`
-- `raw/execution-scopes/2026-04-19-issue-329-governance-tooling-closeout-mirrors.json`
+- `raw/execution-scopes/2026-04-19-issue-329-governance-tooling-closeout-mirrors-planning.json`
 - `raw/closeouts/2026-04-19-issue-288-governance-tooling-distribution-final.md`
 - `OVERLORD_BACKLOG.md`
 - `docs/PROGRESS.md`
@@ -62,17 +62,17 @@ This updates stale mirrors that still listed #288 and #294 as active after GitHu
 
 ## Execution Scope / Write Boundary
 
-- Execution scope: `raw/execution-scopes/2026-04-19-issue-329-governance-tooling-closeout-mirrors.json`
+- Execution scope: `raw/execution-scopes/2026-04-19-issue-329-governance-tooling-closeout-mirrors-planning.json`
 - Scope command:
-  - `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-19-issue-329-governance-tooling-closeout-mirrors.json --changed-files-file /tmp/issue-329-changed-files.txt`
+  - `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-19-issue-329-governance-tooling-closeout-mirrors-planning.json --changed-files-file /tmp/issue-329-changed-files.txt`
 
 ## Validation Commands
 
 Validation results are recorded in the PR and issue comments for #329. Required commands:
 
 - `python3 -m json.tool docs/plans/issue-329-structured-agent-cycle-plan.json`
-- `python3 -m json.tool raw/execution-scopes/2026-04-19-issue-329-governance-tooling-closeout-mirrors.json`
-- `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-19-issue-329-governance-tooling-closeout-mirrors.json --changed-files-file /tmp/issue-329-changed-files.txt`
+- `python3 -m json.tool raw/execution-scopes/2026-04-19-issue-329-governance-tooling-closeout-mirrors-planning.json`
+- `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-19-issue-329-governance-tooling-closeout-mirrors-planning.json --changed-files-file /tmp/issue-329-changed-files.txt`
 - `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name docs/issue-329-governance-tooling-closeout-mirrors-20260419 --changed-files-file /tmp/issue-329-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope`
 - `python3 scripts/overlord/check_overlord_backlog_github_alignment.py`
 - `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json`

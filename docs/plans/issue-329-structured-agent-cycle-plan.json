@@ -1,0 +1,121 @@
+{
+  "session_id": "session-20260419-issue-329-governance-tooling-closeout-mirrors",
+  "issue_number": 329,
+  "objective": "Reconcile hldpro-governance status mirrors and closeout evidence after the org-level governance tooling distribution epic #288 and downstream pilot planning slice #294 were closed with final downstream e2e proof recorded on GitHub.",
+  "tier": 1,
+  "scope_boundary": [
+    "Create a small issue-backed reconciliation package for issue #329.",
+    "Move #288 and #294 out of active backlog/progress mirrors.",
+    "Record final downstream e2e evidence for #288 in a committed closeout artifact.",
+    "Preserve the LAM default-target halt reason and the knocktracker fallback proof.",
+    "Run deterministic local validators and GitHub PR checks before merge."
+  ],
+  "out_of_scope": [
+    "Changing governance tooling package implementation.",
+    "Editing downstream repositories.",
+    "Reopening #288 or #294.",
+    "Re-running the downstream knocktracker pilot.",
+    "Cleaning or modifying the dirty shared main checkout."
+  ],
+  "research_summary": "Live GitHub state shows #288 and #294 are closed. Issue #288 records final downstream e2e proof through fallback consumer knocktracker after the default local-ai-machine target halted before implementation writes on unrelated startup preflight and global worktree hygiene blockers. The repo mirrors still list #288 and #294 as active, so this slice reconciles committed governance artifacts with canonical GitHub state.",
+  "research_artifacts": [
+    "GitHub issue #288 comments",
+    "GitHub issue #294 comments",
+    "GitHub issue #329",
+    "knocktracker issue #175",
+    "knocktracker PR #176",
+    "local-ai-machine issue #461",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "raw/closeouts/2026-04-18-issue-294-downstream-governance-pilot-planning.md"
+  ],
+  "sprints": [
+    {
+      "name": "Mirror Reconciliation",
+      "goal": "Align committed status mirrors with closed GitHub issues #288 and #294.",
+      "tasks": [
+        "Remove #288 and #294 from active In Progress mirrors.",
+        "Add Done entries for the final org governance tooling distribution epic and downstream pilot planning slice.",
+        "Record exact e2e evidence from #288 comments in the Done notes."
+      ],
+      "acceptance_criteria": [
+        "#288 and #294 no longer appear as active In Progress rows.",
+        "Done mirrors cite #288, #294, local-ai-machine#461, knocktracker#175, and knocktracker#176.",
+        "Done mirrors state that the fallback pilot satisfied the final e2e AC."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Closeout Evidence",
+      "goal": "Commit a Stage 6 closeout so final e2e evidence is available in repo history, not only GitHub comments.",
+      "tasks": [
+        "Create the #288/#294 final closeout artifact.",
+        "Name the default LAM halt reason.",
+        "Name the knocktracker fallback evidence, pinned governance ref, negative-control failure, remediation pass, rollback/reapply proof, and downstream GitHub Actions pass.",
+        "Run the closeout hook and local validators."
+      ],
+      "acceptance_criteria": [
+        "Closeout artifact exists under raw/closeouts.",
+        "Closeout artifact records local-ai-machine#461 halt before writes.",
+        "Closeout artifact records knocktracker#175/#176 final e2e proof.",
+        "Local validation and PR checks pass before merge."
+      ],
+      "file_paths": [
+        "raw/closeouts/2026-04-19-issue-288-governance-tooling-distribution-final.md",
+        "docs/plans/issue-329-structured-agent-cycle-plan.json",
+        "docs/plans/issue-329-governance-tooling-closeout-mirrors-pdcar.md",
+        "raw/execution-scopes/2026-04-19-issue-329-governance-tooling-closeout-mirrors-planning.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Huygens",
+      "role": "overlord planning reviewer",
+      "focus": "Required governance planning artifacts, validation commands, and scope boundaries.",
+      "status": "accepted_with_followup",
+      "summary": "The subagent confirmed the expected artifact pattern: issue-backed structured plan, PDCAR, execution scope, closeout evidence, backlog/progress alignment, and deterministic validation. Its artifact-number focus used stale root context, so this slice applies that pattern to current canonical issues #288/#294/#329.",
+      "evidence": [
+        "Subagent Huygens notification",
+        "CLAUDE.md",
+        "STANDARDS.md",
+        "raw/closeouts/TEMPLATE.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family-reconciliation-fallback",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "True alternate-family review was not available in this lane. This docs/status reconciliation is accepted with deterministic validation and prior downstream e2e evidence already recorded on GitHub; no implementation code or downstream repo changes are in scope.",
+    "evidence": [
+      "GitHub issue #288 final e2e comment",
+      "GitHub issue #294 planning evidence comments",
+      "Subagent Huygens notification"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #329 may update planning/status/closeout artifacts and generated closeout graph/wiki evidence for the #288/#294 mirror reconciliation. It may not edit governance tooling implementation or downstream repos.",
+    "next_execution_step": "Validate, open PR, watch checks, merge, close #329, and leave downstream repos untouched.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If validation requires source or workflow changes, stop and create a separate implementation issue.",
+    "If downstream evidence is missing, do not invent it; link back to the GitHub issue comments or keep the mirror active.",
+    "If #288/#294 GitHub state changes, re-check live GitHub before merge.",
+    "If closeout hook generates graph/wiki updates, include only generated artifacts allowed by execution scope."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #329",
+    "operator instruction: follow repo rules and loop through PDCAR, GH epic, ACs, e2e testing as final AC",
+    "Subagent Huygens notification"
+  ],
+  "approved_at": "2026-04-19T02:25:00Z"
+}
