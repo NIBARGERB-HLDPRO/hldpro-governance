@@ -66,7 +66,7 @@ This preserves the #296 non-goal that tmux/live terminal injection is not the de
 - Execution-scope boundary gate.
 - Diff hygiene.
 - Local CI Gate.
-- GitHub PR checks.
+- GitHub PR checks before merge; check names, conclusions, and run evidence are recorded in the #303/#296 issue comments after the PR exists.
 
 ## Execution Scope / Write Boundary
 
