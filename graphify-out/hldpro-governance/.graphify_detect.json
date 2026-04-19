@@ -95,6 +95,10 @@
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-352-backlog-closed-drift/metrics/graphify-usage/README.md",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-352-backlog-closed-drift/cache/local-ci-gate/reports/20260419T044014Z-hldpro-governance-git/changed-files.txt",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-352-backlog-closed-drift/cache/local-ci-gate/reports/20260419T044014Z-hldpro-governance-git/local-ci-20260419T044016Z.txt",
+      "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-352-backlog-closed-drift/cache/local-ci-gate/reports/20260419T044529Z-hldpro-governance-git/local-ci-20260419T044531Z.txt",
+      "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-352-backlog-closed-drift/cache/local-ci-gate/reports/20260419T044529Z-hldpro-governance-git/changed-files.txt",
+      "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-352-backlog-closed-drift/cache/local-ci-gate/reports/20260419T044243Z-hldpro-governance-git/local-ci-20260419T044245Z.txt",
+      "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-352-backlog-closed-drift/cache/local-ci-gate/reports/20260419T044243Z-hldpro-governance-git/changed-files.txt",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-352-backlog-closed-drift/cache/local-ci-gate/reports/20260419T044145Z-hldpro-governance-git/local-ci-20260419T044147Z.txt",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-352-backlog-closed-drift/cache/local-ci-gate/reports/20260419T044145Z-hldpro-governance-git/changed-files.txt",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-352-backlog-closed-drift/agents/overlord-sweep.md",
@@ -1628,10 +1632,10 @@
     "paper": [],
     "image": []
   },
-  "total_files": 1621,
-  "total_words": 395892,
+  "total_files": 1625,
+  "total_words": 396608,
   "needs_graph": true,
-  "warning": "Large corpus: 1621 files \u00b7 ~395,892 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
+  "warning": "Large corpus: 1625 files \u00b7 ~396,608 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
   "skipped_sensitive": [],
   "graphifyignore_patterns": 0
 }

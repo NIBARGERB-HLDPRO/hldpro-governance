@@ -16,6 +16,7 @@ No contradiction. This strengthens the existing policy that GitHub Issues are th
 
 ## Files Changed
 - `.github/workflows/governance-check.yml`
+- `.github/workflows/local-ci-gate.yml`
 - `OVERLORD_BACKLOG.md`
 - `docs/PROGRESS.md`
 - `docs/plans/issue-352-backlog-closed-drift-pdcar.md`
@@ -74,7 +75,7 @@ Changed-file execution-scope assertion passed with only declared active parallel
 Same-family exception: `raw/exceptions/2026-04-19-issue-352-same-family-implementation.md`.
 
 ## Residual Risks / Follow-Up
-The validator now depends on GitHub issue state for active rows. The governance workflow provides `GH_TOKEN`; local runs require an authenticated `gh` session.
+The validator now depends on GitHub issue state for active rows. The governance and Local CI Gate workflows provide `GH_TOKEN`; local runs require an authenticated `gh` session.
 
 ## Wiki Pages Updated
 Stage 6 graph/wiki artifacts should refresh `wiki/hldpro/` through the closeout hook.
