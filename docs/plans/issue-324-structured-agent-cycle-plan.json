@@ -1,0 +1,108 @@
+{
+  "session_id": "2026-04-19-governance-issue-324-detached-scope-validation",
+  "issue_number": 324,
+  "objective": "Fix execution-scope validation so reusable governance PR checkouts can validate trusted scopes while detached by using GitHub PR branch context.",
+  "tier": 2,
+  "scope_boundary": [
+    "scripts/overlord/assert_execution_scope.py branch detection",
+    "scripts/overlord/test_assert_execution_scope.py detached checkout regression coverage",
+    "Issue #324 planning, execution scope, progress, fail-fast, and validation evidence"
+  ],
+  "out_of_scope": [
+    "Changing execution-scope path authorization semantics",
+    "Changing product repository scopes directly",
+    "Changing GitHub checkout behavior in the reusable workflow"
+  ],
+  "research_summary": "EmailAssistant PR #3 proved the reusable workflow checks out pull request merge refs in detached HEAD state. The current validator only reads git branch --show-current, so it rejects a valid trusted scope before path validation.",
+  "research_artifacts": [
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "EmailAssistant PR #3 governance-check logs",
+    "raw/execution-scopes/2026-04-19-issue-324-detached-scope-validation-implementation.json"
+  ],
+  "sprints": [
+    {
+      "name": "Planning scope",
+      "goal": "Land a trusted execution scope before validator source edits.",
+      "tasks": [
+        "Create structured plan",
+        "Create implementation execution scope",
+        "Record same-family exception",
+        "Add progress row for issue #324"
+      ],
+      "acceptance_criteria": [
+        "Plan JSON validates",
+        "Execution scope covers only issue #324 implementation files",
+        "Planning PR contains no validator source edits"
+      ],
+      "file_paths": [
+        "docs/PROGRESS.md",
+        "docs/plans/issue-324-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-19-issue-324-detached-scope-validation-implementation.json",
+        "raw/exceptions/2026-04-19-issue-324-same-family-detached-scope-validation.md"
+      ]
+    },
+    {
+      "name": "Validator implementation",
+      "goal": "Allow detached PR checkouts to use GitHub branch context while preserving local branch enforcement.",
+      "tasks": [
+        "Patch current-branch detection",
+        "Add detached checkout regression test",
+        "Run focused validator tests",
+        "Rerun downstream EmailAssistant PR #3 governance gate"
+      ],
+      "acceptance_criteria": [
+        "Detached checkout with GITHUB_HEAD_REF passes when it matches expected_branch",
+        "Wrong local branch still fails",
+        "EmailAssistant PR #3 governance check passes after merge"
+      ],
+      "file_paths": [
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py",
+        "docs/PROGRESS.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/FAIL_FAST_LOG.md",
+        "raw/validation/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-local",
+      "role": "gate failure investigator",
+      "focus": "EmailAssistant PR #3 reusable workflow failure mode",
+      "status": "accepted",
+      "summary": "The failure is a detached-checkout branch detection issue in the shared validator.",
+      "evidence": [
+        "EmailAssistant PR #3 governance-check logs"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family exception path",
+    "model_family": "gpt-5",
+    "status": "accepted_with_followup",
+    "summary": "No alternate model connector is available in this session; same-family execution is constrained by scope and regression tests.",
+    "evidence": [
+      "raw/exceptions/2026-04-19-issue-324-same-family-detached-scope-validation.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Proceed with the detached-checkout validator fix after this planning scope lands on base.",
+    "next_execution_step": "Patch branch detection and tests, then rerun EmailAssistant PR #3 governance check.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Do not weaken allowed_write_paths validation.",
+    "Do not remove branch validation for normal local checkouts.",
+    "If workflow behavior is changed instead of validator behavior, update the plan before implementation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator-no-hitl-directive"
+  ],
+  "approved_at": "2026-04-19T00:00:00Z"
+}

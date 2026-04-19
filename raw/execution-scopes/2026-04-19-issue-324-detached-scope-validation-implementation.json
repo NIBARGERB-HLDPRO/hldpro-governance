@@ -1,0 +1,29 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-324-assert-scope-detached-head",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "docs/PROGRESS.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/plans/issue-324-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-19-issue-324-detached-scope-validation-implementation.json",
+    "raw/exceptions/2026-04-19-issue-324-same-family-detached-scope-validation.md",
+    "raw/validation/"
+  ],
+  "forbidden_roots": [],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T00:00:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-324-structured-agent-cycle-plan.json",
+      "raw/exceptions/2026-04-19-issue-324-same-family-detached-scope-validation.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-19-issue-324-same-family-detached-scope-validation.md#issue-324-same-family-exception",
+    "active_exception_expires_at": "2026-05-19T00:00:00Z"
+  }
+}
