@@ -1,0 +1,76 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-303-final-e2e-proof",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T01:05:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-303-structured-agent-cycle-plan.json",
+      "docs/plans/issue-303-final-e2e-proof-pdcar.md",
+      "raw/exceptions/2026-04-19-issue-303-same-family-final-e2e.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-19-issue-303-same-family-final-e2e.md",
+    "active_exception_expires_at": "2026-04-20T01:05:00Z"
+  },
+  "allowed_write_paths": [
+    "scripts/orchestrator/test_hitl_relay_final_e2e.py",
+    "docs/plans/issue-303-structured-agent-cycle-plan.json",
+    "docs/plans/issue-303-final-e2e-proof-pdcar.md",
+    "raw/cross-review/2026-04-19-issue-303-final-e2e-proof-review.md",
+    "raw/exceptions/2026-04-19-issue-303-same-family-final-e2e.md",
+    "raw/execution-scopes/2026-04-19-issue-303-final-e2e-proof-implementation.json",
+    "raw/validation/2026-04-19-issue-303-final-e2e-proof.md",
+    "raw/closeouts/2026-04-19-issue-296-som-hitl-relay-final-e2e.md",
+    "OVERLORD_BACKLOG.md",
+    "graphify-out/hldpro-governance/",
+    "wiki/hldpro/",
+    "wiki/index.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout has unrelated local work and must not be edited by issue #303."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "AIS child slice is already merged and is not edited by this final proof."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "LAM child slices are already merged and are not edited by this final proof."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Sibling repo is unrelated to #303 final proof."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Sibling repo is unrelated to #303 final proof."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Sibling repo is unrelated to #303 final proof."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+      "reason": "Sibling repo is unrelated to #303 final proof."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Sibling repo is unrelated to #303 final proof."
+    }
+  ]
+}

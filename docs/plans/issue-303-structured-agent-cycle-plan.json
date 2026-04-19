@@ -1,0 +1,117 @@
+{
+  "session_id": "session-20260419-issue-303-final-e2e-proof",
+  "issue_number": 303,
+  "objective": "Record the final evidence-backed E2E proof for the always-on SoM HITL relay epic.",
+  "tier": 2,
+  "scope_boundary": [
+    "Validate the governance-owned HITL queue against approval, request-changes, ambiguous response, stale session, duplicate/replay, expired notification, audit replay, and privacy fail-closed paths.",
+    "Tie final evidence to the merged child slices in hldpro-governance, ai-integration-services, and local-ai-machine.",
+    "Create final validation and Stage 6 closeout evidence for parent epic #296 and final gate #303.",
+    "Update the #296 backlog mirror only after local E2E evidence exists."
+  ],
+  "out_of_scope": [
+    "Editing ai-integration-services or local-ai-machine after their child slices have merged.",
+    "Enabling live SMS, Slack, or terminal injection adapters.",
+    "Treating raw operator message text as a local CLI instruction.",
+    "Closing any future channel-specific follow-up outside this issue."
+  ],
+  "research_summary": "#299 delivered HITL relay packet contracts, #302 delivered the security policy, #300 delivered validators, #301 delivered the queue-first governance prototype, ai-integration-services#1144 delivered sandbox transport evidence, local-ai-machine#462 delivered MCP/orchestrator normalization, and local-ai-machine#463 delivered the local CLI session adapter. #303 is the final proof and closeout slice for #296.",
+  "research_artifacts": [
+    "GitHub issue #296",
+    "GitHub issue #303",
+    "hldpro-governance PR #305",
+    "hldpro-governance PR #306",
+    "hldpro-governance PR #308",
+    "hldpro-governance PR #316",
+    "ai-integration-services PR #1148",
+    "local-ai-machine PR #470",
+    "local-ai-machine PR #471",
+    "scripts/orchestrator/test_hitl_relay_final_e2e.py",
+    "raw/validation/2026-04-19-issue-303-final-e2e-proof.md"
+  ],
+  "sprints": [
+    {
+      "name": "Final E2E Matrix",
+      "goal": "Prove all #303 acceptance paths with executable local evidence.",
+      "tasks": [
+        "Add a final E2E test that preserves request, notification, response, session, model, validator, instruction, resume, and audit identity across the queue.",
+        "Run the final E2E test with the existing queue, schema, validator, and Local CI gates.",
+        "Record exact command outcomes and child-slice merge evidence."
+      ],
+      "acceptance_criteria": [
+        "Final AC: approval produces a bounded session instruction for the matching session.",
+        "Final AC: request-changes routes feedback without approval semantics.",
+        "Final AC: ambiguous response requests clarification and emits no instruction.",
+        "Final AC: stale session creates a resume packet instead of injecting into a session.",
+        "Final AC: duplicate, replayed, expired, and external-channel PII replies fail closed.",
+        "Final AC: audit replay reconstructs the request, notification, response, decision, instruction, and session identity chain."
+      ],
+      "file_paths": [
+        "scripts/orchestrator/test_hitl_relay_final_e2e.py",
+        "raw/validation/2026-04-19-issue-303-final-e2e-proof.md"
+      ]
+    },
+    {
+      "name": "Stage 6 Closeout",
+      "goal": "Close the parent epic only after final E2E proof exists and CI is green.",
+      "tasks": [
+        "Create final closeout evidence for #296/#303.",
+        "Run structured plan, execution scope, diff hygiene, queue, packet, and Local CI validation.",
+        "Update backlog mirror and issue comments with residual risk decisions."
+      ],
+      "acceptance_criteria": [
+        "Final AC: closeout cites the exact proof artifact and validation commands.",
+        "Final AC: live SMS/Slack and terminal push adapters remain disabled/follow-up until separately planned.",
+        "Final AC: GitHub PR checks pass before merge."
+      ],
+      "file_paths": [
+        "raw/closeouts/2026-04-19-issue-296-som-hitl-relay-final-e2e.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "local final E2E matrix",
+      "role": "final-e2e-gate",
+      "focus": "Executable proof of #303 acceptance paths and child-slice evidence continuity.",
+      "status": "accepted",
+      "summary": "Final E2E test and validation artifact are the primary proof package for #303.",
+      "evidence": [
+        "scripts/orchestrator/test_hitl_relay_final_e2e.py",
+        "raw/validation/2026-04-19-issue-303-final-e2e-proof.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Codex isolated reviewer",
+    "model_family": "gpt",
+    "status": "accepted",
+    "summary": "Same-family review is allowed by the issue #303 exception and is recorded in the closeout package.",
+    "evidence": [
+      "raw/cross-review/2026-04-19-issue-303-final-e2e-proof-review.md",
+      "raw/exceptions/2026-04-19-issue-303-same-family-final-e2e.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #303 may add final E2E tests, validation evidence, closeout evidence, structured plan/PDCAR/scope artifacts, and #296 backlog status mirror updates in hldpro-governance only.",
+    "next_execution_step": "Run local final E2E validation, PR checks, merge, then close #303 and #296 with evidence.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any child slice is not merged, stop and repair that child issue before final closeout.",
+    "If final E2E cannot prove the identity chain, keep #296 open and create a gap issue.",
+    "If live SMS/Slack or terminal push is required, create follow-up issues instead of expanding this final evidence slice."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #303",
+    "Parent epic #296",
+    "operator instruction: follow repo rules, no HITL, e2e testing as final AC",
+    "raw/exceptions/2026-04-19-issue-303-same-family-final-e2e.md"
+  ],
+  "approved_at": "2026-04-19T01:05:00Z"
+}
