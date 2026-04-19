@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 from dataclasses import dataclass
@@ -241,7 +242,10 @@ def _current_branch(cwd: Path) -> str | None:
     result = _run_git(["branch", "--show-current"], cwd)
     if result.returncode != 0:
         return None
-    return result.stdout.strip()
+    branch = result.stdout.strip()
+    if branch:
+        return branch
+    return os.environ.get("GITHUB_HEAD_REF") or os.environ.get("GITHUB_REF_NAME") or branch
 
 
 def _changed_paths(cwd: Path) -> list[str] | None:

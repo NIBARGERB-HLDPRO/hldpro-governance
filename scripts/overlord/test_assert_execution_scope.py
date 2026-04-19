@@ -10,6 +10,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 from typing import Any
 
@@ -368,6 +369,25 @@ class TestAssertExecutionScope(unittest.TestCase):
 
         self.assertNotEqual(code, 0)
         self.assertIn("branch mismatch", output)
+
+    def test_detached_checkout_uses_github_head_ref(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo", branch="issue-324-detached-source")
+            head = _git(repo.root, "rev-parse", "HEAD").stdout.strip()
+            _git(repo.root, "checkout", "--detach", head)
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            scope = self._scope_file(tmpdir, repo.root, branch="issue-324-detached-source")
+
+            with mock.patch.dict(
+                "os.environ",
+                {"GITHUB_HEAD_REF": "issue-324-detached-source"},
+                clear=False,
+            ):
+                code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertEqual(code, 0, output)
+        self.assertIn("PASS execution scope", output)
 
     def test_refuses_dirty_forbidden_root(self) -> None:
         with tempfile.TemporaryDirectory() as raw_tmpdir:
