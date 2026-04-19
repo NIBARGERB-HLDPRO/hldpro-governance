@@ -180,25 +180,41 @@ pgrep -fl som-mcp
 ### 4b. Qwen-Coder warm worker (Tier-2 fallback)
 
 - Model: `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (~4.5 GB peak)
-- Location: `local-ai-machine/services/som-worker/` (worktree: `_worktrees/lam-som-mcp/services/som-worker/`)
+- Location: `local-ai-machine/services/som-worker/`
 - Role: Tier-2 Worker when codex-spark unavailable
 - Inbox: reads job JSON from configured inbox; writes outputs + moves to done
 
-**Start:**
+**Boot-start install:**
 ```bash
-bash ~/Developer/HLDPRO/_worktrees/lam-som-mcp/services/som-worker/bin/start-som-worker.sh
+cd ~/Developer/HLDPRO/local-ai-machine/services/som-worker
+scripts/install-launchd.sh
 ```
 
-Script guards duplicate via `/tmp/som-worker.pid`. Waits up to 90s for `watching` in log.
+The installer renders `launchd/com.hldpro.som-worker.plist.in` to
+`$HOME/Library/LaunchAgents/com.hldpro.som-worker.plist` and loads it with
+`launchctl load`. The LaunchAgent starts the foreground daemon at login and
+keeps it alive.
 
-**Stop:**
+**Manual start without launchd:**
 ```bash
-bash ~/Developer/HLDPRO/_worktrees/lam-som-mcp/services/som-worker/bin/stop-som-worker.sh
+cd ~/Developer/HLDPRO/local-ai-machine/services/som-worker
+bin/start-som-worker.sh
+```
+
+The manual script guards duplicate starts via `/tmp/som-worker.pid` and waits
+up to 90s for `watching` in the log.
+
+**Unload / stop:**
+```bash
+cd ~/Developer/HLDPRO/local-ai-machine/services/som-worker
+scripts/uninstall-launchd.sh
+bin/stop-som-worker.sh
 ```
 
 **Preflight:**
 ```bash
-test -f /tmp/som-worker.pid && kill -0 "$(cat /tmp/som-worker.pid)" 2>&1 && echo "som-worker up" || echo "som-worker down"
+launchctl list | grep com.hldpro.som-worker || true
+tail -50 /tmp/som-worker.log /tmp/som-worker-err.log
 ```
 
 **Known limits (issue #105):** full-file regen >200 lines emits stubs; see `docs/runbooks/qwen-coder-driver.md` workarounds.

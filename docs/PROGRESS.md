@@ -10,7 +10,6 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
-| Stage 5+ som-worker launchd boot-start integration | #189 | PLANNED | MEDIUM | 2-3 | launchd plist, service docs | Gate: local-ai-machine #431, #432 adopt |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
 | SoM Stage 5: som-worker daemon | #178 | PLANNED | LOW | 6-8 | Daemon implementation, queue wiring | Follow-on to Stage 3b/4 |
@@ -41,6 +40,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Stage 5+ som-worker launchd boot-start integration | #189 | 2026-04-19 | Downstream local-ai-machine#482 / PR #483 implemented the `com.hldpro.som-worker` LaunchAgent, installer/uninstaller, README docs, fake-launchctl e2e proof, reviewer checkpoints, and GitHub Actions green. Merge commit `8ceb5e38a0dd8105c2467e48d00219b95bac28d4`. Closeout: raw/closeouts/2026-04-19-issue-189-som-worker-launchd.md. |
 | Qwen3.6-35B-A3B Mac MLX benchmark | #351 | 2026-04-19 | Downloaded `mlx-community/Qwen3.6-35B-A3B-4bit`, captured the Python 3.9 `qwen3_5_moe` runtime blocker, installed the Python 3.11 MLX runtime, and benchmarked the model at 103.018 avg generation tok/s with 19.797 GB peak MLX memory on 128/128 synthetic runs. Active routing remains unchanged. |
 | hldpro-governance backlog closed-issue drift repair | #352 | 2026-04-19 | Reconciled stale closed issue refs out of actionable `OVERLORD_BACKLOG.md` and `docs/PROGRESS.md` sections, hardened the Overlord backlog validator to require open GitHub issues, and added an e2e negative test for closed issues in `In Progress`. |
 | Detached PR execution-scope validation fix | #324 | 2026-04-19 | PRs #325 and #326 added planning and implementation coverage for detached PR checkout branch fallback in `assert_execution_scope.py`, unblocking EmailAssistant#1-style validation contexts. |
