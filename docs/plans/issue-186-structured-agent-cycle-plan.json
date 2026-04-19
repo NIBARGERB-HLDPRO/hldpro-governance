@@ -1,0 +1,144 @@
+{
+  "session_id": "session-20260419-issue-186-root-hooks",
+  "issue_number": 186,
+  "objective": "Add missing root-level local enforcement hooks for governance checks, backlog alignment, and fail-fast/error-pattern schema validation.",
+  "tier": 2,
+  "scope_boundary": [
+    "Add `hooks/governance-check.sh`, `hooks/backlog-check.sh`, and `hooks/check-errors.sh` at the repository root.",
+    "Make each hook executable and smoke-testable from both the repo root and nested directories.",
+    "Reuse existing governance validators and schema contracts where available.",
+    "Add issue-backed PDCAR, execution-scope, validation, and closeout artifacts.",
+    "Update local progress/backlog mirrors."
+  ],
+  "out_of_scope": [
+    "Changing reusable GitHub Actions workflow policy.",
+    "Changing structured-plan schema semantics.",
+    "Changing backlog alignment validator behavior.",
+    "Changing fail-fast schema policy beyond exposing the existing minimal checks locally.",
+    "Editing downstream repositories."
+  ],
+  "research_summary": "Issue #186 identifies that root-level `hooks/governance-check.sh`, `hooks/backlog-check.sh`, and `hooks/check-errors.sh` are missing even though repo docs list them as required local hooks. Existing root hooks use portable bash entrypoints, and existing CI/workflow logic already owns the actual governance, backlog, and fail-fast schema contracts. The minimal implementation is to add tracked root scripts that resolve the checkout root and invoke those existing checks.",
+  "research_artifacts": [
+    "Issue #186",
+    "hooks/closeout-hook.sh",
+    "hooks/pre-session-context.sh",
+    "hooks/code-write-gate.sh",
+    ".github/workflows/governance-check.yml",
+    ".github/workflows/check-fail-fast-schema.yml",
+    "scripts/overlord/check_overlord_backlog_github_alignment.py",
+    "docs/plans/issue-186-root-hooks-pdcar.md"
+  ],
+  "sprints": [
+    {
+      "name": "Root Hook Entry Points",
+      "goal": "Provide tracked local hook scripts for the missing required hook names.",
+      "tasks": [
+        "Add `hooks/governance-check.sh`.",
+        "Add `hooks/backlog-check.sh`.",
+        "Add `hooks/check-errors.sh`.",
+        "Set executable mode on all three scripts."
+      ],
+      "acceptance_criteria": [
+        "All three files exist under root `hooks/`.",
+        "All three files are executable.",
+        "All three scripts pass shell syntax checks."
+      ],
+      "file_paths": [
+        "hooks/governance-check.sh",
+        "hooks/backlog-check.sh",
+        "hooks/check-errors.sh"
+      ]
+    },
+    {
+      "name": "Local Enforcement Wiring",
+      "goal": "Reuse existing repository governance logic through the new hook names.",
+      "tasks": [
+        "Wire `governance-check.sh` to structured-plan checks, governance-surface changed-file validation, backlog alignment, and `git diff --check`.",
+        "Wire `backlog-check.sh` to `check_overlord_backlog_github_alignment.py`.",
+        "Wire `check-errors.sh` to FAIL_FAST_LOG and ERROR_PATTERNS schema checks matching the reusable workflow contract.",
+        "Smoke-test each hook from the repo root and from `docs/plans`."
+      ],
+      "acceptance_criteria": [
+        "Root smoke tests pass.",
+        "Nested-directory smoke tests pass.",
+        "Hook output is explicit and exits non-zero on validation failures."
+      ],
+      "file_paths": [
+        "hooks/governance-check.sh",
+        "hooks/backlog-check.sh",
+        "hooks/check-errors.sh"
+      ]
+    },
+    {
+      "name": "Governance Evidence",
+      "goal": "Record the issue-backed implementation and final e2e proof.",
+      "tasks": [
+        "Add PDCAR and structured-plan artifacts.",
+        "Add implementation execution-scope and same-family exception evidence.",
+        "Record validation and closeout artifacts.",
+        "Update local progress/backlog mirrors."
+      ],
+      "acceptance_criteria": [
+        "Execution-scope assertion passes for the changed-file set.",
+        "Local CI Gate passes.",
+        "Stage 6 closeout hook passes."
+      ],
+      "file_paths": [
+        "docs/plans/issue-186-root-hooks-pdcar.md",
+        "docs/plans/issue-186-structured-agent-cycle-plan.json",
+        "raw/exceptions/2026-04-19-issue-186-same-family-implementation.md",
+        "raw/execution-scopes/2026-04-19-issue-186-root-hooks-implementation.json",
+        "raw/validation/2026-04-19-issue-186-root-hooks.md",
+        "raw/closeouts/2026-04-19-issue-186-root-hooks.md",
+        "docs/PROGRESS.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex implementation session",
+      "role": "hook behavior analysis",
+      "focus": "Map the missing local hook names to existing governance enforcement logic.",
+      "status": "accepted",
+      "summary": "The new hooks should stay thin and invoke existing repo-owned validators or workflow-equivalent schema checks.",
+      "evidence": [
+        "hooks/closeout-hook.sh",
+        "hooks/pre-session-context.sh",
+        ".github/workflows/governance-check.yml",
+        ".github/workflows/check-fail-fast-schema.yml"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "read-only reviewer agent after implementation",
+    "model_family": "openai",
+    "status": "not_requested",
+    "summary": "This is an implementation slice exposing existing local hook entrypoints, not an architecture or standards change requiring Tier 1 alternate-family review. A read-only implementation review is planned before PR closeout.",
+    "evidence": [
+      "STANDARDS.md Society of Minds cross-review scope",
+      "docs/plans/issue-186-root-hooks-pdcar.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex implementation session",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement issue #186 only: add the three root-level hooks, record governance evidence, validate root/nested smoke behavior, and update trackers.",
+    "next_execution_step": "Run hook smoke tests, local gates, read-only review, then open a PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If reusable workflow policy must change, create a separate issue.",
+    "If fail-fast schema policy must broaden, create a separate issue.",
+    "If backlog validation behavior must change, create a separate issue.",
+    "If downstream repos need changes, create a separate issue-backed rollout slice."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: proceed, no HITL",
+    "GitHub issue #186 acceptance criteria",
+    "Codex implementation session"
+  ],
+  "approved_at": "2026-04-19T04:05:00Z"
+}

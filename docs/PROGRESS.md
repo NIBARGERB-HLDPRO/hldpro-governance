@@ -53,6 +53,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Root-level enforcement hooks | #186 | 2026-04-19 | Added tracked executable root hooks `hooks/governance-check.sh`, `hooks/backlog-check.sh`, and `hooks/check-errors.sh`; validation covers shell syntax, executable bits, root smoke, nested-directory smoke, governance-surface planning, execution scope, and Local CI Gate. |
 | Structured plan malformed JSON failure contract | #192 | 2026-04-19 | `validate_structured_agent_cycle_plan.py` now catches malformed plan JSON and file-read errors, emits structured `FAIL <path>: could not parse JSON: ...` output, exits 1 without a traceback, and has regression coverage for full-scan and governance-surface matching paths. |
 | Portable governance hook settings paths | #197 | 2026-04-19 | Replaced hardcoded `.claude/settings.json` hook commands with checkout-relative `git rev-parse --show-toplevel` wrappers for `pre-session-context.sh` and `code-write-gate.sh`; validation covers root and nested-directory hook execution. |
 | ASC-Evaluator governance workflow exemption reconciliation | #176 | 2026-04-19 | Confirmed ASC-Evaluator's existing `.github/workflows/governance.yml` is compatible with its knowledge-repo code-governance exemption. Latest default-branch Governance Gate passed on `master` at `4d7ecdb3313c1aa9b586bf2b8ffd21caa50174a6` (run `24578334806`), so no downstream workflow edit is required. `SOM-ASC-CI-001` is closed and `SOM-EXEMPT-ASC-001` remains active with clarified scope. |
