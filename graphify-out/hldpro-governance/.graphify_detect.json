@@ -92,6 +92,8 @@
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-338-lam-governance-tooling-closeout/metrics/graphify-evals/2026-04-09-graphify-vs-search.md",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-338-lam-governance-tooling-closeout/metrics/pilot/issue-231-e2e-pilot.md",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-338-lam-governance-tooling-closeout/metrics/graphify-usage/README.md",
+      "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-338-lam-governance-tooling-closeout/cache/local-ci-gate/reports/20260419T030610Z-hldpro-governance-git/local-ci-20260419T030610Z.txt",
+      "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-338-lam-governance-tooling-closeout/cache/local-ci-gate/reports/20260419T030610Z-hldpro-governance-git/changed-files.txt",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-338-lam-governance-tooling-closeout/agents/overlord-sweep.md",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-338-lam-governance-tooling-closeout/agents/verify-completion.md",
       "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-338-lam-governance-tooling-closeout/agents/overlord.md",
@@ -1600,10 +1602,10 @@
     "paper": [],
     "image": []
   },
-  "total_files": 1593,
-  "total_words": 386693,
+  "total_files": 1595,
+  "total_words": 386958,
   "needs_graph": true,
-  "warning": "Large corpus: 1593 files \u00b7 ~386,693 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
+  "warning": "Large corpus: 1595 files \u00b7 ~386,958 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
   "skipped_sensitive": [],
   "graphifyignore_patterns": 0
 }
