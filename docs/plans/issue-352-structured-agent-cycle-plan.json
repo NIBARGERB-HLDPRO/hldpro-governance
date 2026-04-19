@@ -42,6 +42,7 @@
       ],
       "file_paths": [
         ".github/workflows/governance-check.yml",
+        ".github/workflows/local-ci-gate.yml",
         "OVERLORD_BACKLOG.md",
         "docs/PROGRESS.md",
         "docs/plans/issue-352-backlog-closed-drift-pdcar.md",

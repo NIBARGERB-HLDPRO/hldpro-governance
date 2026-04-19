@@ -17,6 +17,7 @@ Branch: `fix/issue-352-backlog-closed-drift-20260419`
 | `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name fix/issue-352-backlog-closed-drift-20260419 --changed-files-file /tmp/issue-352-changed-files.txt --enforce-governance-surface` | PASS; 69 plans validated |
 | `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-19-issue-352-backlog-closed-drift-implementation.json --changed-files-file /tmp/issue-352-changed-files.txt` | PASS; declared active parallel roots warned only |
 | `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | PASS; 11 changed files, blockers 0, advisories 0 |
+| GitHub `local-ci-gate` first run | FAIL; Local CI workflow did not provide `GH_TOKEN` to the Overlord backlog check |
 
 ## Acceptance Criteria
 
@@ -28,6 +29,10 @@ Branch: `fix/issue-352-backlog-closed-drift-20260419`
 | Focused e2e/unit coverage proves a closed issue in `In Progress` fails | PASS |
 | PDCAR, structured plan, execution scope, validation evidence, and Stage 6 closeout are recorded | PASS pending closeout hook |
 | Final AC: Local CI Gate and GitHub PR checks pass before merge | PASS locally; GitHub pending PR |
+
+## CI Follow-Up
+
+The first PR run showed a CI-only token gap in `.github/workflows/local-ci-gate.yml`. The workflow now grants `issues: read` and passes `GH_TOKEN: ${{ github.token }}` to the Local CI Gate runner, matching the validator's GitHub issue-state dependency.
 
 ## Reviewer Checkpoint
 

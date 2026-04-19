@@ -24,7 +24,7 @@ Acceptance criteria:
 - Added Done evidence rows for closed work that still needed governance visibility.
 - Updated the Overlord backlog validator to check issue state through GitHub, not only issue-reference syntax.
 - Added focused validator coverage for closed `In Progress` issue refs.
-- Set `GH_TOKEN` for the governance workflow check so the GitHub state lookup is available in CI.
+- Set `GH_TOKEN` for the governance and Local CI Gate workflow checks so the GitHub state lookup is available in CI.
 
 ## Check
 
