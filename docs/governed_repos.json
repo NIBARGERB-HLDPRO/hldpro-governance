@@ -199,11 +199,12 @@
       "governance_status": "governed",
       "classification": {
         "owner": "governance",
-        "rationale": "Active faith AI product repository with governance front-door docs, CODEOWNERS, dependency automation, governance workflow coverage, graph/wiki coverage, metrics, raw feed, Codex ingestion, compendium, and code governance. Memory integrity and required-check hardgate follow-up are tracked in seek-and-ponder#23.",
+        "rationale": "Active faith AI product repository with governance front-door docs, CODEOWNERS, dependency automation, governance workflow coverage, graph/wiki coverage, metrics, raw feed, Codex ingestion, compendium, code governance, required-check hardgate coverage, and memory integrity participation. Downstream issue seek-and-ponder#23 completed the memory bootstrap and required-check adoption; governance issue #331 enabled registry-driven memory integrity coverage.",
         "review_date": "2026-04-19",
         "issue_refs": [
           "#298",
           "#311",
+          "#331",
           "https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/issues/23"
         ]
       },
@@ -212,7 +213,7 @@
         "graphify": true,
         "sweep": true,
         "metrics": true,
-        "memory_integrity": false,
+        "memory_integrity": true,
         "codex_ingestion": true,
         "compendium": true,
         "raw_feed_sync": true,

@@ -1,6 +1,6 @@
 {
   "expected_execution_root": "{repo_root}",
-  "expected_branch": "docs/issue-331-seek-ponder-memory-registry",
+  "expected_branch": "docs/issue-331-seek-ponder-memory-registry-impl",
   "execution_mode": "implementation_ready",
   "allowed_write_paths": [
     "docs/governed_repos.json",
@@ -16,6 +16,10 @@
     "docs/PROGRESS.md",
     "wiki/index.md",
     "wiki/decisions/2026-04-19-seek-ponder-memory-registry.md",
+    "wiki/hldpro/Codex_fire_Failure.md",
+    "graphify-out/hldpro-governance/.graphify_ast.json",
+    "graphify-out/hldpro-governance/.graphify_detect.json",
+    "graphify-out/hldpro-governance/.graphify_summary.json",
     "graphify-out/hldpro-governance/GRAPH_REPORT.md",
     "graphify-out/hldpro-governance/graph.json"
   ],
