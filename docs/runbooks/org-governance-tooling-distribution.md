@@ -14,12 +14,30 @@ The initial package contract defines:
 
 - package owner: `NIBARGERB-HLDPRO/hldpro-governance`
 - initial package version: `0.1.0-contract`
+- initial release tag: `governance-tooling-v0.1.0`
 - required downstream pin: governance git SHA
-- optional future pin: semver tag plus git SHA
+- recommended readable coordinate: release tag plus git SHA
 - consumer record path: `.hldpro/governance-tooling.json`
 - final epic gate: downstream end-to-end pull, deploy, local enforcement, GitHub enforcement, and rollback or uninstall proof
 
-Downstream repos must record the governance SHA they consume. A semver tag can improve readability later, but it cannot replace the exact SHA in the consumer record.
+Downstream repos must record the governance SHA they consume. A release tag improves readability and rollback communication, but it cannot replace the exact SHA in the consumer record.
+
+## Release Tags
+
+The first package release coordinate is:
+
+```text
+governance-tooling-v0.1.0
+```
+
+Create release tags only after the release PR merges and GitHub Actions pass. The tag must point at the merged `main` commit that contains the package contract and closeout evidence for that release.
+
+Consumers should use both values:
+
+- release tag for human-readable intent, for example `governance-tooling-v0.1.0`
+- exact git SHA for immutable audit evidence in `.hldpro/governance-tooling.json`
+
+Do not deploy from tag name alone. Resolve the tag, record the exact SHA, and keep that SHA in the consumer record. A rollback should name both the previous release tag and the previous SHA when both are known.
 
 ## Surface Classes
 
