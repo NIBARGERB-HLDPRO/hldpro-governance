@@ -24,7 +24,9 @@
     "docs/plans/issue-189-structured-agent-cycle-plan.json",
     "raw/execution-scopes/2026-04-19-issue-189-launchd-issue-ref-implementation.json",
     "raw/validation/2026-04-19-issue-189-som-worker-launchd.md",
-    "raw/closeouts/2026-04-19-issue-189-som-worker-launchd.md"
+    "raw/closeouts/2026-04-19-issue-189-som-worker-launchd.md",
+    "graphify-out/hldpro-governance/.graphify_detect.json",
+    "graphify-out/hldpro-governance/GRAPH_REPORT.md"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
