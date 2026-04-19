@@ -81,6 +81,23 @@ class TestRuntimeInventory(unittest.TestCase):
         self.assertEqual(payload["routing_boundaries"]["patterns_missing_behavior"], "halt")
         self.assertEqual(payload["routing_boundaries"]["windows_role"], "lan_only_fallback_batch_health_unverified")
 
+    def test_qwen36_large_worker_is_mac_mlx_on_demand_only(self) -> None:
+        payload = runtime_inventory.memory_budget(48)
+        model = payload["on_demand"]["worker_lam_large"]
+        self.assertEqual(model["model"], "mlx-community/Qwen3.6-35B-A3B-4bit")
+        self.assertEqual(model["runtime"], "mlx")
+        self.assertEqual(model["resident"], False)
+        self.assertLessEqual(model["budget_gb"], 24)
+        self.assertIn("one large on-demand model at a time", payload["policy"])
+
+    def test_qwen36_config_and_inventory_budget_stay_aligned(self) -> None:
+        config = (runtime_inventory.REPO_ROOT / ".lam-config.yml").read_text(encoding="utf-8")
+        model = runtime_inventory.memory_budget(48)["on_demand"]["worker_lam_large"]
+        self.assertIn(f"model_id: {model['model']}", config)
+        self.assertIn(f"mem_estimate_gb: {model['budget_gb']}", config)
+        self.assertIn(f"runtime: {model['runtime']}", config)
+        self.assertIn("residency: on_demand", config)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -1,0 +1,115 @@
+{
+  "session_id": "session-20260419-issue-347-qwen36-mac-model-roster",
+  "issue_number": 347,
+  "objective": "Add Qwen3.6-35B-A3B to the local model roster in the Mac-appropriate MLX form while preserving existing local runtime, PII, and no-payload probe boundaries.",
+  "tier": 2,
+  "scope_boundary": [
+    "Add the Mac-equivalent Qwen3.6-35B-A3B model ID as an on-demand MLX candidate.",
+    "Update runtime inventory metadata and tests so the candidate is visible without downloading or loading the model.",
+    "Document memory placement on the Mac M5 Pro 48 GB local runtime lane.",
+    "Keep Guardrail-LAM and MCP intent residency unchanged.",
+    "Preserve PII routing boundaries and fail-closed guardrail behavior."
+  ],
+  "out_of_scope": [
+    "Downloading, installing, benchmarking, or serving Qwen3.6-35B-A3B.",
+    "Changing Society of Minds routing order or fallback authority.",
+    "Sending prompt payloads to local, Windows, or cloud model endpoints.",
+    "Changing Windows Ollama model placement or allowlists.",
+    "Changing STANDARDS.md."
+  ],
+  "research_summary": "The local runtime slice from issue #228 identifies this machine as a MacBook Pro Mac17,8 with Apple M5 Pro and 48 GB unified memory, with MLX available and no local Ollama CLI in this shell. The Mac-equivalent roster entry for Qwen/Qwen3.6-35B-A3B should therefore use an MLX quantized package. The selected candidate is mlx-community/Qwen3.6-35B-A3B-4bit, recorded as on-demand only with a conservative 24 GB budget. BF16 is too large for this lane and 8-bit is too tight once resident guardrail and intent models are considered.",
+  "research_artifacts": [
+    "Issue #347",
+    "Issue #224",
+    "Issue #228",
+    "docs/runbooks/local-model-runtime.md",
+    "scripts/lam/runtime_inventory.py",
+    ".lam-config.yml",
+    "Qwen/Qwen3.6-35B-A3B model card",
+    "mlx-community/Qwen3.6-35B-A3B-4bit model package"
+  ],
+  "sprints": [
+    {
+      "name": "Mac MLX Roster Entry",
+      "goal": "Record the Mac-equivalent Qwen3.6-35B-A3B candidate without changing runtime authority.",
+      "tasks": [
+        "Add mlx-community/Qwen3.6-35B-A3B-4bit to .lam-config.yml as an on-demand large Worker-LAM candidate.",
+        "Add worker_lam_large to runtime inventory memory budgets.",
+        "Document the memory placement and variant choice in the local model runtime runbook."
+      ],
+      "acceptance_criteria": [
+        "The roster uses an MLX model ID appropriate for this MacBook setup.",
+        "The entry is on-demand only and does not displace resident guardrail or warm MCP intent models.",
+        "Runtime inventory reports the new candidate with a conservative memory budget."
+      ],
+      "file_paths": [
+        ".lam-config.yml",
+        "scripts/lam/runtime_inventory.py",
+        "docs/runbooks/local-model-runtime.md"
+      ]
+    },
+    {
+      "name": "Validation and Evidence",
+      "goal": "Prove the metadata-only roster change preserves governance and PII boundaries.",
+      "tasks": [
+        "Add a focused runtime inventory test for the Qwen3.6 large worker candidate.",
+        "Record PDCA/R evidence.",
+        "Run runtime, compile, structured-plan, and focused governance docs validation."
+      ],
+      "acceptance_criteria": [
+        "PII boundaries remain unchanged.",
+        "PDCA/R artifact records Plan, Do, Check, Adjust, and Review.",
+        "End-to-end local validation passes."
+      ],
+      "file_paths": [
+        "scripts/lam/test_runtime_inventory.py",
+        "docs/plans/issue-347-qwen36-mac-model-roster-pdcar.md",
+        "docs/plans/issue-347-structured-agent-cycle-plan.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex implementation agent",
+      "role": "runtime roster implementer",
+      "focus": "Mac MLX model placement, no-payload inventory behavior, and unchanged PII boundaries.",
+      "status": "accepted",
+      "summary": "The change adds metadata and documentation only. It does not install, load, route to, or execute the new model.",
+      "evidence": [
+        ".lam-config.yml",
+        "scripts/lam/runtime_inventory.py",
+        "scripts/lam/test_runtime_inventory.py",
+        "docs/runbooks/local-model-runtime.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not required for metadata-only roster candidate",
+    "model_family": "none",
+    "status": "not_required",
+    "summary": "This issue does not modify STANDARDS.md, routing order, PII policy, or autonomous execution authority. A separate alternate-family cross-review is not required for this metadata-only roster candidate.",
+    "evidence": [
+      "docs/plans/issue-347-qwen36-mac-model-roster-pdcar.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Add Qwen3.6-35B-A3B as a Mac MLX on-demand model candidate and validate the metadata-only runtime inventory/docs change.",
+    "next_execution_step": "Run local validation and update issue #347 with AC results.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If validation requires downloading or loading the model, stop and create a separate benchmark/install issue.",
+    "If PII routing boundaries need changes, stop and route through a standards/cross-review slice.",
+    "If Windows/Ollama placement is requested, stop and create a separate Windows host model inventory issue.",
+    "If the 24 GB budget proves inaccurate in live benchmark evidence, update the issue with a follow-up rather than changing runtime authority in this slice."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: proceed, follow repo rules and loop through PDCA/R, GitHub epic, ACs, e2e testing as final AC",
+    "Codex implementation agent"
+  ],
+  "approved_at": "2026-04-19T00:00:00-05:00"
+}

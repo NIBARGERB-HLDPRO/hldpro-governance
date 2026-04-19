@@ -132,6 +132,13 @@ def memory_budget(total_memory_gb: int = 48) -> dict[str, Any]:
         },
         "on_demand": {
             "worker_lam": {"model": "mlx-community/Qwen3-14B-4bit", "budget_gb": 10, "resident": False},
+            "worker_lam_large": {
+                "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+                "budget_gb": 24,
+                "resident": False,
+                "runtime": "mlx",
+                "placement": "mac_m5_pro_48gb_on_demand_only",
+            },
             "critic_lam": {"model": "mlx-community/gemma-4-26b-a4b-4bit", "budget_gb": 18, "resident": False},
             "qwen_coder_fallback": {"model": "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit", "budget_gb": 6, "resident": False},
         },
