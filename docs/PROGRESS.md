@@ -53,6 +53,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Qwen3.6-35B-A3B Mac MLX model roster entry | #347 | 2026-04-19 | PR #349 added `mlx-community/Qwen3.6-35B-A3B-4bit` as an on-demand Mac Worker-LAM candidate, exposed it in runtime inventory with a conservative 24 GB budget, preserved PII/no-payload boundaries, and recorded PDCAR, execution-scope, validation, review, GitHub Actions, and Stage 6 closeout evidence. |
 | Root-level enforcement hooks | #186 | 2026-04-19 | Added tracked executable root hooks `hooks/governance-check.sh`, `hooks/backlog-check.sh`, and `hooks/check-errors.sh`; validation covers shell syntax, executable bits, root smoke, nested-directory smoke, governance-surface planning, execution scope, and Local CI Gate. |
 | Structured plan malformed JSON failure contract | #192 | 2026-04-19 | `validate_structured_agent_cycle_plan.py` now catches malformed plan JSON and file-read errors, emits structured `FAIL <path>: could not parse JSON: ...` output, exits 1 without a traceback, and has regression coverage for full-scan and governance-surface matching paths. |
 | Portable governance hook settings paths | #197 | 2026-04-19 | Replaced hardcoded `.claude/settings.json` hook commands with checkout-relative `git rev-parse --show-toplevel` wrappers for `pre-session-context.sh` and `code-write-gate.sh`; validation covers root and nested-directory hook execution. |
