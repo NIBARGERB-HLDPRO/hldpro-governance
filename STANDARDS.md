@@ -319,6 +319,23 @@ If the orchestrator begins a task in the table below: STOP, spawn the agent, wai
 | Repo health aggregation | hldpro-watcher / LAM equivalent | Sonnet |
 | Cross-repo health | overlord-sweep | Sonnet |
 
+### Delegation Gate Enforcement
+
+Delegation ownership may be mechanically enforced through a PreToolUse delegation gate.
+The gate inspects orchestrator task descriptions for Agent/Task, Bash, and
+implementation-scoped Explore attempts, maps them to registered Tier 2 owners,
+and blocks or warns when the orchestrator attempts owned work directly.
+
+Implementation rules:
+- Deterministic routing rules run first.
+- Optional classifier or MCP fallback may run only when deterministic rules are inconclusive.
+- High-confidence matches (`>= 0.90`) block for Agent/Task and Bash.
+- Medium-confidence matches (`0.70` to `0.89`) warn and log.
+- Explore remains warn-only so the orchestrator can still gather routing context.
+- Read is never gated.
+- Bypass requires an explicit operator-visible `--bypass-delegation-gate` first-token flag and a local governance log entry.
+- Unavailable MCP/classifier endpoints fail open to ALLOW and must not block local work.
+
 ### Scope Freeze Rule (all repos)
 
 When session has `.claude/current_plan.json` with `approved_scope_paths`:

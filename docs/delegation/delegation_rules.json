@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-04-19",
+  "policy": {
+    "block_threshold": 0.9,
+    "warn_threshold": 0.7,
+    "explore_mode": "warn_only",
+    "read_mode": "always_allow",
+    "bypass_flag": "--bypass-delegation-gate"
+  },
+  "owners": [
+    {
+      "task_type": "Migration validation",
+      "agent": "migration-validator",
+      "keywords": ["migration", "sql", "rls", "policy", "supabase migration", "schema migration"],
+      "implementation_verbs": ["audit", "validate", "review", "fix", "write", "implement", "check"]
+    },
+    {
+      "task_type": "Edge function review",
+      "agent": "edge-fn-reviewer",
+      "keywords": ["edge function", "supabase function", "cors", "secret", "auth", "deno function"],
+      "implementation_verbs": ["audit", "validate", "review", "fix", "write", "implement", "check"]
+    },
+    {
+      "task_type": "Schema consistency",
+      "agent": "schema-reviewer",
+      "keywords": ["schema", "schema drift", "crmconnector", "table design", "database schema"],
+      "implementation_verbs": ["audit", "validate", "review", "fix", "write", "implement", "check"]
+    },
+    {
+      "task_type": "Test writing",
+      "agent": "test-writer",
+      "keywords": ["test", "playwright", "vitest", "e2e", "unit test", "integration test"],
+      "implementation_verbs": ["add", "write", "implement", "fix", "create", "update"]
+    },
+    {
+      "task_type": "Diagram generation",
+      "agent": "diagram-writer",
+      "keywords": ["diagram", "mermaid", "flowchart", "architecture diagram", "sequence diagram"],
+      "implementation_verbs": ["add", "write", "implement", "create", "update", "draw"]
+    },
+    {
+      "task_type": "Documentation",
+      "agent": "docs-writer",
+      "keywords": ["docs", "documentation", "one-pager", "narrative", "writeup", "runbook"],
+      "implementation_verbs": ["add", "write", "implement", "create", "update", "draft"]
+    },
+    {
+      "task_type": "Repo health aggregation",
+      "agent": "hldpro-watcher",
+      "keywords": ["repo health", "health aggregation", "watcher", "repository status", "repo status"],
+      "implementation_verbs": ["audit", "validate", "review", "check", "summarize", "aggregate"]
+    },
+    {
+      "task_type": "Cross-repo health",
+      "agent": "overlord-sweep",
+      "keywords": ["cross-repo", "all repos", "weekly sweep", "overlord sweep", "standards sweep"],
+      "implementation_verbs": ["audit", "validate", "review", "check", "summarize", "aggregate"]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-212-da-hybrid-delegation-gate",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T01:10:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-212-structured-agent-cycle-plan.json",
+      "docs/plans/issue-212-da-hybrid-delegation-gate-pdcar.md",
+      "raw/exceptions/2026-04-19-issue-212-same-family-implementation.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-19-issue-212-same-family-implementation.md",
+    "active_exception_expires_at": "2026-04-20T01:10:00Z"
+  },
+  "allowed_write_paths": [
+    "docs/delegation/delegation_rules.json",
+    "docs/plans/issue-212-structured-agent-cycle-plan.json",
+    "docs/plans/issue-212-da-hybrid-delegation-gate-pdcar.md",
+    "hooks/code-write-gate.sh",
+    "scripts/orchestrator/delegation_gate.py",
+    "scripts/orchestrator/test_delegation_gate.py",
+    "scripts/orchestrator/test_delegation_hook.py",
+    "STANDARDS.md",
+    "OVERLORD_BACKLOG.md",
+    "raw/cross-review/2026-04-19-issue-212-da-hybrid-delegation-gate-review.md",
+    "raw/exceptions/2026-04-19-issue-212-same-family-implementation.md",
+    "raw/execution-scopes/2026-04-19-issue-212-da-hybrid-delegation-gate-implementation.json",
+    "raw/validation/2026-04-19-issue-212-da-hybrid-delegation-gate.md",
+    "raw/closeouts/2026-04-19-issue-212-da-hybrid-delegation-gate.md",
+    "graphify-out/hldpro-governance/",
+    "wiki/hldpro/",
+    "wiki/index.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout has unrelated local work and must not be edited by issue #212."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Downstream adoption is out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Live MCP classifier rollout is out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Downstream adoption is out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Downstream adoption is out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Downstream adoption is out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+      "reason": "Downstream adoption is out of scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Downstream adoption is out of scope."
+    }
+  ]
+}
