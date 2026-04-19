@@ -18,6 +18,7 @@ None.
 - `OVERLORD_BACKLOG.md`
 - `docs/PROGRESS.md`
 - `raw/closeouts/2026-04-19-issue-338-lam-governance-tooling-adoption.md`
+- `raw/execution-scopes/2026-04-19-issue-338-closeout-implementation.json`
 
 ## Issue Links
 - Governance epic: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/338
@@ -58,7 +59,7 @@ None.
 
 ## Execution Scope / Write Boundary
 - Governance planning scope: `raw/execution-scopes/2026-04-19-issue-338-lam-governance-tooling-adoption-planning.json`
-- Governance closeout scope: `raw/execution-scopes/2026-04-19-issue-338-closeout-implementation.json`
+- Governance closeout scope: `raw/execution-scopes/2026-04-19-issue-338-closeout-implementation.json` (status/closeout write only; no production implementation changed in this branch)
 - Governance planning assertion: `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-19-issue-338-lam-governance-tooling-adoption-planning.json --changed-files-file /tmp/issue-338-changed-files.txt`
 - LAM implementation scope was enforced by session lock on `riskfix/issue-475-lam-governance-tooling-adoption-20260419`, then reacquired with the required co-staged docs after GitHub governance-check exposed the missing `docs/FEATURE_REGISTRY.md` scope.
 
