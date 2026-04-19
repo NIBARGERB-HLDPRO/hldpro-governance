@@ -1,6 +1,15 @@
 worker:
   model_id: mlx-community/Qwen3-14B-4bit
   model_family: qwen
+  large_on_demand_candidates:
+    qwen3.6-35b-a3b-4bit:
+      model_id: mlx-community/Qwen3.6-35B-A3B-4bit
+      model_family: qwen
+      mem_estimate_gb: 24
+      runtime: mlx
+      residency: on_demand
+      role: worker-lam-large
+      placement_note: Mac M5 Pro 48 GB; load only when other large on-demand models are unloaded
 reviewer:
   model_id: mlx-community/gemma-4-26b-a4b-4bit
   model_family: gemma

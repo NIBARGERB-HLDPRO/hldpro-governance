@@ -1,0 +1,54 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-347-qwen36-mac-model-roster",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-directive",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T00:00:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/347",
+      "docs/plans/issue-347-structured-agent-cycle-plan.json",
+      "docs/plans/issue-347-qwen36-mac-model-roster-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  },
+  "allowed_write_paths": [
+    ".lam-config.yml",
+    "OVERLORD_BACKLOG.md",
+    "docs/plans/issue-347-qwen36-mac-model-roster-pdcar.md",
+    "docs/plans/issue-347-structured-agent-cycle-plan.json",
+    "docs/runbooks/local-model-runtime.md",
+    "raw/execution-scopes/2026-04-19-issue-347-qwen36-mac-model-roster-implementation.json",
+    "scripts/lam/runtime_inventory.py",
+    "scripts/lam/test_runtime_inventory.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout has unrelated local work and must not be edited by issue #347."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Sibling repo has unrelated local work and remains out of scope for issue #347."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Sibling repo has unrelated local work and remains out of scope for issue #347."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Sibling repo has unrelated local work and remains out of scope for issue #347."
+    }
+  ]
+}

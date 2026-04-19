@@ -25,10 +25,13 @@ The Mac is the primary local runtime for PII, guardrails, and offline/bulk work.
 | Guardrail-LAM | `mlx-community/Qwen3-8B-4bit` | always resident | 4.67 GB |
 | MCP intent | `mlx-community/Qwen3-1.7B-4bit` | warm, evictable | 1.5 GB |
 | Worker-LAM | `mlx-community/Qwen3-14B-4bit` | on demand | 10 GB |
+| Worker-LAM large | `mlx-community/Qwen3.6-35B-A3B-4bit` | on demand | 24 GB |
 | Critic-LAM | `mlx-community/gemma-4-26b-a4b-4bit` | on demand | 18 GB |
 | Qwen-Coder fallback | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` | on demand | 6 GB |
 
 Operating rule: keep guardrail resident, keep MCP intent warm when memory allows, and run only one large on-demand worker/critic model at a time. Unload on completion or memory pressure.
+
+`mlx-community/Qwen3.6-35B-A3B-4bit` is the Mac-equivalent local entry for `Qwen/Qwen3.6-35B-A3B`. The BF16 MLX package is too large for this 48 GB lane, and the 8-bit package is too tight once guardrail and intent residency are considered. This entry is not always-warm and does not change PII routing authority.
 
 ## Health Probe
 
