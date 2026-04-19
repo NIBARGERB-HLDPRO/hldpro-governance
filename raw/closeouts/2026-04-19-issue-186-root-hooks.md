@@ -36,11 +36,11 @@ Execution-scope artifact with `implementation_ready` handoff evidence.
 
 ## Model Identity
 - Planner/implementer: Codex, `gpt-5.4`, OpenAI, reasoning effort medium in this session.
-- Reviewer: read-only reviewer agent, model recorded in PR validation notes.
+- Reviewer: Aquinas, read-only Codex reviewer agent, `gpt-5.4-mini`, OpenAI, reasoning effort medium.
 - Gate: focused local validation plus GitHub required checks after PR.
 
 ## Review And Gate Identity
-Read-only implementation review is performed before PR closeout. Final verdict is recorded in `raw/validation/2026-04-19-issue-186-root-hooks.md` and the issue closeout comment.
+Read-only reviewer `Aquinas` found no issues. Residual risk: smoke coverage is recorded in validation artifacts rather than encoded as a repo test harness. That is acceptable for issue #186 because its AC requires executable hooks and basic smoke tests.
 
 ## Wired Checks Run
 - Shell syntax checks for all three new hooks.
@@ -81,7 +81,7 @@ Changed-file execution-scope assertion passed with only declared active parallel
 Same-family exception: `raw/exceptions/2026-04-19-issue-186-same-family-implementation.md`.
 
 ## Residual Risks / Follow-Up
-None expected. Broader downstream rollout of these hook names, if needed, should be issue-backed separately.
+The hook smoke checks are documented evidence, not an automated regression suite. Broader downstream rollout of these hook names, if needed, should be issue-backed separately.
 
 ## Wiki Pages Updated
 Stage 6 graph/wiki artifacts should refresh `wiki/hldpro/` through the closeout hook.

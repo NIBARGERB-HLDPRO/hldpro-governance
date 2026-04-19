@@ -33,4 +33,14 @@ PASS. The three missing root-level hook scripts exist under `hooks/`, are execut
 
 ## Reviewer Checkpoint
 
-Read-only reviewer result is recorded in the PR closeout notes.
+Read-only reviewer `Aquinas` found no issues. Reviewed surfaces:
+
+- `hooks/governance-check.sh`
+- `hooks/backlog-check.sh`
+- `hooks/check-errors.sh`
+- `docs/plans/issue-186-root-hooks-pdcar.md`
+- `docs/plans/issue-186-structured-agent-cycle-plan.json`
+- `raw/execution-scopes/2026-04-19-issue-186-root-hooks-implementation.json`
+- `raw/validation/2026-04-19-issue-186-root-hooks.md`
+
+Residual risk: the root/nested smoke coverage is recorded in validation artifacts rather than encoded as repo tests, so future hook edits could drift without an automated regression guard. That is acceptable for issue #186 because its AC requires basic smoke tests, not a new test harness.
