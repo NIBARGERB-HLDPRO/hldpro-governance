@@ -1,0 +1,109 @@
+{
+  "session_id": "session-20260419-issue-351-qwen36-benchmark",
+  "issue_number": 351,
+  "objective": "Download and benchmark the governed Mac MLX candidate mlx-community/Qwen3.6-35B-A3B-4bit without changing routing authority or PII policy.",
+  "tier": 2,
+  "scope_boundary": [
+    "Download only mlx-community/Qwen3.6-35B-A3B-4bit.",
+    "Use no-PII synthetic prompts and built-in MLX synthetic benchmark inputs.",
+    "Record runtime blocker and successful benchmark evidence.",
+    "Keep the model as a candidate only and avoid routing promotion.",
+    "Record validation, PDCA/R, execution scope, closeout, and roadmap mirrors."
+  ],
+  "out_of_scope": [
+    "Active routing promotion.",
+    "Windows/Ollama placement.",
+    "PII prompts or cloud fallback for PII.",
+    "Fine-tuning.",
+    "Changing STANDARDS.md."
+  ],
+  "research_summary": "Issue #347 added mlx-community/Qwen3.6-35B-A3B-4bit as a Mac MLX on-demand candidate with a 24 GB budget. Issue #351 validates the runtime claim by downloading the model and benchmarking it on this Mac17,8 Apple M5 Pro with 48 GB unified memory. System Python 3.9 with mlx-lm 0.29.1 cannot load the model because qwen3_5_moe is unsupported; Python 3.11 with mlx-lm 0.31.2 and mlx 0.31.1 loads and benchmarks the model successfully.",
+  "research_artifacts": [
+    "Issue #351",
+    "Issue #347",
+    "https://huggingface.co/mlx-community/Qwen3.6-35B-A3B-4bit",
+    "metrics/runtime-benchmarks/2026-04-19-qwen36-35b-a3b-mlx.json",
+    "raw/validation/2026-04-19-issue-351-qwen36-benchmark.md"
+  ],
+  "sprints": [
+    {
+      "name": "Download and Runtime Probe",
+      "goal": "Download the model and determine the working local MLX runtime.",
+      "tasks": [
+        "Verify disk headroom and local runtime prerequisites.",
+        "Download the Hugging Face snapshot.",
+        "Run a tiny smoke generation and capture failures."
+      ],
+      "acceptance_criteria": [
+        "Download completes or exact blocker is captured.",
+        "No-PII smoke generation either succeeds or records a precise runtime blocker."
+      ],
+      "file_paths": [
+        "metrics/runtime-benchmarks/2026-04-19-qwen36-35b-a3b-mlx.json",
+        "raw/validation/2026-04-19-issue-351-qwen36-benchmark.md"
+      ]
+    },
+    {
+      "name": "Benchmark and Closeout",
+      "goal": "Record benchmark performance, memory evidence, and closeout artifacts.",
+      "tasks": [
+        "Run no-PII generation benchmark.",
+        "Run built-in MLX synthetic benchmark.",
+        "Record PDCA/R, closeout, and roadmap mirrors."
+      ],
+      "acceptance_criteria": [
+        "Benchmark evidence includes model ID, command, timing, token count or estimate, and memory observations.",
+        "No routing order, PII policy, or active model promotion is changed.",
+        "E2E local validation passes after artifacts are written."
+      ],
+      "file_paths": [
+        "docs/plans/issue-351-qwen36-benchmark-pdcar.md",
+        "docs/plans/issue-351-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-19-issue-351-qwen36-benchmark-implementation.json",
+        "raw/closeouts/2026-04-19-issue-351-qwen36-benchmark.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex benchmark implementer",
+      "role": "runtime benchmark executor",
+      "focus": "Download completion, no-PII prompts, MLX runtime compatibility, memory/tokens-per-second evidence, and no routing promotion.",
+      "status": "accepted",
+      "summary": "The model downloaded and benchmarks successfully on Python 3.11 with mlx-lm 0.31.2. System Python 3.9 runtime blocker is recorded.",
+      "evidence": [
+        "metrics/runtime-benchmarks/2026-04-19-qwen36-35b-a3b-mlx.json",
+        "raw/validation/2026-04-19-issue-351-qwen36-benchmark.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not required for benchmark-only evidence",
+    "model_family": "none",
+    "status": "not_required",
+    "summary": "This benchmark-only slice does not modify STANDARDS.md, routing order, PII policy, or active model authority.",
+    "evidence": [
+      "docs/plans/issue-351-qwen36-benchmark-pdcar.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Download and benchmark Qwen3.6 MLX candidate, then record evidence and closeout only.",
+    "next_execution_step": "Run local gates, Stage 6 closeout, open PR, and merge after CI passes.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If model loading requires routing-policy changes, stop and open a separate standards issue.",
+    "If benchmark prompts require real user data, stop and use synthetic prompts only.",
+    "If memory pressure is unsafe, stop and record the blocker instead of forcing a run.",
+    "If promotion into active routing is desired, open a separate promotion issue after benchmark closeout."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: download and benchmark",
+    "Codex implementation agent"
+  ],
+  "approved_at": "2026-04-19T00:00:00-05:00"
+}

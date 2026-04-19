@@ -1,8 +1,8 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-352-backlog-closed-drift/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-352-backlog-closed-drift/wiki/hldpro",
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-351-qwen36-benchmark/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-351-qwen36-benchmark/wiki/hldpro",
   "nodes": 1105,
   "edges": 2132,
   "communities": 60,
