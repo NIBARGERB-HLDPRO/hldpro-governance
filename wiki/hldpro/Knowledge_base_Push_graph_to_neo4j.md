@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **push_graph_to_neo4j.py** (2 connections) — `scripts/knowledge_base/push_graph_to_neo4j.py`
-- **build_scoped_graph()** (2 connections) — `scripts/knowledge_base/push_graph_to_neo4j.py`
-- **main()** (2 connections) — `scripts/knowledge_base/push_graph_to_neo4j.py`
+- **push_graph_to_neo4j.py** (2 connections) — `hldpro-governance/scripts/knowledge_base/push_graph_to_neo4j.py`
+- **build_scoped_graph()** (2 connections) — `hldpro-governance/scripts/knowledge_base/push_graph_to_neo4j.py`
+- **main()** (2 connections) — `hldpro-governance/scripts/knowledge_base/push_graph_to_neo4j.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `scripts/knowledge_base/push_graph_to_neo4j.py`
+- `hldpro-governance/scripts/knowledge_base/push_graph_to_neo4j.py`
 
 ## Audit Trail
 

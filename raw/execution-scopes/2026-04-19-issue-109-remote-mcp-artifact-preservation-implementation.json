@@ -1,0 +1,91 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-109-preserve-remote-mcp-plan-20260419",
+  "execution_mode": "implementation_ready",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-directive",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T00:00:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109",
+      "docs/plans/issue-109-structured-agent-cycle-plan.json",
+      "docs/plans/issue-109-remote-mcp-artifact-preservation-pdcar.md",
+      "raw/cross-review/2026-04-14-remote-mcp-bridge.md"
+    ],
+    "active_exception_ref": "docs/exception-register.md#som-rmb-round2-waived-001--tier-1-round-2-re-signature-waived-for-remote-mcp-bridge-epic",
+    "active_exception_expires_at": "2026-05-14T00:00:00Z"
+  },
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/exception-register.md",
+    "docs/plans/issue-109-remote-mcp-artifact-preservation-pdcar.md",
+    "docs/plans/issue-109-structured-agent-cycle-plan.json",
+    "raw/closeouts/2026-04-15-windows-ollama-sprint3.md",
+    "raw/closeouts/2026-04-19-issue-109-remote-mcp-artifact-preservation.md",
+    "raw/cross-review/2026-04-14-remote-mcp-bridge.md",
+    "raw/cross-review/2026-04-15-windows-ollama-tier2-round2.md",
+    "raw/execution-scopes/2026-04-19-issue-109-remote-mcp-artifact-preservation-implementation.json",
+    "raw/handoff/2026-04-14-session-end.md",
+    "raw/inbox/2026-04-14-remote-mcp-bridge-plan.md",
+    "raw/inbox/2026-04-15-windows-ollama-epic-plan.md",
+    "raw/validation/2026-04-19-issue-109-remote-mcp-artifact-preservation.md",
+    "wiki/decisions/2026-04-15-windows-ollama-sprint3.md",
+    "graphify-out/",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-fix-launchd-issue-ref-20260419",
+    "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-remote-mcp-bridge",
+    "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-windows-ollama-sprint3-closeout"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 artifact preservation."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 artifact preservation."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 artifact preservation."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 artifact preservation."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 artifact preservation."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 artifact preservation."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #109 artifact preservation."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-fix-launchd-issue-ref-20260419",
+      "reason": "Existing sibling governance worktree is unrelated to issue #109 artifact preservation."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-remote-mcp-bridge",
+      "reason": "Detached inspection worktree for the stale Remote MCP branch; read-only source only."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-windows-ollama-sprint3-closeout",
+      "reason": "Detached inspection worktree for the stale Windows-Ollama branch; read-only source only."
+    }
+  ]
+}

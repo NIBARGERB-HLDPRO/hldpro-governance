@@ -113,7 +113,7 @@ json.dumps(obj, sort_keys=True, separators=(',',':'), ensure_ascii=False).encode
 
 ## References
 
-- Remote MCP Bridge audit spec: `_worktrees/gov-remote-mcp/raw/inbox/2026-04-14-remote-mcp-bridge-plan.md` (§107-132)
+- Remote MCP Bridge audit spec: `raw/inbox/2026-04-14-remote-mcp-bridge-plan.md` (§107-132)
 - SoM hard-rule invariants: STANDARDS.md § Society of Minds (invariant #5)
 - Sprint 3 PR: [#118](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/118)
 - Closeout: `raw/closeouts/2026-04-15-windows-ollama-sprint3.md`

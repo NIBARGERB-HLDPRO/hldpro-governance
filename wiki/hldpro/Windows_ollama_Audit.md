@@ -1,33 +1,35 @@
 # Windows ollama Audit
 
-> 24 nodes · cohesion 0.14
+> 33 nodes · cohesion 0.07
 
 ## Key Concepts
 
-- **AuditWriter** (10 connections) — `scripts/windows-ollama/audit.py`
-- **audit.py** (7 connections) — `scripts/windows-ollama/audit.py`
-- **.write_entry()** (7 connections) — `scripts/windows-ollama/audit.py`
-- **._write_manifest()** (7 connections) — `scripts/windows-ollama/audit.py`
-- **._get_prev_hash()** (6 connections) — `scripts/windows-ollama/audit.py`
-- **._get_today_path()** (5 connections) — `scripts/windows-ollama/audit.py`
-- **._read_last_entry()** (5 connections) — `scripts/windows-ollama/audit.py`
-- **canonical_json()** (5 connections) — `scripts/windows-ollama/audit.py`
-- **._get_next_seq()** (4 connections) — `scripts/windows-ollama/audit.py`
-- **compute_entry_hmac()** (4 connections) — `scripts/windows-ollama/audit.py`
-- **compute_sha256()** (4 connections) — `scripts/windows-ollama/audit.py`
-- **._get_today_manifest_path()** (3 connections) — `scripts/windows-ollama/audit.py`
-- **.__init__()** (1 connections) — `scripts/windows-ollama/audit.py`
-- **Write an audit entry. Returns True if successful, False otherwise.          Args** (1 connections) — `scripts/windows-ollama/audit.py`
-- **Return canonical JSON for HMAC computation.** (1 connections) — `scripts/windows-ollama/audit.py`
-- **Write or update today's manifest.** (1 connections) — `scripts/windows-ollama/audit.py`
-- **Compute SHA256 hash of bytes.** (1 connections) — `scripts/windows-ollama/audit.py`
-- **Compute HMAC-SHA256 over canonical JSON of entry (without entry_hmac field).** (1 connections) — `scripts/windows-ollama/audit.py`
-- **Append-only audit log writer with hash-chain and daily manifest.** (1 connections) — `scripts/windows-ollama/audit.py`
-- **Return path to today's audit log.** (1 connections) — `scripts/windows-ollama/audit.py`
-- **Return path to today's manifest.** (1 connections) — `scripts/windows-ollama/audit.py`
-- **Read the last entry from today's log, or None if file doesn't exist.** (1 connections) — `scripts/windows-ollama/audit.py`
-- **Get next sequence number for today.** (1 connections) — `scripts/windows-ollama/audit.py`
-- **Get previous entry's hash (or zero for seq=0).** (1 connections) — `scripts/windows-ollama/audit.py`
+- **test_audit.py** (7 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **verify_audit.py** (7 connections) — `hldpro-governance/scripts/windows-ollama/verify_audit.py`
+- **verify_audit_dir()** (7 connections) — `hldpro-governance/scripts/windows-ollama/verify_audit.py`
+- **canonical_json()** (4 connections) — `hldpro-governance/scripts/windows-ollama/verify_audit.py`
+- **compute_entry_hmac()** (4 connections) — `hldpro-governance/scripts/windows-ollama/verify_audit.py`
+- **TestAuditChainIntegrity** (3 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **TestFileTruncation** (3 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **TestHmacForgery** (3 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **TestManifestMismatch** (3 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **TestReplay** (3 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **compute_sha256()** (3 connections) — `hldpro-governance/scripts/windows-ollama/verify_audit.py`
+- **verify_hmac()** (3 connections) — `hldpro-governance/scripts/windows-ollama/verify_audit.py`
+- **.test_tamper_line_breaks_chain()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **.test_file_truncation_detected()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **.test_hmac_forgery_detected()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **.test_manifest_first_hash_mismatch()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **.test_duplicate_line_detected()** (2 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **main()** (2 connections) — `hldpro-governance/scripts/windows-ollama/verify_audit.py`
+- **Modify first_hash in manifest and verify fails.** (1 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **Test that truncated file (missing last line) breaks manifest.** (1 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **Delete last line and verify detects entry_count mismatch.** (1 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **Test that duplicate line (replay) breaks seq monotonicity.** (1 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **Duplicate a line and verify detects non-monotonic seq.** (1 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **Test that tampering with a line breaks the chain.** (1 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- **Tamper with line N and verify fails at line N+1.** (1 connections) — `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- *... and 8 more nodes in this community*
 
 ## Relationships
 
@@ -35,12 +37,13 @@
 
 ## Source Files
 
-- `scripts/windows-ollama/audit.py`
+- `hldpro-governance/scripts/windows-ollama/tests/test_audit.py`
+- `hldpro-governance/scripts/windows-ollama/verify_audit.py`
 
 ## Audit Trail
 
-- EXTRACTED: 49 (62%)
-- INFERRED: 30 (38%)
+- EXTRACTED: 65 (84%)
+- INFERRED: 12 (16%)
 - AMBIGUOUS: 0 (0%)
 
 ---

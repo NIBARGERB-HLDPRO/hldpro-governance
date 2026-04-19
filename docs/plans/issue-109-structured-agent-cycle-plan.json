@@ -1,0 +1,108 @@
+{
+  "session_id": "session-20260419-issue-109-remote-mcp-artifact-preservation",
+  "issue_number": 109,
+  "objective": "Preserve the Remote MCP Bridge planning, cross-review, waiver, and session handoff artifacts on main before deleting stale remote branches.",
+  "tier": 2,
+  "scope_boundary": [
+    "Restore issue #109 planning artifacts from origin/feat/remote-mcp-bridge into canonical raw artifact paths.",
+    "Restore the active SOM-RMB-ROUND2-WAIVED-001 exception register entry.",
+    "Update stale local worktree references to repo-local raw artifact paths.",
+    "Record PDCAR, execution scope, validation, and Stage 6 closeout evidence for the preservation slice.",
+    "Delete stale remote branches only after preservation has merged and validation has passed."
+  ],
+  "out_of_scope": [
+    "Implementing Cloud -> Local MCP Bridge stages A-D.",
+    "Changing Remote MCP Bridge architecture semantics.",
+    "Closing issue #109.",
+    "Editing downstream repositories.",
+    "Changing Society of Minds hard-rule invariants."
+  ],
+  "research_summary": "Remote branch audit found two remaining branches. docs/windows-ollama-sprint3-closeout is redundant because its substantive closeout and decision artifacts already match main. feat/remote-mcp-bridge contains the issue #109 plan, rejected cross-review/resolution artifact, handoff, and active round-2 waiver missing from main. Main already references the plan path from Windows-Ollama artifacts, so preserving the plan before remote branch cleanup avoids losing governance history.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109",
+    "origin/feat/remote-mcp-bridge",
+    "origin/docs/windows-ollama-sprint3-closeout",
+    "raw/inbox/2026-04-14-remote-mcp-bridge-plan.md",
+    "raw/cross-review/2026-04-14-remote-mcp-bridge.md",
+    "raw/handoff/2026-04-14-session-end.md",
+    "docs/exception-register.md"
+  ],
+  "sprints": [
+    {
+      "name": "Artifact preservation and branch cleanup",
+      "goal": "Move useful governance history from stale remote branches onto main, prove it locally, and then remove stale remote branches.",
+      "tasks": [
+        "Restore the Remote MCP Bridge plan, cross-review/resolution, and handoff artifacts.",
+        "Restore SOM-RMB-ROUND2-WAIVED-001 in the exception register.",
+        "Replace stale private worktree references with canonical repo-local artifact references.",
+        "Record issue #109 PDCAR, structured plan, execution scope, validation, and closeout evidence.",
+        "Run local validation and Local CI Gate.",
+        "Open and merge the preservation PR, then delete stale remote branches."
+      ],
+      "acceptance_criteria": [
+        "Issue #109 referenced artifacts exist on main after merge.",
+        "Current parser gates can parse the historical cross-review artifact.",
+        "No stale _worktrees/gov-remote-mcp plan references remain in tracked docs.",
+        "docs/windows-ollama-sprint3-closeout has no unique substantive artifact not already on main.",
+        "Local CI Gate and GitHub PR checks pass before remote branch deletion."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/exception-register.md",
+        "docs/plans/issue-109-remote-mcp-artifact-preservation-pdcar.md",
+        "docs/plans/issue-109-structured-agent-cycle-plan.json",
+        "raw/closeouts/2026-04-15-windows-ollama-sprint3.md",
+        "raw/closeouts/2026-04-19-issue-109-remote-mcp-artifact-preservation.md",
+        "raw/cross-review/2026-04-14-remote-mcp-bridge.md",
+        "raw/cross-review/2026-04-15-windows-ollama-tier2-round2.md",
+        "raw/execution-scopes/2026-04-19-issue-109-remote-mcp-artifact-preservation-implementation.json",
+        "raw/handoff/2026-04-14-session-end.md",
+        "raw/inbox/2026-04-14-remote-mcp-bridge-plan.md",
+        "raw/inbox/2026-04-15-windows-ollama-epic-plan.md",
+        "raw/validation/2026-04-19-issue-109-remote-mcp-artifact-preservation.md",
+        "wiki/decisions/2026-04-15-windows-ollama-sprint3.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "not delegated",
+      "role": "n/a",
+      "focus": "n/a",
+      "status": "not_required",
+      "summary": "The change preserves historical documentation and does not alter architecture or implementation behavior.",
+      "evidence": [
+        "docs/plans/issue-109-remote-mcp-artifact-preservation-pdcar.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not requested",
+    "model_family": "n/a",
+    "status": "not_required",
+    "summary": "This slice preserves existing issue #109 artifacts. The historical architecture artifact already records the original cross-family review and operator waiver.",
+    "evidence": [
+      "raw/cross-review/2026-04-14-remote-mcp-bridge.md",
+      "docs/exception-register.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex gpt-5.4",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #109 may restore its missing raw planning artifacts, exception register waiver, stale reference cleanup, and slice evidence artifacts before stale remote branch cleanup.",
+    "next_execution_step": "Run local validation, PR checks, merge, delete stale remote branches, and update issue #109 with canonical main links.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If Local CI treats the historical rejected cross-review as a current approval artifact, stop and move it to a non-enforced historical path in a separate issue-backed patch.",
+    "If Remote MCP implementation changes are needed, keep them out of this slice and track them under #109 follow-up stages.",
+    "If either stale branch has unique implementation code, do not delete it until that code is separately preserved or explicitly abandoned."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #109 governing epic"
+  ],
+  "approved_at": "2026-04-19T00:00:00Z"
+}

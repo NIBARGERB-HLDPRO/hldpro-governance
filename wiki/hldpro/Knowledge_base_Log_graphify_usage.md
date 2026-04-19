@@ -4,11 +4,11 @@
 
 ## Key Concepts
 
-- **log_graphify_usage.py** (4 connections) — `scripts/knowledge_base/log_graphify_usage.py`
-- **main()** (4 connections) — `scripts/knowledge_base/log_graphify_usage.py`
-- **append_event()** (2 connections) — `scripts/knowledge_base/log_graphify_usage.py`
-- **build_event()** (2 connections) — `scripts/knowledge_base/log_graphify_usage.py`
-- **parse_args()** (2 connections) — `scripts/knowledge_base/log_graphify_usage.py`
+- **log_graphify_usage.py** (4 connections) — `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
+- **main()** (4 connections) — `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
+- **append_event()** (2 connections) — `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
+- **build_event()** (2 connections) — `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
+- **parse_args()** (2 connections) — `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
 
 ## Relationships
 
@@ -16,7 +16,7 @@
 
 ## Source Files
 
-- `scripts/knowledge_base/log_graphify_usage.py`
+- `hldpro-governance/scripts/knowledge_base/log_graphify_usage.py`
 
 ## Audit Trail
 
