@@ -1,0 +1,66 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "docs/issue-331-seek-ponder-memory-registry",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/governed_repos.json",
+    "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+    "docs/plans/issue-331-seek-ponder-memory-registry-pdcar.md",
+    "docs/plans/issue-331-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-19-issue-331-seek-ponder-memory-registry-planning.json",
+    "raw/execution-scopes/2026-04-19-issue-331-seek-ponder-memory-registry-implementation.json",
+    "raw/exceptions/2026-04-19-issue-331-same-family-implementation.md",
+    "raw/validation/2026-04-19-issue-331-seek-ponder-memory-registry.md",
+    "raw/closeouts/2026-04-19-issue-331-seek-ponder-memory-registry.md",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "wiki/index.md",
+    "wiki/decisions/2026-04-19-seek-ponder-memory-registry.md",
+    "graphify-out/hldpro-governance/GRAPH_REPORT.md",
+    "graphify-out/hldpro-governance/graph.json"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Shared main checkout is dirty from pre-existing operator files; this issue works only in the isolated worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Shared seek-and-ponder checkout has a pre-existing local FAIL_FAST_LOG edit; this governance issue does not modify it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Sibling repo has active unrelated worktree/doc changes; issue #331 does not modify it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Sibling repo has active unrelated SoM/runtime changes; issue #331 does not modify it."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Sibling repo has active unrelated graph/compendium/cache changes; issue #331 does not modify it."
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-19T02:35:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-331-structured-agent-cycle-plan.json",
+      "docs/plans/issue-331-seek-ponder-memory-registry-pdcar.md",
+      "raw/exceptions/2026-04-19-issue-331-same-family-implementation.md"
+    ],
+    "active_exception_ref": "raw/exceptions/2026-04-19-issue-331-same-family-implementation.md",
+    "active_exception_expires_at": "2026-04-26T00:00:00Z"
+  }
+}

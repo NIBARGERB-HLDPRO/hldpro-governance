@@ -1,0 +1,127 @@
+{
+  "session_id": "session-20260419-issue-331-seek-ponder-memory-registry",
+  "issue_number": 331,
+  "objective": "Enable or explicitly disposition seek-and-ponder memory-integrity participation in the hldpro-governance registry after downstream seek-and-ponder#23 completed required-check and memory bootstrap adoption.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repo only.",
+    "Update planning, execution-scope, registry, validation, closeout, and generated governance evidence surfaces for issue #331.",
+    "Do not edit downstream product repositories.",
+    "Use the existing external Claude memory bootstrap as validation input."
+  ],
+  "out_of_scope": [
+    "Product behavior changes in seek-and-ponder.",
+    "New required-check or ruleset work in downstream repos.",
+    "Changing memory_integrity.py semantics unless validation exposes a blocker.",
+    "Cleaning unrelated dirty files in the shared hldpro-governance checkout."
+  ],
+  "research_summary": "The current registry already contains seek-and-ponder with graphify, sweep, metrics, raw feed, Codex ingestion, compendium, and code governance enabled, but memory_integrity remains false with rationale pointing to seek-and-ponder#23. Downstream issue #23 is now closed, with a local external memory bootstrap verified at ~/.claude/projects/-Users-bennibarger-Developer-HLDPRO-seek-and-ponder/memory/. scripts/overlord/memory_integrity.py already derives its repo list from the registry flag, so implementation should be a registry disposition plus validation and closeout evidence.",
+  "research_artifacts": [
+    "NIBARGERB-HLDPRO/hldpro-governance#331",
+    "NIBARGERB-HLDPRO/hldpro-governance#298",
+    "NIBARGERB-HLDPRO/hldpro-governance#311",
+    "NIBARGERB-HLDPRO/seek-and-ponder#23",
+    "docs/governed_repos.json",
+    "scripts/overlord/memory_integrity.py",
+    "scripts/overlord/validate_governed_repos.py",
+    "Subagent Hubble registry review"
+  ],
+  "sprints": [
+    {
+      "name": "Planning And Scope",
+      "goal": "Commit the issue-backed planning bundle before implementation edits.",
+      "tasks": [
+        "Create PDCAR and structured plan artifacts.",
+        "Create planning and implementation execution scopes.",
+        "Create same-family exception for no-HITL implementation by Codex.",
+        "Add #331 to governance progress and backlog mirrors."
+      ],
+      "acceptance_criteria": [
+        "Planning artifacts validate as JSON where applicable.",
+        "Planning execution scope passes against the planning diff.",
+        "#331 appears in active governance mirrors before implementation begins."
+      ],
+      "file_paths": [
+        "docs/plans/issue-331-seek-ponder-memory-registry-pdcar.md",
+        "docs/plans/issue-331-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-19-issue-331-seek-ponder-memory-registry-planning.json",
+        "raw/execution-scopes/2026-04-19-issue-331-seek-ponder-memory-registry-implementation.json",
+        "raw/exceptions/2026-04-19-issue-331-same-family-implementation.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Registry Enablement",
+      "goal": "Make seek-and-ponder memory-integrity participation explicit and validator-backed.",
+      "tasks": [
+        "Update seek-and-ponder registry rationale and issue refs.",
+        "Enable memory_integrity if validation of the external memory bootstrap passes.",
+        "Run registry, memory, graphify, compendium, progress, backlog, and closeout validations.",
+        "Record final validation and closeout evidence."
+      ],
+      "acceptance_criteria": [
+        "seek-and-ponder memory_integrity disposition is explicit in docs/governed_repos.json.",
+        "memory_integrity.py validates seek-and-ponder successfully or documents an issue-backed deferral.",
+        "Final e2e gate passes before #331 is closed."
+      ],
+      "file_paths": [
+        "docs/governed_repos.json",
+        "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+        "raw/validation/2026-04-19-issue-331-seek-ponder-memory-registry.md",
+        "raw/closeouts/2026-04-19-issue-331-seek-ponder-memory-registry.md",
+        "wiki/index.md",
+        "graphify-out/hldpro-governance/GRAPH_REPORT.md",
+        "graphify-out/hldpro-governance/graph.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Hubble",
+      "role": "registry and memory-integrity explorer",
+      "focus": "Identify exact files, validators, and derived surfaces for seek-and-ponder memory-integrity enablement.",
+      "status": "accepted_with_followup",
+      "summary": "Hubble confirmed the implementation should primarily edit docs/governed_repos.json because memory_integrity.py already honors the registry flag. It also identified validation commands and secondary generated surfaces to watch.",
+      "evidence": [
+        "Subagent Hubble notification",
+        "docs/governed_repos.json",
+        "scripts/overlord/memory_integrity.py",
+        "scripts/overlord/validate_registry_surfaces.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude CLI or same-family fallback",
+    "model_family": "anthropic-or-openai-fallback",
+    "status": "accepted_with_followup",
+    "summary": "Alternate-family review should be attempted for the implementation PR if Claude CLI is available. If unavailable, deterministic validators plus the same-family exception govern this small registry-only slice.",
+    "evidence": [
+      "raw/exceptions/2026-04-19-issue-331-same-family-implementation.md",
+      "Final validation artifact for issue #331"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "After the planning PR lands, Codex may update the seek-and-ponder registry disposition, generated compendium/graph/wiki evidence if validators require it, validation artifacts, closeout, and progress/backlog mirrors for #331 only.",
+    "next_execution_step": "Open and merge planning PR, then perform the scoped registry implementation and run the final e2e gate.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If memory bootstrap validation fails, repair or create a downstream issue before closing #331.",
+    "If implementation requires script or workflow changes, create a new issue or scope expansion before editing those files.",
+    "If graphify or compendium generation changes broad unrelated surfaces, inspect and include only generated outputs tied to the registry flip.",
+    "If live GitHub inventory disagrees with the registry, stop and route through the org inventory drift issue path."
+  ],
+  "approved": true,
+  "approved_by": [
+    "GitHub issue #331",
+    "operator instruction: follow repo rules and loop through PDCAR, GH epic, ACs, e2e testing as final AC, no HITL",
+    "Subagent Hubble notification"
+  ],
+  "approved_at": "2026-04-19T02:35:00Z"
+}

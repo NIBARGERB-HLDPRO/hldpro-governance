@@ -20,6 +20,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| seek-and-ponder registry memory-integrity follow-up | [#331](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/331) | HIGH | 1-2 | Governance-side follow-up from seek-and-ponder#23; enable or explicitly disposition memory_integrity in the canonical registry and run final e2e validation. |
 | Codex dispatch fail-fast wrapper | [#200](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/200) | HIGH | 1-2 | Implementation in progress on `issue-200-codex-fire-failfast`; final AC is an e2e fake-Codex proof that unavailable models fail within the bounded preflight window, write `raw/fail-fast-log.md`, and emit the dispatcher-visible `CODEX_FAIL` signal. |
 | PentAGI sweep trigger/source alignment | [#213](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/213) | HIGH | 2-3 | Implementation in progress on `issue-213-pentagi-sweep-source`; final AC is an e2e local/CI proof that missing/stale PentAGI reports produce explicit trigger/skip status and report/dashboard paths share audited-root evidence. |
 | §DA Phase 2 hybrid delegation gate | [#212](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/212) | HIGH | 2-3 | Implementation in progress on `issue-212-da-hybrid-delegation-gate`; final AC is hook-level proof that owned Agent/Bash work blocks, Explore warns, Read allows, bypass logs, and MCP endpoint failure opens safely. |
