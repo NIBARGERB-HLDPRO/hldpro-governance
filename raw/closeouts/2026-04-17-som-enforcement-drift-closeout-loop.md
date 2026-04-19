@@ -106,7 +106,7 @@ Commands run for this closeout:
 ## Residual Risks / Follow-Up
 
 - #214 remains open until all child slices #215-#220 are reviewed and merged.
-- #104 remains the issue-backed Stage 5+ launchd boot-start follow-up for the SoM worker.
+- #189 remains the issue-backed Stage 5+ launchd boot-start follow-up for the SoM worker.
 - #105 remains the issue-backed Qwen-Coder MLX stub-emission follow-up.
 - #139 and #140 remain issue-backed cross-repo model-pin and agent-file migration follow-ups.
 - #178 remains the issue-backed SoM Stage 5 worker daemon follow-up.

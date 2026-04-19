@@ -96,7 +96,7 @@ All fallback reasons logged; no hard failures.
 
 | Item | Priority | Est. Hours | Notes |
 |------|----------|-----------|-------|
-| Stage 5+ som-worker launchd boot-start integration | MEDIUM | 2–3 | MCP daemon live as manual service; convert to `launchd` agent for system boot. Gate: local-ai-machine #431, #432 adopt. Tracking issue: [#104](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/104) (auto-closed by #100 merge). |
+| Stage 5+ som-worker launchd boot-start integration | MEDIUM | 2–3 | MCP daemon live as manual service; convert to `launchd` agent for system boot. Gate: local-ai-machine #431, #432 adopt. Tracking issue: [#189](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/189). |
 | Qwen-Coder MLX driver stub-emission bug fix (#105) | LOW | 1–2 | Qwen2.5-Coder-7B fallback worker throws truncated output on edge cases. Requires MLX driver patch or workaround. Tracking issue: [#105](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/105) (open, independent). |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | LOW-MEDIUM | 2–3 | Post-outage code review; codex-spark authorship of 6 MCP tools + packet validator. Gate: live-fallback rate < 2% for 2 weeks post-merge. |
 | Reconcile SoM branch naming vs local-ai-machine riskfix/* convention | MEDIUM | 1–2 | Exception SOM-LAM-BRANCH-001 defers enforcement. Both naming schemes must co-exist cleanly or unified. Tracking issue: (new, tracked in OVERLORD_BACKLOG). |
