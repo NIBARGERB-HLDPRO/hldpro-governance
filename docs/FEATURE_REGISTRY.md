@@ -51,6 +51,7 @@
 | GOV-024 | E2E_AUTONOMOUS_DELIVERY_PILOT | Low-risk governance pilot from issue-backed plan through packet, review, gate, closeout, PR checks, and readiness conclusion | COMPLETE | REQUIRED |
 | GOV-025 | GRAPHIFY_HOOK_HELPER | Governance-owned graphify hook helper and installer for governed repo graph refresh hooks | COMPLETE | OPS_READY |
 | GOV-026 | PENTAGI_SWEEP_STATUS | Registry-aware PentAGI freshness and trigger status for overlord sweep report/dashboard source alignment | IN_PROGRESS | OPS_READY |
+| GOV-027 | CODEX_FIRE_FAILFAST | Fail-fast Codex dispatcher wrapper with bounded model preflight and structured failure logging | IN_PROGRESS | OPS_READY |
 
 ---
 
@@ -98,6 +99,7 @@
 | GOV-009 | `hooks/closeout-hook.sh` validates Stage 6 closeout template, refreshes the manifest-defined closeout graph target through the repo-local builder, rebuilds `wiki/index.md`, and prompts for `operator_context` write-back. Template at `raw/closeouts/TEMPLATE.md`. |
 | GOV-010 | `raw-feed-sync.yml` fetches open GitHub issues from all governed repos daily and writes metadata-only markdown summaries to `raw/github-issues/` (issue number, title, labels, created/updated dates, URL). Issue bodies are intentionally excluded so raw feeds do not create durable secondary copies of sensitive ticket content. |
 | GOV-012 | `scripts/overlord/codex_ingestion.py` now supports real governed-repo `generate`, `qualify`, `status`, and `promote` flows with bounded timeouts, precomputed diff context, CI auth/canary support, session-start backlog surfacing, and strong-anchor cited-code validation during qualification so hallucinated line references are rejected before backlog promotion. |
+| GOV-027 | `scripts/codex-fire.sh` is the required local dispatcher path for Codex brief execution. It preflights the selected model within a bounded timeout, writes failures to `raw/fail-fast-log.md`, and emits `CODEX_FAIL` so unavailable models do not look like live work. Dedicated canary/preflight helpers and the Python ingestion helper may keep their own direct Codex calls only when they preserve bounded timeout and structured failure semantics. |
 | GOV-013 | `scripts/overlord/build_effectiveness_metrics.py` persists bug rate, revert rate, and CI pass rate baselines into governance, and `overlord-sweep.yml` refreshes the dated and latest snapshots weekly. |
 | GOV-013 | Weekly sweep issue bodies now include a `BASELINE REFRESH` status block so operators can tell whether graph/metrics artifacts were actually persisted, and the workflow fails after publication when commit or push persistence fails. |
 | GOV-014 | `docs/schemas/structured-agent-cycle-plan.schema.json` defines the canonical org-wide execution-plan contract, and `scripts/overlord/validate_structured_agent_cycle_plan.py` enforces it in reusable governance CI for issue/riskfix execution branches. |

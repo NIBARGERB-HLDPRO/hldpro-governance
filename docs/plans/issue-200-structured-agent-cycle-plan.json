@@ -1,0 +1,136 @@
+{
+  "session_id": "2026-04-19-governance-issue-200-codex-fire-failfast",
+  "issue_number": 200,
+  "objective": "Add a fail-fast Codex dispatch wrapper so unavailable models fail within a bounded preflight window, write structured evidence, and return an immediate dispatcher-visible failure line.",
+  "tier": 2,
+  "scope_boundary": [
+    "Codex dispatch wrapper script",
+    "Local dispatcher shell call-site wiring",
+    "Fail-fast log seed artifact",
+    "Issue #200 planning, execution-scope, review, validation, closeout, and local memory evidence"
+  ],
+  "out_of_scope": [
+    "Changing Codex CLI internals",
+    "Changing GitHub Actions sweep behavior beyond documenting existing direct canary calls",
+    "Changing the Python Codex ingestion helper's existing timeout/retry semantics",
+    "Editing downstream product repositories"
+  ],
+  "research_summary": "Issue #200 documents Codex CLI dispatches hanging or failing late when the selected model is unavailable. Existing repo code already has a Codex preflight helper and a Python ingestion helper with bounded timeouts, but local dispatcher-style shell invocations still call `codex exec` directly. The implementation should add a reusable wrapper with a five-second model preflight, structured failure logging, and a one-line `CODEX_FAIL` signal, then route future local dispatcher Codex brief calls through that wrapper.",
+  "research_artifacts": [
+    "scripts/codex-preflight.sh",
+    "scripts/codex-review-template.sh",
+    "scripts/overlord/codex_ingestion.py",
+    ".github/scripts/check_codex_model_pins.py",
+    "raw/execution-scopes/2026-04-19-issue-200-codex-fire-failfast-implementation.json"
+  ],
+  "sprints": [
+    {
+      "name": "Planning and scope",
+      "goal": "Create issue-backed governance artifacts before modifying dispatcher tooling.",
+      "tasks": [
+        "Create structured plan",
+        "Create PDCA/R",
+        "Create implementation execution scope",
+        "Record same-family exception",
+        "Move #200 into active backlog mirror"
+      ],
+      "acceptance_criteria": [
+        "Structured plan validates",
+        "Execution scope covers only issue #200 files",
+        "Same-family exception documents the no-HITL directive and mitigation"
+      ],
+      "file_paths": [
+        "docs/plans/issue-200-structured-agent-cycle-plan.json",
+        "docs/plans/issue-200-codex-fire-failfast-pdcar.md",
+        "raw/execution-scopes/2026-04-19-issue-200-codex-fire-failfast-implementation.json",
+        "raw/exceptions/2026-04-19-issue-200-same-family-codex-fire.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "name": "Fail-fast wrapper",
+      "goal": "Add `scripts/codex-fire.sh` with bounded preflight, structured logging, and dispatcher-visible failure output.",
+      "tasks": [
+        "Implement argument parsing for model, effort, worktree, and brief",
+        "Probe model availability with a timeout before firing the real brief",
+        "Append structured failures to `raw/fail-fast-log.md`",
+        "Return the required `CODEX_FAIL` line on preflight or execution failure",
+        "Add deterministic tests with a fake Codex CLI"
+      ],
+      "acceptance_criteria": [
+        "Preflight model failure exits within five seconds",
+        "Failure writes a structured log row",
+        "Execution failure writes a structured log row and emits the one-line dispatcher signal",
+        "Success path runs the brief through Codex without writing a failure row"
+      ],
+      "file_paths": [
+        "scripts/codex-fire.sh",
+        "scripts/test_codex_fire.py",
+        "raw/fail-fast-log.md"
+      ]
+    },
+    {
+      "name": "Dispatcher routing and closeout",
+      "goal": "Route local dispatcher Codex brief calls through the wrapper and prove the behavior end to end.",
+      "tasks": [
+        "Update `scripts/codex-review-template.sh` audit and critique modes to use `codex-fire.sh`",
+        "Update the governance Codex-spark memory note",
+        "Record focused review and validation evidence",
+        "Run local CI and GitHub PR checks before merge"
+      ],
+      "acceptance_criteria": [
+        "Future local dispatcher Codex brief invocations use `codex-fire.sh`",
+        "Existing dedicated preflight and bounded ingestion helpers are documented as non-dispatch exceptions",
+        "Memory evidence references `codex-fire.sh` as the required dispatch path",
+        "Final AC includes an e2e fake-Codex proof for preflight failure, execution failure, and success"
+      ],
+      "file_paths": [
+        "scripts/codex-review-template.sh",
+        "docs/FEATURE_REGISTRY.md",
+        "raw/cross-review/2026-04-19-issue-200-codex-fire-failfast-review.md",
+        "raw/validation/2026-04-19-issue-200-codex-fire-failfast.md",
+        "raw/closeouts/2026-04-19-issue-200-codex-fire-failfast.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-subagent",
+      "role": "focused reviewer",
+      "focus": "Codex wrapper failure semantics, tests, and dispatcher call-site coverage",
+      "status": "accepted_with_followup",
+      "summary": "Focused review found that `codex-review-template.sh` initially masked wrapper failures and deleted failed temporary briefs. The template now exits nonzero on wrapper failure, retains failed briefs for inspection, and has regression coverage. Memory update evidence is recorded as local out-of-repo evidence in validation.",
+      "evidence": [
+        "raw/cross-review/2026-04-19-issue-200-codex-fire-failfast-review.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "same-family exception path",
+    "model_family": "gpt-5",
+    "status": "accepted_with_followup",
+    "summary": "No separate Claude connector is available in this Codex session and the operator directed no HITL; same-family implementation is accepted for this narrow governance tooling bug with deterministic fake-Codex tests, local CI, GitHub checks, and focused subagent review before merge.",
+    "evidence": [
+      "raw/exceptions/2026-04-19-issue-200-same-family-codex-fire.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Proceed with issue #200 Codex dispatch fail-fast wrapper and local dispatcher call-site wiring.",
+    "next_execution_step": "Implement the wrapper, tests, dispatcher wiring, memory evidence, validation, and closeout.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Do not edit downstream product repositories.",
+    "Do not remove the existing dedicated Codex preflight helper.",
+    "Do not make unavailable-model failures silent or unbounded.",
+    "If new dispatcher Codex call sites are discovered, either route them through `codex-fire.sh` or document why they are not dispatcher brief invocations."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator-no-hitl-directive"
+  ],
+  "approved_at": "2026-04-19T00:00:00Z"
+}
