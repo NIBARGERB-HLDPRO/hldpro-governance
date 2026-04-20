@@ -1,0 +1,26 @@
+{
+  "package": "hldpro-sim",
+  "version": "0.1.0",
+  "tag": "hldpro-sim-v0.1.0",
+  "pinned_sha": "fed5ead670cf6834e5c73bffcaf64e41cc483fce",
+  "source_repo": "hldpro-governance",
+  "source_path": "packages/hldpro-sim/",
+  "install_methods": ["pip-editable", "directory-copy"],
+  "managed_personas": {
+    "source_path": "packages/hldpro-sim/personas/",
+    "consumer_target": "sim-personas/shared/",
+    "ownership": "governance-managed-read-only",
+    "personas": [
+      "asc-medical-director.json",
+      "hvac-homeowner.json",
+      "trader-growth.json",
+      "trader-momentum.json",
+      "trader-value.json"
+    ]
+  },
+  "consumer_record_path": ".hldpro/hldpro-sim.json",
+  "deployer_script": "scripts/deployer/deploy-hldpro-sim.sh",
+  "contract_version": "1.0",
+  "issued_at": "2026-04-20T00:00:00Z",
+  "governing_issue": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/422"
+}
