@@ -1,0 +1,53 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-407-hldpro-sim-closeout-20260420",
+  "allowed_write_paths": [
+    "raw/closeouts/2026-04-20-issue-407-hldpro-sim.md",
+    "raw/execution-scopes/2026-04-20-issue-407-hldpro-sim-closeout-implementation.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "graphify-out/hldpro-governance/.graphify_ast.json",
+    "graphify-out/hldpro-governance/.graphify_detect.json",
+    "graphify-out/hldpro-governance/.graphify_summary.json",
+    "graphify-out/hldpro-governance/GRAPH_REPORT.md",
+    "graphify-out/hldpro-governance/community-labels.json",
+    "graphify-out/hldpro-governance/graph.json",
+    "wiki/hldpro/Fixtures_Stampede_consumer.md",
+    "wiki/hldpro/Hldpro_sim_Artifacts.md",
+    "wiki/hldpro/Hldpro_sim_Engine.md",
+    "wiki/hldpro/Hldpro_sim_Hldprosim.md",
+    "wiki/hldpro/Hldpro_sim_Hldprosim_Personas.md",
+    "wiki/hldpro/Hldpro_sim_Providers.md",
+    "wiki/hldpro/Hldpro_sim_Runner.md",
+    "wiki/hldpro/Hldpro_sim_Stampede_consumer_proof.md",
+    "wiki/hldpro/index.md",
+    "wiki/index.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance worktree is on issue-385-remote-mcp-vault-bootstrap-20260420; has untracked __pycache__ files not yet gitignored"
+    }
+  ],
+  "execution_mode": "implementation_complete",
+  "lane_claim": {
+    "issue_number": 407,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/407",
+    "claimed_by": "session-agent-claude-sonnet-4-6",
+    "claimed_at": "2026-04-20T18:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-sonnet-4-6",
+    "implementer_model": "claude-sonnet-4-6",
+    "accepted_at": "2026-04-20T18:00:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-407-hldpro-sim-structured-agent-cycle-plan.json"
+    ],
+    "active_exception_ref": "raw/execution-scopes/2026-04-20-issue-407-hldpro-sim-closeout-implementation.json#same-model-exception",
+    "active_exception_expires_at": "2026-04-27T18:00:00Z"
+  }
+}
