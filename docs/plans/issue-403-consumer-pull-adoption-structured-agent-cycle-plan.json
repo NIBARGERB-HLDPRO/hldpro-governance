@@ -1,0 +1,95 @@
+{
+  "session_id": "session-20260420-issue-403-consumer-pull-adoption",
+  "issue_number": 403,
+  "objective": "Pilot downstream consumer-pulled governance package verification in knocktracker before broader rollout.",
+  "tier": 1,
+  "scope_boundary": [
+    "Add governance rollout planning and execution-scope artifacts.",
+    "Coordinate downstream knocktracker issue #177 and PR evidence.",
+    "Record local and GitHub verification evidence.",
+    "Close the governance epic only after downstream pilot and Stage 6 closeout are complete."
+  ],
+  "out_of_scope": [
+    "Changing central GitHub org/repo rulesets or repository settings.",
+    "Mutating downstream repos other than knocktracker pilot issue #177.",
+    "Rolling out to SaaS, HIPAA, LAM, or additional repos before pilot evidence is captured."
+  ],
+  "research_summary": "Issue #398 added the non-mutating verifier and desired-state contract. Issue #403 consumes that package surface through a downstream pilot. The consumer repo should verify local managed files and pinned package ref while reporting central GitHub policy drift only.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/398",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/403",
+    "https://github.com/NIBARGERB-HLDPRO/knocktracker/issues/177",
+    "docs/governance-consumer-pull-state.json",
+    "scripts/overlord/verify_governance_consumer.py"
+  ],
+  "sprints": [
+    {
+      "name": "Knocktracker consumer-pull verifier pilot",
+      "goal": "Prove a downstream repo can pull and verify the governance package from its pinned consumer record.",
+      "tasks": [
+        "Create governance and downstream issue-backed worktrees.",
+        "Add knocktracker repo-side workflow or equivalent check for the consumer verifier.",
+        "Run the verifier locally against knocktracker.",
+        "Publish downstream PR and confirm GitHub Actions passes.",
+        "Record governance closeout with downstream evidence."
+      ],
+      "acceptance_criteria": [
+        "Knocktracker verifier workflow runs without copying governance package-core logic.",
+        "The verifier reads the pinned governance SHA from `.hldpro/governance-tooling.json`.",
+        "No downstream workflow mutates GitHub rulesets, branch protection, bypass actors, or repository settings.",
+        "Governance #403 closeout cites downstream issue, PR, merge commit, and validation evidence."
+      ],
+      "file_paths": [
+        "docs/plans/issue-403-consumer-pull-adoption-pdcar.md",
+        "docs/plans/issue-403-consumer-pull-adoption-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-20-issue-403-consumer-pull-adoption-implementation.json",
+        "raw/cross-review/2026-04-20-issue-403-consumer-pull-adoption.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "knocktracker-worker",
+      "role": "Downstream implementation specialist",
+      "focus": "Implement issue #177 repo-side verifier workflow without central-policy mutation.",
+      "status": "completed",
+      "summary": "Worker subagent implemented the isolated knocktracker issue #177 workflow; orchestrator QA refreshed the managed pin, added hard verifier enforcement, and merged downstream PRs #178 and #179.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/knocktracker/issues/177",
+        "https://github.com/NIBARGERB-HLDPRO/knocktracker/pull/178",
+        "https://github.com/NIBARGERB-HLDPRO/knocktracker/pull/179",
+        "raw/validation/issue-403-consumer-pull-adoption/knocktracker-pilot.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "operator-directive",
+    "model_family": "human",
+    "status": "accepted",
+    "summary": "Operator approved looping through the recommended next steps, testing locally, following repo rules, and spawning specialist subagents.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/403"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #403 may add governance planning, scope, roadmap mirror, review, validation, and closeout artifacts for the knocktracker consumer-pull pilot. Downstream implementation occurs under knocktracker issue #177.",
+    "next_execution_step": "Complete knocktracker pilot, publish PRs, verify GitHub checks, then Stage 6 closeout.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If downstream adoption needs central GitHub settings mutation, stop and create a separate governance apply issue.",
+    "If knocktracker lacks prerequisites to run the verifier, document the blocker and do not expand rollout.",
+    "If package-core logic must change, patch hldpro-governance before changing downstream repos."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #403"
+  ],
+  "approved_at": "2026-04-20T15:45:00Z"
+}

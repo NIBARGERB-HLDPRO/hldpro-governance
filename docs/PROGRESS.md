@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| Consumer-pulled governance adoption rollout | #403 | DONE | MEDIUM | 4-6 | Knocktracker pilot merged through downstream PRs #178 and #179; governance PR #406 records evidence | Uses knocktracker #177 as the first repo-side consumer-pull pilot |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
 | SoM Stage 5: som-worker daemon | #178 | PLANNED | LOW | 6-8 | Daemon implementation, queue wiring | Follow-on to Stage 3b/4 |
@@ -39,6 +40,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Stale governance worktree cleanup after lane-guard rollout | #405 | 2026-04-20 | Removed nine clean linked worktrees whose remotes were gone and governing issues were closed, while preserving the primary worktree, dirty #359, open/dirty #403, current #405, and worktrees with live remote branches. |
 | Consumer-pulled governance package bootstrap | #398 | 2026-04-20 | PR #401 added a non-mutating consumer verifier for pinned governance package records and managed files, introduced `docs/governance-consumer-pull-state.json`, documented the repo-pulled versus centrally applied GitHub policy boundary, wired verifier tests into Local CI package coverage, and merged through native auto-merge after required checks passed. Downstream adoption remains future issue-backed work. |
 | Runtime issue-lane guard proof and startup runbook | #400 | 2026-04-20 | Synced the installed global branch/worktree guard to the repo hook, recorded no-mutation sibling worktree hygiene evidence, proved the installed hook blocks unclaimed and mismatched issue worktree creation while allowing bootstrap, matching scope, and non-issue worktrees, and added the issue-lane startup sequence to the org repo intake runbook. |
 | Pre-worktree issue-lane creation gate | #397 | 2026-04-20 | Hardens `hooks/branch-switch-guard.sh` so `git worktree add -b issue-*` requires explicit planning bootstrap or a matching claimed execution scope before creating filesystem side effects. |
