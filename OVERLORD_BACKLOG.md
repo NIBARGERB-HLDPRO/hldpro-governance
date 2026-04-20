@@ -18,6 +18,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| SoM HITL SMS dedicated sender env propagation | [#421](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/421) | HIGH | 1-2 | Propagate `SOM_TWILIO_FROM_NUMBER` and sender aliases through governance SSOT/bootstrap, document route separation from AIS/Alex/customer-demo senders, and prove redacted bootstrap output. |
 
 ## Done
 

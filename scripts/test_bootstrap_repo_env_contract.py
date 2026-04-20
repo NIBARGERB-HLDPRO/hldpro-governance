@@ -35,6 +35,9 @@ def main() -> int:
         "SLACK_E2E_CHANNEL_ID",
         "TWILIO_ACCOUNT_SID",
         "TWILIO_AUTH_TOKEN",
+        "TWILIO_FROM_NUMBER",
+        "TWILIO_SMS_FROM",
+        "SOM_TWILIO_FROM_NUMBER",
         "TWILIO_TEST_CONSUMER_NUMBER",
         "OPERATOR_SMS_PHONE",
         "SOM_OPERATOR_SMS_PHONE",
@@ -68,6 +71,9 @@ def run_synthetic_lam_bootstrap() -> None:
     SOM_OPERATOR_INBOUND_QUEUE_ROOT=/tmp/synthetic queue root
     TWILIO_ACCOUNT_SID=synthetic-twilio-sid
     TWILIO_AUTH_TOKEN=synthetic-twilio-secret
+    TWILIO_FROM_NUMBER=+15557654321
+    TWILIO_SMS_FROM=+15557654321
+    SOM_TWILIO_FROM_NUMBER=+15557654321
     TWILIO_TEST_CONSUMER_NUMBER=+15551234567
     OPERATOR_SMS_PHONE=+15551234567
     SOM_OPERATOR_SMS_PHONE=+15551234567
@@ -102,6 +108,9 @@ def run_synthetic_lam_bootstrap() -> None:
             "SLACK_BOT_USER_OAUTH_TOKEN",
             "TWILIO_ACCOUNT_SID",
             "TWILIO_AUTH_TOKEN",
+            "TWILIO_FROM_NUMBER",
+            "TWILIO_SMS_FROM",
+            "SOM_TWILIO_FROM_NUMBER",
             "TWILIO_TEST_CONSUMER_NUMBER",
             "OPERATOR_SMS_PHONE",
             "SOM_OPERATOR_SMS_PHONE",
@@ -112,6 +121,7 @@ def run_synthetic_lam_bootstrap() -> None:
             "synthetic-cloudflare-secret",
             "synthetic-hmac-secret",
             "synthetic-twilio-secret",
+            "+15557654321",
             "+15551234567",
         ]:
             check(secret_value not in output, f"dry-run leaked synthetic value {secret_value}")
@@ -141,6 +151,9 @@ def run_sibling_worktree_lam_bootstrap() -> None:
                 CF_TEAM_DOMAIN=synthetic-team
                 CF_ACCESS_AUD_TAG=synthetic-aud
                 TWILIO_TEST_CONSUMER_NUMBER=+15551234567
+                TWILIO_FROM_NUMBER=+15557654321
+                TWILIO_SMS_FROM=+15557654321
+                SOM_TWILIO_FROM_NUMBER=+15557654321
                 OPERATOR_SMS_PHONE=+15551234567
                 SOM_OPERATOR_SMS_PHONE=+15551234567
                 """
@@ -161,6 +174,7 @@ def run_sibling_worktree_lam_bootstrap() -> None:
         )
         check(result.returncode == 0, f"sibling worktree lam dry-run failed: {result.stderr.strip()}")
         check("OPERATOR_SMS_PHONE=<redacted>" in result.stdout, "sibling worktree dry-run missed operator phone")
+        check("SOM_TWILIO_FROM_NUMBER=<redacted>" in result.stdout, "sibling worktree dry-run missed SoM sender")
 
 
 if __name__ == "__main__":
