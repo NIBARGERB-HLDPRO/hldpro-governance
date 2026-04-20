@@ -1,12 +1,24 @@
 {
   "expected_execution_root": ".",
-  "expected_branch": "issue-391-automerge-pilot-20260420",
+  "expected_branch": "issue-391-automerge-pilot-closeout-20260420",
   "execution_mode": "implementation_complete",
+  "lane_claim": {
+    "issue_number": 391,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/391",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-20T15:05:00Z"
+  },
   "allowed_write_paths": [
     "docs/plans/issue-391-native-automerge-pilot-pdcar.md",
     "docs/plans/issue-391-native-automerge-pilot-structured-agent-cycle-plan.json",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "graphify-out/hldpro-governance/",
+    "raw/closeouts/2026-04-20-issue-391-native-automerge-pilot.md",
     "raw/execution-scopes/2026-04-20-issue-391-native-automerge-pilot-implementation.json",
-    "raw/validation/issue-391-automerge-pilot/"
+    "raw/validation/issue-391-automerge-pilot/",
+    "wiki/hldpro/",
+    "wiki/index.md"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
@@ -55,6 +67,7 @@
     "evidence_paths": [
       "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/391",
       "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/390",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/394",
       "docs/plans/issue-391-native-automerge-pilot-pdcar.md"
     ],
     "active_exception_ref": null,
