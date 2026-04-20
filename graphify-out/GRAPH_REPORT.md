@@ -5,91 +5,91 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1251 nodes · 2561 edges · 62 communities detected
-- Extraction: 47% EXTRACTED · 53% INFERRED · 0% AMBIGUOUS · INFERRED: 1353 edges (avg confidence: 0.5)
+- 1251 nodes · 2400 edges · 63 communities detected
+- Extraction: 50% EXTRACTED · 50% INFERRED · 0% AMBIGUOUS · INFERRED: 1192 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
-1. `WindowsOllamaSubmitter` - 48 edges
-2. `PiiDetectionError` - 44 edges
-3. `ModelNotAllowedError` - 44 edges
-4. `EndpointUnreachableError` - 44 edges
-5. `TestAssertExecutionScope` - 29 edges
-6. `_tier1_packet()` - 29 edges
-7. `AuditWriter` - 28 edges
-8. `RepoFixture` - 26 edges
-9. `TestGovernanceSurfacePlanGate` - 24 edges
-10. `TestDeployGovernanceTooling` - 19 edges
+1. `TestAssertExecutionScope` - 29 edges
+2. `_tier1_packet()` - 29 edges
+3. `RepoFixture` - 26 edges
+4. `TestGovernanceSurfacePlanGate` - 24 edges
+5. `TestDeployGovernanceTooling` - 19 edges
+6. `TestLocalCiGate` - 19 edges
+7. `TestDeployLocalCIGate` - 16 edges
+8. `TestPacketQueue` - 15 edges
+9. `SomClient` - 15 edges
+10. `describe_file()` - 14 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `ValidateLocationTests` --uses--> `Finding`  [INFERRED]
-  tests/test_codex_ingestion.py → scripts/overlord/codex_ingestion.py
-- `Submit requests to Windows-Ollama endpoint with PII detection and allowlist enfo` --uses--> `AuditWriter`  [INFERRED]
-  scripts/windows-ollama/submit.py → scripts/windows-ollama/audit.py
-- `Initialize the submitter.          Args:             endpoint: Windows-Ollama en` --uses--> `AuditWriter`  [INFERRED]
-  scripts/windows-ollama/submit.py → scripts/windows-ollama/audit.py
-- `Load PII patterns from pii_patterns.yml.` --uses--> `AuditWriter`  [INFERRED]
-  scripts/windows-ollama/submit.py → scripts/windows-ollama/audit.py
-- `Load model allowlist from model_allowlist.yml.` --uses--> `AuditWriter`  [INFERRED]
-  scripts/windows-ollama/submit.py → scripts/windows-ollama/audit.py
+- `compute_entry_hash()` --calls--> `canonical_json()`  [INFERRED]
+  scripts/remote-mcp/verify_audit.py → /Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/verify_audit.py
+- `Return canonical JSON bytes for cryptographic checks.` --rationale_for--> `canonical_json()`  [EXTRACTED]
+  scripts/remote-mcp/verify_audit.py → /Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/verify_audit.py
+- `compute_entry_hash()` --calls--> `compute_sha256()`  [INFERRED]
+  scripts/remote-mcp/verify_audit.py → /Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/verify_audit.py
+- `_verify_manifest()` --calls--> `compute_sha256()`  [INFERRED]
+  scripts/remote-mcp/verify_audit.py → /Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/verify_audit.py
+- `Compute SHA-256 hex digest.` --rationale_for--> `compute_sha256()`  [EXTRACTED]
+  scripts/remote-mcp/verify_audit.py → /Users/bennibarger/Developer/HLDPRO/hldpro-governance/scripts/windows-ollama/verify_audit.py
 
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.04
-Nodes (73): AuditWriter, canonical_json(), compute_entry_hmac(), compute_sha256(), Write an audit entry. Returns True if successful, False otherwise.          Args, Return canonical JSON for HMAC computation., Write or update today's manifest., Compute SHA256 hash of bytes. (+65 more)
+Cohesion: 0.05
+Nodes (40): AuditWriter, canonical_json(), compute_entry_hmac(), compute_sha256(), Write an audit entry. Returns True if successful, False otherwise.          Args, Return canonical JSON for HMAC computation., Write or update today's manifest., Compute SHA256 hash of bytes. (+32 more)
 
 ### Community 1 - "Community 1"
+Cohesion: 0.03
+Nodes (37): Test that clean prompt passes PII detection., Negative test: non-allowlisted model., Test that non-allowlisted model is rejected., Test that allowlisted model passes allowlist check., Negative test: unreachable endpoint., Test that unreachable endpoint raises appropriate error., Test that endpoint timeout is handled., Test that reachable endpoint succeeds. (+29 more)
+
+### Community 2 - "Community 2"
 Cohesion: 0.05
 Nodes (47): Modify first_hash in manifest and verify fails., Test that truncated file (missing last line) breaks manifest., Delete last line and verify detects entry_count mismatch., Test that duplicate line (replay) breaks seq monotonicity., Duplicate a line and verify detects non-monotonic seq., Test that tampering with a line breaks the chain., Tamper with line N and verify fails at line N+1., Test that replacing entry_hmac with wrong value fails verification. (+39 more)
 
-### Community 2 - "Community 2"
+### Community 3 - "Community 3"
+Cohesion: 0.06
+Nodes (23): BaseHTTPRequestHandler, build_parser(), build_payload(), _call_fixture(), _call_live(), Check, _fixture_server(), _FixtureMcpHandler (+15 more)
+
+### Community 4 - "Community 4"
 Cohesion: 0.07
 Nodes (19): _make_parent_packet(), Cross-family independence violated: both planners are anthropic., anthropic + openai is fine., Parent file absent → warn, don't refuse., Sanity: the patterns file should be present in this worktree., Non-LAM role with PII artifact path must be refused., worker-lam role is allowed to handle PII artifacts., When pii-patterns.yml is absent, validator must refuse (not silently pass). (+11 more)
 
-### Community 3 - "Community 3"
+### Community 5 - "Community 5"
 Cohesion: 0.09
 Nodes (39): _expand_home(), governed_repos(), GovernedRepo, load_registry(), repo_names_enabled_for(), repos_enabled_for(), repos_root(), build_payload() (+31 more)
 
-### Community 4 - "Community 4"
+### Community 6 - "Community 6"
 Cohesion: 0.1
 Nodes (34): append_fail_fast_block_entry(), append_fail_fast_candidate(), append_fail_fast_table_entry(), append_progress_candidate(), bounded_text(), build_parser(), build_review_context(), build_schema_file() (+26 more)
 
-### Community 5 - "Community 5"
+### Community 7 - "Community 7"
 Cohesion: 0.12
 Nodes (37): _branch_issue_number(), build_argument_parser(), _build_summary(), _changed_files_from_git(), ChangedFiles, _check_exit_code(), _check_matches_changed_files(), CheckResult (+29 more)
 
-### Community 6 - "Community 6"
+### Community 8 - "Community 8"
 Cohesion: 0.23
 Nodes (4): _git(), RepoFixture, TestAssertExecutionScope, _working_directory()
 
-### Community 7 - "Community 7"
+### Community 9 - "Community 9"
 Cohesion: 0.11
 Nodes (22): build_parser(), _env_has_live_markers(), main(), _run_fixture(), _run_live(), _scan_evidence_dir(), _stage_d_args(), _build_fixture_server() (+14 more)
 
-### Community 8 - "Community 8"
+### Community 10 - "Community 10"
 Cohesion: 0.15
 Nodes (26): atomic_write_yaml(), build_report(), _date_from_text(), duplicate_counts(), enrich_packet(), _entry_id(), LearningEntry, LearningMatch (+18 more)
 
-### Community 9 - "Community 9"
-Cohesion: 0.1
-Nodes (12): RuntimeError, build_parser(), _decode_jwt_payload(), from_env(), main(), Error raised for client-side protocol and transport failures., Decode JWT payload without verifying signature., Minimal HTTP client for Remote MCP Bridge tools. (+4 more)
-
-### Community 10 - "Community 10"
+### Community 11 - "Community 11"
 Cohesion: 0.13
 Nodes (19): add_common_args(), build_plan(), build_refresh_command(), execute_refresh(), find_target(), git_hook_paths(), HelperError, HookPlan (+11 more)
 
-### Community 11 - "Community 11"
+### Community 12 - "Community 12"
 Cohesion: 0.12
 Nodes (28): _load(), test_duplicate_reply_cannot_produce_instruction(), test_expired_reply_cannot_produce_instruction(), test_low_confidence_clarify_decision_passes_without_instruction(), test_low_confidence_non_clarify_decision_fails_closed(), test_pii_external_channel_fails_closed(), test_response_requires_notification_and_response_ids(), test_session_instruction_requires_matching_target_session() (+20 more)
 
-### Community 12 - "Community 12"
+### Community 13 - "Community 13"
 Cohesion: 0.1
 Nodes (30): _find_packet_file(), _load_packet(), load_pii_patterns(), _load_schema(), Load and compile PII patterns from pii-patterns.yml., Enforce cross-family independence for tier-1 dual-planner packets.      When pri, Refuse if any consecutive pair in the parent chain shares model_id across differ, Enforce expected handoff sequence with no tier jumps. (+22 more)
-
-### Community 13 - "Community 13"
-Cohesion: 0.19
-Nodes (28): append_audit(), atomic_write_json(), _base_packet(), _build_decision_packet(), _build_instruction_packet(), build_request(), _build_response_packet(), _build_resume_packet() (+20 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.16
@@ -120,16 +120,16 @@ Cohesion: 0.19
 Nodes (21): build(), category_for(), describe_file(), esc(), FileInfo, first_comment(), first_heading(), frontmatter_field() (+13 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.16
-Nodes (12): BaseHTTPRequestHandler, build_parser(), build_payload(), _call_fixture(), _call_live(), Check, _fixture_server(), _FixtureMcpHandler (+4 more)
-
-### Community 22 - "Community 22"
 Cohesion: 0.2
 Nodes (18): append_audit(), _audit_path(), ensure_queue(), load_packet(), _load_plan(), QueueDecision, Replay audit events into logical latest states.      `latest_states` includes ac, replay_audit() (+10 more)
 
-### Community 23 - "Community 23"
+### Community 22 - "Community 22"
 Cohesion: 0.21
 Nodes (12): _actual_workflows(), check_inventory(), _command_file_candidates(), _load_inventory(), main(), _normalize_path(), _validate_coverage(), _validate_required_snippets() (+4 more)
+
+### Community 23 - "Community 23"
+Cohesion: 0.3
+Nodes (19): append_audit(), atomic_write_json(), _base_packet(), _build_decision_packet(), _build_instruction_packet(), build_request(), _build_response_packet(), _build_resume_packet() (+11 more)
 
 ### Community 24 - "Community 24"
 Cohesion: 0.32
@@ -140,12 +140,12 @@ Cohesion: 0.1
 Nodes (1): TestLocalCiGate
 
 ### Community 26 - "Community 26"
-Cohesion: 0.3
-Nodes (2): _packet(), TestPacketQueue
+Cohesion: 0.25
+Nodes (15): add_common_args(), build_plan(), _common_preview_payload(), DeployError, DeployPlan, _existing_shim_state(), _fail(), _is_relative_to() (+7 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.27
-Nodes (14): add_common_args(), build_plan(), _common_preview_payload(), DeployError, DeployPlan, _existing_shim_state(), _fail(), _is_relative_to() (+6 more)
+Cohesion: 0.3
+Nodes (2): _packet(), TestPacketQueue
 
 ### Community 28 - "Community 28"
 Cohesion: 0.27
@@ -212,40 +212,40 @@ Cohesion: 0.4
 Nodes (9): build_inventory(), import_available(), local_runtime(), mac_hardware(), main(), memory_budget(), pii_guardrail(), _run() (+1 more)
 
 ### Community 44 - "Community 44"
+Cohesion: 0.53
+Nodes (9): _final_request(), _load(), _process(), test_final_e2e_ambiguous_response_requests_clarification_without_instruction(), test_final_e2e_approval_path_preserves_full_identity_chain(), test_final_e2e_duplicate_replay_and_expired_replies_fail_closed(), test_final_e2e_external_channel_pii_is_refused_without_instruction(), test_final_e2e_request_changes_is_not_treated_as_approval() (+1 more)
+
+### Community 45 - "Community 45"
 Cohesion: 0.29
 Nodes (9): check_github_issue(), find_planned_table(), main(), parse_columns(), Return (header_line_index, list_of_data_lines) for the ## Planned table., Split a markdown table row into a dict keyed by header column names.     Returns, Extract a #NNN from the cell value.     Returns the integer issue number, or Non, Call GitHub API to verify issue exists and is open.     Returns (ok: bool, title (+1 more)
 
-### Community 45 - "Community 45"
+### Community 46 - "Community 46"
 Cohesion: 0.49
 Nodes (9): check(), fail(), main(), read_text(), repos_for_static_checkout(), validate_docs_surfaces(), validate_runtime_registry_consumers(), validate_static_checkout_workflow() (+1 more)
 
-### Community 46 - "Community 46"
+### Community 47 - "Community 47"
 Cohesion: 0.61
 Nodes (8): check(), main(), run_command(), test_logger_backwards_compatible(), test_logger_query_trace_fields(), test_measurement_falls_back_from_stale_governance_repo_path(), test_measurement_outputs_query_traces(), test_schema_shape()
 
-### Community 47 - "Community 47"
+### Community 48 - "Community 48"
 Cohesion: 0.42
 Nodes (7): check_memory_exists(), inspect_repo(), load_memory_lines(), main(), memory_dir_for_repo(), parse_pointer_filenames(), validate_frontmatter()
 
-### Community 48 - "Community 48"
+### Community 49 - "Community 49"
 Cohesion: 0.5
 Nodes (8): run_fire(), test_exec_failure_after_successful_preflight_logs_and_signals(), test_preflight_failure_logs_and_exits_fast(), test_preflight_timeout_logs_and_exits_fast(), test_review_template_default_persona_reaches_codex_fire(), test_review_template_propagates_wrapper_failure(), test_success_does_not_write_failure_log(), write_fake_codex()
 
-### Community 49 - "Community 49"
+### Community 50 - "Community 50"
 Cohesion: 0.46
 Nodes (7): collect_repo_metrics(), main(), parse_iso(), pct(), render_markdown(), RepoMetrics, run()
 
-### Community 50 - "Community 50"
+### Community 51 - "Community 51"
 Cohesion: 0.48
 Nodes (2): _copy_fixture(), TestReadOnlyObserver
 
-### Community 51 - "Community 51"
+### Community 52 - "Community 52"
 Cohesion: 0.67
 Nodes (6): check(), fail(), load_json(), main(), validate_graphify_reconciliation(), validate_registry_shape()
-
-### Community 52 - "Community 52"
-Cohesion: 0.4
-Nodes (5): detect_pii(), _iter_patterns(), load_pii_patterns(), Load and validate pii patterns from pii_patterns.yml., Scan text for PII patterns from YAML patterns.      Falls back to the previous b
 
 ### Community 53 - "Community 53"
 Cohesion: 0.7
@@ -283,28 +283,34 @@ Nodes (1): Build a client from well-known environment variables.
 Cohesion: 1.0
 Nodes (0): 
 
+### Community 62 - "Community 62"
+Cohesion: 1.0
+Nodes (1): Temporary audit directory for testing.
+
 ## Knowledge Gaps
-- **67 isolated node(s):** `Replay audit events into logical latest states.      `latest_states` includes ac`, `Return (header_line_index, list_of_data_lines) for the ## Planned table.`, `Split a markdown table row into a dict keyed by header column names.     Returns`, `Extract a #NNN from the cell value.     Returns the integer issue number, or Non`, `Call GitHub API to verify issue exists and is open.     Returns (ok: bool, title` (+62 more)
+- **111 isolated node(s):** `Replay audit events into logical latest states.      `latest_states` includes ac`, `Return (header_line_index, list_of_data_lines) for the ## Planned table.`, `Split a markdown table row into a dict keyed by header column names.     Returns`, `Extract a #NNN from the cell value.     Returns the integer issue number, or Non`, `Call GitHub API to verify issue exists and is open.     Returns (ok: bool, title` (+106 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **Thin community `Community 60`** (1 nodes): `Build a client from well-known environment variables.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 61`** (1 nodes): `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 62`** (1 nodes): `Temporary audit directory for testing.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `GateError` connect `Community 5` to `Community 9`?**
+- **Why does `GateError` connect `Community 7` to `Community 26`?**
   _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **Are the 39 inferred relationships involving `WindowsOllamaSubmitter` (e.g. with `main()` and `AuditWriter`) actually correct?**
-  _`WindowsOllamaSubmitter` has 39 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 39 inferred relationships involving `PiiDetectionError` (e.g. with `.submit()` and `AuditWriter`) actually correct?**
-  _`PiiDetectionError` has 39 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 39 inferred relationships involving `ModelNotAllowedError` (e.g. with `.submit()` and `AuditWriter`) actually correct?**
-  _`ModelNotAllowedError` has 39 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 39 inferred relationships involving `EndpointUnreachableError` (e.g. with `.submit()` and `AuditWriter`) actually correct?**
-  _`EndpointUnreachableError` has 39 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `SomClientError` connect `Community 3` to `Community 26`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **Why does `HelperError` connect `Community 11` to `Community 26`?**
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._
+- **Are the 28 inferred relationships involving `_tier1_packet()` (e.g. with `.test_tier1_without_parent_passes()` and `.test_same_family_dual_planner_refused()`) actually correct?**
+  _`_tier1_packet()` has 28 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 23 inferred relationships involving `RepoFixture` (e.g. with `.test_allows_changes_in_allowed_paths_dirty_tree_mode()` and `.test_planning_only_diff_inside_allowed_paths_passes()`) actually correct?**
+  _`RepoFixture` has 23 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Replay audit events into logical latest states.      `latest_states` includes ac`, `Return (header_line_index, list_of_data_lines) for the ## Planned table.`, `Split a markdown table row into a dict keyed by header column names.     Returns` to the rest of the system?**
-  _67 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _111 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.04 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05 - nodes in this community are weakly interconnected._
