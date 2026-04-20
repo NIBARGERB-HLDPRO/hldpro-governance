@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "packet_id": "16d67b03-3534-5016-8f26-38c3fe694e47",
+  "packet_type": "hitl_request",
+  "created_at": "2026-04-20T14:38:27Z",
+  "issue_number": 385,
+  "repo": {
+    "owner": "NIBARGERB-HLDPRO",
+    "name": "hldpro-governance"
+  },
+  "session": {
+    "session_id": "codex-operator-live-20260420",
+    "cli": "codex",
+    "state": "waiting_hitl"
+  },
+  "correlation": {
+    "request_id": "remote-mcp-vault-bootstrap-live-receive-385"
+  },
+  "policy": {
+    "pii_mode": "none",
+    "data_classification": "internal",
+    "channel_policy_ref": "docs/runbooks/hitl-relay-security.md"
+  },
+  "event_type": "hitl_checkpoint",
+  "artifacts": [
+    {
+      "kind": "plan",
+      "ref": "docs/plans/issue-385-remote-mcp-vault-bootstrap-structured-agent-cycle-plan.json"
+    }
+  ],
+  "requested_decision": {
+    "decision_type": "feedback",
+    "allowed_actions": [
+      "details",
+      "request_changes",
+      "pause"
+    ],
+    "prompt_ref": "raw/remote-mcp-vault-bootstrap/live-inbound-prompt.md"
+  }
+}

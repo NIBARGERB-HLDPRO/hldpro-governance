@@ -1,0 +1,114 @@
+{
+  "session_id": "session-20260420-issue-385-remote-mcp-vault-bootstrap",
+  "issue_number": 385,
+  "objective": "Bootstrap Remote MCP live operator keys into the local gitignored vault, document the procedure, align the operator client with the live Stage B/C bridge protocol, and preserve no-secret live readiness evidence.",
+  "tier": 2,
+  "scope_boundary": [
+    "Update Remote MCP operator runbooks, environment registry, service/feature/data registries, backlog/progress mirrors, issue #385 planning/validation/closeout artifacts, no-secret evidence, generated graph/wiki artifacts, and focused thin-client bridge protocol support.",
+    "Store secret values only in the gitignored `.env.shared` vault and local LaunchAgent runtime environment.",
+    "Use live e2e preflight evidence as the final acceptance criterion without committing bearer tokens, JWT fragments, Cloudflare Access secrets, HMAC keys, raw PII, or raw MCP payloads."
+  ],
+  "out_of_scope": [
+    "Changing the downstream local-ai-machine Remote MCP bridge implementation.",
+    "Exposing new Remote MCP tools.",
+    "Committing `.env.shared` or installed LaunchAgent secret material.",
+    "Claiming external SMS, Slack, or email push delivery beyond the bounded HITL relay session-inbox receive proof."
+  ],
+  "research_summary": "Issue #385 follows the completed Remote MCP epic and operator preflight slices. The live bridge is the merged Stage B/C bridge contract on `/mcp/call`, protected by Cloudflare Access plus a signed inner JWT. The operator preflight needed vault material, Access policy membership, bridge protocol selection, and a local bridge listener on the Cloudflare tunnel origin port.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/385",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "docs/ENV_REGISTRY.md",
+    "scripts/som-client/som_client.py",
+    "scripts/remote-mcp/operator_connectivity.py",
+    "scripts/remote-mcp/operator_inbound_preflight.py",
+    "raw/remote-mcp-vault-bootstrap/2026-04-20-vault-bootstrap.json",
+    "raw/remote-mcp-vault-bootstrap/2026-04-20-connectivity-live-after-bridge.json",
+    "raw/remote-mcp-vault-bootstrap/2026-04-20-inbound-live-after-valid-seed.json"
+  ],
+  "sprints": [
+    {
+      "name": "Vault bootstrap and live readiness",
+      "goal": "Create/store operator key material, document the procedure, and prove live Remote MCP request/response plus inbound receive readiness from this machine.",
+      "tasks": [
+        "Create issue #385 and branch from origin/main.",
+        "Generate missing Remote MCP keys and Cloudflare Access service-token credentials into `.env.shared` only.",
+        "Attach the service token to the Remote MCP Access policy and record no-secret evidence.",
+        "Add Stage B/C bridge protocol support to the thin client and focused tests.",
+        "Load the local Remote MCP bridge on the Cloudflare tunnel origin port.",
+        "Update runbooks, registries, backlog/progress mirrors, validation, and closeout artifacts.",
+        "Run live connectivity and inbound preflights as final acceptance evidence."
+      ],
+      "acceptance_criteria": [
+        "No committed artifact contains secret values, bearer-token material, JWT fragments, Cloudflare Access secrets, HMAC keys, raw PII, or raw MCP payloads.",
+        "Vault evidence records key names and status only.",
+        "Cloudflare policy evidence records token id membership status only.",
+        "Live `operator_connectivity.py --mode live` exits 0 and writes `ready: true`.",
+        "Live `operator_inbound_preflight.py --mode live` exits 0 and writes `ready: true`.",
+        "Focused tests and Local CI Gate pass.",
+        "Final AC: PR checks pass before merge."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/ENV_REGISTRY.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/plans/issue-385-remote-mcp-vault-bootstrap-pdcar.md",
+        "docs/plans/issue-385-remote-mcp-vault-bootstrap-structured-agent-cycle-plan.json",
+        "docs/runbooks/remote-mcp-bridge.md",
+        "graphify-out/",
+        "raw/execution-scopes/2026-04-20-issue-385-remote-mcp-vault-bootstrap-implementation.json",
+        "raw/remote-mcp-vault-bootstrap/",
+        "raw/validation/2026-04-20-issue-385-remote-mcp-vault-bootstrap.md",
+        "raw/closeouts/2026-04-20-issue-385-remote-mcp-vault-bootstrap.md",
+        "scripts/som-client/som_client.py",
+        "scripts/som-client/tests/test_som_client.py",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-explorer-beauvoir",
+      "role": "governance-surface explorer",
+      "focus": "Identify required docs, registry, mirror, raw evidence, closeout, and validator surfaces for the vault-bootstrap slice.",
+      "status": "accepted",
+      "summary": "Recommended PDCAR, structured plan, execution scope, backlog/progress mirrors, Remote MCP contract surfaces, runbook, raw validation, closeout, and local gates.",
+      "evidence": [
+        "subagent 019dab4c-1650-72d2-bf69-6bb5a5aeea7e final report"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "codex-explorer-beauvoir",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Accepted the governance surface and validation checklist for the Remote MCP vault-bootstrap slice.",
+    "evidence": [
+      "subagent 019dab4c-1650-72d2-bf69-6bb5a5aeea7e final report"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #385 may update Remote MCP vault/runbook/registry/mirror/planning/evidence/closeout surfaces and focused thin-client bridge protocol support.",
+    "next_execution_step": "Validate locally, open PR, merge after checks pass, and close issue #385.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any evidence artifact contains secret material, remove the artifact and rerun from sanitized inputs.",
+    "If Cloudflare Access or bridge launchd cannot be configured, preserve a no-secret blocker artifact and do not claim live readiness.",
+    "If inbound receive cannot be proved without external delivery, preserve fixture proof and issue-back the residual external-channel work."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #385",
+    "codex-explorer-beauvoir"
+  ],
+  "approved_at": "2026-04-20T14:40:00Z"
+}

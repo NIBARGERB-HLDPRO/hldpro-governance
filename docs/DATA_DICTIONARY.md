@@ -245,6 +245,7 @@ Each `checks[]` entry contains:
 Contract:
 - Fixture mode starts a local fixture MCP server and proves `som.ping` through `SomClient`.
 - Live mode requires `SOM_MCP_URL`, either `SOM_MCP_TOKEN` or `SOM_REMOTE_MCP_JWT`, `CF_ACCESS_CLIENT_ID`, and `CF_ACCESS_CLIENT_SECRET`.
+- Live mode may set `SOM_MCP_PROTOCOL=bridge` and `SOM_MCP_CALL_PATH=mcp/call` to use the merged Stage B/C Remote MCP bridge contract instead of the legacy JSON-RPC fixture shape.
 - Live mode exits `2` before sending a request when required live configuration is missing.
 - Launchd install/load warnings do not block one-shot request/response readiness.
 - Output must not include bearer-token material, JWT fragments, Cloudflare Access header material, raw SSNs, credential values, or raw MCP payloads.

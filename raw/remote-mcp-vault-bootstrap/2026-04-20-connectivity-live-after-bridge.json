@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "mode": "live",
+  "ready": true,
+  "message_path": "som.ping",
+  "checks": [
+    {
+      "name": "launchd-template-present",
+      "status": "pass",
+      "detail": "launchd/com.hldpro.remote-mcp-monitor.plist"
+    },
+    {
+      "name": "launchd-template-live-mode",
+      "status": "pass",
+      "detail": "template invokes live monitor mode"
+    },
+    {
+      "name": "launchd-installed",
+      "status": "warn",
+      "detail": "not installed in user LaunchAgents"
+    },
+    {
+      "name": "launchd-loaded",
+      "status": "warn",
+      "detail": "not loaded in launchctl"
+    },
+    {
+      "name": "som-ping-request-response",
+      "status": "pass",
+      "detail": "live som.ping returned a response"
+    }
+  ],
+  "missing_live_config": [],
+  "missing_monitor_config": [],
+  "warnings": [
+    "launchd-installed",
+    "launchd-loaded"
+  ],
+  "recommended_action": "Remote MCP request/response is ready."
+}

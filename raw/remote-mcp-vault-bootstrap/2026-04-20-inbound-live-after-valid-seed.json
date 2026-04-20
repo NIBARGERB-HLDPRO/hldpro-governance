@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "mode": "live",
+  "ready": true,
+  "receive_path": "hitl-relay-session-inbox",
+  "checks": [
+    {
+      "name": "hitl-relay-queue-contract",
+      "status": "pass",
+      "detail": "using existing HITL relay queue validator"
+    },
+    {
+      "name": "remote-mcp-request-response-separation",
+      "status": "pass",
+      "detail": "inbound receive is separate from som.ping request/response"
+    },
+    {
+      "name": "operator-inbound-session-inbox",
+      "status": "pass",
+      "detail": "live session inbox contains a validated instruction"
+    }
+  ],
+  "missing_live_config": [],
+  "warnings": [],
+  "received_instruction": {
+    "packet_type": "session_instruction",
+    "packet_id": "de51b60d-bda6-5a28-8887-5e053cd3ddfd",
+    "session_id": "codex-operator-live-20260420",
+    "request_id": "remote-mcp-vault-bootstrap-live-receive-385b",
+    "response_id": "remote-mcp-vault-bootstrap-live-response-385b",
+    "action": "details",
+    "target_session_id": "codex-operator-live-20260420"
+  },
+  "recommended_action": "Operator inbound message receive path is ready."
+}
