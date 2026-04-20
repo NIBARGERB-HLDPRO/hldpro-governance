@@ -1,0 +1,63 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-391-automerge-pilot-20260420",
+  "execution_mode": "implementation_complete",
+  "allowed_write_paths": [
+    "docs/plans/issue-391-native-automerge-pilot-pdcar.md",
+    "docs/plans/issue-391-native-automerge-pilot-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-20-issue-391-native-automerge-pilot-implementation.json",
+    "raw/validation/issue-391-automerge-pilot/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-386-automerge-main",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout has unrelated active remote MCP/vault work outside issue #391 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-386-automerge-main",
+      "reason": "prior issue #386 closeout worktree retained locally after merge"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+      "reason": "sibling governance worktree has pre-existing graphify artifact changes and is outside issue #391 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "sibling repo may have unrelated active work outside issue #391 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo may have unrelated active work outside issue #391 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo may have unrelated active work outside issue #391 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "sibling repo may have unrelated active work outside issue #391 scope"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "issue-386-accepted-policy-plan",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-20T15:05:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/391",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/390",
+      "docs/plans/issue-391-native-automerge-pilot-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}
