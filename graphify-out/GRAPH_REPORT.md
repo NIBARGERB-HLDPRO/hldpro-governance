@@ -1,12 +1,12 @@
 # Graph Report - .  (2026-04-19)
 
 ## Corpus Check
-- 78 files · ~0 words
+- 80 files · ~0 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1183 nodes · 2443 edges · 60 communities detected
-- Extraction: 47% EXTRACTED · 53% INFERRED · 0% AMBIGUOUS · INFERRED: 1303 edges (avg confidence: 0.5)
+- 1195 nodes · 2463 edges · 59 communities detected
+- Extraction: 47% EXTRACTED · 53% INFERRED · 0% AMBIGUOUS · INFERRED: 1311 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -64,68 +64,68 @@ Cohesion: 0.23
 Nodes (4): _git(), RepoFixture, TestAssertExecutionScope, _working_directory()
 
 ### Community 7 - "Community 7"
+Cohesion: 0.11
+Nodes (22): build_parser(), _env_has_live_markers(), main(), _run_fixture(), _run_live(), _scan_evidence_dir(), _stage_d_args(), _build_fixture_server() (+14 more)
+
+### Community 8 - "Community 8"
 Cohesion: 0.15
 Nodes (26): atomic_write_yaml(), build_report(), _date_from_text(), duplicate_counts(), enrich_packet(), _entry_id(), LearningEntry, LearningMatch (+18 more)
 
-### Community 8 - "Community 8"
+### Community 9 - "Community 9"
 Cohesion: 0.13
 Nodes (19): add_common_args(), build_plan(), build_refresh_command(), execute_refresh(), find_target(), git_hook_paths(), HelperError, HookPlan (+11 more)
 
-### Community 9 - "Community 9"
+### Community 10 - "Community 10"
 Cohesion: 0.12
 Nodes (28): _load(), test_duplicate_reply_cannot_produce_instruction(), test_expired_reply_cannot_produce_instruction(), test_low_confidence_clarify_decision_passes_without_instruction(), test_low_confidence_non_clarify_decision_fails_closed(), test_pii_external_channel_fails_closed(), test_response_requires_notification_and_response_ids(), test_session_instruction_requires_matching_target_session() (+20 more)
 
-### Community 10 - "Community 10"
+### Community 11 - "Community 11"
 Cohesion: 0.1
 Nodes (12): RuntimeError, build_parser(), _decode_jwt_payload(), from_env(), main(), Error raised for client-side protocol and transport failures., Decode JWT payload without verifying signature., Minimal HTTP client for Remote MCP Bridge tools. (+4 more)
 
-### Community 11 - "Community 11"
+### Community 12 - "Community 12"
 Cohesion: 0.1
 Nodes (30): _find_packet_file(), _load_packet(), load_pii_patterns(), _load_schema(), Load and compile PII patterns from pii-patterns.yml., Enforce cross-family independence for tier-1 dual-planner packets.      When pri, Refuse if any consecutive pair in the parent chain shares model_id across differ, Enforce expected handoff sequence with no tier jumps. (+22 more)
 
-### Community 12 - "Community 12"
+### Community 13 - "Community 13"
+Cohesion: 0.19
+Nodes (28): append_audit(), atomic_write_json(), _base_packet(), _build_decision_packet(), _build_instruction_packet(), build_request(), _build_response_packet(), _build_resume_packet() (+20 more)
+
+### Community 14 - "Community 14"
 Cohesion: 0.16
 Nodes (28): aggregate_file_scores(), augment_workflow_doc_candidates(), baseline_results(), build_summary(), build_trace(), emit_usage_events(), estimate_tokens(), evaluate_relevance() (+20 more)
 
-### Community 13 - "Community 13"
+### Community 15 - "Community 15"
 Cohesion: 0.18
 Nodes (24): add_common_args(), apply(), _build_local_ci_plan(), build_plan(), _consumer_record(), _consumer_record_relpath(), _ensure_relative_to(), _fail() (+16 more)
 
-### Community 14 - "Community 14"
+### Community 16 - "Community 16"
 Cohesion: 0.11
 Nodes (14): _all_executable_lines(), _all_run_commands(), check_contract(), _contains_main_branch(), _executable_lines(), _failures_for_text(), _has_executable_line_starting_with(), _load_workflow() (+6 more)
 
-### Community 15 - "Community 15"
+### Community 17 - "Community 17"
 Cohesion: 0.15
 Nodes (2): _plan(), TestGovernanceSurfacePlanGate
 
-### Community 16 - "Community 16"
+### Community 18 - "Community 18"
 Cohesion: 0.17
 Nodes (22): _changed_paths(), _changed_paths_from_file(), check_scope(), _current_branch(), ExecutionScope, _format_path(), _git_root(), HandoffEvidence (+14 more)
 
-### Community 17 - "Community 17"
-Cohesion: 0.18
-Nodes (15): _build_fixture_server(), build_parser(), _expect(), from_env(), main(), ProofResult, _request(), run_fixture() (+7 more)
-
-### Community 18 - "Community 18"
+### Community 19 - "Community 19"
 Cohesion: 0.15
 Nodes (11): apply_policy(), classifier_match(), _contains_term(), decide(), deterministic_match(), GateDecision, _load_classifier(), load_rules() (+3 more)
 
-### Community 19 - "Community 19"
+### Community 20 - "Community 20"
 Cohesion: 0.19
 Nodes (21): build(), category_for(), describe_file(), esc(), FileInfo, first_comment(), first_heading(), frontmatter_field() (+13 more)
 
-### Community 20 - "Community 20"
+### Community 21 - "Community 21"
 Cohesion: 0.2
 Nodes (18): append_audit(), _audit_path(), ensure_queue(), load_packet(), _load_plan(), QueueDecision, Replay audit events into logical latest states.      `latest_states` includes ac, replay_audit() (+10 more)
 
-### Community 21 - "Community 21"
+### Community 22 - "Community 22"
 Cohesion: 0.21
 Nodes (12): _actual_workflows(), check_inventory(), _command_file_candidates(), _load_inventory(), main(), _normalize_path(), _validate_coverage(), _validate_required_snippets() (+4 more)
-
-### Community 22 - "Community 22"
-Cohesion: 0.3
-Nodes (19): append_audit(), atomic_write_json(), _base_packet(), _build_decision_packet(), _build_instruction_packet(), build_request(), _build_response_packet(), _build_resume_packet() (+11 more)
 
 ### Community 23 - "Community 23"
 Cohesion: 0.32
@@ -200,95 +200,91 @@ Cohesion: 0.4
 Nodes (9): build_inventory(), import_available(), local_runtime(), mac_hardware(), main(), memory_budget(), pii_guardrail(), _run() (+1 more)
 
 ### Community 41 - "Community 41"
-Cohesion: 0.53
-Nodes (9): _final_request(), _load(), _process(), test_final_e2e_ambiguous_response_requests_clarification_without_instruction(), test_final_e2e_approval_path_preserves_full_identity_chain(), test_final_e2e_duplicate_replay_and_expired_replies_fail_closed(), test_final_e2e_external_channel_pii_is_refused_without_instruction(), test_final_e2e_request_changes_is_not_treated_as_approval() (+1 more)
-
-### Community 42 - "Community 42"
 Cohesion: 0.29
 Nodes (9): check_github_issue(), find_planned_table(), main(), parse_columns(), Return (header_line_index, list_of_data_lines) for the ## Planned table., Split a markdown table row into a dict keyed by header column names.     Returns, Extract a #NNN from the cell value.     Returns the integer issue number, or Non, Call GitHub API to verify issue exists and is open.     Returns (ok: bool, title (+1 more)
 
-### Community 43 - "Community 43"
+### Community 42 - "Community 42"
 Cohesion: 0.49
 Nodes (9): check(), fail(), main(), read_text(), repos_for_static_checkout(), validate_docs_surfaces(), validate_runtime_registry_consumers(), validate_static_checkout_workflow() (+1 more)
 
-### Community 44 - "Community 44"
+### Community 43 - "Community 43"
 Cohesion: 0.61
 Nodes (8): check(), main(), run_command(), test_logger_backwards_compatible(), test_logger_query_trace_fields(), test_measurement_falls_back_from_stale_governance_repo_path(), test_measurement_outputs_query_traces(), test_schema_shape()
 
-### Community 45 - "Community 45"
+### Community 44 - "Community 44"
 Cohesion: 0.42
 Nodes (7): check_memory_exists(), inspect_repo(), load_memory_lines(), main(), memory_dir_for_repo(), parse_pointer_filenames(), validate_frontmatter()
 
-### Community 46 - "Community 46"
+### Community 45 - "Community 45"
 Cohesion: 0.5
 Nodes (8): run_fire(), test_exec_failure_after_successful_preflight_logs_and_signals(), test_preflight_failure_logs_and_exits_fast(), test_preflight_timeout_logs_and_exits_fast(), test_review_template_default_persona_reaches_codex_fire(), test_review_template_propagates_wrapper_failure(), test_success_does_not_write_failure_log(), write_fake_codex()
 
-### Community 47 - "Community 47"
+### Community 46 - "Community 46"
 Cohesion: 0.46
 Nodes (7): collect_repo_metrics(), main(), parse_iso(), pct(), render_markdown(), RepoMetrics, run()
 
-### Community 48 - "Community 48"
+### Community 47 - "Community 47"
 Cohesion: 0.48
 Nodes (2): _copy_fixture(), TestReadOnlyObserver
 
-### Community 49 - "Community 49"
+### Community 48 - "Community 48"
 Cohesion: 0.67
 Nodes (6): check(), fail(), load_json(), main(), validate_graphify_reconciliation(), validate_registry_shape()
 
-### Community 50 - "Community 50"
+### Community 49 - "Community 49"
 Cohesion: 0.4
 Nodes (5): detect_pii(), _iter_patterns(), load_pii_patterns(), Load and validate pii patterns from pii_patterns.yml., Scan text for PII patterns from YAML patterns.      Falls back to the previous b
 
-### Community 51 - "Community 51"
+### Community 50 - "Community 50"
 Cohesion: 0.7
 Nodes (4): append_event(), build_event(), main(), parse_args()
 
-### Community 52 - "Community 52"
+### Community 51 - "Community 51"
 Cohesion: 0.8
 Nodes (4): _load(), test_invalid_hitl_relay_examples_fail(), test_valid_hitl_relay_examples_pass(), _validator()
 
-### Community 53 - "Community 53"
+### Community 52 - "Community 52"
 Cohesion: 0.83
 Nodes (3): check(), is_ignored(), main()
 
-### Community 54 - "Community 54"
+### Community 53 - "Community 53"
 Cohesion: 0.83
 Nodes (3): main(), replace_section(), summary_line()
 
-### Community 55 - "Community 55"
+### Community 54 - "Community 54"
 Cohesion: 0.67
 Nodes (3): emit_packet(), main(), Emit a packet YAML file.     Returns: path to written file
 
-### Community 56 - "Community 56"
+### Community 55 - "Community 55"
 Cohesion: 1.0
 Nodes (2): build_scoped_graph(), main()
 
-### Community 57 - "Community 57"
+### Community 56 - "Community 56"
 Cohesion: 1.0
 Nodes (2): main(), render_issue()
 
-### Community 58 - "Community 58"
+### Community 57 - "Community 57"
 Cohesion: 1.0
 Nodes (1): Build a client from well-known environment variables.
 
-### Community 59 - "Community 59"
+### Community 58 - "Community 58"
 Cohesion: 1.0
 Nodes (0): 
 
 ## Knowledge Gaps
 - **67 isolated node(s):** `Replay audit events into logical latest states.      `latest_states` includes ac`, `Return (header_line_index, list_of_data_lines) for the ## Planned table.`, `Split a markdown table row into a dict keyed by header column names.     Returns`, `Extract a #NNN from the cell value.     Returns the integer issue number, or Non`, `Call GitHub API to verify issue exists and is open.     Returns (ok: bool, title` (+62 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 58`** (1 nodes): `Build a client from well-known environment variables.`
+- **Thin community `Community 57`** (1 nodes): `Build a client from well-known environment variables.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 59`** (1 nodes): `__init__.py`
+- **Thin community `Community 58`** (1 nodes): `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `GateError` connect `Community 5` to `Community 10`?**
+- **Why does `GateError` connect `Community 5` to `Community 11`?**
   _High betweenness centrality (0.009) - this node is a cross-community bridge._
-- **Why does `HelperError` connect `Community 8` to `Community 10`?**
+- **Why does `HelperError` connect `Community 9` to `Community 11`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Are the 39 inferred relationships involving `WindowsOllamaSubmitter` (e.g. with `main()` and `AuditWriter`) actually correct?**
   _`WindowsOllamaSubmitter` has 39 INFERRED edges - model-reasoned connections that need verification._
