@@ -34,7 +34,7 @@ None.
 ## Issue Links
 - Issue: [#380](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/380)
 - Parent Remote MCP issue: [#109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109)
-- PR: pending
+- PR: [#381](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/381)
 
 ## Schema / Artifact Version
 - Remote MCP Operator Connectivity Preflight schema version `1`
@@ -87,7 +87,7 @@ Result: PASS. Dirty sibling roots were declared as active parallel roots and wer
 - Evidence sensitive-material scan — PASS
 - `git diff --check` — PASS
 - Local CI Gate — PASS
-- GitHub PR checks — pending
+- GitHub PR checks — PASS: Analyze (actions), Analyze (python), CodeQL, commit-scope, contract, local-ci-gate, and validate
 
 ## Tier Evidence Used
 Issue-backed PDCAR: `docs/plans/issue-380-remote-mcp-connectivity-preflight-pdcar.md`

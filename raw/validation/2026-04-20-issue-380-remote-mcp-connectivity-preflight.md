@@ -31,9 +31,22 @@ Issue: [#380](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/380)
 | `rg -n "123-45-6789\|Bearer\\s+[A-Za-z0-9._~+/=-]{10,}\|CF-Access\|eyJ[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{8,}\|client-secret\|cf-secret\|fixture-token" raw/remote-mcp-connectivity-preflight \|\| true` | PASS, no matches |
 | `git diff --check` | PASS |
 | `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --base-ref origin/main --head-ref HEAD --json` | PASS, final committed branch diff, 34 changed files, blocker checks passed |
+| `gh pr checks 381 --watch --interval 10` | PASS: Analyze (actions), Analyze (python), CodeQL, commit-scope, contract, local-ci-gate, and validate |
 
 ## Current-Machine Answer
 
 As of this validation, fixture request/response works through the thin client path. Current-machine live Remote MCP request/response is not ready because `SOM_MCP_URL`, `SOM_MCP_TOKEN` or `SOM_REMOTE_MCP_JWT`, `CF_ACCESS_CLIENT_ID`, and `CF_ACCESS_CLIENT_SECRET` are not configured in this execution environment. No live request was sent.
 
 MCP request/response does not prove inbound push/operator messaging. Push messaging remains a separate relay capability.
+
+## PR Checks
+
+PR [#381](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/381) passed:
+
+- Analyze (actions)
+- Analyze (python)
+- CodeQL
+- commit-scope
+- contract
+- local-ci-gate
+- validate
