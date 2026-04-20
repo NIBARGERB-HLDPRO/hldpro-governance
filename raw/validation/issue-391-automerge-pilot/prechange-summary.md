@@ -24,3 +24,15 @@ Source: `prechange-repo.json`
 ## Rollback Baseline
 
 If the pilot fails, restore `allow_auto_merge` to `false` and verify the ruleset snapshots still match `prechange-repo-rulesets.json` and `prechange-org-rulesets.json`.
+
+## Post-Change Evidence
+
+Source: `postchange-repo.json`
+
+- `allow_auto_merge`: `true`
+
+Source: `label-merge-when-green.json`
+
+- `merge-when-green` label exists and is the explicit pilot opt-in label.
+
+No ruleset, required-check, review, CODEOWNER, or workflow setting was changed as part of this evidence update.
