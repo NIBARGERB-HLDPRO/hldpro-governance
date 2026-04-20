@@ -36,3 +36,12 @@ Source: `label-merge-when-green.json`
 - `merge-when-green` label exists and is the explicit pilot opt-in label.
 
 No ruleset, required-check, review, CODEOWNER, or workflow setting was changed as part of this evidence update.
+
+## Evaluator Evidence
+
+Sources:
+
+- `evaluator-eligible.json`
+- `evaluator-blocked.json`
+
+The eligible fixture exits `0` with no blockers. The blocked fixture exits `2` and blocks draft, dirty mergeability, failed Local CI Gate, unresolved review threads, blocking label, missing opt-in label, and missing PDCAR.
