@@ -3,6 +3,8 @@
 # Prevents multi-session conflicts where one session's branch switch
 # corrupts another session's working directory.
 # Allows file-restore operations (git checkout -- <file>, git checkout .)
+# Blocks issue worktree creation unless the command explicitly declares a
+# planning bootstrap or points to an existing claimed execution scope.
 #
 # IMPORTANT: Do NOT use set -e / set -euo pipefail in PreToolUse hooks.
 # Silent non-zero exits block ALL Bash commands with "No stderr output".
@@ -23,24 +25,64 @@ fi
 # Split on && and ; to get individual command segments
 # Use awk for reliable splitting (macOS sed doesn't handle \n in replacement)
 BLOCKED=""
+WORKTREE_BLOCKED=""
 while IFS= read -r segment; do
   # Trim whitespace
   trimmed=$(echo "$segment" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
   [ -z "$trimmed" ] && continue
 
+  # Strip leading VAR=value assignments for command matching while retaining
+  # the original segment for explicit bootstrap/scope markers.
+  command_part=$(echo "$trimmed" | sed -E 's/^([A-Za-z_][A-Za-z0-9_]*=[^[:space:]]+[[:space:]]+)*//')
+
+  if echo "$command_part" | grep -qE '^\s*git\s+worktree\s+add\b' &&
+     echo "$command_part" | grep -qE '(^|[[:space:]])(-b|-B|--branch)[[:space:]]+issue-[0-9]+'; then
+    if echo "$trimmed" | grep -qE '(^|[[:space:]])HLDPRO_LANE_CLAIM_BOOTSTRAP=1([[:space:]]|$)'; then
+      continue
+    fi
+
+    branch_issue=$(echo "$command_part" | sed -nE 's/.*(^|[[:space:]])(-b|-B|--branch)[[:space:]]+issue-([0-9]+).*/\3/p' | head -n 1)
+    scope_ref=$(echo "$trimmed" | sed -nE 's/.*(^|[[:space:]])HLDPRO_LANE_CLAIM_SCOPE=([^[:space:]]+).*/\2/p' | head -n 1)
+    if [ -n "$branch_issue" ] && [ -n "$scope_ref" ]; then
+      repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || repo_root=""
+      if [ -n "$repo_root" ]; then
+        python3 - "$repo_root" "$scope_ref" "$branch_issue" <<'PY' >/dev/null 2>&1
+import json
+import pathlib
+import sys
+
+root = pathlib.Path(sys.argv[1])
+scope_ref = pathlib.Path(sys.argv[2])
+issue = int(sys.argv[3])
+scope_path = scope_ref if scope_ref.is_absolute() else root / scope_ref
+payload = json.loads(scope_path.read_text(encoding="utf-8"))
+claim = payload.get("lane_claim")
+if not isinstance(claim, dict) or claim.get("issue_number") != issue:
+    raise SystemExit(1)
+PY
+        if [ "$?" -eq 0 ]; then
+          continue
+        fi
+      fi
+    fi
+
+    WORKTREE_BLOCKED="$trimmed"
+    break
+  fi
+
   # Only match git checkout/switch at the START of the segment
   # This avoids false positives from commit messages containing "git checkout"
-  if ! echo "$trimmed" | grep -qE '^\s*git\s+(checkout|switch)\b'; then
+  if ! echo "$command_part" | grep -qE '^\s*git\s+(checkout|switch)\b'; then
     continue
   fi
 
   # ALLOW: git checkout with -- anywhere (file restore)
-  if echo "$trimmed" | grep -qE '^\s*git\s+checkout\s+(.*\s)?--\s'; then
+  if echo "$command_part" | grep -qE '^\s*git\s+checkout\s+(.*\s)?--\s'; then
     continue
   fi
 
   # ALLOW: git checkout . (restore all files)
-  if echo "$trimmed" | grep -qE '^\s*git\s+checkout\s+\.\s*$'; then
+  if echo "$command_part" | grep -qE '^\s*git\s+checkout\s+\.\s*$'; then
     continue
   fi
 
@@ -49,6 +91,19 @@ while IFS= read -r segment; do
   break
 
 done < <(echo "$COMMAND" | awk '{gsub(/&&/,"\n"); gsub(/;/,"\n"); gsub(/\|\|/,"\n"); print}')
+
+if [ -n "$WORKTREE_BLOCKED" ]; then
+  echo "BLOCKED: Issue worktree creation requires an explicit lane claim or planning bootstrap." >&2
+  echo "" >&2
+  echo "  Blocked command: $WORKTREE_BLOCKED" >&2
+  echo "" >&2
+  echo "  Allowed issue-lane bootstrap forms:" >&2
+  echo "    HLDPRO_LANE_CLAIM_BOOTSTRAP=1 git worktree add -b issue-<n>-<slug> <path> <base>" >&2
+  echo "    HLDPRO_LANE_CLAIM_SCOPE=raw/execution-scopes/<scope>.json git worktree add -b issue-<n>-<slug> <path> <base>" >&2
+  echo "" >&2
+  echo "  The scope form must include lane_claim.issue_number matching issue-<n>." >&2
+  exit 2
+fi
 
 if [ -n "$BLOCKED" ]; then
   echo "BLOCKED: Branch switching is not allowed. Multi-session safety risk." >&2

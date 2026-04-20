@@ -50,6 +50,7 @@
 | build_org_governance_compendium.py | `scripts/overlord/build_org_governance_compendium.py` | Generates the org-level governance rules compendium from canonical governed repos |
 | worktree_shared_dependencies.sh | `scripts/overlord/worktree_shared_dependencies.sh` | Approved dependency symlink helper for worktrees |
 | audit_remote.sh | `scripts/overlord/audit_remote.sh` | Reads a file from any repo's remote HEAD via GH API |
+| branch-switch-guard.sh | `hooks/branch-switch-guard.sh` | PreToolUse branch/worktree guard that blocks branch switching and unclaimed `issue-*` worktree creation |
 
 ---
 

@@ -39,6 +39,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Pre-worktree issue-lane creation gate | #397 | 2026-04-20 | Hardens `hooks/branch-switch-guard.sh` so `git worktree add -b issue-*` requires explicit planning bootstrap or a matching claimed execution scope before creating filesystem side effects. |
 | Cross-session issue-lane ownership gate | #393 | 2026-04-20 | Adds execution-scope `lane_claim` enforcement so implementation work can require the current branch issue, expected branch issue, and claimed issue to match; wires the check through execution-environment preflight and Local CI Gate scope resolution. |
 | Native GitHub automerge pilot for green verified PRs | #391 | 2026-04-20 | PR #394 captured pre-change repo/ruleset/branch-protection snapshots, enabled native repository auto-merge, recorded the `merge-when-green` opt-in label and evaluator evidence, then merged through GitHub native auto-merge after required checks passed. Repo auto-merge remains enabled for governed opt-in PRs; rollback is captured in `raw/validation/issue-391-automerge-pilot/`. |
 | Org-level automerge policy for green verified PRs | #386 | 2026-04-20 | PR #390 planned the policy, documented prerequisites and rollback, added a non-mutating dry-run eligibility evaluator with focused tests, and kept live org/repo settings unchanged. Native GitHub automerge pilot rollout continues under #391. |
