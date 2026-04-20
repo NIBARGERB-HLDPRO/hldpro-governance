@@ -9,6 +9,8 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Codex brief templates: embed plan schema + lane_claim + graphify-out | [#412](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/412) | MEDIUM | 1-2 | Update docs/templates/codex-spark-dispatch-brief.md with required fields for structured-agent-cycle-plan.json (validate_structured_agent_cycle_plan.py schema) and execution-scope files (lane_claim, graphify-out/ in allowed_write_paths). Prevents recurrence of #411 CI failures. |
+| hldpro-sim OASIS simulation engine package | [#407](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/407) | HIGH | 4-6 | Governance-owned Python OASIS package: CodexCliProvider (proven via contract test), BaseAggregator[T], shared persona registry, governance deployer wiring. First consumer: Stampede Phase 0 Slice 6. |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | [#177](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/177) | LOW-MEDIUM | 2-3 | Post-outage code review. Gate: live-fallback rate < 2% for 2 weeks post-merge (window now passed). |
 | Qwen-Coder MLX driver stub-emission bug | [#105](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/105) | LOW | 1-2 | Qwen2.5-Coder-7B throws truncated output on edge cases (>200 lines). Workarounds in `docs/runbooks/qwen-coder-driver.md`. |
 | SoM Stage 5: som-worker daemon (always-warm Qwen-Coder + packet queue pipeline) | [#178](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/178) | LOW | 6-8 | Qwen watches raw/packets/inbound/, processes to raw/packets/outbound/, Sonnet reviews async. |
