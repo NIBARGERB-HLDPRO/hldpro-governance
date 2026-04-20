@@ -7,20 +7,20 @@
   <key>ProgramArguments</key>
   <array>
     <string>/usr/bin/python3</string>
-    <string>__REPO_ROOT__/scripts/remote-mcp/live_health_monitor.py</string>
+    <string>/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-launchd-proof/scripts/remote-mcp/live_health_monitor.py</string>
     <string>--mode</string>
     <string>live</string>
   </array>
   <key>WorkingDirectory</key>
-  <string>__REPO_ROOT__</string>
+  <string>/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-launchd-proof</string>
   <key>RunAtLoad</key>
   <true/>
   <key>StartInterval</key>
   <integer>900</integer>
   <key>StandardOutPath</key>
-  <string>__REPO_ROOT__/projects/hldpro-governance/reports/remote-mcp-monitor.stdout.log</string>
+  <string>/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-launchd-proof/projects/hldpro-governance/reports/remote-mcp-monitor.stdout.log</string>
   <key>StandardErrorPath</key>
-  <string>__REPO_ROOT__/projects/hldpro-governance/reports/remote-mcp-monitor.stderr.log</string>
+  <string>/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-launchd-proof/projects/hldpro-governance/reports/remote-mcp-monitor.stderr.log</string>
   <key>ProcessType</key>
   <string>Background</string>
 </dict>

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "issue": 378,
+  "command": "env -i PATH=<current-path> python3 scripts/remote-mcp/live_health_monitor.py --mode live --json",
+  "expected_exit_code": 2,
+  "actual_exit_code": 2,
+  "result": "pass",
+  "stdout_path": "raw/remote-mcp-launchd-live-proof/2026-04-20.live-missing-config.stdout.txt",
+  "stderr_path": "raw/remote-mcp-launchd-live-proof/2026-04-20.live-missing-config.stderr.txt"
+}

@@ -1,0 +1,123 @@
+{
+  "session_id": "session-20260420-issue-378-remote-mcp-launchd-live-proof",
+  "issue_number": 378,
+  "objective": "Harden and prove the selected local launchd Remote MCP monitor surface with payload-safe render, rehearsal, and fail-closed evidence.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify the Remote MCP launchd template, launchd proof docs, governance registries, progress/backlog mirrors, issue #378 planning/validation/closeout artifacts, launchd proof evidence, and generated graph/wiki artifacts.",
+    "Reuse the existing Remote MCP monitor and alert contracts; do not change Remote MCP bridge protocol behavior.",
+    "Do not commit Cloudflare credentials, bridge tokens, JWTs, HMAC keys, raw PII, production monitor payloads, rendered secret-bearing plists, or raw MCP payloads."
+  ],
+  "out_of_scope": [
+    "Installing launchd on the operator machine from this PR.",
+    "Configuring production launchd environment values.",
+    "Configuring production GitHub Actions secrets.",
+    "Claiming production live monitor health without live credentials and copied audit evidence."
+  ],
+  "research_summary": "Issue #376 selected local launchd as the live-authoritative Remote MCP monitor surface. The next proof slice must ensure the selected launchd template runs live mode directly and fails closed when live inputs are absent, while preserving safe render/lint and rehearsal artifacts.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/378",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "launchd/com.hldpro.remote-mcp-monitor.plist",
+    "scripts/remote-mcp/live_health_monitor.py",
+    "scripts/remote-mcp/monitor_alert.py",
+    "raw/validation/2026-04-20-issue-376-remote-mcp-monitor-operating-mode.md"
+  ],
+  "sprints": [
+    {
+      "name": "Launchd live proof",
+      "goal": "Make the selected local launchd monitor surface live fail-closed and preserve payload-safe launchd proof evidence.",
+      "tasks": [
+        "Move #376 from active mirrors to Done and mark #378 active.",
+        "Change the launchd template to call live monitor mode directly.",
+        "Update runbook launchd setup, evidence capture, and rollback procedure.",
+        "Generate launchd rendered plist lint proof, fixture monitor rehearsal, alert evidence, and live missing-config proof.",
+        "Update registry and data dictionary references for the launchd live proof contract.",
+        "Run validation, closeout hook, Local CI Gate, PR checks, and issue closeout."
+      ],
+      "acceptance_criteria": [
+        "Backlog/progress mirrors track #378 as active before implementation.",
+        "Runbook documents launchd live proof sequence, evidence capture, rollback, and no-secrets artifact policy.",
+        "Launchd plist render/lint proof is preserved for the intended checkout path.",
+        "Selected-mode monitor rehearsal and alert artifact are preserved.",
+        "Live mode missing-config proof fails closed before requests when production configuration is absent.",
+        "Evidence scan proves preserved artifacts contain no raw SSNs, bearer-token material, Cloudflare Access markers, JWT fragments, credentials, or raw MCP payloads.",
+        "Local tests and Local CI Gate pass.",
+        "Final AC: GitHub PR checks pass before closeout."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/plans/issue-378-remote-mcp-launchd-live-proof-pdcar.md",
+        "docs/plans/issue-378-remote-mcp-launchd-live-proof-structured-agent-cycle-plan.json",
+        "docs/runbooks/remote-mcp-bridge.md",
+        "graphify-out/GRAPH_REPORT.md",
+        "graphify-out/graph.json",
+        "graphify-out/hldpro-governance/",
+        "launchd/com.hldpro.remote-mcp-monitor.plist",
+        "raw/execution-scopes/2026-04-20-issue-378-remote-mcp-launchd-live-proof-implementation.json",
+        "raw/remote-mcp-launchd-live-proof/",
+        "raw/validation/2026-04-20-issue-378-remote-mcp-launchd-live-proof.md",
+        "raw/closeouts/2026-04-20-issue-378-remote-mcp-launchd-live-proof.md",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-explorer-dewey",
+      "role": "remote-mcp launchd proof explorer",
+      "focus": "Identify next issue-backed live launchd proof scope, validation commands, mirror drift, and secret-safety pitfalls.",
+      "status": "accepted",
+      "summary": "Recommended a separate #378 proof slice, reconciliation of closed #376 mirrors, and payload-safe launchd render/rehearsal/missing-config artifacts.",
+      "evidence": [
+        "subagent 019da91a-219d-73d1-85f0-c68f221000dd final report"
+      ]
+    },
+    {
+      "reviewer": "codex-explorer-lorentz",
+      "role": "execution-scope validation explorer",
+      "focus": "Confirm allowed write paths, validation commands, and likely blockers for issue #378.",
+      "status": "accepted",
+      "summary": "Recommended issue-specific #378 plan, execution-scope, raw artifact namespace, and validation gate commands.",
+      "evidence": [
+        "subagent 019da91a-f039-7c93-99af-2055d8a6682a final report"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "codex-explorer-dewey-and-lorentz",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Accepted the issue #378 scope: separate launchd proof slice, #376 mirror reconciliation, launchd live fail-closed behavior, and payload-safe evidence.",
+    "evidence": [
+      "subagent 019da91a-219d-73d1-85f0-c68f221000dd final report",
+      "subagent 019da91a-f039-7c93-99af-2055d8a6682a final report"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #378 may update the Remote MCP launchd template, runbook, registries, backlog/progress mirrors, launchd proof artifacts, validation, closeout, and generated graph/wiki artifacts.",
+    "next_execution_step": "Implement launchd live fail-closed proof, validate locally, open PR, merge after checks pass, and close issue #378.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any preserved artifact includes secrets, JWT fragments, Cloudflare Access material, bearer-token material, raw PII, or raw MCP payloads, remove the artifact and rerun from sanitized inputs.",
+    "If production live configuration is absent, preserve fixture rehearsal and fail-closed evidence only; do not claim production live recurring health.",
+    "If launchd cannot be installed in the current execution context, preserve render/lint proof and document the live install as operator-environment work."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #378",
+    "codex-explorer-dewey",
+    "codex-explorer-lorentz"
+  ],
+  "approved_at": "2026-04-20T16:20:00Z"
+}

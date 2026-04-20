@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "issue": 378,
+  "selected_live_mode": "local-launchd",
+  "template_path": "launchd/com.hldpro.remote-mcp-monitor.plist",
+  "rendered_plist_path": "raw/remote-mcp-launchd-live-proof/2026-04-20.com.hldpro.remote-mcp-monitor.rendered.plist",
+  "monitor_mode_argument": "live",
+  "lint_result": "pass",
+  "production_live_health_claimed": false,
+  "production_live_health_reason": "Production live credentials and copied audit evidence were intentionally unavailable to the repo; fail-closed evidence is preserved instead.",
+  "live_missing_config": {
+    "expected_exit_code": 2,
+    "actual_exit_code": 2,
+    "result": "pass",
+    "proof_path": "raw/remote-mcp-launchd-live-proof/2026-04-20.live-missing-config.proof.json"
+  },
+  "artifacts": {
+    "template_plutil": "raw/remote-mcp-launchd-live-proof/2026-04-20.template-plutil.txt",
+    "rendered_plutil": "raw/remote-mcp-launchd-live-proof/2026-04-20.rendered-plutil.txt",
+    "monitor_rehearsal": "raw/remote-mcp-launchd-live-proof/2026-04-20.launchd-rehearsal.monitor.json",
+    "alert_rehearsal_json": "raw/remote-mcp-launchd-live-proof/2026-04-20.launchd-rehearsal.alert.json",
+    "alert_rehearsal_markdown": "raw/remote-mcp-launchd-live-proof/2026-04-20.launchd-rehearsal.alert.md",
+    "live_missing_config_stdout": "raw/remote-mcp-launchd-live-proof/2026-04-20.live-missing-config.stdout.txt",
+    "live_missing_config_stderr": "raw/remote-mcp-launchd-live-proof/2026-04-20.live-missing-config.stderr.txt",
+    "validation": "raw/validation/2026-04-20-issue-378-remote-mcp-launchd-live-proof.md"
+  }
+}
