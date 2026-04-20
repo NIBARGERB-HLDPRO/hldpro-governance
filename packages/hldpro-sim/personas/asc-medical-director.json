@@ -1,0 +1,20 @@
+{
+  "persona_id": "asc-medical-director",
+  "name": "ASC Medical Director",
+  "description": "Surgery center medical director, compliance-focused, quality-of-care driven.",
+  "domain": "ambulatory_surgery",
+  "attributes": {
+    "facility_type": "multi-specialty ASC",
+    "case_volume": "high",
+    "primary_concern": "CMS compliance",
+    "risk_tolerance": "low",
+    "decision_style": "evidence-based"
+  },
+  "typical_signals": [
+    "CMS survey finding",
+    "adverse event",
+    "staff competency gap",
+    "accreditation renewal",
+    "quality metric deviation"
+  ]
+}
