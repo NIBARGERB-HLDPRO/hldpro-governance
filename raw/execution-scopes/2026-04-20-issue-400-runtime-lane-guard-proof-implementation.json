@@ -1,0 +1,59 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-400-runtime-lane-guard-proof-20260420",
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 400,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/400",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-20T15:33:36Z"
+  },
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/runbooks/org-repo-intake.md",
+    "docs/plans/issue-400-runtime-lane-guard-proof-pdcar.md",
+    "docs/plans/issue-400-runtime-lane-guard-proof-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-20-issue-400-runtime-lane-guard-proof-implementation.json",
+    "raw/validation/issue-400-runtime-lane-guard-proof/",
+    "raw/closeouts/2026-04-20-issue-400-runtime-lane-guard-proof.md",
+    "graphify-out/",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-384-backlog-drift",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-386-automerge",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-386-automerge-main",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-391-automerge-pilot",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-393-lane-claim-gate",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-397-preworktree-lane-gate",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-398-consumer-pull-bootstrap",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-launchd-proof",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-operating-mode",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-stage-d-live-tunnel"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+      "reason": "pre-existing dirty graphify artifacts from an unrelated active lane"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5-codex",
+    "implementer_model": "gpt-5-codex",
+    "accepted_at": "2026-04-20T15:33:36Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/400",
+      "docs/plans/issue-400-runtime-lane-guard-proof-structured-agent-cycle-plan.json",
+      "docs/plans/issue-400-runtime-lane-guard-proof-pdcar.md"
+    ],
+    "active_exception_ref": "raw/execution-scopes/2026-04-20-issue-400-runtime-lane-guard-proof-implementation.json",
+    "active_exception_expires_at": "2026-04-21T15:33:36Z"
+  }
+}
