@@ -1,0 +1,102 @@
+{
+  "session_id": "session-20260420-issue-393-lane-claim-gate",
+  "issue_number": 393,
+  "objective": "Add a repo-native lane-claim gate so agents cannot start implementation work in a different issue lane without a matching execution-scope claim.",
+  "tier": 1,
+  "scope_boundary": [
+    "Extend the existing execution-scope validator with an optional lane_claim contract.",
+    "Wire lane-claim enforcement into execution-environment preflight and the governance Local CI profile.",
+    "Document the rule and preserve focused regression coverage."
+  ],
+  "out_of_scope": [
+    "Cleaning or removing the accidentally created issue #391 worktree.",
+    "Changing GitHub org or repository settings.",
+    "Creating a separate lock service or durable external lane registry."
+  ],
+  "research_summary": "The best repo-native enforcement point is the existing execution-scope contract. It already owns root, branch, write surface, forbidden roots, active parallel roots, and handoff evidence. Adding lane_claim there avoids a second source of truth while letting callers opt into hard lane ownership enforcement.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/393",
+    "docs/plans/issue-393-lane-claim-gate-pdcar.md",
+    "scripts/overlord/assert_execution_scope.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Lane-claim execution-scope gate",
+      "goal": "Fail closed when implementation work lacks an explicit lane claim matching the current issue branch.",
+      "tasks": [
+        "Add lane_claim parsing and enforcement to assert_execution_scope.py.",
+        "Expose --require-lane-claim through check_execution_environment.py.",
+        "Require lane claims in the governance Local CI planner-boundary command.",
+        "Make Local CI scope resolution validate lane_claim.issue_number.",
+        "Update standards and registry documentation.",
+        "Run focused unit tests, governance validators, execution-scope validation, and Local CI."
+      ],
+      "acceptance_criteria": [
+        "A matching lane_claim passes with --require-lane-claim.",
+        "A missing lane_claim fails with --require-lane-claim.",
+        "A mismatched branch/scope issue fails with --require-lane-claim.",
+        "Local CI refuses an issue scope whose filename matches but lane_claim.issue_number does not.",
+        "The #393 execution scope passes lane-claim enforcement."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "STANDARDS.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/plans/issue-393-lane-claim-gate-pdcar.md",
+        "docs/plans/issue-393-lane-claim-gate-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-20-issue-393-lane-claim-gate-implementation.json",
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/check_execution_environment.py",
+        "scripts/overlord/test_assert_execution_scope.py",
+        "tools/local-ci-gate/local_ci_gate.py",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Popper",
+      "role": "repo-native governance-pattern researcher",
+      "focus": "Find the best existing enforcement point for lane ownership without creating a drifting parallel lock system.",
+      "status": "accepted",
+      "summary": "Recommended embedding lane_claim in execution scopes and enforcing it via assert_execution_scope.py, check_execution_environment.py, and Local CI Gate.",
+      "evidence": [
+        "subagent:019dab6b-19d9-74f3-8880-d68acf85b340",
+        "scripts/overlord/assert_execution_scope.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "repo-specialist-research-subagent",
+    "model_family": "codex",
+    "status": "accepted_with_followup",
+    "summary": "A full cross-family review should be added before broad rollout to downstream repos; this governance-local guard is still safe because it only tightens existing local/CI checks.",
+    "evidence": [
+      "docs/plans/issue-393-lane-claim-gate-pdcar.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #393 may update execution-scope validators, Local CI gate wiring, standards/registry docs, and issue-specific planning/scope artifacts.",
+    "next_execution_step": "Implement lane_claim enforcement and validate with focused tests plus Local CI.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Do not create a new external lock service for this slice.",
+    "Do not mutate issue #391 or its worktree as part of this guardrail implementation.",
+    "If lane ownership cannot be determined from execution scope, fail closed when enforcement is requested."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #393",
+    "specialist research subagent"
+  ],
+  "approved_at": "2026-04-20T15:05:17Z"
+}

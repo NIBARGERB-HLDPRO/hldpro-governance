@@ -13,6 +13,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Preflight the current execution environment against a scope file.")
     parser.add_argument("--scope", required=True, help="Path to execution scope JSON.")
     parser.add_argument("--changed-files-file", help="Optional file containing changed paths to validate.")
+    parser.add_argument("--require-lane-claim", action="store_true", help="Require the scope lane_claim to match the current issue branch.")
     args = parser.parse_args(argv)
 
     scope_path = Path(args.scope)
@@ -27,6 +28,7 @@ def main(argv: list[str] | None = None) -> int:
         scope,
         Path.cwd(),
         changed_files_file=changed_files_file,
+        require_lane_claim=args.require_lane_claim,
     )
 
     for warning in warnings:

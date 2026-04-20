@@ -52,6 +52,13 @@
 - If planner and implementer are the same model or model family, handoff evidence must include an active exception reference and concrete expiry (`active_exception_ref`, `active_exception_expires_at`).
 - CI is authoritative for this boundary (`.github/workflows/governance-check.yml`); local hook output from `hooks/code-write-gate.sh` is warning/early-signal only for planner-boundary drift.
 
+### Lane Claim Gate (Issue Work)
+- Every new implementation-ready issue lane must declare ownership in its execution scope with `lane_claim.issue_number`, `lane_claim.claim_ref`, `lane_claim.claimed_by`, and `lane_claim.claimed_at`.
+- When `scripts/overlord/assert_execution_scope.py --require-lane-claim` is used, the current branch issue number, `expected_branch` issue number, and `lane_claim.issue_number` must match.
+- Follow-up issue creation is a hard stop for the closing session unless the operator explicitly assigns that follow-up lane to the same session or a matching claimed execution scope already exists.
+- Planning bootstrap may create PDCAR, structured plan, and execution-scope artifacts for a new issue; implementation changes require the claimed scope first.
+- Local CI Gate resolves issue execution scopes by `lane_claim.issue_number`, not filename alone, so stale or cross-issue scope files cannot authorize another lane.
+
 ### Branch Isolation (global hook)
 - `~/.claude/hooks/branch-switch-guard.sh` — **global PreToolUse hook** that blocks `git checkout <branch>` and `git switch <branch>` in all repos
 - Prevents multi-session conflicts where one session's branch switch corrupts another session's working directory

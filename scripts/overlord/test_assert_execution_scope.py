@@ -63,6 +63,7 @@ class TestAssertExecutionScope(unittest.TestCase):
         forbidden_roots: list[Path] | None = None,
         active_parallel_roots: list[dict[str, str]] | None = None,
         execution_mode: str | None = None,
+        lane_claim: dict[str, Any] | None = None,
         handoff_evidence: dict[str, Any] | None = None,
     ) -> Path:
         scope = {
@@ -75,16 +76,26 @@ class TestAssertExecutionScope(unittest.TestCase):
             scope["active_parallel_roots"] = active_parallel_roots
         if execution_mode is not None:
             scope["execution_mode"] = execution_mode
+        if lane_claim is not None:
+            scope["lane_claim"] = lane_claim
         if handoff_evidence is not None:
             scope["handoff_evidence"] = handoff_evidence
         path = tmpdir / "scope.json"
         path.write_text(json.dumps(scope), encoding="utf-8")
         return path
 
-    def _run_main(self, repo: Path, scope: Path, changed_files_file: Path | None = None) -> tuple[int, str]:
+    def _run_main(
+        self,
+        repo: Path,
+        scope: Path,
+        changed_files_file: Path | None = None,
+        require_lane_claim: bool = False,
+    ) -> tuple[int, str]:
         args = ["--scope", str(scope)]
         if changed_files_file is not None:
             args.extend(["--changed-files-file", str(changed_files_file)])
+        if require_lane_claim:
+            args.append("--require-lane-claim")
         stdout = io.StringIO()
         stderr = io.StringIO()
         with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr), _working_directory(repo):
@@ -116,6 +127,14 @@ class TestAssertExecutionScope(unittest.TestCase):
             "evidence_paths": ["raw/closeouts/issue-242-handoff.md"],
             "active_exception_ref": active_exception_ref,
             "active_exception_expires_at": active_exception_expires_at,
+        }
+
+    def _lane_claim(self, issue_number: int = 393) -> dict[str, Any]:
+        return {
+            "issue_number": issue_number,
+            "claim_ref": f"https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/{issue_number}",
+            "claimed_by": "codex",
+            "claimed_at": "2026-04-20T15:05:17Z",
         }
 
     def test_allows_changes_in_allowed_paths_dirty_tree_mode(self) -> None:
@@ -369,6 +388,66 @@ class TestAssertExecutionScope(unittest.TestCase):
 
         self.assertNotEqual(code, 0)
         self.assertIn("branch mismatch", output)
+
+    def test_require_lane_claim_passes_when_issue_matches_branch_and_scope(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo", branch="issue-393-lane-claim-gate-20260420")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                branch="issue-393-lane-claim-gate-20260420",
+                lane_claim=self._lane_claim(393),
+            )
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed, require_lane_claim=True)
+
+        self.assertEqual(code, 0, output)
+        self.assertIn("PASS execution scope", output)
+
+    def test_require_lane_claim_fails_when_missing(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo", branch="issue-393-lane-claim-gate-20260420")
+            scope = self._scope_file(tmpdir, repo.root, branch="issue-393-lane-claim-gate-20260420")
+
+            code, output = self._run_main(repo.root, scope, require_lane_claim=True)
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("requires `lane_claim`", output)
+
+    def test_require_lane_claim_fails_when_current_branch_issue_mismatches(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo", branch="issue-393-lane-claim-gate-20260420")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                branch="issue-393-lane-claim-gate-20260420",
+                lane_claim=self._lane_claim(391),
+            )
+
+            code, output = self._run_main(repo.root, scope, require_lane_claim=True)
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("lane_claim issue mismatch", output)
+
+    def test_require_lane_claim_fails_when_expected_branch_issue_mismatches(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo", branch="issue-393-lane-claim-gate-20260420")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                branch="feature/no-issue-token",
+                lane_claim=self._lane_claim(393),
+            )
+
+            code, output = self._run_main(repo.root, scope, require_lane_claim=True)
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("expected_branch to contain `issue-<number>`", output)
 
     def test_detached_checkout_uses_github_head_ref(self) -> None:
         with tempfile.TemporaryDirectory() as raw_tmpdir:

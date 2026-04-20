@@ -342,6 +342,22 @@ def _branch_issue_number(branch_name: str) -> str:
     return match.group(1) if match else ""
 
 
+def _scope_lane_claim_issue(path: Path) -> str:
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise GateError(f"could not read execution scope {path}: {exc}") from exc
+    if not isinstance(payload, dict):
+        raise GateError(f"{path}: execution scope must be a JSON object")
+    lane_claim = payload.get("lane_claim")
+    if not isinstance(lane_claim, dict):
+        return ""
+    issue_number = lane_claim.get("issue_number")
+    if not isinstance(issue_number, int) or issue_number <= 0:
+        raise GateError(f"{path}: lane_claim.issue_number must be a positive integer")
+    return str(issue_number)
+
+
 def _resolve_execution_scope(repo_root: Path, branch_name: str) -> str:
     issue_number = _branch_issue_number(branch_name)
     if not issue_number:
@@ -354,7 +370,17 @@ def _resolve_execution_scope(repo_root: Path, branch_name: str) -> str:
         raise GateError(f"multiple execution scopes match issue-{issue_number}: {', '.join(str(item) for item in matches)}")
     if not matches:
         return ""
-    return matches[0].relative_to(repo_root).as_posix()
+    claimed_matches = [path for path in matches if _scope_lane_claim_issue(path) == issue_number]
+    if len(claimed_matches) > 1:
+        raise GateError(
+            f"multiple claimed execution scopes match issue-{issue_number}: "
+            + ", ".join(str(item) for item in claimed_matches)
+        )
+    if not claimed_matches:
+        raise GateError(
+            f"execution scope for issue-{issue_number} must include lane_claim.issue_number={issue_number}"
+        )
+    return claimed_matches[0].relative_to(repo_root).as_posix()
 
 
 def _command_context(

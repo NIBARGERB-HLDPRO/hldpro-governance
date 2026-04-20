@@ -135,6 +135,7 @@
 | GOV-019 | `.github/workflows/governance-check.yml` and `hooks/code-write-gate.sh` call the shared validator so CI and local write-time enforcement use the same governance-surface planning gate. |
 | GOV-019 | `scripts/overlord/validate_structured_agent_cycle_plan.py --enforce-planner-boundary-scope` provides a local E2E simulation of CI planner-boundary scope resolution by requiring issue-matching execution-scope JSON under `raw/execution-scopes/` whenever planner-boundary files change. |
 | GOV-019 | `scripts/overlord/assert_execution_scope.py` remains the root/branch/write-scope guard, with tests proving wrong checkout roots, dirty forbidden roots, and out-of-scope paths fail locally. |
+| GOV-019 | `scripts/overlord/assert_execution_scope.py --require-lane-claim` requires the current branch issue, expected branch issue, and execution-scope `lane_claim.issue_number` to match before implementation work is authorized. |
 | GOV-019 | `scripts/overlord/assert_execution_scope.py` resolves detached PR checkouts through `GITHUB_HEAD_REF`/`GITHUB_REF_NAME` so reusable governance checks can validate trusted scopes while preserving local wrong-branch failures. |
 | GOV-019 | Planner write-boundary enforcement now treats Tier 1 sessions as planning-only by default (`execution_mode: planning_only`), with `allowed_write_paths` as the planning artifact allowlist. |
 | GOV-019 | Non-planning diffs now require accepted pinned-agent handoff evidence, and same-model or same-family planner/implementer pairs require an active exception reference with expiry. |
