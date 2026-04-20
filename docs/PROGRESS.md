@@ -1,6 +1,6 @@
 # hldpro-governance — Progress & Backlog
 
-**Last Updated:** 2026-04-19
+**Last Updated:** 2026-04-20
 **Scope:** Cross-repo governance standards, CI enforcement, audit agents, and knowledge base infrastructure.
 
 > This file is the single source of truth for planned work, open bugs, feature requests, and operational items in hldpro-governance.
@@ -25,7 +25,7 @@
 
 | Feature | Issue | Priority | Notes |
 |---------|-------|----------|-------|
-| Remote MCP monitor alert delivery and first recurring evidence | #374 | HIGH | Add payload-safe alert/report formatting and first recurring fixture-run evidence for the #372 monitor |
+| Remote MCP live monitor operating-mode proof | #376 | HIGH | Select the live operating surface, document setup/evidence capture, preserve payload-safe rehearsal and live fail-closed evidence |
 | SoM Slice A: codex flag remediation across AIS / HP / LAM / KT | #139 | MEDIUM | Epic: model-pin compliance across governed repos |
 | SoM Slice B: AGENTS.md → agents/*.md migration + model pins | #140 | MEDIUM | Follow-on to Slice A |
 
@@ -35,12 +35,13 @@
 |------|-------|--------|-------|
 | Weekly overlord sweep write-back to wiki/index.md | — | ACTIVE / AWAITING NEXT RUN | Workflow and graph/index write-back path are wired; last committed index remains the 2026-04-09 bootstrap until the next scheduled or manual sweep refreshes generated counts |
 | LAM env-var-docs contract debt: SOM_* variables unclassified | #145 | OPEN | local-ai-machine env vars need classification |
-| Remote MCP monitor alert delivery and first recurring evidence | #374 | IN_PROGRESS | Payload-safe alert/report formatter, workflow summary, first fixture-run evidence, validation, and closeout are in progress |
+| Remote MCP live monitor operating-mode proof | #376 | IN_PROGRESS | Local launchd is being documented as the selected live operating mode; GitHub Actions remains the fixture harness and optional configured-live runner |
 
 ## Done
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Remote MCP monitor alert delivery and first recurring evidence | #374 | 2026-04-20 | PR #375 added payload-safe alert/report formatting, workflow step-summary and artifact output, first fixture-run evidence, live-missing-config validation, Local CI evidence, and closeout. |
 | Remote MCP recurring live health and audit monitor | #372 | 2026-04-20 | PR #373 added the monitor wrapper, scheduled/manual workflow, launchd template, runbook, fixture/live fail-closed validation, Local CI evidence, graph/wiki refresh, and closeout. Alert delivery continues under #374. |
 | Cloud → Local MCP Bridge live Stage D closeout | #109 #370 | 2026-04-19 | Stage A governance, downstream Stage B/C bridge controls, final Cloudflare Access Stage D proof, strict audit verification, tamper-negative proof, stdio continuity proof, temporary Access cleanup, PR #371, and downstream local-ai-machine PRs #488/#490/#492 are complete. Recurring operations continue under #372. |
 | Stage 5+ som-worker launchd boot-start integration | #189 | 2026-04-19 | Downstream local-ai-machine#482 / PR #483 implemented the `com.hldpro.som-worker` LaunchAgent, installer/uninstaller, README docs, fake-launchctl e2e proof, reviewer checkpoints, and GitHub Actions green. Merge commit `8ceb5e38a0dd8105c2467e48d00219b95bac28d4`. Closeout: raw/closeouts/2026-04-19-issue-189-som-worker-launchd.md. |

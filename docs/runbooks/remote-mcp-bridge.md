@@ -1,13 +1,13 @@
 # Remote MCP Bridge Runbook
 
-Last updated: 2026-04-19
+Last updated: 2026-04-20
 Owner: Operator (`nibargerb`)
-Issue: [hldpro-governance #109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109), recurring monitor [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372)
+Issue: [hldpro-governance #109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109), recurring monitor [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372), alert evidence [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374), operating mode [#376](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376)
 Scope: Governance Remote MCP Bridge contract, proof, and operator procedure.
 
 ## Current Status
 
-Stage A governance standards, Stage B/C downstream HTTP bridge controls, and Stage D live Cloudflare proof are merged. Issue #109 is closed. Recurring operational monitoring is tracked by issue #372 and uses the same Stage D proof runner plus evidence-safety checks.
+Stage A governance standards, Stage B/C downstream HTTP bridge controls, and Stage D live Cloudflare proof are merged. Issue #109 is closed. Recurring operational monitoring is tracked by issue #372 and uses the same Stage D proof runner plus evidence-safety checks. Issue #376 selects local `launchd` as the live-authoritative monitor operating mode; GitHub Actions remains the scheduled fixture harness and an optional configured-live runner.
 
 ## Approved Remote Surface
 
@@ -89,6 +89,24 @@ The live proof fails fast when required endpoint, identity, audit, HMAC, or stdi
 
 Use the recurring monitor after Stage D activation to keep the live bridge under continuous authenticated smoke and audit verification. The monitor intentionally composes `stage_d_smoke.py`; it does not introduce a second Remote MCP protocol path.
 
+### Operating Mode
+
+Selected live mode: install `launchd/com.hldpro.remote-mcp-monitor.plist` from the intended operator checkout and run `scripts/remote-mcp/live_health_monitor.py --mode live` locally.
+
+Rationale:
+
+- Live health requires access to the copied Remote MCP audit directory and the HMAC key used to verify that audit chain.
+- Live health also requires `SOM_REMOTE_MCP_STDIO_PROOF_COMMAND` so local stdio continuity is proved after remote tunnel checks.
+- Those inputs are local operational controls. Do not treat GitHub-hosted fixture evidence as production live health.
+
+GitHub Actions role:
+
+- `.github/workflows/remote-mcp-live-health.yml` is the daily scheduled fixture harness and alert-artifact regression path.
+- The workflow may run live mode only when the complete live secret set, safe audit-evidence source, and stdio-proof command are intentionally configured.
+- If live inputs are absent, the workflow must preserve fixture evidence and report a skip/notice, not claim live health.
+
+Selected-mode rehearsal evidence for issue #376 is preserved in `raw/remote-mcp-monitor-operating-mode/`. It proves the monitor and alert pipeline for the selected local operating mode without production credentials. It is not a substitute for a future issue-backed live run.
+
 Fixture harness check:
 
 ```bash
@@ -133,8 +151,8 @@ Alert output contains counts, check names, redacted failure details, health, mod
 
 Recurring surfaces:
 
-- GitHub Actions: `.github/workflows/remote-mcp-live-health.yml` runs the fixture harness on schedule, writes a payload-safe step summary and alert artifact, and runs live mode only when the full secret set is configured.
-- macOS launchd template: `launchd/com.hldpro.remote-mcp-monitor.plist` runs the same monitor every 900 seconds after replacing `__REPO_ROOT__` with the checkout path.
+- macOS launchd template: `launchd/com.hldpro.remote-mcp-monitor.plist` is the selected live operating surface and runs the same monitor every 900 seconds after replacing `__REPO_ROOT__` with the checkout path.
+- GitHub Actions: `.github/workflows/remote-mcp-live-health.yml` runs the fixture harness on schedule, writes a payload-safe step summary and alert artifact, and runs live mode only when the full secret set and safe live evidence inputs are configured.
 
 Install the launchd template only from the intended operating checkout:
 
@@ -147,6 +165,26 @@ plutil -lint ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
 launchctl bootstrap "gui/$(id -u)" ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
 launchctl kickstart -k "gui/$(id -u)/com.hldpro.remote-mcp-monitor"
 ```
+
+After installation, capture payload-safe selected-mode evidence:
+
+```bash
+python3 scripts/remote-mcp/live_health_monitor.py --mode live --json \
+  > /tmp/remote-mcp-monitor-live.json
+python3 scripts/remote-mcp/monitor_alert.py \
+  --input /tmp/remote-mcp-monitor-live.json \
+  --json-output /tmp/remote-mcp-monitor-live-alert.json \
+  --markdown-output /tmp/remote-mcp-monitor-live-alert.md \
+  --fail-on-degraded
+```
+
+For dry-run rehearsal without production credentials, use `--mode fixture` and preserve the monitor JSON plus alert JSON/Markdown. For live-missing-configuration proof, `env -i PATH="$PATH" python3 scripts/remote-mcp/live_health_monitor.py --mode live --json` must exit before sending requests and state the missing required configuration names only.
+
+Operator response:
+
+- Healthy alert: keep the launchd job loaded and retain the alert summary with the monitor timestamp.
+- Degraded alert: inspect failed check names first, then verify Cloudflare Access status, inner bridge token rotation, audit-copy freshness, HMAC key availability, and stdio proof command health.
+- Sensitive-finding alert: quarantine the affected artifact, rotate any implicated live credential if the source was production, rerun the monitor from sanitized evidence, and attach only redacted summaries to issue closeout.
 
 Uninstall:
 
