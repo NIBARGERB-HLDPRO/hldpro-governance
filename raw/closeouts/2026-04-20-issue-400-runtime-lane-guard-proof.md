@@ -53,14 +53,14 @@ The scope restricts writes to issue #400 planning, runbook, validation, closeout
 
 ## Validation Commands
 - PASS: `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .`
-- PASS with expected active parallel root warning and all 10 tracked/untracked changed paths: `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-20-issue-400-runtime-lane-guard-proof-implementation.json --changed-files-file /tmp/issue-400-changed-files.txt --require-lane-claim`
-- PASS with expected active parallel root warning and all 10 tracked/untracked changed paths: `python3 scripts/overlord/check_execution_environment.py --scope raw/execution-scopes/2026-04-20-issue-400-runtime-lane-guard-proof-implementation.json --changed-files-file /tmp/issue-400-changed-files.txt --require-lane-claim`
+- PASS with expected active parallel root warning and all 13 PR changed paths: `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-20-issue-400-runtime-lane-guard-proof-implementation.json --changed-files-file /tmp/issue-400-pr-changed-files.txt --require-lane-claim`
+- PASS with expected active parallel root warning and all 13 PR changed paths: `python3 scripts/overlord/check_execution_environment.py --scope raw/execution-scopes/2026-04-20-issue-400-runtime-lane-guard-proof-implementation.json --changed-files-file /tmp/issue-400-pr-changed-files.txt --require-lane-claim`
 - PASS: `python3 -m unittest scripts/overlord/test_branch_switch_guard.py`
 - PASS: `python3 scripts/overlord/check_overlord_backlog_github_alignment.py`
 - PASS: `python3 scripts/overlord/validate_registry_surfaces.py`
 - PASS: `git diff --check`
 - PASS: `bash hooks/governance-check.sh`
-- PASS: `/opt/homebrew/bin/python3.11 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --changed-files /tmp/issue-400-changed-files.txt`
+- PASS: `/opt/homebrew/bin/python3.11 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --changed-files /tmp/issue-400-pr-changed-files.txt`
 - Pending before merge: GitHub checks.
 
 ## Tier Evidence Used
