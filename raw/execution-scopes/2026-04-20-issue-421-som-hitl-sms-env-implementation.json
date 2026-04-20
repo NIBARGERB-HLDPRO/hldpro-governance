@@ -1,0 +1,68 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-421-som-hitl-sms-env-20260420",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/ENV_REGISTRY.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-421-som-hitl-sms-env-pdcar.md",
+    "docs/plans/issue-421-som-hitl-sms-env-structured-agent-cycle-plan.json",
+    "graphify-out/",
+    "OVERLORD_BACKLOG.md",
+    "raw/execution-scopes/2026-04-20-issue-421-som-hitl-sms-env-implementation.json",
+    "raw/validation/2026-04-20-issue-421-som-hitl-sms-env.md",
+    "raw/closeouts/2026-04-20-issue-421-som-hitl-sms-env.md",
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/test_bootstrap_repo_env_contract.py",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout is outside issue #421 scope; issue #421 uses an isolated worktree"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "downstream repo has separate SMS runtime PRs; this governance slice does not edit it"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "AIS/Alex sender route is explicitly out of scope for production SoM approvals"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo is unrelated to issue #421"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "sibling repo has unrelated dirty state outside issue #421 scope"
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 421,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/421",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-20T20:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "github-issue-421-and-codex-local-analysis",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-20T20:00:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/421",
+      "docs/plans/issue-421-som-hitl-sms-env-structured-agent-cycle-plan.json",
+      "docs/plans/issue-421-som-hitl-sms-env-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

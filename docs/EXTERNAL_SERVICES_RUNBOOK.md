@@ -572,7 +572,23 @@ curl -s https://api.stripe.com/v1/prices -u "$STRIPE_SECRET_KEY:" \
 | `TWILIO_AUTH_TOKEN` | API auth |
 | `TWILIO_API_SID` + `TWILIO_SECONDARY_AUTH_TOKEN` | API key pair |
 | `TWILIO_OAUTH_CLIENT_ID` + `TWILIO_OAUTH_SECRET` | OAuth credentials |
+| `SOM_TWILIO_FROM_NUMBER` | Dedicated SoM HITL SMS sender for local-ai-machine approval/reply routing |
+| `TWILIO_FROM_NUMBER` / `TWILIO_SMS_FROM` | Generic sender aliases for compatibility and diagnostics |
 | `TWILIO_TEST_CONSUMER_NUMBER` | CI test phone (+18176806400 as of 2026-04-15) |
+
+### SoM HITL SMS Route
+
+Store the SoM HITL sender and operator destination only in the gitignored `hldpro-governance/.env.shared` vault, then run:
+
+```bash
+bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh lam
+```
+
+The local-ai-machine route must prefer `SOM_TWILIO_FROM_NUMBER` for approval/reply traffic. The AIS/Alex sender and any customer-demo Twilio sender are diagnostic or product-demo paths only; they must not be the production SoM approval route because inbound replies can collide with AIS/customer intent handling.
+
+Evidence and validation artifacts must refer to route keys, Twilio message ids, delivery status, and redacted phone suffixes only. Do not commit raw phone numbers, Twilio auth material, webhook request bodies, or generated `.env` files.
+
+Provisioning a new Twilio number or A2P campaign is an external-service change that requires explicit operator approval before purchase or dashboard mutation.
 
 ### CLI Operations
 ```bash

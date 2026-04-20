@@ -110,6 +110,8 @@ DRY_RUN=1 bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.s
 | `SOM_OPERATOR_INBOUND_QUEUE_ROOT` / `SOM_OPERATOR_INBOUND_SESSION_ID` | same | HITL relay receive preflight queue root and target session id |
 | `SLACK_BOT_USER_OAUTH_TOKEN` / `SLACK_CODEX_CHANNEL_ID` / `SLACK_CHANNEL_ID` / `SLACK_E2E_CHANNEL_ID` | same | Operator notification and HITL Slack routing for local-ai-machine tooling |
 | `TWILIO_ACCOUNT_SID` / `TWILIO_AUTH_TOKEN` / `TWILIO_API_SID` / `TWILIO_SECONDARY_AUTH_TOKEN` | same | SMS fallback provider credentials for operator notification routing |
+| `SOM_TWILIO_FROM_NUMBER` | `SOM_TWILIO_FROM_NUMBER` | Dedicated SoM HITL SMS sender for local-ai-machine approval/reply routing; do not reuse the AIS/Alex or customer-demo sender as the production approval route |
+| `TWILIO_FROM_NUMBER` / `TWILIO_SMS_FROM` | same | Generic Twilio sender aliases for compatibility and diagnostics; production SoM HITL approval routing must prefer `SOM_TWILIO_FROM_NUMBER` |
 | `TWILIO_TEST_CONSUMER_NUMBER` / `OPERATOR_SMS_PHONE` / `SOM_OPERATOR_SMS_PHONE` | same | Operator SMS destination values for tests and SoM/HITL notification routing |
 
 ### knocktracker
