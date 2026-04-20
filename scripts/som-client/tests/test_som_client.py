@@ -67,6 +67,24 @@ def test_som_client_sends_cf_and_bearer_headers(monkeypatch) -> None:
     assert seen_headers["user-agent"] == "hldpro-som-client-test/1"
 
 
+def test_som_client_accepts_remote_mcp_jwt_fallback(monkeypatch) -> None:
+    seen_headers: Dict[str, str] = {}
+
+    def fake_urlopen(request: urllib.request.Request, timeout: float = 0.0):
+        seen_headers.update({k.lower(): v for k, v in request.header_items()})
+        return _build_success_response({"result": {"ok": True}})
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
+    monkeypatch.setenv("SOM_MCP_URL", "https://mcp.example.com")
+    monkeypatch.delenv("SOM_MCP_TOKEN", raising=False)
+    monkeypatch.setenv("SOM_REMOTE_MCP_JWT", "remote-mcp-jwt")
+
+    client = SomClient.from_env()
+    client.ping()
+
+    assert seen_headers["authorization"] == "Bearer remote-mcp-jwt"
+
+
 def test_som_client_retries_on_429(monkeypatch) -> None:
     calls = {"count": 0}
     sleeps: List[float] = []

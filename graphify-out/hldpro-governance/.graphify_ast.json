@@ -5146,6 +5146,125 @@
       "source_location": "L147"
     },
     {
+      "id": "operator_connectivity",
+      "label": "operator_connectivity.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "operator_connectivity_check",
+      "label": "Check",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L41"
+    },
+    {
+      "id": "operator_connectivity_check_to_dict",
+      "label": ".to_dict()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L46"
+    },
+    {
+      "id": "operator_connectivity_fixturemcphandler",
+      "label": "_FixtureMcpHandler",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L50"
+    },
+    {
+      "id": "basehttprequesthandler",
+      "label": "BaseHTTPRequestHandler",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "operator_connectivity_fixturemcphandler_log_message",
+      "label": ".log_message()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L53"
+    },
+    {
+      "id": "operator_connectivity_fixturemcphandler_do_post",
+      "label": ".do_POST()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L56"
+    },
+    {
+      "id": "operator_connectivity_fixturemcphandler_write_json",
+      "label": "._write_json()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L76"
+    },
+    {
+      "id": "operator_connectivity_fixture_server",
+      "label": "_fixture_server()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L86"
+    },
+    {
+      "id": "operator_connectivity_missing_groups",
+      "label": "_missing_groups()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L98"
+    },
+    {
+      "id": "operator_connectivity_launchctl_loaded",
+      "label": "_launchctl_loaded()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L106"
+    },
+    {
+      "id": "operator_connectivity_launchd_checks",
+      "label": "_launchd_checks()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L116"
+    },
+    {
+      "id": "operator_connectivity_call_fixture",
+      "label": "_call_fixture()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L149"
+    },
+    {
+      "id": "operator_connectivity_call_live",
+      "label": "_call_live()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L168"
+    },
+    {
+      "id": "operator_connectivity_build_payload",
+      "label": "build_payload()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L183"
+    },
+    {
+      "id": "operator_connectivity_build_parser",
+      "label": "build_parser()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L223"
+    },
+    {
+      "id": "operator_connectivity_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L230"
+    },
+    {
       "id": "verify_audit",
       "label": "verify_audit.py",
       "file_type": "code",
@@ -5424,6 +5543,41 @@
       "file_type": "code",
       "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L88"
+    },
+    {
+      "id": "test_operator_connectivity",
+      "label": "test_operator_connectivity.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_operator_connectivity_test_fixture_preflight_proves_request_response_without_live_secrets",
+      "label": "test_fixture_preflight_proves_request_response_without_live_secrets()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L18"
+    },
+    {
+      "id": "test_operator_connectivity_test_live_preflight_fails_closed_before_request_when_config_missing",
+      "label": "test_live_preflight_fails_closed_before_request_when_config_missing()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L28"
+    },
+    {
+      "id": "test_operator_connectivity_test_cli_writes_json_output",
+      "label": "test_cli_writes_json_output()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L49"
+    },
+    {
+      "id": "test_operator_connectivity_test_launchctl_absence_is_non_blocking",
+      "label": "test_launchctl_absence_is_non_blocking()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L74"
     },
     {
       "id": "test_verify_audit",
@@ -8320,14 +8474,14 @@
       "id": "som_client",
       "label": "som_client.py",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L1"
     },
     {
       "id": "som_client_somclienterror",
       "label": "SomClientError",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L31"
     },
     {
@@ -8341,211 +8495,218 @@
       "id": "som_client_somclienterror_init",
       "label": ".__init__()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L34"
     },
     {
       "id": "som_client_somclienterror_to_dict",
       "label": ".to_dict()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L47"
     },
     {
       "id": "som_client_decode_jwt_payload",
       "label": "_decode_jwt_payload()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L56"
     },
     {
       "id": "som_client_unix_now",
       "label": "_unix_now()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L70"
     },
     {
       "id": "som_client_somclientconfig",
       "label": "SomClientConfig",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L75"
     },
     {
       "id": "som_client_somclient",
       "label": "SomClient",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L88"
     },
     {
       "id": "som_client_somclient_init",
       "label": ".__init__()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L91"
     },
     {
       "id": "som_client_from_env",
       "label": "from_env()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L96"
     },
     {
       "id": "som_client_somclient_current_token",
       "label": "._current_token()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L110"
     },
     {
       "id": "som_client_somclient_headers",
       "label": "._headers()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L128"
     },
     {
       "id": "som_client_somclient_request",
       "label": "._request()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L148"
     },
     {
       "id": "som_client_somclient_call_tool",
       "label": "._call_tool()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L215"
     },
     {
       "id": "som_client_somclient_ping",
       "label": ".ping()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L232"
     },
     {
       "id": "som_client_somclient_handoff",
       "label": ".handoff()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L235"
     },
     {
       "id": "som_client_somclient_chain",
       "label": ".chain()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L247"
     },
     {
       "id": "som_client_somclient_log_fallback",
       "label": ".log_fallback()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L250"
     },
     {
       "id": "som_client_somclient_lam_probe",
       "label": ".lam_probe()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L253"
     },
     {
       "id": "som_client_somclient_lam_embed",
       "label": ".lam_embed()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L256"
     },
     {
       "id": "som_client_build_parser",
       "label": "build_parser()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L263"
     },
     {
       "id": "som_client_main",
       "label": "main()",
       "file_type": "code",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L268"
     },
     {
       "id": "som_client_rationale_32",
       "label": "Error raised for client-side protocol and transport failures.",
       "file_type": "rationale",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L32"
     },
     {
       "id": "som_client_rationale_57",
       "label": "Decode JWT payload without verifying signature.",
       "file_type": "rationale",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L57"
     },
     {
       "id": "som_client_rationale_89",
       "label": "Minimal HTTP client for Remote MCP Bridge tools.",
       "file_type": "rationale",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L89"
     },
     {
       "id": "som_client_rationale_97",
       "label": "Build a client from well-known environment variables.",
       "file_type": "rationale",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L97"
     },
     {
       "id": "test_som_client",
       "label": "test_som_client.py",
       "file_type": "code",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L1"
     },
     {
       "id": "test_som_client_build_success_response",
       "label": "_build_success_response()",
       "file_type": "code",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L23"
     },
     {
       "id": "test_som_client_build_http_error",
       "label": "_build_http_error()",
       "file_type": "code",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L32"
     },
     {
       "id": "test_som_client_test_som_client_sends_cf_and_bearer_headers",
       "label": "test_som_client_sends_cf_and_bearer_headers()",
       "file_type": "code",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L46"
+    },
+    {
+      "id": "test_som_client_test_som_client_accepts_remote_mcp_jwt_fallback",
+      "label": "test_som_client_accepts_remote_mcp_jwt_fallback()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
+      "source_location": "L70"
     },
     {
       "id": "test_som_client_test_som_client_retries_on_429",
       "label": "test_som_client_retries_on_429()",
       "file_type": "code",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
-      "source_location": "L70"
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
+      "source_location": "L88"
     },
     {
       "id": "test_som_client_test_som_client_payload_safe_errors",
       "label": "test_som_client_payload_safe_errors()",
       "file_type": "code",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
-      "source_location": "L102"
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
+      "source_location": "L120"
     }
   ],
   "edges": [
@@ -23940,6 +24101,393 @@
       "weight": 0.8
     },
     {
+      "source": "operator_connectivity",
+      "target": "argparse",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "contextlib",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "threading",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "dataclasses",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "http_server",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "som_client",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "operator_connectivity_check",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity_check",
+      "target": "operator_connectivity_check_to_dict",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "operator_connectivity_fixturemcphandler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity_fixturemcphandler",
+      "target": "basehttprequesthandler",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity_fixturemcphandler",
+      "target": "operator_connectivity_fixturemcphandler_log_message",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity_fixturemcphandler",
+      "target": "operator_connectivity_fixturemcphandler_do_post",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity_fixturemcphandler",
+      "target": "operator_connectivity_fixturemcphandler_write_json",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "operator_connectivity_fixture_server",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "operator_connectivity_missing_groups",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "operator_connectivity_launchctl_loaded",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "operator_connectivity_launchd_checks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "operator_connectivity_call_fixture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "operator_connectivity_call_live",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "operator_connectivity_build_payload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L183",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "operator_connectivity_build_parser",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L223",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity",
+      "target": "operator_connectivity_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L230",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity_fixturemcphandler_do_post",
+      "target": "operator_connectivity_fixturemcphandler_write_json",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L58",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_launchd_checks",
+      "target": "operator_connectivity_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L120",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_launchd_checks",
+      "target": "operator_connectivity_launchctl_loaded",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L138",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_call_fixture",
+      "target": "operator_connectivity_fixture_server",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L150",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_call_fixture",
+      "target": "operator_connectivity_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L161",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_call_live",
+      "target": "operator_connectivity_missing_groups",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L169",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_call_live",
+      "target": "operator_connectivity_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L171",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_call_live",
+      "target": "operator_connectivity_check_to_dict",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L175",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_build_payload",
+      "target": "operator_connectivity_launchd_checks",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L184",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_build_payload",
+      "target": "operator_connectivity_missing_groups",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L185",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_build_payload",
+      "target": "operator_connectivity_call_fixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L189",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_build_payload",
+      "target": "operator_connectivity_call_live",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L193",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_build_payload",
+      "target": "operator_connectivity_check_to_dict",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L214",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_main",
+      "target": "operator_connectivity_build_parser",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L231",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_main",
+      "target": "operator_connectivity_build_payload",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L232",
+      "weight": 0.8
+    },
+    {
       "source": "verify_audit",
       "target": "argparse",
       "relation": "imports",
@@ -24757,6 +25305,96 @@
       "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L91",
       "weight": 0.8
+    },
+    {
+      "source": "test_operator_connectivity",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_connectivity",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_connectivity",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_connectivity",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_connectivity",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_connectivity",
+      "target": "operator_connectivity",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_connectivity",
+      "target": "test_operator_connectivity_test_fixture_preflight_proves_request_response_without_live_secrets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_connectivity",
+      "target": "test_operator_connectivity_test_live_preflight_fails_closed_before_request_when_config_missing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_connectivity",
+      "target": "test_operator_connectivity_test_cli_writes_json_output",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_connectivity",
+      "target": "test_operator_connectivity_test_launchctl_absence_is_non_blocking",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_connectivity.py",
+      "source_location": "L74",
+      "weight": 1.0
     },
     {
       "source": "test_verify_audit",
@@ -33646,7 +34284,7 @@
       "target": "argparse",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L16",
       "weight": 1.0
     },
@@ -33655,7 +34293,7 @@
       "target": "base64",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L17",
       "weight": 1.0
     },
@@ -33664,7 +34302,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L18",
       "weight": 1.0
     },
@@ -33673,7 +34311,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L19",
       "weight": 1.0
     },
@@ -33682,7 +34320,7 @@
       "target": "time",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L20",
       "weight": 1.0
     },
@@ -33691,7 +34329,7 @@
       "target": "urllib_error",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L21",
       "weight": 1.0
     },
@@ -33700,7 +34338,7 @@
       "target": "urllib_request",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L22",
       "weight": 1.0
     },
@@ -33709,7 +34347,7 @@
       "target": "uuid",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L23",
       "weight": 1.0
     },
@@ -33718,7 +34356,7 @@
       "target": "dataclasses",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L24",
       "weight": 1.0
     },
@@ -33727,7 +34365,7 @@
       "target": "typing",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L25",
       "weight": 1.0
     },
@@ -33736,7 +34374,7 @@
       "target": "som_client_somclienterror",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L31",
       "weight": 1.0
     },
@@ -33745,7 +34383,7 @@
       "target": "runtimeerror",
       "relation": "inherits",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L31",
       "weight": 1.0
     },
@@ -33754,7 +34392,7 @@
       "target": "som_client_somclienterror_init",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L34",
       "weight": 1.0
     },
@@ -33763,7 +34401,7 @@
       "target": "som_client_somclienterror_to_dict",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L47",
       "weight": 1.0
     },
@@ -33772,7 +34410,7 @@
       "target": "som_client_decode_jwt_payload",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L56",
       "weight": 1.0
     },
@@ -33781,7 +34419,7 @@
       "target": "som_client_unix_now",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L70",
       "weight": 1.0
     },
@@ -33790,7 +34428,7 @@
       "target": "som_client_somclientconfig",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L75",
       "weight": 1.0
     },
@@ -33799,7 +34437,7 @@
       "target": "som_client_somclient",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L88",
       "weight": 1.0
     },
@@ -33808,7 +34446,7 @@
       "target": "som_client_somclient_init",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L91",
       "weight": 1.0
     },
@@ -33817,7 +34455,7 @@
       "target": "som_client_from_env",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L96",
       "weight": 1.0
     },
@@ -33826,7 +34464,7 @@
       "target": "som_client_somclient_current_token",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L110",
       "weight": 1.0
     },
@@ -33835,7 +34473,7 @@
       "target": "som_client_somclient_headers",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L128",
       "weight": 1.0
     },
@@ -33844,7 +34482,7 @@
       "target": "som_client_somclient_request",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L148",
       "weight": 1.0
     },
@@ -33853,7 +34491,7 @@
       "target": "som_client_somclient_call_tool",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L215",
       "weight": 1.0
     },
@@ -33862,7 +34500,7 @@
       "target": "som_client_somclient_ping",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L232",
       "weight": 1.0
     },
@@ -33871,7 +34509,7 @@
       "target": "som_client_somclient_handoff",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L235",
       "weight": 1.0
     },
@@ -33880,7 +34518,7 @@
       "target": "som_client_somclient_chain",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L247",
       "weight": 1.0
     },
@@ -33889,7 +34527,7 @@
       "target": "som_client_somclient_log_fallback",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L250",
       "weight": 1.0
     },
@@ -33898,7 +34536,7 @@
       "target": "som_client_somclient_lam_probe",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L253",
       "weight": 1.0
     },
@@ -33907,7 +34545,7 @@
       "target": "som_client_somclient_lam_embed",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L256",
       "weight": 1.0
     },
@@ -33916,7 +34554,7 @@
       "target": "som_client_build_parser",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L263",
       "weight": 1.0
     },
@@ -33925,7 +34563,7 @@
       "target": "som_client_main",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L268",
       "weight": 1.0
     },
@@ -33934,7 +34572,7 @@
       "target": "som_client_somclient_init",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L45",
       "weight": 0.8
     },
@@ -33943,7 +34581,7 @@
       "target": "som_client_somclientconfig",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L101",
       "weight": 0.8
     },
@@ -33952,7 +34590,7 @@
       "target": "som_client_somclienterror",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L112",
       "weight": 0.8
     },
@@ -33961,7 +34599,7 @@
       "target": "som_client_decode_jwt_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L114",
       "weight": 0.8
     },
@@ -33970,7 +34608,7 @@
       "target": "som_client_unix_now",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L120",
       "weight": 0.8
     },
@@ -33979,7 +34617,7 @@
       "target": "som_client_somclient_current_token",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L136",
       "weight": 0.8
     },
@@ -33988,7 +34626,7 @@
       "target": "som_client_somclient_headers",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L165",
       "weight": 0.8
     },
@@ -33997,7 +34635,7 @@
       "target": "som_client_somclienterror",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L179",
       "weight": 0.8
     },
@@ -34006,7 +34644,7 @@
       "target": "som_client_somclient_request",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L225",
       "weight": 0.8
     },
@@ -34015,7 +34653,7 @@
       "target": "som_client_somclienterror",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L227",
       "weight": 0.8
     },
@@ -34024,7 +34662,7 @@
       "target": "som_client_somclient_call_tool",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L233",
       "weight": 0.8
     },
@@ -34033,7 +34671,7 @@
       "target": "som_client_somclient_call_tool",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L245",
       "weight": 0.8
     },
@@ -34042,7 +34680,7 @@
       "target": "som_client_somclient_call_tool",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L248",
       "weight": 0.8
     },
@@ -34051,7 +34689,7 @@
       "target": "som_client_somclient_call_tool",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L251",
       "weight": 0.8
     },
@@ -34060,7 +34698,7 @@
       "target": "som_client_somclient_call_tool",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L254",
       "weight": 0.8
     },
@@ -34069,7 +34707,7 @@
       "target": "som_client_somclient_call_tool",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L260",
       "weight": 0.8
     },
@@ -34078,7 +34716,7 @@
       "target": "som_client_build_parser",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L269",
       "weight": 0.8
     },
@@ -34087,7 +34725,7 @@
       "target": "som_client_somclient_ping",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L271",
       "weight": 0.8
     },
@@ -34096,7 +34734,7 @@
       "target": "som_client_from_env",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L271",
       "weight": 0.8
     },
@@ -34105,7 +34743,7 @@
       "target": "som_client_somclienterror",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L32",
       "weight": 1.0
     },
@@ -34114,7 +34752,7 @@
       "target": "som_client_decode_jwt_payload",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L57",
       "weight": 1.0
     },
@@ -34123,7 +34761,7 @@
       "target": "som_client_somclient",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L89",
       "weight": 1.0
     },
@@ -34132,7 +34770,7 @@
       "target": "som_client_somclient_from_env",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L97",
       "weight": 1.0
     },
@@ -34141,7 +34779,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -34150,7 +34788,7 @@
       "target": "sys",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -34159,7 +34797,7 @@
       "target": "urllib_error",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L10",
       "weight": 1.0
     },
@@ -34168,7 +34806,7 @@
       "target": "urllib_request",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L11",
       "weight": 1.0
     },
@@ -34177,7 +34815,7 @@
       "target": "io",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L12",
       "weight": 1.0
     },
@@ -34186,7 +34824,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L13",
       "weight": 1.0
     },
@@ -34195,7 +34833,7 @@
       "target": "types",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L14",
       "weight": 1.0
     },
@@ -34204,7 +34842,7 @@
       "target": "typing",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L15",
       "weight": 1.0
     },
@@ -34213,7 +34851,7 @@
       "target": "pytest",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L17",
       "weight": 1.0
     },
@@ -34222,7 +34860,7 @@
       "target": "som_client",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L20",
       "weight": 1.0
     },
@@ -34231,7 +34869,7 @@
       "target": "test_som_client_build_success_response",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L23",
       "weight": 1.0
     },
@@ -34240,7 +34878,7 @@
       "target": "test_som_client_build_http_error",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L32",
       "weight": 1.0
     },
@@ -34249,8 +34887,17 @@
       "target": "test_som_client_test_som_client_sends_cf_and_bearer_headers",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "test_som_client",
+      "target": "test_som_client_test_som_client_accepts_remote_mcp_jwt_fallback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -34258,8 +34905,8 @@
       "target": "test_som_client_test_som_client_retries_on_429",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
-      "source_location": "L70",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
+      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -34267,9 +34914,63 @@
       "target": "test_som_client_test_som_client_payload_safe_errors",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/som-client/tests/test_som_client.py",
-      "source_location": "L102",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
+      "source_location": "L120",
       "weight": 1.0
+    },
+    {
+      "source": "operator_connectivity_check",
+      "target": "som_client_somclient",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L19",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_fixturemcphandler",
+      "target": "som_client_somclient",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L19",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_check",
+      "target": "som_client_somclientconfig",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L19",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_fixturemcphandler",
+      "target": "som_client_somclientconfig",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L19",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_check",
+      "target": "som_client_somclienterror",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L19",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_connectivity_fixturemcphandler",
+      "target": "som_client_somclienterror",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_connectivity.py",
+      "source_location": "L19",
+      "weight": 0.8
     }
   ],
   "input_tokens": 0,

@@ -1,6 +1,6 @@
 # Data Dictionary
 
-**Last Updated:** 2026-04-17
+**Last Updated:** 2026-04-20
 **Scope:** hldpro-governance — meta-governance repo
 **Source of truth:** This file documents the canonical schemas, file formats, and data contracts owned or enforced by hldpro-governance. Schema JSON/YAML source files live in `docs/schemas/`.
 
@@ -214,6 +214,40 @@ Contract:
 - Preserved launchd proof artifacts must pass the Remote MCP sensitive-material denylist.
 - Sensitive input details are replaced with `[redacted-sensitive-detail]` and force `health: degraded`.
 - `--fail-on-degraded` exits non-zero after writing redacted artifacts so workflows can both preserve evidence and fail closed.
+
+---
+
+### Remote MCP Operator Connectivity Preflight
+**Generator:** `scripts/remote-mcp/operator_connectivity.py`
+**Storage:** `raw/remote-mcp-connectivity-preflight/*.json`
+**Issue:** #380
+
+Preflight object fields:
+| Field | Type | Description |
+|-------|------|-------------|
+| `schema_version` | integer | Preflight schema version, currently `1` |
+| `mode` | enum | `fixture` or `live` |
+| `ready` | boolean | True only when blocking checks pass and `som.ping` request/response succeeded |
+| `message_path` | string | Request/response path being proved, currently `som.ping` |
+| `checks` | array | Launchd status checks plus `som.ping` request/response result |
+| `missing_live_config` | array | Missing live request configuration names or accepted alternatives, never values |
+| `missing_monitor_config` | array | Missing recurring-monitor configuration names, never values |
+| `warnings` | array | Non-blocking check names, such as launchd not installed or loaded |
+| `recommended_action` | string | Payload-safe operator next action |
+
+Each `checks[]` entry contains:
+| Field | Type | Description |
+|-------|------|-------------|
+| `name` | string | Check name, such as `launchd-template-present`, `launchd-loaded`, or `som-ping-request-response` |
+| `status` | enum | `pass`, `warn`, or `fail` |
+| `detail` | string | Payload-safe detail; missing config names are allowed, credential values are not |
+
+Contract:
+- Fixture mode starts a local fixture MCP server and proves `som.ping` through `SomClient`.
+- Live mode requires `SOM_MCP_URL`, either `SOM_MCP_TOKEN` or `SOM_REMOTE_MCP_JWT`, `CF_ACCESS_CLIENT_ID`, and `CF_ACCESS_CLIENT_SECRET`.
+- Live mode exits `2` before sending a request when required live configuration is missing.
+- Launchd install/load warnings do not block one-shot request/response readiness.
+- Output must not include bearer-token material, JWT fragments, Cloudflare Access header material, raw SSNs, credential values, or raw MCP payloads.
 
 ---
 
