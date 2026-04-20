@@ -1,0 +1,96 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-386-org-automerge-policy-main-20260420",
+  "execution_mode": "implementation_complete",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-386-org-automerge-policy-pdcar.md",
+    "docs/plans/issue-386-org-automerge-policy-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-20-issue-386-org-automerge-policy-implementation.json",
+    "scripts/overlord/automerge_policy_check.py",
+    "scripts/overlord/test_automerge_policy_check.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-384-backlog-drift",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-launchd-proof",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-operating-mode",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-stage-d-live-tunnel",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout has unrelated active remote MCP/vault work outside issue #386 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+      "reason": "sibling governance worktree has pre-existing graphify artifact changes and is outside issue #386 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-384-backlog-drift",
+      "reason": "prerequisite issue #384 repair lane is active separately from issue #386"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts",
+      "reason": "merged sibling governance lane retained locally for prior work"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight",
+      "reason": "merged sibling governance lane retained locally for prior work"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-launchd-proof",
+      "reason": "merged sibling governance lane retained locally for prior work"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor",
+      "reason": "local main worktree is behind origin/main and outside issue #386 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-operating-mode",
+      "reason": "merged sibling governance lane retained locally for prior work"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-stage-d-live-tunnel",
+      "reason": "merged sibling governance lane retained locally for prior work"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "sibling repo may have unrelated active work outside issue #386 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo may have unrelated active work outside issue #386 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo may have unrelated active work outside issue #386 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "sibling repo may have unrelated active work outside issue #386 scope"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-directive-and-codex-local-github-audit",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-20T14:35:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/386",
+      "docs/plans/issue-386-org-automerge-policy-structured-agent-cycle-plan.json",
+      "docs/plans/issue-386-org-automerge-policy-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}
