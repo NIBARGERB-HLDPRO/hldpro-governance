@@ -10,9 +10,9 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
-| Org-level automerge policy for green verified PRs | #386 | PLANNED | HIGH | 2-4 planning, rollout TBD | Policy definition, dry-run evaluator, local tests, rollback plan, later rollout issue | Must preserve required checks, reviews, CODEOWNERS, and exceptions; depends on #384 backlog drift repair first |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
+| Native GitHub automerge pilot for green verified PRs | #391 | PLANNED | HIGH | 2-4 pilot | Native GitHub automerge pilot, rollback snapshots, dry-run evidence, first live pilot result | Must not weaken required reviews, checks, CODEOWNERS, review-thread resolution, Local CI Gate, branch protection, or rulesets |
 | SoM Stage 5: som-worker daemon | #178 | PLANNED | LOW | 6-8 | Daemon implementation, queue wiring | Follow-on to Stage 3b/4 |
 | Living Knowledge Base — Phase 8: Qwen3-32B fine-tune | #49 | PLANNED | LOW | TBD | Fine-tuned model, eval results | Gate: 6+ months of wiki data |
 
@@ -40,6 +40,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Org-level automerge policy for green verified PRs | #386 | 2026-04-20 | PR #390 planned the policy, documented prerequisites and rollback, added a non-mutating dry-run eligibility evaluator with focused tests, and kept live org/repo settings unchanged. Native GitHub automerge pilot rollout continues under #391. |
 | Remote MCP live key vault bootstrap | #385 | 2026-04-20 | Created and stored Remote MCP operator key material in the gitignored `.env.shared` vault, attached the new Cloudflare Access service token to the `remote-mcp.hldpro.com` policy, aligned the thin client with the Stage B/C bridge protocol, loaded the local Remote MCP bridge on the Cloudflare tunnel origin port, and preserved no-secret live request/response plus inbound receive evidence. |
 | Remote MCP operator inbound message preflight | #382 | 2026-04-20 | PR #383 added a no-secret fixture/live inbound operator-message preflight through the HITL relay session inbox path, preserved current-machine fail-closed evidence, updated runbook/registry surfaces, ran Local CI and GitHub checks, and merged as `f31d7939c982e23eefb7857327724dc011daf7bf`, closing #382. Post-merge active-row drift is tracked by #384; issue #385 later proved the configured live session inbox with a validated instruction. |
 | Remote MCP operator connectivity e2e preflight | #380 | 2026-04-20 | PR #381 added a no-secret `som.ping` request/response preflight, fixture and current-machine fail-closed evidence, launchd status reporting, runbook guidance, Local CI, and GitHub checks. Merge commit `f32fed721607d4530253fe1cf370f4ab74bbf70e` closed #380. |
