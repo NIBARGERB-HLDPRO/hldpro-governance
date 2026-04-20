@@ -1,7 +1,7 @@
 # Graph Report - hldpro-governance  (2026-04-19)
 
 ## Corpus Check
-- Large corpus: 1676 files · ~421,068 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1685 files · ~423,587 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
 - 1211 nodes · 2320 edges · 64 communities detected
