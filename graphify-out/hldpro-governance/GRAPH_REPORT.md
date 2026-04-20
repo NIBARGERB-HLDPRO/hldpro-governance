@@ -1,11 +1,11 @@
 # Graph Report - hldpro-governance  (2026-04-20)
 
 ## Corpus Check
-- Large corpus: 1758 files · ~448,529 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1761 files · ~449,442 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 1378 nodes · 2587 edges · 75 communities detected
-- Extraction: 51% EXTRACTED · 49% INFERRED · 0% AMBIGUOUS · INFERRED: 1257 edges (avg confidence: 0.5)
+- 1383 nodes · 2594 edges · 76 communities detected
+- Extraction: 51% EXTRACTED · 49% INFERRED · 0% AMBIGUOUS · INFERRED: 1260 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -38,13 +38,13 @@
 Cohesion: 0.03
 Nodes (37): Test that clean prompt passes PII detection., Negative test: non-allowlisted model., Test that non-allowlisted model is rejected., Test that allowlisted model passes allowlist check., Negative test: unreachable endpoint., Test that unreachable endpoint raises appropriate error., Test that endpoint timeout is handled., Test that reachable endpoint succeeds. (+29 more)
 
-### Community 1 - "Packet Validate Passes"
+### Community 1 - "Remote mcp Verify audit"
+Cohesion: 0.05
+Nodes (47): Modify first_hash in manifest and verify fails., Test that truncated file (missing last line) breaks manifest., Delete last line and verify detects entry_count mismatch., Test that duplicate line (replay) breaks seq monotonicity., Duplicate a line and verify detects non-monotonic seq., Test that tampering with a line breaks the chain., Tamper with line N and verify fails at line N+1., Test that replacing entry_hmac with wrong value fails verification. (+39 more)
+
+### Community 2 - "Packet Validate Passes"
 Cohesion: 0.07
 Nodes (19): _make_parent_packet(), Cross-family independence violated: both planners are anthropic., anthropic + openai is fine., Parent file absent → warn, don't refuse., Sanity: the patterns file should be present in this worktree., Non-LAM role with PII artifact path must be refused., worker-lam role is allowed to handle PII artifacts., When pii-patterns.yml is absent, validator must refuse (not silently pass). (+11 more)
-
-### Community 2 - "Windows ollama Audit"
-Cohesion: 0.06
-Nodes (30): AuditWriter, canonical_json(), compute_entry_hmac(), compute_sha256(), Write an audit entry. Returns True if successful, False otherwise.          Args, Return canonical JSON for HMAC computation., Write or update today's manifest., Compute SHA256 hash of bytes. (+22 more)
 
 ### Community 3 - "Overlord Codex ingestion"
 Cohesion: 0.1
@@ -62,13 +62,13 @@ Nodes (25): Exception, detect_pii(), _iter_patterns(), load_pii_patterns(), Load
 Cohesion: 0.12
 Nodes (38): _branch_issue_number(), build_argument_parser(), _build_summary(), _changed_files_from_git(), ChangedFiles, _check_exit_code(), _check_matches_changed_files(), CheckResult (+30 more)
 
-### Community 7 - "Remote mcp Verify audit"
-Cohesion: 0.09
-Nodes (32): _build_entry(), _make_chain_entries(), test_verify_audit_require_hmac_key_fails_when_missing(), test_verify_audit_tamper_detects_chain_break(), test_verify_audit_valid_chain_passes(), _write_audit_file(), canonical_json(), _collect_file_errors() (+24 more)
-
-### Community 8 - "Hldpro sim Hldprosim"
+### Community 7 - "Packages Hldpro sim"
 Cohesion: 0.06
 Nodes (14): ABC, BaseAggregator, ArtifactWriter, RunManifest, SimulationEngine, PersonaLoader, Load persona JSON files. Resolves local-first, shared fallback., Protocol (+6 more)
+
+### Community 8 - "Remote mcp Stage d"
+Cohesion: 0.11
+Nodes (22): build_parser(), _env_has_live_markers(), main(), _run_fixture(), _run_live(), _scan_evidence_dir(), _stage_d_args(), _build_fixture_server() (+14 more)
 
 ### Community 9 - "Som client Som client Error"
 Cohesion: 0.09
@@ -86,41 +86,41 @@ Nodes (19): add_common_args(), build_plan(), build_refresh_command(), execute_re
 Cohesion: 0.12
 Nodes (28): _load(), test_duplicate_reply_cannot_produce_instruction(), test_expired_reply_cannot_produce_instruction(), test_low_confidence_clarify_decision_passes_without_instruction(), test_low_confidence_non_clarify_decision_fails_closed(), test_pii_external_channel_fails_closed(), test_response_requires_notification_and_response_ids(), test_session_instruction_requires_matching_target_session() (+20 more)
 
-### Community 13 - "Remote mcp Stage d"
-Cohesion: 0.13
-Nodes (22): build_parser(), _env_has_live_markers(), main(), _run_fixture(), _run_live(), _scan_evidence_dir(), _stage_d_args(), _build_fixture_server() (+14 more)
-
-### Community 14 - "Packet Validate Load"
+### Community 13 - "Packet Validate Load"
 Cohesion: 0.1
 Nodes (30): _find_packet_file(), _load_packet(), load_pii_patterns(), _load_schema(), Load and compile PII patterns from pii-patterns.yml., Enforce cross-family independence for tier-1 dual-planner packets.      When pri, Refuse if any consecutive pair in the parent chain shares model_id across differ, Enforce expected handoff sequence with no tier jumps. (+22 more)
 
-### Community 15 - "Orchestrator Hitl relay queue"
+### Community 14 - "Orchestrator Hitl relay queue"
 Cohesion: 0.19
 Nodes (28): append_audit(), atomic_write_json(), _base_packet(), _build_decision_packet(), _build_instruction_packet(), build_request(), _build_response_packet(), _build_resume_packet() (+20 more)
 
-### Community 16 - "Overlord Deploy governance tooling"
+### Community 15 - "Overlord Deploy governance tooling"
 Cohesion: 0.18
 Nodes (24): add_common_args(), apply(), _build_local_ci_plan(), build_plan(), _consumer_record(), _consumer_record_relpath(), _ensure_relative_to(), _fail() (+16 more)
 
-### Community 17 - "Overlord Assert execution scope"
+### Community 16 - "Overlord Assert execution scope"
 Cohesion: 0.15
 Nodes (26): _branch_issue_number(), _changed_paths(), _changed_paths_from_file(), check_scope(), _current_branch(), ExecutionScope, _format_path(), _git_root() (+18 more)
 
-### Community 18 - "Knowledge base Measure graphify usage"
+### Community 17 - "Knowledge base Measure graphify usage"
 Cohesion: 0.16
 Nodes (28): aggregate_file_scores(), augment_workflow_doc_candidates(), baseline_results(), build_summary(), build_trace(), emit_usage_events(), estimate_tokens(), evaluate_relevance() (+20 more)
 
-### Community 19 - "Overlord Check local ci gate workflow"
+### Community 18 - "Overlord Check local ci gate workflow"
 Cohesion: 0.11
 Nodes (14): _all_executable_lines(), _all_run_commands(), check_contract(), _contains_main_branch(), _executable_lines(), _failures_for_text(), _has_executable_line_starting_with(), _load_workflow() (+6 more)
 
-### Community 20 - "Overlord Validate structured agent cycle plan"
+### Community 19 - "Overlord Validate structured agent cycle plan"
 Cohesion: 0.15
 Nodes (2): _plan(), TestGovernanceSurfacePlanGate
 
-### Community 21 - "Overlord Pentagi sweep"
+### Community 20 - "Overlord Pentagi sweep"
 Cohesion: 0.16
 Nodes (22): _expand_home(), governed_repos(), GovernedRepo, load_registry(), repo_names_enabled_for(), repos_enabled_for(), repos_root(), build_payload() (+14 more)
+
+### Community 21 - "Windows ollama Audit"
+Cohesion: 0.14
+Nodes (15): AuditWriter, canonical_json(), compute_entry_hmac(), compute_sha256(), Write an audit entry. Returns True if successful, False otherwise.          Args, Return canonical JSON for HMAC computation., Write or update today's manifest., Compute SHA256 hash of bytes. (+7 more)
 
 ### Community 22 - "Overlord Org governance compendium"
 Cohesion: 0.19
@@ -150,13 +150,13 @@ Nodes (12): _actual_workflows(), check_inventory(), _command_file_candidates(), 
 Cohesion: 0.2
 Nodes (18): append_audit(), _audit_path(), ensure_queue(), load_packet(), _load_plan(), QueueDecision, Replay audit events into logical latest states.      `latest_states` includes ac, replay_audit() (+10 more)
 
-### Community 29 - "Overlord Deploy governance tooling"
-Cohesion: 0.32
-Nodes (1): TestDeployGovernanceTooling
-
-### Community 30 - "Overlord Check overlord backlog github alignment"
+### Community 29 - "Overlord Check overlord backlog github alignment"
 Cohesion: 0.14
 Nodes (10): check_github_issue_open(), collect_section_lines(), fail(), issue_column_index(), issue_numbers(), main(), parse_markdown_row(), validate_section() (+2 more)
+
+### Community 30 - "Overlord Deploy governance tooling"
+Cohesion: 0.32
+Nodes (1): TestDeployGovernanceTooling
 
 ### Community 31 - "Orchestrator Read only observer"
 Cohesion: 0.22
@@ -222,13 +222,13 @@ Nodes (6): _check_required_checks(), evaluate(), _labels(), main(), eligible_pay
 Cohesion: 0.38
 Nodes (10): build_graph(), _community_label(), _derive_path_phrase(), _derive_path_tokens(), infer_community_labels(), main(), _normalize_phrase(), _sanitize_markdown_artifacts() (+2 more)
 
-### Community 47 - "Orchestrator Hitl relay queue"
-Cohesion: 0.45
-Nodes (10): _process(), _request(), test_ambiguous_response_produces_clarification_and_no_instruction(), test_expired_response_fails_closed_to_dead_letter(), test_invalid_packet_lands_in_dead_letter_with_validation_errors(), test_local_cli_checkpoint_fixture_creates_valid_hitl_request(), test_replay_reconstructs_decision_path(), test_request_changes_response_preserves_feedback_path_without_approval() (+2 more)
-
-### Community 48 - "Orchestrator Delegation Owned"
+### Community 47 - "Orchestrator Delegation Owned"
 Cohesion: 0.45
 Nodes (10): _payload(), _run_hook(), test_hook_allows_read_even_when_text_matches_owned_work(), test_hook_blocks_agent_owned_work_before_file_path_logic(), test_hook_blocks_task_tool_owned_work(), test_hook_bypass_allows_and_logs(), test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate(), test_hook_preserves_new_code_file_block() (+2 more)
+
+### Community 48 - "Orchestrator Hitl relay queue"
+Cohesion: 0.45
+Nodes (10): _process(), _request(), test_ambiguous_response_produces_clarification_and_no_instruction(), test_expired_response_fails_closed_to_dead_letter(), test_invalid_packet_lands_in_dead_letter_with_validation_errors(), test_local_cli_checkpoint_fixture_creates_valid_hitl_request(), test_replay_reconstructs_decision_path(), test_request_changes_response_preserves_feedback_path_without_approval() (+2 more)
 
 ### Community 49 - "Overlord Validate registry surfaces"
 Cohesion: 0.49
@@ -242,7 +242,7 @@ Nodes (9): build_inventory(), import_available(), local_runtime(), mac_hardware(
 Cohesion: 0.38
 Nodes (9): filtered_targets(), find_target(), load_manifest(), main(), print_json(), print_shell(), print_stage_paths(), print_tsv() (+1 more)
 
-### Community 52 - "Hldpro sim Providers"
+### Community 52 - "Packages Hldpro sim Providers"
 Cohesion: 0.2
 Nodes (0): 
 
@@ -274,78 +274,82 @@ Nodes (6): check(), fail(), load_json(), main(), validate_graphify_reconciliatio
 Cohesion: 0.48
 Nodes (2): _copy_fixture(), TestReadOnlyObserver
 
-### Community 60 - "Fixtures Stampede consumer"
+### Community 60 - "Packages Hldpro sim Stampede"
 Cohesion: 0.4
 Nodes (4): BaseAggregator, BaseModel, NarrativeAggregator, NarrativeOutcome
 
-### Community 61 - "Knowledge base Log graphify usage"
+### Community 61 - "Bootstrap repo Lam"
+Cohesion: 0.7
+Nodes (4): check(), main(), Exercise lam bootstrap with command-like vault values and missing optional keys., run_synthetic_lam_bootstrap()
+
+### Community 62 - "Knowledge base Log graphify usage"
 Cohesion: 0.7
 Nodes (4): append_event(), build_event(), main(), parse_args()
 
-### Community 62 - "Packet Hitl relay schema"
+### Community 63 - "Packet Hitl relay schema"
 Cohesion: 0.8
 Nodes (4): _load(), test_invalid_hitl_relay_examples_fail(), test_valid_hitl_relay_examples_pass(), _validator()
 
-### Community 63 - "Knowledge base Graphify governance"
+### Community 64 - "Knowledge base Graphify governance"
 Cohesion: 0.83
 Nodes (3): check(), is_ignored(), main()
 
-### Community 64 - "Knowledge base Update knowledge"
+### Community 65 - "Knowledge base Update knowledge"
 Cohesion: 0.83
 Nodes (3): main(), replace_section(), summary_line()
 
-### Community 65 - "Packet Emit Yaml"
+### Community 66 - "Packet Emit Yaml"
 Cohesion: 0.67
 Nodes (3): emit_packet(), main(), Emit a packet YAML file.     Returns: path to written file
 
-### Community 66 - "Hldpro sim Stampede consumer proof"
+### Community 67 - "Packages Hldpro sim Stampede"
 Cohesion: 0.67
 Nodes (2): MockProvider, test_stampede_e2e()
 
-### Community 67 - "Overlord Render github issue feed"
+### Community 68 - "Overlord Render github issue feed"
 Cohesion: 1.0
 Nodes (2): main(), render_issue()
 
-### Community 68 - "Knowledge base Push graph to neo4j"
+### Community 69 - "Knowledge base Push graph to neo4j"
 Cohesion: 1.0
 Nodes (2): build_scoped_graph(), main()
 
-### Community 69 - "Hldpro sim Runner"
+### Community 70 - "Packages Hldpro sim Runner"
 Cohesion: 0.67
 Nodes (0): 
 
-### Community 70 - "Hldpro sim Engine"
+### Community 71 - "Packages Hldpro sim Engine"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 71 - "Hldpro sim Artifacts"
+### Community 72 - "Packages Hldpro sim Artifacts"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 72 - "Windows ollama Submit Temporary"
+### Community 73 - "Windows ollama Submit Temporary"
 Cohesion: 1.0
 Nodes (1): Temporary audit directory for testing.
 
-### Community 73 - "Som client Som client From"
+### Community 74 - "Som client Som client From"
 Cohesion: 1.0
 Nodes (1): Build a client from well-known environment variables.
 
-### Community 74 - "Hldpro sim Hldprosim Personas"
+### Community 75 - "Packages Hldpro sim Personas"
 Cohesion: 1.0
 Nodes (1): Convenience: load shared dir from bundled package personas/.
 
 ## Knowledge Gaps
-- **112 isolated node(s):** `Submit requests to Windows-Ollama endpoint with PII detection and allowlist enfo`, `Initialize the submitter.          Args:             endpoint: Windows-Ollama en`, `Load PII patterns from pii_patterns.yml.`, `Load model allowlist from model_allowlist.yml.`, `Scan text for PII patterns.          Returns: pattern name if detected, None oth` (+107 more)
+- **113 isolated node(s):** `Exercise lam bootstrap with command-like vault values and missing optional keys.`, `Submit requests to Windows-Ollama endpoint with PII detection and allowlist enfo`, `Initialize the submitter.          Args:             endpoint: Windows-Ollama en`, `Load PII patterns from pii_patterns.yml.`, `Load model allowlist from model_allowlist.yml.` (+108 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Hldpro sim Engine`** (2 nodes): `test_engine.py`, `test_engine_passes_template_results_to_provider()`
+- **Thin community `Packages Hldpro sim Engine`** (2 nodes): `test_engine.py`, `test_engine_passes_template_results_to_provider()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Hldpro sim Artifacts`** (2 nodes): `test_artifacts.py`, `test_artifact_writer_writes_manifest_and_outcomes()`
+- **Thin community `Packages Hldpro sim Artifacts`** (2 nodes): `test_artifacts.py`, `test_artifact_writer_writes_manifest_and_outcomes()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Windows ollama Submit Temporary`** (1 nodes): `Temporary audit directory for testing.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Som client Som client From`** (1 nodes): `Build a client from well-known environment variables.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Hldpro sim Hldprosim Personas`** (1 nodes): `Convenience: load shared dir from bundled package personas/.`
+- **Thin community `Packages Hldpro sim Personas`** (1 nodes): `Convenience: load shared dir from bundled package personas/.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
@@ -359,9 +363,9 @@ _Questions this graph is uniquely positioned to answer:_
   _`RepoFixture` has 27 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 28 inferred relationships involving `_tier1_packet()` (e.g. with `.test_tier1_without_parent_passes()` and `.test_same_family_dual_planner_refused()`) actually correct?**
   _`_tier1_packet()` has 28 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Submit requests to Windows-Ollama endpoint with PII detection and allowlist enfo`, `Initialize the submitter.          Args:             endpoint: Windows-Ollama en`, `Load PII patterns from pii_patterns.yml.` to the rest of the system?**
-  _112 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Exercise lam bootstrap with command-like vault values and missing optional keys.`, `Submit requests to Windows-Ollama endpoint with PII detection and allowlist enfo`, `Initialize the submitter.          Args:             endpoint: Windows-Ollama en` to the rest of the system?**
+  _113 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Windows ollama Submit` be split into smaller, more focused modules?**
   _Cohesion score 0.03 - nodes in this community are weakly interconnected._
-- **Should `Packet Validate Passes` be split into smaller, more focused modules?**
-  _Cohesion score 0.07 - nodes in this community are weakly interconnected._
+- **Should `Remote mcp Verify audit` be split into smaller, more focused modules?**
+  _Cohesion score 0.05 - nodes in this community are weakly interconnected._

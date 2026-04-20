@@ -1,0 +1,65 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-416-operator-notification-ssot-20260420",
+  "execution_mode": "implementation_complete",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/ENV_REGISTRY.md",
+    "docs/plans/issue-416-operator-notification-ssot-pdcar.md",
+    "docs/plans/issue-416-operator-notification-ssot-structured-agent-cycle-plan.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "graphify-out/hldpro-governance/",
+    "raw/execution-scopes/2026-04-20-issue-416-operator-notification-ssot-implementation.json",
+    "raw/validation/2026-04-20-issue-416-operator-notification-ssot.md",
+    "raw/closeouts/2026-04-20-issue-416-operator-notification-ssot.md",
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/test_bootstrap_repo_env_contract.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout is outside issue #416 scope; issue #416 uses an isolated worktree"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "sibling repo receives only a generated ignored .env artifact after validation"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo has unrelated dirty state outside issue #416 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo has unrelated dirty state outside issue #416 scope"
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 416,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/416",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-20T17:55:01Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "github-issue-416-and-codex-local-analysis",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-20T17:55:01Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/416",
+      "docs/plans/issue-416-operator-notification-ssot-structured-agent-cycle-plan.json",
+      "docs/plans/issue-416-operator-notification-ssot-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

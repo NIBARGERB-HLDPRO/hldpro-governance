@@ -547,6 +547,41 @@
       "source_location": "L225"
     },
     {
+      "id": "test_bootstrap_repo_env_contract",
+      "label": "test_bootstrap_repo_env_contract.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_bootstrap_repo_env_contract_check",
+      "label": "check()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L17"
+    },
+    {
+      "id": "test_bootstrap_repo_env_contract_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L22"
+    },
+    {
+      "id": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "label": "run_synthetic_lam_bootstrap()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L51"
+    },
+    {
+      "id": "test_bootstrap_repo_env_contract_rationale_52",
+      "label": "Exercise lam bootstrap with command-like vault values and missing optional keys.",
+      "file_type": "rationale",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L52"
+    },
+    {
       "id": "verify_governance_consumer",
       "label": "verify_governance_consumer.py",
       "file_type": "code",
@@ -11252,6 +11287,114 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L227",
       "weight": 0.8
+    },
+    {
+      "source": "test_bootstrap_repo_env_contract",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "test_bootstrap_repo_env_contract",
+      "target": "shutil",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_bootstrap_repo_env_contract",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "test_bootstrap_repo_env_contract",
+      "target": "textwrap",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "test_bootstrap_repo_env_contract",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "test_bootstrap_repo_env_contract",
+      "target": "test_bootstrap_repo_env_contract_check",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "test_bootstrap_repo_env_contract",
+      "target": "test_bootstrap_repo_env_contract_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "test_bootstrap_repo_env_contract",
+      "target": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "test_bootstrap_repo_env_contract_main",
+      "target": "test_bootstrap_repo_env_contract_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L23",
+      "weight": 0.8
+    },
+    {
+      "source": "test_bootstrap_repo_env_contract_main",
+      "target": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L45",
+      "weight": 0.8
+    },
+    {
+      "source": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "target": "test_bootstrap_repo_env_contract_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L94",
+      "weight": 0.8
+    },
+    {
+      "source": "test_bootstrap_repo_env_contract_rationale_52",
+      "target": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L52",
+      "weight": 1.0
     },
     {
       "source": "verify_governance_consumer",

@@ -1,12 +1,12 @@
 # Graph Report - .  (2026-04-20)
 
 ## Corpus Check
-- 105 files · ~0 words
+- 106 files · ~0 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1378 nodes · 2774 edges · 69 communities detected
-- Extraction: 48% EXTRACTED · 52% INFERRED · 0% AMBIGUOUS · INFERRED: 1444 edges (avg confidence: 0.5)
+- 1383 nodes · 2781 edges · 70 communities detected
+- Extraction: 48% EXTRACTED · 52% INFERRED · 0% AMBIGUOUS · INFERRED: 1447 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -272,32 +272,32 @@ Cohesion: 0.8
 Nodes (4): _load(), test_invalid_hitl_relay_examples_fail(), test_valid_hitl_relay_examples_pass(), _validator()
 
 ### Community 59 - "Community 59"
-Cohesion: 0.83
-Nodes (3): check(), is_ignored(), main()
+Cohesion: 0.7
+Nodes (4): check(), main(), Exercise lam bootstrap with command-like vault values and missing optional keys., run_synthetic_lam_bootstrap()
 
 ### Community 60 - "Community 60"
 Cohesion: 0.83
-Nodes (3): main(), replace_section(), summary_line()
+Nodes (3): check(), is_ignored(), main()
 
 ### Community 61 - "Community 61"
-Cohesion: 0.67
-Nodes (3): emit_packet(), main(), Emit a packet YAML file.     Returns: path to written file
+Cohesion: 0.83
+Nodes (3): main(), replace_section(), summary_line()
 
 ### Community 62 - "Community 62"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (3): emit_packet(), main(), Emit a packet YAML file.     Returns: path to written file
 
 ### Community 63 - "Community 63"
-Cohesion: 1.0
-Nodes (2): build_scoped_graph(), main()
+Cohesion: 0.67
+Nodes (0): 
 
 ### Community 64 - "Community 64"
 Cohesion: 1.0
-Nodes (2): main(), render_issue()
+Nodes (2): build_scoped_graph(), main()
 
 ### Community 65 - "Community 65"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): main(), render_issue()
 
 ### Community 66 - "Community 66"
 Cohesion: 1.0
@@ -305,22 +305,26 @@ Nodes (0):
 
 ### Community 67 - "Community 67"
 Cohesion: 1.0
-Nodes (1): Convenience: load shared dir from bundled package personas/.
+Nodes (0): 
 
 ### Community 68 - "Community 68"
+Cohesion: 1.0
+Nodes (1): Convenience: load shared dir from bundled package personas/.
+
+### Community 69 - "Community 69"
 Cohesion: 1.0
 Nodes (1): Build a client from well-known environment variables.
 
 ## Knowledge Gaps
-- **67 isolated node(s):** `Load persona JSON files. Resolves local-first, shared fallback.`, `Convenience: load shared dir from bundled package personas/.`, `Subprocess-backed provider using codex exec --ephemeral.`, `Cloud stub — not implemented until API keys are provisioned.`, `Replay audit events into logical latest states.      `latest_states` includes ac` (+62 more)
+- **68 isolated node(s):** `Load persona JSON files. Resolves local-first, shared fallback.`, `Convenience: load shared dir from bundled package personas/.`, `Subprocess-backed provider using codex exec --ephemeral.`, `Cloud stub — not implemented until API keys are provisioned.`, `Replay audit events into logical latest states.      `latest_states` includes ac` (+63 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 65`** (2 nodes): `test_artifacts.py`, `test_artifact_writer_writes_manifest_and_outcomes()`
+- **Thin community `Community 66`** (2 nodes): `test_artifacts.py`, `test_artifact_writer_writes_manifest_and_outcomes()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 66`** (2 nodes): `test_engine.py`, `test_engine_passes_template_results_to_provider()`
+- **Thin community `Community 67`** (2 nodes): `test_engine.py`, `test_engine_passes_template_results_to_provider()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 67`** (1 nodes): `Convenience: load shared dir from bundled package personas/.`
+- **Thin community `Community 68`** (1 nodes): `Convenience: load shared dir from bundled package personas/.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 68`** (1 nodes): `Build a client from well-known environment variables.`
+- **Thin community `Community 69`** (1 nodes): `Build a client from well-known environment variables.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
@@ -337,6 +341,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 39 inferred relationships involving `EndpointUnreachableError` (e.g. with `.submit()` and `AuditWriter`) actually correct?**
   _`EndpointUnreachableError` has 39 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Load persona JSON files. Resolves local-first, shared fallback.`, `Convenience: load shared dir from bundled package personas/.`, `Subprocess-backed provider using codex exec --ephemeral.` to the rest of the system?**
-  _67 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _68 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.04 - nodes in this community are weakly interconnected._

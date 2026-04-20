@@ -177,7 +177,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/personas.py",
       "source_location": "L24",
       "id": "personas_rationale_24",
-      "community": 67
+      "community": 68
     },
     {
       "label": "providers.py",
@@ -353,7 +353,7 @@
       "source_file": "packages/hldpro-sim/tests/test_artifacts.py",
       "source_location": "L1",
       "id": "test_artifacts",
-      "community": 65
+      "community": 66
     },
     {
       "label": "test_artifact_writer_writes_manifest_and_outcomes()",
@@ -361,7 +361,7 @@
       "source_file": "packages/hldpro-sim/tests/test_artifacts.py",
       "source_location": "L7",
       "id": "test_artifacts_test_artifact_writer_writes_manifest_and_outcomes",
-      "community": 65
+      "community": 66
     },
     {
       "label": "test_engine.py",
@@ -369,7 +369,7 @@
       "source_file": "packages/hldpro-sim/tests/test_engine.py",
       "source_location": "L1",
       "id": "test_engine",
-      "community": 66
+      "community": 67
     },
     {
       "label": "test_engine_passes_template_results_to_provider()",
@@ -377,7 +377,7 @@
       "source_file": "packages/hldpro-sim/tests/test_engine.py",
       "source_location": "L5",
       "id": "test_engine_test_engine_passes_template_results_to_provider",
-      "community": 66
+      "community": 67
     },
     {
       "label": "test_providers.py",
@@ -465,7 +465,7 @@
       "source_file": "packages/hldpro-sim/tests/test_runner.py",
       "source_location": "L1",
       "id": "test_runner",
-      "community": 62
+      "community": 63
     },
     {
       "label": "test_runner_run_n_returns_requested_count_without_threads()",
@@ -473,7 +473,7 @@
       "source_file": "packages/hldpro-sim/tests/test_runner.py",
       "source_location": "L7",
       "id": "test_runner_test_runner_run_n_returns_requested_count_without_threads",
-      "community": 62
+      "community": 63
     },
     {
       "label": "test_runner_run_n_uses_threadpool_when_configured()",
@@ -481,7 +481,7 @@
       "source_file": "packages/hldpro-sim/tests/test_runner.py",
       "source_location": "L17",
       "id": "test_runner_test_runner_run_n_uses_threadpool_when_configured",
-      "community": 62
+      "community": 63
     },
     {
       "label": "test_stampede_consumer_proof.py",
@@ -1129,7 +1129,7 @@
       "source_file": "scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L1",
       "id": "push_graph_to_neo4j",
-      "community": 63
+      "community": 64
     },
     {
       "label": "build_scoped_graph()",
@@ -1137,7 +1137,7 @@
       "source_file": "scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L15",
       "id": "push_graph_to_neo4j_build_scoped_graph",
-      "community": 63
+      "community": 64
     },
     {
       "label": "main()",
@@ -1145,7 +1145,7 @@
       "source_file": "scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L37",
       "id": "push_graph_to_neo4j_main",
-      "community": 63
+      "community": 64
     },
     {
       "label": "test_graphify_governance_contract.py",
@@ -1153,7 +1153,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L1",
       "id": "test_graphify_governance_contract",
-      "community": 59
+      "community": 60
     },
     {
       "label": "check()",
@@ -1161,7 +1161,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L38",
       "id": "test_graphify_governance_contract_check",
-      "community": 59
+      "community": 60
     },
     {
       "label": "is_ignored()",
@@ -1169,7 +1169,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L46",
       "id": "test_graphify_governance_contract_is_ignored",
-      "community": 59
+      "community": 60
     },
     {
       "label": "main()",
@@ -1177,7 +1177,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L64",
       "id": "test_graphify_governance_contract_main",
-      "community": 59
+      "community": 60
     },
     {
       "label": "test_graphify_hook_helper.py",
@@ -1353,7 +1353,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L1",
       "id": "update_knowledge_index",
-      "community": 60
+      "community": 61
     },
     {
       "label": "summary_line()",
@@ -1361,7 +1361,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L21",
       "id": "update_knowledge_index_summary_line",
-      "community": 60
+      "community": 61
     },
     {
       "label": "replace_section()",
@@ -1369,7 +1369,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L29",
       "id": "update_knowledge_index_replace_section",
-      "community": 60
+      "community": 61
     },
     {
       "label": "main()",
@@ -1377,7 +1377,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L38",
       "id": "update_knowledge_index_main",
-      "community": 60
+      "community": 61
     },
     {
       "label": "runtime_inventory.py",
@@ -4873,7 +4873,7 @@
       "source_file": "scripts/overlord/render_github_issue_feed.py",
       "source_location": "L1",
       "id": "render_github_issue_feed",
-      "community": 64
+      "community": 65
     },
     {
       "label": "render_issue()",
@@ -4881,7 +4881,7 @@
       "source_file": "scripts/overlord/render_github_issue_feed.py",
       "source_location": "L7",
       "id": "render_github_issue_feed_render_issue",
-      "community": 64
+      "community": 65
     },
     {
       "label": "main()",
@@ -4889,7 +4889,7 @@
       "source_file": "scripts/overlord/render_github_issue_feed.py",
       "source_location": "L22",
       "id": "render_github_issue_feed_main",
-      "community": 64
+      "community": 65
     },
     {
       "label": "test_assert_execution_scope.py",
@@ -6993,7 +6993,7 @@
       "source_file": "scripts/packet/emit.py",
       "source_location": "L1",
       "id": "emit",
-      "community": 61
+      "community": 62
     },
     {
       "label": "emit_packet()",
@@ -7001,7 +7001,7 @@
       "source_file": "scripts/packet/emit.py",
       "source_location": "L15",
       "id": "emit_emit_packet",
-      "community": 61
+      "community": 62
     },
     {
       "label": "main()",
@@ -7009,7 +7009,7 @@
       "source_file": "scripts/packet/emit.py",
       "source_location": "L74",
       "id": "emit_main",
-      "community": 61
+      "community": 62
     },
     {
       "label": "Emit a packet YAML file.     Returns: path to written file",
@@ -7017,7 +7017,7 @@
       "source_file": "scripts/packet/emit.py",
       "source_location": "L27",
       "id": "emit_rationale_27",
-      "community": 61
+      "community": 62
     },
     {
       "label": "test_hitl_relay_schema.py",
@@ -9129,7 +9129,7 @@
       "source_file": "scripts/som-client/som_client.py",
       "source_location": "L99",
       "id": "som_client_rationale_99",
-      "community": 68
+      "community": 69
     },
     {
       "label": "test_som_client.py",
@@ -9194,6 +9194,46 @@
       "source_location": "L141",
       "id": "test_som_client_test_som_client_payload_safe_errors",
       "community": 1
+    },
+    {
+      "label": "test_bootstrap_repo_env_contract.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L1",
+      "id": "test_bootstrap_repo_env_contract",
+      "community": 59
+    },
+    {
+      "label": "check()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L17",
+      "id": "test_bootstrap_repo_env_contract_check",
+      "community": 59
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L22",
+      "id": "test_bootstrap_repo_env_contract_main",
+      "community": 59
+    },
+    {
+      "label": "run_synthetic_lam_bootstrap()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L51",
+      "id": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "community": 59
+    },
+    {
+      "label": "Exercise lam bootstrap with command-like vault values and missing optional keys.",
+      "file_type": "rationale",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L52",
+      "id": "test_bootstrap_repo_env_contract_rationale_52",
+      "community": 59
     },
     {
       "label": "test_codex_fire.py",
@@ -38603,6 +38643,90 @@
       "_tgt": "test_som_client_test_som_client_payload_safe_errors",
       "source": "test_som_client",
       "target": "test_som_client_test_som_client_payload_safe_errors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "test_bootstrap_repo_env_contract",
+      "_tgt": "test_bootstrap_repo_env_contract_check",
+      "source": "test_bootstrap_repo_env_contract",
+      "target": "test_bootstrap_repo_env_contract_check",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "test_bootstrap_repo_env_contract",
+      "_tgt": "test_bootstrap_repo_env_contract_main",
+      "source": "test_bootstrap_repo_env_contract",
+      "target": "test_bootstrap_repo_env_contract_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_src": "test_bootstrap_repo_env_contract",
+      "_tgt": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "source": "test_bootstrap_repo_env_contract",
+      "target": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L23",
+      "weight": 0.8,
+      "_src": "test_bootstrap_repo_env_contract_main",
+      "_tgt": "test_bootstrap_repo_env_contract_check",
+      "source": "test_bootstrap_repo_env_contract_check",
+      "target": "test_bootstrap_repo_env_contract_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L94",
+      "weight": 0.8,
+      "_src": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "_tgt": "test_bootstrap_repo_env_contract_check",
+      "source": "test_bootstrap_repo_env_contract_check",
+      "target": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L45",
+      "weight": 0.8,
+      "_src": "test_bootstrap_repo_env_contract_main",
+      "_tgt": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "source": "test_bootstrap_repo_env_contract_main",
+      "target": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_src": "test_bootstrap_repo_env_contract_rationale_52",
+      "_tgt": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "source": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
+      "target": "test_bootstrap_repo_env_contract_rationale_52",
       "confidence_score": 1.0
     },
     {
