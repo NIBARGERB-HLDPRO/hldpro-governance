@@ -31,9 +31,22 @@ Issue: [#382](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/382)
 | `rg -n "123-45-6789\|Bearer\\s+[A-Za-z0-9._~+/=-]{10,}\|CF-Access\|eyJ[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{8,}\|client-secret\|cf-secret\|fixture-token\|raw_message_body\|message_body\|Body=" raw/remote-mcp-operator-inbound-preflight \|\| true` | PASS, no matches |
 | `git diff --check` | PASS |
 | `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --base-ref origin/main --head-ref HEAD --json` | PASS, final committed branch diff, 30 changed files, blocker checks passed |
+| `gh pr checks 383 --watch --interval 10` | PASS: Analyze (actions), Analyze (python), CodeQL, commit-scope, contract, local-ci-gate, and validate |
 
 ## Current-Machine Answer
 
 As of this validation, fixture operator-message receive works through the existing HITL relay queue/session-inbox path. Current-machine live inbound operator-message receive is not ready because `SOM_OPERATOR_INBOUND_QUEUE_ROOT` and `SOM_OPERATOR_INBOUND_SESSION_ID` are not configured in this execution environment. No live receive queue was inspected.
 
 This does not add SMS, Slack, terminal push, or Remote MCP push transport. It proves the local validated receive contract and fail-closed live readiness check.
+
+## PR Checks
+
+PR [#383](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/383) passed:
+
+- Analyze (actions)
+- Analyze (python)
+- CodeQL
+- commit-scope
+- contract
+- local-ci-gate
+- validate
