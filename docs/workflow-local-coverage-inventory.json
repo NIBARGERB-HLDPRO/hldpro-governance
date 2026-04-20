@@ -290,8 +290,8 @@
           "command": ["python3", "scripts/remote-mcp/live_health_monitor.py", "--mode", "fixture", "--json"]
         }
       ],
-      "required_snippets": ["live_health_monitor.py", "--mode fixture", "--mode live"],
-      "rationale": "Fixture mode deterministically proves the monitor harness locally; live mode depends on Cloudflare Access, bridge, audit-copy, and stdio-proof secrets."
+      "required_snippets": ["live_health_monitor.py", "monitor_alert.py", "GITHUB_STEP_SUMMARY", "--mode fixture", "--mode live"],
+      "rationale": "Fixture mode deterministically proves the monitor harness and alert formatter locally; live mode depends on Cloudflare Access, bridge, audit-copy, and stdio-proof secrets."
     },
     {
       "path": ".github/workflows/require-cross-review.yml",

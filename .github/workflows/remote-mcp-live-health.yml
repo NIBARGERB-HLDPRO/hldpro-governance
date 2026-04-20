@@ -38,7 +38,14 @@ jobs:
           python3 scripts/remote-mcp/live_health_monitor.py \
             --mode fixture \
             --fixture-evidence-dir "$RUNNER_TEMP/remote-mcp-monitor-fixture" \
-            --json
+            --json \
+            > "$RUNNER_TEMP/remote-mcp-monitor-fixture.json"
+          python3 scripts/remote-mcp/monitor_alert.py \
+            --input "$RUNNER_TEMP/remote-mcp-monitor-fixture.json" \
+            --json-output "$RUNNER_TEMP/remote-mcp-monitor-alert.json" \
+            --markdown-output "$RUNNER_TEMP/remote-mcp-monitor-alert.md" \
+            --fail-on-degraded
+          cat "$RUNNER_TEMP/remote-mcp-monitor-alert.md" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Live monitor when configured
         env:
@@ -69,11 +76,22 @@ jobs:
             exit 0
           fi
 
-          python3 scripts/remote-mcp/live_health_monitor.py --mode live --json
+          python3 scripts/remote-mcp/live_health_monitor.py --mode live --json \
+            > "$RUNNER_TEMP/remote-mcp-monitor-live.json"
+          python3 scripts/remote-mcp/monitor_alert.py \
+            --input "$RUNNER_TEMP/remote-mcp-monitor-live.json" \
+            --json-output "$RUNNER_TEMP/remote-mcp-monitor-live-alert.json" \
+            --markdown-output "$RUNNER_TEMP/remote-mcp-monitor-live-alert.md" \
+            --fail-on-degraded
+          cat "$RUNNER_TEMP/remote-mcp-monitor-live-alert.md" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload fixture evidence
         uses: actions/upload-artifact@v4
         with:
           name: remote-mcp-monitor-fixture
-          path: ${{ runner.temp }}/remote-mcp-monitor-fixture/
+          path: |
+            ${{ runner.temp }}/remote-mcp-monitor-fixture/
+            ${{ runner.temp }}/remote-mcp-monitor-fixture.json
+            ${{ runner.temp }}/remote-mcp-monitor-alert.json
+            ${{ runner.temp }}/remote-mcp-monitor-alert.md
           if-no-files-found: error

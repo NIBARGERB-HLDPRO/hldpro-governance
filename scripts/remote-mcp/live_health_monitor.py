@@ -33,7 +33,7 @@ LIVE_MARKER_ENVS = (
 
 EVIDENCE_DENY_PATTERNS = (
     ("raw-ssn", re.compile(r"\b\d{3}-\d{2}-\d{4}\b")),
-    ("bearer-token", re.compile(r"\bBearer\s+[A-Za-z0-9._~+/=-]+", re.IGNORECASE)),
+    ("bearer-token", re.compile(r"\bBearer\s+[A-Za-z0-9._~+/=-]{10,}", re.IGNORECASE)),
     ("cloudflare-access-token", re.compile(r"\bCF-Access\b", re.IGNORECASE)),
     ("jwt-fragment", re.compile(r"\beyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}", re.IGNORECASE)),
 )

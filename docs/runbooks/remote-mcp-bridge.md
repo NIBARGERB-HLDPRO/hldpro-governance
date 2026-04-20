@@ -117,9 +117,23 @@ python3 scripts/remote-mcp/live_health_monitor.py --mode live --json
 
 `--mode auto` runs live when live configuration markers are present and fixture mode otherwise. Missing partial live configuration is a hard failure. The monitor appends an `evidence-safety-scan` result and fails if preserved evidence contains raw SSNs, bearer tokens, Cloudflare Access token markers, or JWT fragments.
 
+Payload-safe alert summary:
+
+```bash
+python3 scripts/remote-mcp/live_health_monitor.py --mode fixture --json \
+  > /tmp/remote-mcp-monitor.json
+python3 scripts/remote-mcp/monitor_alert.py \
+  --input /tmp/remote-mcp-monitor.json \
+  --json-output /tmp/remote-mcp-monitor-alert.json \
+  --markdown-output /tmp/remote-mcp-monitor-alert.md \
+  --fail-on-degraded
+```
+
+Alert output contains counts, check names, redacted failure details, health, mode, evidence path, and recommended operator action. It must not include auth headers, bearer tokens, JWT fragments, Cloudflare Access material, raw SSNs, or raw MCP payloads. If sensitive material appears in monitor input, the alert formatter replaces it with `[redacted-sensitive-detail]`, marks the monitor degraded, and returns non-zero when `--fail-on-degraded` is set.
+
 Recurring surfaces:
 
-- GitHub Actions: `.github/workflows/remote-mcp-live-health.yml` runs the fixture harness on schedule and runs live mode only when the full secret set is configured.
+- GitHub Actions: `.github/workflows/remote-mcp-live-health.yml` runs the fixture harness on schedule, writes a payload-safe step summary and alert artifact, and runs live mode only when the full secret set is configured.
 - macOS launchd template: `launchd/com.hldpro.remote-mcp-monitor.plist` runs the same monitor every 900 seconds after replacing `__REPO_ROOT__` with the checkout path.
 
 Install the launchd template only from the intended operating checkout:
@@ -194,7 +208,8 @@ No audit directory is valid before Stage B/C activation. Once audit files exist,
 | PII detected | Reject with payload-safe error. | Use local stdio/LAM path only. |
 | Rate limit exceeded | Return 429 before dispatch. | Wait or inspect principal activity. |
 | Audit verifier fails | Disable remote endpoint. | Preserve files, identify break, rotate keys if needed, rebuild trust with issue-backed closeout. |
-| Recurring monitor fails | Treat as remote-health degraded. | Disable or restrict remote endpoint until authenticated smoke, negative checks, strict audit, tamper-negative check, and evidence scan pass again. |
+| Recurring monitor fails | Treat as remote-health degraded. | Read the payload-safe alert summary, disable or restrict remote endpoint, and rerun monitor only after authenticated smoke, negative checks, strict audit, tamper-negative check, and evidence scan pass again. |
+| Alert formatter reports sensitive material | Treat evidence as unsafe. | Do not publish the raw monitor output. Rotate credentials if live secrets may have been exposed, preserve only redacted alert output, and create an issue-backed remediation. |
 | `cloudflared` down | Remote unreachable/503; stdio continues. | Restart tunnel only after bridge health and audit checks pass. |
 
 ## Stage B/C Acceptance Criteria

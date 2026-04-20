@@ -75,6 +75,7 @@
 | som_client.py | `scripts/som-client/som_client.py` | Thin Remote MCP operator client with Cloudflare Access headers, bearer auth, safe errors, and retry handling |
 | verify_audit.py | `scripts/remote-mcp/verify_audit.py` | Deterministic verifier for Remote MCP audit JSONL hash chains, HMACs, and manifests |
 | live_health_monitor.py | `scripts/remote-mcp/live_health_monitor.py` | Recurring Remote MCP monitor composing Stage D smoke/security checks, strict audit verification, tamper-negative proof, and evidence-safety scan |
+| monitor_alert.py | `scripts/remote-mcp/monitor_alert.py` | Payload-safe alert/report formatter for Remote MCP monitor JSON results |
 
 ---
 

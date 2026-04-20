@@ -1,0 +1,51 @@
+{
+  "mode": "fixture",
+  "results": [
+    {
+      "name": "authenticated-ping",
+      "status": "pass",
+      "detail": "status=200 body_keys=['result', 'status']"
+    },
+    {
+      "name": "anonymous-rejected",
+      "status": "pass",
+      "detail": "status=401"
+    },
+    {
+      "name": "origin-spoof-non-authoritative",
+      "status": "pass",
+      "detail": "status=400"
+    },
+    {
+      "name": "pii-handoff-rejected",
+      "status": "pass",
+      "detail": "status=400"
+    },
+    {
+      "name": "scrub-pii-remote-rejected",
+      "status": "pass",
+      "detail": "status=400"
+    },
+    {
+      "name": "audit-valid",
+      "status": "pass",
+      "detail": "valid audit chain"
+    },
+    {
+      "name": "audit-tamper-negative",
+      "status": "pass",
+      "detail": "2026-04-19.jsonl:1: seq 999999 != expected 0; 2026-04-19.jsonl:2: prev_hash mismatch (expected 312fa9540f8c1ef51eda29aa300f1e333e1598d7e41d98556ffcf26d8ae7264d, got fd619e358dc9fca4ec28d635c851db5f1738d7e2dd155ed53b0a9bc0ebebc2cb); 2026-04-19.jsonl:1: entry_hmac mismatch; 2026-04-19.manifest.json: first_hash mismatch; 2026-04-19.manifest.json: sha256_of_file mismatch"
+    },
+    {
+      "name": "stdio-after-tunnel-stop",
+      "status": "skip",
+      "detail": "stdio proof command not configured"
+    },
+    {
+      "name": "evidence-safety-scan",
+      "status": "pass",
+      "detail": "no raw PII, bearer tokens, Cloudflare Access tokens, or JWT fragments found"
+    }
+  ],
+  "evidence_dir": "/tmp/issue374-remote-mcp-monitor-fixture"
+}
