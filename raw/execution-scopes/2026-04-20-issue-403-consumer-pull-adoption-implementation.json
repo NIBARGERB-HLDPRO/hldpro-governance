@@ -1,0 +1,77 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-403-consumer-pull-adoption-20260420",
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 403,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/403",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-20T15:45:00Z"
+  },
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-403-consumer-pull-adoption-pdcar.md",
+    "docs/plans/issue-403-consumer-pull-adoption-structured-agent-cycle-plan.json",
+    "raw/cross-review/2026-04-20-issue-403-consumer-pull-adoption.md",
+    "raw/execution-scopes/2026-04-20-issue-403-consumer-pull-adoption-implementation.json",
+    "raw/validation/issue-403-consumer-pull-adoption/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-398-consumer-pull-bootstrap",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-398-consumer-pull-closeout",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker-issue-177-consumer-pull-verifier",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout has unrelated stale branch state outside issue #403"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-398-consumer-pull-bootstrap",
+      "reason": "completed issue #398 implementation worktree retained locally after merge"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-398-consumer-pull-closeout",
+      "reason": "completed issue #398 closeout worktree retained locally after merge"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "primary knocktracker checkout has pre-existing local graph/compendium noise outside issue #403"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker-issue-177-consumer-pull-verifier",
+      "reason": "active downstream pilot worktree for knocktracker issue #177"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "sibling repo has unrelated active work outside issue #403"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo has unrelated active work outside issue #403"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "sibling repo may have unrelated active work outside issue #403"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-pdcar-directive",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-20T15:45:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/403",
+      "https://github.com/NIBARGERB-HLDPRO/knocktracker/issues/177",
+      "docs/plans/issue-403-consumer-pull-adoption-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

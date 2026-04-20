@@ -18,6 +18,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Consumer-pulled governance adoption rollout | [#403](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/403) | MEDIUM | 4-6 | Pilot repo-side governance package verification in knocktracker issue [#177](https://github.com/NIBARGERB-HLDPRO/knocktracker/issues/177), keep central GitHub settings report-only, and record downstream verification before wider rollout. |
 
 ## Done
 
