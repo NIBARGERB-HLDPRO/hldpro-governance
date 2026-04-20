@@ -62,8 +62,9 @@
 ### Branch Isolation (global hook)
 - `~/.claude/hooks/branch-switch-guard.sh` — **global PreToolUse hook** that blocks `git checkout <branch>` and `git switch <branch>` in all repos
 - Prevents multi-session conflicts where one session's branch switch corrupts another session's working directory
-- **Allowed:** `git checkout -- <file>` (file restore), `git checkout .`, `git worktree add`
+- **Allowed:** `git checkout -- <file>` (file restore), `git checkout .`, non-issue `git worktree add`
 - **Blocked:** `git checkout <branch>`, `git switch <branch>`, `git checkout -b <branch>`, `git checkout -`
+- **Issue worktree guard:** `git worktree add -b issue-*` must include either `HLDPRO_LANE_CLAIM_BOOTSTRAP=1` for planning-bootstrap work or `HLDPRO_LANE_CLAIM_SCOPE=<scope.json>` pointing to an execution scope whose `lane_claim.issue_number` matches the issue branch.
 - **Alternative:** Use `EnterWorktree` tool or `git worktree add` for branch work in concurrent sessions
 - Configured in `~/.claude/settings.json` PreToolUse hooks (absolute path, not `~`)
 

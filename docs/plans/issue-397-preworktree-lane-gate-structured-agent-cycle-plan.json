@@ -1,0 +1,98 @@
+{
+  "session_id": "session-20260420-issue-397-preworktree-lane-gate",
+  "issue_number": 397,
+  "objective": "Block unclaimed issue worktree creation before filesystem side effects while preserving explicit planning bootstrap and claimed-scope workflows.",
+  "tier": 1,
+  "scope_boundary": [
+    "Update the repo-owned branch/worktree guard.",
+    "Add focused hook tests for issue worktree gating.",
+    "Document the issue-lane bootstrap forms and validation expectations."
+  ],
+  "out_of_scope": [
+    "Cleaning stale local worktrees from prior lanes.",
+    "Changing GitHub org or repository settings.",
+    "Blocking non-issue worktree creation."
+  ],
+  "research_summary": "Issue #393 enforces lane ownership once execution-scope validation runs. This slice prevents the earlier worktree-creation side effect by adding a PreToolUse hook check for issue worktree creation. The gate uses visible environment markers so bootstrap intent is explicit in the command transcript.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/397",
+    "docs/plans/issue-397-preworktree-lane-gate-pdcar.md",
+    "hooks/branch-switch-guard.sh",
+    "scripts/overlord/test_branch_switch_guard.py"
+  ],
+  "sprints": [
+    {
+      "name": "Pre-worktree issue-lane guard",
+      "goal": "Prevent accidental creation of another issue lane's worktree without explicit bootstrap or a matching lane claim.",
+      "tasks": [
+        "Detect `git worktree add -b issue-*` in branch-switch-guard.",
+        "Require `HLDPRO_LANE_CLAIM_BOOTSTRAP=1` or `HLDPRO_LANE_CLAIM_SCOPE=<scope>` for issue worktree creation.",
+        "Validate scoped claims by checking `lane_claim.issue_number` against the issue branch.",
+        "Add tests for blocked and allowed command forms.",
+        "Update standards, service registry, and progress/backlog docs."
+      ],
+      "acceptance_criteria": [
+        "Unmarked issue worktree creation is blocked.",
+        "Explicit planning bootstrap issue worktree creation is allowed.",
+        "Matching claimed scope issue worktree creation is allowed.",
+        "Mismatched claimed scope issue worktree creation is blocked.",
+        "Non-issue worktree creation remains allowed.",
+        "Existing branch checkout blocking remains intact."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "STANDARDS.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/plans/issue-397-preworktree-lane-gate-pdcar.md",
+        "docs/plans/issue-397-preworktree-lane-gate-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-20-issue-397-preworktree-lane-gate-implementation.json",
+        "hooks/branch-switch-guard.sh",
+        "scripts/overlord/test_branch_switch_guard.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "issue-393-specialist-research",
+      "role": "lane-ownership governance reviewer",
+      "focus": "Keep lane ownership tied to execution scopes and avoid a drifting lock system.",
+      "status": "accepted_with_followup",
+      "summary": "Issue #393 completed the execution-scope contract; this follow-up adds an earlier hook guard for worktree creation side effects.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/395",
+        "STANDARDS.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "codex-local-hook-tests",
+    "model_family": "codex",
+    "status": "accepted_with_followup",
+    "summary": "Focused hook tests cover the critical command forms. Downstream rollout to Claude global hook installations should be handled as a separate operator-controlled update if needed.",
+    "evidence": [
+      "scripts/overlord/test_branch_switch_guard.py"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #397 may update the branch/worktree guard, hook tests, standards/registry docs, and issue-specific planning/scope artifacts.",
+    "next_execution_step": "Run focused hook tests, execution-scope validation, Local CI, and GitHub checks.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Do not clean or mutate sibling lane worktrees.",
+    "Do not block non-issue worktree creation in this slice.",
+    "Do not treat bootstrap as implementation authorization; implementation still requires lane_claim execution-scope validation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #397",
+    "issue #393 guardrail follow-up"
+  ],
+  "approved_at": "2026-04-20T15:25:00Z"
+}
