@@ -21,7 +21,8 @@
     "wiki/hldpro/Hldpro_sim_Runner.md",
     "wiki/hldpro/Hldpro_sim_Stampede_consumer_proof.md",
     "wiki/hldpro/index.md",
-    "wiki/index.md"
+    "wiki/index.md",
+    "raw/execution-scopes/2026-04-20-issue-407-hldpro-sim-implementation.json"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
