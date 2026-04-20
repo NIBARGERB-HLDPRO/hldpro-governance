@@ -1,32 +1,38 @@
 {
   "expected_execution_root": "{repo_root}",
-  "expected_branch": "issue-412-backlog-add-20260420",
+  "expected_branch": "issue-412-codex-brief-template-fix-20260420",
   "allowed_write_paths": [
-    "OVERLORD_BACKLOG.md",
-    "docs/plans/backlog-add-412-structured-agent-cycle-plan.json",
+    "docs/templates/codex-spark-dispatch-brief.md",
     "raw/execution-scopes/2026-04-20-issue-412-backlog-add-implementation.json",
+    "raw/execution-scopes/2026-04-20-issue-412-template-fix-implementation.json",
     "graphify-out/GRAPH_REPORT.md",
     "graphify-out/graph.json"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
   ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance worktree is on issue-385-remote-mcp-vault-bootstrap-20260420; has untracked __pycache__ and var/worktrees/issue-416 files"
+    }
+  ],
   "execution_mode": "implementation_complete",
   "lane_claim": {
     "issue_number": 412,
     "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/412",
     "claimed_by": "session-agent-claude-sonnet-4-6",
-    "claimed_at": "2026-04-20T17:30:00Z"
+    "claimed_at": "2026-04-20T18:10:00Z"
   },
   "handoff_evidence": {
     "status": "accepted",
     "planner_model": "claude-sonnet-4-6",
     "implementer_model": "claude-sonnet-4-6",
-    "accepted_at": "2026-04-20T17:30:00Z",
+    "accepted_at": "2026-04-20T18:10:00Z",
     "evidence_paths": [
       "docs/plans/backlog-add-412-structured-agent-cycle-plan.json"
     ],
-    "active_exception_ref": "raw/execution-scopes/2026-04-20-issue-412-backlog-add-implementation.json#same-model-exception",
-    "active_exception_expires_at": "2026-04-27T17:30:00Z"
+    "active_exception_ref": "raw/execution-scopes/2026-04-20-issue-412-template-fix-implementation.json#same-model-exception",
+    "active_exception_expires_at": "2026-04-27T18:10:00Z"
   }
 }
