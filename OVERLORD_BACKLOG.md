@@ -18,6 +18,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| hldpro-sim v0.1.0 deployment readiness — version tag + deployer | [#422](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/422) | HIGH | 2 | PR [#424](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/424). Tag hldpro-sim-v0.1.0 pushed, consumer pull state contract, deploy-hldpro-sim.sh with --dry-run. Pending CI green + merge. |
 
 ## Done
 
