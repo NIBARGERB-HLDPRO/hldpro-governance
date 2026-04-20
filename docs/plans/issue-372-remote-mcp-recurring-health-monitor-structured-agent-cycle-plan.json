@@ -1,0 +1,118 @@
+{
+  "session_id": "session-20260419-issue-372-remote-mcp-recurring-health-monitor",
+  "issue_number": 372,
+  "objective": "Convert the completed Remote MCP Stage D live proof into a recurring health and audit monitor with scheduled fixture coverage, configured live execution, payload-safe evidence scanning, runbook instructions, and governance closeout artifacts.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify Remote MCP monitor scripts/tests, scheduled workflow, launchd template, Remote MCP runbook, governance registries, progress/backlog mirrors, issue #372 planning/validation/closeout artifacts, and generated graph/wiki artifacts.",
+    "Reuse the existing Stage D proof runner and audit verifier rather than changing Remote MCP invariants or duplicating protocol logic.",
+    "Do not commit Cloudflare credentials, bridge tokens, JWTs, HMAC keys, raw PII, or production audit payloads."
+  ],
+  "out_of_scope": [
+    "Changing STANDARDS.md Remote MCP invariants 11-15.",
+    "Changing downstream local-ai-machine bridge behavior.",
+    "Installing launchd on the operator machine as a side effect of this PR.",
+    "Adding permanent Cloudflare policies or secrets.",
+    "Reopening issue #109."
+  ],
+  "research_summary": "Issue #109 closed after Stage A governance, downstream Stage B/C bridge controls, and final Stage D live Cloudflare proof. The follow-up operational gap is recurring health verification. Existing Stage D and audit verifier code already covers the required authenticated, negative, audit, tamper, and stdio checks, so issue #372 should compose those tools and add schedule/runbook surfaces plus payload-safe evidence scanning.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/370",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "scripts/remote-mcp/stage_d_smoke.py",
+    "scripts/remote-mcp/verify_audit.py",
+    "scripts/orchestrator/read_only_observer.py",
+    "launchd/com.hldpro.governance-observer.plist"
+  ],
+  "sprints": [
+    {
+      "name": "Recurring monitor implementation",
+      "goal": "Add a recurring Remote MCP health monitor that reuses Stage D checks and proves fixture/live behavior safely.",
+      "tasks": [
+        "Add live health monitor wrapper with auto, fixture, and live modes.",
+        "Add evidence-safety scanning for raw PII and token material.",
+        "Add focused tests for fixture E2E, live fail-fast, and sensitive evidence rejection.",
+        "Add scheduled/manual GitHub workflow with deterministic fixture proof and configured live execution.",
+        "Add optional launchd template for local recurring monitor operation.",
+        "Update runbook, feature registry, service registry, data dictionary, workflow coverage inventory, progress, and backlog mirrors.",
+        "Run validation, closeout hook, local CI, PR checks, and issue closeout."
+      ],
+      "acceptance_criteria": [
+        "Scheduled/manual monitor path exists for Remote MCP live health.",
+        "Authenticated smoke and anonymous rejection checks are represented in the monitor path.",
+        "Strict audit HMAC verification and tamper-negative verification are represented in the monitor path.",
+        "Evidence handling documents and checks that no secrets, bearer tokens, Cloudflare Access tokens, JWT fragments, or raw PII are preserved.",
+        "Runbook documents operator setup, expected outputs, and alert/remediation behavior.",
+        "Local tests cover fixture monitor success and fail-fast missing live configuration behavior.",
+        "Final AC: E2E testing runs through local CI and PR checks before closeout."
+      ],
+      "file_paths": [
+        ".github/workflows/remote-mcp-live-health.yml",
+        "OVERLORD_BACKLOG.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/plans/issue-372-remote-mcp-recurring-health-monitor-pdcar.md",
+        "docs/plans/issue-372-remote-mcp-recurring-health-monitor-structured-agent-cycle-plan.json",
+        "docs/runbooks/remote-mcp-bridge.md",
+        "docs/workflow-local-coverage-inventory.json",
+        "graphify-out/GRAPH_REPORT.md",
+        "graphify-out/graph.json",
+        "graphify-out/hldpro-governance/",
+        "launchd/com.hldpro.remote-mcp-monitor.plist",
+        "raw/execution-scopes/2026-04-19-issue-372-remote-mcp-recurring-health-monitor-implementation.json",
+        "raw/validation/2026-04-19-issue-372-remote-mcp-recurring-health-monitor.md",
+        "raw/closeouts/2026-04-19-issue-372-remote-mcp-recurring-health-monitor.md",
+        "scripts/remote-mcp/live_health_monitor.py",
+        "scripts/remote-mcp/tests/test_live_health_monitor.py",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-explorer-plato",
+      "role": "repo-rule and operational-scope explorer",
+      "focus": "Identify required artifacts, ACs, recurring monitor shape, and validation commands for issue #372.",
+      "status": "accepted",
+      "summary": "The slice should remain an operational follow-up, keep Remote MCP invariants unchanged, add a monitor script/test pair, scheduler surface, runbook/registry artifacts, and prove payload-safe output.",
+      "evidence": [
+        "subagent 019da844-a4af-74a2-917f-80ed4c80e008 final report",
+        "docs/runbooks/remote-mcp-bridge.md",
+        "launchd/com.hldpro.governance-observer.plist"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "codex-explorer-plato",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Accepted operational monitor scope with no standards rewrite; recommended monitor script/tests, launchd template, runbook/registry updates, validation, and closeout artifacts.",
+    "evidence": [
+      "subagent 019da844-a4af-74a2-917f-80ed4c80e008 final report"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #372 may add a recurring Remote MCP monitor wrapper, tests, workflow, launchd template, documentation, registries, validation evidence, closeout, and generated graph/wiki artifacts.",
+    "next_execution_step": "Finish implementation, run validation, open PR, merge after checks pass, close issue #372.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If monitor evidence includes secrets or raw sensitive payloads, remove the evidence, rotate affected credentials if live material was exposed, and rerun validation.",
+    "If live monitor cannot run due absent secrets, record fixture and fail-fast evidence only; do not claim live recurring health.",
+    "If scheduled workflow fails without production secrets, adjust workflow to skip unconfigured live mode while preserving fixture proof and fail-closed partial configuration."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #372",
+    "codex-explorer-plato"
+  ],
+  "approved_at": "2026-04-19T23:59:00Z"
+}

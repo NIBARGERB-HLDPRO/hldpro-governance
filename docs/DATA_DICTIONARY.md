@@ -107,6 +107,34 @@ Contract:
 
 ---
 
+### Remote MCP Monitor Result
+**Generator:** `scripts/remote-mcp/live_health_monitor.py`
+**Workflow:** `.github/workflows/remote-mcp-live-health.yml`
+**Optional scheduler:** `launchd/com.hldpro.remote-mcp-monitor.plist`
+
+Result object fields:
+| Field | Type | Description |
+|-------|------|-------------|
+| `mode` | enum | `fixture` or `live` after auto-mode resolution |
+| `results` | array | Stage D proof results plus monitor-specific evidence scan |
+| `evidence_dir` | string | Directory scanned for preserved audit evidence |
+
+Each `results[]` entry contains:
+| Field | Type | Description |
+|-------|------|-------------|
+| `name` | string | Check name, such as `authenticated-ping`, `audit-valid`, or `evidence-safety-scan` |
+| `status` | enum | `pass`, `fail`, or `skip` |
+| `detail` | string | Payload-safe detail; never token material or raw user payloads |
+
+Contract:
+- `auto` mode runs live only when live configuration markers are present; otherwise it runs fixture mode.
+- Partial live configuration fails before any request is sent.
+- Live mode composes the Stage D proof runner and requires authenticated smoke, anonymous rejection, origin-spoof rejection, PII rejection, forbidden-tool rejection, strict audit verification, tamper-negative proof, and stdio continuity proof.
+- Evidence scanning fails if committed or uploaded evidence contains raw SSNs, bearer tokens, Cloudflare Access token markers, or JWT fragments.
+- Fixture mode is valid for scheduled harness regression only; live Remote MCP health still requires configured secrets and copied audit evidence.
+
+---
+
 ### HITL Relay Queue
 **Generator:** `scripts/orchestrator/hitl_relay_queue.py`
 **Storage:** `raw/hitl-relay/queue/`

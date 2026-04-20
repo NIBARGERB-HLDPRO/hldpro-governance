@@ -1,0 +1,79 @@
+name: remote-mcp-live-health
+
+on:
+  schedule:
+    - cron: '17 14 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Monitor mode'
+        required: false
+        default: auto
+        type: choice
+        options:
+          - auto
+          - fixture
+          - live
+
+permissions:
+  contents: read
+
+jobs:
+  remote-mcp-live-health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SOM_REMOTE_MCP_MONITOR_MODE: ${{ inputs.mode || 'auto' }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fixture monitor proof
+        run: |
+          set -euo pipefail
+          python3 scripts/remote-mcp/live_health_monitor.py \
+            --mode fixture \
+            --fixture-evidence-dir "$RUNNER_TEMP/remote-mcp-monitor-fixture" \
+            --json
+
+      - name: Live monitor when configured
+        env:
+          SOM_MCP_URL: ${{ secrets.SOM_MCP_URL }}
+          SOM_MCP_TOKEN: ${{ secrets.SOM_MCP_TOKEN }}
+          SOM_REMOTE_MCP_IDENTITY_EMAIL: ${{ secrets.SOM_REMOTE_MCP_IDENTITY_EMAIL }}
+          SOM_REMOTE_MCP_IDENTITY_SUB: ${{ secrets.SOM_REMOTE_MCP_IDENTITY_SUB }}
+          SOM_REMOTE_MCP_AUDIT_DIR: ${{ secrets.SOM_REMOTE_MCP_AUDIT_DIR }}
+          SOM_REMOTE_MCP_AUDIT_HMAC_KEY: ${{ secrets.SOM_REMOTE_MCP_AUDIT_HMAC_KEY }}
+          SOM_REMOTE_MCP_STDIO_PROOF_COMMAND: ${{ secrets.SOM_REMOTE_MCP_STDIO_PROOF_COMMAND }}
+          SOM_REMOTE_MCP_USER_AGENT: ${{ secrets.SOM_REMOTE_MCP_USER_AGENT }}
+          SOM_REMOTE_MCP_RESOLVE_IP: ${{ secrets.SOM_REMOTE_MCP_RESOLVE_IP }}
+          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
+          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+          if [ "${SOM_REMOTE_MCP_MONITOR_MODE}" = "fixture" ]; then
+            echo "::notice::fixture mode requested; live Remote MCP monitor skipped"
+            exit 0
+          fi
+
+          if [ -z "${SOM_MCP_URL:-}${SOM_MCP_TOKEN:-}${SOM_REMOTE_MCP_AUDIT_DIR:-}${SOM_REMOTE_MCP_STDIO_PROOF_COMMAND:-}" ]; then
+            if [ "${SOM_REMOTE_MCP_MONITOR_MODE}" = "live" ]; then
+              echo "::error::live mode requested but live Remote MCP monitor secrets are incomplete"
+              exit 1
+            fi
+            echo "::notice::live Remote MCP monitor secrets not configured; fixture proof above is the scheduled harness check"
+            exit 0
+          fi
+
+          python3 scripts/remote-mcp/live_health_monitor.py --mode live --json
+
+      - name: Upload fixture evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: remote-mcp-monitor-fixture
+          path: ${{ runner.temp }}/remote-mcp-monitor-fixture/
+          if-no-files-found: error

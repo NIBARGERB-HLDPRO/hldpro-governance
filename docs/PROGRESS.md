@@ -25,7 +25,7 @@
 
 | Feature | Issue | Priority | Notes |
 |---------|-------|----------|-------|
-| Cloud → Local MCP Bridge (remote CLI access to SoM daemon) | #109 | MEDIUM | Deferred; depends on SoM Stage 5 |
+| Remote MCP recurring live health and audit monitor | #372 | HIGH | Convert the closed #109 Stage D proof into recurring fixture/live monitor, scheduler surface, evidence-safety scan, and runbook controls |
 | SoM Slice A: codex flag remediation across AIS / HP / LAM / KT | #139 | MEDIUM | Epic: model-pin compliance across governed repos |
 | SoM Slice B: AGENTS.md → agents/*.md migration + model pins | #140 | MEDIUM | Follow-on to Slice A |
 
@@ -35,11 +35,13 @@
 |------|-------|--------|-------|
 | Weekly overlord sweep write-back to wiki/index.md | — | ACTIVE / AWAITING NEXT RUN | Workflow and graph/index write-back path are wired; last committed index remains the 2026-04-09 bootstrap until the next scheduled or manual sweep refreshes generated counts |
 | LAM env-var-docs contract debt: SOM_* variables unclassified | #145 | OPEN | local-ai-machine env vars need classification |
+| Remote MCP recurring live health and audit monitor | #372 | IN_PROGRESS | Governance monitor wrapper, workflow, launchd template, runbook, validation, and closeout evidence are in progress |
 
 ## Done
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Cloud → Local MCP Bridge live Stage D closeout | #109 #370 | 2026-04-19 | Stage A governance, downstream Stage B/C bridge controls, final Cloudflare Access Stage D proof, strict audit verification, tamper-negative proof, stdio continuity proof, temporary Access cleanup, PR #371, and downstream local-ai-machine PRs #488/#490/#492 are complete. Recurring operations continue under #372. |
 | Stage 5+ som-worker launchd boot-start integration | #189 | 2026-04-19 | Downstream local-ai-machine#482 / PR #483 implemented the `com.hldpro.som-worker` LaunchAgent, installer/uninstaller, README docs, fake-launchctl e2e proof, reviewer checkpoints, and GitHub Actions green. Merge commit `8ceb5e38a0dd8105c2467e48d00219b95bac28d4`. Closeout: raw/closeouts/2026-04-19-issue-189-som-worker-launchd.md. |
 | Qwen3.6-35B-A3B Mac MLX benchmark | #351 | 2026-04-19 | Downloaded `mlx-community/Qwen3.6-35B-A3B-4bit`, captured the Python 3.9 `qwen3_5_moe` runtime blocker, installed the Python 3.11 MLX runtime, and benchmarked the model at 103.018 avg generation tok/s with 19.797 GB peak MLX memory on 128/128 synthetic runs. Active routing remains unchanged. |
 | hldpro-governance backlog closed-issue drift repair | #352 | 2026-04-19 | Reconciled stale closed issue refs out of actionable `OVERLORD_BACKLOG.md` and `docs/PROGRESS.md` sections, hardened the Overlord backlog validator to require open GitHub issues, and added an e2e negative test for closed issues in `In Progress`. |

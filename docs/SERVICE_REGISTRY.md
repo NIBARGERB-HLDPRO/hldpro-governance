@@ -24,6 +24,7 @@
 | governance-check | `.github/workflows/governance-check.yml` | PR / push | Doc co-staging, structured planning, governance-surface, planner write-boundary, and registry gates |
 | check-backlog-gh-sync | `.github/workflows/check-backlog-gh-sync.yml` | PR / push (OVERLORD_BACKLOG.md) | Backlog ↔ GH issue sync gate |
 | check-pr-commit-scope | `.github/workflows/check-pr-commit-scope.yml` | PR to main | Stale-worktree contamination guard |
+| remote-mcp-live-health | `.github/workflows/remote-mcp-live-health.yml` | Daily / manual | Recurring Remote MCP fixture harness and configured live health/audit monitor |
 | overlord-sweep | `.github/workflows/overlord-sweep.yml` | Weekly (Mon 9am CT) | Cross-repo standards sweep |
 | overlord-nightly-cleanup | `.github/workflows/overlord-nightly-cleanup.yml` | Nightly | Stale branch cleanup |
 | graphify-governance-contract | `.github/workflows/graphify-governance-contract.yml` | PR / push | Graphify usage logging contract tests |
@@ -73,6 +74,7 @@
 |--------|------|---------|
 | som_client.py | `scripts/som-client/som_client.py` | Thin Remote MCP operator client with Cloudflare Access headers, bearer auth, safe errors, and retry handling |
 | verify_audit.py | `scripts/remote-mcp/verify_audit.py` | Deterministic verifier for Remote MCP audit JSONL hash chains, HMACs, and manifests |
+| live_health_monitor.py | `scripts/remote-mcp/live_health_monitor.py` | Recurring Remote MCP monitor composing Stage D smoke/security checks, strict audit verification, tamper-negative proof, and evidence-safety scan |
 
 ---
 
@@ -81,6 +83,7 @@
 | Label | File | Purpose |
 |-------|------|---------|
 | com.hldpro.governance-observer | `launchd/com.hldpro.governance-observer.plist` | Optional macOS user-agent template for periodic read-only observer runs |
+| com.hldpro.remote-mcp-monitor | `launchd/com.hldpro.remote-mcp-monitor.plist` | Optional macOS user-agent template for recurring Remote MCP health and audit monitor runs |
 
 ---
 

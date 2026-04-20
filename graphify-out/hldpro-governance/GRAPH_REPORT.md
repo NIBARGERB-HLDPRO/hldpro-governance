@@ -1,11 +1,11 @@
 # Graph Report - hldpro-governance  (2026-04-19)
 
 ## Corpus Check
-- Large corpus: 1664 files · ~415,869 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1670 files · ~418,616 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 1183 nodes · 2273 edges · 62 communities detected
-- Extraction: 50% EXTRACTED · 50% INFERRED · 0% AMBIGUOUS · INFERRED: 1133 edges (avg confidence: 0.5)
+- 1195 nodes · 2293 edges · 62 communities detected
+- Extraction: 50% EXTRACTED · 50% INFERRED · 0% AMBIGUOUS · INFERRED: 1141 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -62,53 +62,53 @@ Nodes (37): _branch_issue_number(), build_argument_parser(), _build_summary(), _
 Cohesion: 0.23
 Nodes (4): _git(), RepoFixture, TestAssertExecutionScope, _working_directory()
 
-### Community 7 - "Orchestrator Self learning"
+### Community 7 - "Remote mcp Stage d"
+Cohesion: 0.11
+Nodes (22): build_parser(), _env_has_live_markers(), main(), _run_fixture(), _run_live(), _scan_evidence_dir(), _stage_d_args(), _build_fixture_server() (+14 more)
+
+### Community 8 - "Orchestrator Self learning"
 Cohesion: 0.15
 Nodes (26): atomic_write_yaml(), build_report(), _date_from_text(), duplicate_counts(), enrich_packet(), _entry_id(), LearningEntry, LearningMatch (+18 more)
 
-### Community 8 - "Knowledge base Graphify"
+### Community 9 - "Knowledge base Graphify"
 Cohesion: 0.13
 Nodes (19): add_common_args(), build_plan(), build_refresh_command(), execute_refresh(), find_target(), git_hook_paths(), HelperError, HookPlan (+11 more)
 
-### Community 9 - "Packet Validate hitl relay"
+### Community 10 - "Packet Validate hitl relay"
 Cohesion: 0.12
 Nodes (28): _load(), test_duplicate_reply_cannot_produce_instruction(), test_expired_reply_cannot_produce_instruction(), test_low_confidence_clarify_decision_passes_without_instruction(), test_low_confidence_non_clarify_decision_fails_closed(), test_pii_external_channel_fails_closed(), test_response_requires_notification_and_response_ids(), test_session_instruction_requires_matching_target_session() (+20 more)
 
-### Community 10 - "Som client Som client Error"
+### Community 11 - "Som client Som client Error"
 Cohesion: 0.1
 Nodes (12): RuntimeError, build_parser(), _decode_jwt_payload(), from_env(), main(), Error raised for client-side protocol and transport failures., Decode JWT payload without verifying signature., Minimal HTTP client for Remote MCP Bridge tools. (+4 more)
 
-### Community 11 - "Packet Validate Load"
+### Community 12 - "Packet Validate Load"
 Cohesion: 0.1
 Nodes (30): _find_packet_file(), _load_packet(), load_pii_patterns(), _load_schema(), Load and compile PII patterns from pii-patterns.yml., Enforce cross-family independence for tier-1 dual-planner packets.      When pri, Refuse if any consecutive pair in the parent chain shares model_id across differ, Enforce expected handoff sequence with no tier jumps. (+22 more)
-
-### Community 12 - "Knowledge base Measure graphify usage"
-Cohesion: 0.16
-Nodes (28): aggregate_file_scores(), augment_workflow_doc_candidates(), baseline_results(), build_summary(), build_trace(), emit_usage_events(), estimate_tokens(), evaluate_relevance() (+20 more)
 
 ### Community 13 - "Overlord Deploy governance tooling"
 Cohesion: 0.18
 Nodes (24): add_common_args(), apply(), _build_local_ci_plan(), build_plan(), _consumer_record(), _consumer_record_relpath(), _ensure_relative_to(), _fail() (+16 more)
 
-### Community 14 - "Overlord Check local ci gate workflow"
+### Community 14 - "Knowledge base Measure graphify usage"
+Cohesion: 0.16
+Nodes (28): aggregate_file_scores(), augment_workflow_doc_candidates(), baseline_results(), build_summary(), build_trace(), emit_usage_events(), estimate_tokens(), evaluate_relevance() (+20 more)
+
+### Community 15 - "Overlord Check local ci gate workflow"
 Cohesion: 0.11
 Nodes (14): _all_executable_lines(), _all_run_commands(), check_contract(), _contains_main_branch(), _executable_lines(), _failures_for_text(), _has_executable_line_starting_with(), _load_workflow() (+6 more)
 
-### Community 15 - "Overlord Validate structured agent cycle plan"
+### Community 16 - "Overlord Validate structured agent cycle plan"
 Cohesion: 0.15
 Nodes (2): _plan(), TestGovernanceSurfacePlanGate
 
-### Community 16 - "Overlord Assert execution scope"
+### Community 17 - "Overlord Assert execution scope"
 Cohesion: 0.17
 Nodes (22): _changed_paths(), _changed_paths_from_file(), check_scope(), _current_branch(), ExecutionScope, _format_path(), _git_root(), HandoffEvidence (+14 more)
 
-### Community 17 - "Overlord Pentagi sweep"
+### Community 18 - "Overlord Pentagi sweep"
 Cohesion: 0.16
 Nodes (22): _expand_home(), governed_repos(), GovernedRepo, load_registry(), repo_names_enabled_for(), repos_enabled_for(), repos_root(), build_payload() (+14 more)
-
-### Community 18 - "Remote mcp Stage d"
-Cohesion: 0.18
-Nodes (15): _build_fixture_server(), build_parser(), _expect(), from_env(), main(), ProofResult, _request(), run_fixture() (+7 more)
 
 ### Community 19 - "Overlord Org governance compendium"
 Cohesion: 0.19
