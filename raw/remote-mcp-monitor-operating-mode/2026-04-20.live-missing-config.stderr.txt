@@ -1,0 +1,1 @@
+missing required live monitor configuration: SOM_MCP_URL, SOM_MCP_TOKEN or SOM_REMOTE_MCP_JWT, SOM_REMOTE_MCP_IDENTITY_EMAIL, SOM_REMOTE_MCP_IDENTITY_SUB, SOM_REMOTE_MCP_AUDIT_DIR or --audit-dir, SOM_REMOTE_MCP_AUDIT_HMAC_KEY or --audit-hmac-key, SOM_REMOTE_MCP_STDIO_PROOF_COMMAND or --stdio-proof-command

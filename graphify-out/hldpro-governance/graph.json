@@ -5798,7 +5798,7 @@
     {
       "label": "monitor_alert.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L1",
       "id": "monitor_alert",
       "community": 33
@@ -5806,7 +5806,7 @@
     {
       "label": "_now()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L23",
       "id": "monitor_alert_now",
       "community": 33
@@ -5814,7 +5814,7 @@
     {
       "label": "_contains_sensitive()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L27",
       "id": "monitor_alert_contains_sensitive",
       "community": 33
@@ -5822,7 +5822,7 @@
     {
       "label": "_safe_text()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L31",
       "id": "monitor_alert_safe_text",
       "community": 33
@@ -5830,7 +5830,7 @@
     {
       "label": "_load_payload()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L39",
       "id": "monitor_alert_load_payload",
       "community": 33
@@ -5838,7 +5838,7 @@
     {
       "label": "build_alert()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L50",
       "id": "monitor_alert_build_alert",
       "community": 33
@@ -5846,7 +5846,7 @@
     {
       "label": "render_markdown()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L106",
       "id": "monitor_alert_render_markdown",
       "community": 33
@@ -5854,7 +5854,7 @@
     {
       "label": "build_parser()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L138",
       "id": "monitor_alert_build_parser",
       "community": 33
@@ -5862,7 +5862,7 @@
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L147",
       "id": "monitor_alert_main",
       "community": 33
@@ -5990,7 +5990,7 @@
     {
       "label": "live_health_monitor.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L1",
       "id": "live_health_monitor",
       "community": 7
@@ -5998,7 +5998,7 @@
     {
       "label": "_env_has_live_markers()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L42",
       "id": "live_health_monitor_env_has_live_markers",
       "community": 7
@@ -6006,7 +6006,7 @@
     {
       "label": "_scan_evidence_dir()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L46",
       "id": "live_health_monitor_scan_evidence_dir",
       "community": 7
@@ -6014,7 +6014,7 @@
     {
       "label": "_stage_d_args()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L86",
       "id": "live_health_monitor_stage_d_args",
       "community": 7
@@ -6022,7 +6022,7 @@
     {
       "label": "_run_fixture()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L103",
       "id": "live_health_monitor_run_fixture",
       "community": 7
@@ -6030,7 +6030,7 @@
     {
       "label": "_run_live()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L109",
       "id": "live_health_monitor_run_live",
       "community": 7
@@ -6038,7 +6038,7 @@
     {
       "label": "build_parser()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L122",
       "id": "live_health_monitor_build_parser",
       "community": 7
@@ -6046,7 +6046,7 @@
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L144",
       "id": "live_health_monitor_main",
       "community": 7
@@ -6086,7 +6086,7 @@
     {
       "label": "test_monitor_alert.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L1",
       "id": "test_monitor_alert",
       "community": 33
@@ -6094,7 +6094,7 @@
     {
       "label": "_payload()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L17",
       "id": "test_monitor_alert_payload",
       "community": 33
@@ -6102,7 +6102,7 @@
     {
       "label": "test_build_alert_marks_healthy_payload()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L28",
       "id": "test_monitor_alert_test_build_alert_marks_healthy_payload",
       "community": 33
@@ -6110,7 +6110,7 @@
     {
       "label": "test_build_alert_marks_degraded_failures()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L37",
       "id": "test_monitor_alert_test_build_alert_marks_degraded_failures",
       "community": 33
@@ -6118,7 +6118,7 @@
     {
       "label": "test_sensitive_material_is_redacted_and_degraded()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L46",
       "id": "test_monitor_alert_test_sensitive_material_is_redacted_and_degraded",
       "community": 33
@@ -6126,7 +6126,7 @@
     {
       "label": "test_cli_writes_json_and_markdown()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L61",
       "id": "test_monitor_alert_test_cli_writes_json_and_markdown",
       "community": 33
@@ -6134,7 +6134,7 @@
     {
       "label": "test_cli_fail_on_degraded_returns_one_without_secret_echo()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L88",
       "id": "test_monitor_alert_test_cli_fail_on_degraded_returns_one_without_secret_echo",
       "community": 33
@@ -26292,7 +26292,7 @@
     {
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L21",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -26628,7 +26628,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L23",
       "weight": 1.0,
       "_src": "monitor_alert",
@@ -26640,7 +26640,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L27",
       "weight": 1.0,
       "_src": "monitor_alert",
@@ -26652,7 +26652,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L31",
       "weight": 1.0,
       "_src": "monitor_alert",
@@ -26664,7 +26664,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L39",
       "weight": 1.0,
       "_src": "monitor_alert",
@@ -26676,7 +26676,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L50",
       "weight": 1.0,
       "_src": "monitor_alert",
@@ -26688,7 +26688,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L106",
       "weight": 1.0,
       "_src": "monitor_alert",
@@ -26700,7 +26700,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L138",
       "weight": 1.0,
       "_src": "monitor_alert",
@@ -26712,7 +26712,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L147",
       "weight": 1.0,
       "_src": "monitor_alert",
@@ -26724,7 +26724,7 @@
     {
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L14",
       "weight": 1.0,
       "_src": "test_monitor_alert",
@@ -26736,7 +26736,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L85",
       "weight": 0.8,
       "_src": "monitor_alert_build_alert",
@@ -26748,7 +26748,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L33",
       "weight": 0.8,
       "_src": "monitor_alert_safe_text",
@@ -26760,7 +26760,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L51",
       "weight": 0.8,
       "_src": "monitor_alert_build_alert",
@@ -26772,7 +26772,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L150",
       "weight": 0.8,
       "_src": "monitor_alert_main",
@@ -26784,7 +26784,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L150",
       "weight": 0.8,
       "_src": "monitor_alert_main",
@@ -26796,7 +26796,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L163",
       "weight": 0.8,
       "_src": "monitor_alert_main",
@@ -26808,7 +26808,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/monitor_alert.py",
+      "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L148",
       "weight": 0.8,
       "_src": "monitor_alert_main",
@@ -26940,7 +26940,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L42",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -26952,7 +26952,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L46",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -26964,7 +26964,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L86",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -26976,7 +26976,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L103",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -26988,7 +26988,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L109",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -27000,7 +27000,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L122",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -27012,7 +27012,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L144",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -27036,7 +27036,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L148",
       "weight": 0.8,
       "_src": "live_health_monitor_main",
@@ -27048,7 +27048,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L105",
       "weight": 0.8,
       "_src": "live_health_monitor_run_fixture",
@@ -27060,7 +27060,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L118",
       "weight": 0.8,
       "_src": "live_health_monitor_run_live",
@@ -27072,7 +27072,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L104",
       "weight": 0.8,
       "_src": "live_health_monitor_run_fixture",
@@ -27084,7 +27084,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L110",
       "weight": 0.8,
       "_src": "live_health_monitor_run_live",
@@ -27096,7 +27096,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L154",
       "weight": 0.8,
       "_src": "live_health_monitor_main",
@@ -27108,7 +27108,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L152",
       "weight": 0.8,
       "_src": "live_health_monitor_main",
@@ -27120,7 +27120,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L145",
       "weight": 0.8,
       "_src": "live_health_monitor_main",
@@ -27168,7 +27168,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L17",
       "weight": 1.0,
       "_src": "test_monitor_alert",
@@ -27180,7 +27180,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L28",
       "weight": 1.0,
       "_src": "test_monitor_alert",
@@ -27192,7 +27192,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L37",
       "weight": 1.0,
       "_src": "test_monitor_alert",
@@ -27204,7 +27204,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L46",
       "weight": 1.0,
       "_src": "test_monitor_alert",
@@ -27216,7 +27216,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L61",
       "weight": 1.0,
       "_src": "test_monitor_alert",
@@ -27228,7 +27228,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L88",
       "weight": 1.0,
       "_src": "test_monitor_alert",
@@ -27240,7 +27240,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L29",
       "weight": 0.8,
       "_src": "test_monitor_alert_test_build_alert_marks_healthy_payload",
@@ -27252,7 +27252,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L38",
       "weight": 0.8,
       "_src": "test_monitor_alert_test_build_alert_marks_degraded_failures",
@@ -27264,7 +27264,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L48",
       "weight": 0.8,
       "_src": "test_monitor_alert_test_sensitive_material_is_redacted_and_degraded",
@@ -27276,7 +27276,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L65",
       "weight": 0.8,
       "_src": "test_monitor_alert_test_cli_writes_json_and_markdown",
@@ -27288,7 +27288,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/scripts/remote-mcp/tests/test_monitor_alert.py",
+      "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L91",
       "weight": 0.8,
       "_src": "test_monitor_alert_test_cli_fail_on_degraded_returns_one_without_secret_echo",

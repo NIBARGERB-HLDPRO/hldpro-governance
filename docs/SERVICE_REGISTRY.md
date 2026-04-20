@@ -1,6 +1,6 @@
 # Service Registry
 
-**Last Updated:** 2026-04-19
+**Last Updated:** 2026-04-20
 **Scope:** hldpro-governance — meta-governance repo
 **Source of truth:** This file inventories the scripts, agents, CI workflows, and hooks that constitute the active "services" enforced or provided by hldpro-governance across the governed org.
 
@@ -24,7 +24,7 @@
 | governance-check | `.github/workflows/governance-check.yml` | PR / push | Doc co-staging, structured planning, governance-surface, planner write-boundary, and registry gates |
 | check-backlog-gh-sync | `.github/workflows/check-backlog-gh-sync.yml` | PR / push (OVERLORD_BACKLOG.md) | Backlog ↔ GH issue sync gate |
 | check-pr-commit-scope | `.github/workflows/check-pr-commit-scope.yml` | PR to main | Stale-worktree contamination guard |
-| remote-mcp-live-health | `.github/workflows/remote-mcp-live-health.yml` | Daily / manual | Recurring Remote MCP fixture harness and configured live health/audit monitor |
+| remote-mcp-live-health | `.github/workflows/remote-mcp-live-health.yml` | Daily / manual | Recurring Remote MCP fixture harness and optional configured live health/audit monitor; local launchd is the selected live-authoritative surface |
 | overlord-sweep | `.github/workflows/overlord-sweep.yml` | Weekly (Mon 9am CT) | Cross-repo standards sweep |
 | overlord-nightly-cleanup | `.github/workflows/overlord-nightly-cleanup.yml` | Nightly | Stale branch cleanup |
 | graphify-governance-contract | `.github/workflows/graphify-governance-contract.yml` | PR / push | Graphify usage logging contract tests |
@@ -84,7 +84,7 @@
 | Label | File | Purpose |
 |-------|------|---------|
 | com.hldpro.governance-observer | `launchd/com.hldpro.governance-observer.plist` | Optional macOS user-agent template for periodic read-only observer runs |
-| com.hldpro.remote-mcp-monitor | `launchd/com.hldpro.remote-mcp-monitor.plist` | Optional macOS user-agent template for recurring Remote MCP health and audit monitor runs |
+| com.hldpro.remote-mcp-monitor | `launchd/com.hldpro.remote-mcp-monitor.plist` | Selected macOS live operating-mode template for recurring Remote MCP health and audit monitor runs |
 
 ---
 

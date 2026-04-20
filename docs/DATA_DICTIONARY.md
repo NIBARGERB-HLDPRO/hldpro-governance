@@ -158,6 +158,33 @@ Alert object fields:
 
 Contract:
 - Alert output must not contain bearer tokens, JWT fragments, Cloudflare Access header material, raw SSNs, or raw MCP payloads.
+
+---
+
+### Remote MCP Monitor Operating-Mode Proof
+**Producer:** issue-backed operator proof for issue #376
+**Storage:** `raw/remote-mcp-monitor-operating-mode/*.json`, `raw/remote-mcp-monitor-operating-mode/*.md`, and validation closeout artifacts
+**Selected live surface:** `launchd/com.hldpro.remote-mcp-monitor.plist`
+**Scheduled harness:** `.github/workflows/remote-mcp-live-health.yml`
+
+Proof object fields:
+| Field | Type | Description |
+|-------|------|-------------|
+| `schema_version` | integer | Operating-mode proof schema version, currently `1` |
+| `issue` | integer | Governance issue number for the proof |
+| `selected_live_mode` | string | Selected live operating surface; currently `local-launchd` |
+| `selected_live_surface` | string | Repo path to the selected scheduler template |
+| `github_actions_role` | string | Role of the GitHub workflow for fixture harness and optional configured-live checks |
+| `rationale` | array | Payload-safe reasons for the selected mode |
+| `required_live_inputs` | array | Environment/configuration names required before live health may be claimed |
+| `evidence_policy` | object | Rules for fixture rehearsal, live evidence, fail-closed evidence, and sensitive-material refusal |
+| `artifacts` | object | Repo-relative paths to preserved monitor, alert, and validation evidence |
+
+Contract:
+- The selected live operating mode is local launchd because live health requires copied audit evidence and a stdio continuity proof command.
+- GitHub Actions fixture evidence proves harness regression only unless the complete live configuration and safe evidence source are intentionally configured.
+- Live-missing-configuration evidence may include missing environment/configuration names but must not include credential values.
+- Preserved operating-mode artifacts must pass the same sensitive-material denylist used by the monitor and alert contracts.
 - Sensitive input details are replaced with `[redacted-sensitive-detail]` and force `health: degraded`.
 - `--fail-on-degraded` exits non-zero after writing redacted artifacts so workflows can both preserve evidence and fail closed.
 

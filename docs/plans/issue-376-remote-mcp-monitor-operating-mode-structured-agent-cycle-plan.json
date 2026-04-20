@@ -1,0 +1,108 @@
+{
+  "session_id": "session-20260420-issue-376-remote-mcp-monitor-operating-mode",
+  "issue_number": 376,
+  "objective": "Select and prove the operating mode for live Remote MCP monitoring while preserving payload-safe rehearsal and fail-closed evidence.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify Remote MCP monitor operating-mode docs, governance registries, progress/backlog mirrors, issue #376 planning/validation/closeout artifacts, selected-mode rehearsal evidence, and generated graph/wiki artifacts.",
+    "Reuse the existing issue #372 monitor and issue #374 alert contracts; do not change Remote MCP bridge protocol behavior.",
+    "Do not commit Cloudflare credentials, bridge tokens, JWTs, HMAC keys, raw PII, production monitor payloads, or raw MCP payloads."
+  ],
+  "out_of_scope": [
+    "Changing STANDARDS.md Remote MCP invariants 11-15.",
+    "Installing launchd on the operator machine from this PR.",
+    "Configuring production GitHub Actions secrets.",
+    "Claiming production live monitor health without configured live evidence."
+  ],
+  "research_summary": "Issue #372 added the recurring monitor and both GitHub Actions and launchd surfaces. Issue #374 added payload-safe alert artifacts. Issue #376 selects local launchd as the live-authoritative operating mode because live health requires local audit-copy access and stdio continuity proof; GitHub Actions remains the scheduled fixture harness and optional configured-live runner.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376",
+    "docs/runbooks/remote-mcp-bridge.md",
+    ".github/workflows/remote-mcp-live-health.yml",
+    "launchd/com.hldpro.remote-mcp-monitor.plist",
+    "scripts/remote-mcp/live_health_monitor.py",
+    "scripts/remote-mcp/monitor_alert.py"
+  ],
+  "sprints": [
+    {
+      "name": "Operating-mode proof",
+      "goal": "Document the selected live monitor surface and preserve payload-safe evidence for the selected-mode rehearsal and live fail-closed behavior.",
+      "tasks": [
+        "Update active backlog mirrors for issue #376.",
+        "Update the Remote MCP runbook with the selected local launchd operating mode, GitHub Actions role, evidence capture, and operator response.",
+        "Update feature, service, and data-dictionary registry entries.",
+        "Generate selected-mode fixture monitor and alert evidence under raw/remote-mcp-monitor-operating-mode/.",
+        "Record live missing-config fail-closed evidence and validation results.",
+        "Run local validation, closeout hook, Local CI Gate, PR checks, and issue closeout."
+      ],
+      "acceptance_criteria": [
+        "Operating mode is explicitly selected and justified.",
+        "Runbook documents live monitor setup, evidence capture, and operator response for the selected mode.",
+        "A payload-safe monitor alert artifact is preserved for the selected-mode rehearsal.",
+        "Live mode fails closed when required production configuration is absent.",
+        "Evidence scan proves preserved artifacts contain no raw SSNs, bearer-token material, Cloudflare Access markers, or JWT fragments.",
+        "Local tests and Local CI Gate pass.",
+        "Final AC: GitHub PR checks pass before closeout."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/plans/issue-376-remote-mcp-monitor-operating-mode-pdcar.md",
+        "docs/plans/issue-376-remote-mcp-monitor-operating-mode-structured-agent-cycle-plan.json",
+        "docs/runbooks/remote-mcp-bridge.md",
+        "graphify-out/GRAPH_REPORT.md",
+        "graphify-out/graph.json",
+        "graphify-out/hldpro-governance/",
+        "raw/execution-scopes/2026-04-20-issue-376-remote-mcp-monitor-operating-mode-implementation.json",
+        "raw/remote-mcp-monitor-operating-mode/",
+        "raw/validation/2026-04-20-issue-376-remote-mcp-monitor-operating-mode.md",
+        "raw/closeouts/2026-04-20-issue-376-remote-mcp-monitor-operating-mode.md",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-explorer-hubble",
+      "role": "remote-mcp operating-mode explorer",
+      "focus": "Identify the current monitor surfaces, active backlog gap, evidence paths, validation commands, and secret-safety pitfalls for issue #376.",
+      "status": "accepted_with_followup",
+      "summary": "Accepted the need to mirror issue #376, preserve fixture/alert evidence, document the role split between GitHub Actions and launchd, and avoid claiming live health without production configuration.",
+      "evidence": [
+        "subagent 019da8f8-9f58-7920-a834-0170cd77f871 final report"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "codex-explorer-hubble",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "Accepted the issue #376 documentation/evidence shape. Implementation selects local launchd as live-authoritative because the live proof requires local audit-copy and stdio-continuity inputs.",
+    "evidence": [
+      "subagent 019da8f8-9f58-7920-a834-0170cd77f871 final report"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #376 may update Remote MCP monitor operating-mode docs, registries, backlog mirrors, selected-mode rehearsal evidence, validation, closeout, and generated graph/wiki artifacts.",
+    "next_execution_step": "Implement the runbook/registry/evidence updates, validate locally, open PR, merge after checks pass, and close issue #376.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any preserved evidence includes secrets, JWT fragments, Cloudflare Access material, bearer-token material, raw PII, or raw MCP payloads, remove the artifact and rerun the proof from sanitized inputs.",
+    "If live configuration is absent, preserve fixture rehearsal and fail-closed evidence only; do not claim production live recurring health.",
+    "If GitHub Actions live mode cannot access copied audit evidence and stdio proof safely, keep it optional and treat local launchd as the selected live operating mode."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #376",
+    "codex-explorer-hubble"
+  ],
+  "approved_at": "2026-04-20T15:30:00Z"
+}
