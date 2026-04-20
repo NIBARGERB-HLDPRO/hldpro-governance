@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/wiki/hldpro",
-  "nodes": 1195,
-  "edges": 2293,
-  "communities": 62,
-  "articles": 72,
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts/wiki/hldpro",
+  "nodes": 1211,
+  "edges": 2320,
+  "communities": 64,
+  "articles": 74,
   "html_status": "skipped",
-  "code_files": 80
+  "code_files": 82
 }

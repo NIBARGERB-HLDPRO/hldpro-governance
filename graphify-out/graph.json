@@ -6974,7 +6974,7 @@
     {
       "label": "live_health_monitor.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L1",
       "id": "live_health_monitor",
       "community": 7
@@ -6982,7 +6982,7 @@
     {
       "label": "_env_has_live_markers()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L42",
       "id": "live_health_monitor_env_has_live_markers",
       "community": 7
@@ -6990,7 +6990,7 @@
     {
       "label": "_scan_evidence_dir()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L46",
       "id": "live_health_monitor_scan_evidence_dir",
       "community": 7
@@ -6998,7 +6998,7 @@
     {
       "label": "_stage_d_args()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L86",
       "id": "live_health_monitor_stage_d_args",
       "community": 7
@@ -7006,7 +7006,7 @@
     {
       "label": "_run_fixture()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L103",
       "id": "live_health_monitor_run_fixture",
       "community": 7
@@ -7014,7 +7014,7 @@
     {
       "label": "_run_live()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L109",
       "id": "live_health_monitor_run_live",
       "community": 7
@@ -7022,7 +7022,7 @@
     {
       "label": "build_parser()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L122",
       "id": "live_health_monitor_build_parser",
       "community": 7
@@ -7030,7 +7030,7 @@
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L144",
       "id": "live_health_monitor_main",
       "community": 7
@@ -7190,7 +7190,7 @@
     {
       "label": "test_live_health_monitor.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L1",
       "id": "test_live_health_monitor",
       "community": 7
@@ -7198,7 +7198,7 @@
     {
       "label": "test_fixture_monitor_e2e_passes_and_scans_evidence()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L17",
       "id": "test_live_health_monitor_test_fixture_monitor_e2e_passes_and_scans_evidence",
       "community": 7
@@ -7206,7 +7206,7 @@
     {
       "label": "test_live_monitor_fails_fast_without_required_configuration()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L46",
       "id": "test_live_health_monitor_test_live_monitor_fails_fast_without_required_configuration",
       "community": 7
@@ -7214,7 +7214,7 @@
     {
       "label": "test_evidence_scan_rejects_sensitive_material()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L60",
       "id": "test_live_health_monitor_test_evidence_scan_rejects_sensitive_material",
       "community": 7
@@ -31336,7 +31336,7 @@
     {
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L21",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -31348,7 +31348,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L42",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -31360,7 +31360,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L46",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -31372,7 +31372,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L86",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -31384,7 +31384,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L103",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -31396,7 +31396,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L109",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -31408,7 +31408,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L122",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -31420,7 +31420,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L144",
       "weight": 1.0,
       "_src": "live_health_monitor",
@@ -31432,7 +31432,7 @@
     {
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L14",
       "weight": 1.0,
       "_src": "test_live_health_monitor",
@@ -31444,7 +31444,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L148",
       "weight": 0.8,
       "_src": "live_health_monitor_main",
@@ -31456,7 +31456,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L105",
       "weight": 0.8,
       "_src": "live_health_monitor_run_fixture",
@@ -31468,7 +31468,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L118",
       "weight": 0.8,
       "_src": "live_health_monitor_run_live",
@@ -31480,7 +31480,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L104",
       "weight": 0.8,
       "_src": "live_health_monitor_run_fixture",
@@ -31492,7 +31492,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L110",
       "weight": 0.8,
       "_src": "live_health_monitor_run_live",
@@ -31504,7 +31504,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L154",
       "weight": 0.8,
       "_src": "live_health_monitor_main",
@@ -31516,7 +31516,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L152",
       "weight": 0.8,
       "_src": "live_health_monitor_main",
@@ -31528,7 +31528,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L145",
       "weight": 0.8,
       "_src": "live_health_monitor_main",
@@ -32068,7 +32068,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L17",
       "weight": 1.0,
       "_src": "test_live_health_monitor",
@@ -32080,7 +32080,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L46",
       "weight": 1.0,
       "_src": "test_live_health_monitor",
@@ -32092,7 +32092,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L60",
       "weight": 1.0,
       "_src": "test_live_health_monitor",
