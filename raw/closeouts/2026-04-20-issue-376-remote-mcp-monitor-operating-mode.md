@@ -31,7 +31,7 @@ No contradiction. This clarifies the previously dual-surfaced monitor setup in `
 - Governance issue: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376
 - Parent monitor issue: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372
 - Alert issue: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374
-- PR: pending at closeout-file creation; update before final issue closure.
+- PR: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/377
 
 ## Schema / Artifact Version
 - Remote MCP monitor result contract from `docs/DATA_DICTIONARY.md`
@@ -91,7 +91,7 @@ Result: PASS. Declared active parallel roots produced warnings only.
 - PASS: registry surface reconciliation
 - PASS: `git diff --check`
 - PASS: `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json`
-- PENDING: GitHub PR checks, to be updated after PR creation and CI completion.
+- PASS: GitHub PR #377 checks: Analyze (actions), Analyze (python), CodeQL, commit-scope, contract, local-ci-gate, and validate.
 
 ## Tier Evidence Used
 Tier 2 governance operating-mode documentation and evidence proof. No architecture or standards invariant change requiring a dual-signed cross-review artifact.
