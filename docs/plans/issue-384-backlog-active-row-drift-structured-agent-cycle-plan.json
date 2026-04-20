@@ -1,0 +1,99 @@
+{
+  "session_id": "session-20260420-issue-384-backlog-active-row-drift",
+  "issue_number": 384,
+  "objective": "Repair post-merge governance backlog drift after issue #382 closed while OVERLORD_BACKLOG.md still listed it under In Progress, and align the legacy backlog-sync entrypoint with the hardened active-row checker.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify backlog/progress mirrors for issue #382 and issue #384 planning evidence.",
+    "Update the legacy backlog GitHub sync entrypoint so it delegates to the canonical Overlord backlog alignment checker.",
+    "Add focused unit coverage for the delegation path."
+  ],
+  "out_of_scope": [
+    "Changing GitHub issue auto-close behavior.",
+    "Changing PR merge policy or branch protection rules.",
+    "Refreshing graph/wiki artifacts unless a gate explicitly requires it.",
+    "Cleaning unrelated stale worktrees or dirty sibling checkout state."
+  ],
+  "research_summary": "Audit found PR #383 moved #382 into In Progress while the issue was open, CI passed, then GitHub closed #382 on merge. The hardened Overlord checker validates In Progress rows, but the dedicated backlog-sync entrypoint still used a legacy Planned-only checker.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/384",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/382",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/383",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "scripts/overlord/check_overlord_backlog_github_alignment.py",
+    "scripts/overlord/validate_backlog_gh_sync.py"
+  ],
+  "sprints": [
+    {
+      "name": "Backlog drift repair",
+      "goal": "Reconcile closed issue #382 out of active governance mirrors and remove the Planned-only checker gap in the named backlog-sync path.",
+      "tasks": [
+        "Move #382 from active OVERLORD_BACKLOG.md and docs/PROGRESS.md sections to Done with PR #383 evidence.",
+        "Add issue #384 PDCAR and structured plan artifacts.",
+        "Make validate_backlog_gh_sync.py delegate to check_overlord_backlog_github_alignment.py.",
+        "Add focused wrapper delegation coverage.",
+        "Validate locally with focused tests, backlog alignment, structured plan enforcement, execution-scope enforcement, and diff checks."
+      ],
+      "acceptance_criteria": [
+        "No closed #382 reference remains in active backlog/progress sections.",
+        "Backlog alignment checker passes against the current tree.",
+        "The legacy backlog-sync entrypoint uses the hardened checker that validates both Planned and In Progress.",
+        "Focused tests pass.",
+        "Governance-surface plan and execution-scope gates pass."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md",
+        "docs/plans/issue-384-backlog-active-row-drift-pdcar.md",
+        "docs/plans/issue-384-backlog-active-row-drift-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-20-issue-384-backlog-active-row-drift-implementation.json",
+        "scripts/overlord/validate_backlog_gh_sync.py",
+        "scripts/overlord/test_validate_backlog_gh_sync.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-audit-agent",
+      "role": "Backlog drift auditor",
+      "focus": "Trace how issue #382 remained active after PR #383 merged and determine whether checker coverage should have prevented it.",
+      "status": "accepted",
+      "summary": "Confirmed the drift came from a rolling backlog update pattern plus post-merge issue closure timing, and identified the legacy Planned-only checker as a weaker workflow path.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/383",
+        "scripts/overlord/validate_backlog_gh_sync.py",
+        "scripts/overlord/check_overlord_backlog_github_alignment.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "codex-audit-agent",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Accepted the minimal remediation: move #382 to Done and delegate the legacy backlog-sync entrypoint to the hardened active-row checker.",
+    "evidence": [
+      "docs/plans/issue-384-backlog-active-row-drift-pdcar.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #384 may update backlog/progress mirrors, planning artifacts, execution scope, and backlog-sync checker wrapper/tests.",
+    "next_execution_step": "Apply the mirror repair and checker wrapper parity change, validate locally, then publish a PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If validation requires broader workflow changes, split them into a separate issue-backed hardening slice.",
+    "If graph/wiki artifacts change only because of the worktree hook, exclude that generated noise from the repair patch.",
+    "If another closed issue appears in active sections, reconcile it in the same mirror repair only when it is part of the same acceptance path."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #384",
+    "codex-audit-agent"
+  ],
+  "approved_at": "2026-04-20T10:30:00Z"
+}

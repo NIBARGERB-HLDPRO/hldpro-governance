@@ -18,12 +18,12 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Remote MCP operator inbound message preflight | [#382](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/382) | HIGH | 1-2 | Adds a no-secret preflight that proves fixture operator-message receive through the HITL relay session inbox and fails closed for live receive until queue root/session inputs are configured. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Remote MCP operator inbound message preflight | 2026-04-20 | Issue [#382](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/382). PR [#383](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/383) added a no-secret fixture/live inbound operator-message preflight through the HITL relay session inbox path, preserved current-machine fail-closed evidence, updated runbook/registry surfaces, ran Local CI and GitHub checks, and merged as `f31d7939c982e23eefb7857327724dc011daf7bf`, closing #382. Post-merge active-row drift is tracked by issue [#384](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/384). |
 | Remote MCP operator connectivity e2e preflight | 2026-04-20 | Issue [#380](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/380). PR [#381](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/381) added a no-secret `som.ping` request/response preflight, fixture and current-machine fail-closed evidence, launchd status reporting, runbook guidance, Local CI, and GitHub checks; merge commit `f32fed721607d4530253fe1cf370f4ab74bbf70e` closed #380. |
 | Remote MCP launchd live monitor proof | 2026-04-20 | Issue [#378](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/378). PR [#379](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/379) hardened the selected launchd surface to run live fail-closed mode directly, documented production proof steps, preserved payload-safe launchd render, rehearsal, and missing-config evidence, ran Local CI and GitHub checks, and closed #378. |
 | Remote MCP live monitor operating-mode proof | 2026-04-20 | Issue [#376](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376). PR [#377](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/377) selected local launchd as the live-authoritative operating mode, kept GitHub Actions as the fixture harness and optional configured-live runner, preserved rehearsal/fail-closed evidence, ran Local CI and GitHub checks, and closed #376. |

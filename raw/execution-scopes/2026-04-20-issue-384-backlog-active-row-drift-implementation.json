@@ -1,0 +1,91 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-384-backlog-drift-pdcar-20260420",
+  "execution_mode": "implementation_complete",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-384-backlog-active-row-drift-pdcar.md",
+    "docs/plans/issue-384-backlog-active-row-drift-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-20-issue-384-backlog-active-row-drift-implementation.json",
+    "scripts/overlord/validate_backlog_gh_sync.py",
+    "scripts/overlord/test_validate_backlog_gh_sync.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-launchd-proof",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-operating-mode",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-stage-d-live-tunnel",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout is a stale completed issue #359 lane and is outside issue #384 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+      "reason": "sibling governance worktree has pre-existing graphify artifact changes and is outside issue #384 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts",
+      "reason": "merged sibling governance lane retained locally for prior work"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight",
+      "reason": "merged sibling governance lane retained locally for prior work"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-launchd-proof",
+      "reason": "merged sibling governance lane retained locally for prior work"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor",
+      "reason": "local main worktree is behind origin/main and outside issue #384 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-operating-mode",
+      "reason": "merged sibling governance lane retained locally for prior work"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-stage-d-live-tunnel",
+      "reason": "merged sibling governance lane retained locally for prior work"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "sibling repo may have unrelated active work outside issue #384 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo may have unrelated active work outside issue #384 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo may have unrelated active work outside issue #384 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "sibling repo may have unrelated active work outside issue #384 scope"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-directive-and-codex-audit-agent",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-20T10:30:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/384",
+      "docs/plans/issue-384-backlog-active-row-drift-structured-agent-cycle-plan.json",
+      "docs/plans/issue-384-backlog-active-row-drift-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}
