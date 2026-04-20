@@ -1,0 +1,105 @@
+{
+  "session_id": "session-20260420-issue-400-runtime-lane-guard-proof",
+  "issue_number": 400,
+  "objective": "Verify the installed runtime issue-lane guard, record no-mutation worktree hygiene evidence, and document safe issue-lane startup.",
+  "tier": 1,
+  "scope_boundary": [
+    "Record a no-mutation audit of local hldpro-governance worktrees.",
+    "Sync and verify the installed global branch/worktree guard.",
+    "Capture live installed-hook proof for blocked and allowed issue worktree command forms.",
+    "Document the safe issue-lane startup sequence in the org repo intake runbook."
+  ],
+  "out_of_scope": [
+    "Removing or cleaning sibling worktrees.",
+    "Starting item 5 or any backlog implementation lane.",
+    "Mutating issue #398 or any other active session lane.",
+    "Changing GitHub org or repository rulesets."
+  ],
+  "research_summary": "Issue #393 added execution-scope lane ownership and issue #397 moved the guard earlier to PreToolUse worktree creation. This slice verifies the installed runtime hook path and documents the operator startup sequence so the prior #391 lane-invasion pattern stays closed.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/400",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/397",
+    "docs/plans/issue-397-preworktree-lane-gate-pdcar.md",
+    "hooks/branch-switch-guard.sh"
+  ],
+  "sprints": [
+    {
+      "name": "Runtime lane guard proof",
+      "goal": "Prove the installed global hook blocks unclaimed issue worktree creation while preserving explicit bootstrap and claimed-scope paths.",
+      "tasks": [
+        "Create issue-backed PDCAR, structured plan, and lane-claimed execution scope.",
+        "Capture worktree hygiene status without mutating sibling roots.",
+        "Sync the global hook to the repo hook when hash drift exists.",
+        "Run installed-hook negative and positive controls.",
+        "Add the issue-lane startup snippet to the runbook.",
+        "Update backlog/progress mirrors and closeout evidence."
+      ],
+      "acceptance_criteria": [
+        "Worktree hygiene audit is recorded without deletion or cleanup.",
+        "Global hook sync evidence records before and after hashes.",
+        "Installed-hook proof covers blocked unmarked issue worktree creation.",
+        "Installed-hook proof covers explicit planning bootstrap.",
+        "Installed-hook proof covers matching claimed scope.",
+        "Installed-hook proof covers mismatched claimed scope rejection.",
+        "Installed-hook proof covers allowed non-issue worktree creation.",
+        "Runbook documents the safe issue-lane startup sequence.",
+        "Execution-scope, Local CI, and GitHub checks pass before merge."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md",
+        "docs/runbooks/org-repo-intake.md",
+        "docs/plans/issue-400-runtime-lane-guard-proof-pdcar.md",
+        "docs/plans/issue-400-runtime-lane-guard-proof-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-20-issue-400-runtime-lane-guard-proof-implementation.json",
+        "raw/validation/issue-400-runtime-lane-guard-proof/",
+        "raw/closeouts/2026-04-20-issue-400-runtime-lane-guard-proof.md",
+        "graphify-out/",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-local-runtime-audit",
+      "role": "lane guard runtime reviewer",
+      "focus": "Verify the installed hook path and keep cleanup evidence separate from mutations.",
+      "status": "accepted_with_followup",
+      "summary": "The agent pool was full, so the review was performed locally against the repo hook, installed global hook, and sibling worktree state. Cleanup recommendations are evidence-only and must not mutate another lane.",
+      "evidence": [
+        "raw/validation/issue-400-runtime-lane-guard-proof/global-hook-sync.md",
+        "raw/validation/issue-400-runtime-lane-guard-proof/worktree-hygiene-audit.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "codex-installed-hook-proof",
+    "model_family": "codex",
+    "status": "accepted_with_followup",
+    "summary": "Installed-hook controls exercise the runtime PreToolUse path directly. The evidence does not create or delete worktrees.",
+    "evidence": [
+      "raw/validation/issue-400-runtime-lane-guard-proof/installed-hook-proof.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #400 may update runbook/backlog/progress docs plus issue-specific planning, scope, validation, and closeout artifacts.",
+    "next_execution_step": "Run installed-hook proof, execution-scope validation, Local CI, GitHub checks, and merge.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Do not clean, delete, or reset sibling worktrees in this issue.",
+    "Do not start backlog item 5 from this lane.",
+    "Treat issue #398 and all non-#400 issue worktrees as separate lanes.",
+    "Do not claim runtime protection from docs alone; preserve installed-hook command evidence."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #400",
+    "issue #397 runtime follow-up"
+  ],
+  "approved_at": "2026-04-20T15:33:36Z"
+}

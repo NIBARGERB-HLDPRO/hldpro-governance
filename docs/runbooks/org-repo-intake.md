@@ -27,6 +27,42 @@ Collect these before writes:
 
 Every intake needs an issue-backed planning surface before registry or downstream writes.
 
+### Issue-Lane Startup Guard
+
+Create or confirm the GitHub issue before creating an `issue-*` worktree. The installed PreToolUse guard blocks unmarked issue worktree creation, so the first planning worktree must use the explicit bootstrap marker:
+
+```bash
+HLDPRO_LANE_CLAIM_BOOTSTRAP=1 git worktree add -b issue-<n>-<slug>-YYYYMMDD <path> origin/main
+```
+
+Bootstrap is only for creating the planning surface. Before implementation writes, create the PDCAR, structured plan, and execution scope with a matching lane claim:
+
+```json
+"lane_claim": {
+  "issue_number": <n>,
+  "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/<n>",
+  "claimed_by": "<agent-or-operator>",
+  "claimed_at": "YYYY-MM-DDTHH:MM:SSZ"
+}
+```
+
+Then run the lane-claim preflight:
+
+```bash
+python3 scripts/overlord/check_execution_environment.py \
+  --scope raw/execution-scopes/<scope>.json \
+  --require-lane-claim
+```
+
+Any later issue worktree creation for the same issue should point at the claimed scope:
+
+```bash
+HLDPRO_LANE_CLAIM_SCOPE=raw/execution-scopes/<scope>.json \
+  git worktree add -b issue-<n>-<slug>-YYYYMMDD <path> origin/main
+```
+
+If another open worktree already exists for a different issue, treat it as another session's lane. Do not clean, reset, delete, or build from that lane unless a fresh issue-backed scope explicitly assigns it.
+
 Required artifacts:
 
 - `docs/plans/issue-<n>-<repo>-intake-pdcar.md`
@@ -47,7 +83,7 @@ Validation:
 
 ```bash
 python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .
-python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/<scope>.json --changed-files-file <changed-files>
+python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/<scope>.json --changed-files-file <changed-files> --require-lane-claim
 git diff --check
 ```
 
