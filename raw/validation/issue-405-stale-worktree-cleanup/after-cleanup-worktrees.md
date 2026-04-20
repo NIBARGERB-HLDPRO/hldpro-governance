@@ -39,6 +39,10 @@ branch refs/heads/main
 ## Preserved Dirty Or Active Lanes
 
 ```text
+/Users/bennibarger/Developer/HLDPRO/hldpro-governance
+  primary worktree
+  dirty after cleanup: OVERLORD_BACKLOG.md concurrent issue #407 planning row
+
 /Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede
   dirty: graphify-out/GRAPH_REPORT.md, graphify-out/graph.json
 

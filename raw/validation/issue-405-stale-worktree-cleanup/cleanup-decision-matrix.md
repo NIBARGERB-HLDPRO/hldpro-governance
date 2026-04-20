@@ -25,7 +25,7 @@ Preserve when any are true:
 
 | Path | Branch | Issue State | Local State | Remote State | Decision | Reason |
 |---|---|---:|---|---|---|---|
-| `/Users/bennibarger/Developer/HLDPRO/hldpro-governance` | `issue-385-remote-mcp-vault-bootstrap-20260420` | #385 closed | clean | gone | keep | primary worktree; common `.git` owner |
+| `/Users/bennibarger/Developer/HLDPRO/hldpro-governance` | `issue-385-remote-mcp-vault-bootstrap-20260420` | #385 closed | clean before cleanup; later dirty with concurrent #407 backlog row | gone | keep | primary worktree; common `.git` owner |
 | `/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede` | `codex/issue-359-stampede-overlord-enrollment` | #359 not checked here | dirty | gone | keep | dirty graphify artifacts |
 | `/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-384-backlog-drift` | `issue-384-backlog-drift-pdcar-20260420` | #384 closed | clean | gone | remove | safe stale linked worktree |
 | `/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-386-automerge` | `issue-386-org-automerge-policy-20260420` | not needed | clean | live | keep | live remote branch |

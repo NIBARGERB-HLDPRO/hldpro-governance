@@ -53,11 +53,11 @@ Execution scope contract: `scripts/overlord/assert_execution_scope.py` with `--r
 ## Execution Scope / Write Boundary
 Execution scope: `raw/execution-scopes/2026-04-20-issue-405-stale-worktree-cleanup-implementation.json`
 
-The scope restricts repo writes to issue #405 planning, scope, validation, closeout, backlog/progress mirrors, and possible closeout graph/wiki artifacts. It declares dirty #359 and open/dirty #403 as active parallel roots and forbids all other sibling roots.
+The scope restricts repo writes to issue #405 planning, scope, validation, closeout, backlog/progress mirrors, and possible closeout graph/wiki artifacts. It declares the primary worktree's concurrent #407 backlog edit, dirty #359, and open/dirty #403 as active parallel roots and forbids all other sibling roots.
 
 ## Validation Commands
-- PASS with expected warnings for removed roots plus active dirty #359 and #403: `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-20-issue-405-stale-worktree-cleanup-implementation.json --changed-files-file /tmp/issue-405-pr-changed-files.txt --require-lane-claim`
-- PASS with expected warnings for removed roots plus active dirty #359 and #403: `python3 scripts/overlord/check_execution_environment.py --scope raw/execution-scopes/2026-04-20-issue-405-stale-worktree-cleanup-implementation.json --changed-files-file /tmp/issue-405-pr-changed-files.txt --require-lane-claim`
+- PASS with expected warnings for removed roots plus active dirty primary/#407, #359, and #403: `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-20-issue-405-stale-worktree-cleanup-implementation.json --changed-files-file /tmp/issue-405-pr-changed-files.txt --require-lane-claim`
+- PASS with expected warnings for removed roots plus active dirty primary/#407, #359, and #403: `python3 scripts/overlord/check_execution_environment.py --scope raw/execution-scopes/2026-04-20-issue-405-stale-worktree-cleanup-implementation.json --changed-files-file /tmp/issue-405-pr-changed-files.txt --require-lane-claim`
 - PASS: `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .`
 - PASS: `python3 scripts/overlord/check_overlord_backlog_github_alignment.py`
 - PASS: `python3 scripts/overlord/validate_registry_surfaces.py`
@@ -69,7 +69,7 @@ The scope restricts repo writes to issue #405 planning, scope, validation, close
 Issue #405 is a Tier 1 local cleanup and evidence slice. Decision and after-cleanup evidence are recorded under `raw/validation/issue-405-stale-worktree-cleanup/`.
 
 ## Residual Risks / Follow-Up
-The primary worktree remains on closed issue #385 because it owns the common `.git` directory. Dirty #359 and open #403 remain untouched. Worktrees with live remote branches remain untouched.
+The primary worktree remains on closed issue #385 because it owns the common `.git` directory and now carries a concurrent #407 backlog edit. Dirty #359 and open #403 remain untouched. Worktrees with live remote branches remain untouched.
 
 ## Wiki Pages Updated
 None manually. The closeout hook may refresh generated graph/wiki artifacts if graphify is available.

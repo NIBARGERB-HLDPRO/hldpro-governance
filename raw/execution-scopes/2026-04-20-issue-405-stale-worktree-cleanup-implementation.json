@@ -41,6 +41,10 @@
   ],
   "active_parallel_roots": [
     {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary worktree has a concurrent issue #407 OVERLORD_BACKLOG.md edit and must not be restored from this lane"
+    },
+    {
       "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
       "reason": "pre-existing dirty graphify artifacts from an unrelated lane"
     },
