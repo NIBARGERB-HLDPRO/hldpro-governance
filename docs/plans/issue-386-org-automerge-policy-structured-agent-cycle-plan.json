@@ -1,0 +1,100 @@
+{
+  "session_id": "session-20260420-issue-386-org-automerge-policy",
+  "issue_number": 386,
+  "objective": "Define and locally test a governed automerge policy so complete, verified, tested, green PRs can be automatically merged without bypassing branch protection, reviews, required checks, CODEOWNERS, or exceptions.",
+  "tier": 1,
+  "scope_boundary": [
+    "Document the automerge policy, eligibility criteria, prerequisites, rollout stages, local dry-run verification, audit evidence, and rollback path.",
+    "Add a local-only deterministic eligibility evaluator and focused tests.",
+    "Do not change GitHub org settings, repository settings, rulesets, branch protection, or workflow automation in this planning slice."
+  ],
+  "out_of_scope": [
+    "Enabling auto-merge on any repository.",
+    "Creating or editing GitHub org/repo rulesets.",
+    "Adding a mutating merge automation workflow before the policy is reviewed.",
+    "Bypassing manual review, CODEOWNERS, required checks, review-thread resolution, or exception policy."
+  ],
+  "research_summary": "Live inspection shows organization rulesets currently protect main/master with PR-only, deletion, and non-fast-forward rules but do not yet enforce org-level reviews, CODEOWNER review, or required status checks. hldpro-governance has allow_auto_merge disabled. Existing Enterprise docs require exact check-name verification and exception handling before broad ruleset tightening. Therefore automerge must be staged as native GitHub auto-merge enabled per repo only after the repo's safe merge conditions are enforced and locally proven by a non-mutating policy evaluator.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/386",
+    "GITHUB_ENTERPRISE_RULESET_RECOMMENDATIONS.md",
+    "GITHUB_ENTERPRISE_REQUIRED_CHECK_BASELINE.md",
+    "GITHUB_ENTERPRISE_EXCEPTION_REGISTER.md",
+    "docs/plans/issue-386-org-automerge-policy-pdcar.md",
+    "scripts/overlord/automerge_policy_check.py",
+    "scripts/overlord/test_automerge_policy_check.py"
+  ],
+  "sprints": [
+    {
+      "name": "Policy and dry-run verification",
+      "goal": "Define and locally test the exact conditions under which auto-merge may be enabled for a PR.",
+      "tasks": [
+        "Define complete, verified, tested, and green in terms of GitHub PR state, checks, reviews, CODEOWNERS, governance artifacts, and labels.",
+        "Define blocking labels and manual-review classes.",
+        "Add a local dry-run evaluator that cannot mutate GitHub state.",
+        "Add focused passing and failing fixture tests.",
+        "Document rollback before any future live rollout."
+      ],
+      "acceptance_criteria": [
+        "Eligibility excludes draft, conflicted, red, pending, unreviewed, blocked-label, missing-opt-in, disabled-repo, and governance-incomplete PRs.",
+        "The policy distinguishes GitHub native auto-merge from bot-driven bypass merges.",
+        "Local tests prove the dry-run evaluator behavior.",
+        "The policy records #384 as a prerequisite for clean governance validation."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md",
+        "docs/plans/issue-386-org-automerge-policy-pdcar.md",
+        "docs/plans/issue-386-org-automerge-policy-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-20-issue-386-org-automerge-policy-implementation.json",
+        "scripts/overlord/automerge_policy_check.py",
+        "scripts/overlord/test_automerge_policy_check.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-local-github-audit",
+      "role": "GitHub Enterprise policy reviewer",
+      "focus": "Verify live org/repo ruleset and auto-merge settings before proposing automation.",
+      "status": "accepted",
+      "summary": "Live state supports a staged native-auto-merge policy only after per-repo required checks and review requirements are enforceable.",
+      "evidence": [
+        "GITHUB_ENTERPRISE_RULESET_RECOMMENDATIONS.md",
+        "GITHUB_ENTERPRISE_REQUIRED_CHECK_BASELINE.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "pending-cross-family-policy-review",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Architecture/policy rollout should receive cross-family review before any GitHub settings or mutating workflow automation are changed.",
+    "evidence": [
+      "docs/plans/issue-386-org-automerge-policy-pdcar.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #386 may update governance planning artifacts, roadmap mirrors, and local dry-run policy evaluator/tests only; implementation of settings or mutating workflow automation requires a follow-up accepted rollout slice.",
+    "next_execution_step": "Validate the local dry-run evaluator, merge prerequisite #384, then review this policy before creating a separate live rollout issue.",
+    "blocked_on": [
+      "Issue #384 backlog drift repair must merge before clean validation from origin/main.",
+      "Cross-family policy review is required before org/repo setting changes."
+    ]
+  },
+  "material_deviation_rules": [
+    "If the implementation path would bypass GitHub protected-branch or ruleset enforcement, reject it.",
+    "If a repo lacks stable required checks or review requirements, keep automerge disabled or require explicit operator opt-in.",
+    "If any auto-merge workflow needs elevated tokens, document least-privilege permissions and audit logging before implementation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #386",
+    "codex-local-github-audit"
+  ],
+  "approved_at": "2026-04-20T14:35:00Z"
+}
