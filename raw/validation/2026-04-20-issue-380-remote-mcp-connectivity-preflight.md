@@ -30,7 +30,7 @@ Issue: [#380](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/380)
 | `python3 scripts/overlord/validate_registry_surfaces.py` | PASS |
 | `rg -n "123-45-6789\|Bearer\\s+[A-Za-z0-9._~+/=-]{10,}\|CF-Access\|eyJ[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{8,}\|client-secret\|cf-secret\|fixture-token" raw/remote-mcp-connectivity-preflight \|\| true` | PASS, no matches |
 | `git diff --check` | PASS |
-| `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --base-ref origin/main --head-ref HEAD --json` | PASS, 32 changed files, blocker checks passed |
+| `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --base-ref origin/main --head-ref HEAD --json` | PASS, final committed branch diff, 34 changed files, blocker checks passed |
 
 ## Current-Machine Answer
 
