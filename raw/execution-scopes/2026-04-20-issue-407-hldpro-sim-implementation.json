@@ -24,12 +24,20 @@
     "packages/hldpro-sim/tests/test_providers.py",
     "packages/hldpro-sim/tests/test_runner.py",
     "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
-    "raw/execution-scopes/2026-04-20-issue-407-hldpro-sim-implementation.json"
+    "raw/execution-scopes/2026-04-20-issue-407-hldpro-sim-implementation.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
   ],
   "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 407,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/407",
+    "claimed_by": "session-agent-claude-sonnet-4-6",
+    "claimed_at": "2026-04-20T16:00:00Z"
+  },
   "handoff_evidence": {
     "status": "accepted",
     "planner_model": "claude-sonnet-4-6",
