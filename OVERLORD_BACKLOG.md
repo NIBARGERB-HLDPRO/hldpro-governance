@@ -18,12 +18,13 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Remote MCP live monitor operating-mode proof | [#376](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376) | HIGH | 1-2 | Selects local launchd as the live operating surface, documents setup/evidence capture, and preserves payload-safe rehearsal plus live fail-closed evidence. |
+| Remote MCP launchd live monitor proof | [#378](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/378) | HIGH | 1-2 | Hardens the selected launchd surface to live fail-closed mode, documents production proof steps, and preserves payload-safe launchd render, rehearsal, and missing-config evidence. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Remote MCP live monitor operating-mode proof | 2026-04-20 | Issue [#376](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376). PR [#377](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/377) selected local launchd as the live-authoritative operating mode, kept GitHub Actions as the fixture harness and optional configured-live runner, preserved rehearsal/fail-closed evidence, ran Local CI and GitHub checks, and closed #376. |
 | Remote MCP monitor alert delivery and first recurring evidence | 2026-04-20 | Issue [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374). PR [#375](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/375) added payload-safe alert/report formatting, workflow step-summary and artifact output, first fixture-run evidence, live-missing-config validation, Local CI evidence, and closeout. |
 | Remote MCP recurring live health and audit monitor | 2026-04-20 | Issue [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372). PR [#373](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/373) added the recurring monitor wrapper, scheduled/manual workflow, launchd template, runbook, fixture/live fail-closed validation, Local CI evidence, and closeout. Alert delivery and first recurring evidence continue under issue [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374). |
 | Cloud -> Local MCP Bridge implementation stages B-D | 2026-04-19 | Issue [#109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109) is closed. Stage A governance, downstream Stage B/C bridge controls, Stage D harness, live Cloudflare Access proof, strict audit verification, tamper-negative proof, stdio continuity proof, temporary Access cleanup, PR #371, and downstream local-ai-machine PRs #488/#490/#492 are complete. Recurring operations continue under issue [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372). |

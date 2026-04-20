@@ -84,7 +84,7 @@
 | Label | File | Purpose |
 |-------|------|---------|
 | com.hldpro.governance-observer | `launchd/com.hldpro.governance-observer.plist` | Optional macOS user-agent template for periodic read-only observer runs |
-| com.hldpro.remote-mcp-monitor | `launchd/com.hldpro.remote-mcp-monitor.plist` | Selected macOS live operating-mode template for recurring Remote MCP health and audit monitor runs |
+| com.hldpro.remote-mcp-monitor | `launchd/com.hldpro.remote-mcp-monitor.plist` | Selected macOS live operating-mode template for recurring Remote MCP health and audit monitor runs; runs monitor `--mode live` so missing live inputs fail closed |
 
 ---
 

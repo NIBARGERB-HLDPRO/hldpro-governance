@@ -162,9 +162,20 @@ sed "s#__REPO_ROOT__#$(pwd)#g" \
   launchd/com.hldpro.remote-mcp-monitor.plist \
   > ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
 plutil -lint ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
+launchctl setenv SOM_MCP_URL "<remote-mcp-url>"
+launchctl setenv SOM_MCP_TOKEN "<inner-jwt>"
+launchctl setenv SOM_REMOTE_MCP_IDENTITY_EMAIL "<cloudflare-identity-email>"
+launchctl setenv SOM_REMOTE_MCP_IDENTITY_SUB "<cloudflare-identity-sub>"
+launchctl setenv CF_ACCESS_CLIENT_ID "<access-client-id>"
+launchctl setenv CF_ACCESS_CLIENT_SECRET "<access-client-secret>"
+launchctl setenv SOM_REMOTE_MCP_AUDIT_DIR "/path/to/copied/raw/remote-mcp-audit"
+launchctl setenv SOM_REMOTE_MCP_AUDIT_HMAC_KEY "<audit-hmac-key>"
+launchctl setenv SOM_REMOTE_MCP_STDIO_PROOF_COMMAND "<local-stdio-proof-command-after-tunnel-stop>"
 launchctl bootstrap "gui/$(id -u)" ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
 launchctl kickstart -k "gui/$(id -u)/com.hldpro.remote-mcp-monitor"
 ```
+
+The template runs `--mode live`, not `--mode auto`. This is intentional: the selected live surface must fail closed when required live inputs are missing rather than silently producing fixture evidence.
 
 After installation, capture payload-safe selected-mode evidence:
 
@@ -180,6 +191,18 @@ python3 scripts/remote-mcp/monitor_alert.py \
 
 For dry-run rehearsal without production credentials, use `--mode fixture` and preserve the monitor JSON plus alert JSON/Markdown. For live-missing-configuration proof, `env -i PATH="$PATH" python3 scripts/remote-mcp/live_health_monitor.py --mode live --json` must exit before sending requests and state the missing required configuration names only.
 
+For issue-backed launchd proof without installing on the operator machine, render and lint the plist into raw evidence:
+
+```bash
+mkdir -p raw/remote-mcp-launchd-live-proof
+sed "s#__REPO_ROOT__#$(pwd)#g" \
+  launchd/com.hldpro.remote-mcp-monitor.plist \
+  > raw/remote-mcp-launchd-live-proof/YYYY-MM-DD.com.hldpro.remote-mcp-monitor.rendered.plist
+plutil -lint raw/remote-mcp-launchd-live-proof/YYYY-MM-DD.com.hldpro.remote-mcp-monitor.rendered.plist
+```
+
+Do not commit a rendered plist containing credential values. The tracked launchd template and rendered lint proof may contain repo paths and command arguments only.
+
 Operator response:
 
 - Healthy alert: keep the launchd job loaded and retain the alert summary with the monitor timestamp.
@@ -191,6 +214,15 @@ Uninstall:
 ```bash
 launchctl bootout "gui/$(id -u)" ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
 rm -f ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
+launchctl unsetenv SOM_MCP_URL
+launchctl unsetenv SOM_MCP_TOKEN
+launchctl unsetenv SOM_REMOTE_MCP_IDENTITY_EMAIL
+launchctl unsetenv SOM_REMOTE_MCP_IDENTITY_SUB
+launchctl unsetenv CF_ACCESS_CLIENT_ID
+launchctl unsetenv CF_ACCESS_CLIENT_SECRET
+launchctl unsetenv SOM_REMOTE_MCP_AUDIT_DIR
+launchctl unsetenv SOM_REMOTE_MCP_AUDIT_HMAC_KEY
+launchctl unsetenv SOM_REMOTE_MCP_STDIO_PROOF_COMMAND
 ```
 
 ## Token Rotation

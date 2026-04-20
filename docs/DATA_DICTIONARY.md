@@ -185,6 +185,33 @@ Contract:
 - GitHub Actions fixture evidence proves harness regression only unless the complete live configuration and safe evidence source are intentionally configured.
 - Live-missing-configuration evidence may include missing environment/configuration names but must not include credential values.
 - Preserved operating-mode artifacts must pass the same sensitive-material denylist used by the monitor and alert contracts.
+
+---
+
+### Remote MCP Launchd Live Proof
+**Producer:** issue-backed operator proof for issue #378
+**Storage:** `raw/remote-mcp-launchd-live-proof/*.json`, `raw/remote-mcp-launchd-live-proof/*.md`, `raw/remote-mcp-launchd-live-proof/*.plist`, and validation closeout artifacts
+**Selected live surface:** `launchd/com.hldpro.remote-mcp-monitor.plist`
+
+Proof object fields:
+| Field | Type | Description |
+|-------|------|-------------|
+| `schema_version` | integer | Launchd proof schema version, currently `1` |
+| `issue` | integer | Governance issue number for the proof |
+| `selected_live_mode` | string | Selected live operating mode; currently `local-launchd` |
+| `template_path` | string | Repo path to the launchd template |
+| `rendered_plist_path` | string | Repo path to the payload-safe rendered plist proof |
+| `monitor_mode_argument` | string | Expected launchd monitor mode argument; currently `live` |
+| `lint_result` | string | Result of `plutil -lint` for the rendered plist |
+| `live_missing_config` | object | Expected and actual exit code for no-secret live fail-closed proof |
+| `artifacts` | object | Repo-relative paths to preserved monitor, alert, plist, scan, and validation evidence |
+
+Contract:
+- The selected launchd template must invoke `live_health_monitor.py --mode live`, not `--mode auto`.
+- Rendered plist evidence must contain repo paths and command arguments only; no credential values may be committed.
+- Missing live configuration must fail closed before Remote MCP requests are sent.
+- Fixture rehearsal evidence proves launchd pipeline readiness only and must not be described as production live health.
+- Preserved launchd proof artifacts must pass the Remote MCP sensitive-material denylist.
 - Sensitive input details are replaced with `[redacted-sensitive-detail]` and force `health: degraded`.
 - `--fail-on-degraded` exits non-zero after writing redacted artifacts so workflows can both preserve evidence and fail closed.
 

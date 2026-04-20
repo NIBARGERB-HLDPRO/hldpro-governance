@@ -1,0 +1,1 @@
+launchd/com.hldpro.remote-mcp-monitor.plist: OK
