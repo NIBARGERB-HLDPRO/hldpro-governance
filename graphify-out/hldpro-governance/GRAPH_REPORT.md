@@ -1,11 +1,11 @@
 # Graph Report - hldpro-governance  (2026-04-19)
 
 ## Corpus Check
-- Large corpus: 1643 files · ~408,362 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1664 files · ~415,869 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 1160 nodes · 2225 edges · 62 communities detected
-- Extraction: 50% EXTRACTED · 50% INFERRED · 0% AMBIGUOUS · INFERRED: 1109 edges (avg confidence: 0.5)
+- 1183 nodes · 2273 edges · 62 communities detected
+- Extraction: 50% EXTRACTED · 50% INFERRED · 0% AMBIGUOUS · INFERRED: 1133 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -22,37 +22,37 @@
 
 ## Surprising Connections (you probably didn't know these)
 - `Return canonical JSON for HMAC computation.` --rationale_for--> `canonical_json()`  [EXTRACTED]
-  scripts/windows-ollama/verify_audit.py → hldpro-governance/scripts/remote-mcp/verify_audit.py
+  scripts/windows-ollama/verify_audit.py → scripts/remote-mcp/verify_audit.py
 - `Compute SHA256 hash of bytes.` --rationale_for--> `compute_sha256()`  [EXTRACTED]
-  scripts/windows-ollama/verify_audit.py → hldpro-governance/scripts/remote-mcp/verify_audit.py
+  scripts/windows-ollama/verify_audit.py → scripts/remote-mcp/verify_audit.py
 - `Compute HMAC-SHA256 over entry without entry_hmac field.` --rationale_for--> `compute_entry_hmac()`  [EXTRACTED]
-  scripts/windows-ollama/verify_audit.py → hldpro-governance/scripts/remote-mcp/verify_audit.py
+  scripts/windows-ollama/verify_audit.py → scripts/remote-mcp/verify_audit.py
 - `verify_audit_dir()` --calls--> `verify_hmac()`  [INFERRED]
-  hldpro-governance/scripts/remote-mcp/verify_audit.py → scripts/windows-ollama/verify_audit.py
+  scripts/remote-mcp/verify_audit.py → scripts/windows-ollama/verify_audit.py
 - `Verify all audit logs in the directory.     Returns (success: bool, errors: list` --rationale_for--> `verify_audit_dir()`  [EXTRACTED]
-  scripts/windows-ollama/verify_audit.py → hldpro-governance/scripts/remote-mcp/verify_audit.py
+  scripts/windows-ollama/verify_audit.py → scripts/remote-mcp/verify_audit.py
 
 ## Communities
 
 ### Community 0 - "Windows ollama Submit"
+Cohesion: 0.05
+Nodes (40): AuditWriter, canonical_json(), compute_entry_hmac(), compute_sha256(), Write an audit entry. Returns True if successful, False otherwise.          Args, Return canonical JSON for HMAC computation., Write or update today's manifest., Compute SHA256 hash of bytes. (+32 more)
+
+### Community 1 - "Windows ollama Submit"
 Cohesion: 0.03
 Nodes (37): Test that clean prompt passes PII detection., Negative test: non-allowlisted model., Test that non-allowlisted model is rejected., Test that allowlisted model passes allowlist check., Negative test: unreachable endpoint., Test that unreachable endpoint raises appropriate error., Test that endpoint timeout is handled., Test that reachable endpoint succeeds. (+29 more)
 
-### Community 1 - "Remote mcp Verify audit"
+### Community 2 - "Remote mcp Verify audit"
 Cohesion: 0.05
 Nodes (47): Modify first_hash in manifest and verify fails., Test that truncated file (missing last line) breaks manifest., Delete last line and verify detects entry_count mismatch., Test that duplicate line (replay) breaks seq monotonicity., Duplicate a line and verify detects non-monotonic seq., Test that tampering with a line breaks the chain., Tamper with line N and verify fails at line N+1., Test that replacing entry_hmac with wrong value fails verification. (+39 more)
 
-### Community 2 - "Packet Validate Passes"
+### Community 3 - "Packet Validate Passes"
 Cohesion: 0.07
 Nodes (19): _make_parent_packet(), Cross-family independence violated: both planners are anthropic., anthropic + openai is fine., Parent file absent → warn, don't refuse., Sanity: the patterns file should be present in this worktree., Non-LAM role with PII artifact path must be refused., worker-lam role is allowed to handle PII artifacts., When pii-patterns.yml is absent, validator must refuse (not silently pass). (+11 more)
 
-### Community 3 - "Overlord Codex ingestion"
+### Community 4 - "Overlord Codex ingestion"
 Cohesion: 0.1
 Nodes (34): append_fail_fast_block_entry(), append_fail_fast_candidate(), append_fail_fast_table_entry(), append_progress_candidate(), bounded_text(), build_parser(), build_review_context(), build_schema_file() (+26 more)
-
-### Community 4 - "Windows ollama Submit"
-Cohesion: 0.07
-Nodes (25): Exception, detect_pii(), _iter_patterns(), load_pii_patterns(), Load and validate pii patterns from pii_patterns.yml., Scan text for PII patterns from YAML patterns.      Falls back to the previous b, EndpointUnreachableError, main() (+17 more)
 
 ### Community 5 - "Local ci gate Local ci gate Report"
 Cohesion: 0.12
@@ -82,13 +82,13 @@ Nodes (12): RuntimeError, build_parser(), _decode_jwt_payload(), from_env(), mai
 Cohesion: 0.1
 Nodes (30): _find_packet_file(), _load_packet(), load_pii_patterns(), _load_schema(), Load and compile PII patterns from pii-patterns.yml., Enforce cross-family independence for tier-1 dual-planner packets.      When pri, Refuse if any consecutive pair in the parent chain shares model_id across differ, Enforce expected handoff sequence with no tier jumps. (+22 more)
 
-### Community 12 - "Overlord Deploy governance tooling"
-Cohesion: 0.18
-Nodes (24): add_common_args(), apply(), _build_local_ci_plan(), build_plan(), _consumer_record(), _consumer_record_relpath(), _ensure_relative_to(), _fail() (+16 more)
-
-### Community 13 - "Knowledge base Measure graphify usage"
+### Community 12 - "Knowledge base Measure graphify usage"
 Cohesion: 0.16
 Nodes (28): aggregate_file_scores(), augment_workflow_doc_candidates(), baseline_results(), build_summary(), build_trace(), emit_usage_events(), estimate_tokens(), evaluate_relevance() (+20 more)
+
+### Community 13 - "Overlord Deploy governance tooling"
+Cohesion: 0.18
+Nodes (24): add_common_args(), apply(), _build_local_ci_plan(), build_plan(), _consumer_record(), _consumer_record_relpath(), _ensure_relative_to(), _fail() (+16 more)
 
 ### Community 14 - "Overlord Check local ci gate workflow"
 Cohesion: 0.11
@@ -98,17 +98,17 @@ Nodes (14): _all_executable_lines(), _all_run_commands(), check_contract(), _con
 Cohesion: 0.15
 Nodes (2): _plan(), TestGovernanceSurfacePlanGate
 
-### Community 16 - "Overlord Pentagi sweep"
-Cohesion: 0.16
-Nodes (22): _expand_home(), governed_repos(), GovernedRepo, load_registry(), repo_names_enabled_for(), repos_enabled_for(), repos_root(), build_payload() (+14 more)
-
-### Community 17 - "Overlord Assert execution scope"
+### Community 16 - "Overlord Assert execution scope"
 Cohesion: 0.17
 Nodes (22): _changed_paths(), _changed_paths_from_file(), check_scope(), _current_branch(), ExecutionScope, _format_path(), _git_root(), HandoffEvidence (+14 more)
 
-### Community 18 - "Windows ollama Audit"
-Cohesion: 0.14
-Nodes (15): AuditWriter, canonical_json(), compute_entry_hmac(), compute_sha256(), Write an audit entry. Returns True if successful, False otherwise.          Args, Return canonical JSON for HMAC computation., Write or update today's manifest., Compute SHA256 hash of bytes. (+7 more)
+### Community 17 - "Overlord Pentagi sweep"
+Cohesion: 0.16
+Nodes (22): _expand_home(), governed_repos(), GovernedRepo, load_registry(), repo_names_enabled_for(), repos_enabled_for(), repos_root(), build_payload() (+14 more)
+
+### Community 18 - "Remote mcp Stage d"
+Cohesion: 0.18
+Nodes (15): _build_fixture_server(), build_parser(), _expect(), from_env(), main(), ProofResult, _request(), run_fixture() (+7 more)
 
 ### Community 19 - "Overlord Org governance compendium"
 Cohesion: 0.19
@@ -306,6 +306,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `Return (header_line_index, list_of_data_lines) for the ## Planned table.`, `Split a markdown table row into a dict keyed by header column names.     Returns`, `Extract a #NNN from the cell value.     Returns the integer issue number, or Non` to the rest of the system?**
   _111 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Windows ollama Submit` be split into smaller, more focused modules?**
-  _Cohesion score 0.03 - nodes in this community are weakly interconnected._
-- **Should `Remote mcp Verify audit` be split into smaller, more focused modules?**
   _Cohesion score 0.05 - nodes in this community are weakly interconnected._
+- **Should `Windows ollama Submit` be split into smaller, more focused modules?**
+  _Cohesion score 0.03 - nodes in this community are weakly interconnected._
