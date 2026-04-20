@@ -18,12 +18,12 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Consumer-pulled governance package bootstrap | [#398](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/398) | MEDIUM | 3-4 | Add non-mutating repo-side verification for pinned governance package consumption, document the repo-pulled versus centrally applied GitHub policy boundary, and keep downstream rollout issue-backed. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Consumer-pulled governance package bootstrap | 2026-04-20 | Issue [#398](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/398). PR [#401](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/401) added a non-mutating consumer verifier for pinned governance package records and managed files, introduced `docs/governance-consumer-pull-state.json`, documented the repo-pulled versus centrally applied GitHub policy boundary, wired verifier tests into Local CI package coverage, and merged through native auto-merge after required checks passed. Downstream adoption remains future issue-backed work. |
 | Pre-worktree issue-lane creation gate | 2026-04-20 | Issue [#397](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/397). Hardens `hooks/branch-switch-guard.sh` so `git worktree add -b issue-*` requires explicit planning bootstrap or a matching claimed execution scope before creating filesystem side effects. |
 | Cross-session issue-lane ownership gate | 2026-04-20 | Issue [#393](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/393). Adds execution-scope `lane_claim` enforcement so implementation work can require the current branch issue, expected branch issue, and claimed issue to match; wires the check through execution-environment preflight and Local CI Gate scope resolution. |
 | Native GitHub automerge pilot for green verified PRs | 2026-04-20 | Issue [#391](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/391). PR [#394](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/394) captured pre-change repo/ruleset/branch-protection snapshots, enabled native repository auto-merge, recorded the `merge-when-green` opt-in label and evaluator evidence, then merged through GitHub native auto-merge after required checks passed. Repo auto-merge remains enabled for governed opt-in PRs; rollback is captured in `raw/validation/issue-391-automerge-pilot/`. |

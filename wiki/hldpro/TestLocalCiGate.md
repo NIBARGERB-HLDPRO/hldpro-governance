@@ -1,6 +1,6 @@
 # TestLocalCiGate
 
-> God node · 19 connections · `tools/local-ci-gate/tests/test_local_ci_gate.py`
+> God node · 20 connections · `tools/local-ci-gate/tests/test_local_ci_gate.py`
 
 ## Connections by Relation
 
@@ -23,6 +23,7 @@
 - [[.test_bundled_profiles_load()]] `EXTRACTED`
 - [[.test_governance_profile_uses_active_execution_scope_placeholder()]] `EXTRACTED`
 - [[.test_execution_scope_resolution_prefers_active_issue_implementation_scope()]] `EXTRACTED`
+- [[.test_execution_scope_resolution_requires_matching_lane_claim()]] `EXTRACTED`
 - [[.test_knocktracker_profile_scopes_heavy_checks_to_matching_files()]] `EXTRACTED`
 - [[.test_ai_integration_services_profile_scopes_app_builds()]] `EXTRACTED`
 - [[.test_local_ai_machine_profile_scopes_contract_checks()]] `EXTRACTED`
