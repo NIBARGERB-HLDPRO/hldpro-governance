@@ -12,7 +12,10 @@
     "graphify-out/hldpro-governance/.graphify_ast.json",
     "graphify-out/hldpro-governance/.graphify_detect.json",
     "graphify-out/hldpro-governance/.graphify_summary.json",
-    "graphify-out/hldpro-governance/community-labels.json"
+    "graphify-out/hldpro-governance/community-labels.json",
+    "raw/execution-scopes/2026-04-20-issue-422-hldpro-sim-deploy-implementation.json",
+    "wiki/hldpro/Bootstrap_repo_Lam.md",
+    "scripts/knowledge_base/__pycache__/graphify_targets.cpython-314.pyc"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
