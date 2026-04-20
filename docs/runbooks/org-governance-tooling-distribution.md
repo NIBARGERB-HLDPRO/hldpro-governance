@@ -187,6 +187,28 @@ python3 scripts/overlord/deploy_governance_tooling.py verify \
 
 The deployer refuses dirty target repos and unmanaged managed-path files by default. The existing Local CI shim deployer remains the compatibility surface for rendering the managed shim body.
 
+## Consumer Pull Verification
+
+The first repo-pulled surface is non-mutating verification:
+
+```bash
+python3 scripts/overlord/verify_governance_consumer.py \
+  --target-repo /path/to/consumer-repo \
+  --profile <profile> \
+  --governance-ref <exact-governance-sha>
+```
+
+The verifier reads the consumer repo's `.hldpro/governance-tooling.json`, checks that `governance_ref` is an exact 40-character git SHA, confirms the package version/profile, and verifies that expected managed files exist without escaping the repo root. For the managed Local CI shim, it also checks the governance marker and the pinned ref.
+
+This is the boundary between repo-pulled rules and centrally applied GitHub policy:
+
+- Repo-pulled: consumer record, managed shim, Local CI profile, package-core verifier/evaluator logic, and PR-visible drift reporting.
+- Centrally applied: org rulesets, repo rulesets, repository auto-merge settings, bypass actors, and required-status wiring.
+
+Consumer verification must not mutate GitHub settings. If a consumer check detects central-policy drift, open or update issue-backed governance work and use the governed apply path. Do not let downstream repos silently self-rewrite rulesets or repository settings.
+
+The desired-state contract for this first slice is `docs/governance-consumer-pull-state.json`.
+
 ## Verification Matrix
 
 | Surface | Local verification | GitHub verification |
@@ -197,6 +219,7 @@ The deployer refuses dirty target repos and unmanaged managed-path files by defa
 | Local CI Gate | `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | `local-ci-gate.yml` |
 | Workflow coverage | `python3 scripts/overlord/check_workflow_local_coverage.py --root .` | `graphify-governance-contract.yml` and `local-ci-gate.yml` |
 | Package deployer | `python3 scripts/overlord/test_deploy_governance_tooling.py` | `local-ci-gate.yml` when deployer paths change |
+| Consumer pull verifier | `python3 scripts/overlord/test_verify_governance_consumer.py` | `local-ci-gate.yml` when verifier paths change |
 | Shim deployer compatibility | `python3 scripts/overlord/test_deploy_local_ci_gate.py` | `local-ci-gate.yml` when deployer paths change |
 
 When changed-file selection skips a check, the report must say whether it ran zero specs, a subset, or full coverage. A skipped local surface is not proof that CI will pass.

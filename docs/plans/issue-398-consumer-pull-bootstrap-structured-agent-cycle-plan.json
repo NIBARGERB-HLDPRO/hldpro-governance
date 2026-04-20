@@ -1,0 +1,95 @@
+{
+  "session_id": "session-20260420-issue-398-consumer-pull-bootstrap",
+  "issue_number": 398,
+  "objective": "Add the first governance-owned, repo-side pull verification slice so governed repos can verify pinned governance package consumption without being operator-pushed or self-mutating central GitHub rules.",
+  "tier": 1,
+  "scope_boundary": [
+    "Document the consumer-pull architecture and mutation boundary.",
+    "Add a non-mutating verifier for downstream consumer records and managed files.",
+    "Add a machine-readable desired-state contract for the initial consumer-pull package surface.",
+    "Wire focused verifier tests into the governance package Local CI Gate surface."
+  ],
+  "out_of_scope": [
+    "Mutating downstream repositories.",
+    "Applying or changing org rulesets, repo rulesets, required checks, bypass actors, or repository settings.",
+    "Replacing the existing governance package deployer.",
+    "Rolling the verifier into every governed repo in this slice."
+  ],
+  "research_summary": "Existing issue #288/#290/#292/#338 work established a governance package, managed deployer, mandatory SHA pinning, consumer record path, and downstream adoption proof. This issue extends that package with a pull-side verifier so downstream repos can prove their own pinned consumption while central GitHub policy remains governed by explicit apply work.",
+  "research_artifacts": [
+    "docs/governance-tooling-package.json",
+    "docs/runbooks/org-governance-tooling-distribution.md",
+    "scripts/overlord/deploy_governance_tooling.py",
+    "raw/closeouts/2026-04-19-issue-288-governance-tooling-distribution-final.md",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/398"
+  ],
+  "sprints": [
+    {
+      "name": "Consumer pull verifier",
+      "goal": "Let a consumer repo verify that its local consumer record and managed files match an exact pinned governance package ref.",
+      "tasks": [
+        "Add consumer-pull desired-state contract.",
+        "Implement non-mutating verifier.",
+        "Add focused verifier tests.",
+        "Update package manifest, runbook, Local CI profile, and roadmap mirrors.",
+        "Run local gates and publish PR."
+      ],
+      "acceptance_criteria": [
+        "Verifier exits 0 for a valid exact-SHA consumer record and managed shim.",
+        "Verifier exits non-zero for missing records, non-SHA refs, marker drift, profile mismatch, and missing managed files.",
+        "Runbook clearly distinguishes repo-pulled checks from centrally applied GitHub settings/rulesets.",
+        "Local CI Gate passes with the verifier tests included in package-tooling coverage."
+      ],
+      "file_paths": [
+        "docs/governance-consumer-pull-state.json",
+        "docs/governance-tooling-package.json",
+        "docs/runbooks/org-governance-tooling-distribution.md",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "scripts/overlord/verify_governance_consumer.py",
+        "scripts/overlord/test_verify_governance_consumer.py",
+        "scripts/overlord/test_deploy_governance_tooling.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-local-implementation",
+      "role": "Governance package implementer",
+      "focus": "Keep consumer verification non-mutating and rollback-safe.",
+      "status": "accepted",
+      "summary": "The verifier only reads the target repo, package manifest, and desired-state file; it reports central GitHub settings as drift-only and does not apply them.",
+      "evidence": [
+        "scripts/overlord/verify_governance_consumer.py",
+        "scripts/overlord/test_verify_governance_consumer.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "operator-directive",
+    "model_family": "human",
+    "status": "accepted",
+    "summary": "The operator requested PDCAR and implementation of the consumer-pull architecture without HITL pauses.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/398"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #398 may add planning artifacts, package contract docs, a non-mutating verifier, focused tests, Local CI profile coverage, and roadmap mirrors. It may not mutate downstream repos or GitHub rules/settings.",
+    "next_execution_step": "Run focused tests and Local CI Gate, then publish a PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If implementation needs to mutate downstream repos, create downstream issue-backed work instead.",
+    "If implementation needs to change GitHub org/repo settings or rulesets, create a separate central apply issue with rollback evidence.",
+    "If package verification cannot distinguish repo-pulled from centrally applied surfaces, stop and keep the change in planning only."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #398"
+  ],
+  "approved_at": "2026-04-20T15:40:00Z"
+}

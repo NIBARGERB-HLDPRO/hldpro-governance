@@ -1,0 +1,77 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-398-consumer-pull-bootstrap-20260420",
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 398,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/398",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-20T15:40:00Z"
+  },
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/governance-consumer-pull-state.json",
+    "docs/governance-tooling-package.json",
+    "docs/plans/issue-398-consumer-pull-bootstrap-pdcar.md",
+    "docs/plans/issue-398-consumer-pull-bootstrap-structured-agent-cycle-plan.json",
+    "docs/runbooks/org-governance-tooling-distribution.md",
+    "raw/cross-review/2026-04-20-issue-398-consumer-pull-bootstrap.md",
+    "raw/execution-scopes/2026-04-20-issue-398-consumer-pull-bootstrap-implementation.json",
+    "scripts/overlord/test_deploy_governance_tooling.py",
+    "scripts/overlord/test_verify_governance_consumer.py",
+    "scripts/overlord/verify_governance_consumer.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-386-automerge-main",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout has unrelated active work outside issue #398 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-386-automerge-main",
+      "reason": "prior issue #386 worktree retained locally after merge"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+      "reason": "sibling governance worktree has pre-existing graphify artifact changes and is outside issue #398 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "sibling repo may have unrelated active work outside issue #398 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo may have unrelated active work outside issue #398 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo may have unrelated active work outside issue #398 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "sibling repo may have unrelated active work outside issue #398 scope"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-pdcar-directive",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-20T15:40:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/398",
+      "docs/plans/issue-398-consumer-pull-bootstrap-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

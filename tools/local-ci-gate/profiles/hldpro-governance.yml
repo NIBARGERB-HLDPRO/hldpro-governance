@@ -127,9 +127,15 @@ profile:
         - scripts/overlord/test_deploy_governance_tooling.py
         - scripts/overlord/deploy_local_ci_gate.py
         - scripts/overlord/test_deploy_local_ci_gate.py
+        - docs/governance-consumer-pull-state.json
+        - scripts/overlord/verify_governance_consumer.py
+        - scripts/overlord/test_verify_governance_consumer.py
       command:
         - python3
-        - scripts/overlord/test_deploy_governance_tooling.py
+        - -m
+        - unittest
+        - scripts.overlord.test_deploy_governance_tooling
+        - scripts.overlord.test_verify_governance_consumer
 
     - id: local-tool-tests
       title: Local CI gate focused Python tests
