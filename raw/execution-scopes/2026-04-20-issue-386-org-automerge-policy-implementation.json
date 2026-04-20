@@ -7,6 +7,7 @@
     "docs/PROGRESS.md",
     "docs/plans/issue-386-org-automerge-policy-pdcar.md",
     "docs/plans/issue-386-org-automerge-policy-structured-agent-cycle-plan.json",
+    "raw/closeouts/2026-04-20-issue-386-org-automerge-policy.md",
     "raw/execution-scopes/2026-04-20-issue-386-org-automerge-policy-implementation.json",
     "scripts/overlord/automerge_policy_check.py",
     "scripts/overlord/test_automerge_policy_check.py"
