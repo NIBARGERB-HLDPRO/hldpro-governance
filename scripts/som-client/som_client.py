@@ -81,6 +81,7 @@ class SomClientConfig:
     timeout_sec: float = 8.0
     max_retries: int = 3
     backoff_base_sec: float = 0.25
+    user_agent: Optional[str] = None
     headers: Optional[Dict[str, str]] = None
 
 
@@ -102,6 +103,7 @@ class SomClient:
                 bearer_token=token,
                 cf_access_client_id=os.environ.get("CF_ACCESS_CLIENT_ID"),
                 cf_access_client_secret=os.environ.get("CF_ACCESS_CLIENT_SECRET"),
+                user_agent=os.environ.get("SOM_MCP_USER_AGENT"),
             )
         )
 
@@ -128,6 +130,8 @@ class SomClient:
             "Content-Type": "application/json",
             "Accept": "application/json",
         }
+        if self._config.user_agent:
+            headers["User-Agent"] = self._config.user_agent
 
         token = self._current_token()
         headers["Authorization"] = f"Bearer {token}"

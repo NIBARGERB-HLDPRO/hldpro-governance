@@ -10,14 +10,17 @@ so the proof harness itself remains CI-testable without live Cloudflare secrets.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import json
 import os
 import shutil
+import socket
 import sys
 import tempfile
 import threading
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -51,6 +54,8 @@ class StageDConfig:
     identity_sub: str
     cf_access_client_id: str
     cf_access_client_secret: str
+    user_agent: str
+    resolve_ip: str
     audit_dir: Optional[Path]
     audit_hmac_key: Optional[str]
     timeout_sec: float
@@ -70,6 +75,8 @@ class StageDConfig:
             identity_sub=args.identity_sub or os.environ.get("SOM_REMOTE_MCP_IDENTITY_SUB", ""),
             cf_access_client_id=os.environ.get("CF_ACCESS_CLIENT_ID", ""),
             cf_access_client_secret=os.environ.get("CF_ACCESS_CLIENT_SECRET", ""),
+            user_agent=os.environ.get("SOM_REMOTE_MCP_USER_AGENT", ""),
+            resolve_ip=os.environ.get("SOM_REMOTE_MCP_RESOLVE_IP", ""),
             audit_dir=Path(audit_dir_raw) if audit_dir_raw else None,
             audit_hmac_key=args.audit_hmac_key or os.environ.get("SOM_REMOTE_MCP_AUDIT_HMAC_KEY"),
             timeout_sec=args.timeout_sec,
@@ -96,6 +103,26 @@ class StageDConfig:
         return missing
 
 
+@contextlib.contextmanager
+def _temporary_resolver(host: str, ip_address: str):
+    if not host or not ip_address:
+        yield
+        return
+
+    original_getaddrinfo = socket.getaddrinfo
+
+    def getaddrinfo(name, port, family=0, type=0, proto=0, flags=0):
+        if name == host:
+            return original_getaddrinfo(ip_address, port, family, type, proto, flags)
+        return original_getaddrinfo(name, port, family, type, proto, flags)
+
+    socket.getaddrinfo = getaddrinfo
+    try:
+        yield
+    finally:
+        socket.getaddrinfo = original_getaddrinfo
+
+
 def _safe_json_response(error: urllib.error.HTTPError) -> Dict[str, Any]:
     try:
         raw = error.read()
@@ -118,6 +145,8 @@ def _request(
         body.update(body_extra)
 
     headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    if config.user_agent:
+        headers["User-Agent"] = config.user_agent
     if auth:
         headers["Authorization"] = f"Bearer {config.token}"
         headers["Cf-Access-Jwt-Assertion"] = config.token
@@ -198,31 +227,33 @@ def _run_stdio_proof(config: StageDConfig) -> ProofResult:
 
 def run_stage_d(config: StageDConfig) -> list[ProofResult]:
     results: list[ProofResult] = []
+    resolve_host = urllib.parse.urlparse(config.base_url).hostname or ""
 
-    status, payload = _request(config, tool="som.ping", arguments={})
-    results.append(_expect("authenticated-ping", status == 200, f"status={status} body_keys={sorted(payload.keys())}"))
+    with _temporary_resolver(resolve_host, config.resolve_ip):
+        status, payload = _request(config, tool="som.ping", arguments={})
+        results.append(_expect("authenticated-ping", status == 200, f"status={status} body_keys={sorted(payload.keys())}"))
 
-    status, _ = _request(config, tool="som.ping", arguments={}, auth=False)
-    results.append(_expect("anonymous-rejected", status in {400, 401, 403}, f"status={status}"))
+        status, _ = _request(config, tool="som.ping", arguments={}, auth=False)
+        results.append(_expect("anonymous-rejected", status in {400, 401, 403}, f"status={status}"))
 
-    status, _ = _request(
-        config,
-        tool="som.ping",
-        arguments={},
-        body_extra={"origin": "local"},
-        headers_extra={"Origin": "local"},
-    )
-    results.append(_expect("origin-spoof-non-authoritative", status in {400, 401, 403}, f"status={status}"))
+        status, _ = _request(
+            config,
+            tool="som.ping",
+            arguments={},
+            body_extra={"origin": "local"},
+            headers_extra={"Origin": "local"},
+        )
+        results.append(_expect("origin-spoof-non-authoritative", status in {400, 401, 403}, f"status={status}"))
 
-    status, _ = _request(
-        config,
-        tool="som.handoff",
-        arguments={"packet": {"prompt": "patient SSN 123-45-6789"}},
-    )
-    results.append(_expect("pii-handoff-rejected", status in {400, 401, 403}, f"status={status}"))
+        status, _ = _request(
+            config,
+            tool="som.handoff",
+            arguments={"packet": {"prompt": "patient SSN 123-45-6789"}},
+        )
+        results.append(_expect("pii-handoff-rejected", status in {400, 401, 403}, f"status={status}"))
 
-    status, _ = _request(config, tool="lam.scrub_pii", arguments={"text": "ssn 123-45-6789"})
-    results.append(_expect("scrub-pii-remote-rejected", status in {400, 401, 403, 404}, f"status={status}"))
+        status, _ = _request(config, tool="lam.scrub_pii", arguments={"text": "ssn 123-45-6789"})
+        results.append(_expect("scrub-pii-remote-rejected", status in {400, 401, 403, 404}, f"status={status}"))
 
     if config.require_audit or (config.audit_dir is not None and config.audit_dir.exists()):
         results.append(_verify_audit_valid(config))
@@ -358,6 +389,8 @@ def run_fixture(args: argparse.Namespace) -> tuple[list[ProofResult], Path]:
             identity_sub="fixture-user",
             cf_access_client_id="",
             cf_access_client_secret="",
+            user_agent="",
+            resolve_ip="",
             audit_dir=audit_dir,
             audit_hmac_key=hmac_key,
             timeout_sec=args.timeout_sec,

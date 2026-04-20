@@ -55,6 +55,7 @@ def test_som_client_sends_cf_and_bearer_headers(monkeypatch) -> None:
     monkeypatch.setenv("SOM_MCP_TOKEN", "bearer-token")
     monkeypatch.setenv("CF_ACCESS_CLIENT_ID", "cf-id")
     monkeypatch.setenv("CF_ACCESS_CLIENT_SECRET", "cf-secret")
+    monkeypatch.setenv("SOM_MCP_USER_AGENT", "hldpro-som-client-test/1")
     monkeypatch.setenv("SOM_REMOTE_MCP_AUDIT_HMAC_KEY", "unused")
 
     client = SomClient.from_env()
@@ -63,6 +64,7 @@ def test_som_client_sends_cf_and_bearer_headers(monkeypatch) -> None:
     assert seen_headers["authorization"] == "Bearer bearer-token"
     assert seen_headers["cf-access-client-id"] == "cf-id"
     assert seen_headers["cf-access-client-secret"] == "cf-secret"
+    assert seen_headers["user-agent"] == "hldpro-som-client-test/1"
 
 
 def test_som_client_retries_on_429(monkeypatch) -> None:

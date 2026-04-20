@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-109-stage-a/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-109-stage-a/wiki/hldpro",
-  "nodes": 1160,
-  "edges": 2225,
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-stage-d-live-tunnel/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-stage-d-live-tunnel/wiki/hldpro",
+  "nodes": 1183,
+  "edges": 2273,
   "communities": 62,
   "articles": 72,
   "html_status": "skipped",
-  "code_files": 76
+  "code_files": 78
 }

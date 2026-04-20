@@ -35,6 +35,7 @@ The Stage A client reads:
 | `SOM_MCP_TOKEN` | Inner bridge bearer/JWT token. |
 | `CF_ACCESS_CLIENT_ID` | Cloudflare Access service-token client id. |
 | `CF_ACCESS_CLIENT_SECRET` | Cloudflare Access service-token client secret. |
+| `SOM_MCP_USER_AGENT` | Optional client user agent for Cloudflare edge policies that block default Python transports. |
 | `SOM_REMOTE_MCP_AUDIT_HMAC_KEY` | HMAC key used by the audit verifier when audit files exist. |
 
 Example local client smoke:
@@ -44,6 +45,7 @@ export SOM_MCP_URL="https://som-mcp.example.com"
 export SOM_MCP_TOKEN="<inner-jwt>"
 export CF_ACCESS_CLIENT_ID="<access-client-id>"
 export CF_ACCESS_CLIENT_SECRET="<access-client-secret>"
+export SOM_MCP_USER_AGENT="hldpro-som-client/1"
 python3 scripts/som-client/som_client.py
 ```
 
@@ -71,6 +73,9 @@ export SOM_REMOTE_MCP_IDENTITY_EMAIL="<cloudflare-identity-email>"
 export SOM_REMOTE_MCP_IDENTITY_SUB="<cloudflare-identity-sub>"
 export CF_ACCESS_CLIENT_ID="<access-client-id>"
 export CF_ACCESS_CLIENT_SECRET="<access-client-secret>"
+export SOM_REMOTE_MCP_USER_AGENT="hldpro-remote-mcp-stage-d/1"
+# Optional DNS propagation workaround; keeps HTTPS hostname/SNI unchanged.
+# export SOM_REMOTE_MCP_RESOLVE_IP="<cloudflare-edge-ip-from-dig>"
 export SOM_REMOTE_MCP_AUDIT_DIR="/path/to/copied/raw/remote-mcp-audit"
 export SOM_REMOTE_MCP_AUDIT_HMAC_KEY="<audit-hmac-key>"
 export SOM_REMOTE_MCP_STDIO_PROOF_COMMAND="<local-stdio-proof-command-after-tunnel-stop>"

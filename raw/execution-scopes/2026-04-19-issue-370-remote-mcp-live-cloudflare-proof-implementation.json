@@ -1,0 +1,61 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-370-remote-mcp-live-cloudflare-proof-20260419",
+  "execution_mode": "implementation_complete",
+  "allowed_write_paths": [
+    "docs/plans/issue-370-remote-mcp-live-cloudflare-proof-pdcar.md",
+    "docs/plans/issue-370-remote-mcp-live-cloudflare-proof-structured-agent-cycle-plan.json",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "graphify-out/hldpro-governance/",
+    "raw/execution-scopes/2026-04-19-issue-370-remote-mcp-live-cloudflare-proof-implementation.json",
+    "raw/validation/2026-04-19-issue-370-remote-mcp-live-cloudflare-proof.md",
+    "raw/closeouts/2026-04-19-issue-370-remote-mcp-live-cloudflare-proof.md",
+    "raw/remote-mcp-live-cloudflare-e2e/",
+    "scripts/remote-mcp/stage_d_smoke.py",
+    "scripts/remote-mcp/tests/test_stage_d_smoke.py",
+    "scripts/som-client/README.md",
+    "scripts/som-client/som_client.py",
+    "scripts/som-client/tests/test_som_client.py",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout has pre-existing graphify changes; issue #370 uses an isolated worktree"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "primary LAM checkout has pre-existing unrelated dirty work; live proof used a detached origin/main worktree plus the operator venv"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo has pre-existing unrelated artifacts outside issue #370 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo has pre-existing unrelated graphify/cache artifacts outside issue #370 scope"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "github-issue-370-under-epic-109",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-19T23:59:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/370",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109",
+      "docs/plans/issue-370-remote-mcp-live-cloudflare-proof-structured-agent-cycle-plan.json",
+      "docs/plans/issue-370-remote-mcp-live-cloudflare-proof-pdcar.md",
+      "raw/validation/2026-04-19-issue-370-remote-mcp-live-cloudflare-proof.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}
