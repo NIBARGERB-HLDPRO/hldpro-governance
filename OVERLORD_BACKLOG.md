@@ -11,6 +11,7 @@
 |------|-------|----------|-----------|-------|
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | [#177](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/177) | LOW-MEDIUM | 2-3 | Post-outage code review. Gate: live-fallback rate < 2% for 2 weeks post-merge (window now passed). |
 | Qwen-Coder MLX driver stub-emission bug | [#105](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/105) | LOW | 1-2 | Qwen2.5-Coder-7B throws truncated output on edge cases (>200 lines). Workarounds in `docs/runbooks/qwen-coder-driver.md`. |
+| Native GitHub automerge pilot for green verified PRs | [#391](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/391) | HIGH | 2-4 pilot | Run the first native GitHub automerge pilot after #386 policy acceptance, with pre-change rollback snapshots, explicit opt-in, dry-run eligibility evidence, and no weakening of required reviews, checks, CODEOWNERS, review-thread resolution, Local CI Gate, branch protection, or rulesets. |
 | SoM Stage 5: som-worker daemon (always-warm Qwen-Coder + packet queue pipeline) | [#178](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/178) | LOW | 6-8 | Qwen watches raw/packets/inbound/, processes to raw/packets/outbound/, Sonnet reviews async. |
 | Living Knowledge Base — Phase 8: Qwen3-32B fine-tune on wiki data | [#49](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/49) | LOW | TBD | Gate: wiki must have 6+ months of compounding data minimum. |
 
