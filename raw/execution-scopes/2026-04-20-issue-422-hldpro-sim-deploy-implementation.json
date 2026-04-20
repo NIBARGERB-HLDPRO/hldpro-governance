@@ -9,7 +9,14 @@
     "raw/validation/2026-04-20-issue-422-hldpro-sim-deploy.md",
     "scripts/deployer/deploy-hldpro-sim.sh",
     "graphify-out/GRAPH_REPORT.md",
-    "graphify-out/graph.json"
+    "graphify-out/graph.json",
+    "OVERLORD_BACKLOG.md",
+    "graphify-out/hldpro-governance/GRAPH_REPORT.md",
+    "graphify-out/hldpro-governance/graph.json",
+    "graphify-out/hldpro-governance/.graphify_ast.json",
+    "graphify-out/hldpro-governance/.graphify_detect.json",
+    "graphify-out/hldpro-governance/.graphify_summary.json",
+    "graphify-out/hldpro-governance/community-labels.json"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
@@ -20,7 +27,7 @@
       "reason": "primary governance worktree on issue-385; has untracked __pycache__ and var/worktrees files"
     }
   ],
-  "execution_mode": "implementation_ready",
+  "execution_mode": "implementation_complete",
   "lane_claim": {
     "issue_number": 422,
     "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/422",
