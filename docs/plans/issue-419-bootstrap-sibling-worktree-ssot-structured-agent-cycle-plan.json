@@ -1,0 +1,94 @@
+{
+  "session_id": "session-20260420-issue-419-bootstrap-sibling-worktree-ssot",
+  "issue_number": 419,
+  "objective": "Fix bootstrap .env.shared discovery when scripts run from sibling governance worktrees.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify bootstrap vault discovery, focused contract tests, issue #419 planning/validation/closeout artifacts, and generated graph/wiki artifacts.",
+    "Do not commit .env.shared or generated repo-local env files."
+  ],
+  "out_of_scope": [
+    "Changing vault values.",
+    "Changing local-ai-machine runtime code.",
+    "Rotating credentials."
+  ],
+  "research_summary": "Post-merge verification for #416 proved that a sibling governance worktree could not find the primary .env.shared vault. The intended SSOT remains the primary hldpro-governance checkout.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/419",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/418",
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/test_bootstrap_repo_env_contract.py"
+  ],
+  "sprints": [
+    {
+      "name": "Sibling worktree SSOT discovery",
+      "goal": "Allow bootstrap scripts to resolve the primary governance vault from sibling worktrees.",
+      "tasks": [
+        "Add sibling primary checkout fallback to bootstrap vault discovery.",
+        "Add synthetic sibling-worktree contract coverage.",
+        "Validate bootstrap from the synced main worktree.",
+        "Open PR, wait for checks, merge, and close #419."
+      ],
+      "acceptance_criteria": [
+        "Sibling governance worktrees resolve the primary hldpro-governance .env.shared vault.",
+        "Nested worktree and primary checkout behavior remains unchanged.",
+        "Validation does not print secret values or phone numbers.",
+        "Final AC: GitHub PR checks pass before merge."
+      ],
+      "file_paths": [
+        "docs/plans/issue-419-bootstrap-sibling-worktree-ssot-pdcar.md",
+        "docs/plans/issue-419-bootstrap-sibling-worktree-ssot-structured-agent-cycle-plan.json",
+        "graphify-out/GRAPH_REPORT.md",
+        "graphify-out/graph.json",
+        "graphify-out/hldpro-governance/",
+        "raw/execution-scopes/2026-04-20-issue-419-bootstrap-sibling-worktree-ssot-implementation.json",
+        "raw/validation/2026-04-20-issue-419-bootstrap-sibling-worktree-ssot.md",
+        "raw/closeouts/2026-04-20-issue-419-bootstrap-sibling-worktree-ssot.md",
+        "scripts/bootstrap-repo-env.sh",
+        "scripts/test_bootstrap_repo_env_contract.py",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-local-analysis",
+      "role": "bootstrap contract reviewer",
+      "focus": "Verify sibling worktree vault discovery stays scoped and redacted.",
+      "status": "accepted",
+      "summary": "Accepted a focused fallback to the sibling primary governance checkout.",
+      "evidence": [
+        "scripts/bootstrap-repo-env.sh",
+        "scripts/test_bootstrap_repo_env_contract.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-requested",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "Small post-merge bugfix under the existing #416 validation lane.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/419"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #419 may update bootstrap discovery, focused tests, and issue artifacts only.",
+    "next_execution_step": "Validate, open PR, merge after checks pass, and regenerate local-ai-machine env from merged main.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If vault discovery requires hardcoding a user secret path, stop and redesign.",
+    "If validation output includes values, redact and rerun."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #419",
+    "codex-local-analysis"
+  ],
+  "approved_at": "2026-04-20T18:20:00Z"
+}

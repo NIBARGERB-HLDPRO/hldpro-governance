@@ -37,6 +37,12 @@ if [[ ! -f "$PRIMARY_GOV_ROOT/.env.shared" ]]; then
     SEARCH_ROOT="$(dirname "$SEARCH_ROOT")"
   done
 fi
+if [[ ! -f "$PRIMARY_GOV_ROOT/.env.shared" ]]; then
+  SIBLING_PRIMARY_GOV_ROOT="$(cd "$GOV_ROOT/.." && pwd)/hldpro-governance"
+  if [[ -f "$SIBLING_PRIMARY_GOV_ROOT/.env.shared" ]]; then
+    PRIMARY_GOV_ROOT="$SIBLING_PRIMARY_GOV_ROOT"
+  fi
+fi
 
 SHARED_ENV="$PRIMARY_GOV_ROOT/.env.shared"
 HLDPRO_ROOT="$(cd "$PRIMARY_GOV_ROOT/.." && pwd)"

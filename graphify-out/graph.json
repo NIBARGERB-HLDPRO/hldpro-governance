@@ -857,7 +857,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L1",
       "id": "log_graphify_usage",
-      "community": 57
+      "community": 58
     },
     {
       "label": "parse_args()",
@@ -865,7 +865,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L13",
       "id": "log_graphify_usage_parse_args",
-      "community": 57
+      "community": 58
     },
     {
       "label": "build_event()",
@@ -873,7 +873,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L31",
       "id": "log_graphify_usage_build_event",
-      "community": 57
+      "community": 58
     },
     {
       "label": "append_event()",
@@ -881,7 +881,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L70",
       "id": "log_graphify_usage_append_event",
-      "community": 57
+      "community": 58
     },
     {
       "label": "main()",
@@ -889,7 +889,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L80",
       "id": "log_graphify_usage_main",
-      "community": 57
+      "community": 58
     },
     {
       "label": "measure_graphify_usage.py",
@@ -7025,7 +7025,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L1",
       "id": "test_hitl_relay_schema",
-      "community": 58
+      "community": 59
     },
     {
       "label": "_validator()",
@@ -7033,7 +7033,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L15",
       "id": "test_hitl_relay_schema_validator",
-      "community": 58
+      "community": 59
     },
     {
       "label": "_load()",
@@ -7041,7 +7041,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L21",
       "id": "test_hitl_relay_schema_load",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_valid_hitl_relay_examples_pass()",
@@ -7049,7 +7049,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L25",
       "id": "test_hitl_relay_schema_test_valid_hitl_relay_examples_pass",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_invalid_hitl_relay_examples_fail()",
@@ -7057,7 +7057,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L34",
       "id": "test_hitl_relay_schema_test_invalid_hitl_relay_examples_fail",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_validate.py",
@@ -8494,7 +8494,7 @@
     {
       "label": "test_live_health_monitor.py",
       "file_type": "code",
-      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L1",
       "id": "test_live_health_monitor",
       "community": 9
@@ -8502,7 +8502,7 @@
     {
       "label": "test_fixture_monitor_e2e_passes_and_scans_evidence()",
       "file_type": "code",
-      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L17",
       "id": "test_live_health_monitor_test_fixture_monitor_e2e_passes_and_scans_evidence",
       "community": 9
@@ -8510,7 +8510,7 @@
     {
       "label": "test_live_monitor_fails_fast_without_required_configuration()",
       "file_type": "code",
-      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L46",
       "id": "test_live_health_monitor_test_live_monitor_fails_fast_without_required_configuration",
       "community": 9
@@ -8518,7 +8518,7 @@
     {
       "label": "test_evidence_scan_rejects_sensitive_material()",
       "file_type": "code",
-      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L60",
       "id": "test_live_health_monitor_test_evidence_scan_rejects_sensitive_material",
       "community": 9
@@ -9198,42 +9198,58 @@
     {
       "label": "test_bootstrap_repo_env_contract.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L1",
       "id": "test_bootstrap_repo_env_contract",
-      "community": 59
+      "community": 56
     },
     {
       "label": "check()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L17",
       "id": "test_bootstrap_repo_env_contract_check",
-      "community": 59
+      "community": 56
     },
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L22",
       "id": "test_bootstrap_repo_env_contract_main",
-      "community": 59
+      "community": 56
     },
     {
       "label": "run_synthetic_lam_bootstrap()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L51",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L52",
       "id": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
-      "community": 59
+      "community": 56
+    },
+    {
+      "label": "run_sibling_worktree_lam_bootstrap()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L120",
+      "id": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
+      "community": 56
     },
     {
       "label": "Exercise lam bootstrap with command-like vault values and missing optional keys.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L52",
-      "id": "test_bootstrap_repo_env_contract_rationale_52",
-      "community": 59
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L53",
+      "id": "test_bootstrap_repo_env_contract_rationale_53",
+      "community": 56
+    },
+    {
+      "label": "Exercise vault discovery from sibling governance worktrees.",
+      "file_type": "rationale",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L121",
+      "id": "test_bootstrap_repo_env_contract_rationale_121",
+      "community": 56
     },
     {
       "label": "test_codex_fire.py",
@@ -9313,7 +9329,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L1",
       "id": "pii",
-      "community": 56
+      "community": 57
     },
     {
       "label": "load_pii_patterns()",
@@ -9321,7 +9337,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L33",
       "id": "pii_load_pii_patterns",
-      "community": 56
+      "community": 57
     },
     {
       "label": "_iter_patterns()",
@@ -9329,7 +9345,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L63",
       "id": "pii_iter_patterns",
-      "community": 56
+      "community": 57
     },
     {
       "label": "detect_pii()",
@@ -9337,7 +9353,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L73",
       "id": "pii_detect_pii",
-      "community": 56
+      "community": 57
     },
     {
       "label": "Load and validate pii patterns from pii_patterns.yml.",
@@ -9345,7 +9361,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L34",
       "id": "pii_rationale_34",
-      "community": 56
+      "community": 57
     },
     {
       "label": "Scan text for PII patterns from YAML patterns.      Falls back to the previous b",
@@ -9353,7 +9369,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L74",
       "id": "pii_rationale_74",
-      "community": 56
+      "community": 57
     },
     {
       "label": "audit.py",
@@ -35384,7 +35400,7 @@
     {
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L14",
       "weight": 1.0,
       "_src": "test_live_health_monitor",
@@ -37004,7 +37020,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L17",
       "weight": 1.0,
       "_src": "test_live_health_monitor",
@@ -37016,7 +37032,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L46",
       "weight": 1.0,
       "_src": "test_live_health_monitor",
@@ -37028,7 +37044,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L60",
       "weight": 1.0,
       "_src": "test_live_health_monitor",
@@ -38648,7 +38664,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L17",
       "weight": 1.0,
       "_src": "test_bootstrap_repo_env_contract",
@@ -38660,7 +38676,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L22",
       "weight": 1.0,
       "_src": "test_bootstrap_repo_env_contract",
@@ -38672,8 +38688,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L51",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L52",
       "weight": 1.0,
       "_src": "test_bootstrap_repo_env_contract",
       "_tgt": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
@@ -38682,9 +38698,21 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_src": "test_bootstrap_repo_env_contract",
+      "_tgt": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
+      "source": "test_bootstrap_repo_env_contract",
+      "target": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L23",
       "weight": 0.8,
       "_src": "test_bootstrap_repo_env_contract_main",
@@ -38696,8 +38724,8 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L94",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L95",
       "weight": 0.8,
       "_src": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
       "_tgt": "test_bootstrap_repo_env_contract_check",
@@ -38708,7 +38736,19 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L162",
+      "weight": 0.8,
+      "_src": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
+      "_tgt": "test_bootstrap_repo_env_contract_check",
+      "source": "test_bootstrap_repo_env_contract_check",
+      "target": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L45",
       "weight": 0.8,
       "_src": "test_bootstrap_repo_env_contract_main",
@@ -38718,15 +38758,39 @@
       "confidence_score": 0.5
     },
     {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L46",
+      "weight": 0.8,
+      "_src": "test_bootstrap_repo_env_contract_main",
+      "_tgt": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
+      "source": "test_bootstrap_repo_env_contract_main",
+      "target": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
+      "confidence_score": 0.5
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L52",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L53",
       "weight": 1.0,
-      "_src": "test_bootstrap_repo_env_contract_rationale_52",
+      "_src": "test_bootstrap_repo_env_contract_rationale_53",
       "_tgt": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
       "source": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
-      "target": "test_bootstrap_repo_env_contract_rationale_52",
+      "target": "test_bootstrap_repo_env_contract_rationale_53",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L121",
+      "weight": 1.0,
+      "_src": "test_bootstrap_repo_env_contract_rationale_121",
+      "_tgt": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
+      "source": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
+      "target": "test_bootstrap_repo_env_contract_rationale_121",
       "confidence_score": 1.0
     },
     {

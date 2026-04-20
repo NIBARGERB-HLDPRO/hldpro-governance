@@ -1,13 +1,15 @@
 # Bootstrap repo Lam
 
-> 5 nodes · cohesion 0.70
+> 7 nodes · cohesion 0.52
 
 ## Key Concepts
 
+- **test_bootstrap_repo_env_contract.py** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
+- **check()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
+- **main()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
+- **run_sibling_worktree_lam_bootstrap()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
 - **run_synthetic_lam_bootstrap()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **test_bootstrap_repo_env_contract.py** (3 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **check()** (3 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **main()** (3 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
+- **Exercise vault discovery from sibling governance worktrees.** (1 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
 - **Exercise lam bootstrap with command-like vault values and missing optional keys.** (1 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
 
 ## Relationships
@@ -20,8 +22,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 8 (57%)
-- INFERRED: 6 (43%)
+- EXTRACTED: 12 (55%)
+- INFERRED: 10 (45%)
 - AMBIGUOUS: 0 (0%)
 
 ---

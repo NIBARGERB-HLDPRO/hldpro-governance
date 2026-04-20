@@ -1,0 +1,61 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-419-bootstrap-sibling-worktree-ssot-20260420",
+  "execution_mode": "implementation_complete",
+  "allowed_write_paths": [
+    "docs/plans/issue-419-bootstrap-sibling-worktree-ssot-pdcar.md",
+    "docs/plans/issue-419-bootstrap-sibling-worktree-ssot-structured-agent-cycle-plan.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "graphify-out/hldpro-governance/",
+    "raw/execution-scopes/2026-04-20-issue-419-bootstrap-sibling-worktree-ssot-implementation.json",
+    "raw/validation/2026-04-20-issue-419-bootstrap-sibling-worktree-ssot.md",
+    "raw/closeouts/2026-04-20-issue-419-bootstrap-sibling-worktree-ssot.md",
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/test_bootstrap_repo_env_contract.py",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout holds the local .env.shared vault and has unrelated active state"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "sibling repo receives only a generated ignored .env artifact during validation"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo has unrelated dirty state outside issue #419 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo has unrelated dirty state outside issue #419 scope"
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 419,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/419",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-20T18:20:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "github-issue-419-and-codex-local-analysis",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-20T18:20:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/419",
+      "docs/plans/issue-419-bootstrap-sibling-worktree-ssot-structured-agent-cycle-plan.json"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

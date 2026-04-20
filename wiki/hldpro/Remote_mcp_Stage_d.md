@@ -1,6 +1,6 @@
 # Remote mcp Stage d
 
-> 35 nodes · cohesion 0.11
+> 31 nodes · cohesion 0.13
 
 ## Key Concepts
 
@@ -12,13 +12,12 @@
 - **_expect()** (6 connections) — `scripts/remote-mcp/stage_d_smoke.py`
 - **main()** (5 connections) — `scripts/remote-mcp/live_health_monitor.py`
 - **run_fixture()** (5 connections) — `scripts/remote-mcp/stage_d_smoke.py`
-- **test_stage_d_smoke.py** (5 connections) — `scripts/remote-mcp/tests/test_stage_d_smoke.py`
 - **_run_fixture()** (4 connections) — `scripts/remote-mcp/live_health_monitor.py`
 - **_run_live()** (4 connections) — `scripts/remote-mcp/live_health_monitor.py`
 - **_run_stdio_proof()** (4 connections) — `scripts/remote-mcp/stage_d_smoke.py`
 - **_verify_audit_tamper_fails()** (4 connections) — `scripts/remote-mcp/stage_d_smoke.py`
 - **_verify_audit_valid()** (4 connections) — `scripts/remote-mcp/stage_d_smoke.py`
-- **test_live_health_monitor.py** (4 connections) — `scripts/remote-mcp/tests/test_live_health_monitor.py`
+- **test_live_health_monitor.py** (4 connections) — `hldpro-governance/scripts/remote-mcp/tests/test_live_health_monitor.py`
 - **_scan_evidence_dir()** (3 connections) — `scripts/remote-mcp/live_health_monitor.py`
 - **_stage_d_args()** (3 connections) — `scripts/remote-mcp/live_health_monitor.py`
 - **_request()** (3 connections) — `scripts/remote-mcp/stage_d_smoke.py`
@@ -29,7 +28,8 @@
 - **build_parser()** (2 connections) — `scripts/remote-mcp/stage_d_smoke.py`
 - **from_env()** (2 connections) — `scripts/remote-mcp/stage_d_smoke.py`
 - **.to_dict()** (2 connections) — `scripts/remote-mcp/stage_d_smoke.py`
-- *... and 10 more nodes in this community*
+- **_safe_json_response()** (2 connections) — `scripts/remote-mcp/stage_d_smoke.py`
+- *... and 6 more nodes in this community*
 
 ## Relationships
 
@@ -37,15 +37,14 @@
 
 ## Source Files
 
+- `hldpro-governance/scripts/remote-mcp/tests/test_live_health_monitor.py`
 - `scripts/remote-mcp/live_health_monitor.py`
 - `scripts/remote-mcp/stage_d_smoke.py`
-- `scripts/remote-mcp/tests/test_live_health_monitor.py`
-- `scripts/remote-mcp/tests/test_stage_d_smoke.py`
 
 ## Audit Trail
 
-- EXTRACTED: 70 (52%)
-- INFERRED: 64 (48%)
+- EXTRACTED: 62 (49%)
+- INFERRED: 64 (51%)
 - AMBIGUOUS: 0 (0%)
 
 ---
