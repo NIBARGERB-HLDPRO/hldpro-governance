@@ -550,50 +550,50 @@
       "id": "test_bootstrap_repo_env_contract",
       "label": "test_bootstrap_repo_env_contract.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L1"
     },
     {
       "id": "test_bootstrap_repo_env_contract_check",
       "label": "check()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L17"
     },
     {
       "id": "test_bootstrap_repo_env_contract_main",
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L22"
     },
     {
       "id": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
       "label": "run_synthetic_lam_bootstrap()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L52"
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L55"
     },
     {
       "id": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
       "label": "run_sibling_worktree_lam_bootstrap()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L120"
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L130"
     },
     {
-      "id": "test_bootstrap_repo_env_contract_rationale_53",
+      "id": "test_bootstrap_repo_env_contract_rationale_56",
       "label": "Exercise lam bootstrap with command-like vault values and missing optional keys.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L53"
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L56"
     },
     {
-      "id": "test_bootstrap_repo_env_contract_rationale_121",
+      "id": "test_bootstrap_repo_env_contract_rationale_131",
       "label": "Exercise vault discovery from sibling governance worktrees.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L121"
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L131"
     },
     {
       "id": "verify_governance_consumer",
@@ -6220,28 +6220,28 @@
       "id": "test_live_health_monitor",
       "label": "test_live_health_monitor.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L1"
     },
     {
       "id": "test_live_health_monitor_test_fixture_monitor_e2e_passes_and_scans_evidence",
       "label": "test_fixture_monitor_e2e_passes_and_scans_evidence()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L17"
     },
     {
       "id": "test_live_health_monitor_test_live_monitor_fails_fast_without_required_configuration",
       "label": "test_live_monitor_fails_fast_without_required_configuration()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L46"
     },
     {
       "id": "test_live_health_monitor_test_evidence_scan_rejects_sensitive_material",
       "label": "test_evidence_scan_rejects_sensitive_material()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L60"
     },
     {
@@ -11307,7 +11307,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -11316,7 +11316,7 @@
       "target": "shutil",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -11325,7 +11325,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -11334,7 +11334,7 @@
       "target": "textwrap",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -11343,7 +11343,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L10",
       "weight": 1.0
     },
@@ -11352,7 +11352,7 @@
       "target": "test_bootstrap_repo_env_contract_check",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L17",
       "weight": 1.0
     },
@@ -11361,7 +11361,7 @@
       "target": "test_bootstrap_repo_env_contract_main",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L22",
       "weight": 1.0
     },
@@ -11370,8 +11370,8 @@
       "target": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L52",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -11379,8 +11379,8 @@
       "target": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L120",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -11388,7 +11388,7 @@
       "target": "test_bootstrap_repo_env_contract_check",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L23",
       "weight": 0.8
     },
@@ -11397,8 +11397,8 @@
       "target": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L45",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L48",
       "weight": 0.8
     },
     {
@@ -11406,8 +11406,8 @@
       "target": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L46",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L49",
       "weight": 0.8
     },
     {
@@ -11415,8 +11415,8 @@
       "target": "test_bootstrap_repo_env_contract_check",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L95",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L101",
       "weight": 0.8
     },
     {
@@ -11424,26 +11424,26 @@
       "target": "test_bootstrap_repo_env_contract_check",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L162",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L175",
       "weight": 0.8
     },
     {
-      "source": "test_bootstrap_repo_env_contract_rationale_53",
+      "source": "test_bootstrap_repo_env_contract_rationale_56",
       "target": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L53",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
-      "source": "test_bootstrap_repo_env_contract_rationale_121",
+      "source": "test_bootstrap_repo_env_contract_rationale_131",
       "target": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/test_bootstrap_repo_env_contract.py",
-      "source_location": "L121",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -28596,7 +28596,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -28605,7 +28605,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -28614,7 +28614,7 @@
       "target": "sys",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -28623,7 +28623,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -28632,7 +28632,7 @@
       "target": "live_health_monitor",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L14",
       "weight": 1.0
     },
@@ -28641,7 +28641,7 @@
       "target": "test_live_health_monitor_test_fixture_monitor_e2e_passes_and_scans_evidence",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L17",
       "weight": 1.0
     },
@@ -28650,7 +28650,7 @@
       "target": "test_live_health_monitor_test_live_monitor_fails_fast_without_required_configuration",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L46",
       "weight": 1.0
     },
@@ -28659,7 +28659,7 @@
       "target": "test_live_health_monitor_test_evidence_scan_rejects_sensitive_material",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/scripts/remote-mcp/tests/test_live_health_monitor.py",
+      "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L60",
       "weight": 1.0
     },
