@@ -9281,6 +9281,454 @@
       "file_type": "code",
       "source_file": "scripts/som-client/tests/test_som_client.py",
       "source_location": "L141"
+    },
+    {
+      "id": "personas",
+      "label": "personas.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "personas_personaloader",
+      "label": "PersonaLoader",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L6"
+    },
+    {
+      "id": "personas_personaloader_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L9"
+    },
+    {
+      "id": "personas_personaloader_load",
+      "label": ".load()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L13"
+    },
+    {
+      "id": "personas_from_package",
+      "label": "from_package()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L23"
+    },
+    {
+      "id": "personas_rationale_7",
+      "label": "Load persona JSON files. Resolves local-first, shared fallback.",
+      "file_type": "rationale",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L7"
+    },
+    {
+      "id": "personas_rationale_24",
+      "label": "Convenience: load shared dir from bundled package personas/.",
+      "file_type": "rationale",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L24"
+    },
+    {
+      "id": "runner",
+      "label": "runner.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/runner.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "runner_runner",
+      "label": "Runner",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/runner.py",
+      "source_location": "L6"
+    },
+    {
+      "id": "runner_runner_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/runner.py",
+      "source_location": "L7"
+    },
+    {
+      "id": "runner_runner_run_n",
+      "label": ".run_n()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/runner.py",
+      "source_location": "L10"
+    },
+    {
+      "id": "aggregator",
+      "label": "aggregator.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/aggregator.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "aggregator_baseaggregator",
+      "label": "BaseAggregator",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/aggregator.py",
+      "source_location": "L8"
+    },
+    {
+      "id": "abc",
+      "label": "ABC",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "aggregator_aggregate",
+      "label": "aggregate()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/aggregator.py",
+      "source_location": "L10"
+    },
+    {
+      "id": "init",
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/__init__.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "providers",
+      "label": "providers.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "providers_baseprovider",
+      "label": "BaseProvider",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L10"
+    },
+    {
+      "id": "protocol",
+      "label": "Protocol",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "providers_baseprovider_complete",
+      "label": ".complete()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L11"
+    },
+    {
+      "id": "providers_codexcliprovider",
+      "label": "CodexCliProvider",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L14"
+    },
+    {
+      "id": "providers_codexcliprovider_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L17"
+    },
+    {
+      "id": "providers_codexcliprovider_complete",
+      "label": ".complete()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L21"
+    },
+    {
+      "id": "providers_anthropicapiprovider",
+      "label": "AnthropicApiProvider",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L69"
+    },
+    {
+      "id": "providers_anthropicapiprovider_complete",
+      "label": ".complete()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L72"
+    },
+    {
+      "id": "providers_rationale_15",
+      "label": "Subprocess-backed provider using codex exec --ephemeral.",
+      "file_type": "rationale",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L15"
+    },
+    {
+      "id": "providers_rationale_70",
+      "label": "Cloud stub \u2014 not implemented until API keys are provisioned.",
+      "file_type": "rationale",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L70"
+    },
+    {
+      "id": "engine",
+      "label": "engine.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/engine.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "engine_simulationengine",
+      "label": "SimulationEngine",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/engine.py",
+      "source_location": "L7"
+    },
+    {
+      "id": "engine_simulationengine_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/engine.py",
+      "source_location": "L8"
+    },
+    {
+      "id": "engine_simulationengine_run",
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/engine.py",
+      "source_location": "L20"
+    },
+    {
+      "id": "artifacts",
+      "label": "artifacts.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "artifacts_runmanifest",
+      "label": "RunManifest",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L10"
+    },
+    {
+      "id": "artifacts_git_commit",
+      "label": "_git_commit()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L21"
+    },
+    {
+      "id": "artifacts_artifactwriter",
+      "label": "ArtifactWriter",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L33"
+    },
+    {
+      "id": "artifacts_artifactwriter_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L34"
+    },
+    {
+      "id": "artifacts_artifactwriter_write",
+      "label": ".write()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L37"
+    },
+    {
+      "id": "test_engine",
+      "label": "test_engine.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_engine.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_engine_test_engine_passes_template_results_to_provider",
+      "label": "test_engine_passes_template_results_to_provider()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_engine.py",
+      "source_location": "L5"
+    },
+    {
+      "id": "test_providers",
+      "label": "test_providers.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_providers_write_output_from_call",
+      "label": "_write_output_from_call()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L15"
+    },
+    {
+      "id": "test_providers_test_codex_provider_builds_expected_subprocess_args",
+      "label": "test_codex_provider_builds_expected_subprocess_args()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L23"
+    },
+    {
+      "id": "test_providers_test_codex_provider_injects_additional_properties_false_when_missing",
+      "label": "test_codex_provider_injects_additional_properties_false_when_missing()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L42"
+    },
+    {
+      "id": "test_providers_test_codex_provider_passes_prompt_as_positional_arg_only",
+      "label": "test_codex_provider_passes_prompt_as_positional_arg_only()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L54"
+    },
+    {
+      "id": "test_providers_test_anthropic_provider_not_implemented",
+      "label": "test_anthropic_provider_not_implemented()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L64"
+    },
+    {
+      "id": "test_providers_test_codex_provider_raises_on_nonzero_exit_code",
+      "label": "test_codex_provider_raises_on_nonzero_exit_code()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L76"
+    },
+    {
+      "id": "test_providers_test_persona_loader_prefers_local_file",
+      "label": "test_persona_loader_prefers_local_file()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L88"
+    },
+    {
+      "id": "test_providers_test_persona_loader_falls_back_to_shared_file",
+      "label": "test_persona_loader_falls_back_to_shared_file()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L100"
+    },
+    {
+      "id": "test_providers_test_persona_loader_raises_when_missing",
+      "label": "test_persona_loader_raises_when_missing()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L110"
+    },
+    {
+      "id": "test_artifacts",
+      "label": "test_artifacts.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_artifacts.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_artifacts_test_artifact_writer_writes_manifest_and_outcomes",
+      "label": "test_artifact_writer_writes_manifest_and_outcomes()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_artifacts.py",
+      "source_location": "L7"
+    },
+    {
+      "id": "test_runner",
+      "label": "test_runner.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_runner.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_runner_test_runner_run_n_returns_requested_count_without_threads",
+      "label": "test_runner_run_n_returns_requested_count_without_threads()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_runner.py",
+      "source_location": "L7"
+    },
+    {
+      "id": "test_runner_test_runner_run_n_uses_threadpool_when_configured",
+      "label": "test_runner_run_n_uses_threadpool_when_configured()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_runner.py",
+      "source_location": "L17"
+    },
+    {
+      "id": "test_stampede_consumer_proof",
+      "label": "test_stampede_consumer_proof.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_stampede_consumer_proof_mockprovider",
+      "label": "MockProvider",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L37"
+    },
+    {
+      "id": "test_stampede_consumer_proof_mockprovider_complete",
+      "label": ".complete()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L38"
+    },
+    {
+      "id": "test_stampede_consumer_proof_test_stampede_e2e",
+      "label": "test_stampede_e2e()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L42"
+    },
+    {
+      "id": "stampede_consumer",
+      "label": "stampede_consumer.py",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "stampede_consumer_narrativeoutcome",
+      "label": "NarrativeOutcome",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L8"
+    },
+    {
+      "id": "basemodel",
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "stampede_consumer_narrativeaggregator",
+      "label": "NarrativeAggregator",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L17"
+    },
+    {
+      "id": "baseaggregator",
+      "label": "BaseAggregator",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "stampede_consumer_narrativeaggregator_aggregate",
+      "label": ".aggregate()",
+      "file_type": "code",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L18"
     }
   ],
   "edges": [
@@ -37381,6 +37829,978 @@
       "source_file": "scripts/som-client/tests/test_som_client.py",
       "source_location": "L141",
       "weight": 1.0
+    },
+    {
+      "source": "personas",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "personas",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "personas",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "personas",
+      "target": "personas_personaloader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "personas_personaloader",
+      "target": "personas_personaloader_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "personas_personaloader",
+      "target": "personas_personaloader_load",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "personas",
+      "target": "personas_from_package",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "personas_rationale_7",
+      "target": "personas_personaloader",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "personas_rationale_24",
+      "target": "personas_personaloader_from_package",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/personas.py",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "runner",
+      "target": "concurrent_futures",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/runner.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "runner",
+      "target": "engine",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/runner.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "runner",
+      "target": "runner_runner",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/runner.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "runner_runner",
+      "target": "runner_runner_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/runner.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "runner_runner",
+      "target": "runner_runner_run_n",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/runner.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "aggregator",
+      "target": "abc",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/aggregator.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "aggregator",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/aggregator.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "aggregator",
+      "target": "aggregator_baseaggregator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/aggregator.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "aggregator_baseaggregator",
+      "target": "abc",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/aggregator.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "aggregator",
+      "target": "aggregator_aggregate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/aggregator.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "init",
+      "target": "engine",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "init",
+      "target": "providers",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/__init__.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "init",
+      "target": "personas",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/__init__.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "init",
+      "target": "aggregator",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/__init__.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "init",
+      "target": "runner",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/__init__.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "init",
+      "target": "artifacts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/__init__.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "providers",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "providers",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "providers",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "providers",
+      "target": "tempfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "providers",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "providers",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "providers",
+      "target": "providers_baseprovider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "providers_baseprovider",
+      "target": "protocol",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "providers_baseprovider",
+      "target": "providers_baseprovider_complete",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "providers",
+      "target": "providers_codexcliprovider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "providers_codexcliprovider",
+      "target": "providers_codexcliprovider_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "providers_codexcliprovider",
+      "target": "providers_codexcliprovider_complete",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "providers",
+      "target": "providers_anthropicapiprovider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "providers_anthropicapiprovider",
+      "target": "providers_anthropicapiprovider_complete",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "providers_rationale_15",
+      "target": "providers_codexcliprovider",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "providers_rationale_70",
+      "target": "providers_anthropicapiprovider",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/providers.py",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "engine",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/engine.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "engine",
+      "target": "personas",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/engine.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "engine",
+      "target": "providers",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/engine.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "engine",
+      "target": "engine_simulationengine",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/engine.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "engine_simulationengine",
+      "target": "engine_simulationengine_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/engine.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "engine_simulationengine",
+      "target": "engine_simulationengine_run",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/engine.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts",
+      "target": "hashlib",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts",
+      "target": "dataclasses",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts",
+      "target": "datetime",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts",
+      "target": "artifacts_runmanifest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts",
+      "target": "artifacts_git_commit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts",
+      "target": "artifacts_artifactwriter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_artifactwriter",
+      "target": "artifacts_artifactwriter_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "artifacts_artifactwriter",
+      "target": "artifacts_artifactwriter_write",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "test_engine",
+      "target": "hldprosim_engine",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_engine.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "test_engine",
+      "target": "hldprosim_personas",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_engine.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "test_engine",
+      "target": "test_engine_test_engine_passes_template_results_to_provider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_engine.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "tempfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "unittest_mock",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "hldprosim_personas",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "hldprosim_providers",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "test_providers_write_output_from_call",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "test_providers_test_codex_provider_builds_expected_subprocess_args",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "test_providers_test_codex_provider_injects_additional_properties_false_when_missing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "test_providers_test_codex_provider_passes_prompt_as_positional_arg_only",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "test_providers_test_anthropic_provider_not_implemented",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "test_providers_test_codex_provider_raises_on_nonzero_exit_code",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "test_providers_test_persona_loader_prefers_local_file",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "test_providers_test_persona_loader_falls_back_to_shared_file",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "test_providers",
+      "target": "test_providers_test_persona_loader_raises_when_missing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_providers.py",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "test_artifacts",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_artifacts.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "test_artifacts",
+      "target": "tempfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_artifacts.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "test_artifacts",
+      "target": "hldprosim_artifacts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_artifacts.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_artifacts",
+      "target": "test_artifacts_test_artifact_writer_writes_manifest_and_outcomes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_artifacts.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_runner",
+      "target": "concurrent_futures",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_runner.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "test_runner",
+      "target": "unittest_mock",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_runner.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "test_runner",
+      "target": "hldprosim_runner",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_runner.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_runner",
+      "target": "test_runner_test_runner_run_n_returns_requested_count_without_threads",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_runner.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_runner",
+      "target": "test_runner_test_runner_run_n_uses_threadpool_when_configured",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_runner.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "test_stampede_consumer_proof",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "test_stampede_consumer_proof",
+      "target": "tempfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "test_stampede_consumer_proof",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_stampede_consumer_proof",
+      "target": "hldprosim_artifacts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "test_stampede_consumer_proof",
+      "target": "hldprosim_engine",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_stampede_consumer_proof",
+      "target": "hldprosim_personas",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "test_stampede_consumer_proof",
+      "target": "hldprosim_runner",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "test_stampede_consumer_proof",
+      "target": "tests_fixtures_stampede_consumer",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "test_stampede_consumer_proof",
+      "target": "test_stampede_consumer_proof_mockprovider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "test_stampede_consumer_proof_mockprovider",
+      "target": "test_stampede_consumer_proof_mockprovider_complete",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "test_stampede_consumer_proof",
+      "target": "test_stampede_consumer_proof_test_stampede_e2e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "test_stampede_consumer_proof_test_stampede_e2e",
+      "target": "test_stampede_consumer_proof_mockprovider",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+      "source_location": "L46",
+      "weight": 0.8
+    },
+    {
+      "source": "stampede_consumer",
+      "target": "collections",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "stampede_consumer",
+      "target": "hldprosim_aggregator",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "stampede_consumer",
+      "target": "pydantic",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "stampede_consumer",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "stampede_consumer",
+      "target": "stampede_consumer_narrativeoutcome",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "stampede_consumer_narrativeoutcome",
+      "target": "basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "stampede_consumer",
+      "target": "stampede_consumer_narrativeaggregator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "stampede_consumer_narrativeaggregator",
+      "target": "baseaggregator",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "stampede_consumer_narrativeaggregator",
+      "target": "stampede_consumer_narrativeaggregator_aggregate",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "stampede_consumer_narrativeaggregator_aggregate",
+      "target": "stampede_consumer_narrativeoutcome",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+      "source_location": "L19",
+      "weight": 0.8
     }
   ],
   "input_tokens": 0,

@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-403-consumer-pull-closeout/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-403-consumer-pull-closeout/wiki/hldpro",
-  "nodes": 1315,
-  "edges": 2525,
-  "communities": 68,
-  "articles": 78,
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-407-closeout/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-407-closeout/wiki/hldpro",
+  "nodes": 1378,
+  "edges": 2587,
+  "communities": 75,
+  "articles": 85,
   "html_status": "skipped",
-  "code_files": 92
+  "code_files": 105
 }
