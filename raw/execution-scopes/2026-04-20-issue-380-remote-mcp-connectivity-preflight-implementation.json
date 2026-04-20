@@ -1,0 +1,65 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-380-remote-mcp-connectivity-preflight-20260420",
+  "execution_mode": "implementation_complete",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/DATA_DICTIONARY.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/SERVICE_REGISTRY.md",
+    "docs/plans/issue-380-remote-mcp-connectivity-preflight-pdcar.md",
+    "docs/plans/issue-380-remote-mcp-connectivity-preflight-structured-agent-cycle-plan.json",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "graphify-out/hldpro-governance/",
+    "raw/execution-scopes/2026-04-20-issue-380-remote-mcp-connectivity-preflight-implementation.json",
+    "raw/remote-mcp-connectivity-preflight/",
+    "raw/validation/2026-04-20-issue-380-remote-mcp-connectivity-preflight.md",
+    "raw/closeouts/2026-04-20-issue-380-remote-mcp-connectivity-preflight.md",
+    "scripts/remote-mcp/operator_connectivity.py",
+    "scripts/remote-mcp/tests/test_operator_connectivity.py",
+    "scripts/som-client/som_client.py",
+    "scripts/som-client/tests/test_som_client.py",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout is outside issue #380 scope; issue #380 uses an isolated worktree"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "sibling repo may have unrelated active work outside issue #380 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo may have unrelated active work outside issue #380 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo may have unrelated active work outside issue #380 scope"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "github-issue-380-and-codex-explorer-nash",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-20T17:20:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/380",
+      "docs/plans/issue-380-remote-mcp-connectivity-preflight-structured-agent-cycle-plan.json",
+      "docs/plans/issue-380-remote-mcp-connectivity-preflight-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

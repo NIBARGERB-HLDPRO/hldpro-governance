@@ -1,0 +1,1 @@
+{"command":"env -i PATH=... python3 scripts/remote-mcp/operator_connectivity.py --mode live --json-output raw/remote-mcp-connectivity-preflight/2026-04-20.live-missing-config.json","exit_code":2,"expected_exit_code":2}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "mode": "live",
+  "ready": false,
+  "message_path": "som.ping",
+  "checks": [
+    {
+      "name": "launchd-template-present",
+      "status": "pass",
+      "detail": "launchd/com.hldpro.remote-mcp-monitor.plist"
+    },
+    {
+      "name": "launchd-template-live-mode",
+      "status": "pass",
+      "detail": "template invokes live monitor mode"
+    },
+    {
+      "name": "launchd-installed",
+      "status": "warn",
+      "detail": "not installed in user LaunchAgents"
+    },
+    {
+      "name": "launchd-loaded",
+      "status": "warn",
+      "detail": "not loaded in launchctl"
+    },
+    {
+      "name": "som-ping-request-response",
+      "status": "fail",
+      "detail": "missing live configuration: SOM_MCP_URL, SOM_MCP_TOKEN or SOM_REMOTE_MCP_JWT, CF_ACCESS_CLIENT_ID, CF_ACCESS_CLIENT_SECRET"
+    }
+  ],
+  "missing_live_config": [
+    "SOM_MCP_URL",
+    "SOM_MCP_TOKEN or SOM_REMOTE_MCP_JWT",
+    "CF_ACCESS_CLIENT_ID",
+    "CF_ACCESS_CLIENT_SECRET"
+  ],
+  "missing_monitor_config": [
+    "SOM_REMOTE_MCP_IDENTITY_EMAIL",
+    "SOM_REMOTE_MCP_IDENTITY_SUB",
+    "SOM_REMOTE_MCP_AUDIT_DIR",
+    "SOM_REMOTE_MCP_AUDIT_HMAC_KEY",
+    "SOM_REMOTE_MCP_STDIO_PROOF_COMMAND"
+  ],
+  "warnings": [
+    "launchd-installed",
+    "launchd-loaded"
+  ],
+  "recommended_action": "Configure missing live inputs, install/load launchd if desired, then rerun live preflight."
+}

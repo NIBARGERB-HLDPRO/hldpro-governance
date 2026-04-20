@@ -18,12 +18,13 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Remote MCP launchd live monitor proof | [#378](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/378) | HIGH | 1-2 | Hardens the selected launchd surface to live fail-closed mode, documents production proof steps, and preserves payload-safe launchd render, rehearsal, and missing-config evidence. |
+| Remote MCP operator connectivity e2e preflight | [#380](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/380) | HIGH | 1-2 | Adds a no-secret operator preflight that answers whether this machine can send `som.ping` to Remote MCP and receive a response now, with fixture proof, live fail-closed output, launchd status, and payload-safe evidence. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Remote MCP launchd live monitor proof | 2026-04-20 | Issue [#378](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/378). PR [#379](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/379) hardened the selected launchd surface to run live fail-closed mode directly, documented production proof steps, preserved payload-safe launchd render, rehearsal, and missing-config evidence, ran Local CI and GitHub checks, and closed #378. |
 | Remote MCP live monitor operating-mode proof | 2026-04-20 | Issue [#376](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376). PR [#377](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/377) selected local launchd as the live-authoritative operating mode, kept GitHub Actions as the fixture harness and optional configured-live runner, preserved rehearsal/fail-closed evidence, ran Local CI and GitHub checks, and closed #376. |
 | Remote MCP monitor alert delivery and first recurring evidence | 2026-04-20 | Issue [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374). PR [#375](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/375) added payload-safe alert/report formatting, workflow step-summary and artifact output, first fixture-run evidence, live-missing-config validation, Local CI evidence, and closeout. |
 | Remote MCP recurring live health and audit monitor | 2026-04-20 | Issue [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372). PR [#373](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/373) added the recurring monitor wrapper, scheduled/manual workflow, launchd template, runbook, fixture/live fail-closed validation, Local CI evidence, and closeout. Alert delivery and first recurring evidence continue under issue [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374). |

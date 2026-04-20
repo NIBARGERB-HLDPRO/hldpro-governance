@@ -96,7 +96,7 @@ class SomClient:
     def from_env(cls) -> "SomClient":
         """Build a client from well-known environment variables."""
         base_url = os.environ.get("SOM_MCP_URL", DEFAULT_BASE_URL).rstrip("/")
-        token = os.environ.get("SOM_MCP_TOKEN")
+        token = os.environ.get("SOM_MCP_TOKEN") or os.environ.get("SOM_REMOTE_MCP_JWT")
         return cls(
             SomClientConfig(
                 base_url=base_url,

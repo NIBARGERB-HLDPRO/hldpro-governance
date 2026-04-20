@@ -2,12 +2,12 @@
 
 Last updated: 2026-04-20
 Owner: Operator (`nibargerb`)
-Issue: [hldpro-governance #109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109), recurring monitor [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372), alert evidence [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374), operating mode [#376](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376)
+Issue: [hldpro-governance #109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109), recurring monitor [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372), alert evidence [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374), operating mode [#376](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376), launchd proof [#378](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/378), connectivity preflight [#380](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/380)
 Scope: Governance Remote MCP Bridge contract, proof, and operator procedure.
 
 ## Current Status
 
-Stage A governance standards, Stage B/C downstream HTTP bridge controls, and Stage D live Cloudflare proof are merged. Issue #109 is closed. Recurring operational monitoring is tracked by issue #372 and uses the same Stage D proof runner plus evidence-safety checks. Issue #376 selects local `launchd` as the live-authoritative monitor operating mode; GitHub Actions remains the scheduled fixture harness and an optional configured-live runner.
+Stage A governance standards, Stage B/C downstream HTTP bridge controls, and Stage D live Cloudflare proof are merged. Issue #109 is closed. Recurring operational monitoring is tracked by issue #372 and uses the same Stage D proof runner plus evidence-safety checks. Issue #376 selects local `launchd` as the live-authoritative monitor operating mode; GitHub Actions remains the scheduled fixture harness and an optional configured-live runner. Issue #380 adds the operator connectivity preflight for the immediate question: can this machine send `som.ping` to Remote MCP and receive a response now?
 
 ## Approved Remote Surface
 
@@ -33,6 +33,7 @@ The Stage A client reads:
 |---|---|
 | `SOM_MCP_URL` | HTTPS URL for the bridge endpoint. Defaults to `http://localhost:8080` for local dev. |
 | `SOM_MCP_TOKEN` | Inner bridge bearer/JWT token. |
+| `SOM_REMOTE_MCP_JWT` | Alternate inner bridge bearer/JWT token used when `SOM_MCP_TOKEN` is absent. |
 | `CF_ACCESS_CLIENT_ID` | Cloudflare Access service-token client id. |
 | `CF_ACCESS_CLIENT_SECRET` | Cloudflare Access service-token client secret. |
 | `SOM_MCP_USER_AGENT` | Optional client user agent for Cloudflare edge policies that block default Python transports. |
@@ -50,6 +51,42 @@ python3 scripts/som-client/som_client.py
 ```
 
 The client deliberately does not expose `lam.scrub_pii`.
+
+## Operator Connectivity Preflight
+
+Use the connectivity preflight when the operator question is "does Remote MCP request/response work from this machine right now?" The preflight sends only `som.ping`, emits JSON, reports launchd template/install/load status without reading credential values, and fails closed before a live request when required live configuration is absent.
+
+Fixture request/response proof:
+
+```bash
+python3 scripts/remote-mcp/operator_connectivity.py \
+  --mode fixture \
+  --json-output raw/remote-mcp-connectivity-preflight/YYYY-MM-DD.fixture-connectivity.json
+```
+
+Live operator proof:
+
+```bash
+export SOM_MCP_URL="https://som-mcp.example.com"
+export SOM_MCP_TOKEN="<inner-jwt>"
+# Or use SOM_REMOTE_MCP_JWT when SOM_MCP_TOKEN is intentionally absent.
+export CF_ACCESS_CLIENT_ID="<access-client-id>"
+export CF_ACCESS_CLIENT_SECRET="<access-client-secret>"
+
+python3 scripts/remote-mcp/operator_connectivity.py \
+  --mode live \
+  --json-output raw/remote-mcp-connectivity-preflight/YYYY-MM-DD.live-connectivity.json
+```
+
+Interpretation:
+
+- `ready: true` in live mode means this machine sent a `som.ping` Remote MCP request through the thin client and received a response.
+- `ready: true` in fixture mode means the preflight harness and thin client path work locally; run live mode to prove current-machine Remote MCP readiness.
+- Exit `2` in live mode means required setup names are missing, so no live Remote MCP request was sent.
+- `launchd-installed` and `launchd-loaded` warnings do not block the one-shot request/response proof; they only say the recurring monitor is not installed or loaded in this user session.
+- MCP here is request/response. Inbound push messaging to the operator remains a separate relay capability and must not be inferred from a successful `som.ping`.
+
+Preserved preflight evidence must contain missing configuration names only, never token values, Cloudflare Access material, bearer headers, JWT fragments, raw PII, or raw MCP payloads.
 
 ## Stage D Proof Runner
 
