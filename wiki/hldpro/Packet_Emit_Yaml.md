@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **emit_packet()** (3 connections) — `scripts/packet/emit.py`
-- **emit.py** (2 connections) — `scripts/packet/emit.py`
-- **main()** (2 connections) — `scripts/packet/emit.py`
-- **Emit a packet YAML file.     Returns: path to written file** (1 connections) — `scripts/packet/emit.py`
+- **emit_packet()** (3 connections) — `hldpro-governance/scripts/packet/emit.py`
+- **emit.py** (2 connections) — `hldpro-governance/scripts/packet/emit.py`
+- **main()** (2 connections) — `hldpro-governance/scripts/packet/emit.py`
+- **Emit a packet YAML file.     Returns: path to written file** (1 connections) — `hldpro-governance/scripts/packet/emit.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `scripts/packet/emit.py`
+- `hldpro-governance/scripts/packet/emit.py`
 
 ## Audit Trail
 
