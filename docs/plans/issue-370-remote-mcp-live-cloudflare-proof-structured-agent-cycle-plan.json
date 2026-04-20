@@ -1,0 +1,117 @@
+{
+  "session_id": "session-20260419-issue-370-remote-mcp-live-cloudflare-proof",
+  "issue_number": 370,
+  "objective": "Record final live Cloudflare Access Stage D proof evidence for Remote MCP Bridge epic #109 and add the operator controls needed for stdlib Python proof traffic through the Cloudflare edge.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify only the governance Stage D proof runner, thin client user-agent support, Remote MCP runbook, issue #370 planning/validation/closeout artifacts, execution scope, and non-secret live audit evidence.",
+    "Use downstream local-ai-machine PRs for origin auth fixes; do not vendor downstream code into governance.",
+    "Do not commit Cloudflare credentials, service-token secrets, JWTs, private HMAC keys, or raw sensitive payloads."
+  ],
+  "out_of_scope": [
+    "Changing unrelated governance standards or registries.",
+    "Changing unrelated Cloudflare applications, tunnels, or policies.",
+    "Keeping temporary Cloudflare service tokens after proof.",
+    "Closing epic #109 before final evidence and CI pass."
+  ],
+  "research_summary": "Cloudflare Access live proof required observing actual edge behavior. Python's default user agent hit Cloudflare edge blocking, local resolver propagation required a curl-style resolve override, Access forwarded its own assertion before the inner bearer, and service-token traffic forwarded partial identity headers. Governance now documents proof-client controls while downstream local-ai-machine PRs #488, #490, and #492 handle origin auth semantics. The final proof passed through remote-mcp.hldpro.com with strict audit verification.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/370",
+    "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/pull/488",
+    "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/pull/490",
+    "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/pull/492",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "scripts/remote-mcp/stage_d_smoke.py"
+  ],
+  "sprints": [
+    {
+      "name": "Live Cloudflare proof closeout",
+      "goal": "Pass every Stage D AC against the Cloudflare-protected Remote MCP route and preserve non-secret evidence.",
+      "tasks": [
+        "Add user-agent support to Stage D proof runner and thin client.",
+        "Add resolver override support to Stage D proof runner for DNS propagation parity with curl --resolve.",
+        "Document live proof environment controls in the service runbook.",
+        "Create issue #370 planning, execution-scope, validation, and closeout artifacts.",
+        "Run final Stage D proof through Cloudflare Access with a temporary service token.",
+        "Strictly verify live audit evidence and preserve JSONL plus manifest files.",
+        "Confirm temporary Cloudflare service token removal and deletion."
+      ],
+      "acceptance_criteria": [
+        "Authenticated ping passes through Cloudflare Access plus inner token.",
+        "Anonymous request is rejected by Cloudflare or bridge.",
+        "Spoofed origin is rejected before dispatch and audited.",
+        "PII-bearing handoff is rejected before dispatch and audited without raw PII.",
+        "Remote lam.scrub_pii call is rejected.",
+        "Audit verifier passes valid live evidence.",
+        "Tamper-negative audit check passes.",
+        "Local stdio MCP import proof passes after tunnel proof.",
+        "Temporary Cloudflare Access service token is removed from policy and deleted.",
+        "Evidence contains no raw PII, JWTs, service-token secrets, Cloudflare API tokens, or private HMAC keys."
+      ],
+      "file_paths": [
+        "docs/plans/issue-370-remote-mcp-live-cloudflare-proof-pdcar.md",
+        "docs/plans/issue-370-remote-mcp-live-cloudflare-proof-structured-agent-cycle-plan.json",
+        "docs/runbooks/remote-mcp-bridge.md",
+        "graphify-out/hldpro-governance/",
+        "raw/execution-scopes/2026-04-19-issue-370-remote-mcp-live-cloudflare-proof-implementation.json",
+        "raw/validation/2026-04-19-issue-370-remote-mcp-live-cloudflare-proof.md",
+        "raw/closeouts/2026-04-19-issue-370-remote-mcp-live-cloudflare-proof.md",
+        "raw/remote-mcp-live-cloudflare-e2e/2026-04-20.jsonl",
+        "raw/remote-mcp-live-cloudflare-e2e/2026-04-20.manifest.json",
+        "scripts/remote-mcp/stage_d_smoke.py",
+        "scripts/remote-mcp/tests/test_stage_d_smoke.py",
+        "scripts/som-client/README.md",
+        "scripts/som-client/som_client.py",
+        "scripts/som-client/tests/test_som_client.py",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-self-review",
+      "role": "secret and scope review",
+      "focus": "Confirm live evidence and validation notes are payload-safe and scoped to issue #370.",
+      "status": "accepted",
+      "summary": "The preserved audit artifacts contain audit metadata and HMAC digests only. Temporary Cloudflare service-token values, JWTs, private HMAC keys, and API tokens were not committed.",
+      "evidence": [
+        "raw/validation/2026-04-19-issue-370-remote-mcp-live-cloudflare-proof.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not_requested",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This slice adds bounded proof-runner controls and records deterministic live evidence; downstream auth changes were separately tested and merged.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/pull/488",
+      "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/pull/490",
+      "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/pull/492"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_complete",
+    "approved_scope_summary": "Issue #370 may add proof-runner/client controls, runbook updates, live proof evidence, and governance closeout artifacts for epic #109.",
+    "next_execution_step": "Run governance validation, publish PR, merge if green, and close epic #109 after final evidence is on main.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any committed evidence contains a secret or raw sensitive payload, remove it, rotate affected credentials, and rerun proof.",
+    "If Cloudflare temporary token cleanup fails, do not merge until policy and token inventory are restored.",
+    "If live Stage D proof fails, do not close #109; record the issue-backed blocker instead."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #370 child evidence issue",
+    "issue #109 governing epic",
+    "local-ai-machine PR #488",
+    "local-ai-machine PR #490",
+    "local-ai-machine PR #492"
+  ],
+  "approved_at": "2026-04-19T23:59:00Z"
+}

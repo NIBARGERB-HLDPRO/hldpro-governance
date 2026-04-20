@@ -8,6 +8,7 @@
 - `SOM_MCP_TOKEN` (required for `Authorization: Bearer ...` in this stage)
 - `CF_ACCESS_CLIENT_ID` (optional)
 - `CF_ACCESS_CLIENT_SECRET` (optional)
+- `SOM_MCP_USER_AGENT` (optional)
 - `SOM_REMOTE_MCP_AUDIT_HMAC_KEY` (used by `verify_audit.py` when required)
 
 ## Usage
@@ -30,6 +31,7 @@ pkt = client.handoff(
 
 - `Authorization: Bearer <SOM_MCP_TOKEN>`
 - `Cf-Access-Client-Id` and `Cf-Access-Client-Secret` when both are set
+- `User-Agent` when `SOM_MCP_USER_AGENT` is set
 
 ## Error behavior
 

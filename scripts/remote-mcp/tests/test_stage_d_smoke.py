@@ -14,6 +14,7 @@ from pathlib import Path
 SCRIPT = Path(__file__).resolve().parents[1] / "stage_d_smoke.py"
 sys.path.insert(0, str(SCRIPT.parent))
 import verify_audit  # noqa: E402
+import stage_d_smoke  # noqa: E402
 
 
 def test_stage_d_fixture_e2e_passes(tmp_path: Path) -> None:
@@ -68,3 +69,46 @@ def test_stage_d_live_mode_fails_fast_without_required_env() -> None:
     assert result.returncode == 2
     assert "missing required live proof configuration" in result.stderr
     assert "SOM_REMOTE_MCP_AUDIT_DIR or --audit-dir" in result.stderr
+
+
+def test_stage_d_request_adds_configured_user_agent(monkeypatch, tmp_path: Path) -> None:
+    seen_headers = {}
+
+    class FakeResponse:
+        status = 200
+
+        def read(self) -> bytes:
+            return b'{"status":"ok"}'
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+    def fake_urlopen(request, timeout=0.0):
+        seen_headers.update({k.lower(): v for k, v in request.header_items()})
+        return FakeResponse()
+
+    monkeypatch.setattr(stage_d_smoke.urllib.request, "urlopen", fake_urlopen)
+    config = stage_d_smoke.StageDConfig(
+        base_url="https://mcp.example.com",
+        proof_path="/mcp/call",
+        token="token",
+        identity_email="operator@example.invalid",
+        identity_sub="operator",
+        cf_access_client_id="cf-id",
+        cf_access_client_secret="cf-secret",
+        user_agent="hldpro-stage-d-test/1",
+        resolve_ip="",
+        audit_dir=tmp_path,
+        audit_hmac_key="audit-key",
+        timeout_sec=1.0,
+        require_audit=False,
+        stdio_proof_command=None,
+    )
+
+    status, _ = stage_d_smoke._request(config, tool="som.ping", arguments={})
+
+    assert status == 200
+    assert seen_headers["user-agent"] == "hldpro-stage-d-test/1"
