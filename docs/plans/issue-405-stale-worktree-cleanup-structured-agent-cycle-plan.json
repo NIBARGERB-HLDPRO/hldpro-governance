@@ -1,0 +1,103 @@
+{
+  "session_id": "session-20260420-issue-405-stale-worktree-cleanup",
+  "issue_number": 405,
+  "objective": "Clean safe stale local hldpro-governance linked worktrees after lane-guard rollout without touching active lanes.",
+  "tier": 1,
+  "scope_boundary": [
+    "Record live local worktree, remote branch, and GitHub issue state.",
+    "Remove only clean linked worktrees whose remote branch is gone and whose governing issue is closed.",
+    "Preserve primary, dirty, open-issue, current, and live-remote worktrees.",
+    "Update issue-specific planning, validation, closeout, backlog, and progress mirrors."
+  ],
+  "out_of_scope": [
+    "Mutating issue #403 or any open backlog lane.",
+    "Cleaning dirty worktrees.",
+    "Removing the primary hldpro-governance worktree.",
+    "Changing GitHub org or repository settings.",
+    "Starting the next backlog implementation issue."
+  ],
+  "research_summary": "Issue #400 verified the lane guard and recorded stale worktree candidates. This slice applies the cleanup with a fail-closed rule that keeps active and ambiguous lanes intact.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/400",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/405",
+    "raw/validation/issue-400-runtime-lane-guard-proof/worktree-hygiene-audit.md"
+  ],
+  "sprints": [
+    {
+      "name": "Stale linked-worktree cleanup",
+      "goal": "Remove only closed/gone/clean linked worktrees while preserving active lanes.",
+      "tasks": [
+        "Create issue-backed PDCAR, structured plan, and lane-claimed execution scope.",
+        "Capture before-cleanup decision evidence.",
+        "Run safe `git worktree remove` commands for approved candidates.",
+        "Record after-cleanup worktree state.",
+        "Update backlog/progress mirrors and closeout evidence.",
+        "Run local and GitHub validation before merge."
+      ],
+      "acceptance_criteria": [
+        "Decision matrix documents keep/remove reasoning for every governance worktree.",
+        "Primary worktree is preserved.",
+        "Dirty #359 is preserved.",
+        "Open/dirty #403 is preserved.",
+        "Current #405 worktree is preserved.",
+        "Only clean closed/gone linked worktrees are removed.",
+        "Execution-scope and Local CI validation pass.",
+        "GitHub checks pass before merge."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md",
+        "docs/plans/issue-405-stale-worktree-cleanup-pdcar.md",
+        "docs/plans/issue-405-stale-worktree-cleanup-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-20-issue-405-stale-worktree-cleanup-implementation.json",
+        "raw/validation/issue-405-stale-worktree-cleanup/",
+        "raw/closeouts/2026-04-20-issue-405-stale-worktree-cleanup.md",
+        "graphify-out/",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-local-worktree-cleanup-audit",
+      "role": "cleanup safety reviewer",
+      "focus": "Avoid cross-session lane deletion by requiring clean, closed, gone, linked worktree evidence.",
+      "status": "accepted_with_followup",
+      "summary": "The cleanup rule is intentionally conservative and preserves dirty, open, primary, current, and live-remote worktrees.",
+      "evidence": [
+        "raw/validation/issue-405-stale-worktree-cleanup/cleanup-decision-matrix.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "codex-cleanup-negative-control",
+    "model_family": "codex",
+    "status": "accepted_with_followup",
+    "summary": "No coding subagent could be spawned because the agent pool was already at its configured limit; cleanup was reviewed locally against live status evidence.",
+    "evidence": [
+      "raw/validation/issue-405-stale-worktree-cleanup/after-cleanup-worktrees.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #405 may update planning/scope/validation/closeout artifacts, backlog/progress mirrors, generated closeout graph/wiki artifacts, and local linked worktree state for approved cleanup candidates only.",
+    "next_execution_step": "Remove approved clean stale linked worktrees, record after evidence, and run validation.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "Do not remove the primary hldpro-governance worktree.",
+    "Do not remove dirty worktrees.",
+    "Do not remove open-issue worktrees.",
+    "Do not remove worktrees with live remote branches.",
+    "Do not start any backlog implementation issue from this lane."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #405",
+    "issue #400 cleanup recommendation"
+  ],
+  "approved_at": "2026-04-20T15:55:00Z"
+}
