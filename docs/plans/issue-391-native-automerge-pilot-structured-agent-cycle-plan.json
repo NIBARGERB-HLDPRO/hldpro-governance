@@ -1,0 +1,101 @@
+{
+  "session_id": "session-20260420-issue-391-native-automerge-pilot",
+  "issue_number": 391,
+  "objective": "Run a first governed native GitHub auto-merge pilot without weakening protected branch checks, rulesets, reviews, CODEOWNERS, or rollback controls.",
+  "tier": 1,
+  "scope_boundary": [
+    "Capture pre-change repository settings, repo rulesets, org rulesets, and branch-protection evidence.",
+    "Enable only the native GitHub repository auto-merge setting for hldpro-governance.",
+    "Open a pilot PR with explicit merge-when-green opt-in and enable native PR auto-merge after required checks are queued.",
+    "Record dry-run evaluator evidence and rollback/fix-forward notes."
+  ],
+  "out_of_scope": [
+    "Deploying a custom merge bot.",
+    "Weakening rulesets, required checks, review requirements, CODEOWNERS, Local CI Gate, or workflow definitions.",
+    "Expanding auto-merge to other repositories before pilot evidence is recorded.",
+    "Using admin bypass or manual merge as pilot success evidence."
+  ],
+  "research_summary": "Issue #386 established the accepted policy: automerge is allowed only as a native GitHub accelerator after branch protection and required checks have already accepted a PR. Pre-change inspection for hldpro-governance shows repository auto-merge disabled, classic branch protection absent, repo ruleset 15241047 requiring Local CI Gate on main, and org ruleset 14715976 protecting main branches. Therefore the pilot can change only allow_auto_merge and must rely on the existing rulesets and PR checks.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/386",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/391",
+    "docs/plans/issue-386-org-automerge-policy-pdcar.md",
+    "scripts/overlord/automerge_policy_check.py",
+    "raw/validation/issue-391-automerge-pilot/prechange-summary.md",
+    "raw/validation/issue-391-automerge-pilot/prechange-repo.json",
+    "raw/validation/issue-391-automerge-pilot/prechange-repo-rulesets.json",
+    "raw/validation/issue-391-automerge-pilot/prechange-org-rulesets.json",
+    "raw/validation/issue-391-automerge-pilot/prechange-branch-protection.json"
+  ],
+  "sprints": [
+    {
+      "name": "Native auto-merge pilot",
+      "goal": "Prove a single hldpro-governance PR can be merged by native GitHub auto-merge after required checks pass.",
+      "tasks": [
+        "Capture pre-change repository and protection snapshots.",
+        "Commit pilot PDCAR, structured plan, execution scope, and validation evidence.",
+        "Create or reuse merge-when-green opt-in label.",
+        "Enable repository allow_auto_merge only.",
+        "Open the pilot PR and add the opt-in label.",
+        "Run local gates and policy evaluator fixtures.",
+        "Enable PR-level native auto-merge and observe GitHub merge result."
+      ],
+      "acceptance_criteria": [
+        "Pre-change snapshots show the rollback baseline.",
+        "No ruleset, required check, review, CODEOWNER, or workflow weakening occurs.",
+        "Local CI Gate and GitHub required checks pass.",
+        "Pilot PR is merged by native GitHub auto-merge, or rollback evidence is recorded."
+      ],
+      "file_paths": [
+        "docs/plans/issue-391-native-automerge-pilot-pdcar.md",
+        "docs/plans/issue-391-native-automerge-pilot-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-20-issue-391-native-automerge-pilot-implementation.json",
+        "raw/validation/issue-391-automerge-pilot/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-local-github-audit",
+      "role": "GitHub Enterprise policy reviewer",
+      "focus": "Verify live repo settings and protection state before enabling native auto-merge.",
+      "status": "accepted",
+      "summary": "Pilot may proceed by changing only allow_auto_merge and relying on existing protected-branch/ruleset checks.",
+      "evidence": [
+        "raw/validation/issue-391-automerge-pilot/prechange-summary.md",
+        "raw/validation/issue-391-automerge-pilot/prechange-repo.json"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "issue-386-policy-acceptance",
+    "model_family": "operator",
+    "status": "accepted",
+    "summary": "The accepted #386 policy authorizes a native GitHub pilot as separate issue-backed work with rollback snapshots.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/386",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/390",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/392"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #391 may capture GitHub settings evidence, enable repository native auto-merge, open one pilot PR, enable PR-level native auto-merge, and record rollback evidence. Rulesets, required checks, review rules, CODEOWNERS, and workflows are out of scope.",
+    "next_execution_step": "Validate local gates, enable repository allow_auto_merge, open the pilot PR, and enable native PR auto-merge after checks are queued.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any step requires weakening required checks, rulesets, reviews, or CODEOWNERS, stop and rollback.",
+    "If native auto-merge cannot be enabled, record the blocker and do not merge manually as pilot evidence.",
+    "If checks fail, do not bypass; fix forward or disable repository auto-merge and remove the opt-in label."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #386 accepted policy",
+    "issue #391"
+  ],
+  "approved_at": "2026-04-20T15:05:00Z"
+}

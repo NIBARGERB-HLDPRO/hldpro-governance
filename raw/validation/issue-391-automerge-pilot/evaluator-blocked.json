@@ -1,0 +1,19 @@
+{
+  "blockers": [
+    "pull request is draft",
+    "pull request is not cleanly mergeable: dirty",
+    "required check not successful: local-ci-gate (failure)",
+    "review threads are not resolved",
+    "blocking label present: hold",
+    "explicit automerge opt-in label missing",
+    "required governance artifact missing: PDCAR"
+  ],
+  "eligible": false,
+  "rollback": [
+    "remove the automerge or merge-when-green label from the PR",
+    "disable the repository auto-merge setting",
+    "disable or remove the automerge workflow entrypoint",
+    "restore the previous ruleset or branch-protection snapshot if a rollout changed enforcement"
+  ],
+  "warnings": []
+}

@@ -1,0 +1,11 @@
+{
+  "blockers": [],
+  "eligible": true,
+  "rollback": [
+    "remove the automerge or merge-when-green label from the PR",
+    "disable the repository auto-merge setting",
+    "disable or remove the automerge workflow entrypoint",
+    "restore the previous ruleset or branch-protection snapshot if a rollout changed enforcement"
+  ],
+  "warnings": []
+}
