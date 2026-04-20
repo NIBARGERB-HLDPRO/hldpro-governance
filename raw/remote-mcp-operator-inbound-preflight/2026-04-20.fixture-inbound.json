@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "mode": "fixture",
+  "ready": true,
+  "receive_path": "hitl-relay-session-inbox",
+  "checks": [
+    {
+      "name": "hitl-relay-queue-contract",
+      "status": "pass",
+      "detail": "using existing HITL relay queue validator"
+    },
+    {
+      "name": "remote-mcp-request-response-separation",
+      "status": "pass",
+      "detail": "inbound receive is separate from som.ping request/response"
+    },
+    {
+      "name": "operator-inbound-session-inbox",
+      "status": "pass",
+      "detail": "fixture operator message reached session inbox"
+    }
+  ],
+  "missing_live_config": [
+    "SOM_OPERATOR_INBOUND_QUEUE_ROOT",
+    "SOM_OPERATOR_INBOUND_SESSION_ID"
+  ],
+  "warnings": [],
+  "received_instruction": {
+    "packet_type": "session_instruction",
+    "packet_id": "81b86192-fa77-538f-991e-3471891ddcd6",
+    "session_id": "codex-issue-382-operator-inbound-fixture",
+    "request_id": "remote-mcp-operator-inbound-382",
+    "response_id": "remote-mcp-operator-inbound-response-382",
+    "action": "details",
+    "target_session_id": "codex-issue-382-operator-inbound-fixture",
+    "audit_packet_types": [
+      "hitl_request",
+      "hitl_response",
+      "normalized_decision",
+      "session_instruction"
+    ]
+  },
+  "recommended_action": "Fixture inbound queue path is ready; configure live inbound queue inputs to prove current-machine receive."
+}

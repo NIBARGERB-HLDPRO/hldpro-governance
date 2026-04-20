@@ -25,7 +25,7 @@
 
 | Feature | Issue | Priority | Notes |
 |---------|-------|----------|-------|
-| Remote MCP operator connectivity e2e preflight | #380 | HIGH | Add a no-secret preflight that answers whether this machine can send `som.ping` to Remote MCP and receive a response now, with fixture proof, live fail-closed output, launchd status, and payload-safe evidence |
+| Remote MCP operator inbound message preflight | #382 | HIGH | Add a no-secret preflight that proves fixture operator-message receive through the HITL relay session inbox and fails closed for live receive until queue root/session inputs are configured |
 | SoM Slice A: codex flag remediation across AIS / HP / LAM / KT | #139 | MEDIUM | Epic: model-pin compliance across governed repos |
 | SoM Slice B: AGENTS.md → agents/*.md migration + model pins | #140 | MEDIUM | Follow-on to Slice A |
 
@@ -35,12 +35,13 @@
 |------|-------|--------|-------|
 | Weekly overlord sweep write-back to wiki/index.md | — | ACTIVE / AWAITING NEXT RUN | Workflow and graph/index write-back path are wired; last committed index remains the 2026-04-09 bootstrap until the next scheduled or manual sweep refreshes generated counts |
 | LAM env-var-docs contract debt: SOM_* variables unclassified | #145 | OPEN | local-ai-machine env vars need classification |
-| Remote MCP operator connectivity e2e preflight | #380 | IN_PROGRESS | Adds fixture/live operator preflight output for Remote MCP request/response readiness plus no-secret launchd status. |
+| Remote MCP operator inbound message preflight | #382 | IN_PROGRESS | Adds fixture/live operator-message receive readiness output for the HITL relay session inbox path. |
 
 ## Done
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Remote MCP operator connectivity e2e preflight | #380 | 2026-04-20 | PR #381 added a no-secret `som.ping` request/response preflight, fixture and current-machine fail-closed evidence, launchd status reporting, runbook guidance, Local CI, and GitHub checks. Merge commit `f32fed721607d4530253fe1cf370f4ab74bbf70e` closed #380. |
 | Remote MCP launchd live monitor proof | #378 | 2026-04-20 | PR #379 hardened the selected launchd surface to run live fail-closed mode directly, documented production proof steps, preserved payload-safe launchd render, rehearsal, and missing-config evidence, ran Local CI and GitHub checks, and closed #378. |
 | Remote MCP live monitor operating-mode proof | #376 | 2026-04-20 | PR #377 selected local launchd as the live-authoritative operating mode, kept GitHub Actions as the fixture harness and optional configured-live runner, preserved rehearsal/fail-closed evidence, ran Local CI and GitHub checks, and closed #376. |
 | Remote MCP monitor alert delivery and first recurring evidence | #374 | 2026-04-20 | PR #375 added payload-safe alert/report formatting, workflow step-summary and artifact output, first fixture-run evidence, live-missing-config validation, Local CI evidence, and closeout. |

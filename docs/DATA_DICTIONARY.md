@@ -251,6 +251,35 @@ Contract:
 
 ---
 
+### Remote MCP Operator Inbound Preflight
+**Generator:** `scripts/remote-mcp/operator_inbound_preflight.py`
+**Storage:** `raw/remote-mcp-operator-inbound-preflight/*.json`
+**Issue:** #382
+
+Preflight object fields:
+| Field | Type | Description |
+|-------|------|-------------|
+| `schema_version` | integer | Preflight schema version, currently `1` |
+| `mode` | enum | `fixture` or `live` |
+| `ready` | boolean | True only when the receive-path checks pass |
+| `receive_path` | string | Receive path being proved, currently `hitl-relay-session-inbox` |
+| `checks` | array | Queue contract, request/response separation, and session-inbox receive checks |
+| `missing_live_config` | array | Missing live queue/session configuration names, never values |
+| `warnings` | array | Non-blocking check names |
+| `received_instruction` | object | Payload-safe summary of the received `session_instruction` |
+| `recommended_action` | string | Payload-safe operator next action |
+
+The `received_instruction` summary may contain packet id, packet type, session id, request id, response id, action, target session id, and audit packet types. It must not contain raw message body text.
+
+Contract:
+- Fixture mode uses `scripts/orchestrator/hitl_relay_queue.py` to build a valid request, process a deterministic operator response, and prove a validated `session_instruction` reaches `session-inbox`.
+- Live mode requires `SOM_OPERATOR_INBOUND_QUEUE_ROOT` and `SOM_OPERATOR_INBOUND_SESSION_ID`.
+- Live mode exits `2` before inspecting receive state when required live configuration is missing.
+- Live mode exits `1` when the queue is configured but no validated instruction for the configured session is present.
+- Output must not include bearer-token material, JWT fragments, Cloudflare Access header material, raw SSNs, credential values, or raw message bodies.
+
+---
+
 ### HITL Relay Queue
 **Generator:** `scripts/orchestrator/hitl_relay_queue.py`
 **Storage:** `raw/hitl-relay/queue/`
