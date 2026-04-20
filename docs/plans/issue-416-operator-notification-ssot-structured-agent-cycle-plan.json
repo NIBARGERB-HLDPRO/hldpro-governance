@@ -1,0 +1,109 @@
+{
+  "session_id": "session-20260420-issue-416-operator-notification-ssot",
+  "issue_number": 416,
+  "objective": "Propagate operator notification and Remote MCP SSOT keys from the gitignored governance vault into generated local-ai-machine env files without executing vault values.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify the governance env bootstrap, ENV registry, issue #416 planning/validation/closeout artifacts, and focused contract tests.",
+    "Regenerate local-ai-machine .env only as an ignored local artifact after code validation.",
+    "Do not commit .env.shared, generated .env files, phone numbers, token values, JWTs, HMAC keys, or Cloudflare Access secrets."
+  ],
+  "out_of_scope": [
+    "Implementing a new Slack or SMS send adapter.",
+    "Changing Remote MCP bridge runtime code.",
+    "Rotating existing Twilio, Slack, Cloudflare, or Remote MCP secrets.",
+    "Editing unrelated sibling worktrees or repos beyond the generated local-ai-machine .env artifact."
+  ],
+  "research_summary": "Repository docs designate hldpro-governance/.env.shared as the gitignored SSOT vault and generated repo-local env files as artifacts. The prior lam bootstrap did not propagate operator notification keys and shell-sourced .env.shared, which can execute command-string values.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/416",
+    "docs/ENV_REGISTRY.md",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "scripts/bootstrap-repo-env.sh",
+    "CLAUDE.md",
+    "STANDARDS.md"
+  ],
+  "sprints": [
+    {
+      "name": "LAM notification SSOT bootstrap",
+      "goal": "Make local-ai-machine env generation consume operator notification SSOT keys safely and completely.",
+      "tasks": [
+        "Update bootstrap vault loading to parse .env.shared as data and export shell-safe values.",
+        "Emit Remote MCP and operator notification keys from the lam target with optional defaults where appropriate.",
+        "Document the new local-ai-machine key mappings in the env registry.",
+        "Add a static contract test for safe parsing and required key propagation.",
+        "Validate dry-run output and regenerated local-ai-machine .env without printing values.",
+        "Open PR, merge after checks pass, and close issue #416."
+      ],
+      "acceptance_criteria": [
+        "The bootstrap script no longer contains `source \"$SHARED_ENV\"` or equivalent shell execution of the vault.",
+        "The lam target emits Remote MCP, Cloudflare Access service token, operator inbound queue, Slack routing, Twilio provider, and operator SMS destination keys.",
+        "Missing optional notification keys do not produce `set -u` failures.",
+        "ENV registry documents the propagated local-ai-machine keys.",
+        "Validation proves required key names are present without printing values.",
+        "No vault values or generated env files are committed.",
+        "Closed-issue backlog drift surfaced by final CI is reconciled without reopening or editing unrelated issue scope.",
+        "Final AC: GitHub PR checks pass before closeout."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/ENV_REGISTRY.md",
+        "docs/plans/issue-416-operator-notification-ssot-pdcar.md",
+        "docs/plans/issue-416-operator-notification-ssot-structured-agent-cycle-plan.json",
+        "graphify-out/GRAPH_REPORT.md",
+        "graphify-out/graph.json",
+        "graphify-out/hldpro-governance/",
+        "raw/execution-scopes/2026-04-20-issue-416-operator-notification-ssot-implementation.json",
+        "raw/validation/2026-04-20-issue-416-operator-notification-ssot.md",
+        "raw/closeouts/2026-04-20-issue-416-operator-notification-ssot.md",
+        "scripts/bootstrap-repo-env.sh",
+        "scripts/test_bootstrap_repo_env_contract.py",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-local-analysis",
+      "role": "SSOT bootstrap reviewer",
+      "focus": "Confirm .env.shared is parsed as data and LAM notification keys are emitted without committing or printing secret values.",
+      "status": "accepted",
+      "summary": "Accepted a scoped bootstrap and registry change with no runtime bridge modifications and no committed local vault artifacts.",
+      "evidence": [
+        "scripts/bootstrap-repo-env.sh",
+        "docs/ENV_REGISTRY.md",
+        "scripts/test_bootstrap_repo_env_contract.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "codex-spark-qa-agent",
+    "model_family": "openai",
+    "status": "accepted_with_followup",
+    "summary": "Fresh QA review is requested for the final diff and validation set; local acceptance is conditioned on no findings or resolved findings.",
+    "evidence": [
+      "subagent:019dac08-5092-74f2-983d-eb558a573e8e"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #416 may update the governance env bootstrap, ENV registry, focused tests, and issue planning/validation/closeout artifacts; generated local-ai-machine env is local-only.",
+    "next_execution_step": "Validate the bootstrap contract, regenerate local-ai-machine env as an ignored artifact, open PR, merge after checks pass, and close issue #416.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any command output or artifact contains vault values, remove or redact it before commit and rerun validation.",
+    "If Slack or SMS source credentials are absent from .env.shared, keep generated keys empty and route provider setup to a follow-up issue.",
+    "If the change requires local-ai-machine runtime code edits, stop and create a separate LAM issue/lane."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #416",
+    "codex-local-analysis"
+  ],
+  "approved_at": "2026-04-20T17:55:01Z"
+}

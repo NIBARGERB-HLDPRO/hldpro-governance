@@ -19,7 +19,7 @@ bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh hp-stagi
 bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh hp-worktree \
   ~/Developer/HLDPRO/HealthcarePlatform/.claude/worktrees/<slug>/backend/.env.local
 
-# Dry-run (print without writing)
+# Dry-run (redacted preview without writing)
 DRY_RUN=1 bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh hp-staging
 ```
 
@@ -108,6 +108,9 @@ DRY_RUN=1 bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.s
 | `CF_ACCESS_CLIENT_ID` / `CF_ACCESS_CLIENT_SECRET` | same | Cloudflare Access service-token client credentials |
 | `CF_ACCESS_SERVICE_TOKEN_ID` / `CF_ACCESS_SERVICE_TOKEN_NAME` | same | Service-token inventory metadata; not a substitute for the secret |
 | `SOM_OPERATOR_INBOUND_QUEUE_ROOT` / `SOM_OPERATOR_INBOUND_SESSION_ID` | same | HITL relay receive preflight queue root and target session id |
+| `SLACK_BOT_USER_OAUTH_TOKEN` / `SLACK_CODEX_CHANNEL_ID` / `SLACK_CHANNEL_ID` / `SLACK_E2E_CHANNEL_ID` | same | Operator notification and HITL Slack routing for local-ai-machine tooling |
+| `TWILIO_ACCOUNT_SID` / `TWILIO_AUTH_TOKEN` / `TWILIO_API_SID` / `TWILIO_SECONDARY_AUTH_TOKEN` | same | SMS fallback provider credentials for operator notification routing |
+| `TWILIO_TEST_CONSUMER_NUMBER` / `OPERATOR_SMS_PHONE` / `SOM_OPERATOR_SMS_PHONE` | same | Operator SMS destination values for tests and SoM/HITL notification routing |
 
 ### knocktracker
 

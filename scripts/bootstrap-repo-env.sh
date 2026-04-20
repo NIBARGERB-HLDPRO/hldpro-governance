@@ -14,7 +14,7 @@
 #   knocktracker    knocktracker/.env.local  (default)
 #   governance      hldpro-governance/.env.local  (default)
 #
-# Dry-run: set DRY_RUN=1 to print the output without writing.
+# Dry-run: set DRY_RUN=1 to print a redacted output preview without writing.
 #
 # Examples:
 #   bootstrap-repo-env.sh hp-staging
@@ -25,19 +25,52 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 GOV_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-SHARED_ENV="$GOV_ROOT/.env.shared"
-HLDPRO_ROOT="$(cd "$GOV_ROOT/.." && pwd)"
+
+PRIMARY_GOV_ROOT="$GOV_ROOT"
+if [[ ! -f "$PRIMARY_GOV_ROOT/.env.shared" ]]; then
+  SEARCH_ROOT="$GOV_ROOT"
+  while [[ "$SEARCH_ROOT" != "/" ]]; do
+    if [[ "$(basename "$SEARCH_ROOT")" == "hldpro-governance" && -f "$SEARCH_ROOT/.env.shared" ]]; then
+      PRIMARY_GOV_ROOT="$SEARCH_ROOT"
+      break
+    fi
+    SEARCH_ROOT="$(dirname "$SEARCH_ROOT")"
+  done
+fi
+
+SHARED_ENV="$PRIMARY_GOV_ROOT/.env.shared"
+HLDPRO_ROOT="$(cd "$PRIMARY_GOV_ROOT/.." && pwd)"
 
 if [[ ! -f "$SHARED_ENV" ]]; then
-  echo "ERROR: $SHARED_ENV not found. Run from hldpro-governance or check path." >&2
+  echo "ERROR: .env.shared not found in this checkout or a parent hldpro-governance root." >&2
   exit 1
 fi
 
-# Load all vars from .env.shared into environment
-set -a
-# shellcheck disable=SC1090
-source "$SHARED_ENV"
-set +a
+# Load all vars from .env.shared into environment without executing values.
+# Some vault values are command strings with spaces; treating the vault as a
+# shell script can accidentally execute those strings during bootstrap.
+eval "$(
+  python3 - "$SHARED_ENV" <<'PY'
+import re
+import shlex
+import sys
+from pathlib import Path
+
+env_path = Path(sys.argv[1])
+for raw in env_path.read_text(encoding="utf-8", errors="ignore").splitlines():
+    line = raw.strip()
+    if not line or line.startswith("#") or "=" not in line:
+        continue
+    key, value = line.split("=", 1)
+    key = key.strip()
+    if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", key):
+        continue
+    value = value.strip()
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
+        value = value[1:-1]
+    print(f"export {key}={shlex.quote(value)}")
+PY
+)"
 
 REPO="${1:-}"
 TARGET="${2:-}"
@@ -53,7 +86,19 @@ write_env() {
   local content="$2"
   if [[ "${DRY_RUN:-0}" == "1" ]]; then
     echo "=== DRY RUN: would write to $target ==="
-    echo "$content"
+    while IFS= read -r line; do
+      if [[ "$line" =~ ^[A-Za-z_][A-Za-z0-9_]*= ]]; then
+        local key="${line%%=*}"
+        local value="${line#*=}"
+        if [[ -n "$value" ]]; then
+          printf '%s=<redacted>\n' "$key"
+        else
+          printf '%s=\n' "$key"
+        fi
+      else
+        printf '%s\n' "$line"
+      fi
+    done <<< "$content"
   else
     mkdir -p "$(dirname "$target")"
     printf '%s\n' "$content" > "$target"
@@ -323,7 +368,38 @@ CLOUDFLARE_TUNNEL_ID=${CLOUDFLARE_TUNNEL_ID}
 
 # Cloudflare Access JWT validation (defense-in-depth)
 CF_TEAM_DOMAIN=${CF_TEAM_DOMAIN}
-CF_ACCESS_AUD_TAG=${CF_ACCESS_AUD_TAG}"
+CF_ACCESS_AUD_TAG=${CF_ACCESS_AUD_TAG}
+
+# --- Remote MCP ---
+SOM_MCP_URL=${SOM_MCP_URL:-}
+SOM_MCP_TOKEN=${SOM_MCP_TOKEN:-}
+SOM_REMOTE_MCP_JWT=${SOM_REMOTE_MCP_JWT:-}
+SOM_MCP_PROTOCOL=${SOM_MCP_PROTOCOL:-}
+SOM_MCP_CALL_PATH=${SOM_MCP_CALL_PATH:-}
+SOM_MCP_USER_AGENT=${SOM_MCP_USER_AGENT:-}
+SOM_REMOTE_MCP_AUTH_HMAC_KEY=${SOM_REMOTE_MCP_AUTH_HMAC_KEY:-}
+SOM_REMOTE_MCP_AUDIT_HMAC_KEY=${SOM_REMOTE_MCP_AUDIT_HMAC_KEY:-}
+SOM_REMOTE_MCP_AUDIENCE=${SOM_REMOTE_MCP_AUDIENCE:-}
+SOM_REMOTE_MCP_ROTATION_VERSION=${SOM_REMOTE_MCP_ROTATION_VERSION:-}
+CF_ACCESS_CLIENT_ID=${CF_ACCESS_CLIENT_ID:-}
+CF_ACCESS_CLIENT_SECRET=${CF_ACCESS_CLIENT_SECRET:-}
+CF_ACCESS_SERVICE_TOKEN_ID=${CF_ACCESS_SERVICE_TOKEN_ID:-}
+CF_ACCESS_SERVICE_TOKEN_NAME=${CF_ACCESS_SERVICE_TOKEN_NAME:-}
+SOM_OPERATOR_INBOUND_QUEUE_ROOT=${SOM_OPERATOR_INBOUND_QUEUE_ROOT:-}
+SOM_OPERATOR_INBOUND_SESSION_ID=${SOM_OPERATOR_INBOUND_SESSION_ID:-}
+
+# --- Operator notification routing ---
+SLACK_BOT_USER_OAUTH_TOKEN=${SLACK_BOT_USER_OAUTH_TOKEN:-}
+SLACK_CODEX_CHANNEL_ID=${SLACK_CODEX_CHANNEL_ID:-}
+SLACK_CHANNEL_ID=${SLACK_CHANNEL_ID:-}
+SLACK_E2E_CHANNEL_ID=${SLACK_E2E_CHANNEL_ID:-}
+TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID:-}
+TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN:-}
+TWILIO_API_SID=${TWILIO_API_SID:-}
+TWILIO_SECONDARY_AUTH_TOKEN=${TWILIO_SECONDARY_AUTH_TOKEN:-}
+TWILIO_TEST_CONSUMER_NUMBER=${TWILIO_TEST_CONSUMER_NUMBER:-}
+OPERATOR_SMS_PHONE=${OPERATOR_SMS_PHONE:-}
+SOM_OPERATOR_SMS_PHONE=${SOM_OPERATOR_SMS_PHONE:-}"
     ;;
 
   knocktracker)
