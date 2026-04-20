@@ -78,6 +78,8 @@ class SomClientConfig:
     cf_access_client_id: Optional[str] = None
     cf_access_client_secret: Optional[str] = None
     token_refresher: Optional[Callable[[], str]] = None
+    protocol: str = "jsonrpc"
+    call_path: str = "mcp"
     timeout_sec: float = 8.0
     max_retries: int = 3
     backoff_base_sec: float = 0.25
@@ -103,6 +105,8 @@ class SomClient:
                 bearer_token=token,
                 cf_access_client_id=os.environ.get("CF_ACCESS_CLIENT_ID"),
                 cf_access_client_secret=os.environ.get("CF_ACCESS_CLIENT_SECRET"),
+                protocol=os.environ.get("SOM_MCP_PROTOCOL", "jsonrpc"),
+                call_path=os.environ.get("SOM_MCP_CALL_PATH", "mcp"),
                 user_agent=os.environ.get("SOM_MCP_USER_AGENT"),
             )
         )
@@ -213,6 +217,20 @@ class SomClient:
         raise SomClientError("request could not be completed", tool=tool, attempts=self._config.max_retries + 1)
 
     def _call_tool(self, name: str, args: Dict[str, Any], *, method: str = "POST") -> Dict[str, Any]:
+        if self._config.protocol == "bridge":
+            response = self._request(
+                self._config.call_path,
+                method,
+                {"tool": name, "arguments": args},
+                tool=name,
+            )
+            if response.get("status") != "ok":
+                raise SomClientError("remote bridge returned an error", status_code=200, tool=name)
+            result = response.get("result")
+            if isinstance(result, dict):
+                return result
+            return {"result": result}
+
         body = {
             "jsonrpc": "2.0",
             "id": str(uuid.uuid4()),

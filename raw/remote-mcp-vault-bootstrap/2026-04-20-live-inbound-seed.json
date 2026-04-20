@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-04-20T14:38:27+00:00",
+  "instruction_packet_path": "raw/remote-mcp-vault-bootstrap/live-inbound-queue/dead-letter/9e42c036-623a-566c-9f7c-9b7ca706d5be.json",
+  "instruction_status": "dead_letter",
+  "issue": 385,
+  "queue_root": "raw/remote-mcp-vault-bootstrap/live-inbound-queue",
+  "request_status": "ok",
+  "schema_version": 1,
+  "secret_values_recorded": false,
+  "session_id": "codex-operator-live-20260420"
+}

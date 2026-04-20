@@ -1,0 +1,30 @@
+{
+  "bridge_protocol": "bridge",
+  "generated_at": "2026-04-20T14:36:41+00:00",
+  "issue": 385,
+  "jwt_claim_keys": [
+    "aud",
+    "email",
+    "exp",
+    "iat",
+    "iss",
+    "jti",
+    "nbf",
+    "rotation_version",
+    "scope",
+    "sub"
+  ],
+  "keys_status": {
+    "SOM_MCP_CALL_PATH": "set",
+    "SOM_MCP_PROTOCOL": "set",
+    "SOM_MCP_TOKEN": "set",
+    "SOM_REMOTE_MCP_AUDIT_DIR": "set",
+    "SOM_REMOTE_MCP_AUTH_HMAC_KEY": "set",
+    "SOM_REMOTE_MCP_JWT": "set",
+    "SOM_REMOTE_MCP_PORT": "set",
+    "SOM_REMOTE_MCP_STDIO_PROOF_COMMAND": "set"
+  },
+  "schema_version": 1,
+  "secret_values_recorded": false,
+  "vault_path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.env.shared"
+}

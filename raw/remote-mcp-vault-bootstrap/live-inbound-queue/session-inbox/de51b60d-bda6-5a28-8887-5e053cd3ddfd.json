@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "packet_id": "de51b60d-bda6-5a28-8887-5e053cd3ddfd",
+  "packet_type": "session_instruction",
+  "created_at": "2026-04-20T14:38:53Z",
+  "issue_number": 385,
+  "repo": {
+    "owner": "NIBARGERB-HLDPRO",
+    "name": "hldpro-governance"
+  },
+  "session": {
+    "session_id": "codex-operator-live-20260420",
+    "cli": "codex",
+    "state": "waiting_hitl"
+  },
+  "correlation": {
+    "request_id": "remote-mcp-vault-bootstrap-live-receive-385b",
+    "parent_packet_id": "57f4cf75-0a12-56c2-a7bc-a8aad6361318",
+    "notification_id": "remote-mcp-vault-bootstrap-live-notification-385b",
+    "response_id": "remote-mcp-vault-bootstrap-live-response-385b"
+  },
+  "policy": {
+    "pii_mode": "none",
+    "data_classification": "internal",
+    "channel_policy_ref": "docs/runbooks/hitl-relay-security.md",
+    "retention_policy_ref": "docs/runbooks/hitl-relay-security.md#retention"
+  },
+  "operator_reply": {
+    "channel": "other",
+    "sender_ref": "operator:ben",
+    "message_id": "remote-mcp-vault-bootstrap-live-message-385b",
+    "received_at": "2026-04-20T14:38:53Z",
+    "raw_message_ref": "raw/remote-mcp-vault-bootstrap/live-inbound-response.json",
+    "sender_verified": true
+  },
+  "normalized_decision": {
+    "action": "details",
+    "confidence": 0.98,
+    "model_id": "gpt-5.4",
+    "model_family": "openai",
+    "raw_message_ref": "raw/remote-mcp-vault-bootstrap/live-inbound-response.json",
+    "validation_required": true
+  },
+  "instruction": {
+    "action": "details",
+    "target_session_id": "codex-operator-live-20260420",
+    "constraints": [
+      "require_governance_validation",
+      "require_audit_replay"
+    ],
+    "audit_refs": [
+      "raw/hitl-relay/queue/requests/57f4cf75-0a12-56c2-a7bc-a8aad6361318.json",
+      "raw/remote-mcp-vault-bootstrap/live-inbound-response.json",
+      "raw/hitl-relay/queue/audit/events.jsonl"
+    ]
+  }
+}

@@ -2,12 +2,12 @@
 
 Last updated: 2026-04-20
 Owner: Operator (`nibargerb`)
-Issue: [hldpro-governance #109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109), recurring monitor [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372), alert evidence [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374), operating mode [#376](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376), launchd proof [#378](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/378), connectivity preflight [#380](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/380), inbound preflight [#382](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/382)
+Issue: [hldpro-governance #109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109), recurring monitor [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372), alert evidence [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374), operating mode [#376](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376), launchd proof [#378](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/378), connectivity preflight [#380](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/380), inbound preflight [#382](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/382), vault bootstrap [#385](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/385)
 Scope: Governance Remote MCP Bridge contract, proof, and operator procedure.
 
 ## Current Status
 
-Stage A governance standards, Stage B/C downstream HTTP bridge controls, and Stage D live Cloudflare proof are merged. Issue #109 is closed. Recurring operational monitoring is tracked by issue #372 and uses the same Stage D proof runner plus evidence-safety checks. Issue #376 selects local `launchd` as the live-authoritative monitor operating mode; GitHub Actions remains the scheduled fixture harness and an optional configured-live runner. Issue #380 adds the operator connectivity preflight for the immediate question: can this machine send `som.ping` to Remote MCP and receive a response now? Issue #382 adds the separate operator inbound preflight for the immediate question: can this environment receive an operator-targeted message into a session inbox?
+Stage A governance standards, Stage B/C downstream HTTP bridge controls, and Stage D live Cloudflare proof are merged. Issue #109 is closed. Recurring operational monitoring is tracked by issue #372 and uses the same Stage D proof runner plus evidence-safety checks. Issue #376 selects local `launchd` as the live-authoritative monitor operating mode; GitHub Actions remains the scheduled fixture harness and an optional configured-live runner. Issue #380 adds the operator connectivity preflight for the immediate question: can this machine send `som.ping` to Remote MCP and receive a response now? Issue #382 adds the separate operator inbound preflight for the immediate question: can this environment receive an operator-targeted message into a session inbox? Issue #385 bootstraps the current operator vault keys, Cloudflare Access service-token policy membership, the local Remote MCP bridge LaunchAgent on the tunnel origin port, and live no-secret readiness evidence.
 
 ## Approved Remote Surface
 
@@ -34,16 +34,25 @@ The Stage A client reads:
 | `SOM_MCP_URL` | HTTPS URL for the bridge endpoint. Defaults to `http://localhost:8080` for local dev. |
 | `SOM_MCP_TOKEN` | Inner bridge bearer/JWT token. |
 | `SOM_REMOTE_MCP_JWT` | Alternate inner bridge bearer/JWT token used when `SOM_MCP_TOKEN` is absent. |
+| `SOM_MCP_PROTOCOL` | Set to `bridge` for the merged Stage B/C bridge protocol. Leave unset for legacy JSON-RPC fixtures. |
+| `SOM_MCP_CALL_PATH` | Stage B/C bridge call path, normally `mcp/call`. |
 | `CF_ACCESS_CLIENT_ID` | Cloudflare Access service-token client id. |
 | `CF_ACCESS_CLIENT_SECRET` | Cloudflare Access service-token client secret. |
 | `SOM_MCP_USER_AGENT` | Optional client user agent for Cloudflare edge policies that block default Python transports. |
+| `SOM_REMOTE_MCP_AUTH_HMAC_KEY` | HMAC key used by the local Stage B/C bridge to verify the inner JWT. |
 | `SOM_REMOTE_MCP_AUDIT_HMAC_KEY` | HMAC key used by the audit verifier when audit files exist. |
+| `SOM_REMOTE_MCP_AUDIENCE` | Expected inner JWT audience when enforced by the bridge. |
+| `SOM_REMOTE_MCP_ROTATION_VERSION` | Inner JWT rotation marker used by the bridge and operator token. |
+| `SOM_OPERATOR_INBOUND_QUEUE_ROOT` | HITL relay queue root inspected by the operator inbound preflight. |
+| `SOM_OPERATOR_INBOUND_SESSION_ID` | Target CLI session id for the inbound preflight. |
 
 Example local client smoke:
 
 ```bash
 export SOM_MCP_URL="https://som-mcp.example.com"
 export SOM_MCP_TOKEN="<inner-jwt>"
+export SOM_MCP_PROTOCOL="bridge"
+export SOM_MCP_CALL_PATH="mcp/call"
 export CF_ACCESS_CLIENT_ID="<access-client-id>"
 export CF_ACCESS_CLIENT_SECRET="<access-client-secret>"
 export SOM_MCP_USER_AGENT="hldpro-som-client/1"
@@ -51,6 +60,40 @@ python3 scripts/som-client/som_client.py
 ```
 
 The client deliberately does not expose `lam.scrub_pii`.
+
+## Vault Bootstrap
+
+The local operator vault is `.env.shared` at the governance checkout root. It is gitignored and must stay local. Do not paste or commit values from it.
+
+Issue #385 created or refreshed these live operator entries in the vault:
+
+| Entry | No-secret status |
+|---|---|
+| `SOM_MCP_URL` | Set to the Cloudflare-protected Remote MCP endpoint. |
+| `SOM_MCP_TOKEN` / `SOM_REMOTE_MCP_JWT` | Set to the signed inner JWT used by the Stage B/C bridge. |
+| `SOM_MCP_PROTOCOL` / `SOM_MCP_CALL_PATH` | Set to the Stage B/C bridge protocol and call path. |
+| `SOM_REMOTE_MCP_AUTH_HMAC_KEY` | Set for local bridge JWT verification. |
+| `SOM_REMOTE_MCP_AUDIT_HMAC_KEY` | Set for audit entry and args HMAC verification. |
+| `CF_ACCESS_CLIENT_ID` / `CF_ACCESS_CLIENT_SECRET` | Set from the Cloudflare Access service token created for the operator path. |
+| `CF_ACCESS_SERVICE_TOKEN_ID` / `CF_ACCESS_SERVICE_TOKEN_NAME` | Set so the token can be found and rotated without exposing its secret. |
+| `SOM_OPERATOR_INBOUND_QUEUE_ROOT` / `SOM_OPERATOR_INBOUND_SESSION_ID` | Set for the local inbound preflight receive proof. |
+
+The no-secret bootstrap evidence is under `raw/remote-mcp-vault-bootstrap/`. Those files record key names, status, Cloudflare policy membership, launchd health, and live preflight results only. They must not contain bearer tokens, JWT fragments, Cloudflare client secrets, HMAC keys, raw PII, or raw MCP payloads.
+
+Current bridge runtime:
+
+1. `cloudflared` maps `remote-mcp.hldpro.com` to local origin `http://127.0.0.1:18082`.
+2. `com.hldpro.remote-mcp-bridge` runs the downstream `local-ai-machine` Stage B/C bridge on `127.0.0.1:18082`.
+3. `scripts/remote-mcp/operator_connectivity.py --mode live` sends `som.ping` through Cloudflare Access plus the inner JWT and expects `ready: true`.
+4. `scripts/remote-mcp/operator_inbound_preflight.py --mode live` checks the configured HITL relay `session-inbox` for a validated instruction addressed to the configured session.
+
+When rotating:
+
+1. Create a new Cloudflare Access service token and add only its token id to the `remote-mcp.hldpro.com` Access policy.
+2. Generate a new `SOM_REMOTE_MCP_AUTH_HMAC_KEY` and signed `SOM_REMOTE_MCP_JWT`; set `SOM_MCP_TOKEN` to the same JWT unless deliberately testing the fallback path.
+3. Reload `com.hldpro.remote-mcp-bridge` after updating its local LaunchAgent environment.
+4. Run the live connectivity preflight and inbound preflight.
+5. Remove the old Cloudflare service token from the Access policy, then delete it.
 
 ## Operator Connectivity Preflight
 

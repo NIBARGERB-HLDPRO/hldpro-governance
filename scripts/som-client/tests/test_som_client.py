@@ -85,6 +85,27 @@ def test_som_client_accepts_remote_mcp_jwt_fallback(monkeypatch) -> None:
     assert seen_headers["authorization"] == "Bearer remote-mcp-jwt"
 
 
+def test_som_client_bridge_protocol_uses_stage_bc_shape(monkeypatch) -> None:
+    seen = {}
+
+    def fake_urlopen(request: urllib.request.Request, timeout: float = 0.0):
+        seen["url"] = request.full_url
+        seen["body"] = json.loads(request.data.decode("utf-8"))
+        return _build_success_response({"status": "ok", "result": {"accepted_tool": "som.ping"}})
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
+    monkeypatch.setenv("SOM_MCP_URL", "https://mcp.example.com")
+    monkeypatch.setenv("SOM_MCP_TOKEN", "bearer-token")
+    monkeypatch.setenv("SOM_MCP_PROTOCOL", "bridge")
+    monkeypatch.setenv("SOM_MCP_CALL_PATH", "mcp/call")
+
+    result = SomClient.from_env().ping()
+
+    assert seen["url"] == "https://mcp.example.com/mcp/call"
+    assert seen["body"] == {"tool": "som.ping", "arguments": {}}
+    assert result == {"accepted_tool": "som.ping"}
+
+
 def test_som_client_retries_on_429(monkeypatch) -> None:
     calls = {"count": 0}
     sleeps: List[float] = []

@@ -457,6 +457,18 @@ bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh <repo>
 | `CF_ACCESS_AUD_TAG` | `e99b8781...` | Access JWT AUD claim | — |
 | ~~`CLOUDFLARE_API`~~ | ~~`cfk_Qf...`~~ | Legacy API key | **EXPIRED 2026-04-03** |
 
+### Remote MCP Access Service Token
+
+Issue #385 created the operator Remote MCP Access service token for `remote-mcp.hldpro.com` and attached its token id to the existing "Service tokens only" Access policy. The vault stores `CF_ACCESS_CLIENT_ID`, `CF_ACCESS_CLIENT_SECRET`, `CF_ACCESS_SERVICE_TOKEN_ID`, and `CF_ACCESS_SERVICE_TOKEN_NAME`; never commit or print the client secret.
+
+Rotation order:
+
+1. Create a replacement Cloudflare Access service token.
+2. Add the replacement token id to the `remote-mcp.hldpro.com` Access policy.
+3. Update `.env.shared` with the new `CF_ACCESS_*` values.
+4. Rerun the Remote MCP live connectivity preflight.
+5. Remove the old token id from the Access policy and delete the old service token.
+
 ### DNS Record Operations
 
 ```bash

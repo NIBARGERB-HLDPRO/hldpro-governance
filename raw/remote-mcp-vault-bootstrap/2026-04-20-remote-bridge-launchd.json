@@ -1,0 +1,15 @@
+{
+  "bootstrap_exit": 0,
+  "generated_at": "2026-04-20T14:37:14+00:00",
+  "health_exit": 1,
+  "health_rechecked_at": "2026-04-20T14:37:46+00:00",
+  "health_status": "pass",
+  "health_stdout": "{\"status\": 200}",
+  "issue": 385,
+  "label": "com.hldpro.remote-mcp-bridge",
+  "loaded": true,
+  "origin": "http://127.0.0.1:18082",
+  "plist_path": "/Users/bennibarger/Library/LaunchAgents/com.hldpro.remote-mcp-bridge.plist",
+  "schema_version": 1,
+  "secret_values_recorded": false
+}

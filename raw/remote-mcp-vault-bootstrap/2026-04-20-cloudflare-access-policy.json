@@ -1,0 +1,15 @@
+{
+  "app_domain": "remote-mcp.hldpro.com",
+  "app_id": "ae6a9527-3868-4d01-b85f-536f0347e506",
+  "generated_at": "2026-04-20T14:32:14+00:00",
+  "issue": 385,
+  "policy_id": "5bcd8674-7def-47cc-9d23-2cdd2c1a9186",
+  "policy_include_count_after": 3,
+  "policy_include_count_before": 2,
+  "policy_name": "Service tokens only",
+  "reason": "",
+  "schema_version": 1,
+  "secret_values_recorded": false,
+  "service_token_id_present": true,
+  "status": "updated"
+}

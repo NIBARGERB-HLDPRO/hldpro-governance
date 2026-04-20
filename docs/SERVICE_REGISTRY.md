@@ -72,7 +72,7 @@
 
 | Script | Path | Purpose |
 |--------|------|---------|
-| som_client.py | `scripts/som-client/som_client.py` | Thin Remote MCP operator client with Cloudflare Access headers, `SOM_MCP_TOKEN` / `SOM_REMOTE_MCP_JWT` bearer auth, safe errors, and retry handling |
+| som_client.py | `scripts/som-client/som_client.py` | Thin Remote MCP operator client with Cloudflare Access headers, `SOM_MCP_TOKEN` / `SOM_REMOTE_MCP_JWT` bearer auth, safe errors, retry handling, legacy JSON-RPC fixture mode, and Stage B/C bridge mode via `SOM_MCP_PROTOCOL=bridge` |
 | verify_audit.py | `scripts/remote-mcp/verify_audit.py` | Deterministic verifier for Remote MCP audit JSONL hash chains, HMACs, and manifests |
 | operator_connectivity.py | `scripts/remote-mcp/operator_connectivity.py` | No-secret fixture/live operator preflight for `som.ping` request/response readiness, launchd status, missing live config names, and recommended action |
 | operator_inbound_preflight.py | `scripts/remote-mcp/operator_inbound_preflight.py` | No-secret fixture/live operator-message receive preflight for the HITL relay session inbox path, missing live queue config names, and recommended action |

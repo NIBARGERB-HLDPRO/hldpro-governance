@@ -1,0 +1,36 @@
+{
+  "already_present_keys": [],
+  "blocked": [],
+  "created_or_rotated_keys": [
+    "CF_ACCESS_CLIENT_ID",
+    "CF_ACCESS_CLIENT_SECRET",
+    "CF_ACCESS_SERVICE_TOKEN_ID",
+    "CF_ACCESS_SERVICE_TOKEN_NAME",
+    "SOM_MCP_TOKEN",
+    "SOM_MCP_URL",
+    "SOM_OPERATOR_INBOUND_QUEUE_ROOT",
+    "SOM_OPERATOR_INBOUND_SESSION_ID",
+    "SOM_REMOTE_MCP_AUDIT_HMAC_KEY"
+  ],
+  "generated_at": "2026-04-20T14:31:08+00:00",
+  "issue": 385,
+  "keys_status": {
+    "CF_ACCESS_CLIENT_ID": "set",
+    "CF_ACCESS_CLIENT_SECRET": "set",
+    "CF_ACCESS_SERVICE_TOKEN_ID": "set",
+    "CF_ACCESS_SERVICE_TOKEN_NAME": "set",
+    "SOM_MCP_TOKEN": "set",
+    "SOM_MCP_URL": "set",
+    "SOM_OPERATOR_INBOUND_QUEUE_ROOT": "set",
+    "SOM_OPERATOR_INBOUND_SESSION_ID": "set",
+    "SOM_REMOTE_MCP_AUDIT_HMAC_KEY": "set"
+  },
+  "notes": [
+    "Secret values are stored only in .env.shared and are intentionally omitted from this manifest.",
+    "CF_ACCESS_CLIENT_SECRET is only retrievable at Cloudflare service-token creation time."
+  ],
+  "schema_version": 1,
+  "secret_values_recorded": false,
+  "vault_gitignored": true,
+  "vault_path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.env.shared"
+}

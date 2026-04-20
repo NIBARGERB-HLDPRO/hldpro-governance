@@ -1,0 +1,12 @@
+{
+  "channel": "other",
+  "generated_at": "2026-04-20T14:38:53+00:00",
+  "instruction_packet_path": "raw/remote-mcp-vault-bootstrap/live-inbound-queue/session-inbox/de51b60d-bda6-5a28-8887-5e053cd3ddfd.json",
+  "instruction_status": "ok",
+  "issue": 385,
+  "queue_root": "raw/remote-mcp-vault-bootstrap/live-inbound-queue",
+  "request_status": "ok",
+  "schema_version": 1,
+  "secret_values_recorded": false,
+  "session_id": "codex-operator-live-20260420"
+}

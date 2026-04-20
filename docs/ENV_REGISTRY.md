@@ -98,6 +98,16 @@ DRY_RUN=1 bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.s
 | `CLOUDFLARE_TUNNEL_ID` | `CLOUDFLARE_TUNNEL_ID` | |
 | `CF_TEAM_DOMAIN` | `CF_TEAM_DOMAIN` | JWT validation |
 | `CF_ACCESS_AUD_TAG` | `CF_ACCESS_AUD_TAG` | JWT validation |
+| `SOM_MCP_URL` | `SOM_MCP_URL` | Remote MCP Cloudflare endpoint |
+| `SOM_MCP_TOKEN` / `SOM_REMOTE_MCP_JWT` | same | Signed inner JWT for the Remote MCP Stage B/C bridge |
+| `SOM_MCP_PROTOCOL` / `SOM_MCP_CALL_PATH` | same | Bridge protocol selector and call path for live Remote MCP |
+| `SOM_MCP_USER_AGENT` | `SOM_MCP_USER_AGENT` | Stable operator client user-agent for Cloudflare edge policy compatibility |
+| `SOM_REMOTE_MCP_AUTH_HMAC_KEY` | `SOM_REMOTE_MCP_AUTH_HMAC_KEY` | Local bridge JWT verification key |
+| `SOM_REMOTE_MCP_AUDIT_HMAC_KEY` | `SOM_REMOTE_MCP_AUDIT_HMAC_KEY` | Remote MCP audit HMAC key |
+| `SOM_REMOTE_MCP_AUDIENCE` / `SOM_REMOTE_MCP_ROTATION_VERSION` | same | Inner JWT audience and rotation marker |
+| `CF_ACCESS_CLIENT_ID` / `CF_ACCESS_CLIENT_SECRET` | same | Cloudflare Access service-token client credentials |
+| `CF_ACCESS_SERVICE_TOKEN_ID` / `CF_ACCESS_SERVICE_TOKEN_NAME` | same | Service-token inventory metadata; not a substitute for the secret |
+| `SOM_OPERATOR_INBOUND_QUEUE_ROOT` / `SOM_OPERATOR_INBOUND_SESSION_ID` | same | HITL relay receive preflight queue root and target session id |
 
 ### knocktracker
 
@@ -121,6 +131,7 @@ DRY_RUN=1 bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.s
 | Stripe keys | On compromise | Stripe Dashboard → Developers → API Keys → update `.env.shared` |
 | Twilio tokens | On compromise | Twilio Console → update `.env.shared` |
 | Cloudflare tokens | Annual or on scope change | Cloudflare Dashboard → My Profile → API Tokens → update `.env.shared` |
+| Remote MCP operator keys | On bridge rotation, Cloudflare service-token rotation, or suspected exposure | Generate a new `SOM_REMOTE_MCP_AUTH_HMAC_KEY`, mint a matching `SOM_REMOTE_MCP_JWT`, set `SOM_MCP_TOKEN` to that JWT, create/attach a new Cloudflare Access service token, reload `com.hldpro.remote-mcp-bridge`, run live preflights, then remove the old Access token |
 
 After any rotation in `.env.shared`, re-run bootstrap for affected repos:
 ```bash

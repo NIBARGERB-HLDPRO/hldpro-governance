@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-04-20T14:33:20+00:00",
+  "issue": 385,
+  "key": "SOM_MCP_USER_AGENT",
+  "reason": "Cloudflare 1010 browser_signature_banned blocked the default Python client signature during live preflight.",
+  "schema_version": 1,
+  "secret_values_recorded": false,
+  "status": "set",
+  "vault_path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.env.shared"
+}
