@@ -1,7 +1,7 @@
 {
   "expected_execution_root": ".",
-  "expected_branch": "issue-398-consumer-pull-bootstrap-20260420",
-  "execution_mode": "implementation_ready",
+  "expected_branch": "issue-398-consumer-pull-closeout-20260420",
+  "execution_mode": "implementation_complete",
   "lane_claim": {
     "issue_number": 398,
     "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/398",
@@ -17,11 +17,15 @@
     "docs/plans/issue-398-consumer-pull-bootstrap-structured-agent-cycle-plan.json",
     "docs/runbooks/org-governance-tooling-distribution.md",
     "raw/cross-review/2026-04-20-issue-398-consumer-pull-bootstrap.md",
+    "raw/closeouts/2026-04-20-issue-398-consumer-pull-bootstrap.md",
     "raw/execution-scopes/2026-04-20-issue-398-consumer-pull-bootstrap-implementation.json",
     "scripts/overlord/test_deploy_governance_tooling.py",
     "scripts/overlord/test_verify_governance_consumer.py",
     "scripts/overlord/verify_governance_consumer.py",
-    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "graphify-out/hldpro-governance/",
+    "wiki/hldpro/",
+    "wiki/index.md"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",

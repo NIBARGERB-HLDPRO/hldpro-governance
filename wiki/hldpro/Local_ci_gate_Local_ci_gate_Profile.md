@@ -1,10 +1,10 @@
 # Local ci gate Local ci gate Profile
 
-> 20 nodes · cohesion 0.10
+> 21 nodes · cohesion 0.10
 
 ## Key Concepts
 
-- **TestLocalCiGate** (19 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
+- **TestLocalCiGate** (20 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **test_local_ci_gate.py** (2 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.setUp()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.tearDown()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
@@ -16,6 +16,7 @@
 - **.test_cli_accepts_managed_shim_run_invocation()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_cli_prints_authoritative_note()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_execution_scope_resolution_prefers_active_issue_implementation_scope()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
+- **.test_execution_scope_resolution_requires_matching_lane_claim()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_uses_active_execution_scope_placeholder()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_knocktracker_profile_scopes_heavy_checks_to_matching_files()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_local_ai_machine_profile_scopes_contract_checks()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
@@ -35,7 +36,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 39 (100%)
+- EXTRACTED: 41 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -9,7 +9,7 @@
 - **._call_tool()** (9 connections) — `scripts/som-client/som_client.py`
 - **SomClientError** (8 connections) — `scripts/som-client/som_client.py`
 - **test_som_client.py** (8 connections) — `scripts/som-client/tests/test_som_client.py`
-- **RuntimeError** (5 connections)
+- **RuntimeError** (6 connections)
 - **._current_token()** (5 connections) — `scripts/som-client/som_client.py`
 - **main()** (4 connections) — `scripts/som-client/som_client.py`
 - **._request()** (4 connections) — `scripts/som-client/som_client.py`
@@ -42,7 +42,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 71 (65%)
+- EXTRACTED: 72 (65%)
 - INFERRED: 38 (35%)
 - AMBIGUOUS: 0 (0%)
 
