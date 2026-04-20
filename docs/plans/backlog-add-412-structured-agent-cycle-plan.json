@@ -1,0 +1,66 @@
+{
+  "session_id": "session-20260420-backlog-add-412",
+  "issue_number": 412,
+  "objective": "Add issue #412 (Codex brief templates: embed plan schema + lane_claim + graphify-out) to OVERLORD_BACKLOG.md Planned table so it is tracked for execution.",
+  "tier": 1,
+  "scope_boundary": [
+    "Single row addition to OVERLORD_BACKLOG.md Planned table referencing issue #412"
+  ],
+  "out_of_scope": [
+    "Actual template changes (tracked in #412 itself)",
+    "Any other backlog rows or governance surface modifications"
+  ],
+  "research_summary": "Issue #412 was created 2026-04-20 to track the systemic fix for Codex briefs missing plan schema and lane_claim fields, discovered during PR #411 (hldpro-sim bootstrap). Backlog row required to ensure #412 is tracked in the governance roadmap.",
+  "research_artifacts": [
+    "OVERLORD_BACKLOG.md (pre-existing)",
+    "Issue #412: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/412",
+    "PR #411: hldpro-sim bootstrap (origin of the systemic issue)"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 — Add backlog row",
+      "goal": "Insert #412 row into OVERLORD_BACKLOG.md Planned table.",
+      "tasks": [
+        "Add row: | Codex brief templates: embed plan schema + lane_claim + graphify-out | [#412](...) | MEDIUM | 1-2 | ... |"
+      ],
+      "acceptance_criteria": [
+        "OVERLORD_BACKLOG.md Planned table contains a row for #412",
+        "CI check-backlog-gh-sync validates #412 is open"
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "scope-reviewer",
+      "role": "Scope reviewer",
+      "focus": "Confirm change is limited to one backlog row addition.",
+      "status": "accepted",
+      "summary": "Single OVERLORD_BACKLOG.md row. No other files modified.",
+      "evidence": ["git diff shows 1 file, 2 lines added"]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "n/a",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "Tier 1 administrative backlog row addition. No standards change.",
+    "evidence": ["OVERLORD_BACKLOG.md row addition only"]
+  },
+  "execution_handoff": {
+    "session_agent": "dispatcher",
+    "execution_mode": "implementation_complete",
+    "approved_scope_summary": "OVERLORD_BACKLOG.md updated with #412 row. Complete.",
+    "next_execution_step": "Merge PR #413 after CI passes.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If OVERLORD_BACKLOG.md has conflicting changes on main, rebase — do not force push."
+  ],
+  "approved": true,
+  "approved_by": ["session-agent-claude-sonnet-4-6"],
+  "approved_at": "2026-04-20T17:30:00Z"
+}
