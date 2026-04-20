@@ -282,6 +282,18 @@
       "rationale": "Renderer can be tested locally; scheduled fetch and push remain GitHub-only."
     },
     {
+      "path": ".github/workflows/remote-mcp-live-health.yml",
+      "risk": "environment-dependent-scheduled",
+      "coverage": [
+        {
+          "type": "local_command",
+          "command": ["python3", "scripts/remote-mcp/live_health_monitor.py", "--mode", "fixture", "--json"]
+        }
+      ],
+      "required_snippets": ["live_health_monitor.py", "--mode fixture", "--mode live"],
+      "rationale": "Fixture mode deterministically proves the monitor harness locally; live mode depends on Cloudflare Access, bridge, audit-copy, and stdio-proof secrets."
+    },
+    {
       "path": ".github/workflows/require-cross-review.yml",
       "risk": "deterministic-pr-context",
       "coverage": [

@@ -25,6 +25,8 @@ Updates the older runbook status that treated #109 as still open; #109 is closed
 - `docs/plans/issue-372-remote-mcp-recurring-health-monitor-structured-agent-cycle-plan.json`
 - `docs/runbooks/remote-mcp-bridge.md`
 - `docs/workflow-local-coverage-inventory.json`
+- `graphify-out/GRAPH_REPORT.md`
+- `graphify-out/graph.json`
 - `graphify-out/hldpro-governance/`
 - `launchd/com.hldpro.remote-mcp-monitor.plist`
 - `raw/execution-scopes/2026-04-19-issue-372-remote-mcp-recurring-health-monitor-implementation.json`

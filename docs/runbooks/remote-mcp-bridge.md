@@ -2,12 +2,12 @@
 
 Last updated: 2026-04-19
 Owner: Operator (`nibargerb`)
-Issue: [hldpro-governance #109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109)
+Issue: [hldpro-governance #109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109), recurring monitor [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372)
 Scope: Governance Remote MCP Bridge contract, proof, and operator procedure.
 
 ## Current Status
 
-Stage A governance standards, the local verifier, the thin client, and operator procedures are merged. Stage B/C downstream HTTP bridge controls are merged in `local-ai-machine`. Stage D proof tooling exists in this repository, but issue #109 is not closed until a live second-machine proof passes against the Cloudflare-protected endpoint and confirms stdio MCP still works after the tunnel is stopped.
+Stage A governance standards, Stage B/C downstream HTTP bridge controls, and Stage D live Cloudflare proof are merged. Issue #109 is closed. Recurring operational monitoring is tracked by issue #372 and uses the same Stage D proof runner plus evidence-safety checks.
 
 ## Approved Remote Surface
 
@@ -85,6 +85,62 @@ python3 scripts/remote-mcp/stage_d_smoke.py --json
 
 The live proof fails fast when required endpoint, identity, audit, HMAC, or stdio proof inputs are missing. Do not close issue #109 from fixture-only evidence.
 
+## Recurring Health Monitor
+
+Use the recurring monitor after Stage D activation to keep the live bridge under continuous authenticated smoke and audit verification. The monitor intentionally composes `stage_d_smoke.py`; it does not introduce a second Remote MCP protocol path.
+
+Fixture harness check:
+
+```bash
+python3 scripts/remote-mcp/live_health_monitor.py \
+  --mode fixture \
+  --fixture-evidence-dir raw/remote-mcp-monitor-fixture \
+  --json
+```
+
+Live monitor check:
+
+```bash
+export SOM_MCP_URL="https://som-mcp.example.com"
+export SOM_MCP_TOKEN="<inner-jwt>"
+export SOM_REMOTE_MCP_IDENTITY_EMAIL="<cloudflare-identity-email>"
+export SOM_REMOTE_MCP_IDENTITY_SUB="<cloudflare-identity-sub>"
+export CF_ACCESS_CLIENT_ID="<access-client-id>"
+export CF_ACCESS_CLIENT_SECRET="<access-client-secret>"
+export SOM_REMOTE_MCP_USER_AGENT="hldpro-remote-mcp-monitor/1"
+export SOM_REMOTE_MCP_AUDIT_DIR="/path/to/copied/raw/remote-mcp-audit"
+export SOM_REMOTE_MCP_AUDIT_HMAC_KEY="<audit-hmac-key>"
+export SOM_REMOTE_MCP_STDIO_PROOF_COMMAND="<local-stdio-proof-command-after-tunnel-stop>"
+
+python3 scripts/remote-mcp/live_health_monitor.py --mode live --json
+```
+
+`--mode auto` runs live when live configuration markers are present and fixture mode otherwise. Missing partial live configuration is a hard failure. The monitor appends an `evidence-safety-scan` result and fails if preserved evidence contains raw SSNs, bearer tokens, Cloudflare Access token markers, or JWT fragments.
+
+Recurring surfaces:
+
+- GitHub Actions: `.github/workflows/remote-mcp-live-health.yml` runs the fixture harness on schedule and runs live mode only when the full secret set is configured.
+- macOS launchd template: `launchd/com.hldpro.remote-mcp-monitor.plist` runs the same monitor every 900 seconds after replacing `__REPO_ROOT__` with the checkout path.
+
+Install the launchd template only from the intended operating checkout:
+
+```bash
+mkdir -p ~/Library/LaunchAgents projects/hldpro-governance/reports
+sed "s#__REPO_ROOT__#$(pwd)#g" \
+  launchd/com.hldpro.remote-mcp-monitor.plist \
+  > ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
+plutil -lint ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
+launchctl bootstrap "gui/$(id -u)" ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
+launchctl kickstart -k "gui/$(id -u)/com.hldpro.remote-mcp-monitor"
+```
+
+Uninstall:
+
+```bash
+launchctl bootout "gui/$(id -u)" ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
+rm -f ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
+```
+
 ## Token Rotation
 
 Stage B/C must implement token rotation in `local-ai-machine` by bumping `rotation_version` and invalidating lower-version tokens. Operator procedure:
@@ -138,6 +194,7 @@ No audit directory is valid before Stage B/C activation. Once audit files exist,
 | PII detected | Reject with payload-safe error. | Use local stdio/LAM path only. |
 | Rate limit exceeded | Return 429 before dispatch. | Wait or inspect principal activity. |
 | Audit verifier fails | Disable remote endpoint. | Preserve files, identify break, rotate keys if needed, rebuild trust with issue-backed closeout. |
+| Recurring monitor fails | Treat as remote-health degraded. | Disable or restrict remote endpoint until authenticated smoke, negative checks, strict audit, tamper-negative check, and evidence scan pass again. |
 | `cloudflared` down | Remote unreachable/503; stdio continues. | Restart tunnel only after bridge health and audit checks pass. |
 
 ## Stage B/C Acceptance Criteria
