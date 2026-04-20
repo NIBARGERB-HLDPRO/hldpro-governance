@@ -1,0 +1,67 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-374-remote-mcp-monitor-alerts-20260419",
+  "execution_mode": "implementation_complete",
+  "allowed_write_paths": [
+    ".github/workflows/remote-mcp-live-health.yml",
+    "OVERLORD_BACKLOG.md",
+    "docs/DATA_DICTIONARY.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/SERVICE_REGISTRY.md",
+    "docs/plans/issue-374-remote-mcp-monitor-alerts-pdcar.md",
+    "docs/plans/issue-374-remote-mcp-monitor-alerts-structured-agent-cycle-plan.json",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "docs/workflow-local-coverage-inventory.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "graphify-out/hldpro-governance/",
+    "raw/execution-scopes/2026-04-20-issue-374-remote-mcp-monitor-alerts-implementation.json",
+    "raw/remote-mcp-monitor-first-run/",
+    "raw/validation/2026-04-20-issue-374-remote-mcp-monitor-alerts.md",
+    "raw/closeouts/2026-04-20-issue-374-remote-mcp-monitor-alerts.md",
+    "scripts/remote-mcp/live_health_monitor.py",
+    "scripts/remote-mcp/monitor_alert.py",
+    "scripts/remote-mcp/tests/test_monitor_alert.py",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout has pre-existing graphify changes; issue #374 uses an isolated worktree"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "primary local-ai-machine checkout has pre-existing unrelated dirty work outside issue #374 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo may have unrelated active work outside issue #374 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo may have unrelated active work outside issue #374 scope"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "github-issue-374-and-codex-explorer-descartes",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-20T00:55:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374",
+      "docs/plans/issue-374-remote-mcp-monitor-alerts-structured-agent-cycle-plan.json",
+      "docs/plans/issue-374-remote-mcp-monitor-alerts-pdcar.md",
+      "raw/validation/2026-04-20-issue-374-remote-mcp-monitor-alerts.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

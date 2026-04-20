@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-20T00:51:40Z",
+  "service": "remote-mcp",
+  "monitor": "live_health_monitor",
+  "mode": "fixture",
+  "health": "healthy",
+  "summary": {
+    "total": 9,
+    "passed": 8,
+    "failed": 0,
+    "skipped": 1,
+    "unknown": 0,
+    "sensitive_findings": 0
+  },
+  "failed_checks": [],
+  "unknown_checks": [],
+  "sensitive_findings": [],
+  "evidence_dir": "/tmp/issue374-remote-mcp-monitor-fixture",
+  "recommended_action": "No action required."
+}

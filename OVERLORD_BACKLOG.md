@@ -18,12 +18,13 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Remote MCP recurring live health and audit monitor | [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372) | HIGH | 2-3 | Turns issue #109 Stage D proof into recurring fixture/live monitor, runbook, scheduler, validation, and closeout evidence. |
+| Remote MCP monitor alert delivery and first recurring evidence | [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374) | HIGH | 1-2 | Adds payload-safe alert/report formatting and first recurring fixture-run evidence for the #372 monitor. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Remote MCP recurring live health and audit monitor | 2026-04-20 | Issue [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372). PR [#373](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/373) added the recurring monitor wrapper, scheduled/manual workflow, launchd template, runbook, fixture/live fail-closed validation, Local CI evidence, and closeout. Alert delivery and first recurring evidence continue under issue [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374). |
 | Cloud -> Local MCP Bridge implementation stages B-D | 2026-04-19 | Issue [#109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109) is closed. Stage A governance, downstream Stage B/C bridge controls, Stage D harness, live Cloudflare Access proof, strict audit verification, tamper-negative proof, stdio continuity proof, temporary Access cleanup, PR #371, and downstream local-ai-machine PRs #488/#490/#492 are complete. Recurring operations continue under issue [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372). |
 | Cloud -> Local MCP Bridge Stage A governance controls | 2026-04-19 | Issue [#109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109). Adds Remote MCP Bridge standards and invariants 11-15, audit schema workflow, deterministic verifier, thin operator client, runbook, workflow-local coverage, focused tests, Local CI evidence, and Stage 6 closeout. Later Stage B-D and live proof evidence closed #109. Closeout: `raw/closeouts/2026-04-19-issue-109-remote-mcp-stage-a.md`. |
 | Stage 5+ som-worker launchd boot-start integration | 2026-04-19 | Issue [#189](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/189). Downstream local-ai-machine issue [#482](https://github.com/NIBARGERB-HLDPRO/local-ai-machine/issues/482) and PR [#483](https://github.com/NIBARGERB-HLDPRO/local-ai-machine/pull/483) added `com.hldpro.som-worker` LaunchAgent support, install/uninstall scripts, README runbook docs, fake-launchctl e2e coverage, reviewer checkpoints, and GitHub Actions green. Merge commit: `8ceb5e38a0dd8105c2467e48d00219b95bac28d4`. Closeout: `raw/closeouts/2026-04-19-issue-189-som-worker-launchd.md`. |

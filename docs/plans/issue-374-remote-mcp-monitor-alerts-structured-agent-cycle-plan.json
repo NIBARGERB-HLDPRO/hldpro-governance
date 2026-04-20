@@ -1,0 +1,112 @@
+{
+  "session_id": "session-20260420-issue-374-remote-mcp-monitor-alerts",
+  "issue_number": 374,
+  "objective": "Add payload-safe alert delivery and first recurring fixture-run evidence for the Remote MCP recurring health monitor.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify Remote MCP monitor alert scripts/tests, the existing Remote MCP live-health workflow, Remote MCP runbook, governance registries, progress/backlog mirrors, issue #374 planning/validation/closeout artifacts, first-run evidence, and generated graph/wiki artifacts.",
+    "Reuse the existing issue #372 monitor output contract; do not change Remote MCP bridge invariants or downstream local-ai-machine behavior.",
+    "Do not commit Cloudflare credentials, bridge tokens, JWTs, HMAC keys, raw PII, or production monitor payloads."
+  ],
+  "out_of_scope": [
+    "Changing STANDARDS.md Remote MCP invariants 11-15.",
+    "Installing launchd or configuring production GitHub secrets.",
+    "Posting live issue comments from CI with broad write scopes.",
+    "Claiming production live recurring health without configured live evidence."
+  ],
+  "research_summary": "Issue #372 added the recurring Remote MCP monitor wrapper, scheduled/manual workflow, and launchd template. Issue #374 closes the next operational gap by converting monitor JSON into redacted operator alerts and preserving the first fixture-run evidence. The alert layer marks failed, unknown, or sensitive monitor output as degraded and refuses to echo matched sensitive text.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374",
+    ".github/workflows/remote-mcp-live-health.yml",
+    "scripts/remote-mcp/live_health_monitor.py",
+    "docs/runbooks/remote-mcp-bridge.md",
+    "raw/validation/2026-04-19-issue-372-remote-mcp-recurring-health-monitor.md"
+  ],
+  "sprints": [
+    {
+      "name": "Alert delivery and first evidence",
+      "goal": "Make Remote MCP monitor results operator-visible through payload-safe alert artifacts and preserve the first fixture-run evidence.",
+      "tasks": [
+        "Add `monitor_alert.py` alert formatter.",
+        "Add alert formatter tests for healthy, degraded, CLI, and sensitive-material paths.",
+        "Wire alert artifacts and GitHub step summary into `remote-mcp-live-health.yml`.",
+        "Generate first fixture-run monitor JSON and alert JSON/Markdown evidence.",
+        "Update runbook, data dictionary, service registry, feature registry, workflow coverage inventory, progress, and backlog mirrors.",
+        "Run validation, closeout hook, Local CI Gate, PR checks, and issue closeout."
+      ],
+      "acceptance_criteria": [
+        "Monitor can emit a payload-safe alert/report summary from monitor JSON.",
+        "Failure summaries are explicit enough to act on but do not echo tokens, JWT fragments, Cloudflare Access headers, or raw PII.",
+        "First recurring fixture-run evidence is preserved with a safety scan.",
+        "Live first-run path is documented and fails closed when required live configuration is absent.",
+        "Runbook documents alert delivery setup and operator response.",
+        "Local tests cover healthy, degraded, and sensitive-material redaction/refusal paths.",
+        "Final AC: Local CI and GitHub PR checks pass before issue closeout."
+      ],
+      "file_paths": [
+        ".github/workflows/remote-mcp-live-health.yml",
+        "OVERLORD_BACKLOG.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/plans/issue-374-remote-mcp-monitor-alerts-pdcar.md",
+        "docs/plans/issue-374-remote-mcp-monitor-alerts-structured-agent-cycle-plan.json",
+        "docs/runbooks/remote-mcp-bridge.md",
+        "docs/workflow-local-coverage-inventory.json",
+        "graphify-out/graph.json",
+        "graphify-out/hldpro-governance/",
+        "raw/execution-scopes/2026-04-20-issue-374-remote-mcp-monitor-alerts-implementation.json",
+        "raw/remote-mcp-monitor-first-run/",
+        "raw/validation/2026-04-20-issue-374-remote-mcp-monitor-alerts.md",
+        "raw/closeouts/2026-04-20-issue-374-remote-mcp-monitor-alerts.md",
+        "scripts/remote-mcp/live_health_monitor.py",
+        "scripts/remote-mcp/monitor_alert.py",
+        "scripts/remote-mcp/tests/test_monitor_alert.py",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-explorer-descartes",
+      "role": "operational monitor slice explorer",
+      "focus": "Identify alert/evidence acceptance criteria, files, validation commands, and secret-safety pitfalls for the next Remote MCP monitor slice.",
+      "status": "accepted",
+      "summary": "The slice should stay in `scripts/remote-mcp/`, preserve sanitized alert/evidence artifacts, avoid token or payload echo, and keep fixture/live paths explicit.",
+      "evidence": [
+        "subagent 019da85c-7fcd-7d53-85fe-683ea237e3bf final report"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "codex-explorer-descartes",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Accepted payload-safe alert/evidence scope and validation shape for issue #374.",
+    "evidence": [
+      "subagent 019da85c-7fcd-7d53-85fe-683ea237e3bf final report"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #374 may add Remote MCP monitor alert formatting, tests, workflow summary/artifacts, first fixture-run evidence, docs, registries, validation, closeout, and generated graph/wiki artifacts.",
+    "next_execution_step": "Run validation, open PR, merge after checks pass, and close issue #374.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If alert artifacts include secrets or raw sensitive payloads, remove artifacts, rotate affected live credentials if applicable, and rerun validation.",
+    "If live monitor configuration is absent, preserve fixture and fail-fast evidence only; do not claim live recurring health.",
+    "If workflow issue comments require broader permissions, defer comments and keep alert delivery to step summary plus artifacts."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #374",
+    "codex-explorer-descartes"
+  ],
+  "approved_at": "2026-04-20T00:55:00Z"
+}

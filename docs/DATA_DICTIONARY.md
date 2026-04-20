@@ -135,6 +135,34 @@ Contract:
 
 ---
 
+### Remote MCP Monitor Alert
+**Generator:** `scripts/remote-mcp/monitor_alert.py`
+**Input:** Remote MCP Monitor Result JSON
+**Storage:** workflow artifacts, `raw/remote-mcp-monitor-first-run/*.alert.json`, and optional Markdown summaries
+
+Alert object fields:
+| Field | Type | Description |
+|-------|------|-------------|
+| `schema_version` | integer | Alert schema version, currently `1` |
+| `generated_at` | string | UTC timestamp |
+| `service` | string | Always `remote-mcp` |
+| `monitor` | string | Monitor producer, currently `live_health_monitor` |
+| `mode` | enum | `fixture` or `live` |
+| `health` | enum | `healthy` or `degraded` |
+| `summary` | object | Counts for total, passed, failed, skipped, unknown, and sensitive findings |
+| `failed_checks` | array | Failed check names and redacted details |
+| `unknown_checks` | array | Checks with unexpected status values |
+| `sensitive_findings` | array | Pattern labels only; matched sensitive text is never emitted |
+| `evidence_dir` | string | Payload-safe evidence directory reference |
+| `recommended_action` | string | Operator response summary |
+
+Contract:
+- Alert output must not contain bearer tokens, JWT fragments, Cloudflare Access header material, raw SSNs, or raw MCP payloads.
+- Sensitive input details are replaced with `[redacted-sensitive-detail]` and force `health: degraded`.
+- `--fail-on-degraded` exits non-zero after writing redacted artifacts so workflows can both preserve evidence and fail closed.
+
+---
+
 ### HITL Relay Queue
 **Generator:** `scripts/orchestrator/hitl_relay_queue.py`
 **Storage:** `raw/hitl-relay/queue/`

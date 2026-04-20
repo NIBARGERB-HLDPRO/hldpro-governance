@@ -18,7 +18,7 @@
 - **_run_stdio_proof()** (4 connections) — `scripts/remote-mcp/stage_d_smoke.py`
 - **_verify_audit_tamper_fails()** (4 connections) — `scripts/remote-mcp/stage_d_smoke.py`
 - **_verify_audit_valid()** (4 connections) — `scripts/remote-mcp/stage_d_smoke.py`
-- **test_live_health_monitor.py** (4 connections) — `hldpro-governance/scripts/remote-mcp/tests/test_live_health_monitor.py`
+- **test_live_health_monitor.py** (4 connections) — `scripts/remote-mcp/tests/test_live_health_monitor.py`
 - **_scan_evidence_dir()** (3 connections) — `hldpro-governance/scripts/remote-mcp/live_health_monitor.py`
 - **_stage_d_args()** (3 connections) — `hldpro-governance/scripts/remote-mcp/live_health_monitor.py`
 - **_request()** (3 connections) — `scripts/remote-mcp/stage_d_smoke.py`
@@ -38,8 +38,8 @@
 ## Source Files
 
 - `hldpro-governance/scripts/remote-mcp/live_health_monitor.py`
-- `hldpro-governance/scripts/remote-mcp/tests/test_live_health_monitor.py`
 - `scripts/remote-mcp/stage_d_smoke.py`
+- `scripts/remote-mcp/tests/test_live_health_monitor.py`
 - `scripts/remote-mcp/tests/test_stage_d_smoke.py`
 
 ## Audit Trail
