@@ -2,12 +2,12 @@
 
 Last updated: 2026-04-20
 Owner: Operator (`nibargerb`)
-Issue: [hldpro-governance #109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109), recurring monitor [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372), alert evidence [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374), operating mode [#376](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376), launchd proof [#378](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/378), connectivity preflight [#380](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/380)
+Issue: [hldpro-governance #109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109), recurring monitor [#372](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/372), alert evidence [#374](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/374), operating mode [#376](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376), launchd proof [#378](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/378), connectivity preflight [#380](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/380), inbound preflight [#382](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/382)
 Scope: Governance Remote MCP Bridge contract, proof, and operator procedure.
 
 ## Current Status
 
-Stage A governance standards, Stage B/C downstream HTTP bridge controls, and Stage D live Cloudflare proof are merged. Issue #109 is closed. Recurring operational monitoring is tracked by issue #372 and uses the same Stage D proof runner plus evidence-safety checks. Issue #376 selects local `launchd` as the live-authoritative monitor operating mode; GitHub Actions remains the scheduled fixture harness and an optional configured-live runner. Issue #380 adds the operator connectivity preflight for the immediate question: can this machine send `som.ping` to Remote MCP and receive a response now?
+Stage A governance standards, Stage B/C downstream HTTP bridge controls, and Stage D live Cloudflare proof are merged. Issue #109 is closed. Recurring operational monitoring is tracked by issue #372 and uses the same Stage D proof runner plus evidence-safety checks. Issue #376 selects local `launchd` as the live-authoritative monitor operating mode; GitHub Actions remains the scheduled fixture harness and an optional configured-live runner. Issue #380 adds the operator connectivity preflight for the immediate question: can this machine send `som.ping` to Remote MCP and receive a response now? Issue #382 adds the separate operator inbound preflight for the immediate question: can this environment receive an operator-targeted message into a session inbox?
 
 ## Approved Remote Surface
 
@@ -87,6 +87,38 @@ Interpretation:
 - MCP here is request/response. Inbound push messaging to the operator remains a separate relay capability and must not be inferred from a successful `som.ping`.
 
 Preserved preflight evidence must contain missing configuration names only, never token values, Cloudflare Access material, bearer headers, JWT fragments, raw PII, or raw MCP payloads.
+
+## Operator Inbound Message Preflight
+
+Use the inbound preflight when the operator question is "can this environment receive a message for a local CLI session?" This is not a Remote MCP `som.ping` request/response proof. It uses the HITL relay queue contract and proves that a validated operator instruction reaches `raw/hitl-relay/queue/session-inbox/` for one target session.
+
+Fixture receive proof:
+
+```bash
+python3 scripts/remote-mcp/operator_inbound_preflight.py \
+  --mode fixture \
+  --json-output raw/remote-mcp-operator-inbound-preflight/YYYY-MM-DD.fixture-inbound.json
+```
+
+Live receive proof from a configured queue:
+
+```bash
+export SOM_OPERATOR_INBOUND_QUEUE_ROOT="raw/hitl-relay/queue"
+export SOM_OPERATOR_INBOUND_SESSION_ID="<target-cli-session-id>"
+
+python3 scripts/remote-mcp/operator_inbound_preflight.py \
+  --mode live \
+  --json-output raw/remote-mcp-operator-inbound-preflight/YYYY-MM-DD.live-inbound.json
+```
+
+Interpretation:
+
+- `ready: true` in live mode means the configured `session-inbox` contains a validated `session_instruction` addressed to `SOM_OPERATOR_INBOUND_SESSION_ID`.
+- `ready: true` in fixture mode means the local queue contract can carry an operator instruction into a session inbox; run live mode to prove current-machine receive readiness.
+- Exit `2` in live mode means the queue root or session id is missing, so no live receive path was inspected.
+- Exit `1` in live mode with no missing config means the queue exists but no validated instruction for the configured session is present yet.
+
+Preserved inbound preflight evidence must contain packet ids, session ids, action names, and audit packet types only. Do not commit raw message bodies, bearer tokens, JWT fragments, Cloudflare Access material, credential values, or PII.
 
 ## Stage D Proof Runner
 

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "mode": "live",
+  "ready": false,
+  "receive_path": "hitl-relay-session-inbox",
+  "checks": [
+    {
+      "name": "hitl-relay-queue-contract",
+      "status": "pass",
+      "detail": "using existing HITL relay queue validator"
+    },
+    {
+      "name": "remote-mcp-request-response-separation",
+      "status": "pass",
+      "detail": "inbound receive is separate from som.ping request/response"
+    },
+    {
+      "name": "operator-inbound-session-inbox",
+      "status": "fail",
+      "detail": "missing live configuration: SOM_OPERATOR_INBOUND_QUEUE_ROOT, SOM_OPERATOR_INBOUND_SESSION_ID"
+    }
+  ],
+  "missing_live_config": [
+    "SOM_OPERATOR_INBOUND_QUEUE_ROOT",
+    "SOM_OPERATOR_INBOUND_SESSION_ID"
+  ],
+  "warnings": [],
+  "received_instruction": {},
+  "recommended_action": "Configure live inbound queue root/session id or deliver a validated instruction, then rerun live preflight."
+}

@@ -75,6 +75,7 @@
 | som_client.py | `scripts/som-client/som_client.py` | Thin Remote MCP operator client with Cloudflare Access headers, `SOM_MCP_TOKEN` / `SOM_REMOTE_MCP_JWT` bearer auth, safe errors, and retry handling |
 | verify_audit.py | `scripts/remote-mcp/verify_audit.py` | Deterministic verifier for Remote MCP audit JSONL hash chains, HMACs, and manifests |
 | operator_connectivity.py | `scripts/remote-mcp/operator_connectivity.py` | No-secret fixture/live operator preflight for `som.ping` request/response readiness, launchd status, missing live config names, and recommended action |
+| operator_inbound_preflight.py | `scripts/remote-mcp/operator_inbound_preflight.py` | No-secret fixture/live operator-message receive preflight for the HITL relay session inbox path, missing live queue config names, and recommended action |
 | live_health_monitor.py | `scripts/remote-mcp/live_health_monitor.py` | Recurring Remote MCP monitor composing Stage D smoke/security checks, strict audit verification, tamper-negative proof, and evidence-safety scan |
 | monitor_alert.py | `scripts/remote-mcp/monitor_alert.py` | Payload-safe alert/report formatter for Remote MCP monitor JSON results |
 

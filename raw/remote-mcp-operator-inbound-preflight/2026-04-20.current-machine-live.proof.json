@@ -1,0 +1,1 @@
+{"command":"python3 scripts/remote-mcp/operator_inbound_preflight.py --mode live --json-output raw/remote-mcp-operator-inbound-preflight/2026-04-20.current-machine-live.json","exit_code":2,"expected_exit_code_when_unconfigured":2}
