@@ -1,6 +1,6 @@
 # Remote mcp Verify audit
 
-> 56 nodes · cohesion 0.05
+> 60 nodes · cohesion 0.05
 
 ## Key Concepts
 
@@ -13,6 +13,7 @@
 - **compute_entry_hash()** (6 connections) — `scripts/remote-mcp/verify_audit.py`
 - **compute_entry_hmac()** (6 connections) — `scripts/remote-mcp/verify_audit.py`
 - **compute_sha256()** (6 connections) — `scripts/remote-mcp/verify_audit.py`
+- **test_stage_d_smoke.py** (5 connections) — `scripts/remote-mcp/tests/test_stage_d_smoke.py`
 - **_make_chain_entries()** (5 connections) — `scripts/remote-mcp/tests/test_verify_audit.py`
 - **_write_audit_file()** (4 connections) — `scripts/remote-mcp/tests/test_verify_audit.py`
 - **_verify_manifest()** (4 connections) — `scripts/remote-mcp/verify_audit.py`
@@ -28,8 +29,7 @@
 - **_read_jsonl()** (3 connections) — `scripts/remote-mcp/verify_audit.py`
 - **_validate_schema()** (3 connections) — `scripts/remote-mcp/verify_audit.py`
 - **_verify_chain()** (3 connections) — `scripts/remote-mcp/verify_audit.py`
-- **verify_hmac()** (3 connections) — `scripts/windows-ollama/verify_audit.py`
-- *... and 31 more nodes in this community*
+- *... and 35 more nodes in this community*
 
 ## Relationships
 
@@ -37,6 +37,7 @@
 
 ## Source Files
 
+- `scripts/remote-mcp/tests/test_stage_d_smoke.py`
 - `scripts/remote-mcp/tests/test_verify_audit.py`
 - `scripts/remote-mcp/verify_audit.py`
 - `scripts/windows-ollama/tests/test_audit.py`
@@ -44,8 +45,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 113 (68%)
-- INFERRED: 52 (32%)
+- EXTRACTED: 121 (70%)
+- INFERRED: 52 (30%)
 - AMBIGUOUS: 0 (0%)
 
 ---

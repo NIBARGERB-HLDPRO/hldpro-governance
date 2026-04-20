@@ -43,6 +43,7 @@ def main() -> int:
         check(key in REGISTRY, f"ENV registry missing local-ai-machine mapping for {key}")
 
     run_synthetic_lam_bootstrap()
+    run_sibling_worktree_lam_bootstrap()
 
     print("[PASS] bootstrap repo env contract checks passed")
     return 0
@@ -114,6 +115,52 @@ def run_synthetic_lam_bootstrap() -> None:
             "+15551234567",
         ]:
             check(secret_value not in output, f"dry-run leaked synthetic value {secret_value}")
+
+
+def run_sibling_worktree_lam_bootstrap() -> None:
+    """Exercise vault discovery from sibling governance worktrees."""
+    import tempfile
+
+    with tempfile.TemporaryDirectory() as tmp:
+        hldpro_root = Path(tmp) / "HLDPRO"
+        primary_root = hldpro_root / "hldpro-governance"
+        sibling_root = hldpro_root / "hldpro-governance-sibling-worktree"
+        primary_root.mkdir(parents=True)
+        (sibling_root / "scripts").mkdir(parents=True)
+        script_path = sibling_root / "scripts" / "bootstrap-repo-env.sh"
+        shutil.copy2("scripts/bootstrap-repo-env.sh", script_path)
+        script_path.chmod(0o755)
+        (primary_root / ".env.shared").write_text(
+            textwrap.dedent(
+                """
+                CLAUDE_CODE_OAUTH_TOKEN=synthetic-claude-secret
+                CLOUDFLARE_MASTER_OPS_TOKEN=synthetic-cloudflare-secret
+                CLOUDFLARE_ACCOUNT_ID=synthetic-account
+                CLOUDFLARE_ZONE_ID=synthetic-zone
+                CLOUDFLARE_TUNNEL_ID=synthetic-tunnel
+                CF_TEAM_DOMAIN=synthetic-team
+                CF_ACCESS_AUD_TAG=synthetic-aud
+                TWILIO_TEST_CONSUMER_NUMBER=+15551234567
+                OPERATOR_SMS_PHONE=+15551234567
+                SOM_OPERATOR_SMS_PHONE=+15551234567
+                """
+            ).strip()
+            + "\n",
+            encoding="utf-8",
+        )
+
+        env = os.environ.copy()
+        env["DRY_RUN"] = "1"
+        result = subprocess.run(
+            ["bash", str(script_path), "lam", str(hldpro_root / "local-ai-machine" / ".env")],
+            cwd=sibling_root,
+            env=env,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        check(result.returncode == 0, f"sibling worktree lam dry-run failed: {result.stderr.strip()}")
+        check("OPERATOR_SMS_PHONE=<redacted>" in result.stdout, "sibling worktree dry-run missed operator phone")
 
 
 if __name__ == "__main__":

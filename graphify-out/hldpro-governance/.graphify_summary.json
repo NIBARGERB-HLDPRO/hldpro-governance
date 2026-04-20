@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-416-operator-notification-ssot-20260420/wiki/hldpro",
-  "nodes": 1383,
-  "edges": 2594,
-  "communities": 76,
-  "articles": 86,
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor/wiki/hldpro",
+  "nodes": 1385,
+  "edges": 2598,
+  "communities": 75,
+  "articles": 85,
   "html_status": "skipped",
   "code_files": 106
 }
