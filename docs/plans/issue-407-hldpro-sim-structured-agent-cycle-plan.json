@@ -1,0 +1,149 @@
+{
+  "session_id": "session-20260420-issue-407-hldpro-sim",
+  "issue_number": 407,
+  "objective": "Build packages/hldpro-sim/ — a governance-owned Python package implementing the OASIS multi-agent simulation pattern. Includes CodexCliProvider (proven via contract test), BaseAggregator[T], shared persona registry (5 persona JSON files), and a Stampede consumer proof fixture. First consumer: Stampede Phase 0 Slice 6.",
+  "tier": 2,
+  "scope_boundary": [
+    "packages/hldpro-sim/ Python package with pyproject.toml, hldprosim/ module, tests/, and personas/",
+    "hldprosim/providers.py: CodexCliProvider (subprocess codex exec --ephemeral) + AnthropicApiProvider (NotImplementedError stub)",
+    "hldprosim/personas.py: PersonaLoader with local-first + shared fallback resolution",
+    "hldprosim/engine.py: SimulationEngine wiring provider + loader + prompt_template + outcome_schema",
+    "hldprosim/runner.py: Runner.run_n() with optional ThreadPoolExecutor",
+    "hldprosim/aggregator.py: BaseAggregator[T] abstract generic",
+    "hldprosim/artifacts.py: ArtifactWriter + RunManifest dataclass",
+    "5 persona JSON files: trader-momentum, trader-growth, trader-value, hvac-homeowner, asc-medical-director",
+    "tests/ covering all modules with unittest.mock (no live codex exec in tests)",
+    "tests/fixtures/stampede_consumer.py: NarrativeOutcome + NarrativeAggregator e2e proof"
+  ],
+  "out_of_scope": [
+    "AnthropicApiProvider live implementation (deferred until API keys provisioned)",
+    "Deployer wiring to governance-tooling package (follow-on issue)",
+    "Live codex exec integration tests (contract proven 2026-04-20; unit mocks sufficient)",
+    "Stampede Phase 0 Slice 6 actual implementation (this is the library only)"
+  ],
+  "research_summary": "CodexCliProvider contract proven on 2026-04-20: codex exec --ephemeral --skip-git-repo-check --sandbox read-only --output-schema <schema.json> -o <output.json> '<prompt>'. Prompt must be positional arg (stdin hangs). Schema must include additionalProperties:false. ~30s wall clock, ~11k tokens per call. Codex authored all package files in one pass on branch issue-407-hldpro-sim-20260420. 6 of 13 tests fail due to plan schema mismatch (Write hook blocked persona files) and minor test bugs from code generation.",
+  "research_artifacts": [
+    "packages/hldpro-sim/hldprosim/ — all module files authored by Codex 2026-04-20",
+    "packages/hldpro-sim/tests/ — test suite authored by Codex 2026-04-20",
+    "Issue #407: hldpro-sim OASIS simulation engine package",
+    "Issue #410: plan file schema fix (this session)"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 — Package scaffold, providers, persona loader",
+      "goal": "pyproject.toml, hldprosim module with providers.py + personas.py, test_providers.py passing.",
+      "tasks": [
+        "pyproject.toml with setuptools>=68 build backend, pydantic>=2.0 dep",
+        "hldprosim/__init__.py exposing public API",
+        "hldprosim/providers.py: CodexCliProvider + AnthropicApiProvider",
+        "hldprosim/personas.py: PersonaLoader with local/shared resolution",
+        "tests/test_providers.py: 8 unit tests all passing"
+      ],
+      "acceptance_criteria": [
+        "python3.11 -m pip install -e . succeeds",
+        "CodexCliProvider builds subprocess args with prompt as positional arg",
+        "additionalProperties:false injected into schema automatically",
+        "AnthropicApiProvider raises NotImplementedError",
+        "PersonaLoader local-first + shared fallback + FileNotFoundError all tested"
+      ],
+      "file_paths": [
+        "packages/hldpro-sim/pyproject.toml",
+        "packages/hldpro-sim/hldprosim/__init__.py",
+        "packages/hldpro-sim/hldprosim/providers.py",
+        "packages/hldpro-sim/hldprosim/personas.py",
+        "packages/hldpro-sim/tests/test_providers.py"
+      ]
+    },
+    {
+      "name": "Sprint 2 — Engine, runner, aggregator, artifacts",
+      "goal": "SimulationEngine + Runner + BaseAggregator + ArtifactWriter all tested with mocks.",
+      "tasks": [
+        "hldprosim/engine.py: SimulationEngine.run(event, persona_id)",
+        "hldprosim/runner.py: Runner.run_n() serial + ThreadPoolExecutor paths",
+        "hldprosim/aggregator.py: BaseAggregator[T] abstract generic",
+        "hldprosim/artifacts.py: ArtifactWriter + RunManifest",
+        "tests/test_engine.py, test_runner.py, test_artifacts.py"
+      ],
+      "acceptance_criteria": [
+        "SimulationEngine.run passes correct system/user to provider",
+        "Runner.run_n returns n outcomes; ThreadPoolExecutor path tested",
+        "ArtifactWriter.write() produces run_manifest.json + outcomes.jsonl",
+        "All 5 test files pass"
+      ],
+      "file_paths": [
+        "packages/hldpro-sim/hldprosim/engine.py",
+        "packages/hldpro-sim/hldprosim/runner.py",
+        "packages/hldpro-sim/hldprosim/aggregator.py",
+        "packages/hldpro-sim/hldprosim/artifacts.py",
+        "packages/hldpro-sim/tests/test_engine.py",
+        "packages/hldpro-sim/tests/test_runner.py",
+        "packages/hldpro-sim/tests/test_artifacts.py"
+      ]
+    },
+    {
+      "name": "Sprint 3 — Persona registry + Stampede consumer proof",
+      "goal": "5 persona JSON files + e2e fixture test proving Stampede integration pattern.",
+      "tasks": [
+        "personas/trader-momentum.json, trader-growth.json, trader-value.json, hvac-homeowner.json, asc-medical-director.json",
+        "tests/fixtures/stampede_consumer.py: NarrativeOutcome + NarrativeAggregator",
+        "tests/test_stampede_consumer_proof.py: MockProvider e2e through full stack"
+      ],
+      "acceptance_criteria": [
+        "All 5 persona files loadable via PersonaLoader",
+        "NarrativeAggregator.aggregate() returns sentiment_distribution, top_catalysts, avg_confidence",
+        "test_stampede_e2e passes: MockProvider -> Engine -> Runner(n=3) -> Aggregator -> ArtifactWriter"
+      ],
+      "file_paths": [
+        "packages/hldpro-sim/personas/trader-momentum.json",
+        "packages/hldpro-sim/personas/trader-growth.json",
+        "packages/hldpro-sim/personas/trader-value.json",
+        "packages/hldpro-sim/personas/hvac-homeowner.json",
+        "packages/hldpro-sim/personas/asc-medical-director.json",
+        "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
+        "packages/hldpro-sim/tests/test_stampede_consumer_proof.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "scope-reviewer",
+      "role": "Scope reviewer",
+      "focus": "Confirm package stays library-only; no deployer wiring, no live API calls in tests.",
+      "status": "accepted",
+      "summary": "Scope tightly bounded to packages/hldpro-sim/. No governance surface files modified. AnthropicApiProvider is stub only. All tests use mocks.",
+      "evidence": ["Issue #407", "packages/hldpro-sim/ untracked in worktree"]
+    },
+    {
+      "reviewer": "contract-reviewer",
+      "role": "Provider contract reviewer",
+      "focus": "Verify CodexCliProvider subprocess invocation matches proven contract exactly.",
+      "status": "accepted",
+      "summary": "Proven pattern on 2026-04-20: positional prompt arg, --ephemeral, additionalProperties:false enforced. Tests mock subprocess.run and verify arg list.",
+      "evidence": ["hldprosim/providers.py", "tests/test_providers.py"]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "n/a",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "Tier 2 library package. Not a standards change, not a governance surface modification. SoM charter does not require alternate-model review for implementation-only packages.",
+    "evidence": ["STANDARDS.md §Society of Minds", "packages/ not in GOVERNANCE_SURFACE_PREFIXES"]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "All 3 sprints implemented by Codex in worktree issue-407-hldpro-sim-20260420. Dispatcher applies mechanical test fixes and persona files, then pushes and opens PR.",
+    "next_execution_step": "Run pytest packages/hldpro-sim/tests/ -v; confirm 13/13 pass; commit; push; open PR against main.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any test touches live codex exec (not mocked), HALT — tests must be hermetic.",
+    "If packages/hldpro-sim/ grows to include governance surface files, open a new issue before proceeding.",
+    "If AnthropicApiProvider is implemented (not just stub), that requires a separate issue with API key plan.",
+    "If persona files do not load via PersonaLoader.load(), fix the file — do not change the loader contract."
+  ],
+  "approved": true,
+  "approved_by": ["session-agent-claude-sonnet-4-6"],
+  "approved_at": "2026-04-20T00:00:00Z"
+}

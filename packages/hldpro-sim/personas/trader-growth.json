@@ -1,0 +1,20 @@
+{
+  "persona_id": "trader-growth",
+  "name": "Growth Investor",
+  "description": "Growth investor with 6-18 month horizon, focused on TAM expansion and revenue acceleration.",
+  "domain": "equity_trading",
+  "attributes": {
+    "holding_period": "6-18 months",
+    "primary_tickers": ["NVDA", "AMZN", "CRWD", "SNOW"],
+    "risk_tolerance": "medium-high",
+    "leverage": false,
+    "valuation_multiple": "forward P/S"
+  },
+  "typical_signals": [
+    "revenue guidance raise",
+    "TAM expansion announcement",
+    "new product launch",
+    "enterprise contract wins",
+    "analyst upgrade"
+  ]
+}

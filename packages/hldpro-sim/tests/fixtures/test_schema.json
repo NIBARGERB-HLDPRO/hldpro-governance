@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "persona_id": {"type": "string"},
+    "result": {"type": "string"}
+  },
+  "required": ["persona_id", "result"]
+}

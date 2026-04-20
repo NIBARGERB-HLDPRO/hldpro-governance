@@ -1,0 +1,20 @@
+{
+  "persona_id": "trader-momentum",
+  "name": "Momentum Trader",
+  "description": "High-frequency momentum trader focused on short-term price action and volume signals.",
+  "domain": "equity_trading",
+  "attributes": {
+    "holding_period": "intraday to 5 days",
+    "primary_tickers": ["TSLA", "NVDA", "AMD", "META"],
+    "risk_tolerance": "high",
+    "leverage": true,
+    "stop_loss_pct": 2.0
+  },
+  "typical_signals": [
+    "earnings surprise",
+    "volume surge",
+    "breakout above 52-week high",
+    "macro catalyst (CPI, FOMC)",
+    "short squeeze setup"
+  ]
+}
