@@ -9,7 +9,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L1",
       "id": "build_graph",
-      "community": 38
+      "community": 39
     },
     {
       "label": "_split_words()",
@@ -17,7 +17,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L78",
       "id": "build_graph_split_words",
-      "community": 38
+      "community": 39
     },
     {
       "label": "_normalize_phrase()",
@@ -25,7 +25,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L84",
       "id": "build_graph_normalize_phrase",
-      "community": 38
+      "community": 39
     },
     {
       "label": "_derive_path_phrase()",
@@ -33,7 +33,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L91",
       "id": "build_graph_derive_path_phrase",
-      "community": 38
+      "community": 39
     },
     {
       "label": "_derive_path_tokens()",
@@ -41,7 +41,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L123",
       "id": "build_graph_derive_path_tokens",
-      "community": 38
+      "community": 39
     },
     {
       "label": "_community_label()",
@@ -49,7 +49,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L137",
       "id": "build_graph_community_label",
-      "community": 38
+      "community": 39
     },
     {
       "label": "infer_community_labels()",
@@ -57,7 +57,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L168",
       "id": "build_graph_infer_community_labels",
-      "community": 38
+      "community": 39
     },
     {
       "label": "_sanitize_text_paths()",
@@ -65,7 +65,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L172",
       "id": "build_graph_sanitize_text_paths",
-      "community": 38
+      "community": 39
     },
     {
       "label": "_sanitize_markdown_artifacts()",
@@ -73,7 +73,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L179",
       "id": "build_graph_sanitize_markdown_artifacts",
-      "community": 38
+      "community": 39
     },
     {
       "label": "build_graph()",
@@ -81,7 +81,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L191",
       "id": "build_graph_build_graph",
-      "community": 38
+      "community": 39
     },
     {
       "label": "main()",
@@ -89,7 +89,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L277",
       "id": "build_graph_main",
-      "community": 38
+      "community": 39
     },
     {
       "label": "graphify_hook_helper.py",
@@ -97,7 +97,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L1",
       "id": "graphify_hook_helper",
-      "community": 9
+      "community": 10
     },
     {
       "label": "HelperError",
@@ -105,7 +105,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L18",
       "id": "graphify_hook_helper_helpererror",
-      "community": 9
+      "community": 10
     },
     {
       "label": "RuntimeError",
@@ -113,7 +113,7 @@
       "source_file": "",
       "source_location": "",
       "id": "runtimeerror",
-      "community": 8
+      "community": 9
     },
     {
       "label": "HookPlan",
@@ -121,7 +121,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L23",
       "id": "graphify_hook_helper_hookplan",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".to_json()",
@@ -129,7 +129,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L32",
       "id": "graphify_hook_helper_hookplan_to_json",
-      "community": 9
+      "community": 10
     },
     {
       "label": "load_manifest()",
@@ -137,7 +137,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L44",
       "id": "graphify_hook_helper_load_manifest",
-      "community": 9
+      "community": 10
     },
     {
       "label": "target_rows()",
@@ -145,7 +145,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L54",
       "id": "graphify_hook_helper_target_rows",
-      "community": 9
+      "community": 10
     },
     {
       "label": "find_target()",
@@ -153,7 +153,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L61",
       "id": "graphify_hook_helper_find_target",
-      "community": 9
+      "community": 10
     },
     {
       "label": "infer_repo_slug()",
@@ -161,7 +161,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L68",
       "id": "graphify_hook_helper_infer_repo_slug",
-      "community": 9
+      "community": 10
     },
     {
       "label": "resolve_under()",
@@ -169,7 +169,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L80",
       "id": "graphify_hook_helper_resolve_under",
-      "community": 9
+      "community": 10
     },
     {
       "label": "git_hook_paths()",
@@ -177,7 +177,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L89",
       "id": "graphify_hook_helper_git_hook_paths",
-      "community": 9
+      "community": 10
     },
     {
       "label": "build_plan()",
@@ -185,7 +185,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L103",
       "id": "graphify_hook_helper_build_plan",
-      "community": 9
+      "community": 10
     },
     {
       "label": "is_relative_to()",
@@ -193,7 +193,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L122",
       "id": "graphify_hook_helper_is_relative_to",
-      "community": 9
+      "community": 10
     },
     {
       "label": "preflight_safe_output()",
@@ -201,7 +201,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L130",
       "id": "graphify_hook_helper_preflight_safe_output",
-      "community": 9
+      "community": 10
     },
     {
       "label": "build_refresh_command()",
@@ -209,7 +209,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L139",
       "id": "graphify_hook_helper_build_refresh_command",
-      "community": 9
+      "community": 10
     },
     {
       "label": "managed_hook_body()",
@@ -217,7 +217,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L157",
       "id": "graphify_hook_helper_managed_hook_body",
-      "community": 9
+      "community": 10
     },
     {
       "label": "install_hooks()",
@@ -225,7 +225,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L171",
       "id": "graphify_hook_helper_install_hooks",
-      "community": 9
+      "community": 10
     },
     {
       "label": "execute_refresh()",
@@ -233,7 +233,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L187",
       "id": "graphify_hook_helper_execute_refresh",
-      "community": 9
+      "community": 10
     },
     {
       "label": "print_json()",
@@ -241,7 +241,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L192",
       "id": "graphify_hook_helper_print_json",
-      "community": 9
+      "community": 10
     },
     {
       "label": "add_common_args()",
@@ -249,7 +249,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L197",
       "id": "graphify_hook_helper_add_common_args",
-      "community": 9
+      "community": 10
     },
     {
       "label": "main()",
@@ -257,7 +257,7 @@
       "source_file": "scripts/knowledge_base/graphify_hook_helper.py",
       "source_location": "L204",
       "id": "graphify_hook_helper_main",
-      "community": 9
+      "community": 10
     },
     {
       "label": "graphify_targets.py",
@@ -265,7 +265,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L1",
       "id": "graphify_targets",
-      "community": 41
+      "community": 42
     },
     {
       "label": "load_manifest()",
@@ -273,7 +273,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L14",
       "id": "graphify_targets_load_manifest",
-      "community": 41
+      "community": 42
     },
     {
       "label": "target_rows()",
@@ -281,7 +281,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L24",
       "id": "graphify_targets_target_rows",
-      "community": 41
+      "community": 42
     },
     {
       "label": "filtered_targets()",
@@ -289,7 +289,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L30",
       "id": "graphify_targets_filtered_targets",
-      "community": 41
+      "community": 42
     },
     {
       "label": "find_target()",
@@ -297,7 +297,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L39",
       "id": "graphify_targets_find_target",
-      "community": 41
+      "community": 42
     },
     {
       "label": "print_json()",
@@ -305,7 +305,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L46",
       "id": "graphify_targets_print_json",
-      "community": 41
+      "community": 42
     },
     {
       "label": "print_tsv()",
@@ -313,7 +313,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L51",
       "id": "graphify_targets_print_tsv",
-      "community": 41
+      "community": 42
     },
     {
       "label": "print_shell()",
@@ -321,7 +321,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L67",
       "id": "graphify_targets_print_shell",
-      "community": 41
+      "community": 42
     },
     {
       "label": "print_stage_paths()",
@@ -329,7 +329,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L74",
       "id": "graphify_targets_print_stage_paths",
-      "community": 41
+      "community": 42
     },
     {
       "label": "main()",
@@ -337,7 +337,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L84",
       "id": "graphify_targets_main",
-      "community": 41
+      "community": 42
     },
     {
       "label": "log_graphify_usage.py",
@@ -345,7 +345,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L1",
       "id": "log_graphify_usage",
-      "community": 52
+      "community": 53
     },
     {
       "label": "parse_args()",
@@ -353,7 +353,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L13",
       "id": "log_graphify_usage_parse_args",
-      "community": 52
+      "community": 53
     },
     {
       "label": "build_event()",
@@ -361,7 +361,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L31",
       "id": "log_graphify_usage_build_event",
-      "community": 52
+      "community": 53
     },
     {
       "label": "append_event()",
@@ -369,7 +369,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L70",
       "id": "log_graphify_usage_append_event",
-      "community": 52
+      "community": 53
     },
     {
       "label": "main()",
@@ -377,7 +377,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L80",
       "id": "log_graphify_usage_main",
-      "community": 52
+      "community": 53
     },
     {
       "label": "measure_graphify_usage.py",
@@ -617,7 +617,7 @@
       "source_file": "scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L1",
       "id": "push_graph_to_neo4j",
-      "community": 57
+      "community": 58
     },
     {
       "label": "build_scoped_graph()",
@@ -625,7 +625,7 @@
       "source_file": "scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L15",
       "id": "push_graph_to_neo4j_build_scoped_graph",
-      "community": 57
+      "community": 58
     },
     {
       "label": "main()",
@@ -633,7 +633,7 @@
       "source_file": "scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L37",
       "id": "push_graph_to_neo4j_main",
-      "community": 57
+      "community": 58
     },
     {
       "label": "test_graphify_governance_contract.py",
@@ -641,7 +641,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L1",
       "id": "test_graphify_governance_contract",
-      "community": 54
+      "community": 55
     },
     {
       "label": "check()",
@@ -649,7 +649,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L38",
       "id": "test_graphify_governance_contract_check",
-      "community": 54
+      "community": 55
     },
     {
       "label": "is_ignored()",
@@ -657,7 +657,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L46",
       "id": "test_graphify_governance_contract_is_ignored",
-      "community": 54
+      "community": 55
     },
     {
       "label": "main()",
@@ -665,7 +665,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L64",
       "id": "test_graphify_governance_contract_main",
-      "community": 54
+      "community": 55
     },
     {
       "label": "test_graphify_hook_helper.py",
@@ -673,7 +673,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_hook_helper.py",
       "source_location": "L1",
       "id": "test_graphify_hook_helper",
-      "community": 9
+      "community": 10
     },
     {
       "label": "TestGraphifyHookHelper",
@@ -681,7 +681,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_hook_helper.py",
       "source_location": "L14",
       "id": "test_graphify_hook_helper_testgraphifyhookhelper",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".setUp()",
@@ -689,7 +689,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_hook_helper.py",
       "source_location": "L15",
       "id": "test_graphify_hook_helper_testgraphifyhookhelper_setup",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".tearDown()",
@@ -697,7 +697,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_hook_helper.py",
       "source_location": "L46",
       "id": "test_graphify_hook_helper_testgraphifyhookhelper_teardown",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".write_manifest()",
@@ -705,7 +705,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_hook_helper.py",
       "source_location": "L49",
       "id": "test_graphify_hook_helper_testgraphifyhookhelper_write_manifest",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".args()",
@@ -713,7 +713,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_hook_helper.py",
       "source_location": "L52",
       "id": "test_graphify_hook_helper_testgraphifyhookhelper_args",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".test_infers_repo_slug_and_resolves_manifest_paths_from_governance_root()",
@@ -721,7 +721,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_hook_helper.py",
       "source_location": "L62",
       "id": "test_graphify_hook_helper_testgraphifyhookhelper_test_infers_repo_slug_and_resolves_manifest_paths_from_governance_root",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".test_accepts_explicit_knocktracker_slug()",
@@ -729,7 +729,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_hook_helper.py",
       "source_location": "L73",
       "id": "test_graphify_hook_helper_testgraphifyhookhelper_test_accepts_explicit_knocktracker_slug",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".test_unsafe_product_repo_output_aborts_before_builder_call()",
@@ -737,7 +737,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_hook_helper.py",
       "source_location": "L83",
       "id": "test_graphify_hook_helper_testgraphifyhookhelper_test_unsafe_product_repo_output_aborts_before_builder_call",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".test_install_refuses_unmanaged_existing_hooks()",
@@ -745,7 +745,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_hook_helper.py",
       "source_location": "L99",
       "id": "test_graphify_hook_helper_testgraphifyhookhelper_test_install_refuses_unmanaged_existing_hooks",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".test_install_backs_up_unmanaged_hook_and_writes_managed_body()",
@@ -753,7 +753,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_hook_helper.py",
       "source_location": "L110",
       "id": "test_graphify_hook_helper_testgraphifyhookhelper_test_install_backs_up_unmanaged_hook_and_writes_managed_body",
-      "community": 9
+      "community": 10
     },
     {
       "label": ".test_dry_run_payload_includes_command_and_hook_targets()",
@@ -761,7 +761,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_hook_helper.py",
       "source_location": "L126",
       "id": "test_graphify_hook_helper_testgraphifyhookhelper_test_dry_run_payload_includes_command_and_hook_targets",
-      "community": 9
+      "community": 10
     },
     {
       "label": "test_graphify_usage_logging_contract.py",
@@ -769,7 +769,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L1",
       "id": "test_graphify_usage_logging_contract",
-      "community": 45
+      "community": 46
     },
     {
       "label": "check()",
@@ -777,7 +777,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L19",
       "id": "test_graphify_usage_logging_contract_check",
-      "community": 45
+      "community": 46
     },
     {
       "label": "run_command()",
@@ -785,7 +785,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L27",
       "id": "test_graphify_usage_logging_contract_run_command",
-      "community": 45
+      "community": 46
     },
     {
       "label": "test_schema_shape()",
@@ -793,7 +793,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L31",
       "id": "test_graphify_usage_logging_contract_test_schema_shape",
-      "community": 45
+      "community": 46
     },
     {
       "label": "test_logger_backwards_compatible()",
@@ -801,7 +801,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L42",
       "id": "test_graphify_usage_logging_contract_test_logger_backwards_compatible",
-      "community": 45
+      "community": 46
     },
     {
       "label": "test_logger_query_trace_fields()",
@@ -809,7 +809,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L74",
       "id": "test_graphify_usage_logging_contract_test_logger_query_trace_fields",
-      "community": 45
+      "community": 46
     },
     {
       "label": "test_measurement_outputs_query_traces()",
@@ -817,7 +817,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L128",
       "id": "test_graphify_usage_logging_contract_test_measurement_outputs_query_traces",
-      "community": 45
+      "community": 46
     },
     {
       "label": "test_measurement_falls_back_from_stale_governance_repo_path()",
@@ -825,7 +825,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L193",
       "id": "test_graphify_usage_logging_contract_test_measurement_falls_back_from_stale_governance_repo_path",
-      "community": 45
+      "community": 46
     },
     {
       "label": "main()",
@@ -833,7 +833,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L247",
       "id": "test_graphify_usage_logging_contract_main",
-      "community": 45
+      "community": 46
     },
     {
       "label": "update_knowledge_index.py",
@@ -841,7 +841,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L1",
       "id": "update_knowledge_index",
-      "community": 55
+      "community": 56
     },
     {
       "label": "summary_line()",
@@ -849,7 +849,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L21",
       "id": "update_knowledge_index_summary_line",
-      "community": 55
+      "community": 56
     },
     {
       "label": "replace_section()",
@@ -857,7 +857,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L29",
       "id": "update_knowledge_index_replace_section",
-      "community": 55
+      "community": 56
     },
     {
       "label": "main()",
@@ -865,7 +865,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L38",
       "id": "update_knowledge_index_main",
-      "community": 55
+      "community": 56
     },
     {
       "label": "runtime_inventory.py",
@@ -873,7 +873,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L1",
       "id": "runtime_inventory",
-      "community": 42
+      "community": 43
     },
     {
       "label": "_run()",
@@ -881,7 +881,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L25",
       "id": "runtime_inventory_run",
-      "community": 42
+      "community": 43
     },
     {
       "label": "mac_hardware()",
@@ -889,7 +889,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L29",
       "id": "runtime_inventory_mac_hardware",
-      "community": 42
+      "community": 43
     },
     {
       "label": "import_available()",
@@ -897,7 +897,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L48",
       "id": "runtime_inventory_import_available",
-      "community": 42
+      "community": 43
     },
     {
       "label": "local_runtime()",
@@ -905,7 +905,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L53",
       "id": "runtime_inventory_local_runtime",
-      "community": 42
+      "community": 43
     },
     {
       "label": "windows_ollama()",
@@ -913,7 +913,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L62",
       "id": "runtime_inventory_windows_ollama",
-      "community": 42
+      "community": 43
     },
     {
       "label": "pii_guardrail()",
@@ -921,7 +921,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L97",
       "id": "runtime_inventory_pii_guardrail",
-      "community": 42
+      "community": 43
     },
     {
       "label": "memory_budget()",
@@ -929,7 +929,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L126",
       "id": "runtime_inventory_memory_budget",
-      "community": 42
+      "community": 43
     },
     {
       "label": "build_inventory()",
@@ -937,7 +937,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L149",
       "id": "runtime_inventory_build_inventory",
-      "community": 42
+      "community": 43
     },
     {
       "label": "main()",
@@ -945,7 +945,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L174",
       "id": "runtime_inventory_main",
-      "community": 42
+      "community": 43
     },
     {
       "label": "test_runtime_inventory.py",
@@ -953,7 +953,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L1",
       "id": "test_runtime_inventory",
-      "community": 33
+      "community": 34
     },
     {
       "label": "FakeResponse",
@@ -961,7 +961,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L23",
       "id": "test_runtime_inventory_fakeresponse",
-      "community": 33
+      "community": 34
     },
     {
       "label": ".__init__()",
@@ -969,7 +969,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L24",
       "id": "test_runtime_inventory_fakeresponse_init",
-      "community": 33
+      "community": 34
     },
     {
       "label": ".__enter__()",
@@ -977,7 +977,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L27",
       "id": "test_runtime_inventory_fakeresponse_enter",
-      "community": 33
+      "community": 34
     },
     {
       "label": ".__exit__()",
@@ -985,7 +985,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L30",
       "id": "test_runtime_inventory_fakeresponse_exit",
-      "community": 33
+      "community": 34
     },
     {
       "label": ".read()",
@@ -993,7 +993,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L33",
       "id": "test_runtime_inventory_fakeresponse_read",
-      "community": 33
+      "community": 34
     },
     {
       "label": "TestRuntimeInventory",
@@ -1001,7 +1001,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L37",
       "id": "test_runtime_inventory_testruntimeinventory",
-      "community": 33
+      "community": 34
     },
     {
       "label": ".test_windows_timeout_reports_unreachable_without_payloads()",
@@ -1009,7 +1009,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L38",
       "id": "test_runtime_inventory_testruntimeinventory_test_windows_timeout_reports_unreachable_without_payloads",
-      "community": 33
+      "community": 34
     },
     {
       "label": ".test_windows_tags_lists_models_without_payloads()",
@@ -1017,7 +1017,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L46",
       "id": "test_runtime_inventory_testruntimeinventory_test_windows_tags_lists_models_without_payloads",
-      "community": 33
+      "community": 34
     },
     {
       "label": ".test_pii_guardrail_missing_patterns_fails_closed()",
@@ -1025,7 +1025,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L55",
       "id": "test_runtime_inventory_testruntimeinventory_test_pii_guardrail_missing_patterns_fails_closed",
-      "community": 33
+      "community": 34
     },
     {
       "label": ".test_pii_guardrail_happy_path_detects_email_and_allows_clean_probe()",
@@ -1033,7 +1033,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L61",
       "id": "test_runtime_inventory_testruntimeinventory_test_pii_guardrail_happy_path_detects_email_and_allows_clean_probe",
-      "community": 33
+      "community": 34
     },
     {
       "label": ".test_inventory_has_no_payload_routing()",
@@ -1041,7 +1041,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L68",
       "id": "test_runtime_inventory_testruntimeinventory_test_inventory_has_no_payload_routing",
-      "community": 33
+      "community": 34
     },
     {
       "label": ".test_qwen36_large_worker_is_mac_mlx_on_demand_only()",
@@ -1049,7 +1049,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L84",
       "id": "test_runtime_inventory_testruntimeinventory_test_qwen36_large_worker_is_mac_mlx_on_demand_only",
-      "community": 33
+      "community": 34
     },
     {
       "label": ".test_qwen36_config_and_inventory_budget_stay_aligned()",
@@ -1057,7 +1057,7 @@
       "source_file": "scripts/lam/test_runtime_inventory.py",
       "source_location": "L93",
       "id": "test_runtime_inventory_testruntimeinventory_test_qwen36_config_and_inventory_budget_stay_aligned",
-      "community": 33
+      "community": 34
     },
     {
       "label": "delegation_gate.py",
@@ -1641,7 +1641,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L1",
       "id": "self_learning",
-      "community": 7
+      "community": 8
     },
     {
       "label": "LearningEntry",
@@ -1649,7 +1649,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L26",
       "id": "self_learning_learningentry",
-      "community": 7
+      "community": 8
     },
     {
       "label": "LearningMatch",
@@ -1657,7 +1657,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L38",
       "id": "self_learning_learningmatch",
-      "community": 7
+      "community": 8
     },
     {
       "label": "utc_now()",
@@ -1665,7 +1665,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L47",
       "id": "self_learning_utc_now",
-      "community": 7
+      "community": 8
     },
     {
       "label": "tokenize()",
@@ -1673,7 +1673,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L51",
       "id": "self_learning_tokenize",
-      "community": 7
+      "community": 8
     },
     {
       "label": "_rel()",
@@ -1681,7 +1681,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L59",
       "id": "self_learning_rel",
-      "community": 7
+      "community": 8
     },
     {
       "label": "_entry_id()",
@@ -1689,7 +1689,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L66",
       "id": "self_learning_entry_id",
-      "community": 7
+      "community": 8
     },
     {
       "label": "_date_from_text()",
@@ -1697,7 +1697,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L70",
       "id": "self_learning_date_from_text",
-      "community": 7
+      "community": 8
     },
     {
       "label": "load_fail_fast()",
@@ -1705,7 +1705,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L75",
       "id": "self_learning_load_fail_fast",
-      "community": 7
+      "community": 8
     },
     {
       "label": "load_error_patterns()",
@@ -1713,7 +1713,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L108",
       "id": "self_learning_load_error_patterns",
-      "community": 7
+      "community": 8
     },
     {
       "label": "_section()",
@@ -1721,7 +1721,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L138",
       "id": "self_learning_section",
-      "community": 7
+      "community": 8
     },
     {
       "label": "load_closeouts()",
@@ -1729,7 +1729,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L149",
       "id": "self_learning_load_closeouts",
-      "community": 7
+      "community": 8
     },
     {
       "label": "load_operator_context()",
@@ -1737,7 +1737,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L176",
       "id": "self_learning_load_operator_context",
-      "community": 7
+      "community": 8
     },
     {
       "label": "load_compendium_attention()",
@@ -1745,7 +1745,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L199",
       "id": "self_learning_load_compendium_attention",
-      "community": 7
+      "community": 8
     },
     {
       "label": "load_graph_attention()",
@@ -1753,7 +1753,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L206",
       "id": "self_learning_load_graph_attention",
-      "community": 7
+      "community": 8
     },
     {
       "label": "load_entries()",
@@ -1761,7 +1761,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L213",
       "id": "self_learning_load_entries",
-      "community": 7
+      "community": 8
     },
     {
       "label": "duplicate_counts()",
@@ -1769,7 +1769,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L222",
       "id": "self_learning_duplicate_counts",
-      "community": 7
+      "community": 8
     },
     {
       "label": "lookup_patterns()",
@@ -1777,7 +1777,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L231",
       "id": "self_learning_lookup_patterns",
-      "community": 7
+      "community": 8
     },
     {
       "label": "query_from_packet()",
@@ -1785,7 +1785,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L259",
       "id": "self_learning_query_from_packet",
-      "community": 7
+      "community": 8
     },
     {
       "label": "enrich_packet()",
@@ -1793,7 +1793,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L272",
       "id": "self_learning_enrich_packet",
-      "community": 7
+      "community": 8
     },
     {
       "label": "atomic_write_yaml()",
@@ -1801,7 +1801,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L289",
       "id": "self_learning_atomic_write_yaml",
-      "community": 7
+      "community": 8
     },
     {
       "label": "record_failure()",
@@ -1809,7 +1809,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L296",
       "id": "self_learning_record_failure",
-      "community": 7
+      "community": 8
     },
     {
       "label": "build_report()",
@@ -1817,7 +1817,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L328",
       "id": "self_learning_build_report",
-      "community": 7
+      "community": 8
     },
     {
       "label": "report_markdown()",
@@ -1825,7 +1825,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L352",
       "id": "self_learning_report_markdown",
-      "community": 7
+      "community": 8
     },
     {
       "label": "_run_cli()",
@@ -1833,7 +1833,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L374",
       "id": "self_learning_run_cli",
-      "community": 7
+      "community": 8
     },
     {
       "label": "test_delegation_gate.py",
@@ -1913,7 +1913,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L1",
       "id": "test_delegation_hook",
-      "community": 39
+      "community": 40
     },
     {
       "label": "_run_hook()",
@@ -1921,7 +1921,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L15",
       "id": "test_delegation_hook_run_hook",
-      "community": 39
+      "community": 40
     },
     {
       "label": "_payload()",
@@ -1929,7 +1929,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L30",
       "id": "test_delegation_hook_payload",
-      "community": 39
+      "community": 40
     },
     {
       "label": "test_hook_blocks_agent_owned_work_before_file_path_logic()",
@@ -1937,7 +1937,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L39",
       "id": "test_delegation_hook_test_hook_blocks_agent_owned_work_before_file_path_logic",
-      "community": 39
+      "community": 40
     },
     {
       "label": "test_hook_warns_for_implementation_scoped_explore()",
@@ -1945,7 +1945,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L52",
       "id": "test_delegation_hook_test_hook_warns_for_implementation_scoped_explore",
-      "community": 39
+      "community": 40
     },
     {
       "label": "test_hook_allows_read_even_when_text_matches_owned_work()",
@@ -1953,7 +1953,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L65",
       "id": "test_delegation_hook_test_hook_allows_read_even_when_text_matches_owned_work",
-      "community": 39
+      "community": 40
     },
     {
       "label": "test_hook_bypass_allows_and_logs()",
@@ -1961,7 +1961,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L78",
       "id": "test_delegation_hook_test_hook_bypass_allows_and_logs",
-      "community": 39
+      "community": 40
     },
     {
       "label": "test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass()",
@@ -1969,7 +1969,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L90",
       "id": "test_delegation_hook_test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass",
-      "community": 39
+      "community": 40
     },
     {
       "label": "test_hook_blocks_task_tool_owned_work()",
@@ -1977,7 +1977,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L103",
       "id": "test_delegation_hook_test_hook_blocks_task_tool_owned_work",
-      "community": 39
+      "community": 40
     },
     {
       "label": "test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate()",
@@ -1985,7 +1985,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L115",
       "id": "test_delegation_hook_test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate",
-      "community": 39
+      "community": 40
     },
     {
       "label": "test_hook_preserves_new_code_file_block()",
@@ -1993,7 +1993,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L129",
       "id": "test_delegation_hook_test_hook_preserves_new_code_file_block",
-      "community": 39
+      "community": 40
     },
     {
       "label": "test_hitl_relay_final_e2e.py",
@@ -2081,7 +2081,7 @@
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L1",
       "id": "test_hitl_relay_queue",
-      "community": 40
+      "community": 41
     },
     {
       "label": "_request()",
@@ -2089,7 +2089,7 @@
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L15",
       "id": "test_hitl_relay_queue_request",
-      "community": 40
+      "community": 41
     },
     {
       "label": "_process()",
@@ -2097,7 +2097,7 @@
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L34",
       "id": "test_hitl_relay_queue_process",
-      "community": 40
+      "community": 41
     },
     {
       "label": "test_local_cli_checkpoint_fixture_creates_valid_hitl_request()",
@@ -2105,7 +2105,7 @@
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L59",
       "id": "test_hitl_relay_queue_test_local_cli_checkpoint_fixture_creates_valid_hitl_request",
-      "community": 40
+      "community": 41
     },
     {
       "label": "test_valid_approval_response_produces_bounded_session_instruction()",
@@ -2113,7 +2113,7 @@
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L72",
       "id": "test_hitl_relay_queue_test_valid_approval_response_produces_bounded_session_instruction",
-      "community": 40
+      "community": 41
     },
     {
       "label": "test_request_changes_response_preserves_feedback_path_without_approval()",
@@ -2121,7 +2121,7 @@
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L92",
       "id": "test_hitl_relay_queue_test_request_changes_response_preserves_feedback_path_without_approval",
-      "community": 40
+      "community": 41
     },
     {
       "label": "test_ambiguous_response_produces_clarification_and_no_instruction()",
@@ -2129,7 +2129,7 @@
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L107",
       "id": "test_hitl_relay_queue_test_ambiguous_response_produces_clarification_and_no_instruction",
-      "community": 40
+      "community": 41
     },
     {
       "label": "test_stale_session_fixture_produces_resume_packet()",
@@ -2137,7 +2137,7 @@
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L121",
       "id": "test_hitl_relay_queue_test_stale_session_fixture_produces_resume_packet",
-      "community": 40
+      "community": 41
     },
     {
       "label": "test_invalid_packet_lands_in_dead_letter_with_validation_errors()",
@@ -2145,7 +2145,7 @@
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L137",
       "id": "test_hitl_relay_queue_test_invalid_packet_lands_in_dead_letter_with_validation_errors",
-      "community": 40
+      "community": 41
     },
     {
       "label": "test_expired_response_fails_closed_to_dead_letter()",
@@ -2153,7 +2153,7 @@
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L151",
       "id": "test_hitl_relay_queue_test_expired_response_fails_closed_to_dead_letter",
-      "community": 40
+      "community": 41
     },
     {
       "label": "test_replay_reconstructs_decision_path()",
@@ -2161,7 +2161,7 @@
       "source_file": "scripts/orchestrator/test_hitl_relay_queue.py",
       "source_location": "L164",
       "id": "test_hitl_relay_queue_test_replay_reconstructs_decision_path",
-      "community": 40
+      "community": 41
     },
     {
       "label": "test_packet_queue.py",
@@ -2305,7 +2305,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L1",
       "id": "test_read_only_observer",
-      "community": 49
+      "community": 50
     },
     {
       "label": "_copy_fixture()",
@@ -2313,7 +2313,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L26",
       "id": "test_read_only_observer_copy_fixture",
-      "community": 49
+      "community": 50
     },
     {
       "label": "TestReadOnlyObserver",
@@ -2321,7 +2321,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L35",
       "id": "test_read_only_observer_testreadonlyobserver",
-      "community": 49
+      "community": 50
     },
     {
       "label": "._fixture()",
@@ -2329,7 +2329,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L36",
       "id": "test_read_only_observer_testreadonlyobserver_fixture",
-      "community": 49
+      "community": 50
     },
     {
       "label": ".test_check_only_does_not_write_reports_or_packets()",
@@ -2337,7 +2337,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L51",
       "id": "test_read_only_observer_testreadonlyobserver_test_check_only_does_not_write_reports_or_packets",
-      "community": 49
+      "community": 50
     },
     {
       "label": ".test_writes_only_project_reports()",
@@ -2345,7 +2345,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L63",
       "id": "test_read_only_observer_testreadonlyobserver_test_writes_only_project_reports",
-      "community": 49
+      "community": 50
     },
     {
       "label": ".test_cli_check_only()",
@@ -2353,7 +2353,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L85",
       "id": "test_read_only_observer_testreadonlyobserver_test_cli_check_only",
-      "community": 49
+      "community": 50
     },
     {
       "label": "test_self_learning.py",
@@ -2361,7 +2361,7 @@
       "source_file": "scripts/orchestrator/test_self_learning.py",
       "source_location": "L1",
       "id": "test_self_learning",
-      "community": 7
+      "community": 8
     },
     {
       "label": "_write_fixture()",
@@ -2369,7 +2369,7 @@
       "source_file": "scripts/orchestrator/test_self_learning.py",
       "source_location": "L17",
       "id": "test_self_learning_write_fixture",
-      "community": 7
+      "community": 8
     },
     {
       "label": "TestSelfLearning",
@@ -2377,7 +2377,7 @@
       "source_file": "scripts/orchestrator/test_self_learning.py",
       "source_location": "L68",
       "id": "test_self_learning_testselflearning",
-      "community": 7
+      "community": 8
     },
     {
       "label": ".test_lookup_returns_cited_prior_patterns()",
@@ -2385,7 +2385,7 @@
       "source_file": "scripts/orchestrator/test_self_learning.py",
       "source_location": "L69",
       "id": "test_self_learning_testselflearning_test_lookup_returns_cited_prior_patterns",
-      "community": 7
+      "community": 8
     },
     {
       "label": ".test_enrich_packet_injects_known_failure_context()",
@@ -2393,7 +2393,7 @@
       "source_file": "scripts/orchestrator/test_self_learning.py",
       "source_location": "L81",
       "id": "test_self_learning_testselflearning_test_enrich_packet_injects_known_failure_context",
-      "community": 7
+      "community": 8
     },
     {
       "label": ".test_record_failure_is_append_only_and_issue_backed()",
@@ -2401,7 +2401,7 @@
       "source_file": "scripts/orchestrator/test_self_learning.py",
       "source_location": "L99",
       "id": "test_self_learning_testselflearning_test_record_failure_is_append_only_and_issue_backed",
-      "community": 7
+      "community": 8
     },
     {
       "label": ".test_record_failure_rejects_out_of_range_issue_numbers()",
@@ -2409,7 +2409,7 @@
       "source_file": "scripts/orchestrator/test_self_learning.py",
       "source_location": "L124",
       "id": "test_self_learning_testselflearning_test_record_failure_rejects_out_of_range_issue_numbers",
-      "community": 7
+      "community": 8
     },
     {
       "label": ".test_report_flags_duplicates_and_graphify_attention_only()",
@@ -2417,7 +2417,7 @@
       "source_file": "scripts/orchestrator/test_self_learning.py",
       "source_location": "L146",
       "id": "test_self_learning_testselflearning_test_report_flags_duplicates_and_graphify_attention_only",
-      "community": 7
+      "community": 8
     },
     {
       "label": "assert_execution_scope.py",
@@ -2609,7 +2609,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L1",
       "id": "build_effectiveness_metrics",
-      "community": 48
+      "community": 49
     },
     {
       "label": "RepoMetrics",
@@ -2617,7 +2617,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L28",
       "id": "build_effectiveness_metrics_repometrics",
-      "community": 48
+      "community": 49
     },
     {
       "label": "run()",
@@ -2625,7 +2625,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L42",
       "id": "build_effectiveness_metrics_run",
-      "community": 48
+      "community": 49
     },
     {
       "label": "pct()",
@@ -2633,7 +2633,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L53",
       "id": "build_effectiveness_metrics_pct",
-      "community": 48
+      "community": 49
     },
     {
       "label": "parse_iso()",
@@ -2641,7 +2641,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L59",
       "id": "build_effectiveness_metrics_parse_iso",
-      "community": 48
+      "community": 49
     },
     {
       "label": "collect_repo_metrics()",
@@ -2649,7 +2649,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L63",
       "id": "build_effectiveness_metrics_collect_repo_metrics",
-      "community": 48
+      "community": 49
     },
     {
       "label": "render_markdown()",
@@ -2657,7 +2657,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L128",
       "id": "build_effectiveness_metrics_render_markdown",
-      "community": 48
+      "community": 49
     },
     {
       "label": "main()",
@@ -2665,7 +2665,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L162",
       "id": "build_effectiveness_metrics_main",
-      "community": 48
+      "community": 49
     },
     {
       "label": "build_org_governance_compendium.py",
@@ -2977,7 +2977,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L1",
       "id": "check_org_repo_inventory",
-      "community": 29
+      "community": 30
     },
     {
       "label": "OrgRepo",
@@ -2985,7 +2985,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L27",
       "id": "check_org_repo_inventory_orgrepo",
-      "community": 29
+      "community": 30
     },
     {
       "label": "InventoryDrift",
@@ -2993,7 +2993,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L38",
       "id": "check_org_repo_inventory_inventorydrift",
-      "community": 29
+      "community": 30
     },
     {
       "label": ".has_blocking_drift()",
@@ -3001,7 +3001,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L44",
       "id": "check_org_repo_inventory_inventorydrift_has_blocking_drift",
-      "community": 29
+      "community": 30
     },
     {
       "label": "_load_json()",
@@ -3009,7 +3009,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L48",
       "id": "check_org_repo_inventory_load_json",
-      "community": 29
+      "community": 30
     },
     {
       "label": "_inventory_rows_from_payload()",
@@ -3017,7 +3017,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L52",
       "id": "check_org_repo_inventory_inventory_rows_from_payload",
-      "community": 29
+      "community": 30
     },
     {
       "label": "_default_branch_name()",
@@ -3025,7 +3025,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L64",
       "id": "check_org_repo_inventory_default_branch_name",
-      "community": 29
+      "community": 30
     },
     {
       "label": "parse_inventory()",
@@ -3033,7 +3033,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L74",
       "id": "check_org_repo_inventory_parse_inventory",
-      "community": 29
+      "community": 30
     },
     {
       "label": "load_inventory_file()",
@@ -3041,7 +3041,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L95",
       "id": "check_org_repo_inventory_load_inventory_file",
-      "community": 29
+      "community": 30
     },
     {
       "label": "load_live_inventory()",
@@ -3049,7 +3049,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L99",
       "id": "check_org_repo_inventory_load_live_inventory",
-      "community": 29
+      "community": 30
     },
     {
       "label": "compare_inventory()",
@@ -3057,7 +3057,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L114",
       "id": "check_org_repo_inventory_compare_inventory",
-      "community": 29
+      "community": 30
     },
     {
       "label": "render_text()",
@@ -3065,7 +3065,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L154",
       "id": "check_org_repo_inventory_render_text",
-      "community": 29
+      "community": 30
     },
     {
       "label": "render_markdown()",
@@ -3073,7 +3073,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L181",
       "id": "check_org_repo_inventory_render_markdown",
-      "community": 29
+      "community": 30
     },
     {
       "label": "_repo_list()",
@@ -3081,7 +3081,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L211",
       "id": "check_org_repo_inventory_repo_list",
-      "community": 29
+      "community": 30
     },
     {
       "label": "render_json()",
@@ -3089,7 +3089,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L218",
       "id": "check_org_repo_inventory_render_json",
-      "community": 29
+      "community": 30
     },
     {
       "label": "main()",
@@ -3097,7 +3097,7 @@
       "source_file": "scripts/overlord/check_org_repo_inventory.py",
       "source_location": "L232",
       "id": "check_org_repo_inventory_main",
-      "community": 29
+      "community": 30
     },
     {
       "label": "check_overlord_backlog_github_alignment.py",
@@ -3105,7 +3105,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L1",
       "id": "check_overlord_backlog_github_alignment",
-      "community": 32
+      "community": 33
     },
     {
       "label": "fail()",
@@ -3113,7 +3113,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L21",
       "id": "check_overlord_backlog_github_alignment_fail",
-      "community": 32
+      "community": 33
     },
     {
       "label": "parse_markdown_row()",
@@ -3121,7 +3121,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L26",
       "id": "check_overlord_backlog_github_alignment_parse_markdown_row",
-      "community": 32
+      "community": 33
     },
     {
       "label": "collect_section_lines()",
@@ -3129,7 +3129,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L37",
       "id": "check_overlord_backlog_github_alignment_collect_section_lines",
-      "community": 32
+      "community": 33
     },
     {
       "label": "has_issue_ref()",
@@ -3137,7 +3137,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L50",
       "id": "check_overlord_backlog_github_alignment_has_issue_ref",
-      "community": 32
+      "community": 33
     },
     {
       "label": "issue_numbers()",
@@ -3145,7 +3145,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L54",
       "id": "check_overlord_backlog_github_alignment_issue_numbers",
-      "community": 32
+      "community": 33
     },
     {
       "label": "issue_column_index()",
@@ -3153,7 +3153,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L58",
       "id": "check_overlord_backlog_github_alignment_issue_column_index",
-      "community": 32
+      "community": 33
     },
     {
       "label": "check_github_issue_open()",
@@ -3161,7 +3161,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L65",
       "id": "check_overlord_backlog_github_alignment_check_github_issue_open",
-      "community": 32
+      "community": 33
     },
     {
       "label": "validate_section()",
@@ -3169,7 +3169,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L98",
       "id": "check_overlord_backlog_github_alignment_validate_section",
-      "community": 32
+      "community": 33
     },
     {
       "label": "main()",
@@ -3177,7 +3177,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L135",
       "id": "check_overlord_backlog_github_alignment_main",
-      "community": 32
+      "community": 33
     },
     {
       "label": "check_progress_github_issue_staleness.py",
@@ -3185,7 +3185,7 @@
       "source_file": "scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L1",
       "id": "check_progress_github_issue_staleness",
-      "community": 30
+      "community": 31
     },
     {
       "label": "IssueRef",
@@ -3193,7 +3193,7 @@
       "source_file": "scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L40",
       "id": "check_progress_github_issue_staleness_issueref",
-      "community": 30
+      "community": 31
     },
     {
       "label": "fail()",
@@ -3201,7 +3201,7 @@
       "source_file": "scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L47",
       "id": "check_progress_github_issue_staleness_fail",
-      "community": 30
+      "community": 31
     },
     {
       "label": "parse_args()",
@@ -3209,7 +3209,7 @@
       "source_file": "scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L52",
       "id": "check_progress_github_issue_staleness_parse_args",
-      "community": 30
+      "community": 31
     },
     {
       "label": "current_repo_slug()",
@@ -3217,7 +3217,7 @@
       "source_file": "scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L60",
       "id": "check_progress_github_issue_staleness_current_repo_slug",
-      "community": 30
+      "community": 31
     },
     {
       "label": "gh_json()",
@@ -3225,7 +3225,7 @@
       "source_file": "scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L69",
       "id": "check_progress_github_issue_staleness_gh_json",
-      "community": 30
+      "community": 31
     },
     {
       "label": "backlog_issues()",
@@ -3233,7 +3233,7 @@
       "source_file": "scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L80",
       "id": "check_progress_github_issue_staleness_backlog_issues",
-      "community": 30
+      "community": 31
     },
     {
       "label": "normalize_heading()",
@@ -3241,7 +3241,7 @@
       "source_file": "scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L107",
       "id": "check_progress_github_issue_staleness_normalize_heading",
-      "community": 30
+      "community": 31
     },
     {
       "label": "section_state()",
@@ -3249,7 +3249,7 @@
       "source_file": "scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L111",
       "id": "check_progress_github_issue_staleness_section_state",
-      "community": 30
+      "community": 31
     },
     {
       "label": "collect_active_issue_refs()",
@@ -3257,7 +3257,7 @@
       "source_file": "scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L119",
       "id": "check_progress_github_issue_staleness_collect_active_issue_refs",
-      "community": 30
+      "community": 31
     },
     {
       "label": "build_summary()",
@@ -3265,7 +3265,7 @@
       "source_file": "scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L138",
       "id": "check_progress_github_issue_staleness_build_summary",
-      "community": 30
+      "community": 31
     },
     {
       "label": "main()",
@@ -3273,7 +3273,7 @@
       "source_file": "scripts/overlord/check_progress_github_issue_staleness.py",
       "source_location": "L167",
       "id": "check_progress_github_issue_staleness_main",
-      "community": 30
+      "community": 31
     },
     {
       "label": "check_workflow_local_coverage.py",
@@ -4089,7 +4089,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L1",
       "id": "memory_integrity",
-      "community": 46
+      "community": 47
     },
     {
       "label": "fail()",
@@ -4097,7 +4097,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L21",
       "id": "memory_integrity_fail",
-      "community": 46
+      "community": 47
     },
     {
       "label": "memory_dir_for_repo()",
@@ -4105,7 +4105,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L26",
       "id": "memory_integrity_memory_dir_for_repo",
-      "community": 46
+      "community": 47
     },
     {
       "label": "load_memory_lines()",
@@ -4113,7 +4113,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L30",
       "id": "memory_integrity_load_memory_lines",
-      "community": 46
+      "community": 47
     },
     {
       "label": "check_memory_exists()",
@@ -4121,7 +4121,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L34",
       "id": "memory_integrity_check_memory_exists",
-      "community": 46
+      "community": 47
     },
     {
       "label": "parse_pointer_filenames()",
@@ -4129,7 +4129,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L42",
       "id": "memory_integrity_parse_pointer_filenames",
-      "community": 46
+      "community": 47
     },
     {
       "label": "validate_frontmatter()",
@@ -4137,7 +4137,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L57",
       "id": "memory_integrity_validate_frontmatter",
-      "community": 46
+      "community": 47
     },
     {
       "label": "inspect_repo()",
@@ -4145,7 +4145,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L88",
       "id": "memory_integrity_inspect_repo",
-      "community": 46
+      "community": 47
     },
     {
       "label": "main()",
@@ -4153,7 +4153,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L120",
       "id": "memory_integrity_main",
-      "community": 46
+      "community": 47
     },
     {
       "label": "pentagi_sweep.py",
@@ -4289,7 +4289,7 @@
       "source_file": "scripts/overlord/render_github_issue_feed.py",
       "source_location": "L1",
       "id": "render_github_issue_feed",
-      "community": 58
+      "community": 59
     },
     {
       "label": "render_issue()",
@@ -4297,7 +4297,7 @@
       "source_file": "scripts/overlord/render_github_issue_feed.py",
       "source_location": "L7",
       "id": "render_github_issue_feed_render_issue",
-      "community": 58
+      "community": 59
     },
     {
       "label": "main()",
@@ -4305,7 +4305,7 @@
       "source_file": "scripts/overlord/render_github_issue_feed.py",
       "source_location": "L22",
       "id": "render_github_issue_feed_main",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_assert_execution_scope.py",
@@ -4593,7 +4593,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L1",
       "id": "test_check_org_repo_inventory",
-      "community": 36
+      "community": 37
     },
     {
       "label": "TestOrgRepoInventory",
@@ -4601,7 +4601,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L23",
       "id": "test_check_org_repo_inventory_testorgrepoinventory",
-      "community": 36
+      "community": 37
     },
     {
       "label": "._registry()",
@@ -4609,7 +4609,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L24",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_registry",
-      "community": 36
+      "community": 37
     },
     {
       "label": "._inventory()",
@@ -4617,7 +4617,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L73",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_inventory",
-      "community": 36
+      "community": 37
     },
     {
       "label": "._repo_row()",
@@ -4625,7 +4625,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L78",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_repo_row",
-      "community": 36
+      "community": 37
     },
     {
       "label": "._run()",
@@ -4633,7 +4633,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L88",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_run",
-      "community": 36
+      "community": 37
     },
     {
       "label": ".test_exact_active_inventory_passes()",
@@ -4641,7 +4641,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L95",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_exact_active_inventory_passes",
-      "community": 36
+      "community": 37
     },
     {
       "label": ".test_missing_active_repo_fails()",
@@ -4649,7 +4649,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L109",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_missing_active_repo_fails",
-      "community": 36
+      "community": 37
     },
     {
       "label": ".test_warn_only_reports_missing_active_repo_but_passes()",
@@ -4657,7 +4657,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L124",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_warn_only_reports_missing_active_repo_but_passes",
-      "community": 36
+      "community": 37
     },
     {
       "label": ".test_stale_registry_repo_fails()",
@@ -4665,7 +4665,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L147",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_stale_registry_repo_fails",
-      "community": 36
+      "community": 37
     },
     {
       "label": ".test_archived_unregistered_repo_is_notice_not_blocker()",
@@ -4673,7 +4673,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L159",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_unregistered_repo_is_notice_not_blocker",
-      "community": 36
+      "community": 37
     },
     {
       "label": ".test_archived_registry_repo_fails_without_archived_lifecycle_classification()",
@@ -4681,7 +4681,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L174",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_fails_without_archived_lifecycle_classification",
-      "community": 36
+      "community": 37
     },
     {
       "label": ".test_archived_registry_repo_passes_with_archived_lifecycle_classification()",
@@ -4689,7 +4689,7 @@
       "source_file": "scripts/overlord/test_check_org_repo_inventory.py",
       "source_location": "L189",
       "id": "test_check_org_repo_inventory_testorgrepoinventory_test_archived_registry_repo_passes_with_archived_lifecycle_classification",
-      "community": 36
+      "community": 37
     },
     {
       "label": "test_check_overlord_backlog_github_alignment.py",
@@ -4697,7 +4697,7 @@
       "source_file": "scripts/overlord/test_check_overlord_backlog_github_alignment.py",
       "source_location": "L1",
       "id": "test_check_overlord_backlog_github_alignment",
-      "community": 32
+      "community": 33
     },
     {
       "label": "TestOverlordBacklogGithubAlignment",
@@ -4705,7 +4705,7 @@
       "source_file": "scripts/overlord/test_check_overlord_backlog_github_alignment.py",
       "source_location": "L17",
       "id": "test_check_overlord_backlog_github_alignment_testoverlordbackloggithubalignment",
-      "community": 32
+      "community": 33
     },
     {
       "label": ".test_in_progress_closed_issue_fails()",
@@ -4713,7 +4713,7 @@
       "source_file": "scripts/overlord/test_check_overlord_backlog_github_alignment.py",
       "source_location": "L18",
       "id": "test_check_overlord_backlog_github_alignment_testoverlordbackloggithubalignment_test_in_progress_closed_issue_fails",
-      "community": 32
+      "community": 33
     },
     {
       "label": ".test_planned_open_issue_passes()",
@@ -4721,7 +4721,7 @@
       "source_file": "scripts/overlord/test_check_overlord_backlog_github_alignment.py",
       "source_location": "L36",
       "id": "test_check_overlord_backlog_github_alignment_testoverlordbackloggithubalignment_test_planned_open_issue_passes",
-      "community": 32
+      "community": 33
     },
     {
       "label": ".test_missing_issue_column_reference_fails()",
@@ -4729,7 +4729,7 @@
       "source_file": "scripts/overlord/test_check_overlord_backlog_github_alignment.py",
       "source_location": "L42",
       "id": "test_check_overlord_backlog_github_alignment_testoverlordbackloggithubalignment_test_missing_issue_column_reference_fails",
-      "community": 32
+      "community": 33
     },
     {
       "label": "test_deploy_governance_tooling.py",
@@ -5145,7 +5145,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L1",
       "id": "test_pentagi_sweep",
-      "community": 37
+      "community": 38
     },
     {
       "label": "_registry()",
@@ -5153,7 +5153,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L10",
       "id": "test_pentagi_sweep_registry",
-      "community": 37
+      "community": 38
     },
     {
       "label": "_repo()",
@@ -5161,7 +5161,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L75",
       "id": "test_pentagi_sweep_repo",
-      "community": 37
+      "community": 38
     },
     {
       "label": "_track()",
@@ -5169,7 +5169,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L84",
       "id": "test_pentagi_sweep_track",
-      "community": 37
+      "community": 38
     },
     {
       "label": "_run()",
@@ -5177,7 +5177,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L88",
       "id": "test_pentagi_sweep_run",
-      "community": 37
+      "community": 38
     },
     {
       "label": "test_missing_report_skips_with_missing_token()",
@@ -5185,7 +5185,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L107",
       "id": "test_pentagi_sweep_test_missing_report_skips_with_missing_token",
-      "community": 37
+      "community": 38
     },
     {
       "label": "test_stale_report_skips_with_missing_token()",
@@ -5193,7 +5193,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L121",
       "id": "test_pentagi_sweep_test_stale_report_skips_with_missing_token",
-      "community": 37
+      "community": 38
     },
     {
       "label": "test_missing_runner_is_explicit_when_token_exists()",
@@ -5201,7 +5201,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L136",
       "id": "test_pentagi_sweep_test_missing_runner_is_explicit_when_token_exists",
-      "community": 37
+      "community": 38
     },
     {
       "label": "test_fresh_report_does_not_trigger()",
@@ -5209,7 +5209,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L147",
       "id": "test_pentagi_sweep_test_fresh_report_does_not_trigger",
-      "community": 37
+      "community": 38
     },
     {
       "label": "test_runner_would_run_without_execute()",
@@ -5217,7 +5217,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L161",
       "id": "test_pentagi_sweep_test_runner_would_run_without_execute",
-      "community": 37
+      "community": 38
     },
     {
       "label": "test_untracked_fresh_report_does_not_count_for_audited_ref()",
@@ -5225,7 +5225,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L175",
       "id": "test_pentagi_sweep_test_untracked_fresh_report_does_not_count_for_audited_ref",
-      "community": 37
+      "community": 38
     },
     {
       "label": "test_execute_runs_tracked_runner()",
@@ -5233,7 +5233,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L188",
       "id": "test_pentagi_sweep_test_execute_runs_tracked_runner",
-      "community": 37
+      "community": 38
     },
     {
       "label": "test_markdown_records_same_source_root_for_dashboard_consumers()",
@@ -5241,7 +5241,7 @@
       "source_file": "scripts/overlord/test_pentagi_sweep.py",
       "source_location": "L202",
       "id": "test_pentagi_sweep_test_markdown_records_same_source_root_for_dashboard_consumers",
-      "community": 37
+      "community": 38
     },
     {
       "label": "test_validate_governed_repos.py",
@@ -5249,7 +5249,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L1",
       "id": "test_validate_governed_repos",
-      "community": 34
+      "community": 35
     },
     {
       "label": "GovernedReposValidationTests",
@@ -5257,7 +5257,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L65",
       "id": "test_validate_governed_repos_governedreposvalidationtests",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".write_registry()",
@@ -5265,7 +5265,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L66",
       "id": "test_validate_governed_repos_governedreposvalidationtests_write_registry",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".assert_invalid()",
@@ -5273,7 +5273,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L73",
       "id": "test_validate_governed_repos_governedreposvalidationtests_assert_invalid",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_valid_registry_classification_passes()",
@@ -5281,7 +5281,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L77",
       "id": "test_validate_governed_repos_governedreposvalidationtests_test_valid_registry_classification_passes",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_missing_classification_fails()",
@@ -5289,7 +5289,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L80",
       "id": "test_validate_governed_repos_governedreposvalidationtests_test_missing_classification_fails",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_extra_repository_field_fails()",
@@ -5297,7 +5297,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L85",
       "id": "test_validate_governed_repos_governedreposvalidationtests_test_extra_repository_field_fails",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_extra_classification_field_fails()",
@@ -5305,7 +5305,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L90",
       "id": "test_validate_governed_repos_governedreposvalidationtests_test_extra_classification_field_fails",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_missing_root_field_fails()",
@@ -5313,7 +5313,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L95",
       "id": "test_validate_governed_repos_governedreposvalidationtests_test_missing_root_field_fails",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_invalid_lifecycle_status_fails()",
@@ -5321,7 +5321,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L100",
       "id": "test_validate_governed_repos_governedreposvalidationtests_test_invalid_lifecycle_status_fails",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_invalid_governance_status_fails()",
@@ -5329,7 +5329,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L105",
       "id": "test_validate_governed_repos_governedreposvalidationtests_test_invalid_governance_status_fails",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_empty_issue_refs_fails()",
@@ -5337,7 +5337,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L110",
       "id": "test_validate_governed_repos_governedreposvalidationtests_test_empty_issue_refs_fails",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_bad_review_date_fails()",
@@ -5345,7 +5345,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L115",
       "id": "test_validate_governed_repos_governedreposvalidationtests_test_bad_review_date_fails",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_non_boolean_subsystem_value_fails()",
@@ -5353,7 +5353,7 @@
       "source_file": "scripts/overlord/test_validate_governed_repos.py",
       "source_location": "L120",
       "id": "test_validate_governed_repos_governedreposvalidationtests_test_non_boolean_subsystem_value_fails",
-      "community": 34
+      "community": 35
     },
     {
       "label": "test_validate_structured_agent_cycle_plan.py",
@@ -5665,7 +5665,7 @@
       "source_file": "scripts/overlord/validate_backlog_gh_sync.py",
       "source_location": "L1",
       "id": "validate_backlog_gh_sync",
-      "community": 43
+      "community": 44
     },
     {
       "label": "find_planned_table()",
@@ -5673,7 +5673,7 @@
       "source_file": "scripts/overlord/validate_backlog_gh_sync.py",
       "source_location": "L24",
       "id": "validate_backlog_gh_sync_find_planned_table",
-      "community": 43
+      "community": 44
     },
     {
       "label": "parse_columns()",
@@ -5681,7 +5681,7 @@
       "source_file": "scripts/overlord/validate_backlog_gh_sync.py",
       "source_location": "L57",
       "id": "validate_backlog_gh_sync_parse_columns",
-      "community": 43
+      "community": 44
     },
     {
       "label": "resolve_issue_number()",
@@ -5689,7 +5689,7 @@
       "source_file": "scripts/overlord/validate_backlog_gh_sync.py",
       "source_location": "L78",
       "id": "validate_backlog_gh_sync_resolve_issue_number",
-      "community": 43
+      "community": 44
     },
     {
       "label": "check_github_issue()",
@@ -5697,7 +5697,7 @@
       "source_file": "scripts/overlord/validate_backlog_gh_sync.py",
       "source_location": "L95",
       "id": "validate_backlog_gh_sync_check_github_issue",
-      "community": 43
+      "community": 44
     },
     {
       "label": "main()",
@@ -5705,7 +5705,7 @@
       "source_file": "scripts/overlord/validate_backlog_gh_sync.py",
       "source_location": "L138",
       "id": "validate_backlog_gh_sync_main",
-      "community": 43
+      "community": 44
     },
     {
       "label": "Return (header_line_index, list_of_data_lines) for the ## Planned table.",
@@ -5713,7 +5713,7 @@
       "source_file": "scripts/overlord/validate_backlog_gh_sync.py",
       "source_location": "L25",
       "id": "validate_backlog_gh_sync_rationale_25",
-      "community": 43
+      "community": 44
     },
     {
       "label": "Split a markdown table row into a dict keyed by header column names.     Returns",
@@ -5721,7 +5721,7 @@
       "source_file": "scripts/overlord/validate_backlog_gh_sync.py",
       "source_location": "L58",
       "id": "validate_backlog_gh_sync_rationale_58",
-      "community": 43
+      "community": 44
     },
     {
       "label": "Extract a #NNN from the cell value.     Returns the integer issue number, or Non",
@@ -5729,7 +5729,7 @@
       "source_file": "scripts/overlord/validate_backlog_gh_sync.py",
       "source_location": "L79",
       "id": "validate_backlog_gh_sync_rationale_79",
-      "community": 43
+      "community": 44
     },
     {
       "label": "Call GitHub API to verify issue exists and is open.     Returns (ok: bool, title",
@@ -5737,7 +5737,7 @@
       "source_file": "scripts/overlord/validate_backlog_gh_sync.py",
       "source_location": "L96",
       "id": "validate_backlog_gh_sync_rationale_96",
-      "community": 43
+      "community": 44
     },
     {
       "label": "validate_governed_repos.py",
@@ -5745,7 +5745,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L1",
       "id": "validate_governed_repos",
-      "community": 50
+      "community": 51
     },
     {
       "label": "fail()",
@@ -5753,7 +5753,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L71",
       "id": "validate_governed_repos_fail",
-      "community": 50
+      "community": 51
     },
     {
       "label": "check()",
@@ -5761,7 +5761,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L76",
       "id": "validate_governed_repos_check",
-      "community": 50
+      "community": 51
     },
     {
       "label": "load_json()",
@@ -5769,7 +5769,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L81",
       "id": "validate_governed_repos_load_json",
-      "community": 50
+      "community": 51
     },
     {
       "label": "validate_registry_shape()",
@@ -5777,7 +5777,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L90",
       "id": "validate_governed_repos_validate_registry_shape",
-      "community": 50
+      "community": 51
     },
     {
       "label": "validate_graphify_reconciliation()",
@@ -5785,7 +5785,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L206",
       "id": "validate_governed_repos_validate_graphify_reconciliation",
-      "community": 50
+      "community": 51
     },
     {
       "label": "main()",
@@ -5793,7 +5793,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L229",
       "id": "validate_governed_repos_main",
-      "community": 50
+      "community": 51
     },
     {
       "label": "validate_registry_surfaces.py",
@@ -5801,7 +5801,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L1",
       "id": "validate_registry_surfaces",
-      "community": 44
+      "community": 45
     },
     {
       "label": "fail()",
@@ -5809,7 +5809,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L21",
       "id": "validate_registry_surfaces_fail",
-      "community": 44
+      "community": 45
     },
     {
       "label": "check()",
@@ -5817,7 +5817,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L26",
       "id": "validate_registry_surfaces_check",
-      "community": 44
+      "community": 45
     },
     {
       "label": "read_text()",
@@ -5825,7 +5825,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L31",
       "id": "validate_registry_surfaces_read_text",
-      "community": 44
+      "community": 45
     },
     {
       "label": "repos_for_static_checkout()",
@@ -5833,7 +5833,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L35",
       "id": "validate_registry_surfaces_repos_for_static_checkout",
-      "community": 44
+      "community": 45
     },
     {
       "label": "validate_static_checkout_workflow()",
@@ -5841,7 +5841,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L45",
       "id": "validate_registry_surfaces_validate_static_checkout_workflow",
-      "community": 44
+      "community": 45
     },
     {
       "label": "validate_runtime_registry_consumers()",
@@ -5849,7 +5849,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L58",
       "id": "validate_registry_surfaces_validate_runtime_registry_consumers",
-      "community": 44
+      "community": 45
     },
     {
       "label": "validate_docs_surfaces()",
@@ -5857,7 +5857,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L95",
       "id": "validate_registry_surfaces_validate_docs_surfaces",
-      "community": 44
+      "community": 45
     },
     {
       "label": "validate_subsystem_expectations()",
@@ -5865,7 +5865,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L111",
       "id": "validate_registry_surfaces_validate_subsystem_expectations",
-      "community": 44
+      "community": 45
     },
     {
       "label": "main()",
@@ -5873,7 +5873,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L128",
       "id": "validate_registry_surfaces_main",
-      "community": 44
+      "community": 45
     },
     {
       "label": "validate_structured_agent_cycle_plan.py",
@@ -5881,7 +5881,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L1",
       "id": "validate_structured_agent_cycle_plan",
-      "community": 35
+      "community": 36
     },
     {
       "label": "_display_path()",
@@ -5889,7 +5889,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L52",
       "id": "validate_structured_agent_cycle_plan_display_path",
-      "community": 35
+      "community": 36
     },
     {
       "label": "_load_json_safe()",
@@ -5897,7 +5897,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L59",
       "id": "validate_structured_agent_cycle_plan_load_json_safe",
-      "community": 35
+      "community": 36
     },
     {
       "label": "_find_plan_files()",
@@ -5905,7 +5905,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L67",
       "id": "validate_structured_agent_cycle_plan_find_plan_files",
-      "community": 35
+      "community": 36
     },
     {
       "label": "_require()",
@@ -5913,7 +5913,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L71",
       "id": "validate_structured_agent_cycle_plan_require",
-      "community": 35
+      "community": 36
     },
     {
       "label": "_branch_issue_number()",
@@ -5921,7 +5921,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L76",
       "id": "validate_structured_agent_cycle_plan_branch_issue_number",
-      "community": 35
+      "community": 36
     },
     {
       "label": "_is_governance_surface()",
@@ -5929,7 +5929,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L81",
       "id": "validate_structured_agent_cycle_plan_is_governance_surface",
-      "community": 35
+      "community": 36
     },
     {
       "label": "_read_changed_files()",
@@ -5937,7 +5937,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L90",
       "id": "validate_structured_agent_cycle_plan_read_changed_files",
-      "community": 35
+      "community": 36
     },
     {
       "label": "_matching_plan_payloads()",
@@ -5945,7 +5945,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L96",
       "id": "validate_structured_agent_cycle_plan_matching_plan_payloads",
-      "community": 35
+      "community": 36
     },
     {
       "label": "_matching_execution_scopes()",
@@ -5953,7 +5953,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L110",
       "id": "validate_structured_agent_cycle_plan_matching_execution_scopes",
-      "community": 35
+      "community": 36
     },
     {
       "label": "_validate_planner_boundary_scope_presence()",
@@ -5961,7 +5961,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L119",
       "id": "validate_structured_agent_cycle_plan_validate_planner_boundary_scope_presence",
-      "community": 35
+      "community": 36
     },
     {
       "label": "_validate_implementation_ready_plan()",
@@ -5969,7 +5969,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L151",
       "id": "validate_structured_agent_cycle_plan_validate_implementation_ready_plan",
-      "community": 35
+      "community": 36
     },
     {
       "label": "_validate_file()",
@@ -5977,7 +5977,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L176",
       "id": "validate_structured_agent_cycle_plan_validate_file",
-      "community": 35
+      "community": 36
     },
     {
       "label": "main()",
@@ -5985,7 +5985,7 @@
       "source_file": "scripts/overlord/validate_structured_agent_cycle_plan.py",
       "source_location": "L254",
       "id": "validate_structured_agent_cycle_plan_main",
-      "community": 35
+      "community": 36
     },
     {
       "label": "emit.py",
@@ -5993,7 +5993,7 @@
       "source_file": "scripts/packet/emit.py",
       "source_location": "L1",
       "id": "emit",
-      "community": 56
+      "community": 57
     },
     {
       "label": "emit_packet()",
@@ -6001,7 +6001,7 @@
       "source_file": "scripts/packet/emit.py",
       "source_location": "L15",
       "id": "emit_emit_packet",
-      "community": 56
+      "community": 57
     },
     {
       "label": "main()",
@@ -6009,7 +6009,7 @@
       "source_file": "scripts/packet/emit.py",
       "source_location": "L74",
       "id": "emit_main",
-      "community": 56
+      "community": 57
     },
     {
       "label": "Emit a packet YAML file.     Returns: path to written file",
@@ -6017,7 +6017,7 @@
       "source_file": "scripts/packet/emit.py",
       "source_location": "L27",
       "id": "emit_rationale_27",
-      "community": 56
+      "community": 57
     },
     {
       "label": "test_hitl_relay_schema.py",
@@ -6025,7 +6025,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L1",
       "id": "test_hitl_relay_schema",
-      "community": 53
+      "community": 54
     },
     {
       "label": "_validator()",
@@ -6033,7 +6033,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L15",
       "id": "test_hitl_relay_schema_validator",
-      "community": 53
+      "community": 54
     },
     {
       "label": "_load()",
@@ -6041,7 +6041,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L21",
       "id": "test_hitl_relay_schema_load",
-      "community": 53
+      "community": 54
     },
     {
       "label": "test_valid_hitl_relay_examples_pass()",
@@ -6049,7 +6049,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L25",
       "id": "test_hitl_relay_schema_test_valid_hitl_relay_examples_pass",
-      "community": 53
+      "community": 54
     },
     {
       "label": "test_invalid_hitl_relay_examples_fail()",
@@ -6057,7 +6057,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L34",
       "id": "test_hitl_relay_schema_test_invalid_hitl_relay_examples_fail",
-      "community": 53
+      "community": 54
     },
     {
       "label": "test_validate.py",
@@ -6473,7 +6473,7 @@
       "source_file": "scripts/packet/test_validate_hitl_relay.py",
       "source_location": "L1",
       "id": "test_validate_hitl_relay",
-      "community": 10
+      "community": 11
     },
     {
       "label": "_load()",
@@ -6481,7 +6481,7 @@
       "source_file": "scripts/packet/test_validate_hitl_relay.py",
       "source_location": "L19",
       "id": "test_validate_hitl_relay_load",
-      "community": 10
+      "community": 11
     },
     {
       "label": "test_valid_examples_pass_policy_validation()",
@@ -6489,7 +6489,7 @@
       "source_file": "scripts/packet/test_validate_hitl_relay.py",
       "source_location": "L23",
       "id": "test_validate_hitl_relay_test_valid_examples_pass_policy_validation",
-      "community": 10
+      "community": 11
     },
     {
       "label": "test_invalid_examples_fail_policy_validation()",
@@ -6497,7 +6497,7 @@
       "source_file": "scripts/packet/test_validate_hitl_relay.py",
       "source_location": "L30",
       "id": "test_validate_hitl_relay_test_invalid_examples_fail_policy_validation",
-      "community": 10
+      "community": 11
     },
     {
       "label": "test_session_instruction_requires_matching_target_session()",
@@ -6505,7 +6505,7 @@
       "source_file": "scripts/packet/test_validate_hitl_relay.py",
       "source_location": "L38",
       "id": "test_validate_hitl_relay_test_session_instruction_requires_matching_target_session",
-      "community": 10
+      "community": 11
     },
     {
       "label": "test_low_confidence_non_clarify_decision_fails_closed()",
@@ -6513,7 +6513,7 @@
       "source_file": "scripts/packet/test_validate_hitl_relay.py",
       "source_location": "L46",
       "id": "test_validate_hitl_relay_test_low_confidence_non_clarify_decision_fails_closed",
-      "community": 10
+      "community": 11
     },
     {
       "label": "test_low_confidence_clarify_decision_passes_without_instruction()",
@@ -6521,7 +6521,7 @@
       "source_file": "scripts/packet/test_validate_hitl_relay.py",
       "source_location": "L54",
       "id": "test_validate_hitl_relay_test_low_confidence_clarify_decision_passes_without_instruction",
-      "community": 10
+      "community": 11
     },
     {
       "label": "test_duplicate_reply_cannot_produce_instruction()",
@@ -6529,7 +6529,7 @@
       "source_file": "scripts/packet/test_validate_hitl_relay.py",
       "source_location": "L64",
       "id": "test_validate_hitl_relay_test_duplicate_reply_cannot_produce_instruction",
-      "community": 10
+      "community": 11
     },
     {
       "label": "test_expired_reply_cannot_produce_instruction()",
@@ -6537,7 +6537,7 @@
       "source_file": "scripts/packet/test_validate_hitl_relay.py",
       "source_location": "L72",
       "id": "test_validate_hitl_relay_test_expired_reply_cannot_produce_instruction",
-      "community": 10
+      "community": 11
     },
     {
       "label": "test_pii_external_channel_fails_closed()",
@@ -6545,7 +6545,7 @@
       "source_file": "scripts/packet/test_validate_hitl_relay.py",
       "source_location": "L80",
       "id": "test_validate_hitl_relay_test_pii_external_channel_fails_closed",
-      "community": 10
+      "community": 11
     },
     {
       "label": "test_stale_session_requires_resume_packet()",
@@ -6553,7 +6553,7 @@
       "source_file": "scripts/packet/test_validate_hitl_relay.py",
       "source_location": "L90",
       "id": "test_validate_hitl_relay_test_stale_session_requires_resume_packet",
-      "community": 10
+      "community": 11
     },
     {
       "label": "test_response_requires_notification_and_response_ids()",
@@ -6561,7 +6561,7 @@
       "source_file": "scripts/packet/test_validate_hitl_relay.py",
       "source_location": "L98",
       "id": "test_validate_hitl_relay_test_response_requires_notification_and_response_ids",
-      "community": 10
+      "community": 11
     },
     {
       "label": "validate.py",
@@ -6569,7 +6569,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L1",
       "id": "validate",
-      "community": 11
+      "community": 12
     },
     {
       "label": "_load_packet()",
@@ -6577,7 +6577,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L57",
       "id": "validate_load_packet",
-      "community": 11
+      "community": 12
     },
     {
       "label": "_load_schema()",
@@ -6585,7 +6585,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L65",
       "id": "validate_load_schema",
-      "community": 11
+      "community": 12
     },
     {
       "label": "_find_packet_file()",
@@ -6593,7 +6593,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L79",
       "id": "validate_find_packet_file",
-      "community": 11
+      "community": 12
     },
     {
       "label": "_resolve_chain()",
@@ -6601,7 +6601,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L89",
       "id": "validate_resolve_chain",
-      "community": 11
+      "community": 12
     },
     {
       "label": "load_pii_patterns()",
@@ -6609,7 +6609,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L115",
       "id": "validate_load_pii_patterns",
-      "community": 11
+      "community": 12
     },
     {
       "label": "validate_dual_planner()",
@@ -6617,7 +6617,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L137",
       "id": "validate_validate_dual_planner",
-      "community": 11
+      "community": 12
     },
     {
       "label": "validate_no_self_approval()",
@@ -6625,7 +6625,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L180",
       "id": "validate_validate_no_self_approval",
-      "community": 11
+      "community": 12
     },
     {
       "label": "validate_tier_escalation_valid()",
@@ -6633,7 +6633,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L213",
       "id": "validate_validate_tier_escalation_valid",
-      "community": 11
+      "community": 12
     },
     {
       "label": "validate_local_family_diversity()",
@@ -6641,7 +6641,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L231",
       "id": "validate_validate_local_family_diversity",
-      "community": 11
+      "community": 12
     },
     {
       "label": "validate_fallback_logged()",
@@ -6649,7 +6649,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L257",
       "id": "validate_validate_fallback_logged",
-      "community": 11
+      "community": 12
     },
     {
       "label": "validate_schema()",
@@ -6657,7 +6657,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L294",
       "id": "validate_validate_schema",
-      "community": 11
+      "community": 12
     },
     {
       "label": "validate_planning_floor()",
@@ -6665,7 +6665,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L309",
       "id": "validate_validate_planning_floor",
-      "community": 11
+      "community": 12
     },
     {
       "label": "validate_pii_floor()",
@@ -6673,7 +6673,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L325",
       "id": "validate_validate_pii_floor",
-      "community": 11
+      "community": 12
     },
     {
       "label": "validate_packet()",
@@ -6681,7 +6681,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L362",
       "id": "validate_validate_packet",
-      "community": 11
+      "community": 12
     },
     {
       "label": "_run_cli()",
@@ -6689,7 +6689,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L393",
       "id": "validate_run_cli",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Load a YAML packet; return None if missing or malformed.",
@@ -6697,7 +6697,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L58",
       "id": "validate_rationale_58",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Load the packet schema from docs/schemas/som-packet.schema.yml.",
@@ -6705,7 +6705,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L66",
       "id": "validate_rationale_66",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Locate a packet file by ID (supports YYYY-MM-DD-<id>.yml naming).",
@@ -6713,7 +6713,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L80",
       "id": "validate_rationale_80",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Walk parent_packet_id links backwards; return ordered list [packet, parent, ...]",
@@ -6721,7 +6721,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L90",
       "id": "validate_rationale_90",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Load and compile PII patterns from pii-patterns.yml.",
@@ -6729,7 +6729,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L116",
       "id": "validate_rationale_116",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Enforce cross-family independence for tier-1 dual-planner packets.      When pri",
@@ -6737,7 +6737,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L141",
       "id": "validate_rationale_141",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Refuse if any consecutive pair in the parent chain shares model_id across differ",
@@ -6745,7 +6745,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L184",
       "id": "validate_rationale_184",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Enforce expected handoff sequence with no tier jumps.",
@@ -6753,7 +6753,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L214",
       "id": "validate_rationale_214",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Enforce LAM family diversity for LAM-only handoffs.",
@@ -6761,7 +6761,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L235",
       "id": "validate_rationale_235",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Require explicit fallback references to resolve in raw/model-fallbacks.",
@@ -6769,7 +6769,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L258",
       "id": "validate_rationale_258",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Validate packet shape against docs/schemas/som-packet.schema.yml.",
@@ -6777,7 +6777,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L295",
       "id": "validate_rationale_295",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Refuse tier-1 packets whose model is below the planning floor.",
@@ -6785,7 +6785,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L310",
       "id": "validate_rationale_310",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Refuse if PII artifacts appear outside LAM-role packets, or if the pattern file",
@@ -6793,7 +6793,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L326",
       "id": "validate_rationale_326",
-      "community": 11
+      "community": 12
     },
     {
       "label": "Run all validators against a packet dict.      Returns (all_passed, list_of_fail",
@@ -6801,7 +6801,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L366",
       "id": "validate_rationale_366",
-      "community": 11
+      "community": 12
     },
     {
       "label": "CLI entrypoint for validating packet files.",
@@ -6809,7 +6809,7 @@
       "source_file": "scripts/packet/validate.py",
       "source_location": "L394",
       "id": "validate_rationale_394",
-      "community": 11
+      "community": 12
     },
     {
       "label": "validate_hitl_relay.py",
@@ -6817,7 +6817,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L1",
       "id": "validate_hitl_relay",
-      "community": 10
+      "community": 11
     },
     {
       "label": "load_packet()",
@@ -6825,7 +6825,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L22",
       "id": "validate_hitl_relay_load_packet",
-      "community": 10
+      "community": 11
     },
     {
       "label": "_schema_validator()",
@@ -6833,7 +6833,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L26",
       "id": "validate_hitl_relay_schema_validator",
-      "community": 10
+      "community": 11
     },
     {
       "label": "validate_schema()",
@@ -6841,7 +6841,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L32",
       "id": "validate_hitl_relay_validate_schema",
-      "community": 10
+      "community": 11
     },
     {
       "label": "_packet_type()",
@@ -6849,7 +6849,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L37",
       "id": "validate_hitl_relay_packet_type",
-      "community": 10
+      "community": 11
     },
     {
       "label": "_correlation()",
@@ -6857,7 +6857,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L41",
       "id": "validate_hitl_relay_correlation",
-      "community": 10
+      "community": 11
     },
     {
       "label": "_session()",
@@ -6865,7 +6865,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L46",
       "id": "validate_hitl_relay_session",
-      "community": 10
+      "community": 11
     },
     {
       "label": "_policy()",
@@ -6873,7 +6873,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L51",
       "id": "validate_hitl_relay_policy",
-      "community": 10
+      "community": 11
     },
     {
       "label": "_operator_reply()",
@@ -6881,7 +6881,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L56",
       "id": "validate_hitl_relay_operator_reply",
-      "community": 10
+      "community": 11
     },
     {
       "label": "_decision()",
@@ -6889,7 +6889,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L61",
       "id": "validate_hitl_relay_decision",
-      "community": 10
+      "community": 11
     },
     {
       "label": "_instruction()",
@@ -6897,7 +6897,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L66",
       "id": "validate_hitl_relay_instruction",
-      "community": 10
+      "community": 11
     },
     {
       "label": "validate_policy_refs()",
@@ -6905,7 +6905,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L71",
       "id": "validate_hitl_relay_validate_policy_refs",
-      "community": 10
+      "community": 11
     },
     {
       "label": "validate_correlation()",
@@ -6913,7 +6913,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L83",
       "id": "validate_hitl_relay_validate_correlation",
-      "community": 10
+      "community": 11
     },
     {
       "label": "validate_operator_reply()",
@@ -6921,7 +6921,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L96",
       "id": "validate_hitl_relay_validate_operator_reply",
-      "community": 10
+      "community": 11
     },
     {
       "label": "validate_pii_channel_policy()",
@@ -6929,7 +6929,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L113",
       "id": "validate_hitl_relay_validate_pii_channel_policy",
-      "community": 10
+      "community": 11
     },
     {
       "label": "validate_normalized_decision()",
@@ -6937,7 +6937,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L124",
       "id": "validate_hitl_relay_validate_normalized_decision",
-      "community": 10
+      "community": 11
     },
     {
       "label": "validate_instruction()",
@@ -6945,7 +6945,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L142",
       "id": "validate_hitl_relay_validate_instruction",
-      "community": 10
+      "community": 11
     },
     {
       "label": "validate_resume()",
@@ -6953,7 +6953,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L161",
       "id": "validate_hitl_relay_validate_resume",
-      "community": 10
+      "community": 11
     },
     {
       "label": "validate_hitl_packet()",
@@ -6961,7 +6961,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L170",
       "id": "validate_hitl_relay_validate_hitl_packet",
-      "community": 10
+      "community": 11
     },
     {
       "label": "_run_cli()",
@@ -6969,7 +6969,7 @@
       "source_file": "scripts/packet/validate_hitl_relay.py",
       "source_location": "L187",
       "id": "validate_hitl_relay_run_cli",
-      "community": 10
+      "community": 11
     },
     {
       "label": "live_health_monitor.py",
@@ -6977,7 +6977,7 @@
       "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L1",
       "id": "live_health_monitor",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_env_has_live_markers()",
@@ -6985,7 +6985,7 @@
       "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L42",
       "id": "live_health_monitor_env_has_live_markers",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_scan_evidence_dir()",
@@ -6993,7 +6993,7 @@
       "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L46",
       "id": "live_health_monitor_scan_evidence_dir",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_stage_d_args()",
@@ -7001,7 +7001,7 @@
       "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L86",
       "id": "live_health_monitor_stage_d_args",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_run_fixture()",
@@ -7009,7 +7009,7 @@
       "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L103",
       "id": "live_health_monitor_run_fixture",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_run_live()",
@@ -7017,7 +7017,7 @@
       "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L109",
       "id": "live_health_monitor_run_live",
-      "community": 12
+      "community": 7
     },
     {
       "label": "build_parser()",
@@ -7025,7 +7025,7 @@
       "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L122",
       "id": "live_health_monitor_build_parser",
-      "community": 12
+      "community": 7
     },
     {
       "label": "main()",
@@ -7033,7 +7033,7 @@
       "source_file": "scripts/remote-mcp/live_health_monitor.py",
       "source_location": "L144",
       "id": "live_health_monitor_main",
-      "community": 12
+      "community": 7
     },
     {
       "label": "monitor_alert.py",
@@ -7041,7 +7041,7 @@
       "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L1",
       "id": "monitor_alert",
-      "community": 31
+      "community": 32
     },
     {
       "label": "_now()",
@@ -7049,7 +7049,7 @@
       "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L23",
       "id": "monitor_alert_now",
-      "community": 31
+      "community": 32
     },
     {
       "label": "_contains_sensitive()",
@@ -7057,7 +7057,7 @@
       "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L27",
       "id": "monitor_alert_contains_sensitive",
-      "community": 31
+      "community": 32
     },
     {
       "label": "_safe_text()",
@@ -7065,7 +7065,7 @@
       "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L31",
       "id": "monitor_alert_safe_text",
-      "community": 31
+      "community": 32
     },
     {
       "label": "_load_payload()",
@@ -7073,7 +7073,7 @@
       "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L39",
       "id": "monitor_alert_load_payload",
-      "community": 31
+      "community": 32
     },
     {
       "label": "build_alert()",
@@ -7081,7 +7081,7 @@
       "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L50",
       "id": "monitor_alert_build_alert",
-      "community": 31
+      "community": 32
     },
     {
       "label": "render_markdown()",
@@ -7089,7 +7089,7 @@
       "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L106",
       "id": "monitor_alert_render_markdown",
-      "community": 31
+      "community": 32
     },
     {
       "label": "build_parser()",
@@ -7097,7 +7097,7 @@
       "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L138",
       "id": "monitor_alert_build_parser",
-      "community": 31
+      "community": 32
     },
     {
       "label": "main()",
@@ -7105,7 +7105,7 @@
       "source_file": "scripts/remote-mcp/monitor_alert.py",
       "source_location": "L147",
       "id": "monitor_alert_main",
-      "community": 31
+      "community": 32
     },
     {
       "label": "operator_connectivity.py",
@@ -7244,12 +7244,108 @@
       "community": 21
     },
     {
+      "label": "operator_inbound_preflight.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L1",
+      "id": "operator_inbound_preflight",
+      "community": 29
+    },
+    {
+      "label": "Check",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L32",
+      "id": "operator_inbound_preflight_check",
+      "community": 29
+    },
+    {
+      "label": ".to_dict()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L37",
+      "id": "operator_inbound_preflight_check_to_dict",
+      "community": 29
+    },
+    {
+      "label": "_missing_groups()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L41",
+      "id": "operator_inbound_preflight_missing_groups",
+      "community": 29
+    },
+    {
+      "label": "_fixture_request()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L49",
+      "id": "operator_inbound_preflight_fixture_request",
+      "community": 29
+    },
+    {
+      "label": "_packet_summary()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L68",
+      "id": "operator_inbound_preflight_packet_summary",
+      "community": 29
+    },
+    {
+      "label": "_call_fixture()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L81",
+      "id": "operator_inbound_preflight_call_fixture",
+      "community": 29
+    },
+    {
+      "label": "_latest_live_instruction()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L121",
+      "id": "operator_inbound_preflight_latest_live_instruction",
+      "community": 29
+    },
+    {
+      "label": "_call_live()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L143",
+      "id": "operator_inbound_preflight_call_live",
+      "community": 29
+    },
+    {
+      "label": "build_payload()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L154",
+      "id": "operator_inbound_preflight_build_payload",
+      "community": 29
+    },
+    {
+      "label": "build_parser()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L200",
+      "id": "operator_inbound_preflight_build_parser",
+      "community": 29
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L207",
+      "id": "operator_inbound_preflight_main",
+      "community": 29
+    },
+    {
       "label": "stage_d_smoke.py",
       "file_type": "code",
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L1",
       "id": "stage_d_smoke",
-      "community": 12
+      "community": 7
     },
     {
       "label": "ProofResult",
@@ -7257,7 +7353,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L39",
       "id": "stage_d_smoke_proofresult",
-      "community": 12
+      "community": 7
     },
     {
       "label": ".to_dict()",
@@ -7265,7 +7361,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L44",
       "id": "stage_d_smoke_proofresult_to_dict",
-      "community": 12
+      "community": 7
     },
     {
       "label": "StageDConfig",
@@ -7273,7 +7369,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L49",
       "id": "stage_d_smoke_stagedconfig",
-      "community": 12
+      "community": 7
     },
     {
       "label": "from_env()",
@@ -7281,7 +7377,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L66",
       "id": "stage_d_smoke_from_env",
-      "community": 12
+      "community": 7
     },
     {
       "label": ".validate_live()",
@@ -7289,7 +7385,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L87",
       "id": "stage_d_smoke_stagedconfig_validate_live",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_temporary_resolver()",
@@ -7297,7 +7393,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L107",
       "id": "stage_d_smoke_temporary_resolver",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_safe_json_response()",
@@ -7305,7 +7401,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L126",
       "id": "stage_d_smoke_safe_json_response",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_request()",
@@ -7313,7 +7409,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L134",
       "id": "stage_d_smoke_request",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_expect()",
@@ -7321,7 +7417,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L175",
       "id": "stage_d_smoke_expect",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_verify_audit_valid()",
@@ -7329,7 +7425,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L179",
       "id": "stage_d_smoke_verify_audit_valid",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_verify_audit_tamper_fails()",
@@ -7337,7 +7433,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L190",
       "id": "stage_d_smoke_verify_audit_tamper_fails",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_run_stdio_proof()",
@@ -7345,7 +7441,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L217",
       "id": "stage_d_smoke_run_stdio_proof",
-      "community": 12
+      "community": 7
     },
     {
       "label": "run_stage_d()",
@@ -7353,7 +7449,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L228",
       "id": "stage_d_smoke_run_stage_d",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_write_fixture_entry()",
@@ -7361,7 +7457,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L273",
       "id": "stage_d_smoke_write_fixture_entry",
-      "community": 12
+      "community": 7
     },
     {
       "label": "_build_fixture_server()",
@@ -7369,7 +7465,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L318",
       "id": "stage_d_smoke_build_fixture_server",
-      "community": 12
+      "community": 7
     },
     {
       "label": "run_fixture()",
@@ -7377,7 +7473,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L375",
       "id": "stage_d_smoke_run_fixture",
-      "community": 12
+      "community": 7
     },
     {
       "label": "build_parser()",
@@ -7385,7 +7481,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L414",
       "id": "stage_d_smoke_build_parser",
-      "community": 12
+      "community": 7
     },
     {
       "label": "main()",
@@ -7393,7 +7489,7 @@
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
       "source_location": "L431",
       "id": "stage_d_smoke_main",
-      "community": 12
+      "community": 7
     },
     {
       "label": "test_live_health_monitor.py",
@@ -7401,7 +7497,7 @@
       "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L1",
       "id": "test_live_health_monitor",
-      "community": 12
+      "community": 7
     },
     {
       "label": "test_fixture_monitor_e2e_passes_and_scans_evidence()",
@@ -7409,7 +7505,7 @@
       "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L17",
       "id": "test_live_health_monitor_test_fixture_monitor_e2e_passes_and_scans_evidence",
-      "community": 12
+      "community": 7
     },
     {
       "label": "test_live_monitor_fails_fast_without_required_configuration()",
@@ -7417,7 +7513,7 @@
       "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L46",
       "id": "test_live_health_monitor_test_live_monitor_fails_fast_without_required_configuration",
-      "community": 12
+      "community": 7
     },
     {
       "label": "test_evidence_scan_rejects_sensitive_material()",
@@ -7425,7 +7521,7 @@
       "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L60",
       "id": "test_live_health_monitor_test_evidence_scan_rejects_sensitive_material",
-      "community": 12
+      "community": 7
     },
     {
       "label": "test_monitor_alert.py",
@@ -7433,7 +7529,7 @@
       "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L1",
       "id": "test_monitor_alert",
-      "community": 31
+      "community": 32
     },
     {
       "label": "_payload()",
@@ -7441,7 +7537,7 @@
       "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L17",
       "id": "test_monitor_alert_payload",
-      "community": 31
+      "community": 32
     },
     {
       "label": "test_build_alert_marks_healthy_payload()",
@@ -7449,7 +7545,7 @@
       "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L28",
       "id": "test_monitor_alert_test_build_alert_marks_healthy_payload",
-      "community": 31
+      "community": 32
     },
     {
       "label": "test_build_alert_marks_degraded_failures()",
@@ -7457,7 +7553,7 @@
       "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L37",
       "id": "test_monitor_alert_test_build_alert_marks_degraded_failures",
-      "community": 31
+      "community": 32
     },
     {
       "label": "test_sensitive_material_is_redacted_and_degraded()",
@@ -7465,7 +7561,7 @@
       "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L46",
       "id": "test_monitor_alert_test_sensitive_material_is_redacted_and_degraded",
-      "community": 31
+      "community": 32
     },
     {
       "label": "test_cli_writes_json_and_markdown()",
@@ -7473,7 +7569,7 @@
       "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L61",
       "id": "test_monitor_alert_test_cli_writes_json_and_markdown",
-      "community": 31
+      "community": 32
     },
     {
       "label": "test_cli_fail_on_degraded_returns_one_without_secret_echo()",
@@ -7481,7 +7577,7 @@
       "source_file": "scripts/remote-mcp/tests/test_monitor_alert.py",
       "source_location": "L88",
       "id": "test_monitor_alert_test_cli_fail_on_degraded_returns_one_without_secret_echo",
-      "community": 31
+      "community": 32
     },
     {
       "label": "test_operator_connectivity.py",
@@ -7524,12 +7620,52 @@
       "community": 21
     },
     {
+      "label": "test_operator_inbound_preflight.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L1",
+      "id": "test_operator_inbound_preflight",
+      "community": 29
+    },
+    {
+      "label": "test_fixture_preflight_proves_session_inbox_receive_path()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L18",
+      "id": "test_operator_inbound_preflight_test_fixture_preflight_proves_session_inbox_receive_path",
+      "community": 29
+    },
+    {
+      "label": "test_live_preflight_fails_closed_when_config_missing()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L31",
+      "id": "test_operator_inbound_preflight_test_live_preflight_fails_closed_when_config_missing",
+      "community": 29
+    },
+    {
+      "label": "test_live_preflight_fails_when_session_inbox_has_no_instruction()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L47",
+      "id": "test_operator_inbound_preflight_test_live_preflight_fails_when_session_inbox_has_no_instruction",
+      "community": 29
+    },
+    {
+      "label": "test_cli_writes_json_output()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L62",
+      "id": "test_operator_inbound_preflight_test_cli_writes_json_output",
+      "community": 29
+    },
+    {
       "label": "test_stage_d_smoke.py",
       "file_type": "code",
       "source_file": "scripts/remote-mcp/tests/test_stage_d_smoke.py",
       "source_location": "L1",
       "id": "test_stage_d_smoke",
-      "community": 1
+      "community": 7
     },
     {
       "label": "test_stage_d_fixture_e2e_passes()",
@@ -7537,7 +7673,7 @@
       "source_file": "scripts/remote-mcp/tests/test_stage_d_smoke.py",
       "source_location": "L20",
       "id": "test_stage_d_smoke_test_stage_d_fixture_e2e_passes",
-      "community": 1
+      "community": 7
     },
     {
       "label": "test_stage_d_live_mode_fails_fast_without_required_env()",
@@ -7545,7 +7681,7 @@
       "source_file": "scripts/remote-mcp/tests/test_stage_d_smoke.py",
       "source_location": "L61",
       "id": "test_stage_d_smoke_test_stage_d_live_mode_fails_fast_without_required_env",
-      "community": 1
+      "community": 7
     },
     {
       "label": "test_stage_d_request_adds_configured_user_agent()",
@@ -7553,7 +7689,7 @@
       "source_file": "scripts/remote-mcp/tests/test_stage_d_smoke.py",
       "source_location": "L74",
       "id": "test_stage_d_smoke_test_stage_d_request_adds_configured_user_agent",
-      "community": 1
+      "community": 7
     },
     {
       "label": "test_verify_audit.py",
@@ -7793,7 +7929,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L1",
       "id": "som_client",
-      "community": 8
+      "community": 9
     },
     {
       "label": "SomClientError",
@@ -7801,7 +7937,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L31",
       "id": "som_client_somclienterror",
-      "community": 8
+      "community": 9
     },
     {
       "label": ".__init__()",
@@ -7809,7 +7945,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L34",
       "id": "som_client_somclienterror_init",
-      "community": 8
+      "community": 9
     },
     {
       "label": ".to_dict()",
@@ -7817,7 +7953,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L47",
       "id": "som_client_somclienterror_to_dict",
-      "community": 8
+      "community": 9
     },
     {
       "label": "_decode_jwt_payload()",
@@ -7825,7 +7961,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L56",
       "id": "som_client_decode_jwt_payload",
-      "community": 8
+      "community": 9
     },
     {
       "label": "_unix_now()",
@@ -7833,7 +7969,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L70",
       "id": "som_client_unix_now",
-      "community": 8
+      "community": 9
     },
     {
       "label": "SomClientConfig",
@@ -7841,7 +7977,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L75",
       "id": "som_client_somclientconfig",
-      "community": 8
+      "community": 9
     },
     {
       "label": "SomClient",
@@ -7849,7 +7985,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L88",
       "id": "som_client_somclient",
-      "community": 8
+      "community": 9
     },
     {
       "label": ".__init__()",
@@ -7857,7 +7993,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L91",
       "id": "som_client_somclient_init",
-      "community": 8
+      "community": 9
     },
     {
       "label": "from_env()",
@@ -7865,7 +8001,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L96",
       "id": "som_client_from_env",
-      "community": 8
+      "community": 9
     },
     {
       "label": "._current_token()",
@@ -7873,7 +8009,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L110",
       "id": "som_client_somclient_current_token",
-      "community": 8
+      "community": 9
     },
     {
       "label": "._headers()",
@@ -7881,7 +8017,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L128",
       "id": "som_client_somclient_headers",
-      "community": 8
+      "community": 9
     },
     {
       "label": "._request()",
@@ -7889,7 +8025,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L148",
       "id": "som_client_somclient_request",
-      "community": 8
+      "community": 9
     },
     {
       "label": "._call_tool()",
@@ -7897,7 +8033,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L215",
       "id": "som_client_somclient_call_tool",
-      "community": 8
+      "community": 9
     },
     {
       "label": ".ping()",
@@ -7905,7 +8041,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L232",
       "id": "som_client_somclient_ping",
-      "community": 8
+      "community": 9
     },
     {
       "label": ".handoff()",
@@ -7913,7 +8049,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L235",
       "id": "som_client_somclient_handoff",
-      "community": 8
+      "community": 9
     },
     {
       "label": ".chain()",
@@ -7921,7 +8057,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L247",
       "id": "som_client_somclient_chain",
-      "community": 8
+      "community": 9
     },
     {
       "label": ".log_fallback()",
@@ -7929,7 +8065,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L250",
       "id": "som_client_somclient_log_fallback",
-      "community": 8
+      "community": 9
     },
     {
       "label": ".lam_probe()",
@@ -7937,7 +8073,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L253",
       "id": "som_client_somclient_lam_probe",
-      "community": 8
+      "community": 9
     },
     {
       "label": ".lam_embed()",
@@ -7945,7 +8081,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L256",
       "id": "som_client_somclient_lam_embed",
-      "community": 8
+      "community": 9
     },
     {
       "label": "build_parser()",
@@ -7953,7 +8089,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L263",
       "id": "som_client_build_parser",
-      "community": 8
+      "community": 9
     },
     {
       "label": "main()",
@@ -7961,7 +8097,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L268",
       "id": "som_client_main",
-      "community": 8
+      "community": 9
     },
     {
       "label": "Error raised for client-side protocol and transport failures.",
@@ -7969,7 +8105,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L32",
       "id": "som_client_rationale_32",
-      "community": 8
+      "community": 9
     },
     {
       "label": "Decode JWT payload without verifying signature.",
@@ -7977,7 +8113,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L57",
       "id": "som_client_rationale_57",
-      "community": 8
+      "community": 9
     },
     {
       "label": "Minimal HTTP client for Remote MCP Bridge tools.",
@@ -7985,7 +8121,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L89",
       "id": "som_client_rationale_89",
-      "community": 8
+      "community": 9
     },
     {
       "label": "Build a client from well-known environment variables.",
@@ -7993,7 +8129,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/som_client.py",
       "source_location": "L97",
       "id": "som_client_rationale_97",
-      "community": 59
+      "community": 60
     },
     {
       "label": "test_som_client.py",
@@ -8001,7 +8137,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L1",
       "id": "test_som_client",
-      "community": 8
+      "community": 9
     },
     {
       "label": "_build_success_response()",
@@ -8009,7 +8145,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L23",
       "id": "test_som_client_build_success_response",
-      "community": 8
+      "community": 9
     },
     {
       "label": "_build_http_error()",
@@ -8017,7 +8153,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L32",
       "id": "test_som_client_build_http_error",
-      "community": 8
+      "community": 9
     },
     {
       "label": "test_som_client_sends_cf_and_bearer_headers()",
@@ -8025,7 +8161,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L46",
       "id": "test_som_client_test_som_client_sends_cf_and_bearer_headers",
-      "community": 8
+      "community": 9
     },
     {
       "label": "test_som_client_accepts_remote_mcp_jwt_fallback()",
@@ -8033,7 +8169,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L70",
       "id": "test_som_client_test_som_client_accepts_remote_mcp_jwt_fallback",
-      "community": 8
+      "community": 9
     },
     {
       "label": "test_som_client_retries_on_429()",
@@ -8041,7 +8177,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L88",
       "id": "test_som_client_test_som_client_retries_on_429",
-      "community": 8
+      "community": 9
     },
     {
       "label": "test_som_client_payload_safe_errors()",
@@ -8049,7 +8185,7 @@
       "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/som-client/tests/test_som_client.py",
       "source_location": "L120",
       "id": "test_som_client_test_som_client_payload_safe_errors",
-      "community": 8
+      "community": 9
     },
     {
       "label": "test_codex_fire.py",
@@ -8057,7 +8193,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L1",
       "id": "test_codex_fire",
-      "community": 47
+      "community": 48
     },
     {
       "label": "write_fake_codex()",
@@ -8065,7 +8201,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L13",
       "id": "test_codex_fire_write_fake_codex",
-      "community": 47
+      "community": 48
     },
     {
       "label": "run_fire()",
@@ -8073,7 +8209,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L27",
       "id": "test_codex_fire_run_fire",
-      "community": 47
+      "community": 48
     },
     {
       "label": "test_preflight_failure_logs_and_exits_fast()",
@@ -8081,7 +8217,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L61",
       "id": "test_codex_fire_test_preflight_failure_logs_and_exits_fast",
-      "community": 47
+      "community": 48
     },
     {
       "label": "test_preflight_timeout_logs_and_exits_fast()",
@@ -8089,7 +8225,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L83",
       "id": "test_codex_fire_test_preflight_timeout_logs_and_exits_fast",
-      "community": 47
+      "community": 48
     },
     {
       "label": "test_exec_failure_after_successful_preflight_logs_and_signals()",
@@ -8097,7 +8233,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L105",
       "id": "test_codex_fire_test_exec_failure_after_successful_preflight_logs_and_signals",
-      "community": 47
+      "community": 48
     },
     {
       "label": "test_success_does_not_write_failure_log()",
@@ -8105,7 +8241,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L137",
       "id": "test_codex_fire_test_success_does_not_write_failure_log",
-      "community": 47
+      "community": 48
     },
     {
       "label": "test_review_template_default_persona_reaches_codex_fire()",
@@ -8113,7 +8249,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L155",
       "id": "test_codex_fire_test_review_template_default_persona_reaches_codex_fire",
-      "community": 47
+      "community": 48
     },
     {
       "label": "test_review_template_propagates_wrapper_failure()",
@@ -8121,7 +8257,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L225",
       "id": "test_codex_fire_test_review_template_propagates_wrapper_failure",
-      "community": 47
+      "community": 48
     },
     {
       "label": "_pii.py",
@@ -8129,7 +8265,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L1",
       "id": "pii",
-      "community": 51
+      "community": 52
     },
     {
       "label": "load_pii_patterns()",
@@ -8137,7 +8273,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L33",
       "id": "pii_load_pii_patterns",
-      "community": 51
+      "community": 52
     },
     {
       "label": "_iter_patterns()",
@@ -8145,7 +8281,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L63",
       "id": "pii_iter_patterns",
-      "community": 51
+      "community": 52
     },
     {
       "label": "detect_pii()",
@@ -8153,7 +8289,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L73",
       "id": "pii_detect_pii",
-      "community": 51
+      "community": 52
     },
     {
       "label": "Load and validate pii patterns from pii_patterns.yml.",
@@ -8161,7 +8297,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L34",
       "id": "pii_rationale_34",
-      "community": 51
+      "community": 52
     },
     {
       "label": "Scan text for PII patterns from YAML patterns.      Falls back to the previous b",
@@ -8169,7 +8305,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L74",
       "id": "pii_rationale_74",
-      "community": 51
+      "community": 52
     },
     {
       "label": "audit.py",
@@ -8641,7 +8777,7 @@
       "source_file": "scripts/windows-ollama/tests/__init__.py",
       "source_location": "L1",
       "id": "init",
-      "community": 60
+      "community": 61
     },
     {
       "label": "test_audit.py",
@@ -9385,7 +9521,7 @@
       "source_file": "tests/test_progress_github_issue_staleness.py",
       "source_location": "L1",
       "id": "test_progress_github_issue_staleness",
-      "community": 30
+      "community": 31
     },
     {
       "label": "ProgressGithubIssueStalenessTests",
@@ -9393,7 +9529,7 @@
       "source_file": "tests/test_progress_github_issue_staleness.py",
       "source_location": "L16",
       "id": "test_progress_github_issue_staleness_progressgithubissuestalenesstests",
-      "community": 30
+      "community": 31
     },
     {
       "label": ".test_collects_active_sections_and_ignores_done()",
@@ -9401,7 +9537,7 @@
       "source_file": "tests/test_progress_github_issue_staleness.py",
       "source_location": "L17",
       "id": "test_progress_github_issue_staleness_progressgithubissuestalenesstests_test_collects_active_sections_and_ignores_done",
-      "community": 30
+      "community": 31
     },
     {
       "label": ".test_build_summary_reports_missing_open_and_stale_closed()",
@@ -9409,7 +9545,7 @@
       "source_file": "tests/test_progress_github_issue_staleness.py",
       "source_location": "L46",
       "id": "test_progress_github_issue_staleness_progressgithubissuestalenesstests_test_build_summary_reports_missing_open_and_stale_closed",
-      "community": 30
+      "community": 31
     },
     {
       "label": "local_ci_gate.py",
@@ -13391,6 +13527,18 @@
       "_tgt": "hitl_relay_queue",
       "source": "hitl_relay_queue",
       "target": "test_hitl_relay_queue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight",
+      "_tgt": "hitl_relay_queue",
+      "source": "hitl_relay_queue",
+      "target": "operator_inbound_preflight",
       "confidence_score": 1.0
     },
     {
@@ -31406,6 +31554,18 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight",
+      "_tgt": "validate_hitl_relay",
+      "source": "validate_hitl_relay",
+      "target": "operator_inbound_preflight",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/packet/validate_hitl_relay.py",
@@ -32438,6 +32598,330 @@
       "confidence_score": 0.5
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight",
+      "_tgt": "operator_inbound_preflight_check",
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_check",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight",
+      "_tgt": "operator_inbound_preflight_missing_groups",
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_missing_groups",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight",
+      "_tgt": "operator_inbound_preflight_fixture_request",
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_fixture_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight",
+      "_tgt": "operator_inbound_preflight_packet_summary",
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_packet_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight",
+      "_tgt": "operator_inbound_preflight_call_fixture",
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_call_fixture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L121",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight",
+      "_tgt": "operator_inbound_preflight_latest_live_instruction",
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_latest_live_instruction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight",
+      "_tgt": "operator_inbound_preflight_call_live",
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_call_live",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L154",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight",
+      "_tgt": "operator_inbound_preflight_build_payload",
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_build_payload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L200",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight",
+      "_tgt": "operator_inbound_preflight_build_parser",
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_build_parser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L207",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight",
+      "_tgt": "operator_inbound_preflight_main",
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "test_operator_inbound_preflight",
+      "_tgt": "operator_inbound_preflight",
+      "source": "operator_inbound_preflight",
+      "target": "test_operator_inbound_preflight",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_src": "operator_inbound_preflight_check",
+      "_tgt": "operator_inbound_preflight_check_to_dict",
+      "source": "operator_inbound_preflight_check",
+      "target": "operator_inbound_preflight_check_to_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L87",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_call_fixture",
+      "_tgt": "operator_inbound_preflight_check",
+      "source": "operator_inbound_preflight_check",
+      "target": "operator_inbound_preflight_call_fixture",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L124",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_latest_live_instruction",
+      "_tgt": "operator_inbound_preflight_check",
+      "source": "operator_inbound_preflight_check",
+      "target": "operator_inbound_preflight_latest_live_instruction",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L146",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_call_live",
+      "_tgt": "operator_inbound_preflight_check",
+      "source": "operator_inbound_preflight_check",
+      "target": "operator_inbound_preflight_call_live",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L156",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_build_payload",
+      "_tgt": "operator_inbound_preflight_check",
+      "source": "operator_inbound_preflight_check",
+      "target": "operator_inbound_preflight_build_payload",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L190",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_build_payload",
+      "_tgt": "operator_inbound_preflight_check_to_dict",
+      "source": "operator_inbound_preflight_check_to_dict",
+      "target": "operator_inbound_preflight_build_payload",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L144",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_call_live",
+      "_tgt": "operator_inbound_preflight_missing_groups",
+      "source": "operator_inbound_preflight_missing_groups",
+      "target": "operator_inbound_preflight_call_live",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L159",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_build_payload",
+      "_tgt": "operator_inbound_preflight_missing_groups",
+      "source": "operator_inbound_preflight_missing_groups",
+      "target": "operator_inbound_preflight_build_payload",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L84",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_call_fixture",
+      "_tgt": "operator_inbound_preflight_fixture_request",
+      "source": "operator_inbound_preflight_fixture_request",
+      "target": "operator_inbound_preflight_call_fixture",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L103",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_call_fixture",
+      "_tgt": "operator_inbound_preflight_packet_summary",
+      "source": "operator_inbound_preflight_packet_summary",
+      "target": "operator_inbound_preflight_call_fixture",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L137",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_latest_live_instruction",
+      "_tgt": "operator_inbound_preflight_packet_summary",
+      "source": "operator_inbound_preflight_packet_summary",
+      "target": "operator_inbound_preflight_latest_live_instruction",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L162",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_build_payload",
+      "_tgt": "operator_inbound_preflight_call_fixture",
+      "source": "operator_inbound_preflight_call_fixture",
+      "target": "operator_inbound_preflight_build_payload",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L150",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_call_live",
+      "_tgt": "operator_inbound_preflight_latest_live_instruction",
+      "source": "operator_inbound_preflight_latest_live_instruction",
+      "target": "operator_inbound_preflight_call_live",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L167",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_build_payload",
+      "_tgt": "operator_inbound_preflight_call_live",
+      "source": "operator_inbound_preflight_call_live",
+      "target": "operator_inbound_preflight_build_payload",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L209",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_main",
+      "_tgt": "operator_inbound_preflight_build_payload",
+      "source": "operator_inbound_preflight_build_payload",
+      "target": "operator_inbound_preflight_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L208",
+      "weight": 0.8,
+      "_src": "operator_inbound_preflight_main",
+      "_tgt": "operator_inbound_preflight_build_parser",
+      "source": "operator_inbound_preflight_build_parser",
+      "target": "operator_inbound_preflight_main",
+      "confidence_score": 0.5
+    },
+    {
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "scripts/remote-mcp/stage_d_smoke.py",
@@ -33179,6 +33663,54 @@
       "_tgt": "test_operator_connectivity_test_launchctl_absence_is_non_blocking",
       "source": "test_operator_connectivity",
       "target": "test_operator_connectivity_test_launchctl_absence_is_non_blocking",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "test_operator_inbound_preflight",
+      "_tgt": "test_operator_inbound_preflight_test_fixture_preflight_proves_session_inbox_receive_path",
+      "source": "test_operator_inbound_preflight",
+      "target": "test_operator_inbound_preflight_test_fixture_preflight_proves_session_inbox_receive_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_src": "test_operator_inbound_preflight",
+      "_tgt": "test_operator_inbound_preflight_test_live_preflight_fails_closed_when_config_missing",
+      "source": "test_operator_inbound_preflight",
+      "target": "test_operator_inbound_preflight_test_live_preflight_fails_closed_when_config_missing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_src": "test_operator_inbound_preflight",
+      "_tgt": "test_operator_inbound_preflight_test_live_preflight_fails_when_session_inbox_has_no_instruction",
+      "source": "test_operator_inbound_preflight",
+      "target": "test_operator_inbound_preflight_test_live_preflight_fails_when_session_inbox_has_no_instruction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_src": "test_operator_inbound_preflight",
+      "_tgt": "test_operator_inbound_preflight_test_cli_writes_json_output",
+      "source": "test_operator_inbound_preflight",
+      "target": "test_operator_inbound_preflight_test_cli_writes_json_output",
       "confidence_score": 1.0
     },
     {

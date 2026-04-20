@@ -88,7 +88,7 @@ Result: PASS. Dirty sibling roots were declared as active parallel roots and wer
 - `python3 scripts/overlord/validate_registry_surfaces.py` — PASS
 - Evidence sensitive-material scan — PASS
 - `git diff --check` — PASS
-- Local CI Gate — pending
+- Local CI Gate — PASS
 - GitHub PR checks — pending
 
 ## Tier Evidence Used
