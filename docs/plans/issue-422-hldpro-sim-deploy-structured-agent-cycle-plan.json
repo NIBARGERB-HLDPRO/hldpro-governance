@@ -1,0 +1,102 @@
+{
+  "session_id": "session-20260420-issue-422-hldpro-sim-deploy",
+  "issue_number": 422,
+  "objective": "Make hldpro-sim v0.1.0 consumable by Stampede via version tag, distribution contract doc, and deployer script.",
+  "tier": 2,
+  "scope_boundary": [
+    "hldpro-sim-v0.1.0 git tag pointing to PR #411 merge commit",
+    "docs/hldpro-sim-consumer-pull-state.json — package distribution contract",
+    "scripts/deployer/deploy-hldpro-sim.sh — managed installer for consumers",
+    "raw/validation/2026-04-20-issue-422-hldpro-sim-deploy.md — dry-run proof"
+  ],
+  "out_of_scope": [
+    "packages/hldpro-sim source changes (already merged in PR #411)",
+    "ClaudeCliProvider implementation (separate issue)",
+    "Stampede adoption PR (Stampede owns that; unblocked once deployer ships)",
+    "Cloud/API provider (future issue)"
+  ],
+  "research_summary": "governance-tooling-v0.1.0 (PR #401) is the proven deployer precedent. hldpro-sim v0.1.0 is on main at fed5ead670cf6834e5c73bffcaf64e41cc483fce. No tag or deployer exists yet. Consumer record pattern mirrors .hldpro/governance-tooling.json.",
+  "research_artifacts": [
+    "packages/hldpro-sim/pyproject.toml",
+    "docs/governance-consumer-pull-state.json",
+    "tools/governance-deployer/"
+  ],
+  "sprints": [
+    {
+      "sprint_id": "sprint-1",
+      "name": "Version tag + distribution contract",
+      "goal": "Push hldpro-sim-v0.1.0 tag and commit docs/hldpro-sim-consumer-pull-state.json",
+      "tasks": [
+        "Push git tag hldpro-sim-v0.1.0 pointing to fed5ead670cf6834e5c73bffcaf64e41cc483fce",
+        "Write docs/hldpro-sim-consumer-pull-state.json with package + managed personas contract"
+      ],
+      "acceptance_criteria": [
+        "git rev-list -n 1 hldpro-sim-v0.1.0 equals fed5ead670cf6834e5c73bffcaf64e41cc483fce",
+        "docs/hldpro-sim-consumer-pull-state.json is valid JSON with schema_version, package, personas sections"
+      ],
+      "file_paths": [
+        "docs/hldpro-sim-consumer-pull-state.json",
+        "docs/plans/issue-422-hldpro-sim-deploy-structured-agent-cycle-plan.json",
+        "docs/plans/2026-04-20-issue-422-hldpro-sim-deploy-pdcar.md",
+        "raw/execution-scopes/2026-04-20-issue-422-hldpro-sim-deploy-implementation.json"
+      ]
+    },
+    {
+      "sprint_id": "sprint-2",
+      "name": "Deployer script + dry-run validation",
+      "goal": "Write scripts/deployer/deploy-hldpro-sim.sh and prove dry-run against /tmp/sim-consumer-test",
+      "tasks": [
+        "Write scripts/deployer/deploy-hldpro-sim.sh with --dry-run flag",
+        "Deployer installs package, deploys personas to sim-personas/shared/, writes .hldpro/hldpro-sim.json",
+        "Run dry-run against /tmp/sim-consumer-test and commit validation evidence"
+      ],
+      "acceptance_criteria": [
+        "bash scripts/deployer/deploy-hldpro-sim.sh /tmp/sim-consumer-test --dry-run exits 0",
+        "/tmp/sim-consumer-test/.hldpro/hldpro-sim.json contains pinned_sha and install_method",
+        "/tmp/sim-consumer-test/sim-personas/shared/ contains all 5 shared personas",
+        "raw/validation/2026-04-20-issue-422-hldpro-sim-deploy.md records PASS for all checks"
+      ],
+      "file_paths": [
+        "scripts/deployer/deploy-hldpro-sim.sh",
+        "raw/validation/2026-04-20-issue-422-hldpro-sim-deploy.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "session-agent-claude-sonnet-4-6",
+      "role": "planner-self-review",
+      "focus": "Scope completeness and deployer contract alignment with governance-tooling-v0.1.0 precedent",
+      "status": "approved",
+      "summary": "Two-sprint scope is minimal and complete. Tag + contract doc in sprint 1, deployer + proof in sprint 2. No source changes to hldpro-sim. Aligns with governance-tooling deployer pattern.",
+      "evidence": [
+        "docs/plans/issue-422-hldpro-sim-deploy-structured-agent-cycle-plan.json"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "none",
+    "model_family": "none",
+    "status": "not-required",
+    "summary": "Non-architecture implementation slice. Same-model exception active (planner and implementer both claude-sonnet-4-6). No cross-review artifact required.",
+    "evidence": [
+      "raw/execution-scopes/2026-04-20-issue-422-hldpro-sim-deploy-implementation.json"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "session-agent-claude-sonnet-4-6",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Push hldpro-sim-v0.1.0 tag, commit distribution contract and PDCAR, write deployer script, commit dry-run proof.",
+    "next_execution_step": "Commit plan + scope files, push tag hldpro-sim-v0.1.0, write docs/hldpro-sim-consumer-pull-state.json",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If pip-editable install fails in consumer env, fall back to directory copy and record install_method: directory-copy in consumer record"
+  ],
+  "approved": true,
+  "approved_by": [
+    "session-agent-claude-sonnet-4-6"
+  ],
+  "approved_at": "2026-04-20T19:00:00Z"
+}
