@@ -18,6 +18,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Consumer-pulled governance package bootstrap | [#398](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/398) | MEDIUM | 3-4 | Add non-mutating repo-side verification for pinned governance package consumption, document the repo-pulled versus centrally applied GitHub policy boundary, and keep downstream rollout issue-backed. |
 
 ## Done
 

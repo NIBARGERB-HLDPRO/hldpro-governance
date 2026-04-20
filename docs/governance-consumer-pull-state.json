@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "owner_repo": "NIBARGERB-HLDPRO/hldpro-governance",
+  "updated_at": "2026-04-20",
+  "consumer_record_path": ".hldpro/governance-tooling.json",
+  "pinning": {
+    "governance_ref": "required_exact_git_sha",
+    "release_tag": "optional_human_coordinate_only"
+  },
+  "repo_pulled_surfaces": [
+    {
+      "id": "consumer-record",
+      "kind": "managed_file",
+      "path": ".hldpro/governance-tooling.json",
+      "consumer_action": "read locally and verify"
+    },
+    {
+      "id": "local-ci-shim",
+      "kind": "managed_file",
+      "path": ".hldpro/local-ci.sh",
+      "consumer_action": "execute locally or from repository workflow"
+    },
+    {
+      "id": "governance-package-core",
+      "kind": "pinned_governance_checkout",
+      "path": "tools/local-ci-gate/",
+      "consumer_action": "resolve from governance_ref"
+    }
+  ],
+  "centrally_applied_surfaces": [
+    {
+      "id": "github-org-rulesets",
+      "kind": "github_settings",
+      "consumer_action": "report drift only",
+      "mutation_policy": "issue-backed governance apply only"
+    },
+    {
+      "id": "repository-auto-merge",
+      "kind": "github_settings",
+      "consumer_action": "report drift only",
+      "mutation_policy": "issue-backed governance apply only"
+    }
+  ],
+  "profiles": {
+    "hldpro-governance": {
+      "package_version": "0.1.0-contract",
+      "managed_files": [
+        ".hldpro/local-ci.sh",
+        ".hldpro/governance-tooling.json"
+      ],
+      "central_github_state": {
+        "allow_auto_merge": true,
+        "required_status_contexts": [
+          "commit-scope",
+          "contract",
+          "local-ci-gate"
+        ],
+        "automerge_label": "merge-when-green"
+      }
+    },
+    "ai-integration-services": {
+      "package_version": "0.1.0-contract",
+      "managed_files": [
+        ".hldpro/local-ci.sh",
+        ".hldpro/governance-tooling.json"
+      ]
+    },
+    "knocktracker": {
+      "package_version": "0.1.0-contract",
+      "managed_files": [
+        ".hldpro/local-ci.sh",
+        ".hldpro/governance-tooling.json"
+      ]
+    },
+    "local-ai-machine": {
+      "package_version": "0.1.0-contract",
+      "managed_files": [
+        ".hldpro/local-ci.sh",
+        ".hldpro/governance-tooling.json"
+      ]
+    }
+  }
+}

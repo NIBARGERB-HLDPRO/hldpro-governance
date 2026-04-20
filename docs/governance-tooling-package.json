@@ -100,6 +100,23 @@
       "notes": "Package-level deployer writes the consumer record and delegates Local CI shim rendering to the compatibility deployer."
     },
     {
+      "id": "consumer-pull-verifier",
+      "classification": "package_core",
+      "owner": "hldpro-governance",
+      "paths": [
+        "docs/governance-consumer-pull-state.json",
+        "scripts/overlord/verify_governance_consumer.py",
+        "scripts/overlord/test_verify_governance_consumer.py"
+      ],
+      "consumer_mode": "repo_side_non_mutating_verification",
+      "version_rule": "pin by governance git SHA; release tags are human-readable only",
+      "verification": [
+        "python3 scripts/overlord/test_verify_governance_consumer.py",
+        "python3 scripts/overlord/verify_governance_consumer.py --target-repo <consumer> --profile <profile> --governance-ref <sha>"
+      ],
+      "notes": "Consumer repos can prove that their local consumer record and managed files match the governance package they claim to consume. Central GitHub rulesets and repository settings remain report-only from the consumer side and are applied only by issue-backed governance work."
+    },
+    {
       "id": "execution-scope-validation",
       "classification": "package_core",
       "owner": "hldpro-governance",

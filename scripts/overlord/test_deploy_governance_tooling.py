@@ -14,6 +14,7 @@ import sys
 
 MODULE_PATH = Path(__file__).with_name("deploy_governance_tooling.py")
 REPO_ROOT = MODULE_PATH.resolve().parents[2]
+sys.path.insert(0, str(MODULE_PATH.parent))
 SPEC = importlib.util.spec_from_file_location("deploy_governance_tooling", MODULE_PATH)
 assert SPEC is not None
 assert SPEC.loader is not None
