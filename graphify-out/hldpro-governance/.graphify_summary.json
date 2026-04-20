@@ -1,8 +1,8 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/wiki/hldpro",
+  "output": "/private/tmp/issue-422-closeout/graphify-out/hldpro-governance",
+  "wiki_dir": "/private/tmp/issue-422-closeout/wiki/hldpro",
   "nodes": 1385,
   "edges": 2598,
   "communities": 75,

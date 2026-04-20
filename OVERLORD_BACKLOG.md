@@ -19,13 +19,13 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| hldpro-sim v0.1.0 deployment readiness — version tag + deployer | [#422](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/422) | HIGH | 2 | PR [#424](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/424). Tag hldpro-sim-v0.1.0 pushed, consumer pull state contract, deploy-hldpro-sim.sh with --dry-run. Pending CI green + merge. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
 | Codex brief templates embed plan schema and lane claim requirements | 2026-04-20 | Issue [#412](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/412). PR [#417](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/417) embedded structured-plan schema, lane-claim, graphify-out write-boundary, and validation requirements into the Codex Spark dispatch brief template. Removed from Planned because #412 is closed. |
+| hldpro-sim v0.1.0 deployment readiness — version tag + deployer | 2026-04-20 | Issue [#422](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/422). PR [#424](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/424) pushed hldpro-sim-v0.1.0 tag (fed5ead), consumer pull state contract, and deploy-hldpro-sim.sh deployer with --dry-run + directory-copy fallback. Stampede adoption tracked in issue #425. |
 | SoM HITL SMS dedicated sender env propagation | 2026-04-20 | Issue [#421](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/421). PR [#423](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/423) propagated SOM_TWILIO_FROM_NUMBER and sender aliases through governance SSOT/bootstrap. |
 | hldpro-sim OASIS simulation engine package | 2026-04-20 | Issue [#407](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/407). PR [#411](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/411) bootstrapped the governance-owned Python OASIS simulation package: CodexCliProvider (codex exec --ephemeral subprocess contract), BaseAggregator[T] steering-wheel pattern, shared persona registry with local/shared fallback, engine orchestration, and artifact writer. 13/13 tests pass. First consumer: Stampede Phase 0 Slice 6. Closeout complete — PR #415 merged, Stage 6 verified. |
 | Consumer-pulled governance adoption rollout | 2026-04-20 | Issue [#403](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/403). Governance PR [#406](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/406) records the rollout evidence; downstream knocktracker PRs [#178](https://github.com/NIBARGERB-HLDPRO/knocktracker/pull/178) and [#179](https://github.com/NIBARGERB-HLDPRO/knocktracker/pull/179) prove the repo-side consumer verifier and sprint-doc correction. Central GitHub settings remained report-only. |

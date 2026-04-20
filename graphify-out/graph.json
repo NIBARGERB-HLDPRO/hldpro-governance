@@ -9198,7 +9198,7 @@
     {
       "label": "test_bootstrap_repo_env_contract.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L1",
       "id": "test_bootstrap_repo_env_contract",
       "community": 56
@@ -9206,7 +9206,7 @@
     {
       "label": "check()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L17",
       "id": "test_bootstrap_repo_env_contract_check",
       "community": 56
@@ -9214,7 +9214,7 @@
     {
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L22",
       "id": "test_bootstrap_repo_env_contract_main",
       "community": 56
@@ -9222,7 +9222,7 @@
     {
       "label": "run_synthetic_lam_bootstrap()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L55",
       "id": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
       "community": 56
@@ -9230,7 +9230,7 @@
     {
       "label": "run_sibling_worktree_lam_bootstrap()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L130",
       "id": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
       "community": 56
@@ -9238,7 +9238,7 @@
     {
       "label": "Exercise lam bootstrap with command-like vault values and missing optional keys.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L56",
       "id": "test_bootstrap_repo_env_contract_rationale_56",
       "community": 56
@@ -9246,7 +9246,7 @@
     {
       "label": "Exercise vault discovery from sibling governance worktrees.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L131",
       "id": "test_bootstrap_repo_env_contract_rationale_131",
       "community": 56
@@ -38664,7 +38664,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L17",
       "weight": 1.0,
       "_src": "test_bootstrap_repo_env_contract",
@@ -38676,7 +38676,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L22",
       "weight": 1.0,
       "_src": "test_bootstrap_repo_env_contract",
@@ -38688,7 +38688,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L55",
       "weight": 1.0,
       "_src": "test_bootstrap_repo_env_contract",
@@ -38700,7 +38700,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L130",
       "weight": 1.0,
       "_src": "test_bootstrap_repo_env_contract",
@@ -38712,7 +38712,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L23",
       "weight": 0.8,
       "_src": "test_bootstrap_repo_env_contract_main",
@@ -38724,7 +38724,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L101",
       "weight": 0.8,
       "_src": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
@@ -38736,7 +38736,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L175",
       "weight": 0.8,
       "_src": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
@@ -38748,7 +38748,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L48",
       "weight": 0.8,
       "_src": "test_bootstrap_repo_env_contract_main",
@@ -38760,7 +38760,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L49",
       "weight": 0.8,
       "_src": "test_bootstrap_repo_env_contract_main",
@@ -38772,7 +38772,7 @@
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L56",
       "weight": 1.0,
       "_src": "test_bootstrap_repo_env_contract_rationale_56",
@@ -38784,7 +38784,7 @@
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-421-som-hitl-sms-env/scripts/test_bootstrap_repo_env_contract.py",
+      "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L131",
       "weight": 1.0,
       "_src": "test_bootstrap_repo_env_contract_rationale_131",
