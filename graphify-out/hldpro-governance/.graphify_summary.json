@@ -1,8 +1,8 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-400-runtime-lane-guard-proof/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-400-runtime-lane-guard-proof/wiki/hldpro",
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-405-stale-worktree-cleanup/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-405-stale-worktree-cleanup/wiki/hldpro",
   "nodes": 1315,
   "edges": 2525,
   "communities": 68,
