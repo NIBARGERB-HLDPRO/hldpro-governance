@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **validate_hitl_relay.py** (21 connections) — `scripts/packet/validate_hitl_relay.py`
+- **validate_hitl_relay.py** (22 connections) — `scripts/packet/validate_hitl_relay.py`
 - **test_validate_hitl_relay.py** (12 connections) — `scripts/packet/test_validate_hitl_relay.py`
 - **_load()** (9 connections) — `scripts/packet/test_validate_hitl_relay.py`
 - **_packet_type()** (7 connections) — `scripts/packet/validate_hitl_relay.py`
@@ -42,7 +42,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 63 (53%)
+- EXTRACTED: 64 (53%)
 - INFERRED: 56 (47%)
 - AMBIGUOUS: 0 (0%)
 

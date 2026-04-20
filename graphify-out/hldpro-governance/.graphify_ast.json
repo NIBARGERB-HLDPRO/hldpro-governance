@@ -5083,6 +5083,90 @@
       "source_location": "L431"
     },
     {
+      "id": "operator_inbound_preflight",
+      "label": "operator_inbound_preflight.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "operator_inbound_preflight_check",
+      "label": "Check",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L32"
+    },
+    {
+      "id": "operator_inbound_preflight_check_to_dict",
+      "label": ".to_dict()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L37"
+    },
+    {
+      "id": "operator_inbound_preflight_missing_groups",
+      "label": "_missing_groups()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L41"
+    },
+    {
+      "id": "operator_inbound_preflight_fixture_request",
+      "label": "_fixture_request()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L49"
+    },
+    {
+      "id": "operator_inbound_preflight_packet_summary",
+      "label": "_packet_summary()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L68"
+    },
+    {
+      "id": "operator_inbound_preflight_call_fixture",
+      "label": "_call_fixture()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L81"
+    },
+    {
+      "id": "operator_inbound_preflight_latest_live_instruction",
+      "label": "_latest_live_instruction()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L121"
+    },
+    {
+      "id": "operator_inbound_preflight_call_live",
+      "label": "_call_live()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L143"
+    },
+    {
+      "id": "operator_inbound_preflight_build_payload",
+      "label": "build_payload()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L154"
+    },
+    {
+      "id": "operator_inbound_preflight_build_parser",
+      "label": "build_parser()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L200"
+    },
+    {
+      "id": "operator_inbound_preflight_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L207"
+    },
+    {
       "id": "monitor_alert",
       "label": "monitor_alert.py",
       "file_type": "code",
@@ -5662,6 +5746,41 @@
       "file_type": "code",
       "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L60"
+    },
+    {
+      "id": "test_operator_inbound_preflight",
+      "label": "test_operator_inbound_preflight.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_operator_inbound_preflight_test_fixture_preflight_proves_session_inbox_receive_path",
+      "label": "test_fixture_preflight_proves_session_inbox_receive_path()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L18"
+    },
+    {
+      "id": "test_operator_inbound_preflight_test_live_preflight_fails_closed_when_config_missing",
+      "label": "test_live_preflight_fails_closed_when_config_missing()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L31"
+    },
+    {
+      "id": "test_operator_inbound_preflight_test_live_preflight_fails_when_session_inbox_has_no_instruction",
+      "label": "test_live_preflight_fails_when_session_inbox_has_no_instruction()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L47"
+    },
+    {
+      "id": "test_operator_inbound_preflight_test_cli_writes_json_output",
+      "label": "test_cli_writes_json_output()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L62"
     },
     {
       "id": "test_graphify_governance_contract",
@@ -23903,6 +24022,330 @@
       "weight": 0.8
     },
     {
+      "source": "operator_inbound_preflight",
+      "target": "argparse",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "tempfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "dataclasses",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "hitl_relay_queue",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "validate_hitl_relay",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_check",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight_check",
+      "target": "operator_inbound_preflight_check_to_dict",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_missing_groups",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_fixture_request",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_packet_summary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_call_fixture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_latest_live_instruction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_call_live",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_build_payload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_build_parser",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight",
+      "target": "operator_inbound_preflight_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "operator_inbound_preflight_call_fixture",
+      "target": "operator_inbound_preflight_fixture_request",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L84",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_call_fixture",
+      "target": "operator_inbound_preflight_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L87",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_call_fixture",
+      "target": "operator_inbound_preflight_packet_summary",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L103",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_latest_live_instruction",
+      "target": "operator_inbound_preflight_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L124",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_latest_live_instruction",
+      "target": "operator_inbound_preflight_packet_summary",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L137",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_call_live",
+      "target": "operator_inbound_preflight_missing_groups",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L144",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_call_live",
+      "target": "operator_inbound_preflight_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L146",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_call_live",
+      "target": "operator_inbound_preflight_latest_live_instruction",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L150",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_build_payload",
+      "target": "operator_inbound_preflight_check",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L156",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_build_payload",
+      "target": "operator_inbound_preflight_missing_groups",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L159",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_build_payload",
+      "target": "operator_inbound_preflight_call_fixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L162",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_build_payload",
+      "target": "operator_inbound_preflight_call_live",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L167",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_build_payload",
+      "target": "operator_inbound_preflight_check_to_dict",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L190",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_main",
+      "target": "operator_inbound_preflight_build_parser",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L208",
+      "weight": 0.8
+    },
+    {
+      "source": "operator_inbound_preflight_main",
+      "target": "operator_inbound_preflight_build_payload",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/operator_inbound_preflight.py",
+      "source_location": "L209",
+      "weight": 0.8
+    },
+    {
       "source": "monitor_alert",
       "target": "argparse",
       "relation": "imports",
@@ -25655,6 +26098,96 @@
       "confidence": "EXTRACTED",
       "source_file": "scripts/remote-mcp/tests/test_live_health_monitor.py",
       "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_inbound_preflight",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_inbound_preflight",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_inbound_preflight",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_inbound_preflight",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_inbound_preflight",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_inbound_preflight",
+      "target": "operator_inbound_preflight",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_inbound_preflight",
+      "target": "test_operator_inbound_preflight_test_fixture_preflight_proves_session_inbox_receive_path",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_inbound_preflight",
+      "target": "test_operator_inbound_preflight_test_live_preflight_fails_closed_when_config_missing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_inbound_preflight",
+      "target": "test_operator_inbound_preflight_test_live_preflight_fails_when_session_inbox_has_no_instruction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "test_operator_inbound_preflight",
+      "target": "test_operator_inbound_preflight_test_cli_writes_json_output",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight/scripts/remote-mcp/tests/test_operator_inbound_preflight.py",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
