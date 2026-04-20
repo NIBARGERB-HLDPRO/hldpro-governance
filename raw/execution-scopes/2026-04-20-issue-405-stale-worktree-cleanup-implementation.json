@@ -1,0 +1,69 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-405-stale-worktree-cleanup-20260420",
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 405,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/405",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-20T15:55:00Z"
+  },
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-405-stale-worktree-cleanup-pdcar.md",
+    "docs/plans/issue-405-stale-worktree-cleanup-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-20-issue-405-stale-worktree-cleanup-implementation.json",
+    "raw/validation/issue-405-stale-worktree-cleanup/",
+    "raw/closeouts/2026-04-20-issue-405-stale-worktree-cleanup.md",
+    "graphify-out/",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-384-backlog-drift",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-386-automerge",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-386-automerge-main",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-391-automerge-pilot",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-393-lane-claim-gate",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-397-preworktree-lane-gate",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-398-consumer-pull-bootstrap",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-398-consumer-pull-closeout",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-400-runtime-lane-guard-proof",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-403-consumer-pull-adoption",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-launchd-proof",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-operating-mode",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-stage-d-live-tunnel"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary worktree has a concurrent issue #407 OVERLORD_BACKLOG.md edit and must not be restored from this lane"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+      "reason": "pre-existing dirty graphify artifacts from an unrelated lane"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-403-consumer-pull-adoption",
+      "reason": "open issue #403 active lane with uncommitted planning and backlog/progress edits"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5-codex",
+    "implementer_model": "gpt-5-codex",
+    "accepted_at": "2026-04-20T15:55:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/405",
+      "docs/plans/issue-405-stale-worktree-cleanup-structured-agent-cycle-plan.json",
+      "docs/plans/issue-405-stale-worktree-cleanup-pdcar.md"
+    ],
+    "active_exception_ref": "raw/execution-scopes/2026-04-20-issue-405-stale-worktree-cleanup-implementation.json",
+    "active_exception_expires_at": "2026-04-21T15:55:00Z"
+  }
+}
