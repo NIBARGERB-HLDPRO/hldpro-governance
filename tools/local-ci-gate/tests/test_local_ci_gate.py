@@ -323,11 +323,22 @@ profile:
         planning = scope_dir / "2026-04-18-issue-275-planning.json"
         implementation = scope_dir / "2026-04-18-issue-275-implementation.json"
         planning.write_text("{}\n", encoding="utf-8")
-        implementation.write_text("{}\n", encoding="utf-8")
+        implementation.write_text('{"lane_claim": {"issue_number": 275}}\n', encoding="utf-8")
 
         resolved = gate._resolve_execution_scope(self.root, "feature/issue-275-local-ci-enforcement-remediation")
 
         self.assertEqual(resolved, "raw/execution-scopes/2026-04-18-issue-275-implementation.json")
+
+    def test_execution_scope_resolution_requires_matching_lane_claim(self) -> None:
+        scope_dir = self.root / "raw" / "execution-scopes"
+        scope_dir.mkdir(parents=True)
+        implementation = scope_dir / "2026-04-18-issue-275-implementation.json"
+        implementation.write_text('{"lane_claim": {"issue_number": 276}}\n', encoding="utf-8")
+
+        with self.assertRaises(gate.GateError) as ctx:
+            gate._resolve_execution_scope(self.root, "feature/issue-275-local-ci-enforcement-remediation")
+
+        self.assertIn("lane_claim.issue_number=275", str(ctx.exception))
 
     def test_knocktracker_profile_scopes_heavy_checks_to_matching_files(self) -> None:
         profile = gate.load_profile(PROFILES_DIR / "knocktracker.yml")

@@ -1,0 +1,64 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-393-lane-claim-gate-20260420",
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 393,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/393",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-20T15:05:17Z"
+  },
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "STANDARDS.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/SERVICE_REGISTRY.md",
+    "docs/plans/issue-393-lane-claim-gate-pdcar.md",
+    "docs/plans/issue-393-lane-claim-gate-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-20-issue-393-lane-claim-gate-implementation.json",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/check_execution_environment.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "tools/local-ci-gate/local_ci_gate.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "tools/local-ci-gate/tests/test_local_ci_gate.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-384-backlog-drift",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-386-automerge",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-386-automerge-main",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-391-automerge-pilot",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-alerts",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-connectivity-preflight",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-launchd-proof",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-monitor",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-remote-mcp-operating-mode",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-stage-d-live-tunnel"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede",
+      "reason": "pre-existing dirty graphify artifacts from an unrelated active lane"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-391-automerge-pilot",
+      "reason": "separate active automerge pilot lane owned by another session"
+    }
+  ],
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "specialist-research-subagent",
+    "implementer_model": "gpt-5-codex",
+    "accepted_at": "2026-04-20T15:05:17Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/393",
+      "docs/plans/issue-393-lane-claim-gate-structured-agent-cycle-plan.json",
+      "docs/plans/issue-393-lane-claim-gate-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

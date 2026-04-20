@@ -4,11 +4,20 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
+
+
+@dataclass(frozen=True)
+class LaneClaim:
+    issue_number: int
+    claim_ref: str
+    claimed_by: str
+    claimed_at: datetime
 
 
 @dataclass(frozen=True)
@@ -30,6 +39,7 @@ class ExecutionScope:
     forbidden_roots: tuple[Path, ...]
     active_parallel_roots: tuple[Path, ...] = ()
     execution_mode: str = "planning_only"
+    lane_claim: LaneClaim | None = None
     handoff_evidence: HandoffEvidence | None = None
 
 
@@ -158,6 +168,32 @@ def _load_handoff_evidence(payload: dict[str, object], scope_path: Path) -> Hand
     )
 
 
+def _load_lane_claim(payload: dict[str, object], scope_path: Path) -> LaneClaim:
+    required = ["issue_number", "claim_ref", "claimed_by", "claimed_at"]
+    missing = [field for field in required if field not in payload]
+    if missing:
+        raise ValueError(f"{scope_path}: `lane_claim` missing field(s): {', '.join(missing)}")
+
+    issue_number = payload["issue_number"]
+    claim_ref = payload["claim_ref"]
+    claimed_by = payload["claimed_by"]
+    claimed_at_raw = payload["claimed_at"]
+
+    if not isinstance(issue_number, int) or issue_number <= 0:
+        raise ValueError(f"{scope_path}: `lane_claim.issue_number` must be a positive integer")
+    if not isinstance(claim_ref, str) or not claim_ref:
+        raise ValueError(f"{scope_path}: `lane_claim.claim_ref` must be a non-empty string")
+    if not isinstance(claimed_by, str) or not claimed_by:
+        raise ValueError(f"{scope_path}: `lane_claim.claimed_by` must be a non-empty string")
+
+    return LaneClaim(
+        issue_number=issue_number,
+        claim_ref=claim_ref,
+        claimed_by=claimed_by,
+        claimed_at=_parse_iso8601_timestamp(claimed_at_raw, "lane_claim.claimed_at", scope_path),
+    )
+
+
 def _load_scope(path: Path) -> ExecutionScope:
     payload = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(payload, dict):
@@ -179,6 +215,7 @@ def _load_scope(path: Path) -> ExecutionScope:
     forbidden_roots = payload["forbidden_roots"]
     active_parallel_roots = payload.get("active_parallel_roots", [])
     execution_mode = payload.get("execution_mode", "planning_only")
+    lane_claim_payload = payload.get("lane_claim")
     handoff_evidence_payload = payload.get("handoff_evidence")
 
     if not isinstance(expected_execution_root, str) or not expected_execution_root:
@@ -193,6 +230,8 @@ def _load_scope(path: Path) -> ExecutionScope:
         raise ValueError(f"{path}: `active_parallel_roots` must be an array when provided")
     if not isinstance(execution_mode, str) or not execution_mode:
         raise ValueError(f"{path}: `execution_mode` must be a non-empty string when provided")
+    if lane_claim_payload is not None and not isinstance(lane_claim_payload, dict):
+        raise ValueError(f"{path}: `lane_claim` must be an object when provided")
     if handoff_evidence_payload is not None and not isinstance(handoff_evidence_payload, dict):
         raise ValueError(f"{path}: `handoff_evidence` must be an object when provided")
 
@@ -217,6 +256,10 @@ def _load_scope(path: Path) -> ExecutionScope:
             normalized_active_roots.append(normalized_active)
 
     handoff_evidence = None
+    lane_claim = None
+    if isinstance(lane_claim_payload, dict):
+        lane_claim = _load_lane_claim(lane_claim_payload, path)
+
     if isinstance(handoff_evidence_payload, dict):
         handoff_evidence = _load_handoff_evidence(handoff_evidence_payload, path)
 
@@ -227,6 +270,7 @@ def _load_scope(path: Path) -> ExecutionScope:
         forbidden_roots=normalized_forbidden_roots,
         active_parallel_roots=tuple(normalized_active_roots),
         execution_mode=execution_mode,
+        lane_claim=lane_claim,
         handoff_evidence=handoff_evidence,
     )
 
@@ -246,6 +290,11 @@ def _current_branch(cwd: Path) -> str | None:
     if branch:
         return branch
     return os.environ.get("GITHUB_HEAD_REF") or os.environ.get("GITHUB_REF_NAME") or branch
+
+
+def _branch_issue_number(branch_name: str) -> int | None:
+    match = re.search(r"(?:^|/)issue-(\d+)(?:[-_/]|$)", branch_name)
+    return int(match.group(1)) if match else None
 
 
 def _changed_paths(cwd: Path) -> list[str] | None:
@@ -373,12 +422,41 @@ def _validate_active_exception_ref(scope: ExecutionScope, actual_root: Path) -> 
     return []
 
 
+def _validate_lane_claim(scope: ExecutionScope, actual_branch: str | None, require_lane_claim: bool) -> list[str]:
+    if not require_lane_claim:
+        return []
+
+    if scope.lane_claim is None:
+        return ["execution scope requires `lane_claim` when lane-claim enforcement is enabled"]
+
+    failures: list[str] = []
+    branch_issue = _branch_issue_number(actual_branch or "")
+    expected_branch_issue = _branch_issue_number(scope.expected_branch)
+    if branch_issue is None:
+        failures.append("lane_claim enforcement requires current branch to contain `issue-<number>`")
+    elif branch_issue != scope.lane_claim.issue_number:
+        failures.append(
+            "lane_claim issue mismatch: "
+            f"current branch issue {branch_issue}, lane_claim issue {scope.lane_claim.issue_number}"
+        )
+
+    if expected_branch_issue is None:
+        failures.append("lane_claim enforcement requires expected_branch to contain `issue-<number>`")
+    elif expected_branch_issue != scope.lane_claim.issue_number:
+        failures.append(
+            "lane_claim expected_branch mismatch: "
+            f"expected_branch issue {expected_branch_issue}, lane_claim issue {scope.lane_claim.issue_number}"
+        )
+    return failures
+
+
 def check_scope(
     scope: ExecutionScope,
     cwd: Path,
     *,
     changed_files_file: Path | None = None,
     now_utc: datetime | None = None,
+    require_lane_claim: bool = False,
 ) -> tuple[list[str], list[str]]:
     failures: list[str] = []
     warnings: list[str] = []
@@ -403,6 +481,7 @@ def check_scope(
     elif actual_branch != scope.expected_branch:
         failures.append(f"branch mismatch: expected {scope.expected_branch}, got {actual_branch or '<detached HEAD>'}")
 
+    failures.extend(_validate_lane_claim(scope, actual_branch, require_lane_claim))
     failures.extend(_validate_execution_mode(scope, now_utc))
     failures.extend(_validate_active_exception_ref(scope, actual_root))
 
@@ -459,6 +538,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Assert the current checkout matches a declared execution scope.")
     parser.add_argument("--scope", required=True, help="Path to execution scope JSON.")
     parser.add_argument("--changed-files-file", help="Optional file containing changed paths to validate.")
+    parser.add_argument("--require-lane-claim", action="store_true", help="Require lane_claim.issue_number to match the current issue branch.")
     args = parser.parse_args(argv)
 
     try:
@@ -468,7 +548,12 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     changed_files_file = Path(args.changed_files_file).expanduser() if args.changed_files_file else None
-    failures, warnings = check_scope(scope, Path.cwd(), changed_files_file=changed_files_file)
+    failures, warnings = check_scope(
+        scope,
+        Path.cwd(),
+        changed_files_file=changed_files_file,
+        require_lane_claim=args.require_lane_claim,
+    )
     for warning in warnings:
         print(f"WARN {warning}")
     if failures:

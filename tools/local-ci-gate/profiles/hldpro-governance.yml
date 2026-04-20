@@ -73,6 +73,7 @@ profile:
         - "{execution_scope}"
         - --changed-files-file
         - "{changed_files_file}"
+        - --require-lane-claim
 
     - id: diff-hygiene
       title: Git diff whitespace hygiene
