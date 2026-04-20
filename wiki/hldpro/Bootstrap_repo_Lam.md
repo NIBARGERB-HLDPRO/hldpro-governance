@@ -4,13 +4,13 @@
 
 ## Key Concepts
 
-- **test_bootstrap_repo_env_contract.py** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **check()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **main()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **run_sibling_worktree_lam_bootstrap()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **run_synthetic_lam_bootstrap()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **Exercise vault discovery from sibling governance worktrees.** (1 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **Exercise lam bootstrap with command-like vault values and missing optional keys.** (1 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
+- **test_bootstrap_repo_env_contract.py** (4 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **check()** (4 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **main()** (4 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **run_sibling_worktree_lam_bootstrap()** (4 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **run_synthetic_lam_bootstrap()** (4 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **Exercise vault discovery from sibling governance worktrees.** (1 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **Exercise lam bootstrap with command-like vault values and missing optional keys.** (1 connections) — `scripts/test_bootstrap_repo_env_contract.py`
 
 ## Relationships
 
@@ -18,7 +18,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
+- `scripts/test_bootstrap_repo_env_contract.py`
 
 ## Audit Trail
 
