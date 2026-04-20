@@ -21,7 +21,7 @@ Production live health is not claimed in this slice because production credentia
 | Live mode missing-config proof fails closed before requests | PASS | `2026-04-20.live-missing-config.proof.json`; exit code `2` |
 | Evidence scan finds no sensitive material | PASS | `rg` denylist scan returned no matches |
 | Local tests and Local CI Gate pass | PASS | Focused pytest suite: `18 passed`; Local CI Gate verdict: `PASS` |
-| Final AC: GitHub PR checks pass before closeout | PENDING | To be recorded after PR checks pass |
+| Final AC: GitHub PR checks pass before closeout | PASS | PR #379 checks passed: Analyze (actions), Analyze (python), CodeQL, commit-scope, contract, local-ci-gate, and validate |
 
 ## Commands
 
@@ -129,6 +129,12 @@ tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json
 ```
 
 Result: PASS. Verdict: `PASS`.
+
+```bash
+gh pr checks 379 --watch --interval 10
+```
+
+Result: PASS. Checks passed: Analyze (actions), Analyze (python), CodeQL, commit-scope, contract, local-ci-gate, and validate.
 
 ## Residual Risk
 

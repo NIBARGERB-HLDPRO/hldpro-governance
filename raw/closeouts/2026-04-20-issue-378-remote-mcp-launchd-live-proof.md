@@ -31,7 +31,7 @@ No contradiction. This tightens the issue #376 operating-mode decision by making
 ## Issue Links
 - Governance issue: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/378
 - Parent operating-mode issue: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/376
-- PR: pending at closeout-file creation; update before final issue closure.
+- PR: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/379
 
 ## Schema / Artifact Version
 - Remote MCP monitor result contract from `docs/DATA_DICTIONARY.md`
@@ -95,7 +95,7 @@ Result: PASS. Declared active parallel roots produced warnings only.
 - PASS: registry surface reconciliation
 - PASS: `git diff --check`
 - PASS: `tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json`
-- PENDING: GitHub PR checks, to be updated after PR creation and CI completion.
+- PASS: GitHub PR #379 checks: Analyze (actions), Analyze (python), CodeQL, commit-scope, contract, local-ci-gate, and validate.
 
 ## Tier Evidence Used
 Tier 2 governance operational proof. No architecture or standards invariant change requiring a dual-signed cross-review artifact.
