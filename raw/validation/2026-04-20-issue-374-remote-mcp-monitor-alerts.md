@@ -87,7 +87,7 @@ git diff --check
 # PASS
 
 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json
-# PASS: report cache/local-ci-gate/reports/20260420T005625Z-hldpro-governance-git
+# PASS: report cache/local-ci-gate/reports/20260420T005700Z-hldpro-governance-git
 ```
 
 ## Residual Risk
