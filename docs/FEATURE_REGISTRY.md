@@ -1,6 +1,6 @@
 # hldpro-governance — Feature Registry
 
-**Last Updated:** 2026-04-20
+**Last Updated:** 2026-04-21
 **Scope:** Shared governance standards, reusable CI enforcement, and cross-repo audit agents.
 
 ---
@@ -184,6 +184,7 @@
 | GOV-023 | `packet_queue.py` halts dispatch when known-failure context reports `repeat_count >= 2`, forcing planning-gate escalation before repeating a documented mistake. |
 | GOV-023 | `record-failure` writes novel failures to `raw/operator-context/self-learning/` as new issue-backed files and never overwrites human-authored logs. |
 | GOV-023 | `overlord-sweep.yml` builds `metrics/self-learning/latest.json` and `latest.md`, appends the markdown report to the weekly issue, and persists the metric with other weekly generated artifacts. |
+| GOV-023 | Issue #475 adds an operational proof pattern: stale self-learning reports must be repaired by fixing the pre-sweep blocker, regenerating metrics, and preserving an issue-backed `raw/operator-context/self-learning/` artifact. |
 
 ### E2E_AUTONOMOUS_DELIVERY_PILOT
 

@@ -1,0 +1,73 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-475-self-learning-loop-proof",
+  "issue_number": 475,
+  "parent_epic_number": 475,
+  "lifecycle_state": "accepted",
+  "from_role": "codex-research-planner",
+  "to_role": "codex-implementation-validator",
+  "structured_plan_ref": "docs/plans/issue-475-self-learning-loop-proof-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-475-self-learning-loop-proof-implementation.json",
+  "packet_ref": "raw/packets/2026-04-21-issue-475-self-learning-loop-proof.json",
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "The pre-sweep model-pin blocker is removed without treating stale var/worktrees mirrors as authoritative source.",
+      "verification_refs": [
+        ".github/scripts/check_codex_model_pins.py",
+        "packages/hldpro-sim/hldprosim/providers.py",
+        "packages/hldpro-sim/tests/test_providers.py",
+        "raw/validation/2026-04-21-issue-475-self-learning-loop-proof.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Self-learning metrics and reusable error-pattern evidence are current and issue-backed.",
+      "verification_refs": [
+        "metrics/self-learning/latest.json",
+        "docs/ERROR_PATTERNS.md",
+        "raw/operator-context/self-learning/2026-04-21-issue-475-self-learning-sweep-staleness.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "The governed evidence package validates locally while keeping remote scheduled-sweep proof as an issue-backed follow-up.",
+      "verification_refs": [
+        "docs/plans/issue-475-self-learning-loop-proof-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-475-self-learning-loop-proof-implementation.json",
+        "raw/validation/2026-04-21-issue-475-self-learning-loop-proof.md",
+        "raw/closeouts/2026-04-21-issue-475-self-learning-loop-proof.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_handoff_package.py raw/handoffs/2026-04-21-issue-475-self-learning-loop-proof.json --root .",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-21-issue-475-self-learning-loop-proof.md --root .",
+    "python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json --report-dir cache/local-ci-gate/reports"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [
+    "cache/local-ci-gate/reports/local-ci-20260421T174159Z.json"
+  ],
+  "artifact_refs": [
+    "docs/plans/issue-475-self-learning-loop-proof-structured-agent-cycle-plan.json",
+    "docs/plans/issue-475-self-learning-loop-proof-pdcar.md",
+    "raw/execution-scopes/2026-04-21-issue-475-self-learning-loop-proof-implementation.json",
+    "raw/packets/2026-04-21-issue-475-self-learning-loop-proof.json",
+    "raw/closeouts/2026-04-21-issue-475-self-learning-loop-proof.md",
+    "metrics/self-learning/latest.json",
+    "docs/ERROR_PATTERNS.md",
+    "raw/operator-context/self-learning/2026-04-21-issue-475-self-learning-sweep-staleness.md"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-475-self-learning-loop-proof.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-04-21-issue-475-self-learning-loop-proof.md",
+  "blocked_on": [
+    "Remote scheduled overlord-sweep proof after this branch is pushed and merged."
+  ],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T17:38:38-05:00",
+  "notes": "Issue #475 local implementation and evidence package. The GitHub issue remains open for remote scheduled-sweep proof."
+}

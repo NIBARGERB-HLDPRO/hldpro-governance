@@ -34,6 +34,7 @@
 | Item | Issue | Status | Notes |
 |------|-------|--------|-------|
 | SoM HITL SMS dedicated sender env propagation | #421 | IN PROGRESS | Add `SOM_TWILIO_FROM_NUMBER` plus sender aliases to local-ai-machine bootstrap output and document dedicated approval-route separation from AIS/Alex/customer-demo senders. |
+| Self-learning loop operational proof gap | #475 | IN PROGRESS | Unblock scheduled sweep before self-learning, refresh metrics, add operator-context write-back evidence, and document the reusable prevention pattern. |
 | Weekly overlord sweep write-back to wiki/index.md | — | ACTIVE / AWAITING NEXT RUN | Workflow and graph/index write-back path are wired; last committed index remains the 2026-04-09 bootstrap until the next scheduled or manual sweep refreshes generated counts |
 | LAM env-var-docs contract debt: SOM_* variables unclassified | #145 | OPEN | local-ai-machine env vars need classification |
 

@@ -1,0 +1,55 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-475-self-learning-loop-proof-20260421",
+  "allowed_write_paths": [
+    ".github/scripts/check_codex_model_pins.py",
+    "OVERLORD_BACKLOG.md",
+    "docs/ERROR_PATTERNS.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-475-self-learning-loop-proof-pdcar.md",
+    "docs/plans/issue-475-self-learning-loop-proof-structured-agent-cycle-plan.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "metrics/self-learning/latest.json",
+    "metrics/self-learning/latest.md",
+    "packages/hldpro-sim/hldprosim/providers.py",
+    "packages/hldpro-sim/tests/test_providers.py",
+    "raw/closeouts/2026-04-21-issue-475-self-learning-loop-proof.md",
+    "raw/execution-scopes/2026-04-21-issue-475-self-learning-loop-proof-implementation.json",
+    "raw/handoffs/2026-04-21-issue-475-self-learning-loop-proof.json",
+    "raw/operator-context/self-learning/2026-04-21-issue-475-self-learning-sweep-staleness.md",
+    "raw/packets/2026-04-21-issue-475-self-learning-loop-proof.json",
+    "raw/validation/2026-04-21-issue-475-self-learning-loop-proof.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary checkout has pre-existing user edits in raw/fail-fast-log.md and must not be modified by issue #475."
+    }
+  ],
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 475,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/475",
+    "claimed_by": "session-agent-codex-gpt-5.4",
+    "claimed_at": "2026-04-21T17:31:51Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-directive-and-codex-research-pass",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-21T17:31:51Z",
+    "evidence_paths": [
+      "docs/plans/issue-475-self-learning-loop-proof-structured-agent-cycle-plan.json",
+      "raw/handoffs/2026-04-21-issue-475-self-learning-loop-proof.json",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/475"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

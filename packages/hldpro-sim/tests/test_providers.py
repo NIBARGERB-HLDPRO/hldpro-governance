@@ -30,10 +30,13 @@ def test_codex_provider_builds_expected_subprocess_args():
         provider.complete("system prompt", "user prompt", schema)
 
     called_cmd = mock_run.call_args.args[0]
-    assert called_cmd[:3] == ["codex", "exec", "--ephemeral"]
+    assert called_cmd[0] == "codex"
+    assert called_cmd[1] == "exec"
+    assert called_cmd[2] == "--ephemeral"
     assert called_cmd[3] == "--skip-git-repo-check"
     assert called_cmd[4:7] == ["--sandbox", "read-only", "-m"]
     assert called_cmd[7] == provider.model
+    assert called_cmd[8:10] == ["-c", f"model_reasoning_effort={provider.effort}"]
     assert "--output-schema" in called_cmd
     assert _captured_schema["additionalProperties"] is False
     assert called_cmd[-1] == "system prompt\n\nuser prompt"

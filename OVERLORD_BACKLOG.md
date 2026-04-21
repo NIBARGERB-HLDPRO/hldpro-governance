@@ -19,6 +19,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Self-learning loop operational proof gap | [#475](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/475) | HIGH | 2-3 | Unblock scheduled sweep before self-learning, refresh metrics, add issue-backed operator-context write-back evidence, and document the reusable prevention pattern. |
 
 ## Done
 
