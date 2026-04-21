@@ -204,3 +204,9 @@
 | GOV-016 | Future SoM closeouts must identify the wired checks actually run, schema/artifact version, model identities, reviewer and gate identity, issue links, validation commands, and residual risks or deferrals. The closeout contract lives in `raw/closeouts/TEMPLATE.md`, with the current Slice 6 record under `raw/closeouts/2026-04-17-som-enforcement-drift-closeout-loop.md`. |
 | GOV-016 | Issue #432 revises the governance waterfall SSOT: Codex orchestrates and integrates, Opus 4.6 plans, GPT-5.4 high reviews the plan with Spark only as a logged fallback/specialist critique, Sonnet 4.6 is the primary Worker, Codex performs QA, Qwen local models handle bounded implementation chunks, Gemma is A/B shadow-only, and Windows Ollama is off the active fallback ladder. |
 | GOV-021 | Runtime inventory now treats Windows Ollama as deprecated/off-ladder, exposes Qwen2.5-Coder/Qwen3-14B/Qwen3.6 as the local worker ladder, and asserts Gemma's `ab_shadow_only` authority. |
+## Pages Deploy Gate
+
+- Issue: #469
+- Owner: governance-owned
+- Status: implementation complete
+- Summary: Reusable Cloudflare Pages Direct Upload deploy gate with pre-deploy phase, CI/Wrangler preflight, build freshness checks, Pages limits, secret redaction, and evidence JSON.

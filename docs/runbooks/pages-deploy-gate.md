@@ -2,33 +2,23 @@
 
 ## Invocation
 
-Run from the consumer repository root:
-
 ```bash
-python3 scripts/pages-deploy/pages_deploy_gate.py --config pages-deploy.config.json
-```
-
-Dry-run skips approval, build, Pages limit checks, and deploy:
-
-```bash
-python3 scripts/pages-deploy/pages_deploy_gate.py --config pages-deploy.config.json --dry-run
+python3 scripts/pages-deploy/pages_deploy_gate.py --config <path> [--dry-run]
 ```
 
 ## Required Environment
 
-- `CLOUDFLARE_API_TOKEN`: Cloudflare API token with Cloudflare Pages: Edit permission at the account level.
+- `CLOUDFLARE_API_TOKEN`: Cloudflare token with Cloudflare Pages: Edit plus account-level access.
 - `CLOUDFLARE_ACCOUNT_ID`: Cloudflare account id for the Pages project.
-- `PAGES_DEPLOY_APPROVED=1`: Required for non-dry-run deploys.
+- `PAGES_DEPLOY_APPROVED=1`: Required for non-dry-run deployment.
 
-Do not place secret values in the config file. Put only environment variable names in `required_env`.
+## Deploy Flow
 
-## Two-Phase Deploy Order
+The gate runs deployment in two phases:
 
-1. Validate config and preflight local tooling, required environment, approval, and Wrangler version.
-2. Run the optional `pre_deploy.command`, build the app, validate the artifact directory and Pages limits, then run `wrangler pages deploy`.
-
-The gate fails closed before deploy if any preflight, hook, build, stale-artifact, or Pages limit check fails.
+1. `pre_deploy.command` runs first. Use this phase for dependent deploy work such as Supabase edge function deploys.
+2. `wrangler pages deploy` uploads the built Pages artifact with CI and non-interactive flags.
 
 ## Config Schema
 
-Consumer config shape is defined in `docs/schemas/pages-deploy-consumer.schema.json`.
+Consumer config must follow `docs/schemas/pages-deploy-consumer.schema.json`.

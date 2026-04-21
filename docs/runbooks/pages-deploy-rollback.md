@@ -1,17 +1,19 @@
 # Pages Deploy Rollback Runbook
 
-List recent deployments:
+## List Deployments
 
 ```bash
 wrangler pages deployments list --project-name <name>
 ```
 
-Rollback a deployment:
+## Roll Back
 
 ```bash
 wrangler pages deployments rollback <deployment-id> --project-name <name>
 ```
 
-Cloudflare dashboard path: Workers & Pages -> Pages -> `<project-name>` -> Deployments.
+## Dashboard
 
-Supabase function rollback is separate from Cloudflare Pages rollback and must be handled through the Supabase deployment path for the affected project.
+In the Cloudflare dashboard, open Pages → project → Deployments tab.
+
+Supabase edge function rollback is separate. Use the Supabase dashboard or `supabase functions deploy --version`.
