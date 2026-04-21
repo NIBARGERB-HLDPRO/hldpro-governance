@@ -1,27 +1,35 @@
 # Orchestrator Packet queue
 
-> 18 nodes · cohesion 0.29
+> 39 nodes · cohesion 0.12
 
 ## Key Concepts
 
+- **packet_queue.py** (20 connections) — `scripts/orchestrator/packet_queue.py`
 - **TestPacketQueue** (16 connections) — `scripts/orchestrator/test_packet_queue.py`
 - **_packet()** (14 connections) — `scripts/orchestrator/test_packet_queue.py`
 - **._write_inbound()** (14 connections) — `scripts/orchestrator/test_packet_queue.py`
+- **transition_packet()** (8 connections) — `scripts/orchestrator/packet_queue.py`
+- **validate_for_dispatch()** (7 connections) — `scripts/orchestrator/packet_queue.py`
+- **_repo_relative_path()** (5 connections) — `scripts/orchestrator/packet_queue.py`
+- **_run_cli()** (5 connections) — `scripts/orchestrator/packet_queue.py`
+- **_write_transition_audit()** (4 connections) — `scripts/orchestrator/packet_queue.py`
 - **.test_dispatch_accepts_json_execution_scope_ref()** (4 connections) — `scripts/orchestrator/test_packet_queue.py`
+- **append_audit()** (3 connections) — `scripts/orchestrator/packet_queue.py`
+- **_audit_path()** (3 connections) — `scripts/orchestrator/packet_queue.py`
+- **ensure_queue()** (3 connections) — `scripts/orchestrator/packet_queue.py`
+- **_load_plan()** (3 connections) — `scripts/orchestrator/packet_queue.py`
+- **QueueDecision** (3 connections) — `scripts/orchestrator/packet_queue.py`
+- **replay_audit()** (3 connections) — `scripts/orchestrator/packet_queue.py`
+- **_validate_execution_scope_ref()** (3 connections) — `scripts/orchestrator/packet_queue.py`
+- **_validate_fallback_ref()** (3 connections) — `scripts/orchestrator/packet_queue.py`
+- **_validate_local_refs()** (3 connections) — `scripts/orchestrator/packet_queue.py`
 - **test_packet_queue.py** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
 - **.test_dispatch_refuses_markdown_execution_scope_ref()** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
 - **.test_dispatch_refuses_schema_valid_packet_without_governance()** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
 - **.test_dispatch_requires_approved_issue_backed_plan()** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
 - **.test_dispatch_requires_local_review_artifact_refs_to_exist()** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
 - **.test_dry_run_authorization_does_not_allow_real_dispatch()** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
-- **.test_invalid_packet_fails_schema_before_dispatch()** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
-- **.test_pii_halt_reason_takes_precedence_over_known_failure_halt()** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
-- **.test_pii_packet_halts_before_non_lam_dispatch()** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
-- **.test_repeated_known_failure_context_halts_dispatch()** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
-- **.test_replay_counts_refused_events_deterministically()** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
-- **.test_valid_packet_dry_run_replays_through_queue_without_moving()** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
-- **.test_valid_packet_real_dispatch_moves_file()** (3 connections) — `scripts/orchestrator/test_packet_queue.py`
-- **._write_execution_scope()** (2 connections) — `scripts/orchestrator/test_packet_queue.py`
+- *... and 14 more nodes in this community*
 
 ## Relationships
 
@@ -29,12 +37,13 @@
 
 ## Source Files
 
+- `scripts/orchestrator/packet_queue.py`
 - `scripts/orchestrator/test_packet_queue.py`
 
 ## Audit Trail
 
-- EXTRACTED: 35 (39%)
-- INFERRED: 54 (61%)
+- EXTRACTED: 76 (44%)
+- INFERRED: 98 (56%)
 - AMBIGUOUS: 0 (0%)
 
 ---

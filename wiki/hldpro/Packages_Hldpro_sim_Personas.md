@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **Convenience: load shared dir from bundled package personas/.** (0 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/personas.py`
+- **Convenience: load shared dir from bundled package personas/.** (0 connections) — `packages/hldpro-sim/hldprosim/personas.py`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `hldpro-governance/packages/hldpro-sim/hldprosim/personas.py`
+- `packages/hldpro-sim/hldprosim/personas.py`
 
 ## Audit Trail
 

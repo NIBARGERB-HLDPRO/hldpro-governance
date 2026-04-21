@@ -1,18 +1,17 @@
 # Overlord Memory integrity
 
-> 9 nodes · cohesion 0.42
+> 8 nodes · cohesion 0.32
 
 ## Key Concepts
 
-- **memory_integrity.py** (8 connections) — `scripts/overlord/memory_integrity.py`
-- **inspect_repo()** (7 connections) — `scripts/overlord/memory_integrity.py`
-- **check_memory_exists()** (3 connections) — `scripts/overlord/memory_integrity.py`
-- **memory_dir_for_repo()** (3 connections) — `scripts/overlord/memory_integrity.py`
-- **load_memory_lines()** (2 connections) — `scripts/overlord/memory_integrity.py`
-- **main()** (2 connections) — `scripts/overlord/memory_integrity.py`
-- **parse_pointer_filenames()** (2 connections) — `scripts/overlord/memory_integrity.py`
-- **validate_frontmatter()** (2 connections) — `scripts/overlord/memory_integrity.py`
-- **fail()** (1 connections) — `scripts/overlord/memory_integrity.py`
+- **MemoryIntegrityTests** (7 connections) — `scripts/overlord/test_memory_integrity.py`
+- **.write_memory()** (3 connections) — `scripts/overlord/test_memory_integrity.py`
+- **.test_existing_malformed_memory_still_fails_in_allow_missing_mode()** (2 connections) — `scripts/overlord/test_memory_integrity.py`
+- **.test_valid_memory_pointer_passes()** (2 connections) — `scripts/overlord/test_memory_integrity.py`
+- **test_memory_integrity.py** (1 connections) — `scripts/overlord/test_memory_integrity.py`
+- **.setUp()** (1 connections) — `scripts/overlord/test_memory_integrity.py`
+- **.test_allow_missing_memory_skips_without_failing()** (1 connections) — `scripts/overlord/test_memory_integrity.py`
+- **.test_strict_missing_memory_fails()** (1 connections) — `scripts/overlord/test_memory_integrity.py`
 
 ## Relationships
 
@@ -20,12 +19,12 @@
 
 ## Source Files
 
-- `scripts/overlord/memory_integrity.py`
+- `scripts/overlord/test_memory_integrity.py`
 
 ## Audit Trail
 
-- EXTRACTED: 16 (53%)
-- INFERRED: 14 (47%)
+- EXTRACTED: 14 (78%)
+- INFERRED: 4 (22%)
 - AMBIGUOUS: 0 (0%)
 
 ---
