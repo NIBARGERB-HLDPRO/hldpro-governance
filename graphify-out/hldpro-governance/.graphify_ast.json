@@ -561,6 +561,167 @@
       "source_location": "L225"
     },
     {
+      "id": "test_cli_session_supervisor",
+      "label": "test_cli_session_supervisor.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_cli_session_supervisor_write_fake",
+      "label": "write_fake()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L12"
+    },
+    {
+      "id": "test_cli_session_supervisor_run_supervisor",
+      "label": "run_supervisor()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L18"
+    },
+    {
+      "id": "test_cli_session_supervisor_events",
+      "label": "events()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L58"
+    },
+    {
+      "id": "test_cli_session_supervisor_test_success_event_captures_stdout_and_schema_fields",
+      "label": "test_success_event_captures_stdout_and_schema_fields()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L63"
+    },
+    {
+      "id": "test_cli_session_supervisor_test_nonzero_failure_is_recorded_without_retry",
+      "label": "test_nonzero_failure_is_recorded_without_retry()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L86"
+    },
+    {
+      "id": "test_cli_session_supervisor_test_silent_stall_hits_idle_timeout_and_kills_process",
+      "label": "test_silent_stall_hits_idle_timeout_and_kills_process()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L104"
+    },
+    {
+      "id": "test_cli_session_supervisor_test_intermittent_output_avoids_idle_timeout",
+      "label": "test_intermittent_output_avoids_idle_timeout()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L121"
+    },
+    {
+      "id": "test_cli_session_supervisor_test_total_timeout_overrides_active_output",
+      "label": "test_total_timeout_overrides_active_output()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L140"
+    },
+    {
+      "id": "test_cli_session_supervisor_test_retry_once_can_recover_from_timeout",
+      "label": "test_retry_once_can_recover_from_timeout()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L159"
+    },
+    {
+      "id": "test_cli_session_supervisor_test_retry_halts_after_one_additional_timeout",
+      "label": "test_retry_halts_after_one_additional_timeout()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L194"
+    },
+    {
+      "id": "cli_session_supervisor",
+      "label": "cli_session_supervisor.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "cli_session_supervisor_attemptresult",
+      "label": "AttemptResult",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L25"
+    },
+    {
+      "id": "cli_session_supervisor_utcnow",
+      "label": "utcnow()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L30"
+    },
+    {
+      "id": "cli_session_supervisor_session_id",
+      "label": "session_id()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L34"
+    },
+    {
+      "id": "cli_session_supervisor_sha256_bytes",
+      "label": "sha256_bytes()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L39"
+    },
+    {
+      "id": "cli_session_supervisor_event_paths",
+      "label": "event_paths()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L43"
+    },
+    {
+      "id": "cli_session_supervisor_append_jsonl",
+      "label": "append_jsonl()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L50"
+    },
+    {
+      "id": "cli_session_supervisor_kill_group",
+      "label": "kill_group()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L56"
+    },
+    {
+      "id": "cli_session_supervisor_build_command",
+      "label": "build_command()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L79"
+    },
+    {
+      "id": "cli_session_supervisor_stream_attempt",
+      "label": "stream_attempt()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L122"
+    },
+    {
+      "id": "cli_session_supervisor_parse_args",
+      "label": "parse_args()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L265"
+    },
+    {
+      "id": "cli_session_supervisor_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L308"
+    },
+    {
       "id": "test_bootstrap_repo_env_contract",
       "label": "test_bootstrap_repo_env_contract.py",
       "file_type": "code",
@@ -655,77 +816,77 @@
       "id": "validate_closeout",
       "label": "validate_closeout.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L1"
     },
     {
       "id": "validate_closeout_repo_rel",
       "label": "_repo_rel()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L44"
     },
     {
       "id": "validate_closeout_sections",
       "label": "_sections()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L51"
     },
     {
       "id": "validate_closeout_extract_repo_refs",
       "label": "_extract_repo_refs()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L64"
     },
     {
       "id": "validate_closeout_load_json",
       "label": "_load_json()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L75"
     },
     {
       "id": "validate_closeout_validate_residuals",
       "label": "_validate_residuals()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L83"
     },
     {
       "id": "validate_closeout_validate_refs",
       "label": "_validate_refs()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L98"
     },
     {
       "id": "validate_closeout_validate_handoff_refs",
       "label": "_validate_handoff_refs()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L125"
     },
     {
       "id": "validate_closeout_validate_closeout",
       "label": "validate_closeout()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L154"
     },
     {
       "id": "validate_closeout_build_parser",
       "label": "build_parser()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L177"
     },
     {
       "id": "validate_closeout_main",
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L184"
     },
     {
@@ -2503,91 +2664,91 @@
       "id": "test_validate_closeout",
       "label": "test_validate_closeout.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L1"
     },
     {
       "id": "test_validate_closeout_write",
       "label": "_write()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L11"
     },
     {
       "id": "test_validate_closeout_json",
       "label": "_json()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L16"
     },
     {
       "id": "test_validate_closeout_testvalidatecloseout",
       "label": "TestValidateCloseout",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L20"
     },
     {
       "id": "test_validate_closeout_testvalidatecloseout_repo",
       "label": "._repo()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L21"
     },
     {
       "id": "test_validate_closeout_testvalidatecloseout_closeout",
       "label": "._closeout()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L69"
     },
     {
       "id": "test_validate_closeout_testvalidatecloseout_test_valid_closeout_passes",
       "label": ".test_valid_closeout_passes()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L109"
     },
     {
       "id": "test_validate_closeout_testvalidatecloseout_test_missing_referenced_artifact_fails",
       "label": ".test_missing_referenced_artifact_fails()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L115"
     },
     {
       "id": "test_validate_closeout_testvalidatecloseout_test_residual_without_issue_ref_fails",
       "label": ".test_residual_without_issue_ref_fails()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L122"
     },
     {
       "id": "test_validate_closeout_testvalidatecloseout_test_handoff_without_lifecycle_record_fails",
       "label": ".test_handoff_without_lifecycle_record_fails()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L128"
     },
     {
       "id": "test_validate_closeout_testvalidatecloseout_test_placeholder_text_in_required_section_fails",
       "label": ".test_placeholder_text_in_required_section_fails()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L134"
     },
     {
       "id": "test_validate_closeout_testvalidatecloseout_test_gate_evidence_requires_artifact_or_command_result",
       "label": ".test_gate_evidence_requires_artifact_or_command_result()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L143"
     },
     {
       "id": "test_validate_closeout_testvalidatecloseout_test_hook_invokes_validator_before_graph_refresh",
       "label": ".test_hook_invokes_validator_before_graph_refresh()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L152"
     },
     {
@@ -11930,6 +12091,636 @@
       "weight": 0.8
     },
     {
+      "source": "test_cli_session_supervisor",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "textwrap",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "test_cli_session_supervisor_write_fake",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "test_cli_session_supervisor_run_supervisor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "test_cli_session_supervisor_events",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "test_cli_session_supervisor_test_success_event_captures_stdout_and_schema_fields",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "test_cli_session_supervisor_test_nonzero_failure_is_recorded_without_retry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "test_cli_session_supervisor_test_silent_stall_hits_idle_timeout_and_kills_process",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "test_cli_session_supervisor_test_intermittent_output_avoids_idle_timeout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "test_cli_session_supervisor_test_total_timeout_overrides_active_output",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "test_cli_session_supervisor_test_retry_once_can_recover_from_timeout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor",
+      "target": "test_cli_session_supervisor_test_retry_halts_after_one_additional_timeout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L194",
+      "weight": 1.0
+    },
+    {
+      "source": "test_cli_session_supervisor_test_success_event_captures_stdout_and_schema_fields",
+      "target": "test_cli_session_supervisor_write_fake",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L64",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_success_event_captures_stdout_and_schema_fields",
+      "target": "test_cli_session_supervisor_run_supervisor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L73",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_success_event_captures_stdout_and_schema_fields",
+      "target": "test_cli_session_supervisor_events",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L77",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_nonzero_failure_is_recorded_without_retry",
+      "target": "test_cli_session_supervisor_write_fake",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L87",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_nonzero_failure_is_recorded_without_retry",
+      "target": "test_cli_session_supervisor_run_supervisor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L96",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_nonzero_failure_is_recorded_without_retry",
+      "target": "test_cli_session_supervisor_events",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L99",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_silent_stall_hits_idle_timeout_and_kills_process",
+      "target": "test_cli_session_supervisor_write_fake",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L105",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_silent_stall_hits_idle_timeout_and_kills_process",
+      "target": "test_cli_session_supervisor_run_supervisor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L113",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_silent_stall_hits_idle_timeout_and_kills_process",
+      "target": "test_cli_session_supervisor_events",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L117",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_intermittent_output_avoids_idle_timeout",
+      "target": "test_cli_session_supervisor_write_fake",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L122",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_intermittent_output_avoids_idle_timeout",
+      "target": "test_cli_session_supervisor_run_supervisor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L132",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_intermittent_output_avoids_idle_timeout",
+      "target": "test_cli_session_supervisor_events",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L135",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_total_timeout_overrides_active_output",
+      "target": "test_cli_session_supervisor_write_fake",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L141",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_total_timeout_overrides_active_output",
+      "target": "test_cli_session_supervisor_run_supervisor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L151",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_total_timeout_overrides_active_output",
+      "target": "test_cli_session_supervisor_events",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L155",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_retry_once_can_recover_from_timeout",
+      "target": "test_cli_session_supervisor_write_fake",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L160",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_retry_once_can_recover_from_timeout",
+      "target": "test_cli_session_supervisor_run_supervisor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L176",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_retry_once_can_recover_from_timeout",
+      "target": "test_cli_session_supervisor_events",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L186",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_retry_halts_after_one_additional_timeout",
+      "target": "test_cli_session_supervisor_write_fake",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L195",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_retry_halts_after_one_additional_timeout",
+      "target": "test_cli_session_supervisor_run_supervisor",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L205",
+      "weight": 0.8
+    },
+    {
+      "source": "test_cli_session_supervisor_test_retry_halts_after_one_additional_timeout",
+      "target": "test_cli_session_supervisor_events",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_location": "L215",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "argparse",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "hashlib",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "selectors",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "signal",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "time",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "uuid",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "dataclasses",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "datetime",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "cli_session_supervisor_attemptresult",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "cli_session_supervisor_utcnow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "cli_session_supervisor_session_id",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "cli_session_supervisor_sha256_bytes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "cli_session_supervisor_event_paths",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "cli_session_supervisor_append_jsonl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "cli_session_supervisor_kill_group",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "cli_session_supervisor_build_command",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "cli_session_supervisor_stream_attempt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "cli_session_supervisor_parse_args",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L265",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor",
+      "target": "cli_session_supervisor_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L308",
+      "weight": 1.0
+    },
+    {
+      "source": "cli_session_supervisor_stream_attempt",
+      "target": "cli_session_supervisor_session_id",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L131",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_session_supervisor_stream_attempt",
+      "target": "cli_session_supervisor_event_paths",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L132",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_session_supervisor_stream_attempt",
+      "target": "cli_session_supervisor_build_command",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L133",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_session_supervisor_stream_attempt",
+      "target": "cli_session_supervisor_utcnow",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L134",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_session_supervisor_stream_attempt",
+      "target": "cli_session_supervisor_kill_group",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L182",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_session_supervisor_stream_attempt",
+      "target": "cli_session_supervisor_sha256_bytes",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L240",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_session_supervisor_stream_attempt",
+      "target": "cli_session_supervisor_append_jsonl",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L258",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_session_supervisor_stream_attempt",
+      "target": "cli_session_supervisor_attemptresult",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L261",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_session_supervisor_main",
+      "target": "cli_session_supervisor_parse_args",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L309",
+      "weight": 0.8
+    },
+    {
+      "source": "cli_session_supervisor_main",
+      "target": "cli_session_supervisor_stream_attempt",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_location": "L314",
+      "weight": 0.8
+    },
+    {
       "source": "test_bootstrap_repo_env_contract",
       "target": "os",
       "relation": "imports",
@@ -12186,7 +12977,7 @@
       "target": "argparse",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -12195,7 +12986,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -12204,7 +12995,7 @@
       "target": "re",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -12213,7 +13004,7 @@
       "target": "sys",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -12222,7 +13013,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -12231,7 +13022,7 @@
       "target": "typing",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -12240,7 +13031,7 @@
       "target": "validate_handoff_package",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L12",
       "weight": 1.0
     },
@@ -12249,7 +13040,7 @@
       "target": "validate_handoff_package",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L15",
       "weight": 1.0
     },
@@ -12258,7 +13049,7 @@
       "target": "validate_closeout_repo_rel",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L44",
       "weight": 1.0
     },
@@ -12267,7 +13058,7 @@
       "target": "validate_closeout_sections",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L51",
       "weight": 1.0
     },
@@ -12276,7 +13067,7 @@
       "target": "validate_closeout_extract_repo_refs",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L64",
       "weight": 1.0
     },
@@ -12285,7 +13076,7 @@
       "target": "validate_closeout_load_json",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L75",
       "weight": 1.0
     },
@@ -12294,7 +13085,7 @@
       "target": "validate_closeout_validate_residuals",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L83",
       "weight": 1.0
     },
@@ -12303,7 +13094,7 @@
       "target": "validate_closeout_validate_refs",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L98",
       "weight": 1.0
     },
@@ -12312,7 +13103,7 @@
       "target": "validate_closeout_validate_handoff_refs",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L125",
       "weight": 1.0
     },
@@ -12321,7 +13112,7 @@
       "target": "validate_closeout_validate_closeout",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L154",
       "weight": 1.0
     },
@@ -12330,7 +13121,7 @@
       "target": "validate_closeout_build_parser",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L177",
       "weight": 1.0
     },
@@ -12339,7 +13130,7 @@
       "target": "validate_closeout_main",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L184",
       "weight": 1.0
     },
@@ -12348,7 +13139,7 @@
       "target": "validate_closeout_repo_rel",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L129",
       "weight": 0.8
     },
@@ -12357,7 +13148,7 @@
       "target": "validate_closeout_load_json",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L141",
       "weight": 0.8
     },
@@ -12366,7 +13157,7 @@
       "target": "validate_closeout_sections",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L162",
       "weight": 0.8
     },
@@ -12375,7 +13166,7 @@
       "target": "validate_closeout_extract_repo_refs",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L170",
       "weight": 0.8
     },
@@ -12384,7 +13175,7 @@
       "target": "validate_closeout_validate_refs",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L171",
       "weight": 0.8
     },
@@ -12393,7 +13184,7 @@
       "target": "validate_closeout_validate_residuals",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L172",
       "weight": 0.8
     },
@@ -12402,7 +13193,7 @@
       "target": "validate_closeout_validate_handoff_refs",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L173",
       "weight": 0.8
     },
@@ -12411,7 +13202,7 @@
       "target": "validate_closeout_build_parser",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L185",
       "weight": 0.8
     },
@@ -12420,7 +13211,7 @@
       "target": "validate_closeout_validate_closeout",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/validate_closeout.py",
+      "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L187",
       "weight": 0.8
     },
@@ -18765,7 +19556,7 @@
       "target": "tempfile",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -18774,7 +19565,7 @@
       "target": "unittest",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -18783,7 +19574,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -18792,7 +19583,7 @@
       "target": "validate_closeout",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -18801,7 +19592,7 @@
       "target": "test_validate_closeout_write",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L11",
       "weight": 1.0
     },
@@ -18810,7 +19601,7 @@
       "target": "test_validate_closeout_json",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L16",
       "weight": 1.0
     },
@@ -18819,7 +19610,7 @@
       "target": "test_validate_closeout_testvalidatecloseout",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L20",
       "weight": 1.0
     },
@@ -18828,7 +19619,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_repo",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L21",
       "weight": 1.0
     },
@@ -18837,7 +19628,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_closeout",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L69",
       "weight": 1.0
     },
@@ -18846,7 +19637,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_test_valid_closeout_passes",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L109",
       "weight": 1.0
     },
@@ -18855,7 +19646,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_test_missing_referenced_artifact_fails",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L115",
       "weight": 1.0
     },
@@ -18864,7 +19655,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_test_residual_without_issue_ref_fails",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L122",
       "weight": 1.0
     },
@@ -18873,7 +19664,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_test_handoff_without_lifecycle_record_fails",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L128",
       "weight": 1.0
     },
@@ -18882,7 +19673,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_test_placeholder_text_in_required_section_fails",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L134",
       "weight": 1.0
     },
@@ -18891,7 +19682,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_test_gate_evidence_requires_artifact_or_command_result",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L143",
       "weight": 1.0
     },
@@ -18900,7 +19691,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_test_hook_invokes_validator_before_graph_refresh",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L152",
       "weight": 1.0
     },
@@ -18909,7 +19700,7 @@
       "target": "test_validate_closeout_write",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L17",
       "weight": 0.8
     },
@@ -18918,7 +19709,7 @@
       "target": "test_validate_closeout_json",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L24",
       "weight": 0.8
     },
@@ -18927,7 +19718,7 @@
       "target": "test_validate_closeout_write",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L32",
       "weight": 0.8
     },
@@ -18936,7 +19727,7 @@
       "target": "test_validate_closeout_write",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L71",
       "weight": 0.8
     },
@@ -18945,7 +19736,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_repo",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L110",
       "weight": 0.8
     },
@@ -18954,7 +19745,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_closeout",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L112",
       "weight": 0.8
     },
@@ -18963,7 +19754,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_repo",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L116",
       "weight": 0.8
     },
@@ -18972,7 +19763,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_closeout",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L119",
       "weight": 0.8
     },
@@ -18981,7 +19772,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_repo",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L123",
       "weight": 0.8
     },
@@ -18990,7 +19781,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_closeout",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L125",
       "weight": 0.8
     },
@@ -18999,7 +19790,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_repo",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L129",
       "weight": 0.8
     },
@@ -19008,7 +19799,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_closeout",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L131",
       "weight": 0.8
     },
@@ -19017,7 +19808,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_repo",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L135",
       "weight": 0.8
     },
@@ -19026,7 +19817,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_closeout",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L137",
       "weight": 0.8
     },
@@ -19035,7 +19826,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_repo",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L144",
       "weight": 0.8
     },
@@ -19044,7 +19835,7 @@
       "target": "test_validate_closeout_testvalidatecloseout_closeout",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/scripts/overlord/test_validate_closeout.py",
+      "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L146",
       "weight": 0.8
     },

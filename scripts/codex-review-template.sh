@@ -155,12 +155,31 @@ ${TARGET}
 
 Read the relevant files, then provide your findings in markdown format."
 
-    claude -p "$PROMPT" \
-      --allowedTools "Read Grep Glob" \
+    prompt_file="$(mktemp "${TMPDIR:-/tmp}/claude-review-prompt.XXXXXX")" || exit 1
+    printf '%s\n' "$PROMPT" >"$prompt_file"
+
+    if ! python3 "$REPO_ROOT/scripts/cli_session_supervisor.py" \
+      --tool claude \
+      --role specialist-reviewer \
+      --model "${CLAUDE_REVIEW_MODEL:-claude-sonnet-4-6}" \
+      --cwd "$REPO_ROOT" \
+      --prompt-file "$prompt_file" \
+      --scope-slug "codex-review-template-claude-${DATE}" \
+      --handoff-package-ref "${CLAUDE_REVIEW_HANDOFF_PACKAGE_REF:-codex-review-template}" \
+      --event-root "$REPO_ROOT/raw/cli-session-events" \
+      --stdout-copy "$OUTPUT_FILE" \
+      --wall-timeout-sec "${CLAUDE_REVIEW_WALL_TIMEOUT_SECONDS:-900}" \
+      --silence-timeout-sec "${CLAUDE_REVIEW_SILENCE_TIMEOUT_SECONDS:-120}" \
+      --terminate-grace-sec "${CLAUDE_REVIEW_TERMINATE_GRACE_SECONDS:-5}" \
+      --permission-mode "${CLAUDE_REVIEW_PERMISSION_MODE:-bypassPermissions}" \
+      --allowed-tools "Read Grep Glob" \
       --max-turns 5 \
-      --no-session-persistence \
-      --dangerously-skip-permissions \
-      2>&1 | tee "$OUTPUT_FILE"
+      --max-budget-usd "${CLAUDE_REVIEW_MAX_BUDGET_USD:-1.00}" \
+      --no-session-persistence; then
+      echo "Claude review failed; see raw/cli-session-events for session evidence." >&2
+      exit 1
+    fi
+    rm -f "$prompt_file"
 
     echo ""
     echo "Claude review saved to: $OUTPUT_FILE"
