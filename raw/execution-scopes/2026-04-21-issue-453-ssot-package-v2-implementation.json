@@ -1,0 +1,83 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-453-ssot-package-v2",
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 453,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/453",
+    "claimed_by": "Codex orchestrator",
+    "claimed_at": "2026-04-21T20:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-approved-preplan",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-21T20:00:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/452",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/453",
+      "docs/plans/issue-453-structured-agent-cycle-plan.json",
+      "docs/plans/issue-453-governance-package-v2-pdcar.md",
+      "raw/cross-review/2026-04-21-issue-453-ssot-package-v2.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  },
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/governance-tooling-package.json",
+    "docs/plans/issue-453-structured-agent-cycle-plan.json",
+    "docs/plans/issue-453-governance-package-v2-pdcar.md",
+    "raw/cross-review/2026-04-21-issue-453-ssot-package-v2.md",
+    "raw/execution-scopes/2026-04-21-issue-453-ssot-package-v2-implementation.json",
+    "raw/validation/2026-04-21-issue-453-ssot-package-v2.md",
+    "graphify-out/",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/PHASE0"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary checkout has unrelated dirty raw/fail-fast-log.md and is not edited by issue #453."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Downstream product repo is out of scope for issue #453."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Downstream product repo is out of scope for issue #453."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Downstream product repo is out of scope for issue #453."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Downstream product repo is out of scope for issue #453."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Downstream product repo is out of scope for issue #453."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Downstream product repo is out of scope for issue #453."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Downstream product repo is out of scope for issue #453."
+    }
+  ]
+}

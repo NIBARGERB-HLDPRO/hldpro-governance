@@ -1,0 +1,132 @@
+{
+  "session_id": "session-20260421-issue-453-ssot-package-v2",
+  "issue_number": 453,
+  "objective": "Define governance package v0.2 as the SSOT bootstrap contract for thin downstream repo governance consumers, preserving repo-specific adapters for HIPAA, plan-mode, lane policy, local runtime, exempt knowledge, and product-baseline constraints.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance package contract and planning artifacts only.",
+    "Extend the existing governance tooling package manifest instead of creating a second bootstrap mechanism.",
+    "Document profile inheritance, managed surfaces, and local override contracts.",
+    "Do not edit downstream product repositories in this slice."
+  ],
+  "out_of_scope": [
+    "Per-repo rollout PRs.",
+    "Mutating downstream repos.",
+    "Deleting copied downstream hooks before managed parity is proven.",
+    "Weakening HealthcarePlatform HIPAA, PHI/PII, or lane policy requirements.",
+    "Implementing the v0.2 verifier or deployer expansion; that is issue #454."
+  ],
+  "research_summary": "Preplanning compared the proposed governance SSOT plus thin repo adapter model against current governance package and downstream repo states. Research found an existing Local CI-centered package foundation with partial downstream adoption, duplicated local hooks across repos, mutable workflow refs in some products, and repo-specific constraints that must become typed profile extensions rather than copied prose.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/452",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/453",
+    "docs/governance-tooling-package.json",
+    "docs/governance-consumer-pull-state.json",
+    "scripts/overlord/deploy_governance_tooling.py",
+    "scripts/overlord/verify_governance_consumer.py",
+    "scripts/overlord/test_verify_governance_consumer.py",
+    "docs/governed_repos.json"
+  ],
+  "sprints": [
+    {
+      "name": "Package v0.2 SSOT contract",
+      "goal": "Make the package manifest describe shared governance surfaces beyond Local CI.",
+      "tasks": [
+        "Add package v0.2 bootstrap contract metadata.",
+        "Add shared surface classes for hooks, workflows, lane policies, plan preflight, CLI session events, and handoff package lifecycle refs.",
+        "Add profile inheritance and local override requirements."
+      ],
+      "acceptance_criteria": [
+        "The manifest states that v0.2 extends v0.1 rather than replacing it.",
+        "Managed surfaces cover hooks, reusable workflows, schemas, Local CI, lane policy, plan preflight, CLI supervision, and handoff refs.",
+        "Local overrides require issue, owner, reason, and review cadence or expiry."
+      ],
+      "file_paths": [
+        "docs/governance-tooling-package.json",
+        "docs/plans/issue-453-structured-agent-cycle-plan.json",
+        "docs/plans/issue-453-governance-package-v2-pdcar.md",
+        "raw/execution-scopes/2026-04-21-issue-453-ssot-package-v2-implementation.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "name": "Repo profile contract",
+      "goal": "Preserve repo-specific controls through typed profiles instead of copied governance logic.",
+      "tasks": [
+        "Define baseline and extension profile names.",
+        "Document HealthcarePlatform, Seek, LAM, ASC, and product-baseline constraints.",
+        "Document forbidden local overrides that weaken stricter profiles."
+      ],
+      "acceptance_criteria": [
+        "HealthcarePlatform HIPAA/PII/lane constraints are represented as profile requirements.",
+        "Seek plan-mode and LAM local runtime constraints are represented as profile requirements.",
+        "ASC exemption and Stampede product-baseline behavior have explicit profile slots."
+      ],
+      "file_paths": [
+        "docs/governance-tooling-package.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Schrodinger",
+      "role": "read-only governance package researcher",
+      "focus": "Existing governance consumer package, managed-file contract, profiles, and downstream bootstrap foundations.",
+      "status": "accepted",
+      "summary": "Found a Local CI-centered package foundation suitable for extension to v0.2 rather than replacement.",
+      "evidence": [
+        "subagent 019db0d1-6e93-7c31-8509-d38b6f3bbec5"
+      ]
+    },
+    {
+      "reviewer": "Euler",
+      "role": "read-only downstream repo researcher",
+      "focus": "Current governance pointers, hooks, workflows, and local overrides across governed repos.",
+      "status": "accepted",
+      "summary": "Found partial adoption, copied hook drift, and repo-specific constraints requiring typed local profiles.",
+      "evidence": [
+        "subagent 019db0d1-6ec4-7580-8c77-af2ba9d2a9b5"
+      ]
+    },
+    {
+      "reviewer": "Boyle",
+      "role": "read-only rollout synthesis researcher",
+      "focus": "PDCA/R rollout strategy for SSOT package plus thin local adapters.",
+      "status": "accepted_with_followup",
+      "summary": "Recommended a v0.2 package contract followed by verifier expansion and per-repo rollout PRs.",
+      "evidence": [
+        "subagent 019db0d1-6eea-7f33-8d7e-4466153f772b"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Claude Opus 4.6 returned APPROVED_WITH_CHANGES. Required profile-key and issue #444 dependency clarifications were applied in the manifest and recorded in the cross-review artifact.",
+    "evidence": [
+      "raw/cross-review/2026-04-21-issue-453-ssot-package-v2.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement issue #453 governance package v0.2 contract artifacts only; no downstream repo edits.",
+    "next_execution_step": "Validate JSON/schema surfaces, record validation, and obtain required cross-review before merge.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If verifier behavior must change, stop and route to issue #454 unless the change is only manifest-compatible scaffolding.",
+    "If downstream repo files are required, stop and route to the relevant rollout child issue.",
+    "If HealthcarePlatform constraints cannot be represented without weakening them, stop and split an HP-specific profile design issue.",
+    "If cross-review is unavailable, do not mark the slice merge-ready."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive: follow repo rules and proceed without HITL",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T20:00:00-05:00"
+}
