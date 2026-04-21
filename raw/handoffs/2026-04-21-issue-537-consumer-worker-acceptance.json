@@ -1,0 +1,92 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-537-consumer-worker-acceptance",
+  "issue_number": 537,
+  "parent_epic_number": 533,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-qa",
+  "structured_plan_ref": "docs/plans/issue-537-consumer-worker-acceptance-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-537-consumer-worker-acceptance-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Consumer verifier catches typoed or missing governance roots.",
+      "verification_refs": [
+        "scripts/overlord/verify_governance_consumer.py",
+        "scripts/overlord/test_verify_governance_consumer.py",
+        "raw/validation/2026-04-21-issue-537-consumer-worker-acceptance.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Malformed local_overrides fails before consumer acceptance.",
+      "verification_refs": [
+        "scripts/overlord/test_verify_governance_consumer.py",
+        "raw/validation/2026-04-21-issue-537-consumer-worker-acceptance.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Stale or mismatched governance workflow SHA remains a hard failure.",
+      "verification_refs": [
+        "scripts/overlord/test_verify_governance_consumer.py",
+        "raw/validation/2026-04-21-issue-537-consumer-worker-acceptance.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Accepted handoffs touching consumer-managed paths require consumer verifier commands and evidence refs.",
+      "verification_refs": [
+        "scripts/overlord/validate_handoff_package.py",
+        "scripts/overlord/test_validate_handoff_package.py",
+        "raw/validation/2026-04-21-issue-537-consumer-worker-acceptance.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "Worker acceptance cannot use unsafe handoff evidence refs.",
+      "verification_refs": [
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py",
+        "scripts/overlord/test_check_worker_handoff_route.py",
+        "raw/validation/2026-04-21-issue-537-consumer-worker-acceptance.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_verify_governance_consumer.py",
+    "python3 scripts/overlord/test_validate_handoff_package.py",
+    "python3 scripts/overlord/test_assert_execution_scope.py",
+    "python3 scripts/overlord/test_check_worker_handoff_route.py",
+    "python3 -m py_compile scripts/overlord/verify_governance_consumer.py scripts/overlord/validate_handoff_package.py scripts/overlord/assert_execution_scope.py scripts/overlord/check_worker_handoff_route.py",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-21-issue-537-consumer-worker-acceptance.json",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-537-consumer-worker-acceptance --changed-files-file /tmp/issue-537-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-537-consumer-worker-acceptance-implementation.json --changed-files-file /tmp/issue-537-changed-files.txt --require-lane-claim"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-21-issue-537-consumer-worker-acceptance.md"
+  ],
+  "artifact_refs": [
+    "docs/ERROR_PATTERNS.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/check_worker_handoff_route.py",
+    "scripts/overlord/validate_handoff_package.py",
+    "scripts/overlord/verify_governance_consumer.py"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-537-consumer-worker-acceptance.md",
+    "raw/operator-context/self-learning/2026-04-21-issue-537-consumer-worker-acceptance.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T22:33:23Z",
+  "notes": "Issue #537 consumes the stabilized supervisor and PR contracts from issue #536 by enforcing consumer verifier and Worker acceptance evidence before handoff close."
+}

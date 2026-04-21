@@ -483,8 +483,18 @@ def _validate_record(
 
 def verify(args: argparse.Namespace) -> dict[str, Any]:
     governance_root = Path(args.governance_root).resolve()
-    manifest_path = Path(args.manifest).resolve()
-    desired_state_path = Path(args.desired_state).resolve()
+    if not governance_root.is_dir():
+        _fail(f"governance root does not exist or is not a directory: {governance_root}")
+    manifest_path = Path(args.manifest).resolve() if args.manifest else governance_root / "docs" / "governance-tooling-package.json"
+    desired_state_path = (
+        Path(args.desired_state).resolve()
+        if args.desired_state
+        else governance_root / "docs" / "governance-consumer-pull-state.json"
+    )
+    if not _is_relative_to(manifest_path, governance_root):
+        _fail(f"package manifest must stay under governance root: {manifest_path}")
+    if not _is_relative_to(desired_state_path, governance_root):
+        _fail(f"consumer pull desired state must stay under governance root: {desired_state_path}")
     target_repo = _git_root(Path(args.target_repo).resolve())
 
     manifest = _load_json(manifest_path, "package manifest")
@@ -525,8 +535,8 @@ def print_json(payload: Any) -> None:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Verify a downstream repo consumes pinned HLDPRO governance tooling.")
     parser.add_argument("--governance-root", default=str(GOVERNANCE_ROOT), help="hldpro-governance checkout root")
-    parser.add_argument("--manifest", default=str(PACKAGE_MANIFEST), help="Governance package manifest")
-    parser.add_argument("--desired-state", default=str(DESIRED_STATE), help="Consumer-pull desired-state contract")
+    parser.add_argument("--manifest", default="", help="Governance package manifest")
+    parser.add_argument("--desired-state", default="", help="Consumer-pull desired-state contract")
     parser.add_argument("--target-repo", default=".", help="Consumer repo checkout root")
     parser.add_argument("--record-path", default="", help="Repo-relative consumer record path")
     parser.add_argument("--profile", default="", help="Expected consumer profile")

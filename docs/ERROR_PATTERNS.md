@@ -155,3 +155,35 @@ The supervisor had end-to-end tests for `--command` mode but not direct native C
 - Require native argv regression tests for every governed CLI path, not only fake `--command` subprocess tests.
 - Keep model-pin checks PR-visible through reusable governance CI and local coverage inventory.
 - Keep PR completion automation explicit about pending, blocked, and eligible states.
+
+## Pattern: consumer-worker-acceptance-evidence-gap
+
+### Symptom
+Worker handoff or closeout can be marked accepted for consumer-managed governance changes even when the consumer verifier command and evidence refs are missing. A downstream typoed governance root, malformed `local_overrides`, or stale reusable workflow SHA may be detected only after acceptance.
+
+### Root Cause
+The consumer verifier already covered several drift classes, but `--governance-root` did not own default manifest resolution and handoff package validation did not tie consumer-managed write scope to verifier command/evidence requirements.
+
+### Detection
+- Accepted handoff scope includes `.hldpro/`, `.governance/`, `docs/governance-consumer-pull-state.json`, or consumer verifier files.
+- `validation_commands` lacks `scripts/overlord/verify_governance_consumer.py`.
+- Acceptance criteria or gate refs lack verifier evidence such as `raw/validation/`.
+- Consumer verifier stderr reports a missing governance root.
+- Consumer verifier failures mention `local_overrides` metadata or reusable workflow SHA mismatch.
+
+### Resolution Playbook
+1. Run `python3 scripts/overlord/verify_governance_consumer.py --governance-root <governance> --target-repo <consumer> --profile <profile> --governance-ref <sha>`.
+2. Record verifier output in `raw/validation/` or equivalent issue/PR evidence.
+3. Add that command to the handoff package `validation_commands`.
+4. Add the evidence ref to acceptance criteria or gate artifact refs before setting `handoff_decision` to `accepted`.
+5. Keep unsafe handoff evidence refs repo-relative; parent traversal and absolute paths must fail.
+
+### Instances
+| Date | Incident | Notes |
+|------|----------|-------|
+| 2026-04-21 | [2026-04-21](FAIL_FAST_LOG.md) | Issue #537 required consumer verifier commands/evidence before accepted handoff for consumer-managed paths. |
+
+### Prevention
+- Treat consumer verifier output as acceptance evidence for consumer-managed changes, not as optional late validation.
+- Add focused fixtures for every newly discovered verifier drift class.
+- Keep Worker route and execution-scope evidence refs safe repo-relative paths.

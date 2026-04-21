@@ -1,0 +1,75 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-537-consumer-worker-acceptance",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/ERROR_PATTERNS.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-537-consumer-worker-acceptance-pdcar.md",
+    "docs/plans/issue-537-consumer-worker-acceptance-structured-agent-cycle-plan.json",
+    "raw/closeouts/2026-04-21-issue-537-consumer-worker-acceptance.md",
+    "raw/execution-scopes/2026-04-21-issue-537-consumer-worker-acceptance-implementation.json",
+    "raw/handoffs/2026-04-21-issue-537-consumer-worker-acceptance.json",
+    "raw/operator-context/self-learning/2026-04-21-issue-537-consumer-worker-acceptance.md",
+    "raw/validation/2026-04-21-issue-537-consumer-worker-acceptance.md",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "scripts/overlord/check_worker_handoff_route.py",
+    "scripts/overlord/test_check_worker_handoff_route.py",
+    "scripts/overlord/validate_handoff_package.py",
+    "scripts/overlord/test_validate_handoff_package.py",
+    "scripts/overlord/verify_governance_consumer.py",
+    "scripts/overlord/test_verify_governance_consumer.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #537."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #537."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #537."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #537."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #537."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 537,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/537#issuecomment-4292266543",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-21T22:33:23Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-opus-4-6",
+    "implementer_model": "codex-orchestrator",
+    "accepted_at": "2026-04-21T22:33:23Z",
+    "evidence_paths": [
+      "docs/plans/issue-537-consumer-worker-acceptance-structured-agent-cycle-plan.json",
+      "docs/plans/issue-537-consumer-worker-acceptance-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

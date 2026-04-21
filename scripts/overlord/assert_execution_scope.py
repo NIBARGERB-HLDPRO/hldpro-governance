@@ -90,6 +90,16 @@ def _normalize_active_exception_ref(raw_ref: str, scope_path: Path) -> str:
     return normalized_path
 
 
+def _normalize_evidence_ref(raw_ref: str, field_name: str, scope_path: Path) -> str:
+    path_part, has_anchor, anchor = raw_ref.partition("#")
+    normalized_path = _normalize_repo_relative_file_path(path_part, field_name, scope_path)
+    if has_anchor and not anchor:
+        raise ValueError(f"{scope_path}: `{field_name}` has an empty '#anchor' suffix")
+    if has_anchor:
+        return f"{normalized_path}#{anchor}"
+    return normalized_path
+
+
 def _parse_iso8601_timestamp(raw_value: str, field_name: str, path: Path) -> datetime:
     if not isinstance(raw_value, str) or not raw_value:
         raise ValueError(f"{path}: `{field_name}` must be a non-empty string")
@@ -162,7 +172,10 @@ def _load_handoff_evidence(payload: dict[str, object], scope_path: Path) -> Hand
         planner_model=planner_model,
         implementer_model=implementer_model,
         accepted_at=accepted_at,
-        evidence_paths=tuple(_normalize_repo_path(item) for item in evidence_paths),
+        evidence_paths=tuple(
+            _normalize_evidence_ref(item, f"handoff_evidence.evidence_paths[{index}]", scope_path)
+            for index, item in enumerate(evidence_paths, start=1)
+        ),
         active_exception_ref=normalized_exception_ref,
         active_exception_expires_at=active_exception_expires_at,
     )
