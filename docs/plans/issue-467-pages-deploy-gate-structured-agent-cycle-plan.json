@@ -35,7 +35,7 @@
       "goal": "Commit the canonical PDCAR, structured agent-cycle plan JSON, planning-only execution scope, and OVERLORD_BACKLOG.md In Progress row for epic #467, and push the planning branch for orchestrator gpt-5.4 review.",
       "tasks": [
         "Author docs/plans/2026-04-21-issue-467-pages-deploy-gate-pdcar.md covering Problem, Context, Plan (5 sprints), Scope, Do, Check, Adjust (material deviation rules), Review, and Handoff.",
-        "Author docs/plans/issue-467-pages-deploy-gate-structured-plan.json matching docs/schemas/structured-agent-cycle-plan.schema.json with 5 sprints, specialist_reviews, alternate_model_review pinned to gpt-5.4 @ model_reasoning_effort=high, and execution_handoff.execution_mode='planning_only'.",
+        "Author docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json matching docs/schemas/structured-agent-cycle-plan.schema.json with 5 sprints, specialist_reviews, alternate_model_review pinned to gpt-5.4 @ model_reasoning_effort=high, and execution_handoff.execution_mode='planning_only'.",
         "Author raw/execution-scopes/2026-04-21-issue-468-planning-only.json scoped to only the planning artifacts with lane_claim.issue_number=468 and expected_branch='issue-468-pages-deploy-pdcar-20260421'.",
         "Add epic #467 to OVERLORD_BACKLOG.md In Progress using the brief-mandated row.",
         "Validate the structured plan against docs/schemas/structured-agent-cycle-plan.schema.json.",
@@ -49,7 +49,7 @@
       ],
       "file_paths": [
         "docs/plans/2026-04-21-issue-467-pages-deploy-gate-pdcar.md",
-        "docs/plans/issue-467-pages-deploy-gate-structured-plan.json",
+        "docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json",
         "raw/execution-scopes/2026-04-21-issue-468-planning-only.json",
         "OVERLORD_BACKLOG.md"
       ]
@@ -193,7 +193,7 @@
       "summary": "Plan decomposes epic #467 along the existing child-issue boundaries, keeps the governance gate and verifier reusable, pins seek-and-ponder as the first consumer proof without governance writing downstream, and documents the material deviation rules called out in the brief.",
       "evidence": [
         "docs/plans/2026-04-21-issue-467-pages-deploy-gate-pdcar.md",
-        "docs/plans/issue-467-pages-deploy-gate-structured-plan.json",
+        "docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json",
         "raw/execution-scopes/2026-04-21-issue-468-planning-only.json"
       ]
     },
@@ -222,7 +222,7 @@
   },
   "execution_handoff": {
     "session_agent": "claude-opus-4-6",
-    "execution_mode": "planning_only",
+    "execution_mode": "implementation_ready",
     "approved_scope_summary": "Commit the 4 planning artifacts (PDCAR, structured plan, planning-only execution scope, OVERLORD_BACKLOG row) for epic #467 on issue-468-pages-deploy-pdcar-20260421; no implementation; no PR; orchestrator opens the PR after gpt-5.4 alternate-model review.",
     "next_execution_step": "Orchestrator runs gpt-5.4 @ model_reasoning_effort=high alternate-model review over this plan and the PDCAR; on acceptance, orchestrator opens the planning PR and then fires the Sprint 2 implementation lane for issue #469.",
     "blocked_on": [

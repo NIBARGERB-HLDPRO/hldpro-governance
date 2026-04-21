@@ -7,7 +7,7 @@ Reviewer: gpt-5.4 @ model_reasoning_effort=high (Tier 1B Plan Reviewer)
 Planner: claude-opus-4-6 (Tier 1A)
 Artifacts reviewed:
 - docs/plans/2026-04-21-issue-467-pages-deploy-gate-pdcar.md
-- docs/plans/issue-467-pages-deploy-gate-structured-plan.json
+- docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json
 
 ## VERDICT
 
