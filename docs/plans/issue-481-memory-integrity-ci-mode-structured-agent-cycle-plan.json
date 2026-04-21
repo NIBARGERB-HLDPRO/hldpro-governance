@@ -1,0 +1,106 @@
+{
+  "session_id": "session-20260421-issue-481-memory-integrity-ci-mode",
+  "issue_number": 481,
+  "objective": "Unblock the governance Overlord Sweep self-learning report step from GitHub-hosted runner failures caused by missing operator-local Claude memory files, while preserving strict local memory integrity validation.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify only the governance memory integrity audit, its sweep invocation, focused tests, and issue-backed fail-fast/error-pattern planning evidence.",
+    "Preserve strict default local behavior for operator memory checks.",
+    "Use issue #481 as the governing issue for the runner-specific blocker discovered while proving issue #475."
+  ],
+  "out_of_scope": [
+    "Changing the self-learning report implementation beyond validating it still builds.",
+    "Changing downstream product repositories.",
+    "Committing operator-local Claude memory files or secrets.",
+    "Redesigning the memory writer or long-term memory source of truth."
+  ],
+  "research_summary": "Manual sweep run 24738583207 checked out all governed repositories and passed model-pin validation, then failed at Memory integrity audit because scripts/overlord/memory_integrity.py expected local Claude memory paths under /home/runner/.claude/projects. That skipped Build self-learning knowledge report. A supervised Claude worker independently identified the same runner-local path assumption and recommended an explicit CI skip with visible logging.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/481",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/actions/runs/24738583207",
+    "scripts/overlord/memory_integrity.py",
+    ".github/workflows/overlord-sweep.yml",
+    "docs/ERROR_PATTERNS.md",
+    "docs/FAIL_FAST_LOG.md"
+  ],
+  "sprints": [
+    {
+      "name": "Runner-safe memory integrity gate",
+      "goal": "Let GitHub-hosted sweep runs continue to self-learning when operator-home memory files are unavailable, without weakening local strict validation.",
+      "tasks": [
+        "Add a memory_integrity.py option that treats missing memory files as explicit SKIP notices.",
+        "Keep malformed existing memory files as hard failures.",
+        "Run the sweep memory audit with the explicit runner mode.",
+        "Add focused unit tests for strict, skip, valid, and malformed paths.",
+        "Record the failure in fail-fast and error-pattern docs."
+      ],
+      "acceptance_criteria": [
+        "Strict local memory integrity remains the default behavior.",
+        "Runner-mode missing memory exits 0 with SKIP notices.",
+        "Malformed existing memory files fail even in runner mode.",
+        "The Overlord Sweep reaches Build self-learning knowledge report after merge.",
+        "Validation evidence records any remaining gap before closeout."
+      ],
+      "file_paths": [
+        ".github/workflows/overlord-sweep.yml",
+        "docs/ERROR_PATTERNS.md",
+        "docs/FAIL_FAST_LOG.md",
+        "docs/plans/issue-481-memory-integrity-ci-mode-pdcar.md",
+        "docs/plans/issue-481-memory-integrity-ci-mode-structured-agent-cycle-plan.json",
+        "graphify-out/GRAPH_REPORT.md",
+        "graphify-out/graph.json",
+        "raw/execution-scopes/2026-04-21-issue-481-memory-integrity-ci-mode-implementation.json",
+        "raw/validation/2026-04-21-issue-481-memory-integrity-ci-mode.md",
+        "scripts/overlord/memory_integrity.py",
+        "scripts/overlord/test_memory_integrity.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "supervised-claude-worker-memory-integrity-reviewer",
+      "role": "memory integrity reviewer",
+      "focus": "Inspect the runner failure and recommend the smallest change that preserves local strict behavior.",
+      "status": "accepted",
+      "summary": "The worker identified the hardcoded operator-home Claude memory path as the runner blocker and recommended an explicit, visible CI skip path for missing local memory.",
+      "evidence": [
+        "/tmp/hldpro-issue475-claude/memory-worker.out"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-runner-gate-bugfix",
+    "model_family": "none",
+    "status": "not_requested",
+    "summary": "This is a deterministic runner-gate bugfix with focused tests and no standards or architecture policy change.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/481"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #481 may update the memory integrity audit, sweep invocation, focused tests, fail-fast/error-pattern docs, plan, scope, and validation evidence required to unblock the self-learning report step.",
+    "next_execution_step": "Publish the scoped fix, merge after CI, and re-run the Overlord Sweep to verify self-learning report execution.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-481-memory-integrity-ci-mode-implementation.json",
+    "handoff_package_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-481-memory-integrity-ci-mode.md"
+    ],
+    "closeout_ref": null
+  },
+  "material_deviation_rules": [
+    "If the runner-mode audit hides malformed existing memory, stop and harden the distinction before publishing.",
+    "If the next sweep still skips self-learning, create or update an issue for the newly failed step before claiming closure.",
+    "If local strict memory validation fails, do not proceed until the local memory source is repaired or a separate issue-backed deferral is created."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "GitHub issue #481",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T18:22:00Z"
+}

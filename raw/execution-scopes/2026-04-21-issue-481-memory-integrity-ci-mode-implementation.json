@@ -1,0 +1,45 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-481-memory-integrity-ci-mode",
+  "allowed_write_paths": [
+    ".github/workflows/overlord-sweep.yml",
+    "docs/ERROR_PATTERNS.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/plans/issue-481-memory-integrity-ci-mode-pdcar.md",
+    "docs/plans/issue-481-memory-integrity-ci-mode-structured-agent-cycle-plan.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "raw/execution-scopes/2026-04-21-issue-481-memory-integrity-ci-mode-implementation.json",
+    "raw/validation/2026-04-21-issue-481-memory-integrity-ci-mode.md",
+    "scripts/overlord/memory_integrity.py",
+    "scripts/overlord/test_memory_integrity.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary checkout is a separate active worktree and must not be modified by issue #481."
+    }
+  ],
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 481,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/481",
+    "claimed_by": "session-agent-codex-gpt-5.4",
+    "claimed_at": "2026-04-21T18:22:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-sonnet-4-6-supervised-worker-and-operator-directive",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-21T18:22:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-481-memory-integrity-ci-mode-structured-agent-cycle-plan.json",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/481"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

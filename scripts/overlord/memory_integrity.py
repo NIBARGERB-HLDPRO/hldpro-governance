@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 import re
 import sys
 from collections import Counter
+from dataclasses import dataclass
 from pathlib import Path
 
 
@@ -23,16 +25,24 @@ def fail(message: str) -> None:
     raise SystemExit(1)
 
 
-def memory_dir_for_repo(repo_slug: str) -> Path:
-    return MEMORY_ROOT_PREFIX / f"-Users-bennibarger-Developer-HLDPRO-{repo_slug}" / "memory"
+@dataclass(frozen=True)
+class MemoryInspection:
+    passed: bool
+    issues: list[str]
+    entries: int
+    skipped: bool = False
+
+
+def memory_dir_for_repo(repo_slug: str, memory_root: Path = MEMORY_ROOT_PREFIX) -> Path:
+    return memory_root / f"-Users-bennibarger-Developer-HLDPRO-{repo_slug}" / "memory"
 
 
 def load_memory_lines(memory_path: Path) -> list[str]:
     return memory_path.read_text(encoding="utf-8").splitlines()
 
 
-def check_memory_exists(repo_slug: str) -> tuple[Path, list[str]]:
-    memory_dir = memory_dir_for_repo(repo_slug)
+def check_memory_exists(repo_slug: str, memory_root: Path = MEMORY_ROOT_PREFIX) -> tuple[Path, list[str]]:
+    memory_dir = memory_dir_for_repo(repo_slug, memory_root)
     memory_md = memory_dir / "MEMORY.md"
     if not memory_md.exists():
         return memory_md, [f"{memory_md} missing"]
@@ -85,10 +95,22 @@ def validate_frontmatter(path: Path, repo_slug: str, file_name: str) -> list[str
     return issues
 
 
-def inspect_repo(repo_slug: str) -> tuple[bool, list[str], int]:
-    memory_md, issues = check_memory_exists(repo_slug)
+def inspect_repo(
+    repo_slug: str,
+    *,
+    memory_root: Path = MEMORY_ROOT_PREFIX,
+    allow_missing: bool = False,
+) -> MemoryInspection:
+    memory_md, issues = check_memory_exists(repo_slug, memory_root)
     if issues:
-        return False, issues, 0
+        if allow_missing:
+            return MemoryInspection(
+                passed=True,
+                issues=[f"memory source unavailable at {memory_md}; skipped in allow-missing mode"],
+                entries=0,
+                skipped=True,
+            )
+        return MemoryInspection(False, issues, 0)
 
     memory_lines = load_memory_lines(memory_md)
     line_count = len(memory_lines)
@@ -103,29 +125,59 @@ def inspect_repo(repo_slug: str) -> tuple[bool, list[str], int]:
     for duplicate in sorted(duplicates):
         issues.append(f"duplicate pointer in MEMORY.md: {duplicate}")
 
-    memory_directory = memory_dir_for_repo(repo_slug)
+    memory_directory = memory_dir_for_repo(repo_slug, memory_root)
     for pointer in pointers:
         target = (memory_directory / pointer).resolve()
         if not target.exists():
             issues.append(f"pointer '{pointer}' does not resolve to a file in {memory_directory}")
             continue
-        if not str(target).startswith(str(memory_directory)):
+        try:
+            target.relative_to(memory_directory.resolve())
+        except ValueError:
             issues.append(f"pointer '{pointer}' resolves outside memory directory")
             continue
         issues.extend(validate_frontmatter(target, repo_slug, pointer))
 
-    return (len(issues) == 0), issues, entries
+    return MemoryInspection(len(issues) == 0, issues, entries)
 
 
-def main() -> None:
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Audit governed Claude MEMORY.md pointer files")
+    parser.add_argument(
+        "--registry",
+        type=Path,
+        default=DEFAULT_REGISTRY,
+        help="Path to governed_repos.json",
+    )
+    parser.add_argument(
+        "--memory-root",
+        type=Path,
+        default=MEMORY_ROOT_PREFIX,
+        help="Root containing Claude project memory directories",
+    )
+    parser.add_argument(
+        "--allow-missing",
+        action="store_true",
+        help=(
+            "Treat missing MEMORY.md sources as explicit skips. Use only where operator-home "
+            "Claude memory is unavailable, such as GitHub-hosted runners."
+        ),
+    )
+    return parser
+
+
+def main(argv: list[str] | None = None) -> None:
+    args = build_parser().parse_args(argv)
     all_pass = True
-    for repo_slug in repo_names_enabled_for("memory_integrity", DEFAULT_REGISTRY):
-        passed, issues, entries = inspect_repo(repo_slug)
-        status = "PASS" if passed else "FAIL"
-        print(f"{repo_slug}: {status} ({entries} entries, {len(issues)} issues)")
-        if issues:
+    for repo_slug in repo_names_enabled_for("memory_integrity", args.registry):
+        result = inspect_repo(repo_slug, memory_root=args.memory_root, allow_missing=args.allow_missing)
+        status = "SKIP" if result.skipped else "PASS" if result.passed else "FAIL"
+        issue_label = "notices" if result.skipped else "issues"
+        print(f"{repo_slug}: {status} ({result.entries} entries, {len(result.issues)} {issue_label})")
+        if not result.passed:
             all_pass = False
-            for issue in issues:
+        if result.issues:
+            for issue in result.issues:
                 print(f"- {issue}")
 
     if not all_pass:
