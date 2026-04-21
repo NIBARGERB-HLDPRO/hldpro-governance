@@ -1,6 +1,6 @@
 {
   "expected_execution_root": "{repo_root}",
-  "expected_branch": "issue-487-overlord-sweep-artifact-pr",
+  "expected_branch": "issue-487-overlord-sweep-artifact-pr-token",
   "allowed_write_paths": [
     ".github/workflows/overlord-sweep.yml",
     "docs/plans/issue-487-overlord-sweep-artifact-pr-pdcar.md",
