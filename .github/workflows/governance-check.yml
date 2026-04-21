@@ -283,6 +283,30 @@ jobs:
           echo "$HANDOFF_CHANGES"
           python3 "$HANDOFF_VALIDATOR" --root .
 
+      - name: Enforce Stage 6 closeout evidence
+        if: github.event_name == 'pull_request'
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          BRANCH_NAME="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+
+          if [ "$REPO_NAME" = "hldpro-governance" ]; then
+            CLOSEOUT_CHECK="scripts/overlord/check_stage6_closeout.py"
+          else
+            CLOSEOUT_CHECK=".governance/scripts/overlord/check_stage6_closeout.py"
+          fi
+
+          if [ ! -f "$CLOSEOUT_CHECK" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: Stage 6 closeout checker missing at ${CLOSEOUT_CHECK}."
+            exit 1
+          fi
+
+          python3 "$CLOSEOUT_CHECK" \
+            --root . \
+            --branch-name "$BRANCH_NAME" \
+            --changed-files-file /tmp/governance-changed-files.txt
+
       - name: Enforce issue execution scope for planner boundary
         if: github.event_name == 'pull_request'
         run: |

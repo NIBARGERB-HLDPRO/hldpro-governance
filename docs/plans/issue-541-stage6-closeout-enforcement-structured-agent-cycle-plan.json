@@ -1,0 +1,102 @@
+{
+  "session_id": "issue-541-stage6-closeout-enforcement-20260421",
+  "issue_number": 541,
+  "objective": "Make Stage 6 closeout presence merge-enforced for issue-backed implementation and governance-surface PRs by wiring a shared validator into reusable governance CI and Local CI.",
+  "tier": 2,
+  "scope_boundary": [
+    "Require issue-matching closeout evidence for implementation/governance-surface PRs.",
+    "Reuse existing closeout template and validate_closeout.py.",
+    "Preserve planning-only PR flow without final closeout requirement."
+  ],
+  "out_of_scope": [
+    "Replacing hooks/closeout-hook.sh.",
+    "Reformatting historical closeouts.",
+    "Downstream consumer rollout beyond reusable governance CI wiring."
+  ],
+  "research_summary": "Existing closeout hook and closeout validator are already present, but they are passive. CI validates closeouts only when closeout paths are touched; it does not require closeout presence for implementation/governance-surface PRs.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/533",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/541",
+    "hooks/closeout-hook.sh",
+    "scripts/overlord/validate_closeout.py",
+    ".github/workflows/governance-check.yml",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Stage 6 closeout merge enforcement",
+      "goal": "Block implementation/governance-surface PRs that lack issue-matching Stage 6 closeout evidence.",
+      "tasks": [
+        "Add a shared closeout-presence validator.",
+        "Wire the validator into reusable governance CI.",
+        "Wire the validator into the hldpro-governance Local CI Gate profile.",
+        "Add focused positive and negative tests.",
+        "Record validation, closeout, and self-learning evidence."
+      ],
+      "acceptance_criteria": [
+        "Governance-surface or implementation changes on issue branches fail without a matching raw/closeouts issue file.",
+        "Planning-only changes pass without a closeout.",
+        "Matching closeouts are validated with scripts/overlord/validate_closeout.py.",
+        "Multiple matching closeouts fail.",
+        "Local CI and reusable GitHub governance checks use the same validator."
+      ],
+      "file_paths": [
+        ".github/workflows/governance-check.yml",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "scripts/overlord/check_stage6_closeout.py",
+        "scripts/overlord/test_check_stage6_closeout.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "stage6-closeout-enforcement-specialist",
+      "role": "specialist-research",
+      "focus": "Closeout hook, validator, CI, and Local CI wiring",
+      "status": "accepted",
+      "summary": "Recommended enforcing closeout presence in reusable governance CI and Local CI while reusing validate_closeout.py.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/541"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.4-mini specialist subagent",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Specialist review confirmed the validator is healthy and the missing piece is a reliable merge-gate caller, with care to avoid overbroad enforcement.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/541"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implementation may update only closeout enforcement validator, tests, CI/local gate wiring, and issue #541 governance evidence.",
+    "next_execution_step": "Implement closeout-presence validator and wire it into existing gates.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-541-stage6-closeout-enforcement-implementation.json",
+    "validation_artifact_refs": [],
+    "review_artifact_refs": [],
+    "gate_artifact_refs": [],
+    "closeout_ref": null,
+    "next_role": "worker",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Focused closeout enforcement tests pass.",
+      "Implementation stays inside allowed write paths.",
+      "Stage 6 evidence is present before closeout."
+    ]
+  },
+  "material_deviation_rules": [
+    "If the validator must change existing closeout schema semantics, stop and split a schema migration issue.",
+    "If downstream repo rollout requires managed package updates, stop and route to a consumer rollout issue.",
+    "If planning-only exemptions are too broad, tighten them with tests instead of bypassing the gate."
+  ],
+  "approved": true,
+  "approved_by": [
+    "codex-orchestrator"
+  ],
+  "approved_at": "2026-04-21T21:35:00Z"
+}

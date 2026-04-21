@@ -42,6 +42,7 @@
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
 | Self-learning loop operational proof gap | #475 #481 | 2026-04-21 | PR #477 merged the local proof, PR #483 closed the CI memory-audit blocker, and Overlord Sweep run `24741910552` proved the self-learning report step ran and wrote `metrics/self-learning/latest.json` / `.md`. |
+| Stage 6 closeout merge enforcement | #541 #533 | 2026-04-21 | Added a shared Stage 6 closeout-presence validator, wired it into reusable governance CI and the hldpro-governance Local CI Gate profile, and preserved planning-only PR exemptions. |
 | Governance SSOT consumer adoption report and epic closeout | #459 #452 | 2026-04-21 | Added the org-level consumer adoption report, wired it into overlord-sweep and Local CI, recorded the v0.2 adoption snapshot, and opened downstream residual workflow-pin issues HealthcarePlatform#1462 and ASC-Evaluator#13. |
 | Secret provisioning evidence validator | #510 | 2026-04-21 | Added `scripts/overlord/validate_provisioning_evidence.py`, focused leakage-class tests, and `hldpro-governance` Local CI Gate wiring for no-secret provisioning evidence checks. |
 | Pages deploy gate missing-secret UX | #511 | 2026-04-21 | Hardened `scripts/pages-deploy/pages_deploy_gate.py` missing Cloudflare env diagnostics to use name-only Secret Provisioning UX guidance and added focused tests/runbook coverage. |
