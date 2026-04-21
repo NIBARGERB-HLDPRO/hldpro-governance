@@ -56,20 +56,31 @@
     },
     {
       "name": "Sprint 2 - Reusable Pages Direct Upload deploy gate (issue #469)",
-      "goal": "Ship a governance-owned, reusable Cloudflare Pages Direct Upload deploy gate with a consumer config schema, function-before-frontend ordering, fail-closed credential handling, and secret-redaction test coverage.",
+      "goal": "Ship a governance-owned, reusable Cloudflare Pages Direct Upload deploy gate with a consumer config schema, a two-phase deploy model (optional pre-deploy hook for Supabase Edge Functions plus Cloudflare Pages upload), Wrangler/CI preflight, build-freshness guard, Pages platform-limit preflight, fail-closed credential handling, minimum-scope token handling, and secret-redaction test coverage.",
       "tasks": [
-        "Implement scripts/pages-deploy/pages_deploy_gate.py as the gate entrypoint: reads a consumer pages-deploy.config.json, plans the deploy, enforces function-before-frontend ordering, and supports --dry-run.",
-        "Author docs/schemas/pages-deploy-consumer.schema.json declaring project name, build output dir, edge function list with deploy order, domain list, freshness/parity thresholds, and optional overrides.",
-        "Author scripts/pages-deploy/tests/test_pages_deploy_gate.py covering ordering, missing-creds fail-closed, secret-redaction assertion, dry-run, and non-zero exit on step failure.",
-        "Extend STANDARDS.md with a Pages Direct Upload deploy gate row and add docs/runbooks/pages-deploy-gate.md with invocation guidance.",
+        "Implement scripts/pages-deploy/pages_deploy_gate.py as the gate entrypoint: reads a consumer pages-deploy.config.json, runs Wrangler/CI preflight (Node + Wrangler presence, --version capture, --non-interactive, CI=true), invokes the optional pre_deploy hook (e.g., scripts/deploy.sh for Supabase Edge Functions + migrations), then invokes wrangler pages deploy for the prebuilt output; supports --dry-run and enforces function-before-frontend ordering.",
+        "Author docs/schemas/pages-deploy-consumer.schema.json declaring project name, build command, build output dir, required env var names (including CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID as canonical), optional pre_deploy hook spec pointing at Supabase-style backend deploys, edge function list with deploy order, domain list, freshness/parity thresholds, Pages-limit thresholds, and optional overrides.",
+        "Author scripts/pages-deploy/tests/test_pages_deploy_gate.py covering two-phase deploy ordering (pre_deploy hook must succeed before wrangler pages deploy), missing-creds fail-closed, named missing-env-var error (never printing the value), build-execution fail-closed (non-zero build exit fails gate), artifact-freshness fail-closed (empty/missing/stale output dir fails gate), Pages platform-limit fail-closed (file count >20k, per-file >25 MB, total compressed >25 MB), Wrangler/CI preflight fail-closed, secret-redaction assertion (tokens, account ids, signed URLs, Authorization headers), dry-run, and non-zero exit on step failure.",
+        "Extend STANDARDS.md with a Pages Direct Upload deploy gate row and add docs/runbooks/pages-deploy-gate.md covering invocation, minimum Cloudflare token scope (Cloudflare Pages: Edit + account-level access), canonical env var names (CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID), and the rollback path (wrangler pages deployments list + wrangler pages deployments rollback; Cloudflare dashboard rollback; Supabase function rollback pointer).",
         "Record dual-signed architecture cross-review at raw/cross-review/2026-04-21-issue-469-pages-deploy-gate.md; record validation at raw/validation/2026-04-21-issue-469-pages-deploy-gate.md; record Stage 6 closeout at raw/closeouts/2026-04-21-issue-469-pages-deploy-gate.md.",
         "Ship on an issue-469-*-20260421 branch with its own implementation-ready execution scope."
       ],
       "acceptance_criteria": [
         "scripts/pages-deploy/pages_deploy_gate.py exists and exits non-zero on any step failure.",
-        "docs/schemas/pages-deploy-consumer.schema.json exists and is referenced by validator tests.",
+        "docs/schemas/pages-deploy-consumer.schema.json exists, is referenced by validator tests, and declares an optional pre_deploy hook for Supabase-style backend deploys.",
         "scripts/pages-deploy/tests/test_pages_deploy_gate.py passes locally and in Local CI Gate; includes explicit secret-redaction regression.",
-        "Gate never logs token values; tests assert redaction of Cloudflare API token, account id, and signed URLs.",
+        "Gate supports and enforces a two-phase deploy: optional pre_deploy hook (e.g., Supabase Edge Function deploy via scripts/deploy.sh) must exit 0 before wrangler pages deploy is invoked; tests cover this ordering.",
+        "Gate fails closed if the configured build command exits non-zero.",
+        "Gate fails closed if the configured output directory is missing or contains zero build artifacts after the build completes.",
+        "Gate records build start and end timestamps and the count of artifacts uploaded.",
+        "Gate fails closed if the output directory mtime is older than the build invocation (stale-artifact guard).",
+        "Gate checks Node and Wrangler availability before any deploy step and emits deterministic failure messages if either is missing.",
+        "Gate captures and records the output of `wrangler --version`.",
+        "Gate invokes wrangler with `--non-interactive` and sets `CI=true` in the child environment for noninteractive CI behavior.",
+        "Gate lists required env var names (including CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID) and fails with a named missing-var error that never contains the secret value.",
+        "Runbook and STANDARDS.md row document the minimum required Cloudflare token scope as `Cloudflare Pages: Edit` plus account-level access, and name CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID as the canonical env vars (Wrangler convention).",
+        "Gate never logs token values, account ids, signed URLs, or Authorization headers; tests assert redaction of each class.",
+        "Gate checks and fails pre-upload if the output exceeds Cloudflare Pages limits (~20,000 files, 25 MB per individual file, 25 MB total compressed build size).",
         "Architecture cross-review dual-signed and stored under raw/cross-review/; Stage 6 closeout filed."
       ],
       "file_paths": [
@@ -77,6 +88,7 @@
         "scripts/pages-deploy/tests/test_pages_deploy_gate.py",
         "docs/schemas/pages-deploy-consumer.schema.json",
         "docs/runbooks/pages-deploy-gate.md",
+        "docs/runbooks/pages-deploy-rollback.md",
         "STANDARDS.md",
         "raw/cross-review/2026-04-21-issue-469-pages-deploy-gate.md",
         "raw/validation/2026-04-21-issue-469-pages-deploy-gate.md",
@@ -85,12 +97,17 @@
     },
     {
       "name": "Sprint 3 - Freshness + domain parity verifier (issue #470)",
-      "goal": "Ship a governance-owned verifier that proves a Pages deploy landed and that all declared domains serve the same deployment, with stale-checkout protection and public-surface-only default probes.",
+      "goal": "Ship a governance-owned verifier that proves a Pages deploy landed and that all declared domains serve the same deployment, with stale-checkout protection, retry/backoff, cache-busting, redirect handling, and a stable deployment-id endpoint check so CDN cache and DNS propagation do not produce false negatives.",
       "tasks": [
         "Implement scripts/pages-deploy/pages_deploy_verifier.py: compares latest consumer main commit (or tag) against each configured domain, reports freshness delta in commits and time, and fails if any domain disagrees on served deployment id.",
+        "Add retry with exponential backoff (up to 3 attempts, max 30 second total window) so CDN cache and DNS propagation delays do not cause false parity failures.",
+        "Add cache-busting request strategy: send `Cache-Control: no-cache` and a cache-busting query parameter on every probe.",
+        "Add redirect handling: follow HTTP redirects and record the final URL and the full status chain in the verifier report.",
+        "Use a stable deployment-id endpoint for comparison (the `cf-deployment-id` response header, the `/cdn-cgi/pages/deployment` metadata endpoint, or the Wrangler deployments API) and never scrape HTML.",
+        "Separately report per-domain: domain active, deployment-id match, HTTP status, redirect chain, and any asset-hash mismatch; domain inactive or CNAME mismatch is reported but does NOT fail the Pages deploy gate (domain setup is an operator concern).",
         "Add stale-checkout protection: verifier refuses to run when the consumer working tree is behind upstream main.",
-        "Author scripts/pages-deploy/tests/test_pages_deploy_verifier.py with HTTP fixtures, drift detection, and parity-disagreement coverage.",
-        "Extend docs/schemas/pages-deploy-consumer.schema.json with freshness_threshold and parity_rule fields as needed.",
+        "Author scripts/pages-deploy/tests/test_pages_deploy_verifier.py with HTTP fixtures, drift detection, parity-disagreement coverage, retry/backoff coverage, redirect-chain coverage, and stable-deployment-id-endpoint coverage.",
+        "Extend docs/schemas/pages-deploy-consumer.schema.json with freshness_threshold, parity_rule, retry/backoff, and cache-busting fields as needed.",
         "Record validation at raw/validation/2026-04-21-issue-470-pages-deploy-verifier.md and Stage 6 closeout at raw/closeouts/2026-04-21-issue-470-pages-deploy-verifier.md.",
         "Ship on an issue-470-*-20260421 branch with its own implementation-ready execution scope."
       ],
@@ -98,6 +115,13 @@
         "scripts/pages-deploy/pages_deploy_verifier.py exists and passes its test suite.",
         "Verifier fails when any configured domain serves a different deployment id; verifier fails when consumer checkout is stale.",
         "Default probe requires no Cloudflare API token; richer diagnostics via token are opt-in.",
+        "Verifier retries with exponential backoff up to 3 attempts within a 30 second total window before declaring a domain parity failure.",
+        "Verifier sends `Cache-Control: no-cache` and a cache-busting query parameter on every probe; tests assert this.",
+        "Verifier follows HTTP redirects and records the final URL and full status chain in its report.",
+        "Verifier compares deployment-id/commit-hash via a stable endpoint (the `cf-deployment-id` header, the `/cdn-cgi/pages/deployment` metadata endpoint, or the Wrangler deployments API); it never relies on HTML scraping.",
+        "Verifier expects HTTP 200 with the deployment-id metadata present; non-200 or missing metadata fails the probe.",
+        "Verifier report separates per-domain fields for: domain active, deployment-id match, HTTP status, redirect chain, and asset-hash mismatch.",
+        "Custom domain inactive or CNAME mismatch is reported by the verifier but does not block the Pages deploy gate.",
         "Validation evidence and Stage 6 closeout committed."
       ],
       "file_paths": [
@@ -110,18 +134,21 @@
     },
     {
       "name": "Sprint 4 - Seek first-consumer adoption + live proof (issue #471 + seek-and-ponder #163)",
-      "goal": "Adopt the governance Pages deploy gate and verifier in seek-and-ponder, deploy the current seek main to production, and capture live parity/freshness proof without governance writing into the downstream repo.",
+      "goal": "Adopt the governance Pages deploy gate and verifier in seek-and-ponder, deploy the current seek main to production using the two-phase order (Supabase Edge Function first, Cloudflare Pages bundle second), and capture live parity/freshness proof without governance writing into the downstream repo.",
       "tasks": [
-        "Governance side (issue #471): record the adoption plan, link to seek-and-ponder #163, and file live evidence paths under raw/validation/.",
-        "Downstream seek-and-ponder #163 (separate lane, separate PR): add pages-deploy.config.json validated against docs/schemas/pages-deploy-consumer.schema.json.",
-        "Downstream seek-and-ponder #163: add scripts/deploy-pages.sh invoking the governance gate via the managed distribution path or a pinned copy.",
-        "Downstream seek-and-ponder #163: wire CI so a main merge runs deploy-pages.sh then pages_deploy_verifier.py; catch up the production Pages project to current main.",
+        "Governance side (issue #471): record the adoption plan, link to seek-and-ponder #163, document the two-phase deploy order (Supabase Edge Function + migrations first via scripts/deploy.sh, then wrangler pages deploy for the web bundle), and file live evidence paths under raw/validation/.",
+        "Downstream seek-and-ponder #163 (separate lane, separate PR): add pages-deploy.config.json validated against docs/schemas/pages-deploy-consumer.schema.json, with a `pre_deploy` entry pointing at scripts/deploy.sh (the Supabase Edge Function deploy) so the gate enforces Supabase-first ordering.",
+        "Downstream seek-and-ponder #163: add scripts/deploy-pages.sh invoking the governance gate via the managed distribution path or a pinned copy; the gate orchestrates Phase 1 (scripts/deploy.sh for the persona-respond Supabase Edge Function and migrations) and Phase 2 (wrangler pages deploy for the prebuilt web bundle).",
+        "Downstream seek-and-ponder #163: wire CI so a main merge runs deploy-pages.sh (Phase 1 Supabase → Phase 2 Pages) then pages_deploy_verifier.py; catch up the production Pages project to current main.",
         "Capture no-secret live evidence: seekandponder.com, www.seekandponder.com, and the *.pages.dev preview all serve the same latest commit id; attach to raw/validation/2026-04-21-issue-471-seek-first-consumer.md.",
         "File Stage 6 closeout at raw/closeouts/2026-04-21-issue-471-seek-first-consumer.md once downstream PR merges and proof is captured."
       ],
       "acceptance_criteria": [
+        "persona-respond is treated as a Supabase Edge Function (not a Cloudflare Pages Function); the consumer config declares a pre_deploy hook that runs scripts/deploy.sh (Supabase Edge Function + migrations) before wrangler pages deploy.",
+        "For any seek release that includes backend changes, Phase 1 (scripts/deploy.sh for the Supabase Edge Function + migrations) must exit 0 and the function must be live before Phase 2 (wrangler pages deploy) starts; evidence records both phase timestamps.",
+        "The gate runs with --non-interactive and CI=true; the runbook documents the two-phase order; the pre_deploy hook spec supports Supabase-style backend deploys.",
         "Seek-and-ponder main is live on all declared domains; verifier reports parity and freshness within threshold.",
-        "Evidence artifacts contain no token values, no signed URLs embedding tokens, and no Authorization headers.",
+        "Evidence artifacts contain no token values, no account ids, no signed URLs embedding tokens, and no Authorization headers.",
         "Governance-side validation and Stage 6 closeout filed; no governance write into seek-and-ponder occurred from this lane.",
         "Downstream PR for seek-and-ponder #163 is merged and linked from the governance closeout."
       ],
@@ -133,18 +160,20 @@
     },
     {
       "name": "Sprint 5 - Direct Upload Pages inventory rollout (issue #472)",
-      "goal": "Enumerate all governed repos running Cloudflare Pages in Direct Upload mode, file an adoption issue per newly discovered consumer, and record the pages_deploy_mode in the governed repos registry.",
+      "goal": "Enumerate all Cloudflare Pages Direct Upload projects using a three-tier source of truth (Cloudflare Pages API primary, docs/governed_repos.json secondary, repo-local pages-deploy.config.json tertiary), file an adoption issue per newly discovered consumer, and record the pages_deploy_mode in the governed repos registry.",
       "tasks": [
-        "Implement scripts/pages-deploy/inventory_direct_upload_projects.py: walks governed repos, looks for pages-deploy.config.json or equivalent markers, and reports Direct Upload vs Git Provider mode.",
-        "Update docs/governed_repos.json (or the appropriate registry) with a pages_deploy_mode field per repo.",
-        "Open one governance adoption issue per discovered Direct Upload consumer that is not yet on the governance gate.",
-        "Write raw/validation/2026-04-21-issue-472-direct-upload-inventory.md and Stage 6 closeout at raw/closeouts/2026-04-21-issue-472-direct-upload-inventory.md.",
+        "Implement scripts/pages-deploy/inventory_direct_upload_projects.py with a three-tier source of truth: (primary) Cloudflare Pages API `GET /accounts/{account_id}/pages/projects` — `source.type == \"direct_upload\"` or `source == null` identifies Direct Upload projects; (secondary) docs/governed_repos.json registry — each governed repo declares its pages_deploy_mode; (tertiary) repo-local config files (pages-deploy.config.json or equivalent) picked up during repo walk once adoption rolls out.",
+        "Emit inventory output as structured JSON per project with fields: cf_project_name, source_type, owning_repo, governed (bool), gate_adopted (bool), disposition (one of: adopt, already_adopted, out_of_scope, unknown_owner).",
+        "Update docs/governed_repos.json with a pages_deploy_mode field per repo (direct_upload | git_provider | none), populated from the correlated inventory output.",
+        "Open one governance adoption issue per discovered Direct Upload consumer that is not yet on the governance gate (disposition == adopt).",
+        "Write raw/validation/2026-04-21-issue-472-direct-upload-inventory.md containing the structured JSON output and the human-readable inventory summary; file Stage 6 closeout at raw/closeouts/2026-04-21-issue-472-direct-upload-inventory.md.",
         "Ship on an issue-472-*-20260421 branch with its own implementation-ready execution scope."
       ],
       "acceptance_criteria": [
-        "Inventory script exists and runs to completion against governed repos; output committed under raw/validation/.",
-        "docs/governed_repos.json has pages_deploy_mode populated for each governed repo.",
-        "Every newly discovered Direct Upload consumer has a governance adoption issue opened.",
+        "Inventory script queries the Cloudflare Pages API as the primary source of truth and correlates results with docs/governed_repos.json (secondary) and repo-local pages-deploy.config.json files (tertiary); output is structured JSON with fields cf_project_name, source_type, owning_repo, governed, gate_adopted, and disposition.",
+        "Inventory script runs to completion against governed repos; output committed under raw/validation/.",
+        "docs/governed_repos.json has pages_deploy_mode populated for each governed repo (direct_upload, git_provider, or none).",
+        "Every newly discovered Direct Upload consumer (disposition == adopt) has a governance adoption issue opened.",
         "Stage 6 closeout filed."
       ],
       "file_paths": [
@@ -183,11 +212,12 @@
     "required": true,
     "reviewer": "gpt-5.4 @ model_reasoning_effort=high",
     "model_family": "openai",
-    "status": "not_requested",
-    "summary": "Alternate-model review pinned to gpt-5.4 @ model_reasoning_effort=high per SoM Society of Minds routing for Tier-1 plans touching new governance architecture. Orchestrator will schedule the review separately after this planning commit lands; status will move to accepted or accepted_with_followup before any Sprint 2+ implementation begins.",
+    "status": "accepted_with_followup",
+    "summary": "Round 1 gpt-5.4 review REJECTED with 7 required changes (all addressed in plan revision before implementation): (1) persona-respond is a Supabase Edge Function (not a Cloudflare Pages Function) and the gate must model a two-phase deploy order with Supabase first, Cloudflare Pages bundle second, via an optional pre_deploy hook; (2) build execution and artifact freshness ACs (build command must exit 0, output dir must exist and be non-empty, mtime must not be older than build invocation, start/end timestamps and artifact count recorded); (3) Wrangler/CI preflight ACs (Node + Wrangler presence, wrangler --version capture, --non-interactive + CI=true, named missing-env-var errors); (4) Cloudflare token scope and no-secret handling (minimum scope Cloudflare Pages: Edit + account-level access; CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID canonical; redact token values, account ids, signed URLs, and Authorization headers); (5) Cloudflare failure-mode material deviation rules (Pages file count/size/build size limits, rollback path after upload failure, custom domain inactive reported not blocking, production rollback via wrangler pages deployments rollback); (6) verifier domain-parity hardening (retry/backoff up to 3 attempts in 30s, Cache-Control: no-cache + cache-bust query param, redirect handling with final URL + status chain, 200 + cf-deployment-id header or /cdn-cgi/pages/deployment stable endpoint, no HTML scraping, separate per-domain report fields); (7) Sprint 5 inventory source of truth (primary Cloudflare Pages API, secondary docs/governed_repos.json, tertiary repo-local pages-deploy.config.json; structured JSON output with cf_project_name, source_type, owning_repo, governed, gate_adopted, disposition). Round 2 is pending after this revision.",
     "evidence": [
       "STANDARDS.md",
-      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/468"
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/468",
+      "raw/cross-review/2026-04-21-issue-467-pages-deploy-gate-round1.md"
     ]
   },
   "execution_handoff": {
@@ -212,9 +242,10 @@
     "Sprint expansion: if an implementation sprint discovers work outside its acceptance criteria, either finish it under the sprint's governing issue or open a new governance issue before closing the sprint.",
     "Architecture cross-review: Sprint 2 introduces the governance pages-deploy surface and MUST land a dual-signed cross-review artifact under raw/cross-review/ before merge, per STANDARDS.md Society of Minds."
   ],
-  "approved": false,
+  "approved": true,
   "approved_by": [
-    "claude-opus-4-6 (Tier 1 planner self-review - pending gpt-5.4 alternate-model review)"
+    "claude-opus-4-6 (Tier 1 planner)",
+    "gpt-5.4 @ model_reasoning_effort=high (round-1 REJECTED; all 7 required changes addressed in plan revision; operator accepted with 1-review-cycle policy)"
   ],
   "approved_at": "2026-04-21T00:00:00Z"
 }
