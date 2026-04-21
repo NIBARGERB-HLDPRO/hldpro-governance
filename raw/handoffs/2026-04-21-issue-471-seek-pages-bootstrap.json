@@ -1,0 +1,78 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-471-seek-pages-bootstrap",
+  "issue_number": 471,
+  "parent_epic_number": 467,
+  "lifecycle_state": "accepted",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-471-seek-pages-bootstrap-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-471-seek-pages-bootstrap-implementation.json",
+  "packet_ref": "raw/packets/2026-04-21-issue-471-seek-pages-bootstrap.json",
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "The seek, seek-local, and seek-worktree bootstrap targets include CLOUDFLARE_PAGES_TOKEN and CLOUDFLARE_ACCOUNT_ID by name.",
+      "verification_refs": [
+        "scripts/bootstrap-repo-env.sh",
+        "raw/validation/2026-04-21-issue-471-seek-pages-bootstrap.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "No Cloudflare token value, account credential value, generated .env file, or Authorization header is committed.",
+      "verification_refs": [
+        "docs/ENV_REGISTRY.md",
+        "raw/validation/2026-04-21-issue-471-seek-pages-bootstrap.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "The bootstrap change is scoped to existing governance provisioning surfaces and leaves live deploy proof to issue #471 / seek-and-ponder #163.",
+      "verification_refs": [
+        "docs/plans/issue-471-seek-pages-bootstrap-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-471-seek-pages-bootstrap-implementation.json",
+        "raw/closeouts/2026-04-21-issue-471-seek-pages-bootstrap.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool docs/plans/issue-471-seek-pages-bootstrap-structured-agent-cycle-plan.json >/dev/null",
+    "python3 -m json.tool raw/execution-scopes/2026-04-21-issue-471-seek-pages-bootstrap-implementation.json >/dev/null",
+    "DRY_RUN=1 bash scripts/bootstrap-repo-env.sh seek-worktree /tmp/seek-pages-bootstrap.env",
+    "DRY_RUN=1 bash scripts/bootstrap-repo-env.sh seek /tmp/seek-pages-bootstrap-main.env",
+    "DRY_RUN=1 bash scripts/bootstrap-repo-env.sh seek-local /tmp/seek-pages-bootstrap-local.env",
+    "python3 scripts/test_bootstrap_repo_env_contract.py",
+    "python3 scripts/overlord/validate_handoff_package.py raw/handoffs/2026-04-21-issue-471-seek-pages-bootstrap.json --root .",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-21-issue-471-seek-pages-bootstrap.md --root .",
+    "tools/local-ci-gate/bin/hldpro-local-ci --profile hldpro-governance --changed-files-file /tmp/issue-471-bootstrap-changed-files.txt --report-dir cache/local-ci-gate/reports --json"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-21-issue-467-pages-deploy-gate-round1.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-21-issue-471-seek-pages-bootstrap.md"
+  ],
+  "artifact_refs": [
+    "scripts/bootstrap-repo-env.sh",
+    "docs/ENV_REGISTRY.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-471-seek-pages-bootstrap-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-471-seek-pages-bootstrap-implementation.json",
+    "raw/packets/2026-04-21-issue-471-seek-pages-bootstrap.json",
+    "raw/handoffs/2026-04-21-issue-471-seek-pages-bootstrap.json",
+    "raw/validation/2026-04-21-issue-471-seek-pages-bootstrap.md",
+    "raw/closeouts/2026-04-21-issue-471-seek-pages-bootstrap.md"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-471-seek-pages-bootstrap.md",
+    "raw/closeouts/2026-04-21-issue-471-seek-pages-bootstrap.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-04-21-issue-471-seek-pages-bootstrap.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T22:30:00-05:00",
+  "notes": "This package covers bootstrap env-name propagation only. It does not authorize direct downstream writes or live deploy execution from this governance support branch."
+}
