@@ -1,0 +1,94 @@
+{
+  "session_id": "session-20260421-issue-487-overlord-sweep-artifact-pr",
+  "issue_number": 487,
+  "objective": "Persist Overlord Sweep generated graph and metrics artifacts through automation pull requests instead of direct pushes to protected main.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify only the Overlord Sweep generated-artifact persistence path and required issue-backed governance evidence.",
+    "Preserve the self-learning, graph update, and report issue generation behavior.",
+    "Use issue #487 as the governing issue for branch-protection-aligned generated artifact persistence."
+  ],
+  "out_of_scope": [
+    "Changing repository rules or bypassing branch protection.",
+    "Auto-merging generated artifact PRs.",
+    "Changing downstream repositories."
+  ],
+  "research_summary": "Run 24739372677 completed all substantive sweep steps and updated issue #10, but final persistence failed because direct push to main violated the repository rule requiring PRs and local-ci-gate. The workflow needs to push generated artifacts to an automation branch and open a PR.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/487",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/actions/runs/24739372677",
+    ".github/workflows/overlord-sweep.yml"
+  ],
+  "sprints": [
+    {
+      "name": "PR-based generated artifact persistence",
+      "goal": "Make generated graph and metrics artifacts durable without violating protected main rules.",
+      "tasks": [
+        "Add pull request write permission to the workflow.",
+        "Push generated artifact commits to a run-specific automation branch.",
+        "Create a PR for generated artifacts and expose the PR URL in step outputs.",
+        "Record PR status in the overlord report issue.",
+        "Fail only when commit, branch push, or PR creation fails."
+      ],
+      "acceptance_criteria": [
+        "No generated artifact path pushes directly to main.",
+        "Generated artifacts create a remote branch and PR.",
+        "The sweep report issue includes PR persistence details.",
+        "Manual sweep no longer fails with GH013 direct-main rejection."
+      ],
+      "file_paths": [
+        ".github/workflows/overlord-sweep.yml",
+        "docs/plans/issue-487-overlord-sweep-artifact-pr-pdcar.md",
+        "docs/plans/issue-487-overlord-sweep-artifact-pr-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-487-overlord-sweep-artifact-pr-implementation.json",
+        "raw/validation/2026-04-21-issue-487-overlord-sweep-artifact-pr.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-orchestrator-log-inspection",
+      "role": "workflow persistence triage",
+      "focus": "Inspect run 24739372677 final guard failure.",
+      "status": "accepted",
+      "summary": "The generated artifact commit was created, but direct push to main was rejected by intended repository rules. PR-based persistence is the bounded fix.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/actions/runs/24739372677"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-workflow-persistence-bugfix",
+    "model_family": "none",
+    "status": "not_requested",
+    "summary": "This is a deterministic workflow persistence fix aligning automation with existing branch protection.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/487"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #487 may update Overlord Sweep generated artifact persistence and required governance evidence.",
+    "next_execution_step": "Merge the workflow persistence fix and re-run Overlord Sweep on main.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-487-overlord-sweep-artifact-pr-implementation.json",
+    "handoff_package_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-487-overlord-sweep-artifact-pr.md"
+    ],
+    "closeout_ref": null
+  },
+  "material_deviation_rules": [
+    "If GitHub token permissions cannot create PRs, record the permission gap in the sweep report and fail the workflow.",
+    "If generated artifact PR checks fail, fix through the generated PR rather than bypassing branch protection."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "GitHub issue #487",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T18:31:00Z"
+}
