@@ -1,6 +1,6 @@
 # TestAssertExecutionScope
 
-> God node · 34 connections · `scripts/overlord/test_assert_execution_scope.py`
+> God node · 34 connections · `hldpro-governance/scripts/overlord/test_assert_execution_scope.py`
 
 ## Connections by Relation
 

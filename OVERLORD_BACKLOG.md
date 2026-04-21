@@ -19,12 +19,14 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Seek and Stampede env bootstrap targets | [#430](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/430) | MEDIUM | 1-2 | Add repo-native SSOT bootstrap aliases for `seek-and-ponder` and `Stampede`, with redacted dry-run contract coverage and registry docs so agents stop hunting credentials manually. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Stampede Phase 1 live order routing epic (#81–#86) | 2026-04-21 | Issues [#81](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/81)–[#86](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/86). Phase 1 pipeline code-complete: spec v0.2, RSSHub trigger, 3-persona LLM inference, Tradier executor+KillSwitch, paper trade runner+gate, launchd automation. PRs #87–#92+#94 merged. Backtest n=27: r=+0.563 dir=70.4%. Paper smoke 6/7=85.7% PASS. **Issue #86 gate in progress** — 30-day paper gate started 2026-04-21, target close 2026-05-21. Closeouts: raw/closeouts/2026-04-21-stampede-issue-8x-*.md. |
+| Seek and Stampede env bootstrap targets | 2026-04-21 | Issue [#430](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/430). PR [#431](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/431) added repo-native SSOT bootstrap aliases for `seek-and-ponder`, `seek-local`, `seek-worktree`, and `Stampede`, with redacted dry-run contract coverage and registry docs so agents stop hunting credentials manually. |
+| Stampede issue #76: temperature determinism | 2026-04-20 | Stampede issue [#76](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/76) CLOSED. `AnthropicApiProvider` wired with `temperature=0.0`; seed stability re-run confirmed mean std dev 4.6 bps, 0 direction-unstable events (down from 28.9 bps / 4 unstable). Unblocks forward validation (issue #78). Closeout: `raw/closeouts/2026-04-20-stampede-issue-76-temperature-determinism.md`. |
 | Codex brief templates embed plan schema and lane claim requirements | 2026-04-20 | Issue [#412](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/412). PR [#417](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/417) embedded structured-plan schema, lane-claim, graphify-out write-boundary, and validation requirements into the Codex Spark dispatch brief template. Removed from Planned because #412 is closed. |
 | hldpro-sim v0.1.0 deployment readiness — version tag + deployer | 2026-04-20 | Issue [#422](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/422). PR [#424](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/424) pushed hldpro-sim-v0.1.0 tag (fed5ead), consumer pull state contract, and deploy-hldpro-sim.sh deployer with --dry-run + directory-copy fallback. Stampede adoption tracked in issue #425. |
 | SoM HITL SMS dedicated sender env propagation | 2026-04-20 | Issue [#421](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/421). PR [#423](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/423) propagated SOM_TWILIO_FROM_NUMBER and sender aliases through governance SSOT/bootstrap. |
