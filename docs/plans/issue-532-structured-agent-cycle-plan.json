@@ -1,0 +1,101 @@
+{
+  "session_id": "session-20260421-issue-532-secret-provisioning-downstream-closeout",
+  "issue_number": 532,
+  "objective": "Amend the Secret Provisioning UX Stage 6 closeout after downstream residual follow-ups merged and closed.",
+  "tier": 2,
+  "scope_boundary": [
+    "Governance closeout evidence only.",
+    "Update the existing #507 closeout residual-risk section with downstream completion evidence.",
+    "Update docs/PROGRESS.md completed-history mirror.",
+    "Add issue #532 plan, execution-scope, and validation artifacts."
+  ],
+  "out_of_scope": [
+    "Downstream repository file changes.",
+    "Changing Secret Provisioning UX standards, validators, deploy gates, or bootstrap behavior.",
+    "Credential handling, secret rotation, generated env files, signed URLs, Authorization headers, raw phone numbers, or screenshots.",
+    "Graph/wiki refresh beyond hook-generated closeout write-back."
+  ],
+  "research_summary": "PR #531 converted #507 to a full Stage 6 closeout while the downstream rollout issues were still residual follow-ups. HealthcarePlatform #1470, ai-integration-services #1215, seek-and-ponder #167, and Stampede #120 are now closed by merged PRs with required checks green. The closeout residual-risk section should be amended to record completion rather than leave stale residual status.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/507",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/529",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/532",
+    "raw/closeouts/2026-04-21-issue-507-secret-provisioning-ux-closeout.md",
+    "https://github.com/NIBARGERB-HLDPRO/HealthcarePlatform/pull/1472",
+    "https://github.com/NIBARGERB-HLDPRO/ai-integration-services/pull/1216",
+    "https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/pull/171",
+    "https://github.com/NIBARGERB-HLDPRO/Stampede/pull/121"
+  ],
+  "sprints": [
+    {
+      "name": "Downstream residual closeout",
+      "goal": "Make the #507 closeout match the final downstream rollout state.",
+      "tasks": [
+        "Verify downstream issue, PR, merge commit, merged timestamp, closure, and check status evidence.",
+        "Update the #507 closeout residual-risk and issue-link sections.",
+        "Update docs/PROGRESS.md and add issue #532 validation artifacts.",
+        "Run the existing closeout hook and preserve only hook-generated closeout graph/wiki outputs.",
+        "Run governance validation, publish PR, and merge when checks are green."
+      ],
+      "acceptance_criteria": [
+        "The closeout artifact no longer lists the four downstream follow-ups as open residuals.",
+        "The closeout artifact records downstream PR links, merge commits, merge timestamps, and issue closure state.",
+        "Validation evidence records the GitHub state checks and local governance checks.",
+        "No downstream repo files are modified."
+      ],
+      "file_paths": [
+        "docs/PROGRESS.md",
+        "docs/plans/issue-532-secret-provisioning-downstream-closeout-pdcar.md",
+        "docs/plans/issue-532-structured-agent-cycle-plan.json",
+        "raw/closeouts/2026-04-21-issue-507-secret-provisioning-ux-closeout.md",
+        "raw/execution-scopes/2026-04-21-issue-532-secret-provisioning-downstream-closeout-implementation.json",
+        "raw/validation/2026-04-21-issue-532-secret-provisioning-downstream-closeout.md",
+        "graphify-out/",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex verify-completion subagent",
+      "role": "completion verifier",
+      "focus": "Independently verify downstream rollout completion and identify stale governance closeout text.",
+      "status": "accepted",
+      "summary": "Read-only verification confirmed all four downstream issues are closed and their PRs are merged. It identified the #507 closeout residual-risk block as stale and recommended updating the closeout artifact plus optional progress mirror evidence.",
+      "evidence": [
+        "HealthcarePlatform #1470 / PR #1472",
+        "ai-integration-services #1215 / PR #1216",
+        "seek-and-ponder #167 / PR #171",
+        "Stampede #120 / PR #121"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not required",
+    "model_family": "n/a",
+    "status": "not_required",
+    "summary": "This is a post-rollout evidence amendment; it does not change architecture, standards, validators, or implementation behavior.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/532"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Write only issue #532 governance closeout amendment evidence, progress mirror updates, and hook-generated graph/wiki closeout outputs.",
+    "next_execution_step": "Run validation, publish the PR, wait for required checks, and merge.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any downstream issue or PR is not actually closed or merged, leave it as residual and record the blocker.",
+    "If downstream repository edits appear necessary, stop and open a downstream issue instead of editing those repos.",
+    "If validation finds a policy defect beyond closeout evidence, create or update a separate governance issue."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator request: need stage 6 closeout",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/532"
+  ],
+  "approved_at": "2026-04-21T16:45:00-05:00"
+}
