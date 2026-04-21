@@ -61,6 +61,30 @@ HLDPRO_LANE_CLAIM_SCOPE=raw/execution-scopes/<scope>.json \
   git worktree add -b issue-<n>-<slug>-YYYYMMDD <path> origin/main
 ```
 
+Repo-specific lane policies must be planned through the governance helper instead of hand-composed from memory:
+
+```bash
+python3 scripts/overlord/lane_bootstrap.py \
+  --repo-slug HealthcarePlatform \
+  --json \
+  plan \
+  --issue-number <n> \
+  --scope-slug <scope> \
+  --worktree-root <path>
+```
+
+HealthcarePlatform lanes require this branch and matching worktree basename shape:
+
+```text
+Branch:   sandbox/issue-<n>-pr-pending-<scope>
+Worktree: issue-<n>-pr-pending-<scope>
+```
+
+The PreToolUse guard rejects malformed HealthcarePlatform issue lanes before worktree creation when `HLDPRO_REPO_SLUG=HealthcarePlatform` is present or repo context resolves to HealthcarePlatform. If an invalid lane was created before this guard existed, inspect it before cleanup:
+
+- clean invalid lane with no edits: remove it and recreate through `lane_bootstrap.py`
+- dirty or untracked invalid lane: do not auto-delete; stop and record an operator review requirement
+
 If another open worktree already exists for a different issue, treat it as another session's lane. Do not clean, reset, delete, or build from that lane unless a fresh issue-backed scope explicitly assigns it.
 
 Required artifacts:

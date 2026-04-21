@@ -25,14 +25,16 @@ def run_hook(command: str, cwd: Path | None = None) -> subprocess.CompletedProce
 
 class TestBranchSwitchGuard(unittest.TestCase):
     def test_blocks_unclaimed_issue_worktree_add(self) -> None:
-        result = run_hook("git worktree add -b issue-397-preworktree-lane-gate ../wt origin/main")
+        result = run_hook(
+            "git worktree add -b issue-397-preworktree-lane-gate ../issue-397-preworktree-lane-gate origin/main"
+        )
 
         self.assertEqual(result.returncode, 2)
         self.assertIn("Issue worktree creation requires", result.stderr)
 
     def test_allows_explicit_planning_bootstrap_issue_worktree_add(self) -> None:
         result = run_hook(
-            "HLDPRO_LANE_CLAIM_BOOTSTRAP=1 git worktree add -b issue-397-preworktree-lane-gate ../wt origin/main"
+            "HLDPRO_LANE_CLAIM_BOOTSTRAP=1 git worktree add -b issue-397-preworktree-lane-gate ../issue-397-preworktree-lane-gate origin/main"
         )
 
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -52,7 +54,7 @@ class TestBranchSwitchGuard(unittest.TestCase):
 
             result = run_hook(
                 "HLDPRO_LANE_CLAIM_SCOPE=raw/execution-scopes/issue-397-scope.json "
-                "git worktree add -b issue-397-preworktree-lane-gate ../wt origin/main",
+                "git worktree add -b issue-397-preworktree-lane-gate ../issue-397-preworktree-lane-gate origin/main",
                 cwd=root,
             )
 
@@ -68,12 +70,29 @@ class TestBranchSwitchGuard(unittest.TestCase):
 
             result = run_hook(
                 "HLDPRO_LANE_CLAIM_SCOPE=raw/execution-scopes/issue-397-scope.json "
-                "git worktree add -b issue-397-preworktree-lane-gate ../wt origin/main",
+                "git worktree add -b issue-397-preworktree-lane-gate ../issue-397-preworktree-lane-gate origin/main",
                 cwd=root,
             )
 
         self.assertEqual(result.returncode, 2)
         self.assertIn("matching issue-<n>", result.stderr)
+
+    def test_healthcareplatform_policy_rejects_non_sandbox_branch(self) -> None:
+        result = run_hook(
+            "HLDPRO_REPO_SLUG=HealthcarePlatform HLDPRO_LANE_CLAIM_BOOTSTRAP=1 "
+            "git worktree add -b issue-1357-chart-audit ../issue-1357-chart-audit origin/main"
+        )
+
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("Lane policy: invalid branch pattern", result.stderr)
+
+    def test_healthcareplatform_policy_accepts_sandbox_pr_pending_lane(self) -> None:
+        result = run_hook(
+            "HLDPRO_REPO_SLUG=HealthcarePlatform HLDPRO_LANE_CLAIM_BOOTSTRAP=1 "
+            "git worktree add -b sandbox/issue-1357-pr-pending-chart-audit ../issue-1357-pr-pending-chart-audit origin/main"
+        )
+
+        self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_still_blocks_branch_checkout(self) -> None:
         result = run_hook("git checkout main")
