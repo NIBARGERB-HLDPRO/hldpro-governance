@@ -2485,11 +2485,11 @@ Nodes (0):
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `log()` connect `Issue3 signed url Check` to `Survey store Offline`, `Testing Run v1 1 hosted assertions Training`, `Testing Run full role crawl matrix Training`, `Issues Local codex queue runner`, `Testing Validate option3 hosted`, `Training Run training seed generator`, `Training Run training section writer`, `Ci Validate subagent evidence`, `Testing Seed option3 manifest`, `Testing Seed historical assessments`, `Testing Provision auth`, `Sync dictionary Parse`, `Stakeholder Provision stakeholder accounts`, `Issues Plan queue from story catalog`, `Ci Validate agents rules`, `Issue131 evidence deny audit`, `Ci Check search path hardening`, `Ci Validate issue execution governance`, `Testing Provision prod account`, `Issues Sync github issues to`, `Ci Check supabase lint security`, `Lane Preflight Ps1`, `Ci Check auth Has`, `Ci Check progress github alignment`, `Ci Check asc evaluator import`, `Ci Check no stale mirror gate language`, `Ci Validate supabase gh governance`, `Ci Validate structured agent cycle plan schema`?**
-  _High betweenness centrality (0.252) - this node is a cross-community bridge._
-- **Why does `json()` connect `Training Supabase` to `Sync dictionary Parse`, `Issue3 signed url Check`, `Training Chart`, `Testing Run v1 1 hosted assertions Training`, `Seeded Audit`, `Twenty crm client Supabase`, `Verify jwt Supabase`, `Insurance verification Supabase`, `Reports Supabase`, `Pat ai Supabase`, `Runtime selection Supabase`?**
-  _High betweenness centrality (0.164) - this node is a cross-community bridge._
+  _High betweenness centrality (0.198) - this node is a cross-community bridge._
 - **Why does `toApiRequestError()` connect `Training Chart` to `Admin Reports`, `Survey store Offline`, `Integrations Ehr`?**
-  _High betweenness centrality (0.136) - this node is a cross-community bridge._
+  _High betweenness centrality (0.189) - this node is a cross-community bridge._
+- **Why does `json()` connect `Training Supabase` to `Sync dictionary Parse`, `Issue3 signed url Check`, `Training Chart`, `Testing Run v1 1 hosted assertions Training`, `Seeded Audit`, `Twenty crm client Supabase`, `Verify jwt Supabase`, `Insurance verification Supabase`, `Reports Supabase`, `Pat ai Supabase`, `Runtime selection Supabase`?**
+  _High betweenness centrality (0.182) - this node is a cross-community bridge._
 - **Are the 190 inferred relationships involving `errorResponse()` (e.g. with `createDocumentRequest()` and `listDocumentRequests()`) actually correct?**
   _`errorResponse()` has 190 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 178 inferred relationships involving `successResponse()` (e.g. with `createDocumentRequest()` and `listDocumentRequests()`) actually correct?**

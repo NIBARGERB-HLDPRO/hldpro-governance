@@ -19,14 +19,14 @@ This file is the single org-level index of governance rules, enforcement files, 
 
 | Repo | Purpose | Rule Files | Graph Nodes | Graph Edges |
 |------|---------|-----------:|------------:|------------:|
-| `hldpro-governance` | Governance standards, reusable CI, agents, and cross-repo audit tooling | 429 | 12667 | 29896 |
+| `hldpro-governance` | Governance standards, reusable CI, agents, and cross-repo audit tooling | 432 | 12667 | 29896 |
 | `ai-integration-services` | AIS SaaS platform governance, CI, hooks, and specialist agents | 180 | 2648 | 5133 |
 | `HealthcarePlatform` | HIPAA platform governance, CI, hooks, and specialist agents | 94 | 3204 | 6244 |
 | `local-ai-machine` | Local AI runtime governance, packet controls, lane rules, and schemas | 182 | 3670 | 8198 |
 | `knocktracker` | Field app governance, issue controls, security/privacy agents, and CI | 59 | 587 | 715 |
 | `seek-and-ponder` | Faith-based scripture research, AI study co-pilot, and creator network platform | 83 | 533 | 765 |
-| `Stampede` | Stampede Phase0 product specifications, baselines, label schema, and governance bootstrap artifacts | 28 | 466 | 913 |
-| `ASC-Evaluator` | Knowledge/evaluation repo with limited governance and graph coverage | 21 | 101 | 184 |
+| `Stampede` | Stampede Phase0 product specifications, baselines, label schema, and governance bootstrap artifacts | 30 | 466 | 913 |
+| `ASC-Evaluator` | Knowledge/evaluation repo with limited governance and graph coverage | 23 | 101 | 184 |
 
 ## Org-Level Rule Map
 
@@ -110,6 +110,7 @@ Governance standards, reusable CI, agents, and cross-repo audit tooling
 | `docs/plans/2026-04-17-governance-path-repair-findings.md` | pdcar-plan | Governance Path Repair Findings | Sections: Purpose, Workspace State At Finding, Primary Finding, Rule Evidence, Missing Or Late Artifacts, Mechanical Control Gap | References *structured-agent-cycle-plan.json, .github/workflows/overlord-sweep.yml, CLAUDE.md, OVERLORD_BACKLOG.md, README.md, STANDARDS.md, agents/overlord-sweep.md, docs/DATA_DICTIONARY.md |
 | `docs/plans/2026-04-17-som-enforcement-drift-pdcar.md` | pdcar-plan | PDCAR: SoM Enforcement Drift Closure | Sections: Problem, Plan, Scope, Do, Check, Adjust | References .github/scripts/check_codex_model_pins.py, .github/scripts/check_no_self_approval.py, .github/workflows/check-arch-tier.yml, .github/workflows/governance-check.yml, .github/workflows/overlord-sweep.yml, .github/workflows/require- |
 | `docs/plans/2026-04-20-issue-422-hldpro-sim-deploy-pdcar.md` | pdcar-plan | PDCAR: hldpro-sim v0.1.0 Deployment Readiness | Sections: Problem, Plan, Scope, Do, Check, Adjust | References <consumer>/.hldpro/hldpro-sim.json, docs/hldpro-sim-consumer-pull-state.json, raw/validation/2026-04-20-issue-422-hldpro-sim-deploy.md, scripts/deployer/deploy-hldpro-sim.sh |
+| `docs/plans/2026-04-21-issue-467-pages-deploy-gate-pdcar.md` | pdcar-plan | PDCAR: Cloudflare Pages Direct Upload Deploy Gate (Epic #467) | Sections: Problem, Context, Plan, Scope, Do, Check | References STANDARDS.md, deploy-pages.sh, docs/governed_repos.json, docs/schemas/pages-deploy-consumer.schema.json, docs/schemas/structured-agent-cycle-plan.schema.json, governance-check.yml, pages-deploy.config.json, pages_deploy_verifier. |
 | `docs/plans/CRITIC_INTEGRATION_PLAN.md` | pdcar-plan | HLDPRO Critic Integration — Comprehensive Implementation Plan | Sections: Execution Status (updated 2026-04-09) | References caller_mask_policy.json, critic_issue_creator.py, diff_mode_synthesizer.py, generate_stub_bundle.py, phi_redactor.py, redaction_attestation.schema.json, scripts/clients/critic_call.sh |
 | `docs/plans/HLD_Pro_Local_CI_Gate_Runbook.md` | pdcar-plan | HLD Pro — Local CI Gate Implementation Runbook | Sections: Revision Note (April 17, 2026), Table of Contents, Applicability Note, 1. Epic <a name="epic"></a>, 2. Problem Statement <a name="problem-statement"></a>, 3. Non-Goals <a name="non-goals"></a> | References .claude/agents/hldpro-watcher.md, .github/workflows/*.yml, .github/workflows/playwright.yml, .governance/local-ci.sh, .hldpro/local-ci.sh, BACKLOG.md, CLAUDE.md, HLD_Pro_Local_CI_Gate_Runbook.md |
 | `docs/plans/Local_CI_Gate_Runbook_Reviewer_Response_Memo.md` | pdcar-plan | Reviewer Response Memo — Local CI Gate Runbook | Sections: Artifact Mismatch Note, 1. Accepted, 2. Not Applicable, 3. Refinements Adopted, 4. Scope Boundary Reaffirmed, 5. Edits To Be Applied to Runbook | References ./scripts/governance-check.sh, HLD_Pro_Local_CI_Gate_Runbook.md, governance-check.yml |
@@ -325,6 +326,7 @@ Governance standards, reusable CI, agents, and cross-repo audit tooling
 | `docs/plans/issue-46-codex-ingestion-pdcar.md` | pdcar-plan | Issue 46 — Codex Ingestion Operationalization PDCA/R | Sections: Plan, Do, Check, Adjust, Review | References .github/workflows/overlord-sweep.yml, backlog-*.md, backlog-2026-04-09.md, docs/FAIL_FAST_LOG.md, qualified-*.json, qualified-2026-04-09.json, review-*.json, review-2026-04-09.json |
 | `docs/plans/issue-463-stage6-closeout-439-pdcar.md` | pdcar-plan | PDCAR: Issue #463 Stage 6 Closeout for Downstream SoM Propagation | Sections: Plan, Do, Check, Adjust, Review | No explicit file references detected |
 | `docs/plans/issue-463-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | No explicit file references detected |
+| `docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | No explicit file references detected |
 | `docs/plans/issue-474-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | No explicit file references detected |
 | `docs/plans/issue-474-verifier-hardening-pdcar.md` | pdcar-plan | Issue 474 PDCAR: SSOT Consumer Verifier Hardening | Sections: Plan, Do, Check, Adjust | No explicit file references detected |
 | `docs/plans/issue-475-self-learning-loop-proof-pdcar.md` | pdcar-plan | Issue #475 — Self-Learning Loop Operational Proof PDCAR | Sections: Plan, Do, Check, Adjust, Review | References ERROR_PATTERNS.md, metrics/self-learning/latest.json, metrics/self-learning/latest.md, python3 -m py_compile .github/scripts/check_codex_model_pins.py scripts/orchestrator/self_learning.py scripts/orchestrator/packet_queue.py scr |
@@ -336,6 +338,7 @@ Governance standards, reusable CI, agents, and cross-repo audit tooling
 | `docs/plans/issue-485-overlord-sweep-python-runtime-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | No explicit file references detected |
 | `docs/plans/issue-487-overlord-sweep-artifact-pr-pdcar.md` | pdcar-plan | Issue 487 PDCAR: Overlord Sweep Artifact PR Persistence | Sections: Plan, Do, Check, Act | References .github/workflows/overlord-sweep.yml |
 | `docs/plans/issue-487-overlord-sweep-artifact-pr-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | No explicit file references detected |
+| `docs/plans/issue-487-overlord-sweep-generated-artifacts-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | No explicit file references detected |
 | `docs/plans/issue-58-nightly-timezone-pdcar.md` | pdcar-plan | Issue #58 — Nightly Cleanup Timezone Policy PDCA/R | Sections: Plan, Do, Check, Adjust, Review | References overlord-nightly-cleanup.yml |
 | `docs/plans/issue-62-neo4j-bootstrap-pdcar.md` | pdcar-plan | Issue 62 PDCA/R — Neo4j Runtime Bootstrap | Sections: Plan, Do, Check, Adjust, Review | References scripts/knowledge_base/bootstrap_neo4j.sh |
 | `docs/plans/issue-65-graphify-measurement-pdcar.md` | pdcar-plan | Issue 65 PDCA/R — Graphify Adoption And Measurement | Sections: Plan, Do, Check, Adjust, Review | No explicit file references detected |
@@ -1181,8 +1184,10 @@ Stampede Phase0 product specifications, baselines, label schema, and governance 
 | `.github/workflows/governance-check.yml` | workflow | workflow file | Workflow governance-check; triggers: pull_request, push | Uses actions/checkout@v6 |
 | `CHANGELOG_v0_1_to_v0_1_1.md` | policy-doc | CHANGELOG: v0.1 → v0.1.1 | Sections: Status, Files, Reasoning summary for each change, Removals, Additions at project level, Pre-freeze checklist | References event_set_v0_1.json |
 | `Production_Spec_v0.1.1.md` | policy-doc | Fincept × MiroFish News-Reactive Trading System | Sections: Production Spec v0.1.1, Objective, Governing Hypothesis, Phase 0 Pass Criteria (HARD), Threshold Derivation, Buckets | References baselines_v0_1.json, label_schema_v0_1.json, phase0.yaml |
-| `docs/PROGRESS.md` | policy-doc | STAMPEDE PHASE0 Progress | Sections: Active Backlog, Completed | No explicit file references detected |
+| `docs/PROGRESS.md` | policy-doc | STAMPEDE PHASE0 Progress | Sections: Active Backlog, Completed | References .hldpro/governance-tooling.json, .hldpro/hldpro-sim.json, .hldpro/local-ci.sh |
 | `docs/exception-register.md` | policy-doc | STAMPEDE PHASE0 Exception Register | Sections: Exception Template | No explicit file references detected |
+| `docs/plans/issue-112-ssot-v02-product-baseline-pdcar.md` | pdcar-plan | Issue #112 PDCAR - SSOT v0.2 Product-Baseline Consumer Metadata | Sections: Plan, Do, Check, Adjust, Record | References .hldpro/governance-tooling.json, .hldpro/hldpro-sim.json, .hldpro/local-ci.sh, raw/validation/issue-112-ssot-v02-product-baseline.md |
+| `docs/plans/issue-112-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | No explicit file references detected |
 | `docs/plans/issue-14-cli-model-bakeoff-pdcar.md` | pdcar-plan | Issue #14 - CLI-Primary Model Bakeoff PDCA/R | Sections: Plan, Do, Check, Adjust, Review | No explicit file references detected |
 | `docs/plans/issue-16-public-data-path-pdcar.md` | pdcar-plan | Issue #16 PDCAR: Public/Internal Data Path | Sections: Plan, Do, Check, Adjust, Review | References config/data_sources_v0_1.json |
 | `docs/plans/issue-18-live-provider-probes-pdcar.md` | pdcar-plan | Issue #18 PDCAR: Live Provider Probe Scaffold | Sections: Plan, Do, Check, Adjust, Review | References config/provider_probe_plan_v0_1.json |
@@ -1215,7 +1220,7 @@ Knowledge/evaluation repo with limited governance and graph coverage
 - Graph report: `graphify-out/asc-evaluator/GRAPH_REPORT.md`
 - Nodes / edges / hyperedges: `101` / `184` / `0`
 - Top nodes: `generate_existing_info_report.py (45)`, `write_docx() (16)`, `convert() (9)`, `main() (8)`, `xlsx_text_extract.py (8)`, `extract_workbook() (8)`, `annotate() (7)`, `annotate() (7)`
-- Top communities: `Generate existing info report Reviews`, `Generate docx from markdown Cycle`, `Xlsx text extract`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Generate existing info report`, `Generate existing info report Reviews`
+- Top communities: `Generate existing info report Reviews`, `Generate docx from markdown Cycle`, `Xlsx text extract`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Generate existing info report Reviews`, `Generate existing info report`
 
 ### Governance File Index
 
@@ -1239,6 +1244,8 @@ Knowledge/evaluation repo with limited governance and graph coverage
 | `docs/DATA_DICTIONARY.md` | policy-doc | Data Dictionary | Sections: Table of Contents, Evaluation Artifacts | No explicit file references detected |
 | `docs/FAIL_FAST_LOG.md` | policy-doc | Fail Fast Log — ASC-Evaluator | Sections: Known Error Patterns | No explicit file references detected |
 | `docs/FEATURE_REGISTRY.md` | policy-doc | ASC-Evaluator Feature Registry | Sections: Summary Table, Notes | References docs/PROGRESS.md |
-| `docs/PROGRESS.md` | policy-doc | Active Progress | Sections: Issue #7/#8: MHSC Richmond HITL report-formatting artifacts — DONE 2026-04-17, Issue #5: §DA governance scaffolding (S6) — DONE 2026-04-16, Plans, Known Bugs, Feature Requests, Operational Items | References .claude/hooks/governance-check.sh, .claude/settings.json, AGENTS.md, CLAUDE.md, RUNBOOK_SURVEY_REVIEW.md, TRAINING_INDEX.md |
+| `docs/PROGRESS.md` | policy-doc | Active Progress | Sections: Issue #7/#8: MHSC Richmond HITL report-formatting artifacts — DONE 2026-04-17, Issue #11: Governance SSOT v0.2 exempt consumer metadata — DONE 2026-04-21, Issue #5: §DA governance scaffolding (S6) — DONE 2026-04-16, Plans, Known B | References .claude/hooks/governance-check.sh, .claude/settings.json, .hldpro/governance-tooling.json, .hldpro/local-ci.sh, AGENTS.md, CLAUDE.md, RUNBOOK_SURVEY_REVIEW.md, TRAINING_INDEX.md |
 | `docs/SERVICE_REGISTRY.md` | policy-doc | Service Registry — ASC-Evaluator | Markdown policy or agent instruction document | References ../hldpro-governance/AGENT_REGISTRY.md |
+| `docs/plans/issue-11-ssot-v02-exempt-consumer-pdcar.md` | pdcar-plan | Issue #11 PDCAR - SSOT v0.2 Exempt Consumer Metadata | Sections: Plan, Do, Check, Adjust, Record | References .hldpro/governance-tooling.json, .hldpro/local-ci.sh, raw/validation/issue-11-ssot-v02-exempt-consumer.md |
+| `docs/plans/issue-11-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | No explicit file references detected |
 | `docs/plans/issue-9-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | No explicit file references detected |

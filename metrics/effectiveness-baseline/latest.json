@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-04-21",
-  "generated_at": "2026-04-21T18:39:16Z",
+  "generated_at": "2026-04-21T18:55:04Z",
   "commit_window_days": 7,
   "ci_window_days": 14,
   "repos": [
@@ -71,10 +71,10 @@
     },
     {
       "repo": "Stampede",
-      "commit_count": 65,
+      "commit_count": 66,
       "bug_fix_commits": 9,
       "revert_commits": 0,
-      "bug_rate_pct": 13.8,
+      "bug_rate_pct": 13.6,
       "revert_rate_pct": 0.0,
       "ci_pass": 0,
       "ci_fail": 0,
@@ -84,7 +84,7 @@
     },
     {
       "repo": "ASC-Evaluator",
-      "commit_count": 5,
+      "commit_count": 6,
       "bug_fix_commits": 0,
       "revert_commits": 0,
       "bug_rate_pct": 0.0,
