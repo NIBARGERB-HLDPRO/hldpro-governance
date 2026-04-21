@@ -1,0 +1,85 @@
+{
+  "date": "2026-04-21",
+  "epic": 507,
+  "issue": 513,
+  "policy": "Secret Provisioning UX",
+  "scope": "inventory_and_issue_routing_only",
+  "downstream_mutation": false,
+  "statuses": [
+    "adopted",
+    "blocked",
+    "not_applicable",
+    "follow_up_required"
+  ],
+  "repositories": [
+    {
+      "repo": "HealthcarePlatform",
+      "github_repo": "NIBARGERB-HLDPRO/HealthcarePlatform",
+      "status": "follow_up_required",
+      "finding": "Direct Wrangler or Cloudflare Pages workflow guidance needs Secret Provisioning UX audit.",
+      "follow_up_issue": "https://github.com/NIBARGERB-HLDPRO/HealthcarePlatform/issues/1470",
+      "routing": "owning_repo_issue"
+    },
+    {
+      "repo": "ai-integration-services",
+      "github_repo": "NIBARGERB-HLDPRO/ai-integration-services",
+      "status": "follow_up_required",
+      "finding": "Bespoke marketing deploy gate needs Secret Provisioning UX alignment.",
+      "follow_up_issue": "https://github.com/NIBARGERB-HLDPRO/ai-integration-services/issues/1215",
+      "routing": "owning_repo_issue"
+    },
+    {
+      "repo": "local-ai-machine",
+      "github_repo": "NIBARGERB-HLDPRO/local-ai-machine",
+      "status": "adopted",
+      "finding": "Remote MCP operator vault/bootstrap work is already governed by the name-only Secret Provisioning UX contract and no-secret evidence rules.",
+      "follow_up_issue": null,
+      "routing": "none"
+    },
+    {
+      "repo": "knocktracker",
+      "github_repo": "NIBARGERB-HLDPRO/knocktracker",
+      "status": "not_applicable",
+      "finding": "No known Cloudflare Pages deploy gate, Remote MCP secret provisioning, or cross-repo credential runbook surface in this epic scope.",
+      "follow_up_issue": null,
+      "routing": "none"
+    },
+    {
+      "repo": "seek-and-ponder",
+      "github_repo": "NIBARGERB-HLDPRO/seek-and-ponder",
+      "status": "follow_up_required",
+      "finding": "Cloudflare runbook/token guidance needs Secret Provisioning UX scrub.",
+      "follow_up_issue": "https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/issues/167",
+      "routing": "owning_repo_issue"
+    },
+    {
+      "repo": "Stampede",
+      "github_repo": "NIBARGERB-HLDPRO/Stampede",
+      "status": "follow_up_required",
+      "finding": "Direct .env.shared sourcing guidance should be replaced with bootstrap/provider-vault Secret Provisioning UX guidance.",
+      "follow_up_issue": "https://github.com/NIBARGERB-HLDPRO/Stampede/issues/120",
+      "routing": "owning_repo_issue"
+    },
+    {
+      "repo": "EmailAssistant",
+      "github_repo": "NIBARGERB-HLDPRO/EmailAssistant",
+      "status": "not_applicable",
+      "finding": "No known Pages deploy gate, Remote MCP, or shared secret provisioning surface in this epic scope.",
+      "follow_up_issue": null,
+      "routing": "none"
+    },
+    {
+      "repo": "ASC-Evaluator",
+      "github_repo": "NIBARGERB-HLDPRO/ASC-Evaluator",
+      "status": "not_applicable",
+      "finding": "No known Pages deploy gate, Remote MCP, or shared secret provisioning surface in this epic scope.",
+      "follow_up_issue": null,
+      "routing": "none"
+    }
+  ],
+  "validation": {
+    "no_secret_values_recorded": true,
+    "downstream_repos_modified": false,
+    "follow_up_required_rows_have_issues": true
+  }
+}
