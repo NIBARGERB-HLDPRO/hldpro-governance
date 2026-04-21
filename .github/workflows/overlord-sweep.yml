@@ -629,12 +629,64 @@ jobs:
           git config user.email "overlord@hldpro.com"
           python3 scripts/knowledge_base/graphify_targets.py stage-paths --scheduled | xargs git add 2>/dev/null || true
           git add wiki/index.md metrics/effectiveness-baseline metrics/self-learning metrics/pentagi docs/ORG_GOVERNANCE_COMPENDIUM.md 2>/dev/null || true
+          DATE=$(date -u +%Y-%m-%d)
+          BRANCH="automation/issue-487-overlord-sweep-${DATE}-${GITHUB_RUN_ID}"
+          export DATE BRANCH
           if git diff --staged --quiet; then
             echo "status=no_changes" >> "$GITHUB_OUTPUT"
             echo "note=No graph or metrics changes were generated." >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          COMMIT_MESSAGE="chore(governance): weekly graph and metrics update $(date -u +%Y-%m-%d)"
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          branch = os.environ["BRANCH"]
+          run_id = os.environ["GITHUB_RUN_ID"]
+          server_url = os.environ["GITHUB_SERVER_URL"]
+          repository = os.environ["GITHUB_REPOSITORY"]
+          run_url = f"{server_url}/{repository}/actions/runs/{run_id}"
+          scope_path = Path("raw/execution-scopes/2026-04-21-issue-487-overlord-sweep-artifact-pr-implementation.json")
+          scope_path.parent.mkdir(parents=True, exist_ok=True)
+          scope = {
+              "expected_execution_root": "{repo_root}",
+              "expected_branch": branch,
+              "allowed_write_paths": [
+                  "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+                  "graphify-out/",
+                  "metrics/effectiveness-baseline/",
+                  "metrics/pentagi/",
+                  "metrics/self-learning/",
+                  "raw/execution-scopes/2026-04-21-issue-487-overlord-sweep-artifact-pr-implementation.json",
+                  "wiki/",
+              ],
+              "forbidden_roots": [],
+              "execution_mode": "implementation_ready",
+              "lane_claim": {
+                  "issue_number": 487,
+                  "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/487",
+                  "claimed_by": "overlord-sweep-workflow",
+                  "claimed_at": "2026-04-21T18:31:00Z",
+              },
+              "handoff_evidence": {
+                  "status": "accepted",
+                  "planner_model": "operator-directive",
+                  "implementer_model": "overlord-sweep-workflow",
+                  "accepted_at": "2026-04-21T18:31:00Z",
+                  "evidence_paths": [
+                      "docs/plans/issue-487-overlord-sweep-artifact-pr-structured-agent-cycle-plan.json",
+                      run_url,
+                      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/487",
+                  ],
+                  "active_exception_ref": None,
+                  "active_exception_expires_at": None,
+              },
+          }
+          scope_path.write_text(json.dumps(scope, indent=2) + "\n", encoding="utf-8")
+          PY
+          git add raw/execution-scopes/2026-04-21-issue-487-overlord-sweep-artifact-pr-implementation.json
+          COMMIT_MESSAGE="chore(governance): weekly graph and metrics update ${DATE}"
           COMMIT_OUTPUT=$(git commit -m "$COMMIT_MESSAGE" 2>&1)
           COMMIT_STATUS=$?
           if [ $COMMIT_STATUS -ne 0 ]; then
@@ -643,8 +695,6 @@ jobs:
             echo "note=${NOTE}" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          DATE=$(date -u +%Y-%m-%d)
-          BRANCH="automation/overlord-sweep-${DATE}-${GITHUB_RUN_ID}"
           git switch -c "$BRANCH"
           PUSH_OUTPUT=$(git push --set-upstream origin "$BRANCH" 2>&1)
           PUSH_STATUS=$?
@@ -659,7 +709,9 @@ jobs:
             "## Summary" \
             "" \
             "- Automated Overlord Sweep generated graph and metrics refresh for ${DATE}." \
+            "- Governance evidence branch: \`${BRANCH}\`." \
             "- Source run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" \
+            "- Refs #487." \
             "" \
             "## Validation" \
             "" \

@@ -1,8 +1,9 @@
 {
   "expected_execution_root": "{repo_root}",
-  "expected_branch": "automation/issue-487-overlord-sweep-2026-04-21-24739922689",
+  "expected_branch": "issue-487-overlord-sweep-artifact-pr-evidence",
   "allowed_write_paths": [
     "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+    ".github/workflows/overlord-sweep.yml",
     "docs/plans/issue-487-overlord-sweep-artifact-pr-pdcar.md",
     "docs/plans/issue-487-overlord-sweep-artifact-pr-structured-agent-cycle-plan.json",
     "docs/plans/issue-487-overlord-sweep-generated-artifacts-structured-agent-cycle-plan.json",
@@ -12,6 +13,7 @@
     "metrics/self-learning/",
     "raw/execution-scopes/2026-04-21-issue-487-overlord-sweep-artifact-pr-implementation.json",
     "raw/validation/2026-04-21-issue-487-overlord-sweep-artifact-pr.md",
+    "raw/validation/2026-04-21-issue-487-overlord-sweep-artifact-pr-evidence.md",
     "raw/validation/2026-04-21-issue-487-overlord-sweep-generated-artifacts.md",
     "wiki/"
   ],
