@@ -103,6 +103,24 @@ PY
 )"
 
 if [ -n "$write_target" ]; then
+  plan_preflight="$repo_root/scripts/overlord/check_plan_preflight.py"
+  if [ -f "$plan_preflight" ]; then
+    trivial_flag=""
+    if [ "${PLAN_GATE_TRIVIAL_SINGLE_LINE:-}" = "true" ]; then
+      trivial_flag="--trivial-single-line"
+    fi
+    plan_result="$(python3 "$plan_preflight" \
+      --repo-root "$repo_root" \
+      --command "$command_text" \
+      --intent write \
+      $trivial_flag \
+      --json 2>/dev/null || true)"
+    plan_decision="$(printf '%s' "$plan_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('decision','allow'))" 2>/dev/null || printf 'allow')"
+    if [ "$plan_decision" = "block" ]; then
+      plan_reason="$(printf '%s' "$plan_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('reason',''))" 2>/dev/null || true)"
+      fail "$plan_reason"
+    fi
+  fi
   fail "BLOCKED: Bash file write detected for ${write_target}; rule: SoM write-boundary. Next action: use the approved edit/Worker handoff path with issue-backed execution scope and accepted handoff evidence."
 fi
 
