@@ -126,20 +126,22 @@ def test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate() -> None:
         assert result.stdout == ""
 
 
-def test_hook_preserves_new_code_file_block() -> None:
+def test_hook_preserves_new_code_file_block_for_common_extensions() -> None:
     with tempfile.TemporaryDirectory() as raw:
-        target = Path(raw) / "new_worker.py"
-        result = _run_hook(
-            {
-                "tool_name": "Write",
-                "tool_input": {
-                    "file_path": str(target),
+        for extension in (".sh", ".py", ".ts", ".js"):
+            target = Path(raw) / f"new_worker{extension}"
+            result = _run_hook(
+                {
+                    "tool_name": "Write",
+                    "tool_input": {
+                        "file_path": str(target),
+                    },
                 },
-            },
-            env={"DELEGATION_GATE_LOG": str(Path(raw) / "governance.log")},
-        )
+                env={"DELEGATION_GATE_LOG": str(Path(raw) / "governance.log")},
+            )
 
-        assert result.returncode == 2
-        output = json.loads(result.stdout)
-        assert output["decision"] == "block"
-        assert "approved Worker" in output["reason"]
+            assert result.returncode == 2
+            output = json.loads(result.stdout)
+            assert output["decision"] == "block"
+            assert "approved Worker" in output["reason"]
+            assert "raw/execution-scopes/<date>-issue-<n>-worker-implementation.json" in output["reason"]

@@ -1,0 +1,128 @@
+{
+  "session_id": "session-20260421-issue-448-worker-handoff-routing",
+  "issue_number": 448,
+  "objective": "Make planner/orchestrator new-code-file blocks route to a validated Worker handoff path with concrete next-action guidance while keeping planner lanes blocked by default.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repository only.",
+    "Add a Worker handoff routing helper/check for new implementation-file writes.",
+    "Wire hooks/code-write-gate.sh to consult the helper for blocked code-file extensions.",
+    "Keep planner/orchestrator lanes blocked unless accepted Worker handoff evidence and allowed write paths cover the target path.",
+    "Add tests for planner blocks, approved Worker handoff acceptance, missing target path, wrong issue, same-family exception handling, and actionable errors."
+  ],
+  "out_of_scope": [
+    "Product repository edits.",
+    "Weakening SoM division of labor.",
+    "Replacing packet dispatch schemas.",
+    "Replacing PR/closeout handoff evidence gates.",
+    "Solving silent hook diagnostics."
+  ],
+  "research_summary": "Issue #448 follows the recurring new-code-file block where the policy is correct but the next action is too manual. Existing execution-scope validation already enforces accepted handoff evidence, allowed write paths, lane claims, and same-family exception requirements. This slice connects that validation to the local write hook and adds a reusable handoff routing template.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/434",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/448",
+    "hooks/code-write-gate.sh",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "scripts/orchestrator/test_delegation_hook.py",
+    "docs/schemas/execution-scope.schema.json"
+  ],
+  "sprints": [
+    {
+      "name": "Worker handoff route",
+      "goal": "Provide a validated route from new-code-file planner blocks to approved Worker handoff execution.",
+      "tasks": [
+        "Add a Worker handoff routing helper/check that validates branch issue, lane role, execution scope, allowed write paths, accepted handoff evidence, and same-family exception requirements.",
+        "Wire the code write gate to call the helper before issuing the hard new-code-file block.",
+        "Add a Worker handoff routing template compatible with the #434 package handoff lifecycle.",
+        "Add tests for planner blocks, Worker acceptance, target path missing, wrong issue, same-family without exception, and actionable next-step text.",
+        "Record issue #448 evidence and run deterministic gates."
+      ],
+      "acceptance_criteria": [
+        "New code file creation from a planning/orchestration lane remains blocked unless an issue-backed execution scope and approved Worker handoff cover the target path.",
+        "The block message identifies the missing evidence type and concrete next action.",
+        "A Worker handoff artifact/template exists and is compatible with #434 package handoff lifecycle.",
+        "Worker handoff evidence can reference issue number, structured plan, execution scope, allowed write paths, target files, Worker lane/model, validation commands, QA/gate expectations, and handoff package ref.",
+        "Tests cover planner lane creating new .sh/.py/.ts/.js files being blocked.",
+        "Tests cover approved Worker handoff acceptance for the same path.",
+        "Tests cover execution scope present but target path missing.",
+        "Tests cover Worker handoff present but wrong issue number.",
+        "Tests cover same-family Worker handoff without active exception being blocked where applicable.",
+        "No product repo code edits occur."
+      ],
+      "file_paths": [
+        "hooks/code-write-gate.sh",
+        "scripts/overlord/check_worker_handoff_route.py",
+        "scripts/overlord/test_check_worker_handoff_route.py",
+        "scripts/orchestrator/test_delegation_hook.py",
+        "docs/templates/worker-handoff-routing-template.json",
+        "docs/plans/issue-448-worker-handoff-routing-pdcar.md",
+        "docs/plans/issue-448-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-448-worker-handoff-routing-implementation.json",
+        "raw/handoffs/2026-04-21-issue-448-plan-to-implementation.json",
+        "raw/validation/2026-04-21-issue-448-worker-handoff-routing.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Claude Sonnet 4.6",
+      "role": "worker",
+      "focus": "Worker handoff route helper, hook wiring, template, and tests.",
+      "status": "failed_max_turns_no_edits",
+      "summary": "Bounded Sonnet worker handoff was attempted through scripts/cli_session_supervisor.py and exited nonzero after reaching max turns with no scoped implementation edits. Codex implemented and QA'd the bounded scope under the material deviation rule.",
+      "evidence": [
+        "docs/plans/issue-448-worker-handoff-routing-pdcar.md",
+        "raw/validation/2026-04-21-issue-448-worker-handoff-routing.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Codex QA",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Codex QA reviewed the Worker handoff route helper, hook integration, tests, and evidence after the Sonnet worker attempt failed without edits.",
+    "evidence": [
+      "raw/cross-review/2026-04-21-issue-448-worker-handoff-routing.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement governance-only Worker handoff routing for new code-file write blocks, including helper/check, hook wiring, template, tests, issue evidence, validation, review, and closeout for issue #448.",
+    "next_execution_step": "Run focused validation, Local CI Gate, closeout, PR, and automerge if green.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-448-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-448-worker-handoff-routing-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-448-worker-handoff-routing.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-21-issue-448-worker-handoff-routing.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-448-worker-handoff-routing.md",
+    "next_role": "codex-qa",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Planner/orchestrator lanes still block new code-file creation with actionable next-step text.",
+      "Approved Worker lane plus accepted handoff evidence allows target-path creation.",
+      "Execution-scope and handoff mismatch cases fail closed.",
+      "Local CI Gate passes before merge."
+    ]
+  },
+  "material_deviation_rules": [
+    "If downstream repos need propagation, create downstream issues instead of editing them here.",
+    "If Sonnet worker tooling is unavailable or hangs, record the attempt and continue with Codex implementation plus Codex QA.",
+    "If hook diagnostics need broader silent-failure repair, defer to issue #444 or a new issue."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: no HITL, loop remaining child issues",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T11:10:00-05:00"
+}

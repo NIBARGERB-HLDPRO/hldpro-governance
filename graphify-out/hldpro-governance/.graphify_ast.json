@@ -564,161 +564,161 @@
       "id": "test_cli_session_supervisor",
       "label": "test_cli_session_supervisor.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L1"
     },
     {
       "id": "test_cli_session_supervisor_write_fake",
       "label": "write_fake()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L12"
     },
     {
       "id": "test_cli_session_supervisor_run_supervisor",
       "label": "run_supervisor()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L18"
     },
     {
       "id": "test_cli_session_supervisor_events",
       "label": "events()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L58"
     },
     {
       "id": "test_cli_session_supervisor_test_success_event_captures_stdout_and_schema_fields",
       "label": "test_success_event_captures_stdout_and_schema_fields()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L63"
     },
     {
       "id": "test_cli_session_supervisor_test_nonzero_failure_is_recorded_without_retry",
       "label": "test_nonzero_failure_is_recorded_without_retry()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L86"
     },
     {
       "id": "test_cli_session_supervisor_test_silent_stall_hits_idle_timeout_and_kills_process",
       "label": "test_silent_stall_hits_idle_timeout_and_kills_process()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L104"
     },
     {
       "id": "test_cli_session_supervisor_test_intermittent_output_avoids_idle_timeout",
       "label": "test_intermittent_output_avoids_idle_timeout()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L121"
     },
     {
       "id": "test_cli_session_supervisor_test_total_timeout_overrides_active_output",
       "label": "test_total_timeout_overrides_active_output()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L140"
     },
     {
       "id": "test_cli_session_supervisor_test_retry_once_can_recover_from_timeout",
       "label": "test_retry_once_can_recover_from_timeout()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L159"
     },
     {
       "id": "test_cli_session_supervisor_test_retry_halts_after_one_additional_timeout",
       "label": "test_retry_halts_after_one_additional_timeout()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L194"
     },
     {
       "id": "cli_session_supervisor",
       "label": "cli_session_supervisor.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L1"
     },
     {
       "id": "cli_session_supervisor_attemptresult",
       "label": "AttemptResult",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L25"
     },
     {
       "id": "cli_session_supervisor_utcnow",
       "label": "utcnow()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L30"
     },
     {
       "id": "cli_session_supervisor_session_id",
       "label": "session_id()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L34"
     },
     {
       "id": "cli_session_supervisor_sha256_bytes",
       "label": "sha256_bytes()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L39"
     },
     {
       "id": "cli_session_supervisor_event_paths",
       "label": "event_paths()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L43"
     },
     {
       "id": "cli_session_supervisor_append_jsonl",
       "label": "append_jsonl()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L50"
     },
     {
       "id": "cli_session_supervisor_kill_group",
       "label": "kill_group()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L56"
     },
     {
       "id": "cli_session_supervisor_build_command",
       "label": "build_command()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L79"
     },
     {
       "id": "cli_session_supervisor_stream_attempt",
       "label": "stream_attempt()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L122"
     },
     {
       "id": "cli_session_supervisor_parse_args",
       "label": "parse_args()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L265"
     },
     {
       "id": "cli_session_supervisor_main",
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L308"
     },
     {
@@ -2127,6 +2127,118 @@
       "file_type": "code",
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L162"
+    },
+    {
+      "id": "test_check_worker_handoff_route",
+      "label": "test_check_worker_handoff_route.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_check_worker_handoff_route_git",
+      "label": "_git()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L16"
+    },
+    {
+      "id": "test_check_worker_handoff_route_repofixture",
+      "label": "RepoFixture",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L20"
+    },
+    {
+      "id": "test_check_worker_handoff_route_repofixture_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L21"
+    },
+    {
+      "id": "test_check_worker_handoff_route_repofixture_write_scope",
+      "label": ".write_scope()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L32"
+    },
+    {
+      "id": "test_check_worker_handoff_route_repofixture_write_exception",
+      "label": ".write_exception()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L39"
+    },
+    {
+      "id": "test_check_worker_handoff_route_scope",
+      "label": "_scope()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L45"
+    },
+    {
+      "id": "test_check_worker_handoff_route_testworkerhandoffroute",
+      "label": "TestWorkerHandoffRoute",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L79"
+    },
+    {
+      "id": "test_check_worker_handoff_route_testworkerhandoffroute_run",
+      "label": "._run()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L80"
+    },
+    {
+      "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_planner_lane_new_python_file_is_blocked_with_next_action",
+      "label": ".test_planner_lane_new_python_file_is_blocked_with_next_action()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L101"
+    },
+    {
+      "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_approved_worker_handoff_for_target_path_is_accepted",
+      "label": ".test_approved_worker_handoff_for_target_path_is_accepted()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L113"
+    },
+    {
+      "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_scope_present_but_target_path_missing_is_blocked",
+      "label": ".test_scope_present_but_target_path_missing_is_blocked()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L123"
+    },
+    {
+      "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_worker_handoff_wrong_issue_number_is_blocked",
+      "label": ".test_worker_handoff_wrong_issue_number_is_blocked()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L134"
+    },
+    {
+      "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_without_exception_is_blocked",
+      "label": ".test_same_family_worker_handoff_without_exception_is_blocked()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L144"
+    },
+    {
+      "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_with_active_exception_is_accepted",
+      "label": ".test_same_family_worker_handoff_with_active_exception_is_accepted()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L159"
+    },
+    {
+      "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_javascript_and_shell_targets_are_governed_code_files",
+      "label": ".test_javascript_and_shell_targets_are_governed_code_files()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L176"
     },
     {
       "id": "test_branch_switch_guard",
@@ -3604,6 +3716,62 @@
       "file_type": "code",
       "source_file": "scripts/overlord/codex_ingestion.py",
       "source_location": "L888"
+    },
+    {
+      "id": "check_worker_handoff_route",
+      "label": "check_worker_handoff_route.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "check_worker_handoff_route_normalize_repo_path",
+      "label": "_normalize_repo_path()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L29"
+    },
+    {
+      "id": "check_worker_handoff_route_actionable_next_step",
+      "label": "_actionable_next_step()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L33"
+    },
+    {
+      "id": "check_worker_handoff_route_result",
+      "label": "_result()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L44"
+    },
+    {
+      "id": "check_worker_handoff_route_find_scope",
+      "label": "_find_scope()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L52"
+    },
+    {
+      "id": "check_worker_handoff_route_check_route",
+      "label": "check_route()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L64"
+    },
+    {
+      "id": "check_worker_handoff_route_parse_args",
+      "label": "parse_args()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L142"
+    },
+    {
+      "id": "check_worker_handoff_route_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L152"
     },
     {
       "id": "deploy_local_ci_gate",
@@ -9034,77 +9202,77 @@
       "id": "test_delegation_hook",
       "label": "test_delegation_hook.py",
       "file_type": "code",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L1"
     },
     {
       "id": "test_delegation_hook_run_hook",
       "label": "_run_hook()",
       "file_type": "code",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L15"
     },
     {
       "id": "test_delegation_hook_payload",
       "label": "_payload()",
       "file_type": "code",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L30"
     },
     {
       "id": "test_delegation_hook_test_hook_blocks_agent_owned_work_before_file_path_logic",
       "label": "test_hook_blocks_agent_owned_work_before_file_path_logic()",
       "file_type": "code",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L39"
     },
     {
       "id": "test_delegation_hook_test_hook_warns_for_implementation_scoped_explore",
       "label": "test_hook_warns_for_implementation_scoped_explore()",
       "file_type": "code",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L52"
     },
     {
       "id": "test_delegation_hook_test_hook_allows_read_even_when_text_matches_owned_work",
       "label": "test_hook_allows_read_even_when_text_matches_owned_work()",
       "file_type": "code",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L65"
     },
     {
       "id": "test_delegation_hook_test_hook_bypass_allows_and_logs",
       "label": "test_hook_bypass_allows_and_logs()",
       "file_type": "code",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L78"
     },
     {
       "id": "test_delegation_hook_test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass",
       "label": "test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass()",
       "file_type": "code",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L90"
     },
     {
       "id": "test_delegation_hook_test_hook_blocks_task_tool_owned_work",
       "label": "test_hook_blocks_task_tool_owned_work()",
       "file_type": "code",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L103"
     },
     {
       "id": "test_delegation_hook_test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate",
       "label": "test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate()",
       "file_type": "code",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L115"
     },
     {
-      "id": "test_delegation_hook_test_hook_preserves_new_code_file_block",
-      "label": "test_hook_preserves_new_code_file_block()",
+      "id": "test_delegation_hook_test_hook_preserves_new_code_file_block_for_common_extensions",
+      "label": "test_hook_preserves_new_code_file_block_for_common_extensions()",
       "file_type": "code",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L129"
     },
     {
@@ -12095,7 +12263,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L1",
       "weight": 1.0
     },
@@ -12104,7 +12272,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L2",
       "weight": 1.0
     },
@@ -12113,7 +12281,7 @@
       "target": "sys",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L3",
       "weight": 1.0
     },
@@ -12122,7 +12290,7 @@
       "target": "textwrap",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -12131,7 +12299,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -12140,7 +12308,7 @@
       "target": "test_cli_session_supervisor_write_fake",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L12",
       "weight": 1.0
     },
@@ -12149,7 +12317,7 @@
       "target": "test_cli_session_supervisor_run_supervisor",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L18",
       "weight": 1.0
     },
@@ -12158,7 +12326,7 @@
       "target": "test_cli_session_supervisor_events",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L58",
       "weight": 1.0
     },
@@ -12167,7 +12335,7 @@
       "target": "test_cli_session_supervisor_test_success_event_captures_stdout_and_schema_fields",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L63",
       "weight": 1.0
     },
@@ -12176,7 +12344,7 @@
       "target": "test_cli_session_supervisor_test_nonzero_failure_is_recorded_without_retry",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L86",
       "weight": 1.0
     },
@@ -12185,7 +12353,7 @@
       "target": "test_cli_session_supervisor_test_silent_stall_hits_idle_timeout_and_kills_process",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L104",
       "weight": 1.0
     },
@@ -12194,7 +12362,7 @@
       "target": "test_cli_session_supervisor_test_intermittent_output_avoids_idle_timeout",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L121",
       "weight": 1.0
     },
@@ -12203,7 +12371,7 @@
       "target": "test_cli_session_supervisor_test_total_timeout_overrides_active_output",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L140",
       "weight": 1.0
     },
@@ -12212,7 +12380,7 @@
       "target": "test_cli_session_supervisor_test_retry_once_can_recover_from_timeout",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L159",
       "weight": 1.0
     },
@@ -12221,7 +12389,7 @@
       "target": "test_cli_session_supervisor_test_retry_halts_after_one_additional_timeout",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L194",
       "weight": 1.0
     },
@@ -12230,7 +12398,7 @@
       "target": "test_cli_session_supervisor_write_fake",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L64",
       "weight": 0.8
     },
@@ -12239,7 +12407,7 @@
       "target": "test_cli_session_supervisor_run_supervisor",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L73",
       "weight": 0.8
     },
@@ -12248,7 +12416,7 @@
       "target": "test_cli_session_supervisor_events",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L77",
       "weight": 0.8
     },
@@ -12257,7 +12425,7 @@
       "target": "test_cli_session_supervisor_write_fake",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L87",
       "weight": 0.8
     },
@@ -12266,7 +12434,7 @@
       "target": "test_cli_session_supervisor_run_supervisor",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L96",
       "weight": 0.8
     },
@@ -12275,7 +12443,7 @@
       "target": "test_cli_session_supervisor_events",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L99",
       "weight": 0.8
     },
@@ -12284,7 +12452,7 @@
       "target": "test_cli_session_supervisor_write_fake",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L105",
       "weight": 0.8
     },
@@ -12293,7 +12461,7 @@
       "target": "test_cli_session_supervisor_run_supervisor",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L113",
       "weight": 0.8
     },
@@ -12302,7 +12470,7 @@
       "target": "test_cli_session_supervisor_events",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L117",
       "weight": 0.8
     },
@@ -12311,7 +12479,7 @@
       "target": "test_cli_session_supervisor_write_fake",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L122",
       "weight": 0.8
     },
@@ -12320,7 +12488,7 @@
       "target": "test_cli_session_supervisor_run_supervisor",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L132",
       "weight": 0.8
     },
@@ -12329,7 +12497,7 @@
       "target": "test_cli_session_supervisor_events",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L135",
       "weight": 0.8
     },
@@ -12338,7 +12506,7 @@
       "target": "test_cli_session_supervisor_write_fake",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L141",
       "weight": 0.8
     },
@@ -12347,7 +12515,7 @@
       "target": "test_cli_session_supervisor_run_supervisor",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L151",
       "weight": 0.8
     },
@@ -12356,7 +12524,7 @@
       "target": "test_cli_session_supervisor_events",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L155",
       "weight": 0.8
     },
@@ -12365,7 +12533,7 @@
       "target": "test_cli_session_supervisor_write_fake",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L160",
       "weight": 0.8
     },
@@ -12374,7 +12542,7 @@
       "target": "test_cli_session_supervisor_run_supervisor",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L176",
       "weight": 0.8
     },
@@ -12383,7 +12551,7 @@
       "target": "test_cli_session_supervisor_events",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L186",
       "weight": 0.8
     },
@@ -12392,7 +12560,7 @@
       "target": "test_cli_session_supervisor_write_fake",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L195",
       "weight": 0.8
     },
@@ -12401,7 +12569,7 @@
       "target": "test_cli_session_supervisor_run_supervisor",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L205",
       "weight": 0.8
     },
@@ -12410,7 +12578,7 @@
       "target": "test_cli_session_supervisor_events",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/test_cli_session_supervisor.py",
+      "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L215",
       "weight": 0.8
     },
@@ -12419,7 +12587,7 @@
       "target": "argparse",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -12428,7 +12596,7 @@
       "target": "hashlib",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -12437,7 +12605,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -12446,7 +12614,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -12455,7 +12623,7 @@
       "target": "selectors",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L10",
       "weight": 1.0
     },
@@ -12464,7 +12632,7 @@
       "target": "signal",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L11",
       "weight": 1.0
     },
@@ -12473,7 +12641,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L12",
       "weight": 1.0
     },
@@ -12482,7 +12650,7 @@
       "target": "sys",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L13",
       "weight": 1.0
     },
@@ -12491,7 +12659,7 @@
       "target": "time",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L14",
       "weight": 1.0
     },
@@ -12500,7 +12668,7 @@
       "target": "uuid",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L15",
       "weight": 1.0
     },
@@ -12509,7 +12677,7 @@
       "target": "dataclasses",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L16",
       "weight": 1.0
     },
@@ -12518,7 +12686,7 @@
       "target": "datetime",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L17",
       "weight": 1.0
     },
@@ -12527,7 +12695,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L18",
       "weight": 1.0
     },
@@ -12536,7 +12704,7 @@
       "target": "cli_session_supervisor_attemptresult",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L25",
       "weight": 1.0
     },
@@ -12545,7 +12713,7 @@
       "target": "cli_session_supervisor_utcnow",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L30",
       "weight": 1.0
     },
@@ -12554,7 +12722,7 @@
       "target": "cli_session_supervisor_session_id",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L34",
       "weight": 1.0
     },
@@ -12563,7 +12731,7 @@
       "target": "cli_session_supervisor_sha256_bytes",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L39",
       "weight": 1.0
     },
@@ -12572,7 +12740,7 @@
       "target": "cli_session_supervisor_event_paths",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L43",
       "weight": 1.0
     },
@@ -12581,7 +12749,7 @@
       "target": "cli_session_supervisor_append_jsonl",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L50",
       "weight": 1.0
     },
@@ -12590,7 +12758,7 @@
       "target": "cli_session_supervisor_kill_group",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L56",
       "weight": 1.0
     },
@@ -12599,7 +12767,7 @@
       "target": "cli_session_supervisor_build_command",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L79",
       "weight": 1.0
     },
@@ -12608,7 +12776,7 @@
       "target": "cli_session_supervisor_stream_attempt",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L122",
       "weight": 1.0
     },
@@ -12617,7 +12785,7 @@
       "target": "cli_session_supervisor_parse_args",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L265",
       "weight": 1.0
     },
@@ -12626,7 +12794,7 @@
       "target": "cli_session_supervisor_main",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L308",
       "weight": 1.0
     },
@@ -12635,7 +12803,7 @@
       "target": "cli_session_supervisor_session_id",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L131",
       "weight": 0.8
     },
@@ -12644,7 +12812,7 @@
       "target": "cli_session_supervisor_event_paths",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L132",
       "weight": 0.8
     },
@@ -12653,7 +12821,7 @@
       "target": "cli_session_supervisor_build_command",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L133",
       "weight": 0.8
     },
@@ -12662,7 +12830,7 @@
       "target": "cli_session_supervisor_utcnow",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L134",
       "weight": 0.8
     },
@@ -12671,7 +12839,7 @@
       "target": "cli_session_supervisor_kill_group",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L182",
       "weight": 0.8
     },
@@ -12680,7 +12848,7 @@
       "target": "cli_session_supervisor_sha256_bytes",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L240",
       "weight": 0.8
     },
@@ -12689,7 +12857,7 @@
       "target": "cli_session_supervisor_append_jsonl",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L258",
       "weight": 0.8
     },
@@ -12698,7 +12866,7 @@
       "target": "cli_session_supervisor_attemptresult",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L261",
       "weight": 0.8
     },
@@ -12707,7 +12875,7 @@
       "target": "cli_session_supervisor_parse_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L309",
       "weight": 0.8
     },
@@ -12716,7 +12884,7 @@
       "target": "cli_session_supervisor_stream_attempt",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-444-cli-session-supervisor/scripts/cli_session_supervisor.py",
+      "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L314",
       "weight": 0.8
     },
@@ -17896,6 +18064,465 @@
       "weight": 0.8
     },
     {
+      "source": "test_check_worker_handoff_route",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route",
+      "target": "tempfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route",
+      "target": "unittest",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route",
+      "target": "typing",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route",
+      "target": "test_check_worker_handoff_route_git",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route",
+      "target": "test_check_worker_handoff_route_repofixture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route_repofixture",
+      "target": "test_check_worker_handoff_route_repofixture_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route_repofixture",
+      "target": "test_check_worker_handoff_route_repofixture_write_scope",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route_repofixture",
+      "target": "test_check_worker_handoff_route_repofixture_write_exception",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route",
+      "target": "test_check_worker_handoff_route_scope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_planner_lane_new_python_file_is_blocked_with_next_action",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_approved_worker_handoff_for_target_path_is_accepted",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_scope_present_but_target_path_missing_is_blocked",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_worker_handoff_wrong_issue_number_is_blocked",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_without_exception_is_blocked",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_with_active_exception_is_accepted",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_javascript_and_shell_targets_are_governed_code_files",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "test_check_worker_handoff_route_repofixture_init",
+      "target": "test_check_worker_handoff_route_git",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L24",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_planner_lane_new_python_file_is_blocked_with_next_action",
+      "target": "test_check_worker_handoff_route_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L103",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_planner_lane_new_python_file_is_blocked_with_next_action",
+      "target": "test_check_worker_handoff_route_repofixture_write_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L104",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_planner_lane_new_python_file_is_blocked_with_next_action",
+      "target": "test_check_worker_handoff_route_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L104",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_planner_lane_new_python_file_is_blocked_with_next_action",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L106",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_approved_worker_handoff_for_target_path_is_accepted",
+      "target": "test_check_worker_handoff_route_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L115",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_approved_worker_handoff_for_target_path_is_accepted",
+      "target": "test_check_worker_handoff_route_repofixture_write_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L116",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_approved_worker_handoff_for_target_path_is_accepted",
+      "target": "test_check_worker_handoff_route_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L116",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_approved_worker_handoff_for_target_path_is_accepted",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L118",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_scope_present_but_target_path_missing_is_blocked",
+      "target": "test_check_worker_handoff_route_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L125",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_scope_present_but_target_path_missing_is_blocked",
+      "target": "test_check_worker_handoff_route_repofixture_write_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L126",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_scope_present_but_target_path_missing_is_blocked",
+      "target": "test_check_worker_handoff_route_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L126",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_scope_present_but_target_path_missing_is_blocked",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L128",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_worker_handoff_wrong_issue_number_is_blocked",
+      "target": "test_check_worker_handoff_route_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L136",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_worker_handoff_wrong_issue_number_is_blocked",
+      "target": "test_check_worker_handoff_route_repofixture_write_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L137",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_worker_handoff_wrong_issue_number_is_blocked",
+      "target": "test_check_worker_handoff_route_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L137",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_worker_handoff_wrong_issue_number_is_blocked",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L139",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_without_exception_is_blocked",
+      "target": "test_check_worker_handoff_route_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L146",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_without_exception_is_blocked",
+      "target": "test_check_worker_handoff_route_repofixture_write_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L147",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_without_exception_is_blocked",
+      "target": "test_check_worker_handoff_route_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L148",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_without_exception_is_blocked",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L154",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_with_active_exception_is_accepted",
+      "target": "test_check_worker_handoff_route_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L161",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_with_active_exception_is_accepted",
+      "target": "test_check_worker_handoff_route_repofixture_write_exception",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L162",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_with_active_exception_is_accepted",
+      "target": "test_check_worker_handoff_route_repofixture_write_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L163",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_with_active_exception_is_accepted",
+      "target": "test_check_worker_handoff_route_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L164",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_with_active_exception_is_accepted",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L172",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_javascript_and_shell_targets_are_governed_code_files",
+      "target": "test_check_worker_handoff_route_repofixture",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L178",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_javascript_and_shell_targets_are_governed_code_files",
+      "target": "test_check_worker_handoff_route_repofixture_write_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L179",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_javascript_and_shell_targets_are_governed_code_files",
+      "target": "test_check_worker_handoff_route_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L179",
+      "weight": 0.8
+    },
+    {
+      "source": "test_check_worker_handoff_route_testworkerhandoffroute_test_javascript_and_shell_targets_are_governed_code_files",
+      "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_location": "L181",
+      "weight": 0.8
+    },
+    {
       "source": "test_branch_switch_guard",
       "target": "json",
       "relation": "imports",
@@ -22843,6 +23470,186 @@
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/codex_ingestion.py",
       "source_location": "L899",
+      "weight": 0.8
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "argparse",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "tempfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "assert_execution_scope",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "check_worker_handoff_route_normalize_repo_path",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "check_worker_handoff_route_actionable_next_step",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "check_worker_handoff_route_result",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "check_worker_handoff_route_find_scope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "check_worker_handoff_route_check_route",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "check_worker_handoff_route_parse_args",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route",
+      "target": "check_worker_handoff_route_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "check_worker_handoff_route_check_route",
+      "target": "check_worker_handoff_route_normalize_repo_path",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L66",
+      "weight": 0.8
+    },
+    {
+      "source": "check_worker_handoff_route_check_route",
+      "target": "check_worker_handoff_route_result",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L71",
+      "weight": 0.8
+    },
+    {
+      "source": "check_worker_handoff_route_check_route",
+      "target": "check_worker_handoff_route_actionable_next_step",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L80",
+      "weight": 0.8
+    },
+    {
+      "source": "check_worker_handoff_route_check_route",
+      "target": "check_worker_handoff_route_find_scope",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L92",
+      "weight": 0.8
+    },
+    {
+      "source": "check_worker_handoff_route_main",
+      "target": "check_worker_handoff_route_parse_args",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L153",
+      "weight": 0.8
+    },
+    {
+      "source": "check_worker_handoff_route_main",
+      "target": "check_worker_handoff_route_check_route",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_location": "L159",
       "weight": 0.8
     },
     {
@@ -38051,7 +38858,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -38060,7 +38867,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -38069,7 +38876,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -38078,7 +38885,7 @@
       "target": "tempfile",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -38087,7 +38894,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -38096,7 +38903,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L15",
       "weight": 1.0
     },
@@ -38105,7 +38912,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L30",
       "weight": 1.0
     },
@@ -38114,7 +38921,7 @@
       "target": "test_delegation_hook_test_hook_blocks_agent_owned_work_before_file_path_logic",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L39",
       "weight": 1.0
     },
@@ -38123,7 +38930,7 @@
       "target": "test_delegation_hook_test_hook_warns_for_implementation_scoped_explore",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L52",
       "weight": 1.0
     },
@@ -38132,7 +38939,7 @@
       "target": "test_delegation_hook_test_hook_allows_read_even_when_text_matches_owned_work",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L65",
       "weight": 1.0
     },
@@ -38141,7 +38948,7 @@
       "target": "test_delegation_hook_test_hook_bypass_allows_and_logs",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L78",
       "weight": 1.0
     },
@@ -38150,7 +38957,7 @@
       "target": "test_delegation_hook_test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L90",
       "weight": 1.0
     },
@@ -38159,7 +38966,7 @@
       "target": "test_delegation_hook_test_hook_blocks_task_tool_owned_work",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L103",
       "weight": 1.0
     },
@@ -38168,16 +38975,16 @@
       "target": "test_delegation_hook_test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L115",
       "weight": 1.0
     },
     {
       "source": "test_delegation_hook",
-      "target": "test_delegation_hook_test_hook_preserves_new_code_file_block",
+      "target": "test_delegation_hook_test_hook_preserves_new_code_file_block_for_common_extensions",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L129",
       "weight": 1.0
     },
@@ -38186,7 +38993,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L41",
       "weight": 0.8
     },
@@ -38195,7 +39002,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L42",
       "weight": 0.8
     },
@@ -38204,7 +39011,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L55",
       "weight": 0.8
     },
@@ -38213,7 +39020,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L56",
       "weight": 0.8
     },
@@ -38222,7 +39029,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L68",
       "weight": 0.8
     },
@@ -38231,7 +39038,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L69",
       "weight": 0.8
     },
@@ -38240,7 +39047,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L81",
       "weight": 0.8
     },
@@ -38249,7 +39056,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L82",
       "weight": 0.8
     },
@@ -38258,7 +39065,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L92",
       "weight": 0.8
     },
@@ -38267,7 +39074,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L93",
       "weight": 0.8
     },
@@ -38276,7 +39083,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L105",
       "weight": 0.8
     },
@@ -38285,7 +39092,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L106",
       "weight": 0.8
     },
@@ -38294,7 +39101,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L117",
       "weight": 0.8
     },
@@ -38303,17 +39110,17 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L118",
       "weight": 0.8
     },
     {
-      "source": "test_delegation_hook_test_hook_preserves_new_code_file_block",
+      "source": "test_delegation_hook_test_hook_preserves_new_code_file_block_for_common_extensions",
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/test_delegation_hook.py",
-      "source_location": "L132",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_location": "L133",
       "weight": 0.8
     },
     {

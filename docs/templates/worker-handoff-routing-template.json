@@ -1,0 +1,43 @@
+{
+  "schema_version": "worker-handoff-route.v1",
+  "issue_number": 448,
+  "parent_issue_number": 434,
+  "planner_orchestrator_identity": {
+    "role": "codex-orchestrator",
+    "model": "gpt-5.4"
+  },
+  "approved_worker_identity": {
+    "lane_role": "claude-sonnet-worker",
+    "model": "claude-sonnet-4-6"
+  },
+  "structured_plan_ref": "docs/plans/issue-448-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-448-worker-handoff-routing-implementation.json",
+  "handoff_package_ref": "raw/handoffs/2026-04-21-issue-448-plan-to-implementation.json",
+  "target_files": [
+    "scripts/example_worker_owned_file.py"
+  ],
+  "allowed_write_paths": [
+    "scripts/example_worker_owned_file.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_check_worker_handoff_route.py",
+    "python3 scripts/orchestrator/test_delegation_hook.py",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/<date>-issue-<n>-worker-implementation.json --require-lane-claim"
+  ],
+  "qa_gate_expectations": [
+    "Codex QA reviews the Worker output.",
+    "Local CI Gate passes before merge.",
+    "PR and closeout include handoff package evidence."
+  ],
+  "same_family_exception_ref": null,
+  "same_family_exception_expires_at": null
+}
