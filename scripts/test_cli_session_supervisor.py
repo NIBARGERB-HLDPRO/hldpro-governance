@@ -7,6 +7,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SUPERVISOR = ROOT / "scripts" / "cli_session_supervisor.py"
+sys.path.insert(0, str(ROOT / "scripts"))
+import cli_session_supervisor as supervisor  # noqa: E402
 
 
 def write_fake(tmp_path: Path, body: str) -> Path:
@@ -216,3 +218,128 @@ def test_retry_halts_after_one_additional_timeout(tmp_path):
     assert first["termination_reason"] == "idle_timeout"
     assert second["termination_reason"] == "idle_timeout"
     assert second["retry_count"] == 1
+
+
+def test_claude_stream_json_native_argv_adds_verbose(tmp_path):
+    prompt = tmp_path / "prompt.txt"
+    prompt.write_text("do work\n", encoding="utf-8")
+
+    args = supervisor.parse_args(
+        [
+            "--tool",
+            "claude",
+            "--role",
+            "worker",
+            "--model",
+            "claude-sonnet-4-6",
+            "--cwd",
+            str(tmp_path),
+            "--prompt-file",
+            str(prompt),
+            "--scope-slug",
+            "test-scope",
+            "--output-format",
+            "stream-json",
+        ]
+    )
+
+    command, stdin_bytes = supervisor.build_command(args, prompt.read_bytes())
+
+    assert command[:3] == ["claude", "-p", "do work\n"]
+    assert ["--output-format", "stream-json"] == command[-3:-1]
+    assert command[-1] == "--verbose"
+    assert command.count("--verbose") == 1
+    assert stdin_bytes == b""
+
+
+def test_claude_native_argv_preserves_explicit_verbose(tmp_path):
+    prompt = tmp_path / "prompt.txt"
+    prompt.write_text("do work\n", encoding="utf-8")
+
+    args = supervisor.parse_args(
+        [
+            "--tool",
+            "claude",
+            "--role",
+            "worker",
+            "--model",
+            "claude-sonnet-4-6",
+            "--cwd",
+            str(tmp_path),
+            "--prompt-file",
+            str(prompt),
+            "--scope-slug",
+            "test-scope",
+            "--output-format",
+            "json",
+            "--verbose",
+        ]
+    )
+
+    command, _ = supervisor.build_command(args, prompt.read_bytes())
+
+    assert ["--output-format", "json"] == command[-3:-1]
+    assert command[-1] == "--verbose"
+    assert command.count("--verbose") == 1
+
+
+def test_codex_native_argv_preserves_model_and_reasoning_effort(tmp_path):
+    prompt = tmp_path / "prompt.txt"
+    prompt.write_text("do work\n", encoding="utf-8")
+
+    args = supervisor.parse_args(
+        [
+            "--tool",
+            "codex",
+            "--role",
+            "qa",
+            "--model",
+            "gpt-5.4",
+            "--reasoning-effort",
+            "high",
+            "--cwd",
+            str(tmp_path),
+            "--prompt-file",
+            str(prompt),
+            "--scope-slug",
+            "test-scope",
+        ]
+    )
+
+    command, stdin_bytes = supervisor.build_command(args, prompt.read_bytes())
+
+    assert command[:6] == ["codex", "exec", "-C", str(tmp_path), "-m", "gpt-5.4"]
+    assert "-c" in command
+    assert "model_reasoning_effort=high" in command
+    assert command[-2:] == ["--", "-"]
+    assert stdin_bytes == b"do work\n"
+
+
+def test_codex_native_argv_requires_reasoning_effort(tmp_path):
+    prompt = tmp_path / "prompt.txt"
+    prompt.write_text("do work\n", encoding="utf-8")
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(SUPERVISOR),
+            "--tool",
+            "codex",
+            "--role",
+            "qa",
+            "--model",
+            "gpt-5.4",
+            "--cwd",
+            str(tmp_path),
+            "--prompt-file",
+            str(prompt),
+            "--scope-slug",
+            "test-scope",
+        ],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert result.returncode == 2
+    assert "--tool codex requires --reasoning-effort" in result.stderr

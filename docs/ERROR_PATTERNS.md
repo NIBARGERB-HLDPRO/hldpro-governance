@@ -92,3 +92,36 @@ The closeout hook and validator were local authoring/integrity tools, not merge-
 - Use the existing `validate_closeout.py` for integrity so closeout semantics stay centralized.
 - Preserve a tested planning-only exemption to avoid blocking early plan/scope PRs.
 - Record closeout gaps in self-learning evidence so future sessions retrieve the merge-gate fix.
+
+## Pattern: cli-pr-contract-drift
+
+### Symptom
+Supervised worker or reviewer sessions fail before useful output because Claude stream-json mode is invoked without `--verbose`. Separately, PR completion loops misclassify pending checks as terminal failures or try to resolve mergeability by using a local `main` branch that is already checked out in another worktree.
+
+### Root Cause
+The supervisor had end-to-end tests for `--command` mode but not direct native Claude/Codex argv construction, so CLI-specific contracts were not pinned. The automerge evaluator treated every non-completed required check as a blocker and did not carry explicit GitHub-native merge/update guidance.
+
+### Detection
+- Claude stderr references `--output-format stream-json` requiring `--verbose`.
+- Supervisor event `command_argv` lacks `--verbose` for Claude stream-json mode.
+- Codex event `command_argv` lacks `model_reasoning_effort`.
+- PR checks are queued or in progress, but the local evaluator reports a final blocked/failed decision.
+- Merge commands fail because local `main` is owned by another worktree.
+
+### Resolution Playbook
+1. Route Claude/Codex work through `scripts/cli_session_supervisor.py`.
+2. Keep native argv tests in `scripts/test_cli_session_supervisor.py` for Claude stream-json and Codex reasoning-effort pins.
+3. Treat expected pending required checks as `pending`, not final failure, until GitHub reports completion.
+4. Use `gh pr update-branch <pr>` when GitHub says the PR is behind.
+5. Use GitHub-native merge/automerge (`gh pr merge <pr> --merge --delete-branch` or `--auto`) after required checks pass.
+6. Avoid local `main` as a merge path in multi-worktree governance sessions.
+
+### Instances
+| Date | Incident | Notes |
+|------|----------|-------|
+| 2026-04-21 | [2026-04-21](FAIL_FAST_LOG.md) | Issue #536 pinned supervisor argv contracts and PR pending/merge guidance. |
+
+### Prevention
+- Require native argv regression tests for every governed CLI path, not only fake `--command` subprocess tests.
+- Keep model-pin checks PR-visible through reusable governance CI and local coverage inventory.
+- Keep PR completion automation explicit about pending, blocked, and eligible states.

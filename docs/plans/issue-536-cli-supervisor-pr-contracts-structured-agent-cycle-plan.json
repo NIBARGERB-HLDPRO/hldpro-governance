@@ -1,0 +1,109 @@
+{
+  "session_id": "issue-536-cli-supervisor-pr-contracts-20260421",
+  "issue_number": 536,
+  "objective": "Harden existing CLI supervisor and PR merge/check tooling so known Claude stream-json, Codex reasoning-effort, pending-check, and local-main merge failure modes are enforced or classified deterministically.",
+  "tier": 2,
+  "scope_boundary": [
+    "Update existing supervisor and automerge evaluator surfaces only.",
+    "Add focused regression tests for native Claude/Codex argv and pending PR checks.",
+    "Record governance evidence for issue #536 under the session guardrail reliability epic."
+  ],
+  "out_of_scope": [
+    "Implementing the consumer verifier acceptance gate from issue #537.",
+    "Implementing the session error KB/runbook slice from issue #535.",
+    "Creating a live PR merger or polling daemon.",
+    "Changing product repositories."
+  ],
+  "research_summary": "Local and GitHub inspection showed issue #536 open with no PR, model-pin checks already PR-visible in reusable governance CI, and existing tooling gaps in native CLI argv coverage plus pending PR check classification. The implementation tightens the existing supervisor and automerge evaluator in place.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/533",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/536",
+    "docs/plans/issue-536-cli-supervisor-pr-contracts-pdcar.md"
+  ],
+  "sprints": [
+    {
+      "name": "Supervisor and PR contract hardening",
+      "goal": "Make invalid supervised CLI invocations impossible and classify PR pending/merge states without local-main dependency.",
+      "tasks": [
+        "Auto-add Claude --verbose for stream-json output format.",
+        "Require Codex native sessions to include model_reasoning_effort.",
+        "Add direct native argv regression tests for Claude and Codex.",
+        "Separate pending required checks from final blockers in automerge evaluation.",
+        "Add GitHub-native update/merge guidance to automerge output.",
+        "Record self-learning and closeout evidence."
+      ],
+      "acceptance_criteria": [
+        "Claude stream-json supervisor argv includes --verbose exactly once.",
+        "Codex native supervisor argv includes -m and model_reasoning_effort.",
+        "Missing Codex reasoning effort is rejected by the governed wrapper.",
+        "Pending required checks produce pending state rather than final blocker state.",
+        "Local-main mergeability probes are blocked and merge guidance uses GitHub-native commands.",
+        "Model-pin enforcement is verified as PR-visible through reusable governance CI."
+      ],
+      "file_paths": [
+        "scripts/cli_session_supervisor.py",
+        "scripts/test_cli_session_supervisor.py",
+        "scripts/overlord/automerge_policy_check.py",
+        "scripts/overlord/test_automerge_policy_check.py",
+        "docs/ERROR_PATTERNS.md",
+        "docs/FAIL_FAST_LOG.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-orchestrator",
+      "role": "implementation-review",
+      "focus": "Existing supervisor and PR gate contracts",
+      "status": "accepted",
+      "summary": "The bounded implementation updates existing enforcement surfaces and avoids live PR mutation logic.",
+      "evidence": [
+        "scripts/test_cli_session_supervisor.py",
+        "scripts/overlord/test_automerge_policy_check.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "n/a",
+    "model_family": "n/a",
+    "status": "not_required",
+    "summary": "Bounded Tier 2 guardrail repair with deterministic tests; no new standard or cross-family plan review required.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/536"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implementation may update supervisor, automerge evaluator, focused tests, and issue #536 governance evidence only.",
+    "next_execution_step": "Run focused tests, governance validators, local CI gate, then open and merge PR after green checks.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-536-cli-supervisor-pr-contracts-implementation.json",
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-536-cli-supervisor-pr-contracts.md"
+    ],
+    "review_artifact_refs": [],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-536-cli-supervisor-pr-contracts.md",
+    "next_role": "codex-qa",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Focused tests pass.",
+      "Implementation stays inside allowed write paths.",
+      "Stage 6 closeout and self-learning evidence are present."
+    ]
+  },
+  "material_deviation_rules": [
+    "If live PR mutation logic is needed, split to a follow-up issue.",
+    "If model-pin workflows are not PR-visible, wire the existing reusable checks instead of adding a new model-pin checker.",
+    "If implementation needs downstream repo writes, stop and open downstream follow-up issues."
+  ],
+  "approved": true,
+  "approved_by": [
+    "codex-orchestrator"
+  ],
+  "approved_at": "2026-04-21T22:20:00Z"
+}

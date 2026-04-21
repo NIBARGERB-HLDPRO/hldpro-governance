@@ -97,6 +97,10 @@ def build_command(args: argparse.Namespace, prompt_bytes: bytes) -> tuple[list[s
             command.extend(["--max-budget-usd", str(args.max_budget_usd)])
         if args.output_format:
             command.extend(["--output-format", args.output_format])
+            if args.output_format == "stream-json" and not args.verbose:
+                command.append("--verbose")
+        if args.verbose:
+            command.append("--verbose")
         if args.no_session_persistence:
             command.append("--no-session-persistence")
         return command, b""
@@ -292,6 +296,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--max-turns", type=int)
     parser.add_argument("--max-budget-usd", type=float)
     parser.add_argument("--output-format")
+    parser.add_argument("--verbose", action="store_true")
     parser.add_argument("--no-session-persistence", action="store_true")
     parser.add_argument("--codex-sandbox", default="workspace-write")
     parser.add_argument("--codex-approval", default="never")
@@ -300,6 +305,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
 
     if args.retry_prompt_file and not args.scope_reduction_summary:
         parser.error("--retry-prompt-file requires --scope-reduction-summary")
+    if args.tool == "codex" and not args.reasoning_effort:
+        parser.error("--tool codex requires --reasoning-effort so codex exec emits model_reasoning_effort")
     if args.wall_timeout_sec <= 0 or args.silence_timeout_sec <= 0:
         parser.error("timeouts must be greater than zero")
     return args
