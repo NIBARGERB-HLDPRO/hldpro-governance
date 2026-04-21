@@ -1,6 +1,6 @@
 # Packages Hldpro sim Repos
 
-> 348 nodes · cohesion 0.01
+> 357 nodes · cohesion 0.01
 
 ## Key Concepts
 
@@ -28,8 +28,8 @@
 - **run_simulation()** (11 connections) — `hldpro-governance/repos/Stampede/scripts/run_slice6_simulation.py`
 - **StampedeAggregator** (11 connections) — `hldpro-governance/repos/Stampede/scripts/run_slice6_simulation.py`
 - **BaseAggregator** (10 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/aggregator.py`
-- **solar-savings.ts** (10 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
-- *... and 323 more nodes in this community*
+- **GCSubPortal.tsx** (10 connections) — `hldpro-governance/repos/ai-integration-services/apps/marketing/src/portal/pages/gc/GCSubPortal.tsx`
+- *... and 332 more nodes in this community*
 
 ## Relationships
 
@@ -60,8 +60,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 964 (63%)
-- INFERRED: 578 (37%)
+- EXTRACTED: 1009 (64%)
+- INFERRED: 578 (36%)
 - AMBIGUOUS: 0 (0%)
 
 ---

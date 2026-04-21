@@ -14,6 +14,7 @@
 - [[runSync()]] `INFERRED`
 - [[runCommand()]] `INFERRED`
 - [[createUser()]] `INFERRED`
+- [[validate()]] `INFERRED`
 - [[asString()]] `INFERRED`
 - [[handleVerifyBatch()]] `INFERRED`
 - [[callCritic()]] `INFERRED`
@@ -21,7 +22,6 @@
 - [[requestCompetencyValidation()]] `INFERRED`
 - [[reviewCompetencyValidation()]] `INFERRED`
 - [[readSeedValidationArtifact()]] `INFERRED`
-- [[validate()]] `INFERRED`
 - [[ehrVerify()]] `INFERRED`
 - [[createTrackDeployment()]] `INFERRED`
 - [[updateAssignment()]] `INFERRED`

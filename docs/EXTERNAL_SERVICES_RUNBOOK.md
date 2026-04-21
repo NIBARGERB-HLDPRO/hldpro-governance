@@ -280,6 +280,17 @@ Returns 0 if endpoint reachable and required model present; 1 if unreachable; 2 
 
 **Purpose:** Repo hosting, PR automation, overlord-sweep issue creation, rulesets.
 
+### Overlord Sweep Intelligence Credentials
+
+The weekly Overlord Sweep has two optional intelligence paths that must be explicit when unavailable:
+
+| Path | Required configuration | Expected unavailable behavior |
+|---|---|---|
+| PentAGI freshness/trigger status | Repository secret `PENTAGI_API_TOKEN` plus repo-local PentAGI runner support where applicable | The sweep records `SKIPPED: missing PENTAGI_API_TOKEN` in the report and persists `metrics/pentagi/latest.json`; this is configuration debt, not a silent tool failure. |
+| Codex second-opinion review | Valid `CODEX_AUTH_JSON` or `OPENAI_API_KEY` accepted by the Codex canary/auth probe | The sweep records the auth probe or Codex canary failure in the `Codex Second Opinion` table and skips review generation for that run. Operators must rotate/refresh the configured secret before treating skipped Codex review as model feedback. |
+
+Generated graph/wiki/metric artifact PRs are intentionally issue-backed. The permanent anchor is hldpro-governance issue #503; artifact branches use `automation/issue-503-overlord-sweep-<date>-<run_id>` and include generated execution-scope evidence before PR creation.
+
 ### Auth
 - Primary: `GOVERNANCE_GITHUB_TOKEN` in `.env`
 - Fallback: `GITHUB_PERSONAL_ACCESS_TOKEN`

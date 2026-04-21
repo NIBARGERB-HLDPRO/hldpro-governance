@@ -67,6 +67,7 @@
     "document": [
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/Production_Spec_v0.1.1.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/requirements-lookback.txt",
+      "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/CLAUDE.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/CHANGELOG_v0_1_to_v0_1_1.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/DATA_SOURCES.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/PROVIDER_ADAPTER_CONTRACT.md",
@@ -88,6 +89,7 @@
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/MODEL_BAKEOFF_RESULTS_V02.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/EVENT_SET_LOCK_PLAN.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/exception-register.md",
+      "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/FAIL_FAST_LOG.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/PHASE0_LOOKBACK_SMOKE.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/TRADIER_PREFLIGHT_EVIDENCE.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/LIVE_RUN_COMMANDS.md",
@@ -128,8 +130,8 @@
     "image": [],
     "video": []
   },
-  "total_files": 120,
-  "total_words": 52558,
+  "total_files": 122,
+  "total_words": 52783,
   "needs_graph": true,
   "warning": null,
   "skipped_sensitive": [

@@ -1,6 +1,6 @@
 # Generate existing info report
 
-> 9 nodes · cohesion 0.33
+> 10 nodes · cohesion 0.29
 
 ## Key Concepts
 
@@ -12,6 +12,7 @@
 - **add_horizontal_rule()** (2 connections) — `asc-evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py`
 - **add_note_block()** (2 connections) — `asc-evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py`
 - **add_static_toc_line()** (2 connections) — `asc-evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py`
+- **fit_image_size()** (2 connections) — `asc-evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py`
 - **add_boxed_note()** (1 connections) — `asc-evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py`
 
 ## Relationships
@@ -24,7 +25,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 65 (100%)
+- EXTRACTED: 67 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -1,0 +1,34 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "automation/issue-503-overlord-sweep-2026-04-21-24741708775",
+  "allowed_write_paths": [
+    "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+    "graphify-out/",
+    "metrics/effectiveness-baseline/",
+    "metrics/pentagi/",
+    "metrics/self-learning/",
+    "raw/execution-scopes/2026-04-21-issue-503-overlord-sweep-generated-artifacts-implementation.json",
+    "wiki/"
+  ],
+  "forbidden_roots": [],
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 503,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/503",
+    "claimed_by": "overlord-sweep-workflow",
+    "claimed_at": "2026-04-21T19:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-directive",
+    "implementer_model": "overlord-sweep-workflow",
+    "accepted_at": "2026-04-21T19:00:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-503-overlord-sweep-generated-artifacts-structured-agent-cycle-plan.json",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/actions/runs/24741708775",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/503"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

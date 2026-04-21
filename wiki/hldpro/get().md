@@ -1,6 +1,6 @@
 # get()
 
-> God node · 1057 connections · `hldpro-governance/repos/local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
+> God node · 1076 connections · `hldpro-governance/repos/local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
 
 ## Connections by Relation
 
