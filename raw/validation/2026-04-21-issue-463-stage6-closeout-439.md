@@ -24,9 +24,9 @@ Issue: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/463
 | `python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-463-stage6-closeout-439-20260421 --changed-files-file /tmp/issue-463-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope` | PASS | Validated 111 structured agent cycle plan files. |
 | `python3 scripts/overlord/check_overlord_backlog_github_alignment.py` | PASS | Initially caught stale closed #447 in active backlog; after mirror reconciliation, actionable backlog rows reference open issues only. |
 | `bash hooks/closeout-hook.sh raw/closeouts/2026-04-21-issue-439-downstream-som-propagation.md` | PASS | Closeout template/evidence validated, graph/wiki refreshed, memory consolidation skipped because credentials are not configured, and closeout commit `9b3c64b` was created. |
-| `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | PASS | Verdict `pass`; report dir `cache/local-ci-gate/reports/20260421T165019Z-hldpro-governance-git`; blockers 0, advisories 0. |
+| `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | PASS | Final post-merge verdict `pass`; report dir `cache/local-ci-gate/reports/20260421T165414Z-hldpro-governance-git`; blockers 0, advisories 0. |
 
 ## Notes
 Initial inspection showed issue #432 had a Stage 6 closeout for the source SSOT change, but not final downstream #439 merge evidence. This issue #463 slice records that missing downstream closeout.
 
-During validation, the backlog alignment check also exposed stale active-row drift for closed issue #447 on current `origin/main`. That row was moved from active In Progress/Plans to Done in `OVERLORD_BACKLOG.md` and `docs/PROGRESS.md` as part of the same closeout acceptance path.
+During validation, the backlog alignment check also exposed stale active-row drift for closed issue #447 on current `origin/main`; after syncing latest `origin/main`, it exposed the same completed-row drift for closed issue #449. Both rows were moved from active In Progress/Plans to Done in `OVERLORD_BACKLOG.md` and `docs/PROGRESS.md` as part of the same closeout acceptance path.
