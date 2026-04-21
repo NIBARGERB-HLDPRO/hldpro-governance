@@ -7,6 +7,7 @@
     "docs/plans/issue-494-structured-agent-cycle-plan.json",
     "graphify-out/",
     "raw/closeouts/2026-04-21-stampede-issue-111-permanent-services.md",
+    "raw/closeouts/2026-04-21-issue-494-same-model-exception.md",
     "scripts/pages-deploy/",
     "raw/execution-scopes/2026-04-21-issue-494-stampede-111-closeout-implementation.json",
     "raw/handoffs/2026-04-21-issue-494-stampede-111-closeout.json",
@@ -43,7 +44,7 @@
       "docs/plans/issue-494-structured-agent-cycle-plan.json",
       "raw/handoffs/2026-04-21-issue-494-stampede-111-closeout.json"
     ],
-    "active_exception_ref": "same-model-closeout-only: both planner and implementer are claude-sonnet-4-6; no code written, infrastructure closeout artifacts only",
+    "active_exception_ref": "raw/closeouts/2026-04-21-issue-494-same-model-exception.md",
     "active_exception_expires_at": "2026-04-22T00:00:00Z"
   }
 }
