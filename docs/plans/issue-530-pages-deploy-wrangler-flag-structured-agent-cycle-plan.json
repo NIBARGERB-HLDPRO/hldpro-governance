@@ -1,0 +1,105 @@
+{
+  "session_id": "session-20260421-issue-530-pages-deploy-wrangler-flag",
+  "issue_number": 530,
+  "objective": "Remove the obsolete Wrangler 4.x --non-interactive flag from the governance-owned Cloudflare Pages deploy gate while preserving CI=true non-interactive behavior.",
+  "tier": 2,
+  "scope_boundary": [
+    "Issue #530 owns only the Pages deploy gate Wrangler command flag fix, focused test update, operator docs/feature registry wording, and validation evidence.",
+    "Keep Secret Provisioning UX behavior, approval gating, build flow, pre-deploy hooks, and deployment evidence format unchanged.",
+    "Do not run a live Cloudflare Pages deploy from this governance fix."
+  ],
+  "out_of_scope": [
+    "Changing Cloudflare token scopes or provisioning paths.",
+    "Changing downstream consumer repositories.",
+    "Changing Pages freshness verifier semantics.",
+    "Running or approving a production deploy."
+  ],
+  "research_summary": "Wrangler 4.x rejects --non-interactive on pages deploy. The gate already sets CI=true in the child process environment, which is the supported non-interactive behavior for current Wrangler releases. The focused test should assert the removed flag is absent and CI=true remains present.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/530",
+    "scripts/pages-deploy/pages_deploy_gate.py",
+    "scripts/pages-deploy/tests/test_pages_deploy_gate.py",
+    "docs/runbooks/pages-deploy-gate.md",
+    "docs/FEATURE_REGISTRY.md"
+  ],
+  "sprints": [
+    {
+      "name": "Wrangler 4.x deploy flag compatibility",
+      "goal": "Unblock Pages deploy gate adoption on current Wrangler by removing the unsupported CLI flag.",
+      "tasks": [
+        "Remove --non-interactive from the wrangler pages deploy command.",
+        "Update focused tests to assert CI=true is still passed and --non-interactive is absent.",
+        "Update runbook and feature registry wording.",
+        "Run focused tests, provisioning evidence scan, structured plan validation, execution scope assertion, and local CI gate."
+      ],
+      "acceptance_criteria": [
+        "scripts/pages-deploy/pages_deploy_gate.py no longer passes --non-interactive to wrangler pages deploy.",
+        "The deploy command still runs with CI=true in the child environment.",
+        "Focused tests cover absence of --non-interactive and presence of CI=true.",
+        "Docs no longer claim the gate invokes Wrangler with --non-interactive.",
+        "Local validation and GitHub checks pass before issue #530 closes."
+      ],
+      "file_paths": [
+        "scripts/pages-deploy/pages_deploy_gate.py",
+        "scripts/pages-deploy/tests/test_pages_deploy_gate.py",
+        "docs/runbooks/pages-deploy-gate.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/plans/issue-530-pages-deploy-wrangler-flag-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-530-pages-deploy-wrangler-flag-implementation.json",
+        "raw/handoffs/2026-04-21-issue-530-pages-deploy-wrangler-flag.json",
+        "raw/packets/2026-04-21-issue-530-pages-deploy-wrangler-flag.json",
+        "raw/cross-review/2026-04-21-issue-530-pages-deploy-wrangler-flag.md",
+        "raw/validation/2026-04-21-issue-530-pages-deploy-wrangler-flag.md",
+        "raw/closeouts/2026-04-21-issue-530-pages-deploy-wrangler-flag.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-orchestrator",
+      "role": "compatibility triage",
+      "focus": "Confirm the fix is a narrow Wrangler CLI compatibility update and not a deploy gate redesign.",
+      "status": "accepted",
+      "summary": "The only runtime command change needed is removing --non-interactive; CI=true remains the non-interactive guard.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/530",
+        "scripts/pages-deploy/pages_deploy_gate.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-one-flag-runtime-compatibility-fix",
+    "model_family": "none",
+    "status": "not_requested",
+    "summary": "This lane removes a removed CLI flag and updates deterministic tests/docs only; no architecture or policy behavior changes are introduced.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/530"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #530 may update the Pages deploy Wrangler command, focused test, docs, feature registry, and issue-owned governance evidence artifacts.",
+    "next_execution_step": "Run validation, open PR, wait for checks, merge under repository automerge rules, and close issue #530.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-530-pages-deploy-wrangler-flag-implementation.json",
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-530-pages-deploy-wrangler-flag.json",
+    "packet_ref": "raw/packets/2026-04-21-issue-530-pages-deploy-wrangler-flag.json",
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-530-pages-deploy-wrangler-flag.md"
+    ],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-530-pages-deploy-wrangler-flag.md"
+  },
+  "material_deviation_rules": [
+    "If fixing Wrangler compatibility requires changing deploy approval, secret provisioning, or downstream consumer behavior, stop and route that work to the relevant Cloudflare Pages deploy gate child issue.",
+    "If validation evidence would contain credentials, signed URLs, Authorization headers, raw phone numbers, generated env files, or screenshots containing credentials, replace it with redacted structured evidence before commit."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "GitHub issue #530",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T21:55:00Z"
+}

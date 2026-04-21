@@ -19,7 +19,7 @@ Missing-secret diagnostics list variable names only. Provision Cloudflare Pages 
 The gate runs deployment in two phases:
 
 1. `pre_deploy.command` runs first. Use this phase for dependent deploy work such as Supabase edge function deploys.
-2. `wrangler pages deploy` uploads the built Pages artifact with CI and non-interactive flags.
+2. `wrangler pages deploy` uploads the built Pages artifact with `CI=true` in the child environment. The gate does not pass `--non-interactive`; Wrangler 4.x removed that flag and treats it as an unknown argument.
 
 ## Config Schema
 

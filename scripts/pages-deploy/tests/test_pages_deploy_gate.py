@@ -338,7 +338,7 @@ def test_wrangler_missing(tmp_path):
     assert not deploy_calls(calls)
 
 
-def test_wrangler_noninteractive_ci_flags(tmp_path):
+def test_wrangler_uses_ci_without_removed_noninteractive_flag(tmp_path):
     config = write_config(tmp_path)
 
     code, calls = run_gate(config, tmp_path)
@@ -346,5 +346,5 @@ def test_wrangler_noninteractive_ci_flags(tmp_path):
     assert code == 0
     deploy_call = deploy_calls(calls)[0]
     command, kwargs = deploy_call
-    assert "--non-interactive" in command
+    assert "--non-interactive" not in command
     assert kwargs["env"]["CI"] == "true"

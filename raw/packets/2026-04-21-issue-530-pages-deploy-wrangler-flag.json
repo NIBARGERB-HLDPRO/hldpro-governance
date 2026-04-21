@@ -1,0 +1,13 @@
+{
+  "packet_id": "2026-04-21-issue-530-pages-deploy-wrangler-flag",
+  "issue_number": 530,
+  "packet_type": "implementation",
+  "created_at": "2026-04-21T21:55:00Z",
+  "source_issue": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/530",
+  "parent_epic": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/467",
+  "structured_plan_ref": "docs/plans/issue-530-pages-deploy-wrangler-flag-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-530-pages-deploy-wrangler-flag-implementation.json",
+  "handoff_ref": "raw/handoffs/2026-04-21-issue-530-pages-deploy-wrangler-flag.json",
+  "closeout_ref": "raw/closeouts/2026-04-21-issue-530-pages-deploy-wrangler-flag.md",
+  "summary": "Wrangler 4.x compatibility package for removing the unsupported --non-interactive flag while retaining CI=true behavior."
+}

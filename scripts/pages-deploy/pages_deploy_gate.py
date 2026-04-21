@@ -372,7 +372,6 @@ def deploy(config: dict[str, Any], output_dir: Path, source_sha: str, env: dict[
         config["branch"],
         "--commit-hash",
         source_sha,
-        "--non-interactive",
     ]
     result = run_command(command, env=child_env)
     if result.returncode != 0:

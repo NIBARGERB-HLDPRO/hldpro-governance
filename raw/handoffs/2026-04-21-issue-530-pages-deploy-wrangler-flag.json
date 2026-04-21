@@ -1,0 +1,74 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-530-pages-deploy-wrangler-flag",
+  "issue_number": 530,
+  "parent_epic_number": 467,
+  "lifecycle_state": "accepted",
+  "from_role": "operator-directive",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-530-pages-deploy-wrangler-flag-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-530-pages-deploy-wrangler-flag-implementation.json",
+  "packet_ref": "raw/packets/2026-04-21-issue-530-pages-deploy-wrangler-flag.json",
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Wrangler pages deploy command does not include --non-interactive.",
+      "verification_refs": [
+        "scripts/pages-deploy/pages_deploy_gate.py",
+        "scripts/pages-deploy/tests/test_pages_deploy_gate.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Deploy command still sets CI=true in the child environment.",
+      "verification_refs": [
+        "scripts/pages-deploy/tests/test_pages_deploy_gate.py"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Docs and feature registry no longer claim --non-interactive is used.",
+      "verification_refs": [
+        "docs/runbooks/pages-deploy-gate.md",
+        "docs/FEATURE_REGISTRY.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "/opt/homebrew/bin/pytest scripts/pages-deploy/tests/test_pages_deploy_gate.py",
+    "python3 scripts/overlord/validate_provisioning_evidence.py --root . --changed-files-file /tmp/issue-530-changed-files.txt",
+    "python3 scripts/overlord/validate_handoff_package.py raw/handoffs/2026-04-21-issue-530-pages-deploy-wrangler-flag.json --root .",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-530-pages-deploy-wrangler-flag-20260421 --changed-files-file /tmp/issue-530-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-530-pages-deploy-wrangler-flag-implementation.json --changed-files-file /tmp/issue-530-changed-files.txt --require-lane-claim",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-21-issue-530-pages-deploy-wrangler-flag.md --root .",
+    "tools/local-ci-gate/bin/hldpro-local-ci --profile hldpro-governance --changed-files-file /tmp/issue-530-changed-files.txt"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-21-issue-530-pages-deploy-wrangler-flag.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-21-issue-530-pages-deploy-wrangler-flag.md"
+  ],
+  "artifact_refs": [
+    "scripts/pages-deploy/pages_deploy_gate.py",
+    "scripts/pages-deploy/tests/test_pages_deploy_gate.py",
+    "docs/runbooks/pages-deploy-gate.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/plans/issue-530-pages-deploy-wrangler-flag-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-530-pages-deploy-wrangler-flag-implementation.json",
+    "raw/packets/2026-04-21-issue-530-pages-deploy-wrangler-flag.json",
+    "raw/handoffs/2026-04-21-issue-530-pages-deploy-wrangler-flag.json",
+    "raw/cross-review/2026-04-21-issue-530-pages-deploy-wrangler-flag.md",
+    "raw/validation/2026-04-21-issue-530-pages-deploy-wrangler-flag.md",
+    "raw/closeouts/2026-04-21-issue-530-pages-deploy-wrangler-flag.md"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-530-pages-deploy-wrangler-flag.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-04-21-issue-530-pages-deploy-wrangler-flag.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T21:55:00-05:00",
+  "notes": "Issue #530 is a narrow Wrangler 4.x CLI compatibility fix. No downstream repository writes or live deploys are authorized by this package."
+}
