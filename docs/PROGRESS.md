@@ -42,6 +42,7 @@
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
 | Structured handoff package lifecycle — plan preflight routing | #449 | 2026-04-21 | PR #464 preflighted governed write intent for recent planning evidence and emitted machine-routable missing-plan next actions before code writes. |
+| Structured handoff package lifecycle — repo-specific lane bootstrap naming | #445 | 2026-04-21 | PR #466 added the governance lane policy registry, HealthcarePlatform sandbox/pr-pending lane validation, branch-switch guard enforcement, tests, validation, closeout, and graph/wiki outputs. |
 | Stage 6 closeout for downstream SoM propagation epic | #463 | 2026-04-21 | Adds repo-local closeout for epic #439 after all six downstream propagation PRs merged and child issues closed. |
 | Governance SSOT consumer bootstrap v2 package contract | #453 | 2026-04-21 | Closed during concurrent SSOT bootstrap work; package v0.2 contract moved out of active backlog before #449 merge. |
 | Structured handoff package lifecycle — schema guard diagnostics | #447 | 2026-04-21 | PR #462 made schema guard failures actionable and moved silent hook failures toward loud diagnostics. |

@@ -1,0 +1,33 @@
+{
+  "schema_version": "v1",
+  "default_policy": "standard",
+  "policies": {
+    "standard": {
+      "branch_pattern": "^issue-(?P<issue>[0-9]+)-(?P<scope>[a-z0-9][a-z0-9-]*)$",
+      "worktree_basename_pattern": "^issue-(?P<issue>[0-9]+)-(?P<scope>[a-z0-9][a-z0-9-]*)$",
+      "branch_template": "issue-{issue}-{scope}",
+      "worktree_template": "issue-{issue}-{scope}",
+      "requires_pr_pending": false,
+      "requires_sandbox_prefix": false,
+      "cleanup_policy": "clean_invalid_lane_removable_dirty_refused"
+    },
+    "healthcareplatform": {
+      "branch_pattern": "^sandbox/issue-(?P<issue>[0-9]+)-pr-pending-(?P<scope>[a-z0-9][a-z0-9-]*)$",
+      "worktree_basename_pattern": "^issue-(?P<issue>[0-9]+)-pr-pending-(?P<scope>[a-z0-9][a-z0-9-]*)$",
+      "branch_template": "sandbox/issue-{issue}-pr-pending-{scope}",
+      "worktree_template": "issue-{issue}-pr-pending-{scope}",
+      "requires_pr_pending": true,
+      "requires_sandbox_prefix": true,
+      "cleanup_policy": "clean_invalid_lane_removable_dirty_refused"
+    }
+  },
+  "repo_policies": {
+    "hldpro-governance": "standard",
+    "ai-integration-services": "standard",
+    "local-ai-machine": "standard",
+    "knocktracker": "standard",
+    "seek-and-ponder": "standard",
+    "Stampede": "standard",
+    "HealthcarePlatform": "healthcareplatform"
+  }
+}

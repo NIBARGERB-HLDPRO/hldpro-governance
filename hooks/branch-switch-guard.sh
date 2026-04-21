@@ -26,6 +26,7 @@ fi
 # Use awk for reliable splitting (macOS sed doesn't handle \n in replacement)
 BLOCKED=""
 WORKTREE_BLOCKED=""
+WORKTREE_REASON=""
 while IFS= read -r segment; do
   # Trim whitespace
   trimmed=$(echo "$segment" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
@@ -36,12 +37,59 @@ while IFS= read -r segment; do
   command_part=$(echo "$trimmed" | sed -E 's/^([A-Za-z_][A-Za-z0-9_]*=[^[:space:]]+[[:space:]]+)*//')
 
   if echo "$command_part" | grep -qE '^\s*git\s+worktree\s+add\b' &&
-     echo "$command_part" | grep -qE '(^|[[:space:]])(-b|-B|--branch)[[:space:]]+issue-[0-9]+'; then
+     echo "$command_part" | grep -qE '(^|[[:space:]])(-b|-B|--branch)[[:space:]]+[^[:space:]]*issue-[0-9]+'; then
+    lane_payload=$(python3 - "$command_part" <<'PY' 2>/dev/null || true
+import json
+import re
+import shlex
+import sys
+
+tokens = shlex.split(sys.argv[1])
+branch = ""
+worktree = ""
+for index, token in enumerate(tokens):
+    if token in {"-b", "-B", "--branch"} and index + 1 < len(tokens):
+        branch = tokens[index + 1]
+        if index + 2 < len(tokens):
+            worktree = tokens[index + 2]
+        break
+match = re.search(r"issue-([0-9]+)", branch)
+print(json.dumps({"branch": branch, "worktree": worktree, "issue": match.group(1) if match else ""}))
+PY
+)
+    branch_name=$(echo "$lane_payload" | jq -r '.branch // empty' 2>/dev/null) || branch_name=""
+    worktree_path=$(echo "$lane_payload" | jq -r '.worktree // empty' 2>/dev/null) || worktree_path=""
+    branch_issue=$(echo "$lane_payload" | jq -r '.issue // empty' 2>/dev/null) || branch_issue=""
+    repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || repo_root=""
+    repo_slug=$(echo "$trimmed" | sed -nE 's/.*(^|[[:space:]])HLDPRO_REPO_SLUG=([^[:space:]]+).*/\2/p' | head -n 1)
+    if [ -z "$repo_slug" ]; then
+      repo_slug="${HLDPRO_REPO_SLUG:-}"
+    fi
+    if [ -z "$repo_slug" ] && [ -n "$repo_root" ]; then
+      repo_slug=$(basename "$repo_root")
+    fi
+    if [ -n "$repo_root" ] && [ -n "$branch_name" ] && [ -n "$worktree_path" ] && [ -n "$branch_issue" ] &&
+       [ -f "$repo_root/scripts/overlord/lane_bootstrap.py" ]; then
+      lane_output=$(python3 "$repo_root/scripts/overlord/lane_bootstrap.py" \
+        --repo-root "$repo_root" \
+        --repo-slug "$repo_slug" \
+        --json \
+        validate \
+        --branch-name "$branch_name" \
+        --worktree-path "$worktree_path" \
+        --issue-number "$branch_issue" 2>/dev/null)
+      lane_status=$?
+      if [ "$lane_status" -ne 0 ]; then
+        WORKTREE_BLOCKED="$trimmed"
+        WORKTREE_REASON=$(echo "$lane_output" | jq -r '.reason // "repo-specific lane policy rejected worktree command"' 2>/dev/null)
+        break
+      fi
+    fi
+
     if echo "$trimmed" | grep -qE '(^|[[:space:]])HLDPRO_LANE_CLAIM_BOOTSTRAP=1([[:space:]]|$)'; then
       continue
     fi
 
-    branch_issue=$(echo "$command_part" | sed -nE 's/.*(^|[[:space:]])(-b|-B|--branch)[[:space:]]+issue-([0-9]+).*/\3/p' | head -n 1)
     scope_ref=$(echo "$trimmed" | sed -nE 's/.*(^|[[:space:]])HLDPRO_LANE_CLAIM_SCOPE=([^[:space:]]+).*/\2/p' | head -n 1)
     if [ -n "$branch_issue" ] && [ -n "$scope_ref" ]; then
       repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || repo_root=""
@@ -94,11 +142,16 @@ done < <(echo "$COMMAND" | awk '{gsub(/&&/,"\n"); gsub(/;/,"\n"); gsub(/\|\|/,"\
 
 if [ -n "$WORKTREE_BLOCKED" ]; then
   echo "BLOCKED: Issue worktree creation requires an explicit lane claim or planning bootstrap." >&2
+  if [ -n "$WORKTREE_REASON" ]; then
+    echo "  Lane policy: $WORKTREE_REASON" >&2
+    echo "" >&2
+  fi
   echo "" >&2
   echo "  Blocked command: $WORKTREE_BLOCKED" >&2
   echo "" >&2
   echo "  Allowed issue-lane bootstrap forms:" >&2
   echo "    HLDPRO_LANE_CLAIM_BOOTSTRAP=1 git worktree add -b issue-<n>-<slug> <path> <base>" >&2
+  echo "    HLDPRO_REPO_SLUG=HealthcarePlatform HLDPRO_LANE_CLAIM_BOOTSTRAP=1 git worktree add -b sandbox/issue-<n>-pr-pending-<scope> <path>/issue-<n>-pr-pending-<scope> <base>" >&2
   echo "    HLDPRO_LANE_CLAIM_SCOPE=raw/execution-scopes/<scope>.json git worktree add -b issue-<n>-<slug> <path> <base>" >&2
   echo "" >&2
   echo "  The scope form must include lane_claim.issue_number matching issue-<n>." >&2

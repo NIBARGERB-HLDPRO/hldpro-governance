@@ -1,0 +1,125 @@
+{
+  "session_id": "session-20260421-issue-445-lane-bootstrap",
+  "issue_number": 445,
+  "objective": "Enforce repo-specific issue lane branch and worktree naming before worktree creation, starting with HealthcarePlatform sandbox/issue-<n>-pr-pending-<scope> lanes.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repository only.",
+    "Add a governance-owned lane policy registry.",
+    "Add a dry-run/validation helper for repo-specific lane bootstrap.",
+    "Wire branch-switch guard to consult the helper where repo context is available.",
+    "Document invalid clean-lane cleanup and dirty-lane refusal."
+  ],
+  "out_of_scope": [
+    "HealthcarePlatform product-code edits.",
+    "Changing HealthcarePlatform's repo-native lane policy.",
+    "Auto-deleting dirty or untracked worktrees.",
+    "Broadening autonomous execution authority.",
+    "Replacing lane-claim execution scope validation."
+  ],
+  "research_summary": "Existing branch-switch guard blocks unclaimed issue worktrees but only knows generic issue-* lanes. Issue #445 adds a policy layer so HealthcarePlatform's stricter sandbox/issue-<n>-pr-pending-<scope> branch and matching worktree shape can be generated and rejected early without product repo edits.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/434",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/445",
+    "hooks/branch-switch-guard.sh",
+    "scripts/overlord/test_branch_switch_guard.py",
+    "raw/closeouts/2026-04-20-issue-400-runtime-lane-guard-proof.md",
+    "docs/runbooks/org-repo-intake.md"
+  ],
+  "sprints": [
+    {
+      "name": "Repo lane policy bootstrap",
+      "goal": "Make repo-specific issue lane naming deterministic and enforceable before worktree creation.",
+      "tasks": [
+        "Add lane policy metadata for standard repos and HealthcarePlatform.",
+        "Add a lane bootstrap helper that plans compliant branch/worktree names and validates branch/worktree/issue/scope consistency.",
+        "Wire branch-switch guard to reject invalid repo-specific issue lanes before bootstrap/scope bypasses.",
+        "Document clean invalid lane cleanup and dirty invalid lane refusal.",
+        "Add focused tests for valid and invalid HealthcarePlatform lanes, standard lanes, scope/issue mismatches, and cleanup advice."
+      ],
+      "acceptance_criteria": [
+        "Governance-owned lane policy registry expresses HealthcarePlatform's required sandbox/issue-<n>-pr-pending-<scope> branch naming and matching worktree basename.",
+        "Lane bootstrap helper generates repo-compliant branch/worktree names from repo slug, issue number, and scope slug.",
+        "HealthcarePlatform malformed issue-lane branch names are rejected before worktree creation in the guarded path.",
+        "HealthcarePlatform mismatched branch/worktree issue numbers or scope slugs are rejected.",
+        "Standard governed repo lane policy remains supported.",
+        "Execution-scope lane claim validation remains compatible with the branch issue.",
+        "Tests cover valid HP lane, invalid HP branch, invalid HP worktree path, issue mismatch, scope mismatch, standard lane, dirty cleanup refusal, and clean cleanup guidance.",
+        "No HealthcarePlatform product-code edits occur."
+      ],
+      "file_paths": [
+        "docs/lane_policies.json",
+        "docs/runbooks/org-repo-intake.md",
+        "hooks/branch-switch-guard.sh",
+        "scripts/overlord/lane_bootstrap.py",
+        "scripts/overlord/test_lane_bootstrap.py",
+        "scripts/overlord/test_branch_switch_guard.py",
+        "docs/plans/issue-445-lane-bootstrap-pdcar.md",
+        "docs/plans/issue-445-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-445-lane-bootstrap-implementation.json",
+        "raw/handoffs/2026-04-21-issue-445-plan-to-implementation.json",
+        "raw/validation/2026-04-21-issue-445-lane-bootstrap.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex orchestrator",
+      "role": "fallback implementer",
+      "focus": "Lane policy helper, guard wiring, and tests after Sonnet worker instability.",
+      "status": "accepted_with_followup",
+      "summary": "Codex implemented the bounded deterministic guard slice directly after prior supervised Sonnet worker sessions timed out without edits.",
+      "evidence": [
+        "raw/validation/2026-04-21-issue-445-lane-bootstrap.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Codex QA",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Codex QA reviewed the helper, hook integration, tests, and no-downstream scope.",
+    "evidence": [
+      "raw/cross-review/2026-04-21-issue-445-lane-bootstrap.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement governance-only repo-specific lane bootstrap validation for issue #445.",
+    "next_execution_step": "Run focused validation, Local CI Gate, closeout, PR, and automerge if green.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-445-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-445-lane-bootstrap-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-445-lane-bootstrap.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-21-issue-445-lane-bootstrap.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-445-lane-bootstrap.md",
+    "next_role": "codex-qa",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "HealthcarePlatform lane policy generates and validates sandbox/pr-pending branch/worktree names.",
+      "Malformed HealthcarePlatform lanes fail before worktree creation.",
+      "Standard repo lanes remain accepted.",
+      "Local CI Gate passes before merge."
+    ]
+  },
+  "material_deviation_rules": [
+    "If downstream repos need propagation, create downstream issues instead of editing them here.",
+    "If Sonnet worker tooling is unavailable or repeatedly times out, record the deviation and continue with Codex implementation plus Codex QA.",
+    "If cleanup would touch dirty worktrees, refuse and require operator review."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: no HITL, loop remaining child issues",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T16:55:00Z"
+}

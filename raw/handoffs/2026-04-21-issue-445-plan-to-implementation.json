@@ -1,0 +1,49 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-445-plan-to-implementation",
+  "issue_number": 445,
+  "parent_epic_number": 434,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-fallback-implementer",
+  "structured_plan_ref": "docs/plans/issue-445-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-445-lane-bootstrap-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {"id": "AC1", "statement": "Lane policy registry expresses HealthcarePlatform and standard repo lane naming.", "verification_refs": ["docs/lane_policies.json", "scripts/overlord/test_lane_bootstrap.py"]},
+    {"id": "AC2", "statement": "Lane bootstrap helper generates and validates repo-compliant branch/worktree names.", "verification_refs": ["scripts/overlord/lane_bootstrap.py", "scripts/overlord/test_lane_bootstrap.py"]},
+    {"id": "AC3", "statement": "Branch-switch guard rejects malformed HealthcarePlatform issue lanes before worktree creation.", "verification_refs": ["hooks/branch-switch-guard.sh", "scripts/overlord/test_branch_switch_guard.py"]}
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_lane_bootstrap.py",
+    "python3 scripts/overlord/test_branch_switch_guard.py",
+    "python3 -m py_compile scripts/overlord/lane_bootstrap.py",
+    "bash -n hooks/branch-switch-guard.sh",
+    "python3 -m json.tool docs/lane_policies.json",
+    "python3 scripts/overlord/test_validate_handoff_package.py",
+    "python3 scripts/overlord/validate_handoff_package.py --root .",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-445-lane-bootstrap-20260421 --require-if-issue-branch",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-445-lane-bootstrap-implementation.json --require-lane-claim",
+    "tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json"
+  ],
+  "review_artifact_refs": ["raw/cross-review/2026-04-21-issue-445-lane-bootstrap.md"],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "docs/lane_policies.json",
+    "docs/runbooks/org-repo-intake.md",
+    "hooks/branch-switch-guard.sh",
+    "scripts/overlord/lane_bootstrap.py",
+    "scripts/overlord/test_lane_bootstrap.py",
+    "scripts/overlord/test_branch_switch_guard.py",
+    "docs/plans/issue-445-lane-bootstrap-pdcar.md",
+    "docs/plans/issue-445-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-445-lane-bootstrap-implementation.json"
+  ],
+  "audit_refs": ["raw/validation/2026-04-21-issue-445-lane-bootstrap.md"],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T16:55:00Z",
+  "notes": "Governance-only lane bootstrap implementation package for issue #445."
+}
