@@ -19,12 +19,13 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Structured handoff package lifecycle — Worker handoff routing | [#448](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/448) | HIGH | 2-3 | Child of epic #434. Route planner new-code blocks to approved Worker handoff evidence with concrete next-action guidance. |
+| Structured handoff package lifecycle — schema guard diagnostics | [#447](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/447) | HIGH | 2-3 | Child of epic #434. Ensure Bash schema/write-boundary hooks fail loud with actionable stderr diagnostics. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Structured handoff package lifecycle — Worker handoff routing | 2026-04-21 | Issue [#448](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/448). PR [#460](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/460) routed planner new-code blocks to approved Worker handoff evidence, added the Worker route helper/template/tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — CLI session supervisor | 2026-04-21 | Issue [#444](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/444). PR [#451](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/451) added governed CLI session event schema, Claude/Codex subprocess supervisor, Claude review wrapper routing, unmanaged Claude-call guard coverage, fake CLI tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — PR and closeout hardening | 2026-04-21 | Issue [#436](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/436). PR [#450](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/450) added PR template handoff evidence fields, closeout validator enforcement, closeout-hook pre-graph validation, tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — packet dispatch reconciliation | 2026-04-21 | Issue [#437](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/437). PR [#446](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/446) reconciled the SoM packet schema/emitter/validator/queue contract, preserved historical packet compatibility, added dispatch governance emission and tests, validation, closeout, and graph/wiki outputs. |
