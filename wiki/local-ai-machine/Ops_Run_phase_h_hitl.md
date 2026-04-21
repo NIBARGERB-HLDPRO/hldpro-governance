@@ -9,8 +9,10 @@
 - **fail()** (14 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **dump_diagnostics()** (8 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **assert_project_ref_alignment()** (7 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **env_required()** (6 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **post_signed_slack_callback()** (6 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **assert_policy_event()** (5 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
-- **env_required()** (5 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **webhook_url()** (5 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **assert_dual_audit()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **assert_host_command_resume_link()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **assert_intent_mandate()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
@@ -18,17 +20,15 @@
 - **assert_transaction_capability_issuance()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **e2e_thread_ref()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **fetch_pending_action()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
-- **post_signed_slack_callback()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **wait_for_audit_rows()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **wait_for_policy_event()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **wait_for_transaction_capability_issuance()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
-- **webhook_url()** (4 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **assert_command_policy_event()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+- **e2e_channel_id()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **fetch_audit_rows()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **fetch_host_command_resume()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **fetch_intent_mandate()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - **fetch_step_capability_issuance()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
-- **fetch_transaction_capability_issuance()** (3 connections) — `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
 - *... and 10 more nodes in this community*
 
 ## Relationships
@@ -41,8 +41,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 68 (37%)
-- INFERRED: 114 (63%)
+- EXTRACTED: 182 (97%)
+- INFERRED: 6 (3%)
 - AMBIGUOUS: 0 (0%)
 
 ---

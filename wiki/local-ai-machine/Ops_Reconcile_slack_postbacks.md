@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **reconcile_slack_postbacks.py** (3 connections) — `local-ai-machine/scripts/ops/reconcile_slack_postbacks.py`
-- **_env()** (3 connections) — `local-ai-machine/scripts/ops/reconcile_slack_postbacks.py`
-- **_load_env_file()** (2 connections) — `local-ai-machine/scripts/ops/reconcile_slack_postbacks.py`
-- **main()** (2 connections) — `local-ai-machine/scripts/ops/reconcile_slack_postbacks.py`
+- **test_reconcile_slack_postbacks_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_reconcile_slack_postbacks_contract.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_reconcile_slack_postbacks_contract.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/test_reconcile_slack_postbacks_contract.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_reconcile_slack_postbacks_contract.py`
 
 ## Relationships
 
@@ -15,12 +15,12 @@
 
 ## Source Files
 
-- `local-ai-machine/scripts/ops/reconcile_slack_postbacks.py`
+- `local-ai-machine/scripts/ops/test_reconcile_slack_postbacks_contract.py`
 
 ## Audit Trail
 
-- EXTRACTED: 6 (60%)
-- INFERRED: 4 (40%)
+- EXTRACTED: 10 (91%)
+- INFERRED: 1 (9%)
 - AMBIGUOUS: 0 (0%)
 
 ---

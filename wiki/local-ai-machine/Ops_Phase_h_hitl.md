@@ -6,8 +6,8 @@
 
 - **test_phase_h_hitl_e2e_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_phase_h_hitl_e2e_contract.py`
 - **check()** (3 connections) — `local-ai-machine/scripts/ops/test_phase_h_hitl_e2e_contract.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/test_phase_h_hitl_e2e_contract.py`
 - **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_phase_h_hitl_e2e_contract.py`
-- **main()** (2 connections) — `local-ai-machine/scripts/ops/test_phase_h_hitl_e2e_contract.py`
 
 ## Relationships
 
@@ -19,8 +19,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 6 (60%)
-- INFERRED: 4 (40%)
+- EXTRACTED: 10 (91%)
+- INFERRED: 1 (9%)
 - AMBIGUOUS: 0 (0%)
 
 ---

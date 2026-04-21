@@ -1,12 +1,12 @@
 {
   "repo_slug": "knocktracker",
   "source": "knocktracker",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/graphify-out/knocktracker",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/wiki/knocktracker",
-  "nodes": 456,
-  "edges": 660,
-  "communities": 38,
-  "articles": 48,
+  "output": "/home/runner/work/hldpro-governance/hldpro-governance/graphify-out/knocktracker",
+  "wiki_dir": "/home/runner/work/hldpro-governance/hldpro-governance/wiki/knocktracker",
+  "nodes": 587,
+  "edges": 715,
+  "communities": 123,
+  "articles": 133,
   "html_status": "skipped",
-  "code_files": 152
+  "code_files": 171
 }

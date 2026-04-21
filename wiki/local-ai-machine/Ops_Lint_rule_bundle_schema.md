@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
+- **main()** (4 connections) — `local-ai-machine/scripts/ops/test_lint_rule_bundle_schema_contract.py`
 - **test_lint_rule_bundle_schema_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_lint_rule_bundle_schema_contract.py`
 - **check()** (3 connections) — `local-ai-machine/scripts/ops/test_lint_rule_bundle_schema_contract.py`
 - **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_lint_rule_bundle_schema_contract.py`
-- **main()** (2 connections) — `local-ai-machine/scripts/ops/test_lint_rule_bundle_schema_contract.py`
 
 ## Relationships
 
@@ -19,8 +19,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 6 (60%)
-- INFERRED: 4 (40%)
+- EXTRACTED: 10 (83%)
+- INFERRED: 2 (17%)
 - AMBIGUOUS: 0 (0%)
 
 ---

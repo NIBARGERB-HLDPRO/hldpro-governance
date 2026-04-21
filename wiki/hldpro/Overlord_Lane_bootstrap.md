@@ -1,20 +1,21 @@
 # Overlord Lane bootstrap
 
-> 11 nodes · cohesion 0.35
+> 12 nodes · cohesion 0.30
 
 ## Key Concepts
 
-- **lane_bootstrap.py** (10 connections) — `scripts/overlord/lane_bootstrap.py`
-- **main()** (7 connections) — `scripts/overlord/lane_bootstrap.py`
-- **load_policy()** (3 connections) — `scripts/overlord/lane_bootstrap.py`
-- **plan_lane()** (3 connections) — `scripts/overlord/lane_bootstrap.py`
-- **validate_lane()** (3 connections) — `scripts/overlord/lane_bootstrap.py`
-- **cleanup_advice()** (2 connections) — `scripts/overlord/lane_bootstrap.py`
-- **infer_repo_slug()** (2 connections) — `scripts/overlord/lane_bootstrap.py`
-- **LanePolicy** (2 connections) — `scripts/overlord/lane_bootstrap.py`
-- **_match()** (2 connections) — `scripts/overlord/lane_bootstrap.py`
-- **normalize_slug()** (2 connections) — `scripts/overlord/lane_bootstrap.py`
-- **parse_args()** (2 connections) — `scripts/overlord/lane_bootstrap.py`
+- **run_helper()** (11 connections) — `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
+- **TestLaneBootstrap** (10 connections) — `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
+- **test_lane_bootstrap.py** (2 connections) — `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
+- **.test_branch_worktree_issue_mismatch_rejected()** (2 connections) — `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
+- **.test_branch_worktree_scope_mismatch_rejected()** (2 connections) — `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
+- **.test_clean_invalid_lane_cleanup_documented()** (2 connections) — `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
+- **.test_dirty_invalid_lane_cleanup_refused()** (2 connections) — `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
+- **.test_invalid_healthcareplatform_branch_pattern_rejected()** (2 connections) — `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
+- **.test_invalid_healthcareplatform_worktree_path_rejected()** (2 connections) — `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
+- **.test_plan_generates_healthcareplatform_names()** (2 connections) — `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
+- **.test_standard_repo_lane_policy_accepted()** (2 connections) — `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
+- **.test_valid_healthcareplatform_lane_accepted()** (2 connections) — `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
 
 ## Relationships
 
@@ -22,12 +23,12 @@
 
 ## Source Files
 
-- `scripts/overlord/lane_bootstrap.py`
+- `hldpro-governance/scripts/overlord/test_lane_bootstrap.py`
 
 ## Audit Trail
 
-- EXTRACTED: 20 (53%)
-- INFERRED: 18 (47%)
+- EXTRACTED: 40 (98%)
+- INFERRED: 1 (2%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
+- **main()** (8 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
 - **check-supabase-lint-security.js** (7 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
-- **main()** (7 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
 - **fail()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
 - **parseLintPayload()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
 - **readInputOrRunLint()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-supabase-lint-security.js`
@@ -23,8 +23,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 14 (47%)
-- INFERRED: 16 (53%)
+- EXTRACTED: 30 (97%)
+- INFERRED: 1 (3%)
 - AMBIGUOUS: 0 (0%)
 
 ---

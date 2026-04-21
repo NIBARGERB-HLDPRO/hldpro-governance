@@ -5,9 +5,9 @@
 ## Key Concepts
 
 - **check-no-stale-mirror-gate-language.js** (5 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
+- **main()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
 - **fail()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
 - **isExcluded()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
-- **main()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
 - **normalizeSlash()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
 - **walkFiles()** (1 connections) — `healthcareplatform/backend/scripts/ci/check-no-stale-mirror-gate-language.js`
 
@@ -21,8 +21,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 10 (71%)
-- INFERRED: 4 (29%)
+- EXTRACTED: 14 (93%)
+- INFERRED: 1 (7%)
 - AMBIGUOUS: 0 (0%)
 
 ---

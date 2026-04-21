@@ -1,12 +1,12 @@
 {
   "repo_slug": "healthcareplatform",
   "source": "healthcareplatform",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/graphify-out/healthcareplatform",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/wiki/healthcareplatform",
-  "nodes": 1924,
-  "edges": 3033,
-  "communities": 207,
-  "articles": 217,
+  "output": "/home/runner/work/hldpro-governance/hldpro-governance/graphify-out/healthcareplatform",
+  "wiki_dir": "/home/runner/work/hldpro-governance/hldpro-governance/wiki/healthcareplatform",
+  "nodes": 3204,
+  "edges": 6244,
+  "communities": 383,
+  "articles": 393,
   "html_status": "skipped",
-  "code_files": 489
+  "code_files": 639
 }

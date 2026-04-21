@@ -1,35 +1,35 @@
 # Ops Inference Run
 
-> 78 nodes · cohesion 0.04
+> 255 nodes · cohesion 0.02
 
 ## Key Concepts
 
-- **inference_router.py** (34 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **evaluate_spot()** (9 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **route_image()** (9 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **evaluate_escalation()** (8 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **ground_findings()** (8 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **main()** (8 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **evaluate_local()** (7 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **run_inference_comparison.py** (7 connections) — `local-ai-machine/scripts/ops/run_inference_comparison.py`
-- **run_comparison()** (6 connections) — `local-ai-machine/scripts/ops/run_inference_comparison.py`
-- **call_spot_vlm()** (5 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **get_prompts_for_area()** (5 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **run_spot_batch.py** (5 connections) — `local-ai-machine/scripts/ops/run_spot_batch.py`
-- **run_spot_full_batch.py** (5 connections) — `local-ai-machine/scripts/ops/run_spot_full_batch.py`
-- **call_vlm()** (4 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **get_local_model()** (4 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **get_num_predict_for_model()** (4 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **load_visual_persona()** (4 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **resume_mock_survey_batch.py** (4 connections) — `local-ai-machine/scripts/ops/resume_mock_survey_batch.py`
-- **main()** (4 connections) — `local-ai-machine/scripts/ops/run_spot_batch.py`
-- **main()** (4 connections) — `local-ai-machine/scripts/ops/run_spot_full_batch.py`
-- **call_escalation()** (3 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **_call_grounding()** (3 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **_call_opus_grounding()** (3 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **_emit_grounding_event()** (3 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- **emit_learning_event()** (3 connections) — `local-ai-machine/scripts/ops/inference_router.py`
-- *... and 53 more nodes in this community*
+- **get()** (482 connections) — `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
+- **inference_router.py** (30 connections) — `local-ai-machine/scripts/ops/inference_router.py`
+- **critic_runner.ts** (21 connections) — `local-ai-machine/scripts/critic_runner.ts`
+- **main()** (15 connections) — `local-ai-machine/scripts/ops/run_spot_full_batch.py`
+- **main()** (14 connections) — `local-ai-machine/scripts/ops/resume_mock_survey_batch.py`
+- **callCritic()** (13 connections) — `local-ai-machine/scripts/critic_runner.ts`
+- **main()** (13 connections) — `local-ai-machine/scripts/ops/run_spot_batch.py`
+- **runpod_spot_orchestrator.py** (12 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **evaluate_spot()** (12 connections) — `local-ai-machine/scripts/ops/inference_router.py`
+- **route_image()** (12 connections) — `local-ai-machine/scripts/ops/inference_router.py`
+- **run_comparison()** (12 connections) — `local-ai-machine/scripts/ops/run_inference_comparison.py`
+- **main()** (12 connections) — `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- **main()** (11 connections) — `local-ai-machine/scripts/critic_runner.ts`
+- **gatekeeper.py** (11 connections) — `local-ai-machine/gatekeeper.py`
+- **evaluate_escalation()** (11 connections) — `local-ai-machine/scripts/ops/inference_router.py`
+- **main()** (10 connections) — `local-ai-machine/gatekeeper.py`
+- **evaluate_local()** (10 connections) — `local-ai-machine/scripts/ops/inference_router.py`
+- **ground_findings()** (10 connections) — `local-ai-machine/scripts/ops/inference_router.py`
+- **main()** (10 connections) — `local-ai-machine/scripts/ops/inference_router.py`
+- **main()** (10 connections) — `local-ai-machine/scripts/ops/run_inference_comparison.py`
+- **evaluate_spot_direct()** (10 connections) — `local-ai-machine/scripts/ops/run_spot_full_batch.py`
+- **call_spot_vlm()** (9 connections) — `local-ai-machine/scripts/ops/inference_router.py`
+- **export_work_queue()** (9 connections) — `local-ai-machine/scripts/ops/opus_ground_ungrounded.py`
+- **main()** (9 connections) — `local-ai-machine/scripts/ops/run_vlm_area_routed_eval.py`
+- **opus_ground_ungrounded.py** (8 connections) — `local-ai-machine/scripts/ops/opus_ground_ungrounded.py`
+- *... and 230 more nodes in this community*
 
 ## Relationships
 
@@ -37,16 +37,31 @@
 
 ## Source Files
 
+- `local-ai-machine/gatekeeper.py`
+- `local-ai-machine/scripts/control_plane/generate_redaction_audit_trace.py`
+- `local-ai-machine/scripts/control_plane/redaction_airlock.py`
+- `local-ai-machine/scripts/control_plane/scavenger_ingest.py`
+- `local-ai-machine/scripts/critic_runner.ts`
+- `local-ai-machine/scripts/llm/validate_profiles.py`
+- `local-ai-machine/scripts/ops/audit_retention_check.py`
 - `local-ai-machine/scripts/ops/inference_router.py`
+- `local-ai-machine/scripts/ops/opus_ground_ungrounded.py`
+- `local-ai-machine/scripts/ops/report_repo_learning_loop.py`
 - `local-ai-machine/scripts/ops/resume_mock_survey_batch.py`
+- `local-ai-machine/scripts/ops/run_adaptive_compaction_repo_runtime_probe.py`
 - `local-ai-machine/scripts/ops/run_inference_comparison.py`
 - `local-ai-machine/scripts/ops/run_spot_batch.py`
 - `local-ai-machine/scripts/ops/run_spot_full_batch.py`
+- `local-ai-machine/scripts/ops/run_vlm_area_routed_eval.py`
+- `local-ai-machine/scripts/ops/runpod_spot_orchestrator.py`
+- `local-ai-machine/scripts/ops/seed_phase_g_channel_routes.py`
+- `local-ai-machine/scripts/ops/test_claude_settings_hook_path_contract.py`
+- `local-ai-machine/scripts/ops/test_env_var_governance_gap1_runbook_contract.py`
 
 ## Audit Trail
 
-- EXTRACTED: 154 (61%)
-- INFERRED: 98 (39%)
+- EXTRACTED: 798 (52%)
+- INFERRED: 733 (48%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -1,0 +1,25 @@
+# Testing Seed option3 full local
+
+> 1 nodes · cohesion 1.00
+
+## Key Concepts
+
+- **seed-option3-full-local.ps1** (0 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/seed-option3-full-local.ps1`
+
+## Relationships
+
+- No strong cross-community connections detected
+
+## Source Files
+
+- `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/seed-option3-full-local.ps1`
+
+## Audit Trail
+
+- EXTRACTED: 0 (0%)
+- INFERRED: 0 (0%)
+- AMBIGUOUS: 0 (0%)
+
+---
+
+*Part of the graphify knowledge wiki. See [[index]] to navigate.*

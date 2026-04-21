@@ -1,10 +1,14 @@
 # Role policy validation
 
-> 2 nodes · cohesion 1.00
+> 6 nodes · cohesion 0.33
 
 ## Key Concepts
 
-- **role-policy-validation.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/role-policy-validation.test.ts`
+- **role-policy-validation.ts** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/role-policy-validation.ts`
+- **role-policy-validation.test.ts** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/role-policy-validation.test.ts`
+- **evaluateLockMutationDeterminism()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/role-policy-validation.ts`
+- **findBroadUsingTruePolicies()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/role-policy-validation.ts`
+- **findInsertUpdatePoliciesMissingWithCheck()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/role-policy-validation.ts`
 - **assert()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/role-policy-validation.test.ts`
 
 ## Relationships
@@ -14,10 +18,11 @@
 ## Source Files
 
 - `healthcareplatform/backend/supabase/functions/_shared/role-policy-validation.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/role-policy-validation.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 10 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

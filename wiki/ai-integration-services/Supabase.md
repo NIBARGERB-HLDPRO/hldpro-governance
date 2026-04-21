@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **config.ts** (0 connections) — `ai-integration-services/backend/supabase/functions/_shared/config.ts`
+- **supabase.ts** (0 connections) — `ai-integration-services/apps/portal/src/lib/supabase.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `ai-integration-services/backend/supabase/functions/_shared/config.ts`
+- `ai-integration-services/apps/portal/src/lib/supabase.ts`
 
 ## Audit Trail
 

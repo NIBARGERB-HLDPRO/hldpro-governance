@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
+- **main()** (9 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
 - **check-function-search-path-hardening.js** (9 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
-- **main()** (8 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
 - **getChangedMigrationFiles()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
 - **parseAlterSearchPathSignatures()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
 - **fail()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-function-search-path-hardening.js`
@@ -25,8 +25,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 18 (45%)
-- INFERRED: 22 (55%)
+- EXTRACTED: 40 (98%)
+- INFERRED: 1 (2%)
 - AMBIGUOUS: 0 (0%)
 
 ---

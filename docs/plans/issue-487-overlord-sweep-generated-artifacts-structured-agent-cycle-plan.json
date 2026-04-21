@@ -1,0 +1,107 @@
+{
+  "session_id": "session-20260421-issue-487-overlord-sweep-generated-artifacts",
+  "issue_number": 487,
+  "objective": "Persist the successful Overlord Sweep generated graph, wiki, self-learning, Pentagi, and effectiveness baseline artifacts through a pull request that satisfies governance evidence checks.",
+  "tier": 2,
+  "scope_boundary": [
+    "Use GitHub issue #487 as the governing issue for generated Overlord Sweep artifact persistence.",
+    "Limit write scope to generated graphify outputs, wiki pages, metrics snapshots, the organization compendium, and the evidence files needed for this generated artifact PR.",
+    "Preserve the generated content from Overlord Sweep run 24739922689 while supplying the missing plan and execution-scope evidence required by local-ci-gate."
+  ],
+  "out_of_scope": [
+    "Changing application source code in governed repositories.",
+    "Changing the self-learning algorithm or graph generation logic.",
+    "Changing branch protection rules or bypassing required PR checks.",
+    "Editing production secrets or GitHub repository settings."
+  ],
+  "research_summary": "Overlord Sweep run 24739922689 completed across the governed repo set and produced a current self-learning report with 147 indexed entries, zero duplicate groups, and zero stale entries. The generated artifact PR was created, but PR #490 used branch automation/overlord-sweep-2026-04-21-24739922689, which does not contain issue-<number>; governance-surface validation therefore could not resolve an issue-specific plan or execution scope. This corrected branch ties the same generated artifact snapshot to issue #487 and includes explicit plan/scope evidence.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/actions/runs/24739922689",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/490",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/487",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/10",
+    "metrics/self-learning/latest.json",
+    "metrics/effectiveness-baseline/latest.json",
+    "metrics/pentagi/latest.json"
+  ],
+  "sprints": [
+    {
+      "name": "Generated artifact persistence",
+      "goal": "Make the Overlord Sweep generated artifact PR mergeable under the same governance evidence rules as manual governance-surface changes.",
+      "tasks": [
+        "Create an issue-numbered automation branch from the generated artifact snapshot.",
+        "Add a canonical structured agent cycle plan for issue #487.",
+        "Add an implementation execution scope that allows only generated artifact paths and this evidence package.",
+        "Validate the structured plan and execution scope locally before publishing the corrected generated artifact PR."
+      ],
+      "acceptance_criteria": [
+        "The corrected branch name contains issue-487 so governance-surface enforcement can resolve evidence.",
+        "The execution scope allows graphify-out, wiki, metrics, docs/ORG_GOVERNANCE_COMPENDIUM.md, and issue #487 evidence files only.",
+        "python3 scripts/overlord/validate_structured_agent_cycle_plan.py passes with governance-surface enforcement for the corrected branch.",
+        "python3 scripts/overlord/assert_execution_scope.py passes with lane-claim enforcement for the corrected branch.",
+        "The corrected generated artifact PR passes local-ci-gate and can replace PR #490."
+      ],
+      "file_paths": [
+        "docs/ORG_GOVERNANCE_COMPENDIUM.md",
+        "docs/plans/issue-487-overlord-sweep-generated-artifacts-structured-agent-cycle-plan.json",
+        "graphify-out/",
+        "metrics/effectiveness-baseline/",
+        "metrics/pentagi/",
+        "metrics/self-learning/",
+        "raw/execution-scopes/2026-04-21-issue-487-overlord-sweep-artifact-pr-implementation.json",
+        "raw/validation/2026-04-21-issue-487-overlord-sweep-generated-artifacts.md",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-orchestrator",
+      "role": "artifact persistence reviewer",
+      "focus": "Confirm why PR #490 failed and define the minimal governance evidence needed for the generated artifact branch.",
+      "status": "accepted",
+      "summary": "The artifact content was produced by a successful sweep, but the generated branch lacked an issue number and evidence package. The corrected branch should preserve the generated outputs and add issue #487 plan/scope evidence.",
+      "evidence": [
+        "PR #490 local-ci-gate failure",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/assert_execution_scope.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-requested-for-generated-artifact-evidence",
+    "model_family": "none",
+    "status": "not_requested",
+    "summary": "This change adds governance evidence for an already generated artifact snapshot and does not alter architecture, model policy, or application behavior.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/actions/runs/24739922689",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/487"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #487 may publish the Overlord Sweep generated graph/wiki/metric artifacts and the supporting governance evidence needed for a mergeable generated artifact PR.",
+    "next_execution_step": "Validate the corrected branch locally, publish it as the replacement generated artifact PR, wait for required checks, and merge if green.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-487-overlord-sweep-artifact-pr-implementation.json",
+    "handoff_package_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-487-overlord-sweep-generated-artifacts.md"
+    ],
+    "closeout_ref": null
+  },
+  "material_deviation_rules": [
+    "If local-ci-gate still cannot resolve issue #487 evidence, stop and update the workflow branch naming/evidence generation path before merging generated artifacts.",
+    "If generated files outside the declared directories appear, update the execution scope only after confirming they are generated by Overlord Sweep.",
+    "If required checks fail for non-evidence reasons, preserve PR #490 as evidence and create a separate issue-backed fix before merging artifacts."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "GitHub issue #487",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T18:43:54Z"
+}

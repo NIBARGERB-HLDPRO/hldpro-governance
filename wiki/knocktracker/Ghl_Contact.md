@@ -5,8 +5,8 @@
 ## Key Concepts
 
 - **GHLService** (13 connections) — `knocktracker/lib/ghlService.ts`
+- **.handleResponse()** (10 connections) — `knocktracker/lib/ghlService.ts`
 - **.getHeaders()** (9 connections) — `knocktracker/lib/ghlService.ts`
-- **.handleResponse()** (9 connections) — `knocktracker/lib/ghlService.ts`
 - **.addNoteToContact()** (3 connections) — `knocktracker/lib/ghlService.ts`
 - **.addTagsToContact()** (3 connections) — `knocktracker/lib/ghlService.ts`
 - **.createContact()** (3 connections) — `knocktracker/lib/ghlService.ts`
@@ -15,9 +15,9 @@
 - **.searchContactByEmail()** (3 connections) — `knocktracker/lib/ghlService.ts`
 - **.searchContactByPhone()** (3 connections) — `knocktracker/lib/ghlService.ts`
 - **.updateContact()** (3 connections) — `knocktracker/lib/ghlService.ts`
-- **ghlService.ts** (1 connections) — `knocktracker/lib/ghlService.ts`
 - **.constructor()** (1 connections) — `knocktracker/lib/ghlService.ts`
 - **.isConfigured()** (1 connections) — `knocktracker/lib/ghlService.ts`
+- **ghlService.ts** (1 connections) — `knocktracker/lib/ghlService.ts`
 
 ## Relationships
 
@@ -29,8 +29,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 26 (45%)
-- INFERRED: 32 (55%)
+- EXTRACTED: 58 (98%)
+- INFERRED: 1 (2%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **vite.config.ts** (0 connections) — `ai-integration-services/apps/marketing/vite.config.ts`
+- **vite-env.d.ts** (0 connections) — `ai-integration-services/apps/portal/src/vite-env.d.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `ai-integration-services/apps/marketing/vite.config.ts`
+- `ai-integration-services/apps/portal/src/vite-env.d.ts`
 
 ## Audit Trail
 

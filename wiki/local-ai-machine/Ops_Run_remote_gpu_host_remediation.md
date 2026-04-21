@@ -1,13 +1,13 @@
 # Ops Run remote gpu host remediation
 
-> 4 nodes · cohesion 0.50
+> 4 nodes · cohesion 0.83
 
 ## Key Concepts
 
-- **run_remote_gpu_host_remediation.ps1** (3 connections) — `local-ai-machine/scripts/ops/run_remote_gpu_host_remediation.ps1`
-- **Convert-ToLf()** (1 connections) — `local-ai-machine/scripts/ops/run_remote_gpu_host_remediation.ps1`
-- **Escape-BashDoubleQuoted()** (1 connections) — `local-ai-machine/scripts/ops/run_remote_gpu_host_remediation.ps1`
-- **Invoke-SshAndCapture()** (1 connections) — `local-ai-machine/scripts/ops/run_remote_gpu_host_remediation.ps1`
+- **test_run_remote_gpu_host_remediation_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_run_remote_gpu_host_remediation_contract.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_run_remote_gpu_host_remediation_contract.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/test_run_remote_gpu_host_remediation_contract.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_run_remote_gpu_host_remediation_contract.py`
 
 ## Relationships
 
@@ -15,12 +15,12 @@
 
 ## Source Files
 
-- `local-ai-machine/scripts/ops/run_remote_gpu_host_remediation.ps1`
+- `local-ai-machine/scripts/ops/test_run_remote_gpu_host_remediation_contract.py`
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 10 (91%)
+- INFERRED: 1 (9%)
 - AMBIGUOUS: 0 (0%)
 
 ---

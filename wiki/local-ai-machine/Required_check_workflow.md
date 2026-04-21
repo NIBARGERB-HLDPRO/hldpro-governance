@@ -6,8 +6,8 @@
 
 - **test_required_check_workflow_contract.py** (4 connections) — `local-ai-machine/scripts/test_required_check_workflow_contract.py`
 - **check()** (4 connections) — `local-ai-machine/scripts/test_required_check_workflow_contract.py`
+- **read()** (4 connections) — `local-ai-machine/scripts/test_required_check_workflow_contract.py`
 - **main()** (3 connections) — `local-ai-machine/scripts/test_required_check_workflow_contract.py`
-- **read()** (3 connections) — `local-ai-machine/scripts/test_required_check_workflow_contract.py`
 - **fail()** (2 connections) — `local-ai-machine/scripts/test_required_check_workflow_contract.py`
 
 ## Relationships
@@ -20,8 +20,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 8 (50%)
-- INFERRED: 8 (50%)
+- EXTRACTED: 16 (94%)
+- INFERRED: 1 (6%)
 - AMBIGUOUS: 0 (0%)
 
 ---

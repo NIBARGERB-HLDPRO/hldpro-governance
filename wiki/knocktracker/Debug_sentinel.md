@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **DebugSentinel.tsx** (1 connections) — `knocktracker/components/DebugSentinel.tsx`
 - **DebugSentinel()** (1 connections) — `knocktracker/components/DebugSentinel.tsx`
+- **DebugSentinel.tsx** (1 connections) — `knocktracker/components/DebugSentinel.tsx`
 
 ## Relationships
 

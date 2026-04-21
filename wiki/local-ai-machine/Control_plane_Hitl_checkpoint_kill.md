@@ -6,13 +6,13 @@
 
 - **hitl_checkpoint_kill.ts** (8 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
 - **serviceHeaders()** (5 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **loadResumeBundle()** (4 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **requireEnv()** (4 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
 - **restUrl()** (4 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
 - **writeCheckpoint()** (4 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **appendSigkillLog()** (3 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
 - **checkpointAndKill()** (3 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
-- **loadResumeBundle()** (3 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
-- **requireEnv()** (3 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
-- **appendSigkillLog()** (2 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
-- **getPublishableKey()** (2 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
+- **getPublishableKey()** (3 connections) — `local-ai-machine/scripts/control_plane/hitl_checkpoint_kill.ts`
 
 ## Relationships
 
@@ -24,8 +24,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 16 (47%)
-- INFERRED: 18 (53%)
+- EXTRACTED: 34 (89%)
+- INFERRED: 4 (11%)
 - AMBIGUOUS: 0 (0%)
 
 ---

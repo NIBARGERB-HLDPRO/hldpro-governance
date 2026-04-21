@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
+- **main()** (7 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
 - **check-progress-github-alignment.js** (6 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
-- **main()** (6 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
 - **fail()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
 - **collectSectionLines()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
 - **readUtf8()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-progress-github-alignment.js`
@@ -22,8 +22,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 12 (46%)
-- INFERRED: 14 (54%)
+- EXTRACTED: 26 (96%)
+- INFERRED: 1 (4%)
 - AMBIGUOUS: 0 (0%)
 
 ---

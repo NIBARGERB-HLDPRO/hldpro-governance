@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
+- **main()** (5 connections) — `healthcareplatform/backend/scripts/ci/validate-supabase-gh-governance.js`
 - **validate-supabase-gh-governance.js** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-supabase-gh-governance.js`
 - **fail()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-supabase-gh-governance.js`
-- **main()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-supabase-gh-governance.js`
 - **readUtf8()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-supabase-gh-governance.js`
 - **requirePatterns()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-supabase-gh-governance.js`
 
@@ -20,8 +20,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 8 (40%)
-- INFERRED: 12 (60%)
+- EXTRACTED: 20 (95%)
+- INFERRED: 1 (5%)
 - AMBIGUOUS: 0 (0%)
 
 ---
