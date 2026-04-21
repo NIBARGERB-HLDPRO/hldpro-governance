@@ -468,9 +468,9 @@ Contract:
 
 Contract:
 - Probes Mac hardware and local runtime availability without sending prompt payloads.
-- Probes Windows Ollama metadata through `/api/tags` only.
+- Probes Windows Ollama metadata through `/api/tags` only when requested and reports it as deprecated/off the active SoM ladder.
 - Reports `probe_payloads_sent: false`.
 - Reports PII guardrail readiness from local pattern files.
 - Missing or malformed PII patterns must produce `fail_closed: true`.
-- Reports routing boundaries: no PII to cloud, no PII to Windows, halt when patterns are missing, halt for PII/architecture/standards if local guardrail is unavailable.
-- Reports memory budgets for Mac steady-state guardrail/intent models and one-at-a-time on-demand worker/critic models.
+- Reports routing boundaries: no PII to cloud, no PII to Windows, Windows not active as a worker fallback, halt when patterns are missing, halt for PII/architecture/standards if local guardrail is unavailable, and Gemma not allowed as authoritative review.
+- Reports memory budgets for Mac steady-state guardrail/intent models, the bounded Qwen local worker ladder, and Gemma A/B shadow critique.

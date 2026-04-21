@@ -94,6 +94,7 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **closure_reason:** Windows-Ollama Tier-2 rung now ACTIVE. All three prerequisite controls live (PII middleware Sprint 2, audit trail Sprint 3, CI gates Sprint 4, and routing decision tree Sprint 5). Rung transitions from documented/disabled to active in Tier-2 ladder per STANDARDS.md. Invariants #8–#10 enforced.
 - **reclose_reason:** Re-closed as `CLOSED` during Sprint 6 merge — all 8 must-fixes from gpt-5.4 post-hoc review addressed and tested; Tier-2 routing restored to fully functional state.
 - **closure_date:** 2026-04-15
+- **superseded_by:** Issue #432 demotes Windows-Ollama off the active governance waterfall. This closed exception remains historical evidence only and no longer authorizes an active Windows Worker fallback.
 
 ## Active exceptions (temporary)
 

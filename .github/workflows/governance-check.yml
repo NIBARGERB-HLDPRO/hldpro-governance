@@ -639,7 +639,7 @@ jobs:
           [ -d "$GOVSCRIPTS" ] || GOVSCRIPTS=".github/scripts"
           python3 "$GOVSCRIPTS/check_pii_routing.py"
 
-      - name: Validate LAM reviewer/worker family diversity
+      - name: Validate LAM worker ladder and Gemma shadow-only policy
         run: |
           set -euo pipefail
           GOVSCRIPTS=".governance/.github/scripts"

@@ -393,15 +393,36 @@ Schema: `hldpro-governance/schemas/approved_scope_paths.schema.json`
 
 Activity → model routing is codified as a society-of-minds role charter with enforced handoff protocols. Every intent has a CI-verifiable enforcement artifact — no orphan rules.
 
-### Tiers
+### Governance waterfall
 
-| Tier | Role | Primary | Fallback 1 | Fallback 2 | Floor |
-|---|---|---|---|---|---|
-| 1 | **Dual Planner — required pair** | Claude: `claude-opus-4-6` **AND** Codex: `gpt-5.4` @ `model_reasoning_effort=high` | Claude → `claude-sonnet-4-6`; Codex → `gpt-5.3-codex-spark` @ `high` | Codex only → `gpt-5.3-codex-spark` @ `medium` | Claude: no Haiku for planning. Codex: no below-spark for planning. Both unavailable → halt. |
-| 2 | Worker (coder) | `gpt-5.3-codex-spark` @ `high` | `gpt-5.3-codex-spark` @ `medium` | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (local warm daemon) → **Windows Ollama** (`http://172.17.227.49:11434`, `qwen2.5-coder:7b`) → `claude-sonnet-4-6` (cost-flagged). Routed via `scripts/windows-ollama/decide.sh`; PII halts routing per invariant #8; all calls audited per invariant #10. | — |
-| 3 | Reviewer (code) | `claude-sonnet-4-6` | `claude-haiku-4-5` (review quality flagged) | — | — |
-| 3 | Reviewer (non-code long-form) | `gpt-5.4` @ `medium` | `gpt-5.4` @ `low` | `claude-sonnet-4-6` | — |
-| 4 | Gate / verifier | `claude-haiku-4-5-20251001` | `claude-sonnet-4-6` (wasteful but safe) | — | — |
+Codex is the primary local orchestrator for governance work. The orchestrator
+coordinates handoffs, integrates approved plans, updates local docs and GitHub
+issues, and records evidence. Orchestration is not approval authority: the
+orchestrator cannot plan, implement, review, and gate the same work.
+
+| Stage | Role | Primary | Fallback / Constraint |
+|---|---|---|---|
+| 0 | Orchestrator | Codex session | Coordinates and integrates only; no self-approval. |
+| 1A | Planner | `claude-opus-4-6` | `claude-sonnet-4-6` only when Opus is unavailable; fallback must be logged. |
+| 1B | Plan reviewer | `gpt-5.4` @ `model_reasoning_effort=high` | `gpt-5.3-codex-spark` may run same-family critical/specialist plan review only when `gpt-5.4` is unavailable; degraded independence must be logged and operator-visible before implementation. |
+| 1C | Plan integrator | Codex orchestrator | Combines the accepted plan and review into issue/docs/artifacts; no independent approval authority. |
+| 2 | Worker (substantial implementation) | `claude-sonnet-4-6` | Local Qwen worker sublane for bounded low/medium-risk chunks; otherwise halt or escalate intentionally. |
+| 2L | Local bounded worker | Qwen local ladder below | Implementation only; never planning, final review, or gate authority. |
+| 3 | QA / code review | Appropriate Codex QA model with explicit `-m` and `model_reasoning_effort` | Must be distinct from the Worker. For standards/architecture changes, preserve the Tier 1 cross-review artifact. |
+| 3B | Shadow local critic | `mlx-community/gemma-4-26b-a4b-4bit` | A/B measurement only against Codex/Claude QA; non-blocking and cannot approve or reject. |
+| 4 | Gate / verifier | deterministic checks + completion verification | Gate identity must be distinct from planner, worker, and QA reviewer. |
+
+### Local worker ladder
+
+Local workers conserve paid token usage on bounded implementation work. They do
+not replace the planning, QA, or gate roles.
+
+| Order | Model | Role | Constraints |
+|---|---|---|---|
+| 1 | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` | Micro-worker | Tiny patches, tests, mechanical edits. Do not use for full-file regeneration above the issue #105 safe limit. |
+| 2 | `mlx-community/Qwen3-14B-4bit` | Standard local worker | Moderate bounded implementation and structured-output work. |
+| 3 | `mlx-community/Qwen3.6-35B-A3B-4bit` | Large local worker | On-demand only; one large local model loaded at a time; use when memory headroom is available. |
+| 4 | Halt or deliberate cloud escalation | `claude-sonnet-4-6` | Escalation is an explicit routing decision, not an automatic fallback. |
 
 ### LAM lane (local, Apple M5 — MLX runtime)
 
@@ -411,9 +432,10 @@ LAM is lateral to the tier chain. Never plans (Tier 1), never cross-reviews (ind
 |---|---|---|---|
 | M7 Guardrail-LAM | `mlx-community/Qwen3-8B-4bit` | Pre-exec PASS/BLOCK | 64 |
 | M4 Worker-LAM | `mlx-community/Qwen3-14B-4bit` | Implementation on local lanes (PII/bulk/offline) | 400 |
-| M6 Critic-LAM | `mlx-community/gemma-4-26b-a4b-4bit` (outlines) | Adversarial review | 256 |
+| M5 Large Worker-LAM | `mlx-community/Qwen3.6-35B-A3B-4bit` | On-demand larger local implementation | 512 |
+| M6 Shadow-Critic-LAM | `mlx-community/gemma-4-26b-a4b-4bit` (outlines) | A/B shadow critique only | 256 |
 | MCP daemon | `mlx-community/Qwen3-1.7B-4bit` (primary) / `mlx-community/Phi-4-mini-instruct-4bit` (reserve) | Intent parsing + packet routing; always-warm, evictable under pressure | 128 |
-| Qwen-Coder fallback | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` | Tier-2 worker when codex-spark unavailable | 512 |
+| Qwen-Coder micro-worker | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` | Bounded local implementation chunks | 512 |
 | Auditor-Claude | `claude-sonnet-4-6` | Manifest-only review for PII, content review for non-PII | — |
 
 Reference runtime: `local-ai-machine/src/inference/mlx_runtime.py`, `LOCAL_LLM_RUNTIME_STRATEGY.md`, `SOCIETY_OF_MINDS_INTEGRATION.md`. No LAM rewrite — the canonical protocol lives in `local-ai-machine`; this standard references it.
@@ -431,7 +453,7 @@ Hosted in `local-ai-machine/services/som-mcp/`. Single long-running process (boo
 **Eviction policy (resident-memory budget):**
 - M7 Guardrail-LAM: **privileged, always resident** (4.67 GB)
 - MCP daemon model: **warm, evictable** — evicted first under memory pressure; reloaded after M6 unloads
-- M4 / M6 / Qwen-Coder: on-demand load, unload after work
+- M4 / M5 / M6 / Qwen-Coder: on-demand load, unload after work
 
 **Model upgrade stub:** `active` key in `.lam-config.yml mcp` block controls which MCP model loads. Primary `qwen3-1.7b`; flip to `phi-4-mini` when role_scope expands to include reviewer-lam-fallback or routing-error-rate > 5% over 1 week.
 
@@ -442,13 +464,19 @@ Hosted in `local-ai-machine/services/som-mcp/`. Single long-running process (boo
 ### Handoff chain (every architecture/standards slice)
 
 ```
-Tier 1 Dual Planner (opus-4-6 ⇄ gpt-5.4 high)  →  raw/cross-review/YYYY-MM-DD-*.md
-                        ↓ dual-signed plan
-Tier 2 Worker (gpt-5.3-codex-spark high)        →  diff on PR
+Codex orchestrator                                 →  issue/docs/artifact coordination
                         ↓
-Tier 3 Reviewer (sonnet-4-6 for code)           →  approve / changes
+Planner-Claude (opus-4-6)                          →  plan
                         ↓
-Tier 4 Gate (haiku via verify-completion)       →  PASS / FAIL
+Plan reviewer-Codex (gpt-5.4 high)                →  raw/cross-review/YYYY-MM-DD-*.md
+                        ↓
+Codex orchestrator                                 →  integrated plan + GH issue/docs
+                        ↓
+Worker-Claude (sonnet-4-6) or bounded Qwen worker  →  diff on PR
+                        ↓
+Codex QA                                           →  approve / changes
+                        ↓
+Gate / deterministic verifier                      →  PASS / FAIL
 ```
 
 LAM runs out-of-band for its lanes; feeds sanitized outputs into any tier that needs them.
@@ -456,15 +484,15 @@ LAM runs out-of-band for its lanes; feeds sanitized outputs into any tier that n
 ### Hard-rule invariants
 
 1. **No self-approval.** No mind reviews its own output. Drafter, reviewer, and gate identities must be distinct.
-2. **No tier skipping.** No merge without Worker → Reviewer → Gate.
-3. **Planning floor.** Tier 1 never drops below `claude-sonnet-4-6` (Claude side) or `gpt-5.3-codex-spark` (Codex side). Both unavailable → halt.
+2. **No tier skipping.** No merge without Planner → Plan Review → Worker → QA → Gate.
+3. **Planning floor.** Planning never drops below `claude-sonnet-4-6` on the Claude side or `gpt-5.3-codex-spark` on the OpenAI side. `gpt-5.3-codex-spark` is a plan-review fallback/specialist critic only when `gpt-5.4` is unavailable, and the degraded same-family review state must be logged. Both planning families unavailable → halt.
 4. **PII floor.** Content tagged or detected as PII routes through LAM only. Never sent to cloud reviewers. Violation = security incident.
 5. **Cross-family independence.** Tier 1 Planner-Claude and Planner-Codex MUST be different model families (Anthropic + OpenAI). Never both same family.
-6. **Local family diversity.** Worker-LAM and Reviewer-LAM MUST be different model families (e.g., Qwen + Gemma).
+6. **Local family diversity.** Local Qwen workers and Gemma shadow critique must remain separate roles. Gemma output is A/B evidence only until a later issue explicitly promotes it.
 7. **Fallback is logged.** Every fallback to a lower tier writes a schema-validated entry under `raw/model-fallbacks/YYYY-MM-DD.md`.
-8. **Windows-Ollama PII floor.** PII-tagged or PII-detected payloads MUST block Windows host AND Sonnet cloud fallback. Route to LAM only or halt. Before submitting any payload to the Windows host endpoint, payload must pass `pii-patterns.yml` middleware. Fail-closed if patterns unavailable. (Enforced in Sprint 2 via `scripts/windows-ollama/submit.py`; active in Sprint 5.)
-9. **Windows-Ollama firewall binding.** The Windows host endpoint MUST NOT be exposed beyond LAN. Requires firewall binding to Mac host IP or explicit trusted subnet allowlist. No public bind or port-forwarding. Separate epic adding Cloudflare Access may extend this; until then, LAN-only via `sase-switch` vEthernet adapter on subnet `172.17.0.0/16`. (Enforced in Sprint 4 via `check-windows-ollama-exposure.yml` CI; active in Sprint 5.)
-10. **Windows-Ollama audit.** Every Windows-Ollama call appends to `raw/remote-windows-audit/YYYY-MM-DD.jsonl` with hash-chain + HMAC + daily manifest. Break the chain → CI validator fails; endpoint disabled until rebuilt. (Enforced in Sprint 3 via `check-windows-ollama-audit-schema.yml` CI; active in Sprint 5.)
+8. **Windows-Ollama off-ladder.** Windows Ollama is not an active governance waterfall fallback. Historical Windows tooling may remain for archived validation or separately approved experiments, but it is not a Worker fallback and must not be selected by SoM routing.
+9. **Gemma non-authority.** `mlx-community/gemma-4-26b-a4b-4bit` may produce A/B shadow critique only. Its findings can inform follow-up work but cannot block, approve, or satisfy QA/gate requirements.
+10. **Local worker bounded scope.** Qwen local workers may write only within an approved execution scope, with explicit file/task bounds and downstream QA/gate evidence.
 11. **Remote MCP stdio-only boundary.** Remote-origin packets MUST NOT invoke stdio-only tools. `lam.scrub_pii` remains stdio-only; remote bridge dispatchers must refuse it and any future stdio-only tool before local MCP execution.
 12. **Remote MCP server-authoritative origin.** Remote HTTP transport MUST overwrite client-supplied `origin` after Cloudflare Access and inner-token validation. Client-supplied local origins are ignored and audited as spoof attempts.
 13. **Remote MCP PII middleware.** Every remote-exposed tool call MUST pass application-layer PII middleware before dispatch. PII matches, missing PII patterns, malformed PII patterns, schema violations, and payload-size violations fail closed.
@@ -553,18 +581,18 @@ Validator rejects if: any required field missing, `drafter.model_family` == `rev
 | 3 | Cross-review artifact validates schema + invariants | `require-cross-review.yml` schema validator | PR blocked |
 | 4 | No-self-approval (distinct identities) | `check-no-self-approval.yml` | PR blocked |
 | 5 | Fallback auto-logged + schema-valid | `scripts/model-fallback-log.sh` + `check-fallback-log-schema.yml` | PR blocked if malformed |
-| 6 | Fallback rate + M6-vs-Sonnet agreement metrics | `overlord-sweep` weekly | Auto-issue on threshold |
+| 6 | Fallback rate + Gemma-vs-Codex/Claude A/B agreement metrics | `overlord-sweep` weekly | Auto-issue on threshold |
 | 7 | Arch on Haiku blocked | `check-arch-tier.yml` checks PR-scoped raw `raw/cross-review/` artifacts and rejects schema v2+ gates using Haiku | PR + closeout blocked |
 | 8 | PII never leaves machine | `check-pii-routing.yml` + `require-lam-dual-signature.sh` | PR + closeout blocked |
 | 9 | LAM family diversity | `check-lam-family-diversity.yml` reads `.lam-config.yml` | PR blocked |
 | 10 | LAM availability for PII PRs | `check-lam-availability.yml` runtime probe | PR blocked |
 | 11 | CLAUDE.md points to SoT | `check-claude-md-pointer.yml` | PR blocked |
 | 12 | Exception register covers deferrals with expiry ≤ 90d | `overlord-sweep` validates; past-expiry auto-opens issue | Sweep issue on breach |
-| 13 | Windows-Ollama PII floor (invariant #8) | `scripts/windows-ollama/submit.py` validates PII patterns; `scripts/windows-ollama/decide.sh` routes `PII` to HALT before all ladder steps | PR blocked if PII routes to Windows or cloud |
-| 14 | Windows-Ollama firewall binding (invariant #9) | `check-windows-ollama-exposure.yml` CI gate (Sprint 4) asserts no public bind, endpoint still `172.17.227.49:11434` | PR blocked if exposure detected |
-| 15 | Windows-Ollama audit enforcement (invariant #10) | `scripts/windows-ollama/verify_audit.py` local validator (Sprint 3); `check-windows-ollama-audit-schema.yml` CI gate (Sprint 4) | PR blocked on chain break, HMAC forgery, or manifest mismatch |
-| 16 | Windows-Ollama audit schema validation | `check-windows-ollama-audit-schema.yml` verifies audit chain integrity on PRs touching audit files | PR blocked |
-| 17 | Windows-Ollama firewall exposure validation | `check-windows-ollama-exposure.yml` asserts no public bind, endpoint stability (172.17.227.49:11434), Cloudflare stub status | PR blocked |
+| 13 | Windows-Ollama remains off active SoM routing | `STANDARDS.md` + runtime inventory tests assert Windows is deprecated/off-ladder | PR blocked if active Worker fallback language returns |
+| 14 | Local Qwen worker ladder present | `.lam-config.yml` + `scripts/lam/runtime_inventory.py` tests | PR blocked if Qwen2.5/Qwen3-14B/Qwen3.6 worker roles drift |
+| 15 | Gemma shadow-only status | `.lam-config.yml` + `scripts/lam/runtime_inventory.py` tests | PR blocked if Gemma is promoted to authoritative reviewer without a new issue |
+| 16 | Codex plan-review fallback floor | `check-codex-model-pins.yml` and cross-review schema | PR blocked if Codex calls omit `-m` or `model_reasoning_effort` |
+| 17 | Worker/QA separation | PR template, execution scope, and no-self-approval checks | PR blocked when evidence collapses worker, reviewer, and gate identities |
 | 18 | Remote MCP stdio-only boundary | `STANDARDS.md` allowlist + downstream `local-ai-machine` bridge tests; Stage A client exposes no `lam.scrub_pii` helper | PR blocked once downstream bridge lands |
 | 19 | Remote MCP server-authoritative origin | Stage A client omits origin authority; downstream HTTP bridge must overwrite origin and test spoofed local origin | PR blocked once downstream bridge lands |
 | 20 | Remote MCP PII middleware | `docs/runbooks/remote-mcp-bridge.md` + downstream PII middleware tests using shared patterns | PR blocked once downstream bridge lands |
@@ -583,17 +611,22 @@ Validator rejects if: any required field missing, `drafter.model_family` == `rev
 
 Overlord-sweep auto-opens issues for past-expiry entries.
 
-### Round 1 execution protocol (transitional, until M6 steady-state confidence)
+### Gemma A/B shadow protocol
 
-While M6 Critic-LAM's judgment is being calibrated against Sonnet's:
-- M6 is primary code/artifact reviewer; Sonnet runs in **shadow (A/B)** mode on the same artifact.
-- Both verdicts logged to `raw/ab-review/YYYY-MM-DD-{slug}.md` with `agreement: match | m6_only_findings | sonnet_only_findings | both`.
-- **Conservative gate:** if Sonnet REJECTED and M6 APPROVED, Sonnet wins this round; divergence flagged.
-- Overlord-sweep reports weekly M6-vs-Sonnet agreement rate. Exit Round 1 when agreement ≥ 90% for 3 consecutive weeks.
+Gemma is being measured against Codex/Claude QA before any authority decision:
+- Gemma runs in **shadow (A/B)** mode only.
+- Authoritative QA remains Codex or Claude per the approved waterfall.
+- Verdicts are logged to `raw/ab-review/YYYY-MM-DD-{slug}.md` with `agreement: match | gemma_only_findings | cloud_only_findings | both | conflict`.
+- Conservative gate: cloud QA and deterministic gates win every conflict.
+- Overlord-sweep reports weekly Gemma agreement/usefulness rates. Promotion requires a separate issue, explicit acceptance criteria, and updated enforcement.
 
-## Windows Host Inference (Tier-2 fallback)
+## Windows Host Inference (deprecated / off-ladder)
 
-A LAN-resident Ollama-served Windows 10 workstation (64 GB RAM by prior/operator report; discrete VRAM unverified as of 2026-04-17) may act only as Tier-2 fallback/batch/health infrastructure when the local Mac is memory-tight AND codex-spark is quota-blocked. The previous 16 GB VRAM assertion is not active model-placement evidence until direct host telemetry is captured. The integration was first proven in `local-ai-machine` issue #68 (closed 2026-03-16) for HP critic work via `CRITIC_OLLAMA_URL`; current governance placement remains conservative and LAN-only.
+A LAN-resident Ollama-served Windows workstation was previously evaluated as a
+Tier-2 fallback. As of issue #432, Windows Ollama is **not** an active
+governance waterfall fallback. Existing scripts, audit verifiers, and runbooks
+remain historical/deprecated surfaces until a separate issue removes or
+repurposes them.
 
 ### Endpoint
 
@@ -603,11 +636,12 @@ A LAN-resident Ollama-served Windows 10 workstation (64 GB RAM by prior/operator
 
 ### Pinned model roster
 
-Treat the runbook (`docs/runbooks/windows-ollama-worker.md`) as the source of truth for the live inventory. Charter-relevant baseline:
+Treat the runbook (`docs/runbooks/windows-ollama-worker.md`) as a historical
+inventory reference, not an active routing source. Deprecated roster:
 
 | Model | Role | VRAM (~Q4) |
 |---|---|---|
-| `qwen2.5-coder:7b` | SoM Tier-2 Worker (this PR) | ~5 GB |
+| `qwen2.5-coder:7b` | Deprecated Windows worker experiment | ~5 GB |
 | `llama3.1:8b` | HP critic (existing, see LAM #68) | ~5 GB |
 
 Operator may pull additional models (e.g. `qwen3:14b-q4_K_M`) — runbook documents the procedure.

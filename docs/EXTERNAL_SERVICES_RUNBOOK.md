@@ -6,7 +6,7 @@ Scope: **SSOT for all HLDPRO external services.** This runbook supersedes the do
 
 ## 1. Codex CLI (OpenAI)
 
-**Purpose:** Tier-1 Dual-Planner partner (`gpt-5.4` high) and Tier-2 Worker (`gpt-5.3-codex-spark` high) in the Society of Minds charter. See `STANDARDS.md §Society of Minds` and the charter decision at `wiki/decisions/2026-04-14-society-of-minds-charter.md`.
+**Purpose:** Codex orchestrator, GPT-5.4 high plan reviewer, Spark fallback/specialist critique when GPT-5.4 is unavailable, and Codex QA in the Society of Minds charter. See `STANDARDS.md §Society of Minds` and the charter decision at `wiki/decisions/2026-04-14-society-of-minds-charter.md`.
 
 ### Install & auth
 - Binary: `~/.nvm/versions/node/v24.14.1/bin/codex` (OpenAI Codex v0.120.0)
@@ -16,7 +16,7 @@ Scope: **SSOT for all HLDPRO external services.** This runbook supersedes the do
   - `model_reasoning_effort = "medium"`
   - `[shell_environment_policy] inherit = "all"` (required for Claude-as-reviewer cross-model flow — see AIS runbook §Claude Code)
 
-### Quota preflight (run before every spark fire)
+### Quota preflight (run before Spark fallback/specialist critique)
 
 Codex-spark has a rolling 5-hour primary window and a 7-day secondary window. Both are quota-limited (NOT unlimited as legacy memory entries may claim).
 
@@ -70,22 +70,22 @@ Exit codes: `0` available · `1` blocked · `2` config error or log inconclusive
 
 Block condition: `primary.used_percent >= 100` OR `secondary.used_percent >= 100`.
 
-### Fallback ladder (when spark blocked)
+### Model routing
 
-Per `STANDARDS.md §Society of Minds`, Tier-2 ladder is:
+Per `STANDARDS.md §Society of Minds`, Codex roles are:
 
-1. `gpt-5.3-codex-spark` @ `high` ← primary
-2. `gpt-5.3-codex-spark` @ `medium` ← same quota pool, also blocked when primary is
-3. `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (warm daemon) — see §4 below
-4. `claude-sonnet-4-6` (cost-flagged; log to `raw/model-fallbacks/`)
+1. Orchestrator: active Codex session coordinates, integrates, updates docs/issues, and records evidence.
+2. Plan reviewer: `gpt-5.4` @ `high`.
+3. Plan-review fallback/specialist critique: `gpt-5.3-codex-spark` only when GPT-5.4 is unavailable; log degraded same-family review.
+4. QA reviewer: appropriate Codex model with explicit `-m` and `model_reasoning_effort`.
 
 Every fallback MUST be logged via `scripts/model-fallback-log.sh`:
 ```bash
 bash scripts/model-fallback-log.sh \
-  --tier 2 \
-  --primary gpt-5.3-codex-spark \
-  --fallback qwen2.5-coder-7b-instruct-4bit \
-  --reason "codex-spark primary window 100%, reset <local-time>" \
+  --tier 1 \
+  --primary gpt-5.4 \
+  --fallback gpt-5.3-codex-spark \
+  --reason "gpt-5.4 unavailable; Spark used for same-family specialist critique" \
   --caller <slug>
 ```
 
@@ -103,7 +103,7 @@ bash scripts/model-fallback-log.sh \
 
 ## 2. Claude Code CLI (Anthropic)
 
-**Purpose:** Tier-1 Dual-Planner partner (`claude-opus-4-6`), Tier-3 code reviewer (`claude-sonnet-4-6`), Tier-4 gate (`claude-haiku-4-5-20251001`). Also serves as cross-model reviewer invoked FROM codex via `scripts/codex-review.sh claude`.
+**Purpose:** Planner (`claude-opus-4-6`), planning fallback and primary Worker (`claude-sonnet-4-6`), and completion/gate verifier (`claude-haiku-4-5-20251001` where allowed). Also serves as cross-model reviewer invoked FROM codex via `scripts/codex-review.sh claude`.
 
 ### Auth
 - `CLAUDE_CODE_OAUTH_TOKEN` in repo-level `.env` (NOT committed)
@@ -160,7 +160,7 @@ Expected: lineup includes `claude-opus-4-6`, `claude-sonnet-4-6`, `claude-haiku-
 
 ## 4. Local Qwen daemons (MLX, Apple Silicon only)
 
-**Purpose:** Local-lane workers (PII / bulk / embeddings / offline) and Tier-2 Worker fallback when codex-spark is blocked.
+**Purpose:** Local-lane workers (PII / bulk / embeddings / offline) and bounded implementation workers for small chunks when the approved execution scope routes work locally.
 
 ### 4a. SoM MCP daemon (always-warm local orchestrator)
 
@@ -177,11 +177,11 @@ Expected: lineup includes `claude-opus-4-6`, `claude-sonnet-4-6`, `claude-haiku-
 pgrep -fl som-mcp
 ```
 
-### 4b. Qwen-Coder warm worker (Tier-2 fallback)
+### 4b. Qwen-Coder micro-worker
 
 - Model: `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` (~4.5 GB peak)
 - Location: `local-ai-machine/services/som-worker/`
-- Role: Tier-2 Worker when codex-spark unavailable
+- Role: bounded local micro-worker for tiny patches, tests, and mechanical edits
 - Inbox: reads job JSON from configured inbox; writes outputs + moves to done
 
 **Boot-start install:**
@@ -219,12 +219,12 @@ tail -50 /tmp/som-worker.log /tmp/som-worker-err.log
 
 **Known limits (issue #105):** full-file regen >200 lines emits stubs; see `docs/runbooks/qwen-coder-driver.md` workarounds.
 
-### 4c. Qwen3-14B structured-output worker (HP/ASC content pipeline)
+### 4c. Qwen3-14B local worker
 
 - Model: `mlx-community/Qwen3-14B-4bit` (~7-8 GB peak when active)
 - Script: `/tmp/qwen_warm_worker.py` (template; owner: HP training pipeline)
 - Inbox: `/tmp/qwen_jobs/` · Output: `/tmp/qwen_results/` · Done: `/tmp/qwen_done/`
-- Role: outlines-schema prompt generation for ASC survey / training content
+- Role: moderate bounded local implementation and structured-output work
 - Independent of §4b — different model, different inbox, different pidfile; can run concurrently
 
 **Preflight:**
@@ -232,26 +232,34 @@ tail -50 /tmp/som-worker.log /tmp/som-worker-err.log
 pgrep -fl qwen_warm_worker.py
 ```
 
-### 4d. Coexistence on 24 GB M-series
+### 4d. Qwen3.6-35B-A3B large local worker
+
+- Model: `mlx-community/Qwen3.6-35B-A3B-4bit` (~19.8 GB peak measured; 24 GB budget)
+- Runtime: Python 3.11 + `mlx-lm` 0.31.2 or newer
+- Role: larger on-demand local implementation chunks when memory headroom exists
+- Constraint: one large local model at a time; unload after work
+
+### 4e. Coexistence on 48 GB M-series
 
 - M7 Guardrail-LAM (always-resident): 4.67 GB
 - SoM MCP daemon (warm): ~1.2 GB
 - Qwen3-14B active: ~7-8 GB
+- Qwen3.6-35B-A3B active: ~19.8 GB measured / 24 GB budget
 - Qwen-Coder-7B active: ~4.5 GB
 - System baseline: ~8-10 GB
 
-Running both §4b and §4c concurrently is supported but tight — watch `vm_stat` during active generation; evict in order: Qwen-Coder-7B → MCP daemon (never M7).
+Running multiple local workers concurrently is discouraged. Keep one large on-demand worker loaded at a time; evict in order: Qwen-Coder-7B → Qwen3-14B/Qwen3.6 → MCP daemon (never M7).
 
-### 4e. Windows host Ollama (LAN, Tier-2 fallback)
+### 4f. Windows host Ollama (deprecated / off-ladder)
 
-- Host: Windows 10 workstation, 64 GB RAM, 16 GB VRAM (12 GB usable envelope per LAM #68 pinned `vram_target_mb`)
+- Host: Windows 10 workstation, 64 GB RAM, historical VRAM assumptions unverified
 - IP: `172.17.227.49` · adapter `vEthernet (sase-switch)` · Ollama port `11434`
-- Role per SoM charter: Tier-2 Worker fallback step 3 (between local Qwen warm daemon and Sonnet cost-flagged); also serves as HP critic via `CRITIC_OLLAMA_URL` (existing integration, LAM #68)
-- Operating settings (proven, do not change without re-running LAM #68 ladder probes): `keep_alive=15m`, `num_ctx<=4096`, offload ladder `99 -> 80 -> 60`, call timeout 45000ms
+- Role per SoM charter: deprecated/off active governance waterfall; historical batch/health tooling only unless a new issue explicitly reactivates it
+- Operating settings are retained for historical diagnostics only
 - Source-of-truth runbook: `docs/runbooks/windows-ollama-worker.md`
 - LAM #68 closeout for full integration history: `local-ai-machine/_worktrees/lam-issue-68/WINDOWS_HOST_INFERENCE_INTEGRATION_RUNBOOK.md`
 
-**Preflight (LAN reachability + model inventory):**
+**Historical preflight (LAN reachability + model inventory):**
 ```bash
 # For SoM Tier-2 Worker role (qwen2.5-coder:7b):
 bash scripts/windows-ollama/preflight.sh --worker
@@ -341,11 +349,11 @@ Pointer only — owned by AIS runbook §Claude Code (Cross-Model Agent Review). 
 
 ## 7. Emergency procedures
 
-### 7a. Codex-spark blocked during active work
+### 7a. Codex plan-review slot blocked during active work
 1. Run quota preflight (§1) — record `resets_at` in session notes
-2. Log fallback: `scripts/model-fallback-log.sh --primary gpt-5.3-codex-spark --fallback <next>`
-3. Pick fallback per ladder (§1)
-4. If ladder step 4 (Sonnet cost-flagged), explicitly surface cost to operator before firing
+2. Log fallback: `scripts/model-fallback-log.sh --primary gpt-5.4 --fallback gpt-5.3-codex-spark`
+3. Use Spark only for logged same-family plan critique or specialist review when GPT-5.4 is unavailable
+4. If both OpenAI plan-review options are unavailable, halt the plan-review lane instead of silently substituting a Worker
 
 ### 7b. Merge blocked by ruleset that must be overridden (operator-authorized only)
 1. Back up ALL affected rulesets + classic protection:

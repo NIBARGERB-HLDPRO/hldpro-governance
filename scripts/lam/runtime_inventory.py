@@ -19,7 +19,7 @@ from urllib.request import urlopen
 REPO_ROOT = Path(__file__).resolve().parents[2]
 WINDOWS_OLLAMA_URL = "http://172.17.227.49:11434"
 DEFAULT_TIMEOUT = 2.0
-WINDOWS_ROLE_UNVERIFIED = "lan_only_fallback_batch_health_unverified"
+WINDOWS_ROLE_DEPRECATED = "deprecated_off_active_som_ladder"
 
 
 def _run(args: list[str]) -> subprocess.CompletedProcess[str]:
@@ -71,7 +71,7 @@ def windows_ollama(endpoint: str = WINDOWS_OLLAMA_URL, timeout: float = DEFAULT_
             "error": str(exc),
             "models": [],
             "probe_payloads_sent": False,
-            "role": WINDOWS_ROLE_UNVERIFIED,
+            "role": WINDOWS_ROLE_DEPRECATED,
         }
     try:
         parsed = json.loads(body)
@@ -82,7 +82,7 @@ def windows_ollama(endpoint: str = WINDOWS_OLLAMA_URL, timeout: float = DEFAULT_
             "error": f"invalid JSON from /api/tags: {exc}",
             "models": [],
             "probe_payloads_sent": False,
-            "role": WINDOWS_ROLE_UNVERIFIED,
+            "role": WINDOWS_ROLE_DEPRECATED,
         }
     models = [str(row.get("name")) for row in parsed.get("models", []) if isinstance(row, dict) and row.get("name")]
     return {
@@ -90,7 +90,7 @@ def windows_ollama(endpoint: str = WINDOWS_OLLAMA_URL, timeout: float = DEFAULT_
         "reachable": True,
         "models": sorted(models),
         "probe_payloads_sent": False,
-        "role": WINDOWS_ROLE_UNVERIFIED,
+        "role": WINDOWS_ROLE_DEPRECATED,
     }
 
 
@@ -139,10 +139,20 @@ def memory_budget(total_memory_gb: int = 48) -> dict[str, Any]:
                 "runtime": "mlx",
                 "placement": "mac_m5_pro_48gb_on_demand_only",
             },
-            "critic_lam": {"model": "mlx-community/gemma-4-26b-a4b-4bit", "budget_gb": 18, "resident": False},
-            "qwen_coder_fallback": {"model": "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit", "budget_gb": 6, "resident": False},
+            "shadow_critic_lam": {
+                "model": "mlx-community/gemma-4-26b-a4b-4bit",
+                "budget_gb": 18,
+                "resident": False,
+                "authority": "ab_shadow_only",
+            },
+            "qwen_coder_micro_worker": {
+                "model": "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit",
+                "budget_gb": 6,
+                "resident": False,
+                "authority": "implementation_only",
+            },
         },
-        "policy": "keep guardrail resident; load one large on-demand model at a time; unload on completion or memory pressure",
+        "policy": "keep guardrail resident; load one large on-demand model at a time; Gemma is A/B shadow-only; Windows is off the active SoM ladder",
     }
 
 
@@ -166,7 +176,9 @@ def build_inventory(endpoint: str = WINDOWS_OLLAMA_URL, timeout: float = DEFAULT
             "pii_to_windows_allowed": False,
             "patterns_missing_behavior": "halt",
             "local_guardrail_unavailable_behavior": "halt_for_pii_arch_standards",
-            "windows_role": WINDOWS_ROLE_UNVERIFIED,
+            "windows_role": WINDOWS_ROLE_DEPRECATED,
+            "windows_active_worker_fallback": False,
+            "gemma_authoritative_review_allowed": False,
         },
     }
 

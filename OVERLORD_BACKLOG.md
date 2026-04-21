@@ -19,12 +19,13 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Seek and Stampede env bootstrap targets | [#430](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/430) | MEDIUM | 1-2 | Add repo-native SSOT bootstrap aliases for `seek-and-ponder` and `Stampede`, with redacted dry-run contract coverage and registry docs so agents stop hunting credentials manually. |
+| SoM governance waterfall model routing revision | [#432](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/432) | HIGH | 3-4 | Governance SSOT first: Codex orchestrator, Opus planner, GPT-5.4 high plan reviewer with Spark fallback/specialist critique, Sonnet worker, Codex QA, bounded Qwen local worker ladder, Gemma A/B shadow-only, and Windows off active fallback. Downstream repo propagation follows after this source-of-truth PR lands. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Seek and Stampede env bootstrap targets | 2026-04-21 | Issue [#430](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/430). PR [#431](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/431) added repo-native SSOT bootstrap aliases and redacted dry-run contract coverage for `seek-and-ponder` and `Stampede`, with registry/progress/backlog evidence. Closeout: `raw/validation/2026-04-21-issue-430-env-bootstrap-seek-stampede.md`. |
 | Codex brief templates embed plan schema and lane claim requirements | 2026-04-20 | Issue [#412](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/412). PR [#417](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/417) embedded structured-plan schema, lane-claim, graphify-out write-boundary, and validation requirements into the Codex Spark dispatch brief template. Removed from Planned because #412 is closed. |
 | hldpro-sim v0.1.0 deployment readiness — version tag + deployer | 2026-04-20 | Issue [#422](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/422). PR [#424](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/424) pushed hldpro-sim-v0.1.0 tag (fed5ead), consumer pull state contract, and deploy-hldpro-sim.sh deployer with --dry-run + directory-copy fallback. Stampede adoption tracked in issue #425. |
 | SoM HITL SMS dedicated sender env propagation | 2026-04-20 | Issue [#421](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/421). PR [#423](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/423) propagated SOM_TWILIO_FROM_NUMBER and sender aliases through governance SSOT/bootstrap. |

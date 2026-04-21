@@ -12,7 +12,7 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Validate LAM reviewer/worker family diversity
+      - name: Validate LAM worker ladder and Gemma shadow-only policy
         run: |
           set -euo pipefail
           python3 -m pip install --quiet pyyaml

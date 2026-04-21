@@ -1,0 +1,158 @@
+{
+  "session_id": "session-20260421-issue-432-som-waterfall-routing",
+  "issue_number": 432,
+  "objective": "Revise the governance Society of Minds source of truth so Codex orchestrates, Opus plans, GPT-5.4 high reviews plans with Spark as fallback/specialist critique, Sonnet implements, Codex QA reviews, Qwen handles bounded local work, Gemma is A/B shadow-only, and Windows is off the active fallback ladder.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance source-of-truth changes only.",
+    "Update STANDARDS.md, local model inventory, docs, runbooks, templates, guardrails, tests, and closeout evidence.",
+    "Preserve downstream repo propagation as issue-backed follow-up work after this PR lands.",
+    "Do not edit downstream product repositories in this slice."
+  ],
+  "out_of_scope": [
+    "Downstream repository implementation changes.",
+    "Deleting historical Windows-Ollama tooling.",
+    "Promoting Gemma to authoritative review.",
+    "Changing production app model selection outside governance policy surfaces.",
+    "Closing Qwen-Coder issue #105."
+  ],
+  "research_summary": "Operator preplanning established the corrected waterfall. Three read-only research agents inspected governance SSOT files, CI/test guardrails, Stage 6 closeout requirements, and downstream propagation surfaces. Findings converged on STANDARDS.md, LAM runtime inventory/tests, Windows routing tests, PR templates, runbooks, and registry mirrors as the required governance SSOT scope.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/432",
+    "STANDARDS.md §Society of Minds",
+    ".lam-config.yml",
+    "scripts/lam/runtime_inventory.py",
+    "scripts/windows-ollama/decide.sh",
+    ".github/pull_request_template.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/runbooks/local-model-runtime.md",
+    "docs/runbooks/qwen-coder-driver.md",
+    "docs/runbooks/windows-ollama.md",
+    "docs/runbooks/windows-ollama-worker.md"
+  ],
+  "sprints": [
+    {
+      "name": "Governance SSOT routing update",
+      "goal": "Make the charter and documentation reflect the approved waterfall and authority boundaries.",
+      "tasks": [
+        "Update STANDARDS.md with the Codex-orchestrated waterfall.",
+        "Update runbooks, PR template, service/feature/data/progress mirrors.",
+        "Record structured plan, execution scope, cross-review, validation, and closeout artifacts."
+      ],
+      "acceptance_criteria": [
+        "Spark is documented only as GPT-5.4 plan-review fallback/specialist critique.",
+        "Sonnet 4.6 is documented as the primary substantial Worker.",
+        "Gemma is documented as A/B shadow-only.",
+        "Windows is documented as deprecated/off active waterfall."
+      ],
+      "file_paths": [
+        "STANDARDS.md",
+        ".github/pull_request_template.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/DATA_DICTIONARY.md",
+        "docs/PROGRESS.md",
+        "docs/exception-register.md",
+        "docs/runbooks/local-model-runtime.md",
+        "docs/runbooks/qwen-coder-driver.md",
+        "docs/runbooks/windows-ollama.md",
+        "docs/runbooks/windows-ollama-worker.md",
+        "raw/model-fallbacks/2026-04-20.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "name": "Guardrails and tests",
+      "goal": "Make stale routing policy fail in local/CI validation.",
+      "tasks": [
+        "Update LAM config and runtime inventory to expose Qwen worker ladder and Gemma shadow authority.",
+        "Update LAM policy check to assert Qwen worker ladder, Gemma shadow-only authority, Sonnet worker policy, and Windows off-ladder policy.",
+        "Update Windows decision tests so WINDOWS is not a success path.",
+        "Update hook wording away from Spark-primary implementation."
+      ],
+      "acceptance_criteria": [
+        "Runtime inventory tests assert Windows is off-ladder and Gemma is non-authoritative.",
+        "Windows decision tests fail if decide.sh returns WINDOWS.",
+        "Policy check fails if old Spark-primary or Windows-active text returns."
+      ],
+      "file_paths": [
+        ".lam-config.yml",
+        ".github/scripts/check_lam_family_diversity.py",
+        ".github/workflows/check-lam-family-diversity.yml",
+        "hooks/code-write-gate.sh",
+        "scripts/lam/runtime_inventory.py",
+        "scripts/lam/test_runtime_inventory.py",
+        "scripts/windows-ollama/decide.sh",
+        "scripts/windows-ollama/tests/test_decide.sh",
+        "scripts/windows-ollama/tests/test_integration.sh",
+        "scripts/orchestrator/test_delegation_hook.py",
+        "scripts/codex-preflight.sh",
+        "docs/templates/codex-spark-dispatch-brief.md",
+        "docs/agents/codex-reviewer.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Goodall",
+      "role": "read-only governance SSOT researcher",
+      "focus": "File-by-file routing policy and documentation surface inventory.",
+      "status": "accepted",
+      "summary": "Identified core SSOT, runtime runbooks, Codex surfaces, Windows guardrails, and tests that needed alignment.",
+      "evidence": [
+        "subagent 019db04a-cca4-78f0-9418-b7ecf225ea25"
+      ]
+    },
+    {
+      "reviewer": "Peirce",
+      "role": "read-only guardrail researcher",
+      "focus": "Tests and CI gates that should fail stale Spark-primary, Windows-active, or Gemma-authoritative policy.",
+      "status": "accepted",
+      "summary": "Identified Windows decision tests, LAM inventory tests, LAM family policy check, hook wording, and PR template as high-value guardrail updates.",
+      "evidence": [
+        "subagent 019db04a-e38f-7d20-ac41-a7b5ca906bd6"
+      ]
+    },
+    {
+      "reviewer": "Schrodinger",
+      "role": "read-only closeout researcher",
+      "focus": "Stage 6 closeout and downstream follow-up requirements.",
+      "status": "accepted_with_followup",
+      "summary": "Confirmed Stage 6 closeout requirements and residual issue-backed follow-up pattern. Downstream repo propagation must remain separate follow-up work.",
+      "evidence": [
+        "subagent 019db04a-f6a3-7262-bcce-32d9e1db4efe",
+        "raw/closeouts/TEMPLATE.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Tier 1 cross-review artifact",
+    "model_family": "anthropic+openai",
+    "status": "accepted_with_followup",
+    "summary": "Standards scope requires cross-review evidence. The committed raw/cross-review artifact records the approved routing plan and implementation guardrails.",
+    "evidence": [
+      "raw/cross-review/2026-04-21-issue-432-som-waterfall-routing.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement governance SSOT, docs, guardrails, tests, and closeout for issue #432 only.",
+    "next_execution_step": "Run focused validation, create downstream follow-up issues, complete Stage 6 closeout, and open PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If downstream repo files are required, stop and open follow-up issues instead of editing them in this branch.",
+    "If Windows tooling deletion becomes necessary, open a separate removal issue rather than expanding this SSOT slice.",
+    "If Gemma authority promotion is desired, stop and open a separate evidence/threshold issue.",
+    "If Qwen2.5-Coder full-file rewrite work is requested, route around issue #105 limits."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: gov SSOT then downstream as follow-up issues/PRs",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T14:00:00-05:00"
+}

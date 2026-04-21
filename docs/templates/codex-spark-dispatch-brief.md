@@ -1,5 +1,11 @@
 ## Preflight
 
+Use this template only when `gpt-5.3-codex-spark` is explicitly routed as the
+OpenAI-side fallback/specialist critique model or as a bounded specialist agent.
+Spark is not the default implementation Worker in the issue #432 waterfall;
+`claude-sonnet-4-6` is the primary cloud Worker and local Qwen handles bounded
+implementation chunks when scoped.
+
 Run this first and include the full command output in your session notes:
 
 ```bash

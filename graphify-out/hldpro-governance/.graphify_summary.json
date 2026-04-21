@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/private/tmp/issue-422-closeout/graphify-out/hldpro-governance",
-  "wiki_dir": "/private/tmp/issue-422-closeout/wiki/hldpro",
-  "nodes": 1385,
-  "edges": 2598,
-  "communities": 75,
-  "articles": 85,
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-432-som-waterfall-routing/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-432-som-waterfall-routing/wiki/hldpro",
+  "nodes": 1392,
+  "edges": 2611,
+  "communities": 76,
+  "articles": 86,
   "html_status": "skipped",
   "code_files": 106
 }

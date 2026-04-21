@@ -142,4 +142,4 @@ def test_hook_preserves_new_code_file_block() -> None:
         assert result.returncode == 2
         output = json.loads(result.stdout)
         assert output["decision"] == "block"
-        assert "codex-spark" in output["reason"]
+        assert "approved Worker" in output["reason"]

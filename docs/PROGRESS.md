@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| SoM governance waterfall model routing revision | #432 | IN_PROGRESS | HIGH | 3-4 | Governance SSOT, guardrails, tests, closeout, downstream follow-up issues | Codex orchestrator; Opus planning; GPT-5.4 high plan review with Spark fallback/specialist critique; Sonnet worker; Codex QA; bounded Qwen local worker ladder; Gemma A/B shadow-only; Windows off active ladder |
 | Consumer-pulled governance adoption rollout | #403 | DONE | MEDIUM | 4-6 | Knocktracker pilot merged through downstream PRs #178 and #179; governance PR #406 records evidence | Uses knocktracker #177 as the first repo-side consumer-pull pilot |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
@@ -33,7 +34,6 @@
 
 | Item | Issue | Status | Notes |
 |------|-------|--------|-------|
-| Seek and Stampede env bootstrap targets | #430 | IN PROGRESS | Add repo-native SSOT bootstrap aliases and contract coverage for `seek-and-ponder` and `Stampede` so governed agents can generate local `.env` files without credential hunting. |
 | SoM HITL SMS dedicated sender env propagation | #421 | IN PROGRESS | Add `SOM_TWILIO_FROM_NUMBER` plus sender aliases to local-ai-machine bootstrap output and document dedicated approval-route separation from AIS/Alex/customer-demo senders. |
 | Weekly overlord sweep write-back to wiki/index.md | — | ACTIVE / AWAITING NEXT RUN | Workflow and graph/index write-back path are wired; last committed index remains the 2026-04-09 bootstrap until the next scheduled or manual sweep refreshes generated counts |
 | LAM env-var-docs contract debt: SOM_* variables unclassified | #145 | OPEN | local-ai-machine env vars need classification |
@@ -42,6 +42,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Seek and Stampede env bootstrap targets | #430 | 2026-04-21 | PR #431 added repo-native SSOT bootstrap aliases and redacted dry-run contract coverage for `seek-and-ponder` and `Stampede`, with registry/progress/backlog evidence. |
 | Stale governance worktree cleanup after lane-guard rollout | #405 | 2026-04-20 | Removed nine clean linked worktrees whose remotes were gone and governing issues were closed, while preserving the primary worktree, dirty #359, open/dirty #403, current #405, and worktrees with live remote branches. |
 | Consumer-pulled governance package bootstrap | #398 | 2026-04-20 | PR #401 added a non-mutating consumer verifier for pinned governance package records and managed files, introduced `docs/governance-consumer-pull-state.json`, documented the repo-pulled versus centrally applied GitHub policy boundary, wired verifier tests into Local CI package coverage, and merged through native auto-merge after required checks passed. Downstream adoption remains future issue-backed work. |
 | Runtime issue-lane guard proof and startup runbook | #400 | 2026-04-20 | Synced the installed global branch/worktree guard to the repo hook, recorded no-mutation sibling worktree hygiene evidence, proved the installed hook blocks unclaimed and mismatched issue worktree creation while allowing bootstrap, matching scope, and non-issue worktrees, and added the issue-lane startup sequence to the org repo intake runbook. |

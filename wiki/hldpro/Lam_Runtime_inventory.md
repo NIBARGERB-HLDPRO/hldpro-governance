@@ -4,16 +4,16 @@
 
 ## Key Concepts
 
-- **runtime_inventory.py** (9 connections) — `scripts/lam/runtime_inventory.py`
-- **build_inventory()** (7 connections) — `scripts/lam/runtime_inventory.py`
-- **import_available()** (3 connections) — `scripts/lam/runtime_inventory.py`
-- **local_runtime()** (3 connections) — `scripts/lam/runtime_inventory.py`
-- **mac_hardware()** (3 connections) — `scripts/lam/runtime_inventory.py`
-- **_run()** (3 connections) — `scripts/lam/runtime_inventory.py`
-- **main()** (2 connections) — `scripts/lam/runtime_inventory.py`
-- **memory_budget()** (2 connections) — `scripts/lam/runtime_inventory.py`
-- **pii_guardrail()** (2 connections) — `scripts/lam/runtime_inventory.py`
-- **windows_ollama()** (2 connections) — `scripts/lam/runtime_inventory.py`
+- **runtime_inventory.py** (9 connections) — `hldpro-governance/scripts/lam/runtime_inventory.py`
+- **build_inventory()** (7 connections) — `hldpro-governance/scripts/lam/runtime_inventory.py`
+- **import_available()** (3 connections) — `hldpro-governance/scripts/lam/runtime_inventory.py`
+- **local_runtime()** (3 connections) — `hldpro-governance/scripts/lam/runtime_inventory.py`
+- **mac_hardware()** (3 connections) — `hldpro-governance/scripts/lam/runtime_inventory.py`
+- **_run()** (3 connections) — `hldpro-governance/scripts/lam/runtime_inventory.py`
+- **main()** (2 connections) — `hldpro-governance/scripts/lam/runtime_inventory.py`
+- **memory_budget()** (2 connections) — `hldpro-governance/scripts/lam/runtime_inventory.py`
+- **pii_guardrail()** (2 connections) — `hldpro-governance/scripts/lam/runtime_inventory.py`
+- **windows_ollama()** (2 connections) — `hldpro-governance/scripts/lam/runtime_inventory.py`
 
 ## Relationships
 
@@ -21,7 +21,7 @@
 
 ## Source Files
 
-- `scripts/lam/runtime_inventory.py`
+- `hldpro-governance/scripts/lam/runtime_inventory.py`
 
 ## Audit Trail
 

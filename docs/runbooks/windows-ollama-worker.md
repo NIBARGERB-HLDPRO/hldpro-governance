@@ -1,9 +1,9 @@
 # Windows Host Ollama — Operator Runbook
 
-Version: 2026-04-15
+Version: 2026-04-21
 Owner: Operator (nibarger.ben@gmail.com)
 Origin: promoted from `local-ai-machine` issue #68 (closed 2026-03-16) — see that runbook for full integration history.
-Scope: SoM Tier-2 Worker fallback (this PR) + existing HP critic role.
+Scope: deprecated Windows-Ollama worker experiment and historical HP critic role. Windows is not an active SoM governance waterfall fallback as of issue #432.
 
 ## Endpoint
 
@@ -23,11 +23,11 @@ Scope: SoM Tier-2 Worker fallback (this PR) + existing HP critic role.
 
 Discover live with: `curl -s http://172.17.227.49:11434/api/tags | jq '.models[].name'`
 
-Charter-required baseline:
+Deprecated roster:
 
 | Model | Role | Pull command |
 |---|---|---|
-| `qwen2.5-coder:7b` | Tier-2 Worker (SoM) | `ollama pull qwen2.5-coder:7b` |
+| `qwen2.5-coder:7b` | Deprecated Windows worker experiment | `ollama pull qwen2.5-coder:7b` |
 | `llama3.1:8b` | HP critic | `ollama pull llama3.1:8b` |
 
 Optional / operator-approved:
@@ -62,11 +62,11 @@ Update this runbook's "Pinned model roster" table after any add/remove.
 - Schema-failure response shape: `{"status":"...", "label":"...", "rationale":"<MUST be non-empty>", "findings":[]}`. Empty `rationale` will trigger the local fail-closed reject contract.
 - Single-role and dual-role critic paths both proven; SoM Tier-2 Worker uses single-call-per-job submission.
 
-## PII gate (invariant #8)
+## PII gate
 
-Windows Ollama is an **ACTIVE SoM Tier-2 Worker fallback** as of Sprint 5 merge.
+Windows Ollama is **not** an active SoM Worker fallback as of issue #432.
 
-Submission script (`scripts/windows-ollama/submit.py`, Sprint 2) validates `pii_patterns.yml` against the prompt before any HTTP call and blocks PII-tagged payloads entirely (route to LAM only or halt). Routing decision tree (`scripts/windows-ollama/decide.sh`, Sprint 5) halts on PII detection at entry point — payloads flagged as PII will never reach Windows endpoint.
+Submission script (`scripts/windows-ollama/submit.py`, Sprint 2) still validates `pii_patterns.yml` against the prompt before any HTTP call and blocks PII-tagged payloads entirely. Routing decision tree (`scripts/windows-ollama/decide.sh`) halts on PII detection at entry point and no longer returns `WINDOWS` as a success path.
 
 ## Decision routing entry point
 
@@ -84,13 +84,11 @@ bash scripts/windows-ollama/decide.sh \
 
 **Decision priority (evaluated in order):**
 1. **PII halt**: If `--pii-flag yes` or inline PII detected via `pii-patterns.yml` → return `HALT` (exit 1, do not route)
-2. **Spark primary**: If `--spark-high-status ok` → return `CLOUD` (skip ladder, use spark-high)
-3. **Spark medium fallback**: If `--spark-medium-status ok` → return `CLOUD` (use spark-medium)
-4. **Local daemon**: If `--local-warm-daemon-status up` → return `LOCAL` (Qwen2.5 on Mac)
-5. **Windows Ollama**: If `--windows-status ok` → return `WINDOWS` (this endpoint)
-6. **Cloud fallback**: Else → return `CLOUD` (Sonnet cost-flagged final fallback)
+2. **Local daemon**: If `--local-warm-daemon-status up` → return `LOCAL` (bounded Qwen worker on Mac)
+3. **Windows Ollama**: If `--windows-status ok` → return `CLOUD` with `windows_off_ladder`; never return `WINDOWS`
+4. **Cloud worker path**: Else → return `CLOUD`
 
-Output: single line to stdout (`HALT` | `LOCAL` | `WINDOWS` | `CLOUD`). Exit 0 for success; exit 1 for HALT. Stderr logs the decision path for observability.
+Output: single line to stdout (`HALT` | `LOCAL` | `CLOUD`). Exit 0 for success; exit 1 for HALT. Stderr logs the decision path for observability.
 
 ## Audit (invariant #10)
 
@@ -114,15 +112,15 @@ All three enforcement layers are live. Audit compliance is required before any c
 
 ## Stage B acceptance criteria (Sprint 2–5)
 
-Windows-Ollama rung activation (Sprint 5) requires:
+Windows-Ollama off-ladder preservation requires:
 
 1. **submit.py** — Submission script with PII pattern matching + model allowlist validation (Sprint 2)
 2. **PII middleware** — `pii-patterns.yml` blocking PII-tagged payloads + hardening for Windows/cloud fallback routes (Sprint 2)
 3. **Audit writer** — `audit.py` writing hash-chained, HMAC-signed, daily-manifested audit logs (Sprint 3)
 4. **CI validator** — `verify_audit.py` + `check-windows-ollama-audit-schema.yml` enforcing chain integrity (Sprints 3–4); audit schema pattern-matches against Remote MCP Bridge design per `_worktrees/gov-remote-mcp` plan
 5. **Firewall allowlist** — Windows firewall binding to Mac host IP or trusted subnet (Sprint 4 CI gate)
-6. **Failover rules** — PII-tagged payloads halt instead of falling through to cloud (Sprint 5 decision.sh)
-7. **Integration tests** — End-to-end test of submit.py + audit.py + decide.sh (Sprint 5)
+6. **Failover rules** — PII-tagged payloads halt and clean governance fallback never selects Windows
+7. **Integration tests** — Off-ladder smoke test proves decide.sh does not return `WINDOWS`
 
 ## Future epics (Phase 3, deferred)
 
@@ -132,7 +130,7 @@ Windows-Ollama rung activation (Sprint 5) requires:
 
 ## Cross-references
 
-- `STANDARDS.md` §"Windows Host Inference (Tier-2 fallback)" + invariants 8–10
+- `STANDARDS.md` §"Windows Host Inference (deprecated / off-ladder)"
 - `docs/exception-register.md` entries `SOM-WIN-OLLAMA-PII-001`, `SOM-WIN-OLLAMA-AUDIT-001`, `SOM-WIN-OLLAMA-DISABLED-001`
 - `docs/EXTERNAL_SERVICES_RUNBOOK.md` §4e
 - `wiki/decisions/2026-04-14-society-of-minds-charter.md`
@@ -144,3 +142,4 @@ Windows-Ollama rung activation (Sprint 5) requires:
 |---|---|
 | 2026-04-15 | Stage A: Promoted Windows host from HP-critic-only to documented SoM Tier-2 fallback. Renumbered invariants 13–15 to 8–10. Added three exceptions covering PII middleware, audit trail, and activation gate. Windows rung marked "documented / disabled until Sprint 5." |
 | 2026-04-15 | **Sprint 5: Windows-Ollama Tier-2 rung ACTIVATED.** Routing decision tree (`decide.sh`) implemented. All three exceptions closed (PII, audit, disabled-gate). Rung transitions from documented/disabled to active in Tier-2 ladder. Invariants #8–#10 enforced end-to-end. |
+| 2026-04-21 | Issue #432 demotes Windows Ollama off the active governance waterfall. `decide.sh` keeps PII fail-closed behavior but no longer returns `WINDOWS` as a success path. |

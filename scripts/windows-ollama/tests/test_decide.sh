@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# scripts/windows-ollama/tests/test_decide.sh — 14 decision state + fallback enforcement tests for decide.sh
+# scripts/windows-ollama/tests/test_decide.sh — decision state + off-ladder enforcement tests for decide.sh
 
 set -uo pipefail
 
@@ -88,7 +88,7 @@ test_case "PII-no phone + spark-high-ok → HALT" "HALT" "no" "down" "unreachabl
 # Test 5: PII-yes with all routes up -> HALT
 test_case "PII-yes + all-up → HALT" "HALT" "yes" "up" "ok" "ok" "ok" "def foo(): pass"
 
-# Test 6: PII-no + spark-high blocked + spark-medium ok → CLOUD (medium)
+# Test 6: PII-no + spark-high blocked + spark-medium ok → CLOUD (spark ignored for worker routing)
 test_case "PII-no + spark-high-blocked + spark-medium-ok → CLOUD" "CLOUD" "no" "down" "unreachable" "blocked" "ok" "def foo(): pass"
 
 # Test 7: PII-no + missing pii_patterns.yml → HALT
@@ -105,8 +105,8 @@ restore_patterns
 # Test 9: PII-no + spark-high blocked + local-up → LOCAL
 test_case "PII-no + spark-high-blocked + local-up → LOCAL" "LOCAL" "no" "up" "unreachable" "blocked" "blocked" "def foo(): pass"
 
-# Test 10: PII-no + spark-high blocked + local-down + windows-ok → WINDOWS
-test_case "PII-no + spark-high-blocked + local-down + windows-ok → WINDOWS" "WINDOWS" "no" "down" "ok" "blocked" "blocked" "def foo(): pass"
+# Test 10: PII-no + spark-high blocked + local-down + windows-ok → CLOUD, never WINDOWS
+test_case "PII-no + spark-high-blocked + local-down + windows-ok → CLOUD (Windows off-ladder)" "CLOUD" "no" "down" "ok" "blocked" "blocked" "def foo(): pass"
 
 # Test 11: PII-no + spark-high blocked + local-down + windows-down → CLOUD
 test_case "PII-no + spark-high-blocked + local-down + windows-down → CLOUD" "CLOUD" "no" "down" "unreachable" "blocked" "blocked" "def foo(): pass"
@@ -114,13 +114,11 @@ test_case "PII-no + spark-high-blocked + local-down + windows-down → CLOUD" "C
 # Test 12: PII-no + empty prompt → LOCAL
 test_case "PII-no + empty prompt → LOCAL" "LOCAL" "no" "up" "unreachable" "blocked" "blocked" ""
 
-# Test 13: PII-no + spark-unknown + windows-ok → WINDOWS
-test_case "PII-no + spark-unknown + windows-ok → WINDOWS" "WINDOWS" "no" "down" "ok" "unknown" "blocked" "def foo(): pass"
+# Test 13: PII-no + spark-unknown + windows-ok → CLOUD, never WINDOWS
+test_case "PII-no + spark-unknown + windows-ok → CLOUD (Windows off-ladder)" "CLOUD" "no" "down" "ok" "unknown" "blocked" "def foo(): pass"
 
-# Test 14: Fallback logging enforcement — when logging fails, decide.sh must halt
-# This is verified by checking that the spark-medium path still returns CLOUD
-# (which means log_fallback() succeeded in writing the entry)
-test_case "Fallback logging OK — spark-medium writes log before returning CLOUD" "CLOUD" "no" "down" "unreachable" "blocked" "ok" "def foo(): pass"
+# Test 14: Fallback logging OK — local worker writes log before returning LOCAL
+test_case "Fallback logging OK — local worker writes log before returning LOCAL" "LOCAL" "no" "up" "unreachable" "blocked" "blocked" "def foo(): pass"
 
 echo ""
 echo "=== Summary ==="
