@@ -63,7 +63,7 @@ No. This reinforces the existing deterministic self-learning contract: graphify/
 - Implementation only: no alternate-model cross-review was required for this deterministic local unblock/proof slice.
 - Handoff lifecycle: accepted for `raw/handoffs/2026-04-21-issue-475-self-learning-loop-proof.json`.
 - Deterministic gates: model-pin checker, self-learning tests, packet-queue tests, hldpro-sim tests, structured-plan validation, backlog alignment, error-pattern check, Local CI Gate
-- Local CI Gate artifact: `cache/local-ci-gate/reports/local-ci-20260421T174159Z.json`
+- Local CI Gate command result: PASS for `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json --report-dir cache/local-ci-gate/reports`
 - No alternate model review required because this is a deterministic local proof/unblock slice and no routing policy changed
 
 ## Wired Checks Run

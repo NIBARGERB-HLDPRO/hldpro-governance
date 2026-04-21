@@ -47,9 +47,7 @@
     "python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json --report-dir cache/local-ci-gate/reports"
   ],
   "review_artifact_refs": [],
-  "gate_artifact_refs": [
-    "cache/local-ci-gate/reports/local-ci-20260421T174159Z.json"
-  ],
+  "gate_artifact_refs": [],
   "artifact_refs": [
     "docs/plans/issue-475-self-learning-loop-proof-structured-agent-cycle-plan.json",
     "docs/plans/issue-475-self-learning-loop-proof-pdcar.md",
