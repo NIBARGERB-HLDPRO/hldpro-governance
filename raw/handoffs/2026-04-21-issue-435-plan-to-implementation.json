@@ -1,0 +1,66 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-435-plan-to-implementation",
+  "issue_number": 435,
+  "parent_epic_number": 434,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-qa",
+  "structured_plan_ref": "docs/plans/issue-435-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-435-handoff-validator-ci-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Local CI Gate runs the handoff package validator when handoff-relevant paths change.",
+      "verification_refs": [
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Reusable GitHub governance-check runs handoff package validation for handoff-relevant diffs and fails closed when the validator is missing.",
+      "verification_refs": [
+        ".github/workflows/governance-check.yml",
+        "docs/workflow-local-coverage-inventory.json"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "GitHub implementation execution-scope assertion passes --require-lane-claim.",
+      "verification_refs": [
+        ".github/workflows/governance-check.yml",
+        "scripts/overlord/test_assert_execution_scope.py"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_validate_handoff_package.py",
+    "python3 scripts/overlord/validate_handoff_package.py --root .",
+    "python3 tools/local-ci-gate/tests/test_local_ci_gate.py",
+    "python3 scripts/overlord/test_workflow_local_coverage.py",
+    "tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-21-issue-435-handoff-validator-ci.md"
+  ],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    ".github/workflows/governance-check.yml",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "tools/local-ci-gate/tests/test_local_ci_gate.py",
+    "docs/workflow-local-coverage-inventory.json",
+    "docs/plans/issue-435-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-435-handoff-validator-ci-implementation.json"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-435-handoff-validator-ci.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T09:56:12-05:00",
+  "notes": "CI/local gate enforcement slice for issue #435. Packet reconciliation remains issue #437; PR/closeout hardening remains issue #436."
+}
