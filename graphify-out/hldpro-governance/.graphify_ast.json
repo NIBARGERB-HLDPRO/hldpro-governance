@@ -1345,6 +1345,76 @@
       "source_location": "L135"
     },
     {
+      "id": "test_schema_guard_hook",
+      "label": "test_schema_guard_hook.py",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_schema_guard_hook_payload",
+      "label": "_payload()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L16"
+    },
+    {
+      "id": "test_schema_guard_hook_run_hook",
+      "label": "_run_hook()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L20"
+    },
+    {
+      "id": "test_schema_guard_hook_testschemaguardhook",
+      "label": "TestSchemaGuardHook",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L35"
+    },
+    {
+      "id": "test_schema_guard_hook_testschemaguardhook_test_blocked_bash_file_write_has_stderr",
+      "label": ".test_blocked_bash_file_write_has_stderr()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L36"
+    },
+    {
+      "id": "test_schema_guard_hook_testschemaguardhook_test_missing_schema_has_explicit_stderr",
+      "label": ".test_missing_schema_has_explicit_stderr()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L45"
+    },
+    {
+      "id": "test_schema_guard_hook_testschemaguardhook_test_malformed_input_payload_has_stderr",
+      "label": ".test_malformed_input_payload_has_stderr()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L54"
+    },
+    {
+      "id": "test_schema_guard_hook_testschemaguardhook_test_validator_nonzero_is_summarized",
+      "label": ".test_validator_nonzero_is_summarized()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L60"
+    },
+    {
+      "id": "test_schema_guard_hook_testschemaguardhook_test_allowed_read_only_command_remains_allowed",
+      "label": ".test_allowed_read_only_command_remains_allowed()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L76"
+    },
+    {
+      "id": "test_schema_guard_hook_testschemaguardhook_test_python_file_write_policy_block_has_stderr",
+      "label": ".test_python_file_write_policy_block_has_stderr()",
+      "file_type": "code",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L83"
+    },
+    {
       "id": "deploy_governance_tooling",
       "label": "deploy_governance_tooling.py",
       "file_type": "code",
@@ -2132,112 +2202,112 @@
       "id": "test_check_worker_handoff_route",
       "label": "test_check_worker_handoff_route.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L1"
     },
     {
       "id": "test_check_worker_handoff_route_git",
       "label": "_git()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L16"
     },
     {
       "id": "test_check_worker_handoff_route_repofixture",
       "label": "RepoFixture",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L20"
     },
     {
       "id": "test_check_worker_handoff_route_repofixture_init",
       "label": ".__init__()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L21"
     },
     {
       "id": "test_check_worker_handoff_route_repofixture_write_scope",
       "label": ".write_scope()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L32"
     },
     {
       "id": "test_check_worker_handoff_route_repofixture_write_exception",
       "label": ".write_exception()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L39"
     },
     {
       "id": "test_check_worker_handoff_route_scope",
       "label": "_scope()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L45"
     },
     {
       "id": "test_check_worker_handoff_route_testworkerhandoffroute",
       "label": "TestWorkerHandoffRoute",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L79"
     },
     {
       "id": "test_check_worker_handoff_route_testworkerhandoffroute_run",
       "label": "._run()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L80"
     },
     {
       "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_planner_lane_new_python_file_is_blocked_with_next_action",
       "label": ".test_planner_lane_new_python_file_is_blocked_with_next_action()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L101"
     },
     {
       "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_approved_worker_handoff_for_target_path_is_accepted",
       "label": ".test_approved_worker_handoff_for_target_path_is_accepted()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L113"
     },
     {
       "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_scope_present_but_target_path_missing_is_blocked",
       "label": ".test_scope_present_but_target_path_missing_is_blocked()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L123"
     },
     {
       "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_worker_handoff_wrong_issue_number_is_blocked",
       "label": ".test_worker_handoff_wrong_issue_number_is_blocked()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L134"
     },
     {
       "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_without_exception_is_blocked",
       "label": ".test_same_family_worker_handoff_without_exception_is_blocked()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L144"
     },
     {
       "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_with_active_exception_is_accepted",
       "label": ".test_same_family_worker_handoff_with_active_exception_is_accepted()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L159"
     },
     {
       "id": "test_check_worker_handoff_route_testworkerhandoffroute_test_javascript_and_shell_targets_are_governed_code_files",
       "label": ".test_javascript_and_shell_targets_are_governed_code_files()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L176"
     },
     {
@@ -3721,56 +3791,56 @@
       "id": "check_worker_handoff_route",
       "label": "check_worker_handoff_route.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L1"
     },
     {
       "id": "check_worker_handoff_route_normalize_repo_path",
       "label": "_normalize_repo_path()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L29"
     },
     {
       "id": "check_worker_handoff_route_actionable_next_step",
       "label": "_actionable_next_step()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L33"
     },
     {
       "id": "check_worker_handoff_route_result",
       "label": "_result()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L44"
     },
     {
       "id": "check_worker_handoff_route_find_scope",
       "label": "_find_scope()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L52"
     },
     {
       "id": "check_worker_handoff_route_check_route",
       "label": "check_route()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L64"
     },
     {
       "id": "check_worker_handoff_route_parse_args",
       "label": "parse_args()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L142"
     },
     {
       "id": "check_worker_handoff_route_main",
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L152"
     },
     {
@@ -9202,77 +9272,77 @@
       "id": "test_delegation_hook",
       "label": "test_delegation_hook.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L1"
     },
     {
       "id": "test_delegation_hook_run_hook",
       "label": "_run_hook()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L15"
     },
     {
       "id": "test_delegation_hook_payload",
       "label": "_payload()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L30"
     },
     {
       "id": "test_delegation_hook_test_hook_blocks_agent_owned_work_before_file_path_logic",
       "label": "test_hook_blocks_agent_owned_work_before_file_path_logic()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L39"
     },
     {
       "id": "test_delegation_hook_test_hook_warns_for_implementation_scoped_explore",
       "label": "test_hook_warns_for_implementation_scoped_explore()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L52"
     },
     {
       "id": "test_delegation_hook_test_hook_allows_read_even_when_text_matches_owned_work",
       "label": "test_hook_allows_read_even_when_text_matches_owned_work()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L65"
     },
     {
       "id": "test_delegation_hook_test_hook_bypass_allows_and_logs",
       "label": "test_hook_bypass_allows_and_logs()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L78"
     },
     {
       "id": "test_delegation_hook_test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass",
       "label": "test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L90"
     },
     {
       "id": "test_delegation_hook_test_hook_blocks_task_tool_owned_work",
       "label": "test_hook_blocks_task_tool_owned_work()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L103"
     },
     {
       "id": "test_delegation_hook_test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate",
       "label": "test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L115"
     },
     {
       "id": "test_delegation_hook_test_hook_preserves_new_code_file_block_for_common_extensions",
       "label": "test_hook_preserves_new_code_file_block_for_common_extensions()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L129"
     },
     {
@@ -14797,6 +14867,240 @@
       "weight": 0.8
     },
     {
+      "source": "test_schema_guard_hook",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook",
+      "target": "subprocess",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook",
+      "target": "tempfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook",
+      "target": "unittest",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook",
+      "target": "test_schema_guard_hook_payload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook",
+      "target": "test_schema_guard_hook_run_hook",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook",
+      "target": "test_schema_guard_hook_testschemaguardhook",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook",
+      "target": "test_schema_guard_hook_testschemaguardhook_test_blocked_bash_file_write_has_stderr",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook",
+      "target": "test_schema_guard_hook_testschemaguardhook_test_missing_schema_has_explicit_stderr",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook",
+      "target": "test_schema_guard_hook_testschemaguardhook_test_malformed_input_payload_has_stderr",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook",
+      "target": "test_schema_guard_hook_testschemaguardhook_test_validator_nonzero_is_summarized",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook",
+      "target": "test_schema_guard_hook_testschemaguardhook_test_allowed_read_only_command_remains_allowed",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook",
+      "target": "test_schema_guard_hook_testschemaguardhook_test_python_file_write_policy_block_has_stderr",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook_test_blocked_bash_file_write_has_stderr",
+      "target": "test_schema_guard_hook_run_hook",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L37",
+      "weight": 0.8
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook_test_blocked_bash_file_write_has_stderr",
+      "target": "test_schema_guard_hook_payload",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L37",
+      "weight": 0.8
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook_test_missing_schema_has_explicit_stderr",
+      "target": "test_schema_guard_hook_run_hook",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L46",
+      "weight": 0.8
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook_test_missing_schema_has_explicit_stderr",
+      "target": "test_schema_guard_hook_payload",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L47",
+      "weight": 0.8
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook_test_malformed_input_payload_has_stderr",
+      "target": "test_schema_guard_hook_run_hook",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L55",
+      "weight": 0.8
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook_test_validator_nonzero_is_summarized",
+      "target": "test_schema_guard_hook_run_hook",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L66",
+      "weight": 0.8
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook_test_validator_nonzero_is_summarized",
+      "target": "test_schema_guard_hook_payload",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L67",
+      "weight": 0.8
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook_test_allowed_read_only_command_remains_allowed",
+      "target": "test_schema_guard_hook_run_hook",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L77",
+      "weight": 0.8
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook_test_allowed_read_only_command_remains_allowed",
+      "target": "test_schema_guard_hook_payload",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L77",
+      "weight": 0.8
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook_test_python_file_write_policy_block_has_stderr",
+      "target": "test_schema_guard_hook_run_hook",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L84",
+      "weight": 0.8
+    },
+    {
+      "source": "test_schema_guard_hook_testschemaguardhook_test_python_file_write_policy_block_has_stderr",
+      "target": "test_schema_guard_hook_payload",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_location": "L84",
+      "weight": 0.8
+    },
+    {
       "source": "deploy_governance_tooling",
       "target": "argparse",
       "relation": "imports",
@@ -18068,7 +18372,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -18077,7 +18381,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -18086,7 +18390,7 @@
       "target": "tempfile",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -18095,7 +18399,7 @@
       "target": "unittest",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -18104,7 +18408,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -18113,7 +18417,7 @@
       "target": "typing",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -18122,7 +18426,7 @@
       "target": "test_check_worker_handoff_route_git",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L16",
       "weight": 1.0
     },
@@ -18131,7 +18435,7 @@
       "target": "test_check_worker_handoff_route_repofixture",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L20",
       "weight": 1.0
     },
@@ -18140,7 +18444,7 @@
       "target": "test_check_worker_handoff_route_repofixture_init",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L21",
       "weight": 1.0
     },
@@ -18149,7 +18453,7 @@
       "target": "test_check_worker_handoff_route_repofixture_write_scope",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L32",
       "weight": 1.0
     },
@@ -18158,7 +18462,7 @@
       "target": "test_check_worker_handoff_route_repofixture_write_exception",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L39",
       "weight": 1.0
     },
@@ -18167,7 +18471,7 @@
       "target": "test_check_worker_handoff_route_scope",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L45",
       "weight": 1.0
     },
@@ -18176,7 +18480,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L79",
       "weight": 1.0
     },
@@ -18185,7 +18489,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L80",
       "weight": 1.0
     },
@@ -18194,7 +18498,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_planner_lane_new_python_file_is_blocked_with_next_action",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L101",
       "weight": 1.0
     },
@@ -18203,7 +18507,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_approved_worker_handoff_for_target_path_is_accepted",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L113",
       "weight": 1.0
     },
@@ -18212,7 +18516,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_scope_present_but_target_path_missing_is_blocked",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L123",
       "weight": 1.0
     },
@@ -18221,7 +18525,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_worker_handoff_wrong_issue_number_is_blocked",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L134",
       "weight": 1.0
     },
@@ -18230,7 +18534,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_without_exception_is_blocked",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L144",
       "weight": 1.0
     },
@@ -18239,7 +18543,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_same_family_worker_handoff_with_active_exception_is_accepted",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L159",
       "weight": 1.0
     },
@@ -18248,7 +18552,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_test_javascript_and_shell_targets_are_governed_code_files",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L176",
       "weight": 1.0
     },
@@ -18257,7 +18561,7 @@
       "target": "test_check_worker_handoff_route_git",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L24",
       "weight": 0.8
     },
@@ -18266,7 +18570,7 @@
       "target": "test_check_worker_handoff_route_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L103",
       "weight": 0.8
     },
@@ -18275,7 +18579,7 @@
       "target": "test_check_worker_handoff_route_repofixture_write_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L104",
       "weight": 0.8
     },
@@ -18284,7 +18588,7 @@
       "target": "test_check_worker_handoff_route_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L104",
       "weight": 0.8
     },
@@ -18293,7 +18597,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L106",
       "weight": 0.8
     },
@@ -18302,7 +18606,7 @@
       "target": "test_check_worker_handoff_route_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L115",
       "weight": 0.8
     },
@@ -18311,7 +18615,7 @@
       "target": "test_check_worker_handoff_route_repofixture_write_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L116",
       "weight": 0.8
     },
@@ -18320,7 +18624,7 @@
       "target": "test_check_worker_handoff_route_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L116",
       "weight": 0.8
     },
@@ -18329,7 +18633,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L118",
       "weight": 0.8
     },
@@ -18338,7 +18642,7 @@
       "target": "test_check_worker_handoff_route_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L125",
       "weight": 0.8
     },
@@ -18347,7 +18651,7 @@
       "target": "test_check_worker_handoff_route_repofixture_write_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L126",
       "weight": 0.8
     },
@@ -18356,7 +18660,7 @@
       "target": "test_check_worker_handoff_route_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L126",
       "weight": 0.8
     },
@@ -18365,7 +18669,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L128",
       "weight": 0.8
     },
@@ -18374,7 +18678,7 @@
       "target": "test_check_worker_handoff_route_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L136",
       "weight": 0.8
     },
@@ -18383,7 +18687,7 @@
       "target": "test_check_worker_handoff_route_repofixture_write_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L137",
       "weight": 0.8
     },
@@ -18392,7 +18696,7 @@
       "target": "test_check_worker_handoff_route_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L137",
       "weight": 0.8
     },
@@ -18401,7 +18705,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L139",
       "weight": 0.8
     },
@@ -18410,7 +18714,7 @@
       "target": "test_check_worker_handoff_route_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L146",
       "weight": 0.8
     },
@@ -18419,7 +18723,7 @@
       "target": "test_check_worker_handoff_route_repofixture_write_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L147",
       "weight": 0.8
     },
@@ -18428,7 +18732,7 @@
       "target": "test_check_worker_handoff_route_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L148",
       "weight": 0.8
     },
@@ -18437,7 +18741,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L154",
       "weight": 0.8
     },
@@ -18446,7 +18750,7 @@
       "target": "test_check_worker_handoff_route_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L161",
       "weight": 0.8
     },
@@ -18455,7 +18759,7 @@
       "target": "test_check_worker_handoff_route_repofixture_write_exception",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L162",
       "weight": 0.8
     },
@@ -18464,7 +18768,7 @@
       "target": "test_check_worker_handoff_route_repofixture_write_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L163",
       "weight": 0.8
     },
@@ -18473,7 +18777,7 @@
       "target": "test_check_worker_handoff_route_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L164",
       "weight": 0.8
     },
@@ -18482,7 +18786,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L172",
       "weight": 0.8
     },
@@ -18491,7 +18795,7 @@
       "target": "test_check_worker_handoff_route_repofixture",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L178",
       "weight": 0.8
     },
@@ -18500,7 +18804,7 @@
       "target": "test_check_worker_handoff_route_repofixture_write_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L179",
       "weight": 0.8
     },
@@ -18509,7 +18813,7 @@
       "target": "test_check_worker_handoff_route_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L179",
       "weight": 0.8
     },
@@ -18518,7 +18822,7 @@
       "target": "test_check_worker_handoff_route_testworkerhandoffroute_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/test_check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/test_check_worker_handoff_route.py",
       "source_location": "L181",
       "weight": 0.8
     },
@@ -23477,7 +23781,7 @@
       "target": "argparse",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -23486,7 +23790,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -23495,7 +23799,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -23504,7 +23808,7 @@
       "target": "sys",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -23513,7 +23817,7 @@
       "target": "tempfile",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L10",
       "weight": 1.0
     },
@@ -23522,7 +23826,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L11",
       "weight": 1.0
     },
@@ -23531,7 +23835,7 @@
       "target": "assert_execution_scope",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L13",
       "weight": 1.0
     },
@@ -23540,7 +23844,7 @@
       "target": "check_worker_handoff_route_normalize_repo_path",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L29",
       "weight": 1.0
     },
@@ -23549,7 +23853,7 @@
       "target": "check_worker_handoff_route_actionable_next_step",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L33",
       "weight": 1.0
     },
@@ -23558,7 +23862,7 @@
       "target": "check_worker_handoff_route_result",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L44",
       "weight": 1.0
     },
@@ -23567,7 +23871,7 @@
       "target": "check_worker_handoff_route_find_scope",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L52",
       "weight": 1.0
     },
@@ -23576,7 +23880,7 @@
       "target": "check_worker_handoff_route_check_route",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L64",
       "weight": 1.0
     },
@@ -23585,7 +23889,7 @@
       "target": "check_worker_handoff_route_parse_args",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L142",
       "weight": 1.0
     },
@@ -23594,7 +23898,7 @@
       "target": "check_worker_handoff_route_main",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L152",
       "weight": 1.0
     },
@@ -23603,7 +23907,7 @@
       "target": "check_worker_handoff_route_normalize_repo_path",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L66",
       "weight": 0.8
     },
@@ -23612,7 +23916,7 @@
       "target": "check_worker_handoff_route_result",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L71",
       "weight": 0.8
     },
@@ -23621,7 +23925,7 @@
       "target": "check_worker_handoff_route_actionable_next_step",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L80",
       "weight": 0.8
     },
@@ -23630,7 +23934,7 @@
       "target": "check_worker_handoff_route_find_scope",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L92",
       "weight": 0.8
     },
@@ -23639,7 +23943,7 @@
       "target": "check_worker_handoff_route_parse_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L153",
       "weight": 0.8
     },
@@ -23648,7 +23952,7 @@
       "target": "check_worker_handoff_route_check_route",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/overlord/check_worker_handoff_route.py",
+      "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L159",
       "weight": 0.8
     },
@@ -38858,7 +39162,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -38867,7 +39171,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -38876,7 +39180,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -38885,7 +39189,7 @@
       "target": "tempfile",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -38894,7 +39198,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -38903,7 +39207,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L15",
       "weight": 1.0
     },
@@ -38912,7 +39216,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L30",
       "weight": 1.0
     },
@@ -38921,7 +39225,7 @@
       "target": "test_delegation_hook_test_hook_blocks_agent_owned_work_before_file_path_logic",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L39",
       "weight": 1.0
     },
@@ -38930,7 +39234,7 @@
       "target": "test_delegation_hook_test_hook_warns_for_implementation_scoped_explore",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L52",
       "weight": 1.0
     },
@@ -38939,7 +39243,7 @@
       "target": "test_delegation_hook_test_hook_allows_read_even_when_text_matches_owned_work",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L65",
       "weight": 1.0
     },
@@ -38948,7 +39252,7 @@
       "target": "test_delegation_hook_test_hook_bypass_allows_and_logs",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L78",
       "weight": 1.0
     },
@@ -38957,7 +39261,7 @@
       "target": "test_delegation_hook_test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L90",
       "weight": 1.0
     },
@@ -38966,7 +39270,7 @@
       "target": "test_delegation_hook_test_hook_blocks_task_tool_owned_work",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L103",
       "weight": 1.0
     },
@@ -38975,7 +39279,7 @@
       "target": "test_delegation_hook_test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L115",
       "weight": 1.0
     },
@@ -38984,7 +39288,7 @@
       "target": "test_delegation_hook_test_hook_preserves_new_code_file_block_for_common_extensions",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L129",
       "weight": 1.0
     },
@@ -38993,7 +39297,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L41",
       "weight": 0.8
     },
@@ -39002,7 +39306,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L42",
       "weight": 0.8
     },
@@ -39011,7 +39315,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L55",
       "weight": 0.8
     },
@@ -39020,7 +39324,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L56",
       "weight": 0.8
     },
@@ -39029,7 +39333,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L68",
       "weight": 0.8
     },
@@ -39038,7 +39342,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L69",
       "weight": 0.8
     },
@@ -39047,7 +39351,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L81",
       "weight": 0.8
     },
@@ -39056,7 +39360,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L82",
       "weight": 0.8
     },
@@ -39065,7 +39369,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L92",
       "weight": 0.8
     },
@@ -39074,7 +39378,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L93",
       "weight": 0.8
     },
@@ -39083,7 +39387,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L105",
       "weight": 0.8
     },
@@ -39092,7 +39396,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L106",
       "weight": 0.8
     },
@@ -39101,7 +39405,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L117",
       "weight": 0.8
     },
@@ -39110,7 +39414,7 @@
       "target": "test_delegation_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L118",
       "weight": 0.8
     },
@@ -39119,7 +39423,7 @@
       "target": "test_delegation_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-448-worker-handoff-routing/scripts/orchestrator/test_delegation_hook.py",
+      "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L133",
       "weight": 0.8
     },

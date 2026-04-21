@@ -1,11 +1,11 @@
 # Graph Report - hldpro-governance  (2026-04-21)
 
 ## Corpus Check
-- Large corpus: 1854 files · ~480,914 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1862 files · ~482,583 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 1519 nodes · 2894 edges · 79 communities detected
-- Extraction: 51% EXTRACTED · 49% INFERRED · 0% AMBIGUOUS · INFERRED: 1429 edges (avg confidence: 0.5)
+- 1529 nodes · 2914 edges · 80 communities detected
+- Extraction: 51% EXTRACTED · 49% INFERRED · 0% AMBIGUOUS · INFERRED: 1440 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -250,103 +250,107 @@ Nodes (10): _payload(), _run_hook(), test_hook_allows_read_even_when_text_matche
 Cohesion: 0.45
 Nodes (10): _process(), _request(), test_ambiguous_response_produces_clarification_and_no_instruction(), test_expired_response_fails_closed_to_dead_letter(), test_invalid_packet_lands_in_dead_letter_with_validation_errors(), test_local_cli_checkpoint_fixture_creates_valid_hitl_request(), test_replay_reconstructs_decision_path(), test_request_changes_response_preserves_feedback_path_without_approval() (+2 more)
 
-### Community 54 - "Overlord Validate registry surfaces"
+### Community 54 - "Overlord Schema guard"
+Cohesion: 0.44
+Nodes (3): _payload(), _run_hook(), TestSchemaGuardHook
+
+### Community 55 - "Overlord Validate registry surfaces"
 Cohesion: 0.49
 Nodes (9): check(), fail(), main(), read_text(), repos_for_static_checkout(), validate_docs_surfaces(), validate_runtime_registry_consumers(), validate_static_checkout_workflow() (+1 more)
 
-### Community 55 - "Lam Runtime inventory"
+### Community 56 - "Lam Runtime inventory"
 Cohesion: 0.4
 Nodes (9): build_inventory(), import_available(), local_runtime(), mac_hardware(), main(), memory_budget(), pii_guardrail(), _run() (+1 more)
 
-### Community 56 - "Knowledge base Graphify targets"
+### Community 57 - "Knowledge base Graphify targets"
 Cohesion: 0.38
 Nodes (9): filtered_targets(), find_target(), load_manifest(), main(), print_json(), print_shell(), print_stage_paths(), print_tsv() (+1 more)
 
-### Community 57 - "Packages Hldpro sim Providers"
+### Community 58 - "Packages Hldpro sim Providers"
 Cohesion: 0.2
 Nodes (0): 
 
-### Community 58 - "Codex fire Failure"
+### Community 59 - "Codex fire Failure"
 Cohesion: 0.5
 Nodes (8): run_fire(), test_exec_failure_after_successful_preflight_logs_and_signals(), test_preflight_failure_logs_and_exits_fast(), test_preflight_timeout_logs_and_exits_fast(), test_review_template_default_persona_reaches_codex_fire(), test_review_template_propagates_wrapper_failure(), test_success_does_not_write_failure_log(), write_fake_codex()
 
-### Community 59 - "Overlord Branch switch guard"
+### Community 60 - "Overlord Branch switch guard"
 Cohesion: 0.39
 Nodes (2): run_hook(), TestBranchSwitchGuard
 
-### Community 60 - "Overlord Memory integrity"
+### Community 61 - "Overlord Memory integrity"
 Cohesion: 0.42
 Nodes (7): check_memory_exists(), inspect_repo(), load_memory_lines(), main(), memory_dir_for_repo(), parse_pointer_filenames(), validate_frontmatter()
 
-### Community 61 - "Knowledge base Graphify usage logging"
+### Community 62 - "Knowledge base Graphify usage logging"
 Cohesion: 0.61
 Nodes (8): check(), main(), run_command(), test_logger_backwards_compatible(), test_logger_query_trace_fields(), test_measurement_falls_back_from_stale_governance_repo_path(), test_measurement_outputs_query_traces(), test_schema_shape()
 
-### Community 62 - "Overlord Effectiveness metrics"
+### Community 63 - "Overlord Effectiveness metrics"
 Cohesion: 0.46
 Nodes (7): collect_repo_metrics(), main(), parse_iso(), pct(), render_markdown(), RepoMetrics, run()
 
-### Community 63 - "Overlord Validate governed repos"
+### Community 64 - "Overlord Validate governed repos"
 Cohesion: 0.67
 Nodes (6): check(), fail(), load_json(), main(), validate_graphify_reconciliation(), validate_registry_shape()
 
-### Community 64 - "Orchestrator Read only observer"
+### Community 65 - "Orchestrator Read only observer"
 Cohesion: 0.48
 Nodes (2): _copy_fixture(), TestReadOnlyObserver
 
-### Community 65 - "Packages Hldpro sim Stampede"
+### Community 66 - "Packages Hldpro sim Stampede"
 Cohesion: 0.4
 Nodes (4): BaseAggregator, BaseModel, NarrativeAggregator, NarrativeOutcome
 
-### Community 66 - "Knowledge base Log graphify usage"
+### Community 67 - "Knowledge base Log graphify usage"
 Cohesion: 0.7
 Nodes (4): append_event(), build_event(), main(), parse_args()
 
-### Community 67 - "Packet Hitl relay schema"
+### Community 68 - "Packet Hitl relay schema"
 Cohesion: 0.8
 Nodes (4): _load(), test_invalid_hitl_relay_examples_fail(), test_valid_hitl_relay_examples_pass(), _validator()
 
-### Community 68 - "Knowledge base Graphify governance"
+### Community 69 - "Knowledge base Graphify governance"
 Cohesion: 0.83
 Nodes (3): check(), is_ignored(), main()
 
-### Community 69 - "Knowledge base Update knowledge"
+### Community 70 - "Knowledge base Update knowledge"
 Cohesion: 0.83
 Nodes (3): main(), replace_section(), summary_line()
 
-### Community 70 - "Packages Hldpro sim Stampede"
+### Community 71 - "Packages Hldpro sim Stampede"
 Cohesion: 0.67
 Nodes (2): MockProvider, test_stampede_e2e()
 
-### Community 71 - "Overlord Render github issue feed"
+### Community 72 - "Overlord Render github issue feed"
 Cohesion: 1.0
 Nodes (2): main(), render_issue()
 
-### Community 72 - "Knowledge base Push graph to neo4j"
+### Community 73 - "Knowledge base Push graph to neo4j"
 Cohesion: 1.0
 Nodes (2): build_scoped_graph(), main()
 
-### Community 73 - "Packages Hldpro sim Runner"
+### Community 74 - "Packages Hldpro sim Runner"
 Cohesion: 0.67
 Nodes (0): 
 
-### Community 74 - "Packages Hldpro sim Engine"
+### Community 75 - "Packages Hldpro sim Engine"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 75 - "Packages Hldpro sim Artifacts"
+### Community 76 - "Packages Hldpro sim Artifacts"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 76 - "Windows ollama Submit Temporary"
+### Community 77 - "Windows ollama Submit Temporary"
 Cohesion: 1.0
 Nodes (1): Temporary audit directory for testing.
 
-### Community 77 - "Som client Som client From"
+### Community 78 - "Som client Som client From"
 Cohesion: 1.0
 Nodes (1): Build a client from well-known environment variables.
 
-### Community 78 - "Packages Hldpro sim Personas"
+### Community 79 - "Packages Hldpro sim Personas"
 Cohesion: 1.0
 Nodes (1): Convenience: load shared dir from bundled package personas/.
 

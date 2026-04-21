@@ -1,0 +1,120 @@
+{
+  "session_id": "session-20260421-issue-447-schema-guard-diagnostics",
+  "issue_number": 447,
+  "objective": "Make schema/write-boundary hook failures loud and actionable so PreToolUse:Bash never exits nonzero without stderr.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repository only.",
+    "Add or harden the repo-owned Bash schema guard with explicit diagnostics.",
+    "Wire the guard into .claude/settings.json for PreToolUse:Bash.",
+    "Add fixture tests for policy block stderr, missing schema stderr, malformed payload stderr, validator nonzero summaries, allowed read-only commands, and Python file write blocks.",
+    "Do not weaken schema/write-boundary enforcement."
+  ],
+  "out_of_scope": [
+    "Product repository edits.",
+    "Allowing planner/orchestrator lanes to create code files directly.",
+    "Worker handoff routing changes beyond preserving the path created in issue #448.",
+    "Changing branch/worktree guard policy."
+  ],
+  "research_summary": "The repository did not track .claude/hooks/schema-guard.sh even though governed repo compendium entries referenced schema guard hooks. Issue #447 adds the repo-owned Bash guard and fixture coverage so policy refusals and internal failures always produce stderr diagnostics.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/434",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/447",
+    ".claude/settings.json",
+    "hooks/code-write-gate.sh",
+    "docs/ORG_GOVERNANCE_COMPENDIUM.md"
+  ],
+  "sprints": [
+    {
+      "name": "Schema guard diagnostics",
+      "goal": "Ensure Bash hook failures emit explicit stderr diagnostics while preserving policy blocks.",
+      "tasks": [
+        "Add hooks/schema-guard.sh with fail helper and unexpected-error trap.",
+        "Validate hook payloads, repo root, optional schema/config, and optional validator command before policy checks.",
+        "Block Bash file-write patterns with path/rule/next-action stderr.",
+        "Wire the hook for PreToolUse:Bash in .claude/settings.json.",
+        "Add fixture tests for silent-crash and policy-refusal paths.",
+        "Record issue #447 evidence and run deterministic gates."
+      ],
+      "acceptance_criteria": [
+        "hooks/schema-guard.sh never exits nonzero without non-empty stderr in covered cases.",
+        "Policy blocks include blocked path/command, rule name, and next action.",
+        "Internal hook failures include hook name, line or phase, and shortest useful failing command/reason.",
+        "Missing dependency/config/schema cases emit explicit diagnostics.",
+        "Schema validation failures identify the affected validator command and shortest useful reason.",
+        "Tests cover blocked Bash file write, missing schema/config, malformed input payload, validator nonzero summary, allowed read-only command, and expected policy block nonzero.",
+        "Existing governance write-boundary protections remain enforced.",
+        "No product repo edits occur."
+      ],
+      "file_paths": [
+        ".claude/settings.json",
+        "hooks/schema-guard.sh",
+        "scripts/overlord/test_schema_guard_hook.py",
+        "docs/plans/issue-447-schema-guard-diagnostics-pdcar.md",
+        "docs/plans/issue-447-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-447-schema-guard-diagnostics-implementation.json",
+        "raw/handoffs/2026-04-21-issue-447-plan-to-implementation.json",
+        "raw/validation/2026-04-21-issue-447-schema-guard-diagnostics.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Claude Sonnet 4.6",
+      "role": "worker",
+      "focus": "Schema guard diagnostics hook and tests.",
+      "status": "skipped_after_prior_max_turns_failure",
+      "summary": "The immediately prior supervised Sonnet worker handoff failed at max turns with no edits. Codex implemented this small diagnostic slice under the material deviation rule and retained Codex QA.",
+      "evidence": [
+        "raw/validation/2026-04-21-issue-447-schema-guard-diagnostics.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Codex QA",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Codex QA reviewed hook diagnostics, fixture coverage, and governance evidence.",
+    "evidence": [
+      "raw/cross-review/2026-04-21-issue-447-schema-guard-diagnostics.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement governance-only schema guard diagnostics, settings wiring, fixture tests, issue evidence, validation, review, and closeout for issue #447.",
+    "next_execution_step": "Run focused validation, Local CI Gate, closeout, PR, and automerge if green.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-447-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-447-schema-guard-diagnostics-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-447-schema-guard-diagnostics.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-21-issue-447-schema-guard-diagnostics.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-447-schema-guard-diagnostics.md",
+    "next_role": "codex-qa",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Schema guard nonzero exits in covered cases include stderr.",
+      "Policy blocks include path/rule/next-action text.",
+      "Read-only Bash commands remain allowed.",
+      "Local CI Gate passes before merge."
+    ]
+  },
+  "material_deviation_rules": [
+    "If downstream repos need propagation, create downstream issues instead of editing them here.",
+    "If Sonnet worker tooling remains unstable after prior max-turn failure, record the evidence and continue with Codex implementation plus Codex QA."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: no HITL, loop remaining child issues",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T11:23:00-05:00"
+}
