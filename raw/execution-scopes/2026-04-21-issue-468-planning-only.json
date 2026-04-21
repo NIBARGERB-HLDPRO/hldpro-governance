@@ -1,0 +1,66 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-468-pages-deploy-pdcar-20260421",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/2026-04-21-issue-467-pages-deploy-gate-pdcar.md",
+    "docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-468-planning-only.json",
+    "raw/cross-review/2026-04-21-issue-467-pages-deploy-gate-round1.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Read-only research target for epic #467 (understand current Pages Direct Upload shape); no writes authorized from this lane; downstream adoption is seek-and-ponder issue #163."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #468."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #468."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #468."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #468."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #468."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 468,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/468",
+    "claimed_by": "claude-opus-4-6",
+    "claimed_at": "2026-04-21T00:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "not_requested",
+    "planner_model": "claude-opus-4-6",
+    "implementer_model": "pending-gpt-5.4-review",
+    "accepted_at": "2026-04-21T00:00:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json",
+      "docs/plans/2026-04-21-issue-467-pages-deploy-gate-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}
