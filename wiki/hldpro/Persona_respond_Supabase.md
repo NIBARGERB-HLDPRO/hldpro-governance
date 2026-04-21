@@ -1,6 +1,6 @@
 # Persona respond Supabase
 
-> 835 nodes · cohesion 0.01
+> 807 nodes · cohesion 0.01
 
 ## Key Concepts
 
@@ -9,7 +9,6 @@
 - **cors.ts** (214 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/cors.ts`
 - **audit.ts** (161 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/audit.ts`
 - **getSupabaseServiceClient()** (69 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/auth.ts`
-- **warn()** (55 connections) — `hldpro-governance/repos/local-ai-machine/scripts/security/check_pat_hygiene.py`
 - **corpus.ts** (44 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
 - **email.ts** (41 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/email.ts`
 - **vault.ts** (41 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/vault.ts`
@@ -19,7 +18,6 @@
 - **index.ts** (28 connections) — `hldpro-governance/repos/seek-and-ponder/backend/supabase/functions/persona-respond/index.ts`
 - **index.ts** (27 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/webhook-receiver/index.ts`
 - **config.ts** (26 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/config.ts`
-- **sendEmail()** (25 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/email.ts`
 - **cogs.ts** (23 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
 - **emitCOGS()** (22 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
 - **esign.ts** (22 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/esign.ts`
@@ -29,7 +27,9 @@
 - **jsonResponse()** (20 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/quickbooks-oauth/index.ts`
 - **index.ts** (19 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/addon-provision/index.ts`
 - **index.ts** (19 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- *... and 810 more nodes in this community*
+- **setup-readiness.ts** (19 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/setup-readiness.ts`
+- **finalizePortalPurchase()** (19 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- *... and 782 more nodes in this community*
 
 ## Relationships
 
@@ -60,8 +60,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 4311 (81%)
-- INFERRED: 985 (19%)
+- EXTRACTED: 4259 (84%)
+- INFERRED: 831 (16%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -16,8 +16,8 @@
 - [[_COMMUNITY_Processed Pinecroft the woodlands tx 20260114 Annotate|Processed Pinecroft the woodlands tx 20260114 Annotate]]
 - [[_COMMUNITY_Processed Pinecroft the woodlands tx 20260114 Annotate|Processed Pinecroft the woodlands tx 20260114 Annotate]]
 - [[_COMMUNITY_Processed Pinecroft the woodlands tx 20260114 Annotate|Processed Pinecroft the woodlands tx 20260114 Annotate]]
-- [[_COMMUNITY_Generate existing info report Reviews|Generate existing info report Reviews]]
 - [[_COMMUNITY_Generate existing info report|Generate existing info report]]
+- [[_COMMUNITY_Generate existing info report Reviews|Generate existing info report Reviews]]
 - [[_COMMUNITY_Generate existing info report Reviews|Generate existing info report Reviews]]
 - [[_COMMUNITY_Generate existing info report Reviews|Generate existing info report Reviews]]
 - [[_COMMUNITY_Extract xlsx images|Extract xlsx images]]
@@ -72,17 +72,17 @@ Nodes (9): annotate(), draw_arrow(), draw_circle(), draw_label(), Annotate facil
 Cohesion: 0.29
 Nodes (9): annotate(), draw_arrow(), draw_circle(), draw_highlight(), get_color(), Annotate ALL 43 facility images — arrows and highlight zones ONLY (no text on im, Draw a thick arrow with filled arrowhead., Draw semi-transparent rectangle highlight. (+1 more)
 
-### Community 6 - "Generate existing info report Reviews"
-Cohesion: 0.36
-Nodes (9): add_finding_block(), add_heading(), add_info_row(), add_tabbed_info_row(), fit_image_size(), keep_paragraph_together(), set_document_layout(), set_update_fields_on_open() (+1 more)
+### Community 6 - "Generate existing info report"
+Cohesion: 0.29
+Nodes (8): add_bottom_divider(), add_field(), add_footer(), add_horizontal_rule(), add_note_block(), add_static_toc_line(), add_toc(), fit_image_size()
 
-### Community 7 - "Generate existing info report"
-Cohesion: 0.33
-Nodes (7): add_bottom_divider(), add_field(), add_footer(), add_horizontal_rule(), add_note_block(), add_static_toc_line(), add_toc()
-
-### Community 8 - "Generate existing info report Reviews"
+### Community 7 - "Generate existing info report Reviews"
 Cohesion: 0.25
 Nodes (9): clean_display_text(), domain_from_section(), excel_date(), Finding, main(), parse_hr_notes(), parse_main_findings(), parse_photo_notes() (+1 more)
+
+### Community 8 - "Generate existing info report Reviews"
+Cohesion: 0.43
+Nodes (8): add_finding_block(), add_heading(), add_info_row(), add_tabbed_info_row(), keep_paragraph_together(), set_document_layout(), set_update_fields_on_open(), write_docx()
 
 ### Community 9 - "Generate existing info report Reviews"
 Cohesion: 0.4
@@ -99,7 +99,7 @@ Nodes (2): extract_images(), main()
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `convert()` connect `Generate docx from markdown Cycle` to `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Generate existing info report Reviews`?**
+- **Why does `convert()` connect `Generate docx from markdown Cycle` to `Generate existing info report Reviews`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Processed Pinecroft the woodlands tx 20260114 Annotate`?**
   _High betweenness centrality (0.512) - this node is a cross-community bridge._
 - **Why does `add_heading()` connect `Generate existing info report Reviews` to `Generate docx from markdown Cycle`, `Generate existing info report`?**
   _High betweenness centrality (0.442) - this node is a cross-community bridge._

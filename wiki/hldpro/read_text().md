@@ -1,6 +1,6 @@
 # read_text()
 
-> God node · 613 connections · `hldpro-governance/scripts/overlord/build_org_governance_compendium.py`
+> God node · 619 connections · `hldpro-governance/scripts/overlord/build_org_governance_compendium.py`
 
 ## Connections by Relation
 
@@ -21,9 +21,9 @@
 - [[test_stampede_e2e()]] `INFERRED`
 - [[generate_batch()]] `INFERRED`
 - [[main()]] `INFERRED`
-- [[main()]] `INFERRED`
-- [[main()]] `INFERRED`
 - [[verify()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[main()]] `INFERRED`
 - [[_load_scope()]] `INFERRED`
 
 ### contains

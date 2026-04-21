@@ -1,6 +1,6 @@
 # write_text()
 
-> God node · 362 connections · `hldpro-governance/repos/local-ai-machine/generate_stub_bundle.py`
+> God node · 368 connections · `hldpro-governance/repos/local-ai-machine/generate_stub_bundle.py`
 
 ## Connections by Relation
 
@@ -12,6 +12,7 @@
 - [[._write_record()]] `INFERRED`
 - [[._run()]] `INFERRED`
 - [[main()]] `INFERRED`
+- [[write_config()]] `INFERRED`
 - [[main()]] `INFERRED`
 - [[main()]] `INFERRED`
 - [[_write_supporting_files()]] `INFERRED`
@@ -24,7 +25,6 @@
 - [[main()]] `INFERRED`
 - [[main()]] `INFERRED`
 - [[run_blind()]] `INFERRED`
-- [[main()]] `INFERRED`
 
 ### contains
 - [[generate_stub_bundle.py]] `EXTRACTED`

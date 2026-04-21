@@ -15,9 +15,9 @@
 - [[Processed Pinecroft the woodlands tx 20260114 Annotate]] — 10 nodes
 - [[Processed Pinecroft the woodlands tx 20260114 Annotate]] — 10 nodes
 - [[Processed Pinecroft the woodlands tx 20260114 Annotate]] — 10 nodes
+- [[Generate existing info report]] — 10 nodes
 - [[Generate existing info report Reviews]] — 9 nodes
-- [[Generate existing info report]] — 9 nodes
-- [[Generate existing info report Reviews]] — 9 nodes
+- [[Generate existing info report Reviews]] — 8 nodes
 - [[Generate existing info report Reviews]] — 6 nodes
 - [[Extract xlsx images]] — 3 nodes
 

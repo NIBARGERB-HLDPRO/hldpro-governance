@@ -1,7 +1,7 @@
 # Graph Report - ai-integration-services  (2026-04-21)
 
 ## Corpus Check
-- Large corpus: 953 files · ~1,100,109 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 953 files · ~1,100,032 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
 - 2648 nodes · 5133 edges · 246 communities detected
@@ -1533,12 +1533,12 @@ Nodes (0):
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `trim()` connect `Brain Supabase` to `Auth Supabase`, `Twilio client Supabase`, `Setup readiness Supabase`, `Connectors Crm Supabase`, `Debug Debug feedback overlay Handle`, `Support Feature roadmap Affiliate`, `Connectors Crm Supabase`, `Addon provision Supabase`, `Addon lifecycle Voiceflow`, `Real enrollment founder`, `Provisioning Autoprovision preflight Client`, `Magic link jwt Supabase`, `Quickbooks oauth Supabase`, `Connectors Ad Supabase`, `Inbound sms magic link Supabase`, `Compendium Extract Copy`, `Wizard Assistant`, `Gc Gcsub Line`, `Roof report Supabase`, `N8n workflow templates`, `Leads Handle`, `Demo site activation link`?**
-  _High betweenness centrality (0.112) - this node is a cross-community bridge._
 - **Why does `toLocaleDateString()` connect `Support Feature roadmap Affiliate` to `Auth Supabase`, `Roof report Supabase`, `Brain Supabase`, `Twilio client Supabase`, `Connectors Crm Supabase`, `Gc Gcsub Line`, `Debug Debug feedback overlay Handle`, `Leads Handle`, `Addon provision Supabase`, `Provisioning Autoprovision preflight Client`, `Auth Reseller`, `Wizard Assistant`, `Finance Brain`?**
-  _High betweenness centrality (0.069) - this node is a cross-community bridge._
-- **Why does `update()` connect `Connectors Crm Supabase` to `Auth Supabase`, `Twilio client Supabase`, `Brain Supabase`, `Setup readiness Supabase`, `Debug Debug feedback overlay Handle`, `Support Feature roadmap Affiliate`, `Connectors Crm Supabase`, `Addon provision Supabase`, `Quickbooks oauth Supabase`, `Connectors Google calendar Supabase`, `Wizard Assistant`, `Connectors Crm Ghl`?**
-  _High betweenness centrality (0.040) - this node is a cross-community bridge._
+  _High betweenness centrality (0.091) - this node is a cross-community bridge._
+- **Why does `trim()` connect `Brain Supabase` to `Auth Supabase`, `Twilio client Supabase`, `Setup readiness Supabase`, `Connectors Crm Supabase`, `Debug Debug feedback overlay Handle`, `Support Feature roadmap Affiliate`, `Connectors Crm Supabase`, `Addon provision Supabase`, `Addon lifecycle Voiceflow`, `Real enrollment founder`, `Provisioning Autoprovision preflight Client`, `Magic link jwt Supabase`, `Quickbooks oauth Supabase`, `Connectors Ad Supabase`, `Inbound sms magic link Supabase`, `Compendium Extract Copy`, `Wizard Assistant`, `Gc Gcsub Line`, `Roof report Supabase`, `N8n workflow templates`, `Leads Handle`, `Demo site activation link`?**
+  _High betweenness centrality (0.088) - this node is a cross-community bridge._
+- **Why does `text()` connect `Twilio client Supabase` to `Auth Supabase`, `Brain Supabase`, `Setup readiness Supabase`, `Connectors Crm Supabase`, `Debug Debug feedback overlay Handle`, `Connectors Crm Supabase`, `Addon provision Supabase`, `Addon lifecycle Voiceflow`, `Provisioning Autoprovision preflight Client`, `Magic link jwt Supabase`, `Quickbooks oauth Supabase`, `Connectors Google calendar Supabase`, `Inbound sms magic link Supabase`, `Connectors Crm Twenty`, `Connectors Crm Ghl`, `N8n client Supabase`, `Seed esign templates`?**
+  _High betweenness centrality (0.039) - this node is a cross-community bridge._
 - **Are the 98 inferred relationships involving `text()` (e.g. with `fetchJson()` and `restDelete()`) actually correct?**
   _`text()` has 98 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 90 inferred relationships involving `trim()` (e.g. with `envSeed()` and `splitName()`) actually correct?**

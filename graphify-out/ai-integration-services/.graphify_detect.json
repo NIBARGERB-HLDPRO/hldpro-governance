@@ -963,9 +963,9 @@
     "video": []
   },
   "total_files": 953,
-  "total_words": 1100109,
+  "total_words": 1100032,
   "needs_graph": true,
-  "warning": "Large corpus: 953 files \u00b7 ~1,100,109 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
+  "warning": "Large corpus: 953 files \u00b7 ~1,100,032 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
   "skipped_sensitive": [
     "/home/runner/work/hldpro-governance/hldpro-governance/repos/ai-integration-services/e2e/forgot-password.spec.ts",
     "/home/runner/work/hldpro-governance/hldpro-governance/repos/ai-integration-services/scripts/sync-secrets.sh",
