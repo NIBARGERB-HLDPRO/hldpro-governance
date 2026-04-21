@@ -43,6 +43,7 @@
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
 | Governance SSOT consumer verifier edge-case hardening | #474 | 2026-04-21 | Ported duplicate issue #454 verifier QA deltas into the merged v0.2 verifier: workflow-ref mismatch checks, strict override metadata validation, forbidden override class checks, and focused tests. |
+| Pages Deploy Gate | #469 | 2026-04-21 | DONE. Adds the governance-owned Cloudflare Pages Direct Upload deploy gate, 15 mocked pytest cases, deploy and rollback runbooks, two-phase deploy approval, build freshness, Pages limit checks, secret redaction, and evidence output for governed Pages consumers. |
 | Governance SSOT consumer verifier v0.2 drift detection | #454 | 2026-04-21 | PR pre-PR extends the non-mutating consumer verifier with v0.2 profile, override, workflow-ref, and managed hook/content drift reporting while preserving v0.1 compatibility. |
 | Structured handoff package lifecycle — plan preflight routing | #449 | 2026-04-21 | PR #464 preflighted governed write intent for recent planning evidence and emitted machine-routable missing-plan next actions before code writes. |
 | Structured handoff package lifecycle — repo-specific lane bootstrap naming | #445 | 2026-04-21 | PR #466 added the governance lane policy registry, HealthcarePlatform sandbox/pr-pending lane validation, branch-switch guard enforcement, tests, validation, closeout, and graph/wiki outputs. |
@@ -112,3 +113,4 @@
 | Enforce planner write-boundary for governance-surface edits | #242 | 2026-04-17 | PRs #244 and #245 split trusted execution-scope bootstrap from implementation. Reusable governance CI now enforces planner-boundary execution scopes from base, `assert_execution_scope.py` validates `execution_mode` and accepted handoff evidence, and the local write gate provides early warnings. |
 | Harden verify-completion + codex-spark dispatch briefs against stale-checkout contamination | #174 | 2026-04-17 | GitHub issue is closed; moved out of active Plans to keep the local mirror aligned with canonical issue state |
 | Reconcile SoM branch naming vs local-ai-machine riskfix/* convention | #175 | 2026-04-17 | Branch-policy drift resolved by PR #175; active docs now describe the SoM and `riskfix/*` conventions as complementary rather than blocked |
+| Reusable Cloudflare Pages Direct Upload deploy gate | #469 | 2026-04-21 | Implemented reusable two-phase Pages Direct Upload gate; focused pytest target passed 15/15. |
