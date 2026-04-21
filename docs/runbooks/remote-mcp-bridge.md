@@ -46,16 +46,9 @@ The Stage A client reads:
 | `SOM_OPERATOR_INBOUND_QUEUE_ROOT` | HITL relay queue root inspected by the operator inbound preflight. |
 | `SOM_OPERATOR_INBOUND_SESSION_ID` | Target CLI session id for the inbound preflight. |
 
-Example local client smoke:
+Example local client smoke after provisioning the required names through `hldpro-governance/.env.shared` plus bootstrap or the provider vault:
 
 ```bash
-export SOM_MCP_URL="https://som-mcp.example.com"
-export SOM_MCP_TOKEN="<inner-jwt>"
-export SOM_MCP_PROTOCOL="bridge"
-export SOM_MCP_CALL_PATH="mcp/call"
-export CF_ACCESS_CLIENT_ID="<access-client-id>"
-export CF_ACCESS_CLIENT_SECRET="<access-client-secret>"
-export SOM_MCP_USER_AGENT="hldpro-som-client/1"
 python3 scripts/som-client/som_client.py
 ```
 
@@ -107,15 +100,9 @@ python3 scripts/remote-mcp/operator_connectivity.py \
   --json-output raw/remote-mcp-connectivity-preflight/YYYY-MM-DD.fixture-connectivity.json
 ```
 
-Live operator proof:
+Live operator proof after the required names are provisioned through the approved local or CI secret surface:
 
 ```bash
-export SOM_MCP_URL="https://som-mcp.example.com"
-export SOM_MCP_TOKEN="<inner-jwt>"
-# Or use SOM_REMOTE_MCP_JWT when SOM_MCP_TOKEN is intentionally absent.
-export CF_ACCESS_CLIENT_ID="<access-client-id>"
-export CF_ACCESS_CLIENT_SECRET="<access-client-secret>"
-
 python3 scripts/remote-mcp/operator_connectivity.py \
   --mode live \
   --json-output raw/remote-mcp-connectivity-preflight/YYYY-MM-DD.live-connectivity.json
@@ -146,9 +133,6 @@ python3 scripts/remote-mcp/operator_inbound_preflight.py \
 Live receive proof from a configured queue:
 
 ```bash
-export SOM_OPERATOR_INBOUND_QUEUE_ROOT="raw/hitl-relay/queue"
-export SOM_OPERATOR_INBOUND_SESSION_ID="<target-cli-session-id>"
-
 python3 scripts/remote-mcp/operator_inbound_preflight.py \
   --mode live \
   --json-output raw/remote-mcp-operator-inbound-preflight/YYYY-MM-DD.live-inbound.json
@@ -176,22 +160,9 @@ python3 scripts/remote-mcp/stage_d_smoke.py \
   --json
 ```
 
-Live second-machine proof:
+Live second-machine proof after endpoint, identity, Cloudflare Access, audit, HMAC, and stdio-proof names are provisioned through the approved local or CI secret surface:
 
 ```bash
-export SOM_MCP_URL="https://som-mcp.example.com"
-export SOM_MCP_TOKEN="<inner-jwt>"
-export SOM_REMOTE_MCP_IDENTITY_EMAIL="<cloudflare-identity-email>"
-export SOM_REMOTE_MCP_IDENTITY_SUB="<cloudflare-identity-sub>"
-export CF_ACCESS_CLIENT_ID="<access-client-id>"
-export CF_ACCESS_CLIENT_SECRET="<access-client-secret>"
-export SOM_REMOTE_MCP_USER_AGENT="hldpro-remote-mcp-stage-d/1"
-# Optional DNS propagation workaround; keeps HTTPS hostname/SNI unchanged.
-# export SOM_REMOTE_MCP_RESOLVE_IP="<cloudflare-edge-ip-from-dig>"
-export SOM_REMOTE_MCP_AUDIT_DIR="/path/to/copied/raw/remote-mcp-audit"
-export SOM_REMOTE_MCP_AUDIT_HMAC_KEY="<audit-hmac-key>"
-export SOM_REMOTE_MCP_STDIO_PROOF_COMMAND="<local-stdio-proof-command-after-tunnel-stop>"
-
 python3 scripts/remote-mcp/stage_d_smoke.py --json
 ```
 
@@ -228,20 +199,9 @@ python3 scripts/remote-mcp/live_health_monitor.py \
   --json
 ```
 
-Live monitor check:
+Live monitor check after the complete live monitor secret set is provisioned through the approved local or CI secret surface:
 
 ```bash
-export SOM_MCP_URL="https://som-mcp.example.com"
-export SOM_MCP_TOKEN="<inner-jwt>"
-export SOM_REMOTE_MCP_IDENTITY_EMAIL="<cloudflare-identity-email>"
-export SOM_REMOTE_MCP_IDENTITY_SUB="<cloudflare-identity-sub>"
-export CF_ACCESS_CLIENT_ID="<access-client-id>"
-export CF_ACCESS_CLIENT_SECRET="<access-client-secret>"
-export SOM_REMOTE_MCP_USER_AGENT="hldpro-remote-mcp-monitor/1"
-export SOM_REMOTE_MCP_AUDIT_DIR="/path/to/copied/raw/remote-mcp-audit"
-export SOM_REMOTE_MCP_AUDIT_HMAC_KEY="<audit-hmac-key>"
-export SOM_REMOTE_MCP_STDIO_PROOF_COMMAND="<local-stdio-proof-command-after-tunnel-stop>"
-
 python3 scripts/remote-mcp/live_health_monitor.py --mode live --json
 ```
 
@@ -266,7 +226,7 @@ Recurring surfaces:
 - macOS launchd template: `launchd/com.hldpro.remote-mcp-monitor.plist` is the selected live operating surface and runs the same monitor every 900 seconds after replacing `__REPO_ROOT__` with the checkout path.
 - GitHub Actions: `.github/workflows/remote-mcp-live-health.yml` runs the fixture harness on schedule, writes a payload-safe step summary and alert artifact, and runs live mode only when the full secret set and safe live evidence inputs are configured.
 
-Install the launchd template only from the intended operating checkout:
+Install the launchd template only from the intended operating checkout. Provision required live monitor environment names through the local operator vault/bootstrap flow before loading the job; do not use `launchctl setenv` for secret values.
 
 ```bash
 mkdir -p ~/Library/LaunchAgents projects/hldpro-governance/reports
@@ -274,15 +234,6 @@ sed "s#__REPO_ROOT__#$(pwd)#g" \
   launchd/com.hldpro.remote-mcp-monitor.plist \
   > ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
 plutil -lint ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
-launchctl setenv SOM_MCP_URL "<remote-mcp-url>"
-launchctl setenv SOM_MCP_TOKEN "<inner-jwt>"
-launchctl setenv SOM_REMOTE_MCP_IDENTITY_EMAIL "<cloudflare-identity-email>"
-launchctl setenv SOM_REMOTE_MCP_IDENTITY_SUB "<cloudflare-identity-sub>"
-launchctl setenv CF_ACCESS_CLIENT_ID "<access-client-id>"
-launchctl setenv CF_ACCESS_CLIENT_SECRET "<access-client-secret>"
-launchctl setenv SOM_REMOTE_MCP_AUDIT_DIR "/path/to/copied/raw/remote-mcp-audit"
-launchctl setenv SOM_REMOTE_MCP_AUDIT_HMAC_KEY "<audit-hmac-key>"
-launchctl setenv SOM_REMOTE_MCP_STDIO_PROOF_COMMAND "<local-stdio-proof-command-after-tunnel-stop>"
 launchctl bootstrap "gui/$(id -u)" ~/Library/LaunchAgents/com.hldpro.remote-mcp-monitor.plist
 launchctl kickstart -k "gui/$(id -u)/com.hldpro.remote-mcp-monitor"
 ```

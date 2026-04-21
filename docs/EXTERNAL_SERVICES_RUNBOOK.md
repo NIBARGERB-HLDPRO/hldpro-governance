@@ -413,23 +413,10 @@ Pointer only — owned by AIS runbook §Claude Code (Cross-Model Agent Review). 
 | apex-doorknocking | `kfcqyijmuuafflpjepwr` |
 
 ### Fetch API keys (anon + service_role)
-```bash
-TOKEN=$(grep SUPABASE_ACCESS_TOKEN ~/.../hldpro-governance/.env.shared | cut -d= -f2)
-curl -sS "https://api.supabase.com/v1/projects/<ref>/api-keys" \
-  -H "Authorization: Bearer $TOKEN"
-```
+Use the Supabase dashboard or an approved local API client that reads `SUPABASE_ACCESS_TOKEN` from `hldpro-governance/.env.shared` through the bootstrap flow. Evidence may record project refs, key names, command exit status, and redacted output only.
 
 ### Reset a DB password
-```bash
-# Correct endpoint: PATCH /v1/projects/{ref} with name + db_pass
-TOKEN=$(grep SUPABASE_ACCESS_TOKEN ~/Developer/HLDPRO/hldpro-governance/.env.shared | cut -d= -f2)
-curl -sS -X PATCH "https://api.supabase.com/v1/projects/<ref>" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"name":"<project-name>","db_pass":"<new-password>"}'
-# Response: {"id":...,"name":"...","ref":"..."} on success
-# After reset: update HP_STAGING_SUPABASE_DB_PASSWORD / HP_PROD_SUPABASE_DB_PASSWORD in .env.shared
-```
+Use the Supabase dashboard or an approved local API client that reads `SUPABASE_ACCESS_TOKEN` and writes the new password only to `hldpro-governance/.env.shared`. After reset, refresh affected repo env files with `scripts/bootstrap-repo-env.sh`. Do not paste database passwords or bearer headers into runbooks, issues, PRs, shell history, or validation artifacts.
 
 **Note:** `/v1/projects/{ref}/database/password` (PUT/POST/PATCH) does NOT work — returns 404. The project PATCH endpoint is the only working path via PAT.
 
@@ -463,18 +450,18 @@ bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh <repo>
 
 ### Tokens (all in `.env.shared` → `CLOUDFLARE_*`)
 
-| Var | Prefix | Purpose | Status |
+| Var | Evidence-safe value | Purpose | Status |
 |---|---|---|---|
-| `CLOUDFLARE_MASTER_OPS_TOKEN` | `cfut_nJ7q...` | Tunnel Write, DNS Write, Access Apps+Policies, CF One Connector | WORKING (2026-04-09) |
-| `CLOUDFLARE_DNS_TOKEN` | `cfut_2bQY...` | DNS Edit — use for all DNS changes | WORKING |
-| `CLOUDFLARE_PAGES_TOKEN` | `cfat_7mfU...` | Pages Edit — wrangler pages deploy | WORKING |
-| `CLOUDFLARE_AGENT_TOKEN` | `cfut_WBnX...` | Read/Write broad + Email Routing | WORKING (2026-04-07) |
-| `CLOUDFLARE_USER_TOKEN` | `cfut_VpCF...` | User-level token | Untested |
-| `CLOUDFLARE_ORIGIN_API` | `v1.0-c9dd...` | Origin certificate API | Specific use only |
-| `CLOUDFLARE_TUNNEL_ID` | `a9124862-...` | LAM tunnel | Active |
+| `CLOUDFLARE_MASTER_OPS_TOKEN` | redacted; name only | Tunnel Write, DNS Write, Access Apps+Policies, CF One Connector | WORKING (2026-04-09) |
+| `CLOUDFLARE_DNS_TOKEN` | redacted; name only | DNS Edit — use for all DNS changes | WORKING |
+| `CLOUDFLARE_PAGES_TOKEN` | redacted; name only | Pages Edit — wrangler pages deploy | WORKING |
+| `CLOUDFLARE_AGENT_TOKEN` | redacted; name only | Read/Write broad + Email Routing | WORKING (2026-04-07) |
+| `CLOUDFLARE_USER_TOKEN` | redacted; name only | User-level token | Untested |
+| `CLOUDFLARE_ORIGIN_API` | redacted; name only | Origin certificate API | Specific use only |
+| `CLOUDFLARE_TUNNEL_ID` | redacted; name only | LAM tunnel | Active |
 | `CF_TEAM_DOMAIN` | `hldpro` | Access JWT validation | — |
-| `CF_ACCESS_AUD_TAG` | `e99b8781...` | Access JWT AUD claim | — |
-| ~~`CLOUDFLARE_API`~~ | ~~`cfk_Qf...`~~ | Legacy API key | **EXPIRED 2026-04-03** |
+| `CF_ACCESS_AUD_TAG` | redacted; name only | Access JWT AUD claim | — |
+| ~~`CLOUDFLARE_API`~~ | redacted; expired legacy key name only | Legacy API key | **EXPIRED 2026-04-03** |
 
 ### Remote MCP Access Service Token
 
@@ -490,21 +477,7 @@ Rotation order:
 
 ### DNS Record Operations
 
-```bash
-# List records
-curl -s "https://api.cloudflare.com/client/v4/zones/b7dfe6670b831de575c237efcd702f6d/dns_records" \
-  -H "Authorization: Bearer $CLOUDFLARE_DNS_TOKEN" | python3 -m json.tool
-
-# Create CNAME
-curl -s -X POST "https://api.cloudflare.com/client/v4/zones/b7dfe6670b831de575c237efcd702f6d/dns_records" \
-  -H "Authorization: Bearer $CLOUDFLARE_DNS_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"type":"CNAME","name":"SUBDOMAIN.hldpro.com","content":"cname.vercel-dns.com","ttl":1,"proxied":false}'
-
-# Delete record
-curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/b7dfe6670b831de575c237efcd702f6d/dns_records/RECORD_ID" \
-  -H "Authorization: Bearer $CLOUDFLARE_DNS_TOKEN"
-```
+Use the Cloudflare dashboard, Wrangler, or an approved local API client that reads `CLOUDFLARE_DNS_TOKEN` from the approved provisioning surface. Evidence may record zone ids, DNS record ids, record names, proxied status, and redacted command status only. Do not paste bearer headers or token values into runbooks or validation artifacts.
 
 ### CF Pages Projects
 
@@ -558,15 +531,7 @@ curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/b7dfe6670b831de575
 | `STRIPE_RESELLER_PRICE_STARTER/PRO/AGENCY` | Reseller tiers |
 
 ### CLI Operations
-```bash
-# List products
-curl -s https://api.stripe.com/v1/products -u "$STRIPE_SECRET_KEY:" -G -d limit=10 | python3 -m json.tool
-
-# Create price
-curl -s https://api.stripe.com/v1/prices -u "$STRIPE_SECRET_KEY:" \
-  -d product=prod_XXX -d unit_amount=29700 -d currency=usd \
-  -d "recurring[interval]=month"
-```
+Use the Stripe dashboard or an approved local API client that reads `STRIPE_SECRET_KEY` from `hldpro-governance/.env.shared` or the provider vault. Evidence may record object ids, operation names, command exit status, and redacted output only.
 
 ### Rules
 - Price IDs are immutable — create new prices, never modify existing
@@ -593,7 +558,7 @@ curl -s https://api.stripe.com/v1/prices -u "$STRIPE_SECRET_KEY:" \
 | `TWILIO_OAUTH_CLIENT_ID` + `TWILIO_OAUTH_SECRET` | OAuth credentials |
 | `SOM_TWILIO_FROM_NUMBER` | Dedicated SoM HITL SMS sender for local-ai-machine approval/reply routing |
 | `TWILIO_FROM_NUMBER` / `TWILIO_SMS_FROM` | Generic sender aliases for compatibility and diagnostics |
-| `TWILIO_TEST_CONSUMER_NUMBER` | CI test phone (+18176806400 as of 2026-04-15) |
+| `TWILIO_TEST_CONSUMER_NUMBER` | CI test phone; value redacted |
 
 ### SoM HITL SMS Route
 
@@ -610,15 +575,7 @@ Evidence and validation artifacts must refer to route keys, Twilio message ids, 
 Provisioning a new Twilio number or A2P campaign is an external-service change that requires explicit operator approval before purchase or dashboard mutation.
 
 ### CLI Operations
-```bash
-# Send test SMS
-curl -s -X POST "https://api.twilio.com/2010-04-01/Accounts/$TWILIO_ACCOUNT_SID/Messages.json" \
-  -u "$TWILIO_ACCOUNT_SID:$TWILIO_AUTH_TOKEN" \
-  -d "From=+1XXXXXXXXXX" -d "To=+1YYYYYYYYYY" -d "Body=Test message"
-
-# Rotate GitHub Actions secret
-echo "+1XXXXXXXXXX" | gh secret set TWILIO_TEST_CONSUMER_NUMBER --repo NIBARGERB-HLDPRO/ai-integration-services
-```
+Use the Twilio dashboard or an approved local API client that reads Twilio credentials and phone numbers from the approved provisioning surface. For GitHub Actions secrets, set `TWILIO_TEST_CONSUMER_NUMBER` through the GitHub UI or a stdin/file flow that does not include the literal value in the command, shell history, issue text, PR text, or validation artifact.
 
 ### Rules
 - A2P SMS campaign registration required for production messaging
@@ -669,11 +626,7 @@ echo "+1XXXXXXXXXX" | gh secret set TWILIO_TEST_CONSUMER_NUMBER --repo NIBARGERB
 - hldpro.dev: `p=quarantine`
 
 ### Test
-```bash
-curl -s -X POST "https://api.resend.com/emails" \
-  -H "Authorization: Bearer $RESEND_API_KEY" -H "Content-Type: application/json" \
-  -d '{"from":"HLD Pro <noreply@hldpro.com>","to":"test@example.com","subject":"Test","html":"<p>Test</p>"}'
-```
+Use the Resend dashboard or an approved local API client that reads `RESEND_API_KEY` from the approved provisioning surface. Evidence may record sender domain, recipient domain class, operation status, and redacted output only.
 
 ### Verified 2026-04-07
 - `POST /emails` with noreply@hldpro.com and noreply@hldpro.dev both delivered. `RESEND_API_KEY` is send-only (401s on management).
@@ -703,7 +656,7 @@ curl -s -X POST "https://api.resend.com/emails" \
 
 | Var | Purpose |
 |---|---|
-| `ELEVENLABS_API_KEY` | TTS API (sk_...) |
+| `ELEVENLABS_API_KEY` | TTS API; value redacted |
 | `ELEVENLABS_VOICE_ID` | Training narration voice (HP only) |
 | `ELEVENLABS_MODEL` | Default `eleven_v3` for HP training media |
 
@@ -771,22 +724,7 @@ ssh root@159.89.50.9 "cd /opt/plausible && docker compose ps"
 **Domain:** ascsurvey.com — authoritative NS: ns33/ns34.domaincontrol.com
 **Credentials:** `GODADDY_PRODUCTION_KEY` / `GODADDY_PRODUCTION_SECRET` in `.env.shared`
 
-```bash
-KEY=$GODADDY_PRODUCTION_KEY
-SECRET=$GODADDY_PRODUCTION_SECRET
-
-# Add A record
-curl -sS -X PATCH "https://api.godaddy.com/v1/domains/ascsurvey.com/records" \
-  -H "Authorization: sso-key ${KEY}:${SECRET}" \
-  -H "Content-Type: application/json" \
-  -d '[{"type":"A","name":"SUBDOMAIN","data":"159.89.50.9","ttl":600}]'
-
-# Add CAA records (Let's Encrypt only)
-curl -sS -X PATCH "https://api.godaddy.com/v1/domains/ascsurvey.com/records" \
-  -H "Authorization: sso-key ${KEY}:${SECRET}" \
-  -H "Content-Type: application/json" \
-  -d '[{"type":"CAA","name":"@","data":"0 issue \"letsencrypt.org\"","ttl":600},{"type":"CAA","name":"@","data":"0 issuewild \"letsencrypt.org\"","ttl":600}]'
-```
+Use the GoDaddy dashboard or an approved local API client that reads `GODADDY_PRODUCTION_KEY` and `GODADDY_PRODUCTION_SECRET` from the approved provisioning surface. Evidence may record the domain, record type, record name, target, TTL, and redacted command status only. Do not preserve sso-key headers or credential values.
 
 ### Rules
 - Do NOT use Cloudflare for ascsurvey.com — it is GoDaddy-authoritative
@@ -804,18 +742,9 @@ curl -sS -X PATCH "https://api.godaddy.com/v1/domains/ascsurvey.com/records" \
 | `PENTAGI_HOST` | Droplet IP |
 | `PENTAGI_PORT` | 8443 |
 | `PENTAGI_ADMIN_EMAIL` / `PENTAGI_ADMIN_PASSWORD` | Web UI |
-| `PENTAGI_API_TOKEN` | GraphQL Bearer token (expires 2027-04-03) |
+| `PENTAGI_API_TOKEN` | GraphQL token; value redacted |
 
-```bash
-# SSH tunnel (required)
-ssh -f -N -L 8443:localhost:8443 root@104.248.60.107
-
-# List flows
-curl -sk https://localhost:8443/api/v1/graphql \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $PENTAGI_API_TOKEN" \
-  -d '{"query": "{ flows { id status title createdAt updatedAt } }"}'
-```
+Use the PentAGI UI or an approved local API client that reads `PENTAGI_API_TOKEN` from the approved provisioning surface. Evidence may record flow ids, operation status, and redacted output only.
 
 ### Rules
 - GraphQL endpoint is `/api/v1/graphql` (NOT `/api/graphql` — that returns 301)
@@ -832,17 +761,14 @@ curl -sk https://localhost:8443/api/v1/graphql \
 |---|---|
 | `TWENTY_WORKSPACE_URL` | `http://167.71.22.255:3001` |
 | `TWENTY_CRM_APP_SECRET` | App-level auth |
-| `TWENTY_API_KEY` | Bearer token |
+| `TWENTY_API_KEY` | API token; value redacted |
 
 ```bash
 # Health check
 curl -s "$TWENTY_WORKSPACE_URL" -o /dev/null -w "%{http_code}"
 
-# GraphQL query
-curl -s -X POST "$TWENTY_WORKSPACE_URL/graphql" \
-  -H "Authorization: Bearer $TWENTY_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"query":"{ people(first: 2) { edges { node { id name { firstName lastName } } } } }"}'
+# GraphQL queries must use an approved local API client that reads `TWENTY_API_KEY`
+# from the approved provisioning surface and records redacted output only.
 ```
 
 ### Verified 2026-04-07 — `200`, live contacts returned.
@@ -895,7 +821,7 @@ curl -s -X POST "$TWENTY_WORKSPACE_URL/graphql" \
 
 | Var | Purpose |
 |---|---|
-| `CALCOM_API_KEY` | API access (`cal_live_...`) |
+| `CALCOM_API_KEY` | API access; value redacted |
 | `CALCOM_SELF_HOSTED_URL` | `https://schedule.hldpro.com` |
 | `CALCOM_ADMIN_*` | Web UI admin credentials |
 | `CALCOM_TRIGUY_*` | Tri Guy Treasures client account |
