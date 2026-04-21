@@ -1,0 +1,82 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-472-direct-upload-inventory",
+  "issue_number": 472,
+  "parent_epic_number": 467,
+  "lifecycle_state": "accepted",
+  "from_role": "operator-directive",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-472-direct-upload-inventory-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-472-direct-upload-inventory-implementation.json",
+  "packet_ref": "raw/packets/2026-04-21-issue-472-direct-upload-inventory.json",
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Inventory includes all five named #472 Cloudflare Pages projects with domains, Git provider status, owner, deploy path, gate state, disposition, and follow-up.",
+      "verification_refs": [
+        "raw/pages-deploy-inventory/2026-04-21-issue-472-direct-upload-inventory.json",
+        "raw/pages-deploy-inventory/2026-04-21-issue-472-direct-upload-inventory.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Uncovered governed consumer repos have issue-backed adoption follow-ups.",
+      "verification_refs": [
+        "https://github.com/NIBARGERB-HLDPRO/HealthcarePlatform/issues/1478",
+        "https://github.com/NIBARGERB-HLDPRO/ai-integration-services/issues/1217",
+        "raw/validation/2026-04-21-issue-472-direct-upload-inventory.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "No Cloudflare token values or generated env secrets are committed.",
+      "verification_refs": [
+        "raw/validation/2026-04-21-issue-472-direct-upload-inventory.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/pages-deploy/inventory_direct_upload_projects.py --offline-json raw/pages-deploy-inventory/2026-04-21-issue-472-cloudflare-pages-projects.json --output-json /tmp/issue-472-inventory.json --output-markdown /tmp/issue-472-inventory.md",
+    "python3 -m pytest scripts/pages-deploy/tests/test_inventory_direct_upload_projects.py",
+    "python3 -m py_compile scripts/pages-deploy/inventory_direct_upload_projects.py",
+    "python3 -m json.tool raw/pages-deploy-inventory/2026-04-21-issue-472-cloudflare-pages-projects.json",
+    "python3 -m json.tool raw/pages-deploy-inventory/2026-04-21-issue-472-direct-upload-inventory.json",
+    "python3 scripts/overlord/validate_provisioning_evidence.py --root . --changed-files-file /tmp/issue-472-changed-files.txt",
+    "python3 scripts/overlord/validate_handoff_package.py raw/handoffs/2026-04-21-issue-472-direct-upload-inventory.json --root .",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-472-pages-inventory-20260421 --changed-files-file /tmp/issue-472-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-472-direct-upload-inventory-implementation.json --changed-files-file /tmp/issue-472-changed-files.txt --require-lane-claim",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-21-issue-472-direct-upload-inventory.md --root .",
+    "tools/local-ci-gate/bin/hldpro-local-ci --profile hldpro-governance --changed-files-file /tmp/issue-472-changed-files.txt"
+  ],
+  "review_artifact_refs": [
+    "docs/plans/issue-472-direct-upload-inventory-structured-agent-cycle-plan.json"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-21-issue-472-direct-upload-inventory.md"
+  ],
+  "artifact_refs": [
+    "scripts/pages-deploy/inventory_direct_upload_projects.py",
+    "scripts/pages-deploy/tests/test_inventory_direct_upload_projects.py",
+    "raw/pages-deploy-inventory/2026-04-21-issue-472-cloudflare-pages-projects.json",
+    "raw/pages-deploy-inventory/2026-04-21-issue-472-direct-upload-inventory.json",
+    "raw/pages-deploy-inventory/2026-04-21-issue-472-direct-upload-inventory.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-472-direct-upload-inventory-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-472-direct-upload-inventory-implementation.json",
+    "raw/packets/2026-04-21-issue-472-direct-upload-inventory.json",
+    "raw/handoffs/2026-04-21-issue-472-direct-upload-inventory.json",
+    "raw/validation/2026-04-21-issue-472-direct-upload-inventory.md",
+    "raw/closeouts/2026-04-21-issue-472-direct-upload-inventory.md"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-472-direct-upload-inventory.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-04-21-issue-472-direct-upload-inventory.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T23:20:00Z",
+  "notes": "Issue #472 is an inventory/visibility closeout. Downstream adoption work is routed through issue-backed lanes and not implemented here."
+}

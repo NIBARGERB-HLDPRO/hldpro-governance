@@ -1,0 +1,130 @@
+{
+  "generated_for_issue": 472,
+  "parent_epic": 467,
+  "projects": [
+    {
+      "cf_project_name": "seek-and-ponder",
+      "current_deploy_path": "scripts/deploy-pages.sh -> apps/web build -> wrangler pages deploy",
+      "disposition": "covered",
+      "domains": [
+        "seek-and-ponder.pages.dev",
+        "app.seekandponder.com",
+        "seekandponder.com",
+        "www.seekandponder.com"
+      ],
+      "follow_up_issue": "https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/issues/163",
+      "git_provider_status": "no_git_provider_direct_upload",
+      "governance_gate_exists": true,
+      "latest_deployment": {
+        "branch": "main",
+        "commit_dirty": true,
+        "commit_hash": "000cfb4e83e4826b8812ac0f91b6ae6664295699",
+        "commit_message": "Merge pull request #173 from NIBARGERB-HLDPRO/issue-163-live-deploy-20260421",
+        "created_on": "2026-04-21T22:39:00.529743Z",
+        "id": "fd040d95-b34a-4c96-a8cf-5b10183d1882",
+        "trigger_type": "ad_hoc"
+      },
+      "owning_repo": "NIBARGERB-HLDPRO/seek-and-ponder",
+      "source_type": null
+    },
+    {
+      "cf_project_name": "hldpro-dashboard",
+      "current_deploy_path": "HealthcarePlatform dashboard frontend -> frontend/dist -> wrangler pages deploy",
+      "disposition": "needs-consumer-adoption",
+      "domains": [
+        "hldpro-dashboard.pages.dev",
+        "dashboard.hldpro.com"
+      ],
+      "follow_up_issue": "https://github.com/NIBARGERB-HLDPRO/HealthcarePlatform/issues/1478",
+      "git_provider_status": "no_git_provider_direct_upload",
+      "governance_gate_exists": false,
+      "latest_deployment": {
+        "branch": "staging",
+        "commit_dirty": null,
+        "commit_hash": "445d0d2fe2af7e660f423e118cd2869272d3b2d1",
+        "commit_message": "fix(issue-1475): preserve completed survey evidence resume (#1477)",
+        "created_on": "2026-04-21T22:42:01.130129Z",
+        "id": "0d7c75ff-bdf7-4e73-bdad-be7d6e5df58d",
+        "trigger_type": "ad_hoc"
+      },
+      "owning_repo": "NIBARGERB-HLDPRO/HealthcarePlatform",
+      "source_type": null
+    },
+    {
+      "cf_project_name": "hldpro-marketing",
+      "current_deploy_path": "ai-integration-services apps/marketing -> apps/marketing/dist -> wrangler pages deploy",
+      "disposition": "needs-consumer-adoption",
+      "domains": [
+        "hldpro-marketing.pages.dev",
+        "hldpro.com",
+        "www.hldpro.com"
+      ],
+      "follow_up_issue": "https://github.com/NIBARGERB-HLDPRO/ai-integration-services/issues/1217",
+      "git_provider_status": "no_git_provider_direct_upload",
+      "governance_gate_exists": false,
+      "latest_deployment": {
+        "branch": "main",
+        "commit_dirty": null,
+        "commit_hash": "4af28dce7a6bccb17f35cd6c01c1ae48f50481b8",
+        "commit_message": "fix(e2e): stabilize support bug ticket proof (#1203)",
+        "created_on": "2026-04-19T10:35:15.743996Z",
+        "id": "f53ae106-720d-4347-b11d-8a682302da4e",
+        "trigger_type": "ad_hoc"
+      },
+      "owning_repo": "NIBARGERB-HLDPRO/ai-integration-services",
+      "source_type": null
+    },
+    {
+      "cf_project_name": "hldpro-pwa",
+      "current_deploy_path": "ai-integration-services apps/pwa -> apps/pwa/dist -> wrangler pages deploy",
+      "disposition": "needs-consumer-adoption",
+      "domains": [
+        "hldpro-pwa.pages.dev",
+        "pwa.hldpro.com"
+      ],
+      "follow_up_issue": "https://github.com/NIBARGERB-HLDPRO/ai-integration-services/issues/1217",
+      "git_provider_status": "no_git_provider_direct_upload",
+      "governance_gate_exists": false,
+      "latest_deployment": {
+        "branch": "main",
+        "commit_dirty": null,
+        "commit_hash": "4af28dce7a6bccb17f35cd6c01c1ae48f50481b8",
+        "commit_message": "fix(e2e): stabilize support bug ticket proof (#1203)",
+        "created_on": "2026-04-19T10:35:09.916656Z",
+        "id": "21ed43ff-6bdd-4fe5-b009-0456cbd74663",
+        "trigger_type": "ad_hoc"
+      },
+      "owning_repo": "NIBARGERB-HLDPRO/ai-integration-services",
+      "source_type": null
+    },
+    {
+      "cf_project_name": "hldpro-reseller",
+      "current_deploy_path": "ai-integration-services apps/reseller -> apps/reseller/dist -> wrangler pages deploy",
+      "disposition": "needs-consumer-adoption",
+      "domains": [
+        "hldpro-reseller.pages.dev",
+        "hldpro.dev"
+      ],
+      "follow_up_issue": "https://github.com/NIBARGERB-HLDPRO/ai-integration-services/issues/1217",
+      "git_provider_status": "no_git_provider_direct_upload",
+      "governance_gate_exists": false,
+      "latest_deployment": {
+        "branch": "main",
+        "commit_dirty": null,
+        "commit_hash": "4af28dce7a6bccb17f35cd6c01c1ae48f50481b8",
+        "commit_message": "fix(e2e): stabilize support bug ticket proof (#1203)",
+        "created_on": "2026-04-19T10:35:03.018878Z",
+        "id": "8acd4c2d-1f38-4ae4-a0c2-6a0ef50c6699",
+        "trigger_type": "ad_hoc"
+      },
+      "owning_repo": "NIBARGERB-HLDPRO/ai-integration-services",
+      "source_type": null
+    }
+  ],
+  "schema_version": "v1",
+  "source_of_truth": [
+    "Cloudflare Pages API /accounts/{account_id}/pages/projects",
+    "governance-owned project owner map in this script",
+    "repo-local Pages config/workflow evidence"
+  ]
+}
