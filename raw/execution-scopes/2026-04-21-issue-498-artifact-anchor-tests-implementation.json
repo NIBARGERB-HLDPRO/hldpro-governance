@@ -1,0 +1,43 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-498-artifact-anchor-tests",
+  "allowed_write_paths": [
+    ".github/workflows/overlord-sweep.yml",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/plans/issue-498-artifact-anchor-tests-structured-agent-cycle-plan.json",
+    "docs/plans/issue-503-overlord-sweep-generated-artifacts-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-498-artifact-anchor-tests-implementation.json",
+    "raw/validation/2026-04-21-issue-498-artifact-anchor-tests.md",
+    "scripts/overlord/sweep_artifact_pr.py",
+    "scripts/overlord/test_sweep_artifact_pr.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary checkout has unrelated user edits and must not be modified by issue #498."
+    }
+  ],
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 498,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/498",
+    "claimed_by": "session-agent-codex-gpt-5.4",
+    "claimed_at": "2026-04-21T19:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-directive",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-21T19:00:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-498-artifact-anchor-tests-structured-agent-cycle-plan.json",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/498",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/503"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

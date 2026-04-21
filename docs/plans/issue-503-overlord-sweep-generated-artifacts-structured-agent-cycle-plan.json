@@ -1,0 +1,88 @@
+{
+  "session_id": "session-20260421-issue-503-overlord-sweep-generated-artifacts",
+  "issue_number": 503,
+  "objective": "Provide a permanent governance anchor for automated Overlord Sweep generated artifact pull requests.",
+  "tier": 2,
+  "scope_boundary": [
+    "Authorize Overlord Sweep generated artifact PR branches named automation/issue-503-overlord-sweep-<date>-<run_id>.",
+    "Limit generated PR write scope to graph, wiki, metrics, org compendium, and the generated execution-scope artifact.",
+    "Keep this issue open as long as the generated artifact PR workflow exists."
+  ],
+  "out_of_scope": [
+    "Changing generated artifact content outside the Overlord Sweep workflow.",
+    "Bypassing required PR checks or branch protection.",
+    "Authorizing application source-code changes in generated artifact PRs."
+  ],
+  "research_summary": "Issue #487 proved the artifact PR path after direct main pushes were blocked, but it was an incident issue. Generated artifact PRs need a durable issue-number anchor so governance-surface validation can resolve branch, plan, and execution-scope evidence on every run.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/503",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/495",
+    ".github/workflows/overlord-sweep.yml",
+    "scripts/overlord/sweep_artifact_pr.py"
+  ],
+  "sprints": [
+    {
+      "name": "Generated artifact PR anchor",
+      "goal": "Keep automated artifact PRs issue-backed without coupling them to a closed incident issue.",
+      "tasks": [
+        "Generate artifact branch names with issue #503.",
+        "Generate execution-scope evidence with issue #503.",
+        "Restrict allowed write paths to generated artifact surfaces.",
+        "Cover branch and scope generation with deterministic tests."
+      ],
+      "acceptance_criteria": [
+        "Generated branches use automation/issue-503-overlord-sweep-<date>-<run_id>.",
+        "Generated execution scope uses lane_claim.issue_number 503.",
+        "Generated execution scope allows only generated graph/wiki/metric/compendium paths and its own scope file.",
+        "Regression tests pass locally and in CI."
+      ],
+      "file_paths": [
+        ".github/workflows/overlord-sweep.yml",
+        "docs/plans/issue-503-overlord-sweep-generated-artifacts-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-503-overlord-sweep-generated-artifacts-implementation.json",
+        "scripts/overlord/sweep_artifact_pr.py",
+        "scripts/overlord/test_sweep_artifact_pr.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-orchestrator",
+      "role": "governance workflow reviewer",
+      "focus": "Ensure generated artifact PRs stay issue-backed and bounded to generated outputs.",
+      "status": "accepted",
+      "summary": "The permanent issue anchor preserves existing governance-surface enforcement while avoiding reuse of a closed incident issue.",
+      "evidence": [
+        "scripts/overlord/test_sweep_artifact_pr.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-deterministic-workflow-helper",
+    "model_family": "none",
+    "status": "not_requested",
+    "summary": "The change extracts deterministic string/JSON generation from workflow shell into a unit-tested helper.",
+    "evidence": [
+      "scripts/overlord/test_sweep_artifact_pr.py"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #503 authorizes generated artifact PR branch/scope metadata only, with write paths limited to generated artifact surfaces.",
+    "next_execution_step": "Keep issue #503 open and use its plan/scope evidence for generated artifact PR local-ci validation.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If generated artifact PRs need to write any non-generated source path, stop and create a separate issue-backed implementation PR.",
+    "If local-ci cannot resolve issue #503 evidence, keep generated artifact PRs unmerged until the branch/scope helper is fixed."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "GitHub issue #503",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T19:00:00Z"
+}

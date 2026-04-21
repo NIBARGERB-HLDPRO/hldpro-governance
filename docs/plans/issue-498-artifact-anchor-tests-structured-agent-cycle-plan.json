@@ -1,0 +1,100 @@
+{
+  "session_id": "session-20260421-issue-498-artifact-anchor-tests",
+  "issue_number": 498,
+  "objective": "Remove temporary artifact PR issue coupling, make skipped intelligence paths actionable, and add regression coverage for generated artifact PR evidence.",
+  "tier": 2,
+  "scope_boundary": [
+    "Update Overlord Sweep generated artifact PR branch and scope generation to use permanent issue #503.",
+    "Add deterministic tests for generated artifact PR branch names and scope payloads.",
+    "Document PentAGI and Codex skipped-state requirements so missing credentials are actionable rather than silent failures."
+  ],
+  "out_of_scope": [
+    "Changing downstream application runtime behavior.",
+    "Changing GitHub repository secrets directly.",
+    "Bypassing pull-request or local-ci gates.",
+    "Changing generated graph/wiki/metric content outside a sweep run."
+  ],
+  "research_summary": "The prior issue #487 workflow fix proved artifact PR persistence but reused an incident issue. The latest sweep also showed PentAGI and Codex second-opinion paths can be skipped because credentials are unavailable. This sprint makes the artifact PR path permanent and documented, and protects it with unit tests.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/495",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/497",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/498",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/499",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/503",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/actions/runs/24740641923"
+  ],
+  "sprints": [
+    {
+      "name": "Artifact PR and skipped-state hardening",
+      "goal": "Make generated artifact PR governance durable and skipped intelligence paths explicit.",
+      "tasks": [
+        "Extract artifact branch/scope generation into a tested helper.",
+        "Update the workflow to call the helper and reference issue #503.",
+        "Add runbook guidance for PentAGI and Codex second-opinion skipped states.",
+        "Validate structured plans, execution scope, and targeted unit tests."
+      ],
+      "acceptance_criteria": [
+        "No new Overlord Sweep artifact PR branch references issue #487.",
+        "Generated artifact PR scope payload references issue #503.",
+        "Unit tests assert branch naming and scope write paths.",
+        "Runbook documents required PentAGI and Codex auth configuration and expected skip behavior."
+      ],
+      "file_paths": [
+        ".github/workflows/overlord-sweep.yml",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "docs/plans/issue-498-artifact-anchor-tests-structured-agent-cycle-plan.json",
+        "docs/plans/issue-503-overlord-sweep-generated-artifacts-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-498-artifact-anchor-tests-implementation.json",
+        "raw/validation/2026-04-21-issue-498-artifact-anchor-tests.md",
+        "scripts/overlord/sweep_artifact_pr.py",
+        "scripts/overlord/test_sweep_artifact_pr.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-orchestrator",
+      "role": "governance hardening reviewer",
+      "focus": "Confirm the workflow no longer depends on the closed issue #487 and has testable generated artifact metadata.",
+      "status": "accepted",
+      "summary": "The helper gives deterministic unit-testable behavior for branch and scope generation, and the permanent issue #503 plan keeps generated PRs compatible with governance-surface checks.",
+      "evidence": [
+        "scripts/overlord/test_sweep_artifact_pr.py",
+        "docs/plans/issue-503-overlord-sweep-generated-artifacts-structured-agent-cycle-plan.json"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-deterministic-helper-and-docs",
+    "model_family": "none",
+    "status": "not_requested",
+    "summary": "No model-routing or architecture policy is changed; the implementation is deterministic workflow metadata generation plus documentation.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/498"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #498 may update the Overlord Sweep artifact PR metadata helper, workflow call site, runbook docs, issue #503 plan evidence, execution scope, and validation artifact.",
+    "next_execution_step": "Implement, validate locally, open PR, wait for required checks, merge, then dispatch the sweep for Sprint #500 E2E proof.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-498-artifact-anchor-tests-implementation.json",
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-498-artifact-anchor-tests.md"
+    ]
+  },
+  "material_deviation_rules": [
+    "If workflow validation fails, do not dispatch a sweep until PR CI is green.",
+    "If issue #503 cannot remain open, stop and create a new permanent anchor issue before generated PRs are allowed to merge.",
+    "If tests require network access, replace them with deterministic local assertions."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "GitHub issue #498",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T19:00:00Z"
+}
