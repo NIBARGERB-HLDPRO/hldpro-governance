@@ -10,7 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
-| Structured handoff package lifecycle — packet dispatch reconciliation | #437 | IN_PROGRESS | HIGH | 2-3 | SoM packet schema dispatch contract, emitter governance flags, validator/queue parity tests, issue evidence | Child of epic #434; PR/closeout hardening remains #436 |
+| Structured handoff package lifecycle — PR and closeout hardening | #436 | IN_PROGRESS | HIGH | 2-3 | PR template handoff evidence fields, closeout validator, closeout hook pre-graph gate, focused tests, issue evidence | Final child of epic #434 |
 | Consumer-pulled governance adoption rollout | #403 | DONE | MEDIUM | 4-6 | Knocktracker pilot merged through downstream PRs #178 and #179; governance PR #406 records evidence | Uses knocktracker #177 as the first repo-side consumer-pull pilot |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
@@ -42,6 +42,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Structured handoff package lifecycle — packet dispatch reconciliation | #437 | 2026-04-21 | PR #446 reconciled the SoM packet schema/emitter/validator/queue contract, preserved historical packet compatibility, added dispatch governance emission and tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — CI enforcement | #435 | 2026-04-21 | PR #443 wired package handoff validation into Local CI Gate and reusable GitHub governance checks, added lane-claim GitHub assertion parity, focused tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — schema slice | #438 | 2026-04-21 | PR #441 added package-handoff and execution-scope schemas, example/active handoff artifacts, validator/tests, structured-plan handoff refs, documentation, validation, closeout, and graph/wiki outputs. |
 | SoM governance waterfall model routing revision | #432 | 2026-04-21 | PR #433 updated governance SSOT, docs, guardrails, tests, validation, closeout, graph/wiki outputs, and downstream follow-up issues for the Codex-orchestrated waterfall. |

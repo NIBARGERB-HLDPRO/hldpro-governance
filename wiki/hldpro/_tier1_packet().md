@@ -1,6 +1,6 @@
 # _tier1_packet()
 
-> God node · 31 connections · `hldpro-governance/scripts/packet/test_validate.py`
+> God node · 31 connections · `scripts/packet/test_validate.py`
 
 ## Connections by Relation
 

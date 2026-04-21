@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-437-packet-dispatch-reconcile/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-437-packet-dispatch-reconcile/wiki/hldpro",
-  "nodes": 1448,
-  "edges": 2734,
-  "communities": 78,
-  "articles": 88,
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-436-pr-closeout-handoff-gates/wiki/hldpro",
+  "nodes": 1472,
+  "edges": 2783,
+  "communities": 76,
+  "articles": 86,
   "html_status": "skipped",
-  "code_files": 109
+  "code_files": 111
 }

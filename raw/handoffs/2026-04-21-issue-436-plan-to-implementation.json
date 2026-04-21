@@ -1,0 +1,73 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-436-plan-to-implementation",
+  "issue_number": 436,
+  "parent_epic_number": 434,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-qa",
+  "structured_plan_ref": "docs/plans/issue-436-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-436-pr-closeout-handoff-gates-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "PR template requires structured plan, execution scope, handoff package, validation, review/gate, Local CI, closeout, and packet queue state evidence.",
+      "verification_refs": [
+        ".github/pull_request_template.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Closeout hook validates closeout evidence before graph/wiki refresh.",
+      "verification_refs": [
+        "hooks/closeout-hook.sh",
+        "scripts/overlord/validate_closeout.py",
+        "scripts/overlord/test_validate_closeout.py"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Closeout validator refuses missing referenced artifacts and unissued residual risks.",
+      "verification_refs": [
+        "scripts/overlord/test_validate_closeout.py"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool docs/plans/issue-436-structured-agent-cycle-plan.json",
+    "python3 -m json.tool raw/execution-scopes/2026-04-21-issue-436-pr-closeout-handoff-gates-implementation.json",
+    "python3 -m json.tool raw/handoffs/2026-04-21-issue-436-plan-to-implementation.json",
+    "python3 scripts/overlord/test_validate_closeout.py",
+    "python3 -m py_compile scripts/overlord/validate_closeout.py",
+    "bash -n hooks/closeout-hook.sh",
+    "python3 scripts/overlord/test_validate_handoff_package.py",
+    "python3 scripts/overlord/validate_handoff_package.py --root .",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-436-pr-closeout-handoff-gates-20260421 --require-if-issue-branch",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-436-pr-closeout-handoff-gates-implementation.json --require-lane-claim",
+    "tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-21-issue-436-pr-closeout-handoff-gates.md"
+  ],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    ".github/pull_request_template.md",
+    "hooks/closeout-hook.sh",
+    "raw/closeouts/TEMPLATE.md",
+    "scripts/overlord/validate_closeout.py",
+    "scripts/overlord/test_validate_closeout.py",
+    "docs/plans/issue-436-pr-closeout-handoff-gates-pdcar.md",
+    "docs/plans/issue-436-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-436-pr-closeout-handoff-gates-implementation.json"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-436-pr-closeout-handoff-gates.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T10:36:05-05:00",
+  "notes": "PR and closeout handoff evidence hardening slice for issue #436. The initial Claude Sonnet 4.6 worker attempt hung without edits; Codex QA implemented and will use Opus cross-review plus deterministic gates."
+}
