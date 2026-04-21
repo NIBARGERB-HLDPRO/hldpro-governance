@@ -1,0 +1,112 @@
+{
+  "session_id": "session-20260421-issue-474-verifier-hardening",
+  "issue_number": 474,
+  "objective": "Port the useful QA hardening from duplicate issue #454 verifier work into the merged v0.2 SSOT consumer verifier without regressing the merged package-v2 contract.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repository only.",
+    "Keep origin/main issue #454 verifier implementation as the base.",
+    "Port workflow-ref, override metadata, forbidden override, and focused test hardening from the duplicate branch.",
+    "Preserve observed_overrides and v0.2 profile/local_overrides behavior."
+  ],
+  "out_of_scope": [
+    "Downstream consumer repo edits.",
+    "Changing governance package manifest semantics.",
+    "Replacing the deployer or consumer record schema.",
+    "Cleaning stale duplicate branches before the follow-up PR lands."
+  ],
+  "research_summary": "The duplicate issue-454 branch had stronger edge-case tests, but origin/main has the broader v0.2 verifier contract. This plan keeps origin/main as the base and ports the duplicate branch deltas that improve exact workflow SHA enforcement and override validation.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/454",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/474",
+    "scripts/overlord/verify_governance_consumer.py",
+    "scripts/overlord/test_verify_governance_consumer.py",
+    "issue-454-ssot-verifier",
+    "origin/main"
+  ],
+  "sprints": [
+    {
+      "name": "Verifier hardening merge",
+      "goal": "Combine the duplicate branch's useful QA hardening into the merged v0.2 verifier.",
+      "tasks": [
+        "Add exact reusable workflow SHA mismatch checks against consumer governance_ref.",
+        "Require override metadata values to be non-empty strings.",
+        "Add forbidden override pattern checks for protected governance classes.",
+        "Add focused regression tests for workflow refs, override value validation, and forbidden override classes.",
+        "Record validation evidence and run deterministic gates."
+      ],
+      "acceptance_criteria": [
+        "Verifier rejects mutable workflow refs, tags, short SHAs, and valid SHA refs that differ from the consumer record governance_ref.",
+        "Verifier rejects override metadata fields that are missing, empty, or non-string.",
+        "Verifier rejects forbidden override reasons for protected HIPAA/PII/lane, plan-mode, LAM, package-core, CI gate, and dry-run evidence classes.",
+        "Merged v0.2 profile/local_overrides support remains intact.",
+        "Focused tests and Local CI Gate pass."
+      ],
+      "file_paths": [
+        "scripts/overlord/verify_governance_consumer.py",
+        "scripts/overlord/test_verify_governance_consumer.py",
+        "docs/plans/issue-474-verifier-hardening-pdcar.md",
+        "docs/plans/issue-474-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-474-verifier-hardening-implementation.json",
+        "raw/handoffs/2026-04-21-issue-474-plan-to-implementation.json",
+        "raw/validation/2026-04-21-issue-474-verifier-hardening.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex QA",
+      "role": "qa",
+      "focus": "Duplicate branch comparison, verifier compatibility, and regression coverage.",
+      "status": "accepted",
+      "summary": "QA verified that the merged v0.2 contract remains the base and only non-conflicting duplicate hardening deltas are ported.",
+      "evidence": [
+        "raw/validation/2026-04-21-issue-474-verifier-hardening.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Codex QA",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Focused QA review accepted the branch-comparison decision and ported hardening tests.",
+    "evidence": [
+      "raw/validation/2026-04-21-issue-474-verifier-hardening.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement issue #474 verifier hardening by porting useful duplicate branch checks into the merged v0.2 verifier.",
+    "next_execution_step": "Apply bounded verifier and test changes, then run focused validation and Local CI Gate.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-474-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-474-verifier-hardening-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-474-verifier-hardening.md"
+    ],
+    "review_artifact_refs": [],
+    "gate_artifact_refs": [],
+    "closeout_ref": null,
+    "next_role": "codex-qa",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Only useful duplicate branch hardening deltas are ported.",
+      "Verifier output contract remains compatible with origin/main.",
+      "Local CI Gate passes before merge."
+    ]
+  },
+  "material_deviation_rules": [
+    "If duplicate branch behavior conflicts with origin/main v0.2 support, keep origin/main behavior.",
+    "If downstream consumer issues are discovered, record follow-up issues instead of editing downstream repos."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction: compare duplicate branches and combine better code",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T13:20:00-05:00"
+}

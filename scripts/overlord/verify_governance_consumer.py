@@ -21,6 +21,56 @@ MANAGED_LOCAL_CI_MARKER = "# hldpro-governance local-ci gate managed"
 GOVERNANCE_WORKFLOW_REF_RE = re.compile(
     r"NIBARGERB-HLDPRO/hldpro-governance/(?:\.github/workflows/)?[^\s'\"#]+@(?P<ref>[^\s'\"#]+)"
 )
+FORBIDDEN_OVERRIDE_CHECKS: list[tuple[re.Pattern[str], str]] = [
+    (
+        re.compile(
+            r"\b(weaken|disable|skip|bypass|remove|relax|ignore)\b[^.]*\b(hipaa|phi|pii|lane)\b"
+            r"|\b(hipaa|phi|pii|lane)\b[^.]*\b(weaken|disable|skip|bypass|remove|relax|ignore)\b",
+            re.IGNORECASE,
+        ),
+        "forbidden override: weakens HealthcarePlatform HIPAA/PHI/PII/lane constraints",
+    ),
+    (
+        re.compile(
+            r"\b(disable|skip|bypass|remove|relax|suppress)\b[^.]*\bplan.?mode\b"
+            r"|\bplan.?mode\b[^.]*\b(disable|skip|bypass|remove|relax|suppress)\b",
+            re.IGNORECASE,
+        ),
+        "forbidden override: disables Seek plan-mode enforcement",
+    ),
+    (
+        re.compile(
+            r"\bpii\b[^.]*\b(cloud|remote|external|route|send|forward|upload)\b"
+            r"|\b(cloud|remote|external|route|send|forward|upload)\b[^.]*\bpii\b",
+            re.IGNORECASE,
+        ),
+        "forbidden override: routes PII away from LAM/local-only constraints",
+    ),
+    (
+        re.compile(
+            r"\b(fork|patch|vendor|copy|duplicate)\b[^.]*\bcore\b"
+            r"|\bcore\b[^.]*\b(fork|patch|vendor|copy|duplicate)\b",
+            re.IGNORECASE,
+        ),
+        "forbidden override: package core fork without issue exception",
+    ),
+    (
+        re.compile(
+            r"\b(disable|skip|bypass|remove|suppress)\b[^.]*\b(ci.?gate|required.?gate|ci.?check|required.?check)\b"
+            r"|\b(ci.?gate|required.?gate|ci.?check|required.?check)\b[^.]*\b(disable|skip|bypass|remove|suppress)\b",
+            re.IGNORECASE,
+        ),
+        "forbidden override: disables CI-required gates",
+    ),
+    (
+        re.compile(
+            r"\bdry.?run\b[^.]*\b(enforce|live|production|active|evidence)\b"
+            r"|\b(enforce|live|production|active|evidence)\b[^.]*\bdry.?run\b",
+            re.IGNORECASE,
+        ),
+        "forbidden override: treats dry-run as live enforcement evidence",
+    ),
+]
 
 
 class ConsumerVerifyError(RuntimeError):
@@ -221,6 +271,27 @@ def _expected_checksum(entry: dict[str, Any]) -> str:
     return ""
 
 
+def _non_empty_string(value: Any) -> bool:
+    return isinstance(value, str) and bool(value.strip())
+
+
+def _override_text(override: dict[str, Any]) -> str:
+    return " ".join(value for value in override.values() if isinstance(value, str))
+
+
+def _forbidden_override_failures(overrides: list[dict[str, Any]]) -> list[str]:
+    failures: list[str] = []
+    for index, override in enumerate(overrides):
+        text = _override_text(override)
+        if not text:
+            continue
+        for pattern, message in FORBIDDEN_OVERRIDE_CHECKS:
+            if pattern.search(text):
+                failures.append(f"override[{index}] {message}: {text!r}")
+                break
+    return failures
+
+
 def _is_relative_to(path: Path, root: Path) -> bool:
     try:
         path.resolve().relative_to(root.resolve())
@@ -254,17 +325,26 @@ def _override_records(payload: dict[str, Any]) -> tuple[list[dict[str, Any]], li
                 continue
             overrides.append(item)
             for required in ("issue", "reason", "owner"):
-                if not item.get(required):
+                if required not in item:
                     failures.append(f"{field}[{index}] missing required override metadata: {required}")
-            if not item.get("review_cadence") and not item.get("expires_at"):
+                elif not _non_empty_string(item[required]):
+                    failures.append(f"{field}[{index}] override metadata must be a non-empty string: {required}")
+            has_valid_cadence = _non_empty_string(item.get("review_cadence"))
+            has_valid_expiry = _non_empty_string(item.get("expires_at"))
+            if "review_cadence" not in item and "expires_at" not in item:
                 failures.append(f"{field}[{index}] missing required override metadata: review_cadence or expires_at")
+            elif not has_valid_cadence and not has_valid_expiry:
+                failures.append(
+                    f"{field}[{index}] override metadata must include non-empty string review_cadence or expires_at"
+                )
     return overrides, failures
 
 
-def _workflow_ref_failures(target_repo: Path) -> list[str]:
+def _workflow_ref_failures(target_repo: Path, governance_ref: str | None) -> list[str]:
     workflow_root = target_repo / ".github" / "workflows"
     if not workflow_root.exists():
         return []
+    valid_governance_ref = governance_ref if governance_ref and SHA_RE.fullmatch(governance_ref) else None
     failures: list[str] = []
     for path in sorted(workflow_root.glob("*.y*ml")):
         relpath = path.relative_to(target_repo).as_posix()
@@ -273,6 +353,10 @@ def _workflow_ref_failures(target_repo: Path) -> list[str]:
             ref = match.group("ref").rstrip("/")
             if not SHA_RE.fullmatch(ref):
                 failures.append(f"reusable workflow ref must be pinned to an exact governance SHA: {relpath} uses @{ref}")
+            elif valid_governance_ref and ref != valid_governance_ref:
+                failures.append(
+                    f"reusable workflow ref SHA mismatch: {relpath} uses @{ref}, expected @{valid_governance_ref}"
+                )
     return failures
 
 
@@ -373,7 +457,8 @@ def _validate_record(
 
     observed_overrides, override_failures = _override_records(payload)
     failures.extend(override_failures)
-    failures.extend(_workflow_ref_failures(target_repo))
+    failures.extend(_forbidden_override_failures(observed_overrides))
+    failures.extend(_workflow_ref_failures(target_repo, governance_ref if isinstance(governance_ref, str) else None))
 
     central = desired_state.get("centrally_applied_surfaces")
     if isinstance(central, list) and central:
