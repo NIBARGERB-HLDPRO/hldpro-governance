@@ -1,0 +1,101 @@
+{
+  "session_id": "session-20260421-issue-519-governance-catchup",
+  "issue_number": 519,
+  "objective": "Commit the remaining governance catch-up artifacts for Stampede issue #111 closeout evidence, Codex Fire fail-fast evidence, and duplicate wiki case-collision cleanup.",
+  "tier": 2,
+  "scope_boundary": [
+    "Preserve the already-merged Stampede issue #111 closeout artifact, issue #469 fail-fast row, and #494 backlog Done evidence.",
+    "Remove the three duplicate graphify wiki case-collision files from git tracking.",
+    "Add only the issue-owned plan, execution scope, validation, closeout, and backlog evidence required to close issue #519."
+  ],
+  "out_of_scope": [
+    "Changing Stampede application code or launchd service behavior.",
+    "Changing Codex Fire runtime behavior.",
+    "Regenerating graphify or wiki artifacts beyond removing the duplicate tracked collision paths."
+  ],
+  "research_summary": "Origin main already contains raw/closeouts/2026-04-21-stampede-issue-111-permanent-services.md, raw/fail-fast-log.md with the 2026-04-21 13:13 gpt-5.4 preflight timeout row, and the OVERLORD_BACKLOG.md Done entry for governance issue #494. The remaining #519 branch delta removes the tracked duplicate wiki paths that collide with canonical uppercase wiki pages on case-insensitive macOS filesystems.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/519",
+    "raw/closeouts/2026-04-21-stampede-issue-111-permanent-services.md",
+    "raw/fail-fast-log.md",
+    "OVERLORD_BACKLOG.md",
+    "wiki/hldpro/Repos_Healthcare_Platform.md"
+  ],
+  "sprints": [
+    {
+      "name": "Governance catch-up cleanup",
+      "goal": "Close the remaining repository-tracking drift for issue #519.",
+      "tasks": [
+        "Confirm the Stampede #111 closeout, fail-fast row, and #494 backlog entry are present on the branch.",
+        "Remove the duplicate wiki case-collision paths from git tracking.",
+        "Add issue-owned plan, execution scope, validation, closeout, and backlog evidence.",
+        "Run local governance validation and CI gates before PR merge."
+      ],
+      "acceptance_criteria": [
+        "raw/closeouts/2026-04-21-stampede-issue-111-permanent-services.md is tracked.",
+        "raw/fail-fast-log.md includes the 2026-04-21 13:13 gpt-5.4 preflight timeout row.",
+        "wiki/healthcareplatform/Training_assignments.md, wiki/hldpro/Repos_Ai_integration.md, and wiki/hldpro/Repos_Healthcare_platform.md are removed from git tracking.",
+        "OVERLORD_BACKLOG.md includes Done evidence for Stampede issue #111 / governance issue #494 and for issue #519 cleanup.",
+        "Structured plan validation, execution scope assertion, local CI, and governance checks pass."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/plans/issue-519-governance-catchup-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-519-governance-catchup-implementation.json",
+        "raw/validation/2026-04-21-issue-519-governance-catchup.md",
+        "raw/closeouts/2026-04-21-issue-519-governance-catchup.md",
+        "wiki/healthcareplatform/Training_assignments.md",
+        "wiki/hldpro/Repos_Ai_integration.md",
+        "wiki/hldpro/Repos_Healthcare_platform.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-orchestrator-repo-triage",
+      "role": "artifact drift classifier",
+      "focus": "Separate already-merged catch-up evidence from remaining tracked wiki collision cleanup.",
+      "status": "accepted",
+      "summary": "The closeout, fail-fast row, and #494 backlog evidence are already tracked on origin/main; the issue branch should only add issue-owned governance evidence and remove the duplicate wiki paths.",
+      "evidence": [
+        "git show origin/main:raw/fail-fast-log.md",
+        "git show origin/main:OVERLORD_BACKLOG.md",
+        "git ls-tree -r --name-only origin/main"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-catchup-cleanup",
+    "model_family": "none",
+    "status": "not_requested",
+    "summary": "This slice is repository hygiene and evidence preservation only; no architecture, routing, or model policy behavior changes are introduced.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/519"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #519 may remove duplicate tracked wiki collision files and add the governance evidence artifacts needed to close the catch-up lane.",
+    "next_execution_step": "Run validation, open the PR, wait for checks, merge under repository automerge rules, and close issue #519.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-519-governance-catchup-implementation.json",
+    "handoff_package_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-519-governance-catchup.md"
+    ],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-519-governance-catchup.md"
+  },
+  "material_deviation_rules": [
+    "If origin/main no longer contains the Stampede closeout, fail-fast row, or #494 backlog entry, update the issue branch to preserve that evidence before closing #519.",
+    "If graphify or hook-generated wiki changes appear beyond the three declared duplicate paths, stop and split them into a separate issue."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "GitHub issue #519",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T21:35:00Z"
+}
