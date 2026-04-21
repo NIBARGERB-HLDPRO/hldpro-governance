@@ -1,0 +1,31 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-514-codex-fire-failfast-evidence-20260421",
+  "allowed_write_paths": [
+    "raw/fail-fast-log.md",
+    "docs/plans/issue-514-codex-fire-failfast-evidence-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-514-codex-fire-failfast-evidence-implementation.json",
+    "raw/validation/2026-04-21-issue-514-codex-fire-failfast-evidence.md"
+  ],
+  "forbidden_roots": [],
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 514,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/514",
+    "claimed_by": "codex-orchestrator",
+    "claimed_at": "2026-04-21T21:20:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-directive",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-21T21:20:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-514-codex-fire-failfast-evidence-structured-agent-cycle-plan.json",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/514",
+      "/tmp/issue-469-gate-fix-brief.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}
