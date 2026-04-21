@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-459-ssot-v02-closeout/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-459-ssot-v02-closeout/wiki/hldpro",
-  "nodes": 1720,
-  "edges": 3402,
-  "communities": 85,
-  "articles": 95,
+  "output": "/home/runner/work/hldpro-governance/hldpro-governance/graphify-out/hldpro-governance",
+  "wiki_dir": "/home/runner/work/hldpro-governance/hldpro-governance/wiki/hldpro",
+  "nodes": 12823,
+  "edges": 30343,
+  "communities": 716,
+  "articles": 726,
   "html_status": "skipped",
-  "code_files": 127
+  "code_files": 2399
 }

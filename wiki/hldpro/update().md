@@ -1,6 +1,6 @@
 # update()
 
-> God node · 216 connections · `hldpro-governance/repos/ai-integration-services/apps/portal/src/pages/dashboard/DashboardWebsite.tsx`
+> God node · 218 connections · `hldpro-governance/repos/ai-integration-services/apps/portal/src/pages/dashboard/DashboardWebsite.tsx`
 
 ## Connections by Relation
 
@@ -10,6 +10,7 @@
 - [[main()]] `INFERRED`
 - [[handleImport()]] `INFERRED`
 - [[finalizePortalPurchase()]] `INFERRED`
+- [[write_config()]] `INFERRED`
 - [[handleIngestStructured()]] `INFERRED`
 - [[executeTool()]] `INFERRED`
 - [[handleCallback()]] `INFERRED`
@@ -24,7 +25,6 @@
 - [[handleDemoCheckoutSession()]] `INFERRED`
 - [[resolveEvidenceId()]] `INFERRED`
 - [[ehrVerify()]] `INFERRED`
-- [[createTrackDeployment()]] `INFERRED`
 
 ### contains
 - [[DashboardWebsite.tsx]] `EXTRACTED`

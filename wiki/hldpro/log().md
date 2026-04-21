@@ -1,6 +1,6 @@
 # log()
 
-> God node · 192 connections · `hldpro-governance/repos/HealthcarePlatform/frontend/e2e/walkthrough-e2e.spec.ts`
+> God node · 200 connections · `hldpro-governance/scripts/pages-deploy/pages_deploy_gate.py`
 
 ## Connections by Relation
 
@@ -10,6 +10,7 @@
 - [[sendEmail()]] `INFERRED`
 - [[main()]] `INFERRED`
 - [[main()]] `INFERRED`
+- [[run_gate()]] `EXTRACTED`
 - [[main()]] `INFERRED`
 - [[main()]] `INFERRED`
 - [[generateEmbedding()]] `INFERRED`
@@ -24,10 +25,9 @@
 - [[main()]] `INFERRED`
 - [[generateQuestionBankSection()]] `INFERRED`
 - [[run()]] `INFERRED`
-- [[main()]] `INFERRED`
 
 ### contains
-- [[walkthrough-e2e.spec.ts]] `EXTRACTED`
+- [[pages_deploy_gate.py]] `EXTRACTED`
 
 ---
 

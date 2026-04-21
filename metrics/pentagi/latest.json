@@ -2,13 +2,13 @@
   "date": "2026-04-21",
   "execute": true,
   "freshness_window_days": 30,
-  "generated_at": "2026-04-21T18:54:54Z",
+  "generated_at": "2026-04-21T19:19:11Z",
   "repos_root": ".",
   "schema_version": 1,
   "statuses": [
     {
       "age_days": null,
-      "commit": "40ac22224abb63525b3ce425f207e0e0cc96276c",
+      "commit": "b8701b017d7808fb64bd41309bc6cc49236cc9d7",
       "detail": "missing PENTAGI_API_TOKEN",
       "display_name": "ai-integration-services",
       "expected_runner": "scripts/pentagi-run.sh",
@@ -40,7 +40,7 @@
     },
     {
       "age_days": null,
-      "commit": "e705955e1bd6df722add4dd29d93a718b9a6f843",
+      "commit": "20616098183869eaa608a6646de52dadf7898973",
       "detail": "missing PENTAGI_API_TOKEN",
       "display_name": "seek-and-ponder",
       "expected_runner": "scripts/pentagi-run.sh",

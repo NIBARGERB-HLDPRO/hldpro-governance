@@ -1,35 +1,35 @@
 # Ops Session lock Repos
 
-> 191 nodes · cohesion 0.02
+> 43 nodes · cohesion 0.11
 
 ## Key Concepts
 
-- **getEnv()** (57 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/smoke/smoke-test.js`
-- **sha256()** (50 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/email-save-draft/index.ts`
 - **session_lock.py** (35 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
 - **acquire()** (20 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
-- **generate()** (19 connections) — `hldpro-governance/repos/local-ai-machine/scripts/voiceover/dia2_generate.py`
-- **smoke-test.js** (19 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/smoke/smoke-test.js`
-- **enforce_lane_isolation.py** (19 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/enforce_lane_isolation.py`
-- **main()** (19 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/smoke/smoke-test.js`
-- **main()** (15 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/apply_merge_readiness_pack.py`
-- **dia2_generate.py** (15 connections) — `hldpro-governance/repos/local-ai-machine/scripts/voiceover/dia2_generate.py`
-- **materialize_scavenger_teardown_bundle.py** (12 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/materialize_scavenger_teardown_bundle.py`
 - **release()** (12 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
-- **main()** (12 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/sync_agent_configs.py`
 - **verify_current_session()** (11 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
-- **preflight()** (10 connections) — `hldpro-governance/repos/local-ai-machine/scripts/voiceover/dia2_preflight.py`
-- **mode_scope()** (10 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/enforce_lane_isolation.py`
-- **apply_merge_readiness_pack.py** (10 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/apply_merge_readiness_pack.py`
-- **sync_agent_configs.py** (10 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/sync_agent_configs.py`
-- **dia2_preflight.py** (10 connections) — `hldpro-governance/repos/local-ai-machine/scripts/voiceover/dia2_preflight.py`
-- **process()** (10 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/materialize_scavenger_teardown_bundle.py`
 - **force_release()** (10 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
 - **_read_json()** (9 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
 - **status()** (9 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
-- **callFunction()** (9 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/smoke/smoke-test.js`
-- **_env()** (8 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/bridge_health_watchdog.py`
-- *... and 166 more nodes in this community*
+- **_is_stale()** (8 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **list_sessions()** (8 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **main()** (8 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **registry_lock()** (8 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **_branch_is_locked()** (6 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **read_registry()** (6 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **_run_git()** (6 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **_get_lock_files()** (5 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **get_lock_info()** (5 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **_resolve_current_repo_root()** (5 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **_secret_hash()** (5 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **_session_context_path()** (5 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **write_registry()** (5 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **_write_session_context()** (5 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **build_registry_entry()** (4 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **find_registry_conflicts()** (4 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **_load_current_session_context()** (4 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- **utc_now()** (4 connections) — `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
+- *... and 18 more nodes in this community*
 
 ## Relationships
 
@@ -37,29 +37,12 @@
 
 ## Source Files
 
-- `hldpro-governance/repos/HealthcarePlatform/backend/scripts/smoke/smoke-test.js`
-- `hldpro-governance/repos/Stampede/scripts/emit_lookback_artifact_manifest.py`
-- `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/email-save-draft/index.ts`
-- `hldpro-governance/repos/local-ai-machine/scripts/edge/export_audit_chain.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/ops/apply_merge_readiness_pack.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/ops/bridge_health_watchdog.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/ops/enforce_lane_isolation.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/ops/materialize_scavenger_teardown_bundle.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/ops/run_lint_warning_mode.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/ops/seed_phase_g_channel_routes.py`
 - `hldpro-governance/repos/local-ai-machine/scripts/ops/session_lock.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/ops/sync_agent_configs.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/ops/verify_phase_e_migrations_applied.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/ops/verify_phase_f_migrations_applied.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/ops/verify_phase_g_migrations_applied.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/voiceover/dia2_generate.py`
-- `hldpro-governance/repos/local-ai-machine/scripts/voiceover/dia2_preflight.py`
 
 ## Audit Trail
 
-- EXTRACTED: 778 (75%)
-- INFERRED: 260 (25%)
+- EXTRACTED: 210 (86%)
+- INFERRED: 34 (14%)
 - AMBIGUOUS: 0 (0%)
 
 ---

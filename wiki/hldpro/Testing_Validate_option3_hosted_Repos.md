@@ -1,35 +1,35 @@
 # Testing Validate option3 hosted Repos
 
-> 135 nodes · cohesion 0.03
+> 33 nodes · cohesion 0.13
 
 ## Key Concepts
 
 - **validate-option3-hosted.mjs** (27 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
-- **seed-option3-manifest.mjs** (22 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/seed-option3-manifest.mjs`
-- **.createClient()** (22 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
 - **main()** (18 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
-- **seed-historical-assessments.mjs** (17 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/seed-historical-assessments.mjs`
-- **provision-smoke-auth-users.mjs** (15 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/provision-smoke-auth-users.mjs`
-- **main()** (14 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/seed-historical-assessments.mjs`
-- **applySeed()** (13 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/seed-option3-manifest.mjs`
 - **validateAccounts()** (13 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
-- **provision-stakeholder-accounts.mjs** (12 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/stakeholder/provision-stakeholder-accounts.mjs`
-- **main()** (12 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/stakeholder/provision-stakeholder-accounts.mjs`
-- **main()** (11 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/provision-smoke-auth-users.mjs`
-- **main()** (10 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/provision-prod-readonly-account.mjs`
-- **provision-prod-readonly-account.mjs** (9 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/provision-prod-readonly-account.mjs`
-- **main()** (9 connections) — `hldpro-governance/repos/knocktracker/scripts/qa-sprint1.mjs`
-- **generateHistoricalData()** (9 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/seed-historical-assessments.mjs`
-- **main()** (9 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/seed-option3-manifest.mjs`
-- **main()** (7 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/stakeholder/expire-stakeholder-accounts.mjs`
-- **qa-sprint1.mjs** (7 connections) — `hldpro-governance/repos/knocktracker/scripts/qa-sprint1.mjs`
-- **ensureAuthUsers()** (7 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/seed-option3-manifest.mjs`
 - **validateSmeReviewAccounts()** (7 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
-- **loadLocalEnvFile()** (6 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/provision-smoke-auth-users.mjs`
-- **getServiceClient()** (6 connections) — `hldpro-governance/repos/HealthcarePlatform/frontend/e2e/helpers/supabase-client.ts`
 - **env()** (6 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
 - **normalizeEnvValue()** (6 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
-- *... and 110 more nodes in this community*
+- **restSelect()** (6 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **loadEnvFile()** (5 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **signIn()** (5 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **option3-tier-smoke-accounts.mjs** (4 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/option3-tier-smoke-accounts.mjs`
+- **ensure()** (4 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **parseJsonSafe()** (4 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **resolveSeedCredentialsEnvPath()** (4 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **resolveSupabaseEnv()** (4 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **generate-training-seeded-staging-artifact.mjs** (3 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/generate-training-seeded-staging-artifact.mjs`
+- **ensureValidation()** (3 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **firstEnv()** (3 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **normalizeBaseUrl()** (3 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **requiredEnv()** (3 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **summarizeError()** (3 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **tierSmokeAccountFor()** (2 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/option3-tier-smoke-accounts.mjs`
+- **buildRunDir()** (2 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **classifyAccountSource()** (2 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **effectiveJwtRole()** (2 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- **findLatestSeedCredentialsEnv()** (2 connections) — `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
+- *... and 8 more nodes in this community*
 
 ## Relationships
 
@@ -37,25 +37,14 @@
 
 ## Source Files
 
-- `hldpro-governance/repos/HealthcarePlatform/backend/scripts/stakeholder/expire-stakeholder-accounts.mjs`
-- `hldpro-governance/repos/HealthcarePlatform/backend/scripts/stakeholder/provision-stakeholder-accounts.mjs`
 - `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/generate-training-seeded-staging-artifact.mjs`
 - `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/option3-tier-smoke-accounts.mjs`
-- `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/provision-prod-readonly-account.mjs`
-- `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/provision-smoke-auth-users.mjs`
-- `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/seed-historical-assessments.mjs`
-- `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/seed-option3-manifest.mjs`
 - `hldpro-governance/repos/HealthcarePlatform/backend/scripts/testing/validate-option3-hosted.mjs`
-- `hldpro-governance/repos/HealthcarePlatform/backend/supabase/functions/_shared/utils.ts`
-- `hldpro-governance/repos/HealthcarePlatform/frontend/e2e/helpers/supabase-client.ts`
-- `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/inbound-sms-magic-link/index.ts`
-- `hldpro-governance/repos/knocktracker/scripts/qa-sprint1.mjs`
 
 ## Audit Trail
 
-- EXTRACTED: 507 (82%)
-- INFERRED: 114 (18%)
+- EXTRACTED: 137 (89%)
+- INFERRED: 17 (11%)
 - AMBIGUOUS: 0 (0%)
 
 ---

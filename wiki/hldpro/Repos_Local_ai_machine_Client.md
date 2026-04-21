@@ -1,6 +1,6 @@
 # Repos Local ai machine Client
 
-> 101 nodes · cohesion 0.03
+> 100 nodes · cohesion 0.03
 
 ## Key Concepts
 
@@ -29,7 +29,7 @@
 - **DashboardEmailInbox.tsx** (3 connections) — `hldpro-governance/repos/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailInbox.tsx`
 - **.updateContact()** (3 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/connectors/crm/local.ts`
 - **.upsertContact()** (3 connections) — `hldpro-governance/repos/ai-integration-services/backend/supabase/functions/_shared/connectors/crm/local.ts`
-- *... and 76 more nodes in this community*
+- *... and 75 more nodes in this community*
 
 ## Relationships
 
@@ -39,7 +39,6 @@
 
 - `hldpro-governance/repos/HealthcarePlatform/backend/scripts/training/run_training_module_critic.mjs`
 - `hldpro-governance/repos/HealthcarePlatform/frontend/src/components/layout/AppShell.tsx`
-- `hldpro-governance/repos/HealthcarePlatform/frontend/src/components/layout/NotificationBell.tsx`
 - `hldpro-governance/repos/HealthcarePlatform/frontend/src/lib/support.ts`
 - `hldpro-governance/repos/ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailInbox.tsx`
 - `hldpro-governance/repos/ai-integration-services/apps/portal/src/pages/dashboard/DashboardEmailInbox.tsx`
@@ -49,8 +48,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 250 (86%)
-- INFERRED: 41 (14%)
+- EXTRACTED: 249 (86%)
+- INFERRED: 40 (14%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -1,6 +1,6 @@
 # resolve()
 
-> God node · 186 connections · `hldpro-governance/repos/local-ai-machine/scripts/ops/resolve_logical_resource_stub.py`
+> God node · 193 connections · `hldpro-governance/repos/local-ai-machine/scripts/ops/resolve_logical_resource_stub.py`
 
 ## Connections by Relation
 
@@ -17,6 +17,7 @@
 - [[main()]] `INFERRED`
 - [[main()]] `INFERRED`
 - [[main()]] `INFERRED`
+- [[run_gate()]] `INFERRED`
 - [[build_plan()]] `INFERRED`
 - [[check_inventory()]] `INFERRED`
 - [[main()]] `INFERRED`
@@ -24,7 +25,6 @@
 - [[generate_batch()]] `INFERRED`
 - [[route_image()]] `INFERRED`
 - [[inspect_repo()]] `INFERRED`
-- [[main()]] `INFERRED`
 
 ### contains
 - [[resolve_logical_resource_stub.py]] `EXTRACTED`
