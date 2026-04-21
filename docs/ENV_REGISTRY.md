@@ -188,6 +188,8 @@ Ready: required secret variables are present by name and values remain redacted.
 | `SEEK_LOCAL_SUPABASE_URL` / `SEEK_LOCAL_SUPABASE_ANON_KEY` / `SEEK_LOCAL_SUPABASE_SERVICE_ROLE_KEY` | `SUPABASE_*` via `seek-local` | Local Supabase target for repo-local dev and tests |
 | `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` | same | Hosted embedding and LLM providers |
 | `SUPABASE_ACCESS_TOKEN` | same | Supabase management/deploy CLI |
+| `CLOUDFLARE_PAGES_TOKEN` | same | Cloudflare Pages Direct Upload deploy token; wrapper maps to Wrangler's `CLOUDFLARE_API_TOKEN` in process only |
+| `CLOUDFLARE_ACCOUNT_ID` | same | Cloudflare account id for Pages deploys |
 | `STRIPE_SECRET_KEY` / `STRIPE_WEBHOOK_SECRET` | same | Billing integration |
 | `RESEND_API_KEY` | same | Email delivery |
 | `GOOGLE_OAUTH_CLIENT_ID` / `GOOGLE_OAUTH_CLIENT_SECRET` | same | Google SSO |
