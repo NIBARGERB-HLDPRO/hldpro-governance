@@ -1,0 +1,9 @@
+{
+  "packet_id": "2026-04-21-issue-475-self-learning-loop-proof",
+  "issue_number": 475,
+  "packet_type": "self-learning-loop-proof",
+  "created_at": "2026-04-21T17:38:38Z",
+  "source_issue": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/475",
+  "closeout_ref": "raw/closeouts/2026-04-21-issue-475-self-learning-loop-proof.md",
+  "summary": "Stage 6 evidence packet for the issue #475 self-learning loop operational proof gap."
+}

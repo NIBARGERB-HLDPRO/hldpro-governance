@@ -1,7 +1,7 @@
 # Self-Learning Knowledge Report
 
-Generated: 2026-04-17T17:06:01Z
-Entries indexed: 62
+Generated: 2026-04-21T17:35:29Z
+Entries indexed: 144
 Duplicate groups: 0
 Stale entries: 0
 

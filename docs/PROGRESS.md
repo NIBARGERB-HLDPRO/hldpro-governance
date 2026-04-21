@@ -10,7 +10,6 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
-| Governance SSOT consumer verifier edge-case hardening | #474 | IN PROGRESS | HIGH | 1-2 | Workflow-ref mismatch checks, strict override metadata validation, forbidden override class checks, focused tests | Follow-up to duplicate issue #454 branch comparison |
 | Consumer-pulled governance adoption rollout | #403 | DONE | MEDIUM | 4-6 | Knocktracker pilot merged through downstream PRs #178 and #179; governance PR #406 records evidence | Uses knocktracker #177 as the first repo-side consumer-pull pilot |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
@@ -35,6 +34,7 @@
 | Item | Issue | Status | Notes |
 |------|-------|--------|-------|
 | SoM HITL SMS dedicated sender env propagation | #421 | IN PROGRESS | Add `SOM_TWILIO_FROM_NUMBER` plus sender aliases to local-ai-machine bootstrap output and document dedicated approval-route separation from AIS/Alex/customer-demo senders. |
+| Self-learning loop operational proof gap | #475 | IN PROGRESS | Unblock scheduled sweep before self-learning, refresh metrics, add operator-context write-back evidence, and document the reusable prevention pattern. |
 | Weekly overlord sweep write-back to wiki/index.md | — | ACTIVE / AWAITING NEXT RUN | Workflow and graph/index write-back path are wired; last committed index remains the 2026-04-09 bootstrap until the next scheduled or manual sweep refreshes generated counts |
 | LAM env-var-docs contract debt: SOM_* variables unclassified | #145 | OPEN | local-ai-machine env vars need classification |
 
@@ -42,6 +42,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Governance SSOT consumer verifier edge-case hardening | #474 | 2026-04-21 | Ported duplicate issue #454 verifier QA deltas into the merged v0.2 verifier: workflow-ref mismatch checks, strict override metadata validation, forbidden override class checks, and focused tests. |
 | Governance SSOT consumer verifier v0.2 drift detection | #454 | 2026-04-21 | PR pre-PR extends the non-mutating consumer verifier with v0.2 profile, override, workflow-ref, and managed hook/content drift reporting while preserving v0.1 compatibility. |
 | Structured handoff package lifecycle — plan preflight routing | #449 | 2026-04-21 | PR #464 preflighted governed write intent for recent planning evidence and emitted machine-routable missing-plan next actions before code writes. |
 | Structured handoff package lifecycle — repo-specific lane bootstrap naming | #445 | 2026-04-21 | PR #466 added the governance lane policy registry, HealthcarePlatform sandbox/pr-pending lane validation, branch-switch guard enforcement, tests, validation, closeout, and graph/wiki outputs. |

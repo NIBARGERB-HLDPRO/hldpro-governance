@@ -41,6 +41,8 @@ class CodexCliProvider:
                     "read-only",
                     "-m",
                     self.model,
+                    "-c",
+                    f"model_reasoning_effort={self.effort}",
                     "--output-schema",
                     schema_path,
                     "-o",

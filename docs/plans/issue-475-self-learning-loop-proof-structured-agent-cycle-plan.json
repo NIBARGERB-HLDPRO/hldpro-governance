@@ -1,0 +1,134 @@
+{
+  "session_id": "session-20260421-issue-475-self-learning-loop-proof",
+  "issue_number": 475,
+  "objective": "Close the operational proof gap in the governance self-learning and healing loop by unblocking the weekly sweep before self-learning runs, refreshing the learning report, recording append-only write-back evidence, and adding a real error-pattern entry for the skipped-report failure mode.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify governance repo surfaces needed to prove the self-learning loop is operational: model-pin scanner scope, hldpro-sim Codex provider test expectations, self-learning report outputs, operator-context write-back evidence, error/fail-fast pattern docs, progress/backlog mirrors, validation, closeout, and generated graph artifacts.",
+    "Keep the fix deterministic and local; do not add model inference, network-dependent self-learning behavior, or new autonomous write authority.",
+    "Use GitHub issue #475 as the governing epic/issue and preserve existing user changes in the main checkout."
+  ],
+  "out_of_scope": [
+    "Changing Society of Minds model-routing policy.",
+    "Changing Codex CLI authentication behavior in the weekly sweep.",
+    "Running or modifying production GitHub secrets.",
+    "Changing downstream product repositories.",
+    "Replacing the deterministic lexical self-learning implementation with semantic/model-assisted clustering."
+  ],
+  "research_summary": "The April 21 research pass found that the self-learning code path works locally, but operational proof is stale. The latest tracked self-learning report was generated on 2026-04-17 and indexed 62 entries, while a fresh local report indexed 130 entries. The 2026-04-20 scheduled overlord-sweep run failed at the codex model-pin validation step before self-learning report generation, because the checker scanned a mocked provider test and stale var/worktrees copies. No tracked raw/operator-context/self-learning artifact exists, and docs/ERROR_PATTERNS.md remains a stub.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/475",
+    "metrics/self-learning/latest.json",
+    "metrics/self-learning/latest.md",
+    "raw/closeouts/2026-04-17-self-learning.md",
+    "raw/cross-review/2026-04-17-self-learning.md",
+    "scripts/orchestrator/self_learning.py",
+    "scripts/orchestrator/packet_queue.py",
+    ".github/workflows/overlord-sweep.yml",
+    "GitHub Actions run 24674456168"
+  ],
+  "sprints": [
+    {
+      "name": "Sweep unblock and proof artifacts",
+      "goal": "Make the weekly sweep reach self-learning again and preserve evidence that the loop is current and issue-backed.",
+      "tasks": [
+        "Restrict codex model-pin scanning away from stale local worktree mirrors under var/worktrees.",
+        "Align the hldpro-sim provider command and test mock assertion with the required pinned Codex invocation contract.",
+        "Add fail-fast and reusable error-pattern documentation for the sweep-staleness failure mode.",
+        "Write one append-only self-learning operator-context artifact for the April 2026 skipped-report failure.",
+        "Regenerate metrics/self-learning/latest.json and latest.md from the current corpus.",
+        "Record validation and closeout evidence, including local report generation and model-pin checker pass."
+      ],
+      "acceptance_criteria": [
+        "python3 .github/scripts/check_codex_model_pins.py passes locally from the issue #475 worktree.",
+        "The checker no longer reports var/worktrees copies as authoritative source failures.",
+        "packages/hldpro-sim/hldprosim/providers.py and packages/hldpro-sim/tests/test_providers.py prove the provider command includes -m and model_reasoning_effort.",
+        "metrics/self-learning/latest.json has a 2026-04-21 generated_at timestamp and current entry count.",
+        "raw/operator-context/self-learning/2026-04-21-issue-475-self-learning-sweep-staleness.md exists and references issue #475.",
+        "docs/ERROR_PATTERNS.md contains a non-stub Pattern entry for the skipped self-learning report failure mode.",
+        "Validation evidence names any remaining gaps before closeout."
+      ],
+      "file_paths": [
+        ".github/scripts/check_codex_model_pins.py",
+        "OVERLORD_BACKLOG.md",
+        "docs/ERROR_PATTERNS.md",
+        "docs/FAIL_FAST_LOG.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "docs/plans/issue-475-self-learning-loop-proof-pdcar.md",
+        "docs/plans/issue-475-self-learning-loop-proof-structured-agent-cycle-plan.json",
+        "graphify-out/GRAPH_REPORT.md",
+        "graphify-out/graph.json",
+        "metrics/self-learning/latest.json",
+        "metrics/self-learning/latest.md",
+        "packages/hldpro-sim/hldprosim/providers.py",
+        "packages/hldpro-sim/tests/test_providers.py",
+        "raw/closeouts/2026-04-21-issue-475-self-learning-loop-proof.md",
+        "raw/execution-scopes/2026-04-21-issue-475-self-learning-loop-proof-implementation.json",
+        "raw/handoffs/2026-04-21-issue-475-self-learning-loop-proof.json",
+        "raw/operator-context/self-learning/2026-04-21-issue-475-self-learning-sweep-staleness.md",
+        "raw/packets/2026-04-21-issue-475-self-learning-loop-proof.json",
+        "raw/validation/2026-04-21-issue-475-self-learning-loop-proof.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-main-research-pass",
+      "role": "self-learning loop researcher",
+      "focus": "Determine whether the self-learning/healing loop is actually operating and identify proof gaps.",
+      "status": "accepted",
+      "summary": "The loop code works in isolation, but weekly operational proof is stale because the scheduled sweep failed before the self-learning report step; append-only write-back and error-pattern consolidation also lack real evidence.",
+      "evidence": [
+        "metrics/self-learning/latest.json",
+        "GitHub Actions run 24674456168",
+        "raw/closeouts/2026-04-17-self-learning.md"
+      ]
+    },
+    {
+      "reviewer": "supervised-claude-worker-observable-mode",
+      "role": "parallel observability proof",
+      "focus": "Confirm streamed events/tool calls can be watched and stalled worker sessions can be detected.",
+      "status": "accepted",
+      "summary": "The supervised Claude worker parallel-observable mode confirms that future worker execution can be watched for streamed events and stalls rather than leaving silent sessions hanging.",
+      "evidence": [
+        "operator report in issue #475 session context"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-requested-for-local-deterministic-fix",
+    "model_family": "none",
+    "status": "not_requested",
+    "summary": "This implementation is a deterministic local governance proof/unblock slice. No architecture or model-routing policy is changed; validation relies on local tests, model-pin checker, and generated evidence.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/475"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #475 may update the model-pin checker, hldpro-sim provider test, self-learning proof artifacts, progress/backlog mirrors, fail-fast/error-pattern docs, validation, closeout, and generated graph outputs needed to prove the self-learning loop gap is closed.",
+    "next_execution_step": "Implement scoped fixes, run validation, record closeout, and report remaining remote GitHub sweep verification if it cannot be run locally.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-475-self-learning-loop-proof-implementation.json",
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-475-self-learning-loop-proof.json",
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-475-self-learning-loop-proof.md"
+    ],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-475-self-learning-loop-proof.md"
+  },
+  "material_deviation_rules": [
+    "If codex model-pin validation still fails after excluding stale worktree mirrors, stop and record the remaining authoritative source path before closeout.",
+    "If packet-queue tests cannot run because dependencies are unavailable, install documented local test dependencies or record the dependency blocker explicitly.",
+    "If a manual GitHub workflow dispatch is needed to prove the remote scheduled sweep path, record local closure separately from remote follow-up and keep issue #475 open until remote proof is captured."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "GitHub issue #475",
+    "Codex research pass"
+  ],
+  "approved_at": "2026-04-21T17:31:51Z"
+}

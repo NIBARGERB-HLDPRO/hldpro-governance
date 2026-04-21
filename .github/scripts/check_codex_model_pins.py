@@ -6,7 +6,12 @@ import shlex
 allowed = {"gpt-5.4", "gpt-5.3-codex-spark"}
 allowed_ext = {".py", ".sh", ".yml", ".yaml"}
 fail = False
-skip_paths = [pathlib.Path(".claude/worktrees"), pathlib.Path("generated"), pathlib.Path("local")]
+skip_paths = [
+    pathlib.Path(".claude/worktrees"),
+    pathlib.Path("generated"),
+    pathlib.Path("local"),
+    pathlib.Path("var/worktrees"),
+]
 direct_claude_allowlist = {
     pathlib.Path(".github/scripts/check_codex_model_pins.py"),
     pathlib.Path("scripts/cli_session_supervisor.py"),
