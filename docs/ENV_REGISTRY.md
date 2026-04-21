@@ -34,6 +34,7 @@ DRY_RUN=1 bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.s
 | hldpro-staging | `khyadxaiyfdldyuoapyn` | `https://khyadxaiyfdldyuoapyn.supabase.co` | Cross-repo staging / AIS staging ref |
 | ai-integration-services | `gyrtvzvazmvwiirnexls` | `https://gyrtvzvazmvwiirnexls.supabase.co` | ai-integration-services |
 | apex-doorknocking | `kfcqyijmuuafflpjepwr` | `https://kfcqyijmuuafflpjepwr.supabase.co` | knocktracker |
+| seek-and-ponder | `ajeyrcllfxwneozmywhg` | `https://ajeyrcllfxwneozmywhg.supabase.co` | Seek and Ponder (staging) |
 
 ### Key naming convention in `.env.shared`
 
