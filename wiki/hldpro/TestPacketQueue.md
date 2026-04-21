@@ -1,6 +1,6 @@
 # TestPacketQueue
 
-> God node · 15 connections · `scripts/orchestrator/test_packet_queue.py`
+> God node · 16 connections · `hldpro-governance/scripts/orchestrator/test_packet_queue.py`
 
 ## Connections by Relation
 
@@ -17,6 +17,7 @@
 - [[.test_repeated_known_failure_context_halts_dispatch()]] `EXTRACTED`
 - [[.test_pii_halt_reason_takes_precedence_over_known_failure_halt()]] `EXTRACTED`
 - [[.test_dispatch_requires_approved_issue_backed_plan()]] `EXTRACTED`
+- [[.test_dispatch_refuses_schema_valid_packet_without_governance()]] `EXTRACTED`
 - [[.test_dispatch_requires_local_review_artifact_refs_to_exist()]] `EXTRACTED`
 - [[.test_dispatch_refuses_markdown_execution_scope_ref()]] `EXTRACTED`
 - [[.test_replay_counts_refused_events_deterministically()]] `EXTRACTED`

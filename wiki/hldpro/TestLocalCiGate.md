@@ -1,6 +1,6 @@
 # TestLocalCiGate
 
-> God node · 22 connections · `hldpro-governance/tools/local-ci-gate/tests/test_local_ci_gate.py`
+> God node · 22 connections · `tools/local-ci-gate/tests/test_local_ci_gate.py`
 
 ## Connections by Relation
 

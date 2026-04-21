@@ -1,7 +1,14 @@
 $schema: https://json-schema.org/draft/2020-12/schema
 $id: https://hldpro.local/schemas/som-packet/v1
 title: SoM Handoff Packet
-description: Canonical packet for Society of Minds stage-4 deterministic handoff
+description: >-
+  Canonical packet for Society of Minds stage-4 deterministic handoff.
+  The base schema (packet_id, prior, next_tier, standards_ref) is the minimal
+  historical contract and remains valid for all packets. The optional
+  `governance` block carries issue-backed dispatch controls; packet_queue.py
+  enforces its presence and completeness before any packet may enter the
+  dispatched state. Packets without `governance` are schema-valid but will be
+  refused by the queue at dispatch time.
 type: object
 required:
   - packet_id

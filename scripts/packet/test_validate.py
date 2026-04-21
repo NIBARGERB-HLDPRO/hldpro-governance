@@ -450,5 +450,82 @@ class TestCli(unittest.TestCase):
         self.assertEqual(data["status"], "ok")
 
 
+# ---------------------------------------------------------------------------
+# Tests: dispatch-ready packets (governance block in schema)
+# ---------------------------------------------------------------------------
+
+
+def _dispatch_packet(**gov_overrides):
+    """Return a schema-valid dispatch-ready packet with a full governance block."""
+    gov = {
+        "issue_number": 437,
+        "structured_plan_ref": "docs/plans/issue-437-structured-agent-cycle-plan.json",
+        "execution_scope_ref": None,
+        "validation_commands": ["python3 scripts/packet/test_validate.py"],
+        "review_artifacts": ["raw/cross-review/2026-04-21-packet-dispatch-reconcile.md"],
+        "fallback_log_ref": None,
+        "pii_mode": "none",
+        "dispatch_authorized": True,
+    }
+    gov.update(gov_overrides)
+    p = _tier1_packet()
+    p["governance"] = gov
+    return p
+
+
+class TestDispatchPacketSchema(unittest.TestCase):
+
+    def test_full_governance_block_passes_schema(self):
+        packet = _dispatch_packet()
+        passed, reason = validate_schema(packet)
+        self.assertTrue(passed, reason)
+
+    def test_minimal_packet_without_governance_still_passes_schema(self):
+        """Historical compatibility: governance is optional in the schema."""
+        packet = _tier1_packet()
+        self.assertNotIn("governance", packet)
+        passed, reason = validate_schema(packet)
+        self.assertTrue(passed, reason)
+
+    def test_governance_missing_required_field_fails_schema(self):
+        """Incomplete governance block must fail schema validation."""
+        packet = _dispatch_packet()
+        del packet["governance"]["issue_number"]
+        passed, reason = validate_schema(packet)
+        self.assertFalse(passed)
+        self.assertIn("schema validation failed", reason.lower())
+
+    def test_governance_pii_mode_invalid_value_fails_schema(self):
+        packet = _dispatch_packet(pii_mode="unknown_mode")
+        passed, reason = validate_schema(packet)
+        self.assertFalse(passed)
+        self.assertIn("schema validation failed", reason.lower())
+
+    def test_governance_empty_validation_commands_fails_schema(self):
+        packet = _dispatch_packet(validation_commands=[])
+        passed, reason = validate_schema(packet)
+        self.assertFalse(passed)
+        self.assertIn("schema validation failed", reason.lower())
+
+    def test_governance_empty_review_artifacts_fails_schema(self):
+        packet = _dispatch_packet(review_artifacts=[])
+        passed, reason = validate_schema(packet)
+        self.assertFalse(passed)
+        self.assertIn("schema validation failed", reason.lower())
+
+    def test_validate_packet_passes_with_full_governance(self):
+        packet = _dispatch_packet()
+        passed, failures = validate_packet(packet)
+        self.assertTrue(passed, failures)
+
+    def test_governance_extra_field_rejected_by_schema(self):
+        """additionalProperties: false on governance block must reject unknown keys."""
+        packet = _dispatch_packet()
+        packet["governance"]["unexpected_field"] = "value"
+        passed, reason = validate_schema(packet)
+        self.assertFalse(passed)
+        self.assertIn("schema validation failed", reason.lower())
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
