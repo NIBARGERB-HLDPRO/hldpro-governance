@@ -6,7 +6,7 @@ Six-Stage Cycle: Stage 6 / Audit + Closeout
 Completed By: Benji
 
 ## Decision Made
-The Secret Provisioning UX and no-secret evidence contract is complete in governance: standards, validator, Pages deploy UX, runbook scrub, rollout inventory, and downstream issue routing are merged and closed.
+The Secret Provisioning UX and no-secret evidence contract is complete in governance and downstream rollout is complete: standards, validator, Pages deploy UX, runbook scrub, rollout inventory, downstream issue routing, and the four owning-repo follow-ups are merged and closed.
 
 ## Pattern Identified
 Missing-secret UX should extend existing bootstrap, provider-vault, Local CI Gate, and Stage 6 closeout mechanisms instead of introducing parallel credential request workflows.
@@ -48,10 +48,11 @@ This supersedes older operator guidance that suggested inline shell exports, dir
 - Runbook scrub implementation PR #526: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/526, merged `98a88bb2f6f44cefc71a76dd04666d18234bf96f`
 - Rollout inventory scope PR #527: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/527, merged `7b3064ea648338fcc48afc6ece2a771e349511c2`
 - Rollout inventory implementation PR #528: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/528, merged `570c083c0fb87310cde38c1c8e344a64196a7932`
-- HealthcarePlatform follow-up: https://github.com/NIBARGERB-HLDPRO/HealthcarePlatform/issues/1470
-- ai-integration-services follow-up: https://github.com/NIBARGERB-HLDPRO/ai-integration-services/issues/1215
-- seek-and-ponder follow-up: https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/issues/167
-- Stampede follow-up: https://github.com/NIBARGERB-HLDPRO/Stampede/issues/120
+- HealthcarePlatform follow-up: https://github.com/NIBARGERB-HLDPRO/HealthcarePlatform/issues/1470, closed 2026-04-21T21:11:06Z by PR https://github.com/NIBARGERB-HLDPRO/HealthcarePlatform/pull/1472, merged `cda0d47ea8886f16e811233bfc02dfc0e5dd876d`
+- ai-integration-services follow-up: https://github.com/NIBARGERB-HLDPRO/ai-integration-services/issues/1215, closed 2026-04-21T21:22:11Z by PR https://github.com/NIBARGERB-HLDPRO/ai-integration-services/pull/1216, merged `5c6be6ded9b9ce4afbdb02c1c362a7b894284172`
+- seek-and-ponder follow-up: https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/issues/167, closed 2026-04-21T21:29:31Z by PR https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/pull/171, merged `f988d4084fb53da1b8388c91852730698c3f19c1`
+- Stampede follow-up: https://github.com/NIBARGERB-HLDPRO/Stampede/issues/120, closed 2026-04-21T21:39:55Z by PR https://github.com/NIBARGERB-HLDPRO/Stampede/pull/121, merged `979a78caceed062c8bfa50409924cec623440859`
+- Post-rollout amendment issue: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/532
 
 ## Schema / Artifact Version
 - Structured agent cycle plan: `docs/plans/issue-529-structured-agent-cycle-plan.json`
@@ -69,6 +70,7 @@ This supersedes older operator guidance that suggested inline shell exports, dir
 
 ## Review And Gate Identity
 - GitHub repo gates: PRs #516-#528 merged after required checks were green.
+- Downstream rollout gates: HealthcarePlatform PR #1472, ai-integration-services PR #1216, seek-and-ponder PR #171, and Stampede PR #121 all merged after their required repository checks passed.
 - Governance closeout gate: `hooks/closeout-hook.sh raw/closeouts/2026-04-21-issue-507-secret-provisioning-ux-closeout.md`.
 - Handoff lifecycle: accepted for `raw/handoffs/2026-04-21-issue-529-stage6-closeout-507.json`.
 - Review artifact: `raw/cross-review/2026-04-21-issue-529-stage6-closeout-507.md`.
@@ -113,18 +115,23 @@ Handoff lifecycle:
 - Handoff lifecycle: accepted
 
 ## Validation Commands
-See `raw/validation/2026-04-21-issue-529-stage6-closeout-507.md` for the command list and final results.
+See `raw/validation/2026-04-21-issue-529-stage6-closeout-507.md` for the original Stage 6 command list and final results.
+
+Post-rollout amendment validation for issue #532:
+- `gh pr view` and `gh issue view` state checks for HealthcarePlatform #1470 / PR #1472, ai-integration-services #1215 / PR #1216, seek-and-ponder #167 / PR #171, and Stampede #120 / PR #121.
+- `gh pr checks` for the four downstream PRs confirmed the required checks passed before merge.
+- See `raw/validation/2026-04-21-issue-532-secret-provisioning-downstream-closeout.md` for the amendment command list and final results.
 
 ## Tier Evidence Used
 No new architecture or standards tier cross-review was required. This closeout uses issue #529, the accepted handoff package, the execution scope, Stage 6 closeout hook validation, and GitHub PR/issue state as the gate evidence.
 
 ## Residual Risks / Follow-Up
-Downstream residual work remains issue-backed and outside this governance closeout lane:
+None for Secret Provisioning UX rollout. The downstream residuals originally routed by #513 and recorded by #529 are now complete:
 
-- https://github.com/NIBARGERB-HLDPRO/HealthcarePlatform/issues/1470
-- https://github.com/NIBARGERB-HLDPRO/ai-integration-services/issues/1215
-- https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/issues/167
-- https://github.com/NIBARGERB-HLDPRO/Stampede/issues/120
+- HealthcarePlatform #1470 / PR #1472: closed and merged.
+- ai-integration-services #1215 / PR #1216: closed and merged.
+- seek-and-ponder #167 / PR #171: closed and merged.
+- Stampede #120 / PR #121: closed and merged.
 
 ## Wiki Pages Updated
 - `wiki/index.md`
@@ -144,3 +151,4 @@ The closeout hook may refresh additional `wiki/hldpro/` graph pages if graphify 
 - `raw/secret-provisioning-rollout/2026-04-21-issue-513-inventory.json`
 - `raw/validation/2026-04-21-issue-513-secret-provisioning-rollout-inventory.md`
 - `raw/validation/2026-04-21-issue-529-stage6-closeout-507.md`
+- `raw/validation/2026-04-21-issue-532-secret-provisioning-downstream-closeout.md`
