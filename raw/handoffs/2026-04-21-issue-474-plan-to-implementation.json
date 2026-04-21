@@ -1,0 +1,66 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-474-plan-to-implementation",
+  "issue_number": 474,
+  "parent_epic_number": 434,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "bounded-implementation-worker",
+  "structured_plan_ref": "docs/plans/issue-474-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-474-verifier-hardening-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Verifier rejects reusable governance workflow refs that are tags, short SHAs, mutable refs, or valid SHAs that differ from the consumer governance_ref.",
+      "verification_refs": [
+        "scripts/overlord/test_verify_governance_consumer.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Verifier requires override metadata values to be non-empty strings while preserving observed_overrides output.",
+      "verification_refs": [
+        "scripts/overlord/verify_governance_consumer.py",
+        "scripts/overlord/test_verify_governance_consumer.py"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Verifier fails forbidden override classes for protected governance constraints.",
+      "verification_refs": [
+        "scripts/overlord/test_verify_governance_consumer.py"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_verify_governance_consumer.py",
+    "python3 -m unittest scripts.overlord.test_deploy_governance_tooling scripts.overlord.test_verify_governance_consumer",
+    "python3 -m py_compile scripts/overlord/verify_governance_consumer.py scripts/overlord/test_verify_governance_consumer.py",
+    "python3 -m json.tool docs/plans/issue-474-structured-agent-cycle-plan.json",
+    "python3 -m json.tool raw/execution-scopes/2026-04-21-issue-474-verifier-hardening-implementation.json",
+    "python3 -m json.tool raw/handoffs/2026-04-21-issue-474-plan-to-implementation.json",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-21-issue-474-plan-to-implementation.json",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-474-verifier-hardening --changed-files-file /tmp/issue-474-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-474-verifier-hardening-implementation.json --changed-files-file /tmp/issue-474-changed-files.txt --require-lane-claim",
+    "tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "docs/plans/issue-474-verifier-hardening-pdcar.md",
+    "docs/plans/issue-474-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-474-verifier-hardening-implementation.json",
+    "scripts/overlord/verify_governance_consumer.py",
+    "scripts/overlord/test_verify_governance_consumer.py"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-474-verifier-hardening.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T13:20:00-05:00",
+  "notes": "Bounded follow-up to merge useful duplicate issue #454 verifier hardening into the already-merged v0.2 verifier implementation."
+}

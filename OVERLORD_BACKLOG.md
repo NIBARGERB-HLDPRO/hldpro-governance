@@ -19,6 +19,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Governance SSOT consumer verifier edge-case hardening | [#474](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/474) | HIGH | 1-2 | Port useful duplicate issue #454 verifier QA deltas into the merged v0.2 verifier without regressing the v0.2 contract. |
 
 ## Done
 

@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| Governance SSOT consumer verifier edge-case hardening | #474 | IN PROGRESS | HIGH | 1-2 | Workflow-ref mismatch checks, strict override metadata validation, forbidden override class checks, focused tests | Follow-up to duplicate issue #454 branch comparison |
 | Consumer-pulled governance adoption rollout | #403 | DONE | MEDIUM | 4-6 | Knocktracker pilot merged through downstream PRs #178 and #179; governance PR #406 records evidence | Uses knocktracker #177 as the first repo-side consumer-pull pilot |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
