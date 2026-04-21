@@ -19,12 +19,13 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Structured handoff package lifecycle — CI enforcement | [#435](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/435) | HIGH | 2-3 | Child of epic #434. Wire package handoff validator into Local CI Gate and reusable GitHub governance checks with lane-claim parity. |
+| Structured handoff package lifecycle — packet dispatch reconciliation | [#437](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/437) | HIGH | 2-3 | Child of epic #434. Reconcile SoM packet schema, emitter, validator, and queue dispatch metadata. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Structured handoff package lifecycle — CI enforcement | 2026-04-21 | Issue [#435](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/435). PR [#443](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/443) wired package handoff validation into Local CI Gate and reusable GitHub governance checks, added lane-claim GitHub assertion parity, focused tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — schema slice | 2026-04-21 | Issue [#438](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/438). PR [#441](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/441) added package-handoff and execution-scope schemas, example/active handoff artifacts, validator/tests, structured-plan handoff refs, documentation, validation, closeout, and graph/wiki outputs. |
 | SoM governance waterfall model routing revision | 2026-04-21 | Issue [#432](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/432). PR [#433](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/433) updated governance SSOT, docs, guardrails, tests, validation, closeout, graph/wiki outputs, and downstream follow-up issues for the Codex-orchestrated waterfall. |
 | Stampede Phase 1 live order routing epic (#81–#86) | 2026-04-21 | Issues [#81](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/81)–[#86](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/86). Phase 1 pipeline code-complete: spec v0.2, RSSHub trigger, 3-persona LLM inference, Tradier executor+KillSwitch, paper trade runner+gate, launchd automation. PRs #87–#92+#94 merged. Backtest n=27: r=+0.563 dir=70.4%. Paper smoke 6/7=85.7% PASS. **Issue #86 gate in progress** — 30-day paper gate started 2026-04-21, target close 2026-05-21. Closeouts: raw/closeouts/2026-04-21-stampede-issue-8x-*.md. |

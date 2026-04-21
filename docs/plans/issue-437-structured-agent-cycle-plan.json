@@ -1,0 +1,136 @@
+{
+  "session_id": "session-20260421-issue-437-packet-dispatch-reconcile",
+  "issue_number": 437,
+  "objective": "Reconcile the SoM packet schema, emitter, validator, and packet queue so dispatch-ready packets have explicit governance metadata while historical packet compatibility remains intact.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repository only.",
+    "Document the canonical packet schema versus dispatch hardgate boundary.",
+    "Extend the packet authoring path to emit governance dispatch metadata.",
+    "Add emitter, schema-validator, and queue tests for dispatch-ready packet behavior.",
+    "Update issue evidence, backlog/progress mirrors, validation, review, and closeout artifacts."
+  ],
+  "out_of_scope": [
+    "Downstream repository edits.",
+    "PR template and closeout hook hardening; tracked by issue #436.",
+    "Local CI and reusable GitHub handoff validator enforcement; completed by issue #435.",
+    "Changing the packet queue state machine beyond dispatch metadata parity."
+  ],
+  "research_summary": "Issue #438 established the package handoff schema and issue #435 enforced package validation. The remaining packet drift is between the historical SoM packet schema, packet emitter, and queue dispatch requirements. The final state keeps the schema backward compatible and makes dispatch readiness explicit through the optional governance block enforced by packet_queue.py.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/434",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/437",
+    "docs/schemas/som-packet.schema.yml",
+    "scripts/packet/emit.py",
+    "scripts/packet/validate.py",
+    "scripts/orchestrator/packet_queue.py",
+    "scripts/orchestrator/test_packet_queue.py"
+  ],
+  "sprints": [
+    {
+      "name": "Packet dispatch contract reconciliation",
+      "goal": "Make dispatch-ready packet metadata explicit and tested across emitter, schema validator, and queue hardgate.",
+      "tasks": [
+        "Document that som-packet.schema.yml is canonical and that governance metadata is optional for historical packets but required for dispatch.",
+        "Extend scripts/packet/emit.py to support dispatch-ready governance fields.",
+        "Add emitter tests for API and CLI dispatch metadata creation plus historical minimal packets.",
+        "Add schema-validator tests for complete governance, missing required governance fields, invalid PII mode, empty command/artifact lists, and historical compatibility.",
+        "Add queue test proving schema-valid packets without governance metadata are refused at dispatch.",
+        "Update issue #437 plan, scope, handoff, validation, review, closeout, backlog, and progress evidence."
+      ],
+      "acceptance_criteria": [
+        "The schema documentation decides the canonical dispatch boundary: base packets are schema-valid, dispatch-ready packets include governance, and the queue is the dispatch hardgate.",
+        "The packet authoring path can emit issue number, structured plan ref, execution scope ref, validation commands, review artifacts, fallback log ref, PII mode, dispatch authorization, and dry-run authorization.",
+        "The packet validator and queue agree on dispatch-ready metadata requirements.",
+        "Tests cover valid dispatch packet creation and refusal when governance fields are missing.",
+        "Historical packets without governance remain schema-valid.",
+        "No downstream repo edits occur."
+      ],
+      "file_paths": [
+        "docs/schemas/som-packet.schema.yml",
+        "scripts/packet/emit.py",
+        "scripts/packet/test_emit.py",
+        "scripts/packet/test_validate.py",
+        "scripts/orchestrator/test_packet_queue.py",
+        "docs/plans/issue-437-packet-dispatch-reconcile-pdcar.md",
+        "docs/plans/issue-437-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-437-packet-dispatch-reconcile-implementation.json",
+        "raw/handoffs/2026-04-21-issue-437-plan-to-implementation.json",
+        "raw/validation/2026-04-21-issue-437-packet-dispatch-reconcile.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Claude Sonnet 4.6",
+      "role": "worker",
+      "focus": "Packet schema, emitter, and validator reconciliation.",
+      "status": "partial_no_summary",
+      "summary": "The local Claude Sonnet 4.6 worker process hung without returning output. It left bounded edits to the packet schema, emitter, and validator tests before being killed; Codex QA reviewed and completed the slice.",
+      "evidence": [
+        "docs/plans/issue-437-packet-dispatch-reconcile-pdcar.md"
+      ]
+    },
+    {
+      "reviewer": "Codex orchestrator",
+      "role": "orchestrator-qa",
+      "focus": "Issue #437 acceptance criteria, schema/queue boundary, CLI coverage, evidence, and deterministic gates.",
+      "status": "accepted",
+      "summary": "Keep the schema backward compatible, treat the governance block as the dispatch-ready contract, and let packet_queue.py enforce refusal for schema-valid packets missing dispatch metadata.",
+      "evidence": [
+        "scripts/packet/test_emit.py",
+        "scripts/packet/test_validate.py",
+        "scripts/orchestrator/test_packet_queue.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Claude Opus 4.6 approved the packet dispatch reconciliation with a follow-up to make CLI dry_run_authorized emission consistent and to rerun focused tests. Codex QA completed both conditions.",
+    "evidence": [
+      "raw/cross-review/2026-04-21-issue-437-packet-dispatch-reconcile.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement governance-only packet dispatch reconciliation, tests, issue plan/scope/handoff evidence, validation, review, and closeout for issue #437.",
+    "next_execution_step": "Run focused validation, cross-review, Local CI Gate, closeout, PR, and automerge if green.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-437-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-437-packet-dispatch-reconcile-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-437-packet-dispatch-reconcile.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-21-issue-437-packet-dispatch-reconcile.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-437-packet-dispatch-reconcile.md",
+    "next_role": "codex-qa",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Schema documentation states the canonical packet versus queue dispatch boundary.",
+      "Emitter API and CLI can create dispatch-ready governance metadata.",
+      "Validator and queue tests prove missing governance metadata is refused at dispatch.",
+      "Local CI Gate passes before merge."
+    ]
+  },
+  "material_deviation_rules": [
+    "If PR template or closeout hook hardening is needed, stop and use issue #436.",
+    "If downstream repos need propagation, create downstream issues instead of editing them here.",
+    "If packet queue state transitions need broader redesign, create a follow-up issue instead of expanding this slice.",
+    "If Sonnet worker tooling is unavailable or hangs, record the attempt and continue with Codex QA plus alternate-family review."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: proceed",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T10:15:25-05:00"
+}

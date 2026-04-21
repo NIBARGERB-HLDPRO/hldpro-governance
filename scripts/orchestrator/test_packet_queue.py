@@ -264,6 +264,26 @@ class TestPacketQueue(unittest.TestCase):
             self.assertEqual(decision.status, "refused")
             self.assertIn("structured plan not found", decision.reason)
 
+    def test_dispatch_refuses_schema_valid_packet_without_governance(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            queue_root = Path(raw)
+            packet = _packet()
+            packet.pop("governance")
+            packet_path = self._write_inbound(queue_root, packet)
+
+            decision = packet_queue.transition_packet(
+                packet_path,
+                "inbound",
+                "dispatched",
+                queue_root=queue_root,
+                repo_root=REPO_ROOT,
+                dry_run=True,
+            )
+
+            self.assertFalse(decision.allowed)
+            self.assertEqual(decision.status, "refused")
+            self.assertIn("missing governance dispatch metadata", decision.reason)
+
     def test_dispatch_requires_local_review_artifact_refs_to_exist(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             queue_root = Path(raw)
