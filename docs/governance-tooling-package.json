@@ -8,11 +8,37 @@
   "versioning": {
     "initial_version": "0.1.0-contract",
     "initial_release_tag": "governance-tooling-v0.1.0",
+    "next_contract_version": "0.2.0-ssot-bootstrap",
+    "next_contract_issue": 453,
+    "next_contract_parent_epic": 452,
     "release_issue": 332,
     "pinning_required": true,
     "pinning_format": "git_sha_required; release_tag_optional_but_recommended",
     "consumer_record_path": ".hldpro/governance-tooling.json",
     "compatibility_policy": "A consumer repo must record the governance package git SHA it deploys. Release tags improve readability and rollback communication, but tags do not replace the SHA record."
+  },
+  "ssot_bootstrap_v2": {
+    "status": "contract_draft",
+    "issue": 453,
+    "parent_epic": 452,
+    "extends": "0.1.0-contract",
+    "goal": "Make governed repos thin consumers of pinned governance SSOT surfaces while preserving stricter local profile rules.",
+    "consumer_model": "shared_governance_package_with_thin_repo_adapter",
+    "required_consumer_surfaces": [
+      ".hldpro/governance-tooling.json",
+      ".hldpro/local-ci.sh"
+    ],
+    "optional_consumer_surfaces": [
+      ".hldpro/repo-governance-profile.json",
+      ".claude/settings.json pointer or managed shim",
+      "thin CLAUDE.md or AGENTS.md governance pointer"
+    ],
+    "non_goals": [
+      "Do not make downstream repos blind mirrors of hldpro-governance.",
+      "Do not weaken repo-specific HIPAA, PHI/PII, lane, plan-mode, local runtime, or exemption constraints.",
+      "Do not delete local hooks until managed parity is proven.",
+      "Do not mutate downstream repos without repo-specific issue-backed PRs."
+    ]
   },
   "releases": [
     {
@@ -182,6 +208,107 @@
         "python3 scripts/knowledge_base/test_graphify_governance_contract.py"
       ],
       "notes": "Scoped graph/wiki outputs are tracked baselines. Cache and per-run scratch files remain local-only."
+    },
+    {
+      "id": "managed-hook-contracts",
+      "classification": "package_core",
+      "owner": "hldpro-governance",
+      "paths": [
+        "hooks/*.sh",
+        ".claude/settings.json pointer contracts",
+        "repo-local hook adapters declared in consumer records"
+      ],
+      "consumer_mode": "managed_or_declared_local_override",
+      "version_rule": "pin by governance git SHA; copied downstream hook logic is drift unless declared as a local adapter",
+      "verification": [
+        "python3 scripts/overlord/verify_governance_consumer.py --target-repo <consumer> --profile <profile> --governance-ref <sha>"
+      ],
+      "notes": "Hook behavior may be stricter in consumer repos, but stricter local behavior must be declared with owner, reason, and review cadence."
+    },
+    {
+      "id": "reusable-workflow-refs",
+      "classification": "package_core",
+      "owner": "hldpro-governance",
+      "paths": [
+        ".github/workflows/*.yml",
+        "consumer .github/workflows/*.yml references to NIBARGERB-HLDPRO/hldpro-governance"
+      ],
+      "consumer_mode": "pinned_workflow_reference_or_declared_local_equivalent",
+      "version_rule": "workflow references must use immutable governance SHAs unless an issue-backed exception exists",
+      "verification": [
+        "consumer verifier reports mutable refs such as @main"
+      ],
+      "notes": "Reusable workflow refs are package surfaces even when the workflow file itself stays in the consumer repo."
+    },
+    {
+      "id": "lane-policy-profiles",
+      "classification": "repo_profile",
+      "owner": "hldpro-governance",
+      "paths": [
+        "hooks/branch-switch-guard.sh",
+        "raw/execution-scopes/*.json",
+        "future lane policy registry"
+      ],
+      "consumer_mode": "profile_selected_policy",
+      "version_rule": "pin with governance package; local stricter lane policies must be profile extensions",
+      "verification": [
+        "execution-scope validation",
+        "repo-specific lane policy tests"
+      ],
+      "notes": "HealthcarePlatform strict sandbox/issue-<n>-pr-pending-<scope> lanes are represented as a profile extension, not a global baseline."
+    },
+    {
+      "id": "plan-preflight-contracts",
+      "classification": "repo_profile",
+      "owner": "hldpro-governance",
+      "paths": [
+        "future plan preflight helper",
+        "repo-local plan-mode hooks declared in profiles"
+      ],
+      "consumer_mode": "profile_selected_policy",
+      "version_rule": "pin with governance package; repo-local plan gates must be declared",
+      "verification": [
+        "plan preflight tests",
+        "consumer verifier profile checks"
+      ],
+      "notes": "Seek plan-mode behavior remains a repo-specific profile extension until generalized."
+    },
+    {
+      "id": "cli-session-supervision-contract",
+      "classification": "package_core",
+      "owner": "hldpro-governance",
+      "paths": [
+        "raw/cli-session-events/",
+        "future CLI supervisor scripts",
+        "issue #444 implementation artifacts"
+      ],
+      "depends_on": [
+        444
+      ],
+      "consumer_mode": "referenceable_runtime_evidence",
+      "version_rule": "pin with governance package after issue #444 lands",
+      "verification": [
+        "CLI supervisor tests",
+        "handoff package refs once #436/#437 consume events"
+      ],
+      "notes": "Package v0.2 reserves this surface so called Claude/Codex session evidence can be linked into handoff packages without another bootstrap redesign."
+    },
+    {
+      "id": "handoff-package-lifecycle-refs",
+      "classification": "package_core",
+      "owner": "hldpro-governance",
+      "paths": [
+        "raw/handoffs/*.json",
+        "docs/schemas/package-handoff.schema.json",
+        "scripts/overlord/validate_handoff_package.py"
+      ],
+      "consumer_mode": "referenceable_lifecycle_evidence",
+      "version_rule": "pin with governance package",
+      "verification": [
+        "handoff package validation",
+        "closeout and PR evidence gates"
+      ],
+      "notes": "Package consumers should be able to point to lifecycle refs without copying lifecycle validation logic."
     }
   ],
   "artifact_classes": {
@@ -189,18 +316,114 @@
     "repo_profile": "Repo-specific command mapping owned centrally but selected per consumer.",
     "managed_file": "A file written into a consumer repo by a deployer and marked as managed.",
     "repo_local_override": "Consumer-owned deviation that must be recorded in the consumer manifest and reviewed in that repo.",
+    "profile_extension": "A centrally named stricter or specialized policy layer selected by a consumer profile.",
     "tracked_baseline": "Committed measurement or generated artifact used as evidence.",
     "per_run_report": "Local or CI run output that is ignored unless summarized into a closeout or issue comment."
+  },
+  "profile_contract": {
+    "profile_key_policy": "Profile keys use governance registry repo slugs and are matched exactly; display names and dashed aliases may be added by verifier/profile mapping code without changing the canonical key.",
+    "merge_semantics": "Profile inheritance is additive-only by default. A repo-specific extension may add stricter constraints, but it may not remove or weaken constraints inherited from baseline or product-standard layers unless an issue-backed override explicitly allows the narrower behavior and the target profile is not a zero-fail profile.",
+    "inheritance_order": [
+      "baseline",
+      "product-standard",
+      "repo-specific-extension"
+    ],
+    "required_profiles": {
+      "ai-integration-services": {
+        "extends": [
+          "baseline",
+          "product-standard",
+          "full-security"
+        ],
+        "required_constraints": [
+          "supabase edge-function governance",
+          "security-tier-full",
+          "agent-session-governance"
+        ]
+      },
+      "healthcareplatform": {
+        "extends": [
+          "baseline",
+          "product-standard",
+          "hipaa-zero-fail"
+        ],
+        "required_constraints": [
+          "HIPAA and PHI controls must not be weakened",
+          "PII/PHI routing must fail closed",
+          "strict lane naming policy must be preserved",
+          "healthcare-specific audit and RLS controls remain authoritative"
+        ]
+      },
+      "local-ai-machine": {
+        "extends": [
+          "baseline",
+          "local-runtime",
+          "lam-local-worker"
+        ],
+        "required_constraints": [
+          "local model runtime routing",
+          "PII local-only lane",
+          "worker-lam boundaries",
+          "remote MCP boundary controls"
+        ]
+      },
+      "knocktracker": {
+        "extends": [
+          "baseline",
+          "product-standard"
+        ],
+        "required_constraints": [
+          "field-operations product baseline",
+          "pinned governance workflow refs"
+        ]
+      },
+      "seek-and-ponder": {
+        "extends": [
+          "baseline",
+          "product-standard",
+          "seek-plan-mode"
+        ],
+        "required_constraints": [
+          "plan-mode gate before code writes",
+          "corpus and persona-source governance",
+          "agent-session plan preflight"
+        ]
+      },
+      "stampede": {
+        "extends": [
+          "baseline",
+          "product-baseline"
+        ],
+        "required_constraints": [
+          "trading/product runtime safety",
+          "solo-maintainer or product-baseline overrides where issue-backed"
+        ]
+      },
+      "asc-evaluator": {
+        "extends": [
+          "baseline",
+          "asc-exempt-knowledge"
+        ],
+        "required_constraints": [
+          "knowledge-repo exemption",
+          "persona/evaluator boundary preservation",
+          "minimal graphify pointer pattern"
+        ]
+      }
+    }
   },
   "managed_file_contract": {
     "marker_required": true,
     "markers": [
-      "# hldpro-governance local-ci gate managed"
+      "# hldpro-governance local-ci gate managed",
+      "# hldpro-governance managed",
+      "# Managed by hldpro-governance"
     ],
     "allowed_paths": [
       ".hldpro/local-ci.sh",
       ".governance/local-ci.sh",
-      ".hldpro/governance-tooling.json"
+      ".hldpro/governance-tooling.json",
+      ".hldpro/repo-governance-profile.json"
     ],
     "overwrite_policy": "Refuse unmanaged files by default; require backup or force with issue evidence.",
     "rollback_policy": "Managed-file rollback must either restore the previous managed version, remove the managed file, or restore an explicit backup. Phase 2 deployer must expose dry-run rollback preview before apply."
@@ -214,7 +437,10 @@
     "forbidden": [
       "Forking package core logic without an issue-backed exception.",
       "Disabling CI-required gates through local package configuration.",
-      "Treating a dry-run as live enforcement evidence."
+      "Treating a dry-run as live enforcement evidence.",
+      "Weakening HealthcarePlatform HIPAA, PHI, PII, or strict lane constraints through a baseline override.",
+      "Disabling Seek plan-mode enforcement without an issue-backed profile change.",
+      "Routing PII away from LAM/local-only constraints through a product profile override."
     ]
   },
   "consumer_record_contract": {
