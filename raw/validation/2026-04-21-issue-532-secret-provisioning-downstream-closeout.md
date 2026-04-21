@@ -45,6 +45,8 @@ Parent epic: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/507
 - `git diff --check`
 - `bash hooks/closeout-hook.sh raw/closeouts/2026-04-21-issue-507-secret-provisioning-ux-closeout.md`
 - `tools/local-ci-gate/bin/hldpro-local-ci --profile hldpro-governance --report-dir cache/local-ci-gate/reports --json`
+- `git diff origin/main --check`
+- `git diff origin/main | gitleaks stdin --redact --no-banner`
 
 ## Closeout Hook Note
 
