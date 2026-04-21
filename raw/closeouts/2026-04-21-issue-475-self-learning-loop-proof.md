@@ -42,6 +42,9 @@ No. This reinforces the existing deterministic self-learning contract: graphify/
 
 - Epic / issue: #475
 - GitHub Actions failure evidence: run `24674456168`
+- Implementation PR: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/477, merged `c3291dad93893596ae83e99ee11dfe934d9d9341`
+- CI memory-audit follow-up: #481, PR https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/483, merged `181006e8cab176894a29dcd8a7ef4400e582f760`
+- Remote proof: Overlord Sweep run `24741910552`, successful on 2026-04-21T19:23:25Z, executed `scripts/orchestrator/self_learning.py report` and wrote `metrics/self-learning/latest.json` / `.md`
 
 ## Schema / Artifact Version
 
@@ -95,7 +98,7 @@ See `raw/validation/2026-04-21-issue-475-self-learning-loop-proof.md`.
 
 ## Residual Risks / Follow-Up
 
-Remote scheduled-sweep proof still requires this branch to be pushed/merged and `overlord-sweep` to run with the updated files. Issue #475 should remain open until a remote run proves `Build self-learning knowledge report` is no longer skipped.
+None for issue #475. Remote scheduled-sweep proof is complete: Overlord Sweep run `24741910552` succeeded and the log shows the self-learning report command executed, followed by writes to `metrics/self-learning/latest.json` and `metrics/self-learning/latest.md`.
 
 ## Wiki Pages Updated
 
@@ -110,3 +113,4 @@ Closeout graph artifacts were refreshed in the issue worktree by the graphify br
 - `docs/ERROR_PATTERNS.md` pattern `overlord-sweep-self-learning-skipped`
 - `docs/FAIL_FAST_LOG.md` 2026-04-21 sweep-staleness row
 - `metrics/self-learning/latest.json`
+- `raw/validation/2026-04-21-issue-475-remote-sweep-proof.md`
