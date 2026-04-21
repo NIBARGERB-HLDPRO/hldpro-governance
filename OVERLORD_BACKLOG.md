@@ -19,12 +19,14 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Structured handoff package lifecycle — plan preflight routing | [#449](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/449) | HIGH | 2-3 | Child of epic #434. Preflight governed write intent for recent planning evidence and emit machine-routable missing-plan next actions before code writes. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Structured handoff package lifecycle — plan preflight routing | 2026-04-21 | Issue [#449](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/449). PR [#464](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/464) preflighted governed write intent for recent planning evidence and emitted machine-routable missing-plan next actions before code writes. |
+| Stage 6 closeout for downstream SoM propagation epic | 2026-04-21 | Issue [#463](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/463) records the repo-local Stage 6 closeout for downstream epic [#439](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/439), after all child PRs merged: LAM #507, AIS #1208, HP #1451, Seek #148, Stampede #103, and ASC #10. |
+| SoM governance waterfall model routing revision and downstream propagation | 2026-04-21 | Source issue [#432](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/432) and PR [#433](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/433) updated the governance SSOT. Downstream propagation epic [#439](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/439) completed across local-ai-machine, ai-integration-services, HealthcarePlatform, seek-and-ponder, Stampede, and ASC-Evaluator. |
 | Governance SSOT consumer bootstrap v2 package contract | 2026-04-21 | Issue [#453](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/453). Closed during concurrent SSOT bootstrap work; package v0.2 contract moved out of active backlog before #449 merge. |
 | Structured handoff package lifecycle — schema guard diagnostics | 2026-04-21 | Issue [#447](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/447). PR [#462](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/462) made schema guard failures actionable and moved silent hook failures toward loud diagnostics. |
 | Structured handoff package lifecycle — Worker handoff routing | 2026-04-21 | Issue [#448](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/448). PR [#460](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/460) routed planner new-code blocks to approved Worker handoff evidence, added the Worker route helper/template/tests, validation, closeout, and graph/wiki outputs. |

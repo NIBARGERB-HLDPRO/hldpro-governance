@@ -1348,77 +1348,77 @@
       "id": "test_schema_guard_hook",
       "label": "test_schema_guard_hook.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L1"
     },
     {
       "id": "test_schema_guard_hook_payload",
       "label": "_payload()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L16"
     },
     {
       "id": "test_schema_guard_hook_run_hook",
       "label": "_run_hook()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L20"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook",
       "label": "TestSchemaGuardHook",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L35"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_blocked_bash_file_write_has_stderr",
       "label": ".test_blocked_bash_file_write_has_stderr()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L36"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_trivial_plan_bypass_still_reaches_som_write_block",
       "label": ".test_trivial_plan_bypass_still_reaches_som_write_block()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L46"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_missing_schema_has_explicit_stderr",
       "label": ".test_missing_schema_has_explicit_stderr()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L57"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_malformed_input_payload_has_stderr",
       "label": ".test_malformed_input_payload_has_stderr()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L66"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_validator_nonzero_is_summarized",
       "label": ".test_validator_nonzero_is_summarized()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L72"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_allowed_read_only_command_remains_allowed",
       "label": ".test_allowed_read_only_command_remains_allowed()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L88"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_python_file_write_policy_block_has_stderr",
       "label": ".test_python_file_write_policy_block_has_stderr()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L95"
     },
     {
@@ -1635,56 +1635,56 @@
       "id": "check_plan_preflight",
       "label": "check_plan_preflight.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L1"
     },
     {
       "id": "check_plan_preflight_is_governed_path",
       "label": "is_governed_path()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L32"
     },
     {
       "id": "check_plan_preflight_recent_plan",
       "label": "recent_plan()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L37"
     },
     {
       "id": "check_plan_preflight_detect_bash_write_target",
       "label": "detect_bash_write_target()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L47"
     },
     {
       "id": "check_plan_preflight_block_reason",
       "label": "block_reason()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L64"
     },
     {
       "id": "check_plan_preflight_evaluate",
       "label": "evaluate()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L78"
     },
     {
       "id": "check_plan_preflight_parse_args",
       "label": "parse_args()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L131"
     },
     {
       "id": "check_plan_preflight_main",
       "label": "main()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L145"
     },
     {
@@ -2909,77 +2909,77 @@
       "id": "test_check_plan_preflight",
       "label": "test_check_plan_preflight.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L1"
     },
     {
       "id": "test_check_plan_preflight_run",
       "label": "_run()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L17"
     },
     {
       "id": "test_check_plan_preflight_testplanpreflight",
       "label": "TestPlanPreflight",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L27"
     },
     {
       "id": "test_check_plan_preflight_testplanpreflight_test_code_file_without_recent_plan_blocks_with_route_tokens",
       "label": ".test_code_file_without_recent_plan_blocks_with_route_tokens()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L28"
     },
     {
       "id": "test_check_plan_preflight_testplanpreflight_test_read_only_intent_is_allowed",
       "label": ".test_read_only_intent_is_allowed()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L40"
     },
     {
       "id": "test_check_plan_preflight_testplanpreflight_test_trivial_single_line_bypass_is_explicitly_bounded",
       "label": ".test_trivial_single_line_bypass_is_explicitly_bounded()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L48"
     },
     {
       "id": "test_check_plan_preflight_testplanpreflight_test_general_bypass_without_trivial_marker_still_blocks",
       "label": ".test_general_bypass_without_trivial_marker_still_blocks()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L62"
     },
     {
       "id": "test_check_plan_preflight_testplanpreflight_test_recent_plan_allows_governed_write",
       "label": ".test_recent_plan_allows_governed_write()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L69"
     },
     {
       "id": "test_check_plan_preflight_testplanpreflight_test_stale_plan_does_not_clear_preflight",
       "label": ".test_stale_plan_does_not_clear_preflight()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L82"
     },
     {
       "id": "test_check_plan_preflight_testplanpreflight_test_bash_write_command_detects_target",
       "label": ".test_bash_write_command_detects_target()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L97"
     },
     {
       "id": "test_check_plan_preflight_testplanpreflight_test_python_write_command_is_refused_with_routing_signal",
       "label": ".test_python_write_command_is_refused_with_routing_signal()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L109"
     },
     {
@@ -15011,7 +15011,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -15020,7 +15020,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -15029,7 +15029,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -15038,7 +15038,7 @@
       "target": "tempfile",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -15047,7 +15047,7 @@
       "target": "unittest",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -15056,7 +15056,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -15065,7 +15065,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L16",
       "weight": 1.0
     },
@@ -15074,7 +15074,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L20",
       "weight": 1.0
     },
@@ -15083,7 +15083,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L35",
       "weight": 1.0
     },
@@ -15092,7 +15092,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_blocked_bash_file_write_has_stderr",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L36",
       "weight": 1.0
     },
@@ -15101,7 +15101,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_trivial_plan_bypass_still_reaches_som_write_block",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L46",
       "weight": 1.0
     },
@@ -15110,7 +15110,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_missing_schema_has_explicit_stderr",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L57",
       "weight": 1.0
     },
@@ -15119,7 +15119,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_malformed_input_payload_has_stderr",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L66",
       "weight": 1.0
     },
@@ -15128,7 +15128,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_validator_nonzero_is_summarized",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L72",
       "weight": 1.0
     },
@@ -15137,7 +15137,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_allowed_read_only_command_remains_allowed",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L88",
       "weight": 1.0
     },
@@ -15146,7 +15146,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_python_file_write_policy_block_has_stderr",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L95",
       "weight": 1.0
     },
@@ -15155,7 +15155,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L37",
       "weight": 0.8
     },
@@ -15164,7 +15164,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L37",
       "weight": 0.8
     },
@@ -15173,7 +15173,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L47",
       "weight": 0.8
     },
@@ -15182,7 +15182,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L48",
       "weight": 0.8
     },
@@ -15191,7 +15191,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L58",
       "weight": 0.8
     },
@@ -15200,7 +15200,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L59",
       "weight": 0.8
     },
@@ -15209,7 +15209,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L67",
       "weight": 0.8
     },
@@ -15218,7 +15218,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L78",
       "weight": 0.8
     },
@@ -15227,7 +15227,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L79",
       "weight": 0.8
     },
@@ -15236,7 +15236,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L89",
       "weight": 0.8
     },
@@ -15245,7 +15245,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L89",
       "weight": 0.8
     },
@@ -15254,7 +15254,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L96",
       "weight": 0.8
     },
@@ -15263,7 +15263,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L96",
       "weight": 0.8
     },
@@ -16019,7 +16019,7 @@
       "target": "argparse",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -16028,7 +16028,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -16037,7 +16037,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -16046,7 +16046,7 @@
       "target": "re",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -16055,7 +16055,7 @@
       "target": "sys",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L10",
       "weight": 1.0
     },
@@ -16064,7 +16064,7 @@
       "target": "time",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L11",
       "weight": 1.0
     },
@@ -16073,7 +16073,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L12",
       "weight": 1.0
     },
@@ -16082,7 +16082,7 @@
       "target": "typing",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L13",
       "weight": 1.0
     },
@@ -16091,7 +16091,7 @@
       "target": "check_plan_preflight_is_governed_path",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L32",
       "weight": 1.0
     },
@@ -16100,7 +16100,7 @@
       "target": "check_plan_preflight_recent_plan",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L37",
       "weight": 1.0
     },
@@ -16109,7 +16109,7 @@
       "target": "check_plan_preflight_detect_bash_write_target",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L47",
       "weight": 1.0
     },
@@ -16118,7 +16118,7 @@
       "target": "check_plan_preflight_block_reason",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L64",
       "weight": 1.0
     },
@@ -16127,7 +16127,7 @@
       "target": "check_plan_preflight_evaluate",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L78",
       "weight": 1.0
     },
@@ -16136,7 +16136,7 @@
       "target": "check_plan_preflight_parse_args",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L131",
       "weight": 1.0
     },
@@ -16145,7 +16145,7 @@
       "target": "check_plan_preflight_main",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L145",
       "weight": 1.0
     },
@@ -16154,7 +16154,7 @@
       "target": "check_plan_preflight_detect_bash_write_target",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L86",
       "weight": 0.8
     },
@@ -16163,7 +16163,7 @@
       "target": "check_plan_preflight_is_governed_path",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L92",
       "weight": 0.8
     },
@@ -16172,7 +16172,7 @@
       "target": "check_plan_preflight_block_reason",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L109",
       "weight": 0.8
     },
@@ -16181,7 +16181,7 @@
       "target": "check_plan_preflight_recent_plan",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L114",
       "weight": 0.8
     },
@@ -16190,7 +16190,7 @@
       "target": "check_plan_preflight_parse_args",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L146",
       "weight": 0.8
     },
@@ -16199,7 +16199,7 @@
       "target": "check_plan_preflight_evaluate",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/check_plan_preflight.py",
       "source_location": "L147",
       "weight": 0.8
     },
@@ -20843,7 +20843,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -20852,7 +20852,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -20861,7 +20861,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -20870,7 +20870,7 @@
       "target": "tempfile",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -20879,7 +20879,7 @@
       "target": "time",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -20888,7 +20888,7 @@
       "target": "unittest",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -20897,7 +20897,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L10",
       "weight": 1.0
     },
@@ -20906,7 +20906,7 @@
       "target": "test_check_plan_preflight_run",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L17",
       "weight": 1.0
     },
@@ -20915,7 +20915,7 @@
       "target": "test_check_plan_preflight_testplanpreflight",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L27",
       "weight": 1.0
     },
@@ -20924,7 +20924,7 @@
       "target": "test_check_plan_preflight_testplanpreflight_test_code_file_without_recent_plan_blocks_with_route_tokens",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L28",
       "weight": 1.0
     },
@@ -20933,7 +20933,7 @@
       "target": "test_check_plan_preflight_testplanpreflight_test_read_only_intent_is_allowed",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L40",
       "weight": 1.0
     },
@@ -20942,7 +20942,7 @@
       "target": "test_check_plan_preflight_testplanpreflight_test_trivial_single_line_bypass_is_explicitly_bounded",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L48",
       "weight": 1.0
     },
@@ -20951,7 +20951,7 @@
       "target": "test_check_plan_preflight_testplanpreflight_test_general_bypass_without_trivial_marker_still_blocks",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L62",
       "weight": 1.0
     },
@@ -20960,7 +20960,7 @@
       "target": "test_check_plan_preflight_testplanpreflight_test_recent_plan_allows_governed_write",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L69",
       "weight": 1.0
     },
@@ -20969,7 +20969,7 @@
       "target": "test_check_plan_preflight_testplanpreflight_test_stale_plan_does_not_clear_preflight",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L82",
       "weight": 1.0
     },
@@ -20978,7 +20978,7 @@
       "target": "test_check_plan_preflight_testplanpreflight_test_bash_write_command_detects_target",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L97",
       "weight": 1.0
     },
@@ -20987,7 +20987,7 @@
       "target": "test_check_plan_preflight_testplanpreflight_test_python_write_command_is_refused_with_routing_signal",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L109",
       "weight": 1.0
     },
@@ -20996,7 +20996,7 @@
       "target": "test_check_plan_preflight_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L31",
       "weight": 0.8
     },
@@ -21005,7 +21005,7 @@
       "target": "test_check_plan_preflight_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L42",
       "weight": 0.8
     },
@@ -21014,7 +21014,7 @@
       "target": "test_check_plan_preflight_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L50",
       "weight": 0.8
     },
@@ -21023,7 +21023,7 @@
       "target": "test_check_plan_preflight_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L64",
       "weight": 0.8
     },
@@ -21032,7 +21032,7 @@
       "target": "test_check_plan_preflight_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L76",
       "weight": 0.8
     },
@@ -21041,7 +21041,7 @@
       "target": "test_check_plan_preflight_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L92",
       "weight": 0.8
     },
@@ -21050,7 +21050,7 @@
       "target": "test_check_plan_preflight_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L99",
       "weight": 0.8
     },
@@ -21059,7 +21059,7 @@
       "target": "test_check_plan_preflight_run",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-449-plan-preflight/scripts/overlord/test_check_plan_preflight.py",
+      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-463-stage6-closeout-439/scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L111",
       "weight": 0.8
     },

@@ -1,0 +1,62 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-463-stage6-closeout-439",
+  "issue_number": 463,
+  "parent_epic_number": 439,
+  "lifecycle_state": "accepted",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-closeout-writer",
+  "structured_plan_ref": "docs/plans/issue-463-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-463-stage6-closeout-439-implementation.json",
+  "packet_ref": "raw/packets/2026-04-21-issue-463-stage6-closeout-439.json",
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "The closeout artifact links source issue #432, source PR #433, downstream epic #439, and all downstream child issues and PRs.",
+      "verification_refs": [
+        "raw/closeouts/2026-04-21-issue-439-downstream-som-propagation.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "The closeout artifact records all six downstream merge commits and child issue closure.",
+      "verification_refs": [
+        "raw/validation/2026-04-21-issue-463-stage6-closeout-439.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "The closeout branch is issue-backed and constrained to governance closeout artifacts.",
+      "verification_refs": [
+        "raw/execution-scopes/2026-04-21-issue-463-stage6-closeout-439-implementation.json"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool docs/plans/issue-463-structured-agent-cycle-plan.json",
+    "python3 -m json.tool raw/execution-scopes/2026-04-21-issue-463-stage6-closeout-439-implementation.json",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-463-stage6-closeout-439-implementation.json --changed-files-file /tmp/issue-463-changed-files.txt --require-lane-claim",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-463-stage6-closeout-439-20260421 --changed-files-file /tmp/issue-463-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope",
+    "bash hooks/closeout-hook.sh raw/closeouts/2026-04-21-issue-439-downstream-som-propagation.md"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-21-issue-463-stage6-closeout-439.md"
+  ],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "docs/plans/issue-463-structured-agent-cycle-plan.json",
+    "docs/plans/issue-463-stage6-closeout-439-pdcar.md",
+    "raw/execution-scopes/2026-04-21-issue-463-stage6-closeout-439-implementation.json",
+    "raw/packets/2026-04-21-issue-463-stage6-closeout-439.json",
+    "raw/closeouts/2026-04-21-issue-439-downstream-som-propagation.md"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-463-stage6-closeout-439.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-04-21-issue-439-downstream-som-propagation.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T16:45:00-05:00",
+  "notes": "Closeout evidence handoff package for issue #463. No downstream repository writes are authorized by this package."
+}

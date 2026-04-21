@@ -1,0 +1,96 @@
+{
+  "session_id": "session-20260421-issue-463-stage6-closeout-439",
+  "issue_number": 463,
+  "objective": "Create the missing repo-local Stage 6 closeout record for downstream SoM waterfall routing propagation epic #439 after all downstream child PRs merged.",
+  "tier": 2,
+  "scope_boundary": [
+    "Governance closeout evidence only.",
+    "Capture downstream epic #439 merge and closure evidence in repo-local Stage 6 artifacts.",
+    "Update governance backlog/progress mirrors for the closeout trail.",
+    "Do not edit downstream product repositories."
+  ],
+  "out_of_scope": [
+    "Changing the SoM routing decision already landed by issue #432 / PR #433.",
+    "Reopening downstream child issues or PRs.",
+    "Editing downstream repository docs, workflows, or runtime configuration.",
+    "Changing GitHub branch protection or automerge rules."
+  ],
+  "research_summary": "Issue #432 has a source-of-truth Stage 6 closeout, while downstream epic #439 only had GitHub issue closeout comments and no repo-local Stage 6 artifact. The closeout slice records final merged PR evidence, child issue closure, required check outcomes, and the distinction between source SSOT closeout and downstream propagation closeout.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/432",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/433",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/439",
+    "raw/closeouts/2026-04-21-issue-432-som-waterfall-routing.md",
+    "raw/validation/2026-04-21-issue-432-som-waterfall-routing.md"
+  ],
+  "sprints": [
+    {
+      "name": "Downstream propagation closeout",
+      "goal": "Record durable Stage 6 evidence for epic #439.",
+      "tasks": [
+        "Create the issue #463 structured plan and execution scope.",
+        "Create the issue #439 downstream propagation closeout artifact.",
+        "Record validation evidence and merge commits for all child PRs.",
+        "Run the Stage 6 closeout hook and focused governance validation.",
+        "Open a PR and allow repo automerge rules to merge once green."
+      ],
+      "acceptance_criteria": [
+        "The closeout artifact links #432, PR #433, #439, and all downstream child issues and PRs.",
+        "The closeout artifact records all six downstream merge commits.",
+        "The closeout artifact states that all child issues and epic #439 are closed.",
+        "Validation evidence records the commands run and their PASS/SKIP results.",
+        "The PR is issue-backed by #463 and uses an isolated issue branch."
+      ],
+      "file_paths": [
+        "docs/plans/issue-463-structured-agent-cycle-plan.json",
+        "docs/plans/issue-463-stage6-closeout-439-pdcar.md",
+        "raw/execution-scopes/2026-04-21-issue-463-stage6-closeout-439-implementation.json",
+        "raw/validation/2026-04-21-issue-463-stage6-closeout-439.md",
+        "raw/closeouts/2026-04-21-issue-439-downstream-som-propagation.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex orchestrator",
+      "role": "closeout evidence reviewer",
+      "focus": "Compare issue #432 Stage 6 artifact with epic #439 final merge evidence.",
+      "status": "accepted",
+      "summary": "Confirmed #432 closeout only linked downstream follow-up issues and did not include final #439 merge evidence, requiring this issue-backed closeout slice.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/463",
+        "raw/closeouts/2026-04-21-issue-432-som-waterfall-routing.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not required",
+    "model_family": "n/a",
+    "status": "not_required",
+    "summary": "This is a closeout evidence slice, not a standards or architecture change requiring cross-family review.",
+    "evidence": [
+      "raw/cross-review/2026-04-21-issue-463-stage6-closeout-439.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Write only issue #463 closeout, validation, plan, execution-scope, graph/wiki hook outputs, and backlog/progress mirrors.",
+    "next_execution_step": "Run closeout hook, focused validators, open PR, and allow automerge when green.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If downstream repository changes appear necessary, stop and open a downstream issue instead of editing product repos.",
+    "If validation discovers a live policy defect beyond closeout evidence, create or update a separate governance issue.",
+    "If closeout hook graph refresh changes broad graph/wiki outputs, include only the hook-produced artifacts required by Stage 6."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator request: proceed with stage 6 closeout, new gh issue / pr",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T16:45:00-05:00"
+}
