@@ -1,0 +1,83 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-463-stage6-closeout-439-20260421",
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 463,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/463",
+    "claimed_by": "Codex orchestrator",
+    "claimed_at": "2026-04-21T16:45:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-approved-closeout-request",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-21T16:45:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/463",
+      "docs/plans/issue-463-structured-agent-cycle-plan.json",
+      "docs/plans/issue-463-stage6-closeout-439-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  },
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-463-structured-agent-cycle-plan.json",
+    "docs/plans/issue-463-stage6-closeout-439-pdcar.md",
+    "raw/closeouts/2026-04-21-issue-439-downstream-som-propagation.md",
+    "raw/cross-review/2026-04-21-issue-463-stage6-closeout-439.md",
+    "raw/execution-scopes/2026-04-21-issue-463-stage6-closeout-439-implementation.json",
+    "raw/handoffs/2026-04-21-issue-463-stage6-closeout-439.json",
+    "raw/packets/2026-04-21-issue-463-stage6-closeout-439.json",
+    "raw/validation/2026-04-21-issue-463-stage6-closeout-439.md",
+    "graphify-out/",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/PHASE0"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary checkout is detached and has pre-existing local changes; issue #463 writes occur only in this isolated worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Downstream repository is outside closeout write scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Downstream repository is outside closeout write scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Downstream repository is outside closeout write scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Downstream repository is outside closeout write scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Downstream repository is outside closeout write scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Downstream repository is outside closeout write scope."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Downstream repository is outside closeout write scope."
+    }
+  ]
+}

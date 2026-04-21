@@ -19,12 +19,14 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Structured handoff package lifecycle — schema guard diagnostics | [#447](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/447) | HIGH | 2-3 | Child of epic #434. Ensure Bash schema/write-boundary hooks fail loud with actionable stderr diagnostics. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Structured handoff package lifecycle — schema guard diagnostics | 2026-04-21 | Issue [#447](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/447). PR [#461](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/461) made schema/write-boundary guard failures actionable, added diagnostics validation, and closed the issue. |
+| Stage 6 closeout for downstream SoM propagation epic | 2026-04-21 | Issue [#463](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/463) records the repo-local Stage 6 closeout for downstream epic [#439](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/439), after all child PRs merged: LAM #507, AIS #1208, HP #1451, Seek #148, Stampede #103, and ASC #10. |
+| SoM governance waterfall model routing revision and downstream propagation | 2026-04-21 | Source issue [#432](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/432) and PR [#433](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/433) updated the governance SSOT. Downstream propagation epic [#439](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/439) completed across local-ai-machine, ai-integration-services, HealthcarePlatform, seek-and-ponder, Stampede, and ASC-Evaluator. |
 | Structured handoff package lifecycle — Worker handoff routing | 2026-04-21 | Issue [#448](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/448). PR [#460](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/460) routed planner new-code blocks to approved Worker handoff evidence, added the Worker route helper/template/tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — CLI session supervisor | 2026-04-21 | Issue [#444](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/444). PR [#451](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/451) added governed CLI session event schema, Claude/Codex subprocess supervisor, Claude review wrapper routing, unmanaged Claude-call guard coverage, fake CLI tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — PR and closeout hardening | 2026-04-21 | Issue [#436](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/436). PR [#450](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/450) added PR template handoff evidence fields, closeout validator enforcement, closeout-hook pre-graph validation, tests, validation, closeout, and graph/wiki outputs. |

@@ -1,0 +1,10 @@
+{
+  "packet_id": "2026-04-21-issue-463-stage6-closeout-439",
+  "issue_number": 463,
+  "packet_type": "closeout",
+  "created_at": "2026-04-21T16:45:00Z",
+  "source_issue": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/463",
+  "parent_epic": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/439",
+  "closeout_ref": "raw/closeouts/2026-04-21-issue-439-downstream-som-propagation.md",
+  "summary": "Stage 6 closeout package for downstream SoM propagation epic #439."
+}
