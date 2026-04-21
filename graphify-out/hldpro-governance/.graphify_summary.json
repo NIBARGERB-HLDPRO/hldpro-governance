@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/hldpro-governance-issue-529-stage6-closeout-507/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/hldpro-governance-issue-529-stage6-closeout-507/wiki/hldpro",
-  "nodes": 1810,
-  "edges": 3600,
-  "communities": 89,
-  "articles": 99,
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-532-secret-provisioning-closeout/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-532-secret-provisioning-closeout/wiki/hldpro",
+  "nodes": 0,
+  "edges": 0,
+  "communities": 0,
+  "articles": 0,
   "html_status": "skipped",
-  "code_files": 133
+  "code_files": 0
 }
