@@ -1,0 +1,127 @@
+{
+  "session_id": "session-20260421-issue-449-plan-preflight",
+  "issue_number": 449,
+  "objective": "Preflight governed code/config write intent for active planning evidence before mutation attempts, and emit stable missing-plan routing tokens that tell agents to create or update a plan first.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repository only.",
+    "Add a read-only plan preflight helper for governed write targets.",
+    "Wire local write hooks to emit stable PLAN_GATE_BLOCKED and NEXT_ACTION tokens when planning evidence is missing.",
+    "Keep existing write-boundary, Worker handoff, and schema guard enforcement intact.",
+    "Add focused fixtures for missing plan, read-only allow, explicit trivial bypass, Bash/Python write refusal, and recent plan allow."
+  ],
+  "out_of_scope": [
+    "Product repository code edits.",
+    "Weakening plan-mode gates or Worker handoff requirements.",
+    "Making PLAN_GATE_BYPASS a general escape hatch.",
+    "Implementing the downstream feature work that originally triggered the plan block.",
+    "Changing GitHub branch protection or org settings."
+  ],
+  "research_summary": "Issue #449 follows #447 and #448. #447 made Bash/schema guard failures diagnostic, and #448 routed new-code writes to Worker handoff evidence. The remaining behavior gap is earlier routing: when a governed code/config write lacks recent planning evidence, hooks should return machine-routable missing-plan tokens and next action guidance before sessions try Bash, Python, heredoc, or bypass writes.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/434",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/449",
+    "hooks/code-write-gate.sh",
+    "hooks/schema-guard.sh",
+    "scripts/overlord/check_worker_handoff_route.py",
+    "scripts/overlord/test_schema_guard_hook.py",
+    "raw/closeouts/2026-04-21-issue-447-schema-guard-diagnostics.md",
+    "raw/closeouts/2026-04-21-issue-448-worker-handoff-routing.md"
+  ],
+  "sprints": [
+    {
+      "name": "Plan preflight route",
+      "goal": "Make missing planning evidence a deterministic pre-edit route with clear machine tokens and no alternate write retries.",
+      "tasks": [
+        "Add a read-only plan preflight helper that classifies governed write targets and checks for recent planning evidence.",
+        "Wire code-write-gate and Bash schema guard behavior to surface PLAN_GATE_BLOCKED and NEXT_ACTION tokens for missing planning evidence.",
+        "Keep read-only commands allowed and keep bounded trivial bypass explicit.",
+        "Add focused tests covering missing plan, read-only allow, explicit bypass, Bash/Python write attempts, and plan freshness.",
+        "Record handoff, validation, cross-review, closeout, and gate evidence."
+      ],
+      "acceptance_criteria": [
+        "Governed code/config writes without recent planning evidence produce `PLAN_GATE_BLOCKED: missing_recent_plan`.",
+        "The same block output includes `NEXT_ACTION: create_plan`, target file, plans directory, and bounded bypass guidance.",
+        "Read-only commands are not blocked by the preflight.",
+        "Trivial single-line bypass behavior is explicit and bounded.",
+        "Bash/Python/heredoc write attempts receive the same missing-plan routing signal or a clear refusal.",
+        "Creating or updating a plan clears the preflight for subsequent governed code edits.",
+        "Existing Worker handoff and schema guard protections remain enforced.",
+        "No product repo code edits occur."
+      ],
+      "file_paths": [
+        "hooks/code-write-gate.sh",
+        "hooks/schema-guard.sh",
+        "scripts/overlord/check_plan_preflight.py",
+        "scripts/overlord/test_check_plan_preflight.py",
+        "scripts/overlord/test_schema_guard_hook.py",
+        "docs/plans/issue-449-plan-preflight-pdcar.md",
+        "docs/plans/issue-449-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-449-plan-preflight-implementation.json",
+        "raw/handoffs/2026-04-21-issue-449-plan-to-implementation.json",
+        "raw/validation/2026-04-21-issue-449-plan-preflight.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Claude Sonnet 4.6",
+      "role": "worker",
+      "focus": "Plan preflight helper, hook wiring, and tests.",
+      "status": "accepted_with_followup",
+      "summary": "Assigned as the bounded Worker implementation lane through the supervised CLI session. The worker idled out with no edits, so Codex implemented and QA'd the bounded slice under the material deviation rule.",
+      "evidence": [
+        "raw/validation/2026-04-21-issue-449-sonnet-worker-prompt.md",
+        "raw/validation/2026-04-21-issue-449-plan-preflight.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Codex QA",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Codex orchestrator/QA will validate worker output, run focused tests and local CI, and record any material deviation.",
+    "evidence": [
+      "raw/cross-review/2026-04-21-issue-449-plan-preflight.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement governance-only plan preflight routing for issue #449, including helper/check, hook wiring, tests, issue evidence, validation, review, and closeout.",
+    "next_execution_step": "Run the supervised Sonnet Worker implementation handoff, QA the diff, then run focused validation and Local CI Gate.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-449-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-449-plan-preflight-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-449-plan-preflight.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-21-issue-449-plan-preflight.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-449-plan-preflight.md",
+    "next_role": "codex-qa",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Missing recent plan blocks governed writes with stable PLAN_GATE_BLOCKED and NEXT_ACTION tokens.",
+      "Read-only commands remain allowed.",
+      "Explicit trivial bypass is bounded and visible.",
+      "Existing Worker handoff, schema guard, handoff package, and local CI gates pass."
+    ]
+  },
+  "material_deviation_rules": [
+    "If downstream repos need propagation, create downstream issues instead of editing them here.",
+    "If Sonnet worker tooling is unavailable, stalls, or exits without scoped edits, record the attempt and continue with Codex implementation plus Codex QA.",
+    "If plan preflight requires repo-native consumer rollout, defer that propagation to issue-backed downstream follow-up work."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: no HITL, loop remaining child issues",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T16:35:00Z"
+}

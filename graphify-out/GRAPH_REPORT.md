@@ -241,7 +241,7 @@ Nodes (10): events(), run_supervisor(), test_intermittent_output_avoids_idle_tim
 
 ### Community 51 - "Community 51"
 Cohesion: 0.2
-Nodes (0): 
+Nodes (0):
 
 ### Community 52 - "Community 52"
 Cohesion: 0.38
@@ -309,7 +309,7 @@ Nodes (3): main(), replace_section(), summary_line()
 
 ### Community 68 - "Community 68"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (0):
 
 ### Community 69 - "Community 69"
 Cohesion: 1.0
@@ -321,11 +321,11 @@ Nodes (2): main(), render_issue()
 
 ### Community 71 - "Community 71"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (0):
 
 ### Community 72 - "Community 72"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (0):
 
 ### Community 73 - "Community 73"
 Cohesion: 1.0

@@ -38,6 +38,18 @@ class TestSchemaGuardHook(unittest.TestCase):
 
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(result.stdout, "")
+        self.assertIn("schema-guard: PLAN_GATE_BLOCKED: missing_recent_plan", result.stderr)
+        self.assertIn("NEXT_ACTION: create_plan", result.stderr)
+        self.assertIn("TARGET_FILE: scripts/new_file.py", result.stderr)
+        self.assertIn("BYPASS_ALLOWED: trivial_single_line_only", result.stderr)
+
+    def test_trivial_plan_bypass_still_reaches_som_write_block(self) -> None:
+        result = _run_hook(
+            _payload("cat > scripts/new_file.py <<'PY'\nprint('x')\nPY"),
+            env={"PLAN_GATE_BYPASS": "true", "PLAN_GATE_TRIVIAL_SINGLE_LINE": "true"},
+        )
+
+        self.assertNotEqual(result.returncode, 0)
         self.assertIn("schema-guard: BLOCKED: Bash file write detected", result.stderr)
         self.assertIn("SoM write-boundary", result.stderr)
         self.assertIn("Worker handoff", result.stderr)
@@ -84,7 +96,7 @@ class TestSchemaGuardHook(unittest.TestCase):
         result = _run_hook(_payload("python3 - <<'PY'\nfrom pathlib import Path\nPath('x.py').write_text('x')\nPY"))
 
         self.assertNotEqual(result.returncode, 0)
-        self.assertIn("schema-guard: BLOCKED", result.stderr)
+        self.assertIn("schema-guard: PLAN_GATE_BLOCKED", result.stderr)
         self.assertIn("<python file write>", result.stderr)
 
 

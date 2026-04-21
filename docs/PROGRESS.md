@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| Structured handoff package lifecycle — plan preflight routing | #449 | IN_PROGRESS | HIGH | 2-3 | Plan preflight helper, stable missing-plan tokens, hook wiring, fixture tests, issue evidence | Child of epic #434 |
 | Consumer-pulled governance adoption rollout | #403 | DONE | MEDIUM | 4-6 | Knocktracker pilot merged through downstream PRs #178 and #179; governance PR #406 records evidence | Uses knocktracker #177 as the first repo-side consumer-pull pilot |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |
 | Qwen-Coder MLX driver stub-emission bug | #105 | PLANNED | LOW | 1-2 | MLX driver patch or workaround | Workarounds in docs/runbooks/qwen-coder-driver.md |
@@ -41,8 +42,9 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
-| Structured handoff package lifecycle — schema guard diagnostics | #447 | 2026-04-21 | PR #461 made schema/write-boundary guard failures actionable, added diagnostics validation, and closed the issue. |
 | Stage 6 closeout for downstream SoM propagation epic | #463 | 2026-04-21 | Adds repo-local closeout for epic #439 after all six downstream propagation PRs merged and child issues closed. |
+| Governance SSOT consumer bootstrap v2 package contract | #453 | 2026-04-21 | Closed during concurrent SSOT bootstrap work; package v0.2 contract moved out of active backlog before #449 merge. |
+| Structured handoff package lifecycle — schema guard diagnostics | #447 | 2026-04-21 | PR #462 made schema guard failures actionable and moved silent hook failures toward loud diagnostics. |
 | Structured handoff package lifecycle — Worker handoff routing | #448 | 2026-04-21 | PR #460 routed planner new-code blocks to approved Worker handoff evidence, added the Worker route helper/template/tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — CLI session supervisor | #444 | 2026-04-21 | PR #451 added governed CLI session event schema, Claude/Codex subprocess supervisor, Claude review wrapper routing, unmanaged Claude-call guard coverage, fake CLI tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — PR and closeout hardening | #436 | 2026-04-21 | PR #450 added PR template handoff evidence fields, closeout validator enforcement, closeout-hook pre-graph validation, tests, validation, closeout, and graph/wiki outputs. |
