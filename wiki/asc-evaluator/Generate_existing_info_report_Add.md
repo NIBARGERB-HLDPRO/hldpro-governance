@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **add_toc()** (3 connections) — `asc-evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py`
-- **add_static_toc_line()** (2 connections) — `asc-evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py`
+- **add_footer()** (3 connections) — `asc-evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py`
+- **add_field()** (2 connections) — `asc-evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py`
 
 ## Relationships
 
