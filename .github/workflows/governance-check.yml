@@ -254,6 +254,35 @@ jobs:
             --changed-files-file /tmp/governance-changed-files.txt \
             --enforce-governance-surface
 
+      - name: Validate handoff package integrity
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+
+          if [ "$REPO_NAME" = "hldpro-governance" ]; then
+            HANDOFF_VALIDATOR="scripts/overlord/validate_handoff_package.py"
+          else
+            HANDOFF_VALIDATOR=".governance/scripts/overlord/validate_handoff_package.py"
+          fi
+
+          if [ ! -f "$HANDOFF_VALIDATOR" ]; then
+            echo "::error::GOVERNANCE GATE FAILED: handoff package validator missing at ${HANDOFF_VALIDATOR}."
+            exit 1
+          fi
+
+          # Any plan update can change handoff refs or ACs, so docs/plans/ intentionally triggers this cheap validator.
+          HANDOFF_REGEX='^(docs/plans/|docs/schemas/(package-handoff\.schema\.json|examples/package-handoff/)|raw/(closeouts|cross-review|execution-scopes|handoffs|packets|validation)/|scripts/overlord/(validate_handoff_package|test_validate_handoff_package)\.py$)'
+          HANDOFF_CHANGES="$(grep -E "$HANDOFF_REGEX" /tmp/governance-changed-files.txt || true)"
+          if [ -z "$HANDOFF_CHANGES" ]; then
+            echo "✓ No handoff package paths changed; handoff integrity validation skipped"
+            exit 0
+          fi
+
+          echo "Handoff-relevant changes:"
+          echo "$HANDOFF_CHANGES"
+          python3 "$HANDOFF_VALIDATOR" --root .
+
       - name: Enforce issue execution scope for planner boundary
         if: github.event_name == 'pull_request'
         run: |
@@ -273,7 +302,7 @@ jobs:
             exit 0
           fi
 
-          BOUNDARY_REGEX='^(CLAUDE\.md|README\.md|STANDARDS\.md|OVERLORD_BACKLOG\.md|docs/(DATA_DICTIONARY|FEATURE_REGISTRY|PROGRESS|SERVICE_REGISTRY)\.md|\.github/workflows/|\.github/scripts/|agents/|docs/schemas/|hooks/|launchd/|raw/(closeouts|cross-review|execution-scopes|gate|model-fallbacks|operator-context|packets)/|metrics/|scripts/(knowledge_base|lam|orchestrator|overlord|packet)/|wiki/|docs/plans/)'
+          BOUNDARY_REGEX='^(CLAUDE\.md|README\.md|STANDARDS\.md|OVERLORD_BACKLOG\.md|docs/(DATA_DICTIONARY|FEATURE_REGISTRY|PROGRESS|SERVICE_REGISTRY)\.md|\.github/workflows/|\.github/scripts/|agents/|docs/schemas/|hooks/|launchd/|raw/(closeouts|cross-review|execution-scopes|gate|handoffs|model-fallbacks|operator-context|packets|validation)/|metrics/|scripts/(knowledge_base|lam|orchestrator|overlord|packet)/|wiki/|docs/plans/)'
           BOUNDARY_CHANGES="$(grep -E "$BOUNDARY_REGEX" /tmp/governance-changed-files.txt || true)"
           if [ -z "$BOUNDARY_CHANGES" ]; then
             echo "✓ No planner-boundary/governance-surface paths changed; execution-scope gate skipped"
@@ -373,9 +402,14 @@ jobs:
           fi
 
           echo "Using execution scope: ${TRUSTED_SCOPE_PATH}"
-          python3 "$ASSERT_SCOPE" \
-            --scope "$TRUSTED_SCOPE_PATH" \
+          ASSERT_ARGS=(
+            --scope "$TRUSTED_SCOPE_PATH"
             --changed-files-file /tmp/governance-changed-files.txt
+          )
+          if [[ "$SCOPE_PATH" == *implementation*.json ]]; then
+            ASSERT_ARGS+=(--require-lane-claim)
+          fi
+          python3 "$ASSERT_SCOPE" "${ASSERT_ARGS[@]}"
 
       # ── 2. PROGRESS.md co-staged with code changes ──
       - name: Check PROGRESS.md updated with code changes

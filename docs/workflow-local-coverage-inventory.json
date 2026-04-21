@@ -218,7 +218,7 @@
           "command": ["python3", "scripts/overlord/assert_execution_scope.py", "--scope", "raw/execution-scopes/2026-04-18-issue-284-local-first-workflow-coverage-implementation.json"]
         }
       ],
-      "required_snippets": ["Check OVERLORD_BACKLOG issue alignment", "Validate structured agent cycle plans", "Enforce governance-surface planning gate", "Enforce issue execution scope for planner boundary", "Require cross-review artifact", "Report governance failure to operator_context"],
+      "required_snippets": ["Check OVERLORD_BACKLOG issue alignment", "Validate structured agent cycle plans", "Enforce governance-surface planning gate", "Validate handoff package integrity", "validate_handoff_package.py", "--require-lane-claim", "Enforce issue execution scope for planner boundary", "Require cross-review artifact", "Report governance failure to operator_context"],
       "rationale": "Reusable workflow has local-testable deterministic checks plus GitHub-only PR/reporting context; contract coverage pins the broad runner surface."
     },
     {

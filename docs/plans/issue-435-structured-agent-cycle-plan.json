@@ -1,0 +1,119 @@
+{
+  "session_id": "session-20260421-issue-435-handoff-validator-ci",
+  "issue_number": 435,
+  "objective": "Wire handoff package integrity validation into Local CI and reusable GitHub governance checks so structured handoff packages remain enforced after the schema bootstrap.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repository only.",
+    "Add Local CI Gate handoff validator trigger.",
+    "Add reusable GitHub governance-check handoff validator parity.",
+    "Require lane-claim assertion for GitHub implementation execution scopes.",
+    "Add focused tests and issue evidence artifacts."
+  ],
+  "out_of_scope": [
+    "Downstream repository edits.",
+    "SoM packet emitter/schema reconciliation; tracked by issue #437.",
+    "PR template and closeout hook hardening; tracked by issue #436.",
+    "Package schema changes beyond CI enforcement."
+  ],
+  "research_summary": "Issue #438 established the package handoff schema and deterministic validator. This slice wires that validator into existing local and reusable CI gates instead of creating a separate enforcement path.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/434",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/435",
+    "scripts/overlord/validate_handoff_package.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    ".github/workflows/governance-check.yml",
+    "docs/workflow-local-coverage-inventory.json"
+  ],
+  "sprints": [
+    {
+      "name": "Handoff validation gate wiring",
+      "goal": "Make package handoff validation run in Local CI and reusable GitHub governance checks for handoff-relevant diffs.",
+      "tasks": [
+        "Add a Local CI Gate blocker check for handoff package integrity.",
+        "Add reusable governance-check handoff validator parity.",
+        "Pass --require-lane-claim for GitHub implementation execution-scope assertions.",
+        "Add focused Local CI profile trigger/skip tests.",
+        "Update workflow local coverage inventory and issue mirrors."
+      ],
+      "acceptance_criteria": [
+        "Local CI Gate runs validate_handoff_package.py when handoff, plan, packet, execution-scope, validation, closeout, package schema/example, or validator paths change.",
+        "Reusable governance-check runs validate_handoff_package.py for the same handoff-relevant path class and fails closed if the validator is missing.",
+        "GitHub execution-scope assertion uses --require-lane-claim for implementation scopes.",
+        "Focused tests prove local profile trigger and skip behavior.",
+        "Local CI Gate passes before merge."
+      ],
+      "file_paths": [
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        ".github/workflows/governance-check.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py",
+        "docs/workflow-local-coverage-inventory.json",
+        "docs/plans/issue-435-handoff-validator-ci-pdcar.md",
+        "docs/plans/issue-435-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-435-handoff-validator-ci-implementation.json",
+        "raw/handoffs/2026-04-21-issue-435-plan-to-implementation.json",
+        "raw/validation/2026-04-21-issue-435-handoff-validator-ci.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex orchestrator",
+      "role": "implementation planner",
+      "focus": "Existing Local CI profile, reusable governance-check, issue #438 handoff validator, and issue #435 acceptance criteria.",
+      "status": "accepted",
+      "summary": "Use existing Local CI profile checks and reusable GitHub gate steps as the enforcement surfaces; avoid downstream edits and defer packet/closeout hardening to #437/#436.",
+      "evidence": [
+        "docs/plans/issue-435-handoff-validator-ci-pdcar.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Standards/CI enforcement scope requires cross-review before merge. Review artifact records the final verdict and any conditions.",
+    "evidence": [
+      "raw/cross-review/2026-04-21-issue-435-handoff-validator-ci.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement governance-only CI/local gate wiring, tests, workflow inventory, issue plan/scope/handoff evidence, validation, and closeout for issue #435.",
+    "next_execution_step": "Run focused validation, cross-review, Local CI Gate, closeout, PR, and automerge if green.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-435-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-435-handoff-validator-ci-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-435-handoff-validator-ci.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-21-issue-435-handoff-validator-ci.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-435-handoff-validator-ci.md",
+    "next_role": "codex-qa",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Local CI profile handoff validator trigger is tested.",
+      "Reusable GitHub governance-check contains handoff validator parity.",
+      "Local CI Gate passes before merge."
+    ]
+  },
+  "material_deviation_rules": [
+    "If packet emitter/schema changes are needed, stop and use issue #437.",
+    "If PR template or closeout hook hardening is needed, stop and use issue #436.",
+    "If downstream repos need propagation, create downstream issues instead of editing them here.",
+    "If Sonnet worker tooling is unavailable or hangs, record the attempt and continue with Codex QA instead of blocking the CI enforcement slice."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: proceed with next sequence",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T09:56:12-05:00"
+}

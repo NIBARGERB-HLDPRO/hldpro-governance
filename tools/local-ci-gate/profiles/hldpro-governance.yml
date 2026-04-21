@@ -28,6 +28,29 @@ profile:
         - --root
         - .
 
+    - id: handoff-package-integrity
+      title: Handoff package integrity validation
+      severity: blocker
+      scope: changed
+      paths:
+        # Any plan update can change handoff refs or ACs; keep this trigger conservative.
+        - docs/plans/
+        - docs/schemas/package-handoff.schema.json
+        - docs/schemas/examples/package-handoff/
+        - raw/closeouts/
+        - raw/cross-review/
+        - raw/execution-scopes/
+        - raw/handoffs/
+        - raw/packets/
+        - raw/validation/
+        - scripts/overlord/validate_handoff_package.py
+        - scripts/overlord/test_validate_handoff_package.py
+      command:
+        - python3
+        - scripts/overlord/validate_handoff_package.py
+        - --root
+        - .
+
     - id: governance-surface-planning
       title: Governance-surface planning gate
       severity: blocker
@@ -158,5 +181,6 @@ profile:
       command:
         - python3
         - -m
-        - pytest
+        - unittest
+        - discover
         - tools/local-ci-gate/tests

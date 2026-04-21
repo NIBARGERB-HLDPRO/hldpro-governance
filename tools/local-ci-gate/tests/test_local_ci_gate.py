@@ -317,6 +317,35 @@ profile:
         self.assertIn("{execution_scope}", planner_boundary.command)
         self.assertNotIn("issue-253", " ".join(planner_boundary.command))
 
+    def test_governance_profile_runs_handoff_validator_for_handoff_paths(self) -> None:
+        profile = gate.load_profile(PROFILES_DIR / "hldpro-governance.yml")
+        changed = gate.resolve_changed_files(
+            self.root,
+            explicit_files=["raw/handoffs/2026-04-21-issue-435-plan-to-implementation.json"],
+            include_untracked=False,
+        )
+
+        report = gate.run_checks(self.root, profile, changed, dry_run=True, report_dir=self.root / "reports")
+        statuses = {result.check.id: result.status for result in report.results}
+        handoff = next(result for result in report.results if result.check.id == "handoff-package-integrity")
+
+        self.assertEqual(statuses["handoff-package-integrity"], "planned")
+        self.assertIn("scripts/overlord/validate_handoff_package.py", handoff.command)
+        self.assertIn("--root", handoff.command)
+
+    def test_governance_profile_skips_handoff_validator_for_unrelated_paths(self) -> None:
+        profile = gate.load_profile(PROFILES_DIR / "hldpro-governance.yml")
+        changed = gate.resolve_changed_files(
+            self.root,
+            explicit_files=["docs/runbooks/unrelated.md"],
+            include_untracked=False,
+        )
+
+        report = gate.run_checks(self.root, profile, changed, dry_run=True, report_dir=self.root / "reports")
+        statuses = {result.check.id: result.status for result in report.results}
+
+        self.assertEqual(statuses["handoff-package-integrity"], "skipped")
+
     def test_execution_scope_resolution_prefers_active_issue_implementation_scope(self) -> None:
         scope_dir = self.root / "raw" / "execution-scopes"
         scope_dir.mkdir(parents=True)
