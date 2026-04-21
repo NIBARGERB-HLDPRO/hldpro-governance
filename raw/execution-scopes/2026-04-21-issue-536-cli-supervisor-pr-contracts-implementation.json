@@ -1,0 +1,71 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-536-cli-supervisor-pr-contracts",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/ERROR_PATTERNS.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-536-cli-supervisor-pr-contracts-pdcar.md",
+    "docs/plans/issue-536-cli-supervisor-pr-contracts-structured-agent-cycle-plan.json",
+    "raw/closeouts/2026-04-21-issue-536-cli-supervisor-pr-contracts.md",
+    "raw/execution-scopes/2026-04-21-issue-536-cli-supervisor-pr-contracts-implementation.json",
+    "raw/handoffs/2026-04-21-issue-536-cli-supervisor-pr-contracts.json",
+    "raw/operator-context/self-learning/2026-04-21-issue-536-cli-supervisor-pr-contracts.md",
+    "raw/validation/2026-04-21-issue-536-cli-supervisor-pr-contracts.md",
+    "scripts/cli_session_supervisor.py",
+    "scripts/overlord/automerge_policy_check.py",
+    "scripts/overlord/test_automerge_policy_check.py",
+    "scripts/test_cli_session_supervisor.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #536."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #536."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #536."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #536."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #536."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 536,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/536#issuecomment-4292207004",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-21T22:20:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-opus-4-6",
+    "implementer_model": "codex-orchestrator",
+    "accepted_at": "2026-04-21T22:20:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-536-cli-supervisor-pr-contracts-structured-agent-cycle-plan.json",
+      "docs/plans/issue-536-cli-supervisor-pr-contracts-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

@@ -8,6 +8,8 @@ from typing import Any
 
 
 SUCCESS_CONCLUSIONS = {"success"}
+PENDING_STATUSES = {"pending", "queued", "requested", "waiting", "in_progress", "in-progress"}
+GITHUB_NATIVE_MERGE_SOURCES = {"github", "github_api", "origin/main", "origin_main"}
 BLOCKING_LABELS = {
     "do-not-merge",
     "hold",
@@ -21,8 +23,9 @@ def _labels(payload: dict[str, Any]) -> set[str]:
     return {str(label).strip().lower() for label in payload.get("labels", []) if str(label).strip()}
 
 
-def _check_required_checks(payload: dict[str, Any]) -> list[str]:
+def _check_required_checks(payload: dict[str, Any]) -> tuple[list[str], list[str]]:
     blockers: list[str] = []
+    pending: list[str] = []
     for check in payload.get("checks", []):
         if not isinstance(check, dict) or not check.get("required", False):
             continue
@@ -30,15 +33,19 @@ def _check_required_checks(payload: dict[str, Any]) -> list[str]:
         status = str(check.get("status") or "").lower()
         conclusion = str(check.get("conclusion") or "").lower()
         if status != "completed":
-            blockers.append(f"required check pending: {name}")
+            if status in PENDING_STATUSES or not status:
+                pending.append(f"required check pending: {name}")
+            else:
+                blockers.append(f"required check in unexpected state: {name} ({status})")
             continue
         if conclusion not in SUCCESS_CONCLUSIONS:
             blockers.append(f"required check not successful: {name} ({conclusion or 'missing conclusion'})")
-    return blockers
+    return blockers, pending
 
 
 def evaluate(payload: dict[str, Any]) -> dict[str, Any]:
     blockers: list[str] = []
+    pending: list[str] = []
     warnings: list[str] = []
     labels = _labels(payload)
 
@@ -57,7 +64,18 @@ def evaluate(payload: dict[str, Any]) -> dict[str, Any]:
     if mergeable_state != "clean":
         blockers.append(f"pull request is not cleanly mergeable: {mergeable_state or 'unknown'}")
 
-    blockers.extend(_check_required_checks(payload))
+    check_blockers, check_pending = _check_required_checks(payload)
+    blockers.extend(check_blockers)
+    pending.extend(check_pending)
+
+    merge_probe = payload.get("mergeability_probe", {})
+    if not isinstance(merge_probe, dict):
+        merge_probe = {}
+    probe_source = str(merge_probe.get("source") or "").lower()
+    if merge_probe.get("uses_local_main", False):
+        blockers.append("mergeability probe must not use local main; use GitHub state or origin/main")
+    elif probe_source and probe_source not in GITHUB_NATIVE_MERGE_SOURCES:
+        warnings.append(f"mergeability probe source is not GitHub-native/origin-main: {probe_source}")
 
     reviews = payload.get("reviews", {})
     if not isinstance(reviews, dict):
@@ -90,10 +108,19 @@ def evaluate(payload: dict[str, Any]) -> dict[str, Any]:
     if not payload.get("review_requirements_configured", False):
         warnings.append("review requirements are not configured as a merge gate for this target")
 
+    state = "eligible" if not blockers and not pending else "pending" if pending and not blockers else "blocked"
+
     return {
-        "eligible": not blockers,
+        "eligible": state == "eligible",
+        "state": state,
         "blockers": blockers,
+        "pending": pending,
         "warnings": warnings,
+        "merge_guidance": [
+            "wait for required checks to complete before making a final merge decision",
+            "if GitHub reports the branch is behind, run gh pr update-branch <pr> instead of merging local main",
+            "after checks pass, use GitHub-native merge/automerge: gh pr merge <pr> --merge --delete-branch or gh pr merge <pr> --auto",
+        ],
         "rollback": [
             "remove the automerge or merge-when-green label from the PR",
             "disable the repository auto-merge setting",
@@ -107,6 +134,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Dry-run HLD Pro governed automerge eligibility.")
     parser.add_argument("--input", required=True, type=Path, help="JSON fixture describing PR, repo, and gate state.")
     parser.add_argument("--json-output", type=Path, help="Optional path to write the evaluation JSON.")
+    parser.add_argument("--allow-pending", action="store_true", help="Return success for expected pending required checks.")
     args = parser.parse_args()
 
     payload = json.loads(args.input.read_text(encoding="utf-8"))
@@ -118,7 +146,11 @@ def main() -> int:
     if args.json_output:
         args.json_output.write_text(rendered + "\n", encoding="utf-8")
     print(rendered)
-    return 0 if result["eligible"] else 2
+    if result["eligible"]:
+        return 0
+    if result["state"] == "pending":
+        return 0 if args.allow_pending else 3
+    return 2
 
 
 if __name__ == "__main__":
