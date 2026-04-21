@@ -99,6 +99,14 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
     def _write_record(self, record: dict) -> None:
         self._record().write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")
 
+    def _valid_override(self, reason: str = "temporary governance exception") -> dict:
+        return {
+            "issue": "#474",
+            "reason": reason,
+            "owner": "governance",
+            "review_cadence": "quarterly",
+        }
+
     def _next_package_version(self) -> str:
         manifest = json.loads((REPO_ROOT / "docs" / "governance-tooling-package.json").read_text(encoding="utf-8"))
         return manifest["versioning"]["next_contract_version"]
@@ -237,6 +245,58 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         payload = json.loads(stdout)
         self.assertIn("reusable workflow ref must be pinned", "\n".join(payload["failures"]))
 
+    def test_verify_fails_workflow_ref_is_tag(self) -> None:
+        self._deploy()
+        workflow = self.product / ".github" / "workflows" / "governance.yml"
+        workflow.parent.mkdir(parents=True)
+        workflow.write_text(
+            "jobs:\n  check:\n    uses: NIBARGERB-HLDPRO/hldpro-governance/.github/workflows/governance-check.yml@v1.0.0\n",
+            encoding="utf-8",
+        )
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("reusable workflow ref must be pinned", failures_text)
+        self.assertIn("@v1.0.0", failures_text)
+
+    def test_verify_fails_workflow_ref_is_short_sha(self) -> None:
+        self._deploy()
+        workflow = self.product / ".github" / "workflows" / "governance.yml"
+        workflow.parent.mkdir(parents=True)
+        workflow.write_text(
+            "jobs:\n  check:\n    uses: NIBARGERB-HLDPRO/hldpro-governance/.github/workflows/governance-check.yml@abc1234\n",
+            encoding="utf-8",
+        )
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("reusable workflow ref must be pinned", failures_text)
+        self.assertIn("@abc1234", failures_text)
+
+    def test_verify_fails_workflow_ref_sha_mismatch(self) -> None:
+        self._deploy()
+        workflow = self.product / ".github" / "workflows" / "governance.yml"
+        workflow.parent.mkdir(parents=True)
+        wrong_sha = "b" * 40
+        workflow.write_text(
+            f"jobs:\n  check:\n    uses: NIBARGERB-HLDPRO/hldpro-governance/.github/workflows/governance-check.yml@{wrong_sha}\n",
+            encoding="utf-8",
+        )
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("reusable workflow ref SHA mismatch", failures_text)
+        self.assertIn(wrong_sha, failures_text)
+
     def test_verify_fails_for_managed_hook_checksum_drift(self) -> None:
         self._deploy()
         hook = self.product / ".claude" / "hooks" / "pre-tool-use.sh"
@@ -286,6 +346,139 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         self.assertEqual(payload["observed_overrides"], [{"issue": "#454", "reason": "fixture"}])
         self.assertIn("missing required override metadata: owner", "\n".join(payload["failures"]))
         self.assertIn("review_cadence or expires_at", "\n".join(payload["failures"]))
+
+    def test_verify_fails_override_empty_owner(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        override = self._valid_override()
+        override["owner"] = ""
+        record["overrides"] = [override]
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("non-empty string: owner", failures_text)
+
+    def test_verify_fails_override_non_string_reason(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        override = self._valid_override()
+        override["reason"] = 42
+        record["overrides"] = [override]
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("non-empty string: reason", failures_text)
+
+    def test_verify_fails_override_empty_expires_at(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        override = {
+            "issue": "#474",
+            "reason": "temporary governance exception",
+            "owner": "governance",
+            "expires_at": "",
+        }
+        record["overrides"] = [override]
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("review_cadence or expires_at", failures_text)
+
+    def test_verify_fails_override_weakens_healthcareplatform_hipaa(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        record["overrides"] = [self._valid_override("disable HIPAA checks for development")]
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("forbidden override", failures_text)
+        self.assertIn("HealthcarePlatform", failures_text)
+
+    def test_verify_fails_override_disables_seek_plan_mode(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        record["overrides"] = [self._valid_override("disable plan-mode enforcement for quick deploy")]
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("forbidden override", failures_text)
+        self.assertIn("plan-mode", failures_text)
+
+    def test_verify_fails_override_routes_pii_away_from_lam(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        record["overrides"] = [self._valid_override("route PII to cloud storage for analytics")]
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("forbidden override", failures_text)
+        self.assertIn("LAM", failures_text)
+
+    def test_verify_fails_override_core_fork_without_exception(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        record["overrides"] = [self._valid_override("fork core package to add local patches")]
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("forbidden override", failures_text)
+        self.assertIn("core fork", failures_text)
+
+    def test_verify_fails_override_disables_ci_required_gate(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        record["overrides"] = [self._valid_override("disable required-gate for hotfix deploy")]
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("forbidden override", failures_text)
+        self.assertIn("CI-required gates", failures_text)
+
+    def test_verify_fails_override_dry_run_as_live_evidence(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        record["overrides"] = [self._valid_override("treat dry-run results as live enforcement evidence")]
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("forbidden override", failures_text)
+        self.assertIn("dry-run", failures_text)
 
     def test_verify_fails_when_healthcareplatform_v2_profile_weakens_constraints(self) -> None:
         next_version = self._next_package_version()

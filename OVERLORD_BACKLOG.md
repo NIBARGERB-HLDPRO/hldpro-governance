@@ -25,6 +25,7 @@
 
 | Item | Date | Notes |
 |------|------|-------|
+| Governance SSOT consumer verifier edge-case hardening | 2026-04-21 | Issue [#474](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/474). Ported useful duplicate issue #454 verifier QA deltas into the merged v0.2 verifier without regressing the v0.2 contract. |
 | Governance SSOT consumer verifier v0.2 drift detection | 2026-04-21 | Issue [#454](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/454). PR pre-PR extends the non-mutating consumer verifier with v0.2 profile, override, workflow-ref, and managed hook/content drift reporting while preserving v0.1 compatibility. |
 | Structured handoff package lifecycle — plan preflight routing | 2026-04-21 | Issue [#449](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/449). PR [#464](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/464) preflighted governed write intent for recent planning evidence and emitted machine-routable missing-plan next actions before code writes. |
 | Structured handoff package lifecycle — repo-specific lane bootstrap naming | 2026-04-21 | Issue [#445](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/445). PR [#466](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/466) added a governance lane policy registry, HealthcarePlatform sandbox/pr-pending lane validation, branch-switch guard enforcement, tests, validation, closeout, and graph/wiki outputs. |
