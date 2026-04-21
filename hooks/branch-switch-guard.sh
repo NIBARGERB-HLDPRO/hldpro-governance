@@ -22,9 +22,33 @@ if [ -z "$COMMAND" ]; then
   exit 0
 fi
 
+COMMAND_CLEAN=$(python3 - "$COMMAND" <<'PY' 2>/dev/null || printf '%s' "$COMMAND"
+import re
+import sys
+
+text = sys.argv[1]
+lines = text.splitlines()
+output = []
+pending = []
+for line in lines:
+    if pending:
+        stripped = line.strip()
+        if stripped in pending:
+            pending.remove(stripped)
+        continue
+    output.append(line)
+    for match in re.finditer(r"<<-?\s*(?:'([^']+)'|\"([^\"]+)\"|([A-Za-z0-9_]+))", line):
+        delimiter = next(group for group in match.groups() if group)
+        pending.append(delimiter)
+
+print("\n".join(output))
+PY
+)
+
 # Split on && and ; to get individual command segments
 # Use awk for reliable splitting (macOS sed doesn't handle \n in replacement)
 BLOCKED=""
+PUSH_BLOCKED=""
 WORKTREE_BLOCKED=""
 WORKTREE_REASON=""
 while IFS= read -r segment; do
@@ -35,6 +59,59 @@ while IFS= read -r segment; do
   # Strip leading VAR=value assignments for command matching while retaining
   # the original segment for explicit bootstrap/scope markers.
   command_part=$(echo "$trimmed" | sed -E 's/^([A-Za-z_][A-Za-z0-9_]*=[^[:space:]]+[[:space:]]+)*//')
+  scan_part=$(python3 - "$command_part" <<'PY' 2>/dev/null || printf '%s' "$command_part"
+import re
+import sys
+
+text = sys.argv[1]
+lines = text.splitlines()
+output = []
+pending = []
+for line in lines:
+    if pending:
+        stripped = line.strip()
+        if stripped in pending:
+            pending.remove(stripped)
+        continue
+    output.append(line)
+    for match in re.finditer(r"<<-?\s*(?:'([^']+)'|\"([^\"]+)\"|([A-Za-z0-9_]+))", line):
+        delimiter = next(group for group in match.groups() if group)
+        pending.append(delimiter)
+
+print("\n".join(output))
+PY
+)
+
+  if echo "$scan_part" | grep -qE '^[[:space:]]*git[[:space:]]+push([[:space:]]|$)'; then
+    push_payload=$(python3 - "$scan_part" <<'PY' 2>/dev/null || printf '%s\n' '{"push":false}'
+import json
+import shlex
+import sys
+
+command = sys.argv[1]
+try:
+    tokens = shlex.split(command, posix=True)
+except ValueError:
+    tokens = command.split()
+
+push = len(tokens) >= 2 and tokens[0] == "git" and tokens[1] == "push"
+force = False
+refspec = False
+if push:
+    for token in tokens[2:]:
+        if token in {"-f", "--force", "--force-with-lease"} or token.startswith("--force=") or token.startswith("--force-with-lease="):
+            force = True
+        elif token.startswith("+"):
+            refspec = True
+
+print(json.dumps({"push": push, "force": force, "refspec": refspec}))
+PY
+)
+    if echo "$push_payload" | jq -e '.push and (.force or .refspec)' >/dev/null 2>&1; then
+      PUSH_BLOCKED="$trimmed"
+      break
+    fi
+  fi
 
   if echo "$command_part" | grep -qE '^\s*git\s+worktree\s+add\b' &&
      echo "$command_part" | grep -qE '(^|[[:space:]])(-b|-B|--branch)[[:space:]]+[^[:space:]]*issue-[0-9]+'; then
@@ -120,17 +197,17 @@ PY
 
   # Only match git checkout/switch at the START of the segment
   # This avoids false positives from commit messages containing "git checkout"
-  if ! echo "$command_part" | grep -qE '^\s*git\s+(checkout|switch)\b'; then
+  if ! echo "$scan_part" | grep -qE '^[[:space:]]*git[[:space:]]+(checkout|switch)([[:space:]]|$)'; then
     continue
   fi
 
   # ALLOW: git checkout with -- anywhere (file restore)
-  if echo "$command_part" | grep -qE '^\s*git\s+checkout\s+(.*\s)?--\s'; then
+  if echo "$scan_part" | grep -qE '^[[:space:]]*git[[:space:]]+checkout[[:space:]]+(.*[[:space:]])?--([[:space:]]|$)'; then
     continue
   fi
 
   # ALLOW: git checkout . (restore all files)
-  if echo "$command_part" | grep -qE '^\s*git\s+checkout\s+\.\s*$'; then
+  if echo "$scan_part" | grep -qE '^[[:space:]]*git[[:space:]]+checkout[[:space:]]+\.[[:space:]]*$'; then
     continue
   fi
 
@@ -138,7 +215,7 @@ PY
   BLOCKED="$trimmed"
   break
 
-done < <(echo "$COMMAND" | awk '{gsub(/&&/,"\n"); gsub(/;/,"\n"); gsub(/\|\|/,"\n"); print}')
+done < <(echo "$COMMAND_CLEAN" | awk '{gsub(/&&/,"\n"); gsub(/;/,"\n"); gsub(/\|\|/,"\n"); print}')
 
 if [ -n "$WORKTREE_BLOCKED" ]; then
   echo "BLOCKED: Issue worktree creation requires an explicit lane claim or planning bootstrap." >&2
@@ -155,6 +232,15 @@ if [ -n "$WORKTREE_BLOCKED" ]; then
   echo "    HLDPRO_LANE_CLAIM_SCOPE=raw/execution-scopes/<scope>.json git worktree add -b issue-<n>-<slug> <path> <base>" >&2
   echo "" >&2
   echo "  The scope form must include lane_claim.issue_number matching issue-<n>." >&2
+  exit 2
+fi
+
+if [ -n "$PUSH_BLOCKED" ]; then
+  echo "BLOCKED: Force pushing is not allowed. Multi-session safety risk." >&2
+  echo "" >&2
+  echo "  Blocked command: $PUSH_BLOCKED" >&2
+  echo "" >&2
+  echo "  Use a normal push without force flags or +refspecs." >&2
   exit 2
 fi
 

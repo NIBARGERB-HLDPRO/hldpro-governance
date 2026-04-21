@@ -1,0 +1,72 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-538-hook-guardrail-reliability",
+  "issue_number": 538,
+  "parent_epic_number": 533,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "gpt-5.4-codex-worker",
+  "structured_plan_ref": "docs/plans/issue-538-hook-guardrail-reliability-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-538-hook-guardrail-reliability-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Read-only quoted `awk` and `jq` comparisons are allowed by plan preflight and schema guard.",
+      "verification_refs": [
+        "scripts/overlord/test_check_plan_preflight.py",
+        "scripts/overlord/test_schema_guard_hook.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Real Bash/Python writes still route through the existing plan and SoM write-boundary gates.",
+      "verification_refs": [
+        "hooks/schema-guard.sh",
+        "scripts/overlord/check_plan_preflight.py",
+        "scripts/overlord/test_schema_guard_hook.py"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Branch guard ignores heredoc bodies but blocks force-push flags and `+` refspecs.",
+      "verification_refs": [
+        "hooks/branch-switch-guard.sh",
+        "scripts/overlord/test_branch_switch_guard.py"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_check_plan_preflight.py",
+    "python3 scripts/overlord/test_schema_guard_hook.py",
+    "python3 scripts/overlord/test_branch_switch_guard.py",
+    "bash -n hooks/schema-guard.sh hooks/branch-switch-guard.sh hooks/code-write-gate.sh",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-21-issue-538-hook-guardrail-reliability.json",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-538-hook-guardrail-reliability --changed-files-file /tmp/issue-538-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-538-hook-guardrail-reliability-implementation.json --changed-files-file /tmp/issue-538-changed-files.txt --require-lane-claim"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "docs/ERROR_PATTERNS.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/plans/issue-538-hook-guardrail-reliability-pdcar.md",
+    "docs/plans/issue-538-hook-guardrail-reliability-structured-agent-cycle-plan.json",
+    "hooks/branch-switch-guard.sh",
+    "hooks/schema-guard.sh",
+    "scripts/overlord/check_plan_preflight.py",
+    "scripts/overlord/test_branch_switch_guard.py",
+    "scripts/overlord/test_check_plan_preflight.py",
+    "scripts/overlord/test_schema_guard_hook.py"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-538-hook-guardrail-reliability.md",
+    "raw/operator-context/self-learning/2026-04-21-issue-538-hook-guardrail-reliability.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T21:20:00Z",
+  "notes": "Worker implementation package for issue #538. The worker owned the hook/classifier/test patch; Codex orchestrator reviewed, refined, and completed closeout evidence."
+}

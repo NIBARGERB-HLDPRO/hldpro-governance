@@ -78,32 +78,18 @@ if [ -n "${SCHEMA_GUARD_VALIDATOR:-}" ]; then
 fi
 
 phase="detect Bash file writes"
-write_target="$(
-  python3 - "$command_text" <<'PY'
-import re
-import sys
-
-command = sys.argv[1]
-patterns = [
-    r"(?<![0-9])>>?\s*([\"']?)([^\\s;&|]+)\1",
-    r"\bcat\b[^;&|]*\s>>?\s*([\"']?)([^\\s;&|]+)\1",
-    r"\btee\b(?:\s+-[A-Za-z]+)*\s+([\"']?)([^\\s;&|]+)\1",
-    r"\b(?:python|python3)\b.*(?:open\(|write_text\()",
-]
-for pattern in patterns:
-    match = re.search(pattern, command, flags=re.S)
-    if not match:
-        continue
-    if "open\\(" in pattern or "write_text" in pattern:
-        print("<python file write>")
-    else:
-        print(match.group(2))
-    break
-PY
-)"
+plan_preflight="$repo_root/scripts/overlord/check_plan_preflight.py"
+write_target=""
+if [ -f "$plan_preflight" ]; then
+  plan_result="$(python3 "$plan_preflight" \
+    --repo-root "$repo_root" \
+    --command "$command_text" \
+    --intent write \
+    --json 2>/dev/null || true)"
+  write_target="$(printf '%s' "$plan_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('target_path',''))" 2>/dev/null || true)"
+fi
 
 if [ -n "$write_target" ]; then
-  plan_preflight="$repo_root/scripts/overlord/check_plan_preflight.py"
   if [ -f "$plan_preflight" ]; then
     trivial_flag=""
     if [ "${PLAN_GATE_TRIVIAL_SINGLE_LINE:-}" = "true" ]; then

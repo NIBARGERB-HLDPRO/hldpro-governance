@@ -1,0 +1,112 @@
+{
+  "session_id": "issue-538-hook-guardrail-reliability-20260421",
+  "issue_number": 538,
+  "objective": "Harden existing hook guardrails by centralizing Bash write classification, preventing read-only command false positives, making branch parsing heredoc-safe, and blocking force-push commands locally.",
+  "tier": 2,
+  "scope_boundary": [
+    "Fix hook/classifier behavior for observed session guardrail failures.",
+    "Preserve existing plan gate, SoM write-boundary, branch-switch, and issue-worktree semantics.",
+    "Add focused tests for false-positive and true-positive command shapes."
+  ],
+  "out_of_scope": [
+    "Implementing supervisor, merge-flow, consumer verifier, or SQL drift probe changes from sibling sprint issues.",
+    "Replacing local hooks with a new enforcement layer.",
+    "Changing repository force-push policy beyond enforcing the existing prohibition."
+  ],
+  "research_summary": "Specialist research found the plan gate is already wired, but raw regex write detection in schema guard and plan preflight misclassifies quoted awk/jq comparisons. Branch-switch guard is not heredoc-aware and force-push is not locally blocked. The recommended path is to fix existing hooks and add regression tests.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/533",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/538",
+    "docs/plans/issue-538-hook-guardrail-reliability-pdcar.md"
+  ],
+  "sprints": [
+    {
+      "name": "Hook command classifier and force-push guard",
+      "goal": "Classify Bash mutation intent accurately and enforce no-force-push policy in the existing hook layer.",
+      "tasks": [
+        "Centralize Bash write-target detection in scripts/overlord/check_plan_preflight.py.",
+        "Update hooks/schema-guard.sh to consume the shared classifier instead of duplicating raw regex detection.",
+        "Make hooks/branch-switch-guard.sh ignore heredoc bodies for policy matching.",
+        "Block force-push forms in hooks/branch-switch-guard.sh.",
+        "Add regression coverage for read-only awk/jq commands, real writes, heredoc branch text, and force-push forms."
+      ],
+      "acceptance_criteria": [
+        "Read-only awk/jq comparison commands pass schema guard and plan preflight.",
+        "Real Bash file writes still route to missing-plan or SoM write-boundary blocks.",
+        "Heredoc bodies containing branch-switch text do not trigger branch-switch blocks.",
+        "git push --force, git push -f, git push --force-with-lease, and force refspec pushes are blocked.",
+        "Focused tests and shell syntax checks pass."
+      ],
+      "file_paths": [
+        "hooks/schema-guard.sh",
+        "hooks/branch-switch-guard.sh",
+        "scripts/overlord/check_plan_preflight.py",
+        "scripts/overlord/test_check_plan_preflight.py",
+        "scripts/overlord/test_schema_guard_hook.py",
+        "scripts/overlord/test_branch_switch_guard.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "guardrail-reliability-researcher",
+      "role": "specialist-research",
+      "focus": "Existing hook enforcement and command parsing",
+      "status": "accepted",
+      "summary": "Recommended fixing schema guard, plan preflight, and branch guard in place; force-push lacks local enforcement.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/538"
+      ]
+    },
+    {
+      "reviewer": "hook-guardrail-implementer",
+      "role": "implementation-specialist-plan",
+      "focus": "Minimal patch set and tests",
+      "status": "accepted",
+      "summary": "Recommended centralizing write detection in plan preflight, removing duplicate schema-guard regex, and adding heredoc plus force-push tests.",
+      "evidence": [
+        "docs/plans/issue-538-hook-guardrail-reliability-pdcar.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.4-mini specialist subagents",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Parallel specialist research accepted the focused guardrail repair plan and found no need for a redundant enforcement layer.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/533",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/538"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implementation may update only the hook/classifier files, focused tests, and issue #538 governance evidence listed in the execution scope.",
+    "next_execution_step": "Implement hook classifier and force-push guard, then run focused validation.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-538-hook-guardrail-reliability-implementation.json",
+    "validation_artifact_refs": [],
+    "review_artifact_refs": [],
+    "gate_artifact_refs": [],
+    "closeout_ref": null,
+    "next_role": "worker",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Focused tests pass.",
+      "Implementation stays inside allowed write paths.",
+      "Self-learning/session-error evidence is recorded before closeout."
+    ]
+  },
+  "material_deviation_rules": [
+    "If implementation requires new files outside allowed_write_paths, stop and update the execution scope before editing.",
+    "If force-push exceptions are required, stop and create an issue-backed exception instead of adding a broad bypass.",
+    "If a broader shell parser is needed, record the limitation and split it into a follow-up issue."
+  ],
+  "approved": true,
+  "approved_by": [
+    "codex-orchestrator"
+  ],
+  "approved_at": "2026-04-21T20:45:00Z"
+}

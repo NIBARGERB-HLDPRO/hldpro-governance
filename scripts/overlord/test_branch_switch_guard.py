@@ -100,6 +100,28 @@ class TestBranchSwitchGuard(unittest.TestCase):
         self.assertEqual(result.returncode, 2)
         self.assertIn("Branch switching is not allowed", result.stderr)
 
+    def test_heredoc_body_does_not_trigger_branch_matching(self) -> None:
+        result = run_hook("cat <<'EOF'\ngit checkout main\nEOF")
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_blocks_force_push_variants(self) -> None:
+        blocked_commands = [
+            "git push -f origin main",
+            "git push --force origin main",
+            "git push --force-with-lease origin main",
+            "git push --force-with-lease=main origin main",
+            "git push origin +main:main",
+        ]
+
+        for command in blocked_commands:
+            with self.subTest(command=command):
+                result = run_hook(command)
+
+                self.assertEqual(result.returncode, 2)
+                self.assertIn("Blocked command", result.stderr)
+                self.assertIn("git push", result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()

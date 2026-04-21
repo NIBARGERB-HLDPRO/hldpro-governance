@@ -106,6 +106,49 @@ class TestPlanPreflight(unittest.TestCase):
         self.assertEqual(payload["target_path"], "scripts/ingest.ts")
         self.assertIn("NEXT_ACTION: create_plan", payload["reason"])
 
+    def test_quoted_awk_comparison_is_read_only(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            code, payload = _run(
+                Path(raw),
+                "--command",
+                "awk '$1 > 1 { print $0 }' input.txt",
+            )
+
+        self.assertEqual(code, 0, payload)
+        self.assertEqual(payload["decision"], "allow")
+        self.assertEqual(payload["reason"], "no_write_target_detected")
+        self.assertEqual(payload["target_path"], "")
+
+    def test_quoted_jq_comparison_is_read_only(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            code, payload = _run(
+                Path(raw),
+                "--command",
+                "jq '.value > 1' input.json",
+            )
+
+        self.assertEqual(code, 0, payload)
+        self.assertEqual(payload["decision"], "allow")
+        self.assertEqual(payload["reason"], "no_write_target_detected")
+        self.assertEqual(payload["target_path"], "")
+
+    def test_common_read_only_analysis_pipelines_are_allowed(self) -> None:
+        commands = [
+            "grep -R 'PLAN_GATE_BLOCKED' docs scripts | sort",
+            "rg --files | sort | wc -l",
+            "git status --short | wc -l",
+            "find docs -type f | sort | head -20",
+        ]
+
+        for command in commands:
+            with self.subTest(command=command), tempfile.TemporaryDirectory() as raw:
+                code, payload = _run(Path(raw), "--command", command)
+
+                self.assertEqual(code, 0, payload)
+                self.assertEqual(payload["decision"], "allow")
+                self.assertEqual(payload["reason"], "no_write_target_detected")
+                self.assertEqual(payload["target_path"], "")
+
     def test_python_write_command_is_refused_with_routing_signal(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             code, payload = _run(
