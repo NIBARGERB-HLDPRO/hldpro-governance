@@ -597,12 +597,12 @@ jobs:
       # ── Update knowledge graph ──
       - name: Update knowledge graph
         run: |
-          python3.11 -m pip install graphifyy -q
+          python3 -m pip install graphifyy -q
           python3 scripts/knowledge_base/graphify_targets.py list --scheduled --format tsv > /tmp/graphify-targets.tsv
           while IFS=$'\t' read -r repo_slug display_name source_path output_path wiki_path; do
             if [ -d "$source_path" ]; then
               echo "Refreshing graphify artifacts for ${display_name}"
-              python3.11 scripts/knowledge_base/build_graph.py \
+              python3 scripts/knowledge_base/build_graph.py \
                 --source "$source_path" \
                 --output "$output_path" \
                 --wiki-dir "$wiki_path" \
