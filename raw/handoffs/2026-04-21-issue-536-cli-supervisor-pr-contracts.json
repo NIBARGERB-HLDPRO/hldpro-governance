@@ -1,0 +1,82 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-536-cli-supervisor-pr-contracts",
+  "issue_number": 536,
+  "parent_epic_number": 533,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-qa",
+  "structured_plan_ref": "docs/plans/issue-536-cli-supervisor-pr-contracts-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-536-cli-supervisor-pr-contracts-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Claude stream-json supervisor mode includes --verbose automatically or explicitly.",
+      "verification_refs": [
+        "scripts/cli_session_supervisor.py",
+        "scripts/test_cli_session_supervisor.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Codex native supervisor mode preserves -m and requires model_reasoning_effort.",
+      "verification_refs": [
+        "scripts/cli_session_supervisor.py",
+        "scripts/test_cli_session_supervisor.py",
+        ".github/scripts/check_codex_model_pins.py"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Automerge evaluation treats pending checks as pending, blocks local-main merge probes, and emits GitHub-native merge guidance.",
+      "verification_refs": [
+        "scripts/overlord/automerge_policy_check.py",
+        "scripts/overlord/test_automerge_policy_check.py"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Model-pin checks are PR-visible through the reusable governance workflow.",
+      "verification_refs": [
+        ".github/workflows/governance-check.yml",
+        ".github/workflows/check-agent-model-pins.yml",
+        ".github/workflows/check-codex-model-pins.yml",
+        "docs/workflow-local-coverage-inventory.json"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "pytest scripts/test_cli_session_supervisor.py -q",
+    "cd scripts/overlord && python3 -m unittest test_automerge_policy_check.py",
+    "python3 -m py_compile scripts/cli_session_supervisor.py .github/scripts/check_codex_model_pins.py scripts/overlord/automerge_policy_check.py",
+    "python3 .github/scripts/check_codex_model_pins.py",
+    "python3 .github/scripts/check_agent_model_pins.py",
+    "python3 scripts/overlord/check_workflow_local_coverage.py --root .",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-21-issue-536-cli-supervisor-pr-contracts.json",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-536-cli-supervisor-pr-contracts --changed-files-file /tmp/issue-536-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-536-cli-supervisor-pr-contracts-implementation.json --changed-files-file /tmp/issue-536-changed-files.txt --require-lane-claim"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "docs/ERROR_PATTERNS.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "scripts/cli_session_supervisor.py",
+    "scripts/test_cli_session_supervisor.py",
+    "scripts/overlord/automerge_policy_check.py",
+    "scripts/overlord/test_automerge_policy_check.py"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-536-cli-supervisor-pr-contracts.md",
+    "raw/operator-context/self-learning/2026-04-21-issue-536-cli-supervisor-pr-contracts.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T22:20:00Z",
+  "notes": "Issue #536 stabilizes supervised CLI handoff and PR completion contracts before issue #537 worker acceptance gates consume those paths."
+}

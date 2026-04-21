@@ -56,6 +56,7 @@
 | GOV-029 | PAGES_DEPLOY_GATE | Pages Deploy Gate (governance-owned, issue #469) | COMPLETE | OPS_READY |
 | GOV-030 | PAGES_DEPLOYMENT_PARITY | Cloudflare Pages deployment freshness and domain parity verifier | COMPLETE | OPS_READY |
 | GOV-031 | SECRET_PROVISIONING_EVIDENCE | No-secret provisioning evidence validator and Local CI Gate check | COMPLETE | REQUIRED |
+| GOV-032 | CLI_SESSION_AND_PR_CONTRACTS | CLI supervisor native argv contracts and GitHub-native PR merge/check evaluator | COMPLETE | REQUIRED |
 
 ---
 
@@ -79,6 +80,7 @@
 | GOV-029 | `scripts/pages-deploy/pages_deploy_gate.py` provides a reusable Cloudflare Pages Direct Upload gate for governed consumers. It validates consumer config, preflights `node`/`wrangler`, checks required env names without printing values, emits canonical Secret Provisioning UX guidance for missing Cloudflare credentials, requires `PAGES_DEPLOY_APPROVED=1` for live deploys, runs optional pre-deploy hooks before build/upload, rejects stale or oversized artifacts, invokes Wrangler with `CI=true` without the removed Wrangler 4.x `--non-interactive` flag, and emits redacted deployment evidence. |
 | GOV-031 | `scripts/overlord/validate_provisioning_evidence.py` scans provisioning evidence for token-like strings, JWT fragments, Authorization headers, signed URLs, raw phone numbers, and generated env file contents while reporting only file paths and matched classes. |
 | GOV-031 | The `hldpro-governance` Local CI Gate profile runs `provisioning-evidence-safety` when standards, env registry, runbooks, validation artifacts, Pages deploy tooling, or Remote MCP tooling change. |
+| GOV-032 | `scripts/cli_session_supervisor.py` enforces Claude `--output-format stream-json` with `--verbose`, preserves native Claude/Codex argv construction in tests, and requires Codex native sessions to include `model_reasoning_effort`. `scripts/overlord/automerge_policy_check.py` separates expected pending required checks from final blockers and routes merge guidance through GitHub-native `gh pr update-branch` / `gh pr merge` paths rather than local `main`. |
 
 ### AGENT_AUDIT
 
