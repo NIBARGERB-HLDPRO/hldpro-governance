@@ -324,7 +324,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
       "source_location": "L1",
       "id": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_extract_xlsx_images_py",
-      "community": 9,
+      "community": 10,
       "norm_label": "extract_xlsx_images.py"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
       "source_location": "L10",
       "id": "extract_xlsx_images_extract_images",
-      "community": 9,
+      "community": 10,
       "norm_label": "extract_images()"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
       "source_location": "L37",
       "id": "extract_xlsx_images_main",
-      "community": 9,
+      "community": 10,
       "norm_label": "main()"
     },
     {
@@ -351,7 +351,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L1",
       "id": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
-      "community": 6,
+      "community": 7,
       "norm_label": "generate_existing_info_report.py"
     },
     {
@@ -360,7 +360,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L155",
       "id": "generate_existing_info_report_finding",
-      "community": 6,
+      "community": 8,
       "norm_label": "finding"
     },
     {
@@ -378,7 +378,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L179",
       "id": "generate_existing_info_report_clean_display_text",
-      "community": 6,
+      "community": 8,
       "norm_label": "clean_display_text()"
     },
     {
@@ -450,7 +450,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L271",
       "id": "generate_existing_info_report_excel_date",
-      "community": 6,
+      "community": 8,
       "norm_label": "excel_date()"
     },
     {
@@ -459,7 +459,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L279",
       "id": "generate_existing_info_report_domain_from_section",
-      "community": 6,
+      "community": 8,
       "norm_label": "domain_from_section()"
     },
     {
@@ -468,7 +468,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L297",
       "id": "generate_existing_info_report_parse_main_findings",
-      "community": 6,
+      "community": 8,
       "norm_label": "parse_main_findings()"
     },
     {
@@ -477,7 +477,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L348",
       "id": "generate_existing_info_report_parse_photo_notes",
-      "community": 6,
+      "community": 8,
       "norm_label": "parse_photo_notes()"
     },
     {
@@ -486,7 +486,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L357",
       "id": "generate_existing_info_report_parse_hr_notes",
-      "community": 6,
+      "community": 8,
       "norm_label": "parse_hr_notes()"
     },
     {
@@ -531,7 +531,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L475",
       "id": "generate_existing_info_report_risk_from_score",
-      "community": 8,
+      "community": 9,
       "norm_label": "risk_from_score()"
     },
     {
@@ -540,7 +540,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L479",
       "id": "generate_existing_info_report_grouped_counts",
-      "community": 8,
+      "community": 9,
       "norm_label": "grouped_counts()"
     },
     {
@@ -549,7 +549,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L486",
       "id": "generate_existing_info_report_executive_summary_text",
-      "community": 8,
+      "community": 9,
       "norm_label": "executive_summary_text()"
     },
     {
@@ -558,7 +558,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L526",
       "id": "generate_existing_info_report_write_md",
-      "community": 8,
+      "community": 9,
       "norm_label": "write_md()"
     },
     {
@@ -567,7 +567,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L582",
       "id": "generate_existing_info_report_set_document_layout",
-      "community": 7,
+      "community": 6,
       "norm_label": "set_document_layout()"
     },
     {
@@ -576,7 +576,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L593",
       "id": "generate_existing_info_report_add_heading",
-      "community": 7,
+      "community": 6,
       "norm_label": "add_heading()"
     },
     {
@@ -585,7 +585,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L600",
       "id": "generate_existing_info_report_add_static_toc_line",
-      "community": 12,
+      "community": 7,
       "norm_label": "add_static_toc_line()"
     },
     {
@@ -594,7 +594,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L612",
       "id": "generate_existing_info_report_add_toc",
-      "community": 12,
+      "community": 7,
       "norm_label": "add_toc()"
     },
     {
@@ -603,7 +603,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L632",
       "id": "generate_existing_info_report_add_field",
-      "community": 11,
+      "community": 7,
       "norm_label": "add_field()"
     },
     {
@@ -612,7 +612,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L649",
       "id": "generate_existing_info_report_set_update_fields_on_open",
-      "community": 7,
+      "community": 6,
       "norm_label": "set_update_fields_on_open()"
     },
     {
@@ -621,7 +621,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L658",
       "id": "generate_existing_info_report_add_footer",
-      "community": 11,
+      "community": 7,
       "norm_label": "add_footer()"
     },
     {
@@ -630,7 +630,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L677",
       "id": "generate_existing_info_report_add_bottom_divider",
-      "community": 10,
+      "community": 7,
       "norm_label": "add_bottom_divider()"
     },
     {
@@ -639,7 +639,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L690",
       "id": "generate_existing_info_report_add_horizontal_rule",
-      "community": 10,
+      "community": 7,
       "norm_label": "add_horizontal_rule()"
     },
     {
@@ -648,7 +648,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L695",
       "id": "generate_existing_info_report_add_boxed_note",
-      "community": 6,
+      "community": 7,
       "norm_label": "add_boxed_note()"
     },
     {
@@ -657,7 +657,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L714",
       "id": "generate_existing_info_report_keep_paragraph_together",
-      "community": 7,
+      "community": 6,
       "norm_label": "keep_paragraph_together()"
     },
     {
@@ -666,7 +666,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L720",
       "id": "generate_existing_info_report_add_info_row",
-      "community": 7,
+      "community": 6,
       "norm_label": "add_info_row()"
     },
     {
@@ -675,7 +675,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L734",
       "id": "generate_existing_info_report_add_tabbed_info_row",
-      "community": 7,
+      "community": 6,
       "norm_label": "add_tabbed_info_row()"
     },
     {
@@ -684,7 +684,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L752",
       "id": "generate_existing_info_report_add_finding_block",
-      "community": 7,
+      "community": 6,
       "norm_label": "add_finding_block()"
     },
     {
@@ -693,7 +693,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L772",
       "id": "generate_existing_info_report_add_note_block",
-      "community": 10,
+      "community": 7,
       "norm_label": "add_note_block()"
     },
     {
@@ -702,7 +702,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L783",
       "id": "generate_existing_info_report_fit_image_size",
-      "community": 7,
+      "community": 6,
       "norm_label": "fit_image_size()"
     },
     {
@@ -711,7 +711,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L792",
       "id": "generate_existing_info_report_top_risk_items",
-      "community": 8,
+      "community": 9,
       "norm_label": "top_risk_items()"
     },
     {
@@ -720,7 +720,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L822",
       "id": "generate_existing_info_report_collect_report_strings",
-      "community": 8,
+      "community": 9,
       "norm_label": "collect_report_strings()"
     },
     {
@@ -747,7 +747,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L918",
       "id": "generate_existing_info_report_write_docx",
-      "community": 7,
+      "community": 6,
       "norm_label": "write_docx()"
     },
     {
@@ -756,7 +756,7 @@
       "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L1051",
       "id": "generate_existing_info_report_main",
-      "community": 6,
+      "community": 8,
       "norm_label": "main()"
     },
     {
