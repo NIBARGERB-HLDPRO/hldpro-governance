@@ -1,369 +1,673 @@
-# Graph Report - /Users/bennibarger/Developer/HLDPRO/Stampede  (2026-04-20)
+# Graph Report - /Users/bennibarger/Developer/HLDPRO/Stampede  (2026-04-21)
 
 ## Corpus Check
-- Corpus is ~35,085 words - fits in a single context window. You may not need a graph.
+- 93 files · ~63,074 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 363 nodes · 555 edges · 59 communities detected
-- Extraction: 57% EXTRACTED · 43% INFERRED · 0% AMBIGUOUS · INFERRED: 239 edges (avg confidence: 0.51)
+- 503 nodes · 732 edges · 96 communities detected
+- Extraction: 84% EXTRACTED · 16% INFERRED · 0% AMBIGUOUS · INFERRED: 116 edges (avg confidence: 0.73)
 - Token cost: 0 input · 0 output
 
+## Community Hubs (Navigation)
+- [[_COMMUNITY_OASIS Simulation Engine|OASIS Simulation Engine]]
+- [[_COMMUNITY_Baseline LLM Inference Schema|Baseline LLM Inference Schema]]
+- [[_COMMUNITY_yfinance Lookback Smoke Framework|yfinance Lookback Smoke Framework]]
+- [[_COMMUNITY_Lookback Comparison and Model Bakeoff|Lookback Comparison and Model Bakeoff]]
+- [[_COMMUNITY_Provider Endpoint Probe Scripts|Provider Endpoint Probe Scripts]]
+- [[_COMMUNITY_Production Spec and Phase 0 Controls|Production Spec and Phase 0 Controls]]
+- [[_COMMUNITY_Validation Test Suite|Validation Test Suite]]
+- [[_COMMUNITY_Provider Adapter Layer|Provider Adapter Layer]]
+- [[_COMMUNITY_Phase 0 Lookback Runner|Phase 0 Lookback Runner]]
+- [[_COMMUNITY_Provider Probe Report Emitter|Provider Probe Report Emitter]]
+- [[_COMMUNITY_Lookback Feature Computation|Lookback Feature Computation]]
+- [[_COMMUNITY_Endpoint Probe Report Validator|Endpoint Probe Report Validator]]
+- [[_COMMUNITY_PublicInternal Data Path|Public/Internal Data Path]]
+- [[_COMMUNITY_Freeze Gate Concepts|Freeze Gate Concepts]]
+- [[_COMMUNITY_Phase 0 Lookback Validator|Phase 0 Lookback Validator]]
+- [[_COMMUNITY_Freeze Matrix Validator|Freeze Matrix Validator]]
+- [[_COMMUNITY_Source Manifest Emitter|Source Manifest Emitter]]
+- [[_COMMUNITY_Phase 0 Freeze Validator|Phase 0 Freeze Validator]]
+- [[_COMMUNITY_yfinance Prototype Concepts|yfinance Prototype Concepts]]
+- [[_COMMUNITY_Provider Probe Report Validator|Provider Probe Report Validator]]
+- [[_COMMUNITY_Component Group 20|Component Group 20]]
+- [[_COMMUNITY_Component Group 21|Component Group 21]]
+- [[_COMMUNITY_Component Group 22|Component Group 22]]
+- [[_COMMUNITY_Component Group 23|Component Group 23]]
+- [[_COMMUNITY_Component Group 24|Component Group 24]]
+- [[_COMMUNITY_Component Group 25|Component Group 25]]
+- [[_COMMUNITY_Component Group 26|Component Group 26]]
+- [[_COMMUNITY_Component Group 27|Component Group 27]]
+- [[_COMMUNITY_Component Group 28|Component Group 28]]
+- [[_COMMUNITY_Component Group 29|Component Group 29]]
+- [[_COMMUNITY_Component Group 30|Component Group 30]]
+- [[_COMMUNITY_Component Group 31|Component Group 31]]
+- [[_COMMUNITY_Component Group 32|Component Group 32]]
+- [[_COMMUNITY_Component Group 33|Component Group 33]]
+- [[_COMMUNITY_Component Group 34|Component Group 34]]
+- [[_COMMUNITY_Component Group 35|Component Group 35]]
+- [[_COMMUNITY_Component Group 36|Component Group 36]]
+- [[_COMMUNITY_Component Group 37|Component Group 37]]
+- [[_COMMUNITY_Component Group 38|Component Group 38]]
+- [[_COMMUNITY_Component Group 39|Component Group 39]]
+- [[_COMMUNITY_Component Group 40|Component Group 40]]
+- [[_COMMUNITY_Component Group 41|Component Group 41]]
+- [[_COMMUNITY_Component Group 42|Component Group 42]]
+- [[_COMMUNITY_Component Group 43|Component Group 43]]
+- [[_COMMUNITY_Component Group 44|Component Group 44]]
+- [[_COMMUNITY_Component Group 45|Component Group 45]]
+- [[_COMMUNITY_Component Group 46|Component Group 46]]
+- [[_COMMUNITY_Component Group 47|Component Group 47]]
+- [[_COMMUNITY_Component Group 48|Component Group 48]]
+- [[_COMMUNITY_Component Group 49|Component Group 49]]
+- [[_COMMUNITY_Component Group 50|Component Group 50]]
+- [[_COMMUNITY_Component Group 51|Component Group 51]]
+- [[_COMMUNITY_Component Group 52|Component Group 52]]
+- [[_COMMUNITY_Component Group 53|Component Group 53]]
+- [[_COMMUNITY_Component Group 54|Component Group 54]]
+- [[_COMMUNITY_Component Group 55|Component Group 55]]
+- [[_COMMUNITY_Component Group 56|Component Group 56]]
+- [[_COMMUNITY_Component Group 57|Component Group 57]]
+- [[_COMMUNITY_Component Group 58|Component Group 58]]
+- [[_COMMUNITY_Component Group 59|Component Group 59]]
+- [[_COMMUNITY_Component Group 60|Component Group 60]]
+- [[_COMMUNITY_Component Group 61|Component Group 61]]
+- [[_COMMUNITY_Component Group 62|Component Group 62]]
+- [[_COMMUNITY_Component Group 63|Component Group 63]]
+- [[_COMMUNITY_Component Group 64|Component Group 64]]
+- [[_COMMUNITY_Component Group 65|Component Group 65]]
+- [[_COMMUNITY_Component Group 66|Component Group 66]]
+- [[_COMMUNITY_Component Group 67|Component Group 67]]
+- [[_COMMUNITY_Component Group 68|Component Group 68]]
+- [[_COMMUNITY_Component Group 69|Component Group 69]]
+- [[_COMMUNITY_Component Group 70|Component Group 70]]
+- [[_COMMUNITY_Component Group 71|Component Group 71]]
+- [[_COMMUNITY_Component Group 72|Component Group 72]]
+- [[_COMMUNITY_Component Group 73|Component Group 73]]
+- [[_COMMUNITY_Component Group 74|Component Group 74]]
+- [[_COMMUNITY_Component Group 75|Component Group 75]]
+- [[_COMMUNITY_Component Group 76|Component Group 76]]
+- [[_COMMUNITY_Component Group 77|Component Group 77]]
+- [[_COMMUNITY_Component Group 78|Component Group 78]]
+- [[_COMMUNITY_Component Group 79|Component Group 79]]
+- [[_COMMUNITY_Component Group 80|Component Group 80]]
+- [[_COMMUNITY_Component Group 81|Component Group 81]]
+- [[_COMMUNITY_Component Group 82|Component Group 82]]
+- [[_COMMUNITY_Component Group 83|Component Group 83]]
+- [[_COMMUNITY_Component Group 84|Component Group 84]]
+- [[_COMMUNITY_Component Group 85|Component Group 85]]
+- [[_COMMUNITY_Component Group 86|Component Group 86]]
+- [[_COMMUNITY_Component Group 87|Component Group 87]]
+- [[_COMMUNITY_Component Group 88|Component Group 88]]
+- [[_COMMUNITY_Component Group 89|Component Group 89]]
+- [[_COMMUNITY_Component Group 90|Component Group 90]]
+- [[_COMMUNITY_Component Group 91|Component Group 91]]
+- [[_COMMUNITY_Component Group 92|Component Group 92]]
+- [[_COMMUNITY_Component Group 93|Component Group 93]]
+- [[_COMMUNITY_Component Group 94|Component Group 94]]
+- [[_COMMUNITY_Component Group 95|Component Group 95]]
+
 ## God Nodes (most connected - your core abstractions)
-1. `main()` - 11 edges
-2. `SimulationEngine` - 10 edges
-3. `PersonaLoader` - 9 edges
-4. `MockProvider` - 9 edges
-5. `StampedeAggregator` - 9 edges
-6. `scan_massive_minute_file()` - 9 edges
-7. `probe_massive_flatfiles()` - 9 edges
-8. `yfinance No-Key Prototype Fallback Provider` - 9 edges
-9. `FixtureProvider` - 8 edges
-10. `fail()` - 8 edges
+1. `run()` - 21 edges
+2. `load()` - 20 edges
+3. `Production Spec v0.1.1` - 17 edges
+4. `PersonaLoader` - 15 edges
+5. `SimulationEngine` - 13 edges
+6. `main()` - 13 edges
+7. `CodexCliProvider` - 12 edges
+8. `main()` - 12 edges
+9. `test_stampede_e2e()` - 11 edges
+10. `Issue #16 - Public/Internal Data Path PDCAR` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `30-Min SPY-Adjusted Abnormal Return Prediction Task` --conceptually_related_to--> `SimulationEngine`  [INFERRED]
-  prompts/baseline_llm_v0_1.txt → hldpro-sim/hldprosim/engine.py
-- `Issue #29 - Phase 0 Freeze Evidence Matrix PDCAR` --references--> `Phase 0 Freeze Evidence Matrix Config`  [EXTRACTED]
-  docs/plans/issue-29-freeze-evidence-matrix-pdcar.md → scripts/validate_phase0_freeze_matrix.py
-- `yfinance Live Lookback Run 2026-04-20 15:52:39` --demonstrates--> `yfinance No-Key Prototype Fallback Provider`  [EXTRACTED]
-  cache/lookback-runs/yfinance-live-20260420155239/live/summary.md → docs/DATA_SOURCES.md
-- `yfinance Live Lookback Run 2026-04-20 15:44:32` --demonstrates--> `yfinance No-Key Prototype Fallback Provider`  [EXTRACTED]
-  cache/lookback-runs/yfinance-live-20260420154432/live/summary.md → docs/DATA_SOURCES.md
-- `MockProvider` --uses--> `RunManifest`  [INFERRED]
-  /Users/bennibarger/Developer/HLDPRO/Stampede/hldpro-sim/tests/test_stampede_consumer_proof.py → /Users/bennibarger/Developer/HLDPRO/Stampede/hldpro-sim/hldprosim/artifacts.py
+- `Baseline LLM Prompt v0.1 - 30-Min SPY-Adjusted Abnormal Return` --semantically_similar_to--> `Phase 0 Cross-Family Evidence Gates (price_path, volume, volatility, wicks, structure, microstructure)`  [INFERRED] [semantically similar]
+  prompts/baseline_llm_v0_1.txt → docs/plans/issue-29-freeze-evidence-matrix-pdcar.md
+- `Freeze Ready False Decision: paid_provider primary=polygon_massive` --semantically_similar_to--> `Public/Internal Prototype Path (freeze_ready=false)`  [INFERRED] [semantically similar]
+  docs/plans/issue-21-endpoint-probes-pdcar.md → docs/plans/issue-16-public-data-path-pdcar.md
+- `Stampede Graph Report 2026-04-20` --references--> `Issue #35 - Phase 0 Lookback Testable Framework PDCAR`  [EXTRACTED]
+  graphify-out/GRAPH_REPORT.md → docs/plans/issue-35-lookback-smoke-pdcar.md
+- `Public/Internal Prototype Path (freeze_ready=false)` --semantically_similar_to--> `Configured-But-Not-Checked Provider State Cannot Satisfy Freeze`  [INFERRED] [semantically similar]
+  docs/plans/issue-16-public-data-path-pdcar.md → docs/plans/issue-18-live-provider-probes-pdcar.md
+- `test_persona_loader_prefers_local_file()` --calls--> `PersonaLoader`  [INFERRED]
+  /Users/bennibarger/Developer/HLDPRO/Stampede/hldpro-sim/tests/test_providers.py → /Users/bennibarger/Developer/HLDPRO/Stampede/hldpro-sim/hldprosim/personas.py
 
 ## Hyperedges (group relationships)
-- **Simulation Pipeline** — hldprosim_PersonaLoader, hldprosim_SimulationEngine, hldprosim_BaseProvider, hldprosim_Runner [EXTRACTED 0.95]
-- **Provider Implementation Hierarchy** — hldprosim_BaseProvider, hldprosim_CodexCliProvider, hldprosim_AnthropicApiProvider, hldprosim_ClaudeCliProvider [INFERRED 0.85]
-- **End-to-End Test Stack** — hldprosim_PersonaLoader, hldprosim_SimulationEngine, hldprosim_Runner, stampede_NarrativeAggregator, hldprosim_ArtifactWriter [EXTRACTED 1.00]
-- **Lookback Validation Pipeline** — validate_phase0_lookback_tests, validate_phase0_lookback, validate_phase0_lookback_features, compute_features [EXTRACTED 1.00]
-- **Provider Probe Validation Pipeline** — run_provider_endpoint_probes, validate_endpoint_probes, validate_endpoint_probe_report [EXTRACTED 1.00]
-- **Simulation Feature Extraction Workflow** — run_slice6_simulation, compute_features, lookback_features [INFERRED 0.85]
-- **Production Spec Requirements** — production_spec_v0_1_1, phase0_pass_criteria, abnormal_return_30m_label, leakage_audit, scramble_test, discriminator_gate [EXTRACTED 1.00]
-- **yfinance Fallback and Lookback Testing Path** — run_phase0_lookback, yfinance_provider, lookback_smoke_fixture_run, yfinance_live_run_20260420155239, yfinance_live_run_20260420154432, microstructure_degradation [EXTRACTED 1.00]
-- **Phase 0 Freeze Evidence Validation Chain** — validate_phase0_freeze_matrix, validate_phase0_freeze, freeze_evidence_matrix [EXTRACTED 1.00]
-- **Paid Provider Freeze Gate Requirements** — polygon_massive_provider, intrinio_provider, phase0_freeze_evidence_matrix_doc [EXTRACTED 1.00]
-- **Data Source A/B Selection Process** — polygon_massive_provider, intrinio_provider, phase0_ab_plan [EXTRACTED 1.00]
-- **Model A/B Selection Process** — claude_cli_model, codex_cli_model, phase0_ab_plan [EXTRACTED 1.00]
-- **Phase 0 Freeze Evidence Gating** — issue_29_freeze_evidence_matrix, issue_4_phase0_freeze_prep, phase0_freeze, freeze_evidence_matrix [EXTRACTED 1.00]
-- **Model Bakeoff Candidate Selection** — claude_cli_model, codex_cli_model, issue_14_cli_model_bakeoff, baseline_llm_v0_1 [EXTRACTED 1.00]
+- **Phase 0 Mandatory Validation Control Suite** — leakage_audit, scramble_test, discriminator_spec, drift_protocol [EXTRACTED 0.95]
+- **yfinance Prototype Degradation Boundary** — provider_yfinance, microstructure_degraded, freeze_ready_false [EXTRACTED 0.98]
+- **Provider Ladder Selection (paid → keyed prototype → yfinance)** — concept_paid_provider_path, concept_public_internal_prototype, concept_yfinance_prototype_fallback [EXTRACTED 0.90]
+- **Phase 0 Model Bakeoff Candidates** — model_claude_cli, model_codex_cli, model_qwen3_6 [EXTRACTED 0.95]
+- **yfinance Evidence Hardening Progression (Issues 35→37→41→43→46)** — issue35_lookback_smoke, issue37_lookback_hardening, issue41_live_lookback_preflight, issue43_yfinance_benchmark_partial, issue46_yfinance_evidence_index [EXTRACTED 0.95]
+- **Provider Probe Scaffold to Freeze Evidence Chain (Issues 18→21→23→29)** — issue18_live_provider_probes, issue21_endpoint_probes, issue23_massive_event_window, issue29_freeze_evidence_matrix [EXTRACTED 0.92]
+- **Phase 0 Freeze Gate Validation Suite** — issue4_validate_phase0_freeze, issue29_validate_phase0_freeze_matrix, issue29_paid_primary_fallback_requirement, issue29_cross_family_gates [EXTRACTED 0.95]
 
 ## Communities
 
-### Community 0 - "Simulation Core Package"
-Cohesion: 0.05
+### Community 0 - "OASIS Simulation Engine"
+Cohesion: 0.06
 Nodes (32): ABC, BaseAggregator, ArtifactWriter, RunManifest, BaseAggregator, BaseModel, SimulationEngine, PersonaLoader (+24 more)
 
-### Community 1 - "Provider Endpoint Probes"
-Cohesion: 0.16
-Nodes (27): Issue #21 - Massive and Alpaca Endpoint Probes PDCAR, alpaca_request(), base_provider_entry(), build_decision(), build_report(), classify_http_error(), classify_rclone_error(), iso_z() (+19 more)
+### Community 1 - "Baseline LLM Inference Schema"
+Cohesion: 0.05
+Nodes (45): feature_expectations Output Field, Headline Class Prior (procedural_meta, esg_pr, hard_data, guidance, macro_catalyst), Predicted Abnormal Return 30m BPS Output Schema, Reversal Risk Flag (high = opposite direction prior), Baseline LLM Prompt v0.1 - 30-Min SPY-Adjusted Abnormal Return, Volume Confirmation Signal (confirmed/low/unconfirmed), Stampede Graph Report 2026-04-20, Community 9: Freeze Evidence Validation (10 nodes) (+37 more)
 
-### Community 2 - "Data Source Evaluation"
-Cohesion: 0.13
-Nodes (22): Alpaca Public/Internal Provider, Data-Source Bakeoff Report, Phase 0 Data Sources Decision Document, Discriminator Access Decision, build_manifest(), decision(), env_key(), load_json() (+14 more)
+### Community 2 - "yfinance Lookback Smoke Framework"
+Cohesion: 0.08
+Nodes (31): Fixture-Backed yfinance Smoke Bar Sample, Machine-Readable Lookback Config, Issue #35 - Phase 0 Lookback Testable Framework PDCAR, Rationale: No-Paid-Key Lookback Smoke Path Before Paid Spend, run_phase0_lookback.py Script, validate_phase0_lookback.py Script, cache/lookback-runs/<run_id>/ Ignored Output Dir, compare_phase0_lookback.py Script (+23 more)
 
-### Community 3 - "Lookback Comparison"
+### Community 3 - "Lookback Comparison and Model Bakeoff"
+Cohesion: 0.1
+Nodes (21): by_event(), load_json(), load_jsonl(), main(), load_json(), main(), AnthropicApiProvider, CodexCliProvider (+13 more)
+
+### Community 4 - "Provider Endpoint Probe Scripts"
 Cohesion: 0.17
-Nodes (20): by_event(), load_json(), load_jsonl(), main(), Issue #35 - Phase 0 Lookback Testable Framework PDCAR, Microstructure Degradation for yfinance, dataframe_to_bars(), display_path() (+12 more)
+Nodes (26): alpaca_request(), base_provider_entry(), build_decision(), build_report(), classify_http_error(), classify_rclone_error(), iso_z(), load_json() (+18 more)
 
-### Community 4 - "Provider Adapter Layer"
-Cohesion: 0.16
-Nodes (14): CorporateActionEvidence, normalize_corporate_action_evidence(), normalize_intrinio_bar(), normalize_polygon_bar(), NormalizedBar, Provider fixture normalization helpers for Phase 0., fail(), load() (+6 more)
+### Community 5 - "Production Spec and Phase 0 Controls"
+Cohesion: 0.09
+Nodes (25): abnormal_return_30m Label Definition, baselines_v0_1.json, Budget Caps (1500 runs / $500 / 21 days), Changelog v0.1 to v0.1.1, Composite Threshold 0.68, Discriminator Spec (Simulated vs Real Traces), Drift Protocol (KS Tests Weekly), Governing Hypothesis (Narrative Simulation Predictive) (+17 more)
 
-### Community 5 - "Probe Report Validation"
-Cohesion: 0.27
-Nodes (15): fail(), main(), reject_secret_leaks(), selected(), validate_corporate_action_endpoint(), validate_decision(), validate_minute_endpoint(), validate_provider() (+7 more)
+### Community 6 - "Validation Test Suite"
+Cohesion: 0.18
+Nodes (20): fail(), main(), require_report_rejected(), require_runner_rejected(), run_endpoint_report(), fail(), main(), require_rejected() (+12 more)
 
-### Community 6 - "Phase 0 Spec Requirements"
-Cohesion: 0.26
-Nodes (13): Abnormal Return 30m Label Definition, Discriminator Classification Gate, Leakage Audit Procedure, Phase 0 Pass Criteria, Production Spec v0.1.1, Scramble Test Negative Control, fail(), load_json() (+5 more)
+### Community 7 - "Provider Adapter Layer"
+Cohesion: 0.24
+Nodes (14): classify_error(), CorporateActionEvidence, has_corporate_action_reference(), has_quote_or_trade_capability(), normalize_corporate_action_evidence(), normalize_intrinio_bar(), normalize_polygon_bar(), NormalizedBar (+6 more)
 
-### Community 7 - "Feature Extraction"
-Cohesion: 0.29
-Nodes (10): compute_features function, by_minute(), compute_features(), pct(), Feature helpers for Phase 0 lookback smoke runs., returns(), sign_changes(), validate_bar_window() (+2 more)
+### Community 8 - "Phase 0 Lookback Runner"
+Cohesion: 0.28
+Nodes (14): dataframe_to_bars(), display_path(), fail_live_preflight(), git_commit(), iso_z(), load_json(), load_live_yfinance_events(), main() (+6 more)
 
-### Community 8 - "Probe Report Emission"
+### Community 9 - "Provider Probe Report Emitter"
 Cohesion: 0.35
 Nodes (10): build_provider_entry(), build_report(), decision(), env_key(), family_evidence(), load_json(), main(), missing_required_keys() (+2 more)
 
-### Community 9 - "Freeze Evidence Validation"
-Cohesion: 0.42
-Nodes (10): Phase 0 Freeze Evidence Matrix Config, Issue #29 - Phase 0 Freeze Evidence Matrix PDCAR, fail(), load_json(), main(), require_set(), validate_family_mapping(), validate_matrix() (+2 more)
+### Community 10 - "Lookback Feature Computation"
+Cohesion: 0.33
+Nodes (9): by_minute(), compute_features(), pct(), Feature helpers for Phase 0 lookback smoke runs., returns(), sign_changes(), validate_bar_window(), fail() (+1 more)
 
-### Community 10 - "Provider Test Suite"
+### Community 11 - "Endpoint Probe Report Validator"
+Cohesion: 0.45
+Nodes (10): fail(), main(), reject_secret_leaks(), selected(), validate_corporate_action_endpoint(), validate_decision(), validate_minute_endpoint(), validate_provider() (+2 more)
+
+### Community 12 - "Public/Internal Data Path"
 Cohesion: 0.2
-Nodes (0): 
+Nodes (11): Alpaca Public/Internal Market Candidate Provider, Alpha Vantage Narrow Fallback Market Candidate, config/data_sources_v0_1.json, emit_source_manifest.py Script, GDELT Event Evidence Source, Issuer/SEC RSS Event Evidence Source, Issue #16 - Public/Internal Data Path PDCAR, Public/Internal Prototype Path (freeze_ready=false) (+3 more)
 
-### Community 11 - "Lookback Validation"
+### Community 13 - "Freeze Gate Concepts"
+Cohesion: 0.2
+Nodes (10): Corporate-Action Evidence Contract, freeze_ready Gate Concept, Paid Provider Path, Provider Adapter Normalization Contract, Data-Source Bakeoff Report, Phase 0 Freeze Evidence Matrix, Provider Adapter Contract, Rationale: Evidence Matrix Joins Validated Artifacts Before freeze_ready (+2 more)
+
+### Community 14 - "Phase 0 Lookback Validator"
 Cohesion: 0.58
 Nodes (8): fail(), load_features(), load_json(), main(), reject_raw_payloads(), validate_features(), validate_partial_features(), walk()
 
-### Community 12 - "Model Bakeoff Planning"
+### Community 15 - "Freeze Matrix Validator"
+Cohesion: 0.58
+Nodes (8): fail(), load_json(), main(), require_set(), validate_family_mapping(), validate_matrix(), validate_negative_controls(), validate_reports()
+
+### Community 16 - "Source Manifest Emitter"
+Cohesion: 0.46
+Nodes (7): build_manifest(), decision(), env_key(), load_json(), main(), no_key_provider_entry(), provider_entry()
+
+### Community 17 - "Phase 0 Freeze Validator"
+Cohesion: 0.64
+Nodes (7): fail(), load_json(), load_yaml(), main(), require_doc(), require_families(), require_locked_v01()
+
+### Community 18 - "yfinance Prototype Concepts"
 Cohesion: 0.25
-Nodes (9): Claude CLI Primary Model, Codex CLI OpenAI Model, Phase 0 Implementation Plan, Issue #14 - CLI-Primary Model Bakeoff PDCAR, CLI-Primary Model Bakeoff Plan, Phase 0 Freeze Evidence Matrix Doc, Phase 0 Lookback Smoke Framework, STAMPEDE Phase 0 Progress Tracking (+1 more)
+Nodes (8): Lookback Artifact Contract, Public/Internal Prototype Path, yfinance Automatic No-Key Prototype Fallback, fixtures/lookback_yfinance_candidate_events.json, Issue #31 yfinance Automatic Prototype Fallback PDCAR, Phase 0 Lookback Smoke Framework, Public/Internal Data Path, Rationale: yfinance as No-Key Fallback to Unblock Framework Testing
 
-### Community 13 - "LLM Provider and Prompt"
-Cohesion: 0.22
-Nodes (9): 30-Min SPY-Adjusted Abnormal Return Prediction Task, Baseline LLM Prompt v0.1, AnthropicApiProvider, BaseProvider Protocol, ClaudeCliProvider, CodexCliProvider, PersonaLoader, Runner (+1 more)
-
-### Community 14 - "Lookback Negative Tests"
-Cohesion: 0.57
-Nodes (7): copy_run(), expect_validator_failure(), fail(), load(), main(), run(), write()
-
-### Community 15 - "Provider Probe Report Validation"
+### Community 19 - "Provider Probe Report Validator"
 Cohesion: 0.57
 Nodes (6): fail(), has_corporate_action_endpoint_pass(), main(), provider_has_required_passes(), selected_providers(), validate_freeze_decision()
 
-### Community 16 - "Data Source Bakeoff Script"
+### Community 20 - "Component Group 20"
 Cohesion: 0.52
 Nodes (6): build_report(), env_key_present(), env_keys_all_present(), load_config(), main(), provider_status()
 
-### Community 17 - "Event Set Validation"
+### Community 21 - "Component Group 21"
+Cohesion: 0.29
+Nodes (7): Cross-Family Evidence Requirements, Freeze Evidence Matrix, Freeze Ready False (yfinance prototype runs), Freeze Ready Rule (paid provider + cross-family pass), Live Provider Probe Contract, Provider Failure Modes Doc, Source Manifest Schema
+
+### Community 22 - "Component Group 22"
 Cohesion: 0.73
 Nodes (5): fail(), main(), parse_dt(), validate(), validate_event()
 
-### Community 18 - "Provider Probes Validation"
-Cohesion: 0.73
-Nodes (5): fail(), main(), require_doc(), require_report_rejected(), run_report()
-
-### Community 19 - "Data Source Bakeoff Validation"
+### Community 23 - "Component Group 23"
 Cohesion: 0.9
 Nodes (4): fail(), load_json(), main(), require_doc()
 
-### Community 20 - "Live Provider Bakeoff Validation"
+### Community 24 - "Component Group 24"
+Cohesion: 0.4
+Nodes (5): Phase 0 Data Sources Doc, yfinance Provider (No-Key Prototype Fallback), Rationale: yfinance as No-Key Prototype Fallback Before Paid Costs, requirements-lookback.txt (yfinance==1.3.0), StockTwits Unavailable Decision
+
+### Community 25 - "Component Group 25"
+Cohesion: 0.4
+Nodes (5): Governance Tooling JSON Evidence, Pull Request Template Solo-Maintainer Gate, Rationale: Remove Self-Approval Gate for Solo Maintainer, Issue #33 - Solo-Maintainer Auto-Merge Policy PDCAR, Solo Maintainer Merge Policy Document
+
+### Community 26 - "Component Group 26"
 Cohesion: 1.0
 Nodes (3): fail(), main(), require_doc()
 
-### Community 21 - "Freeze Matrix Negative Tests"
-Cohesion: 0.83
-Nodes (3): fail(), main(), require_rejected()
-
-### Community 22 - "Runner Tests"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 23 - "Model Bakeoff Smoke"
-Cohesion: 1.0
-Nodes (2): load_json(), main()
-
-### Community 24 - "Artifact Manifest Emission"
+### Community 27 - "Component Group 27"
 Cohesion: 1.0
 Nodes (2): main(), sha256_file()
 
-### Community 25 - "Lookback Candidate Validation"
+### Community 28 - "Component Group 28"
 Cohesion: 1.0
 Nodes (2): fail(), main()
 
-### Community 26 - "Candidate Freshness Validation"
+### Community 29 - "Component Group 29"
 Cohesion: 1.0
 Nodes (2): fail(), main()
 
-### Community 27 - "Validation Script Cluster"
+### Community 30 - "Component Group 30"
 Cohesion: 0.67
-Nodes (3): emit_provider_probe_report, validate_live_provider_bakeoff, validate_provider_probe_report
+Nodes (3): Phase 0 Implementation Plan, No-Paid-Key Lookback Smoke Path, PDCAR Loop Methodology
 
-### Community 28 - "Tradier Microstructure Path"
+### Community 31 - "Component Group 31"
 Cohesion: 0.67
-Nodes (3): Endpoint Probe Runbook, Issue #25 - Tradier Real-Time Microstructure Path PDCAR, Tradier Real-time Microstructure Provider
+Nodes (3): event_set_v0_1.json, event_set_v0_1.json Immutable 30-Event Corpus, Event Set Lock Plan
 
-### Community 29 - "Engine Tests"
+### Community 32 - "Component Group 32"
+Cohesion: 0.67
+Nodes (3): Tradier Real-Time Microstructure Additive Path, Issue #25 Tradier Real-Time Microstructure Path PDCAR, Rationale: Tradier as Additive Complement, Not Replacement for Massive
+
+### Community 33 - "Component Group 33"
+Cohesion: 0.67
+Nodes (3): Degraded Discriminator Execution, Discriminator Access Decision, Rationale: StockTwits Unavailability Forces Approved Source Contract
+
+### Community 34 - "Component Group 34"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 30 - "Artifact Tests"
+### Community 35 - "Component Group 35"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Solo Maintainer Auto-Merge Policy, Solo Maintainer Merge Policy
 
-### Community 31 - "Candidate Template Emission"
+### Community 36 - "Component Group 36"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Secrets Sanitization and No-Raw-Payload Rule, Live Run Commands
 
-### Community 32 - "Aggregator Hierarchy"
+### Community 37 - "Component Group 37"
 Cohesion: 1.0
-Nodes (2): BaseAggregator, NarrativeAggregator
+Nodes (2): CLI-Primary Model Selection, Issue #14 CLI-Primary Model Bakeoff PDCAR
 
-### Community 33 - "Artifact Writer System"
-Cohesion: 1.0
-Nodes (2): ArtifactWriter, RunManifest
-
-### Community 34 - "yfinance Freeze Constraint"
-Cohesion: 1.0
-Nodes (2): Freeze Not Ready Constraint for Non-Paid Providers, Phase 0 yfinance Live Lookback Run Summary
-
-### Community 35 - "Event Set Lock"
-Cohesion: 1.0
-Nodes (2): Event Set Lock Plan, Locked 30-Event Corpus
-
-### Community 36 - "Phase 0 Freeze Decision"
-Cohesion: 1.0
-Nodes (2): Issue #4 - Phase 0 Recovery and Freeze-Prep PDCAR, Phase 0 Freeze Decision
-
-### Community 37 - "Personas Rationale 24"
+### Community 38 - "Component Group 38"
 Cohesion: 1.0
 Nodes (1): Convenience: load shared dir from bundled package personas/.
 
-### Community 38 - "Script Model Bakeoff"
+### Community 39 - "Component Group 39"
 Cohesion: 1.0
-Nodes (1): model_bakeoff_smoke
+Nodes (1): Phase 1 Sketch (Direction Only)
 
-### Community 39 - "Script Validate Event Set"
+### Community 40 - "Component Group 40"
 Cohesion: 1.0
-Nodes (1): validate_event_set_v0_1
+Nodes (1): Buckets (TSLA / Large-cap / Small-cap)
 
-### Community 40 - "Changelog V0 1 To V0 1 1"
+### Community 41 - "Component Group 41"
 Cohesion: 1.0
-Nodes (1): CHANGELOG v0.1 to v0.1.1
+Nodes (1): Sample Size Protocol (n=30, extension up to +15)
 
-### Community 41 - "Live Provider Probe Contract"
+### Community 42 - "Component Group 42"
 Cohesion: 1.0
-Nodes (1): Live Provider Probe Contract
+Nodes (1): Polygon/Massive Provider
 
-### Community 42 - "Lookback Smoke Fixture Run"
+### Community 43 - "Component Group 43"
 Cohesion: 1.0
-Nodes (1): Phase 0 Lookback Smoke Fixture Run
+Nodes (1): Intrinio Provider
 
-### Community 43 - "Provider Failure Modes"
+### Community 44 - "Component Group 44"
 Cohesion: 1.0
-Nodes (1): Provider Failure Modes Doc
+Nodes (1): Phase 0 yfinance Live Run Summary
 
-### Community 44 - "Exception Register"
+### Community 45 - "Component Group 45"
 Cohesion: 1.0
-Nodes (1): STAMPEDE Phase 0 Exception Register
+Nodes (1): Live Run Command Shape (run_phase0_lookback.py)
 
-### Community 45 - "Run Record Schema"
+### Community 46 - "Component Group 46"
 Cohesion: 1.0
-Nodes (1): Phase 0 Run Record Schema
+Nodes (1): Live Run Observed Result (pass_with_degradation)
 
-### Community 46 - "Live Run Commands"
+### Community 47 - "Component Group 47"
 Cohesion: 1.0
-Nodes (1): Live Run Commands
+Nodes (1): Provider Probe Report Shape
 
-### Community 47 - "Phase0 Ab Plan"
+### Community 48 - "Component Group 48"
+Cohesion: 1.0
+Nodes (1): CLI-Primary Model Bakeoff Plan
+
+### Community 49 - "Component Group 49"
+Cohesion: 1.0
+Nodes (1): Claude CLI Model Arm
+
+### Community 50 - "Component Group 50"
+Cohesion: 1.0
+Nodes (1): Codex CLI Model Arm
+
+### Community 51 - "Component Group 51"
+Cohesion: 1.0
+Nodes (1): Qwen3.6 Local MLX Model Arm
+
+### Community 52 - "Component Group 52"
+Cohesion: 1.0
+Nodes (1): API Fallback Approval Policy (--approve-api-fallback)
+
+### Community 53 - "Component Group 53"
+Cohesion: 1.0
+Nodes (1): Implementation Slices (8 post-freeze)
+
+### Community 54 - "Component Group 54"
+Cohesion: 1.0
+Nodes (1): Exception Register
+
+### Community 55 - "Component Group 55"
+Cohesion: 1.0
+Nodes (1): STAMPEDE Phase 0 Progress Doc
+
+### Community 56 - "Component Group 56"
+Cohesion: 1.0
+Nodes (1): Phase 0 Simulation Runner Issue #52 (IN_PROGRESS)
+
+### Community 57 - "Component Group 57"
+Cohesion: 1.0
+Nodes (1): Lookback Run Cache (fixture) 20260420-155239
+
+### Community 58 - "Component Group 58"
+Cohesion: 1.0
+Nodes (1): Lookback Run Cache (live) 20260420-155239
+
+### Community 59 - "Component Group 59"
+Cohesion: 1.0
+Nodes (1): Lookback Run Cache (fixture) 20260420-154432
+
+### Community 60 - "Component Group 60"
+Cohesion: 1.0
+Nodes (1): Lookback Run Cache (live) 20260420-154432
+
+### Community 61 - "Component Group 61"
+Cohesion: 1.0
+Nodes (1): Lookback Smoke Run Cache 20260420-150450
+
+### Community 62 - "Component Group 62"
+Cohesion: 1.0
+Nodes (1): Microstructure Degraded (yfinance cannot provide authoritative quote/trade)
+
+### Community 63 - "Component Group 63"
+Cohesion: 1.0
+Nodes (1): Endpoint Probe Runbook
+
+### Community 64 - "Component Group 64"
 Cohesion: 1.0
 Nodes (1): Phase 0 A/B Plan
 
-### Community 48 - "Solo Maintainer Merge Policy"
+### Community 65 - "Component Group 65"
 Cohesion: 1.0
-Nodes (1): Solo Maintainer Merge Policy
+Nodes (1): Live Provider Bakeoff
 
-### Community 49 - "Issue 27 Corporate Actions"
+### Community 66 - "Component Group 66"
 Cohesion: 1.0
-Nodes (1): Issue #27 - Corporate-Action Evidence Contract PDCAR
+Nodes (1): No-Peek Rule for Phase 0 A/B
 
-### Community 50 - "Issue 39 Yfinance Missing Data"
+### Community 67 - "Component Group 67"
 Cohesion: 1.0
-Nodes (1): Issue #39 - Live yfinance Missing-Data Evidence PDCAR
+Nodes (1): Candle Feature Families
 
-### Community 51 - "Issue 33 Solo Maintainer"
+### Community 68 - "Component Group 68"
 Cohesion: 1.0
-Nodes (1): Issue #33 - Solo-Maintainer Auto-Merge Policy PDCAR
+Nodes (1): governance-check CI Gate
 
-### Community 52 - "Issue 46 Yfinance Evidence Index"
+### Community 69 - "Component Group 69"
 Cohesion: 1.0
-Nodes (1): Issue #46 - yfinance Evidence Index PDCAR
+Nodes (1): Phase 0 Run Budget (1500 simulation runs)
 
-### Community 53 - "Issue 16 Public Data Path"
+### Community 70 - "Component Group 70"
 Cohesion: 1.0
-Nodes (1): Issue #16 - Public/Internal Data Path PDCAR
+Nodes (1): Alpaca Provider
 
-### Community 54 - "Issue 41 Live Lookback Preflight"
+### Community 71 - "Component Group 71"
 Cohesion: 1.0
-Nodes (1): Issue #41 - Live Lookback Runtime Preflight Checks PDCAR
+Nodes (1): Alpha Vantage Provider
 
-### Community 55 - "Issue 23 Massive Event Window"
+### Community 72 - "Component Group 72"
 Cohesion: 1.0
-Nodes (1): Issue #23 - Massive Event-Window Minute Bars PDCAR
+Nodes (1): Tradier Provider
 
-### Community 56 - "Issue 18 Live Provider Probes"
+### Community 73 - "Component Group 73"
 Cohesion: 1.0
-Nodes (1): Issue #18 - Live Provider Probe Scaffold PDCAR
+Nodes (1): SEC EDGAR Provider
 
-### Community 57 - "Issue 37 Lookback Hardening"
+### Community 74 - "Component Group 74"
 Cohesion: 1.0
-Nodes (1): Issue #37 - Phase 0 Lookback Hardening PDCAR
+Nodes (1): GDELT Provider
 
-### Community 58 - "Issue 43 Yfinance Benchmark"
+### Community 75 - "Component Group 75"
 Cohesion: 1.0
-Nodes (1): Issue #43 - yfinance SPY Benchmark PDCAR
+Nodes (1): Claude CLI Model Candidate
+
+### Community 76 - "Component Group 76"
+Cohesion: 1.0
+Nodes (1): Codex CLI Model Candidate
+
+### Community 77 - "Component Group 77"
+Cohesion: 1.0
+Nodes (1): Qwen3.6 Local MLX Model Candidate
+
+### Community 78 - "Component Group 78"
+Cohesion: 1.0
+Nodes (1): emit_source_manifest.py
+
+### Community 79 - "Component Group 79"
+Cohesion: 1.0
+Nodes (1): validate_source_manifest.py
+
+### Community 80 - "Component Group 80"
+Cohesion: 1.0
+Nodes (1): emit_provider_probe_report.py
+
+### Community 81 - "Component Group 81"
+Cohesion: 1.0
+Nodes (1): validate_provider_probe_report.py
+
+### Community 82 - "Component Group 82"
+Cohesion: 1.0
+Nodes (1): run_provider_endpoint_probes.py
+
+### Community 83 - "Component Group 83"
+Cohesion: 1.0
+Nodes (1): validate_endpoint_probe_report.py
+
+### Community 84 - "Component Group 84"
+Cohesion: 1.0
+Nodes (1): validate_phase0_freeze_matrix.py
+
+### Community 85 - "Component Group 85"
+Cohesion: 1.0
+Nodes (1): validate_event_set_v0_1.py
+
+### Community 86 - "Component Group 86"
+Cohesion: 1.0
+Nodes (1): run_phase0_lookback.py
+
+### Community 87 - "Component Group 87"
+Cohesion: 1.0
+Nodes (1): validate_phase0_lookback.py
+
+### Community 88 - "Component Group 88"
+Cohesion: 1.0
+Nodes (1): run_yfinance_live_smoke.sh
+
+### Community 89 - "Component Group 89"
+Cohesion: 1.0
+Nodes (1): compare_phase0_lookback.py
+
+### Community 90 - "Component Group 90"
+Cohesion: 1.0
+Nodes (1): model_bakeoff_smoke.py
+
+### Community 91 - "Component Group 91"
+Cohesion: 1.0
+Nodes (1): fixtures/provider_bakeoff_sample_events.json
+
+### Community 92 - "Component Group 92"
+Cohesion: 1.0
+Nodes (1): fixtures/event_set_candidate_smoke.json
+
+### Community 93 - "Component Group 93"
+Cohesion: 1.0
+Nodes (1): config/phase0_freeze_evidence_matrix_v0_1.json
+
+### Community 94 - "Component Group 94"
+Cohesion: 1.0
+Nodes (1): Issue #27 Corporate-Action Evidence Contract PDCAR
+
+### Community 95 - "Component Group 95"
+Cohesion: 1.0
+Nodes (1): Issue #39 Live yfinance Missing-Data Evidence PDCAR
 
 ## Knowledge Gaps
-- **63 isolated node(s):** `Load persona JSON files. Resolves local-first, shared fallback.`, `Convenience: load shared dir from bundled package personas/.`, `Subprocess-backed provider using codex exec --ephemeral.`, `Cloud stub — not implemented until API keys are provisioned.`, `Feature helpers for Phase 0 lookback smoke runs.` (+58 more)
+- **162 isolated node(s):** `Load persona JSON files. Resolves local-first, shared fallback.`, `Convenience: load shared dir from bundled package personas/.`, `Subprocess-backed provider using codex exec --ephemeral.`, `Cloud stub — not implemented until API keys are provisioned.`, `Feature helpers for Phase 0 lookback smoke runs.` (+157 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Engine Tests`** (2 nodes): `test_engine.py`, `test_engine_passes_template_results_to_provider()`
+- **Thin community `Component Group 34`** (2 nodes): `main()`, `emit_yfinance_candidate_template.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Artifact Tests`** (2 nodes): `test_artifacts.py`, `test_artifact_writer_writes_manifest_and_outcomes()`
+- **Thin community `Component Group 35`** (2 nodes): `Solo Maintainer Auto-Merge Policy`, `Solo Maintainer Merge Policy`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Candidate Template Emission`** (2 nodes): `emit_yfinance_candidate_template.py`, `main()`
+- **Thin community `Component Group 36`** (2 nodes): `Secrets Sanitization and No-Raw-Payload Rule`, `Live Run Commands`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Aggregator Hierarchy`** (2 nodes): `BaseAggregator`, `NarrativeAggregator`
+- **Thin community `Component Group 37`** (2 nodes): `CLI-Primary Model Selection`, `Issue #14 CLI-Primary Model Bakeoff PDCAR`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Artifact Writer System`** (2 nodes): `ArtifactWriter`, `RunManifest`
+- **Thin community `Component Group 38`** (1 nodes): `Convenience: load shared dir from bundled package personas/.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `yfinance Freeze Constraint`** (2 nodes): `Freeze Not Ready Constraint for Non-Paid Providers`, `Phase 0 yfinance Live Lookback Run Summary`
+- **Thin community `Component Group 39`** (1 nodes): `Phase 1 Sketch (Direction Only)`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Event Set Lock`** (2 nodes): `Event Set Lock Plan`, `Locked 30-Event Corpus`
+- **Thin community `Component Group 40`** (1 nodes): `Buckets (TSLA / Large-cap / Small-cap)`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Phase 0 Freeze Decision`** (2 nodes): `Issue #4 - Phase 0 Recovery and Freeze-Prep PDCAR`, `Phase 0 Freeze Decision`
+- **Thin community `Component Group 41`** (1 nodes): `Sample Size Protocol (n=30, extension up to +15)`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Personas Rationale 24`** (1 nodes): `Convenience: load shared dir from bundled package personas/.`
+- **Thin community `Component Group 42`** (1 nodes): `Polygon/Massive Provider`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Script Model Bakeoff`** (1 nodes): `model_bakeoff_smoke`
+- **Thin community `Component Group 43`** (1 nodes): `Intrinio Provider`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Script Validate Event Set`** (1 nodes): `validate_event_set_v0_1`
+- **Thin community `Component Group 44`** (1 nodes): `Phase 0 yfinance Live Run Summary`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Changelog V0 1 To V0 1 1`** (1 nodes): `CHANGELOG v0.1 to v0.1.1`
+- **Thin community `Component Group 45`** (1 nodes): `Live Run Command Shape (run_phase0_lookback.py)`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Live Provider Probe Contract`** (1 nodes): `Live Provider Probe Contract`
+- **Thin community `Component Group 46`** (1 nodes): `Live Run Observed Result (pass_with_degradation)`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Lookback Smoke Fixture Run`** (1 nodes): `Phase 0 Lookback Smoke Fixture Run`
+- **Thin community `Component Group 47`** (1 nodes): `Provider Probe Report Shape`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Provider Failure Modes`** (1 nodes): `Provider Failure Modes Doc`
+- **Thin community `Component Group 48`** (1 nodes): `CLI-Primary Model Bakeoff Plan`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Exception Register`** (1 nodes): `STAMPEDE Phase 0 Exception Register`
+- **Thin community `Component Group 49`** (1 nodes): `Claude CLI Model Arm`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Run Record Schema`** (1 nodes): `Phase 0 Run Record Schema`
+- **Thin community `Component Group 50`** (1 nodes): `Codex CLI Model Arm`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Live Run Commands`** (1 nodes): `Live Run Commands`
+- **Thin community `Component Group 51`** (1 nodes): `Qwen3.6 Local MLX Model Arm`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Phase0 Ab Plan`** (1 nodes): `Phase 0 A/B Plan`
+- **Thin community `Component Group 52`** (1 nodes): `API Fallback Approval Policy (--approve-api-fallback)`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Solo Maintainer Merge Policy`** (1 nodes): `Solo Maintainer Merge Policy`
+- **Thin community `Component Group 53`** (1 nodes): `Implementation Slices (8 post-freeze)`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Issue 27 Corporate Actions`** (1 nodes): `Issue #27 - Corporate-Action Evidence Contract PDCAR`
+- **Thin community `Component Group 54`** (1 nodes): `Exception Register`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Issue 39 Yfinance Missing Data`** (1 nodes): `Issue #39 - Live yfinance Missing-Data Evidence PDCAR`
+- **Thin community `Component Group 55`** (1 nodes): `STAMPEDE Phase 0 Progress Doc`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Issue 33 Solo Maintainer`** (1 nodes): `Issue #33 - Solo-Maintainer Auto-Merge Policy PDCAR`
+- **Thin community `Component Group 56`** (1 nodes): `Phase 0 Simulation Runner Issue #52 (IN_PROGRESS)`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Issue 46 Yfinance Evidence Index`** (1 nodes): `Issue #46 - yfinance Evidence Index PDCAR`
+- **Thin community `Component Group 57`** (1 nodes): `Lookback Run Cache (fixture) 20260420-155239`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Issue 16 Public Data Path`** (1 nodes): `Issue #16 - Public/Internal Data Path PDCAR`
+- **Thin community `Component Group 58`** (1 nodes): `Lookback Run Cache (live) 20260420-155239`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Issue 41 Live Lookback Preflight`** (1 nodes): `Issue #41 - Live Lookback Runtime Preflight Checks PDCAR`
+- **Thin community `Component Group 59`** (1 nodes): `Lookback Run Cache (fixture) 20260420-154432`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Issue 23 Massive Event Window`** (1 nodes): `Issue #23 - Massive Event-Window Minute Bars PDCAR`
+- **Thin community `Component Group 60`** (1 nodes): `Lookback Run Cache (live) 20260420-154432`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Issue 18 Live Provider Probes`** (1 nodes): `Issue #18 - Live Provider Probe Scaffold PDCAR`
+- **Thin community `Component Group 61`** (1 nodes): `Lookback Smoke Run Cache 20260420-150450`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Issue 37 Lookback Hardening`** (1 nodes): `Issue #37 - Phase 0 Lookback Hardening PDCAR`
+- **Thin community `Component Group 62`** (1 nodes): `Microstructure Degraded (yfinance cannot provide authoritative quote/trade)`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Issue 43 Yfinance Benchmark`** (1 nodes): `Issue #43 - yfinance SPY Benchmark PDCAR`
+- **Thin community `Component Group 63`** (1 nodes): `Endpoint Probe Runbook`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 64`** (1 nodes): `Phase 0 A/B Plan`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 65`** (1 nodes): `Live Provider Bakeoff`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 66`** (1 nodes): `No-Peek Rule for Phase 0 A/B`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 67`** (1 nodes): `Candle Feature Families`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 68`** (1 nodes): `governance-check CI Gate`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 69`** (1 nodes): `Phase 0 Run Budget (1500 simulation runs)`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 70`** (1 nodes): `Alpaca Provider`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 71`** (1 nodes): `Alpha Vantage Provider`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 72`** (1 nodes): `Tradier Provider`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 73`** (1 nodes): `SEC EDGAR Provider`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 74`** (1 nodes): `GDELT Provider`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 75`** (1 nodes): `Claude CLI Model Candidate`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 76`** (1 nodes): `Codex CLI Model Candidate`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 77`** (1 nodes): `Qwen3.6 Local MLX Model Candidate`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 78`** (1 nodes): `emit_source_manifest.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 79`** (1 nodes): `validate_source_manifest.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 80`** (1 nodes): `emit_provider_probe_report.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 81`** (1 nodes): `validate_provider_probe_report.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 82`** (1 nodes): `run_provider_endpoint_probes.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 83`** (1 nodes): `validate_endpoint_probe_report.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 84`** (1 nodes): `validate_phase0_freeze_matrix.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 85`** (1 nodes): `validate_event_set_v0_1.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 86`** (1 nodes): `run_phase0_lookback.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 87`** (1 nodes): `validate_phase0_lookback.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 88`** (1 nodes): `run_yfinance_live_smoke.sh`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 89`** (1 nodes): `compare_phase0_lookback.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 90`** (1 nodes): `model_bakeoff_smoke.py`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 91`** (1 nodes): `fixtures/provider_bakeoff_sample_events.json`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 92`** (1 nodes): `fixtures/event_set_candidate_smoke.json`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 93`** (1 nodes): `config/phase0_freeze_evidence_matrix_v0_1.json`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 94`** (1 nodes): `Issue #27 Corporate-Action Evidence Contract PDCAR`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Component Group 95`** (1 nodes): `Issue #39 Live yfinance Missing-Data Evidence PDCAR`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `yfinance No-Key Prototype Fallback Provider` connect `Data Source Evaluation` to `Lookback Comparison`, `Model Bakeoff Planning`?**
-  _High betweenness centrality (0.058) - this node is a cross-community bridge._
-- **Are the 10 inferred relationships involving `main()` (e.g. with `load_json()` and `load_live_yfinance_events()`) actually correct?**
-  _`main()` has 10 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 7 inferred relationships involving `SimulationEngine` (e.g. with `Runner` and `PersonaLoader`) actually correct?**
-  _`SimulationEngine` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 5 inferred relationships involving `PersonaLoader` (e.g. with `SimulationEngine` and `MockProvider`) actually correct?**
-  _`PersonaLoader` has 5 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 7 inferred relationships involving `MockProvider` (e.g. with `test_stampede_e2e()` and `ArtifactWriter`) actually correct?**
-  _`MockProvider` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 6 inferred relationships involving `StampedeAggregator` (e.g. with `run_simulation()` and `BaseAggregator`) actually correct?**
-  _`StampedeAggregator` has 6 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Load persona JSON files. Resolves local-first, shared fallback.`, `Convenience: load shared dir from bundled package personas/.`, `Subprocess-backed provider using codex exec --ephemeral.` to the rest of the system?**
-  _63 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `load()` connect `Lookback Comparison and Model Bakeoff` to `OASIS Simulation Engine`, `Provider Endpoint Probe Scripts`, `Provider Adapter Layer`, `Phase 0 Lookback Runner`, `Provider Probe Report Emitter`, `Phase 0 Lookback Validator`, `Freeze Matrix Validator`, `Source Manifest Emitter`, `Phase 0 Freeze Validator`, `Component Group 20`, `Component Group 22`, `Component Group 23`?**
+  _High betweenness centrality (0.137) - this node is a cross-community bridge._
+- **Why does `run()` connect `Validation Test Suite` to `OASIS Simulation Engine`, `Lookback Comparison and Model Bakeoff`, `Provider Endpoint Probe Scripts`, `Provider Adapter Layer`, `Phase 0 Lookback Runner`, `Component Group 23`, `Component Group 26`?**
+  _High betweenness centrality (0.068) - this node is a cross-community bridge._
+- **Why does `main()` connect `Phase 0 Lookback Runner` to `Lookback Feature Computation`, `Validation Test Suite`?**
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+- **Are the 17 inferred relationships involving `run()` (e.g. with `.run_n()` and `.complete()`) actually correct?**
+  _`run()` has 17 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 17 inferred relationships involving `load()` (e.g. with `.run()` and `test_persona_loader_prefers_local_file()`) actually correct?**
+  _`load()` has 17 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 11 inferred relationships involving `PersonaLoader` (e.g. with `SimulationEngine` and `MockProvider`) actually correct?**
+  _`PersonaLoader` has 11 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 10 inferred relationships involving `SimulationEngine` (e.g. with `Runner` and `PersonaLoader`) actually correct?**
+  _`SimulationEngine` has 10 INFERRED edges - model-reasoned connections that need verification._
