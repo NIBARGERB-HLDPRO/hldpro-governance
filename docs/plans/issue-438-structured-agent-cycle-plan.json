@@ -1,0 +1,139 @@
+{
+  "session_id": "session-20260421-issue-438-handoff-package-schemas",
+  "issue_number": 438,
+  "objective": "Add the first schema-backed handoff package layer so structured plans, execution scopes, validation artifacts, review/gate evidence, and closeouts can stay linked across model/agent handoffs.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repository only.",
+    "Add package handoff schema, execution-scope schema, example handoff artifact, validator/tests, and documentation.",
+    "Update structured-plan schema with optional handoff refs without breaking historical plans.",
+    "Update backlog/progress mirrors for issue #438."
+  ],
+  "out_of_scope": [
+    "Downstream repository edits.",
+    "GitHub CI hardening for handoff packages; tracked by issue #435.",
+    "SoM packet emitter/schema reconciliation; tracked by issue #437.",
+    "PR template and closeout hook hardening; tracked by issue #436."
+  ],
+  "research_summary": "Read-only research agents and web research found that the repo already has structured plans, scopes, packets, validation artifacts, cross-review, Local CI, and closeouts, but lacks a thin connective handoff package binding those artifacts and handoff-specific ACs.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/434",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/438",
+    "docs/schemas/structured-agent-cycle-plan.schema.json",
+    "docs/schemas/som-packet.schema.yml",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/orchestrator/packet_queue.py",
+    "raw/closeouts/TEMPLATE.md"
+  ],
+  "sprints": [
+    {
+      "name": "Schema and handoff package bootstrap",
+      "goal": "Create a schema-backed package handoff artifact and validate the initial handoff chain for issue #438.",
+      "tasks": [
+        "Add package handoff and execution-scope schemas.",
+        "Add example and active issue #438 handoff artifacts.",
+        "Add validator and tests for required refs, issue consistency, lifecycle rules, and AC refs.",
+        "Update schema docs, STANDARDS.md, backlog, and progress mirrors."
+      ],
+      "acceptance_criteria": [
+        "Package handoff schema links issue, roles, lifecycle, plan, scope, packet, package manifest, ACs, validation, review/gate, artifacts, audit, and closeout refs.",
+        "Execution-scope schema mirrors the current assert_execution_scope.py contract.",
+        "Structured-plan schema can carry handoff package refs without breaking historical plans.",
+        "Validator tests prove valid handoffs pass and missing scope, issue mismatch, lane-claim mismatch, and accepted-without-closeout fail."
+      ],
+      "file_paths": [
+        "docs/schemas/package-handoff.schema.json",
+        "docs/schemas/execution-scope.schema.json",
+        "docs/schemas/examples/package-handoff/issue-438-implementation-ready.json",
+        "raw/handoffs/2026-04-21-issue-438-plan-to-implementation.json",
+        "scripts/overlord/validate_handoff_package.py",
+        "scripts/overlord/test_validate_handoff_package.py",
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "docs/schemas/README.md",
+        "STANDARDS.md",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "James",
+      "role": "read-only current-state researcher",
+      "focus": "Existing structured plan, scope, packet, cross-review, closeout, and gate surfaces.",
+      "status": "accepted",
+      "summary": "Confirmed current AC placement and enforcement surfaces; identified execution-scope AC, closeout completeness, packet null scope, and schema-validator gaps.",
+      "evidence": [
+        "subagent 019db06b-3585-7f21-8694-ff265217aa1d"
+      ]
+    },
+    {
+      "reviewer": "Lorentz",
+      "role": "read-only handoff package researcher",
+      "focus": "Handoff package creation, schema drift, packet/dispatch drift, PR/closeout evidence gaps.",
+      "status": "accepted",
+      "summary": "Recommended package-handoff and execution-scope schemas plus follow-on validator/CI, packet, and closeout hardening.",
+      "evidence": [
+        "subagent 019db06b-8966-7f13-97c6-dad4b3029988"
+      ]
+    },
+    {
+      "reviewer": "Locke",
+      "role": "read-only best-practices researcher",
+      "focus": "Structured handoff lifecycle and target-state model.",
+      "status": "accepted",
+      "summary": "Recommended a manifest-linked lifecycle that binds issue, plan, scope, packet, package manifest, validation, audit, and closeout.",
+      "evidence": [
+        "subagent 019db06b-9d3c-7bb2-8860-13872acc01d5"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Standards/schema scope requires cross-review before merge. Review artifact records schema bootstrap approval and follow-up boundaries.",
+    "evidence": [
+      "raw/cross-review/2026-04-21-issue-438-handoff-package-schemas.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement governance-only schema, validator, tests, docs, plan/scope/handoff evidence, validation, and closeout for issue #438.",
+    "next_execution_step": "Run focused validation, cross-review, Local CI Gate, closeout, PR, and automerge if green.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-438-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-438-handoff-package-schemas-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-438-handoff-package-schemas.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-21-issue-438-handoff-package-schemas.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-438-handoff-package-schemas.md",
+    "next_role": "codex-implementation-slice",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Validator proves valid handoff package passes.",
+      "Validator proves missing/mismatched handoff refs fail.",
+      "Local CI Gate passes before PR merge."
+    ]
+  },
+  "material_deviation_rules": [
+    "If CI wiring is needed beyond local validation, stop and use issue #435.",
+    "If packet emitter/schema changes are needed, stop and use issue #437.",
+    "If closeout hook hardening is needed, stop and use issue #436.",
+    "If downstream repos need propagation, create downstream issues instead of editing them here."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: pdcar this, create GH epic/child issues, clear detailed ACs, and implement",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T09:30:00-05:00"
+}

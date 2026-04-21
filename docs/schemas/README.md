@@ -24,6 +24,35 @@ A JSON Schema YAML describing the canonical handoff packet shape:
 - **runbook_ref** (string, optional): Runbook URL or path
 - **fallback_ladder_ref** (string, optional): Fallback tier-down scenario reference
 
+**File:** `package-handoff.schema.json`
+
+A thin JSON Schema that binds the issue-backed handoff chain without replacing
+the underlying artifacts:
+
+- **handoff_id**: Stable identifier for the handoff boundary
+- **issue_number** and **parent_epic_number**: GitHub issue anchors
+- **lifecycle_state**: `draft`, `planned`, `implementation_ready`,
+  `in_progress`, `validation_ready`, `accepted`, `released`, `consumed`,
+  `deprecated`, `rolled_back`, or `archived`
+- **from_role** and **to_role**: Source and receiving model/agent roles
+- **structured_plan_ref**, **execution_scope_ref**, **packet_ref**,
+  **package_manifest_ref**, and **closeout_ref**: Repo-relative artifact links
+- **acceptance_criteria**: Handoff-specific ACs with verification refs
+- **validation_commands**, **review_artifact_refs**, **gate_artifact_refs**,
+  **artifact_refs**, and **audit_refs**: Evidence required to accept or close
+  the handoff
+
+Examples live under `docs/schemas/examples/package-handoff/`. Active handoff
+packages live under `raw/handoffs/` and are validated by
+`scripts/overlord/validate_handoff_package.py`.
+
+**File:** `execution-scope.schema.json`
+
+A JSON Schema for `raw/execution-scopes/*.json`, aligned to
+`scripts/overlord/assert_execution_scope.py`. It documents the root/branch
+contract, allowed write paths, forbidden roots, active parallel roots,
+`execution_mode`, `lane_claim`, and `handoff_evidence` shape.
+
 **File:** `hitl-relay-packet.schema.json`
 
 A JSON Schema describing the always-on SoM HITL relay packet contract:

@@ -291,6 +291,61 @@
             "type": "string",
             "minLength": 1
           }
+        },
+        "handoff_package_ref": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "execution_scope_ref": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "packet_ref": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "package_manifest_ref": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "validation_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "review_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "gate_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "closeout_ref": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "next_role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "qa_gate_required": {
+          "type": "boolean"
+        },
+        "handoff_acceptance_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     }

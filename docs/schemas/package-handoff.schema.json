@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "docs/schemas/package-handoff.schema.json",
+  "title": "Package Handoff",
+  "description": "Thin connective artifact that binds issue, plan, scope, packet, validation, review, gate, and closeout evidence for a model/agent handoff.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "handoff_id",
+    "issue_number",
+    "parent_epic_number",
+    "lifecycle_state",
+    "from_role",
+    "to_role",
+    "structured_plan_ref",
+    "execution_scope_ref",
+    "packet_ref",
+    "package_manifest_ref",
+    "acceptance_criteria",
+    "validation_commands",
+    "review_artifact_refs",
+    "gate_artifact_refs",
+    "artifact_refs",
+    "audit_refs",
+    "closeout_ref",
+    "blocked_on",
+    "handoff_decision",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "v1"
+    },
+    "handoff_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "issue_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "parent_epic_number": {
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "planned",
+        "implementation_ready",
+        "in_progress",
+        "validation_ready",
+        "accepted",
+        "released",
+        "consumed",
+        "deprecated",
+        "rolled_back",
+        "archived"
+      ]
+    },
+    "from_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "to_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "structured_plan_ref": {
+      "$ref": "#/$defs/repoPath"
+    },
+    "execution_scope_ref": {
+      "anyOf": [
+        {"$ref": "#/$defs/repoPath"},
+        {"type": "null"}
+      ]
+    },
+    "packet_ref": {
+      "anyOf": [
+        {"$ref": "#/$defs/repoPath"},
+        {"type": "null"}
+      ]
+    },
+    "package_manifest_ref": {
+      "anyOf": [
+        {"$ref": "#/$defs/repoPath"},
+        {"type": "null"}
+      ]
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/acceptanceCriterion"
+      }
+    },
+    "validation_commands": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "review_artifact_refs": {
+      "$ref": "#/$defs/refArray"
+    },
+    "gate_artifact_refs": {
+      "$ref": "#/$defs/refArray"
+    },
+    "artifact_refs": {
+      "$ref": "#/$defs/refArray"
+    },
+    "audit_refs": {
+      "$ref": "#/$defs/refArray"
+    },
+    "closeout_ref": {
+      "anyOf": [
+        {"$ref": "#/$defs/repoPath"},
+        {"type": "null"}
+      ]
+    },
+    "blocked_on": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "handoff_decision": {
+      "type": "string",
+      "enum": ["draft", "accepted", "rejected", "blocked"]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "repoPath": {
+      "type": "string",
+      "minLength": 1,
+      "not": {
+        "pattern": "^(/|.*\\.\\./|.*\\\\)"
+      }
+    },
+    "refArray": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {"$ref": "#/$defs/repoPath"},
+          {
+            "type": "string",
+            "format": "uri"
+          }
+        ]
+      }
+    },
+    "acceptanceCriterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "statement",
+        "verification_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[A-Z0-9._-]+$"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verification_refs": {
+          "$ref": "#/$defs/refArray"
+        }
+      }
+    }
+  }
+}

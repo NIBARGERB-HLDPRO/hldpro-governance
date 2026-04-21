@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "docs/schemas/execution-scope.schema.json",
+  "title": "Execution Scope",
+  "description": "Schema for raw/execution-scopes artifacts consumed by scripts/overlord/assert_execution_scope.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "expected_execution_root",
+    "expected_branch",
+    "allowed_write_paths",
+    "forbidden_roots"
+  ],
+  "properties": {
+    "expected_execution_root": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_branch": {
+      "type": "string",
+      "minLength": 1
+    },
+    "allowed_write_paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/repoPathOrDirectory"
+      }
+    },
+    "forbidden_roots": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "active_parallel_roots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "reason"],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "execution_mode": {
+      "type": "string",
+      "enum": [
+        "planning_only",
+        "implementation_ready",
+        "implementation_complete",
+        "blocked"
+      ],
+      "default": "planning_only"
+    },
+    "lane_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "issue_number",
+        "claim_ref",
+        "claimed_by",
+        "claimed_at"
+      ],
+      "properties": {
+        "issue_number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "claim_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claimed_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claimed_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "handoff_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "planner_model",
+        "implementer_model",
+        "accepted_at",
+        "evidence_paths",
+        "active_exception_ref",
+        "active_exception_expires_at"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "accepted",
+            "accepted_with_followup",
+            "mixed",
+            "rejected",
+            "not_requested"
+          ]
+        },
+        "planner_model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "implementer_model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accepted_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/repoPathOrDirectory"
+          }
+        },
+        "active_exception_ref": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "active_exception_expires_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "repoPathOrDirectory": {
+      "type": "string",
+      "minLength": 1,
+      "not": {
+        "pattern": "^(/|.*\\.\\./|.*\\\\)"
+      }
+    }
+  }
+}

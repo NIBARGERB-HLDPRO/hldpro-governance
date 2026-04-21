@@ -1,0 +1,63 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-438-plan-to-implementation",
+  "issue_number": 438,
+  "parent_epic_number": 434,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-implementation-slice",
+  "structured_plan_ref": "docs/plans/issue-438-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-438-handoff-package-schemas-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Package handoff schema exists and links issue, plan, scope, validation, review, gate, artifacts, and closeout refs.",
+      "verification_refs": [
+        "docs/schemas/package-handoff.schema.json",
+        "scripts/overlord/test_validate_handoff_package.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Execution-scope schema exists and mirrors the current assert_execution_scope.py contract.",
+      "verification_refs": [
+        "docs/schemas/execution-scope.schema.json",
+        "scripts/overlord/test_assert_execution_scope.py"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Structured plan execution_handoff can reference the handoff package and role-specific acceptance criteria without breaking historical plans.",
+      "verification_refs": [
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_validate_handoff_package.py",
+    "python3 scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+    "python3 scripts/overlord/test_assert_execution_scope.py"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-21-issue-438-handoff-package-schemas.md"
+  ],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "docs/schemas/package-handoff.schema.json",
+    "docs/schemas/execution-scope.schema.json",
+    "docs/schemas/examples/package-handoff/issue-438-implementation-ready.json",
+    "docs/plans/issue-438-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-438-handoff-package-schemas-implementation.json"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-438-handoff-package-schemas.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T09:30:00-05:00",
+  "notes": "Schema/bootstrap handoff for issue #438. Dispatch packet reconciliation is issue #437; CI hardening is issue #435; PR/closeout hardening is issue #436."
+}

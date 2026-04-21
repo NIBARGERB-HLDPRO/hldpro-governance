@@ -20,6 +20,7 @@ GOVERNANCE_SURFACE_PREFIXES = (
     "raw/cross-review/",
     "raw/execution-scopes/",
     "raw/gate/",
+    "raw/handoffs/",
     "raw/model-fallbacks/",
     "raw/operator-context/",
     "raw/packets/",
