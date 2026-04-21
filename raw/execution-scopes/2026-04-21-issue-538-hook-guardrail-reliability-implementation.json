@@ -1,0 +1,75 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-538-hook-guardrail-reliability",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/ERROR_PATTERNS.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-538-hook-guardrail-reliability-pdcar.md",
+    "docs/plans/issue-538-hook-guardrail-reliability-structured-agent-cycle-plan.json",
+    "docs/runbooks/session-error-patterns.md",
+    "graphify-out/",
+    "hooks/branch-switch-guard.sh",
+    "hooks/schema-guard.sh",
+    "raw/closeouts/2026-04-21-issue-538-hook-guardrail-reliability.md",
+    "raw/execution-scopes/2026-04-21-issue-538-hook-guardrail-reliability-implementation.json",
+    "raw/handoffs/2026-04-21-issue-538-hook-guardrail-reliability.json",
+    "raw/operator-context/self-learning/2026-04-21-issue-538-hook-guardrail-reliability.md",
+    "raw/validation/2026-04-21-issue-538-hook-guardrail-reliability.md",
+    "scripts/overlord/check_plan_preflight.py",
+    "scripts/overlord/test_branch_switch_guard.py",
+    "scripts/overlord/test_check_plan_preflight.py",
+    "scripts/overlord/test_schema_guard_hook.py",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #538."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #538."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #538."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #538."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #538."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 538,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/538",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-21T20:45:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-opus-4-6",
+    "implementer_model": "gpt-5.4-codex-worker",
+    "accepted_at": "2026-04-21T20:45:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-538-hook-guardrail-reliability-structured-agent-cycle-plan.json",
+      "docs/plans/issue-538-hook-guardrail-reliability-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

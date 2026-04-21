@@ -92,6 +92,36 @@ class TestSchemaGuardHook(unittest.TestCase):
         self.assertEqual(result.stdout, "")
         self.assertEqual(result.stderr, "")
 
+    def test_quoted_awk_comparison_remains_allowed(self) -> None:
+        result = _run_hook(_payload("awk '$1 > 1 { print $0 }' input.txt"))
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stdout, "")
+        self.assertEqual(result.stderr, "")
+
+    def test_quoted_jq_comparison_remains_allowed(self) -> None:
+        result = _run_hook(_payload("jq '.value > 1' input.json"))
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stdout, "")
+        self.assertEqual(result.stderr, "")
+
+    def test_common_read_only_analysis_pipelines_remain_allowed(self) -> None:
+        commands = [
+            "grep -R 'PLAN_GATE_BLOCKED' docs scripts | sort",
+            "rg --files | sort | wc -l",
+            "git status --short | wc -l",
+            "find docs -type f | sort | head -20",
+        ]
+
+        for command in commands:
+            with self.subTest(command=command):
+                result = _run_hook(_payload(command))
+
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual(result.stdout, "")
+                self.assertEqual(result.stderr, "")
+
     def test_python_file_write_policy_block_has_stderr(self) -> None:
         result = _run_hook(_payload("python3 - <<'PY'\nfrom pathlib import Path\nPath('x.py').write_text('x')\nPY"))
 

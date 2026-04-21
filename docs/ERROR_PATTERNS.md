@@ -29,3 +29,35 @@ See `docs/schemas/error-patterns.schema.md` for examples and detailed field sema
 - 2026-04-21: GitHub Actions run `24738583207` cleared cross-repo checkouts and model-pin validation, then failed at `Memory integrity audit` because GitHub-hosted runners do not have operator-home Claude memory files mounted.
 
 **Prevention:** Keep workflow preflight scanners scoped to authoritative repo files, add local validation for `self_learning.py report`, require at least one issue-backed `raw/operator-context/self-learning/` artifact when closing a self-learning loop gap, and keep local-only audit surfaces from blocking repo-generated self-learning metrics in GitHub-hosted runners.
+
+## Pattern: hook-command-classification-drift
+
+### Symptom
+Read-only operator commands fail before execution with `schema-guard: BLOCKED: Bash file write detected` even though the command only compares values inside quoted `awk` or `jq` expressions. Separately, commands that should be treated as high-risk session mutations, such as force pushes, remain policy-only unless an operator notices them manually.
+
+### Root Cause
+Hook code classified shell commands with independent raw-string regexes instead of one shared command-intent classifier. The regexes did not distinguish quoted comparison operators from shell redirects, branch matching saw heredoc bodies as executable command text, and the local branch/worktree guard had no force-push detector.
+
+### Detection
+- Log: `schema-guard: BLOCKED: Bash file write detected` followed by a target fragment from a quoted comparison.
+- Log: blocked target text containing snippets such as `for = 0`, `> 1`, or `0)po`.
+- Review signal: `git push -f`, `git push --force`, `git push --force-with-lease`, or `git push origin +...` appears in session output without a local hook block.
+
+### Resolution Playbook
+1. Add or update a focused regression in `scripts/overlord/test_check_plan_preflight.py` for the misclassified read-only command.
+2. Route Bash write-target detection through `scripts/overlord/check_plan_preflight.py` instead of adding another regex to `hooks/schema-guard.sh`.
+3. Add hook-level fixture coverage in `scripts/overlord/test_schema_guard_hook.py`.
+4. If branch matching is involved, strip heredoc bodies before matching executable segments in `hooks/branch-switch-guard.sh`.
+5. If the command mutates remote history, block the force flag or `+` refspec in `hooks/branch-switch-guard.sh`.
+6. Roll back by reverting the hook/classifier change and disabling only the new failing regression if the shared classifier blocks legitimate writes incorrectly.
+
+### Instances
+| Date | Incident | Notes |
+|------|----------|-------|
+| 2026-04-21 | [2026-04-21](FAIL_FAST_LOG.md) | Issue #538 repaired `awk`/`jq` comparison handling, heredoc branch matching, and local force-push blocking. |
+
+### Prevention
+- Keep command intent parsing in `scripts/overlord/check_plan_preflight.py` where focused Python tests can cover it.
+- Require hook fixture tests for every new shell syntax pattern added to a guard.
+- Prefer updating existing guardrails before adding new hook layers.
+- Record session-command failures in `docs/FAIL_FAST_LOG.md` and `docs/ERROR_PATTERNS.md` so self-learning lookup can retrieve the correction.

@@ -7,6 +7,7 @@ import argparse
 import json
 import os
 import re
+import shlex
 import sys
 import time
 from pathlib import Path
@@ -45,19 +46,33 @@ def recent_plan(plans_dir: Path, freshness_hours: float) -> Path | None:
 
 
 def detect_bash_write_target(command: str) -> str:
-    patterns = [
-        r"\bcat\b[^\n;|&]*?(?<![0-9])>\s*([A-Za-z0-9_./@%+=:,~{}-]+)",
-        r"\btee\b(?:\s+-a)?\s+([A-Za-z0-9_./@%+=:,~{}-]+)",
-        r"(?<![0-9])>>?\s*([A-Za-z0-9_./@%+=:,~{}-]+)",
-    ]
-    for pattern in patterns:
-        match = re.search(pattern, command)
-        if match:
-            target = match.group(1).strip("'\"")
-            if target and target not in {"/dev/null", "-"}:
-                return target
     if re.search(r"\b(?:python|python3)\b.*(?:open\(|write_text\()", command, re.S):
         return "<python file write>"
+
+    lexer = shlex.shlex(command, posix=True, punctuation_chars=True)
+    lexer.whitespace_split = True
+    lexer.commenters = ""
+    try:
+        tokens = list(lexer)
+    except ValueError:
+        tokens = command.split()
+
+    index = 0
+    while index < len(tokens):
+        token = tokens[index]
+        if token == "tee":
+            target_index = index + 1
+            while target_index < len(tokens) and tokens[target_index].startswith("-"):
+                target_index += 1
+            if target_index < len(tokens):
+                target = tokens[target_index].strip("'\"")
+                if target and target not in {"/dev/null", "-"}:
+                    return target
+        if token in {">", ">>"} and index + 1 < len(tokens):
+            target = tokens[index + 1].strip("'\"")
+            if target and target not in {"/dev/null", "-", "&"}:
+                return target
+        index += 1
     return ""
 
 
