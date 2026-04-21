@@ -6,8 +6,8 @@
 
 - **test_phase_g3_bridge_heartbeats_sql_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_phase_g3_bridge_heartbeats_sql_contract.py`
 - **check()** (3 connections) — `local-ai-machine/scripts/ops/test_phase_g3_bridge_heartbeats_sql_contract.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/test_phase_g3_bridge_heartbeats_sql_contract.py`
 - **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_phase_g3_bridge_heartbeats_sql_contract.py`
-- **main()** (2 connections) — `local-ai-machine/scripts/ops/test_phase_g3_bridge_heartbeats_sql_contract.py`
 
 ## Relationships
 
@@ -19,8 +19,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 6 (60%)
-- INFERRED: 4 (40%)
+- EXTRACTED: 10 (91%)
+- INFERRED: 1 (9%)
 - AMBIGUOUS: 0 (0%)
 
 ---

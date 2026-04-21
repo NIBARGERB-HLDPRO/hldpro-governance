@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **solar-savings.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
+- **solar-savings.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
 - **calculateIRR()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
 - **calculateSavings()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
 - **calculateITC()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/solar-savings.ts`
@@ -23,8 +23,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 14 (88%)
-- INFERRED: 2 (12%)
+- EXTRACTED: 19 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

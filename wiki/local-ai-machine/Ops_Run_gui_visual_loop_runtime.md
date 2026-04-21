@@ -5,8 +5,8 @@
 ## Key Concepts
 
 - **test_run_frontend_gui_visual_loop_runtime.py** (8 connections) — `local-ai-machine/scripts/ops/test_run_frontend_gui_visual_loop_runtime.py`
-- **main()** (5 connections) — `local-ai-machine/scripts/ops/test_run_frontend_gui_visual_loop_runtime.py`
-- **write_json()** (4 connections) — `local-ai-machine/scripts/ops/test_run_frontend_gui_visual_loop_runtime.py`
+- **main()** (7 connections) — `local-ai-machine/scripts/ops/test_run_frontend_gui_visual_loop_runtime.py`
+- **write_json()** (5 connections) — `local-ai-machine/scripts/ops/test_run_frontend_gui_visual_loop_runtime.py`
 - **approved_minimal_verdict()** (3 connections) — `local-ai-machine/scripts/ops/test_run_frontend_gui_visual_loop_runtime.py`
 - **check()** (3 connections) — `local-ai-machine/scripts/ops/test_run_frontend_gui_visual_loop_runtime.py`
 - **make_manifest()** (3 connections) — `local-ai-machine/scripts/ops/test_run_frontend_gui_visual_loop_runtime.py`
@@ -25,8 +25,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 18 (53%)
-- INFERRED: 16 (47%)
+- EXTRACTED: 34 (92%)
+- INFERRED: 3 (8%)
 - AMBIGUOUS: 0 (0%)
 
 ---

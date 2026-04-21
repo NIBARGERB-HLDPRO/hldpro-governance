@@ -1,12 +1,12 @@
 {
   "repo_slug": "local-ai-machine",
   "source": "local-ai-machine",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/graphify-out/local-ai-machine",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/wiki/local-ai-machine",
-  "nodes": 3089,
-  "edges": 5106,
-  "communities": 417,
-  "articles": 427,
+  "output": "/home/runner/work/hldpro-governance/hldpro-governance/graphify-out/local-ai-machine",
+  "wiki_dir": "/home/runner/work/hldpro-governance/hldpro-governance/wiki/local-ai-machine",
+  "nodes": 3670,
+  "edges": 8198,
+  "communities": 202,
+  "articles": 212,
   "html_status": "skipped",
-  "code_files": 451
+  "code_files": 508
 }

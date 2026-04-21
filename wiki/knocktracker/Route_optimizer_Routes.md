@@ -1,22 +1,23 @@
 # Route optimizer Routes
 
-> 13 nodes · cohesion 0.21
+> 14 nodes · cohesion 0.24
 
 ## Key Concepts
 
-- **routes.tsx** (8 connections) — `knocktracker/app/(main)/routes.tsx`
-- **routeOptimizer.ts** (7 connections) — `knocktracker/utils/routeOptimizer.ts`
+- **routeOptimizer.ts** (6 connections) — `knocktracker/utils/routeOptimizer.ts`
+- **routes.tsx** (5 connections) — `knocktracker/app/(main)/routes.tsx`
+- **routes.tsx** (5 connections) — `knocktracker/app/(tabs)/routes.tsx`
+- **optimizeRoute()** (4 connections) — `knocktracker/utils/routeOptimizer.ts`
+- **handleCreateRoute()** (4 connections) — `knocktracker/app/(tabs)/routes.tsx`
 - **calculateDistance()** (3 connections) — `knocktracker/utils/routeOptimizer.ts`
 - **calculateTotalDistance()** (3 connections) — `knocktracker/utils/routeOptimizer.ts`
 - **nearestNeighborTSP()** (3 connections) — `knocktracker/utils/routeOptimizer.ts`
-- **optimizeRoute()** (3 connections) — `knocktracker/utils/routeOptimizer.ts`
-- **calculateMaxHouses()** (1 connections) — `knocktracker/utils/routeOptimizer.ts`
+- **calculateMaxHouses()** (2 connections) — `knocktracker/utils/routeOptimizer.ts`
+- **deleteRoute()** (2 connections) — `knocktracker/app/(tabs)/routes.tsx`
+- **formatDate()** (2 connections) — `knocktracker/app/(tabs)/routes.tsx`
+- **handleStartPlanning()** (2 connections) — `knocktracker/app/(tabs)/routes.tsx`
+- **toggleFavorite()** (2 connections) — `knocktracker/app/(tabs)/routes.tsx`
 - **estimateCompletionTime()** (1 connections) — `knocktracker/utils/routeOptimizer.ts`
-- **deleteRoute()** (1 connections) — `knocktracker/app/(main)/routes.tsx`
-- **formatDate()** (1 connections) — `knocktracker/app/(main)/routes.tsx`
-- **handleCreateRoute()** (1 connections) — `knocktracker/app/(main)/routes.tsx`
-- **handleStartPlanning()** (1 connections) — `knocktracker/app/(main)/routes.tsx`
-- **toggleFavorite()** (1 connections) — `knocktracker/app/(main)/routes.tsx`
 
 ## Relationships
 
@@ -25,12 +26,13 @@
 ## Source Files
 
 - `knocktracker/app/(main)/routes.tsx`
+- `knocktracker/app/(tabs)/routes.tsx`
 - `knocktracker/utils/routeOptimizer.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 26 (76%)
-- INFERRED: 8 (24%)
+- EXTRACTED: 40 (91%)
+- INFERRED: 4 (9%)
 - AMBIGUOUS: 0 (0%)
 
 ---

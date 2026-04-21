@@ -8,23 +8,23 @@
 - [[twenty.ts]] `EXTRACTED`
 
 ### method
-- [[.upsertContact()]] `EXTRACTED`
 - [[.getApiKey()]] `EXTRACTED`
+- [[.graphql()]] `EXTRACTED`
+- [[.upsertContact()]] `EXTRACTED`
 - [[.createContact()]] `EXTRACTED`
 - [[.updateContact()]] `EXTRACTED`
 - [[.extractNationalNumber()]] `EXTRACTED`
-- [[.graphql()]] `EXTRACTED`
-- [[.extractCountryCode()]] `EXTRACTED`
-- [[.mapPersonToContact()]] `EXTRACTED`
-- [[.searchContacts()]] `EXTRACTED`
 - [[.metadataGraphql()]] `EXTRACTED`
 - [[.acquireUpsertLock()]] `EXTRACTED`
+- [[.createInvoiceRecord()]] `EXTRACTED`
+- [[.updateInvoiceStatus()]] `EXTRACTED`
+- [[.extractCountryCode()]] `EXTRACTED`
+- [[.mapPersonToContact()]] `EXTRACTED`
 - [[.releaseUpsertLock()]] `EXTRACTED`
+- [[.searchContacts()]] `EXTRACTED`
 - [[.getContact()]] `EXTRACTED`
 - [[.deleteContact()]] `EXTRACTED`
 - [[.addNote()]] `EXTRACTED`
-- [[.createInvoiceRecord()]] `EXTRACTED`
-- [[.updateInvoiceStatus()]] `EXTRACTED`
 - [[.constructor()]] `EXTRACTED`
 - [[.createPipeline()]] `EXTRACTED`
 - [[.createStage()]] `EXTRACTED`

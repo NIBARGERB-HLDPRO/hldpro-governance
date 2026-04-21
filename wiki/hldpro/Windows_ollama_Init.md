@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **__init__.py** (0 connections) — `scripts/windows-ollama/tests/__init__.py`
+- **__init__.py** (0 connections) — `hldpro-governance/scripts/windows-ollama/tests/__init__.py`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `scripts/windows-ollama/tests/__init__.py`
+- `hldpro-governance/scripts/windows-ollama/tests/__init__.py`
 
 ## Audit Trail
 

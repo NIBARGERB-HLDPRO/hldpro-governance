@@ -1,17 +1,18 @@
 # saveActivity()
 
-> God node · 8 connections · `knocktracker/app/(main)/track.tsx`
+> God node · 9 connections · `knocktracker/app/(main)/track.tsx`
 
 ## Connections by Relation
 
 ### calls
-- [[logEvent()]] `INFERRED`
-- [[buildContactUpdate()]] `INFERRED`
-- [[getFinalStatus()]] `INFERRED`
-- [[getPipelineUpdateForStatus()]] `INFERRED`
-- [[resolveCompanyId()]] `INFERRED`
-- [[findExistingContact()]] `INFERRED`
-- [[chooseContactAction()]] `INFERRED`
+- [[logEvent()]] `EXTRACTED`
+- [[resolveCompanyId()]] `EXTRACTED`
+- [[buildContactUpdate()]] `EXTRACTED`
+- [[enqueueForEnabledProviders()]] `INFERRED`
+- [[getFinalStatus()]] `EXTRACTED`
+- [[getPipelineUpdateForStatus()]] `EXTRACTED`
+- [[findExistingContact()]] `EXTRACTED`
+- [[chooseContactAction()]] `EXTRACTED`
 
 ### contains
 - [[track.tsx]] `EXTRACTED`

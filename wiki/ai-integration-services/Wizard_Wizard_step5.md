@@ -1,11 +1,12 @@
 # Wizard Wizard step5
 
-> 2 nodes · cohesion 1.00
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
+- **WizardStep5()** (2 connections) — `ai-integration-services/apps/portal/src/pages/wizard/WizardStep5.tsx`
 - **WizardStep5.tsx** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/wizard/WizardStep5.tsx`
-- **WizardStep5()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/wizard/WizardStep5.tsx`
+- **WizardStep5.tsx** (1 connections) — `ai-integration-services/apps/portal/src/pages/wizard/WizardStep5.tsx`
 
 ## Relationships
 
@@ -14,10 +15,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/marketing/src/portal/pages/wizard/WizardStep5.tsx`
+- `ai-integration-services/apps/portal/src/pages/wizard/WizardStep5.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

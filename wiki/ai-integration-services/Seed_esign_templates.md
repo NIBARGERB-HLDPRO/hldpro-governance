@@ -1,6 +1,6 @@
 # Seed esign templates
 
-> 6 nodes · cohesion 0.53
+> 5 nodes · cohesion 0.70
 
 ## Key Concepts
 
@@ -9,7 +9,6 @@
 - **dateSigned()** (2 connections) — `ai-integration-services/scripts/seed-esign-templates.ts`
 - **prefilled()** (2 connections) — `ai-integration-services/scripts/seed-esign-templates.ts`
 - **sig()** (2 connections) — `ai-integration-services/scripts/seed-esign-templates.ts`
-- **text()** (1 connections) — `ai-integration-services/scripts/seed-esign-templates.ts`
 
 ## Relationships
 
@@ -21,8 +20,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 10 (62%)
-- INFERRED: 6 (38%)
+- EXTRACTED: 15 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

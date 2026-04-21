@@ -1,11 +1,15 @@
 # Audit emission validation
 
-> 2 nodes · cohesion 1.00
+> 6 nodes · cohesion 0.33
 
 ## Key Concepts
 
-- **audit-emission-validation.test.ts** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit-emission-validation.test.ts`
+- **audit-emission-validation.ts** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit-emission-validation.ts`
+- **audit-emission-validation.test.ts** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit-emission-validation.test.ts`
+- **assertAllRequiredEmissionsPresent()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit-emission-validation.ts`
 - **assert()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit-emission-validation.test.ts`
+- **validateNoForbiddenAuditPayloadKeys()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit-emission-validation.ts`
+- **validateRequiredAuditPayloadFields()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/audit-emission-validation.ts`
 
 ## Relationships
 
@@ -14,10 +18,11 @@
 ## Source Files
 
 - `healthcareplatform/backend/supabase/functions/_shared/audit-emission-validation.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/audit-emission-validation.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 10 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

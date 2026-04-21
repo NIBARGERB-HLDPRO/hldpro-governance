@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
+- **main()** (4 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_contract.py`
 - **test_supervisor_max_loop_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_contract.py`
-- **main()** (3 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_contract.py`
 - **check()** (2 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_contract.py`
 - **parse_max_loops()** (2 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_contract.py`
 
@@ -19,8 +19,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 6 (60%)
-- INFERRED: 4 (40%)
+- EXTRACTED: 10 (91%)
+- INFERRED: 1 (9%)
 - AMBIGUOUS: 0 (0%)
 
 ---

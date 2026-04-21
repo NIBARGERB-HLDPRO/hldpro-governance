@@ -1,30 +1,30 @@
 # handleSlackWebhook()
 
-> God node · 52 connections · `local-ai-machine/supabase/functions/slack_webhook/index.ts`
+> God node · 54 connections · `local-ai-machine/supabase/functions/slack_webhook/index.ts`
 
 ## Connections by Relation
 
 ### calls
-- [[json()]] `INFERRED`
-- [[insertStepCapabilityIssuance()]] `INFERRED`
-- [[verifySlackSignature()]] `INFERRED`
-- [[parseHitlActionValue()]] `INFERRED`
-- [[interactiveDecisionResponse()]] `INFERRED`
-- [[interactiveTerminalStatusResponse()]] `INFERRED`
-- [[extractIntentScope()]] `INFERRED`
-- [[insertIntentMandate()]] `INFERRED`
-- [[resolveIntentMandateExpiry()]] `INFERRED`
-- [[interactiveDecisionReceipt()]] `INFERRED`
-- [[resolveRouteDecision()]] `INFERRED`
-- [[addReceivedReaction()]] `INFERRED`
-- [[sha256Hex()]] `INFERRED`
-- [[appendIngressAudit()]] `INFERRED`
-- [[appendInteractiveReceiptAudit()]] `INFERRED`
-- [[fetchPendingActionById()]] `INFERRED`
-- [[postThreadSummary()]] `INFERRED`
-- [[applyPendingActionDecision()]] `INFERRED`
-- [[buildPendingActionFollowupPrompt()]] `INFERRED`
-- [[parseDecisionActionValue()]] `INFERRED`
+- [[get()]] `INFERRED`
+- [[String]] `INFERRED`
+- [[json()]] `EXTRACTED`
+- [[insertStepCapabilityIssuance()]] `EXTRACTED`
+- [[resolveIntentMandateExpiry()]] `EXTRACTED`
+- [[buildPendingActionFollowupPrompt()]] `EXTRACTED`
+- [[addReceivedReaction()]] `EXTRACTED`
+- [[verifySlackSignature()]] `EXTRACTED`
+- [[parseHitlActionValue()]] `EXTRACTED`
+- [[interactiveDecisionResponse()]] `EXTRACTED`
+- [[postThreadSummary()]] `EXTRACTED`
+- [[interactiveTerminalStatusResponse()]] `EXTRACTED`
+- [[applyPendingActionDecision()]] `EXTRACTED`
+- [[extractIntentScope()]] `EXTRACTED`
+- [[insertIntentMandate()]] `EXTRACTED`
+- [[interactiveDecisionReceipt()]] `EXTRACTED`
+- [[resolveRouteDecision()]] `EXTRACTED`
+- [[requireEnv()]] `EXTRACTED`
+- [[getPublishableKey()]] `EXTRACTED`
+- [[getRoutingAuthorityMode()]] `EXTRACTED`
 
 ### contains
 - [[index.ts]] `EXTRACTED`

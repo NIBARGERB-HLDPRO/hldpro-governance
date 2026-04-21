@@ -1,12 +1,20 @@
 # Embeddings Supabase
 
-> 3 nodes · cohesion 1.00
+> 11 nodes · cohesion 0.36
 
 ## Key Concepts
 
-- **embeddings.ts** (2 connections) — `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
-- **generateEmbedding()** (2 connections) — `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
+- **embeddings.ts** (12 connections) — `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
+- **generateEmbedding()** (7 connections) — `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
+- **generateLocalHelperEmbedding()** (4 connections) — `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
+- **generateQwenEmbedding()** (4 connections) — `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
+- **generateMlxEmbedding()** (3 connections) — `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
+- **generateRemoteQwenEmbedding()** (3 connections) — `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
+- **normalizeAndPadEmbedding()** (3 connections) — `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
+- **allowEmbeddingFallback()** (2 connections) — `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
+- **generateOpenAiEmbedding()** (2 connections) — `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
 - **hashEmbedding()** (2 connections) — `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
+- **embedQuery()** (2 connections) — `seek-and-ponder/backend/supabase/functions/persona-respond/index.ts`
 
 ## Relationships
 
@@ -15,11 +23,12 @@
 ## Source Files
 
 - `seek-and-ponder/backend/supabase/functions/_shared/embeddings.ts`
+- `seek-and-ponder/backend/supabase/functions/persona-respond/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (67%)
-- INFERRED: 2 (33%)
+- EXTRACTED: 42 (95%)
+- INFERRED: 2 (5%)
 - AMBIGUOUS: 0 (0%)
 
 ---

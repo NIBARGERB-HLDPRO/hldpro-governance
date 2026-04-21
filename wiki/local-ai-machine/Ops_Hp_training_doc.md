@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **build_hp_training_doc.py** (5 connections) — `local-ai-machine/scripts/ops/build_hp_training_doc.py`
 - **build_doc()** (5 connections) — `local-ai-machine/scripts/ops/build_hp_training_doc.py`
+- **build_hp_training_doc.py** (5 connections) — `local-ai-machine/scripts/ops/build_hp_training_doc.py`
 - **img()** (4 connections) — `local-ai-machine/scripts/ops/build_hp_training_doc.py`
 - **both()** (3 connections) — `local-ai-machine/scripts/ops/build_hp_training_doc.py`
 - **bullets()** (2 connections) — `local-ai-machine/scripts/ops/build_hp_training_doc.py`
@@ -22,8 +22,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 12 (55%)
-- INFERRED: 10 (45%)
+- EXTRACTED: 22 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---
