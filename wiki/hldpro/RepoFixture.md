@@ -1,6 +1,6 @@
 # RepoFixture
 
-> God node · 30 connections · `hldpro-governance/scripts/overlord/test_assert_execution_scope.py`
+> God node · 30 connections · `scripts/overlord/test_assert_execution_scope.py`
 
 ## Connections by Relation
 

@@ -4,19 +4,19 @@
 
 ## Key Concepts
 
-- **test_bootstrap_repo_env_contract.py** (7 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **check()** (7 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **main()** (7 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **run_nested_var_worktree_lam_bootstrap()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **run_sibling_worktree_lam_bootstrap()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **run_synthetic_lam_bootstrap()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **run_synthetic_seek_bootstrap()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **run_synthetic_stampede_bootstrap()** (4 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **Exercise vault discovery from sibling governance worktrees.** (1 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **Exercise vault discovery from HLDPRO/var/worktrees/* governance worktrees.** (1 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **Exercise Seek/Ponder bootstrap aliases without leaking synthetic values.** (1 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **Exercise Stampede bootstrap with production Tradier mapping and redaction.** (1 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
-- **Exercise lam bootstrap with command-like vault values and missing optional keys.** (1 connections) — `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
+- **test_bootstrap_repo_env_contract.py** (7 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **check()** (7 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **main()** (7 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **run_nested_var_worktree_lam_bootstrap()** (4 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **run_sibling_worktree_lam_bootstrap()** (4 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **run_synthetic_lam_bootstrap()** (4 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **run_synthetic_seek_bootstrap()** (4 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **run_synthetic_stampede_bootstrap()** (4 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **Exercise vault discovery from sibling governance worktrees.** (1 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **Exercise vault discovery from HLDPRO/var/worktrees/* governance worktrees.** (1 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **Exercise Seek/Ponder bootstrap aliases without leaking synthetic values.** (1 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **Exercise Stampede bootstrap with production Tradier mapping and redaction.** (1 connections) — `scripts/test_bootstrap_repo_env_contract.py`
+- **Exercise lam bootstrap with command-like vault values and missing optional keys.** (1 connections) — `scripts/test_bootstrap_repo_env_contract.py`
 
 ## Relationships
 
@@ -24,7 +24,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/test_bootstrap_repo_env_contract.py`
+- `scripts/test_bootstrap_repo_env_contract.py`
 
 ## Audit Trail
 

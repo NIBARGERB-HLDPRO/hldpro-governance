@@ -1,0 +1,96 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-432-som-waterfall-routing-20260421",
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 432,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/432",
+    "claimed_by": "Codex orchestrator",
+    "claimed_at": "2026-04-21T14:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-approved-preplan",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-21T14:00:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/432",
+      "docs/plans/issue-432-structured-agent-cycle-plan.json",
+      "docs/plans/issue-432-som-waterfall-routing-pdcar.md",
+      "raw/cross-review/2026-04-21-issue-432-som-waterfall-routing.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  },
+  "allowed_write_paths": [
+    ".github/pull_request_template.md",
+    ".github/scripts/check_lam_family_diversity.py",
+    ".github/workflows/check-lam-family-diversity.yml",
+    ".github/workflows/governance-check.yml",
+    ".lam-config.yml",
+    "OVERLORD_BACKLOG.md",
+    "STANDARDS.md",
+    "docs/DATA_DICTIONARY.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/SERVICE_REGISTRY.md",
+    "docs/agents/codex-reviewer.md",
+    "docs/exception-register.md",
+    "docs/plans/issue-432-som-waterfall-routing-pdcar.md",
+    "docs/plans/issue-432-structured-agent-cycle-plan.json",
+    "docs/runbooks/local-model-runtime.md",
+    "docs/runbooks/qwen-coder-driver.md",
+    "docs/runbooks/windows-ollama.md",
+    "docs/runbooks/windows-ollama-worker.md",
+    "docs/templates/codex-spark-dispatch-brief.md",
+    "hooks/code-write-gate.sh",
+    "raw/closeouts/2026-04-21-issue-432-som-waterfall-routing.md",
+    "raw/cross-review/2026-04-21-issue-432-som-waterfall-routing.md",
+    "raw/execution-scopes/2026-04-21-issue-432-som-waterfall-routing-implementation.json",
+    "raw/model-fallbacks/2026-04-21.md",
+    "raw/validation/2026-04-21-issue-432-som-waterfall-routing.md",
+    "scripts/codex-preflight.sh",
+    "scripts/lam/runtime_inventory.py",
+    "scripts/lam/test_runtime_inventory.py",
+    "scripts/orchestrator/test_delegation_hook.py",
+    "scripts/windows-ollama/decide.sh",
+    "scripts/windows-ollama/tests/test_decide.sh",
+    "scripts/windows-ollama/tests/test_integration.sh",
+    "graphify-out/",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/PHASE0"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary checkout has unrelated local changes from issue #385 and is not edited by issue #432."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Downstream repo has unrelated local work and issue #432 does not edit downstream repos."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Downstream repo has unrelated local work and issue #432 does not edit downstream repos."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Downstream repo has unrelated local work and issue #432 does not edit downstream repos."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Downstream repo has unrelated local work and issue #432 does not edit downstream repos."
+    }
+  ]
+}

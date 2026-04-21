@@ -4,15 +4,15 @@
 
 ## Key Concepts
 
-- **run_hook()** (7 connections) — `hldpro-governance/scripts/overlord/test_branch_switch_guard.py`
-- **TestBranchSwitchGuard** (7 connections) — `hldpro-governance/scripts/overlord/test_branch_switch_guard.py`
-- **test_branch_switch_guard.py** (2 connections) — `hldpro-governance/scripts/overlord/test_branch_switch_guard.py`
-- **.test_allows_explicit_planning_bootstrap_issue_worktree_add()** (2 connections) — `hldpro-governance/scripts/overlord/test_branch_switch_guard.py`
-- **.test_allows_issue_worktree_add_with_matching_claimed_scope()** (2 connections) — `hldpro-governance/scripts/overlord/test_branch_switch_guard.py`
-- **.test_allows_non_issue_worktree_add()** (2 connections) — `hldpro-governance/scripts/overlord/test_branch_switch_guard.py`
-- **.test_blocks_issue_worktree_add_with_mismatched_claimed_scope()** (2 connections) — `hldpro-governance/scripts/overlord/test_branch_switch_guard.py`
-- **.test_blocks_unclaimed_issue_worktree_add()** (2 connections) — `hldpro-governance/scripts/overlord/test_branch_switch_guard.py`
-- **.test_still_blocks_branch_checkout()** (2 connections) — `hldpro-governance/scripts/overlord/test_branch_switch_guard.py`
+- **run_hook()** (7 connections) — `scripts/overlord/test_branch_switch_guard.py`
+- **TestBranchSwitchGuard** (7 connections) — `scripts/overlord/test_branch_switch_guard.py`
+- **test_branch_switch_guard.py** (2 connections) — `scripts/overlord/test_branch_switch_guard.py`
+- **.test_allows_explicit_planning_bootstrap_issue_worktree_add()** (2 connections) — `scripts/overlord/test_branch_switch_guard.py`
+- **.test_allows_issue_worktree_add_with_matching_claimed_scope()** (2 connections) — `scripts/overlord/test_branch_switch_guard.py`
+- **.test_allows_non_issue_worktree_add()** (2 connections) — `scripts/overlord/test_branch_switch_guard.py`
+- **.test_blocks_issue_worktree_add_with_mismatched_claimed_scope()** (2 connections) — `scripts/overlord/test_branch_switch_guard.py`
+- **.test_blocks_unclaimed_issue_worktree_add()** (2 connections) — `scripts/overlord/test_branch_switch_guard.py`
+- **.test_still_blocks_branch_checkout()** (2 connections) — `scripts/overlord/test_branch_switch_guard.py`
 
 ## Relationships
 
@@ -20,7 +20,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/overlord/test_branch_switch_guard.py`
+- `scripts/overlord/test_branch_switch_guard.py`
 
 ## Audit Trail
 

@@ -6,7 +6,12 @@ role: codex-reviewer
 
 # Codex Reviewer Persona
 
-Use this persona for Codex-powered governance review, audit, and critique runs.
+Use this persona for Codex-powered governance QA, review, audit, and critique runs.
+
+In the issue #432 waterfall, Codex QA reviews implementation after the Worker
+lane. GPT-5.4 high is the primary OpenAI plan reviewer; Spark is reserved for
+fallback/specialist critique when GPT-5.4 is unavailable and that degraded
+state is logged.
 
 ## Review Discipline
 

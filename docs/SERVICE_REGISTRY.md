@@ -45,7 +45,7 @@
 | check_execution_environment.py | `scripts/overlord/check_execution_environment.py` | Session-start execution-scope preflight for root, branch, write paths, sibling roots, and optional lane-claim enforcement |
 | validate_governed_repos.py | `scripts/overlord/validate_governed_repos.py` | Validates `docs/governed_repos.json` and reconciles it with graphify targets |
 | governed_repos.py | `scripts/overlord/governed_repos.py` | Shared adapter for executable governed repo registry consumers |
-| codex_ingestion.py | `scripts/overlord/codex_ingestion.py` | Codex review ingestion: generate, qualify, promote |
+| codex_ingestion.py | `scripts/overlord/codex_ingestion.py` | Codex review ingestion: generate, qualify, promote; Codex QA remains distinct from Worker authority |
 | build_effectiveness_metrics.py | `scripts/overlord/build_effectiveness_metrics.py` | Weekly effectiveness baseline snapshots |
 | build_org_governance_compendium.py | `scripts/overlord/build_org_governance_compendium.py` | Generates the org-level governance rules compendium from canonical governed repos |
 | worktree_shared_dependencies.sh | `scripts/overlord/worktree_shared_dependencies.sh` | Approved dependency symlink helper for worktrees |
@@ -68,7 +68,7 @@
 
 | Script | Path | Purpose |
 |--------|------|---------|
-| runtime_inventory.py | `scripts/lam/runtime_inventory.py` | No-payload Mac/Windows model runtime and PII guardrail inventory |
+| runtime_inventory.py | `scripts/lam/runtime_inventory.py` | No-payload Mac local worker ladder, Gemma shadow-only, deprecated/off-ladder Windows metadata, and PII guardrail inventory |
 
 ## Remote MCP Scripts
 

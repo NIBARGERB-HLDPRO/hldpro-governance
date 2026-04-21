@@ -230,7 +230,7 @@ esac
 case "$ext" in
   .sh|.py|.mjs|.js|.ts|.tsx|.go|.rb|.rs)
     basename_file="$(basename "$file_path")"
-    printf '%s' "{\"decision\":\"block\",\"reason\":\"BLOCKED: New code file '${basename_file}' must be authored by codex-spark, not Claude directly.\\n\\nRule: SoM division of labor — Claude plans + reviews + trivial mechanical edits only.\\nAll new .sh/.py/.mjs/.ts/.js files → codex-spark brief + Agent tool handoff.\\n\\nTo proceed: write a codex-spark brief and use the Agent tool to delegate this task.\"}"
+    printf '%s' "{\"decision\":\"block\",\"reason\":\"BLOCKED: New code file '${basename_file}' must be authored by an approved Worker, not directly by the planning/orchestration lane.\\n\\nRule: SoM division of labor — Codex orchestrates, Opus plans, Sonnet or bounded local Qwen workers implement, Codex QA reviews, and gates verify.\\nNew .sh/.py/.mjs/.ts/.js files require an issue-backed execution scope and Worker handoff.\\n\\nTo proceed: record the Worker handoff and use the approved Worker lane for this task.\"}"
     exit 2
     ;;
 esac

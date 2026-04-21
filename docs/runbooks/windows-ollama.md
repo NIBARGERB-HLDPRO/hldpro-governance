@@ -2,7 +2,7 @@
 
 ## Current Status
 
-Windows Ollama remains LAN-only fallback/batch/health infrastructure. It is not a primary interactive lane and it is not allowed to receive PII-tagged or PII-detected payloads.
+Windows Ollama is deprecated/off the active Society of Minds governance waterfall as of issue #432. It remains LAN-only historical batch/health infrastructure unless a future issue explicitly reactivates it. It is not a Worker fallback and it is not allowed to receive PII-tagged or PII-detected payloads.
 
 2026-04-17 governance-side probe:
 
@@ -40,12 +40,13 @@ bash scripts/windows-ollama/preflight.sh --critic
 
 ## Routing Boundary
 
-- Windows role: LAN-only fallback/batch/health.
+- Windows role: deprecated/off active SoM ladder.
 - PII-tagged payload: halt.
 - PII detected by local patterns: halt.
 - Missing PII patterns: halt.
 - Endpoint unreachable: do not route to Windows.
 - Endpoint reachable but required model missing: do not route to Windows.
+- Endpoint reachable and model present: still do not route to Windows for governance waterfall work.
 - Cloud fallback for PII: never allowed.
 
 ## Audit Boundary

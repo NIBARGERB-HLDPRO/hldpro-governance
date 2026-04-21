@@ -10,9 +10,15 @@ worker:
       residency: on_demand
       role: worker-lam-large
       placement_note: Mac M5 Pro 48 GB; load only when other large on-demand models are unloaded
-reviewer:
+shadow_critic:
   model_id: mlx-community/gemma-4-26b-a4b-4bit
   model_family: gemma
+  authority: ab_shadow_only
+  role: critic-lam-shadow
+reviewer:
+  authority: cloud_qa_required
+  role: codex-or-claude-authoritative-qa
+  note: Gemma shadow output does not satisfy reviewer or gate requirements.
 guardrail:
   model_id: mlx-community/Qwen3-8B-4bit
   model_family: qwen
@@ -36,13 +42,14 @@ mcp:
     - role_scope_extends_to_reviewer_lam_fallback
     - human_operator_directive
 
-# Tier-2 Worker local fallback — loaded on-demand when codex-spark unavailable
-worker_local_fallback:
+# Local Qwen micro-worker — bounded implementation only, loaded on-demand.
+worker_local_micro:
   model_id: mlx-community/Qwen2.5-Coder-7B-Instruct-4bit
   model_family: qwen
   mem_estimate_gb: 4.5
-  trigger: codex-spark unavailable (quota / outage / auth)
-  role: tier-2 coder
+  trigger: bounded low-risk implementation chunk
+  role: local micro-worker
+  authority: implementation_only
 
 runtime:
   framework: mlx

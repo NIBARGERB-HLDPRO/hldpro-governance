@@ -41,7 +41,7 @@ class TestRuntimeInventory(unittest.TestCase):
         self.assertEqual(payload["reachable"], False)
         self.assertEqual(payload["probe_payloads_sent"], False)
         self.assertEqual(payload["models"], [])
-        self.assertIn("unverified", payload["role"])
+        self.assertEqual(payload["role"], "deprecated_off_active_som_ladder")
 
     def test_windows_tags_lists_models_without_payloads(self) -> None:
         response = FakeResponse({"models": [{"name": "qwen2.5-coder:7b"}, {"name": "llama3.1:8b"}]})
@@ -50,7 +50,7 @@ class TestRuntimeInventory(unittest.TestCase):
         self.assertEqual(payload["reachable"], True)
         self.assertEqual(payload["probe_payloads_sent"], False)
         self.assertEqual(payload["models"], ["llama3.1:8b", "qwen2.5-coder:7b"])
-        self.assertEqual(payload["role"], "lan_only_fallback_batch_health_unverified")
+        self.assertEqual(payload["role"], "deprecated_off_active_som_ladder")
 
     def test_pii_guardrail_missing_patterns_fails_closed(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -72,14 +72,16 @@ class TestRuntimeInventory(unittest.TestCase):
                 "reachable": False,
                 "models": [],
                 "probe_payloads_sent": False,
-                "role": "lan_only_fallback_batch_health_unverified",
+                "role": "deprecated_off_active_som_ladder",
             }
             payload = runtime_inventory.build_inventory("http://example.invalid:11434", 0.01)
         self.assertEqual(payload["probe_payloads_sent"], False)
         self.assertEqual(payload["routing_boundaries"]["pii_to_cloud_allowed"], False)
         self.assertEqual(payload["routing_boundaries"]["pii_to_windows_allowed"], False)
         self.assertEqual(payload["routing_boundaries"]["patterns_missing_behavior"], "halt")
-        self.assertEqual(payload["routing_boundaries"]["windows_role"], "lan_only_fallback_batch_health_unverified")
+        self.assertEqual(payload["routing_boundaries"]["windows_role"], "deprecated_off_active_som_ladder")
+        self.assertEqual(payload["routing_boundaries"]["windows_active_worker_fallback"], False)
+        self.assertEqual(payload["routing_boundaries"]["gemma_authoritative_review_allowed"], False)
 
     def test_qwen36_large_worker_is_mac_mlx_on_demand_only(self) -> None:
         payload = runtime_inventory.memory_budget(48)
@@ -97,6 +99,24 @@ class TestRuntimeInventory(unittest.TestCase):
         self.assertIn(f"mem_estimate_gb: {model['budget_gb']}", config)
         self.assertIn(f"runtime: {model['runtime']}", config)
         self.assertIn("residency: on_demand", config)
+
+    def test_local_qwen_ladder_and_gemma_shadow_policy_are_explicit(self) -> None:
+        payload = runtime_inventory.memory_budget(48)
+        on_demand = payload["on_demand"]
+        self.assertEqual(
+            on_demand["qwen_coder_micro_worker"]["model"],
+            "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit",
+        )
+        self.assertEqual(on_demand["qwen_coder_micro_worker"]["authority"], "implementation_only")
+        self.assertEqual(on_demand["worker_lam"]["model"], "mlx-community/Qwen3-14B-4bit")
+        self.assertEqual(
+            on_demand["worker_lam_large"]["model"],
+            "mlx-community/Qwen3.6-35B-A3B-4bit",
+        )
+        self.assertEqual(on_demand["shadow_critic_lam"]["model"], "mlx-community/gemma-4-26b-a4b-4bit")
+        self.assertEqual(on_demand["shadow_critic_lam"]["authority"], "ab_shadow_only")
+        self.assertIn("Gemma is A/B shadow-only", payload["policy"])
+        self.assertIn("Windows is off the active SoM ladder", payload["policy"])
 
 
 if __name__ == "__main__":

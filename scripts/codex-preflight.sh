@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# codex-preflight.sh — verify codex-spark availability before firing Tier-2 work.
+# codex-preflight.sh — verify codex-spark availability before fallback/specialist critique.
 #
 # Exit codes:
 #   0 — spark available (probe returned ok, or quota logs show primary < 100%)

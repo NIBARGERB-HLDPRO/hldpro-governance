@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
-# scripts/windows-ollama/decide.sh — routing decision tree for Windows Ollama Tier-2 fallback
-# Returns: LOCAL | WINDOWS | CLOUD | HALT
+# scripts/windows-ollama/decide.sh — deprecated Windows-aware routing guard
+# Returns: LOCAL | CLOUD | HALT
 # Exit codes: 0 (success) or 1 (HALT — PII detected, cannot route)
+#
+# Windows Ollama is off the active Society of Minds worker ladder as of issue
+# #432. This helper remains only to fail closed for PII and to prevent old
+# callers from selecting WINDOWS as a success path.
 
 set -uo pipefail
 
@@ -72,7 +76,7 @@ log_fallback() {
   local fallback="$1"
   if ! bash scripts/model-fallback-log.sh \
     --tier 2 \
-    --primary "gpt-5.3-codex-spark" \
+    --primary "claude-sonnet-4-6" \
     --fallback "$fallback" \
     --reason "auto" \
     --caller "decide.sh"; then
@@ -153,22 +157,8 @@ if [[ -n "$PROMPT_TO_CHECK" ]]; then
   fi
 fi
 
-# 2. Spark primary (if ok, use cloud — skip the fallback ladder)
-if [[ "$SPARK_HIGH_STATUS" == "ok" ]]; then
-  echo "CLOUD"
-  echo "decide: CLOUD (pii=no, spark=high, spark_medium=$SPARK_MEDIUM_STATUS, local=$LOCAL_DAEMON_STATUS, win=$WINDOWS_STATUS)" >&2
-  exit 0
-fi
-
-# 3. Spark medium fallback
-if [[ "$SPARK_MEDIUM_STATUS" == "ok" ]]; then
-  echo "CLOUD"
-  log_fallback "gpt-5.3-codex-spark@medium"
-  echo "decide: CLOUD (pii=no, spark_high=$SPARK_HIGH_STATUS, spark_medium=ok, local=$LOCAL_DAEMON_STATUS, win=$WINDOWS_STATUS)" >&2
-  exit 0
-fi
-
-# 4. Local warm daemon
+# 2. Local warm daemon. Spark status flags are accepted for backward
+# compatibility but are not worker-routing inputs in the issue #432 waterfall.
 if [[ "$LOCAL_DAEMON_STATUS" == "up" ]]; then
   echo "LOCAL"
   log_fallback "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit"
@@ -176,16 +166,14 @@ if [[ "$LOCAL_DAEMON_STATUS" == "up" ]]; then
   exit 0
 fi
 
-# 5. Windows Ollama
+# 3. Windows Ollama is off-ladder. Do not return WINDOWS.
 if [[ "$WINDOWS_STATUS" == "ok" ]]; then
-  echo "WINDOWS"
-  log_fallback "qwen2.5-coder:7b"
-  echo "decide: WINDOWS (pii=no, spark_high=$SPARK_HIGH_STATUS, spark_medium=$SPARK_MEDIUM_STATUS, local=$LOCAL_DAEMON_STATUS, win=ok)" >&2
+  echo "CLOUD"
+  echo "decide: CLOUD (windows_off_ladder, pii=no, spark_high=$SPARK_HIGH_STATUS, spark_medium=$SPARK_MEDIUM_STATUS, local=$LOCAL_DAEMON_STATUS, win=ok)" >&2
   exit 0
 fi
 
-# 6. Cloud fallback (Sonnet cost-flagged)
+# 4. Cloud worker path.
 echo "CLOUD"
-log_fallback "claude-sonnet-4-6"
-echo "decide: CLOUD (pii=no, spark_high=$SPARK_HIGH_STATUS, spark_medium=$SPARK_MEDIUM_STATUS, local=$LOCAL_DAEMON_STATUS, win=$WINDOWS_STATUS) [fallback]" >&2
+echo "decide: CLOUD (pii=no, spark_high=$SPARK_HIGH_STATUS, spark_medium=$SPARK_MEDIUM_STATUS, local=$LOCAL_DAEMON_STATUS, win=$WINDOWS_STATUS)" >&2
 exit 0

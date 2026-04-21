@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **test_artifacts.py** (1 connections) — `hldpro-governance/packages/hldpro-sim/tests/test_artifacts.py`
-- **test_artifact_writer_writes_manifest_and_outcomes()** (1 connections) — `hldpro-governance/packages/hldpro-sim/tests/test_artifacts.py`
+- **test_artifacts.py** (1 connections) — `packages/hldpro-sim/tests/test_artifacts.py`
+- **test_artifact_writer_writes_manifest_and_outcomes()** (1 connections) — `packages/hldpro-sim/tests/test_artifacts.py`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `hldpro-governance/packages/hldpro-sim/tests/test_artifacts.py`
+- `packages/hldpro-sim/tests/test_artifacts.py`
 
 ## Audit Trail
 

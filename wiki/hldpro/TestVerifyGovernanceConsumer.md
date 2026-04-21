@@ -1,6 +1,6 @@
 # TestVerifyGovernanceConsumer
 
-> God node · 14 connections · `hldpro-governance/scripts/overlord/test_verify_governance_consumer.py`
+> God node · 14 connections · `scripts/overlord/test_verify_governance_consumer.py`
 
 ## Connections by Relation
 

@@ -92,7 +92,7 @@ Nodes (10): Phase 0 Freeze Evidence Matrix Config, Issue #29 - Phase 0 Freeze Ev
 
 ### Community 10 - "Provider Test Suite"
 Cohesion: 0.2
-Nodes (0): 
+Nodes (0):
 
 ### Community 11 - "Lookback Validation"
 Cohesion: 0.58
@@ -140,7 +140,7 @@ Nodes (3): fail(), main(), require_rejected()
 
 ### Community 22 - "Runner Tests"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (0):
 
 ### Community 23 - "Model Bakeoff Smoke"
 Cohesion: 1.0
@@ -168,15 +168,15 @@ Nodes (3): Endpoint Probe Runbook, Issue #25 - Tradier Real-Time Microstructure 
 
 ### Community 29 - "Engine Tests"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (0):
 
 ### Community 30 - "Artifact Tests"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (0):
 
 ### Community 31 - "Candidate Template Emission"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (0):
 
 ### Community 32 - "Aggregator Hierarchy"
 Cohesion: 1.0

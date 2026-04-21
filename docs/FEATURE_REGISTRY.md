@@ -154,7 +154,7 @@
 
 | Feature ID | Notes |
 |---|---|
-| GOV-021 | `scripts/lam/runtime_inventory.py` reports Mac hardware, MLX availability, Windows Ollama metadata reachability, PII pattern readiness, memory budgets, and fail-closed routing boundaries without sending prompt payloads. |
+| GOV-021 | `scripts/lam/runtime_inventory.py` reports Mac hardware, MLX availability, deprecated/off-ladder Windows Ollama metadata if probed, PII pattern readiness, memory budgets, and fail-closed routing boundaries without sending prompt payloads. |
 | GOV-021 | `docs/runbooks/local-model-runtime.md` defines the Mac M5 Pro 48 GB steady-state and on-demand model budget. |
 | GOV-021 | `docs/runbooks/windows-ollama.md` resolves the prior Windows VRAM assumption as unverified and keeps Windows LAN-only fallback/batch/health until direct host telemetry exists. |
 
@@ -199,3 +199,5 @@
 |---|---|
 | GOV-016 | The original SoM charter landed under umbrella #99; enforcement-drift closure now runs under epic #214 with issue-backed slices #215-#221. Active enforcement work covers Codex model/reasoning pin checks, ladder consistency, cross-review gate identity, architecture tier evidence, packet schema/runtime-boundary accuracy, operational closeout evidence, and execution-root/write-scope validation. |
 | GOV-016 | Future SoM closeouts must identify the wired checks actually run, schema/artifact version, model identities, reviewer and gate identity, issue links, validation commands, and residual risks or deferrals. The closeout contract lives in `raw/closeouts/TEMPLATE.md`, with the current Slice 6 record under `raw/closeouts/2026-04-17-som-enforcement-drift-closeout-loop.md`. |
+| GOV-016 | Issue #432 revises the governance waterfall SSOT: Codex orchestrates and integrates, Opus 4.6 plans, GPT-5.4 high reviews the plan with Spark only as a logged fallback/specialist critique, Sonnet 4.6 is the primary Worker, Codex performs QA, Qwen local models handle bounded implementation chunks, Gemma is A/B shadow-only, and Windows Ollama is off the active fallback ladder. |
+| GOV-021 | Runtime inventory now treats Windows Ollama as deprecated/off-ladder, exposes Qwen2.5-Coder/Qwen3-14B/Qwen3.6 as the local worker ladder, and asserts Gemma's `ab_shadow_only` authority. |
