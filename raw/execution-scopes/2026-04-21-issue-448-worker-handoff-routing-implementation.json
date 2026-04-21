@@ -1,0 +1,68 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-448-worker-handoff-routing-20260421",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-448-worker-handoff-routing-pdcar.md",
+    "docs/plans/issue-448-structured-agent-cycle-plan.json",
+    "docs/templates/worker-handoff-routing-template.json",
+    "graphify-out/",
+    "hooks/code-write-gate.sh",
+    "raw/closeouts/2026-04-21-issue-448-worker-handoff-routing.md",
+    "raw/cross-review/2026-04-21-issue-448-worker-handoff-routing.md",
+    "raw/execution-scopes/2026-04-21-issue-448-worker-handoff-routing-implementation.json",
+    "raw/handoffs/2026-04-21-issue-448-plan-to-implementation.json",
+    "raw/validation/2026-04-21-issue-448-worker-handoff-routing.md",
+    "scripts/orchestrator/test_delegation_hook.py",
+    "scripts/overlord/check_worker_handoff_route.py",
+    "scripts/overlord/test_check_worker_handoff_route.py",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #448."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #448."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #448."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #448."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 448,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/448",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-21T11:10:00-05:00"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-opus-4-6",
+    "implementer_model": "gpt-5.4-codex-qa-after-sonnet-timeout",
+    "accepted_at": "2026-04-21T11:10:00-05:00",
+    "evidence_paths": [
+      "docs/plans/issue-448-structured-agent-cycle-plan.json",
+      "raw/handoffs/2026-04-21-issue-448-plan-to-implementation.json"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

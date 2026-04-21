@@ -230,7 +230,26 @@ esac
 case "$ext" in
   .sh|.py|.mjs|.js|.ts|.tsx|.go|.rb|.rs)
     basename_file="$(basename "$file_path")"
-    printf '%s' "{\"decision\":\"block\",\"reason\":\"BLOCKED: New code file '${basename_file}' must be authored by an approved Worker, not directly by the planning/orchestration lane.\\n\\nRule: SoM division of labor — Codex orchestrates, Opus plans, Sonnet or bounded local Qwen workers implement, Codex QA reviews, and gates verify.\\nNew .sh/.py/.mjs/.ts/.js files require an issue-backed execution scope and Worker handoff.\\n\\nTo proceed: record the Worker handoff and use the approved Worker lane for this task.\"}"
+    if [ -n "$repo_root" ] && [ -n "$rel_path" ] && [ -f "$repo_root/scripts/overlord/check_worker_handoff_route.py" ]; then
+      lane_role="${HLDPRO_LANE_ROLE:-${SOM_LANE_ROLE:-planner}}"
+      route_result="$(python3 "$repo_root/scripts/overlord/check_worker_handoff_route.py" \
+        --repo-root "$repo_root" \
+        --target-path "$rel_path" \
+        --branch-name "${branch_name:-}" \
+        --role "$lane_role" \
+        --json 2>/dev/null || true)"
+      route_decision="$(printf '%s' "$route_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('decision','block'))" 2>/dev/null || printf 'block')"
+      route_reason="$(printf '%s' "$route_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('reason',''))" 2>/dev/null || true)"
+      if [ "$route_decision" = "allow" ]; then
+        exit 0
+      fi
+      if [ -n "$route_reason" ]; then
+        escaped_reason="$(printf '%s' "$route_reason" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read())[1:-1])')"
+        printf '%s' "{\"decision\":\"block\",\"reason\":\"${escaped_reason}\"}"
+        exit 2
+      fi
+    fi
+    printf '%s' "{\"decision\":\"block\",\"reason\":\"BLOCKED: New code file '${basename_file}' must be authored by an approved Worker, not directly by the planning/orchestration lane.\\n\\nRule: SoM division of labor — Codex orchestrates, Opus plans, Sonnet or bounded local Qwen workers implement, Codex QA reviews, and gates verify.\\nNew .sh/.py/.mjs/.ts/.js files require an issue-backed execution scope and Worker handoff.\\n\\nNext: create/update raw/execution-scopes/<date>-issue-<n>-worker-implementation.json and raw/handoffs/<date>-issue-<n>-<scope>.json; include the target file in allowed_write_paths; set execution_mode to implementation_ready; set handoff_evidence.status to accepted; then rerun from the approved Worker lane.\"}"
     exit 2
     ;;
 esac

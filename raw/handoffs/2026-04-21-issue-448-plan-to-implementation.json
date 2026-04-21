@@ -1,0 +1,73 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-448-plan-to-implementation",
+  "issue_number": 448,
+  "parent_epic_number": 434,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "claude-sonnet-worker",
+  "structured_plan_ref": "docs/plans/issue-448-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-448-worker-handoff-routing-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Planner/orchestrator new code-file writes remain blocked by default with actionable next-step text.",
+      "verification_refs": [
+        "hooks/code-write-gate.sh",
+        "scripts/orchestrator/test_delegation_hook.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Approved Worker handoff evidence allows covered target paths.",
+      "verification_refs": [
+        "scripts/overlord/check_worker_handoff_route.py",
+        "scripts/overlord/test_check_worker_handoff_route.py"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Missing scope, missing target path, wrong issue, and same-family missing exception cases fail closed.",
+      "verification_refs": [
+        "scripts/overlord/test_check_worker_handoff_route.py"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_check_worker_handoff_route.py",
+    "pytest scripts/orchestrator/test_delegation_hook.py -q",
+    "python3 scripts/overlord/test_assert_execution_scope.py",
+    "python3 -m py_compile scripts/overlord/check_worker_handoff_route.py",
+    "bash -n hooks/code-write-gate.sh",
+    "python3 -m json.tool docs/templates/worker-handoff-routing-template.json",
+    "python3 scripts/overlord/test_validate_handoff_package.py",
+    "python3 scripts/overlord/validate_handoff_package.py --root .",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-448-worker-handoff-routing-20260421 --require-if-issue-branch",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-448-worker-handoff-routing-implementation.json --require-lane-claim",
+    "tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-21-issue-448-worker-handoff-routing.md"
+  ],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "hooks/code-write-gate.sh",
+    "scripts/overlord/check_worker_handoff_route.py",
+    "scripts/overlord/test_check_worker_handoff_route.py",
+    "scripts/orchestrator/test_delegation_hook.py",
+    "docs/templates/worker-handoff-routing-template.json",
+    "docs/plans/issue-448-worker-handoff-routing-pdcar.md",
+    "docs/plans/issue-448-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-448-worker-handoff-routing-implementation.json"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-448-worker-handoff-routing.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T11:10:00-05:00",
+  "notes": "Worker handoff routing implementation package for issue #448. Sonnet worker handoff was attempted through the CLI supervisor and reached max turns without edits; Codex implemented and QA reviews under the approved deviation rule."
+}

@@ -1,11 +1,11 @@
 # Graph Report - hldpro-governance  (2026-04-21)
 
 ## Corpus Check
-- Large corpus: 1849 files · ~478,649 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1854 files · ~480,914 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 1495 nodes · 2835 edges · 78 communities detected
-- Extraction: 51% EXTRACTED · 49% INFERRED · 0% AMBIGUOUS · INFERRED: 1393 edges (avg confidence: 0.5)
+- 1519 nodes · 2894 edges · 79 communities detected
+- Extraction: 51% EXTRACTED · 49% INFERRED · 0% AMBIGUOUS · INFERRED: 1429 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -66,49 +66,49 @@ Nodes (38): _branch_issue_number(), build_argument_parser(), _build_summary(), _
 Cohesion: 0.12
 Nodes (34): _expand_home(), governed_repos(), GovernedRepo, load_registry(), repo_names_enabled_for(), repos_enabled_for(), repos_root(), build_payload() (+26 more)
 
-### Community 8 - "Packages Hldpro sim"
+### Community 8 - "Overlord Assert execution scope"
+Cohesion: 0.11
+Nodes (33): _branch_issue_number(), _changed_paths(), _changed_paths_from_file(), check_scope(), _current_branch(), ExecutionScope, _format_path(), _git_root() (+25 more)
+
+### Community 9 - "Packages Hldpro sim"
 Cohesion: 0.06
 Nodes (14): ABC, BaseAggregator, ArtifactWriter, RunManifest, SimulationEngine, PersonaLoader, Load persona JSON files. Resolves local-first, shared fallback., Protocol (+6 more)
 
-### Community 9 - "Overlord Validate closeout"
+### Community 10 - "Overlord Validate closeout"
 Cohesion: 0.13
 Nodes (23): _json(), TestValidateCloseout, _write(), build_parser(), _extract_repo_refs(), _load_json(), main(), _repo_rel() (+15 more)
 
-### Community 10 - "Remote mcp Stage d"
+### Community 11 - "Remote mcp Stage d"
 Cohesion: 0.11
 Nodes (22): build_parser(), _env_has_live_markers(), main(), _run_fixture(), _run_live(), _scan_evidence_dir(), _stage_d_args(), _build_fixture_server() (+14 more)
 
-### Community 11 - "Som client Som client Error"
+### Community 12 - "Som client Som client Error"
 Cohesion: 0.09
 Nodes (12): RuntimeError, build_parser(), _decode_jwt_payload(), from_env(), main(), Error raised for client-side protocol and transport failures., Decode JWT payload without verifying signature., Minimal HTTP client for Remote MCP Bridge tools. (+4 more)
 
-### Community 12 - "Orchestrator Self learning"
+### Community 13 - "Orchestrator Self learning"
 Cohesion: 0.15
 Nodes (26): atomic_write_yaml(), build_report(), _date_from_text(), duplicate_counts(), enrich_packet(), _entry_id(), LearningEntry, LearningMatch (+18 more)
-
-### Community 13 - "Packet Validate hitl relay"
-Cohesion: 0.12
-Nodes (28): _load(), test_duplicate_reply_cannot_produce_instruction(), test_expired_reply_cannot_produce_instruction(), test_low_confidence_clarify_decision_passes_without_instruction(), test_low_confidence_non_clarify_decision_fails_closed(), test_pii_external_channel_fails_closed(), test_response_requires_notification_and_response_ids(), test_session_instruction_requires_matching_target_session() (+20 more)
 
 ### Community 14 - "Knowledge base Graphify"
 Cohesion: 0.13
 Nodes (19): add_common_args(), build_plan(), build_refresh_command(), execute_refresh(), find_target(), git_hook_paths(), HelperError, HookPlan (+11 more)
 
-### Community 15 - "Packet Validate Load"
+### Community 15 - "Packet Validate hitl relay"
+Cohesion: 0.12
+Nodes (28): _load(), test_duplicate_reply_cannot_produce_instruction(), test_expired_reply_cannot_produce_instruction(), test_low_confidence_clarify_decision_passes_without_instruction(), test_low_confidence_non_clarify_decision_fails_closed(), test_pii_external_channel_fails_closed(), test_response_requires_notification_and_response_ids(), test_session_instruction_requires_matching_target_session() (+20 more)
+
+### Community 16 - "Packet Validate Load"
 Cohesion: 0.1
 Nodes (30): _find_packet_file(), _load_packet(), load_pii_patterns(), _load_schema(), Load and compile PII patterns from pii-patterns.yml., Enforce cross-family independence for tier-1 dual-planner packets.      When pri, Refuse if any consecutive pair in the parent chain shares model_id across differ, Enforce expected handoff sequence with no tier jumps. (+22 more)
 
-### Community 16 - "Orchestrator Hitl relay queue"
+### Community 17 - "Orchestrator Hitl relay queue"
 Cohesion: 0.19
 Nodes (28): append_audit(), atomic_write_json(), _base_packet(), _build_decision_packet(), _build_instruction_packet(), build_request(), _build_response_packet(), _build_resume_packet() (+20 more)
 
-### Community 17 - "Overlord Deploy governance tooling"
+### Community 18 - "Overlord Deploy governance tooling"
 Cohesion: 0.18
 Nodes (24): add_common_args(), apply(), _build_local_ci_plan(), build_plan(), _consumer_record(), _consumer_record_relpath(), _ensure_relative_to(), _fail() (+16 more)
-
-### Community 18 - "Overlord Assert execution scope"
-Cohesion: 0.15
-Nodes (26): _branch_issue_number(), _changed_paths(), _changed_paths_from_file(), check_scope(), _current_branch(), ExecutionScope, _format_path(), _git_root() (+18 more)
 
 ### Community 19 - "Knowledge base Measure graphify usage"
 Cohesion: 0.16
@@ -150,13 +150,13 @@ Nodes (12): _actual_workflows(), check_inventory(), _command_file_candidates(), 
 Cohesion: 0.2
 Nodes (18): append_audit(), _audit_path(), ensure_queue(), load_packet(), _load_plan(), QueueDecision, Replay audit events into logical latest states.      `latest_states` includes ac, replay_audit() (+10 more)
 
-### Community 29 - "Overlord Deploy governance tooling"
-Cohesion: 0.32
-Nodes (1): TestDeployGovernanceTooling
-
-### Community 30 - "Overlord Check overlord backlog github alignment"
+### Community 29 - "Overlord Check overlord backlog github alignment"
 Cohesion: 0.14
 Nodes (10): check_github_issue_open(), collect_section_lines(), fail(), issue_column_index(), issue_numbers(), main(), parse_markdown_row(), validate_section() (+2 more)
+
+### Community 30 - "Overlord Deploy governance tooling"
+Cohesion: 0.32
+Nodes (1): TestDeployGovernanceTooling
 
 ### Community 31 - "Overlord Validate handoff package"
 Cohesion: 0.36
@@ -186,163 +186,167 @@ Nodes (10): build_parser(), build_payload(), _call_fixture(), _call_live(), Chec
 Cohesion: 0.23
 Nodes (12): backlog_issues(), build_summary(), collect_active_issue_refs(), current_repo_slug(), fail(), gh_json(), IssueRef, main() (+4 more)
 
-### Community 38 - "Overlord Check org repo inventory"
+### Community 38 - "Overlord Check worker handoff route"
+Cohesion: 0.38
+Nodes (4): _git(), RepoFixture, _scope(), TestWorkerHandoffRoute
+
+### Community 39 - "Overlord Check org repo inventory"
 Cohesion: 0.28
 Nodes (14): compare_inventory(), _default_branch_name(), _inventory_rows_from_payload(), InventoryDrift, load_inventory_file(), _load_json(), load_live_inventory(), main() (+6 more)
 
-### Community 39 - "Remote mcp Monitor alert"
+### Community 40 - "Remote mcp Monitor alert"
 Cohesion: 0.23
 Nodes (14): build_alert(), build_parser(), _contains_sensitive(), _load_payload(), main(), _now(), render_markdown(), _safe_text() (+6 more)
 
-### Community 40 - "Overlord Verify governance consumer"
+### Community 41 - "Overlord Verify governance consumer"
 Cohesion: 0.3
 Nodes (1): TestVerifyGovernanceConsumer
 
-### Community 41 - "Lam Runtime inventory"
+### Community 42 - "Lam Runtime inventory"
 Cohesion: 0.14
 Nodes (2): FakeResponse, TestRuntimeInventory
 
-### Community 42 - "Overlord Validate structured agent cycle plan"
+### Community 43 - "Overlord Validate structured agent cycle plan"
 Cohesion: 0.31
 Nodes (13): _branch_issue_number(), _display_path(), _find_plan_files(), _is_governance_surface(), _load_json_safe(), main(), _matching_execution_scopes(), _matching_plan_payloads() (+5 more)
 
-### Community 43 - "Overlord Validate governed repos"
+### Community 44 - "Overlord Validate governed repos"
 Cohesion: 0.26
 Nodes (1): GovernedReposValidationTests
 
-### Community 44 - "Packet Emit Governance"
+### Community 45 - "Packet Emit Governance"
 Cohesion: 0.19
 Nodes (8): build_governance(), emit_dispatch_packet(), emit_packet(), main(), Emit a dispatch-ready packet that includes a complete governance block., Emit a minimal or dispatch-ready packet YAML file. Returns path to written file., Build a governance block dict for inclusion in a dispatch-ready packet., TestPacketEmitter
 
-### Community 45 - "Bootstrap repo Exercise"
+### Community 46 - "Bootstrap repo Exercise"
 Cohesion: 0.29
 Nodes (12): check(), main(), Exercise vault discovery from sibling governance worktrees., Exercise vault discovery from HLDPRO/var/worktrees/* governance worktrees., Exercise Seek/Ponder bootstrap aliases without leaking synthetic values., Exercise Stampede bootstrap with production Tradier mapping and redaction., Exercise lam bootstrap with command-like vault values and missing optional keys., run_nested_var_worktree_lam_bootstrap() (+4 more)
 
-### Community 46 - "Overlord Check org repo inventory"
+### Community 47 - "Overlord Check org repo inventory"
 Cohesion: 0.51
 Nodes (1): TestOrgRepoInventory
 
-### Community 47 - "Cli session supervisor"
+### Community 48 - "Cli session supervisor"
 Cohesion: 0.32
 Nodes (11): append_jsonl(), AttemptResult, build_command(), event_paths(), kill_group(), main(), parse_args(), session_id() (+3 more)
 
-### Community 48 - "Overlord Automerge policy check"
+### Community 49 - "Overlord Automerge policy check"
 Cohesion: 0.27
 Nodes (6): _check_required_checks(), evaluate(), _labels(), main(), eligible_payload(), TestAutomergePolicyCheck
 
-### Community 49 - "Cli session supervisor"
+### Community 50 - "Cli session supervisor"
 Cohesion: 0.56
 Nodes (10): events(), run_supervisor(), test_intermittent_output_avoids_idle_timeout(), test_nonzero_failure_is_recorded_without_retry(), test_retry_halts_after_one_additional_timeout(), test_retry_once_can_recover_from_timeout(), test_silent_stall_hits_idle_timeout_and_kills_process(), test_success_event_captures_stdout_and_schema_fields() (+2 more)
 
-### Community 50 - "Knowledge base Graph"
+### Community 51 - "Knowledge base Graph"
 Cohesion: 0.38
 Nodes (10): build_graph(), _community_label(), _derive_path_phrase(), _derive_path_tokens(), infer_community_labels(), main(), _normalize_phrase(), _sanitize_markdown_artifacts() (+2 more)
 
-### Community 51 - "Orchestrator Delegation Owned"
+### Community 52 - "Orchestrator Delegation Owned"
 Cohesion: 0.45
-Nodes (10): _payload(), _run_hook(), test_hook_allows_read_even_when_text_matches_owned_work(), test_hook_blocks_agent_owned_work_before_file_path_logic(), test_hook_blocks_task_tool_owned_work(), test_hook_bypass_allows_and_logs(), test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate(), test_hook_preserves_new_code_file_block() (+2 more)
+Nodes (10): _payload(), _run_hook(), test_hook_allows_read_even_when_text_matches_owned_work(), test_hook_blocks_agent_owned_work_before_file_path_logic(), test_hook_blocks_task_tool_owned_work(), test_hook_bypass_allows_and_logs(), test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate(), test_hook_preserves_new_code_file_block_for_common_extensions() (+2 more)
 
-### Community 52 - "Orchestrator Hitl relay queue"
+### Community 53 - "Orchestrator Hitl relay queue"
 Cohesion: 0.45
 Nodes (10): _process(), _request(), test_ambiguous_response_produces_clarification_and_no_instruction(), test_expired_response_fails_closed_to_dead_letter(), test_invalid_packet_lands_in_dead_letter_with_validation_errors(), test_local_cli_checkpoint_fixture_creates_valid_hitl_request(), test_replay_reconstructs_decision_path(), test_request_changes_response_preserves_feedback_path_without_approval() (+2 more)
 
-### Community 53 - "Overlord Validate registry surfaces"
+### Community 54 - "Overlord Validate registry surfaces"
 Cohesion: 0.49
 Nodes (9): check(), fail(), main(), read_text(), repos_for_static_checkout(), validate_docs_surfaces(), validate_runtime_registry_consumers(), validate_static_checkout_workflow() (+1 more)
 
-### Community 54 - "Lam Runtime inventory"
+### Community 55 - "Lam Runtime inventory"
 Cohesion: 0.4
 Nodes (9): build_inventory(), import_available(), local_runtime(), mac_hardware(), main(), memory_budget(), pii_guardrail(), _run() (+1 more)
 
-### Community 55 - "Knowledge base Graphify targets"
+### Community 56 - "Knowledge base Graphify targets"
 Cohesion: 0.38
 Nodes (9): filtered_targets(), find_target(), load_manifest(), main(), print_json(), print_shell(), print_stage_paths(), print_tsv() (+1 more)
 
-### Community 56 - "Packages Hldpro sim Providers"
+### Community 57 - "Packages Hldpro sim Providers"
 Cohesion: 0.2
 Nodes (0): 
 
-### Community 57 - "Codex fire Failure"
+### Community 58 - "Codex fire Failure"
 Cohesion: 0.5
 Nodes (8): run_fire(), test_exec_failure_after_successful_preflight_logs_and_signals(), test_preflight_failure_logs_and_exits_fast(), test_preflight_timeout_logs_and_exits_fast(), test_review_template_default_persona_reaches_codex_fire(), test_review_template_propagates_wrapper_failure(), test_success_does_not_write_failure_log(), write_fake_codex()
 
-### Community 58 - "Overlord Branch switch guard"
+### Community 59 - "Overlord Branch switch guard"
 Cohesion: 0.39
 Nodes (2): run_hook(), TestBranchSwitchGuard
 
-### Community 59 - "Overlord Memory integrity"
+### Community 60 - "Overlord Memory integrity"
 Cohesion: 0.42
 Nodes (7): check_memory_exists(), inspect_repo(), load_memory_lines(), main(), memory_dir_for_repo(), parse_pointer_filenames(), validate_frontmatter()
 
-### Community 60 - "Knowledge base Graphify usage logging"
+### Community 61 - "Knowledge base Graphify usage logging"
 Cohesion: 0.61
 Nodes (8): check(), main(), run_command(), test_logger_backwards_compatible(), test_logger_query_trace_fields(), test_measurement_falls_back_from_stale_governance_repo_path(), test_measurement_outputs_query_traces(), test_schema_shape()
 
-### Community 61 - "Overlord Effectiveness metrics"
+### Community 62 - "Overlord Effectiveness metrics"
 Cohesion: 0.46
 Nodes (7): collect_repo_metrics(), main(), parse_iso(), pct(), render_markdown(), RepoMetrics, run()
 
-### Community 62 - "Overlord Validate governed repos"
+### Community 63 - "Overlord Validate governed repos"
 Cohesion: 0.67
 Nodes (6): check(), fail(), load_json(), main(), validate_graphify_reconciliation(), validate_registry_shape()
 
-### Community 63 - "Orchestrator Read only observer"
+### Community 64 - "Orchestrator Read only observer"
 Cohesion: 0.48
 Nodes (2): _copy_fixture(), TestReadOnlyObserver
 
-### Community 64 - "Packages Hldpro sim Stampede"
+### Community 65 - "Packages Hldpro sim Stampede"
 Cohesion: 0.4
 Nodes (4): BaseAggregator, BaseModel, NarrativeAggregator, NarrativeOutcome
 
-### Community 65 - "Knowledge base Log graphify usage"
+### Community 66 - "Knowledge base Log graphify usage"
 Cohesion: 0.7
 Nodes (4): append_event(), build_event(), main(), parse_args()
 
-### Community 66 - "Packet Hitl relay schema"
+### Community 67 - "Packet Hitl relay schema"
 Cohesion: 0.8
 Nodes (4): _load(), test_invalid_hitl_relay_examples_fail(), test_valid_hitl_relay_examples_pass(), _validator()
 
-### Community 67 - "Knowledge base Graphify governance"
+### Community 68 - "Knowledge base Graphify governance"
 Cohesion: 0.83
 Nodes (3): check(), is_ignored(), main()
 
-### Community 68 - "Knowledge base Update knowledge"
+### Community 69 - "Knowledge base Update knowledge"
 Cohesion: 0.83
 Nodes (3): main(), replace_section(), summary_line()
 
-### Community 69 - "Packages Hldpro sim Stampede"
+### Community 70 - "Packages Hldpro sim Stampede"
 Cohesion: 0.67
 Nodes (2): MockProvider, test_stampede_e2e()
 
-### Community 70 - "Overlord Render github issue feed"
+### Community 71 - "Overlord Render github issue feed"
 Cohesion: 1.0
 Nodes (2): main(), render_issue()
 
-### Community 71 - "Knowledge base Push graph to neo4j"
+### Community 72 - "Knowledge base Push graph to neo4j"
 Cohesion: 1.0
 Nodes (2): build_scoped_graph(), main()
 
-### Community 72 - "Packages Hldpro sim Runner"
+### Community 73 - "Packages Hldpro sim Runner"
 Cohesion: 0.67
 Nodes (0): 
 
-### Community 73 - "Packages Hldpro sim Engine"
+### Community 74 - "Packages Hldpro sim Engine"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 74 - "Packages Hldpro sim Artifacts"
+### Community 75 - "Packages Hldpro sim Artifacts"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 75 - "Windows ollama Submit Temporary"
+### Community 76 - "Windows ollama Submit Temporary"
 Cohesion: 1.0
 Nodes (1): Temporary audit directory for testing.
 
-### Community 76 - "Som client Som client From"
+### Community 77 - "Som client Som client From"
 Cohesion: 1.0
 Nodes (1): Build a client from well-known environment variables.
 
-### Community 77 - "Packages Hldpro sim Personas"
+### Community 78 - "Packages Hldpro sim Personas"
 Cohesion: 1.0
 Nodes (1): Convenience: load shared dir from bundled package personas/.
 
