@@ -34,7 +34,6 @@
 | Item | Issue | Status | Notes |
 |------|-------|--------|-------|
 | SoM HITL SMS dedicated sender env propagation | #421 | IN PROGRESS | Add `SOM_TWILIO_FROM_NUMBER` plus sender aliases to local-ai-machine bootstrap output and document dedicated approval-route separation from AIS/Alex/customer-demo senders. |
-| Self-learning loop operational proof gap | #475 | IN PROGRESS | Unblock scheduled sweep before self-learning, refresh metrics, add operator-context write-back evidence, and document the reusable prevention pattern. |
 | Weekly overlord sweep write-back to wiki/index.md | — | ACTIVE / AWAITING NEXT RUN | Workflow and graph/index write-back path are wired; last committed index remains the 2026-04-09 bootstrap until the next scheduled or manual sweep refreshes generated counts |
 | LAM env-var-docs contract debt: SOM_* variables unclassified | #145 | OPEN | local-ai-machine env vars need classification |
 
@@ -42,6 +41,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Self-learning loop operational proof gap | #475 #481 | 2026-04-21 | PR #477 merged the local proof, PR #483 closed the CI memory-audit blocker, and Overlord Sweep run `24741910552` proved the self-learning report step ran and wrote `metrics/self-learning/latest.json` / `.md`. |
 | Governance SSOT consumer adoption report and epic closeout | #459 #452 | 2026-04-21 | Added the org-level consumer adoption report, wired it into overlord-sweep and Local CI, recorded the v0.2 adoption snapshot, and opened downstream residual workflow-pin issues HealthcarePlatform#1462 and ASC-Evaluator#13. |
 | Secret provisioning evidence validator | #510 | 2026-04-21 | Added `scripts/overlord/validate_provisioning_evidence.py`, focused leakage-class tests, and `hldpro-governance` Local CI Gate wiring for no-secret provisioning evidence checks. |
 | Pages deploy gate missing-secret UX | #511 | 2026-04-21 | Hardened `scripts/pages-deploy/pages_deploy_gate.py` missing Cloudflare env diagnostics to use name-only Secret Provisioning UX guidance and added focused tests/runbook coverage. |
