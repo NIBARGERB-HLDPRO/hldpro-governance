@@ -116,6 +116,14 @@ jobs:
           ORG_INVENTORY_REPORT=$(python3 scripts/overlord/check_org_repo_inventory.py --live --warn-only --format markdown)
           REPORT+="${ORG_INVENTORY_REPORT}\n\n"
 
+          REPORT+="## Governance Consumer Adoption Status\n\n"
+          mkdir -p metrics/governance-consumers
+          python3 scripts/overlord/report_governance_consumer_status.py \
+            --repos-root . \
+            --output-json metrics/governance-consumers/latest.json \
+            --output-md /tmp/governance-consumer-status.md
+          REPORT+="$(cat /tmp/governance-consumer-status.md)\n"
+
           if [ -n "${CODEX_AUTH_JSON:-}" ]; then
             printf '%s' "${CODEX_AUTH_JSON}" > "${CODEX_HOME}/auth.json"
             chmod 600 "${CODEX_HOME}/auth.json"

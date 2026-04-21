@@ -6,9 +6,9 @@
 
 - **pentagi_sweep.py** (17 connections) — `scripts/overlord/pentagi_sweep.py`
 - **test_pentagi_sweep.py** (13 connections) — `scripts/overlord/test_pentagi_sweep.py`
+- **governed_repos.py** (9 connections) — `scripts/overlord/governed_repos.py`
 - **_repo()** (9 connections) — `scripts/overlord/test_pentagi_sweep.py`
 - **_run()** (9 connections) — `scripts/overlord/test_pentagi_sweep.py`
-- **governed_repos.py** (8 connections) — `scripts/overlord/governed_repos.py`
 - **evaluate_repo()** (7 connections) — `scripts/overlord/pentagi_sweep.py`
 - **main()** (7 connections) — `scripts/overlord/pentagi_sweep.py`
 - **_track()** (5 connections) — `scripts/overlord/test_pentagi_sweep.py`
@@ -43,7 +43,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 74 (46%)
+- EXTRACTED: 75 (46%)
 - INFERRED: 88 (54%)
 - AMBIGUOUS: 0 (0%)
 

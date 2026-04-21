@@ -279,6 +279,18 @@ def _override_text(override: dict[str, Any]) -> str:
     return " ".join(value for value in override.values() if isinstance(value, str))
 
 
+def _contains_negated_forbidden_action(text: str) -> bool:
+    return bool(
+        re.search(
+            r"\b(?:must|may|should|can|does|do)\s+not\s+(?:be\s+)?"
+            r"(?:weaken|disable|skip|bypass|remove|relax|ignore|suppress)\b"
+            r"|\bcannot\s+(?:be\s+)?(?:weaken|disable|skip|bypass|remove|relax|ignore|suppress)\b",
+            text,
+            re.IGNORECASE,
+        )
+    )
+
+
 def _forbidden_override_failures(overrides: list[dict[str, Any]]) -> list[str]:
     failures: list[str] = []
     for index, override in enumerate(overrides):
@@ -287,6 +299,8 @@ def _forbidden_override_failures(overrides: list[dict[str, Any]]) -> list[str]:
             continue
         for pattern, message in FORBIDDEN_OVERRIDE_CHECKS:
             if pattern.search(text):
+                if _contains_negated_forbidden_action(text):
+                    continue
                 failures.append(f"override[{index}] {message}: {text!r}")
                 break
     return failures

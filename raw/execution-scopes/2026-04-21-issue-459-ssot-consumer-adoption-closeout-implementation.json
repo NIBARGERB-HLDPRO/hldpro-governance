@@ -1,0 +1,85 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-459-ssot-v02-closeout",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    ".github/workflows/overlord-sweep.yml",
+    "OVERLORD_BACKLOG.md",
+    "scripts/overlord/test_verify_governance_consumer.py",
+    "scripts/overlord/verify_governance_consumer.py",
+    "docs/governance-consumer-pull-state.json",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-459-structured-agent-cycle-plan.json",
+    "docs/plans/issue-459-ssot-consumer-adoption-closeout-pdcar.md",
+    "graphify-out/",
+    "metrics/governance-consumers/",
+    "raw/closeouts/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md",
+    "raw/execution-scopes/2026-04-21-issue-459-ssot-consumer-adoption-closeout-implementation.json",
+    "raw/handoffs/2026-04-21-issue-459-plan-to-implementation.json",
+    "raw/cli-session-events/",
+    "raw/validation/2026-04-21-issue-459-sonnet-worker-brief.md",
+    "raw/validation/2026-04-21-issue-459-sonnet-worker-stdout.txt",
+    "raw/validation/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md",
+    "scripts/overlord/report_governance_consumer_status.py",
+    "scripts/overlord/test_report_governance_consumer_status.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Read-only consumer status target for issue #459; no writes authorized."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Read-only consumer status target for issue #459; no writes authorized."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Read-only consumer status target for issue #459; no writes authorized."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Read-only consumer status target for issue #459; no writes authorized."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Read-only consumer status target for issue #459; no writes authorized."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Read-only consumer status target for issue #459; no writes authorized."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Read-only consumer status target for issue #459; no writes authorized."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 459,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/459",
+    "claimed_by": "codex-orchestrator",
+    "claimed_at": "2026-04-21T19:30:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-opus-4-6-planning-via-approved-preplanning-record",
+    "implementer_model": "claude-sonnet-4-6-worker",
+    "accepted_at": "2026-04-21T19:30:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-459-structured-agent-cycle-plan.json",
+      "raw/handoffs/2026-04-21-issue-459-plan-to-implementation.json"
+    ],
+    "active_exception_ref": "STANDARDS.md#governance-waterfall",
+    "active_exception_expires_at": "2026-04-22T00:00:00Z"
+  }
+}

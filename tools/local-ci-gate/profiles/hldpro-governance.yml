@@ -151,6 +151,20 @@ profile:
         - python3
         - scripts/overlord/validate_registry_surfaces.py
 
+    - id: governance-consumer-status-report-tests
+      title: Governance consumer status report tests
+      severity: blocker
+      scope: changed
+      paths:
+        - .github/workflows/overlord-sweep.yml
+        - scripts/overlord/report_governance_consumer_status.py
+        - scripts/overlord/test_report_governance_consumer_status.py
+      command:
+        - python3
+        - -m
+        - unittest
+        - scripts.overlord.test_report_governance_consumer_status
+
     - id: governance-tooling-deployer-tests
       title: Governance tooling deployer tests
       severity: blocker
