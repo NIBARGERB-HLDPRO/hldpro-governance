@@ -1,10 +1,10 @@
 # Local ci gate Local ci gate Profile
 
-> 23 nodes · cohesion 0.09
+> 25 nodes · cohesion 0.08
 
 ## Key Concepts
 
-- **TestLocalCiGate** (22 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
+- **TestLocalCiGate** (24 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **test_local_ci_gate.py** (2 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.setUp()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.tearDown()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
@@ -18,7 +18,9 @@
 - **.test_execution_scope_resolution_prefers_active_issue_implementation_scope()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_execution_scope_resolution_requires_matching_lane_claim()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_runs_handoff_validator_for_handoff_paths()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
+- **.test_governance_profile_runs_provisioning_evidence_validator_for_runbooks()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_skips_handoff_validator_for_unrelated_paths()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
+- **.test_governance_profile_skips_provisioning_evidence_validator_for_unrelated_paths()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_uses_active_execution_scope_placeholder()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_knocktracker_profile_scopes_heavy_checks_to_matching_files()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_local_ai_machine_profile_scopes_contract_checks()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
@@ -38,7 +40,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 45 (100%)
+- EXTRACTED: 49 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

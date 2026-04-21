@@ -1,0 +1,62 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-529-stage6-closeout-507",
+  "issue_number": 529,
+  "parent_epic_number": 507,
+  "lifecycle_state": "accepted",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-closeout-writer",
+  "structured_plan_ref": "docs/plans/issue-529-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-529-stage6-closeout-507-implementation.json",
+  "packet_ref": "raw/packets/2026-04-21-issue-529-stage6-closeout-507.json",
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "The closeout artifact links #507, #508-#513, issue #529, PRs #516-#528, and downstream follow-up issues.",
+      "verification_refs": [
+        "raw/closeouts/2026-04-21-issue-507-secret-provisioning-ux-closeout.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "The Stage 6 closeout hook runs successfully and refreshes graph/wiki evidence.",
+      "verification_refs": [
+        "raw/validation/2026-04-21-issue-529-stage6-closeout-507.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "The closeout branch is issue-backed and constrained to governance closeout artifacts.",
+      "verification_refs": [
+        "raw/execution-scopes/2026-04-21-issue-529-stage6-closeout-507-implementation.json"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool docs/plans/issue-529-structured-agent-cycle-plan.json",
+    "python3 -m json.tool raw/execution-scopes/2026-04-21-issue-529-stage6-closeout-507-implementation.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-21-issue-507-secret-provisioning-ux-closeout.md --root .",
+    "bash hooks/closeout-hook.sh raw/closeouts/2026-04-21-issue-507-secret-provisioning-ux-closeout.md",
+    "tools/local-ci-gate/bin/hldpro-local-ci --profile hldpro-governance --report-dir cache/local-ci-gate/reports --json"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-21-issue-529-stage6-closeout-507.md"
+  ],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "docs/plans/issue-529-structured-agent-cycle-plan.json",
+    "docs/plans/issue-529-stage6-closeout-507-pdcar.md",
+    "raw/execution-scopes/2026-04-21-issue-529-stage6-closeout-507-implementation.json",
+    "raw/packets/2026-04-21-issue-529-stage6-closeout-507.json",
+    "raw/closeouts/2026-04-21-issue-507-secret-provisioning-ux-closeout.md"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-529-stage6-closeout-507.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-04-21-issue-507-secret-provisioning-ux-closeout.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T20:55:00-05:00",
+  "notes": "Closeout evidence handoff package for issue #529. No downstream repository writes are authorized by this package."
+}

@@ -12,8 +12,8 @@
 - **test_som_client.py** (8 connections) — `scripts/som-client/tests/test_som_client.py`
 - **_fail()** (7 connections) — `scripts/overlord/deploy_local_ci_gate.py`
 - **main()** (7 connections) — `scripts/overlord/deploy_local_ci_gate.py`
+- **RuntimeError** (7 connections)
 - **build_plan()** (6 connections) — `scripts/overlord/deploy_local_ci_gate.py`
-- **RuntimeError** (6 connections)
 - **._current_token()** (5 connections) — `scripts/som-client/som_client.py`
 - **DeployPlan** (4 connections) — `scripts/overlord/deploy_local_ci_gate.py`
 - **.to_json()** (4 connections) — `scripts/overlord/deploy_local_ci_gate.py`
@@ -43,7 +43,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 106 (57%)
+- EXTRACTED: 107 (57%)
 - INFERRED: 80 (43%)
 - AMBIGUOUS: 0 (0%)
 
