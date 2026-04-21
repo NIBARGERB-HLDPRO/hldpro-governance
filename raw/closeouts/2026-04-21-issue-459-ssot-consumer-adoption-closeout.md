@@ -61,7 +61,7 @@ Review artifact refs:
 
 Gate artifact refs:
 - `raw/validation/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md`
-- `cache/local-ci-gate/reports/20260421T190513Z-hldpro-governance-file-/tmp/issue-459-changed-files.txt`
+- `cache/local-ci-gate/reports/20260421T190728Z-hldpro-governance-file-/tmp/issue-459-changed-files.txt`
 
 ## Wired Checks Run
 

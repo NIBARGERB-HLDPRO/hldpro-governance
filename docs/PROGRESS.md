@@ -42,6 +42,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Governance SSOT consumer adoption report and epic closeout | #459 #452 | 2026-04-21 | Added the org-level consumer adoption report, wired it into overlord-sweep and Local CI, recorded the v0.2 adoption snapshot, and opened downstream residual workflow-pin issues HealthcarePlatform#1462 and ASC-Evaluator#13. |
 | Governance SSOT consumer verifier edge-case hardening | #474 | 2026-04-21 | Ported duplicate issue #454 verifier QA deltas into the merged v0.2 verifier: workflow-ref mismatch checks, strict override metadata validation, forbidden override class checks, and focused tests. |
 | Pages Deploy Gate | #469 | 2026-04-21 | DONE. Adds the governance-owned Cloudflare Pages Direct Upload deploy gate, 15 mocked pytest cases, deploy and rollback runbooks, two-phase deploy approval, build freshness, Pages limit checks, secret redaction, and evidence output for governed Pages consumers. |
 | Governance SSOT consumer verifier v0.2 drift detection | #454 | 2026-04-21 | PR pre-PR extends the non-mutating consumer verifier with v0.2 profile, override, workflow-ref, and managed hook/content drift reporting while preserving v0.1 compatibility. |

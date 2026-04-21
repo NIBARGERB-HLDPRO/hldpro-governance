@@ -1,0 +1,387 @@
+{
+  "generated_at": "2026-04-21T19:04:42Z",
+  "governance_root": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-459-ssot-v02-closeout",
+  "repos_root": "/private/tmp/hldpro-governance-consumer-checkouts",
+  "expected_governance_ref": "",
+  "strict_expected_ref": false,
+  "strict_desired_package": false,
+  "status": "warning",
+  "totals": {
+    "repos": 7,
+    "passed": 0,
+    "warning": 7,
+    "critical": 0,
+    "critical_failures": 0,
+    "migration_warnings": 26
+  },
+  "repos": [
+    {
+      "repo": "ai-integration-services",
+      "display_name": "ai-integration-services",
+      "repo_path": "/private/tmp/hldpro-governance-consumer-checkouts/repos/ai-integration-services",
+      "profile": "ai-integration-services",
+      "governance_ref": "6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+      "package_version": "0.2.0-ssot-bootstrap",
+      "managed_files": [
+        ".hldpro/governance-tooling.json",
+        ".hldpro/local-ci.sh"
+      ],
+      "local_overrides": [
+        {
+          "id": "ais-security-edge-function-governance",
+          "type": "issue_backed",
+          "issue": "NIBARGERB-HLDPRO/ai-integration-services#1210",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#456",
+          "owner": "NIBARGERB-HLDPRO/ai-integration-services",
+          "reason": "Retain AIS Supabase edge-function, deploy, and full-security local governance surfaces until managed parity is proven; this records stricter local security constraints without weakening shared governance.",
+          "review_cadence": "each governance SSOT minor bump",
+          "rollback_path": "Revert .hldpro/governance-tooling.json and .hldpro/local-ci.sh to remove the v0.2 consumer adoption files."
+        }
+      ],
+      "verifier_status": "warning",
+      "workflow_pin_status": "none",
+      "critical_failures": [],
+      "migration_warnings": [
+        "ai-integration-services: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/ai-integration-services",
+        "ai-integration-services: central GitHub rules/settings are report-only in consumer verification"
+      ],
+      "residual_drift": [
+        "ai-integration-services: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/ai-integration-services",
+        "ai-integration-services: central GitHub rules/settings are report-only in consumer verification"
+      ]
+    },
+    {
+      "repo": "HealthcarePlatform",
+      "display_name": "HealthcarePlatform",
+      "repo_path": "/private/tmp/hldpro-governance-consumer-checkouts/repos/HealthcarePlatform",
+      "profile": "healthcareplatform",
+      "governance_ref": "6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+      "package_version": "0.2.0-ssot-bootstrap",
+      "managed_files": [
+        ".hldpro/governance-tooling.json",
+        ".hldpro/local-ci.sh"
+      ],
+      "local_overrides": [
+        {
+          "id": "hp-hipaa-phi-zero-fail",
+          "issue": "NIBARGERB-HLDPRO/HealthcarePlatform#1458",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#457",
+          "owner": "HealthcarePlatform",
+          "reason": "HealthcarePlatform remains a HIPAA zero-fail repo; governance package consumption may not weaken PHI controls, redaction expectations, or fail-closed PII/PHI routing.",
+          "review_cadence": "per governance package upgrade"
+        },
+        {
+          "id": "hp-strict-lane-naming",
+          "issue": "NIBARGERB-HLDPRO/HealthcarePlatform#1458",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#457",
+          "owner": "HealthcarePlatform",
+          "reason": "HealthcarePlatform requires strict sandbox issue lanes with PR token, one issue per branch/worktree/PR, lane:subagents evidence, and lane:preflight before implementation.",
+          "review_cadence": "per governance package upgrade"
+        },
+        {
+          "id": "hp-audit-rls-authority",
+          "issue": "NIBARGERB-HLDPRO/HealthcarePlatform#1458",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#457",
+          "owner": "HealthcarePlatform",
+          "reason": "Healthcare audit trail, RLS, tenant isolation, and reviewer gate controls remain authoritative local constraints.",
+          "review_cadence": "per governance package upgrade"
+        },
+        {
+          "id": "hp-pinned-workflow-local-override",
+          "issue": "NIBARGERB-HLDPRO/HealthcarePlatform#1458",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#457",
+          "owner": "HealthcarePlatform",
+          "reason": "Existing HealthcarePlatform reusable governance workflow refs are exact-SHA pinned and classified as local workflow caller surfaces; this metadata slice does not alter workflow behavior.",
+          "review_cadence": "per governance package upgrade"
+        }
+      ],
+      "verifier_status": "warning",
+      "workflow_pin_status": "drift",
+      "critical_failures": [],
+      "migration_warnings": [
+        "HealthcarePlatform: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/HealthcarePlatform",
+        "HealthcarePlatform: central GitHub rules/settings are report-only in consumer verification",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @cc3550dadefdbf831a3b7b4c9465aa1cd45f585c, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: .github/workflows/governance.yml uses governance workflow ref @cc3550dadefdbf831a3b7b4c9465aa1cd45f585c, consumer record has @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: .github/workflows/governance.yml uses governance workflow ref @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, consumer record has @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b"
+      ],
+      "residual_drift": [
+        "HealthcarePlatform: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/HealthcarePlatform",
+        "HealthcarePlatform: central GitHub rules/settings are report-only in consumer verification",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @cc3550dadefdbf831a3b7b4c9465aa1cd45f585c, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: .github/workflows/governance.yml uses governance workflow ref @cc3550dadefdbf831a3b7b4c9465aa1cd45f585c, consumer record has @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "HealthcarePlatform: .github/workflows/governance.yml uses governance workflow ref @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, consumer record has @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b"
+      ]
+    },
+    {
+      "repo": "local-ai-machine",
+      "display_name": "local-ai-machine",
+      "repo_path": "/private/tmp/hldpro-governance-consumer-checkouts/repos/local-ai-machine",
+      "profile": "local-ai-machine",
+      "governance_ref": "6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+      "package_version": "0.2.0-ssot-bootstrap",
+      "managed_files": [
+        ".hldpro/governance-tooling.json",
+        ".hldpro/local-ci.sh"
+      ],
+      "local_overrides": [
+        {
+          "id": "lam-local-routing-constraints",
+          "type": "issue_backed",
+          "issue": "NIBARGERB-HLDPRO/local-ai-machine#508",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#455",
+          "owner": "Ben Nibarger",
+          "reason": "Preserve LAM local routing and worker-boundary constraints during SSOT v0.2 consumer refresh. Constraints are not relaxed; this record documents their typed governance status.",
+          "review_cadence": "each governance SSOT minor bump",
+          "rollback_path": "Revert .hldpro/governance-tooling.json to schema_version 1 and restore governance_ref ee6eba894e879de79dc0cfd0cf64ae29b703e3c4 in .hldpro/local-ci.sh."
+        }
+      ],
+      "verifier_status": "warning",
+      "workflow_pin_status": "none",
+      "critical_failures": [],
+      "migration_warnings": [
+        "local-ai-machine: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/local-ai-machine",
+        "local-ai-machine: central GitHub rules/settings are report-only in consumer verification"
+      ],
+      "residual_drift": [
+        "local-ai-machine: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/local-ai-machine",
+        "local-ai-machine: central GitHub rules/settings are report-only in consumer verification"
+      ]
+    },
+    {
+      "repo": "knocktracker",
+      "display_name": "knocktracker",
+      "repo_path": "/private/tmp/hldpro-governance-consumer-checkouts/repos/knocktracker",
+      "profile": "knocktracker",
+      "governance_ref": "6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+      "package_version": "0.2.0-ssot-bootstrap",
+      "managed_files": [
+        ".hldpro/governance-tooling.json",
+        ".hldpro/local-ci.sh"
+      ],
+      "local_overrides": [
+        {
+          "id": "knocktracker-field-operations-baseline",
+          "type": "issue_backed",
+          "issue": "NIBARGERB-HLDPRO/knocktracker#181",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#456",
+          "owner": "NIBARGERB-HLDPRO/knocktracker",
+          "reason": "Retain knocktracker field-operations product governance surfaces and local hooks until managed parity is proven; this records stricter local product baseline constraints without weakening shared governance.",
+          "review_cadence": "each governance SSOT minor bump",
+          "rollback_path": "Revert .hldpro/governance-tooling.json and .hldpro/local-ci.sh to governance ref 615f4848568ac9a1633d82e0fac0d27d79d39c8f and restore prior governance.yml workflow refs."
+        }
+      ],
+      "verifier_status": "warning",
+      "workflow_pin_status": "pinned",
+      "critical_failures": [],
+      "migration_warnings": [
+        "knocktracker: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/knocktracker",
+        "knocktracker: central GitHub rules/settings are report-only in consumer verification"
+      ],
+      "residual_drift": [
+        "knocktracker: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/knocktracker",
+        "knocktracker: central GitHub rules/settings are report-only in consumer verification"
+      ]
+    },
+    {
+      "repo": "seek-and-ponder",
+      "display_name": "seek-and-ponder",
+      "repo_path": "/private/tmp/hldpro-governance-consumer-checkouts/repos/seek-and-ponder",
+      "profile": "seek-and-ponder",
+      "governance_ref": "6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+      "package_version": "0.2.0-ssot-bootstrap",
+      "managed_files": [
+        ".hldpro/governance-tooling.json",
+        ".hldpro/local-ci.sh"
+      ],
+      "local_overrides": [
+        {
+          "id": "seek-plan-mode-gate",
+          "type": "issue_backed",
+          "issue": "NIBARGERB-HLDPRO/seek-and-ponder#164",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#456",
+          "owner": "NIBARGERB-HLDPRO/seek-and-ponder",
+          "reason": "Retain Seek's worktree-local plan-mode gate before code writes; the SSOT consumer record documents this stricter repo rule and does not weaken local hook enforcement.",
+          "review_cadence": "each governance SSOT minor bump",
+          "rollback_path": "Revert the issue #164 PR; this removes the v0.2 consumer files and restores the prior repo-local hook-only state."
+        },
+        {
+          "id": "seek-corpus-persona-governance",
+          "type": "issue_backed",
+          "issue": "NIBARGERB-HLDPRO/seek-and-ponder#164",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#456",
+          "owner": "NIBARGERB-HLDPRO/seek-and-ponder",
+          "reason": "Retain Seek's corpus, persona-source, verifier, and schema governance boundaries as repo-local authority until managed parity is proven.",
+          "review_cadence": "each governance SSOT minor bump",
+          "rollback_path": "Revert the issue #164 PR; no corpus, persona-source, migration, or product runtime files are changed by this adoption."
+        },
+        {
+          "id": "seek-local-ci-profile-adapter",
+          "type": "issue_backed",
+          "issue": "NIBARGERB-HLDPRO/seek-and-ponder#164",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#456",
+          "owner": "NIBARGERB-HLDPRO/seek-and-ponder",
+          "reason": "The pinned governance checkout records Seek as a v0.2 profile but does not yet ship a shared local-ci profile file; the managed shim runs bounded repo-native checks until the shared Seek profile exists.",
+          "review_cadence": "each governance SSOT minor bump",
+          "rollback_path": "Revert the issue #164 PR; follow-up governance work can add a shared seek-and-ponder local-ci profile and simplify the shim."
+        }
+      ],
+      "verifier_status": "warning",
+      "workflow_pin_status": "none",
+      "critical_failures": [],
+      "migration_warnings": [
+        "seek-and-ponder: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/seek-and-ponder",
+        "seek-and-ponder: central GitHub rules/settings are report-only in consumer verification"
+      ],
+      "residual_drift": [
+        "seek-and-ponder: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/seek-and-ponder",
+        "seek-and-ponder: central GitHub rules/settings are report-only in consumer verification"
+      ]
+    },
+    {
+      "repo": "Stampede",
+      "display_name": "Stampede",
+      "repo_path": "/private/tmp/hldpro-governance-consumer-checkouts/repos/Stampede",
+      "profile": "stampede",
+      "governance_ref": "6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+      "package_version": "0.2.0-ssot-bootstrap",
+      "managed_files": [
+        ".hldpro/governance-tooling.json",
+        ".hldpro/local-ci.sh"
+      ],
+      "local_overrides": [
+        {
+          "id": "stampede-product-runtime-safety",
+          "issue": "NIBARGERB-HLDPRO/Stampede#112",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#458",
+          "owner": "Stampede",
+          "reason": "Governance metadata adoption must not alter trading runtime, provider credentials, data-source behavior, model routing, live execution controls, or hldpro-sim package behavior.",
+          "review_cadence": "per governance package upgrade"
+        },
+        {
+          "id": "stampede-solo-maintainer-policy",
+          "issue": "NIBARGERB-HLDPRO/Stampede#112",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#458",
+          "owner": "Stampede",
+          "reason": "Repo ruleset and docs/SOLO_MAINTAINER_MERGE_POLICY.md allow solo-maintainer merging after local validation and green required checks.",
+          "review_cadence": "per governance package upgrade"
+        },
+        {
+          "id": "stampede-product-baseline-governance-check",
+          "issue": "NIBARGERB-HLDPRO/Stampede#112",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#458",
+          "owner": "Stampede",
+          "reason": "Stampede keeps a local product-baseline governance-check workflow that validates Phase 0 artifacts without imposing full application governance.",
+          "review_cadence": "per governance package upgrade"
+        }
+      ],
+      "verifier_status": "warning",
+      "workflow_pin_status": "none",
+      "critical_failures": [],
+      "migration_warnings": [
+        "Stampede: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/Stampede",
+        "Stampede: central GitHub rules/settings are report-only in consumer verification"
+      ],
+      "residual_drift": [
+        "Stampede: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/Stampede",
+        "Stampede: central GitHub rules/settings are report-only in consumer verification"
+      ]
+    },
+    {
+      "repo": "ASC-Evaluator",
+      "display_name": "ASC-Evaluator",
+      "repo_path": "/private/tmp/hldpro-governance-consumer-checkouts/repos/ASC-Evaluator",
+      "profile": "asc-evaluator",
+      "governance_ref": "6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+      "package_version": "0.2.0-ssot-bootstrap",
+      "managed_files": [
+        ".hldpro/governance-tooling.json",
+        ".hldpro/local-ci.sh"
+      ],
+      "local_overrides": [
+        {
+          "id": "asc-exempt-knowledge-profile",
+          "issue": "NIBARGERB-HLDPRO/ASC-Evaluator#11",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#458",
+          "owner": "ASC-Evaluator",
+          "reason": "ASC-Evaluator is a knowledge/persona repo and must not be forced into full product code-governance controls.",
+          "review_cadence": "per governance package upgrade"
+        },
+        {
+          "id": "asc-persona-boundary",
+          "issue": "NIBARGERB-HLDPRO/ASC-Evaluator#11",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#458",
+          "owner": "ASC-Evaluator",
+          "reason": "The evaluator persona, framework-confirmation rule, citation discipline, and survey review runbooks remain authoritative local behavior.",
+          "review_cadence": "per governance package upgrade"
+        },
+        {
+          "id": "asc-minimal-graphify-pointer",
+          "issue": "NIBARGERB-HLDPRO/ASC-Evaluator#11",
+          "governance_parent": "NIBARGERB-HLDPRO/hldpro-governance#458",
+          "owner": "ASC-Evaluator",
+          "reason": "Graph/wiki artifacts remain governance-hosted; ASC keeps only the pointer pattern and does not commit graphify output.",
+          "review_cadence": "per governance package upgrade"
+        }
+      ],
+      "verifier_status": "warning",
+      "workflow_pin_status": "drift",
+      "critical_failures": [],
+      "migration_warnings": [
+        "ASC-Evaluator: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/ASC-Evaluator",
+        "ASC-Evaluator: central GitHub rules/settings are report-only in consumer verification",
+        "ASC-Evaluator: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @f941c5637a399c8aa122bd14b6ec64987351d52f, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "ASC-Evaluator: .github/workflows/governance.yml uses governance workflow ref @f941c5637a399c8aa122bd14b6ec64987351d52f, consumer record has @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b"
+      ],
+      "residual_drift": [
+        "ASC-Evaluator: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/ASC-Evaluator",
+        "ASC-Evaluator: central GitHub rules/settings are report-only in consumer verification",
+        "ASC-Evaluator: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @f941c5637a399c8aa122bd14b6ec64987351d52f, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+        "ASC-Evaluator: .github/workflows/governance.yml uses governance workflow ref @f941c5637a399c8aa122bd14b6ec64987351d52f, consumer record has @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b"
+      ]
+    }
+  ],
+  "critical_failures": [],
+  "migration_warnings": [
+    "ai-integration-services: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/ai-integration-services",
+    "ai-integration-services: central GitHub rules/settings are report-only in consumer verification",
+    "HealthcarePlatform: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/HealthcarePlatform",
+    "HealthcarePlatform: central GitHub rules/settings are report-only in consumer verification",
+    "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @cc3550dadefdbf831a3b7b4c9465aa1cd45f585c, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+    "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+    "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+    "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+    "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+    "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+    "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+    "HealthcarePlatform: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+    "HealthcarePlatform: .github/workflows/governance.yml uses governance workflow ref @cc3550dadefdbf831a3b7b4c9465aa1cd45f585c, consumer record has @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+    "HealthcarePlatform: .github/workflows/governance.yml uses governance workflow ref @b1acb89ab59228e21b68d9aaba75526d9a5b84c3, consumer record has @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+    "local-ai-machine: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/local-ai-machine",
+    "local-ai-machine: central GitHub rules/settings are report-only in consumer verification",
+    "knocktracker: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/knocktracker",
+    "knocktracker: central GitHub rules/settings are report-only in consumer verification",
+    "seek-and-ponder: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/seek-and-ponder",
+    "seek-and-ponder: central GitHub rules/settings are report-only in consumer verification",
+    "Stampede: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/Stampede",
+    "Stampede: central GitHub rules/settings are report-only in consumer verification",
+    "ASC-Evaluator: consumer_repo path differs from target repo: NIBARGERB-HLDPRO/ASC-Evaluator",
+    "ASC-Evaluator: central GitHub rules/settings are report-only in consumer verification",
+    "ASC-Evaluator: reusable workflow ref SHA mismatch: .github/workflows/governance.yml uses @f941c5637a399c8aa122bd14b6ec64987351d52f, expected @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b",
+    "ASC-Evaluator: .github/workflows/governance.yml uses governance workflow ref @f941c5637a399c8aa122bd14b6ec64987351d52f, consumer record has @6c483a09d3ce0383ef9fe7f7fae662baa155ad8b"
+  ]
+}
