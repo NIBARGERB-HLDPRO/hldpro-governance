@@ -1,0 +1,75 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-449-plan-to-implementation",
+  "issue_number": 449,
+  "parent_epic_number": 434,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "claude-sonnet-worker",
+  "structured_plan_ref": "docs/plans/issue-449-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-449-plan-preflight-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Governed code/config writes without recent planning evidence produce `PLAN_GATE_BLOCKED: missing_recent_plan`.",
+      "verification_refs": [
+        "scripts/overlord/check_plan_preflight.py",
+        "scripts/overlord/test_check_plan_preflight.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Missing-plan output includes `NEXT_ACTION: create_plan`, target file, plans directory, and bounded bypass guidance.",
+      "verification_refs": [
+        "hooks/code-write-gate.sh",
+        "hooks/schema-guard.sh",
+        "scripts/overlord/test_check_plan_preflight.py"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Read-only commands are not blocked, explicit trivial bypass is bounded, and recent plan evidence clears the preflight.",
+      "verification_refs": [
+        "scripts/overlord/test_check_plan_preflight.py",
+        "scripts/overlord/test_schema_guard_hook.py"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_check_plan_preflight.py",
+    "python3 scripts/overlord/test_schema_guard_hook.py",
+    "python3 -m py_compile scripts/overlord/check_plan_preflight.py",
+    "bash -n hooks/code-write-gate.sh",
+    "bash -n hooks/schema-guard.sh",
+    "python3 scripts/overlord/test_validate_handoff_package.py",
+    "python3 scripts/overlord/validate_handoff_package.py --root .",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-449-plan-preflight-20260421 --require-if-issue-branch",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-449-plan-preflight-implementation.json --require-lane-claim",
+    "tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-21-issue-449-plan-preflight.md"
+  ],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "hooks/code-write-gate.sh",
+    "hooks/schema-guard.sh",
+    "scripts/overlord/check_plan_preflight.py",
+    "scripts/overlord/test_check_plan_preflight.py",
+    "scripts/overlord/test_schema_guard_hook.py",
+    "docs/plans/issue-449-plan-preflight-pdcar.md",
+    "docs/plans/issue-449-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-449-plan-preflight-implementation.json",
+    "raw/validation/2026-04-21-issue-449-sonnet-worker-prompt.md"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-449-plan-preflight.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T16:35:00Z",
+  "notes": "Worker implementation package for issue #449. Sonnet 4.6 owns the bounded implementation slice; Codex remains orchestrator and QA."
+}
