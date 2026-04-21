@@ -1,0 +1,113 @@
+{
+  "session_id": "issue-535-session-error-patterns-kb-20260421",
+  "issue_number": 535,
+  "objective": "Create a durable session error patterns KB, validate its required schema and seed signatures, and index it in the self-learning loop so future sessions retrieve exact correction paths.",
+  "tier": 2,
+  "scope_boundary": [
+    "Add a dedicated session-error runbook for operator/agent lookup.",
+    "Index the runbook in existing self-learning lookup and report output.",
+    "Add deterministic validation for required runbook fields and required seed signatures.",
+    "Keep the external services runbook scoped to services rather than session tooling errors."
+  ],
+  "out_of_scope": [
+    "Changing external service authentication or runtime procedures.",
+    "Implementing the remaining epic child issues #534, #536, or #537 in this branch.",
+    "Replacing docs/FAIL_FAST_LOG.md or docs/ERROR_PATTERNS.md."
+  ],
+  "research_summary": "Existing self-learning already loads fail-fast rows, canonical error patterns, closeouts, and operator context. The gap is a compact session-error source with exact signatures and deterministic schema validation. A new runbook is preferable to expanding the external services runbook because these failures are session/tooling and governance-flow issues, not service operations.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/533",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/535",
+    "scripts/orchestrator/self_learning.py",
+    "scripts/orchestrator/test_self_learning.py",
+    "hooks/check-errors.sh",
+    ".github/workflows/check-fail-fast-schema.yml",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/ERROR_PATTERNS.md"
+  ],
+  "sprints": [
+    {
+      "name": "Session error KB and self-learning indexing",
+      "goal": "Make recurring session errors searchable and validated without adding a parallel KB layer.",
+      "tasks": [
+        "Create the session-error runbook with the required schema and seed entries.",
+        "Add a self-learning loader for the runbook and include session entries in report output.",
+        "Add focused lookup/report tests.",
+        "Add a runbook schema validator and wire it into existing error schema guards.",
+        "Record fail-fast, canonical pattern, feature registry, progress, validation, and closeout evidence."
+      ],
+      "acceptance_criteria": [
+        "The runbook contains exact signature, category, root cause, correction, guardrail, validation, related files, first observed, and prevented by fields.",
+        "Required seed signatures for hook false positives, Claude stream-json/verbose, force-push policy, stale SHA, malformed local_overrides, typoed governance root, PR pending/merge flow, and SQL/schema drift are present.",
+        "Self-learning lookup can return runbook entries with source paths and evidence paths.",
+        "Self-learning report JSON and markdown list session-error patterns.",
+        "Existing error schema hooks and reusable workflow validate the runbook when present.",
+        "Stage 6 closeout, handoff, execution scope, and validation artifacts are present before merge."
+      ],
+      "file_paths": [
+        "docs/runbooks/session-error-patterns.md",
+        "scripts/orchestrator/self_learning.py",
+        "scripts/orchestrator/test_self_learning.py",
+        "scripts/overlord/validate_session_error_patterns.py",
+        "scripts/overlord/test_validate_session_error_patterns.py",
+        "hooks/check-errors.sh",
+        ".github/workflows/check-fail-fast-schema.yml"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "session-error-kb-self-learning-specialist",
+      "role": "specialist-research",
+      "focus": "Runbook scope, self-learning indexing, schema validation, and Stage 6 evidence requirements",
+      "status": "accepted",
+      "summary": "Recommended a new session-error runbook instead of bloating the external services runbook, self-learning source indexing, report-level discoverability, and a deterministic schema/seed guard.",
+      "evidence": [
+        "Subagent Popper review in the issue #535 session"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "session-error-kb-self-learning-specialist",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Specialist review confirmed the implementation must add a dedicated runbook, self-learning loader/report evidence, schema validation, and Stage 6 closeout proof.",
+    "evidence": [
+      "Subagent Popper review in the issue #535 session"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implementation may update only session-error KB docs, self-learning indexing/reporting, runbook validation, existing error schema guard wiring, and issue #535 evidence artifacts.",
+    "next_execution_step": "Implement runbook indexing, schema validation, report proof, and lifecycle evidence.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-535-session-error-patterns-kb-implementation.json",
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-535-session-error-patterns-kb.md"
+    ],
+    "review_artifact_refs": [],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-535-session-error-patterns-kb.md",
+    "next_role": "worker",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Runbook validator passes.",
+      "Self-learning report output lists session_error_pattern entries.",
+      "Implementation stays inside allowed write paths.",
+      "Stage 6 closeout evidence is present before merge."
+    ]
+  },
+  "material_deviation_rules": [
+    "If runbook validation needs a schema migration shared with downstream repos, split it into a follow-up issue.",
+    "If an entry requires service operational procedure detail, keep the procedure in the service runbook and link only the session signature here.",
+    "If self-learning report output becomes too verbose, retain JSON detail and cap markdown rather than removing source discoverability."
+  ],
+  "approved": true,
+  "approved_by": [
+    "codex-orchestrator"
+  ],
+  "approved_at": "2026-04-21T22:20:00Z"
+}
+

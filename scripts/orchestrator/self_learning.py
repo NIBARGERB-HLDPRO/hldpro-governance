@@ -72,6 +72,21 @@ def _date_from_text(text: str) -> str | None:
     return match.group(0) if match else None
 
 
+def _markdown_table_fields(body: str) -> dict[str, str]:
+    fields: dict[str, str] = {}
+    for raw in body.splitlines():
+        line = raw.strip()
+        if not line.startswith("|") or "---" in line or "Field" in line:
+            continue
+        cells = [cell.strip() for cell in line.strip("|").split("|")]
+        if len(cells) < 2:
+            continue
+        key = re.sub(r"[^a-z0-9]+", "_", cells[0].lower()).strip("_")
+        if key:
+            fields[key] = cells[1]
+    return fields
+
+
 def load_fail_fast(root: Path) -> list[LearningEntry]:
     path = root / "docs" / "FAIL_FAST_LOG.md"
     if not path.exists():
@@ -129,6 +144,44 @@ def load_error_patterns(root: Path) -> list[LearningEntry]:
                 evidence_paths=[source],
                 date=_date_from_text(body),
                 kind="error_pattern",
+                tokens=sorted(tokenize(f"{title} {body}")),
+            )
+        )
+    return entries
+
+
+def load_session_error_patterns(root: Path) -> list[LearningEntry]:
+    path = root / "docs" / "runbooks" / "session-error-patterns.md"
+    if not path.exists():
+        return []
+    source = _rel(root, path)
+    text = path.read_text(encoding="utf-8")
+    entries: list[LearningEntry] = []
+    for match in re.finditer(r"^## Pattern:\s*(.+)$", text, re.MULTILINE):
+        title = match.group(1).strip()
+        start = match.end()
+        next_match = re.search(r"^##\s+", text[start:], re.MULTILINE)
+        body = text[start : start + next_match.start()] if next_match else text[start:]
+        body_text = " ".join(body.strip().split())
+        if not body_text:
+            continue
+        fields = _markdown_table_fields(body)
+        summary_parts = [
+            f"Signature: {fields['signature']}" if fields.get("signature") else "",
+            f"Correction: {fields['correction']}" if fields.get("correction") else "",
+            f"Guardrail: {fields['guardrail']}" if fields.get("guardrail") else "",
+            f"Validation: {fields['validation']}" if fields.get("validation") else "",
+        ]
+        summary = " ".join(part for part in summary_parts if part) or body_text
+        entries.append(
+            LearningEntry(
+                entry_id=_entry_id(source, title),
+                source_path=source,
+                title=title,
+                summary=summary[:500],
+                evidence_paths=[source],
+                date=_date_from_text(body),
+                kind="session_error_pattern",
                 tokens=sorted(tokenize(f"{title} {body}")),
             )
         )
@@ -214,6 +267,7 @@ def load_entries(root: Path = REPO_ROOT) -> list[LearningEntry]:
     return (
         load_fail_fast(root)
         + load_error_patterns(root)
+        + load_session_error_patterns(root)
         + load_closeouts(root)
         + load_operator_context(root)
     )
@@ -345,6 +399,15 @@ def build_report(root: Path = REPO_ROOT) -> dict[str, Any]:
         "duplicate_groups": dupes,
         "stale_entries": stale,
         "sources": sorted({entry.kind for entry in entries}),
+        "session_error_patterns": [
+            {
+                "title": entry.title,
+                "source_path": entry.source_path,
+                "summary": entry.summary,
+            }
+            for entry in entries
+            if entry.kind == "session_error_pattern"
+        ],
         "graphify_attention_only": True,
     }
 
@@ -357,6 +420,7 @@ def report_markdown(report: dict[str, Any]) -> str:
         f"Entries indexed: {report['entry_count']}",
         f"Duplicate groups: {len(report['duplicate_groups'])}",
         f"Stale entries: {len(report['stale_entries'])}",
+        f"Sources: {', '.join(report['sources'])}",
         "",
         "Graphify inference is used for routing attention only; direct source files validate claims.",
     ]
@@ -364,6 +428,10 @@ def report_markdown(report: dict[str, Any]) -> str:
         lines.extend(["", "## Duplicate Groups"])
         for key, count in sorted(report["duplicate_groups"].items()):
             lines.append(f"- {key}: {count}")
+    if report["session_error_patterns"]:
+        lines.extend(["", "## Session Error Patterns"])
+        for entry in report["session_error_patterns"]:
+            lines.append(f"- {entry['title']} ({entry['source_path']}): {entry['summary']}")
     if report["stale_entries"]:
         lines.extend(["", "## Stale Entries"])
         for entry in report["stale_entries"][:25]:

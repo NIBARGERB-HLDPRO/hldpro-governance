@@ -27,6 +27,14 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Validate session error pattern runbook schema
+        run: |
+          if [ -f docs/runbooks/session-error-patterns.md ]; then
+            python3 governance-schemas/scripts/overlord/validate_session_error_patterns.py docs/runbooks/session-error-patterns.md
+          else
+            echo "docs/runbooks/session-error-patterns.md not present; skipping session-error runbook schema"
+          fi
+
       - name: Validate FAIL_FAST_LOG.md schema
         run: |
           python3 << 'VALIDATOR_EOF'

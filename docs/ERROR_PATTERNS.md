@@ -92,3 +92,33 @@ The closeout hook and validator were local authoring/integrity tools, not merge-
 - Use the existing `validate_closeout.py` for integrity so closeout semantics stay centralized.
 - Preserve a tested planning-only exemption to avoid blocking early plan/scope PRs.
 - Record closeout gaps in self-learning evidence so future sessions retrieve the merge-gate fix.
+
+## Pattern: session-error-kb-unindexed
+
+### Symptom
+Session-specific errors are corrected in chat, PR notes, or one-off validation artifacts, but later sessions rediscover the same flag, path, schema, hook, or merge-flow correction.
+
+### Root Cause
+`docs/FAIL_FAST_LOG.md` is the formal ledger and `docs/ERROR_PATTERNS.md` is the canonical pattern catalog, but neither provided a compact operator lookup table for exact session error signatures. The self-learning loop also did not index a dedicated session-error runbook, so packet enrichment could miss recently corrected operational failure modes.
+
+### Detection
+- A repeated session error is visible in transcripts but no structured runbook entry exists with signature, category, correction, guardrail, and validation.
+- `scripts/orchestrator/self_learning.py report` does not include `session_error_pattern` in indexed sources.
+- `scripts/orchestrator/self_learning.py lookup --query '<exact session symptom>'` returns only broad closeout or fail-fast context.
+
+### Resolution Playbook
+1. Add or update `docs/runbooks/session-error-patterns.md` using the repeatable entry schema.
+2. Keep durable formal incidents in `docs/FAIL_FAST_LOG.md`.
+3. Add canonical broad patterns to `docs/ERROR_PATTERNS.md` only when machine-readable lookup or prevention needs a reusable pattern.
+4. Ensure `scripts/orchestrator/self_learning.py` indexes the runbook as `session_error_pattern`.
+5. Validate with self-learning lookup and report output before closeout.
+
+### Instances
+| Date | Incident | Notes |
+|------|----------|-------|
+| 2026-04-21 | [2026-04-21](FAIL_FAST_LOG.md) | Issue #535 added the session error patterns runbook and indexed it in self-learning reports. |
+
+### Prevention
+- Record exact session signatures before they are abstracted into broad runbook prose.
+- Prefer extending the existing self-learning source loader over adding a parallel KB service.
+- Keep external services runbooks focused on service operation; keep session/tooling errors in this dedicated runbook.

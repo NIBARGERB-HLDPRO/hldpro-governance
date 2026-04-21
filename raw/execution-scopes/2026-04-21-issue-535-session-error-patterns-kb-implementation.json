@@ -1,0 +1,77 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-535-session-error-patterns-kb",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    ".github/workflows/check-fail-fast-schema.yml",
+    "docs/ERROR_PATTERNS.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-535-session-error-patterns-kb-pdcar.md",
+    "docs/plans/issue-535-session-error-patterns-kb-structured-agent-cycle-plan.json",
+    "docs/runbooks/session-error-patterns.md",
+    "graphify-out/",
+    "hooks/check-errors.sh",
+    "raw/closeouts/2026-04-21-issue-535-session-error-patterns-kb.md",
+    "raw/cross-review/2026-04-21-issue-535-session-error-patterns-kb.md",
+    "raw/execution-scopes/2026-04-21-issue-535-session-error-patterns-kb-implementation.json",
+    "raw/handoffs/2026-04-21-issue-535-session-error-patterns-kb.json",
+    "raw/operator-context/self-learning/2026-04-21-issue-535-session-error-patterns-kb.md",
+    "raw/validation/2026-04-21-issue-535-session-error-patterns-kb.md",
+    "scripts/orchestrator/self_learning.py",
+    "scripts/orchestrator/test_self_learning.py",
+    "scripts/overlord/test_validate_session_error_patterns.py",
+    "scripts/overlord/validate_session_error_patterns.py",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #535."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #535."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #535."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #535."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #535."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 535,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/535",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-21T22:20:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-opus-4-6",
+    "implementer_model": "gpt-5.4-codex",
+    "accepted_at": "2026-04-21T22:20:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-535-session-error-patterns-kb-structured-agent-cycle-plan.json",
+      "docs/plans/issue-535-session-error-patterns-kb-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

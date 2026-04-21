@@ -177,7 +177,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/personas.py",
       "source_location": "L24",
       "id": "personas_rationale_24",
-      "community": 85
+      "community": 86
     },
     {
       "label": "providers.py",
@@ -353,7 +353,7 @@
       "source_file": "packages/hldpro-sim/tests/test_artifacts.py",
       "source_location": "L1",
       "id": "test_artifacts",
-      "community": 83
+      "community": 84
     },
     {
       "label": "test_artifact_writer_writes_manifest_and_outcomes()",
@@ -361,7 +361,7 @@
       "source_file": "packages/hldpro-sim/tests/test_artifacts.py",
       "source_location": "L7",
       "id": "test_artifacts_test_artifact_writer_writes_manifest_and_outcomes",
-      "community": 83
+      "community": 84
     },
     {
       "label": "test_engine.py",
@@ -369,7 +369,7 @@
       "source_file": "packages/hldpro-sim/tests/test_engine.py",
       "source_location": "L1",
       "id": "test_engine",
-      "community": 84
+      "community": 85
     },
     {
       "label": "test_engine_passes_template_results_to_provider()",
@@ -377,7 +377,7 @@
       "source_file": "packages/hldpro-sim/tests/test_engine.py",
       "source_location": "L5",
       "id": "test_engine_test_engine_passes_template_results_to_provider",
-      "community": 84
+      "community": 85
     },
     {
       "label": "test_providers.py",
@@ -385,7 +385,7 @@
       "source_file": "packages/hldpro-sim/tests/test_providers.py",
       "source_location": "L1",
       "id": "test_providers",
-      "community": 62
+      "community": 63
     },
     {
       "label": "_write_output_from_call()",
@@ -393,7 +393,7 @@
       "source_file": "packages/hldpro-sim/tests/test_providers.py",
       "source_location": "L15",
       "id": "test_providers_write_output_from_call",
-      "community": 62
+      "community": 63
     },
     {
       "label": "test_codex_provider_builds_expected_subprocess_args()",
@@ -401,7 +401,7 @@
       "source_file": "packages/hldpro-sim/tests/test_providers.py",
       "source_location": "L23",
       "id": "test_providers_test_codex_provider_builds_expected_subprocess_args",
-      "community": 62
+      "community": 63
     },
     {
       "label": "test_codex_provider_injects_additional_properties_false_when_missing()",
@@ -409,7 +409,7 @@
       "source_file": "packages/hldpro-sim/tests/test_providers.py",
       "source_location": "L45",
       "id": "test_providers_test_codex_provider_injects_additional_properties_false_when_missing",
-      "community": 62
+      "community": 63
     },
     {
       "label": "test_codex_provider_passes_prompt_as_positional_arg_only()",
@@ -417,7 +417,7 @@
       "source_file": "packages/hldpro-sim/tests/test_providers.py",
       "source_location": "L57",
       "id": "test_providers_test_codex_provider_passes_prompt_as_positional_arg_only",
-      "community": 62
+      "community": 63
     },
     {
       "label": "test_anthropic_provider_not_implemented()",
@@ -425,7 +425,7 @@
       "source_file": "packages/hldpro-sim/tests/test_providers.py",
       "source_location": "L67",
       "id": "test_providers_test_anthropic_provider_not_implemented",
-      "community": 62
+      "community": 63
     },
     {
       "label": "test_codex_provider_raises_on_nonzero_exit_code()",
@@ -433,7 +433,7 @@
       "source_file": "packages/hldpro-sim/tests/test_providers.py",
       "source_location": "L79",
       "id": "test_providers_test_codex_provider_raises_on_nonzero_exit_code",
-      "community": 62
+      "community": 63
     },
     {
       "label": "test_persona_loader_prefers_local_file()",
@@ -441,7 +441,7 @@
       "source_file": "packages/hldpro-sim/tests/test_providers.py",
       "source_location": "L91",
       "id": "test_providers_test_persona_loader_prefers_local_file",
-      "community": 62
+      "community": 63
     },
     {
       "label": "test_persona_loader_falls_back_to_shared_file()",
@@ -449,7 +449,7 @@
       "source_file": "packages/hldpro-sim/tests/test_providers.py",
       "source_location": "L103",
       "id": "test_providers_test_persona_loader_falls_back_to_shared_file",
-      "community": 62
+      "community": 63
     },
     {
       "label": "test_persona_loader_raises_when_missing()",
@@ -457,7 +457,7 @@
       "source_file": "packages/hldpro-sim/tests/test_providers.py",
       "source_location": "L113",
       "id": "test_providers_test_persona_loader_raises_when_missing",
-      "community": 62
+      "community": 63
     },
     {
       "label": "test_runner.py",
@@ -465,7 +465,7 @@
       "source_file": "packages/hldpro-sim/tests/test_runner.py",
       "source_location": "L1",
       "id": "test_runner",
-      "community": 80
+      "community": 81
     },
     {
       "label": "test_runner_run_n_returns_requested_count_without_threads()",
@@ -473,7 +473,7 @@
       "source_file": "packages/hldpro-sim/tests/test_runner.py",
       "source_location": "L7",
       "id": "test_runner_test_runner_run_n_returns_requested_count_without_threads",
-      "community": 80
+      "community": 81
     },
     {
       "label": "test_runner_run_n_uses_threadpool_when_configured()",
@@ -481,7 +481,7 @@
       "source_file": "packages/hldpro-sim/tests/test_runner.py",
       "source_location": "L17",
       "id": "test_runner_test_runner_run_n_uses_threadpool_when_configured",
-      "community": 80
+      "community": 81
     },
     {
       "label": "test_stampede_consumer_proof.py",
@@ -521,7 +521,7 @@
       "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L1",
       "id": "cli_session_supervisor",
-      "community": 54
+      "community": 55
     },
     {
       "label": "AttemptResult",
@@ -529,7 +529,7 @@
       "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L25",
       "id": "cli_session_supervisor_attemptresult",
-      "community": 54
+      "community": 55
     },
     {
       "label": "utcnow()",
@@ -537,7 +537,7 @@
       "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L30",
       "id": "cli_session_supervisor_utcnow",
-      "community": 54
+      "community": 55
     },
     {
       "label": "session_id()",
@@ -545,7 +545,7 @@
       "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L34",
       "id": "cli_session_supervisor_session_id",
-      "community": 54
+      "community": 55
     },
     {
       "label": "sha256_bytes()",
@@ -553,7 +553,7 @@
       "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L39",
       "id": "cli_session_supervisor_sha256_bytes",
-      "community": 54
+      "community": 55
     },
     {
       "label": "event_paths()",
@@ -561,7 +561,7 @@
       "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L43",
       "id": "cli_session_supervisor_event_paths",
-      "community": 54
+      "community": 55
     },
     {
       "label": "append_jsonl()",
@@ -569,7 +569,7 @@
       "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L50",
       "id": "cli_session_supervisor_append_jsonl",
-      "community": 54
+      "community": 55
     },
     {
       "label": "kill_group()",
@@ -577,7 +577,7 @@
       "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L56",
       "id": "cli_session_supervisor_kill_group",
-      "community": 54
+      "community": 55
     },
     {
       "label": "build_command()",
@@ -585,7 +585,7 @@
       "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L79",
       "id": "cli_session_supervisor_build_command",
-      "community": 54
+      "community": 55
     },
     {
       "label": "stream_attempt()",
@@ -593,7 +593,7 @@
       "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L122",
       "id": "cli_session_supervisor_stream_attempt",
-      "community": 54
+      "community": 55
     },
     {
       "label": "parse_args()",
@@ -601,7 +601,7 @@
       "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L265",
       "id": "cli_session_supervisor_parse_args",
-      "community": 54
+      "community": 55
     },
     {
       "label": "main()",
@@ -609,7 +609,7 @@
       "source_file": "scripts/cli_session_supervisor.py",
       "source_location": "L308",
       "id": "cli_session_supervisor_main",
-      "community": 54
+      "community": 55
     },
     {
       "label": "build_graph.py",
@@ -617,7 +617,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L1",
       "id": "build_graph",
-      "community": 57
+      "community": 58
     },
     {
       "label": "_split_words()",
@@ -625,7 +625,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L78",
       "id": "build_graph_split_words",
-      "community": 57
+      "community": 58
     },
     {
       "label": "_normalize_phrase()",
@@ -633,7 +633,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L84",
       "id": "build_graph_normalize_phrase",
-      "community": 57
+      "community": 58
     },
     {
       "label": "_derive_path_phrase()",
@@ -641,7 +641,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L91",
       "id": "build_graph_derive_path_phrase",
-      "community": 57
+      "community": 58
     },
     {
       "label": "_derive_path_tokens()",
@@ -649,7 +649,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L123",
       "id": "build_graph_derive_path_tokens",
-      "community": 57
+      "community": 58
     },
     {
       "label": "_community_label()",
@@ -657,7 +657,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L137",
       "id": "build_graph_community_label",
-      "community": 57
+      "community": 58
     },
     {
       "label": "infer_community_labels()",
@@ -665,7 +665,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L168",
       "id": "build_graph_infer_community_labels",
-      "community": 57
+      "community": 58
     },
     {
       "label": "_sanitize_text_paths()",
@@ -673,7 +673,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L172",
       "id": "build_graph_sanitize_text_paths",
-      "community": 57
+      "community": 58
     },
     {
       "label": "_sanitize_markdown_artifacts()",
@@ -681,7 +681,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L179",
       "id": "build_graph_sanitize_markdown_artifacts",
-      "community": 57
+      "community": 58
     },
     {
       "label": "build_graph()",
@@ -689,7 +689,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L191",
       "id": "build_graph_build_graph",
-      "community": 57
+      "community": 58
     },
     {
       "label": "main()",
@@ -697,7 +697,7 @@
       "source_file": "scripts/knowledge_base/build_graph.py",
       "source_location": "L277",
       "id": "build_graph_main",
-      "community": 57
+      "community": 58
     },
     {
       "label": "graphify_hook_helper.py",
@@ -873,7 +873,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L1",
       "id": "graphify_targets",
-      "community": 63
+      "community": 64
     },
     {
       "label": "load_manifest()",
@@ -881,7 +881,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L14",
       "id": "graphify_targets_load_manifest",
-      "community": 63
+      "community": 64
     },
     {
       "label": "target_rows()",
@@ -889,7 +889,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L24",
       "id": "graphify_targets_target_rows",
-      "community": 63
+      "community": 64
     },
     {
       "label": "filtered_targets()",
@@ -897,7 +897,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L30",
       "id": "graphify_targets_filtered_targets",
-      "community": 63
+      "community": 64
     },
     {
       "label": "find_target()",
@@ -905,7 +905,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L39",
       "id": "graphify_targets_find_target",
-      "community": 63
+      "community": 64
     },
     {
       "label": "print_json()",
@@ -913,7 +913,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L46",
       "id": "graphify_targets_print_json",
-      "community": 63
+      "community": 64
     },
     {
       "label": "print_tsv()",
@@ -921,7 +921,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L51",
       "id": "graphify_targets_print_tsv",
-      "community": 63
+      "community": 64
     },
     {
       "label": "print_shell()",
@@ -929,7 +929,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L67",
       "id": "graphify_targets_print_shell",
-      "community": 63
+      "community": 64
     },
     {
       "label": "print_stage_paths()",
@@ -937,7 +937,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L74",
       "id": "graphify_targets_print_stage_paths",
-      "community": 63
+      "community": 64
     },
     {
       "label": "main()",
@@ -945,7 +945,7 @@
       "source_file": "scripts/knowledge_base/graphify_targets.py",
       "source_location": "L84",
       "id": "graphify_targets_main",
-      "community": 63
+      "community": 64
     },
     {
       "label": "log_graphify_usage.py",
@@ -953,7 +953,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L1",
       "id": "log_graphify_usage",
-      "community": 74
+      "community": 75
     },
     {
       "label": "parse_args()",
@@ -961,7 +961,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L13",
       "id": "log_graphify_usage_parse_args",
-      "community": 74
+      "community": 75
     },
     {
       "label": "build_event()",
@@ -969,7 +969,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L31",
       "id": "log_graphify_usage_build_event",
-      "community": 74
+      "community": 75
     },
     {
       "label": "append_event()",
@@ -977,7 +977,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L70",
       "id": "log_graphify_usage_append_event",
-      "community": 74
+      "community": 75
     },
     {
       "label": "main()",
@@ -985,7 +985,7 @@
       "source_file": "scripts/knowledge_base/log_graphify_usage.py",
       "source_location": "L80",
       "id": "log_graphify_usage_main",
-      "community": 74
+      "community": 75
     },
     {
       "label": "measure_graphify_usage.py",
@@ -1225,7 +1225,7 @@
       "source_file": "scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L1",
       "id": "push_graph_to_neo4j",
-      "community": 81
+      "community": 82
     },
     {
       "label": "build_scoped_graph()",
@@ -1233,7 +1233,7 @@
       "source_file": "scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L15",
       "id": "push_graph_to_neo4j_build_scoped_graph",
-      "community": 81
+      "community": 82
     },
     {
       "label": "main()",
@@ -1241,7 +1241,7 @@
       "source_file": "scripts/knowledge_base/push_graph_to_neo4j.py",
       "source_location": "L37",
       "id": "push_graph_to_neo4j_main",
-      "community": 81
+      "community": 82
     },
     {
       "label": "test_graphify_governance_contract.py",
@@ -1249,7 +1249,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L1",
       "id": "test_graphify_governance_contract",
-      "community": 78
+      "community": 79
     },
     {
       "label": "check()",
@@ -1257,7 +1257,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L38",
       "id": "test_graphify_governance_contract_check",
-      "community": 78
+      "community": 79
     },
     {
       "label": "is_ignored()",
@@ -1265,7 +1265,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L46",
       "id": "test_graphify_governance_contract_is_ignored",
-      "community": 78
+      "community": 79
     },
     {
       "label": "main()",
@@ -1273,7 +1273,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_governance_contract.py",
       "source_location": "L64",
       "id": "test_graphify_governance_contract_main",
-      "community": 78
+      "community": 79
     },
     {
       "label": "test_graphify_hook_helper.py",
@@ -1377,7 +1377,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L1",
       "id": "test_graphify_usage_logging_contract",
-      "community": 66
+      "community": 67
     },
     {
       "label": "check()",
@@ -1385,7 +1385,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L19",
       "id": "test_graphify_usage_logging_contract_check",
-      "community": 66
+      "community": 67
     },
     {
       "label": "run_command()",
@@ -1393,7 +1393,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L27",
       "id": "test_graphify_usage_logging_contract_run_command",
-      "community": 66
+      "community": 67
     },
     {
       "label": "test_schema_shape()",
@@ -1401,7 +1401,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L31",
       "id": "test_graphify_usage_logging_contract_test_schema_shape",
-      "community": 66
+      "community": 67
     },
     {
       "label": "test_logger_backwards_compatible()",
@@ -1409,7 +1409,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L42",
       "id": "test_graphify_usage_logging_contract_test_logger_backwards_compatible",
-      "community": 66
+      "community": 67
     },
     {
       "label": "test_logger_query_trace_fields()",
@@ -1417,7 +1417,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L74",
       "id": "test_graphify_usage_logging_contract_test_logger_query_trace_fields",
-      "community": 66
+      "community": 67
     },
     {
       "label": "test_measurement_outputs_query_traces()",
@@ -1425,7 +1425,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L128",
       "id": "test_graphify_usage_logging_contract_test_measurement_outputs_query_traces",
-      "community": 66
+      "community": 67
     },
     {
       "label": "test_measurement_falls_back_from_stale_governance_repo_path()",
@@ -1433,7 +1433,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L193",
       "id": "test_graphify_usage_logging_contract_test_measurement_falls_back_from_stale_governance_repo_path",
-      "community": 66
+      "community": 67
     },
     {
       "label": "main()",
@@ -1441,7 +1441,7 @@
       "source_file": "scripts/knowledge_base/test_graphify_usage_logging_contract.py",
       "source_location": "L247",
       "id": "test_graphify_usage_logging_contract_main",
-      "community": 66
+      "community": 67
     },
     {
       "label": "update_knowledge_index.py",
@@ -1449,7 +1449,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L1",
       "id": "update_knowledge_index",
-      "community": 79
+      "community": 80
     },
     {
       "label": "summary_line()",
@@ -1457,7 +1457,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L21",
       "id": "update_knowledge_index_summary_line",
-      "community": 79
+      "community": 80
     },
     {
       "label": "replace_section()",
@@ -1465,7 +1465,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L29",
       "id": "update_knowledge_index_replace_section",
-      "community": 79
+      "community": 80
     },
     {
       "label": "main()",
@@ -1473,7 +1473,7 @@
       "source_file": "scripts/knowledge_base/update_knowledge_index.py",
       "source_location": "L38",
       "id": "update_knowledge_index_main",
-      "community": 79
+      "community": 80
     },
     {
       "label": "runtime_inventory.py",
@@ -1481,7 +1481,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L1",
       "id": "runtime_inventory",
-      "community": 64
+      "community": 65
     },
     {
       "label": "_run()",
@@ -1489,7 +1489,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L25",
       "id": "runtime_inventory_run",
-      "community": 64
+      "community": 65
     },
     {
       "label": "mac_hardware()",
@@ -1497,7 +1497,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L29",
       "id": "runtime_inventory_mac_hardware",
-      "community": 64
+      "community": 65
     },
     {
       "label": "import_available()",
@@ -1505,7 +1505,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L48",
       "id": "runtime_inventory_import_available",
-      "community": 64
+      "community": 65
     },
     {
       "label": "local_runtime()",
@@ -1513,7 +1513,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L53",
       "id": "runtime_inventory_local_runtime",
-      "community": 64
+      "community": 65
     },
     {
       "label": "windows_ollama()",
@@ -1521,7 +1521,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L62",
       "id": "runtime_inventory_windows_ollama",
-      "community": 64
+      "community": 65
     },
     {
       "label": "pii_guardrail()",
@@ -1529,7 +1529,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L97",
       "id": "runtime_inventory_pii_guardrail",
-      "community": 64
+      "community": 65
     },
     {
       "label": "memory_budget()",
@@ -1537,7 +1537,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L126",
       "id": "runtime_inventory_memory_budget",
-      "community": 64
+      "community": 65
     },
     {
       "label": "build_inventory()",
@@ -1545,7 +1545,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L159",
       "id": "runtime_inventory_build_inventory",
-      "community": 64
+      "community": 65
     },
     {
       "label": "main()",
@@ -1553,7 +1553,7 @@
       "source_file": "scripts/lam/runtime_inventory.py",
       "source_location": "L186",
       "id": "runtime_inventory_main",
-      "community": 64
+      "community": 65
     },
     {
       "label": "test_runtime_inventory.py",
@@ -2257,7 +2257,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L1",
       "id": "self_learning",
-      "community": 17
+      "community": 13
     },
     {
       "label": "LearningEntry",
@@ -2265,7 +2265,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L26",
       "id": "self_learning_learningentry",
-      "community": 17
+      "community": 13
     },
     {
       "label": "LearningMatch",
@@ -2273,7 +2273,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L38",
       "id": "self_learning_learningmatch",
-      "community": 17
+      "community": 13
     },
     {
       "label": "utc_now()",
@@ -2281,7 +2281,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L47",
       "id": "self_learning_utc_now",
-      "community": 17
+      "community": 13
     },
     {
       "label": "tokenize()",
@@ -2289,7 +2289,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L51",
       "id": "self_learning_tokenize",
-      "community": 17
+      "community": 13
     },
     {
       "label": "_rel()",
@@ -2297,7 +2297,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L59",
       "id": "self_learning_rel",
-      "community": 17
+      "community": 13
     },
     {
       "label": "_entry_id()",
@@ -2305,7 +2305,7 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L66",
       "id": "self_learning_entry_id",
-      "community": 17
+      "community": 13
     },
     {
       "label": "_date_from_text()",
@@ -2313,143 +2313,159 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L70",
       "id": "self_learning_date_from_text",
-      "community": 17
+      "community": 13
+    },
+    {
+      "label": "_markdown_table_fields()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L75",
+      "id": "self_learning_markdown_table_fields",
+      "community": 13
     },
     {
       "label": "load_fail_fast()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L75",
+      "source_location": "L90",
       "id": "self_learning_load_fail_fast",
-      "community": 17
+      "community": 13
     },
     {
       "label": "load_error_patterns()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L108",
+      "source_location": "L123",
       "id": "self_learning_load_error_patterns",
-      "community": 17
+      "community": 13
+    },
+    {
+      "label": "load_session_error_patterns()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L153",
+      "id": "self_learning_load_session_error_patterns",
+      "community": 13
     },
     {
       "label": "_section()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L138",
+      "source_location": "L191",
       "id": "self_learning_section",
-      "community": 17
+      "community": 13
     },
     {
       "label": "load_closeouts()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L149",
+      "source_location": "L202",
       "id": "self_learning_load_closeouts",
-      "community": 17
+      "community": 13
     },
     {
       "label": "load_operator_context()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L176",
+      "source_location": "L229",
       "id": "self_learning_load_operator_context",
-      "community": 17
+      "community": 13
     },
     {
       "label": "load_compendium_attention()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L199",
+      "source_location": "L252",
       "id": "self_learning_load_compendium_attention",
-      "community": 17
+      "community": 13
     },
     {
       "label": "load_graph_attention()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L206",
+      "source_location": "L259",
       "id": "self_learning_load_graph_attention",
-      "community": 17
+      "community": 13
     },
     {
       "label": "load_entries()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L213",
+      "source_location": "L266",
       "id": "self_learning_load_entries",
-      "community": 17
+      "community": 13
     },
     {
       "label": "duplicate_counts()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L222",
+      "source_location": "L276",
       "id": "self_learning_duplicate_counts",
-      "community": 17
+      "community": 13
     },
     {
       "label": "lookup_patterns()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L231",
+      "source_location": "L285",
       "id": "self_learning_lookup_patterns",
-      "community": 17
+      "community": 13
     },
     {
       "label": "query_from_packet()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L259",
+      "source_location": "L313",
       "id": "self_learning_query_from_packet",
-      "community": 17
+      "community": 13
     },
     {
       "label": "enrich_packet()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L272",
+      "source_location": "L326",
       "id": "self_learning_enrich_packet",
-      "community": 17
+      "community": 13
     },
     {
       "label": "atomic_write_yaml()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L289",
+      "source_location": "L343",
       "id": "self_learning_atomic_write_yaml",
-      "community": 17
+      "community": 13
     },
     {
       "label": "record_failure()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L296",
+      "source_location": "L350",
       "id": "self_learning_record_failure",
-      "community": 17
+      "community": 13
     },
     {
       "label": "build_report()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L328",
+      "source_location": "L382",
       "id": "self_learning_build_report",
-      "community": 17
+      "community": 13
     },
     {
       "label": "report_markdown()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L352",
+      "source_location": "L415",
       "id": "self_learning_report_markdown",
-      "community": 17
+      "community": 13
     },
     {
       "label": "_run_cli()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L374",
+      "source_location": "L442",
       "id": "self_learning_run_cli",
-      "community": 17
+      "community": 13
     },
     {
       "label": "test_delegation_gate.py",
@@ -2529,7 +2545,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L1",
       "id": "test_delegation_hook",
-      "community": 58
+      "community": 59
     },
     {
       "label": "_run_hook()",
@@ -2537,7 +2553,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L15",
       "id": "test_delegation_hook_run_hook",
-      "community": 58
+      "community": 59
     },
     {
       "label": "_payload()",
@@ -2545,7 +2561,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L30",
       "id": "test_delegation_hook_payload",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_hook_blocks_agent_owned_work_before_file_path_logic()",
@@ -2553,7 +2569,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L39",
       "id": "test_delegation_hook_test_hook_blocks_agent_owned_work_before_file_path_logic",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_hook_warns_for_implementation_scoped_explore()",
@@ -2561,7 +2577,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L52",
       "id": "test_delegation_hook_test_hook_warns_for_implementation_scoped_explore",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_hook_allows_read_even_when_text_matches_owned_work()",
@@ -2569,7 +2585,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L65",
       "id": "test_delegation_hook_test_hook_allows_read_even_when_text_matches_owned_work",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_hook_bypass_allows_and_logs()",
@@ -2577,7 +2593,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L78",
       "id": "test_delegation_hook_test_hook_bypass_allows_and_logs",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass()",
@@ -2585,7 +2601,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L90",
       "id": "test_delegation_hook_test_hook_quoted_bypass_flag_inside_prompt_does_not_bypass",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_hook_blocks_task_tool_owned_work()",
@@ -2593,7 +2609,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L103",
       "id": "test_delegation_hook_test_hook_blocks_task_tool_owned_work",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate()",
@@ -2601,7 +2617,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L115",
       "id": "test_delegation_hook_test_hook_configured_mcp_endpoint_fails_open_on_unavailable_gate",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_hook_preserves_new_code_file_block_for_common_extensions()",
@@ -2609,7 +2625,7 @@
       "source_file": "scripts/orchestrator/test_delegation_hook.py",
       "source_location": "L129",
       "id": "test_delegation_hook_test_hook_preserves_new_code_file_block_for_common_extensions",
-      "community": 58
+      "community": 59
     },
     {
       "label": "test_hitl_relay_final_e2e.py",
@@ -2929,7 +2945,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L1",
       "id": "test_read_only_observer",
-      "community": 71
+      "community": 72
     },
     {
       "label": "_copy_fixture()",
@@ -2937,7 +2953,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L26",
       "id": "test_read_only_observer_copy_fixture",
-      "community": 71
+      "community": 72
     },
     {
       "label": "TestReadOnlyObserver",
@@ -2945,7 +2961,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L35",
       "id": "test_read_only_observer_testreadonlyobserver",
-      "community": 71
+      "community": 72
     },
     {
       "label": "._fixture()",
@@ -2953,7 +2969,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L36",
       "id": "test_read_only_observer_testreadonlyobserver_fixture",
-      "community": 71
+      "community": 72
     },
     {
       "label": ".test_check_only_does_not_write_reports_or_packets()",
@@ -2961,7 +2977,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L51",
       "id": "test_read_only_observer_testreadonlyobserver_test_check_only_does_not_write_reports_or_packets",
-      "community": 71
+      "community": 72
     },
     {
       "label": ".test_writes_only_project_reports()",
@@ -2969,7 +2985,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L63",
       "id": "test_read_only_observer_testreadonlyobserver_test_writes_only_project_reports",
-      "community": 71
+      "community": 72
     },
     {
       "label": ".test_cli_check_only()",
@@ -2977,7 +2993,7 @@
       "source_file": "scripts/orchestrator/test_read_only_observer.py",
       "source_location": "L85",
       "id": "test_read_only_observer_testreadonlyobserver_test_cli_check_only",
-      "community": 71
+      "community": 72
     },
     {
       "label": "test_self_learning.py",
@@ -2985,7 +3001,7 @@
       "source_file": "scripts/orchestrator/test_self_learning.py",
       "source_location": "L1",
       "id": "test_self_learning",
-      "community": 17
+      "community": 13
     },
     {
       "label": "_write_fixture()",
@@ -2993,55 +3009,71 @@
       "source_file": "scripts/orchestrator/test_self_learning.py",
       "source_location": "L17",
       "id": "test_self_learning_write_fixture",
-      "community": 17
+      "community": 13
     },
     {
       "label": "TestSelfLearning",
       "file_type": "code",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L68",
+      "source_location": "L88",
       "id": "test_self_learning_testselflearning",
-      "community": 17
+      "community": 13
     },
     {
       "label": ".test_lookup_returns_cited_prior_patterns()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L69",
+      "source_location": "L89",
       "id": "test_self_learning_testselflearning_test_lookup_returns_cited_prior_patterns",
-      "community": 17
+      "community": 13
     },
     {
       "label": ".test_enrich_packet_injects_known_failure_context()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L81",
+      "source_location": "L101",
       "id": "test_self_learning_testselflearning_test_enrich_packet_injects_known_failure_context",
-      "community": 17
+      "community": 13
+    },
+    {
+      "label": ".test_session_error_runbook_is_indexed_for_lookup()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_self_learning.py",
+      "source_location": "L119",
+      "id": "test_self_learning_testselflearning_test_session_error_runbook_is_indexed_for_lookup",
+      "community": 13
+    },
+    {
+      "label": ".test_report_surfaces_session_error_source()",
+      "file_type": "code",
+      "source_file": "scripts/orchestrator/test_self_learning.py",
+      "source_location": "L129",
+      "id": "test_self_learning_testselflearning_test_report_surfaces_session_error_source",
+      "community": 13
     },
     {
       "label": ".test_record_failure_is_append_only_and_issue_backed()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L99",
+      "source_location": "L140",
       "id": "test_self_learning_testselflearning_test_record_failure_is_append_only_and_issue_backed",
-      "community": 17
+      "community": 13
     },
     {
       "label": ".test_record_failure_rejects_out_of_range_issue_numbers()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L124",
+      "source_location": "L165",
       "id": "test_self_learning_testselflearning_test_record_failure_rejects_out_of_range_issue_numbers",
-      "community": 17
+      "community": 13
     },
     {
       "label": ".test_report_flags_duplicates_and_graphify_attention_only()",
       "file_type": "code",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L146",
+      "source_location": "L187",
       "id": "test_self_learning_testselflearning_test_report_flags_duplicates_and_graphify_attention_only",
-      "community": 17
+      "community": 13
     },
     {
       "label": "assert_execution_scope.py",
@@ -3049,7 +3081,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L1",
       "id": "assert_execution_scope",
-      "community": 13
+      "community": 14
     },
     {
       "label": "LaneClaim",
@@ -3057,7 +3089,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L16",
       "id": "assert_execution_scope_laneclaim",
-      "community": 13
+      "community": 14
     },
     {
       "label": "HandoffEvidence",
@@ -3065,7 +3097,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L24",
       "id": "assert_execution_scope_handoffevidence",
-      "community": 13
+      "community": 14
     },
     {
       "label": "ExecutionScope",
@@ -3073,7 +3105,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L35",
       "id": "assert_execution_scope_executionscope",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_run_git()",
@@ -3081,7 +3113,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L46",
       "id": "assert_execution_scope_run_git",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_normalize_repo_path()",
@@ -3089,7 +3121,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L56",
       "id": "assert_execution_scope_normalize_repo_path",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_normalize_repo_relative_file_path()",
@@ -3097,7 +3129,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L62",
       "id": "assert_execution_scope_normalize_repo_relative_file_path",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_normalize_active_exception_ref()",
@@ -3105,7 +3137,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L79",
       "id": "assert_execution_scope_normalize_active_exception_ref",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_parse_iso8601_timestamp()",
@@ -3113,7 +3145,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L93",
       "id": "assert_execution_scope_parse_iso8601_timestamp",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_load_handoff_evidence()",
@@ -3121,7 +3153,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L108",
       "id": "assert_execution_scope_load_handoff_evidence",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_load_lane_claim()",
@@ -3129,7 +3161,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L171",
       "id": "assert_execution_scope_load_lane_claim",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_load_scope()",
@@ -3137,7 +3169,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L197",
       "id": "assert_execution_scope_load_scope",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_git_root()",
@@ -3145,7 +3177,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L278",
       "id": "assert_execution_scope_git_root",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_current_branch()",
@@ -3153,7 +3185,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L285",
       "id": "assert_execution_scope_current_branch",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_branch_issue_number()",
@@ -3161,7 +3193,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L295",
       "id": "assert_execution_scope_branch_issue_number",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_changed_paths()",
@@ -3169,7 +3201,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L300",
       "id": "assert_execution_scope_changed_paths",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_changed_paths_from_file()",
@@ -3177,7 +3209,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L328",
       "id": "assert_execution_scope_changed_paths_from_file",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_path_allowed()",
@@ -3185,7 +3217,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L339",
       "id": "assert_execution_scope_path_allowed",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_model_family()",
@@ -3193,7 +3225,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L343",
       "id": "assert_execution_scope_model_family",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_same_model_or_family()",
@@ -3201,7 +3233,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L364",
       "id": "assert_execution_scope_same_model_or_family",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_validate_execution_mode()",
@@ -3209,7 +3241,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L370",
       "id": "assert_execution_scope_validate_execution_mode",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_format_path()",
@@ -3217,7 +3249,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L400",
       "id": "assert_execution_scope_format_path",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_resolve_expected_execution_root()",
@@ -3225,7 +3257,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L404",
       "id": "assert_execution_scope_resolve_expected_execution_root",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_validate_active_exception_ref()",
@@ -3233,7 +3265,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L410",
       "id": "assert_execution_scope_validate_active_exception_ref",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_validate_lane_claim()",
@@ -3241,7 +3273,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L425",
       "id": "assert_execution_scope_validate_lane_claim",
-      "community": 13
+      "community": 14
     },
     {
       "label": "check_scope()",
@@ -3249,7 +3281,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L453",
       "id": "assert_execution_scope_check_scope",
-      "community": 13
+      "community": 14
     },
     {
       "label": "main()",
@@ -3257,7 +3289,7 @@
       "source_file": "scripts/overlord/assert_execution_scope.py",
       "source_location": "L537",
       "id": "assert_execution_scope_main",
-      "community": 13
+      "community": 14
     },
     {
       "label": "automerge_policy_check.py",
@@ -3265,7 +3297,7 @@
       "source_file": "scripts/overlord/automerge_policy_check.py",
       "source_location": "L1",
       "id": "automerge_policy_check",
-      "community": 55
+      "community": 56
     },
     {
       "label": "_labels()",
@@ -3273,7 +3305,7 @@
       "source_file": "scripts/overlord/automerge_policy_check.py",
       "source_location": "L20",
       "id": "automerge_policy_check_labels",
-      "community": 55
+      "community": 56
     },
     {
       "label": "_check_required_checks()",
@@ -3281,7 +3313,7 @@
       "source_file": "scripts/overlord/automerge_policy_check.py",
       "source_location": "L24",
       "id": "automerge_policy_check_check_required_checks",
-      "community": 55
+      "community": 56
     },
     {
       "label": "evaluate()",
@@ -3289,7 +3321,7 @@
       "source_file": "scripts/overlord/automerge_policy_check.py",
       "source_location": "L40",
       "id": "automerge_policy_check_evaluate",
-      "community": 55
+      "community": 56
     },
     {
       "label": "main()",
@@ -3297,7 +3329,7 @@
       "source_file": "scripts/overlord/automerge_policy_check.py",
       "source_location": "L106",
       "id": "automerge_policy_check_main",
-      "community": 55
+      "community": 56
     },
     {
       "label": "build_effectiveness_metrics.py",
@@ -3305,7 +3337,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L1",
       "id": "build_effectiveness_metrics",
-      "community": 68
+      "community": 69
     },
     {
       "label": "RepoMetrics",
@@ -3313,7 +3345,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L28",
       "id": "build_effectiveness_metrics_repometrics",
-      "community": 68
+      "community": 69
     },
     {
       "label": "run()",
@@ -3321,7 +3353,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L42",
       "id": "build_effectiveness_metrics_run",
-      "community": 68
+      "community": 69
     },
     {
       "label": "pct()",
@@ -3329,7 +3361,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L53",
       "id": "build_effectiveness_metrics_pct",
-      "community": 68
+      "community": 69
     },
     {
       "label": "parse_iso()",
@@ -3337,7 +3369,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L59",
       "id": "build_effectiveness_metrics_parse_iso",
-      "community": 68
+      "community": 69
     },
     {
       "label": "collect_repo_metrics()",
@@ -3345,7 +3377,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L63",
       "id": "build_effectiveness_metrics_collect_repo_metrics",
-      "community": 68
+      "community": 69
     },
     {
       "label": "render_markdown()",
@@ -3353,7 +3385,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L128",
       "id": "build_effectiveness_metrics_render_markdown",
-      "community": 68
+      "community": 69
     },
     {
       "label": "main()",
@@ -3361,7 +3393,7 @@
       "source_file": "scripts/overlord/build_effectiveness_metrics.py",
       "source_location": "L162",
       "id": "build_effectiveness_metrics_main",
-      "community": 68
+      "community": 69
     },
     {
       "label": "build_org_governance_compendium.py",
@@ -3545,7 +3577,7 @@
       "source_file": "scripts/overlord/check_execution_environment.py",
       "source_location": "L1",
       "id": "check_execution_environment",
-      "community": 13
+      "community": 14
     },
     {
       "label": "main()",
@@ -3553,7 +3585,7 @@
       "source_file": "scripts/overlord/check_execution_environment.py",
       "source_location": "L12",
       "id": "check_execution_environment_main",
-      "community": 13
+      "community": 14
     },
     {
       "label": "check_local_ci_gate_workflow_contract.py",
@@ -3801,7 +3833,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L1",
       "id": "check_overlord_backlog_github_alignment",
-      "community": 35
+      "community": 34
     },
     {
       "label": "fail()",
@@ -3809,7 +3841,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L21",
       "id": "check_overlord_backlog_github_alignment_fail",
-      "community": 35
+      "community": 34
     },
     {
       "label": "parse_markdown_row()",
@@ -3817,7 +3849,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L26",
       "id": "check_overlord_backlog_github_alignment_parse_markdown_row",
-      "community": 35
+      "community": 34
     },
     {
       "label": "collect_section_lines()",
@@ -3825,7 +3857,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L37",
       "id": "check_overlord_backlog_github_alignment_collect_section_lines",
-      "community": 35
+      "community": 34
     },
     {
       "label": "has_issue_ref()",
@@ -3833,7 +3865,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L50",
       "id": "check_overlord_backlog_github_alignment_has_issue_ref",
-      "community": 35
+      "community": 34
     },
     {
       "label": "issue_numbers()",
@@ -3841,7 +3873,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L54",
       "id": "check_overlord_backlog_github_alignment_issue_numbers",
-      "community": 35
+      "community": 34
     },
     {
       "label": "issue_column_index()",
@@ -3849,7 +3881,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L58",
       "id": "check_overlord_backlog_github_alignment_issue_column_index",
-      "community": 35
+      "community": 34
     },
     {
       "label": "check_github_issue_open()",
@@ -3857,7 +3889,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L65",
       "id": "check_overlord_backlog_github_alignment_check_github_issue_open",
-      "community": 35
+      "community": 34
     },
     {
       "label": "validate_section()",
@@ -3865,7 +3897,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L98",
       "id": "check_overlord_backlog_github_alignment_validate_section",
-      "community": 35
+      "community": 34
     },
     {
       "label": "main()",
@@ -3873,7 +3905,7 @@
       "source_file": "scripts/overlord/check_overlord_backlog_github_alignment.py",
       "source_location": "L135",
       "id": "check_overlord_backlog_github_alignment_main",
-      "community": 35
+      "community": 34
     },
     {
       "label": "check_plan_preflight.py",
@@ -3881,7 +3913,7 @@
       "source_file": "scripts/overlord/check_plan_preflight.py",
       "source_location": "L1",
       "id": "check_plan_preflight",
-      "community": 69
+      "community": 70
     },
     {
       "label": "is_governed_path()",
@@ -3889,7 +3921,7 @@
       "source_file": "scripts/overlord/check_plan_preflight.py",
       "source_location": "L33",
       "id": "check_plan_preflight_is_governed_path",
-      "community": 69
+      "community": 70
     },
     {
       "label": "recent_plan()",
@@ -3897,7 +3929,7 @@
       "source_file": "scripts/overlord/check_plan_preflight.py",
       "source_location": "L38",
       "id": "check_plan_preflight_recent_plan",
-      "community": 69
+      "community": 70
     },
     {
       "label": "detect_bash_write_target()",
@@ -3905,7 +3937,7 @@
       "source_file": "scripts/overlord/check_plan_preflight.py",
       "source_location": "L48",
       "id": "check_plan_preflight_detect_bash_write_target",
-      "community": 69
+      "community": 70
     },
     {
       "label": "block_reason()",
@@ -3913,7 +3945,7 @@
       "source_file": "scripts/overlord/check_plan_preflight.py",
       "source_location": "L79",
       "id": "check_plan_preflight_block_reason",
-      "community": 69
+      "community": 70
     },
     {
       "label": "evaluate()",
@@ -3921,7 +3953,7 @@
       "source_file": "scripts/overlord/check_plan_preflight.py",
       "source_location": "L93",
       "id": "check_plan_preflight_evaluate",
-      "community": 69
+      "community": 70
     },
     {
       "label": "parse_args()",
@@ -3929,7 +3961,7 @@
       "source_file": "scripts/overlord/check_plan_preflight.py",
       "source_location": "L146",
       "id": "check_plan_preflight_parse_args",
-      "community": 69
+      "community": 70
     },
     {
       "label": "main()",
@@ -3937,7 +3969,7 @@
       "source_file": "scripts/overlord/check_plan_preflight.py",
       "source_location": "L160",
       "id": "check_plan_preflight_main",
-      "community": 69
+      "community": 70
     },
     {
       "label": "check_progress_github_issue_staleness.py",
@@ -4129,7 +4161,7 @@
       "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L1",
       "id": "check_worker_handoff_route",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_normalize_repo_path()",
@@ -4137,7 +4169,7 @@
       "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L29",
       "id": "check_worker_handoff_route_normalize_repo_path",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_actionable_next_step()",
@@ -4145,7 +4177,7 @@
       "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L33",
       "id": "check_worker_handoff_route_actionable_next_step",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_result()",
@@ -4153,7 +4185,7 @@
       "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L44",
       "id": "check_worker_handoff_route_result",
-      "community": 13
+      "community": 14
     },
     {
       "label": "_find_scope()",
@@ -4161,7 +4193,7 @@
       "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L52",
       "id": "check_worker_handoff_route_find_scope",
-      "community": 13
+      "community": 14
     },
     {
       "label": "check_route()",
@@ -4169,7 +4201,7 @@
       "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L64",
       "id": "check_worker_handoff_route_check_route",
-      "community": 13
+      "community": 14
     },
     {
       "label": "parse_args()",
@@ -4177,7 +4209,7 @@
       "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L142",
       "id": "check_worker_handoff_route_parse_args",
-      "community": 13
+      "community": 14
     },
     {
       "label": "main()",
@@ -4185,7 +4217,7 @@
       "source_file": "scripts/overlord/check_worker_handoff_route.py",
       "source_location": "L152",
       "id": "check_worker_handoff_route_main",
-      "community": 13
+      "community": 14
     },
     {
       "label": "check_workflow_local_coverage.py",
@@ -5001,7 +5033,7 @@
       "source_file": "scripts/overlord/lane_bootstrap.py",
       "source_location": "L1",
       "id": "lane_bootstrap",
-      "community": 59
+      "community": 60
     },
     {
       "label": "LanePolicy",
@@ -5009,7 +5041,7 @@
       "source_file": "scripts/overlord/lane_bootstrap.py",
       "source_location": "L20",
       "id": "lane_bootstrap_lanepolicy",
-      "community": 59
+      "community": 60
     },
     {
       "label": "load_policy()",
@@ -5017,7 +5049,7 @@
       "source_file": "scripts/overlord/lane_bootstrap.py",
       "source_location": "L29",
       "id": "lane_bootstrap_load_policy",
-      "community": 59
+      "community": 60
     },
     {
       "label": "normalize_slug()",
@@ -5025,7 +5057,7 @@
       "source_file": "scripts/overlord/lane_bootstrap.py",
       "source_location": "L43",
       "id": "lane_bootstrap_normalize_slug",
-      "community": 59
+      "community": 60
     },
     {
       "label": "_match()",
@@ -5033,7 +5065,7 @@
       "source_file": "scripts/overlord/lane_bootstrap.py",
       "source_location": "L50",
       "id": "lane_bootstrap_match",
-      "community": 59
+      "community": 60
     },
     {
       "label": "validate_lane()",
@@ -5041,7 +5073,7 @@
       "source_file": "scripts/overlord/lane_bootstrap.py",
       "source_location": "L54",
       "id": "lane_bootstrap_validate_lane",
-      "community": 59
+      "community": 60
     },
     {
       "label": "plan_lane()",
@@ -5049,7 +5081,7 @@
       "source_file": "scripts/overlord/lane_bootstrap.py",
       "source_location": "L94",
       "id": "lane_bootstrap_plan_lane",
-      "community": 59
+      "community": 60
     },
     {
       "label": "cleanup_advice()",
@@ -5057,7 +5089,7 @@
       "source_file": "scripts/overlord/lane_bootstrap.py",
       "source_location": "L116",
       "id": "lane_bootstrap_cleanup_advice",
-      "community": 59
+      "community": 60
     },
     {
       "label": "infer_repo_slug()",
@@ -5065,7 +5097,7 @@
       "source_file": "scripts/overlord/lane_bootstrap.py",
       "source_location": "L130",
       "id": "lane_bootstrap_infer_repo_slug",
-      "community": 59
+      "community": 60
     },
     {
       "label": "parse_args()",
@@ -5073,7 +5105,7 @@
       "source_file": "scripts/overlord/lane_bootstrap.py",
       "source_location": "L145",
       "id": "lane_bootstrap_parse_args",
-      "community": 59
+      "community": 60
     },
     {
       "label": "main()",
@@ -5081,7 +5113,7 @@
       "source_file": "scripts/overlord/lane_bootstrap.py",
       "source_location": "L168",
       "id": "lane_bootstrap_main",
-      "community": 59
+      "community": 60
     },
     {
       "label": "memory_integrity.py",
@@ -5089,7 +5121,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L1",
       "id": "memory_integrity",
-      "community": 60
+      "community": 61
     },
     {
       "label": "fail()",
@@ -5097,7 +5129,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L23",
       "id": "memory_integrity_fail",
-      "community": 60
+      "community": 61
     },
     {
       "label": "MemoryInspection",
@@ -5105,7 +5137,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L29",
       "id": "memory_integrity_memoryinspection",
-      "community": 60
+      "community": 61
     },
     {
       "label": "memory_dir_for_repo()",
@@ -5113,7 +5145,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L36",
       "id": "memory_integrity_memory_dir_for_repo",
-      "community": 60
+      "community": 61
     },
     {
       "label": "load_memory_lines()",
@@ -5121,7 +5153,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L40",
       "id": "memory_integrity_load_memory_lines",
-      "community": 60
+      "community": 61
     },
     {
       "label": "check_memory_exists()",
@@ -5129,7 +5161,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L44",
       "id": "memory_integrity_check_memory_exists",
-      "community": 60
+      "community": 61
     },
     {
       "label": "parse_pointer_filenames()",
@@ -5137,7 +5169,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L52",
       "id": "memory_integrity_parse_pointer_filenames",
-      "community": 60
+      "community": 61
     },
     {
       "label": "validate_frontmatter()",
@@ -5145,7 +5177,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L67",
       "id": "memory_integrity_validate_frontmatter",
-      "community": 60
+      "community": 61
     },
     {
       "label": "inspect_repo()",
@@ -5153,7 +5185,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L98",
       "id": "memory_integrity_inspect_repo",
-      "community": 60
+      "community": 61
     },
     {
       "label": "build_parser()",
@@ -5161,7 +5193,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L144",
       "id": "memory_integrity_build_parser",
-      "community": 60
+      "community": 61
     },
     {
       "label": "main()",
@@ -5169,7 +5201,7 @@
       "source_file": "scripts/overlord/memory_integrity.py",
       "source_location": "L169",
       "id": "memory_integrity_main",
-      "community": 60
+      "community": 61
     },
     {
       "label": "pentagi_sweep.py",
@@ -5305,7 +5337,7 @@
       "source_file": "scripts/overlord/render_github_issue_feed.py",
       "source_location": "L1",
       "id": "render_github_issue_feed",
-      "community": 82
+      "community": 83
     },
     {
       "label": "render_issue()",
@@ -5313,7 +5345,7 @@
       "source_file": "scripts/overlord/render_github_issue_feed.py",
       "source_location": "L7",
       "id": "render_github_issue_feed_render_issue",
-      "community": 82
+      "community": 83
     },
     {
       "label": "main()",
@@ -5321,7 +5353,7 @@
       "source_file": "scripts/overlord/render_github_issue_feed.py",
       "source_location": "L22",
       "id": "render_github_issue_feed_main",
-      "community": 82
+      "community": 83
     },
     {
       "label": "report_governance_consumer_status.py",
@@ -5497,7 +5529,7 @@
       "source_file": "scripts/overlord/sweep_artifact_pr.py",
       "source_location": "L1",
       "id": "sweep_artifact_pr",
-      "community": 75
+      "community": 76
     },
     {
       "label": "artifact_branch()",
@@ -5505,7 +5537,7 @@
       "source_file": "scripts/overlord/sweep_artifact_pr.py",
       "source_location": "L18",
       "id": "sweep_artifact_pr_artifact_branch",
-      "community": 75
+      "community": 76
     },
     {
       "label": "artifact_scope()",
@@ -5513,7 +5545,7 @@
       "source_file": "scripts/overlord/sweep_artifact_pr.py",
       "source_location": "L26",
       "id": "sweep_artifact_pr_artifact_scope",
-      "community": 75
+      "community": 76
     },
     {
       "label": "write_scope()",
@@ -5521,7 +5553,7 @@
       "source_file": "scripts/overlord/sweep_artifact_pr.py",
       "source_location": "L73",
       "id": "sweep_artifact_pr_write_scope",
-      "community": 75
+      "community": 76
     },
     {
       "label": "main()",
@@ -5529,7 +5561,7 @@
       "source_file": "scripts/overlord/sweep_artifact_pr.py",
       "source_location": "L78",
       "id": "sweep_artifact_pr_main",
-      "community": 75
+      "community": 76
     },
     {
       "label": "test_assert_execution_scope.py",
@@ -5857,7 +5889,7 @@
       "source_file": "scripts/overlord/test_automerge_policy_check.py",
       "source_location": "L1",
       "id": "test_automerge_policy_check",
-      "community": 55
+      "community": 56
     },
     {
       "label": "eligible_payload()",
@@ -5865,7 +5897,7 @@
       "source_file": "scripts/overlord/test_automerge_policy_check.py",
       "source_location": "L14",
       "id": "test_automerge_policy_check_eligible_payload",
-      "community": 55
+      "community": 56
     },
     {
       "label": "TestAutomergePolicyCheck",
@@ -5873,7 +5905,7 @@
       "source_file": "scripts/overlord/test_automerge_policy_check.py",
       "source_location": "L43",
       "id": "test_automerge_policy_check_testautomergepolicycheck",
-      "community": 55
+      "community": 56
     },
     {
       "label": ".test_eligible_payload_passes()",
@@ -5881,7 +5913,7 @@
       "source_file": "scripts/overlord/test_automerge_policy_check.py",
       "source_location": "L44",
       "id": "test_automerge_policy_check_testautomergepolicycheck_test_eligible_payload_passes",
-      "community": 55
+      "community": 56
     },
     {
       "label": ".test_blocks_draft_red_unreviewed_conflicted_pr()",
@@ -5889,7 +5921,7 @@
       "source_file": "scripts/overlord/test_automerge_policy_check.py",
       "source_location": "L51",
       "id": "test_automerge_policy_check_testautomergepolicycheck_test_blocks_draft_red_unreviewed_conflicted_pr",
-      "community": 55
+      "community": 56
     },
     {
       "label": ".test_blocks_disabled_repo_missing_opt_in_and_blocking_label()",
@@ -5897,7 +5929,7 @@
       "source_file": "scripts/overlord/test_automerge_policy_check.py",
       "source_location": "L78",
       "id": "test_automerge_policy_check_testautomergepolicycheck_test_blocks_disabled_repo_missing_opt_in_and_blocking_label",
-      "community": 55
+      "community": 56
     },
     {
       "label": ".test_cli_returns_two_for_blocked_payload_and_writes_json()",
@@ -5905,7 +5937,7 @@
       "source_file": "scripts/overlord/test_automerge_policy_check.py",
       "source_location": "L93",
       "id": "test_automerge_policy_check_testautomergepolicycheck_test_cli_returns_two_for_blocked_payload_and_writes_json",
-      "community": 55
+      "community": 56
     },
     {
       "label": "test_branch_switch_guard.py",
@@ -6121,7 +6153,7 @@
       "source_file": "scripts/overlord/test_check_overlord_backlog_github_alignment.py",
       "source_location": "L1",
       "id": "test_check_overlord_backlog_github_alignment",
-      "community": 35
+      "community": 34
     },
     {
       "label": "TestOverlordBacklogGithubAlignment",
@@ -6129,7 +6161,7 @@
       "source_file": "scripts/overlord/test_check_overlord_backlog_github_alignment.py",
       "source_location": "L17",
       "id": "test_check_overlord_backlog_github_alignment_testoverlordbackloggithubalignment",
-      "community": 35
+      "community": 34
     },
     {
       "label": ".test_in_progress_closed_issue_fails()",
@@ -6137,7 +6169,7 @@
       "source_file": "scripts/overlord/test_check_overlord_backlog_github_alignment.py",
       "source_location": "L18",
       "id": "test_check_overlord_backlog_github_alignment_testoverlordbackloggithubalignment_test_in_progress_closed_issue_fails",
-      "community": 35
+      "community": 34
     },
     {
       "label": ".test_planned_open_issue_passes()",
@@ -6145,7 +6177,7 @@
       "source_file": "scripts/overlord/test_check_overlord_backlog_github_alignment.py",
       "source_location": "L36",
       "id": "test_check_overlord_backlog_github_alignment_testoverlordbackloggithubalignment_test_planned_open_issue_passes",
-      "community": 35
+      "community": 34
     },
     {
       "label": ".test_missing_issue_column_reference_fails()",
@@ -6153,7 +6185,7 @@
       "source_file": "scripts/overlord/test_check_overlord_backlog_github_alignment.py",
       "source_location": "L42",
       "id": "test_check_overlord_backlog_github_alignment_testoverlordbackloggithubalignment_test_missing_issue_column_reference_fails",
-      "community": 35
+      "community": 34
     },
     {
       "label": "test_check_plan_preflight.py",
@@ -6497,7 +6529,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L1",
       "id": "test_deploy_governance_tooling",
-      "community": 34
+      "community": 35
     },
     {
       "label": "TestDeployGovernanceTooling",
@@ -6505,7 +6537,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L26",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".setUp()",
@@ -6513,7 +6545,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L27",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_setup",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".tearDown()",
@@ -6521,7 +6553,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L40",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_teardown",
-      "community": 34
+      "community": 35
     },
     {
       "label": "._invoke()",
@@ -6529,7 +6561,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L43",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_invoke",
-      "community": 34
+      "community": 35
     },
     {
       "label": "._base_args()",
@@ -6537,7 +6569,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L50",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_base_args",
-      "community": 34
+      "community": 35
     },
     {
       "label": "._record()",
@@ -6545,7 +6577,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L62",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_record",
-      "community": 34
+      "community": 35
     },
     {
       "label": "._shim()",
@@ -6553,7 +6585,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L65",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_shim",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_dry_run_plans_managed_files_without_writing()",
@@ -6561,7 +6593,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L68",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_dry_run_plans_managed_files_without_writing",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_apply_writes_managed_shim_and_consumer_record()",
@@ -6569,7 +6601,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L82",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_writes_managed_shim_and_consumer_record",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_verify_passes_after_apply()",
@@ -6577,7 +6609,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L99",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_verify_passes_after_apply",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_rollback_removes_managed_files()",
@@ -6585,7 +6617,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L110",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_rollback_removes_managed_files",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_apply_is_idempotent_for_managed_files()",
@@ -6593,7 +6625,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L122",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_is_idempotent_for_managed_files",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_apply_refuses_unmanaged_shim_by_default()",
@@ -6601,7 +6633,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L133",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_refuses_unmanaged_shim_by_default",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_apply_refuses_unmanaged_consumer_record_by_default()",
@@ -6609,7 +6641,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L144",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_refuses_unmanaged_consumer_record_by_default",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_apply_refuses_dirty_target_by_default()",
@@ -6617,7 +6649,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L154",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_apply_refuses_dirty_target_by_default",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_verify_fails_when_record_is_missing()",
@@ -6625,7 +6657,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L165",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_verify_fails_when_record_is_missing",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_verify_fails_when_managed_shim_body_is_tampered()",
@@ -6633,7 +6665,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L174",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_verify_fails_when_managed_shim_body_is_tampered",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_rollback_refuses_unmanaged_record_before_removing_shim()",
@@ -6641,7 +6673,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L190",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_rollback_refuses_unmanaged_record_before_removing_shim",
-      "community": 34
+      "community": 35
     },
     {
       "label": ".test_real_e2e_apply_verify_rollback_against_temp_git_repo()",
@@ -6649,7 +6681,7 @@
       "source_file": "scripts/overlord/test_deploy_governance_tooling.py",
       "source_location": "L203",
       "id": "test_deploy_governance_tooling_testdeploygovernancetooling_test_real_e2e_apply_verify_rollback_against_temp_git_repo",
-      "community": 34
+      "community": 35
     },
     {
       "label": "test_deploy_local_ci_gate.py",
@@ -6793,7 +6825,7 @@
       "source_file": "scripts/overlord/test_lane_bootstrap.py",
       "source_location": "L1",
       "id": "test_lane_bootstrap",
-      "community": 56
+      "community": 57
     },
     {
       "label": "run_helper()",
@@ -6801,7 +6833,7 @@
       "source_file": "scripts/overlord/test_lane_bootstrap.py",
       "source_location": "L14",
       "id": "test_lane_bootstrap_run_helper",
-      "community": 56
+      "community": 57
     },
     {
       "label": "TestLaneBootstrap",
@@ -6809,7 +6841,7 @@
       "source_file": "scripts/overlord/test_lane_bootstrap.py",
       "source_location": "L24",
       "id": "test_lane_bootstrap_testlanebootstrap",
-      "community": 56
+      "community": 57
     },
     {
       "label": ".test_valid_healthcareplatform_lane_accepted()",
@@ -6817,7 +6849,7 @@
       "source_file": "scripts/overlord/test_lane_bootstrap.py",
       "source_location": "L25",
       "id": "test_lane_bootstrap_testlanebootstrap_test_valid_healthcareplatform_lane_accepted",
-      "community": 56
+      "community": 57
     },
     {
       "label": ".test_invalid_healthcareplatform_branch_pattern_rejected()",
@@ -6825,7 +6857,7 @@
       "source_file": "scripts/overlord/test_lane_bootstrap.py",
       "source_location": "L41",
       "id": "test_lane_bootstrap_testlanebootstrap_test_invalid_healthcareplatform_branch_pattern_rejected",
-      "community": 56
+      "community": 57
     },
     {
       "label": ".test_invalid_healthcareplatform_worktree_path_rejected()",
@@ -6833,7 +6865,7 @@
       "source_file": "scripts/overlord/test_lane_bootstrap.py",
       "source_location": "L57",
       "id": "test_lane_bootstrap_testlanebootstrap_test_invalid_healthcareplatform_worktree_path_rejected",
-      "community": 56
+      "community": 57
     },
     {
       "label": ".test_branch_worktree_issue_mismatch_rejected()",
@@ -6841,7 +6873,7 @@
       "source_file": "scripts/overlord/test_lane_bootstrap.py",
       "source_location": "L73",
       "id": "test_lane_bootstrap_testlanebootstrap_test_branch_worktree_issue_mismatch_rejected",
-      "community": 56
+      "community": 57
     },
     {
       "label": ".test_branch_worktree_scope_mismatch_rejected()",
@@ -6849,7 +6881,7 @@
       "source_file": "scripts/overlord/test_lane_bootstrap.py",
       "source_location": "L89",
       "id": "test_lane_bootstrap_testlanebootstrap_test_branch_worktree_scope_mismatch_rejected",
-      "community": 56
+      "community": 57
     },
     {
       "label": ".test_standard_repo_lane_policy_accepted()",
@@ -6857,7 +6889,7 @@
       "source_file": "scripts/overlord/test_lane_bootstrap.py",
       "source_location": "L105",
       "id": "test_lane_bootstrap_testlanebootstrap_test_standard_repo_lane_policy_accepted",
-      "community": 56
+      "community": 57
     },
     {
       "label": ".test_plan_generates_healthcareplatform_names()",
@@ -6865,7 +6897,7 @@
       "source_file": "scripts/overlord/test_lane_bootstrap.py",
       "source_location": "L121",
       "id": "test_lane_bootstrap_testlanebootstrap_test_plan_generates_healthcareplatform_names",
-      "community": 56
+      "community": 57
     },
     {
       "label": ".test_dirty_invalid_lane_cleanup_refused()",
@@ -6873,7 +6905,7 @@
       "source_file": "scripts/overlord/test_lane_bootstrap.py",
       "source_location": "L139",
       "id": "test_lane_bootstrap_testlanebootstrap_test_dirty_invalid_lane_cleanup_refused",
-      "community": 56
+      "community": 57
     },
     {
       "label": ".test_clean_invalid_lane_cleanup_documented()",
@@ -6881,7 +6913,7 @@
       "source_file": "scripts/overlord/test_lane_bootstrap.py",
       "source_location": "L145",
       "id": "test_lane_bootstrap_testlanebootstrap_test_clean_invalid_lane_cleanup_documented",
-      "community": 56
+      "community": 57
     },
     {
       "label": "test_local_ci_gate_workflow_contract.py",
@@ -7001,7 +7033,7 @@
       "source_file": "scripts/overlord/test_memory_integrity.py",
       "source_location": "L1",
       "id": "test_memory_integrity",
-      "community": 70
+      "community": 71
     },
     {
       "label": "MemoryIntegrityTests",
@@ -7009,7 +7041,7 @@
       "source_file": "scripts/overlord/test_memory_integrity.py",
       "source_location": "L13",
       "id": "test_memory_integrity_memoryintegritytests",
-      "community": 70
+      "community": 71
     },
     {
       "label": ".setUp()",
@@ -7017,7 +7049,7 @@
       "source_file": "scripts/overlord/test_memory_integrity.py",
       "source_location": "L14",
       "id": "test_memory_integrity_memoryintegritytests_setup",
-      "community": 70
+      "community": 71
     },
     {
       "label": ".write_memory()",
@@ -7025,7 +7057,7 @@
       "source_file": "scripts/overlord/test_memory_integrity.py",
       "source_location": "L19",
       "id": "test_memory_integrity_memoryintegritytests_write_memory",
-      "community": 70
+      "community": 71
     },
     {
       "label": ".test_strict_missing_memory_fails()",
@@ -7033,7 +7065,7 @@
       "source_file": "scripts/overlord/test_memory_integrity.py",
       "source_location": "L26",
       "id": "test_memory_integrity_memoryintegritytests_test_strict_missing_memory_fails",
-      "community": 70
+      "community": 71
     },
     {
       "label": ".test_allow_missing_memory_skips_without_failing()",
@@ -7041,7 +7073,7 @@
       "source_file": "scripts/overlord/test_memory_integrity.py",
       "source_location": "L33",
       "id": "test_memory_integrity_memoryintegritytests_test_allow_missing_memory_skips_without_failing",
-      "community": 70
+      "community": 71
     },
     {
       "label": ".test_valid_memory_pointer_passes()",
@@ -7049,7 +7081,7 @@
       "source_file": "scripts/overlord/test_memory_integrity.py",
       "source_location": "L40",
       "id": "test_memory_integrity_memoryintegritytests_test_valid_memory_pointer_passes",
-      "community": 70
+      "community": 71
     },
     {
       "label": ".test_existing_malformed_memory_still_fails_in_allow_missing_mode()",
@@ -7057,7 +7089,7 @@
       "source_file": "scripts/overlord/test_memory_integrity.py",
       "source_location": "L64",
       "id": "test_memory_integrity_memoryintegritytests_test_existing_malformed_memory_still_fails_in_allow_missing_mode",
-      "community": 70
+      "community": 71
     },
     {
       "label": "test_pentagi_sweep.py",
@@ -7377,7 +7409,7 @@
       "source_file": "scripts/overlord/test_sweep_artifact_pr.py",
       "source_location": "L1",
       "id": "test_sweep_artifact_pr",
-      "community": 76
+      "community": 77
     },
     {
       "label": "SweepArtifactPrTest",
@@ -7385,7 +7417,7 @@
       "source_file": "scripts/overlord/test_sweep_artifact_pr.py",
       "source_location": "L17",
       "id": "test_sweep_artifact_pr_sweepartifactprtest",
-      "community": 76
+      "community": 77
     },
     {
       "label": ".test_branch_uses_permanent_issue_anchor()",
@@ -7393,7 +7425,7 @@
       "source_file": "scripts/overlord/test_sweep_artifact_pr.py",
       "source_location": "L18",
       "id": "test_sweep_artifact_pr_sweepartifactprtest_test_branch_uses_permanent_issue_anchor",
-      "community": 76
+      "community": 77
     },
     {
       "label": ".test_scope_uses_branch_issue_and_generated_write_paths()",
@@ -7401,7 +7433,7 @@
       "source_file": "scripts/overlord/test_sweep_artifact_pr.py",
       "source_location": "L24",
       "id": "test_sweep_artifact_pr_sweepartifactprtest_test_scope_uses_branch_issue_and_generated_write_paths",
-      "community": 76
+      "community": 77
     },
     {
       "label": ".test_write_scope_creates_json_file()",
@@ -7409,7 +7441,7 @@
       "source_file": "scripts/overlord/test_sweep_artifact_pr.py",
       "source_location": "L43",
       "id": "test_sweep_artifact_pr_sweepartifactprtest_test_write_scope_creates_json_file",
-      "community": 76
+      "community": 77
     },
     {
       "label": "test_validate_backlog_gh_sync.py",
@@ -7417,7 +7449,7 @@
       "source_file": "scripts/overlord/test_validate_backlog_gh_sync.py",
       "source_location": "L1",
       "id": "test_validate_backlog_gh_sync",
-      "community": 35
+      "community": 34
     },
     {
       "label": "TestValidateBacklogGhSync",
@@ -7425,7 +7457,7 @@
       "source_file": "scripts/overlord/test_validate_backlog_gh_sync.py",
       "source_location": "L10",
       "id": "test_validate_backlog_gh_sync_testvalidatebacklogghsync",
-      "community": 35
+      "community": 34
     },
     {
       "label": ".test_delegates_to_hardened_overlord_alignment_checker()",
@@ -7433,7 +7465,7 @@
       "source_file": "scripts/overlord/test_validate_backlog_gh_sync.py",
       "source_location": "L11",
       "id": "test_validate_backlog_gh_sync_testvalidatebacklogghsync_test_delegates_to_hardened_overlord_alignment_checker",
-      "community": 35
+      "community": 34
     },
     {
       "label": "test_validate_closeout.py",
@@ -7441,7 +7473,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L1",
       "id": "test_validate_closeout",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_write()",
@@ -7449,7 +7481,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L11",
       "id": "test_validate_closeout_write",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_json()",
@@ -7457,7 +7489,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L16",
       "id": "test_validate_closeout_json",
-      "community": 16
+      "community": 17
     },
     {
       "label": "TestValidateCloseout",
@@ -7465,7 +7497,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L20",
       "id": "test_validate_closeout_testvalidatecloseout",
-      "community": 16
+      "community": 17
     },
     {
       "label": "._repo()",
@@ -7473,7 +7505,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L21",
       "id": "test_validate_closeout_testvalidatecloseout_repo",
-      "community": 16
+      "community": 17
     },
     {
       "label": "._closeout()",
@@ -7481,7 +7513,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L69",
       "id": "test_validate_closeout_testvalidatecloseout_closeout",
-      "community": 16
+      "community": 17
     },
     {
       "label": ".test_valid_closeout_passes()",
@@ -7489,7 +7521,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L109",
       "id": "test_validate_closeout_testvalidatecloseout_test_valid_closeout_passes",
-      "community": 16
+      "community": 17
     },
     {
       "label": ".test_missing_referenced_artifact_fails()",
@@ -7497,7 +7529,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L115",
       "id": "test_validate_closeout_testvalidatecloseout_test_missing_referenced_artifact_fails",
-      "community": 16
+      "community": 17
     },
     {
       "label": ".test_residual_without_issue_ref_fails()",
@@ -7505,7 +7537,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L122",
       "id": "test_validate_closeout_testvalidatecloseout_test_residual_without_issue_ref_fails",
-      "community": 16
+      "community": 17
     },
     {
       "label": ".test_handoff_without_lifecycle_record_fails()",
@@ -7513,7 +7545,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L128",
       "id": "test_validate_closeout_testvalidatecloseout_test_handoff_without_lifecycle_record_fails",
-      "community": 16
+      "community": 17
     },
     {
       "label": ".test_placeholder_text_in_required_section_fails()",
@@ -7521,7 +7553,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L134",
       "id": "test_validate_closeout_testvalidatecloseout_test_placeholder_text_in_required_section_fails",
-      "community": 16
+      "community": 17
     },
     {
       "label": ".test_gate_evidence_requires_artifact_or_command_result()",
@@ -7529,7 +7561,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L143",
       "id": "test_validate_closeout_testvalidatecloseout_test_gate_evidence_requires_artifact_or_command_result",
-      "community": 16
+      "community": 17
     },
     {
       "label": ".test_hook_invokes_validator_before_graph_refresh()",
@@ -7537,7 +7569,7 @@
       "source_file": "scripts/overlord/test_validate_closeout.py",
       "source_location": "L152",
       "id": "test_validate_closeout_testvalidatecloseout_test_hook_invokes_validator_before_graph_refresh",
-      "community": 16
+      "community": 17
     },
     {
       "label": "test_validate_governed_repos.py",
@@ -7906,6 +7938,62 @@
       "source_location": "L102",
       "id": "test_validate_provisioning_evidence_validateprovisioningevidencetest_test_changed_files_file_limits_scan",
       "community": 26
+    },
+    {
+      "label": "test_validate_session_error_patterns.py",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L1",
+      "id": "test_validate_session_error_patterns",
+      "community": 53
+    },
+    {
+      "label": "_write_runbook()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L30",
+      "id": "test_validate_session_error_patterns_write_runbook",
+      "community": 53
+    },
+    {
+      "label": "TestValidateSessionErrorPatterns",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L37",
+      "id": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns",
+      "community": 53
+    },
+    {
+      "label": ".test_validates_current_repo_runbook()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L38",
+      "id": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_validates_current_repo_runbook",
+      "community": 53
+    },
+    {
+      "label": ".test_rejects_missing_required_field()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L43",
+      "id": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_missing_required_field",
+      "community": 53
+    },
+    {
+      "label": ".test_rejects_missing_seed_pattern()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L55",
+      "id": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_missing_seed_pattern",
+      "community": 53
+    },
+    {
+      "label": ".test_rejects_invalid_date()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L64",
+      "id": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_invalid_date",
+      "community": 53
     },
     {
       "label": "test_validate_structured_agent_cycle_plan.py",
@@ -8545,7 +8633,7 @@
       "source_file": "scripts/overlord/validate_backlog_gh_sync.py",
       "source_location": "L1",
       "id": "validate_backlog_gh_sync",
-      "community": 35
+      "community": 34
     },
     {
       "label": "main()",
@@ -8553,7 +8641,7 @@
       "source_file": "scripts/overlord/validate_backlog_gh_sync.py",
       "source_location": "L13",
       "id": "validate_backlog_gh_sync_main",
-      "community": 35
+      "community": 34
     },
     {
       "label": "validate_closeout.py",
@@ -8561,7 +8649,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L1",
       "id": "validate_closeout",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_repo_rel()",
@@ -8569,7 +8657,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L44",
       "id": "validate_closeout_repo_rel",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_sections()",
@@ -8577,7 +8665,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L51",
       "id": "validate_closeout_sections",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_extract_repo_refs()",
@@ -8585,7 +8673,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L64",
       "id": "validate_closeout_extract_repo_refs",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_load_json()",
@@ -8593,7 +8681,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L75",
       "id": "validate_closeout_load_json",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_validate_residuals()",
@@ -8601,7 +8689,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L83",
       "id": "validate_closeout_validate_residuals",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_validate_refs()",
@@ -8609,7 +8697,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L98",
       "id": "validate_closeout_validate_refs",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_validate_handoff_refs()",
@@ -8617,7 +8705,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L125",
       "id": "validate_closeout_validate_handoff_refs",
-      "community": 16
+      "community": 17
     },
     {
       "label": "validate_closeout()",
@@ -8625,7 +8713,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L154",
       "id": "validate_closeout_validate_closeout",
-      "community": 16
+      "community": 17
     },
     {
       "label": "build_parser()",
@@ -8633,7 +8721,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L177",
       "id": "validate_closeout_build_parser",
-      "community": 16
+      "community": 17
     },
     {
       "label": "main()",
@@ -8641,7 +8729,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L184",
       "id": "validate_closeout_main",
-      "community": 16
+      "community": 17
     },
     {
       "label": "validate_governed_repos.py",
@@ -8649,7 +8737,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L1",
       "id": "validate_governed_repos",
-      "community": 72
+      "community": 73
     },
     {
       "label": "fail()",
@@ -8657,7 +8745,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L71",
       "id": "validate_governed_repos_fail",
-      "community": 72
+      "community": 73
     },
     {
       "label": "check()",
@@ -8665,7 +8753,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L76",
       "id": "validate_governed_repos_check",
-      "community": 72
+      "community": 73
     },
     {
       "label": "load_json()",
@@ -8673,7 +8761,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L81",
       "id": "validate_governed_repos_load_json",
-      "community": 72
+      "community": 73
     },
     {
       "label": "validate_registry_shape()",
@@ -8681,7 +8769,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L90",
       "id": "validate_governed_repos_validate_registry_shape",
-      "community": 72
+      "community": 73
     },
     {
       "label": "validate_graphify_reconciliation()",
@@ -8689,7 +8777,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L206",
       "id": "validate_governed_repos_validate_graphify_reconciliation",
-      "community": 72
+      "community": 73
     },
     {
       "label": "main()",
@@ -8697,7 +8785,7 @@
       "source_file": "scripts/overlord/validate_governed_repos.py",
       "source_location": "L229",
       "id": "validate_governed_repos_main",
-      "community": 72
+      "community": 73
     },
     {
       "label": "validate_handoff_package.py",
@@ -8705,7 +8793,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L1",
       "id": "validate_handoff_package",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_is_url()",
@@ -8713,7 +8801,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L64",
       "id": "validate_handoff_package_is_url",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_normalize_repo_path()",
@@ -8721,7 +8809,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L68",
       "id": "validate_handoff_package_normalize_repo_path",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_repo_file_exists()",
@@ -8729,7 +8817,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L80",
       "id": "validate_handoff_package_repo_file_exists",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_load_json()",
@@ -8737,7 +8825,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L86",
       "id": "validate_handoff_package_load_json",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_read_json_ref()",
@@ -8745,7 +8833,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L90",
       "id": "validate_handoff_package_read_json_ref",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_validate_ref_array()",
@@ -8753,7 +8841,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L105",
       "id": "validate_handoff_package_validate_ref_array",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_validate_acceptance_criteria()",
@@ -8761,7 +8849,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L126",
       "id": "validate_handoff_package_validate_acceptance_criteria",
-      "community": 16
+      "community": 17
     },
     {
       "label": "validate_package()",
@@ -8769,7 +8857,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L169",
       "id": "validate_handoff_package_validate_package",
-      "community": 16
+      "community": 17
     },
     {
       "label": "_discover_package_files()",
@@ -8777,7 +8865,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L263",
       "id": "validate_handoff_package_discover_package_files",
-      "community": 16
+      "community": 17
     },
     {
       "label": "main()",
@@ -8785,7 +8873,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L272",
       "id": "validate_handoff_package_main",
-      "community": 16
+      "community": 17
     },
     {
       "label": "validate_provisioning_evidence.py",
@@ -8889,7 +8977,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L1",
       "id": "validate_registry_surfaces",
-      "community": 65
+      "community": 66
     },
     {
       "label": "fail()",
@@ -8897,7 +8985,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L21",
       "id": "validate_registry_surfaces_fail",
-      "community": 65
+      "community": 66
     },
     {
       "label": "check()",
@@ -8905,7 +8993,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L26",
       "id": "validate_registry_surfaces_check",
-      "community": 65
+      "community": 66
     },
     {
       "label": "read_text()",
@@ -8913,7 +9001,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L31",
       "id": "validate_registry_surfaces_read_text",
-      "community": 65
+      "community": 66
     },
     {
       "label": "repos_for_static_checkout()",
@@ -8921,7 +9009,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L35",
       "id": "validate_registry_surfaces_repos_for_static_checkout",
-      "community": 65
+      "community": 66
     },
     {
       "label": "validate_static_checkout_workflow()",
@@ -8929,7 +9017,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L45",
       "id": "validate_registry_surfaces_validate_static_checkout_workflow",
-      "community": 65
+      "community": 66
     },
     {
       "label": "validate_runtime_registry_consumers()",
@@ -8937,7 +9025,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L58",
       "id": "validate_registry_surfaces_validate_runtime_registry_consumers",
-      "community": 65
+      "community": 66
     },
     {
       "label": "validate_docs_surfaces()",
@@ -8945,7 +9033,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L95",
       "id": "validate_registry_surfaces_validate_docs_surfaces",
-      "community": 65
+      "community": 66
     },
     {
       "label": "validate_subsystem_expectations()",
@@ -8953,7 +9041,7 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L111",
       "id": "validate_registry_surfaces_validate_subsystem_expectations",
-      "community": 65
+      "community": 66
     },
     {
       "label": "main()",
@@ -8961,7 +9049,55 @@
       "source_file": "scripts/overlord/validate_registry_surfaces.py",
       "source_location": "L128",
       "id": "validate_registry_surfaces_main",
-      "community": 65
+      "community": 66
+    },
+    {
+      "label": "validate_session_error_patterns.py",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L1",
+      "id": "validate_session_error_patterns",
+      "community": 53
+    },
+    {
+      "label": "_field_key()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L35",
+      "id": "validate_session_error_patterns_field_key",
+      "community": 53
+    },
+    {
+      "label": "_pattern_sections()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L39",
+      "id": "validate_session_error_patterns_pattern_sections",
+      "community": 53
+    },
+    {
+      "label": "_fields()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L49",
+      "id": "validate_session_error_patterns_fields",
+      "community": 53
+    },
+    {
+      "label": "validate()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L64",
+      "id": "validate_session_error_patterns_validate",
+      "community": 53
+    },
+    {
+      "label": "_run_cli()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L92",
+      "id": "validate_session_error_patterns_run_cli",
+      "community": 53
     },
     {
       "label": "validate_structured_agent_cycle_plan.py",
@@ -9489,7 +9625,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L1",
       "id": "test_hitl_relay_schema",
-      "community": 77
+      "community": 78
     },
     {
       "label": "_validator()",
@@ -9497,7 +9633,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L15",
       "id": "test_hitl_relay_schema_validator",
-      "community": 77
+      "community": 78
     },
     {
       "label": "_load()",
@@ -9505,7 +9641,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L21",
       "id": "test_hitl_relay_schema_load",
-      "community": 77
+      "community": 78
     },
     {
       "label": "test_valid_hitl_relay_examples_pass()",
@@ -9513,7 +9649,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L25",
       "id": "test_hitl_relay_schema_test_valid_hitl_relay_examples_pass",
-      "community": 77
+      "community": 78
     },
     {
       "label": "test_invalid_hitl_relay_examples_fail()",
@@ -9521,7 +9657,7 @@
       "source_file": "scripts/packet/test_hitl_relay_schema.py",
       "source_location": "L34",
       "id": "test_hitl_relay_schema_test_invalid_hitl_relay_examples_fail",
-      "community": 77
+      "community": 78
     },
     {
       "label": "test_validate.py",
@@ -10553,7 +10689,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L1",
       "id": "pages_deploy_gate",
-      "community": 14
+      "community": 16
     },
     {
       "label": "GateError",
@@ -10561,7 +10697,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L40",
       "id": "pages_deploy_gate_gateerror",
-      "community": 14
+      "community": 16
     },
     {
       "label": "Exception",
@@ -10577,7 +10713,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L43",
       "id": "pages_deploy_gate_gateerror_init",
-      "community": 14
+      "community": 16
     },
     {
       "label": "ArtifactStats",
@@ -10585,7 +10721,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L49",
       "id": "pages_deploy_gate_artifactstats",
-      "community": 14
+      "community": 16
     },
     {
       "label": "repo_root()",
@@ -10593,7 +10729,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L56",
       "id": "pages_deploy_gate_repo_root",
-      "community": 14
+      "community": 16
     },
     {
       "label": "redact()",
@@ -10601,7 +10737,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L60",
       "id": "pages_deploy_gate_redact",
-      "community": 14
+      "community": 16
     },
     {
       "label": "log()",
@@ -10609,7 +10745,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L72",
       "id": "pages_deploy_gate_log",
-      "community": 14
+      "community": 16
     },
     {
       "label": "fail()",
@@ -10617,7 +10753,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L76",
       "id": "pages_deploy_gate_fail",
-      "community": 14
+      "community": 16
     },
     {
       "label": "fail_error()",
@@ -10625,7 +10761,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L81",
       "id": "pages_deploy_gate_fail_error",
-      "community": 14
+      "community": 16
     },
     {
       "label": "load_json()",
@@ -10633,7 +10769,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L85",
       "id": "pages_deploy_gate_load_json",
-      "community": 14
+      "community": 16
     },
     {
       "label": "json_type_matches()",
@@ -10641,7 +10777,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L94",
       "id": "pages_deploy_gate_json_type_matches",
-      "community": 14
+      "community": 16
     },
     {
       "label": "validate_with_schema()",
@@ -10649,7 +10785,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L108",
       "id": "pages_deploy_gate_validate_with_schema",
-      "community": 14
+      "community": 16
     },
     {
       "label": "_validate_config_or_raise()",
@@ -10657,7 +10793,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L139",
       "id": "pages_deploy_gate_validate_config_or_raise",
-      "community": 14
+      "community": 16
     },
     {
       "label": "validate_config()",
@@ -10665,7 +10801,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L147",
       "id": "pages_deploy_gate_validate_config",
-      "community": 14
+      "community": 16
     },
     {
       "label": "validate_schema()",
@@ -10673,7 +10809,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L156",
       "id": "pages_deploy_gate_validate_schema",
-      "community": 14
+      "community": 16
     },
     {
       "label": "load_config()",
@@ -10681,7 +10817,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L172",
       "id": "pages_deploy_gate_load_config",
-      "community": 14
+      "community": 16
     },
     {
       "label": "resolve_app_root()",
@@ -10689,7 +10825,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L179",
       "id": "pages_deploy_gate_resolve_app_root",
-      "community": 14
+      "community": 16
     },
     {
       "label": "resolve_output_dir()",
@@ -10697,7 +10833,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L186",
       "id": "pages_deploy_gate_resolve_output_dir",
-      "community": 14
+      "community": 16
     },
     {
       "label": "run_command()",
@@ -10705,7 +10841,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L193",
       "id": "pages_deploy_gate_run_command",
-      "community": 14
+      "community": 16
     },
     {
       "label": "preflight_env()",
@@ -10713,7 +10849,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L215",
       "id": "pages_deploy_gate_preflight_env",
-      "community": 14
+      "community": 16
     },
     {
       "label": "preflight_tools()",
@@ -10721,7 +10857,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L240",
       "id": "pages_deploy_gate_preflight_tools",
-      "community": 14
+      "community": 16
     },
     {
       "label": "get_wrangler_version()",
@@ -10729,7 +10865,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L247",
       "id": "pages_deploy_gate_get_wrangler_version",
-      "community": 14
+      "community": 16
     },
     {
       "label": "run_pre_deploy()",
@@ -10737,7 +10873,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L256",
       "id": "pages_deploy_gate_run_pre_deploy",
-      "community": 14
+      "community": 16
     },
     {
       "label": "count_files()",
@@ -10745,7 +10881,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L269",
       "id": "pages_deploy_gate_count_files",
-      "community": 14
+      "community": 16
     },
     {
       "label": "run_build()",
@@ -10753,7 +10889,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L273",
       "id": "pages_deploy_gate_run_build",
-      "community": 14
+      "community": 16
     },
     {
       "label": "_inspect_files()",
@@ -10761,7 +10897,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L300",
       "id": "pages_deploy_gate_inspect_files",
-      "community": 14
+      "community": 16
     },
     {
       "label": "_check_pages_limits()",
@@ -10769,7 +10905,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L317",
       "id": "pages_deploy_gate_check_pages_limits",
-      "community": 14
+      "community": 16
     },
     {
       "label": "enforce_pages_limits()",
@@ -10777,7 +10913,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L340",
       "id": "pages_deploy_gate_enforce_pages_limits",
-      "community": 14
+      "community": 16
     },
     {
       "label": "git_head()",
@@ -10785,7 +10921,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L349",
       "id": "pages_deploy_gate_git_head",
-      "community": 14
+      "community": 16
     },
     {
       "label": "deploy()",
@@ -10793,7 +10929,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L361",
       "id": "pages_deploy_gate_deploy",
-      "community": 14
+      "community": 16
     },
     {
       "label": "extract_deployment_url()",
@@ -10801,7 +10937,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L385",
       "id": "pages_deploy_gate_extract_deployment_url",
-      "community": 14
+      "community": 16
     },
     {
       "label": "emit_evidence()",
@@ -10809,7 +10945,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L395",
       "id": "pages_deploy_gate_emit_evidence",
-      "community": 14
+      "community": 16
     },
     {
       "label": "run_gate()",
@@ -10817,7 +10953,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L419",
       "id": "pages_deploy_gate_run_gate",
-      "community": 14
+      "community": 16
     },
     {
       "label": "main()",
@@ -10825,7 +10961,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L463",
       "id": "pages_deploy_gate_main",
-      "community": 14
+      "community": 16
     },
     {
       "label": "Expected gate failure with deterministic operator output.",
@@ -10833,7 +10969,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L41",
       "id": "pages_deploy_gate_rationale_41",
-      "community": 14
+      "community": 16
     },
     {
       "label": "Public test-facing config validator.",
@@ -10841,7 +10977,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L148",
       "id": "pages_deploy_gate_rationale_148",
-      "community": 14
+      "community": 16
     },
     {
       "label": "Public test-facing Pages limits checker.",
@@ -10849,7 +10985,7 @@
       "source_file": "scripts/pages-deploy/pages_deploy_gate.py",
       "source_location": "L341",
       "id": "pages_deploy_gate_rationale_341",
-      "community": 14
+      "community": 16
     },
     {
       "label": "pages_deploy_verifier.py",
@@ -12617,7 +12753,7 @@
       "source_file": "scripts/som-client/som_client.py",
       "source_location": "L99",
       "id": "som_client_rationale_99",
-      "community": 86
+      "community": 87
     },
     {
       "label": "test_som_client.py",
@@ -12689,7 +12825,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L1",
       "id": "test_bootstrap_repo_env_contract",
-      "community": 53
+      "community": 54
     },
     {
       "label": "check()",
@@ -12697,7 +12833,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L17",
       "id": "test_bootstrap_repo_env_contract_check",
-      "community": 53
+      "community": 54
     },
     {
       "label": "main()",
@@ -12705,7 +12841,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L22",
       "id": "test_bootstrap_repo_env_contract_main",
-      "community": 53
+      "community": 54
     },
     {
       "label": "run_synthetic_lam_bootstrap()",
@@ -12713,7 +12849,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L93",
       "id": "test_bootstrap_repo_env_contract_run_synthetic_lam_bootstrap",
-      "community": 53
+      "community": 54
     },
     {
       "label": "run_sibling_worktree_lam_bootstrap()",
@@ -12721,7 +12857,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L168",
       "id": "test_bootstrap_repo_env_contract_run_sibling_worktree_lam_bootstrap",
-      "community": 53
+      "community": 54
     },
     {
       "label": "run_nested_var_worktree_lam_bootstrap()",
@@ -12729,7 +12865,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L218",
       "id": "test_bootstrap_repo_env_contract_run_nested_var_worktree_lam_bootstrap",
-      "community": 53
+      "community": 54
     },
     {
       "label": "run_synthetic_seek_bootstrap()",
@@ -12737,7 +12873,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L263",
       "id": "test_bootstrap_repo_env_contract_run_synthetic_seek_bootstrap",
-      "community": 53
+      "community": 54
     },
     {
       "label": "run_synthetic_stampede_bootstrap()",
@@ -12745,7 +12881,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L322",
       "id": "test_bootstrap_repo_env_contract_run_synthetic_stampede_bootstrap",
-      "community": 53
+      "community": 54
     },
     {
       "label": "Exercise lam bootstrap with command-like vault values and missing optional keys.",
@@ -12753,7 +12889,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L94",
       "id": "test_bootstrap_repo_env_contract_rationale_94",
-      "community": 53
+      "community": 54
     },
     {
       "label": "Exercise vault discovery from sibling governance worktrees.",
@@ -12761,7 +12897,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L169",
       "id": "test_bootstrap_repo_env_contract_rationale_169",
-      "community": 53
+      "community": 54
     },
     {
       "label": "Exercise vault discovery from HLDPRO/var/worktrees/* governance worktrees.",
@@ -12769,7 +12905,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L219",
       "id": "test_bootstrap_repo_env_contract_rationale_219",
-      "community": 53
+      "community": 54
     },
     {
       "label": "Exercise Seek/Ponder bootstrap aliases without leaking synthetic values.",
@@ -12777,7 +12913,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L264",
       "id": "test_bootstrap_repo_env_contract_rationale_264",
-      "community": 53
+      "community": 54
     },
     {
       "label": "Exercise Stampede bootstrap with production Tradier mapping and redaction.",
@@ -12785,7 +12921,7 @@
       "source_file": "scripts/test_bootstrap_repo_env_contract.py",
       "source_location": "L323",
       "id": "test_bootstrap_repo_env_contract_rationale_323",
-      "community": 53
+      "community": 54
     },
     {
       "label": "test_cli_session_supervisor.py",
@@ -12793,7 +12929,7 @@
       "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L1",
       "id": "test_cli_session_supervisor",
-      "community": 61
+      "community": 62
     },
     {
       "label": "write_fake()",
@@ -12801,7 +12937,7 @@
       "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L12",
       "id": "test_cli_session_supervisor_write_fake",
-      "community": 61
+      "community": 62
     },
     {
       "label": "run_supervisor()",
@@ -12809,7 +12945,7 @@
       "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L18",
       "id": "test_cli_session_supervisor_run_supervisor",
-      "community": 61
+      "community": 62
     },
     {
       "label": "events()",
@@ -12817,7 +12953,7 @@
       "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L58",
       "id": "test_cli_session_supervisor_events",
-      "community": 61
+      "community": 62
     },
     {
       "label": "test_success_event_captures_stdout_and_schema_fields()",
@@ -12825,7 +12961,7 @@
       "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L63",
       "id": "test_cli_session_supervisor_test_success_event_captures_stdout_and_schema_fields",
-      "community": 61
+      "community": 62
     },
     {
       "label": "test_nonzero_failure_is_recorded_without_retry()",
@@ -12833,7 +12969,7 @@
       "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L86",
       "id": "test_cli_session_supervisor_test_nonzero_failure_is_recorded_without_retry",
-      "community": 61
+      "community": 62
     },
     {
       "label": "test_silent_stall_hits_idle_timeout_and_kills_process()",
@@ -12841,7 +12977,7 @@
       "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L104",
       "id": "test_cli_session_supervisor_test_silent_stall_hits_idle_timeout_and_kills_process",
-      "community": 61
+      "community": 62
     },
     {
       "label": "test_intermittent_output_avoids_idle_timeout()",
@@ -12849,7 +12985,7 @@
       "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L121",
       "id": "test_cli_session_supervisor_test_intermittent_output_avoids_idle_timeout",
-      "community": 61
+      "community": 62
     },
     {
       "label": "test_total_timeout_overrides_active_output()",
@@ -12857,7 +12993,7 @@
       "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L140",
       "id": "test_cli_session_supervisor_test_total_timeout_overrides_active_output",
-      "community": 61
+      "community": 62
     },
     {
       "label": "test_retry_once_can_recover_from_timeout()",
@@ -12865,7 +13001,7 @@
       "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L159",
       "id": "test_cli_session_supervisor_test_retry_once_can_recover_from_timeout",
-      "community": 61
+      "community": 62
     },
     {
       "label": "test_retry_halts_after_one_additional_timeout()",
@@ -12873,7 +13009,7 @@
       "source_file": "scripts/test_cli_session_supervisor.py",
       "source_location": "L194",
       "id": "test_cli_session_supervisor_test_retry_halts_after_one_additional_timeout",
-      "community": 61
+      "community": 62
     },
     {
       "label": "test_codex_fire.py",
@@ -12881,7 +13017,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L1",
       "id": "test_codex_fire",
-      "community": 67
+      "community": 68
     },
     {
       "label": "write_fake_codex()",
@@ -12889,7 +13025,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L13",
       "id": "test_codex_fire_write_fake_codex",
-      "community": 67
+      "community": 68
     },
     {
       "label": "run_fire()",
@@ -12897,7 +13033,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L27",
       "id": "test_codex_fire_run_fire",
-      "community": 67
+      "community": 68
     },
     {
       "label": "test_preflight_failure_logs_and_exits_fast()",
@@ -12905,7 +13041,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L61",
       "id": "test_codex_fire_test_preflight_failure_logs_and_exits_fast",
-      "community": 67
+      "community": 68
     },
     {
       "label": "test_preflight_timeout_logs_and_exits_fast()",
@@ -12913,7 +13049,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L83",
       "id": "test_codex_fire_test_preflight_timeout_logs_and_exits_fast",
-      "community": 67
+      "community": 68
     },
     {
       "label": "test_exec_failure_after_successful_preflight_logs_and_signals()",
@@ -12921,7 +13057,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L105",
       "id": "test_codex_fire_test_exec_failure_after_successful_preflight_logs_and_signals",
-      "community": 67
+      "community": 68
     },
     {
       "label": "test_success_does_not_write_failure_log()",
@@ -12929,7 +13065,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L137",
       "id": "test_codex_fire_test_success_does_not_write_failure_log",
-      "community": 67
+      "community": 68
     },
     {
       "label": "test_review_template_default_persona_reaches_codex_fire()",
@@ -12937,7 +13073,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L155",
       "id": "test_codex_fire_test_review_template_default_persona_reaches_codex_fire",
-      "community": 67
+      "community": 68
     },
     {
       "label": "test_review_template_propagates_wrapper_failure()",
@@ -12945,7 +13081,7 @@
       "source_file": "scripts/test_codex_fire.py",
       "source_location": "L225",
       "id": "test_codex_fire_test_review_template_propagates_wrapper_failure",
-      "community": 67
+      "community": 68
     },
     {
       "label": "_pii.py",
@@ -12953,7 +13089,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L1",
       "id": "pii",
-      "community": 73
+      "community": 74
     },
     {
       "label": "load_pii_patterns()",
@@ -12961,7 +13097,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L33",
       "id": "pii_load_pii_patterns",
-      "community": 73
+      "community": 74
     },
     {
       "label": "_iter_patterns()",
@@ -12969,7 +13105,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L63",
       "id": "pii_iter_patterns",
-      "community": 73
+      "community": 74
     },
     {
       "label": "detect_pii()",
@@ -12977,7 +13113,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L73",
       "id": "pii_detect_pii",
-      "community": 73
+      "community": 74
     },
     {
       "label": "Load and validate pii patterns from pii_patterns.yml.",
@@ -12985,7 +13121,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L34",
       "id": "pii_rationale_34",
-      "community": 73
+      "community": 74
     },
     {
       "label": "Scan text for PII patterns from YAML patterns.      Falls back to the previous b",
@@ -12993,7 +13129,7 @@
       "source_file": "scripts/windows-ollama/_pii.py",
       "source_location": "L74",
       "id": "pii_rationale_74",
-      "community": 73
+      "community": 74
     },
     {
       "label": "audit.py",
@@ -20920,6 +21056,18 @@
       "source_location": "L75",
       "weight": 1.0,
       "_src": "self_learning",
+      "_tgt": "self_learning_markdown_table_fields",
+      "source": "self_learning",
+      "target": "self_learning_markdown_table_fields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_src": "self_learning",
       "_tgt": "self_learning_load_fail_fast",
       "source": "self_learning",
       "target": "self_learning_load_fail_fast",
@@ -20929,7 +21077,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L108",
+      "source_location": "L123",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_load_error_patterns",
@@ -20941,7 +21089,19 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L138",
+      "source_location": "L153",
+      "weight": 1.0,
+      "_src": "self_learning",
+      "_tgt": "self_learning_load_session_error_patterns",
+      "source": "self_learning",
+      "target": "self_learning_load_session_error_patterns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L191",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_section",
@@ -20953,7 +21113,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L149",
+      "source_location": "L202",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_load_closeouts",
@@ -20965,7 +21125,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L176",
+      "source_location": "L229",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_load_operator_context",
@@ -20977,7 +21137,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L199",
+      "source_location": "L252",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_load_compendium_attention",
@@ -20989,7 +21149,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L206",
+      "source_location": "L259",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_load_graph_attention",
@@ -21001,7 +21161,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L213",
+      "source_location": "L266",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_load_entries",
@@ -21013,7 +21173,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L222",
+      "source_location": "L276",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_duplicate_counts",
@@ -21025,7 +21185,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L231",
+      "source_location": "L285",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_lookup_patterns",
@@ -21037,7 +21197,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L259",
+      "source_location": "L313",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_query_from_packet",
@@ -21049,7 +21209,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L272",
+      "source_location": "L326",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_enrich_packet",
@@ -21061,7 +21221,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L289",
+      "source_location": "L343",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_atomic_write_yaml",
@@ -21073,7 +21233,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L296",
+      "source_location": "L350",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_record_failure",
@@ -21085,7 +21245,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L328",
+      "source_location": "L382",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_build_report",
@@ -21097,7 +21257,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L352",
+      "source_location": "L415",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_report_markdown",
@@ -21109,7 +21269,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L374",
+      "source_location": "L442",
       "weight": 1.0,
       "_src": "self_learning",
       "_tgt": "self_learning_run_cli",
@@ -21133,7 +21293,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L94",
+      "source_location": "L109",
       "weight": 0.8,
       "_src": "self_learning_load_fail_fast",
       "_tgt": "self_learning_learningentry",
@@ -21145,7 +21305,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L124",
+      "source_location": "L139",
       "weight": 0.8,
       "_src": "self_learning_load_error_patterns",
       "_tgt": "self_learning_learningentry",
@@ -21157,7 +21317,19 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L162",
+      "source_location": "L177",
+      "weight": 0.8,
+      "_src": "self_learning_load_session_error_patterns",
+      "_tgt": "self_learning_learningentry",
+      "source": "self_learning_learningentry",
+      "target": "self_learning_load_session_error_patterns",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L215",
       "weight": 0.8,
       "_src": "self_learning_load_closeouts",
       "_tgt": "self_learning_learningentry",
@@ -21169,7 +21341,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L185",
+      "source_location": "L238",
       "weight": 0.8,
       "_src": "self_learning_load_operator_context",
       "_tgt": "self_learning_learningentry",
@@ -21181,7 +21353,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L247",
+      "source_location": "L301",
       "weight": 0.8,
       "_src": "self_learning_lookup_patterns",
       "_tgt": "self_learning_learningmatch",
@@ -21193,7 +21365,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L318",
+      "source_location": "L372",
       "weight": 0.8,
       "_src": "self_learning_record_failure",
       "_tgt": "self_learning_utc_now",
@@ -21205,7 +21377,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L343",
+      "source_location": "L397",
       "weight": 0.8,
       "_src": "self_learning_build_report",
       "_tgt": "self_learning_utc_now",
@@ -21217,7 +21389,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L102",
+      "source_location": "L117",
       "weight": 0.8,
       "_src": "self_learning_load_fail_fast",
       "_tgt": "self_learning_tokenize",
@@ -21229,7 +21401,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L132",
+      "source_location": "L147",
       "weight": 0.8,
       "_src": "self_learning_load_error_patterns",
       "_tgt": "self_learning_tokenize",
@@ -21241,7 +21413,19 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L170",
+      "source_location": "L185",
+      "weight": 0.8,
+      "_src": "self_learning_load_session_error_patterns",
+      "_tgt": "self_learning_tokenize",
+      "source": "self_learning_tokenize",
+      "target": "self_learning_load_session_error_patterns",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L223",
       "weight": 0.8,
       "_src": "self_learning_load_closeouts",
       "_tgt": "self_learning_tokenize",
@@ -21253,7 +21437,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L193",
+      "source_location": "L246",
       "weight": 0.8,
       "_src": "self_learning_load_operator_context",
       "_tgt": "self_learning_tokenize",
@@ -21265,7 +21449,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L203",
+      "source_location": "L256",
       "weight": 0.8,
       "_src": "self_learning_load_compendium_attention",
       "_tgt": "self_learning_tokenize",
@@ -21277,7 +21461,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L210",
+      "source_location": "L263",
       "weight": 0.8,
       "_src": "self_learning_load_graph_attention",
       "_tgt": "self_learning_tokenize",
@@ -21289,7 +21473,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L233",
+      "source_location": "L287",
       "weight": 0.8,
       "_src": "self_learning_lookup_patterns",
       "_tgt": "self_learning_tokenize",
@@ -21301,7 +21485,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L80",
+      "source_location": "L95",
       "weight": 0.8,
       "_src": "self_learning_load_fail_fast",
       "_tgt": "self_learning_rel",
@@ -21313,7 +21497,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L112",
+      "source_location": "L127",
       "weight": 0.8,
       "_src": "self_learning_load_error_patterns",
       "_tgt": "self_learning_rel",
@@ -21325,12 +21509,120 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L160",
+      "source_location": "L157",
+      "weight": 0.8,
+      "_src": "self_learning_load_session_error_patterns",
+      "_tgt": "self_learning_rel",
+      "source": "self_learning_rel",
+      "target": "self_learning_load_session_error_patterns",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L213",
       "weight": 0.8,
       "_src": "self_learning_load_closeouts",
       "_tgt": "self_learning_rel",
       "source": "self_learning_rel",
       "target": "self_learning_load_closeouts",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L236",
+      "weight": 0.8,
+      "_src": "self_learning_load_operator_context",
+      "_tgt": "self_learning_rel",
+      "source": "self_learning_rel",
+      "target": "self_learning_load_operator_context",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L110",
+      "weight": 0.8,
+      "_src": "self_learning_load_fail_fast",
+      "_tgt": "self_learning_entry_id",
+      "source": "self_learning_entry_id",
+      "target": "self_learning_load_fail_fast",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L140",
+      "weight": 0.8,
+      "_src": "self_learning_load_error_patterns",
+      "_tgt": "self_learning_entry_id",
+      "source": "self_learning_entry_id",
+      "target": "self_learning_load_error_patterns",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L178",
+      "weight": 0.8,
+      "_src": "self_learning_load_session_error_patterns",
+      "_tgt": "self_learning_entry_id",
+      "source": "self_learning_entry_id",
+      "target": "self_learning_load_session_error_patterns",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L216",
+      "weight": 0.8,
+      "_src": "self_learning_load_closeouts",
+      "_tgt": "self_learning_entry_id",
+      "source": "self_learning_entry_id",
+      "target": "self_learning_load_closeouts",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L239",
+      "weight": 0.8,
+      "_src": "self_learning_load_operator_context",
+      "_tgt": "self_learning_entry_id",
+      "source": "self_learning_entry_id",
+      "target": "self_learning_load_operator_context",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L115",
+      "weight": 0.8,
+      "_src": "self_learning_load_fail_fast",
+      "_tgt": "self_learning_date_from_text",
+      "source": "self_learning_date_from_text",
+      "target": "self_learning_load_fail_fast",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L145",
+      "weight": 0.8,
+      "_src": "self_learning_load_error_patterns",
+      "_tgt": "self_learning_date_from_text",
+      "source": "self_learning_date_from_text",
+      "target": "self_learning_load_error_patterns",
       "confidence_score": 0.5
     },
     {
@@ -21339,45 +21631,21 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L183",
       "weight": 0.8,
-      "_src": "self_learning_load_operator_context",
-      "_tgt": "self_learning_rel",
-      "source": "self_learning_rel",
-      "target": "self_learning_load_operator_context",
+      "_src": "self_learning_load_session_error_patterns",
+      "_tgt": "self_learning_date_from_text",
+      "source": "self_learning_date_from_text",
+      "target": "self_learning_load_session_error_patterns",
       "confidence_score": 0.5
     },
     {
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L95",
-      "weight": 0.8,
-      "_src": "self_learning_load_fail_fast",
-      "_tgt": "self_learning_entry_id",
-      "source": "self_learning_entry_id",
-      "target": "self_learning_load_fail_fast",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L125",
-      "weight": 0.8,
-      "_src": "self_learning_load_error_patterns",
-      "_tgt": "self_learning_entry_id",
-      "source": "self_learning_entry_id",
-      "target": "self_learning_load_error_patterns",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L163",
+      "source_location": "L221",
       "weight": 0.8,
       "_src": "self_learning_load_closeouts",
-      "_tgt": "self_learning_entry_id",
-      "source": "self_learning_entry_id",
+      "_tgt": "self_learning_date_from_text",
+      "source": "self_learning_date_from_text",
       "target": "self_learning_load_closeouts",
       "confidence_score": 0.5
     },
@@ -21385,36 +21653,12 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L186",
+      "source_location": "L244",
       "weight": 0.8,
       "_src": "self_learning_load_operator_context",
-      "_tgt": "self_learning_entry_id",
-      "source": "self_learning_entry_id",
+      "_tgt": "self_learning_date_from_text",
+      "source": "self_learning_date_from_text",
       "target": "self_learning_load_operator_context",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L100",
-      "weight": 0.8,
-      "_src": "self_learning_load_fail_fast",
-      "_tgt": "self_learning_date_from_text",
-      "source": "self_learning_date_from_text",
-      "target": "self_learning_load_fail_fast",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L130",
-      "weight": 0.8,
-      "_src": "self_learning_load_error_patterns",
-      "_tgt": "self_learning_date_from_text",
-      "source": "self_learning_date_from_text",
-      "target": "self_learning_load_error_patterns",
       "confidence_score": 0.5
     },
     {
@@ -21423,29 +21667,17 @@
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L168",
       "weight": 0.8,
-      "_src": "self_learning_load_closeouts",
-      "_tgt": "self_learning_date_from_text",
-      "source": "self_learning_date_from_text",
-      "target": "self_learning_load_closeouts",
+      "_src": "self_learning_load_session_error_patterns",
+      "_tgt": "self_learning_markdown_table_fields",
+      "source": "self_learning_markdown_table_fields",
+      "target": "self_learning_load_session_error_patterns",
       "confidence_score": 0.5
     },
     {
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L191",
-      "weight": 0.8,
-      "_src": "self_learning_load_operator_context",
-      "_tgt": "self_learning_date_from_text",
-      "source": "self_learning_date_from_text",
-      "target": "self_learning_load_operator_context",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L215",
+      "source_location": "L268",
       "weight": 0.8,
       "_src": "self_learning_load_entries",
       "_tgt": "self_learning_load_fail_fast",
@@ -21457,7 +21689,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L216",
+      "source_location": "L269",
       "weight": 0.8,
       "_src": "self_learning_load_entries",
       "_tgt": "self_learning_load_error_patterns",
@@ -21469,7 +21701,19 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L155",
+      "source_location": "L270",
+      "weight": 0.8,
+      "_src": "self_learning_load_entries",
+      "_tgt": "self_learning_load_session_error_patterns",
+      "source": "self_learning_load_session_error_patterns",
+      "target": "self_learning_load_entries",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L208",
       "weight": 0.8,
       "_src": "self_learning_load_closeouts",
       "_tgt": "self_learning_section",
@@ -21481,7 +21725,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L217",
+      "source_location": "L271",
       "weight": 0.8,
       "_src": "self_learning_load_entries",
       "_tgt": "self_learning_load_closeouts",
@@ -21493,7 +21737,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L218",
+      "source_location": "L272",
       "weight": 0.8,
       "_src": "self_learning_load_entries",
       "_tgt": "self_learning_load_operator_context",
@@ -21505,7 +21749,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L234",
+      "source_location": "L288",
       "weight": 0.8,
       "_src": "self_learning_lookup_patterns",
       "_tgt": "self_learning_load_compendium_attention",
@@ -21517,7 +21761,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L234",
+      "source_location": "L288",
       "weight": 0.8,
       "_src": "self_learning_lookup_patterns",
       "_tgt": "self_learning_load_graph_attention",
@@ -21529,12 +21773,48 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L232",
+      "source_location": "L286",
       "weight": 0.8,
       "_src": "self_learning_lookup_patterns",
       "_tgt": "self_learning_load_entries",
       "source": "self_learning_load_entries",
       "target": "self_learning_lookup_patterns",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L383",
+      "weight": 0.8,
+      "_src": "self_learning_build_report",
+      "_tgt": "self_learning_load_entries",
+      "source": "self_learning_load_entries",
+      "target": "self_learning_build_report",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L289",
+      "weight": 0.8,
+      "_src": "self_learning_lookup_patterns",
+      "_tgt": "self_learning_duplicate_counts",
+      "source": "self_learning_duplicate_counts",
+      "target": "self_learning_lookup_patterns",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/self_learning.py",
+      "source_location": "L384",
+      "weight": 0.8,
+      "_src": "self_learning_build_report",
+      "_tgt": "self_learning_duplicate_counts",
+      "source": "self_learning_duplicate_counts",
+      "target": "self_learning_build_report",
       "confidence_score": 0.5
     },
     {
@@ -21542,42 +21822,6 @@
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
       "source_location": "L329",
-      "weight": 0.8,
-      "_src": "self_learning_build_report",
-      "_tgt": "self_learning_load_entries",
-      "source": "self_learning_load_entries",
-      "target": "self_learning_build_report",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L235",
-      "weight": 0.8,
-      "_src": "self_learning_lookup_patterns",
-      "_tgt": "self_learning_duplicate_counts",
-      "source": "self_learning_duplicate_counts",
-      "target": "self_learning_lookup_patterns",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L330",
-      "weight": 0.8,
-      "_src": "self_learning_build_report",
-      "_tgt": "self_learning_duplicate_counts",
-      "source": "self_learning_duplicate_counts",
-      "target": "self_learning_build_report",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L275",
       "weight": 0.8,
       "_src": "self_learning_enrich_packet",
       "_tgt": "self_learning_lookup_patterns",
@@ -21589,7 +21833,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L402",
+      "source_location": "L470",
       "weight": 0.8,
       "_src": "self_learning_run_cli",
       "_tgt": "self_learning_lookup_patterns",
@@ -21601,7 +21845,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L275",
+      "source_location": "L329",
       "weight": 0.8,
       "_src": "self_learning_enrich_packet",
       "_tgt": "self_learning_query_from_packet",
@@ -21613,7 +21857,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L408",
+      "source_location": "L476",
       "weight": 0.8,
       "_src": "self_learning_run_cli",
       "_tgt": "self_learning_enrich_packet",
@@ -21625,7 +21869,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L408",
+      "source_location": "L476",
       "weight": 0.8,
       "_src": "self_learning_run_cli",
       "_tgt": "self_learning_atomic_write_yaml",
@@ -21637,7 +21881,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L411",
+      "source_location": "L479",
       "weight": 0.8,
       "_src": "self_learning_run_cli",
       "_tgt": "self_learning_record_failure",
@@ -21649,7 +21893,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L422",
+      "source_location": "L490",
       "weight": 0.8,
       "_src": "self_learning_run_cli",
       "_tgt": "self_learning_build_report",
@@ -21661,7 +21905,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/self_learning.py",
-      "source_location": "L426",
+      "source_location": "L494",
       "weight": 0.8,
       "_src": "self_learning_run_cli",
       "_tgt": "self_learning_report_markdown",
@@ -23317,7 +23561,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L68",
+      "source_location": "L88",
       "weight": 1.0,
       "_src": "test_self_learning",
       "_tgt": "test_self_learning_testselflearning",
@@ -23329,7 +23573,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L72",
+      "source_location": "L92",
       "weight": 0.8,
       "_src": "test_self_learning_testselflearning_test_lookup_returns_cited_prior_patterns",
       "_tgt": "test_self_learning_write_fixture",
@@ -23341,7 +23585,7 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L84",
+      "source_location": "L104",
       "weight": 0.8,
       "_src": "test_self_learning_testselflearning_test_enrich_packet_injects_known_failure_context",
       "_tgt": "test_self_learning_write_fixture",
@@ -23353,7 +23597,31 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L149",
+      "source_location": "L122",
+      "weight": 0.8,
+      "_src": "test_self_learning_testselflearning_test_session_error_runbook_is_indexed_for_lookup",
+      "_tgt": "test_self_learning_write_fixture",
+      "source": "test_self_learning_write_fixture",
+      "target": "test_self_learning_testselflearning_test_session_error_runbook_is_indexed_for_lookup",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_self_learning.py",
+      "source_location": "L132",
+      "weight": 0.8,
+      "_src": "test_self_learning_testselflearning_test_report_surfaces_session_error_source",
+      "_tgt": "test_self_learning_write_fixture",
+      "source": "test_self_learning_write_fixture",
+      "target": "test_self_learning_testselflearning_test_report_surfaces_session_error_source",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/orchestrator/test_self_learning.py",
+      "source_location": "L190",
       "weight": 0.8,
       "_src": "test_self_learning_testselflearning_test_report_flags_duplicates_and_graphify_attention_only",
       "_tgt": "test_self_learning_write_fixture",
@@ -23365,7 +23633,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L69",
+      "source_location": "L89",
       "weight": 1.0,
       "_src": "test_self_learning_testselflearning",
       "_tgt": "test_self_learning_testselflearning_test_lookup_returns_cited_prior_patterns",
@@ -23377,7 +23645,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L81",
+      "source_location": "L101",
       "weight": 1.0,
       "_src": "test_self_learning_testselflearning",
       "_tgt": "test_self_learning_testselflearning_test_enrich_packet_injects_known_failure_context",
@@ -23389,7 +23657,31 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L99",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_src": "test_self_learning_testselflearning",
+      "_tgt": "test_self_learning_testselflearning_test_session_error_runbook_is_indexed_for_lookup",
+      "source": "test_self_learning_testselflearning",
+      "target": "test_self_learning_testselflearning_test_session_error_runbook_is_indexed_for_lookup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_self_learning.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_src": "test_self_learning_testselflearning",
+      "_tgt": "test_self_learning_testselflearning_test_report_surfaces_session_error_source",
+      "source": "test_self_learning_testselflearning",
+      "target": "test_self_learning_testselflearning_test_report_surfaces_session_error_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/orchestrator/test_self_learning.py",
+      "source_location": "L140",
       "weight": 1.0,
       "_src": "test_self_learning_testselflearning",
       "_tgt": "test_self_learning_testselflearning_test_record_failure_is_append_only_and_issue_backed",
@@ -23401,7 +23693,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L124",
+      "source_location": "L165",
       "weight": 1.0,
       "_src": "test_self_learning_testselflearning",
       "_tgt": "test_self_learning_testselflearning_test_record_failure_rejects_out_of_range_issue_numbers",
@@ -23413,7 +23705,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "scripts/orchestrator/test_self_learning.py",
-      "source_location": "L146",
+      "source_location": "L187",
       "weight": 1.0,
       "_src": "test_self_learning_testselflearning",
       "_tgt": "test_self_learning_testselflearning_test_report_flags_duplicates_and_graphify_attention_only",
@@ -39310,6 +39602,126 @@
       "confidence_score": 0.5
     },
     {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "test_validate_session_error_patterns",
+      "_tgt": "validate_session_error_patterns",
+      "source": "test_validate_session_error_patterns",
+      "target": "validate_session_error_patterns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "test_validate_session_error_patterns",
+      "_tgt": "test_validate_session_error_patterns_write_runbook",
+      "source": "test_validate_session_error_patterns",
+      "target": "test_validate_session_error_patterns_write_runbook",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_src": "test_validate_session_error_patterns",
+      "_tgt": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns",
+      "source": "test_validate_session_error_patterns",
+      "target": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L46",
+      "weight": 0.8,
+      "_src": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_missing_required_field",
+      "_tgt": "test_validate_session_error_patterns_write_runbook",
+      "source": "test_validate_session_error_patterns_write_runbook",
+      "target": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_missing_required_field",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L58",
+      "weight": 0.8,
+      "_src": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_missing_seed_pattern",
+      "_tgt": "test_validate_session_error_patterns_write_runbook",
+      "source": "test_validate_session_error_patterns_write_runbook",
+      "target": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_missing_seed_pattern",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L67",
+      "weight": 0.8,
+      "_src": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_invalid_date",
+      "_tgt": "test_validate_session_error_patterns_write_runbook",
+      "source": "test_validate_session_error_patterns_write_runbook",
+      "target": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_invalid_date",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_src": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns",
+      "_tgt": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_validates_current_repo_runbook",
+      "source": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns",
+      "target": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_validates_current_repo_runbook",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_src": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns",
+      "_tgt": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_missing_required_field",
+      "source": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns",
+      "target": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_missing_required_field",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns",
+      "_tgt": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_missing_seed_pattern",
+      "source": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns",
+      "target": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_missing_seed_pattern",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_validate_session_error_patterns.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_src": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns",
+      "_tgt": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_invalid_date",
+      "source": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns",
+      "target": "test_validate_session_error_patterns_testvalidatesessionerrorpatterns_test_rejects_invalid_date",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
@@ -43483,6 +43895,114 @@
       "_tgt": "validate_registry_surfaces_validate_subsystem_expectations",
       "source": "validate_registry_surfaces_validate_subsystem_expectations",
       "target": "validate_registry_surfaces_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_src": "validate_session_error_patterns",
+      "_tgt": "validate_session_error_patterns_field_key",
+      "source": "validate_session_error_patterns",
+      "target": "validate_session_error_patterns_field_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "validate_session_error_patterns",
+      "_tgt": "validate_session_error_patterns_pattern_sections",
+      "source": "validate_session_error_patterns",
+      "target": "validate_session_error_patterns_pattern_sections",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_src": "validate_session_error_patterns",
+      "_tgt": "validate_session_error_patterns_fields",
+      "source": "validate_session_error_patterns",
+      "target": "validate_session_error_patterns_fields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_src": "validate_session_error_patterns",
+      "_tgt": "validate_session_error_patterns_validate",
+      "source": "validate_session_error_patterns",
+      "target": "validate_session_error_patterns_validate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_src": "validate_session_error_patterns",
+      "_tgt": "validate_session_error_patterns_run_cli",
+      "source": "validate_session_error_patterns",
+      "target": "validate_session_error_patterns_run_cli",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L58",
+      "weight": 0.8,
+      "_src": "validate_session_error_patterns_fields",
+      "_tgt": "validate_session_error_patterns_field_key",
+      "source": "validate_session_error_patterns_field_key",
+      "target": "validate_session_error_patterns_fields",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L69",
+      "weight": 0.8,
+      "_src": "validate_session_error_patterns_validate",
+      "_tgt": "validate_session_error_patterns_pattern_sections",
+      "source": "validate_session_error_patterns_pattern_sections",
+      "target": "validate_session_error_patterns_validate",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L79",
+      "weight": 0.8,
+      "_src": "validate_session_error_patterns_validate",
+      "_tgt": "validate_session_error_patterns_fields",
+      "source": "validate_session_error_patterns_fields",
+      "target": "validate_session_error_patterns_validate",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/validate_session_error_patterns.py",
+      "source_location": "L97",
+      "weight": 0.8,
+      "_src": "validate_session_error_patterns_run_cli",
+      "_tgt": "validate_session_error_patterns_validate",
+      "source": "validate_session_error_patterns_validate",
+      "target": "validate_session_error_patterns_run_cli",
       "confidence_score": 0.5
     },
     {

@@ -1,5 +1,5 @@
 #!/bin/bash
-# check-errors.sh - local FAIL_FAST_LOG and ERROR_PATTERNS schema gate
+# check-errors.sh - local FAIL_FAST_LOG, ERROR_PATTERNS, and session-error KB schema gate
 # Usage: ./hooks/check-errors.sh
 
 set -euo pipefail
@@ -87,6 +87,10 @@ def validate_error_patterns() -> bool:
 ok = validate_fail_fast_log() and validate_error_patterns()
 sys.exit(0 if ok else 1)
 PY
+
+if [ -f "docs/runbooks/session-error-patterns.md" ]; then
+  python3 scripts/overlord/validate_session_error_patterns.py docs/runbooks/session-error-patterns.md
+fi
 
 echo ""
 echo "Error pattern check PASS"
