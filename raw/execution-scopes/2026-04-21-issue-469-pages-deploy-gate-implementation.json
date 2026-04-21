@@ -1,0 +1,64 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-469-pages-deploy-gate-20260421",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-469-pages-deploy-gate-structured-plan.json",
+    "docs/runbooks/pages-deploy-gate.md",
+    "docs/runbooks/pages-deploy-rollback.md",
+    "docs/schemas/pages-deploy-consumer.schema.json",
+    "raw/cross-review/2026-04-21-issue-469-pages-deploy-gate.md",
+    "raw/execution-scopes/2026-04-21-issue-469-pages-deploy-gate-implementation.json",
+    "raw/validation/2026-04-21-issue-469-pages-deploy-gate.md",
+    "raw/validation/2026-04-21-issue-469-pages-deploy-gate-structured-agent-cycle-plan.json",
+    "scripts/pages-deploy/pages_deploy_gate.py",
+    "scripts/pages-deploy/tests/__init__.py",
+    "scripts/pages-deploy/tests/test_pages_deploy_gate.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Pre-existing sibling checkout; not part of issue #469."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Pre-existing sibling checkout; not part of issue #469."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Pre-existing sibling checkout; not part of issue #469."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Pre-existing sibling checkout; not part of issue #469."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 469,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/469",
+    "claimed_by": "gpt-5.4 (operator-directed fallback; codex-spark quota blocked 2026-04-24)",
+    "claimed_at": "2026-04-21T00:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "codex-orchestrator",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-21T00:00:00-05:00",
+    "evidence_paths": [
+      "raw/validation/2026-04-21-issue-469-pages-deploy-gate-structured-agent-cycle-plan.json"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

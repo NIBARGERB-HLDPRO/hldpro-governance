@@ -53,6 +53,7 @@
 | GOV-026 | PENTAGI_SWEEP_STATUS | Registry-aware PentAGI freshness and trigger status for overlord sweep report/dashboard source alignment | IN_PROGRESS | OPS_READY |
 | GOV-027 | CODEX_FIRE_FAILFAST | Fail-fast Codex dispatcher wrapper with bounded model preflight and structured failure logging | IN_PROGRESS | OPS_READY |
 | GOV-028 | REMOTE_MCP_BRIDGE_GOVERNANCE | Remote MCP Bridge standards, thin client contract, audit verifier, Stage D proof runner, recurring health monitor, payload-safe alerts, and operator runbook | IN_PROGRESS | REQUIRED |
+| GOV-029 | PAGES_DEPLOY_GATE | Pages Deploy Gate (governance-owned, issue #469) | COMPLETE | OPS_READY |
 
 ---
 
@@ -73,6 +74,7 @@
 | GOV-002 | Governance doc consistency rollout now requires source-of-truth metadata plus non-placeholder `DATA_DICTIONARY` and `SERVICE_REGISTRY` bodies in governed repos, while preserving repo-specific exceptions such as AIS backlog shape and the HealthcarePlatform backend pointer. |
 | GOV-002 | `graphify-governance-contract.yml` is the governance repo’s local graphify contract gate: it validates the manifest-defined target set, helper scripts, and generated `wiki/index.md` synchronization before graph contract changes merge. |
 | GOV-006 | Current rollout adds `docs/FEATURE_REGISTRY.md` as a governed artifact and blocks stale code-only changes when the registry is not updated. |
+| GOV-029 | `scripts/pages-deploy/pages_deploy_gate.py` provides a reusable Cloudflare Pages Direct Upload gate for governed consumers. It validates consumer config, preflights `node`/`wrangler`, checks required env names without printing values, requires `PAGES_DEPLOY_APPROVED=1` for live deploys, runs optional pre-deploy hooks before build/upload, rejects stale or oversized artifacts, invokes Wrangler with `CI=true` and `--non-interactive`, and emits redacted deployment evidence. |
 
 ### AGENT_AUDIT
 
