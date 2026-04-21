@@ -1,0 +1,69 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-494-stampede-111-closeout",
+  "issue_number": 494,
+  "parent_epic_number": null,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "claude-sonnet-4-6",
+  "to_role": "claude-sonnet-4-6",
+  "structured_plan_ref": "docs/plans/issue-494-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-494-stampede-111-closeout-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "All Stage 6 closeout artifacts exist and are valid JSON/Markdown.",
+      "verification_refs": [
+        "docs/plans/issue-494-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-494-stampede-111-closeout-implementation.json",
+        "raw/handoffs/2026-04-21-issue-494-stampede-111-closeout.json",
+        "raw/validation/2026-04-21-issue-494-stampede-111-closeout.md",
+        "raw/closeouts/2026-04-21-stampede-issue-111-permanent-services.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Closeout document residual risks each end with a GitHub issue link or state None.",
+      "verification_refs": [
+        "raw/closeouts/2026-04-21-stampede-issue-111-permanent-services.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "OVERLORD_BACKLOG.md Done section has a new row for Stampede #111 / governance #494.",
+      "verification_refs": [
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "hooks/closeout-hook.sh passes on the closeout document.",
+      "verification_refs": [
+        "raw/validation/2026-04-21-issue-494-stampede-111-closeout.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool docs/plans/issue-494-structured-agent-cycle-plan.json",
+    "python3 -m json.tool raw/execution-scopes/2026-04-21-issue-494-stampede-111-closeout-implementation.json",
+    "python3 -m json.tool raw/handoffs/2026-04-21-issue-494-stampede-111-closeout.json",
+    "bash hooks/closeout-hook.sh raw/closeouts/2026-04-21-stampede-issue-111-permanent-services.md"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "docs/plans/issue-494-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-494-stampede-111-closeout-implementation.json",
+    "raw/validation/2026-04-21-issue-494-stampede-111-closeout.md",
+    "raw/closeouts/2026-04-21-stampede-issue-111-permanent-services.md"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-494-stampede-111-closeout.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-04-21-stampede-issue-111-permanent-services.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T18:30:00Z",
+  "notes": "Stage 6 governance closeout artifacts for Stampede issue #111 service path migration from /tmp to permanent ~/Developer/HLDPRO/Stampede clone. Stampede PR #113 already merged; this worktree creates only governance paperwork."
+}
