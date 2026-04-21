@@ -1,0 +1,95 @@
+{
+  "session_id": "session-20260421-issue-428-seek-bootstrap",
+  "issue_number": 428,
+  "objective": "Add seek-and-ponder environment bootstrap aliases and registry metadata to the governance bootstrap contract.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify the governance environment registry and bootstrap script for seek-and-ponder staging, local, and worktree aliases.",
+    "Add only the issue #428 structured plan and execution-scope artifacts required by the planner-boundary gate.",
+    "Permit generated graphify output if repo hooks update graph artifacts during validation."
+  ],
+  "out_of_scope": [
+    "Committing .env.shared, generated .env files, Supabase anon keys, service-role keys, or other secrets.",
+    "Changing seek-and-ponder application runtime code.",
+    "Provisioning or mutating Supabase projects, schemas, policies, or dashboard settings."
+  ],
+  "research_summary": "Issue #428 tracks a mechanical governance bootstrap gap: seek-and-ponder needs documented environment registry metadata and bootstrap aliases so staging/local/worktree env files can be generated from the operator-managed .env.shared vault without committing secrets.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/428",
+    "docs/ENV_REGISTRY.md",
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/test_bootstrap_repo_env_contract.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Seek-and-ponder bootstrap registration",
+      "goal": "Make the governance bootstrap recognize seek-and-ponder aliases while keeping secrets outside git.",
+      "tasks": [
+        "Add the seek-and-ponder staging project to docs/ENV_REGISTRY.md.",
+        "Add seek-and-ponder staging, local, and worktree cases to scripts/bootstrap-repo-env.sh.",
+        "Validate the focused bootstrap env contract and the governance local CI gate.",
+        "Publish the PR branch after checks pass locally."
+      ],
+      "acceptance_criteria": [
+        "The bootstrap script emits seek-and-ponder Supabase URL, anon key, service-role key, and environment mode placeholders from .env.shared inputs.",
+        "Worktree bootstrap execution can discover the parent governance .env.shared file.",
+        "The environment registry contains the seek-and-ponder staging Supabase project row.",
+        "No .env.shared contents, generated .env files, Supabase keys, or dashboard evidence are committed.",
+        "Final AC: local-ci-gate and GitHub PR checks pass."
+      ],
+      "file_paths": [
+        "docs/ENV_REGISTRY.md",
+        "docs/plans/issue-428-seek-bootstrap-structured-agent-cycle-plan.json",
+        "graphify-out/",
+        "raw/execution-scopes/2026-04-21-issue-428-seek-bootstrap-implementation.json",
+        "scripts/bootstrap-repo-env.sh",
+        "scripts/test_bootstrap_repo_env_contract.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-local-analysis",
+      "role": "governance gate reviewer",
+      "focus": "Planner-boundary and local-ci-gate requirements for issue #428.",
+      "status": "accepted",
+      "summary": "Confirmed the failing PR check is caused by the missing issue-specific execution scope and that the bootstrap env contract remains the focused behavioral validation.",
+      "evidence": [
+        "local-ci-gate PR #429 failure log",
+        "scripts/overlord/assert_execution_scope.py",
+        "tools/local-ci-gate/local_ci_gate.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "github-issue-428-and-ci-log-review",
+    "model_family": "github-actions",
+    "status": "accepted",
+    "summary": "Accepted the narrow remediation: add issue #428 scope and structured plan artifacts without broadening bootstrap behavior.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/429",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/428"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #428 may update seek-and-ponder bootstrap/env registry files plus the required plan, execution-scope, and generated graphify artifacts.",
+    "next_execution_step": "Run focused bootstrap and local-ci validation, push the PR branch, and confirm PR checks.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If validation reveals missing seek-and-ponder secret names, update only the bootstrap mapping and contract coverage for those names.",
+    "If Supabase dashboard or schema changes are required, stop and open a separate seek-and-ponder implementation issue.",
+    "If any generated evidence contains secrets or raw .env.shared values, delete the evidence and rerun with redaction."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #428",
+    "codex-local-analysis"
+  ],
+  "approved_at": "2026-04-21T13:06:22Z"
+}
