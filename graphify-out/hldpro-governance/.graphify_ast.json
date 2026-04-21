@@ -1348,70 +1348,70 @@
       "id": "test_schema_guard_hook",
       "label": "test_schema_guard_hook.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L1"
     },
     {
       "id": "test_schema_guard_hook_payload",
       "label": "_payload()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L16"
     },
     {
       "id": "test_schema_guard_hook_run_hook",
       "label": "_run_hook()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L20"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook",
       "label": "TestSchemaGuardHook",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L35"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_blocked_bash_file_write_has_stderr",
       "label": ".test_blocked_bash_file_write_has_stderr()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L36"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_missing_schema_has_explicit_stderr",
       "label": ".test_missing_schema_has_explicit_stderr()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L45"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_malformed_input_payload_has_stderr",
       "label": ".test_malformed_input_payload_has_stderr()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L54"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_validator_nonzero_is_summarized",
       "label": ".test_validator_nonzero_is_summarized()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L60"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_allowed_read_only_command_remains_allowed",
       "label": ".test_allowed_read_only_command_remains_allowed()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L76"
     },
     {
       "id": "test_schema_guard_hook_testschemaguardhook_test_python_file_write_policy_block_has_stderr",
       "label": ".test_python_file_write_policy_block_has_stderr()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L83"
     },
     {
@@ -14871,7 +14871,7 @@
       "target": "json",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L4",
       "weight": 1.0
     },
@@ -14880,7 +14880,7 @@
       "target": "os",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -14889,7 +14889,7 @@
       "target": "subprocess",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -14898,7 +14898,7 @@
       "target": "tempfile",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -14907,7 +14907,7 @@
       "target": "unittest",
       "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -14916,7 +14916,7 @@
       "target": "pathlib",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -14925,7 +14925,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L16",
       "weight": 1.0
     },
@@ -14934,7 +14934,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L20",
       "weight": 1.0
     },
@@ -14943,7 +14943,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L35",
       "weight": 1.0
     },
@@ -14952,7 +14952,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_blocked_bash_file_write_has_stderr",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L36",
       "weight": 1.0
     },
@@ -14961,7 +14961,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_missing_schema_has_explicit_stderr",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L45",
       "weight": 1.0
     },
@@ -14970,7 +14970,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_malformed_input_payload_has_stderr",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L54",
       "weight": 1.0
     },
@@ -14979,7 +14979,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_validator_nonzero_is_summarized",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L60",
       "weight": 1.0
     },
@@ -14988,7 +14988,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_allowed_read_only_command_remains_allowed",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L76",
       "weight": 1.0
     },
@@ -14997,7 +14997,7 @@
       "target": "test_schema_guard_hook_testschemaguardhook_test_python_file_write_policy_block_has_stderr",
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L83",
       "weight": 1.0
     },
@@ -15006,7 +15006,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L37",
       "weight": 0.8
     },
@@ -15015,7 +15015,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L37",
       "weight": 0.8
     },
@@ -15024,7 +15024,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L46",
       "weight": 0.8
     },
@@ -15033,7 +15033,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L47",
       "weight": 0.8
     },
@@ -15042,7 +15042,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L55",
       "weight": 0.8
     },
@@ -15051,7 +15051,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L66",
       "weight": 0.8
     },
@@ -15060,7 +15060,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L67",
       "weight": 0.8
     },
@@ -15069,7 +15069,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L77",
       "weight": 0.8
     },
@@ -15078,7 +15078,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L77",
       "weight": 0.8
     },
@@ -15087,7 +15087,7 @@
       "target": "test_schema_guard_hook_run_hook",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L84",
       "weight": 0.8
     },
@@ -15096,7 +15096,7 @@
       "target": "test_schema_guard_hook_payload",
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-447-schema-guard-diagnostics/scripts/overlord/test_schema_guard_hook.py",
+      "source_file": "scripts/overlord/test_schema_guard_hook.py",
       "source_location": "L84",
       "weight": 0.8
     },
