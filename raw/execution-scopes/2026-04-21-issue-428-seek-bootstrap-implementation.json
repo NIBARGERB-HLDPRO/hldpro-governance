@@ -1,0 +1,61 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "feat/issue-428-seek-bootstrap",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/ENV_REGISTRY.md",
+    "docs/plans/issue-428-seek-bootstrap-structured-agent-cycle-plan.json",
+    "graphify-out/",
+    "raw/execution-scopes/2026-04-21-issue-428-seek-bootstrap-implementation.json",
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/test_bootstrap_repo_env_contract.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "primary governance checkout is outside issue #428 scope; issue #428 uses an isolated worktree"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "downstream local-ai-machine work is out of scope for the governance bootstrap registration"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "sibling repo is unrelated to seek-and-ponder bootstrap registration"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "sibling repo is unrelated to seek-and-ponder bootstrap registration"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "sibling repo is unrelated to seek-and-ponder bootstrap registration"
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 428,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/428",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-21T13:06:22Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "github-issue-428-and-ci-log-review",
+    "implementer_model": "codex-gpt-5",
+    "accepted_at": "2026-04-21T13:06:22Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/428",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/429",
+      "docs/plans/issue-428-seek-bootstrap-structured-agent-cycle-plan.json"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}
