@@ -51,6 +51,35 @@ profile:
         - --root
         - .
 
+    - id: stage6-closeout-evidence
+      title: Stage 6 closeout evidence enforcement
+      severity: blocker
+      scope: changed
+      paths:
+        - .github/
+        - agents/
+        - docs/
+        - hooks/
+        - launchd/
+        - metrics/
+        - raw/
+        - scripts/
+        - tools/local-ci-gate/
+        - wiki/
+        - CLAUDE.md
+        - README.md
+        - STANDARDS.md
+        - OVERLORD_BACKLOG.md
+      command:
+        - python3
+        - scripts/overlord/check_stage6_closeout.py
+        - --root
+        - .
+        - --branch-name
+        - "{branch_name}"
+        - --changed-files-file
+        - "{changed_files_file}"
+
     - id: governance-surface-planning
       title: Governance-surface planning gate
       severity: blocker

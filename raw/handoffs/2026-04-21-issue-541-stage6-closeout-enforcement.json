@@ -1,0 +1,71 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-541-stage6-closeout-enforcement",
+  "issue_number": 541,
+  "parent_epic_number": 533,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-implementation",
+  "structured_plan_ref": "docs/plans/issue-541-stage6-closeout-enforcement-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-541-stage6-closeout-enforcement-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Implementation/governance-surface issue PRs fail without an issue-matching Stage 6 closeout.",
+      "verification_refs": [
+        "scripts/overlord/check_stage6_closeout.py",
+        "scripts/overlord/test_check_stage6_closeout.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Planning-only changes remain exempt from final closeout enforcement.",
+      "verification_refs": [
+        "scripts/overlord/check_stage6_closeout.py",
+        "scripts/overlord/test_check_stage6_closeout.py"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Reusable governance CI and Local CI use the same closeout enforcement validator.",
+      "verification_refs": [
+        ".github/workflows/governance-check.yml",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "docs/workflow-local-coverage-inventory.json"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_check_stage6_closeout.py",
+    "python3 scripts/overlord/test_workflow_local_coverage.py",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-21-issue-541-stage6-closeout-enforcement.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-21-issue-541-stage6-closeout-enforcement.md --root .",
+    "python3 scripts/overlord/check_stage6_closeout.py --root . --branch-name issue-541-stage6-closeout-enforcement --changed-files-file /tmp/issue-541-changed-files.txt",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-541-stage6-closeout-enforcement --changed-files-file /tmp/issue-541-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-541-stage6-closeout-enforcement-implementation.json --changed-files-file /tmp/issue-541-changed-files.txt --require-lane-claim"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    ".github/workflows/governance-check.yml",
+    "docs/ERROR_PATTERNS.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/workflow-local-coverage-inventory.json",
+    "scripts/overlord/check_stage6_closeout.py",
+    "scripts/overlord/test_check_stage6_closeout.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-541-stage6-closeout-enforcement.md",
+    "raw/operator-context/self-learning/2026-04-21-issue-541-stage6-closeout-enforcement.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T21:50:00Z",
+  "notes": "Issue #541 closes the passive Stage 6 gap by making closeout presence part of the merge gate."
+}

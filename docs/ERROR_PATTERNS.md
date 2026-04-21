@@ -61,3 +61,34 @@ Hook code classified shell commands with independent raw-string regexes instead 
 - Require hook fixture tests for every new shell syntax pattern added to a guard.
 - Prefer updating existing guardrails before adding new hook layers.
 - Record session-command failures in `docs/FAIL_FAST_LOG.md` and `docs/ERROR_PATTERNS.md` so self-learning lookup can retrieve the correction.
+
+## Pattern: stage6-closeout-passive-gate
+
+### Symptom
+Implementation or governance-surface work reaches PR or merge readiness without a Stage 6 closeout artifact. Existing closeout validation appears healthy when run manually, but no gate forces the closeout to exist.
+
+### Root Cause
+The closeout hook and validator were local authoring/integrity tools, not merge-presence gates. CI validated handoff packages and closeout contents when closeout paths changed, but it did not require `raw/closeouts/*issue-NNN*.md` for issue-backed implementation or governance-surface diffs.
+
+### Detection
+- PR changes implementation/governance-surface paths but has no `raw/closeouts/*issue-NNN*.md` file.
+- Session closeout relies on narrative status updates instead of a committed Stage 6 closeout artifact.
+- `validate_closeout.py` is never invoked because no closeout file was created.
+
+### Resolution Playbook
+1. Add an issue-matching closeout under `raw/closeouts/`.
+2. Run `scripts/overlord/validate_closeout.py` against the closeout.
+3. If the PR is planning-only, keep changes limited to planning artifacts so the closeout-presence gate can skip it.
+4. If implementation files changed, add validation, handoff, execution-scope, and closeout references before merge.
+5. Roll back by removing the new enforcement call only if it blocks planning-only PRs after focused regression tests prove the exemption failed.
+
+### Instances
+| Date | Incident | Notes |
+|------|----------|-------|
+| 2026-04-21 | [2026-04-21](FAIL_FAST_LOG.md) | Issue #541 wired Stage 6 closeout presence into reusable governance CI and Local CI. |
+
+### Prevention
+- Keep `check_stage6_closeout.py` in the merge path, not only in local hooks.
+- Use the existing `validate_closeout.py` for integrity so closeout semantics stay centralized.
+- Preserve a tested planning-only exemption to avoid blocking early plan/scope PRs.
+- Record closeout gaps in self-learning evidence so future sessions retrieve the merge-gate fix.
