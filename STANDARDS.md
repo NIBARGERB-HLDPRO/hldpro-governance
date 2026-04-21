@@ -481,6 +481,33 @@ Gate / deterministic verifier                      →  PASS / FAIL
 
 LAM runs out-of-band for its lanes; feeds sanitized outputs into any tier that needs them.
 
+### Handoff package artifacts
+
+Every model/agent handoff that crosses planning, implementation, QA, or gate
+authority must have a structured package view. The package does not replace
+the existing plan, execution scope, packet, validation, review, or closeout
+artifacts; it binds them so the receiver can verify the exact acceptance
+criteria and evidence before accepting the handoff.
+
+Canonical schema: `docs/schemas/package-handoff.schema.json`
+
+Canonical location: `raw/handoffs/YYYY-MM-DD-issue-<n>-<stage>.json`
+
+Required lifecycle links:
+- GitHub issue number and optional parent epic number.
+- Source role and destination role.
+- Structured plan reference.
+- Execution-scope reference for implementation-ready or later states.
+- Packet reference for dispatch/validation-ready or later states.
+- Acceptance criteria with verification references.
+- Validation commands.
+- Review and gate artifact references when required by risk/surface.
+- Closeout reference for accepted/released/archived states.
+
+Execution scopes are schema-backed by
+`docs/schemas/execution-scope.schema.json` and remain enforced by
+`scripts/overlord/assert_execution_scope.py`.
+
 ### Hard-rule invariants
 
 1. **No self-approval.** No mind reviews its own output. Drafter, reviewer, and gate identities must be distinct.

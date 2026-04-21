@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-432-som-waterfall-routing/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-432-som-waterfall-routing/wiki/hldpro",
-  "nodes": 1392,
-  "edges": 2611,
-  "communities": 76,
-  "articles": 86,
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-438-handoff-package-schemas/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-438-handoff-package-schemas/wiki/hldpro",
+  "nodes": 1421,
+  "edges": 2693,
+  "communities": 77,
+  "articles": 87,
   "html_status": "skipped",
-  "code_files": 106
+  "code_files": 108
 }

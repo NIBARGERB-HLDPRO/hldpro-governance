@@ -9,6 +9,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Structured handoff package lifecycle — schema slice | [#438](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/438) | HIGH | 2-3 | Child of epic #434. Add package-handoff and execution-scope schemas, example handoff artifact, validator/tests, structured-plan handoff refs, and governance documentation. |
 | Stampede adoption of hldpro-sim v0.1.0 | [#425](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/425) | HIGH | 2-3 | Run deploy-hldpro-sim.sh in Stampede repo, wire Slice 6 simulation runner to hldpro_sim package. Unblocked by PR #424. |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | [#177](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/177) | LOW-MEDIUM | 2-3 | Post-outage code review. Gate: live-fallback rate < 2% for 2 weeks post-merge (window now passed). |
 | Qwen-Coder MLX driver stub-emission bug | [#105](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/105) | LOW | 1-2 | Qwen2.5-Coder-7B throws truncated output on edge cases (>200 lines). Workarounds in `docs/runbooks/qwen-coder-driver.md`. |
@@ -19,12 +20,12 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| SoM governance waterfall model routing revision | [#432](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/432) | HIGH | 3-4 | Governance SSOT first: Codex orchestrator, Opus planner, GPT-5.4 high plan reviewer with Spark fallback/specialist critique, Sonnet worker, Codex QA, bounded Qwen local worker ladder, Gemma A/B shadow-only, and Windows off active fallback. Downstream repo propagation follows after this source-of-truth PR lands. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| SoM governance waterfall model routing revision | 2026-04-21 | Issue [#432](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/432). PR [#433](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/433) updated governance SSOT, docs, guardrails, tests, validation, closeout, graph/wiki outputs, and downstream follow-up issues for the Codex-orchestrated waterfall. |
 | Stampede Phase 1 live order routing epic (#81–#86) | 2026-04-21 | Issues [#81](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/81)–[#86](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/86). Phase 1 pipeline code-complete: spec v0.2, RSSHub trigger, 3-persona LLM inference, Tradier executor+KillSwitch, paper trade runner+gate, launchd automation. PRs #87–#92+#94 merged. Backtest n=27: r=+0.563 dir=70.4%. Paper smoke 6/7=85.7% PASS. **Issue #86 gate in progress** — 30-day paper gate started 2026-04-21, target close 2026-05-21. Closeouts: raw/closeouts/2026-04-21-stampede-issue-8x-*.md. |
 | Seek and Stampede env bootstrap targets | 2026-04-21 | Issue [#430](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/430). PR [#431](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/431) added repo-native SSOT bootstrap aliases for `seek-and-ponder`, `seek-local`, `seek-worktree`, and `Stampede`, with redacted dry-run contract coverage, registry/progress/backlog evidence, and validation at `raw/validation/2026-04-21-issue-430-env-bootstrap-seek-stampede.md`. |
 | Stampede issue #76: temperature determinism | 2026-04-20 | Stampede issue [#76](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/76) CLOSED. `AnthropicApiProvider` wired with `temperature=0.0`; seed stability re-run confirmed mean std dev 4.6 bps, 0 direction-unstable events (down from 28.9 bps / 4 unstable). Unblocks forward validation (issue #78). Closeout: `raw/closeouts/2026-04-20-stampede-issue-76-temperature-determinism.md`. |
