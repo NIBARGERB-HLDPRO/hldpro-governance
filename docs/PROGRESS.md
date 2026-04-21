@@ -1,6 +1,6 @@
 # hldpro-governance — Progress & Backlog
 
-**Last Updated:** 2026-04-20
+**Last Updated:** 2026-04-21
 **Scope:** Cross-repo governance standards, CI enforcement, audit agents, and knowledge base infrastructure.
 
 > This file is the single source of truth for planned work, open bugs, feature requests, and operational items in hldpro-governance.
@@ -33,6 +33,7 @@
 
 | Item | Issue | Status | Notes |
 |------|-------|--------|-------|
+| Seek and Stampede env bootstrap targets | #430 | IN PROGRESS | Add repo-native SSOT bootstrap aliases and contract coverage for `seek-and-ponder` and `Stampede` so governed agents can generate local `.env` files without credential hunting. |
 | SoM HITL SMS dedicated sender env propagation | #421 | IN PROGRESS | Add `SOM_TWILIO_FROM_NUMBER` plus sender aliases to local-ai-machine bootstrap output and document dedicated approval-route separation from AIS/Alex/customer-demo senders. |
 | Weekly overlord sweep write-back to wiki/index.md | — | ACTIVE / AWAITING NEXT RUN | Workflow and graph/index write-back path are wired; last committed index remains the 2026-04-09 bootstrap until the next scheduled or manual sweep refreshes generated counts |
 | LAM env-var-docs contract debt: SOM_* variables unclassified | #145 | OPEN | local-ai-machine env vars need classification |

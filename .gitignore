@@ -24,6 +24,9 @@ projects/
 plugins/
 
 # Misc ephemeral
+__pycache__/
+**/__pycache__/
+*.py[cod]
 shell-snapshots/
 stats-cache.json
 tasks/

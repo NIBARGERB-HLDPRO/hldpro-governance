@@ -1,0 +1,104 @@
+{
+  "session_id": "session-20260421-issue-430-env-bootstrap-seek-stampede",
+  "issue_number": 430,
+  "objective": "Add repo-native SSOT env bootstrap targets for seek-and-ponder and Stampede so governed agents can generate local .env files without manual credential hunting.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify the governance env bootstrap script, focused bootstrap contract test, environment registry, progress/backlog mirrors, issue #430 validation artifacts, and issue #430 plan/scope artifacts.",
+    "Ignore Python bytecode/cache residue produced by local validation.",
+    "Use redacted dry-run validation and synthetic placeholder credentials only in committed evidence.",
+    "Do not edit downstream seek-and-ponder or Stampede source files."
+  ],
+  "out_of_scope": [
+    "Committing .env.shared or any generated downstream .env file.",
+    "Filling missing live Seek staging Supabase anon/service-role values.",
+    "Changing Stampede runtime behavior or provider selection outside generated env key mapping.",
+    "Rotating, provisioning, or validating external provider credentials."
+  ],
+  "research_summary": "PR #429 already added Seek/Ponder staging/local bootstrap cases, but the short `seek` aliases, valid-repo help text, isolated worktree SSOT discovery from HLDPRO/var/worktrees, and Stampede market-data bootstrap coverage were still missing. Stampede's repo-native .env.example expects market-data keys including Alpaca, Massive/Polygon, Tradier, Intrinio, and X bearer placeholders.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/430",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/429",
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/test_bootstrap_repo_env_contract.py",
+    "docs/ENV_REGISTRY.md",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder/.env.example",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede/.env.example"
+  ],
+  "sprints": [
+    {
+      "name": "Seek and Stampede bootstrap coverage",
+      "goal": "Make the governance SSOT bootstrap cover both repos with documented aliases and redacted validation.",
+      "tasks": [
+        "Add `seek`, `seek-local`, and `seek-worktree` aliases to the existing Seek/Ponder bootstrap cases.",
+        "Add a `stampede` bootstrap case that emits the repo-native market-data keys from `.env.shared` with safe blanks for absent optional values.",
+        "Harden `.env.shared` discovery for isolated governance worktrees under `HLDPRO/var/worktrees`.",
+        "Extend focused contract tests for aliases, Stampede key mapping, redacted dry-run output, and nested-worktree vault discovery.",
+        "Ignore Python `__pycache__` and `*.pyc` local validation residue.",
+        "Update environment registry, progress/backlog mirrors, and validation evidence."
+      ],
+      "acceptance_criteria": [
+        "`DRY_RUN=1 bash scripts/bootstrap-repo-env.sh seek /tmp/seek.env` succeeds with redacted values.",
+        "`DRY_RUN=1 bash scripts/bootstrap-repo-env.sh seek-local /tmp/seek-local.env` succeeds with redacted values.",
+        "`DRY_RUN=1 bash scripts/bootstrap-repo-env.sh stampede /tmp/stampede.env` succeeds with redacted values.",
+        "Focused bootstrap contract validation passes.",
+        "No real secret values, `.env.shared`, or generated downstream env files are committed.",
+        "Final AC: Local CI and GitHub PR checks pass before merge."
+      ],
+      "file_paths": [
+        ".gitignore",
+        "OVERLORD_BACKLOG.md",
+        "docs/ENV_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "docs/plans/issue-430-env-bootstrap-seek-stampede-pdcar.md",
+        "docs/plans/issue-430-env-bootstrap-seek-stampede-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-430-env-bootstrap-seek-stampede-implementation.json",
+        "raw/validation/2026-04-21-issue-430-env-bootstrap-seek-stampede.md",
+        "scripts/bootstrap-repo-env.sh",
+        "scripts/test_bootstrap_repo_env_contract.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-local-analysis",
+      "role": "governance contract reviewer",
+      "focus": "Repo-rule compliance, SSOT bootstrap boundary, and validation sufficiency.",
+      "status": "accepted",
+      "summary": "Confirmed the issue #430 slice is bounded to governance bootstrap/docs/tests/evidence and does not edit downstream repos or commit secret-bearing files.",
+      "evidence": [
+        "docs/plans/issue-430-env-bootstrap-seek-stampede-structured-agent-cycle-plan.json",
+        "raw/validation/2026-04-21-issue-430-env-bootstrap-seek-stampede.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "codex-local-analysis",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Mechanical bootstrap/docs/test slice accepted for local implementation under operator directive.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/430"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #430 may update governance env bootstrap, focused tests, env registry, progress/backlog mirrors, and validation/plan/scope artifacts for Seek/Ponder and Stampede bootstrap coverage.",
+    "next_execution_step": "Run focused validation, Local CI, publish PR, and enable native automerge when checks are green.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If validation output includes real secret values, delete the evidence and rerun only redacted dry-run commands.",
+    "If missing Seek or Stampede live credentials must be created or rotated, stop and open a separate credential-provisioning issue.",
+    "If downstream repo files need edits, stop and create downstream issue-backed lanes."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "issue #430",
+    "codex-local-analysis"
+  ],
+  "approved_at": "2026-04-21T13:10:00Z"
+}
