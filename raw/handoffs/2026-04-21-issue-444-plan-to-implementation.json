@@ -1,0 +1,74 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-444-plan-to-implementation",
+  "issue_number": 444,
+  "parent_epic_number": 434,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "claude-sonnet-worker",
+  "structured_plan_ref": "docs/plans/issue-444-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-444-cli-session-supervisor-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "A governed CLI session event schema exists for called Claude/Codex subprocesses.",
+      "verification_refs": [
+        "docs/schemas/cli-session-event.schema.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "A supervisor handles stdout/stderr capture, wall timeout, silence timeout, process-group cleanup, and bounded retry behavior.",
+      "verification_refs": [
+        "scripts/cli_session_supervisor.py",
+        "scripts/test_cli_session_supervisor.py"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "scripts/codex-review-template.sh claude mode uses the supervisor and direct claude -p script calls are guarded.",
+      "verification_refs": [
+        "scripts/codex-review-template.sh",
+        ".github/scripts/check_codex_model_pins.py"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool docs/plans/issue-444-structured-agent-cycle-plan.json",
+    "python3 -m json.tool raw/execution-scopes/2026-04-21-issue-444-cli-session-supervisor-implementation.json",
+    "python3 -m json.tool raw/handoffs/2026-04-21-issue-444-plan-to-implementation.json",
+    "python3 scripts/test_cli_session_supervisor.py",
+    "python3 -m py_compile scripts/cli_session_supervisor.py .github/scripts/check_codex_model_pins.py",
+    "bash -n scripts/codex-review-template.sh scripts/codex-fire.sh",
+    "python3 .github/scripts/check_codex_model_pins.py",
+    "python3 scripts/overlord/test_validate_handoff_package.py",
+    "python3 scripts/overlord/validate_handoff_package.py --root .",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-444-cli-session-supervisor-20260421 --require-if-issue-branch",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-444-cli-session-supervisor-implementation.json --require-lane-claim",
+    "tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-21-issue-444-cli-session-supervisor.md"
+  ],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "docs/schemas/cli-session-event.schema.json",
+    "scripts/cli_session_supervisor.py",
+    "scripts/test_cli_session_supervisor.py",
+    "scripts/codex-review-template.sh",
+    ".github/scripts/check_codex_model_pins.py",
+    "docs/plans/issue-444-cli-session-supervisor-pdcar.md",
+    "docs/plans/issue-444-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-444-cli-session-supervisor-implementation.json"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-444-cli-session-supervisor.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T10:52:33-05:00",
+  "notes": "CLI session supervisor implementation handoff for issue #444. Codex orchestrates and QA reviews; Sonnet owns the bounded implementation slice."
+}

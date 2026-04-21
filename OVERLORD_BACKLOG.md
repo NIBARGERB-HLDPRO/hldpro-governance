@@ -19,12 +19,13 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Structured handoff package lifecycle — PR and closeout hardening | [#436](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/436) | HIGH | 2-3 | Child of epic #434. Require handoff package evidence in PR and closeout surfaces and validate closeout refs before graph/wiki refresh. |
+| Structured handoff package lifecycle — CLI session supervisor | [#444](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/444) | HIGH | 2-3 | Child of epic #434. Supervise called Claude/Codex CLI sessions with timeout evidence, process-group cleanup, wrapper routing, and unmanaged Claude-call guards. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Structured handoff package lifecycle — PR and closeout hardening | 2026-04-21 | Issue [#436](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/436). PR [#450](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/450) added PR template handoff evidence fields, closeout validator enforcement, closeout-hook pre-graph validation, tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — packet dispatch reconciliation | 2026-04-21 | Issue [#437](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/437). PR [#446](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/446) reconciled the SoM packet schema/emitter/validator/queue contract, preserved historical packet compatibility, added dispatch governance emission and tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — CI enforcement | 2026-04-21 | Issue [#435](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/435). PR [#443](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/443) wired package handoff validation into Local CI Gate and reusable GitHub governance checks, added lane-claim GitHub assertion parity, focused tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — schema slice | 2026-04-21 | Issue [#438](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/438). PR [#441](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/441) added package-handoff and execution-scope schemas, example/active handoff artifacts, validator/tests, structured-plan handoff refs, documentation, validation, closeout, and graph/wiki outputs. |

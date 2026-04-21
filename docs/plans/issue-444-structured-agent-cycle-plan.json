@@ -1,0 +1,130 @@
+{
+  "session_id": "session-20260421-issue-444-cli-session-supervisor",
+  "issue_number": 444,
+  "objective": "Add runtime supervision and structured event evidence for called Claude/Codex CLI subprocesses so silent stalls and total runtime timeouts fail closed without leaving hanging workers.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repository only.",
+    "Add a CLI session event schema or equivalent documented contract.",
+    "Add a supervisor that can run Claude and Codex subprocesses with explicit model metadata, prompt files, stdout/stderr capture, wall timeout, silence timeout, process-group cleanup, and bounded retry.",
+    "Wire scripts/codex-review-template.sh claude mode through the supervisor.",
+    "Add direct claude -p guard coverage for scripts/workflows.",
+    "Add fake CLI tests for success, nonzero failure, silent stall, intermittent output, total timeout, retry once, and max-retry halt."
+  ],
+  "out_of_scope": [
+    "Downstream repository edits.",
+    "Requiring packet dispatch to consume CLI session events.",
+    "Requiring PR templates or closeout hooks to consume CLI session events.",
+    "Replacing package handoff schemas or packet schemas.",
+    "Broadening autonomous execution authority."
+  ],
+  "research_summary": "Issue #444 addresses the observed failure mode where a called Claude worker runs silently for minutes and needs a governed termination/retry path. Existing Codex wrappers have preflight and failure logging, but the direct Claude specialist path in scripts/codex-review-template.sh has no silence supervision or structured session event. This slice adds that runtime evidence surface without changing downstream repos.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/434",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/444",
+    "scripts/codex-review-template.sh",
+    "scripts/codex-fire.sh",
+    ".github/scripts/check_codex_model_pins.py",
+    "scripts/test_codex_fire.py"
+  ],
+  "sprints": [
+    {
+      "name": "CLI session supervisor",
+      "goal": "Create a supervised subprocess path for called model CLIs and route the weak Claude review path through it.",
+      "tasks": [
+        "Define the CLI session event schema.",
+        "Implement the supervisor with stdout/stderr capture, process-group cleanup, wall timeout, silence timeout, and bounded retry.",
+        "Route scripts/codex-review-template.sh claude through the supervisor with explicit Claude model pin and prompt file.",
+        "Add or update guard coverage so direct claude -p script/workflow calls are refused unless allowlisted.",
+        "Add fake CLI tests covering the required subprocess outcomes.",
+        "Record issue #444 evidence and run deterministic gates."
+      ],
+      "acceptance_criteria": [
+        "A governed CLI session event schema or documented event contract exists for called Claude/Codex subprocesses.",
+        "The supervisor can run called Claude worker sessions with explicit model, permission mode or tools, no session persistence, max turns, wall timeout, silence timeout, stdout/stderr capture, process-group cleanup, and bounded retry behavior.",
+        "scripts/codex-review-template.sh claude mode uses the supervisor instead of direct claude -p piping.",
+        "Codex compatibility is preserved through the same supervisor interface or documented upgrade path.",
+        "Silent stalls emit operator-visible status, record idle_timeout evidence, terminate the process group, and do not leave hanging workers.",
+        "Total runtime timeouts record total_timeout evidence and terminate the process group.",
+        "Retry behavior is capped to one relaunch when an explicit retry prompt is provided.",
+        "Event records include future-compatible handoff_package_ref.",
+        "Fake CLI tests cover success, nonzero failure, silent stall, intermittent output, total timeout, retry once, and max-retry halt.",
+        "Direct claude -p script/workflow calls are guarded unless allowlisted.",
+        "No downstream repo edits occur."
+      ],
+      "file_paths": [
+        "docs/schemas/cli-session-event.schema.json",
+        "scripts/cli_session_supervisor.py",
+        "scripts/test_cli_session_supervisor.py",
+        "scripts/codex-review-template.sh",
+        ".github/scripts/check_codex_model_pins.py",
+        "docs/plans/issue-444-cli-session-supervisor-pdcar.md",
+        "docs/plans/issue-444-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-444-cli-session-supervisor-implementation.json",
+        "raw/handoffs/2026-04-21-issue-444-plan-to-implementation.json",
+        "raw/validation/2026-04-21-issue-444-cli-session-supervisor.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Claude Sonnet 4.6",
+      "role": "worker",
+      "focus": "CLI session supervisor implementation, wrapper wiring, guard coverage, and fake CLI tests.",
+      "status": "unavailable_timeout_no_edits",
+      "summary": "Bounded Sonnet worker handoff was attempted with claude-sonnet-4-6 and terminated after prolonged silence with no implementation edits. Codex implemented and QA'd the bounded scope under the material deviation rule.",
+      "evidence": [
+        "docs/plans/issue-444-cli-session-supervisor-pdcar.md",
+        "raw/validation/2026-04-21-issue-444-cli-session-supervisor.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Codex QA",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Codex QA completed after the required Sonnet worker handoff stalled with no edits. The review is recorded as the issue #444 cross-review artifact.",
+    "evidence": [
+      "raw/cross-review/2026-04-21-issue-444-cli-session-supervisor.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement governance-only CLI subprocess supervision, Claude review wrapper routing, direct Claude-call guard coverage, fake CLI tests, issue evidence, validation, review, and closeout for issue #444.",
+    "next_execution_step": "Run Codex QA, focused validation, Opus cross-review or documented availability fallback, Local CI Gate, closeout, PR, and automerge if green.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-444-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-444-cli-session-supervisor-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-444-cli-session-supervisor.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-21-issue-444-cli-session-supervisor.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-444-cli-session-supervisor.md",
+    "next_role": "codex-qa",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Supervisor tests prove silent stalls and total timeouts terminate child process groups.",
+      "Claude review template no longer calls claude -p directly.",
+      "Event schema includes handoff_package_ref and retry metadata.",
+      "Local CI Gate passes before merge."
+    ]
+  },
+  "material_deviation_rules": [
+    "If packet/PR/closeout consumers need CLI session events, create follow-up issues instead of expanding this slice.",
+    "If downstream repos need propagation, create downstream issues instead of editing them here.",
+    "If Sonnet worker tooling is unavailable or hangs, record the attempt and continue with Codex QA plus Opus cross-review."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: no HITL, loop remaining child issues",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T10:52:33-05:00"
+}

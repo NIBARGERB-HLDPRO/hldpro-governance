@@ -1,0 +1,68 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-444-cli-session-supervisor-20260421",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    ".github/scripts/check_codex_model_pins.py",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-444-cli-session-supervisor-pdcar.md",
+    "docs/plans/issue-444-structured-agent-cycle-plan.json",
+    "docs/schemas/cli-session-event.schema.json",
+    "graphify-out/",
+    "raw/closeouts/2026-04-21-issue-444-cli-session-supervisor.md",
+    "raw/cross-review/2026-04-21-issue-444-cli-session-supervisor.md",
+    "raw/execution-scopes/2026-04-21-issue-444-cli-session-supervisor-implementation.json",
+    "raw/handoffs/2026-04-21-issue-444-plan-to-implementation.json",
+    "raw/validation/2026-04-21-issue-444-cli-session-supervisor.md",
+    "scripts/cli_session_supervisor.py",
+    "scripts/codex-review-template.sh",
+    "scripts/test_cli_session_supervisor.py",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #444."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #444."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #444."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #444."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 444,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/444",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-21T10:52:33-05:00"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-opus-4-6",
+    "implementer_model": "gpt-5.4-codex-qa-after-sonnet-timeout",
+    "accepted_at": "2026-04-21T10:52:33-05:00",
+    "evidence_paths": [
+      "docs/plans/issue-444-structured-agent-cycle-plan.json",
+      "raw/handoffs/2026-04-21-issue-444-plan-to-implementation.json"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

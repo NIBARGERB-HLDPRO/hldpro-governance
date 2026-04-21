@@ -7,6 +7,10 @@ allowed = {"gpt-5.4", "gpt-5.3-codex-spark"}
 allowed_ext = {".py", ".sh", ".yml", ".yaml"}
 fail = False
 skip_paths = [pathlib.Path(".claude/worktrees"), pathlib.Path("generated"), pathlib.Path("local")]
+direct_claude_allowlist = {
+    pathlib.Path(".github/scripts/check_codex_model_pins.py"),
+    pathlib.Path("scripts/cli_session_supervisor.py"),
+}
 yaml_ext = {".yml", ".yaml"}
 run_key_re = re.compile(r"^(\s*)run:\s*(.*)$")
 token_starters = {"if", "&&", "||", ";", "|", "(", "then", "do", "{", "!"}
@@ -96,6 +100,19 @@ def inspect_invocation(invocation: list[str], path: pathlib.Path, line_no: int) 
         fail = True
 
 
+def inspect_claude_invocation(invocation: list[str], path: pathlib.Path, line_no: int) -> None:
+    global fail
+    if path in direct_claude_allowlist:
+        return
+    if "-p" not in invocation and "--print" not in invocation:
+        return
+    print(
+        f"::error file={path},line={line_no}::[cli-session-supervisor] direct 'claude -p' is not allowed; "
+        "route Claude CLI calls through scripts/cli_session_supervisor.py"
+    )
+    fail = True
+
+
 def iter_shell_lines(path: pathlib.Path, text: str):
     lines = text.splitlines()
     if path.suffix.lower() not in yaml_ext:
@@ -169,6 +186,17 @@ def inspect_shell(path: pathlib.Path, text: str) -> None:
                 if idx > 0 and tokens[idx - 1] not in token_starters and tokens[idx - 1] not in {";", "&&", "||"}:
                     continue
                 inspect_invocation(tokens[idx + 2 :], path, start_line)
+        if "claude" in command and (" -p" in command or "--print" in command):
+            try:
+                tokens = shlex.split(command)
+            except ValueError:
+                tokens = []
+            for idx, token in enumerate(tokens):
+                if token != "claude":
+                    continue
+                if idx > 0 and tokens[idx - 1] not in token_starters and tokens[idx - 1] not in {";", "&&", "||"}:
+                    continue
+                inspect_claude_invocation(tokens[idx + 1 :], path, start_line)
 
         i += 1
 
@@ -178,8 +206,14 @@ def inspect_python_list(path: pathlib.Path, text: str) -> None:
         tree = ast.parse(text)
     except SyntaxError:
         return
+    parents = {}
+    for parent in ast.walk(tree):
+        for child in ast.iter_child_nodes(parent):
+            parents[child] = parent
     for node in ast.walk(tree):
         if not isinstance(node, (ast.List, ast.Tuple)):
+            continue
+        if isinstance(parents.get(node), (ast.Assert, ast.Compare)):
             continue
         parts: list[str] = []
         for element in node.elts:
@@ -189,6 +223,8 @@ def inspect_python_list(path: pathlib.Path, text: str) -> None:
                 parts = []
                 break
         if len(parts) < 2 or parts[0] != "codex" or parts[1] != "exec":
+            if len(parts) >= 2 and parts[0] == "claude":
+                inspect_claude_invocation(parts[1:], path, getattr(node, "lineno", 1))
             continue
         inspect_invocation(parts[2:], path, getattr(node, "lineno", 1))
 
