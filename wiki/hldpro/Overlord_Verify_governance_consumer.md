@@ -1,35 +1,35 @@
 # Overlord Verify governance consumer
 
-> 152 nodes · cohesion 0.04
+> 37 nodes · cohesion 0.11
 
 ## Key Concepts
 
-- **TestVerifyGovernanceConsumer** (40 connections) — `hldpro-governance/scripts/overlord/test_verify_governance_consumer.py`
-- **._invoke()** (29 connections) — `hldpro-governance/scripts/overlord/test_verify_governance_consumer.py`
-- **._deploy()** (27 connections) — `hldpro-governance/scripts/overlord/test_verify_governance_consumer.py`
-- **deploy_governance_tooling.py** (24 connections) — `hldpro-governance/scripts/overlord/deploy_governance_tooling.py`
-- **._base_args()** (23 connections) — `hldpro-governance/scripts/overlord/test_verify_governance_consumer.py`
-- **main()** (22 connections) — `hldpro-governance/scripts/overlord/deploy_local_ci_gate.py`
-- **._read_record()** (19 connections) — `hldpro-governance/scripts/overlord/test_verify_governance_consumer.py`
-- **._write_record()** (19 connections) — `hldpro-governance/scripts/overlord/test_verify_governance_consumer.py`
-- **build_plan()** (16 connections) — `hldpro-governance/scripts/overlord/deploy_governance_tooling.py`
-- **_write_supporting_files()** (16 connections) — `hldpro-governance/scripts/overlord/test_validate_handoff_package.py`
-- **deploy_local_ci_gate.py** (14 connections) — `hldpro-governance/scripts/overlord/deploy_local_ci_gate.py`
-- **verify()** (12 connections) — `hldpro-governance/scripts/overlord/deploy_governance_tooling.py`
-- **build_plan()** (12 connections) — `hldpro-governance/scripts/overlord/deploy_local_ci_gate.py`
-- **TestOrgRepoInventory** (12 connections) — `hldpro-governance/scripts/overlord/test_check_org_repo_inventory.py`
-- **TestValidateHandoffPackage** (12 connections) — `hldpro-governance/scripts/overlord/test_validate_handoff_package.py`
-- **._run_main()** (12 connections) — `hldpro-governance/scripts/overlord/test_validate_handoff_package.py`
-- **_fail()** (11 connections) — `hldpro-governance/scripts/overlord/deploy_governance_tooling.py`
-- **rollback()** (11 connections) — `hldpro-governance/scripts/overlord/deploy_governance_tooling.py`
-- **TestGraphifyHookHelper** (11 connections) — `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- **main()** (10 connections) — `hldpro-governance/scripts/overlord/deploy_governance_tooling.py`
-- **_write_json()** (10 connections) — `hldpro-governance/scripts/overlord/test_validate_handoff_package.py`
-- **apply()** (9 connections) — `hldpro-governance/scripts/overlord/deploy_governance_tooling.py`
-- **._inventory()** (9 connections) — `hldpro-governance/scripts/overlord/test_check_org_repo_inventory.py`
-- **._registry()** (9 connections) — `hldpro-governance/scripts/overlord/test_check_org_repo_inventory.py`
-- **._run()** (9 connections) — `hldpro-governance/scripts/overlord/test_check_org_repo_inventory.py`
-- *... and 127 more nodes in this community*
+- **verify_governance_consumer.py** (37 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_validate_record()** (19 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **verify()** (7 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_load_consumer_record()** (6 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_fail()** (5 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_forbidden_override_failures()** (4 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_git_root()** (4 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_load_json()** (4 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **main()** (4 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_manifest_profiles()** (4 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **ConsumerVerifyError** (3 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_is_relative_to()** (3 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_is_v2_record()** (3 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_known_profiles()** (3 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_override_records()** (3 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_profile_required_constraints()** (3 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **build_parser()** (2 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_consumer_record_relpath()** (2 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **ConsumerRecord** (2 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_contains_negated_forbidden_action()** (2 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_expected_checksum()** (2 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_expected_managed_paths()** (2 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_initial_package_version()** (2 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_managed_file_entry()** (2 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- **_managed_file_type()** (2 connections) — `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+- *... and 12 more nodes in this community*
 
 ## Relationships
 
@@ -37,24 +37,12 @@
 
 ## Source Files
 
-- `hldpro-governance/repos/ai-integration-services/apps/marketing/src/portal/pages/dashboard/MFAEnroll.tsx`
-- `hldpro-governance/repos/ai-integration-services/apps/marketing/src/portal/pages/dashboard/MFAVerify.tsx`
-- `hldpro-governance/repos/ai-integration-services/apps/portal/src/pages/dashboard/MFAEnroll.tsx`
-- `hldpro-governance/repos/ai-integration-services/apps/portal/src/pages/dashboard/MFAVerify.tsx`
-- `hldpro-governance/scripts/knowledge_base/test_graphify_hook_helper.py`
-- `hldpro-governance/scripts/overlord/deploy_governance_tooling.py`
-- `hldpro-governance/scripts/overlord/deploy_local_ci_gate.py`
-- `hldpro-governance/scripts/overlord/test_check_org_repo_inventory.py`
-- `hldpro-governance/scripts/overlord/test_validate_backlog_gh_sync.py`
-- `hldpro-governance/scripts/overlord/test_validate_handoff_package.py`
-- `hldpro-governance/scripts/overlord/test_verify_governance_consumer.py`
-- `hldpro-governance/scripts/packet/emit.py`
-- `hldpro-governance/scripts/packet/test_emit.py`
+- `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
 
 ## Audit Trail
 
-- EXTRACTED: 818 (87%)
-- INFERRED: 123 (13%)
+- EXTRACTED: 74 (48%)
+- INFERRED: 80 (52%)
 - AMBIGUOUS: 0 (0%)
 
 ---

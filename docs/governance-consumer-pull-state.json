@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "owner_repo": "NIBARGERB-HLDPRO/hldpro-governance",
-  "updated_at": "2026-04-20",
+  "updated_at": "2026-04-21",
   "consumer_record_path": ".hldpro/governance-tooling.json",
   "pinning": {
     "governance_ref": "required_exact_git_sha",
@@ -59,21 +59,21 @@
       }
     },
     "ai-integration-services": {
-      "package_version": "0.1.0-contract",
+      "package_version": "0.2.0-ssot-bootstrap",
       "managed_files": [
         ".hldpro/local-ci.sh",
         ".hldpro/governance-tooling.json"
       ]
     },
     "knocktracker": {
-      "package_version": "0.1.0-contract",
+      "package_version": "0.2.0-ssot-bootstrap",
       "managed_files": [
         ".hldpro/local-ci.sh",
         ".hldpro/governance-tooling.json"
       ]
     },
     "local-ai-machine": {
-      "package_version": "0.1.0-contract",
+      "package_version": "0.2.0-ssot-bootstrap",
       "managed_files": [
         ".hldpro/local-ci.sh",
         ".hldpro/governance-tooling.json"

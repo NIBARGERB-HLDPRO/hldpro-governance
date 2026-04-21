@@ -1,0 +1,86 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-459-plan-to-implementation",
+  "issue_number": 459,
+  "parent_epic_number": 452,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "claude-sonnet-4-6-worker",
+  "structured_plan_ref": "docs/plans/issue-459-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-459-ssot-consumer-adoption-closeout-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": "docs/governance-tooling-package.json",
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Weekly governance sweep reports per-repo SSOT consumer status: profile, governance SHA, package version, managed files, local overrides, verifier status, workflow pin status, and residual drift.",
+      "verification_refs": [
+        "scripts/overlord/report_governance_consumer_status.py",
+        ".github/workflows/overlord-sweep.yml"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Drift report distinguishes critical failures from migration warnings.",
+      "verification_refs": [
+        "scripts/overlord/test_report_governance_consumer_status.py"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Product repo rollout status is mirrored in governance roadmap/progress surfaces with issue refs.",
+      "verification_refs": [
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Epic closeout includes org-level adoption report and residual issue-backed follow-ups.",
+      "verification_refs": [
+        "raw/closeouts/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md",
+        "raw/validation/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "Stage 6 closeout hook and graph/wiki refresh run before done.",
+      "verification_refs": [
+        "raw/closeouts/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m unittest scripts.overlord.test_report_governance_consumer_status",
+    "python3 scripts/overlord/report_governance_consumer_status.py --repos-root /Users/bennibarger/Developer/HLDPRO --output-json /tmp/governance-consumers.json --output-md /tmp/governance-consumers.md",
+    "python3 scripts/overlord/validate_handoff_package.py --root .",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-459-ssot-v02-closeout --require-if-issue-branch",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-459-ssot-consumer-adoption-closeout-implementation.json --require-lane-claim",
+    "tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json",
+    "hooks/closeout-hook.sh raw/closeouts/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    ".github/workflows/overlord-sweep.yml",
+    "scripts/overlord/report_governance_consumer_status.py",
+    "scripts/overlord/test_report_governance_consumer_status.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "docs/plans/issue-459-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-459-ssot-consumer-adoption-closeout-implementation.json",
+    "docs/governance-consumer-pull-state.json",
+    "scripts/overlord/verify_governance_consumer.py",
+    "scripts/overlord/test_verify_governance_consumer.py",
+    "metrics/governance-consumers/latest.json",
+    "metrics/governance-consumers/latest.md"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T19:30:00Z",
+  "notes": "Governance-only implementation package for issue #459 and epic #452 closeout. Downstream repos are read-only status targets only."
+}

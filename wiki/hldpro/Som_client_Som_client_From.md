@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **Build a client from well-known environment variables.** (0 connections) — `hldpro-governance/scripts/som-client/som_client.py`
+- **Build a client from well-known environment variables.** (0 connections) — `scripts/som-client/som_client.py`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/som-client/som_client.py`
+- `scripts/som-client/som_client.py`
 
 ## Audit Trail
 

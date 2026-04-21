@@ -1,0 +1,138 @@
+{
+  "session_id": "session-20260421-issue-459-ssot-consumer-adoption-closeout",
+  "issue_number": 459,
+  "objective": "Add the org-level governance SSOT consumer adoption drift report, wire it into the weekly overlord sweep, and close out epic #452 with issue-backed residual status.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repository only.",
+    "Add a non-mutating cross-repo consumer status reporter.",
+    "Wire the reporter into the weekly overlord sweep report.",
+    "Record org-level adoption status, residual drift, validation, and Stage 6 closeout evidence.",
+    "Update governance roadmap surfaces with issue #459 and epic #452 status."
+  ],
+  "out_of_scope": [
+    "Downstream repository mutations.",
+    "Auto-remediation of consumer drift.",
+    "Changing repository GitHub settings or rulesets.",
+    "Weakening repo-specific HIPAA, plan-mode, LAM, exemption, product-baseline, or trading safety constraints.",
+    "Replacing the existing single-repo verifier."
+  ],
+  "research_summary": "Issue #459 is the final SSOT v0.2 rollout child. Prior child issues propagated the consumer metadata to LAM and downstream product/exempt repos. The remaining gap is a governance-owned weekly sweep/report surface that summarizes each repo's profile, governance SHA, package version, managed files, overrides, verifier status, workflow pin status, and residual drift while distinguishing critical failures from migration warnings.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/459",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/452",
+    "scripts/overlord/verify_governance_consumer.py",
+    "scripts/overlord/governed_repos.py",
+    "docs/governance-consumer-pull-state.json",
+    "docs/governance-tooling-package.json",
+    ".github/workflows/overlord-sweep.yml",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Org consumer adoption report",
+      "goal": "Produce a deterministic, non-mutating report across governed repos and expose it in the weekly sweep.",
+      "tasks": [
+        "Add a reporter that resolves sweep-enabled governed repos from the registry.",
+        "Reuse the existing consumer verifier for per-repo status.",
+        "Report profile, governance SHA, package version, managed files, local overrides, verifier status, workflow pin status, and residual drift.",
+        "Classify verifier failures as critical failures and warnings as migration warnings.",
+        "Emit both Markdown and JSON outputs.",
+        "Wire the reporter into overlord-sweep and focused Local CI coverage.",
+        "Add tests for passing, missing-record critical, warning-only, and workflow-pin drift cases.",
+        "Refine report classification so exact stale workflow SHAs are migration warnings while mutable refs remain critical.",
+        "Tighten forbidden override detection so negated guardrail language such as may not weaken is not a false critical."
+      ],
+      "acceptance_criteria": [
+        "Weekly governance sweep can report every sweep-enabled consumer repo's profile, governance SHA, package version, managed files, local overrides, verifier status, workflow pin status, and residual drift.",
+        "The report distinguishes critical failures from migration warnings.",
+        "JSON and Markdown report outputs are deterministic enough for tests and weekly artifacts.",
+        "Product repo rollout status is mirrored in governance roadmap/progress surfaces with issue refs.",
+        "Epic closeout includes org-level adoption report and residual issue-backed follow-ups.",
+        "Stage 6 closeout hook and graph/wiki refresh run before done."
+      ],
+      "file_paths": [
+        ".github/workflows/overlord-sweep.yml",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md",
+        "docs/plans/issue-459-structured-agent-cycle-plan.json",
+        "docs/plans/issue-459-ssot-consumer-adoption-closeout-pdcar.md",
+        "metrics/governance-consumers/",
+        "raw/closeouts/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md",
+        "raw/execution-scopes/2026-04-21-issue-459-ssot-consumer-adoption-closeout-implementation.json",
+        "raw/handoffs/2026-04-21-issue-459-plan-to-implementation.json",
+        "raw/validation/2026-04-21-issue-459-sonnet-worker-brief.md",
+        "raw/validation/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md",
+        "scripts/overlord/report_governance_consumer_status.py",
+        "scripts/overlord/test_report_governance_consumer_status.py",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "docs/governance-consumer-pull-state.json",
+        "scripts/overlord/verify_governance_consumer.py",
+        "scripts/overlord/test_verify_governance_consumer.py",
+        "metrics/governance-consumers/latest.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex orchestrator",
+      "role": "research",
+      "focus": "Current verifier, sweep workflow, governed repo registry, local CI profile, and closeout protocol.",
+      "status": "accepted",
+      "summary": "The implementation can remain governance-only by adding a reporter around the existing verifier and wiring it into the scheduled sweep. Downstream remediation remains issue-backed follow-up work.",
+      "evidence": [
+        "scripts/overlord/verify_governance_consumer.py",
+        ".github/workflows/overlord-sweep.yml",
+        "scripts/overlord/governed_repos.py",
+        "CLAUDE.md Stage 6 protocol"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Codex QA",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Codex QA will review the Sonnet worker diff, run focused tests, run Local CI Gate, validate the closeout hook, and verify PR checks before merge.",
+    "evidence": [
+      "raw/validation/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Governance-only implementation of the issue #459 SSOT consumer adoption drift report and closeout artifacts.",
+    "next_execution_step": "Run supervised Claude Sonnet worker for the bounded implementation slice, then Codex QA/gates and Stage 6 closeout.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-459-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-459-ssot-consumer-adoption-closeout-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": "docs/governance-tooling-package.json",
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md"
+    ],
+    "review_artifact_refs": [],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-459-ssot-consumer-adoption-closeout.md",
+    "next_role": "claude-sonnet-4-6-worker",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Reporter is non-mutating.",
+      "Reporter emits per-repo consumer status and separates critical failures from migration warnings.",
+      "Weekly sweep includes the report.",
+      "Focused tests and Local CI Gate pass before merge.",
+      "Stage 6 closeout is recorded before issue closure."
+    ]
+  },
+  "material_deviation_rules": [
+    "If a downstream repo shows drift, record it in the report and route remediation to issue-backed follow-up instead of editing the repo here.",
+    "If the supervised Sonnet worker stalls, preserve session evidence and continue with Codex orchestration plus Codex QA.",
+    "If Local CI surfaces unrelated pre-existing drift, record it in validation and do not broaden the implementation scope."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: loop remaining child issues, no HITL",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T19:30:00Z"
+}
