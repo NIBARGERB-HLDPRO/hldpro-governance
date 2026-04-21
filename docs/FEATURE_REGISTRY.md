@@ -54,6 +54,7 @@
 | GOV-027 | CODEX_FIRE_FAILFAST | Fail-fast Codex dispatcher wrapper with bounded model preflight and structured failure logging | IN_PROGRESS | OPS_READY |
 | GOV-028 | REMOTE_MCP_BRIDGE_GOVERNANCE | Remote MCP Bridge standards, thin client contract, audit verifier, Stage D proof runner, recurring health monitor, payload-safe alerts, and operator runbook | IN_PROGRESS | REQUIRED |
 | GOV-029 | PAGES_DEPLOY_GATE | Pages Deploy Gate (governance-owned, issue #469) | COMPLETE | OPS_READY |
+| GOV-030 | PAGES_DEPLOYMENT_PARITY | Cloudflare Pages deployment freshness and domain parity verifier | COMPLETE | OPS_READY |
 
 ---
 
@@ -143,6 +144,12 @@
 | GOV-019 | Planner write-boundary enforcement now treats Tier 1 sessions as planning-only by default (`execution_mode: planning_only`), with `allowed_write_paths` as the planning artifact allowlist. |
 | GOV-019 | Non-planning diffs now require accepted pinned-agent handoff evidence, and same-model or same-family planner/implementer pairs require an active exception reference with expiry. |
 | GOV-019 | For planner-boundary enforcement, CI in `.github/workflows/governance-check.yml` is authoritative while local `hooks/code-write-gate.sh` output is warning/early-signal only. |
+
+### PAGES_DEPLOYMENT_PARITY
+
+| Feature ID | Notes |
+|---|---|
+| GOV-029 | `scripts/pages-deploy/pages_deploy_verifier.py` verifies Cloudflare Pages freshness across the Pages alias and custom domains using the stable `/cdn-cgi/pages/deployment` endpoint or `cf-deployment-id` header, records redirect/status chains, cache-busts every request, retries transient failures, refuses stale local checkouts before HTTP probes, and treats inactive custom-domain/CNAME findings as nonblocking operator concerns. |
 
 ### READ_ONLY_GOVERNANCE_OBSERVER
 
