@@ -1,0 +1,48 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-470-pages-deploy-verifier-20260421",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/plans/2026-04-21-issue-470-pages-deploy-verifier-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-470-pages-deploy-verifier-implementation.json",
+    "raw/validation/2026-04-21-issue-470-pages-deploy-verifier.md",
+    "scripts/pages-deploy/pages_deploy_verifier.py",
+    "scripts/pages-deploy/tests/test_pages_deploy_verifier.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary checkout is out of scope for issue #470; implementation is confined to this issue worktree."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 470,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/470",
+    "claimed_by": "gpt-5.4 (operator-directed fallback; codex-spark quota blocked 2026-04-24)",
+    "claimed_at": "2026-04-21T00:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-brief",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-21T00:00:00Z",
+    "evidence_paths": [
+      "/tmp/issue-470-brief.md",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/470"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}

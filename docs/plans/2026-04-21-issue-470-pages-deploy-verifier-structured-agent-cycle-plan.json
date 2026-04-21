@@ -1,0 +1,90 @@
+{
+  "session_id": "session-20260421-issue-470-pages-deploy-verifier",
+  "issue_number": 470,
+  "objective": "Ship the governance-owned Pages deploy freshness and domain parity verifier (Sprint 3 of epic #467). Implements scripts/pages-deploy/pages_deploy_verifier.py with retry/backoff, cache-busting, redirect-chain recording, stable deployment-id checks, stale-checkout guard, per-domain report, and mocked pytest coverage.",
+  "tier": 2,
+  "scope_boundary": [
+    "Sprint 3 of 5 of epic #467; implements the freshness/parity verifier as a standalone governance-owned script.",
+    "No writes to seek-and-ponder or any downstream consumer repo; downstream adoption is seek-and-ponder issue #163."
+  ],
+  "out_of_scope": [
+    "seek-and-ponder repo writes; downstream adoption is seek-and-ponder issue #163.",
+    "Cloudflare Pages gate implementation (issue #469).",
+    "Sprint 4/5 work (issues #471/#472)."
+  ],
+  "research_summary": "Sprint 3 of epic #467. Parent plan approved in issue-467-pages-deploy-gate-structured-agent-cycle-plan.json (issue_number: 468, approved by claude-opus-4-6 + gpt-5.4). Verifier requirements derived from Sprint 3 ACs: stale-checkout guard, retry/backoff (3 attempts, 30s window), Cache-Control: no-cache + cache-bust query param, redirect-chain recording, cf-deployment-id header as stable endpoint (no HTML scraping), per-domain report fields (active, deployment-id match, HTTP status, redirect chain, asset-hash mismatch), inactive/CNAME mismatch is non-blocking. Implemented by gpt-5.4 worker; 12/12 pytest cases pass.",
+  "research_artifacts": [
+    "docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/470",
+    "scripts/pages-deploy/pages_deploy_verifier.py",
+    "scripts/pages-deploy/tests/test_pages_deploy_verifier.py"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 3 - Freshness + domain parity verifier (issue #470)",
+      "goal": "Ship scripts/pages-deploy/pages_deploy_verifier.py with full pytest coverage per Sprint 3 ACs from the parent plan.",
+      "tasks": [
+        "Implement pages_deploy_verifier.py: stale-checkout guard, cache-busting, retry/backoff, redirect-chain recording, cf-deployment-id header check, per-domain report.",
+        "Author scripts/pages-deploy/tests/test_pages_deploy_verifier.py covering drift detection, parity-disagreement, retry/backoff, redirect-chain, and stable-endpoint checks.",
+        "Record validation at raw/validation/2026-04-21-issue-470-pages-deploy-verifier.md."
+      ],
+      "acceptance_criteria": [
+        "scripts/pages-deploy/pages_deploy_verifier.py exists and all 12 pytest cases pass.",
+        "Verifier retries with exponential backoff up to 3 attempts within a 30s total window.",
+        "Verifier sends Cache-Control: no-cache and a cache-busting query parameter on every probe.",
+        "Verifier follows HTTP redirects and records the final URL and full status chain.",
+        "Verifier uses cf-deployment-id header for stable comparison; no HTML scraping.",
+        "Stale-checkout guard refuses to run against a non-current working tree.",
+        "Inactive domain or CNAME mismatch is reported but does not block the deploy gate."
+      ],
+      "file_paths": [
+        "scripts/pages-deploy/pages_deploy_verifier.py",
+        "scripts/pages-deploy/tests/test_pages_deploy_verifier.py",
+        "raw/validation/2026-04-21-issue-470-pages-deploy-verifier.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "gpt-5.4 (operator-directed Tier 2 worker; codex-spark quota blocked 2026-04-24)",
+      "role": "Sprint 3 implementer",
+      "focus": "Freshness/parity verifier per Sprint 3 ACs: stale-checkout guard, retry/backoff, cache-busting, redirect chains, cf-deployment-id endpoint, per-domain report, non-blocking inactive domains.",
+      "status": "accepted",
+      "summary": "Implementation complete; 12/12 pytest cases pass covering all Sprint 3 acceptance criteria from the parent plan.",
+      "evidence": [
+        "scripts/pages-deploy/pages_deploy_verifier.py",
+        "scripts/pages-deploy/tests/test_pages_deploy_verifier.py",
+        "raw/validation/2026-04-21-issue-470-pages-deploy-verifier.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "n/a - covered by parent plan review",
+    "model_family": "n/a",
+    "status": "not_required",
+    "summary": "Sprint 3 is a child implementation sprint fully specified in the pre-approved parent plan (issue-467-pages-deploy-gate-structured-agent-cycle-plan.json, approved by claude-opus-4-6 + gpt-5.4). No new architecture changes and no STANDARDS.md modifications.",
+    "evidence": [
+      "docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "gpt-5.4",
+    "execution_mode": "implementation_complete",
+    "approved_scope_summary": "Sprint 3 verifier implementation complete; 12 tests pass; validation evidence committed on issue-470-pages-deploy-verifier-20260421 branch.",
+    "next_execution_step": "Orchestrator merges PR #482 then fires Sprint 4 (issue #471 seek first-consumer adoption).",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-470-pages-deploy-verifier-implementation.json",
+    "next_role": "orchestrator",
+    "qa_gate_required": false
+  },
+  "material_deviation_rules": [
+    "No writes to downstream repos from this lane; seek adoption is seek-and-ponder issue #163 under its own lane claim.",
+    "Sprint expansion: if implementation discovers work outside acceptance criteria, open a new governance issue before closing this sprint."
+  ],
+  "approved": true,
+  "approved_by": [
+    "gpt-5.4 (Sprint 3 implementer; parent plan pre-approved by claude-opus-4-6 + gpt-5.4)"
+  ],
+  "approved_at": "2026-04-21T00:00:00Z"
+}
