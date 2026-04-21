@@ -1,12 +1,19 @@
 {
   "expected_execution_root": "{repo_root}",
-  "expected_branch": "issue-487-overlord-sweep-artifact-pr-token",
+  "expected_branch": "automation/issue-487-overlord-sweep-2026-04-21-24739922689",
   "allowed_write_paths": [
-    ".github/workflows/overlord-sweep.yml",
+    "docs/ORG_GOVERNANCE_COMPENDIUM.md",
     "docs/plans/issue-487-overlord-sweep-artifact-pr-pdcar.md",
     "docs/plans/issue-487-overlord-sweep-artifact-pr-structured-agent-cycle-plan.json",
+    "docs/plans/issue-487-overlord-sweep-generated-artifacts-structured-agent-cycle-plan.json",
+    "graphify-out/",
+    "metrics/effectiveness-baseline/",
+    "metrics/pentagi/",
+    "metrics/self-learning/",
     "raw/execution-scopes/2026-04-21-issue-487-overlord-sweep-artifact-pr-implementation.json",
-    "raw/validation/2026-04-21-issue-487-overlord-sweep-artifact-pr.md"
+    "raw/validation/2026-04-21-issue-487-overlord-sweep-artifact-pr.md",
+    "raw/validation/2026-04-21-issue-487-overlord-sweep-generated-artifacts.md",
+    "wiki/"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
@@ -31,6 +38,9 @@
     "accepted_at": "2026-04-21T18:31:00Z",
     "evidence_paths": [
       "docs/plans/issue-487-overlord-sweep-artifact-pr-structured-agent-cycle-plan.json",
+      "docs/plans/issue-487-overlord-sweep-generated-artifacts-structured-agent-cycle-plan.json",
+      "raw/validation/2026-04-21-issue-487-overlord-sweep-generated-artifacts.md",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/actions/runs/24739922689",
       "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/487"
     ],
     "active_exception_ref": null,
