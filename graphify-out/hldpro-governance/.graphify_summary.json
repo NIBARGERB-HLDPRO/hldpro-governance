@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-445-lane-bootstrap/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-445-lane-bootstrap/wiki/hldpro",
-  "nodes": 1574,
-  "edges": 2991,
-  "communities": 85,
-  "articles": 95,
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-454-consumer-verifier-v02/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-454-consumer-verifier-v02/wiki/hldpro",
+  "nodes": 1599,
+  "edges": 3072,
+  "communities": 84,
+  "articles": 94,
   "html_status": "skipped",
   "code_files": 120
 }

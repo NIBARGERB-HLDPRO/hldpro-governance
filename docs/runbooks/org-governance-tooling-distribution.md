@@ -200,6 +200,16 @@ python3 scripts/overlord/verify_governance_consumer.py \
 
 The verifier reads the consumer repo's `.hldpro/governance-tooling.json`, checks that `governance_ref` is an exact 40-character git SHA, confirms the package version/profile, and verifies that expected managed files exist without escaping the repo root. For the managed Local CI shim, it also checks the governance marker and the pinned ref.
 
+For SSOT bootstrap v0.2 records, the verifier remains report-only but also reports:
+
+- unknown or missing repo profiles,
+- mutable reusable workflow refs such as `@main`,
+- managed hook/content checksum drift,
+- managed files missing governance markers,
+- missing or invalid local override metadata,
+- missing profile constraints for HP, Seek, LAM, Stampede, and ASC profiles,
+- observed local overrides in a separate `observed_overrides` JSON bucket.
+
 This is the boundary between repo-pulled rules and centrally applied GitHub policy:
 
 - Repo-pulled: consumer record, managed shim, Local CI profile, package-core verifier/evaluator logic, and PR-visible drift reporting.

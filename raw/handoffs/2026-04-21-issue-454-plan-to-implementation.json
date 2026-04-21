@@ -1,0 +1,47 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-454-plan-to-implementation",
+  "issue_number": 454,
+  "parent_epic_number": 452,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-fallback-implementer",
+  "structured_plan_ref": "docs/plans/issue-454-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-454-consumer-verifier-v02-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {"id": "AC1", "statement": "Verifier supports package v0.2 profile/override validation in report-only mode.", "verification_refs": ["scripts/overlord/verify_governance_consumer.py", "scripts/overlord/test_verify_governance_consumer.py"]},
+    {"id": "AC2", "statement": "Verifier output separates failures, warnings, and observed local overrides.", "verification_refs": ["scripts/overlord/test_verify_governance_consumer.py", "raw/validation/2026-04-21-issue-454-consumer-verifier-v02.md"]},
+    {"id": "AC3", "statement": "Existing v0.1 verifier behavior remains compatible and a local downstream read-only proof passes.", "verification_refs": ["scripts/overlord/test_verify_governance_consumer.py", "raw/validation/2026-04-21-issue-454-consumer-verifier-v02.md"]}
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_verify_governance_consumer.py",
+    "python3 -m unittest scripts.overlord.test_deploy_governance_tooling scripts.overlord.test_verify_governance_consumer",
+    "python3 -m py_compile scripts/overlord/verify_governance_consumer.py",
+    "python3 -m json.tool docs/governance-consumer-pull-state.json",
+    "python3 scripts/overlord/verify_governance_consumer.py --target-repo /Users/bennibarger/Developer/HLDPRO/local-ai-machine --profile local-ai-machine --governance-ref ee6eba894e879de79dc0cfd0cf64ae29b703e3c4 --package-version 0.1.0-contract",
+    "python3 scripts/overlord/test_validate_handoff_package.py",
+    "python3 scripts/overlord/validate_handoff_package.py --root .",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-454-consumer-verifier-v02 --require-if-issue-branch",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-454-consumer-verifier-v02-implementation.json --require-lane-claim",
+    "tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json"
+  ],
+  "review_artifact_refs": ["raw/cross-review/2026-04-21-issue-454-consumer-verifier-v02.md"],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "docs/governance-consumer-pull-state.json",
+    "docs/runbooks/org-governance-tooling-distribution.md",
+    "scripts/overlord/verify_governance_consumer.py",
+    "scripts/overlord/test_verify_governance_consumer.py",
+    "docs/plans/issue-454-consumer-verifier-v02-pdcar.md",
+    "docs/plans/issue-454-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-454-consumer-verifier-v02-implementation.json"
+  ],
+  "audit_refs": ["raw/validation/2026-04-21-issue-454-consumer-verifier-v02.md"],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T17:14:00Z",
+  "notes": "Governance-only report-only consumer verifier v0.2 drift implementation package for issue #454."
+}
