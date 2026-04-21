@@ -1,0 +1,107 @@
+{
+  "session_id": "session-20260421-issue-494-stampede-111-closeout",
+  "issue_number": 494,
+  "objective": "Stage 6 closeout for Stampede #111: launchd service path migration from /tmp to permanent clone",
+  "tier": 1,
+  "scope_boundary": [
+    "hldpro-governance repository only.",
+    "Create Stage 6 closeout artifacts for Stampede issue #111 service path migration.",
+    "Record validation evidence for the three launchd services now running from permanent path.",
+    "Update OVERLORD_BACKLOG.md Done table with completed entry."
+  ],
+  "out_of_scope": [
+    "Stampede repo edits.",
+    "Changing launchd plist files or install scripts.",
+    "Modifying any other governance surface files beyond closeout artifacts."
+  ],
+  "research_summary": "Stampede PR #113 (merged 2026-04-21) moved all three launchd services from ephemeral /private/tmp/stampede-main to the permanent clone at ~/Developer/HLDPRO/Stampede. launchd templates and install_services.sh were added to the Stampede repo. Cache was migrated and services relaunched with PIDs 91110, 91122, 91132 confirmed.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/Stampede/issues/111",
+    "https://github.com/NIBARGERB-HLDPRO/Stampede/pull/113",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/494"
+  ],
+  "sprints": [
+    {
+      "name": "Stage 6 closeout artifact creation",
+      "goal": "Create all required governance artifacts for Stage 6 closeout of Stampede #111 service path migration.",
+      "tasks": [
+        "Create structured agent cycle plan JSON.",
+        "Create execution scope JSON with allowed write paths.",
+        "Create handoff JSON in implementation_ready state.",
+        "Create validation log with PASS results for all service checks.",
+        "Update closeout document to reference all artifacts and fix residual risks.",
+        "Update OVERLORD_BACKLOG.md Done section with completed entry."
+      ],
+      "acceptance_criteria": [
+        "All 6 governance artifact files created and valid.",
+        "Closeout document residual risks each have a GitHub issue link or state None.",
+        "OVERLORD_BACKLOG.md Done section has a new row for Stampede #111 / governance #494.",
+        "closeout-hook.sh passes on the closeout document.",
+        "Branch pushed to origin."
+      ],
+      "file_paths": [
+        "docs/plans/issue-494-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-494-stampede-111-closeout-implementation.json",
+        "raw/handoffs/2026-04-21-issue-494-stampede-111-closeout.json",
+        "raw/validation/2026-04-21-issue-494-stampede-111-closeout.md",
+        "raw/closeouts/2026-04-21-stampede-issue-111-permanent-services.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "claude-sonnet-4-6",
+      "role": "orchestrator",
+      "focus": "Closeout artifact creation and governance surface compliance.",
+      "status": "accepted",
+      "summary": "Orchestrator verified all closeout artifacts are consistent with the schema contracts and that the Stampede PR #113 evidence supports the PASS verdicts.",
+      "evidence": [
+        "raw/validation/2026-04-21-issue-494-stampede-111-closeout.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": null,
+    "model_family": null,
+    "status": "n/a",
+    "summary": "No architecture or standards scope; alternate model review not required for infrastructure closeout.",
+    "evidence": ["raw/validation/2026-04-21-issue-494-stampede-111-closeout.md"]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-sonnet-4-6 dispatcher",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Create governance Stage 6 closeout artifacts for Stampede issue #111 service path migration.",
+    "next_execution_step": "Create all artifact files in the worktree, run closeout-hook.sh, commit, and push.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-494-stampede-111-closeout.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-494-stampede-111-closeout-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-494-stampede-111-closeout.md"
+    ],
+    "review_artifact_refs": [],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-stampede-issue-111-permanent-services.md",
+    "next_role": "operator",
+    "qa_gate_required": false,
+    "handoff_acceptance_criteria": [
+      "All closeout artifacts created with correct schema.",
+      "Residual risks have issue links or None.",
+      "OVERLORD_BACKLOG.md updated.",
+      "closeout-hook.sh passes."
+    ]
+  },
+  "material_deviation_rules": [
+    "If closeout-hook.sh fails validation, fix the artifact before committing.",
+    "Do not edit Stampede repo files from governance worktree."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction",
+    "claude-sonnet-4-6"
+  ],
+  "approved_at": "2026-04-21T18:30:00Z"
+}
