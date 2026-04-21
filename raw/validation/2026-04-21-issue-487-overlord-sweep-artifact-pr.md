@@ -14,4 +14,5 @@ Issue: #487
 
 ## Remote Evidence
 
-Pending PR merge and follow-up manual Overlord Sweep dispatch.
+- Run `24739685759` after PR #488: branch push reached `automation/overlord-sweep-2026-04-21-24739685759`, but PR creation failed because the default `GITHUB_TOKEN` is not permitted to create pull requests in this repository.
+- Follow-up patch switches persistence and report issue `GH_TOKEN` to `${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}` to match the existing cross-repo sweep token pattern.

@@ -622,7 +622,7 @@ jobs:
       - name: Commit updated graph
         id: persist_baseline
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           set +e
           git config user.name "overlord-bot"
@@ -689,7 +689,7 @@ jobs:
       # ── Create or update GitHub Issue ──
       - name: Create or update overlord report issue
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_CROSS_REPO_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           DATE=$(date -u +%Y-%m-%d)
 
