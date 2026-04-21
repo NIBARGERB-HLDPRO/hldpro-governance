@@ -1,0 +1,34 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-519-governance-catchup-20260421",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "docs/plans/issue-519-governance-catchup-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-519-governance-catchup-implementation.json",
+    "raw/validation/2026-04-21-issue-519-governance-catchup.md",
+    "raw/closeouts/2026-04-21-issue-519-governance-catchup.md",
+    "wiki/healthcareplatform/Training_assignments.md",
+    "wiki/hldpro/Repos_Ai_integration.md",
+    "wiki/hldpro/Repos_Healthcare_platform.md"
+  ],
+  "forbidden_roots": [],
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 519,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/519",
+    "claimed_by": "codex-orchestrator",
+    "claimed_at": "2026-04-21T21:35:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-directive",
+    "implementer_model": "codex-orchestrator",
+    "accepted_at": "2026-04-21T21:35:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-519-governance-catchup-structured-agent-cycle-plan.json",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/519"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  }
+}
