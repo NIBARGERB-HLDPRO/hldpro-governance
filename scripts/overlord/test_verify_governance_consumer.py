@@ -134,6 +134,25 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         self.assertEqual(stdout, "")
         self.assertIn("consumer record missing", stderr)
 
+    def test_verify_fails_when_governance_root_is_typoed(self) -> None:
+        self._deploy()
+        missing_root = self.root / "hldpro-governnance"
+
+        code, stdout, stderr = self._invoke(
+            "--governance-root",
+            str(missing_root),
+            "--target-repo",
+            str(self.product),
+            "--profile",
+            "hldpro-governance",
+            "--governance-ref",
+            self.ref,
+        )
+
+        self.assertEqual(code, 1)
+        self.assertEqual(stdout, "")
+        self.assertIn("governance root does not exist", stderr)
+
     def test_verify_fails_when_record_is_malformed_shape(self) -> None:
         record = self.product / ".hldpro" / "governance-tooling.json"
         record.parent.mkdir(parents=True)
@@ -297,6 +316,27 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         self.assertIn("reusable workflow ref SHA mismatch", failures_text)
         self.assertIn(wrong_sha, failures_text)
 
+    def test_verify_fails_stale_workflow_ref_before_acceptance(self) -> None:
+        self._deploy()
+        workflow = self.product / ".github" / "workflows" / "governance.yml"
+        workflow.parent.mkdir(parents=True)
+        stale_sha = "c" * 40
+        workflow.write_text(
+            "jobs:\n"
+            "  governance:\n"
+            "    uses: "
+            f"NIBARGERB-HLDPRO/hldpro-governance/.github/workflows/governance-check.yml@{stale_sha}\n",
+            encoding="utf-8",
+        )
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("reusable workflow ref SHA mismatch", failures_text)
+        self.assertIn(stale_sha, failures_text)
+
     def test_verify_fails_for_managed_hook_checksum_drift(self) -> None:
         self._deploy()
         hook = self.product / ".claude" / "hooks" / "pre-tool-use.sh"
@@ -346,6 +386,21 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         self.assertEqual(payload["observed_overrides"], [{"issue": "#454", "reason": "fixture"}])
         self.assertIn("missing required override metadata: owner", "\n".join(payload["failures"]))
         self.assertIn("review_cadence or expires_at", "\n".join(payload["failures"]))
+
+    def test_verify_fails_for_malformed_local_overrides(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        record["local_overrides"] = [{"issue": "#537", "reason": "fixture"}]
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        self.assertEqual(payload["observed_overrides"], [{"issue": "#537", "reason": "fixture"}])
+        failures_text = "\n".join(payload["failures"])
+        self.assertIn("local_overrides[0] missing required override metadata: owner", failures_text)
+        self.assertIn("local_overrides[0] missing required override metadata: review_cadence or expires_at", failures_text)
 
     def test_verify_fails_override_empty_owner(self) -> None:
         self._deploy()

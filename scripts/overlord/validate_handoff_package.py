@@ -59,6 +59,18 @@ SCOPE_REQUIRED_STATES = {
 }
 PACKET_REQUIRED_STATES = {"validation_ready", "accepted", "released", "consumed"}
 CLOSEOUT_REQUIRED_STATES = {"accepted", "released", "consumed", "deprecated", "rolled_back", "archived"}
+CONSUMER_VERIFIER_COMMAND = "verify_governance_consumer.py"
+CONSUMER_VERIFIER_ACCEPTANCE_GATE_CREATED_AT = "2026-04-21T22:33:23Z"
+CONSUMER_MANAGED_PATH_PREFIXES = (
+    ".hldpro/",
+    ".governance/",
+)
+CONSUMER_MANAGED_PATHS = {
+    "docs/governance-consumer-pull-state.json",
+    "docs/governance-tooling-package.json",
+    "scripts/overlord/verify_governance_consumer.py",
+    "scripts/overlord/test_verify_governance_consumer.py",
+}
 
 
 def _is_url(value: str) -> bool:
@@ -166,6 +178,79 @@ def _validate_acceptance_criteria(
                 )
 
 
+def _consumer_managed_paths(scope_payload: dict[str, Any]) -> list[str]:
+    allowed_write_paths = scope_payload.get("allowed_write_paths")
+    if not isinstance(allowed_write_paths, list):
+        return []
+    managed: list[str] = []
+    for item in allowed_write_paths:
+        if not isinstance(item, str):
+            continue
+        normalized = item.strip()
+        while normalized.startswith("./"):
+            normalized = normalized[2:]
+        if normalized in CONSUMER_MANAGED_PATHS or normalized.startswith(CONSUMER_MANAGED_PATH_PREFIXES):
+            managed.append(normalized)
+    return sorted(set(managed))
+
+
+def _criteria_verification_refs(payload: dict[str, Any]) -> list[str]:
+    refs: list[str] = []
+    criteria = payload.get("acceptance_criteria")
+    if not isinstance(criteria, list):
+        return refs
+    for criterion in criteria:
+        if not isinstance(criterion, dict):
+            continue
+        raw_refs = criterion.get("verification_refs")
+        if isinstance(raw_refs, list):
+            refs.extend(str(item) for item in raw_refs if str(item))
+    return refs
+
+
+def _consumer_verifier_acceptance_gate_applies(payload: dict[str, Any]) -> bool:
+    created_at = payload.get("created_at")
+    if not isinstance(created_at, str) or not created_at:
+        return True
+    return created_at >= CONSUMER_VERIFIER_ACCEPTANCE_GATE_CREATED_AT
+
+
+def _validate_consumer_verifier_acceptance(
+    package_path: Path,
+    payload: dict[str, Any],
+    scope_payload: Any | None,
+    failures: list[str],
+) -> None:
+    if payload.get("handoff_decision") != "accepted":
+        return
+    if not _consumer_verifier_acceptance_gate_applies(payload):
+        return
+    if not isinstance(scope_payload, dict):
+        return
+    managed_paths = _consumer_managed_paths(scope_payload)
+    if not managed_paths:
+        return
+
+    validation_commands = payload.get("validation_commands")
+    command_text = "\n".join(item for item in validation_commands if isinstance(item, str)) if isinstance(validation_commands, list) else ""
+    if CONSUMER_VERIFIER_COMMAND not in command_text:
+        failures.append(
+            f"{package_path}: accepted handoff touching consumer-managed path(s) "
+            f"{', '.join(managed_paths)} requires a `{CONSUMER_VERIFIER_COMMAND}` validation command"
+        )
+
+    evidence_refs = _criteria_verification_refs(payload)
+    gate_refs = payload.get("gate_artifact_refs")
+    if isinstance(gate_refs, list):
+        evidence_refs.extend(item for item in gate_refs if isinstance(item, str))
+    evidence_text = "\n".join(evidence_refs)
+    if CONSUMER_VERIFIER_COMMAND not in evidence_text and "raw/validation/" not in evidence_text:
+        failures.append(
+            f"{package_path}: accepted handoff touching consumer-managed path(s) "
+            f"{', '.join(managed_paths)} requires verifier evidence refs in acceptance criteria or gate artifacts"
+        )
+
+
 def validate_package(root: Path, package_path: Path) -> list[str]:
     failures: list[str] = []
     try:
@@ -216,6 +301,7 @@ def validate_package(root: Path, package_path: Path) -> list[str]:
     execution_scope_ref = payload.get("execution_scope_ref")
     if lifecycle_state in SCOPE_REQUIRED_STATES and not execution_scope_ref:
         failures.append(f"{package_path}: lifecycle_state {lifecycle_state!r} requires `execution_scope_ref`")
+    scope_payload: Any | None = None
     if isinstance(execution_scope_ref, str):
         try:
             scope_ref = _normalize_repo_path(execution_scope_ref, "execution_scope_ref", package_path)
@@ -254,6 +340,7 @@ def validate_package(root: Path, package_path: Path) -> list[str]:
         failures.append(f"{package_path}: lifecycle_state {lifecycle_state!r} requires non-empty `validation_commands`")
 
     _validate_acceptance_criteria(root, package_path, payload, failures)
+    _validate_consumer_verifier_acceptance(package_path, payload, scope_payload, failures)
     for field_name in ["review_artifact_refs", "gate_artifact_refs", "artifact_refs", "audit_refs"]:
         _validate_ref_array(root, package_path, payload, field_name, failures)
 

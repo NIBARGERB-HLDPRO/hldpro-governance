@@ -156,6 +156,19 @@ class TestWorkerHandoffRoute(unittest.TestCase):
         self.assertNotEqual(code, 0)
         self.assertIn("active_exception_ref", payload["reason"])
 
+    def test_worker_handoff_with_unsafe_evidence_ref_is_blocked(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            repo = RepoFixture(Path(raw) / "repo")
+            scope = _scope()
+            scope["handoff_evidence"]["evidence_paths"] = ["../outside.md"]
+            repo.write_scope(scope)
+
+            code, payload = self._run(repo, "scripts/new_worker.py")
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("Worker handoff scope is invalid", payload["reason"])
+        self.assertIn("evidence_paths", payload["reason"])
+
     def test_same_family_worker_handoff_with_active_exception_is_accepted(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             repo = RepoFixture(Path(raw) / "repo")

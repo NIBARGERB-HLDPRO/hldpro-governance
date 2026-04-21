@@ -187,6 +187,28 @@ class TestAssertExecutionScope(unittest.TestCase):
         self.assertNotEqual(code, 0)
         self.assertIn("requires `handoff_evidence.status` == 'accepted'", output)
 
+    def test_non_planning_rejects_unsafe_handoff_evidence_ref(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            handoff = self._handoff(
+                planner_model="gpt-5",
+                implementer_model="claude-3-7-sonnet",
+            )
+            handoff["evidence_paths"] = ["../outside.md"]
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="implementation_ready",
+                handoff_evidence=handoff,
+            )
+
+            code, output = self._run_main(repo.root, scope)
+
+        self.assertEqual(code, 2)
+        self.assertIn("handoff_evidence.evidence_paths[1]", output)
+        self.assertIn("must not traverse parent directories", output)
+
     def test_non_planning_with_accepted_handoff_passes(self) -> None:
         with tempfile.TemporaryDirectory() as raw_tmpdir:
             tmpdir = Path(raw_tmpdir)

@@ -97,6 +97,15 @@ def _scope(issue_number: int) -> dict[str, Any]:
     }
 
 
+def _consumer_scope(issue_number: int) -> dict[str, Any]:
+    scope = _scope(issue_number)
+    scope["allowed_write_paths"] = [
+        ".hldpro/governance-tooling.json",
+        "scripts/overlord/verify_governance_consumer.py",
+    ]
+    return scope
+
+
 def _handoff(issue_number: int) -> dict[str, Any]:
     return {
         "schema_version": "v1",
@@ -262,6 +271,64 @@ class TestValidateHandoffPackage(unittest.TestCase):
         self.assertNotEqual(code, 0)
         self.assertIn("handoff_id", output)
         self.assertIn("must match", output)
+
+    def test_accepted_consumer_managed_handoff_requires_consumer_verifier_command(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            _write_json(root, "raw/execution-scopes/2026-04-21-issue-438-implementation.json", _consumer_scope(438))
+            payload = _handoff(438)
+            payload["created_at"] = "2026-04-21T22:40:00Z"
+            payload["validation_commands"] = ["python3 scripts/overlord/test_validate_handoff_package.py"]
+            payload["acceptance_criteria"][0]["verification_refs"] = ["raw/validation/issue-438.md"]
+            (root / "raw/validation").mkdir(parents=True, exist_ok=True)
+            (root / "raw/validation/issue-438.md").write_text("consumer verifier missing\n", encoding="utf-8")
+            _write_json(root, str(package.relative_to(root)), payload)
+
+            code, output = self._run_main(root, str(package))
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("requires a `verify_governance_consumer.py` validation command", output)
+
+    def test_accepted_consumer_managed_handoff_requires_verifier_evidence_refs(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            _write_json(root, "raw/execution-scopes/2026-04-21-issue-438-implementation.json", _consumer_scope(438))
+            payload = _handoff(438)
+            payload["created_at"] = "2026-04-21T22:40:00Z"
+            payload["validation_commands"] = [
+                "python3 scripts/overlord/verify_governance_consumer.py --target-repo /tmp/consumer"
+            ]
+            payload["acceptance_criteria"][0]["verification_refs"] = ["docs/schemas/package-handoff.schema.json"]
+            _write_json(root, str(package.relative_to(root)), payload)
+
+            code, output = self._run_main(root, str(package))
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("requires verifier evidence refs", output)
+
+    def test_accepted_consumer_managed_handoff_passes_with_verifier_command_and_evidence(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            _write_json(root, "raw/execution-scopes/2026-04-21-issue-438-implementation.json", _consumer_scope(438))
+            validation = root / "raw/validation/issue-438-consumer-verifier.md"
+            validation.parent.mkdir(parents=True, exist_ok=True)
+            validation.write_text("PASS consumer verifier\n", encoding="utf-8")
+            payload = _handoff(438)
+            payload["created_at"] = "2026-04-21T22:40:00Z"
+            payload["validation_commands"] = [
+                "python3 scripts/overlord/verify_governance_consumer.py --target-repo /tmp/consumer"
+            ]
+            payload["acceptance_criteria"][0]["verification_refs"] = [
+                "raw/validation/issue-438-consumer-verifier.md"
+            ]
+            _write_json(root, str(package.relative_to(root)), payload)
+
+            code, output = self._run_main(root, str(package))
+
+        self.assertEqual(code, 0, output)
 
 
 if __name__ == "__main__":
