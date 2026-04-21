@@ -1,59 +1,31 @@
 {
   "$schema": "../../docs/schemas/execution-scope.schema.json",
   "expected_execution_root": ".",
-  "expected_branch": "issue-471-seek-pages-bootstrap-20260421",
+  "expected_branch": "issue-471-seek-smoke-bootstrap-20260421",
   "execution_mode": "implementation_ready",
   "allowed_write_paths": [
     "scripts/bootstrap-repo-env.sh",
     "docs/ENV_REGISTRY.md",
     "docs/FEATURE_REGISTRY.md",
     "docs/PROGRESS.md",
-    "docs/plans/issue-471-seek-pages-bootstrap-structured-agent-cycle-plan.json",
     "docs/plans/issue-471-seek-smoke-bootstrap-structured-agent-cycle-plan.json",
-    "raw/execution-scopes/2026-04-21-issue-471-seek-pages-bootstrap-implementation.json",
     "raw/execution-scopes/2026-04-21-seek-smoke-bootstrap-scope.json",
-    "raw/packets/2026-04-21-issue-471-seek-pages-bootstrap.json",
     "raw/packets/2026-04-21-issue-471-seek-smoke-bootstrap.json",
-    "raw/handoffs/2026-04-21-issue-471-seek-pages-bootstrap.json",
     "raw/handoffs/2026-04-21-issue-471-seek-smoke-bootstrap.json",
-    "raw/validation/2026-04-21-issue-471-seek-pages-bootstrap.md",
     "raw/validation/2026-04-21-issue-471-seek-smoke-bootstrap.md",
-    "raw/closeouts/2026-04-21-issue-471-seek-pages-bootstrap.md",
     "raw/closeouts/2026-04-21-issue-471-seek-smoke-bootstrap.md"
   ],
   "forbidden_roots": [
-    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
-    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
-    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
-    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
-    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
     "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
-    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder-issue-163-pages-deploy",
-    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder-issue-163-live-deploy"
   ],
   "active_parallel_roots": [
     {
-      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
-      "reason": "Pre-existing dirty sibling checkout; not part of issue #471."
-    },
-    {
-      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
-      "reason": "Pre-existing dirty sibling checkout; not part of issue #471."
-    },
-    {
-      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
-      "reason": "Pre-existing dirty sibling checkout; not part of issue #471."
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder-issue-163-live-deploy",
+      "reason": "Downstream Seek issue #163 deploy worktree, handled outside this governance lane."
     },
     {
       "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
-      "reason": "Pre-existing dirty sibling checkout; not part of issue #471."
-    },
-    {
-      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder-issue-163-pages-deploy",
-      "reason": "Downstream Seek issue #163 adoption branch, already merged before this bootstrap fix."
-    },
-    {
-      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
       "reason": "Pre-existing dirty sibling checkout; not part of issue #471."
     }
   ],
@@ -70,7 +42,6 @@
     "accepted_at": "2026-04-21T00:00:00Z",
     "evidence_paths": [
       "docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json",
-      "raw/handoffs/2026-04-21-issue-471-seek-pages-bootstrap.json",
       "raw/handoffs/2026-04-21-issue-471-seek-smoke-bootstrap.json",
       "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/471",
       "https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/issues/163"
