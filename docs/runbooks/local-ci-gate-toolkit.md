@@ -53,6 +53,7 @@ It runs or plans:
 - Governance-surface planning gate when governance paths changed.
 - Planner-boundary execution-scope assertion when planner-boundary paths changed.
 - `git diff --check`.
+- Secret provisioning evidence safety checks when standards, env registry, runbooks, validation artifacts, Pages deploy tooling, or Remote MCP tooling change.
 - Focused Local CI Gate tests when `tools/local-ci-gate/` changed.
 
 The runner continues through all checks it can run and exits non-zero only for blocker failures. Advisory failures are reported but do not block by default.

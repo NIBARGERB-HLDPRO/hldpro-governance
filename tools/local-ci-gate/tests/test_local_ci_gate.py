@@ -346,6 +346,34 @@ profile:
 
         self.assertEqual(statuses["handoff-package-integrity"], "skipped")
 
+    def test_governance_profile_runs_provisioning_evidence_validator_for_runbooks(self) -> None:
+        profile = gate.load_profile(PROFILES_DIR / "hldpro-governance.yml")
+        changed = gate.resolve_changed_files(
+            self.root,
+            explicit_files=["docs/runbooks/pages-deploy-gate.md"],
+            include_untracked=False,
+        )
+
+        report = gate.run_checks(self.root, profile, changed, dry_run=True, report_dir=self.root / "reports")
+        provisioning = next(result for result in report.results if result.check.id == "provisioning-evidence-safety")
+
+        self.assertEqual(provisioning.status, "planned")
+        self.assertIn("scripts/overlord/validate_provisioning_evidence.py", provisioning.command)
+        self.assertIn("--changed-files-file", provisioning.command)
+
+    def test_governance_profile_skips_provisioning_evidence_validator_for_unrelated_paths(self) -> None:
+        profile = gate.load_profile(PROFILES_DIR / "hldpro-governance.yml")
+        changed = gate.resolve_changed_files(
+            self.root,
+            explicit_files=["docs/plans/issue-999-example.md"],
+            include_untracked=False,
+        )
+
+        report = gate.run_checks(self.root, profile, changed, dry_run=True, report_dir=self.root / "reports")
+        statuses = {result.check.id: result.status for result in report.results}
+
+        self.assertEqual(statuses["provisioning-evidence-safety"], "skipped")
+
     def test_execution_scope_resolution_prefers_active_issue_implementation_scope(self) -> None:
         scope_dir = self.root / "raw" / "execution-scopes"
         scope_dir.mkdir(parents=True)
