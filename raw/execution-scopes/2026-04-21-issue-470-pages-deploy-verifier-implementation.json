@@ -5,6 +5,7 @@
   "allowed_write_paths": [
     "docs/FEATURE_REGISTRY.md",
     "docs/PROGRESS.md",
+    "docs/plans/2026-04-21-issue-470-pages-deploy-verifier-structured-agent-cycle-plan.json",
     "raw/execution-scopes/2026-04-21-issue-470-pages-deploy-verifier-implementation.json",
     "raw/validation/2026-04-21-issue-470-pages-deploy-verifier.md",
     "scripts/pages-deploy/pages_deploy_verifier.py",
