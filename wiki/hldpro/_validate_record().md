@@ -1,6 +1,6 @@
 # _validate_record()
 
-> God node · 19 connections · `hldpro-governance/scripts/overlord/verify_governance_consumer.py`
+> God node · 19 connections · `scripts/overlord/verify_governance_consumer.py`
 
 ## Connections by Relation
 

@@ -1,16 +1,26 @@
 # Packet Validate hitl relay
 
-> 32 nodes · cohesion 0.12
+> 49 nodes · cohesion 0.08
 
 ## Key Concepts
 
 - **validate_hitl_relay.py** (22 connections) — `scripts/packet/validate_hitl_relay.py`
+- **operator_inbound_preflight.py** (13 connections) — `scripts/remote-mcp/operator_inbound_preflight.py`
 - **test_validate_hitl_relay.py** (12 connections) — `scripts/packet/test_validate_hitl_relay.py`
 - **_load()** (9 connections) — `scripts/packet/test_validate_hitl_relay.py`
+- **build_payload()** (7 connections) — `scripts/remote-mcp/operator_inbound_preflight.py`
 - **_packet_type()** (7 connections) — `scripts/packet/validate_hitl_relay.py`
+- **Check** (6 connections) — `scripts/remote-mcp/operator_inbound_preflight.py`
+- **_call_fixture()** (5 connections) — `scripts/remote-mcp/operator_inbound_preflight.py`
+- **_call_live()** (5 connections) — `scripts/remote-mcp/operator_inbound_preflight.py`
+- **test_operator_inbound_preflight.py** (5 connections) — `scripts/remote-mcp/tests/test_operator_inbound_preflight.py`
 - **validate_instruction()** (5 connections) — `scripts/packet/validate_hitl_relay.py`
+- **_latest_live_instruction()** (4 connections) — `scripts/remote-mcp/operator_inbound_preflight.py`
 - **_operator_reply()** (4 connections) — `scripts/packet/validate_hitl_relay.py`
 - **validate_normalized_decision()** (4 connections) — `scripts/packet/validate_hitl_relay.py`
+- **main()** (3 connections) — `scripts/remote-mcp/operator_inbound_preflight.py`
+- **_missing_groups()** (3 connections) — `scripts/remote-mcp/operator_inbound_preflight.py`
+- **_packet_summary()** (3 connections) — `scripts/remote-mcp/operator_inbound_preflight.py`
 - **_decision()** (3 connections) — `scripts/packet/validate_hitl_relay.py`
 - **_policy()** (3 connections) — `scripts/packet/validate_hitl_relay.py`
 - **_run_cli()** (3 connections) — `scripts/packet/validate_hitl_relay.py`
@@ -19,17 +29,7 @@
 - **validate_operator_reply()** (3 connections) — `scripts/packet/validate_hitl_relay.py`
 - **validate_pii_channel_policy()** (3 connections) — `scripts/packet/validate_hitl_relay.py`
 - **validate_policy_refs()** (3 connections) — `scripts/packet/validate_hitl_relay.py`
-- **validate_resume()** (3 connections) — `scripts/packet/validate_hitl_relay.py`
-- **test_duplicate_reply_cannot_produce_instruction()** (2 connections) — `scripts/packet/test_validate_hitl_relay.py`
-- **test_expired_reply_cannot_produce_instruction()** (2 connections) — `scripts/packet/test_validate_hitl_relay.py`
-- **test_low_confidence_clarify_decision_passes_without_instruction()** (2 connections) — `scripts/packet/test_validate_hitl_relay.py`
-- **test_low_confidence_non_clarify_decision_fails_closed()** (2 connections) — `scripts/packet/test_validate_hitl_relay.py`
-- **test_pii_external_channel_fails_closed()** (2 connections) — `scripts/packet/test_validate_hitl_relay.py`
-- **test_response_requires_notification_and_response_ids()** (2 connections) — `scripts/packet/test_validate_hitl_relay.py`
-- **test_session_instruction_requires_matching_target_session()** (2 connections) — `scripts/packet/test_validate_hitl_relay.py`
-- **test_stale_session_requires_resume_packet()** (2 connections) — `scripts/packet/test_validate_hitl_relay.py`
-- **_correlation()** (2 connections) — `scripts/packet/validate_hitl_relay.py`
-- *... and 7 more nodes in this community*
+- *... and 24 more nodes in this community*
 
 ## Relationships
 
@@ -39,11 +39,13 @@
 
 - `scripts/packet/test_validate_hitl_relay.py`
 - `scripts/packet/validate_hitl_relay.py`
+- `scripts/remote-mcp/operator_inbound_preflight.py`
+- `scripts/remote-mcp/tests/test_operator_inbound_preflight.py`
 
 ## Audit Trail
 
-- EXTRACTED: 64 (53%)
-- INFERRED: 56 (47%)
+- EXTRACTED: 98 (53%)
+- INFERRED: 86 (47%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -1,6 +1,6 @@
 # write_config()
 
-> God node · 16 connections · `hldpro-governance/scripts/pages-deploy/tests/test_pages_deploy_gate.py`
+> God node · 17 connections · `scripts/pages-deploy/tests/test_pages_deploy_gate.py`
 
 ## Connections by Relation
 
@@ -12,6 +12,7 @@
 - [[test_dry_run_skips_deploy()]] `INFERRED`
 - [[test_two_phase_order_pre_deploy_success()]] `INFERRED`
 - [[test_two_phase_order_pre_deploy_failure()]] `INFERRED`
+- [[test_missing_cloudflare_api_token_public_message_is_name_only()]] `INFERRED`
 - [[test_build_failure()]] `INFERRED`
 - [[test_output_dir_missing()]] `INFERRED`
 - [[test_output_dir_empty()]] `INFERRED`

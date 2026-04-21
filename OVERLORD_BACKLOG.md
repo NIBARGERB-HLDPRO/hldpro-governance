@@ -19,7 +19,6 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Secret Provisioning UX and no-secret evidence contract | [#507](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/507) | HIGH | 6-8 | Prevent missing-secret/deploy-gate UX from teaching inline secret export or paste workflows. Child issues: #508 planning, #509 standards, #510 validator, #511 Pages deploy gate UX, #512 runbook scrub, #513 downstream inventory. |
 | Self-learning loop operational proof gap | [#475](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/475) | HIGH | 2-3 | Unblock scheduled sweep before self-learning, refresh metrics, add issue-backed operator-context write-back evidence, and document the reusable prevention pattern. |
 | Cloudflare Pages direct-upload deploy gate epic | [#467](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/467) | HIGH | 4-6 | Reusable govern gate + verifier, seek-and-ponder first consumer proof. Child issues: #468 planning, #469 gate, #470 verifier, #471 Seek adoption, #472 inventory. |
 
@@ -27,6 +26,7 @@
 
 | Item | Date | Notes |
 |------|------|-------|
+| Secret Provisioning UX and no-secret evidence contract | 2026-04-21 | Epic [#507](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/507) completed through child issues #508-#513 and PRs #516-#528. Stage 6 closeout is tracked by issue [#529](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/529). |
 | Governance catch-up for Stampede #111 closeout and wiki case-collision cleanup | 2026-04-21 | Issue [#519](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/519) preserved the already-tracked Stampede issue #111 closeout, issue #469 Codex Fire fail-fast row, and issue #494 Done entry while removing duplicate tracked graphify wiki collision paths. |
 | Stampede launchd service path migration to permanent clone | 2026-04-21 | Stampede issue [#111](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/111). Governance issue [#494](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/494). PR [#113](https://github.com/NIBARGERB-HLDPRO/Stampede/pull/113) moved all 3 launchd services from ephemeral `/private/tmp/stampede-main` to permanent `~/Developer/HLDPRO/Stampede`; cache migrated; PIDs 91110/91122/91132 confirmed live. Closeout: `raw/closeouts/2026-04-21-stampede-issue-111-permanent-services.md`. |
 | Governance SSOT consumer verifier edge-case hardening | 2026-04-21 | Issue [#474](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/474). PR [#476](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/476) hardened SSOT consumer verifier edge cases, closed 2026-04-21T17:39Z. |
