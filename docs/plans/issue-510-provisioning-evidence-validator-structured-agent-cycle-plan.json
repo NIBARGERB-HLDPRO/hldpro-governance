@@ -1,0 +1,117 @@
+{
+  "session_id": "session-20260421-issue-510-provisioning-evidence-validator",
+  "issue_number": 510,
+  "objective": "Extend the existing GOV validator and local-ci surfaces with a no-secret provisioning evidence check.",
+  "tier": 2,
+  "scope_boundary": [
+    "Issue #510 owns validator logic, focused tests, local-ci profile wiring, and supporting GOV registry/progress docs.",
+    "Extend scripts/overlord and tools/local-ci-gate; do not create a parallel runner.",
+    "Do not scrub runbooks or mutate downstream repos in this lane."
+  ],
+  "out_of_scope": [
+    "STANDARDS.md and docs/ENV_REGISTRY.md standards wording; issue #509 owns that and is already closed.",
+    "Pages deploy gate UX changes; issue #511 owns that.",
+    "Governance runbook scrub; issue #512 owns that.",
+    "Downstream inventory and issue routing; issue #513 owns that.",
+    "Secret rotation, value provisioning, or any commit of .env.shared, generated .env files, provider tokens, raw phone numbers, signed URLs, Authorization headers, or credential screenshots."
+  ],
+  "research_summary": "The #510 validator explorer found that GOV already has the right extension points: scripts/overlord for validators, tools/local-ci-gate/profiles/hldpro-governance.yml for changed-file wiring, and tools/local-ci-gate tests for routing behavior. The lane should add one validator under scripts/overlord, focused fixtures/tests, local-ci profile wiring, and minimal docs/registry updates.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/510",
+    "scripts/test_bootstrap_repo_env_contract.py",
+    "tools/local-ci-gate/local_ci_gate.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "tools/local-ci-gate/tests/test_local_ci_gate.py",
+    "docs/runbooks/local-ci-gate-toolkit.md"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 2 - Provisioning evidence validator",
+      "goal": "Reject unsafe provisioning evidence while allowing name-only missing-secret diagnostics.",
+      "tasks": [
+        "Add scripts/overlord/validate_provisioning_evidence.py.",
+        "Add focused tests for token-like strings, JWT fragments, Authorization headers, signed URLs, raw phone numbers, generated env file contents, and safe name-only diagnostics.",
+        "Wire the validator into tools/local-ci-gate/profiles/hldpro-governance.yml as a changed-file blocker.",
+        "Add local-ci routing tests and update tool documentation/registries."
+      ],
+      "acceptance_criteria": [
+        "Unsafe provisioning evidence fails locally and in local-ci.",
+        "Safe missing-secret messages that list variable names only and approved provisioning surfaces pass.",
+        "Validator output reports file paths and matched class names without echoing full matched secret-like values.",
+        "Local CI profile includes the validator when relevant provisioning, runbook, env, validation, or deploy-gate files change.",
+        "Focused tests cover each leakage class and the safe positive fixture."
+      ],
+      "file_paths": [
+        "scripts/overlord/validate_provisioning_evidence.py",
+        "scripts/overlord/test_validate_provisioning_evidence.py",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py",
+        "docs/runbooks/local-ci-gate-toolkit.md",
+        "docs/governance-tooling-package.json",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "docs/SERVICE_REGISTRY.md",
+        "raw/execution-scopes/2026-04-21-issue-510-provisioning-evidence-validator-implementation.json",
+        "raw/validation/2026-04-21-issue-510-provisioning-evidence-validator.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Dalton",
+      "role": "Validator extension explorer",
+      "focus": "Find the least new surface area for issue #510.",
+      "status": "accepted",
+      "summary": "Recommended adding a dedicated scripts/overlord validator and wiring it through the existing hldpro-governance local-ci profile; no runner logic changes needed.",
+      "evidence": [
+        "tools/local-ci-gate/local_ci_gate.py",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not requested for scoped validator extension",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This lane extends existing validation and local-ci profile surfaces according to the approved epic plan. It does not introduce a new architecture or downstream mutation.",
+    "evidence": [
+      "docs/plans/issue-507-secret-provisioning-ux-structured-agent-cycle-plan.json"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-gpt-5",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #510 may add the provisioning evidence validator, focused tests, local-ci profile routing, and supporting GOV docs/registry/validation updates.",
+    "next_execution_step": "Merge this implementation scope as a planning-only PR, then implement the validator on the same issue branch name so CI can trust the base scope.",
+    "blocked_on": [],
+    "handoff_package_ref": null,
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-510-provisioning-evidence-validator-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-510-provisioning-evidence-validator.md"
+    ],
+    "review_artifact_refs": [],
+    "gate_artifact_refs": [],
+    "closeout_ref": null,
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Structured plan validates.",
+      "Execution scope validates with lane claim.",
+      "Local CI gate passes before merge."
+    ]
+  },
+  "material_deviation_rules": [
+    "If the validator needs a new local-ci runner capability, stop and open a separate GOV tooling issue before changing runner semantics.",
+    "If evidence would contain credential values, signed URLs, Authorization headers, raw phone numbers, generated env files, or screenshots containing credentials, replace it with redacted structured evidence before commit.",
+    "If downstream repos need fixes, route to #513 and owning repo issues instead of mutating them here."
+  ],
+  "approved": true,
+  "approved_by": [
+    "codex-gpt-5"
+  ],
+  "approved_at": "2026-04-21T00:00:00Z"
+}

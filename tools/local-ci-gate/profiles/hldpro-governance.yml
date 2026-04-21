@@ -121,6 +121,28 @@ profile:
         - python3
         - scripts/test_bootstrap_repo_env_contract.py
 
+    - id: provisioning-evidence-safety
+      title: Secret provisioning evidence safety
+      severity: blocker
+      scope: changed
+      paths:
+        - STANDARDS.md
+        - docs/ENV_REGISTRY.md
+        - docs/EXTERNAL_SERVICES_RUNBOOK.md
+        - docs/runbooks/
+        - raw/validation/
+        - scripts/pages-deploy/
+        - scripts/remote-mcp/
+        - scripts/overlord/validate_provisioning_evidence.py
+        - scripts/overlord/test_validate_provisioning_evidence.py
+      command:
+        - python3
+        - scripts/overlord/validate_provisioning_evidence.py
+        - --root
+        - .
+        - --changed-files-file
+        - "{changed_files_file}"
+
     - id: workflow-local-coverage
       title: GitHub workflow local-first coverage inventory
       severity: blocker

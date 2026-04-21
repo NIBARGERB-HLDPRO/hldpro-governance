@@ -43,6 +43,7 @@
 | validate_structured_agent_cycle_plan.py | `scripts/overlord/validate_structured_agent_cycle_plan.py` | Validates structured plan JSON against org schema |
 | assert_execution_scope.py | `scripts/overlord/assert_execution_scope.py` | Asserts issue work runs from the declared root/branch, enforces planning-only `allowed_write_paths`, requires accepted pinned-agent handoff evidence for non-planning diffs, and can require `lane_claim` issue ownership |
 | check_execution_environment.py | `scripts/overlord/check_execution_environment.py` | Session-start execution-scope preflight for root, branch, write paths, sibling roots, and optional lane-claim enforcement |
+| validate_provisioning_evidence.py | `scripts/overlord/validate_provisioning_evidence.py` | Scans provisioning evidence for secret-like values while reporting only file paths and matched classes |
 | validate_governed_repos.py | `scripts/overlord/validate_governed_repos.py` | Validates `docs/governed_repos.json` and reconciles it with graphify targets |
 | governed_repos.py | `scripts/overlord/governed_repos.py` | Shared adapter for executable governed repo registry consumers |
 | codex_ingestion.py | `scripts/overlord/codex_ingestion.py` | Codex review ingestion: generate, qualify, promote; Codex QA remains distinct from Worker authority |

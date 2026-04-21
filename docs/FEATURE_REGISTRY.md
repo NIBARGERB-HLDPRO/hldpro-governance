@@ -55,6 +55,7 @@
 | GOV-028 | REMOTE_MCP_BRIDGE_GOVERNANCE | Remote MCP Bridge standards, thin client contract, audit verifier, Stage D proof runner, recurring health monitor, payload-safe alerts, and operator runbook | IN_PROGRESS | REQUIRED |
 | GOV-029 | PAGES_DEPLOY_GATE | Pages Deploy Gate (governance-owned, issue #469) | COMPLETE | OPS_READY |
 | GOV-030 | PAGES_DEPLOYMENT_PARITY | Cloudflare Pages deployment freshness and domain parity verifier | COMPLETE | OPS_READY |
+| GOV-031 | SECRET_PROVISIONING_EVIDENCE | No-secret provisioning evidence validator and Local CI Gate check | COMPLETE | REQUIRED |
 
 ---
 
@@ -76,6 +77,8 @@
 | GOV-002 | `graphify-governance-contract.yml` is the governance repo’s local graphify contract gate: it validates the manifest-defined target set, helper scripts, and generated `wiki/index.md` synchronization before graph contract changes merge. |
 | GOV-006 | Current rollout adds `docs/FEATURE_REGISTRY.md` as a governed artifact and blocks stale code-only changes when the registry is not updated. |
 | GOV-029 | `scripts/pages-deploy/pages_deploy_gate.py` provides a reusable Cloudflare Pages Direct Upload gate for governed consumers. It validates consumer config, preflights `node`/`wrangler`, checks required env names without printing values, requires `PAGES_DEPLOY_APPROVED=1` for live deploys, runs optional pre-deploy hooks before build/upload, rejects stale or oversized artifacts, invokes Wrangler with `CI=true` and `--non-interactive`, and emits redacted deployment evidence. |
+| GOV-031 | `scripts/overlord/validate_provisioning_evidence.py` scans provisioning evidence for token-like strings, JWT fragments, Authorization headers, signed URLs, raw phone numbers, and generated env file contents while reporting only file paths and matched classes. |
+| GOV-031 | The `hldpro-governance` Local CI Gate profile runs `provisioning-evidence-safety` when standards, env registry, runbooks, validation artifacts, Pages deploy tooling, or Remote MCP tooling change. |
 
 ### AGENT_AUDIT
 

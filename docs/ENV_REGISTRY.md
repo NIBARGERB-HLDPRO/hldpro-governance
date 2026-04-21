@@ -1,6 +1,6 @@
 # HLDPRO — Environment Variable Registry
 
-**Version:** 2026-04-16
+**Version:** 2026-04-21
 **Owner:** Operator (nibarger.ben@gmail.com)
 **SSOT file:** `hldpro-governance/.env.shared` (gitignored — never commit)
 **Bootstrap:** `bash scripts/bootstrap-repo-env.sh <repo> [target-path]`
@@ -29,6 +29,51 @@ bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh seek-loc
 # Seed Stampede market-data env
 bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh stampede
 ```
+
+---
+
+## Secret Provisioning UX Contract
+
+Missing-secret diagnostics and deploy preflights must be actionable without asking the operator to paste secret values into a shell, issue, chat, PR, log, or validation artifact.
+
+### Approved provisioning surfaces
+
+| Surface | Use | Evidence allowed |
+|---|---|---|
+| `hldpro-governance/.env.shared` | Local operator-managed credential SSOT. This file is gitignored and must never be committed. | Variable names, target repo key names, and redacted dry-run output only. |
+| `scripts/bootstrap-repo-env.sh` generated files | Repo-local `.env.local` or equivalent generated artifacts for local execution. | Target file path, command exit status, and redacted preview output. |
+| Provider dashboard or vault | Provider-owned rotation and account-scoped secret creation. | Provider name, secret name, scope description, and rotation timestamp. |
+| GitHub Actions secrets or vars | CI-only credentials and deploy approvals. | Secret or variable names and repository/org scope; never values. |
+
+### Diagnostic wording
+
+Use name-only messages:
+
+```text
+Missing required secret variables: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID.
+Provision them through hldpro-governance/.env.shared plus bootstrap for local runs, or through GitHub Actions secrets for CI.
+Values are intentionally not accepted in this prompt or printed in logs.
+```
+
+Use blocked-state messages when the approved surface is unavailable:
+
+```text
+Blocked: required secret variables are absent: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID.
+No deploy was attempted. Configure the approved provisioning surface, then rerun the preflight.
+```
+
+Use ready-state messages without values:
+
+```text
+Ready: required secret variables are present by name and values remain redacted.
+```
+
+### Prohibited guidance
+
+- Do not provide inline secret-setting commands for credential variables.
+- Do not ask operators to paste provider tokens, raw phone numbers, signed URLs, Authorization headers, JWTs, or generated env file contents into terminal commands.
+- Do not record secret values or screenshots containing secret values as validation evidence.
+- Do not source `.env.shared` in a runbook as an execution pattern. Use the bootstrap script or provider/CI secret surfaces instead.
 
 ---
 
