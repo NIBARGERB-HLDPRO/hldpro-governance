@@ -1,0 +1,94 @@
+{
+  "session_id": "session-20260421-issue-514-codex-fire-failfast-evidence",
+  "issue_number": 514,
+  "objective": "Preserve the local Codex Fire fail-fast timeout evidence row on main and clean the unrelated working checkout.",
+  "tier": 2,
+  "scope_boundary": [
+    "Append the observed Codex Fire preflight timeout row to raw/fail-fast-log.md.",
+    "Add only the required issue-backed plan, execution scope, and validation artifacts for this raw evidence change.",
+    "Leave dispatcher behavior and issue #469 implementation files unchanged."
+  ],
+  "out_of_scope": [
+    "Changing scripts/codex-fire.sh behavior.",
+    "Changing issue #469 Pages deploy gate implementation.",
+    "Regenerating graphify or wiki artifacts."
+  ],
+  "research_summary": "The local dirty closeout file was a stale duplicate already merged on main through PR #501. The remaining raw/fail-fast-log.md row points at an existing retained brief, /tmp/issue-469-gate-fix-brief.md, and records the intended Codex Fire failure evidence for a gpt-5.4 preflight timeout.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/514",
+    "raw/fail-fast-log.md",
+    "/tmp/issue-469-gate-fix-brief.md"
+  ],
+  "sprints": [
+    {
+      "name": "Fail-fast evidence preservation",
+      "goal": "Move the local fail-fast evidence row from dirty workspace state into an issue-backed PR.",
+      "tasks": [
+        "Append the observed row to raw/fail-fast-log.md on a branch from origin/main.",
+        "Add the structured plan, execution scope, and validation artifacts required for raw governance edits.",
+        "Validate the branch diff with structured plan and execution scope gates.",
+        "Merge the PR and restore the unrelated local checkout to a clean state."
+      ],
+      "acceptance_criteria": [
+        "raw/fail-fast-log.md includes the 2026-04-21 13:13 gpt-5.4 preflight timeout row.",
+        "Issue #514 owns the evidence preservation branch and PR.",
+        "Structured plan validation passes with governance-surface and planner-boundary enforcement.",
+        "Execution scope assertion passes with lane-claim enforcement.",
+        "The original issue-385 checkout has no remaining local dirty files from this cleanup."
+      ],
+      "file_paths": [
+        "raw/fail-fast-log.md",
+        "docs/plans/issue-514-codex-fire-failfast-evidence-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-514-codex-fire-failfast-evidence-implementation.json",
+        "raw/validation/2026-04-21-issue-514-codex-fire-failfast-evidence.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-orchestrator-workspace-triage",
+      "role": "dirty-file classifier",
+      "focus": "Distinguish stale duplicate local files from execution evidence that should be preserved.",
+      "status": "accepted",
+      "summary": "The closeout file is already committed on main; the fail-fast row is unique evidence with a retained temp brief.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/501",
+        "/tmp/issue-469-gate-fix-brief.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-evidence-only-cleanup",
+    "model_family": "none",
+    "status": "not_requested",
+    "summary": "This slice preserves a single already-observed evidence row and adds the governance artifacts required by existing gates.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/514"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #514 may append the Codex Fire fail-fast evidence row and add required governance artifacts.",
+    "next_execution_step": "Open and merge the evidence preservation PR, then clean the original checkout.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-514-codex-fire-failfast-evidence-implementation.json",
+    "handoff_package_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-514-codex-fire-failfast-evidence.md"
+    ],
+    "closeout_ref": null
+  },
+  "material_deviation_rules": [
+    "If the retained brief disappears before validation, record the evidence gap and do not claim the row is independently inspectable.",
+    "If generated graphify/wiki files appear from local hooks, exclude them from the issue #514 branch diff."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "GitHub issue #514",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T21:20:00Z"
+}
