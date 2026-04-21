@@ -1,6 +1,6 @@
 {
   "expected_execution_root": "{repo_root}",
-  "expected_branch": "automation/issue-503-overlord-sweep-2026-04-21-24741708775",
+  "expected_branch": "automation/issue-503-overlord-sweep-2026-04-21-24741910552",
   "allowed_write_paths": [
     "docs/ORG_GOVERNANCE_COMPENDIUM.md",
     "graphify-out/",
@@ -25,7 +25,7 @@
     "accepted_at": "2026-04-21T19:00:00Z",
     "evidence_paths": [
       "docs/plans/issue-503-overlord-sweep-generated-artifacts-structured-agent-cycle-plan.json",
-      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/actions/runs/24741708775",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/actions/runs/24741910552",
       "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/503"
     ],
     "active_exception_ref": null,

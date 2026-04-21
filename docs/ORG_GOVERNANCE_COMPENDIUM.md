@@ -25,7 +25,7 @@ This file is the single org-level index of governance rules, enforcement files, 
 | `local-ai-machine` | Local AI runtime governance, packet controls, lane rules, and schemas | 182 | 3670 | 8198 |
 | `knocktracker` | Field app governance, issue controls, security/privacy agents, and CI | 59 | 587 | 715 |
 | `seek-and-ponder` | Faith-based scripture research, AI study co-pilot, and creator network platform | 84 | 533 | 765 |
-| `Stampede` | Stampede Phase0 product specifications, baselines, label schema, and governance bootstrap artifacts | 34 | 466 | 913 |
+| `Stampede` | Stampede Phase0 product specifications, baselines, label schema, and governance bootstrap artifacts | 36 | 466 | 913 |
 | `ASC-Evaluator` | Knowledge/evaluation repo with limited governance and graph coverage | 23 | 101 | 184 |
 
 ## Org-Level Rule Map
@@ -1201,8 +1201,10 @@ Stampede Phase0 product specifications, baselines, label schema, and governance 
 | `CHANGELOG_v0_1_to_v0_1_1.md` | policy-doc | CHANGELOG: v0.1 → v0.1.1 | Sections: Status, Files, Reasoning summary for each change, Removals, Additions at project level, Pre-freeze checklist | References event_set_v0_1.json |
 | `CLAUDE.md` | policy-doc | CLAUDE.md | Sections: Session Start, Rules, graphify | References ../hldpro-governance/STANDARDS.md, AGENTS.md, docs/FAIL_FAST_LOG.md, docs/PROGRESS.md, docs/SOLO_MAINTAINER_MERGE_POLICY.md |
 | `Production_Spec_v0.1.1.md` | policy-doc | Fincept × MiroFish News-Reactive Trading System | Sections: Production Spec v0.1.1, Objective, Governing Hypothesis, Phase 0 Pass Criteria (HARD), Threshold Derivation, Buckets | References baselines_v0_1.json, label_schema_v0_1.json, phase0.yaml |
+| `docs/DATA_DICTIONARY.md` | policy-doc | Stampede Data Dictionary | Sections: Schema Rule | No explicit file references detected |
 | `docs/FAIL_FAST_LOG.md` | policy-doc | FAIL_FAST_LOG | Markdown policy or agent instruction document | References CLAUDE.md, docs/FAIL_FAST_LOG.md, governance.yml, security.yml |
-| `docs/PROGRESS.md` | policy-doc | STAMPEDE PHASE0 Progress | Sections: Active Backlog, Completed | References .hldpro/governance-tooling.json, .hldpro/hldpro-sim.json, .hldpro/local-ci.sh |
+| `docs/PROGRESS.md` | policy-doc | STAMPEDE PHASE0 Progress | Sections: Active Backlog, Completed | References .hldpro/governance-tooling.json, .hldpro/hldpro-sim.json, .hldpro/local-ci.sh, docs/DATA_DICTIONARY.md, docs/SERVICE_REGISTRY.md |
+| `docs/SERVICE_REGISTRY.md` | policy-doc | Stampede Service Registry | Sections: External Credential Rule | References .hldpro/hldpro-sim.json |
 | `docs/exception-register.md` | policy-doc | STAMPEDE PHASE0 Exception Register | Sections: Exception Template | No explicit file references detected |
 | `docs/plans/issue-112-ssot-v02-product-baseline-pdcar.md` | pdcar-plan | Issue #112 PDCAR - SSOT v0.2 Product-Baseline Consumer Metadata | Sections: Plan, Do, Check, Adjust, Record | References .hldpro/governance-tooling.json, .hldpro/hldpro-sim.json, .hldpro/local-ci.sh, raw/validation/issue-112-ssot-v02-product-baseline.md |
 | `docs/plans/issue-112-structured-agent-cycle-plan.json` | pdcar-plan | pdcar-plan file | Markdown policy or agent instruction document | No explicit file references detected |
@@ -1238,7 +1240,7 @@ Knowledge/evaluation repo with limited governance and graph coverage
 - Graph report: `graphify-out/asc-evaluator/GRAPH_REPORT.md`
 - Nodes / edges / hyperedges: `101` / `184` / `0`
 - Top nodes: `generate_existing_info_report.py (45)`, `write_docx() (16)`, `convert() (9)`, `main() (8)`, `xlsx_text_extract.py (8)`, `extract_workbook() (8)`, `annotate() (7)`, `annotate() (7)`
-- Top communities: `Generate existing info report Reviews`, `Generate docx from markdown Cycle`, `Xlsx text extract`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Generate existing info report`, `Generate existing info report Reviews`
+- Top communities: `Generate existing info report Reviews`, `Generate docx from markdown Cycle`, `Generate existing info report`, `Xlsx text extract`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Processed Pinecroft the woodlands tx 20260114 Annotate`, `Generate existing info report Reviews`
 
 ### Governance File Index
 

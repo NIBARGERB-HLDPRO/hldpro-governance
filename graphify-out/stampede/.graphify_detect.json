@@ -80,6 +80,7 @@
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/LIVE_PROVIDER_BAKEOFF.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/LIVE_PROVIDER_PROBE_CONTRACT.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/PHASE0_YFINANCE_LIVE_RUN_SUMMARY.md",
+      "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/SERVICE_REGISTRY.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/DATA_SOURCE_BAKEOFF_REPORT.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/PROVIDER_FAILURE_MODES.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/MODEL_BAKEOFF_PLAN.md",
@@ -98,6 +99,7 @@
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/PHASE0_AB_PLAN.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/PROGRESS.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/DISCRIMINATOR_ACCESS_DECISION.md",
+      "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/DATA_DICTIONARY.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/plans/issue-18-live-provider-probes-pdcar.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/plans/issue-41-live-lookback-preflight-pdcar.md",
       "/home/runner/work/hldpro-governance/hldpro-governance/repos/Stampede/docs/plans/issue-37-lookback-hardening-pdcar.md",
@@ -130,8 +132,8 @@
     "image": [],
     "video": []
   },
-  "total_files": 122,
-  "total_words": 52783,
+  "total_files": 124,
+  "total_words": 53191,
   "needs_graph": true,
   "warning": null,
   "skipped_sensitive": [

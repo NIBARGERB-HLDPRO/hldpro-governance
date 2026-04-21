@@ -1,7 +1,7 @@
 # Graph Report - stampede  (2026-04-21)
 
 ## Corpus Check
-- 122 files · ~52,783 words
+- 124 files · ~53,191 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary

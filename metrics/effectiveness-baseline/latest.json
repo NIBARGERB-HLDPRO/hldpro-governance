@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-04-21",
-  "generated_at": "2026-04-21T19:19:20Z",
+  "generated_at": "2026-04-21T19:24:15Z",
   "commit_window_days": 7,
   "ci_window_days": 14,
   "repos": [
@@ -71,10 +71,10 @@
     },
     {
       "repo": "Stampede",
-      "commit_count": 68,
+      "commit_count": 70,
       "bug_fix_commits": 9,
       "revert_commits": 0,
-      "bug_rate_pct": 13.2,
+      "bug_rate_pct": 12.9,
       "revert_rate_pct": 0.0,
       "ci_pass": 0,
       "ci_fail": 0,
