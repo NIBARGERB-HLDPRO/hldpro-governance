@@ -1,35 +1,35 @@
 # Packages Hldpro sim
 
-> 36 nodes · cohesion 0.06
+> 46 nodes · cohesion 0.06
 
 ## Key Concepts
 
-- **__init__.py** (6 connections) — `packages/hldpro-sim/hldprosim/__init__.py`
-- **engine.py** (5 connections) — `packages/hldpro-sim/hldprosim/engine.py`
-- **providers.py** (5 connections) — `packages/hldpro-sim/hldprosim/providers.py`
-- **aggregator.py** (4 connections) — `packages/hldpro-sim/hldprosim/aggregator.py`
-- **artifacts.py** (4 connections) — `packages/hldpro-sim/hldprosim/artifacts.py`
-- **personas.py** (4 connections) — `packages/hldpro-sim/hldprosim/personas.py`
-- **PersonaLoader** (4 connections) — `packages/hldpro-sim/hldprosim/personas.py`
-- **CodexCliProvider** (4 connections) — `packages/hldpro-sim/hldprosim/providers.py`
-- **ArtifactWriter** (3 connections) — `packages/hldpro-sim/hldprosim/artifacts.py`
-- **SimulationEngine** (3 connections) — `packages/hldpro-sim/hldprosim/engine.py`
-- **AnthropicApiProvider** (3 connections) — `packages/hldpro-sim/hldprosim/providers.py`
-- **BaseProvider** (3 connections) — `packages/hldpro-sim/hldprosim/providers.py`
-- **runner.py** (3 connections) — `packages/hldpro-sim/hldprosim/runner.py`
-- **Runner** (3 connections) — `packages/hldpro-sim/hldprosim/runner.py`
+- **MockProvider** (9 connections) — `hldpro-governance/packages/hldpro-sim/tests/test_stampede_consumer_proof.py`
+- **SimulationEngine** (7 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/engine.py`
+- **__init__.py** (6 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/__init__.py`
+- **PersonaLoader** (6 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/personas.py`
+- **engine.py** (5 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/engine.py`
+- **providers.py** (5 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/providers.py`
+- **Runner** (5 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/runner.py`
+- **NarrativeAggregator** (5 connections) — `hldpro-governance/packages/hldpro-sim/tests/fixtures/stampede_consumer.py`
+- **aggregator.py** (4 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/aggregator.py`
+- **BaseAggregator** (4 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/aggregator.py`
+- **artifacts.py** (4 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/artifacts.py`
+- **ArtifactWriter** (4 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/artifacts.py`
+- **personas.py** (4 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/personas.py`
+- **BaseProvider** (4 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/providers.py`
+- **CodexCliProvider** (4 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/providers.py`
+- **NarrativeOutcome** (4 connections) — `hldpro-governance/packages/hldpro-sim/tests/fixtures/stampede_consumer.py`
+- **AnthropicApiProvider** (3 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/providers.py`
+- **runner.py** (3 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/runner.py`
 - **ABC** (2 connections)
-- **BaseAggregator** (2 connections) — `packages/hldpro-sim/hldprosim/aggregator.py`
-- **aggregate()** (1 connections) — `packages/hldpro-sim/hldprosim/aggregator.py`
-- **.__init__()** (1 connections) — `packages/hldpro-sim/hldprosim/artifacts.py`
-- **.write()** (1 connections) — `packages/hldpro-sim/hldprosim/artifacts.py`
-- **_git_commit()** (1 connections) — `packages/hldpro-sim/hldprosim/artifacts.py`
-- **RunManifest** (1 connections) — `packages/hldpro-sim/hldprosim/artifacts.py`
-- **.__init__()** (1 connections) — `packages/hldpro-sim/hldprosim/engine.py`
-- **.run()** (1 connections) — `packages/hldpro-sim/hldprosim/engine.py`
-- **from_package()** (1 connections) — `packages/hldpro-sim/hldprosim/personas.py`
-- **.__init__()** (1 connections) — `packages/hldpro-sim/hldprosim/personas.py`
-- *... and 11 more nodes in this community*
+- **RunManifest** (2 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/artifacts.py`
+- **stampede_consumer.py** (2 connections) — `hldpro-governance/packages/hldpro-sim/tests/fixtures/stampede_consumer.py`
+- **.aggregate()** (2 connections) — `hldpro-governance/packages/hldpro-sim/tests/fixtures/stampede_consumer.py`
+- **test_stampede_consumer_proof.py** (2 connections) — `hldpro-governance/packages/hldpro-sim/tests/test_stampede_consumer_proof.py`
+- **test_stampede_e2e()** (2 connections) — `hldpro-governance/packages/hldpro-sim/tests/test_stampede_consumer_proof.py`
+- **aggregate()** (1 connections) — `hldpro-governance/packages/hldpro-sim/hldprosim/aggregator.py`
+- *... and 21 more nodes in this community*
 
 ## Relationships
 
@@ -37,18 +37,20 @@
 
 ## Source Files
 
-- `packages/hldpro-sim/hldprosim/__init__.py`
-- `packages/hldpro-sim/hldprosim/aggregator.py`
-- `packages/hldpro-sim/hldprosim/artifacts.py`
-- `packages/hldpro-sim/hldprosim/engine.py`
-- `packages/hldpro-sim/hldprosim/personas.py`
-- `packages/hldpro-sim/hldprosim/providers.py`
-- `packages/hldpro-sim/hldprosim/runner.py`
+- `hldpro-governance/packages/hldpro-sim/hldprosim/__init__.py`
+- `hldpro-governance/packages/hldpro-sim/hldprosim/aggregator.py`
+- `hldpro-governance/packages/hldpro-sim/hldprosim/artifacts.py`
+- `hldpro-governance/packages/hldpro-sim/hldprosim/engine.py`
+- `hldpro-governance/packages/hldpro-sim/hldprosim/personas.py`
+- `hldpro-governance/packages/hldpro-sim/hldprosim/providers.py`
+- `hldpro-governance/packages/hldpro-sim/hldprosim/runner.py`
+- `hldpro-governance/packages/hldpro-sim/tests/fixtures/stampede_consumer.py`
+- `hldpro-governance/packages/hldpro-sim/tests/test_stampede_consumer_proof.py`
 
 ## Audit Trail
 
-- EXTRACTED: 78 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 94 (78%)
+- INFERRED: 26 (22%)
 - AMBIGUOUS: 0 (0%)
 
 ---

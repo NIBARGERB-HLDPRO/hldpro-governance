@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- **test_engine.py** (1 connections) — `packages/hldpro-sim/tests/test_engine.py`
-- **test_engine_passes_template_results_to_provider()** (1 connections) — `packages/hldpro-sim/tests/test_engine.py`
+- **test_engine.py** (1 connections) — `hldpro-governance/packages/hldpro-sim/tests/test_engine.py`
+- **test_engine_passes_template_results_to_provider()** (1 connections) — `hldpro-governance/packages/hldpro-sim/tests/test_engine.py`
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- `packages/hldpro-sim/tests/test_engine.py`
+- `hldpro-governance/packages/hldpro-sim/tests/test_engine.py`
 
 ## Audit Trail
 

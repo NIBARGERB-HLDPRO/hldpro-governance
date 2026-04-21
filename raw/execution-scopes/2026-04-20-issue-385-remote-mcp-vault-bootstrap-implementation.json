@@ -2,6 +2,12 @@
   "expected_execution_root": "{repo_root}",
   "expected_branch": "issue-385-remote-mcp-vault-bootstrap-20260420",
   "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 385,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/385",
+    "claimed_by": "Codex orchestrator",
+    "claimed_at": "2026-04-20T14:40:00Z"
+  },
   "handoff_evidence": {
     "status": "accepted",
     "planner_model": "operator-directive",
@@ -27,6 +33,7 @@
     "docs/plans/issue-385-remote-mcp-vault-bootstrap-structured-agent-cycle-plan.json",
     "docs/runbooks/remote-mcp-bridge.md",
     "graphify-out/",
+    "raw/closeouts/",
     "raw/execution-scopes/2026-04-20-issue-385-remote-mcp-vault-bootstrap-implementation.json",
     "raw/remote-mcp-vault-bootstrap/",
     "raw/validation/2026-04-20-issue-385-remote-mcp-vault-bootstrap.md",

@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- **test_runner.py** (2 connections) — `packages/hldpro-sim/tests/test_runner.py`
-- **test_runner_run_n_returns_requested_count_without_threads()** (1 connections) — `packages/hldpro-sim/tests/test_runner.py`
-- **test_runner_run_n_uses_threadpool_when_configured()** (1 connections) — `packages/hldpro-sim/tests/test_runner.py`
+- **test_runner.py** (2 connections) — `hldpro-governance/packages/hldpro-sim/tests/test_runner.py`
+- **test_runner_run_n_returns_requested_count_without_threads()** (1 connections) — `hldpro-governance/packages/hldpro-sim/tests/test_runner.py`
+- **test_runner_run_n_uses_threadpool_when_configured()** (1 connections) — `hldpro-governance/packages/hldpro-sim/tests/test_runner.py`
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- `packages/hldpro-sim/tests/test_runner.py`
+- `hldpro-governance/packages/hldpro-sim/tests/test_runner.py`
 
 ## Audit Trail
 

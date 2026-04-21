@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/private/tmp/issue-422-closeout/graphify-out/hldpro-governance",
-  "wiki_dir": "/private/tmp/issue-422-closeout/wiki/hldpro",
-  "nodes": 1385,
-  "edges": 2598,
-  "communities": 75,
-  "articles": 85,
+  "output": "/private/tmp/hldpro-pr427-sync/graphify-out/hldpro-governance",
+  "wiki_dir": "/private/tmp/hldpro-pr427-sync/wiki/hldpro",
+  "nodes": 1391,
+  "edges": 2621,
+  "communities": 73,
+  "articles": 83,
   "html_status": "skipped",
   "code_files": 106
 }
