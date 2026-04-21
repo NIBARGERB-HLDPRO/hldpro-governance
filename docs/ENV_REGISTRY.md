@@ -185,6 +185,10 @@ Ready: required secret variables are present by name and values remain redacted.
 | `SEEK_STAGING_SUPABASE_ANON_KEY` | `SUPABASE_ANON_KEY` + `SEEK_STAGING_SUPABASE_ANON_KEY` | Browser/client staging anon key |
 | `SEEK_STAGING_SUPABASE_SERVICE_ROLE_KEY` | `SUPABASE_SERVICE_ROLE_KEY` + `SEEK_STAGING_SUPABASE_SERVICE_ROLE_KEY` | Server-side staging writes and e2e seeding only |
 | `SEEK_STAGING_SUPABASE_PROJECT_REF` | same | Supabase deploy target ref |
+| `SEEK_STAGING_PRO_EMAIL` | same | Seeded Pro user login name for staged core smoke |
+| `SEEK_STAGING_PRO_PASSWORD` | same | Seeded Pro user password for staged core smoke |
+| `SEEK_STAGING_SCHOLAR_EMAIL` | same | Seeded Scholar user login name for staged Personas smoke |
+| `SEEK_STAGING_SCHOLAR_PASSWORD` | same | Seeded Scholar user password for staged Personas smoke |
 | `SEEK_LOCAL_SUPABASE_URL` / `SEEK_LOCAL_SUPABASE_ANON_KEY` / `SEEK_LOCAL_SUPABASE_SERVICE_ROLE_KEY` | `SUPABASE_*` via `seek-local` | Local Supabase target for repo-local dev and tests |
 | `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` | same | Hosted embedding and LLM providers |
 | `SUPABASE_ACCESS_TOKEN` | same | Supabase management/deploy CLI |

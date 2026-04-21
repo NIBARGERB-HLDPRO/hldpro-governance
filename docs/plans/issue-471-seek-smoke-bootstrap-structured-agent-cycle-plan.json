@@ -1,0 +1,111 @@
+{
+  "session_id": "session-20260421-issue-471-seek-smoke-bootstrap",
+  "issue_number": 471,
+  "objective": "Extend the existing governance bootstrap for Seek and Ponder so post-deploy staged core smoke can receive seeded-login credential names through approved generated-env surfaces.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify the existing scripts/bootstrap-repo-env.sh Seek targets only.",
+    "Document the new Seek staged smoke env-name mapping in existing registry/progress surfaces.",
+    "Do not create a second credential loader, copy secret values, or deploy Cloudflare Pages from this governance lane."
+  ],
+  "out_of_scope": [
+    "Changing seeded user values.",
+    "Committing .env.shared, generated .env files, token values, Authorization headers, signed URLs, or screenshots.",
+    "Changing the reusable Pages deploy gate or verifier implementation.",
+    "Mutating downstream seek-and-ponder files from this governance lane."
+  ],
+  "research_summary": "Seek post-deploy staged core smoke requires SEEK_STAGING_PRO_EMAIL, SEEK_STAGING_PRO_PASSWORD, SEEK_STAGING_SCHOLAR_EMAIL, and SEEK_STAGING_SCHOLAR_PASSWORD. These names exist in governance .env.shared but were not emitted by Seek bootstrap targets.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/471",
+    "https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/issues/163",
+    "scripts/bootstrap-repo-env.sh",
+    "docs/ENV_REGISTRY.md"
+  ],
+  "sprints": [
+    {
+      "name": "Seek staged core smoke env propagation",
+      "goal": "Make the existing Seek bootstrap targets emit the seeded-login variable names needed by downstream staged core smoke.",
+      "tasks": [
+        "Add SEEK_STAGING_PRO_EMAIL, SEEK_STAGING_PRO_PASSWORD, SEEK_STAGING_SCHOLAR_EMAIL, and SEEK_STAGING_SCHOLAR_PASSWORD to the seek, seek-local, and seek-worktree generated env templates.",
+        "Use empty defaults so synthetic bootstrap contract tests do not fail under set -u.",
+        "Document the mapping in docs/ENV_REGISTRY.md.",
+        "Update feature/progress mirrors and preserve no-secret validation evidence."
+      ],
+      "acceptance_criteria": [
+        "Dry-run bootstrap output for seek, seek-local, and seek-worktree includes staged smoke seeded-login names with redacted or empty values only.",
+        "scripts/test_bootstrap_repo_env_contract.py passes.",
+        "Provisioning evidence validator passes for all changed files.",
+        "Execution scope and Local CI Gate pass before merge."
+      ],
+      "file_paths": [
+        "scripts/bootstrap-repo-env.sh",
+        "docs/ENV_REGISTRY.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "docs/plans/issue-471-seek-smoke-bootstrap-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-seek-smoke-bootstrap-scope.json",
+        "raw/validation/2026-04-21-issue-471-seek-smoke-bootstrap.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-orchestrator",
+      "role": "Existing-surface review",
+      "focus": "Avoid adding another secret provisioning mechanism.",
+      "status": "accepted",
+      "summary": "The existing bootstrap tool is the right surface; extend it for the missing Seek staged smoke names.",
+      "evidence": [
+        "scripts/bootstrap-repo-env.sh",
+        "docs/ENV_REGISTRY.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not required for scoped bootstrap env-name propagation",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This is a bounded extension of an existing bootstrap target under the approved #467/#471 Pages deploy adoption plan.",
+    "evidence": [
+      "docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-gpt-5",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #471 may update bootstrap/env registry/progress evidence needed for the Seek governed Pages deploy post-deploy smoke.",
+    "next_execution_step": "Validate, merge, then use the updated bootstrap to reprovision the temporary Seek deploy worktree for smoke proof.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-471-seek-smoke-bootstrap.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-seek-smoke-bootstrap-scope.json",
+    "packet_ref": "raw/packets/2026-04-21-issue-471-seek-smoke-bootstrap.json",
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-471-seek-smoke-bootstrap.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-21-issue-467-pages-deploy-gate-round1.md"
+    ],
+    "gate_artifact_refs": [
+      "raw/validation/2026-04-21-issue-471-seek-smoke-bootstrap.md"
+    ],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-471-seek-smoke-bootstrap.md",
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Local CI Gate passes.",
+      "Dry-run bootstrap output remains redacted.",
+      "No generated env files or secret values are committed."
+    ]
+  },
+  "material_deviation_rules": [
+    "If staged smoke still lacks required names after bootstrap, stop and record the missing approved provisioning surface instead of using inline secret exports.",
+    "If downstream Seek code needs further edits, use seek-and-ponder#163, not this governance lane."
+  ],
+  "approved": true,
+  "approved_by": [
+    "codex-gpt-5"
+  ],
+  "approved_at": "2026-04-21T00:00:00Z"
+}
