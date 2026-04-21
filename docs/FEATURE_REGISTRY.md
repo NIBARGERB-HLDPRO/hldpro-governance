@@ -201,6 +201,7 @@
 | GOV-023 | `record-failure` writes novel failures to `raw/operator-context/self-learning/` as new issue-backed files and never overwrites human-authored logs. |
 | GOV-023 | `overlord-sweep.yml` builds `metrics/self-learning/latest.json` and `latest.md`, appends the markdown report to the weekly issue, and persists the metric with other weekly generated artifacts. |
 | GOV-023 | Issue #475 adds an operational proof pattern: stale self-learning reports must be repaired by fixing the pre-sweep blocker, regenerating metrics, and preserving an issue-backed `raw/operator-context/self-learning/` artifact. |
+| GOV-023 | Issue #535 adds `docs/runbooks/session-error-patterns.md` as the operator lookup table for exact session error signatures and indexes it in `scripts/orchestrator/self_learning.py` as `session_error_pattern` so lookup/report output can surface the correction path. |
 
 ### E2E_AUTONOMOUS_DELIVERY_PILOT
 

@@ -37,6 +37,26 @@ Resolution Playbook: rerun compendium build and check.
 """,
         encoding="utf-8",
     )
+    (root / "docs" / "runbooks").mkdir(parents=True)
+    (root / "docs" / "runbooks" / "session-error-patterns.md").write_text(
+        """# Session Error Patterns
+
+## Pattern: claude-stream-json-verbose
+
+| Field | Value |
+|---|---|
+| Signature | Claude requires --verbose with --output-format stream-json. |
+| Category | CLI supervisor contract |
+| Root Cause | Worker launch flags omitted Claude's verbose requirement for stream-json output. |
+| Correction | Add --verbose or use the default output mode when the wrapper cannot expose verbose. |
+| Guardrail | Supervisor wrapper flag contract test. |
+| Validation | Fake Claude supervisor run covers stream-json and default output modes. |
+| Related Files | scripts/orchestrator/cli_session_supervisor.py |
+| First Observed | 2026-04-21 |
+| Prevented By | Issue #536 |
+""",
+        encoding="utf-8",
+    )
     (root / "docs" / "ORG_GOVERNANCE_COMPENDIUM.md").write_text("graph compendium closeout\n", encoding="utf-8")
     (root / "raw" / "closeouts").mkdir(parents=True)
     (root / "raw" / "closeouts" / "2026-04-17-test.md").write_text(
@@ -95,6 +115,27 @@ class TestSelfLearning(unittest.TestCase):
             self.assertIn("source_path", context[0])
             self.assertIn("evidence_paths", context[0])
             self.assertNotIn("score", context[0])
+
+    def test_session_error_runbook_is_indexed_for_lookup(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            _write_fixture(root)
+
+            matches = self_learning.lookup_patterns("Claude stream-json verbose worker wrapper", root=root, limit=5)
+
+            self.assertTrue(matches)
+            self.assertTrue(any(match.source_path == "docs/runbooks/session-error-patterns.md" for match in matches))
+
+    def test_report_surfaces_session_error_source(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            _write_fixture(root)
+
+            report = self_learning.build_report(root)
+            markdown = self_learning.report_markdown(report)
+
+            self.assertIn("session_error_pattern", report["sources"])
+            self.assertIn("session_error_pattern", markdown)
 
     def test_record_failure_is_append_only_and_issue_backed(self) -> None:
         with tempfile.TemporaryDirectory() as raw:

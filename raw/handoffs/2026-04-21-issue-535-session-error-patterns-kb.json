@@ -1,0 +1,74 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-535-session-error-patterns-kb",
+  "issue_number": 535,
+  "parent_epic_number": 533,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-implementation",
+  "structured_plan_ref": "docs/plans/issue-535-session-error-patterns-kb-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-535-session-error-patterns-kb-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Add a dedicated session-error runbook with the required fields and seed entries.",
+      "verification_refs": [
+        "docs/runbooks/session-error-patterns.md",
+        "scripts/overlord/validate_session_error_patterns.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Self-learning lookup and report output index session-error runbook entries with cited source paths.",
+      "verification_refs": [
+        "scripts/orchestrator/self_learning.py",
+        "scripts/orchestrator/test_self_learning.py",
+        "raw/validation/2026-04-21-issue-535-session-error-patterns-kb.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Existing error schema guardrails validate the runbook when present.",
+      "verification_refs": [
+        "hooks/check-errors.sh",
+        ".github/workflows/check-fail-fast-schema.yml"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/orchestrator/test_self_learning.py",
+    "python3 scripts/overlord/test_validate_session_error_patterns.py",
+    "python3 scripts/overlord/validate_session_error_patterns.py docs/runbooks/session-error-patterns.md",
+    "hooks/check-errors.sh",
+    "python3 scripts/orchestrator/self_learning.py --root . report --output-json /tmp/session-error-patterns-self-learning.json --output-md /tmp/session-error-patterns-self-learning.md",
+    "python3 scripts/overlord/test_workflow_local_coverage.py",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-21-issue-535-session-error-patterns-kb.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-21-issue-535-session-error-patterns-kb.md --root .",
+    "python3 scripts/overlord/check_stage6_closeout.py --root . --branch-name issue-535-session-error-patterns-kb --changed-files-file /tmp/issue-535-changed-files.txt",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-535-session-error-patterns-kb --changed-files-file /tmp/issue-535-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-535-session-error-patterns-kb-implementation.json --changed-files-file /tmp/issue-535-changed-files.txt --require-lane-claim",
+    "python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    ".github/workflows/check-fail-fast-schema.yml",
+    "docs/runbooks/session-error-patterns.md",
+    "hooks/check-errors.sh",
+    "scripts/orchestrator/self_learning.py",
+    "scripts/orchestrator/test_self_learning.py",
+    "scripts/overlord/validate_session_error_patterns.py",
+    "scripts/overlord/test_validate_session_error_patterns.py"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-21-issue-535-session-error-patterns-kb.md",
+    "raw/operator-context/self-learning/2026-04-21-issue-535-session-error-patterns-kb.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-21T22:20:00Z",
+  "notes": "Issue #535 makes exact session error corrections durable and discoverable in the self-learning loop."
+}
