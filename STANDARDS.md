@@ -149,6 +149,17 @@ These files must be consistent at the contract level. They do **not** need to be
 - Subagent approval system for cross-boundary (frontend↔backend) operations
 - Detailed project tracking lives in `backend/docs/PROJECT_STATUS.md` (supplements root `docs/PROGRESS.md`)
 
+### Secret Provisioning UX
+- Missing-secret and deploy-preflight diagnostics must list required variable names only. They must not print secret values, partial values, token prefixes, raw phone numbers, signed URLs, Authorization headers, generated env file contents, or screenshots containing credentials.
+- Operator guidance must route credential setup through approved provisioning surfaces:
+  - `hldpro-governance/.env.shared` as the gitignored local SSOT for operator-managed local credentials
+  - `scripts/bootstrap-repo-env.sh` generated repo-local env files, which remain ignored generated artifacts
+  - provider dashboards or vaults for provider-owned secret rotation
+  - GitHub Actions secrets or vars for CI-only credentials
+- Tooling, runbooks, issue bodies, PR descriptions, validation artifacts, and CI logs must not instruct operators to paste credential values into inline shell commands. This includes shell export assignments for secret variables, `launchctl setenv` with secret values, and pipelines that send literal values into `gh secret set`.
+- Missing-secret messages should use the canonical pattern documented in `docs/ENV_REGISTRY.md`: report the missing variable names, identify the approved provisioning surface, and ask the operator to rerun the appropriate bootstrap or provider/CI configuration step.
+- Evidence for secret provisioning must be value-free. Valid evidence includes variable names, command exit status, redacted dry-run output, file paths to ignored/generated env targets, provider surface names, GitHub secret names, and issue links.
+
 ## Security Standards (Tiered)
 
 Each repo has a security tier that determines which security artifacts the overlord agents verify.
