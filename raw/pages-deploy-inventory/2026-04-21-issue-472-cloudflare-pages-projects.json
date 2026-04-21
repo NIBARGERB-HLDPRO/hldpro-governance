@@ -1,0 +1,116 @@
+[
+  {
+    "name": "hldpro-dashboard",
+    "domains": [
+      "hldpro-dashboard.pages.dev",
+      "dashboard.hldpro.com"
+    ],
+    "subdomain": "hldpro-dashboard.pages.dev",
+    "production_branch": "main",
+    "source": null,
+    "latest_deployment": {
+      "id": "0d7c75ff-bdf7-4e73-bdad-be7d6e5df58d",
+      "created_on": "2026-04-21T22:42:01.130129Z",
+      "deployment_trigger": {
+        "type": "ad_hoc",
+        "metadata": {
+          "branch": "staging",
+          "commit_hash": "445d0d2fe2af7e660f423e118cd2869272d3b2d1",
+          "commit_message": "fix(issue-1475): preserve completed survey evidence resume (#1477)"
+        }
+      }
+    }
+  },
+  {
+    "name": "seek-and-ponder",
+    "domains": [
+      "seek-and-ponder.pages.dev",
+      "app.seekandponder.com",
+      "seekandponder.com",
+      "www.seekandponder.com"
+    ],
+    "subdomain": "seek-and-ponder.pages.dev",
+    "production_branch": "main",
+    "source": null,
+    "latest_deployment": {
+      "id": "fd040d95-b34a-4c96-a8cf-5b10183d1882",
+      "created_on": "2026-04-21T22:39:00.529743Z",
+      "deployment_trigger": {
+        "type": "ad_hoc",
+        "metadata": {
+          "branch": "main",
+          "commit_dirty": true,
+          "commit_hash": "000cfb4e83e4826b8812ac0f91b6ae6664295699",
+          "commit_message": "Merge pull request #173 from NIBARGERB-HLDPRO/issue-163-live-deploy-20260421"
+        }
+      }
+    }
+  },
+  {
+    "name": "hldpro-marketing",
+    "domains": [
+      "hldpro-marketing.pages.dev",
+      "hldpro.com",
+      "www.hldpro.com"
+    ],
+    "subdomain": "hldpro-marketing.pages.dev",
+    "production_branch": "main",
+    "source": null,
+    "latest_deployment": {
+      "id": "f53ae106-720d-4347-b11d-8a682302da4e",
+      "created_on": "2026-04-19T10:35:15.743996Z",
+      "deployment_trigger": {
+        "type": "ad_hoc",
+        "metadata": {
+          "branch": "main",
+          "commit_hash": "4af28dce7a6bccb17f35cd6c01c1ae48f50481b8",
+          "commit_message": "fix(e2e): stabilize support bug ticket proof (#1203)"
+        }
+      }
+    }
+  },
+  {
+    "name": "hldpro-pwa",
+    "domains": [
+      "hldpro-pwa.pages.dev",
+      "pwa.hldpro.com"
+    ],
+    "subdomain": "hldpro-pwa.pages.dev",
+    "production_branch": "main",
+    "source": null,
+    "latest_deployment": {
+      "id": "21ed43ff-6bdd-4fe5-b009-0456cbd74663",
+      "created_on": "2026-04-19T10:35:09.916656Z",
+      "deployment_trigger": {
+        "type": "ad_hoc",
+        "metadata": {
+          "branch": "main",
+          "commit_hash": "4af28dce7a6bccb17f35cd6c01c1ae48f50481b8",
+          "commit_message": "fix(e2e): stabilize support bug ticket proof (#1203)"
+        }
+      }
+    }
+  },
+  {
+    "name": "hldpro-reseller",
+    "domains": [
+      "hldpro-reseller.pages.dev",
+      "hldpro.dev"
+    ],
+    "subdomain": "hldpro-reseller.pages.dev",
+    "production_branch": "main",
+    "source": null,
+    "latest_deployment": {
+      "id": "8acd4c2d-1f38-4ae4-a0c2-6a0ef50c6699",
+      "created_on": "2026-04-19T10:35:03.018878Z",
+      "deployment_trigger": {
+        "type": "ad_hoc",
+        "metadata": {
+          "branch": "main",
+          "commit_hash": "4af28dce7a6bccb17f35cd6c01c1ae48f50481b8",
+          "commit_message": "fix(e2e): stabilize support bug ticket proof (#1203)"
+        }
+      }
+    }
+  }
+]

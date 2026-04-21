@@ -481,12 +481,20 @@ Use the Cloudflare dashboard, Wrangler, or an approved local API client that rea
 
 ### CF Pages Projects
 
-| Project | Custom Domain(s) | Build Command | Status |
-|---|---|---|---|
-| hldpro-marketing | hldpro.com, www.hldpro.com | `npm run build:marketing` | LIVE (2026-04-03) |
-| hldpro-dashboard | dashboard.hldpro.com | `npm run build:dashboard` | LIVE (2026-04-03) |
-| hldpro-reseller | hldpro.dev | `npm run build:reseller` | LIVE (2026-04-03) |
-| hldpro-pwa | pwa.hldpro.com | `npm run build:pwa` | LIVE (2026-04-03) |
+Issue #472 inventory ran against the Cloudflare Pages API on 2026-04-21. Every listed project has no Git provider configured, so merge-to-main is not a deploy signal unless the owning repo runs the governed Direct Upload deploy gate.
+
+| Project | Pages Alias / Custom Domain(s) | Owning Repo | Current Deploy Path | Gate Status | Disposition |
+|---|---|---|---|---|---|
+| seek-and-ponder | seek-and-ponder.pages.dev; app.seekandponder.com; seekandponder.com; www.seekandponder.com | `NIBARGERB-HLDPRO/seek-and-ponder` | `scripts/deploy-pages.sh` -> `apps/web` build -> Wrangler Pages upload | Adopted via seek-and-ponder#163 | Covered |
+| hldpro-dashboard | hldpro-dashboard.pages.dev; dashboard.hldpro.com | `NIBARGERB-HLDPRO/HealthcarePlatform` | dashboard frontend -> `frontend/dist` -> Wrangler Pages upload | Not adopted | Needs consumer adoption: HealthcarePlatform#1478 |
+| hldpro-marketing | hldpro-marketing.pages.dev; hldpro.com; www.hldpro.com | `NIBARGERB-HLDPRO/ai-integration-services` | `apps/marketing` -> `apps/marketing/dist` -> Wrangler Pages upload | Not adopted | Needs consumer adoption: ai-integration-services#1217 |
+| hldpro-pwa | hldpro-pwa.pages.dev; pwa.hldpro.com | `NIBARGERB-HLDPRO/ai-integration-services` | `apps/pwa` -> `apps/pwa/dist` -> Wrangler Pages upload | Not adopted | Needs consumer adoption: ai-integration-services#1217 |
+| hldpro-reseller | hldpro-reseller.pages.dev; hldpro.dev | `NIBARGERB-HLDPRO/ai-integration-services` | `apps/reseller` -> `apps/reseller/dist` -> Wrangler Pages upload | Not adopted | Needs consumer adoption: ai-integration-services#1217 |
+
+Inventory evidence:
+- `raw/pages-deploy-inventory/2026-04-21-issue-472-cloudflare-pages-projects.json`
+- `raw/pages-deploy-inventory/2026-04-21-issue-472-direct-upload-inventory.json`
+- `raw/pages-deploy-inventory/2026-04-21-issue-472-direct-upload-inventory.md`
 
 ### Current DNS Records (hldpro.com)
 
