@@ -221,7 +221,7 @@ Nodes (10): _process(), _request(), test_ambiguous_response_produces_clarificati
 
 ### Community 46 - "Community 46"
 Cohesion: 0.2
-Nodes (0): 
+Nodes (0):
 
 ### Community 47 - "Community 47"
 Cohesion: 0.38
@@ -289,7 +289,7 @@ Nodes (3): emit_packet(), main(), Emit a packet YAML file.     Returns: path to 
 
 ### Community 63 - "Community 63"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (0):
 
 ### Community 64 - "Community 64"
 Cohesion: 1.0
@@ -301,11 +301,11 @@ Nodes (2): main(), render_issue()
 
 ### Community 66 - "Community 66"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (0):
 
 ### Community 67 - "Community 67"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (0):
 
 ### Community 68 - "Community 68"
 Cohesion: 1.0

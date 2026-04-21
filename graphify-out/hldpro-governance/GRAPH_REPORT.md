@@ -1,7 +1,7 @@
 # Graph Report - hldpro-governance  (2026-04-21)
 
 ## Corpus Check
-- Large corpus: 1798 files · ~458,964 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 1821 files · ~466,707 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
 - 1392 nodes · 2611 edges · 76 communities detected
@@ -248,7 +248,7 @@ Nodes (9): filtered_targets(), find_target(), load_manifest(), main(), print_jso
 
 ### Community 53 - "Packages Hldpro sim Providers"
 Cohesion: 0.2
-Nodes (0): 
+Nodes (0):
 
 ### Community 54 - "Codex fire Failure"
 Cohesion: 0.5
@@ -316,15 +316,15 @@ Nodes (2): build_scoped_graph(), main()
 
 ### Community 70 - "Packages Hldpro sim Runner"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (0):
 
 ### Community 71 - "Packages Hldpro sim Engine"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (0):
 
 ### Community 72 - "Packages Hldpro sim Artifacts"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (0):
 
 ### Community 73 - "Windows ollama Submit Temporary"
 Cohesion: 1.0
