@@ -21,6 +21,13 @@ bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh hp-workt
 
 # Dry-run (redacted preview without writing)
 DRY_RUN=1 bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh hp-staging
+
+# Seed Seek and Ponder staging/local env
+bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh seek
+bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh seek-local
+
+# Seed Stampede market-data env
+bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh stampede
 ```
 
 ---
@@ -45,6 +52,8 @@ DRY_RUN=1 bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.s
 | `HLDPRO_STAGING_SUPABASE_*` | hldpro-staging |
 | `AIS_SUPABASE_*` | ai-integration-services |
 | `DK_SUPABASE_*` | apex-doorknocking |
+| `SEEK_STAGING_SUPABASE_*` | seek-and-ponder staging |
+| `SEEK_LOCAL_SUPABASE_*` | seek-and-ponder local dev |
 
 ---
 
@@ -122,6 +131,36 @@ DRY_RUN=1 bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.s
 | `DK_SUPABASE_URL` | `SUPABASE_URL` + `VITE_SUPABASE_URL` | apex-doorknocking project |
 | `DK_SUPABASE_ANON_KEY` | `SUPABASE_ANON_KEY` + `VITE_SUPABASE_ANON_KEY` | |
 | `DK_SUPABASE_SERVICE_ROLE_KEY` | `SUPABASE_SERVICE_ROLE_KEY` | |
+
+### seek-and-ponder
+
+| Key in `.env.shared` | Repo-native name | Notes |
+|---|---|---|
+| `SEEK_STAGING_SUPABASE_URL` | `SUPABASE_URL` + `SEEK_STAGING_SUPABASE_URL` | Default `seek` target writes staging as the active Supabase project |
+| `SEEK_STAGING_SUPABASE_ANON_KEY` | `SUPABASE_ANON_KEY` + `SEEK_STAGING_SUPABASE_ANON_KEY` | Browser/client staging anon key |
+| `SEEK_STAGING_SUPABASE_SERVICE_ROLE_KEY` | `SUPABASE_SERVICE_ROLE_KEY` + `SEEK_STAGING_SUPABASE_SERVICE_ROLE_KEY` | Server-side staging writes and e2e seeding only |
+| `SEEK_STAGING_SUPABASE_PROJECT_REF` | same | Supabase deploy target ref |
+| `SEEK_LOCAL_SUPABASE_URL` / `SEEK_LOCAL_SUPABASE_ANON_KEY` / `SEEK_LOCAL_SUPABASE_SERVICE_ROLE_KEY` | `SUPABASE_*` via `seek-local` | Local Supabase target for repo-local dev and tests |
+| `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` | same | Hosted embedding and LLM providers |
+| `SUPABASE_ACCESS_TOKEN` | same | Supabase management/deploy CLI |
+| `STRIPE_SECRET_KEY` / `STRIPE_WEBHOOK_SECRET` | same | Billing integration |
+| `RESEND_API_KEY` | same | Email delivery |
+| `GOOGLE_OAUTH_CLIENT_ID` / `GOOGLE_OAUTH_CLIENT_SECRET` | same | Google SSO |
+
+### Stampede
+
+| Key in `.env.shared` | Repo-native name | Notes |
+|---|---|---|
+| `ALPACA_API_KEY` / `ALPACA_SECRET_KEY` | same | Brokerage/market data integration |
+| `ALPHA_VANTAGE_API_KEY` | same | Market data fallback |
+| `POLYGON_API_KEY` | same | Generated from `POLYGON_API_KEY` when present, otherwise `MASSIVE_API_KEY` compatibility value |
+| `MASSIVE_API_KEY` | same | Massive market-data API key |
+| `MASSIVE_FLATFILES_BASE_URL` / `MASSIVE_FLATFILES_BUCKET` | same | Massive flatfiles endpoint and bucket |
+| `MASSIVE_FLATFILES_ACCESS_KEY_ID` / `MASSIVE_FLATFILES_SECRET_ACCESS_KEY` | same | Massive flatfiles object-store credentials |
+| `INTRINIO_API_KEY` | same | Optional market-data provider key; generated blank when absent from SSOT |
+| `TRADIER_PRODUCTION_API_TOKEN` | `TRADIER_API_TOKEN` | Stampede default is production per repo `.env.example`; sandbox key remains in `TRADIER_API_TOKEN` for sandbox callers |
+| `TRADIER_ACCOUNT_ID` / `TRADIER_PRODUCTION_BASE_URL` / `TRADIER_PRODUCTION_ENV` | `TRADIER_ACCOUNT_ID` / `TRADIER_BASE_URL` / `TRADIER_ENV` | Tradier account, production endpoint, and environment selector |
+| `X_BEARER_TOKEN` | same | Optional X/Twitter bearer token; generated blank when absent from SSOT |
 
 ---
 

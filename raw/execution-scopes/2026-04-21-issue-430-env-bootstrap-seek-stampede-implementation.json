@@ -1,0 +1,69 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "feature/issue-430-env-bootstrap-seek-stampede-20260421",
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 430,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/430",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-21T13:10:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-directive",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-21T13:10:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/430",
+      "docs/plans/issue-430-env-bootstrap-seek-stampede-structured-agent-cycle-plan.json",
+      "docs/plans/issue-430-env-bootstrap-seek-stampede-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  },
+  "allowed_write_paths": [
+    ".gitignore",
+    "OVERLORD_BACKLOG.md",
+    "docs/ENV_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-430-env-bootstrap-seek-stampede-pdcar.md",
+    "docs/plans/issue-430-env-bootstrap-seek-stampede-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-21-issue-430-env-bootstrap-seek-stampede-implementation.json",
+    "raw/validation/2026-04-21-issue-430-env-bootstrap-seek-stampede.md",
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/test_bootstrap_repo_env_contract.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout has separate issue-385 vault branch residue and remains out of scope for issue #430."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Sibling repo may have unrelated local work and remains out of scope for issue #430."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Sibling repo has unrelated local work and remains out of scope for issue #430."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Sibling repo has unrelated local work and remains out of scope for issue #430."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Sibling repo has unrelated local work and remains out of scope for issue #430."
+    }
+  ]
+}

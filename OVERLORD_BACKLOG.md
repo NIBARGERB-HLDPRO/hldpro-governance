@@ -19,6 +19,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Seek and Stampede env bootstrap targets | [#430](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/430) | MEDIUM | 1-2 | Add repo-native SSOT bootstrap aliases for `seek-and-ponder` and `Stampede`, with redacted dry-run contract coverage and registry docs so agents stop hunting credentials manually. |
 
 ## Done
 
