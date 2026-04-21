@@ -1,0 +1,220 @@
+{
+  "session_id": "session-20260421-issue-468-pages-deploy-pdcar",
+  "issue_number": 468,
+  "objective": "Produce the canonical PDCAR, structured agent-cycle plan, and planning-only execution scope for Cloudflare Pages Direct Upload deploy gate epic #467. Planning only; no implementation.",
+  "tier": 1,
+  "scope_boundary": [
+    "This planning lane produces only the PDCAR markdown, structured agent-cycle plan JSON, planning-only execution scope, and OVERLORD_BACKLOG.md 'In Progress' row for epic #467.",
+    "Plan decomposes epic #467 into 5 sprints, one per existing child issue (#468 planning, #469 gate, #470 verifier, #471 seek first-consumer proof, #472 Direct Upload inventory).",
+    "Plan defines the governance-owned Cloudflare Pages Direct Upload deploy gate, freshness/domain-parity verifier, consumer config schema, and adoption path, without authoring any of that implementation here."
+  ],
+  "out_of_scope": [
+    "Any code implementation (scripts/pages-deploy/*, tests, runbooks beyond planning).",
+    "Cloudflare Workers (non-Pages) deploy patterns; Vercel/Netlify/S3.",
+    "Flipping any Cloudflare Pages project from Direct Upload to Git Provider.",
+    "Writing into seek-and-ponder or any other consumer repo from this lane (downstream seek adoption is seek-and-ponder issue #163).",
+    "docs/FEATURE_REGISTRY.md and docs/SERVICE_REGISTRY.md edits (reserved for implementation issues)."
+  ],
+  "research_summary": "seek-and-ponder is deployed on Cloudflare Pages with Git Provider: No (Direct Upload). Merging to main does not auto-deploy; the live Pages project is ~21 commits behind main (last deploy b27b931 vs head 311d5db). PRs #157-#162 including web bundle and persona-respond edge-function changes are not live. There is no governance primitive for this deploy pattern, no reusable freshness/domain-parity verifier, no function-before-frontend ordering enforcement, and no inventory of which governed repos run Pages in Direct Upload mode. This epic owns a reusable governance gate, a freshness/parity verifier, the seek-first-consumer proof, and an org-wide inventory rollout.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/467",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/468",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/469",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/470",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/471",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/472",
+    "https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/issues/163",
+    "docs/plans/2026-04-21-issue-467-pages-deploy-gate-pdcar.md",
+    "docs/plans/issue-454-consumer-verifier-v02-pdcar.md",
+    "docs/plans/2026-04-20-issue-422-hldpro-sim-deploy-pdcar.md",
+    "STANDARDS.md"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 - Planning package (issue #468)",
+      "goal": "Commit the canonical PDCAR, structured agent-cycle plan JSON, planning-only execution scope, and OVERLORD_BACKLOG.md In Progress row for epic #467, and push the planning branch for orchestrator gpt-5.4 review.",
+      "tasks": [
+        "Author docs/plans/2026-04-21-issue-467-pages-deploy-gate-pdcar.md covering Problem, Context, Plan (5 sprints), Scope, Do, Check, Adjust (material deviation rules), Review, and Handoff.",
+        "Author docs/plans/issue-467-pages-deploy-gate-structured-plan.json matching docs/schemas/structured-agent-cycle-plan.schema.json with 5 sprints, specialist_reviews, alternate_model_review pinned to gpt-5.4 @ model_reasoning_effort=high, and execution_handoff.execution_mode='planning_only'.",
+        "Author raw/execution-scopes/2026-04-21-issue-468-planning-only.json scoped to only the planning artifacts with lane_claim.issue_number=468 and expected_branch='issue-468-pages-deploy-pdcar-20260421'.",
+        "Add epic #467 to OVERLORD_BACKLOG.md In Progress using the brief-mandated row.",
+        "Validate the structured plan against docs/schemas/structured-agent-cycle-plan.schema.json.",
+        "Commit and push branch issue-468-pages-deploy-pdcar-20260421; do NOT open a PR (orchestrator opens PR after gpt-5.4 review)."
+      ],
+      "acceptance_criteria": [
+        "All four planning artifacts exist on the planning branch with the paths specified above.",
+        "python3 jsonschema validation of the structured plan against docs/schemas/structured-agent-cycle-plan.schema.json returns VALID.",
+        "OVERLORD_BACKLOG.md has the #467 In Progress row in the required format.",
+        "The planning branch is pushed to origin and gpt-5.4 alternate-model review is unblocked."
+      ],
+      "file_paths": [
+        "docs/plans/2026-04-21-issue-467-pages-deploy-gate-pdcar.md",
+        "docs/plans/issue-467-pages-deploy-gate-structured-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-468-planning-only.json",
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "name": "Sprint 2 - Reusable Pages Direct Upload deploy gate (issue #469)",
+      "goal": "Ship a governance-owned, reusable Cloudflare Pages Direct Upload deploy gate with a consumer config schema, function-before-frontend ordering, fail-closed credential handling, and secret-redaction test coverage.",
+      "tasks": [
+        "Implement scripts/pages-deploy/pages_deploy_gate.py as the gate entrypoint: reads a consumer pages-deploy.config.json, plans the deploy, enforces function-before-frontend ordering, and supports --dry-run.",
+        "Author docs/schemas/pages-deploy-consumer.schema.json declaring project name, build output dir, edge function list with deploy order, domain list, freshness/parity thresholds, and optional overrides.",
+        "Author scripts/pages-deploy/tests/test_pages_deploy_gate.py covering ordering, missing-creds fail-closed, secret-redaction assertion, dry-run, and non-zero exit on step failure.",
+        "Extend STANDARDS.md with a Pages Direct Upload deploy gate row and add docs/runbooks/pages-deploy-gate.md with invocation guidance.",
+        "Record dual-signed architecture cross-review at raw/cross-review/2026-04-21-issue-469-pages-deploy-gate.md; record validation at raw/validation/2026-04-21-issue-469-pages-deploy-gate.md; record Stage 6 closeout at raw/closeouts/2026-04-21-issue-469-pages-deploy-gate.md.",
+        "Ship on an issue-469-*-20260421 branch with its own implementation-ready execution scope."
+      ],
+      "acceptance_criteria": [
+        "scripts/pages-deploy/pages_deploy_gate.py exists and exits non-zero on any step failure.",
+        "docs/schemas/pages-deploy-consumer.schema.json exists and is referenced by validator tests.",
+        "scripts/pages-deploy/tests/test_pages_deploy_gate.py passes locally and in Local CI Gate; includes explicit secret-redaction regression.",
+        "Gate never logs token values; tests assert redaction of Cloudflare API token, account id, and signed URLs.",
+        "Architecture cross-review dual-signed and stored under raw/cross-review/; Stage 6 closeout filed."
+      ],
+      "file_paths": [
+        "scripts/pages-deploy/pages_deploy_gate.py",
+        "scripts/pages-deploy/tests/test_pages_deploy_gate.py",
+        "docs/schemas/pages-deploy-consumer.schema.json",
+        "docs/runbooks/pages-deploy-gate.md",
+        "STANDARDS.md",
+        "raw/cross-review/2026-04-21-issue-469-pages-deploy-gate.md",
+        "raw/validation/2026-04-21-issue-469-pages-deploy-gate.md",
+        "raw/closeouts/2026-04-21-issue-469-pages-deploy-gate.md"
+      ]
+    },
+    {
+      "name": "Sprint 3 - Freshness + domain parity verifier (issue #470)",
+      "goal": "Ship a governance-owned verifier that proves a Pages deploy landed and that all declared domains serve the same deployment, with stale-checkout protection and public-surface-only default probes.",
+      "tasks": [
+        "Implement scripts/pages-deploy/pages_deploy_verifier.py: compares latest consumer main commit (or tag) against each configured domain, reports freshness delta in commits and time, and fails if any domain disagrees on served deployment id.",
+        "Add stale-checkout protection: verifier refuses to run when the consumer working tree is behind upstream main.",
+        "Author scripts/pages-deploy/tests/test_pages_deploy_verifier.py with HTTP fixtures, drift detection, and parity-disagreement coverage.",
+        "Extend docs/schemas/pages-deploy-consumer.schema.json with freshness_threshold and parity_rule fields as needed.",
+        "Record validation at raw/validation/2026-04-21-issue-470-pages-deploy-verifier.md and Stage 6 closeout at raw/closeouts/2026-04-21-issue-470-pages-deploy-verifier.md.",
+        "Ship on an issue-470-*-20260421 branch with its own implementation-ready execution scope."
+      ],
+      "acceptance_criteria": [
+        "scripts/pages-deploy/pages_deploy_verifier.py exists and passes its test suite.",
+        "Verifier fails when any configured domain serves a different deployment id; verifier fails when consumer checkout is stale.",
+        "Default probe requires no Cloudflare API token; richer diagnostics via token are opt-in.",
+        "Validation evidence and Stage 6 closeout committed."
+      ],
+      "file_paths": [
+        "scripts/pages-deploy/pages_deploy_verifier.py",
+        "scripts/pages-deploy/tests/test_pages_deploy_verifier.py",
+        "docs/schemas/pages-deploy-consumer.schema.json",
+        "raw/validation/2026-04-21-issue-470-pages-deploy-verifier.md",
+        "raw/closeouts/2026-04-21-issue-470-pages-deploy-verifier.md"
+      ]
+    },
+    {
+      "name": "Sprint 4 - Seek first-consumer adoption + live proof (issue #471 + seek-and-ponder #163)",
+      "goal": "Adopt the governance Pages deploy gate and verifier in seek-and-ponder, deploy the current seek main to production, and capture live parity/freshness proof without governance writing into the downstream repo.",
+      "tasks": [
+        "Governance side (issue #471): record the adoption plan, link to seek-and-ponder #163, and file live evidence paths under raw/validation/.",
+        "Downstream seek-and-ponder #163 (separate lane, separate PR): add pages-deploy.config.json validated against docs/schemas/pages-deploy-consumer.schema.json.",
+        "Downstream seek-and-ponder #163: add scripts/deploy-pages.sh invoking the governance gate via the managed distribution path or a pinned copy.",
+        "Downstream seek-and-ponder #163: wire CI so a main merge runs deploy-pages.sh then pages_deploy_verifier.py; catch up the production Pages project to current main.",
+        "Capture no-secret live evidence: seekandponder.com, www.seekandponder.com, and the *.pages.dev preview all serve the same latest commit id; attach to raw/validation/2026-04-21-issue-471-seek-first-consumer.md.",
+        "File Stage 6 closeout at raw/closeouts/2026-04-21-issue-471-seek-first-consumer.md once downstream PR merges and proof is captured."
+      ],
+      "acceptance_criteria": [
+        "Seek-and-ponder main is live on all declared domains; verifier reports parity and freshness within threshold.",
+        "Evidence artifacts contain no token values, no signed URLs embedding tokens, and no Authorization headers.",
+        "Governance-side validation and Stage 6 closeout filed; no governance write into seek-and-ponder occurred from this lane.",
+        "Downstream PR for seek-and-ponder #163 is merged and linked from the governance closeout."
+      ],
+      "file_paths": [
+        "raw/validation/2026-04-21-issue-471-seek-first-consumer.md",
+        "raw/closeouts/2026-04-21-issue-471-seek-first-consumer.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "name": "Sprint 5 - Direct Upload Pages inventory rollout (issue #472)",
+      "goal": "Enumerate all governed repos running Cloudflare Pages in Direct Upload mode, file an adoption issue per newly discovered consumer, and record the pages_deploy_mode in the governed repos registry.",
+      "tasks": [
+        "Implement scripts/pages-deploy/inventory_direct_upload_projects.py: walks governed repos, looks for pages-deploy.config.json or equivalent markers, and reports Direct Upload vs Git Provider mode.",
+        "Update docs/governed_repos.json (or the appropriate registry) with a pages_deploy_mode field per repo.",
+        "Open one governance adoption issue per discovered Direct Upload consumer that is not yet on the governance gate.",
+        "Write raw/validation/2026-04-21-issue-472-direct-upload-inventory.md and Stage 6 closeout at raw/closeouts/2026-04-21-issue-472-direct-upload-inventory.md.",
+        "Ship on an issue-472-*-20260421 branch with its own implementation-ready execution scope."
+      ],
+      "acceptance_criteria": [
+        "Inventory script exists and runs to completion against governed repos; output committed under raw/validation/.",
+        "docs/governed_repos.json has pages_deploy_mode populated for each governed repo.",
+        "Every newly discovered Direct Upload consumer has a governance adoption issue opened.",
+        "Stage 6 closeout filed."
+      ],
+      "file_paths": [
+        "scripts/pages-deploy/inventory_direct_upload_projects.py",
+        "docs/governed_repos.json",
+        "raw/validation/2026-04-21-issue-472-direct-upload-inventory.md",
+        "raw/closeouts/2026-04-21-issue-472-direct-upload-inventory.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "claude-opus-4-6 (Tier 1 planner)",
+      "role": "Primary planner",
+      "focus": "Decompose Cloudflare Pages Direct Upload deploy gate epic #467 into 5 sprints that match existing child issues #468/#469/#470/#471/#472 and seek-and-ponder #163, with explicit function-before-frontend ordering, domain parity rules, no-secret evidence rules, and material deviation rules for emergency deploys, missing credentials, stale checkouts, and downstream repo edits.",
+      "status": "accepted",
+      "summary": "Plan decomposes epic #467 along the existing child-issue boundaries, keeps the governance gate and verifier reusable, pins seek-and-ponder as the first consumer proof without governance writing downstream, and documents the material deviation rules called out in the brief.",
+      "evidence": [
+        "docs/plans/2026-04-21-issue-467-pages-deploy-gate-pdcar.md",
+        "docs/plans/issue-467-pages-deploy-gate-structured-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-468-planning-only.json"
+      ]
+    },
+    {
+      "reviewer": "infra-delivery reviewer",
+      "role": "Delivery reviewer",
+      "focus": "Pages Direct Upload pitfalls: function-before-frontend ordering, apex vs www vs *.pages.dev parity, stale-checkout false parity, secret-in-logs leakage, and emergency-deploy bypass governance.",
+      "status": "accepted",
+      "summary": "Accepts the plan's ordering, parity, fail-closed credential, stale-checkout, and explicit emergency-bypass rules. Recommends the verifier default to public-surface probes to avoid requiring a Cloudflare API token for routine parity checks; Sprint 3 adopts that.",
+      "evidence": [
+        "docs/plans/2026-04-21-issue-467-pages-deploy-gate-pdcar.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.4 @ model_reasoning_effort=high",
+    "model_family": "openai",
+    "status": "not_requested",
+    "summary": "Alternate-model review pinned to gpt-5.4 @ model_reasoning_effort=high per SoM Society of Minds routing for Tier-1 plans touching new governance architecture. Orchestrator will schedule the review separately after this planning commit lands; status will move to accepted or accepted_with_followup before any Sprint 2+ implementation begins.",
+    "evidence": [
+      "STANDARDS.md",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/468"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-opus-4-6",
+    "execution_mode": "planning_only",
+    "approved_scope_summary": "Commit the 4 planning artifacts (PDCAR, structured plan, planning-only execution scope, OVERLORD_BACKLOG row) for epic #467 on issue-468-pages-deploy-pdcar-20260421; no implementation; no PR; orchestrator opens the PR after gpt-5.4 alternate-model review.",
+    "next_execution_step": "Orchestrator runs gpt-5.4 @ model_reasoning_effort=high alternate-model review over this plan and the PDCAR; on acceptance, orchestrator opens the planning PR and then fires the Sprint 2 implementation lane for issue #469.",
+    "blocked_on": [
+      "gpt-5.4 alternate-model review of this plan and PDCAR",
+      "Orchestrator PR open for the planning branch"
+    ],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-468-planning-only.json",
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true
+  },
+  "material_deviation_rules": [
+    "Emergency deploys: operator may bypass the gate only with PAGES_DEPLOY_EMERGENCY_BYPASS=1 plus a recorded bypass note under raw/validation/ and a follow-up governance issue opened before the next merge; silent bypass is not allowed.",
+    "Missing credentials: gate must fail closed with a human-readable message when any required Cloudflare credential is absent; must never attempt partial-credential deploys; must never log credential values.",
+    "Stale consumer checkouts: verifier must refuse to run against a consumer working tree that is not fast-forward-equal to upstream; must fetch and compare HEAD before any parity check.",
+    "Downstream repo edits: this planning lane must not write into seek-and-ponder or any other consumer repo; seek adoption is seek-and-ponder issue #163 under its own lane claim; any new required downstream change must open a new downstream issue before writes.",
+    "No-secret evidence: validation artifacts must never include token values, token-embedding signed URLs, or Authorization headers; Sprint 2 tests must assert redaction.",
+    "Sprint expansion: if an implementation sprint discovers work outside its acceptance criteria, either finish it under the sprint's governing issue or open a new governance issue before closing the sprint.",
+    "Architecture cross-review: Sprint 2 introduces the governance pages-deploy surface and MUST land a dual-signed cross-review artifact under raw/cross-review/ before merge, per STANDARDS.md Society of Minds."
+  ],
+  "approved": false,
+  "approved_by": [
+    "claude-opus-4-6 (Tier 1 planner self-review - pending gpt-5.4 alternate-model review)"
+  ],
+  "approved_at": "2026-04-21T00:00:00Z"
+}

@@ -20,6 +20,7 @@
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
 | Self-learning loop operational proof gap | [#475](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/475) | HIGH | 2-3 | Unblock scheduled sweep before self-learning, refresh metrics, add issue-backed operator-context write-back evidence, and document the reusable prevention pattern. |
+| Cloudflare Pages direct-upload deploy gate epic | [#467](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/467) | HIGH | 4-6 | Reusable govern gate + verifier, seek-and-ponder first consumer proof. Child issues: #468 planning, #469 gate, #470 verifier, #471 Seek adoption, #472 inventory. |
 
 ## Done
 
