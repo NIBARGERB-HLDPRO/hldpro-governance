@@ -26,6 +26,17 @@ See STANDARDS.md §Society of Minds for the full charter.
 - [ ] ...
 - [ ] ...
 
+## Handoff package evidence
+- [ ] Structured plan: `docs/plans/_______________-structured-agent-cycle-plan.json`
+- [ ] Execution scope: `raw/execution-scopes/_______________-implementation.json`
+- [ ] Handoff package: `raw/handoffs/_______________-plan-to-implementation.json`
+- [ ] Validation artifact: `raw/validation/_______________.md`
+- [ ] Review artifact refs: `raw/cross-review/_______________.md` or `N/A - implementation only`
+- [ ] Gate artifact refs: `_______________` or `N/A - command result below`
+- [ ] Local CI evidence: `cache/local-ci-gate/reports/.../local-ci-*.json` or command result `tools/local-ci-gate/bin/hldpro-local-ci run --profile ... --json`
+- [ ] Closeout: `raw/closeouts/_______________.md`
+- [ ] Packet queue state: `_______________` or `N/A - no packet dispatch in this PR`
+
 ## Cross-review artifact (architecture / standards PRs only)
 <!-- Paste path: raw/cross-review/YYYY-MM-DD-<slug>.md -->
 

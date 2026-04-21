@@ -1,20 +1,27 @@
 # Overlord Validate handoff package
 
-> 11 nodes · cohesion 0.49
+> 18 nodes · cohesion 0.36
 
 ## Key Concepts
 
-- **validate_handoff_package.py** (10 connections) — `scripts/overlord/validate_handoff_package.py`
-- **validate_package()** (8 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_is_url()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_repo_file_exists()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_validate_acceptance_criteria()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_validate_ref_array()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_normalize_repo_path()** (4 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_read_json_ref()** (4 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_load_json()** (3 connections) — `scripts/overlord/validate_handoff_package.py`
-- **main()** (3 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_discover_package_files()** (2 connections) — `scripts/overlord/validate_handoff_package.py`
+- **_write_supporting_files()** (15 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **TestValidateHandoffPackage** (12 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **._run_main()** (11 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **_write_json()** (9 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **_handoff()** (7 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **test_validate_handoff_package.py** (6 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_accepted_package_requires_closeout_ref()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_empty_acceptance_criteria_fails()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_execution_scope_lane_claim_mismatch_fails()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_invalid_handoff_id_fails()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_structured_plan_issue_mismatch_fails()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_unsafe_handoff_ref_fails_without_traceback()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_validation_ready_package_requires_packet_ref()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **_plan()** (3 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **_scope()** (3 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_missing_execution_scope_fails_for_implementation_ready()** (3 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_missing_structured_plan_ref_fails()** (3 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_valid_package_passes()** (3 connections) — `scripts/overlord/test_validate_handoff_package.py`
 
 ## Relationships
 
@@ -22,12 +29,12 @@
 
 ## Source Files
 
-- `scripts/overlord/validate_handoff_package.py`
+- `scripts/overlord/test_validate_handoff_package.py`
 
 ## Audit Trail
 
-- EXTRACTED: 20 (37%)
-- INFERRED: 34 (63%)
+- EXTRACTED: 34 (31%)
+- INFERRED: 76 (69%)
 - AMBIGUOUS: 0 (0%)
 
 ---

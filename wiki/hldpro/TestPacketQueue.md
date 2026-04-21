@@ -1,6 +1,6 @@
 # TestPacketQueue
 
-> God node · 16 connections · `hldpro-governance/scripts/orchestrator/test_packet_queue.py`
+> God node · 16 connections · `scripts/orchestrator/test_packet_queue.py`
 
 ## Connections by Relation
 

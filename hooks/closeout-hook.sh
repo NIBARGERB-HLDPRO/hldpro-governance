@@ -10,6 +10,7 @@ REPO_ROOT="$GOVERNANCE_ROOT"
 BUILD_SCRIPT="${GOVERNANCE_ROOT}/scripts/knowledge_base/build_graph.py"
 TARGET_SCRIPT="${GOVERNANCE_ROOT}/scripts/knowledge_base/graphify_targets.py"
 INDEX_SCRIPT="${GOVERNANCE_ROOT}/scripts/knowledge_base/update_knowledge_index.py"
+CLOSEOUT_VALIDATOR="${GOVERNANCE_ROOT}/scripts/overlord/validate_closeout.py"
 
 if [ -z "$CLOSEOUT_FILE" ]; then
   echo "ERROR: No closeout file specified."
@@ -35,6 +36,11 @@ for field in "${REQUIRED_FIELDS[@]}"; do
     exit 1
   fi
 done
+if [ ! -f "$CLOSEOUT_VALIDATOR" ]; then
+  echo "ERROR: Closeout validator not found: $CLOSEOUT_VALIDATOR"
+  exit 1
+fi
+python3 "$CLOSEOUT_VALIDATOR" "$CLOSEOUT_FILE" --root "$GOVERNANCE_ROOT"
 echo "  ✓ Template validated"
 
 # 2. Refresh the governance graph target defined for closeout

@@ -29,14 +29,35 @@ Completed By: Benji
 ## Review And Gate Identity
 [Name reviewer and gate identities, including role, model ID, model family, signature date, and verdict when the artifact requires it.]
 
+Review artifact refs:
+- `raw/cross-review/YYYY-MM-DD-<slug>.md` or `N/A - implementation only`
+
+Gate artifact refs:
+- `cache/local-ci-gate/reports/YYYYMMDDTHHMMSSZ-<profile>-git/local-ci-*.json` or command result when the report is local-only
+
 ## Wired Checks Run
 [List the actual workflow/script/test checks wired and run. Do not claim enforcement from documentation alone.]
 
 ## Execution Scope / Write Boundary
 [When work is delegated to workers, sweep/status writers, or sibling worktrees, name the execution-scope JSON artifact and the `assert_execution_scope.py` command used to prove the checkout root, branch, changed paths, and forbidden roots.]
 
+Structured plan:
+- `docs/plans/<issue>-structured-agent-cycle-plan.json`
+
+Execution scope:
+- `raw/execution-scopes/YYYY-MM-DD-<issue>-implementation.json`
+
+Handoff package:
+- `raw/handoffs/YYYY-MM-DD-<issue>-plan-to-implementation.json`
+
+Handoff lifecycle:
+- `Handoff lifecycle: accepted` or `Handoff lifecycle: released`
+
 ## Validation Commands
 [Commands run for this closeout and PASS/FAIL/SKIP result. Include why any expected check was skipped.]
+
+Validation artifact:
+- `raw/validation/YYYY-MM-DD-<issue>.md`
 
 ## Tier Evidence Used
 [For architecture or standards scope, name the committed artifact that proves the gate model/tier used (for example `raw/cross-review/YYYY-MM-DD-<slug>.md`).]

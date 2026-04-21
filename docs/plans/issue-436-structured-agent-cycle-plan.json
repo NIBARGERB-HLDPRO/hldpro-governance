@@ -1,0 +1,133 @@
+{
+  "session_id": "session-20260421-issue-436-pr-closeout-handoff-gates",
+  "issue_number": 436,
+  "objective": "Harden PR and closeout surfaces so structured handoff package evidence is requested in PRs and validated by the Stage 6 closeout hook before graph/wiki refresh.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance repository only.",
+    "Update the PR template handoff evidence checklist.",
+    "Update the closeout template with required handoff evidence prompts.",
+    "Add a deterministic closeout validator and focused tests.",
+    "Call the closeout validator from hooks/closeout-hook.sh before graph/wiki refresh.",
+    "Update issue #436 evidence, backlog/progress mirrors, validation, review, and closeout artifacts."
+  ],
+  "out_of_scope": [
+    "Downstream repository edits.",
+    "Changing package-handoff schema semantics beyond closeout surface enforcement.",
+    "Changing packet queue dispatch behavior; completed by issue #437.",
+    "Changing Local CI or reusable GitHub handoff validator triggers; completed by issue #435."
+  ],
+  "research_summary": "Issues #438, #435, and #437 established schemas, CI validation, and packet dispatch reconciliation. The remaining gap is the user-facing and Stage 6 closeout surface: PR authors must provide the package evidence, and closeout must fail before graph/wiki refresh when referenced artifacts are missing or residual follow-ups are not issue-backed.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/434",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/436",
+    ".github/pull_request_template.md",
+    "hooks/closeout-hook.sh",
+    "raw/closeouts/TEMPLATE.md",
+    "scripts/overlord/validate_handoff_package.py"
+  ],
+  "sprints": [
+    {
+      "name": "PR and closeout evidence hardening",
+      "goal": "Make handoff package evidence visible in the PR template and enforceable during closeout before graph/wiki refresh.",
+      "tasks": [
+        "Add PR template fields for structured plan, execution scope, handoff package, validation, review/gate artifacts, Local CI evidence, closeout, and packet queue state.",
+        "Add closeout template prompts for the same evidence and handoff lifecycle recording.",
+        "Add scripts/overlord/validate_closeout.py to check required evidence refs, referenced artifact existence, issue-backed residuals, and handoff lifecycle recording.",
+        "Call the closeout validator from hooks/closeout-hook.sh before graph/wiki refresh.",
+        "Add focused tests for missing referenced artifacts, missing issue-backed residuals, missing handoff lifecycle recording, and hook integration order.",
+        "Update issue mirrors and governance evidence."
+      ],
+      "acceptance_criteria": [
+        "PR template requires structured plan path, execution scope path, handoff package path, validation artifact path, review/gate artifact refs, Local CI report or command result, closeout path, and packet queue state where applicable.",
+        "Closeout hook validates referenced plan/scope/handoff/validation/review/gate artifacts exist before graph/wiki refresh.",
+        "Closeout hook verifies residual risks and follow-ups are issue-backed or explicitly none.",
+        "Closeout hook records or validates lifecycle transition to accepted/released where a handoff package exists.",
+        "Tests cover missing closeout artifact refs and missing issue-backed residuals.",
+        "No downstream repo edits occur."
+      ],
+      "file_paths": [
+        ".github/pull_request_template.md",
+        "hooks/closeout-hook.sh",
+        "raw/closeouts/TEMPLATE.md",
+        "scripts/overlord/validate_closeout.py",
+        "scripts/overlord/test_validate_closeout.py",
+        "docs/plans/issue-436-pr-closeout-handoff-gates-pdcar.md",
+        "docs/plans/issue-436-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-436-pr-closeout-handoff-gates-implementation.json",
+        "raw/handoffs/2026-04-21-issue-436-plan-to-implementation.json",
+        "raw/validation/2026-04-21-issue-436-pr-closeout-handoff-gates.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Claude Sonnet 4.6",
+      "role": "worker",
+      "focus": "PR template, closeout hook, closeout validator, and focused tests.",
+      "status": "unavailable_timeout_no_edits",
+      "summary": "The local Claude Sonnet 4.6 worker process hung without returning output and was killed after a bounded wait. It left no file changes; Codex QA implemented the slice.",
+      "evidence": [
+        "docs/plans/issue-436-pr-closeout-handoff-gates-pdcar.md"
+      ]
+    },
+    {
+      "reviewer": "Codex orchestrator",
+      "role": "orchestrator-qa",
+      "focus": "Issue #436 acceptance criteria, closeout evidence validator behavior, and deterministic gates.",
+      "status": "accepted",
+      "summary": "Add a closeout validator as a pre-graph hook gate and keep the PR/closeout templates aligned with the package handoff evidence chain.",
+      "evidence": [
+        "scripts/overlord/test_validate_closeout.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Claude Opus 4.6 approved with changes. Codex QA completed the required lifecycle-line, gate-evidence, and placeholder-test conditions.",
+    "evidence": [
+      "raw/cross-review/2026-04-21-issue-436-pr-closeout-handoff-gates.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement governance-only PR template, closeout template, closeout hook validator, tests, issue plan/scope/handoff evidence, validation, review, and closeout for issue #436.",
+    "next_execution_step": "Run focused validation, cross-review, Local CI Gate, closeout, PR, and automerge if green.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-21-issue-436-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-436-pr-closeout-handoff-gates-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-436-pr-closeout-handoff-gates.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-21-issue-436-pr-closeout-handoff-gates.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-21-issue-436-pr-closeout-handoff-gates.md",
+    "next_role": "codex-qa",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "PR template exposes all handoff package evidence fields.",
+      "Closeout hook invokes closeout validator before graph/wiki refresh.",
+      "Closeout validator fails on missing referenced artifacts and unissued residual risks.",
+      "Local CI Gate passes before merge."
+    ]
+  },
+  "material_deviation_rules": [
+    "If downstream repos need propagation, create downstream issues instead of editing them here.",
+    "If package-handoff schema semantics need new lifecycle states, create a follow-up issue instead of expanding this slice.",
+    "If Sonnet worker tooling is unavailable or hangs, record the attempt and continue with Codex QA plus alternate-family review."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: go",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T10:36:05-05:00"
+}

@@ -19,12 +19,13 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Structured handoff package lifecycle — packet dispatch reconciliation | [#437](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/437) | HIGH | 2-3 | Child of epic #434. Reconcile SoM packet schema, emitter, validator, and queue dispatch metadata. |
+| Structured handoff package lifecycle — PR and closeout hardening | [#436](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/436) | HIGH | 2-3 | Child of epic #434. Require handoff package evidence in PR and closeout surfaces and validate closeout refs before graph/wiki refresh. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Structured handoff package lifecycle — packet dispatch reconciliation | 2026-04-21 | Issue [#437](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/437). PR [#446](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/446) reconciled the SoM packet schema/emitter/validator/queue contract, preserved historical packet compatibility, added dispatch governance emission and tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — CI enforcement | 2026-04-21 | Issue [#435](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/435). PR [#443](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/443) wired package handoff validation into Local CI Gate and reusable GitHub governance checks, added lane-claim GitHub assertion parity, focused tests, validation, closeout, and graph/wiki outputs. |
 | Structured handoff package lifecycle — schema slice | 2026-04-21 | Issue [#438](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/438). PR [#441](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/441) added package-handoff and execution-scope schemas, example/active handoff artifacts, validator/tests, structured-plan handoff refs, documentation, validation, closeout, and graph/wiki outputs. |
 | SoM governance waterfall model routing revision | 2026-04-21 | Issue [#432](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/432). PR [#433](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/433) updated governance SSOT, docs, guardrails, tests, validation, closeout, graph/wiki outputs, and downstream follow-up issues for the Codex-orchestrated waterfall. |
