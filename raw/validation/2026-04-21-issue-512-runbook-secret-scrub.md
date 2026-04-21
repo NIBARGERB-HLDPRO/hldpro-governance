@@ -37,3 +37,23 @@ Observed results:
 - `assert_execution_scope.py` passed with declared active-parallel-root warnings only.
 - Local CI Gate passed with verdict `pass`; blocker `provisioning-evidence-safety` ran and passed.
 - `git diff --check` passed.
+
+## Implementation Validation
+
+The implementation updates existing governance runbooks and FAIL_FAST guidance only. It does not add a new validator or mutate downstream repos.
+
+```bash
+python3 scripts/overlord/validate_provisioning_evidence.py --root . docs/EXTERNAL_SERVICES_RUNBOOK.md docs/runbooks/remote-mcp-bridge.md docs/FAIL_FAST_LOG.md docs/PROGRESS.md
+python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-21-issue-512-runbook-secret-scrub-implementation.json --require-lane-claim
+python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .
+tools/local-ci-gate/bin/hldpro-local-ci --profile hldpro-governance --report-dir cache/local-ci-gate/reports --json
+git diff --check
+```
+
+Observed results:
+
+- `validate_provisioning_evidence.py` passed on the remediated runbooks, FAIL_FAST entry, and progress row.
+- `assert_execution_scope.py` passed with declared active-parallel-root warnings only.
+- `validate_structured_agent_cycle_plan.py --root .` passed: 135 structured plan files.
+- Local CI Gate passed with verdict `pass`; blocker `provisioning-evidence-safety` ran and passed.
+- `git diff --check` passed.
