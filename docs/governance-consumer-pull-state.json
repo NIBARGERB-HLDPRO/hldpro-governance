@@ -77,6 +77,60 @@
       "managed_files": [
         ".hldpro/local-ci.sh",
         ".hldpro/governance-tooling.json"
+      ],
+      "profile_constraints": [
+        "local model runtime routing",
+        "PII local-only lane",
+        "worker-lam boundaries",
+        "remote MCP boundary controls"
+      ]
+    },
+    "healthcareplatform": {
+      "package_version": "0.2.0-ssot-bootstrap",
+      "managed_files": [
+        ".hldpro/local-ci.sh",
+        ".hldpro/governance-tooling.json"
+      ],
+      "profile_constraints": [
+        "HIPAA and PHI controls must not be weakened",
+        "PII/PHI routing must fail closed",
+        "strict lane naming policy must be preserved",
+        "healthcare-specific audit and RLS controls remain authoritative"
+      ]
+    },
+    "seek-and-ponder": {
+      "package_version": "0.2.0-ssot-bootstrap",
+      "managed_files": [
+        ".hldpro/local-ci.sh",
+        ".hldpro/governance-tooling.json"
+      ],
+      "profile_constraints": [
+        "plan-mode gate before code writes",
+        "corpus and persona-source governance",
+        "agent-session plan preflight"
+      ]
+    },
+    "stampede": {
+      "package_version": "0.2.0-ssot-bootstrap",
+      "managed_files": [
+        ".hldpro/local-ci.sh",
+        ".hldpro/governance-tooling.json"
+      ],
+      "profile_constraints": [
+        "trading/product runtime safety",
+        "solo-maintainer or product-baseline overrides where issue-backed"
+      ]
+    },
+    "asc-evaluator": {
+      "package_version": "0.2.0-ssot-bootstrap",
+      "managed_files": [
+        ".hldpro/local-ci.sh",
+        ".hldpro/governance-tooling.json"
+      ],
+      "profile_constraints": [
+        "knowledge-repo exemption",
+        "persona/evaluator boundary preservation",
+        "minimal graphify pointer pattern"
       ]
     }
   }

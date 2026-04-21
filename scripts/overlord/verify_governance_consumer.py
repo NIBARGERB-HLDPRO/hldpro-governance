@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import subprocess
@@ -17,6 +18,9 @@ DESIRED_STATE = GOVERNANCE_ROOT / "docs" / "governance-consumer-pull-state.json"
 DEFAULT_RECORD_PATH = ".hldpro/governance-tooling.json"
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 MANAGED_LOCAL_CI_MARKER = "# hldpro-governance local-ci gate managed"
+GOVERNANCE_WORKFLOW_REF_RE = re.compile(
+    r"NIBARGERB-HLDPRO/hldpro-governance/(?:\.github/workflows/)?[^\s'\"#]+@(?P<ref>[^\s'\"#]+)"
+)
 
 
 class ConsumerVerifyError(RuntimeError):
@@ -103,6 +107,65 @@ def _profile_desired_state(desired_state: dict[str, Any], profile: str) -> dict[
     return profile_state if isinstance(profile_state, dict) else {}
 
 
+def _profile_contract(manifest: dict[str, Any]) -> dict[str, Any]:
+    contract = manifest.get("profile_contract")
+    return contract if isinstance(contract, dict) else {}
+
+
+def _manifest_profiles(manifest: dict[str, Any]) -> dict[str, Any]:
+    profiles = _profile_contract(manifest).get("required_profiles")
+    return profiles if isinstance(profiles, dict) else {}
+
+
+def _known_profiles(manifest: dict[str, Any], desired_state: dict[str, Any]) -> set[str]:
+    profiles: set[str] = set(_manifest_profiles(manifest))
+    desired_profiles = desired_state.get("profiles")
+    if isinstance(desired_profiles, dict):
+        profiles.update(str(key) for key in desired_profiles)
+    return profiles
+
+
+def _next_package_version(manifest: dict[str, Any]) -> str:
+    versioning = manifest.get("versioning")
+    if isinstance(versioning, dict):
+        value = versioning.get("next_contract_version")
+        if isinstance(value, str):
+            return value
+    return ""
+
+
+def _is_v2_record(payload: dict[str, Any], manifest: dict[str, Any]) -> bool:
+    return (
+        payload.get("package_version") == _next_package_version(manifest)
+        or payload.get("schema_version") == 2
+        or "profile_constraints" in payload
+        or "repo_profile" in payload
+        or "local_overrides" in payload
+    )
+
+
+def _profile_required_constraints(manifest: dict[str, Any], profile: str) -> list[str]:
+    profile_payload = _manifest_profiles(manifest).get(profile)
+    if not isinstance(profile_payload, dict):
+        return []
+    raw = profile_payload.get("required_constraints")
+    if isinstance(raw, list) and all(isinstance(item, str) for item in raw):
+        return raw
+    return []
+
+
+def _record_constraints(payload: dict[str, Any]) -> set[str]:
+    raw = payload.get("profile_constraints")
+    if isinstance(raw, list) and all(isinstance(item, str) for item in raw):
+        return set(raw)
+    repo_profile = payload.get("repo_profile")
+    if isinstance(repo_profile, dict):
+        constraints = repo_profile.get("required_constraints")
+        if isinstance(constraints, list) and all(isinstance(item, str) for item in constraints):
+            return set(constraints)
+    return set()
+
+
 def _expected_managed_paths(profile_state: dict[str, Any]) -> set[str]:
     raw = profile_state.get("managed_files")
     if isinstance(raw, list) and all(isinstance(item, str) for item in raw):
@@ -131,6 +194,33 @@ def _managed_file_type(record: dict[str, Any], relpath: str) -> str:
     return ""
 
 
+def _managed_file_entry(record: dict[str, Any], relpath: str) -> dict[str, Any]:
+    managed_files = record.get("managed_files")
+    if not isinstance(managed_files, list):
+        return {}
+    for item in managed_files:
+        if isinstance(item, dict) and item.get("path") == relpath:
+            return item
+    return {}
+
+
+def _managed_markers(manifest: dict[str, Any]) -> list[str]:
+    contract = manifest.get("managed_file_contract")
+    if isinstance(contract, dict):
+        markers = contract.get("markers")
+        if isinstance(markers, list) and all(isinstance(item, str) for item in markers):
+            return markers
+    return [MANAGED_LOCAL_CI_MARKER, "# hldpro-governance managed", "# Managed by hldpro-governance"]
+
+
+def _expected_checksum(entry: dict[str, Any]) -> str:
+    for key in ("sha256", "content_sha256", "checksum_sha256"):
+        value = entry.get(key)
+        if isinstance(value, str) and value:
+            return value
+    return ""
+
+
 def _is_relative_to(path: Path, root: Path) -> bool:
     try:
         path.resolve().relative_to(root.resolve())
@@ -148,6 +238,44 @@ def _load_consumer_record(target_repo: Path, record_relpath: str) -> ConsumerRec
     return ConsumerRecord(path=record_path, payload=_load_json(record_path, "consumer record"))
 
 
+def _override_records(payload: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
+    failures: list[str] = []
+    overrides: list[dict[str, Any]] = []
+    for field in ("overrides", "local_overrides"):
+        raw = payload.get(field, [])
+        if raw in (None, []):
+            continue
+        if not isinstance(raw, list):
+            failures.append(f"{field} must be a list")
+            continue
+        for index, item in enumerate(raw):
+            if not isinstance(item, dict):
+                failures.append(f"{field}[{index}] must be an object")
+                continue
+            overrides.append(item)
+            for required in ("issue", "reason", "owner"):
+                if not item.get(required):
+                    failures.append(f"{field}[{index}] missing required override metadata: {required}")
+            if not item.get("review_cadence") and not item.get("expires_at"):
+                failures.append(f"{field}[{index}] missing required override metadata: review_cadence or expires_at")
+    return overrides, failures
+
+
+def _workflow_ref_failures(target_repo: Path) -> list[str]:
+    workflow_root = target_repo / ".github" / "workflows"
+    if not workflow_root.exists():
+        return []
+    failures: list[str] = []
+    for path in sorted(workflow_root.glob("*.y*ml")):
+        relpath = path.relative_to(target_repo).as_posix()
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for match in GOVERNANCE_WORKFLOW_REF_RE.finditer(text):
+            ref = match.group("ref").rstrip("/")
+            if not SHA_RE.fullmatch(ref):
+                failures.append(f"reusable workflow ref must be pinned to an exact governance SHA: {relpath} uses @{ref}")
+    return failures
+
+
 def _validate_record(
     *,
     target_repo: Path,
@@ -158,7 +286,7 @@ def _validate_record(
     expected_governance_ref: str | None,
     expected_package_version: str | None,
     allow_non_sha_ref: bool,
-) -> tuple[list[str], list[str]]:
+) -> tuple[list[str], list[str], list[dict[str, Any]]]:
     failures: list[str] = []
     warnings: list[str] = []
     payload = record.payload
@@ -178,6 +306,9 @@ def _validate_record(
         profile = expected_profile or ""
     if expected_profile and profile != expected_profile:
         failures.append(f"profile mismatch: expected {expected_profile}, got {profile}")
+    known_profiles = _known_profiles(manifest, desired_state)
+    if profile and known_profiles and profile not in known_profiles:
+        failures.append(f"unknown profile: {profile}")
 
     package_version = payload.get("package_version")
     expected_version = expected_package_version or _initial_package_version(manifest)
@@ -218,12 +349,37 @@ def _validate_record(
                 failures.append(f"managed local CI shim missing marker: {relpath}")
             if isinstance(governance_ref, str) and governance_ref and governance_ref not in text:
                 failures.append(f"managed local CI shim does not reference governance_ref: {relpath}")
+        elif _managed_file_type(payload, relpath) not in {"consumer_record", ""}:
+            text = candidate.read_text(encoding="utf-8", errors="replace")
+            if not any(marker in text for marker in _managed_markers(manifest)):
+                failures.append(f"managed file missing marker: {relpath}")
+        checksum = _expected_checksum(_managed_file_entry(payload, relpath))
+        if checksum:
+            actual_checksum = hashlib.sha256(candidate.read_bytes()).hexdigest()
+            if actual_checksum != checksum:
+                failures.append(f"managed file checksum drift: {relpath}")
+
+    if _is_v2_record(payload, manifest):
+        required_constraints = _profile_required_constraints(manifest, profile)
+        if required_constraints:
+            actual_constraints = _record_constraints(payload)
+            missing_constraints = sorted(set(required_constraints) - actual_constraints)
+            if missing_constraints:
+                failures.append(
+                    f"profile constraints missing required constraint(s) for {profile}: {', '.join(missing_constraints)}"
+                )
+        if profile == "stampede" and payload.get("schema_version") != 2:
+            warnings.append("Stampede consumer record uses older bootstrap shape; migration to schema_version 2 is recommended")
+
+    observed_overrides, override_failures = _override_records(payload)
+    failures.extend(override_failures)
+    failures.extend(_workflow_ref_failures(target_repo))
 
     central = desired_state.get("centrally_applied_surfaces")
     if isinstance(central, list) and central:
         warnings.append("central GitHub rules/settings are report-only in consumer verification")
 
-    return failures, warnings
+    return failures, warnings, observed_overrides
 
 
 def verify(args: argparse.Namespace) -> dict[str, Any]:
@@ -236,7 +392,7 @@ def verify(args: argparse.Namespace) -> dict[str, Any]:
     desired_state = _load_json(desired_state_path, "consumer pull desired state")
     record_relpath = args.record_path or _consumer_record_relpath(manifest)
     record = _load_consumer_record(target_repo, record_relpath)
-    failures, warnings = _validate_record(
+    failures, warnings, observed_overrides = _validate_record(
         target_repo=target_repo,
         record=record,
         manifest=manifest,
@@ -258,6 +414,7 @@ def verify(args: argparse.Namespace) -> dict[str, Any]:
         "package_version": record.payload.get("package_version"),
         "failures": failures,
         "warnings": warnings,
+        "observed_overrides": observed_overrides,
     }
 
 

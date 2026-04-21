@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import contextlib
+import hashlib
 import importlib.util
 import io
 import json
@@ -49,7 +50,7 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
     def tearDown(self) -> None:
         self.tmp.cleanup()
 
-    def _deploy(self, ref: str | None = None) -> None:
+    def _deploy(self, ref: str | None = None, profile: str = "hldpro-governance", package_version: str = "") -> None:
         args = [
             "apply",
             "--governance-root",
@@ -59,8 +60,10 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
             "--governance-ref",
             ref or self.ref,
             "--profile",
-            "hldpro-governance",
+            profile,
         ]
+        if package_version:
+            args.extend(["--package-version", package_version])
         with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
             code = deploy_governance_tooling.main(args)
         self.assertEqual(code, 0)
@@ -90,6 +93,20 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
     def _shim(self) -> Path:
         return self.product / ".hldpro" / "local-ci.sh"
 
+    def _read_record(self) -> dict:
+        return json.loads(self._record().read_text(encoding="utf-8"))
+
+    def _write_record(self, record: dict) -> None:
+        self._record().write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")
+
+    def _next_package_version(self) -> str:
+        manifest = json.loads((REPO_ROOT / "docs" / "governance-tooling-package.json").read_text(encoding="utf-8"))
+        return manifest["versioning"]["next_contract_version"]
+
+    def _required_constraints(self, profile: str) -> list[str]:
+        manifest = json.loads((REPO_ROOT / "docs" / "governance-tooling-package.json").read_text(encoding="utf-8"))
+        return manifest["profile_contract"]["required_profiles"][profile]["required_constraints"]
+
     def test_verify_passes_for_deployed_pinned_consumer_record(self) -> None:
         self._deploy()
 
@@ -99,6 +116,7 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         payload = json.loads(stdout)
         self.assertEqual(payload["status"], "passed")
         self.assertEqual(payload["failures"], [])
+        self.assertEqual(payload["observed_overrides"], [])
         self.assertIn("central GitHub rules/settings are report-only", "\n".join(payload["warnings"]))
 
     def test_verify_fails_when_record_missing(self) -> None:
@@ -107,6 +125,17 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertEqual(stdout, "")
         self.assertIn("consumer record missing", stderr)
+
+    def test_verify_fails_when_record_is_malformed_shape(self) -> None:
+        record = self.product / ".hldpro" / "governance-tooling.json"
+        record.parent.mkdir(parents=True)
+        record.write_text("[]\n", encoding="utf-8")
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1)
+        self.assertEqual(stdout, "")
+        self.assertIn("consumer record must be a JSON object", stderr)
 
     def test_verify_fails_when_governance_ref_is_not_sha(self) -> None:
         self._deploy(ref="governance-tooling-v0.1.0")
@@ -162,6 +191,178 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         self.assertEqual(code, 1, stderr)
         payload = json.loads(stdout)
         self.assertIn("managed_files missing expected path", "\n".join(payload["failures"]))
+
+    def test_verify_fails_when_profile_is_unknown(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        record["profile"] = "unknown-repo-profile"
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(
+            "--governance-root",
+            str(REPO_ROOT),
+            "--target-repo",
+            str(self.product),
+        )
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        self.assertIn("unknown profile", "\n".join(payload["failures"]))
+
+    def test_verify_fails_when_profile_is_missing(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        record.pop("profile")
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        self.assertIn("consumer record missing field: profile", "\n".join(payload["failures"]))
+        self.assertIn("profile must be a non-empty string", "\n".join(payload["failures"]))
+
+    def test_verify_fails_for_mutable_governance_workflow_ref(self) -> None:
+        self._deploy()
+        workflow = self.product / ".github" / "workflows" / "governance.yml"
+        workflow.parent.mkdir(parents=True)
+        workflow.write_text(
+            "jobs:\n  check:\n    uses: NIBARGERB-HLDPRO/hldpro-governance/.github/workflows/governance-check.yml@main\n",
+            encoding="utf-8",
+        )
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        self.assertIn("reusable workflow ref must be pinned", "\n".join(payload["failures"]))
+
+    def test_verify_fails_for_managed_hook_checksum_drift(self) -> None:
+        self._deploy()
+        hook = self.product / ".claude" / "hooks" / "pre-tool-use.sh"
+        hook.parent.mkdir(parents=True)
+        hook.write_text("# hldpro-governance managed\necho ok\n", encoding="utf-8")
+        record = self._read_record()
+        record["managed_files"].append(
+            {
+                "path": ".claude/hooks/pre-tool-use.sh",
+                "type": "managed_hook",
+                "sha256": "0" * 64,
+            }
+        )
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        self.assertIn("managed file checksum drift", "\n".join(payload["failures"]))
+
+    def test_verify_fails_for_managed_hook_missing_marker(self) -> None:
+        self._deploy()
+        hook = self.product / ".claude" / "hooks" / "pre-tool-use.sh"
+        hook.parent.mkdir(parents=True)
+        hook.write_text("echo unmanaged\n", encoding="utf-8")
+        record = self._read_record()
+        record["managed_files"].append({"path": ".claude/hooks/pre-tool-use.sh", "type": "managed_hook"})
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        self.assertIn("managed file missing marker", "\n".join(payload["failures"]))
+
+    def test_verify_fails_for_invalid_override_metadata_and_reports_observed_override(self) -> None:
+        self._deploy()
+        record = self._read_record()
+        record["overrides"] = [{"issue": "#454", "reason": "fixture"}]
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        self.assertEqual(payload["observed_overrides"], [{"issue": "#454", "reason": "fixture"}])
+        self.assertIn("missing required override metadata: owner", "\n".join(payload["failures"]))
+        self.assertIn("review_cadence or expires_at", "\n".join(payload["failures"]))
+
+    def test_verify_fails_when_healthcareplatform_v2_profile_weakens_constraints(self) -> None:
+        next_version = self._next_package_version()
+        self._deploy(profile="healthcareplatform", package_version=next_version)
+        constraints = self._required_constraints("healthcareplatform")
+        record = self._read_record()
+        record["schema_version"] = 2
+        record["profile_constraints"] = [item for item in constraints if "strict lane naming" not in item]
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(
+            "--governance-root",
+            str(REPO_ROOT),
+            "--target-repo",
+            str(self.product),
+            "--profile",
+            "healthcareplatform",
+            "--governance-ref",
+            self.ref,
+            "--package-version",
+            next_version,
+        )
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        self.assertIn("profile constraints missing required constraint", "\n".join(payload["failures"]))
+
+    def test_verify_passes_for_valid_v2_managed_consumer(self) -> None:
+        next_version = self._next_package_version()
+        self._deploy(profile="healthcareplatform", package_version=next_version)
+        hook = self.product / ".claude" / "hooks" / "pre-tool-use.sh"
+        hook.parent.mkdir(parents=True)
+        hook.write_text("# hldpro-governance managed\necho ok\n", encoding="utf-8")
+        record = self._read_record()
+        record["schema_version"] = 2
+        record["profile_constraints"] = self._required_constraints("healthcareplatform")
+        record["overrides"] = [
+            {
+                "issue": "#454",
+                "reason": "fixture stricter local hook",
+                "owner": "governance",
+                "review_cadence": "quarterly",
+            }
+        ]
+        record["managed_files"].append(
+            {
+                "path": ".claude/hooks/pre-tool-use.sh",
+                "type": "managed_hook",
+                "sha256": hashlib.sha256(hook.read_bytes()).hexdigest(),
+            }
+        )
+        self._write_record(record)
+        workflow = self.product / ".github" / "workflows" / "governance.yml"
+        workflow.parent.mkdir(parents=True)
+        workflow.write_text(
+            f"jobs:\n  check:\n    uses: NIBARGERB-HLDPRO/hldpro-governance/.github/workflows/governance-check.yml@{self.ref}\n",
+            encoding="utf-8",
+        )
+
+        code, stdout, stderr = self._invoke(
+            "--governance-root",
+            str(REPO_ROOT),
+            "--target-repo",
+            str(self.product),
+            "--profile",
+            "healthcareplatform",
+            "--governance-ref",
+            self.ref,
+            "--package-version",
+            next_version,
+        )
+
+        self.assertEqual(code, 0, stderr)
+        payload = json.loads(stdout)
+        self.assertEqual(payload["status"], "passed")
+        self.assertEqual(payload["failures"], [])
+        self.assertEqual(payload["observed_overrides"][0]["owner"], "governance")
 
 
 if __name__ == "__main__":
