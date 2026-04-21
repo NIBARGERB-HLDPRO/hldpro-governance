@@ -12,6 +12,8 @@ python3 scripts/pages-deploy/pages_deploy_gate.py --config <path> [--dry-run]
 - `CLOUDFLARE_ACCOUNT_ID`: Cloudflare account id for the Pages project.
 - `PAGES_DEPLOY_APPROVED=1`: Required for non-dry-run deployment.
 
+Missing-secret diagnostics list variable names only. Provision Cloudflare Pages credentials through `hldpro-governance/.env.shared` plus bootstrap for local runs, or through GitHub Actions secrets for CI. Values are intentionally not accepted in prompts, copied into inline shell commands, or printed in logs. This runbook implements the Secret Provisioning UX contract from `docs/ENV_REGISTRY.md` and remains scoped to the Cloudflare Pages direct-upload deploy gate tracked by #467.
+
 ## Deploy Flow
 
 The gate runs deployment in two phases:

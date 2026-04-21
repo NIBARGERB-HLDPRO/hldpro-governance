@@ -213,9 +213,23 @@ def run_command(
 
 
 def preflight_env(required_env: list[str], env: dict[str, str], dry_run: bool) -> None:
-    for name in required_env:
-        if not env.get(name):
-            raise GateError(f"MISSING_ENV: {name}")
+    missing = [name for name in required_env if not env.get(name)]
+    if missing:
+        missing_names = ", ".join(missing)
+        raise GateError(
+            f"MISSING_ENV: {missing_names}",
+            "\n".join(
+                [
+                    f"Missing required secret variables: {missing_names}.",
+                    (
+                        "Provision them through hldpro-governance/.env.shared plus bootstrap for local runs, "
+                        "or through GitHub Actions secrets for CI."
+                    ),
+                    "Values are intentionally not accepted in this prompt or printed in logs.",
+                    "No deploy was attempted. Configure the approved provisioning surface, then rerun the preflight.",
+                ]
+            ),
+        )
     if not dry_run and env.get("PAGES_DEPLOY_APPROVED") != "1":
         raise GateError(
             "DEPLOY_NOT_APPROVED: PREFLIGHT_FAIL: PAGES_DEPLOY_APPROVED must be 1",

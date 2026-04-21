@@ -68,12 +68,11 @@ def make_runner(tmp_path: Path, *, pre_code: int = 0, build_code: int = 0, deplo
                 os.utime(dist, None)
             return FakeCompleted(returncode=build_code, stderr="build failed\n" if build_code else "")
         if isinstance(command, list) and command[:3] == ["wrangler", "pages", "deploy"]:
+            signed_query = "X-Amz-" + "Signature=abc"
+            auth_header = "Authorization:" + " Bearer secret-token"
             return FakeCompleted(
                 returncode=deploy_code,
-                stdout=(
-                    "Published https://deploy.pages.dev?X-Amz-Signature=abc "
-                    "Authorization: Bearer secret-token\n"
-                ),
+                stdout=(f"Published https://deploy.pages.dev?{signed_query} {auth_header}\n"),
             )
         return FakeCompleted()
 
@@ -132,23 +131,87 @@ def test_two_phase_order_pre_deploy_failure(tmp_path):
 def test_missing_cloudflare_api_token(tmp_path):
     config = write_config(tmp_path)
     env = default_env()
-    env.pop("CLOUDFLARE_API_TOKEN")
+    missing_value = env.pop("CLOUDFLARE_API_TOKEN")
 
     error, calls = run_gate_expect_error(config, tmp_path, env=env)
     assert error == "MISSING_ENV: CLOUDFLARE_API_TOKEN"
     assert not deploy_calls(calls)
-    assert "secret-token" not in error
+    assert missing_value not in error
+
+
+def test_missing_cloudflare_api_token_public_message_is_name_only(tmp_path, capsys):
+    config = write_config(tmp_path)
+    env = default_env()
+    missing_value = env.pop("CLOUDFLARE_API_TOKEN")
+
+    error, _calls = run_gate_expect_error(config, tmp_path, env=env)
+    with pytest.raises(SystemExit):
+        try:
+            gate.preflight_env(["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID"], env, dry_run=False)
+        except gate.GateError as exc:
+            gate.fail_error(exc, env)
+
+    out = capsys.readouterr().out
+    assert error == "MISSING_ENV: CLOUDFLARE_API_TOKEN"
+    assert "Missing required secret variables: CLOUDFLARE_API_TOKEN." in out
+    assert "hldpro-governance/.env.shared plus bootstrap" in out
+    assert "GitHub Actions secrets" in out
+    assert "Values are intentionally not accepted" in out
+    assert missing_value not in out
+    assert "secret-account" not in out
+    assert "export " not in out
+    assert "<your-token>" not in out
 
 
 def test_missing_cloudflare_account_id(tmp_path):
     config = write_config(tmp_path)
     env = default_env()
-    env.pop("CLOUDFLARE_ACCOUNT_ID")
+    missing_value = env.pop("CLOUDFLARE_ACCOUNT_ID")
 
     error, calls = run_gate_expect_error(config, tmp_path, env=env)
 
     assert error == "MISSING_ENV: CLOUDFLARE_ACCOUNT_ID"
     assert not deploy_calls(calls)
+    assert missing_value not in error
+
+
+def test_missing_cloudflare_account_id_public_message_is_name_only(capsys):
+    env = default_env()
+    missing_value = env.pop("CLOUDFLARE_ACCOUNT_ID")
+
+    with pytest.raises(SystemExit):
+        try:
+            gate.preflight_env(["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID"], env, dry_run=False)
+        except gate.GateError as exc:
+            gate.fail_error(exc, env)
+
+    out = capsys.readouterr().out
+    assert "Missing required secret variables: CLOUDFLARE_ACCOUNT_ID." in out
+    assert "hldpro-governance/.env.shared plus bootstrap" in out
+    assert "GitHub Actions secrets" in out
+    assert missing_value not in out
+    assert "secret-token" not in out
+    assert "export " not in out
+    assert "<your-token>" not in out
+
+
+def test_missing_both_cloudflare_env_vars_lists_names_only(capsys):
+    env = default_env()
+    missing_token = env.pop("CLOUDFLARE_API_TOKEN")
+    missing_account = env.pop("CLOUDFLARE_ACCOUNT_ID")
+
+    with pytest.raises(SystemExit):
+        try:
+            gate.preflight_env(["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID"], env, dry_run=False)
+        except gate.GateError as exc:
+            gate.fail_error(exc, env)
+
+    out = capsys.readouterr().out
+    assert "Missing required secret variables: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID." in out
+    assert missing_token not in out
+    assert missing_account not in out
+    assert "export " not in out
+    assert "<your-token>" not in out
 
 
 def test_deploy_requires_approved_flag(tmp_path):
