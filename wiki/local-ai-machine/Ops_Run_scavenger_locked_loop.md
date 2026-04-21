@@ -6,8 +6,8 @@
 
 - **run_scavenger_locked_loop.py** (5 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
 - **run_once()** (5 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
+- **_env()** (3 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
 - **_available_memory_mb()** (2 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
-- **_env()** (2 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
 - **main()** (2 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
 - **_queue_pressure_snapshot()** (2 connections) — `local-ai-machine/scripts/ops/run_scavenger_locked_loop.py`
 
@@ -21,8 +21,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 10 (56%)
-- INFERRED: 8 (44%)
+- EXTRACTED: 18 (95%)
+- INFERRED: 1 (5%)
 - AMBIGUOUS: 0 (0%)
 
 ---

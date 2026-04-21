@@ -5,10 +5,10 @@
 ## Key Concepts
 
 - **issue131-evidence-list-deny-audit-smoke.js** (10 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
-- **main()** (6 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **main()** (7 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
+- **parseJsonSafe()** (6 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
 - **createTenantAVisitIfNeeded()** (5 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
 - **normalizeBaseUrl()** (5 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
-- **parseJsonSafe()** (5 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
 - **signInWithPassword()** (5 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
 - **callCrossTenantEvidenceList()** (4 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
 - **fetchRecentListFailedAudits()** (4 connections) — `healthcareplatform/backend/scripts/smoke/issue131-evidence-list-deny-audit-smoke.js`
@@ -26,8 +26,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 20 (40%)
-- INFERRED: 30 (60%)
+- EXTRACTED: 50 (96%)
+- INFERRED: 2 (4%)
 - AMBIGUOUS: 0 (0%)
 
 ---

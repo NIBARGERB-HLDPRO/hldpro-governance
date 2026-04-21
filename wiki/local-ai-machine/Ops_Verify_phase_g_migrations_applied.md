@@ -5,10 +5,10 @@
 ## Key Concepts
 
 - **verify_phase_g_migrations_applied.py** (4 connections) — `local-ai-machine/scripts/ops/verify_phase_g_migrations_applied.py`
-- **_database_url()** (3 connections) — `local-ai-machine/scripts/ops/verify_phase_g_migrations_applied.py`
+- **_database_url()** (4 connections) — `local-ai-machine/scripts/ops/verify_phase_g_migrations_applied.py`
+- **_load_env_file()** (3 connections) — `local-ai-machine/scripts/ops/verify_phase_g_migrations_applied.py`
 - **main()** (3 connections) — `local-ai-machine/scripts/ops/verify_phase_g_migrations_applied.py`
 - **fail()** (2 connections) — `local-ai-machine/scripts/ops/verify_phase_g_migrations_applied.py`
-- **_load_env_file()** (2 connections) — `local-ai-machine/scripts/ops/verify_phase_g_migrations_applied.py`
 
 ## Relationships
 
@@ -20,8 +20,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 8 (57%)
-- INFERRED: 6 (43%)
+- EXTRACTED: 14 (88%)
+- INFERRED: 2 (12%)
 - AMBIGUOUS: 0 (0%)
 
 ---

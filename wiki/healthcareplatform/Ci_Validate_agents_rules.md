@@ -5,7 +5,7 @@
 ## Key Concepts
 
 - **validate-agents-rules.js** (10 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
-- **main()** (9 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
+- **main()** (10 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
 - **fail()** (7 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
 - **extractRules()** (4 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
 - **ensureRangeReferencesResolve()** (3 connections) — `healthcareplatform/backend/scripts/ci/validate-agents-rules.js`
@@ -26,8 +26,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 20 (42%)
-- INFERRED: 28 (58%)
+- EXTRACTED: 48 (98%)
+- INFERRED: 1 (2%)
 - AMBIGUOUS: 0 (0%)
 
 ---

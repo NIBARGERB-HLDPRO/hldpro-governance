@@ -1,33 +1,33 @@
 # run()
 
-> God node · 21 connections · `local-ai-machine/scripts/ops/run_phase_h_hitl_e2e.py`
+> God node · 90 connections · `local-ai-machine/services/som-hitl-sms/tests/test_durable_assets.py`
 
 ## Connections by Relation
 
 ### calls
-- [[fail()]] `INFERRED`
-- [[dump_diagnostics()]] `INFERRED`
-- [[assert_project_ref_alignment()]] `INFERRED`
-- [[env_required()]] `INFERRED`
-- [[assert_policy_event()]] `INFERRED`
-- [[webhook_url()]] `INFERRED`
-- [[e2e_thread_ref()]] `INFERRED`
-- [[post_signed_slack_callback()]] `INFERRED`
-- [[fetch_pending_action()]] `INFERRED`
-- [[assert_dual_audit()]] `INFERRED`
-- [[assert_intent_mandate()]] `INFERRED`
-- [[assert_step_capability_issuance()]] `INFERRED`
-- [[assert_transaction_capability_issuance()]] `INFERRED`
-- [[assert_host_command_resume_link()]] `INFERRED`
-- [[insert_pending_action()]] `INFERRED`
-- [[info()]] `INFERRED`
-- [[assert_command_policy_event()]] `INFERRED`
-- [[insert_paused_host_command()]] `INFERRED`
-- [[build_hitl_payload()]] `INFERRED`
+- [[call_tool()]] `INFERRED`
+- [[acquire()]] `INFERRED`
 - [[main()]] `INFERRED`
+- [[generate()]] `INFERRED`
+- [[_ping_json()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[_call_tool()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[create_issue()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[main()]] `INFERRED`
+- [[.execute_and_trace()]] `INFERRED`
 
 ### contains
-- [[run_phase_h_hitl_e2e.py]] `EXTRACTED`
+- [[test_durable_assets.py]] `EXTRACTED`
 
 ---
 

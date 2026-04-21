@@ -1,13 +1,14 @@
 # Ops Run remote host inference critic proof
 
-> 4 nodes · cohesion 0.83
+> 5 nodes · cohesion 0.40
 
 ## Key Concepts
 
-- **test_run_remote_host_inference_critic_proof_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_run_remote_host_inference_critic_proof_contract.py`
-- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_run_remote_host_inference_critic_proof_contract.py`
-- **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_run_remote_host_inference_critic_proof_contract.py`
-- **main()** (2 connections) — `local-ai-machine/scripts/ops/test_run_remote_host_inference_critic_proof_contract.py`
+- **run_remote_host_inference_critic_proof.ps1** (4 connections) — `local-ai-machine/scripts/ops/run_remote_host_inference_critic_proof.ps1`
+- **Convert-ToLf()** (1 connections) — `local-ai-machine/scripts/ops/run_remote_host_inference_critic_proof.ps1`
+- **Escape-BashDoubleQuoted()** (1 connections) — `local-ai-machine/scripts/ops/run_remote_host_inference_critic_proof.ps1`
+- **Invoke-SshAndCapture()** (1 connections) — `local-ai-machine/scripts/ops/run_remote_host_inference_critic_proof.ps1`
+- **Publish-LearningEvent()** (1 connections) — `local-ai-machine/scripts/ops/run_remote_host_inference_critic_proof.ps1`
 
 ## Relationships
 
@@ -15,12 +16,12 @@
 
 ## Source Files
 
-- `local-ai-machine/scripts/ops/test_run_remote_host_inference_critic_proof_contract.py`
+- `local-ai-machine/scripts/ops/run_remote_host_inference_critic_proof.ps1`
 
 ## Audit Trail
 
-- EXTRACTED: 6 (60%)
-- INFERRED: 4 (40%)
+- EXTRACTED: 8 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

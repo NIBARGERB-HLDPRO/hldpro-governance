@@ -1,13 +1,14 @@
 # annotate()
 
-> God node · 5 connections · `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py`
+> God node · 6 connections · `asc-evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py`
 
 ## Connections by Relation
 
 ### calls
-- [[draw_circle()]] `INFERRED`
-- [[draw_arrow()]] `INFERRED`
-- [[draw_label()]] `INFERRED`
+- [[convert()]] `INFERRED`
+- [[draw_circle()]] `EXTRACTED`
+- [[draw_arrow()]] `EXTRACTED`
+- [[draw_label()]] `EXTRACTED`
 
 ### contains
 - [[annotate_images.py]] `EXTRACTED`

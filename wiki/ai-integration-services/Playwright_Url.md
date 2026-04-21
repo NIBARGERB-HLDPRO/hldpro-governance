@@ -1,14 +1,13 @@
 # Playwright Url
 
-> 5 nodes · cohesion 0.60
+> 4 nodes · cohesion 0.83
 
 ## Key Concepts
 
-- **playwright.config.ts** (4 connections) — `ai-integration-services/playwright.config.ts`
+- **playwright.config.ts** (3 connections) — `ai-integration-services/playwright.config.ts`
 - **resolveAppUrl()** (3 connections) — `ai-integration-services/playwright.config.ts`
 - **isLocalUrl()** (2 connections) — `ai-integration-services/playwright.config.ts`
 - **resolvePortalBaseUrl()** (2 connections) — `ai-integration-services/playwright.config.ts`
-- **env-resolution-contract.spec.ts** (1 connections) — `ai-integration-services/e2e/env-resolution-contract.spec.ts`
 
 ## Relationships
 
@@ -16,13 +15,12 @@
 
 ## Source Files
 
-- `ai-integration-services/e2e/env-resolution-contract.spec.ts`
 - `ai-integration-services/playwright.config.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 8 (67%)
-- INFERRED: 4 (33%)
+- EXTRACTED: 10 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

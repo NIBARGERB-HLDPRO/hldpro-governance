@@ -1,12 +1,13 @@
 # Ops Validate lint rule bundle
 
-> 3 nodes · cohesion 1.00
+> 4 nodes · cohesion 0.83
 
 ## Key Concepts
 
-- **validate_lint_rule_bundle.py** (2 connections) — `local-ai-machine/scripts/ops/validate_lint_rule_bundle.py`
-- **fail()** (2 connections) — `local-ai-machine/scripts/ops/validate_lint_rule_bundle.py`
-- **main()** (2 connections) — `local-ai-machine/scripts/ops/validate_lint_rule_bundle.py`
+- **test_validate_lint_rule_bundle_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_validate_lint_rule_bundle_contract.py`
+- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_validate_lint_rule_bundle_contract.py`
+- **main()** (3 connections) — `local-ai-machine/scripts/ops/test_validate_lint_rule_bundle_contract.py`
+- **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_validate_lint_rule_bundle_contract.py`
 
 ## Relationships
 
@@ -14,12 +15,12 @@
 
 ## Source Files
 
-- `local-ai-machine/scripts/ops/validate_lint_rule_bundle.py`
+- `local-ai-machine/scripts/ops/test_validate_lint_rule_bundle_contract.py`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (67%)
-- INFERRED: 2 (33%)
+- EXTRACTED: 10 (91%)
+- INFERRED: 1 (9%)
 - AMBIGUOUS: 0 (0%)
 
 ---

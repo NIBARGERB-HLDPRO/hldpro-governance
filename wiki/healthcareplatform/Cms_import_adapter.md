@@ -1,12 +1,17 @@
 # Cms import adapter
 
-> 5 nodes · cohesion 0.50
+> 10 nodes · cohesion 0.27
 
 ## Key Concepts
 
-- **cms-import-adapter.test.ts** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
+- **cms-import-adapter.ts** (6 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.ts`
+- **cms-import-adapter.test.ts** (5 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
+- **buildCmsStageSummary()** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.ts`
+- **normalizeCmsImportPayload()** (4 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.ts`
+- **stableJson()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.ts`
 - **assertEquals()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
 - **canonicalize()** (2 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
+- **sortStrings()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.ts`
 - **readFixture()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
 - **samplePayload()** (1 connections) — `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
 
@@ -17,11 +22,12 @@
 ## Source Files
 
 - `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.test.ts`
+- `healthcareplatform/backend/supabase/functions/_shared/cms-import-adapter.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 8 (80%)
-- INFERRED: 2 (20%)
+- EXTRACTED: 25 (89%)
+- INFERRED: 3 (11%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **routing-engine.ts** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
+- **routing-engine.ts** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
 - **scoreWorker()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
 - **estimateDriveMinutes()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
 - **haversineKm()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
@@ -20,8 +20,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 8 (67%)
-- INFERRED: 4 (33%)
+- EXTRACTED: 13 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

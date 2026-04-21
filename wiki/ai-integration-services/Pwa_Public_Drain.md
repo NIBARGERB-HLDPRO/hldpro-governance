@@ -5,8 +5,8 @@
 ## Key Concepts
 
 - **sw.js** (6 connections) — `ai-integration-services/apps/pwa/public/sw.js`
+- **drainQueue()** (3 connections) — `ai-integration-services/apps/pwa/public/sw.js`
 - **openDB()** (3 connections) — `ai-integration-services/apps/pwa/public/sw.js`
-- **drainQueue()** (2 connections) — `ai-integration-services/apps/pwa/public/sw.js`
 - **enqueue()** (2 connections) — `ai-integration-services/apps/pwa/public/sw.js`
 - **isAuthEndpoint()** (2 connections) — `ai-integration-services/apps/pwa/public/sw.js`
 - **isSupabaseMutation()** (2 connections) — `ai-integration-services/apps/pwa/public/sw.js`
@@ -22,8 +22,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 12 (67%)
-- INFERRED: 6 (33%)
+- EXTRACTED: 18 (95%)
+- INFERRED: 1 (5%)
 - AMBIGUOUS: 0 (0%)
 
 ---

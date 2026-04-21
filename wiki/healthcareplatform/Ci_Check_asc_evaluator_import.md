@@ -1,13 +1,16 @@
 # Ci Check asc evaluator import
 
-> 4 nodes · cohesion 1.00
+> 7 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- **check-asc-evaluator-import-smoke-contract.js** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
-- **fail()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
-- **main()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
-- **readUtf8()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
+- **main()** (7 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-contract.js`
+- **check-asc-evaluator-import-contract.js** (6 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-contract.js`
+- **fail()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-contract.js`
+- **readUtf8()** (4 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-contract.js`
+- **assertImportFnInvariants()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-contract.js`
+- **readJson()** (3 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-contract.js`
+- **includesAll()** (2 connections) — `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-contract.js`
 
 ## Relationships
 
@@ -15,12 +18,12 @@
 
 ## Source Files
 
-- `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-smoke-contract.js`
+- `healthcareplatform/backend/scripts/ci/check-asc-evaluator-import-contract.js`
 
 ## Audit Trail
 
-- EXTRACTED: 6 (50%)
-- INFERRED: 6 (50%)
+- EXTRACTED: 28 (97%)
+- INFERRED: 1 (3%)
 - AMBIGUOUS: 0 (0%)
 
 ---

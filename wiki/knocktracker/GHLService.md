@@ -8,8 +8,8 @@
 - [[ghlService.ts]] `EXTRACTED`
 
 ### method
-- [[.getHeaders()]] `EXTRACTED`
 - [[.handleResponse()]] `EXTRACTED`
+- [[.getHeaders()]] `EXTRACTED`
 - [[.createContact()]] `EXTRACTED`
 - [[.updateContact()]] `EXTRACTED`
 - [[.getContact()]] `EXTRACTED`

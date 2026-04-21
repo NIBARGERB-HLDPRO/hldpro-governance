@@ -1,12 +1,12 @@
 {
   "repo_slug": "stampede",
   "source": "stampede",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede/graphify-out/stampede",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance-issue-359-stampede/wiki/stampede",
-  "nodes": 0,
-  "edges": 0,
-  "communities": 0,
-  "articles": 0,
+  "output": "/home/runner/work/hldpro-governance/hldpro-governance/graphify-out/stampede",
+  "wiki_dir": "/home/runner/work/hldpro-governance/hldpro-governance/wiki/stampede",
+  "nodes": 466,
+  "edges": 913,
+  "communities": 34,
+  "articles": 44,
   "html_status": "skipped",
-  "code_files": 0
+  "code_files": 62
 }

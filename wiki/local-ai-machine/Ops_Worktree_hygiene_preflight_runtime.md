@@ -5,13 +5,13 @@
 ## Key Concepts
 
 - **test_worktree_hygiene_preflight_runtime.py** (12 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **main()** (9 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **main()** (10 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
 - **run()** (7 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **write()** (5 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **write()** (6 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
+- **run_checker()** (5 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
 - **add_remote_branch_worktree()** (4 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
 - **fail()** (4 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
 - **git_setup()** (4 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
-- **run_checker()** (4 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
 - **add_origin_main_tracking_worktree()** (3 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
 - **add_session_lock()** (3 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
 - **add_unpublished_worktree()** (3 connections) — `local-ai-machine/scripts/ops/test_worktree_hygiene_preflight_runtime.py`
@@ -28,8 +28,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 24 (38%)
-- INFERRED: 40 (62%)
+- EXTRACTED: 64 (96%)
+- INFERRED: 3 (4%)
 - AMBIGUOUS: 0 (0%)
 
 ---

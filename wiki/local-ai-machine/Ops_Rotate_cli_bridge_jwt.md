@@ -1,13 +1,15 @@
 # Ops Rotate cli bridge jwt
 
-> 4 nodes · cohesion 0.83
+> 6 nodes · cohesion 0.53
 
 ## Key Concepts
 
-- **test_rotate_cli_bridge_jwt_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_rotate_cli_bridge_jwt_contract.py`
-- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_rotate_cli_bridge_jwt_contract.py`
-- **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_rotate_cli_bridge_jwt_contract.py`
-- **main()** (2 connections) — `local-ai-machine/scripts/ops/test_rotate_cli_bridge_jwt_contract.py`
+- **rotate_cli_bridge_jwt.ps1** (5 connections) — `local-ai-machine/scripts/ops/rotate_cli_bridge_jwt.ps1`
+- **Sync-EdgeSecrets()** (4 connections) — `local-ai-machine/scripts/ops/rotate_cli_bridge_jwt.ps1`
+- **Get-EnvValue()** (2 connections) — `local-ai-machine/scripts/ops/rotate_cli_bridge_jwt.ps1`
+- **Invoke-SupabaseCli()** (2 connections) — `local-ai-machine/scripts/ops/rotate_cli_bridge_jwt.ps1`
+- **Resolve-ProjectRef()** (2 connections) — `local-ai-machine/scripts/ops/rotate_cli_bridge_jwt.ps1`
+- **Import-DotEnv()** (1 connections) — `local-ai-machine/scripts/ops/rotate_cli_bridge_jwt.ps1`
 
 ## Relationships
 
@@ -15,12 +17,12 @@
 
 ## Source Files
 
-- `local-ai-machine/scripts/ops/test_rotate_cli_bridge_jwt_contract.py`
+- `local-ai-machine/scripts/ops/rotate_cli_bridge_jwt.ps1`
 
 ## Audit Trail
 
-- EXTRACTED: 6 (60%)
-- INFERRED: 4 (40%)
+- EXTRACTED: 16 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

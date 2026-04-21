@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-21",
+  "execute": true,
+  "freshness_window_days": 30,
+  "generated_at": "2026-04-21T18:33:49Z",
+  "repos_root": ".",
+  "schema_version": 1,
+  "statuses": [
+    {
+      "age_days": null,
+      "commit": "40ac22224abb63525b3ce425f207e0e0cc96276c",
+      "detail": "missing PENTAGI_API_TOKEN",
+      "display_name": "ai-integration-services",
+      "expected_runner": "scripts/pentagi-run.sh",
+      "freshness": "missing",
+      "latest_report": null,
+      "latest_report_date": null,
+      "repo": "ai-integration-services",
+      "repo_path": "repos/ai-integration-services",
+      "security_tier": "full-pentagi",
+      "source_kind": "ci_checkout_path",
+      "status_label": "SKIPPED: missing PENTAGI_API_TOKEN",
+      "trigger_status": "SKIPPED"
+    },
+    {
+      "age_days": null,
+      "commit": "19b5874834f2666fedcaf547d15c90534da3928e",
+      "detail": "missing PENTAGI_API_TOKEN",
+      "display_name": "HealthcarePlatform",
+      "expected_runner": "scripts/pentagi-run.sh",
+      "freshness": "missing",
+      "latest_report": null,
+      "latest_report_date": null,
+      "repo": "HealthcarePlatform",
+      "repo_path": "repos/HealthcarePlatform",
+      "security_tier": "full-pentagi-hipaa",
+      "source_kind": "ci_checkout_path",
+      "status_label": "SKIPPED: missing PENTAGI_API_TOKEN",
+      "trigger_status": "SKIPPED"
+    },
+    {
+      "age_days": null,
+      "commit": "e705955e1bd6df722add4dd29d93a718b9a6f843",
+      "detail": "missing PENTAGI_API_TOKEN",
+      "display_name": "seek-and-ponder",
+      "expected_runner": "scripts/pentagi-run.sh",
+      "freshness": "missing",
+      "latest_report": null,
+      "latest_report_date": null,
+      "repo": "seek-and-ponder",
+      "repo_path": "repos/seek-and-ponder",
+      "security_tier": "full-pentagi",
+      "source_kind": "ci_checkout_path",
+      "status_label": "SKIPPED: missing PENTAGI_API_TOKEN",
+      "trigger_status": "SKIPPED"
+    }
+  ]
+}

@@ -1,21 +1,21 @@
 # Ops Supervisor max loop enforcer
 
-> 19 nodes · cohesion 0.13
+> 19 nodes · cohesion 0.16
 
 ## Key Concepts
 
-- **SupervisorMaxLoopEnforcer** (7 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
-- **supervisor_max_loop_enforcer.py** (4 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
-- **discover_agents()** (4 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
-- **parse_agent_max_loops()** (3 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
-- **.manifest()** (3 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
-- **.write_manifest()** (3 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
-- **test_supervisor_max_loop_runtime.py** (3 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_runtime.py`
-- **.can_invoke()** (2 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
+- **main()** (12 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_runtime.py`
+- **SupervisorMaxLoopEnforcer** (8 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
+- **discover_agents()** (5 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
+- **parse_agent_max_loops()** (5 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
+- **.record_invocation()** (5 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
+- **.write_manifest()** (5 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
+- **.manifest()** (4 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
+- **supervisor_max_loop_enforcer.py** (3 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
+- **.can_invoke()** (3 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
+- **test_supervisor_max_loop_runtime.py** (2 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_runtime.py`
 - **.__init__()** (2 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
-- **.record_invocation()** (2 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
 - **check()** (2 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_runtime.py`
-- **main()** (2 connections) — `local-ai-machine/scripts/ops/test_supervisor_max_loop_runtime.py`
 - **Extract max-loops value from agent YAML frontmatter.** (1 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
 - **Discover all agents with max-loops declarations.      Returns a dict keyed by ag** (1 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
 - **Tracks agent invocations and enforces max-loops at runtime.** (1 connections) — `local-ai-machine/scripts/ops/supervisor_max_loop_enforcer.py`
@@ -35,8 +35,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 36 (82%)
-- INFERRED: 8 (18%)
+- EXTRACTED: 42 (67%)
+- INFERRED: 21 (33%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
+- **main()** (4 connections) — `local-ai-machine/scripts/ops/test_frontend_gui_visual_pipeline_runbook_contract.py`
 - **test_frontend_gui_visual_pipeline_runbook_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_frontend_gui_visual_pipeline_runbook_contract.py`
 - **check()** (3 connections) — `local-ai-machine/scripts/ops/test_frontend_gui_visual_pipeline_runbook_contract.py`
 - **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_frontend_gui_visual_pipeline_runbook_contract.py`
-- **main()** (2 connections) — `local-ai-machine/scripts/ops/test_frontend_gui_visual_pipeline_runbook_contract.py`
 
 ## Relationships
 
@@ -19,8 +19,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 6 (60%)
-- INFERRED: 4 (40%)
+- EXTRACTED: 10 (83%)
+- INFERRED: 2 (17%)
 - AMBIGUOUS: 0 (0%)
 
 ---

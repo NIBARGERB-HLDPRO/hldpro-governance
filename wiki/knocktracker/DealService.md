@@ -8,14 +8,14 @@
 - [[dealService.ts]] `EXTRACTED`
 
 ### method
-- [[.getDealsByStage()]] `EXTRACTED`
+- [[.createDeal()]] `EXTRACTED`
 - [[.updateDeal()]] `EXTRACTED`
 - [[.moveDealToStage()]] `EXTRACTED`
+- [[.getDealsByStage()]] `EXTRACTED`
 - [[.getPipelineStages()]] `EXTRACTED`
 - [[.constructor()]] `EXTRACTED`
 - [[.getDeals()]] `EXTRACTED`
 - [[.getDeal()]] `EXTRACTED`
-- [[.createDeal()]] `EXTRACTED`
 
 ---
 

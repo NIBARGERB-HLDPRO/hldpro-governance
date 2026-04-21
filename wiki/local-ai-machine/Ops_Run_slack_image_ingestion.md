@@ -1,13 +1,14 @@
 # Ops Run slack image ingestion
 
-> 4 nodes · cohesion 0.83
+> 5 nodes · cohesion 0.40
 
 ## Key Concepts
 
-- **test_run_slack_image_ingestion_e2e_probe_contract.py** (3 connections) — `local-ai-machine/scripts/ops/test_run_slack_image_ingestion_e2e_probe_contract.py`
-- **check()** (3 connections) — `local-ai-machine/scripts/ops/test_run_slack_image_ingestion_e2e_probe_contract.py`
-- **fail()** (2 connections) — `local-ai-machine/scripts/ops/test_run_slack_image_ingestion_e2e_probe_contract.py`
-- **main()** (2 connections) — `local-ai-machine/scripts/ops/test_run_slack_image_ingestion_e2e_probe_contract.py`
+- **run_slack_image_ingestion_e2e_probe.ps1** (4 connections) — `local-ai-machine/scripts/ops/run_slack_image_ingestion_e2e_probe.ps1`
+- **Get-DotEnvValue()** (1 connections) — `local-ai-machine/scripts/ops/run_slack_image_ingestion_e2e_probe.ps1`
+- **Get-HostPort()** (1 connections) — `local-ai-machine/scripts/ops/run_slack_image_ingestion_e2e_probe.ps1`
+- **Get-LatestSlackHostedFixture()** (1 connections) — `local-ai-machine/scripts/ops/run_slack_image_ingestion_e2e_probe.ps1`
+- **Import-DotEnv()** (1 connections) — `local-ai-machine/scripts/ops/run_slack_image_ingestion_e2e_probe.ps1`
 
 ## Relationships
 
@@ -15,12 +16,12 @@
 
 ## Source Files
 
-- `local-ai-machine/scripts/ops/test_run_slack_image_ingestion_e2e_probe_contract.py`
+- `local-ai-machine/scripts/ops/run_slack_image_ingestion_e2e_probe.ps1`
 
 ## Audit Trail
 
-- EXTRACTED: 6 (60%)
-- INFERRED: 4 (40%)
+- EXTRACTED: 8 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

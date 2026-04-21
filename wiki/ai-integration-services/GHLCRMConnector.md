@@ -9,13 +9,13 @@
 
 ### method
 - [[.ghlFetch()]] `EXTRACTED`
-- [[.mapGHLContact()]] `EXTRACTED`
 - [[.getAccessToken()]] `EXTRACTED`
+- [[.mapGHLContact()]] `EXTRACTED`
+- [[.refreshOAuthToken()]] `EXTRACTED`
 - [[.createContact()]] `EXTRACTED`
 - [[.upsertContact()]] `EXTRACTED`
 - [[.getContact()]] `EXTRACTED`
 - [[.updateContact()]] `EXTRACTED`
-- [[.refreshOAuthToken()]] `EXTRACTED`
 - [[.searchContacts()]] `EXTRACTED`
 - [[.deleteContact()]] `EXTRACTED`
 - [[.createDeal()]] `EXTRACTED`

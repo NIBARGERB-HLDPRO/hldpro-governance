@@ -1,600 +1,873 @@
 {
   "nodes": [
     {
-      "id": "annotate_images_v2",
-      "label": "annotate_images_v2.py",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "annotate_images_v2_draw_arrow",
-      "label": "draw_arrow()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L30"
-    },
-    {
-      "id": "annotate_images_v2_draw_circle",
-      "label": "draw_circle()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L40"
-    },
-    {
-      "id": "annotate_images_v2_draw_highlight",
-      "label": "draw_highlight()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L47"
-    },
-    {
-      "id": "annotate_images_v2_get_color",
-      "label": "get_color()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L51"
-    },
-    {
-      "id": "annotate_images_v2_annotate",
-      "label": "annotate()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L61"
-    },
-    {
-      "id": "annotate_images_v2_rationale_1",
-      "label": "Annotate ALL 43 facility images \u2014 arrows and highlight zones ONLY (no text on im",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "annotate_images_v2_rationale_31",
-      "label": "Draw a thick arrow with filled arrowhead.",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L31"
-    },
-    {
-      "id": "annotate_images_v2_rationale_48",
-      "label": "Draw semi-transparent rectangle highlight.",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L48"
-    },
-    {
-      "id": "annotate_images_v2_rationale_62",
-      "label": "annotations: list of dicts:       - arrow: ((from_x, from_y), (to_x, to_y))",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L62"
-    },
-    {
-      "id": "annotate_images",
-      "label": "annotate_images.py",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "annotate_images_draw_arrow",
-      "label": "draw_arrow()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L26"
-    },
-    {
-      "id": "annotate_images_draw_label",
-      "label": "draw_label()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L39"
-    },
-    {
-      "id": "annotate_images_draw_circle",
-      "label": "draw_circle()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L49"
-    },
-    {
-      "id": "annotate_images_annotate",
-      "label": "annotate()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L56"
-    },
-    {
-      "id": "annotate_images_rationale_1",
-      "label": "Annotate facility images with arrows, crop zones, and labels for findings. Produ",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "annotate_images_rationale_27",
-      "label": "Draw an arrow from start to end point.",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L27"
-    },
-    {
-      "id": "annotate_images_rationale_40",
-      "label": "Draw a label with semi-transparent background.",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L40"
-    },
-    {
-      "id": "annotate_images_rationale_50",
-      "label": "Draw a circle highlight.",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L50"
-    },
-    {
-      "id": "annotate_images_rationale_57",
-      "label": "annotations: list of dicts with:       - arrow_from: (x,y) start of arrow",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L57"
-    },
-    {
-      "id": "annotate_images_v3",
-      "label": "annotate_images_v3.py",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "annotate_images_v3_draw_arrow",
-      "label": "draw_arrow()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
-      "source_location": "L25"
-    },
-    {
-      "id": "annotate_images_v3_draw_circle",
-      "label": "draw_circle()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
-      "source_location": "L40"
-    },
-    {
-      "id": "annotate_images_v3_px",
-      "label": "px()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
-      "source_location": "L48"
-    },
-    {
-      "id": "annotate_images_v3_get_color",
-      "label": "get_color()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
-      "source_location": "L53"
-    },
-    {
-      "id": "annotate_images_v3_annotate",
-      "label": "annotate()",
-      "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
-      "source_location": "L64"
-    },
-    {
-      "id": "annotate_images_v3_rationale_1",
-      "label": "Annotate ALL 43 facility images \u2014 arrows and circles ONLY (no text on images). V",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "annotate_images_v3_rationale_26",
-      "label": "Draw a thick arrow with filled arrowhead.",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
-      "source_location": "L26"
-    },
-    {
-      "id": "annotate_images_v3_rationale_49",
-      "label": "Convert proportional coordinate (0.0-1.0) to pixel.",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
-      "source_location": "L49"
-    },
-    {
-      "id": "annotate_images_v3_rationale_65",
-      "label": "annotations: list of dicts with proportional coords (0.0-1.0):       - arrow: ((",
-      "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
-      "source_location": "L65"
-    },
-    {
-      "id": "generate_final_report",
+      "id": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_generate_final_report_py",
       "label": "generate_final_report.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L1"
     },
     {
       "id": "generate_final_report_add_heading_styled",
       "label": "add_heading_styled()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L19"
     },
     {
       "id": "generate_final_report_add_table_row",
       "label": "add_table_row()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L25"
     },
     {
       "id": "generate_final_report_make_table",
       "label": "make_table()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L44"
     },
     {
       "id": "generate_final_report_rationale_1",
       "label": "Generate Final Report for Pinecroft Cycle 1 as a professional Word document.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L1"
+    },
+    {
+      "id": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v3_py",
+      "label": "annotate_images_v3.py",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "annotate_images_v3_draw_arrow",
+      "label": "draw_arrow()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L25"
+    },
+    {
+      "id": "annotate_images_v3_draw_circle",
+      "label": "draw_circle()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L40"
+    },
+    {
+      "id": "annotate_images_v3_px",
+      "label": "px()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L48"
+    },
+    {
+      "id": "annotate_images_v3_get_color",
+      "label": "get_color()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L53"
+    },
+    {
+      "id": "annotate_images_v3_annotate",
+      "label": "annotate()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L64"
+    },
+    {
+      "id": "annotate_images_v3_rationale_1",
+      "label": "Annotate ALL 43 facility images \u2014 arrows and circles ONLY (no text on images). V",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "annotate_images_v3_rationale_26",
+      "label": "Draw a thick arrow with filled arrowhead.",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L26"
+    },
+    {
+      "id": "annotate_images_v3_rationale_49",
+      "label": "Convert proportional coordinate (0.0-1.0) to pixel.",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L49"
+    },
+    {
+      "id": "annotate_images_v3_rationale_65",
+      "label": "annotations: list of dicts with proportional coords (0.0-1.0):       - arrow: ((",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L65"
+    },
+    {
+      "id": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_py",
+      "label": "annotate_images.py",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "annotate_images_draw_arrow",
+      "label": "draw_arrow()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L26"
+    },
+    {
+      "id": "annotate_images_draw_label",
+      "label": "draw_label()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L39"
+    },
+    {
+      "id": "annotate_images_draw_circle",
+      "label": "draw_circle()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L49"
+    },
+    {
+      "id": "annotate_images_annotate",
+      "label": "annotate()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L56"
+    },
+    {
+      "id": "annotate_images_rationale_1",
+      "label": "Annotate facility images with arrows, crop zones, and labels for findings. Produ",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "annotate_images_rationale_27",
+      "label": "Draw an arrow from start to end point.",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L27"
+    },
+    {
+      "id": "annotate_images_rationale_40",
+      "label": "Draw a label with semi-transparent background.",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L40"
+    },
+    {
+      "id": "annotate_images_rationale_50",
+      "label": "Draw a circle highlight.",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L50"
+    },
+    {
+      "id": "annotate_images_rationale_57",
+      "label": "annotations: list of dicts with:       - arrow_from: (x,y) start of arrow",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L57"
+    },
+    {
+      "id": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v2_py",
+      "label": "annotate_images_v2.py",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "annotate_images_v2_draw_arrow",
+      "label": "draw_arrow()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L30"
+    },
+    {
+      "id": "annotate_images_v2_draw_circle",
+      "label": "draw_circle()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L40"
+    },
+    {
+      "id": "annotate_images_v2_draw_highlight",
+      "label": "draw_highlight()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L47"
+    },
+    {
+      "id": "annotate_images_v2_get_color",
+      "label": "get_color()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L51"
+    },
+    {
+      "id": "annotate_images_v2_annotate",
+      "label": "annotate()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L61"
+    },
+    {
+      "id": "annotate_images_v2_rationale_1",
+      "label": "Annotate ALL 43 facility images \u2014 arrows and highlight zones ONLY (no text on im",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "annotate_images_v2_rationale_31",
+      "label": "Draw a thick arrow with filled arrowhead.",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L31"
+    },
+    {
+      "id": "annotate_images_v2_rationale_48",
+      "label": "Draw semi-transparent rectangle highlight.",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L48"
+    },
+    {
+      "id": "annotate_images_v2_rationale_62",
+      "label": "annotations: list of dicts:       - arrow: ((from_x, from_y), (to_x, to_y))",
+      "file_type": "rationale",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L62"
+    },
+    {
+      "id": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_extract_xlsx_images_py",
+      "label": "extract_xlsx_images.py",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "extract_xlsx_images_extract_images",
+      "label": "extract_images()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
+      "source_location": "L10"
+    },
+    {
+      "id": "extract_xlsx_images_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
+      "source_location": "L37"
+    },
+    {
+      "id": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "label": "generate_existing_info_report.py",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "generate_existing_info_report_finding",
+      "label": "Finding",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L155"
+    },
+    {
+      "id": "generate_existing_info_report_appendiximage",
+      "label": "AppendixImage",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L168"
+    },
+    {
+      "id": "generate_existing_info_report_clean_display_text",
+      "label": "clean_display_text()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L179"
+    },
+    {
+      "id": "generate_existing_info_report_col_to_num",
+      "label": "col_to_num()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L191"
+    },
+    {
+      "id": "generate_existing_info_report_cell_ref_parts",
+      "label": "cell_ref_parts()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L198"
+    },
+    {
+      "id": "generate_existing_info_report_num_to_col",
+      "label": "num_to_col()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L205"
+    },
+    {
+      "id": "generate_existing_info_report_load_shared_strings",
+      "label": "load_shared_strings()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L213"
+    },
+    {
+      "id": "generate_existing_info_report_workbook_sheets",
+      "label": "workbook_sheets()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L220"
+    },
+    {
+      "id": "generate_existing_info_report_cell_text",
+      "label": "cell_text()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L235"
+    },
+    {
+      "id": "generate_existing_info_report_sheet_rows",
+      "label": "sheet_rows()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L251"
+    },
+    {
+      "id": "generate_existing_info_report_excel_date",
+      "label": "excel_date()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L271"
+    },
+    {
+      "id": "generate_existing_info_report_domain_from_section",
+      "label": "domain_from_section()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L279"
+    },
+    {
+      "id": "generate_existing_info_report_parse_main_findings",
+      "label": "parse_main_findings()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L297"
+    },
+    {
+      "id": "generate_existing_info_report_parse_photo_notes",
+      "label": "parse_photo_notes()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L348"
+    },
+    {
+      "id": "generate_existing_info_report_parse_hr_notes",
+      "label": "parse_hr_notes()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L357"
+    },
+    {
+      "id": "generate_existing_info_report_image_output_lookup",
+      "label": "image_output_lookup()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L368"
+    },
+    {
+      "id": "generate_existing_info_report_drawing_image_anchors",
+      "label": "drawing_image_anchors()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L379"
+    },
+    {
+      "id": "generate_existing_info_report_nearby_issue_text",
+      "label": "nearby_issue_text()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L436"
+    },
+    {
+      "id": "generate_existing_info_report_parse_image_appendix_items",
+      "label": "parse_image_appendix_items()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L455"
+    },
+    {
+      "id": "generate_existing_info_report_risk_from_score",
+      "label": "risk_from_score()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L475"
+    },
+    {
+      "id": "generate_existing_info_report_grouped_counts",
+      "label": "grouped_counts()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L479"
+    },
+    {
+      "id": "generate_existing_info_report_executive_summary_text",
+      "label": "executive_summary_text()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L486"
+    },
+    {
+      "id": "generate_existing_info_report_write_md",
+      "label": "write_md()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L526"
+    },
+    {
+      "id": "generate_existing_info_report_set_document_layout",
+      "label": "set_document_layout()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L582"
+    },
+    {
+      "id": "generate_existing_info_report_add_heading",
+      "label": "add_heading()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L593"
+    },
+    {
+      "id": "generate_existing_info_report_add_static_toc_line",
+      "label": "add_static_toc_line()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L600"
+    },
+    {
+      "id": "generate_existing_info_report_add_toc",
+      "label": "add_toc()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L612"
+    },
+    {
+      "id": "generate_existing_info_report_add_field",
+      "label": "add_field()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L632"
+    },
+    {
+      "id": "generate_existing_info_report_set_update_fields_on_open",
+      "label": "set_update_fields_on_open()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L649"
+    },
+    {
+      "id": "generate_existing_info_report_add_footer",
+      "label": "add_footer()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L658"
+    },
+    {
+      "id": "generate_existing_info_report_add_bottom_divider",
+      "label": "add_bottom_divider()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L677"
+    },
+    {
+      "id": "generate_existing_info_report_add_horizontal_rule",
+      "label": "add_horizontal_rule()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L690"
+    },
+    {
+      "id": "generate_existing_info_report_add_boxed_note",
+      "label": "add_boxed_note()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L695"
+    },
+    {
+      "id": "generate_existing_info_report_keep_paragraph_together",
+      "label": "keep_paragraph_together()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L714"
+    },
+    {
+      "id": "generate_existing_info_report_add_info_row",
+      "label": "add_info_row()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L720"
+    },
+    {
+      "id": "generate_existing_info_report_add_tabbed_info_row",
+      "label": "add_tabbed_info_row()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L734"
+    },
+    {
+      "id": "generate_existing_info_report_add_finding_block",
+      "label": "add_finding_block()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L752"
+    },
+    {
+      "id": "generate_existing_info_report_add_note_block",
+      "label": "add_note_block()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L772"
+    },
+    {
+      "id": "generate_existing_info_report_fit_image_size",
+      "label": "fit_image_size()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L783"
+    },
+    {
+      "id": "generate_existing_info_report_top_risk_items",
+      "label": "top_risk_items()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L792"
+    },
+    {
+      "id": "generate_existing_info_report_collect_report_strings",
+      "label": "collect_report_strings()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L822"
+    },
+    {
+      "id": "generate_existing_info_report_run_spell_check",
+      "label": "run_spell_check()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L846"
+    },
+    {
+      "id": "generate_existing_info_report_add_table",
+      "label": "add_table()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L900"
+    },
+    {
+      "id": "generate_existing_info_report_write_docx",
+      "label": "write_docx()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L918"
+    },
+    {
+      "id": "generate_existing_info_report_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L1051"
+    },
+    {
+      "id": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "label": "xlsx_text_extract.py",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "xlsx_text_extract_col_to_num",
+      "label": "col_to_num()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L18"
+    },
+    {
+      "id": "xlsx_text_extract_cell_ref_parts",
+      "label": "cell_ref_parts()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L25"
+    },
+    {
+      "id": "xlsx_text_extract_load_shared_strings",
+      "label": "load_shared_strings()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L32"
+    },
+    {
+      "id": "xlsx_text_extract_workbook_sheets",
+      "label": "workbook_sheets()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L43"
+    },
+    {
+      "id": "xlsx_text_extract_cell_text",
+      "label": "cell_text()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L61"
+    },
+    {
+      "id": "xlsx_text_extract_extract_workbook",
+      "label": "extract_workbook()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L81"
+    },
+    {
+      "id": "xlsx_text_extract_markdowncsvadapter",
+      "label": "_MarkdownCsvAdapter",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L121"
+    },
+    {
+      "id": "xlsx_text_extract_markdowncsvadapter_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L122"
+    },
+    {
+      "id": "xlsx_text_extract_markdowncsvadapter_write",
+      "label": ".write()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L125"
+    },
+    {
+      "id": "xlsx_text_extract_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L135"
+    },
+    {
+      "id": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_docx_from_markdown_py",
+      "label": "generate_docx_from_markdown.py",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "generate_docx_from_markdown_style_heading",
+      "label": "style_heading()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L12"
+    },
+    {
+      "id": "generate_docx_from_markdown_add_markdown_table",
+      "label": "add_markdown_table()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L17"
+    },
+    {
+      "id": "generate_docx_from_markdown_flush_paragraph",
+      "label": "flush_paragraph()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L44"
+    },
+    {
+      "id": "generate_docx_from_markdown_convert",
+      "label": "convert()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L56"
+    },
+    {
+      "id": "generate_docx_from_markdown_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L123"
     }
   ],
   "edges": [
     {
-      "source": "annotate_images_v2",
-      "target": "pil",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_generate_final_report_py",
+      "target": "docx",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_generate_final_report_py",
+      "target": "docx_shared",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L5",
       "weight": 1.0
     },
     {
-      "source": "annotate_images_v2",
-      "target": "math",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v2",
-      "target": "os",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v2",
-      "target": "annotate_images_v2_draw_arrow",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L30",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v2",
-      "target": "annotate_images_v2_draw_circle",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L40",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v2",
-      "target": "annotate_images_v2_draw_highlight",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L47",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v2",
-      "target": "annotate_images_v2_get_color",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L51",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v2",
-      "target": "annotate_images_v2_annotate",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L61",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v2_annotate",
-      "target": "annotate_images_v2_get_color",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L74",
-      "weight": 0.8
-    },
-    {
-      "source": "annotate_images_v2_annotate",
-      "target": "annotate_images_v2_draw_highlight",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L78",
-      "weight": 0.8
-    },
-    {
-      "source": "annotate_images_v2_annotate",
-      "target": "annotate_images_v2_draw_circle",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L81",
-      "weight": 0.8
-    },
-    {
-      "source": "annotate_images_v2_annotate",
-      "target": "annotate_images_v2_draw_arrow",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L83",
-      "weight": 0.8
-    },
-    {
-      "source": "annotate_images_v2_rationale_1",
-      "target": "annotate_images_v2",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v2_rationale_31",
-      "target": "annotate_images_v2_draw_arrow",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L31",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v2_rationale_48",
-      "target": "annotate_images_v2_draw_highlight",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L48",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v2_rationale_62",
-      "target": "annotate_images_v2_annotate",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
-      "source_location": "L62",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images",
-      "target": "pil",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_generate_final_report_py",
+      "target": "docx_enum_text",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images",
-      "target": "math",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L6",
       "weight": 1.0
     },
     {
-      "source": "annotate_images",
-      "target": "os",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images",
-      "target": "annotate_images_draw_arrow",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L26",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images",
-      "target": "annotate_images_draw_label",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L39",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images",
-      "target": "annotate_images_draw_circle",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L49",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images",
-      "target": "annotate_images_annotate",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L56",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_annotate",
-      "target": "annotate_images_draw_circle",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L88",
-      "weight": 0.8
-    },
-    {
-      "source": "annotate_images_annotate",
-      "target": "annotate_images_draw_arrow",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L90",
-      "weight": 0.8
-    },
-    {
-      "source": "annotate_images_annotate",
-      "target": "annotate_images_draw_label",
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L92",
-      "weight": 0.8
-    },
-    {
-      "source": "annotate_images_rationale_1",
-      "target": "annotate_images",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_rationale_27",
-      "target": "annotate_images_draw_arrow",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L27",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_rationale_40",
-      "target": "annotate_images_draw_label",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L40",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_rationale_50",
-      "target": "annotate_images_draw_circle",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L50",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_rationale_57",
-      "target": "annotate_images_annotate",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
-      "source_location": "L57",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v3",
-      "target": "pil",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_generate_final_report_py",
+      "target": "docx_enum_table",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v3",
-      "target": "math",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "annotate_images_v3",
-      "target": "os",
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L7",
       "weight": 1.0
     },
     {
-      "source": "annotate_images_v3",
-      "target": "annotate_images_v3_draw_arrow",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_generate_final_report_py",
+      "target": "docx_oxml_ns",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_generate_final_report_py",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_generate_final_report_py",
+      "target": "generate_final_report_add_heading_styled",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_generate_final_report_py",
+      "target": "generate_final_report_add_table_row",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
       "source_location": "L25",
       "weight": 1.0
     },
     {
-      "source": "annotate_images_v3",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_generate_final_report_py",
+      "target": "generate_final_report_make_table",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_final_report_rationale_1",
+      "target": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_generate_final_report_py",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v3_py",
+      "target": "pil",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v3_py",
+      "target": "math",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v3_py",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v3_py",
+      "target": "annotate_images_v3_draw_arrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v3_py",
       "target": "annotate_images_v3_draw_circle",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L40",
       "weight": 1.0
     },
     {
-      "source": "annotate_images_v3",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v3_py",
       "target": "annotate_images_v3_px",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L48",
       "weight": 1.0
     },
     {
-      "source": "annotate_images_v3",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v3_py",
       "target": "annotate_images_v3_get_color",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L53",
       "weight": 1.0
     },
     {
-      "source": "annotate_images_v3",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v3_py",
       "target": "annotate_images_v3_annotate",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L64",
       "weight": 1.0
     },
@@ -602,44 +875,44 @@
       "source": "annotate_images_v3_annotate",
       "target": "annotate_images_v3_get_color",
       "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L77",
-      "weight": 0.8
+      "weight": 1.0
     },
     {
       "source": "annotate_images_v3_annotate",
       "target": "annotate_images_v3_draw_circle",
       "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L82",
-      "weight": 0.8
+      "weight": 1.0
     },
     {
       "source": "annotate_images_v3_annotate",
       "target": "annotate_images_v3_px",
       "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L82",
-      "weight": 0.8
+      "weight": 1.0
     },
     {
       "source": "annotate_images_v3_annotate",
       "target": "annotate_images_v3_draw_arrow",
       "relation": "calls",
-      "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L85",
-      "weight": 0.8
+      "weight": 1.0
     },
     {
       "source": "annotate_images_v3_rationale_1",
-      "target": "annotate_images_v3",
+      "target": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v3_py",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L1",
       "weight": 1.0
     },
@@ -648,7 +921,7 @@
       "target": "annotate_images_v3_draw_arrow",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L26",
       "weight": 1.0
     },
@@ -657,7 +930,7 @@
       "target": "annotate_images_v3_px",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L49",
       "weight": 1.0
     },
@@ -666,98 +939,1835 @@
       "target": "annotate_images_v3_annotate",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
       "source_location": "L65",
       "weight": 1.0
     },
     {
-      "source": "generate_final_report",
-      "target": "docx",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_py",
+      "target": "pil",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "generate_final_report",
-      "target": "docx_shared",
-      "relation": "imports_from",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L5",
       "weight": 1.0
     },
     {
-      "source": "generate_final_report",
-      "target": "docx_enum_text",
-      "relation": "imports_from",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_py",
+      "target": "math",
+      "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L6",
       "weight": 1.0
     },
     {
-      "source": "generate_final_report",
-      "target": "docx_enum_table",
-      "relation": "imports_from",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_py",
+      "target": "os",
+      "relation": "imports",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
       "source_location": "L7",
       "weight": 1.0
     },
     {
-      "source": "generate_final_report",
-      "target": "docx_oxml_ns",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_py",
+      "target": "annotate_images_draw_arrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_py",
+      "target": "annotate_images_draw_label",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_py",
+      "target": "annotate_images_draw_circle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_py",
+      "target": "annotate_images_annotate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_annotate",
+      "target": "annotate_images_draw_circle",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_annotate",
+      "target": "annotate_images_draw_arrow",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_annotate",
+      "target": "annotate_images_draw_label",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_rationale_1",
+      "target": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_py",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_rationale_27",
+      "target": "annotate_images_draw_arrow",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_rationale_40",
+      "target": "annotate_images_draw_label",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_rationale_50",
+      "target": "annotate_images_draw_circle",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_rationale_57",
+      "target": "annotate_images_annotate",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v2_py",
+      "target": "pil",
       "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v2_py",
+      "target": "math",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v2_py",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v2_py",
+      "target": "annotate_images_v2_draw_arrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v2_py",
+      "target": "annotate_images_v2_draw_circle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v2_py",
+      "target": "annotate_images_v2_draw_highlight",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v2_py",
+      "target": "annotate_images_v2_get_color",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v2_py",
+      "target": "annotate_images_v2_annotate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_v2_annotate",
+      "target": "annotate_images_v2_get_color",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_v2_annotate",
+      "target": "annotate_images_v2_draw_highlight",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_v2_annotate",
+      "target": "annotate_images_v2_draw_circle",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_v2_annotate",
+      "target": "annotate_images_v2_draw_arrow",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_v2_rationale_1",
+      "target": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_processed_pinecroft_thewoodlands_tx_20260114_annotate_images_v2_py",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_v2_rationale_31",
+      "target": "annotate_images_v2_draw_arrow",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_v2_rationale_48",
+      "target": "annotate_images_v2_draw_highlight",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_v2_rationale_62",
+      "target": "annotate_images_v2_annotate",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_extract_xlsx_images_py",
+      "target": "argparse",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_extract_xlsx_images_py",
+      "target": "json",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_extract_xlsx_images_py",
+      "target": "shutil",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_extract_xlsx_images_py",
+      "target": "zipfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_extract_xlsx_images_py",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_extract_xlsx_images_py",
+      "target": "extract_xlsx_images_extract_images",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_extract_xlsx_images_py",
+      "target": "extract_xlsx_images_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "extract_xlsx_images_main",
+      "target": "extract_xlsx_images_extract_images",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/extract_xlsx_images.py",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "re",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "zipfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "collections",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "dataclasses",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "datetime",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L8",
       "weight": 1.0
     },
     {
-      "source": "generate_final_report",
-      "target": "os",
-      "relation": "imports",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "xml_etree",
+      "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
       "source_location": "L9",
       "weight": 1.0
     },
     {
-      "source": "generate_final_report",
-      "target": "generate_final_report_add_heading_styled",
-      "relation": "contains",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "docx",
+      "relation": "imports_from",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
-      "source_location": "L19",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
-      "source": "generate_final_report",
-      "target": "generate_final_report_add_table_row",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "docx_enum_text",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "docx_oxml",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "docx_oxml_ns",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "docx_shared",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_finding",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_appendiximage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_clean_display_text",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_col_to_num",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_cell_ref_parts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_num_to_col",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_load_shared_strings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_workbook_sheets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_cell_text",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L235",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_sheet_rows",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L251",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_excel_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L271",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_domain_from_section",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L279",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_parse_main_findings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L297",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_parse_photo_notes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L348",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_parse_hr_notes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L357",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_image_output_lookup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L368",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_drawing_image_anchors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L379",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_nearby_issue_text",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L436",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_parse_image_appendix_items",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L455",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_risk_from_score",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L475",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_grouped_counts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L479",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_executive_summary_text",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L486",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_write_md",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L526",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_set_document_layout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L582",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_heading",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L593",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_static_toc_line",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L600",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_toc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L612",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_field",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L632",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_set_update_fields_on_open",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L649",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_footer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L658",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_bottom_divider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L677",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_horizontal_rule",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L690",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_boxed_note",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L695",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_keep_paragraph_together",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L714",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_info_row",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L720",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_tabbed_info_row",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L734",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_finding_block",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L752",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_note_block",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L772",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_fit_image_size",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L783",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_top_risk_items",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L792",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_collect_report_strings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L822",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_run_spell_check",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L846",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_add_table",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L900",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_write_docx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L918",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_existing_info_report_py",
+      "target": "generate_existing_info_report_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L1051",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_cell_ref_parts",
+      "target": "generate_existing_info_report_col_to_num",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_sheet_rows",
+      "target": "generate_existing_info_report_load_shared_strings",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L254",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_sheet_rows",
+      "target": "generate_existing_info_report_workbook_sheets",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L255",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_sheet_rows",
+      "target": "generate_existing_info_report_cell_ref_parts",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L260",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_sheet_rows",
+      "target": "generate_existing_info_report_cell_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L264",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_parse_main_findings",
+      "target": "generate_existing_info_report_excel_date",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L302",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_parse_main_findings",
+      "target": "generate_existing_info_report_clean_display_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L318",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_parse_main_findings",
+      "target": "generate_existing_info_report_finding",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L324",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_parse_main_findings",
+      "target": "generate_existing_info_report_domain_from_section",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L328",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_parse_photo_notes",
+      "target": "generate_existing_info_report_clean_display_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L353",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_parse_hr_notes",
+      "target": "generate_existing_info_report_clean_display_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L364",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_drawing_image_anchors",
+      "target": "generate_existing_info_report_num_to_col",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L431",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_nearby_issue_text",
+      "target": "generate_existing_info_report_cell_ref_parts",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L437",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_nearby_issue_text",
+      "target": "generate_existing_info_report_num_to_col",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L438",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_nearby_issue_text",
+      "target": "generate_existing_info_report_clean_display_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L452",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_parse_image_appendix_items",
+      "target": "generate_existing_info_report_image_output_lookup",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L456",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_parse_image_appendix_items",
+      "target": "generate_existing_info_report_drawing_image_anchors",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L458",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_parse_image_appendix_items",
+      "target": "generate_existing_info_report_nearby_issue_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L462",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_parse_image_appendix_items",
+      "target": "generate_existing_info_report_appendiximage",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L464",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_md",
+      "target": "generate_existing_info_report_grouped_counts",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L527",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_md",
+      "target": "generate_existing_info_report_executive_summary_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L532",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_md",
+      "target": "generate_existing_info_report_risk_from_score",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L562",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_add_toc",
+      "target": "generate_existing_info_report_add_static_toc_line",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L629",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_add_footer",
+      "target": "generate_existing_info_report_add_field",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L667",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_add_horizontal_rule",
+      "target": "generate_existing_info_report_add_bottom_divider",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L692",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_add_info_row",
+      "target": "generate_existing_info_report_keep_paragraph_together",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L724",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_add_tabbed_info_row",
+      "target": "generate_existing_info_report_keep_paragraph_together",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L739",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_add_finding_block",
+      "target": "generate_existing_info_report_add_heading",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L753",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_add_finding_block",
+      "target": "generate_existing_info_report_keep_paragraph_together",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L754",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_add_finding_block",
+      "target": "generate_existing_info_report_add_info_row",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L755",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_add_finding_block",
+      "target": "generate_existing_info_report_add_bottom_divider",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L769",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_add_note_block",
+      "target": "generate_existing_info_report_add_bottom_divider",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L780",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_collect_report_strings",
+      "target": "generate_existing_info_report_executive_summary_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L827",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_collect_report_strings",
+      "target": "generate_existing_info_report_grouped_counts",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L827",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_collect_report_strings",
+      "target": "generate_existing_info_report_top_risk_items",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L841",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_collect_report_strings",
+      "target": "generate_existing_info_report_clean_display_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L843",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_run_spell_check",
+      "target": "generate_existing_info_report_collect_report_strings",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L859",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_set_update_fields_on_open",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L920",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_set_document_layout",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L921",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_add_footer",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L925",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_add_toc",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L961",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_add_heading",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L964",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_grouped_counts",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L965",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_executive_summary_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L966",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_add_tabbed_info_row",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L973",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_add_bottom_divider",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L975",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_add_info_row",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L979",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_top_risk_items",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L989",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_keep_paragraph_together",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L992",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_add_finding_block",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L1019",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_docx",
+      "target": "generate_existing_info_report_fit_image_size",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L1032",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_main",
+      "target": "generate_existing_info_report_sheet_rows",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L1052",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_main",
+      "target": "generate_existing_info_report_parse_main_findings",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L1054",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_main",
+      "target": "generate_existing_info_report_clean_display_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L1055",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_main",
+      "target": "generate_existing_info_report_parse_image_appendix_items",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L1056",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_main",
+      "target": "generate_existing_info_report_run_spell_check",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L1057",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_main",
+      "target": "generate_existing_info_report_write_md",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L1058",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_main",
+      "target": "generate_existing_info_report_write_docx",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L1059",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "argparse",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "csv",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "re",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "zipfile",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "xml_etree",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "xlsx_text_extract_col_to_num",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "xlsx_text_extract_cell_ref_parts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
       "source_location": "L25",
       "weight": 1.0
     },
     {
-      "source": "generate_final_report",
-      "target": "generate_final_report_make_table",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "xlsx_text_extract_load_shared_strings",
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "xlsx_text_extract_workbook_sheets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "xlsx_text_extract_cell_text",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "xlsx_text_extract_extract_workbook",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "xlsx_text_extract_markdowncsvadapter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "xlsx_text_extract_markdowncsvadapter",
+      "target": "xlsx_text_extract_markdowncsvadapter_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "xlsx_text_extract_markdowncsvadapter",
+      "target": "xlsx_text_extract_markdowncsvadapter_write",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_xlsx_text_extract_py",
+      "target": "xlsx_text_extract_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "xlsx_text_extract_cell_ref_parts",
+      "target": "xlsx_text_extract_col_to_num",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "xlsx_text_extract_extract_workbook",
+      "target": "xlsx_text_extract_load_shared_strings",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "xlsx_text_extract_extract_workbook",
+      "target": "xlsx_text_extract_markdowncsvadapter_write",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "xlsx_text_extract_extract_workbook",
+      "target": "xlsx_text_extract_workbook_sheets",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "xlsx_text_extract_extract_workbook",
+      "target": "xlsx_text_extract_cell_ref_parts",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "xlsx_text_extract_extract_workbook",
+      "target": "xlsx_text_extract_cell_text",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "xlsx_text_extract_extract_workbook",
+      "target": "xlsx_text_extract_markdowncsvadapter",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "xlsx_text_extract_main",
+      "target": "xlsx_text_extract_extract_workbook",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/xlsx_text_extract.py",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_docx_from_markdown_py",
+      "target": "argparse",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_docx_from_markdown_py",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_docx_from_markdown_py",
+      "target": "docx",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_docx_from_markdown_py",
+      "target": "docx_enum_section",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_docx_from_markdown_py",
+      "target": "docx_enum_text",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_docx_from_markdown_py",
+      "target": "docx_shared",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_docx_from_markdown_py",
+      "target": "generate_docx_from_markdown_style_heading",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_docx_from_markdown_py",
+      "target": "generate_docx_from_markdown_add_markdown_table",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_docx_from_markdown_py",
+      "target": "generate_docx_from_markdown_flush_paragraph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
       "source_location": "L44",
       "weight": 1.0
     },
     {
-      "source": "generate_final_report_rationale_1",
-      "target": "generate_final_report",
-      "relation": "rationale_for",
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_docx_from_markdown_py",
+      "target": "generate_docx_from_markdown_convert",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
-      "source_location": "L1",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "home_runner_work_hldpro_governance_hldpro_governance_repos_asc_evaluator_reviews_cycle_1_mhsc_richmond_20250513_scripts_generate_docx_from_markdown_py",
+      "target": "generate_docx_from_markdown_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_docx_from_markdown_convert",
+      "target": "generate_docx_from_markdown_flush_paragraph",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_docx_from_markdown_convert",
+      "target": "generate_docx_from_markdown_add_markdown_table",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_docx_from_markdown_convert",
+      "target": "generate_docx_from_markdown_style_heading",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_docx_from_markdown_main",
+      "target": "generate_docx_from_markdown_convert",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_final_report_add_heading_styled",
+      "target": "generate_existing_info_report_add_heading",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_final_report_make_table",
+      "target": "generate_existing_info_report_add_table",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/generate_final_report.py",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_v3_annotate",
+      "target": "generate_docx_from_markdown_convert",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v3.py",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_annotate",
+      "target": "generate_docx_from_markdown_convert",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images.py",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "annotate_images_v2_annotate",
+      "target": "generate_docx_from_markdown_convert",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Processed/Pinecroft_TheWoodlands_TX_20260114/annotate_images_v2.py",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_write_md",
+      "target": "xlsx_text_extract_markdowncsvadapter_write",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L529",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_existing_info_report_run_spell_check",
+      "target": "xlsx_text_extract_markdowncsvadapter_write",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_existing_info_report.py",
+      "source_location": "L880",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_docx_from_markdown_add_markdown_table",
+      "target": "generate_existing_info_report_add_table",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_docx_from_markdown_convert",
+      "target": "generate_existing_info_report_add_heading",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/runner/work/hldpro-governance/hldpro-governance/repos/ASC-Evaluator/Reviews/Cycle_1_MHSC_Richmond_20250513/scripts/generate_docx_from_markdown.py",
+      "source_location": "L91",
       "weight": 1.0
     }
   ],

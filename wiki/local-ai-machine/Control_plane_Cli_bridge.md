@@ -1,35 +1,35 @@
 # Control plane Cli bridge
 
-> 81 nodes · cohesion 0.06
+> 108 nodes · cohesion 0.05
 
 ## Key Concepts
 
-- **cli_bridge.ts** (80 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **tick()** (25 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **cli_bridge.ts** (81 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **error** (30 connections) — `local-ai-machine/clients/ios/LocalWiFiImageClient/GatewayClient.swift`
+- **tick()** (26 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **fetchAndStoreMedia()** (18 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
 - **runCommand()** (15 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **fetchAndStoreMedia()** (14 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **.push()** (15 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
 - **capabilityFetch()** (10 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
 - **parseHitlContextFromPrompt()** (10 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **ensurePendingActionForCommand()** (7 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **insertExecutionPolicyEvent()** (7 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **postSlackDecisionButtonsToChannel()** (7 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **execution_capability.ts** (10 connections) — `local-ai-machine/scripts/control_plane/execution_capability.ts`
+- **ensurePendingActionForCommand()** (8 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **insertExecutionPolicyEvent()** (8 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **main()** (8 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **maybeRunRepoCompendiumRefresh()** (8 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **postSlackChannelRootWithResult()** (8 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **postSlackDecisionButtonsToChannel()** (8 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **claimTransactionCapability()** (7 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **failStaleExecuting()** (7 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **postSlackDecisionButtonsToResponseUrl()** (7 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **summarizeRequest()** (7 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **knowledge_integrator.ts** (7 connections) — `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
+- **chunkTextForSlack()** (6 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
 - **ensureSlackBotTokenHealthy()** (6 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **failStaleExecuting()** (6 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **main()** (6 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **maybeRunRepoCompendiumRefresh()** (6 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **postSlackChannelRootWithResult()** (6 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **postSlackDecisionButtonsToResponseUrl()** (6 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **renderStructuredSlackMessage()** (6 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **summarizeRequest()** (6 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **chunkTextForSlack()** (5 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **claimTransactionCapability()** (5 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **evaluateExecutionCapability()** (5 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **postSlackResponseWithResult()** (5 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **bootstrapAllowedNetworkHosts()** (4 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **buildDecisionButtons()** (4 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **buildIntentScope()** (4 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- **evaluateNetworkEgressCapability()** (4 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
-- *... and 56 more nodes in this community*
+- **evaluateExecutionCapability()** (6 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **fetchThreadContext()** (6 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- **postSlackChannelMessage()** (6 connections) — `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- *... and 83 more nodes in this community*
 
 ## Relationships
 
@@ -37,12 +37,17 @@
 
 ## Source Files
 
+- `local-ai-machine/clients/ios/LocalWiFiImageClient/GatewayClient.swift`
 - `local-ai-machine/scripts/control_plane/cli_bridge.ts`
+- `local-ai-machine/scripts/control_plane/execution_capability.ts`
+- `local-ai-machine/scripts/control_plane/execution_capability_test.ts`
+- `local-ai-machine/scripts/control_plane/knowledge_integrator.ts`
+- `local-ai-machine/scripts/control_plane/scavenger_stream_guard.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 160 (41%)
-- INFERRED: 232 (59%)
+- EXTRACTED: 471 (84%)
+- INFERRED: 89 (16%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -1,12 +1,12 @@
 {
   "repo_slug": "asc-evaluator",
   "source": "asc-evaluator",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/graphify-out/asc-evaluator",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-graphify-pdcar/wiki/asc-evaluator",
-  "nodes": 35,
-  "edges": 42,
-  "communities": 4,
-  "articles": 14,
+  "output": "/home/runner/work/hldpro-governance/hldpro-governance/graphify-out/asc-evaluator",
+  "wiki_dir": "/home/runner/work/hldpro-governance/hldpro-governance/wiki/asc-evaluator",
+  "nodes": 101,
+  "edges": 184,
+  "communities": 11,
+  "articles": 21,
   "html_status": "skipped",
-  "code_files": 4
+  "code_files": 8
 }

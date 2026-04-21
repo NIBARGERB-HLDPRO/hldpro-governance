@@ -1,10 +1,11 @@
 # Community 168
 
-> 1 nodes · cohesion 1.00
+> 2 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- **report-traceability.test.ts** (0 connections) — `/Users/bennibarger/Developer/HLDPRO/_worktrees/hp-graphify-phase4/backend/supabase/functions/_shared/report-traceability.test.ts`
+- **App()** (1 connections) — `healthcareplatform/frontend/src/App.tsx`
+- **App.tsx** (1 connections) — `healthcareplatform/frontend/src/App.tsx`
 
 ## Relationships
 
@@ -12,11 +13,11 @@
 
 ## Source Files
 
-- `/Users/bennibarger/Developer/HLDPRO/_worktrees/hp-graphify-phase4/backend/supabase/functions/_shared/report-traceability.test.ts`
+- `healthcareplatform/frontend/src/App.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 0 (0%)
+- EXTRACTED: 2 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
