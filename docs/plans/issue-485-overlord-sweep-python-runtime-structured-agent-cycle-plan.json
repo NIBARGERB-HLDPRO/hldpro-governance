@@ -1,0 +1,91 @@
+{
+  "session_id": "session-20260421-issue-485-overlord-sweep-python-runtime",
+  "issue_number": 485,
+  "objective": "Remove the GitHub-hosted runner dependency on a missing python3.11 binary from the Overlord Sweep graph update step.",
+  "tier": 2,
+  "scope_boundary": [
+    "Modify only the Overlord Sweep workflow Python runtime invocation and issue-backed planning, scope, and validation evidence.",
+    "Preserve the existing graphify install/build behavior except for the interpreter executable.",
+    "Use issue #485 as the governing issue for the post-self-learning sweep blocker."
+  ],
+  "out_of_scope": [
+    "Changing graphify graph generation behavior.",
+    "Changing self-learning report generation.",
+    "Changing downstream repositories."
+  ],
+  "research_summary": "Run 24739125036 checked out all governed repos and successfully completed Validate codex and agent model pins, Memory integrity audit, Build self-learning knowledge report, and Build effectiveness baseline snapshot. The later Update knowledge graph step failed immediately with python3.11: command not found.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/485",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/actions/runs/24739125036",
+    ".github/workflows/overlord-sweep.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Workflow Python runtime fix",
+      "goal": "Use the runner-provided Python runtime for graphify installation and graph generation.",
+      "tasks": [
+        "Replace python3.11 with python3 in the Overlord Sweep graph update step.",
+        "Validate the workflow change with local governance gates.",
+        "Publish, merge, and re-run the manual sweep."
+      ],
+      "acceptance_criteria": [
+        "No python3.11 invocation remains in the Overlord Sweep workflow.",
+        "Local CI gate passes.",
+        "Manual sweep reaches the graph update step without python3.11 command-not-found."
+      ],
+      "file_paths": [
+        ".github/workflows/overlord-sweep.yml",
+        "docs/plans/issue-485-overlord-sweep-python-runtime-pdcar.md",
+        "docs/plans/issue-485-overlord-sweep-python-runtime-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-21-issue-485-overlord-sweep-python-runtime-implementation.json",
+        "raw/validation/2026-04-21-issue-485-overlord-sweep-python-runtime.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-orchestrator-log-inspection",
+      "role": "workflow failure triage",
+      "focus": "Inspect Overlord Sweep run 24739125036 and identify the post-self-learning failure source.",
+      "status": "accepted",
+      "summary": "The run failed immediately in Update knowledge graph because python3.11 was not found on the GitHub-hosted runner; replacing the workflow invocation with python3 is the bounded runtime fix.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/actions/runs/24739125036"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "not-required-for-workflow-runtime-bugfix",
+    "model_family": "none",
+    "status": "not_requested",
+    "summary": "This is a deterministic workflow runtime fix with no architecture or policy change.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/485"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #485 may update the Overlord Sweep workflow interpreter invocation and required governance evidence.",
+    "next_execution_step": "Merge the workflow runtime fix and re-run Overlord Sweep on main.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-21-issue-485-overlord-sweep-python-runtime-implementation.json",
+    "handoff_package_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-21-issue-485-overlord-sweep-python-runtime.md"
+    ],
+    "closeout_ref": null
+  },
+  "material_deviation_rules": [
+    "If python3 lacks graphify-compatible version support on the runner, replace the step with explicit setup-python instead of broadening the workflow.",
+    "If graphify itself fails after the interpreter fix, record the new failure separately before claiming full sweep completion."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator directive",
+    "GitHub issue #485",
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-21T18:25:00Z"
+}
