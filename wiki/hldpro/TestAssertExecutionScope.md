@@ -1,6 +1,6 @@
 # TestAssertExecutionScope
 
-> God node · 34 connections · `scripts/overlord/test_assert_execution_scope.py`
+> God node · 35 connections · `scripts/overlord/test_assert_execution_scope.py`
 
 ## Connections by Relation
 
@@ -27,7 +27,7 @@
 - [[.test_planning_only_diff_inside_allowed_paths_passes()]] `EXTRACTED`
 - [[.test_planning_only_diff_outside_allowed_paths_fails()]] `EXTRACTED`
 - [[.test_non_planning_without_handoff_fails()]] `EXTRACTED`
-- [[.test_require_lane_claim_fails_when_current_branch_issue_mismatches()]] `EXTRACTED`
+- [[.test_non_planning_rejects_unsafe_handoff_evidence_ref()]] `EXTRACTED`
 
 ---
 
