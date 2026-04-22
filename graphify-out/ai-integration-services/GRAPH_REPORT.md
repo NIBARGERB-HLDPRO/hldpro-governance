@@ -1,7 +1,7 @@
 # Graph Report - ai-integration-services  (2026-04-22)
 
 ## Corpus Check
-- Large corpus: 2138 files · ~2,801,466 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 2133 files · ~2,794,537 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
 - 3456 nodes · 8473 edges · 351 communities detected
@@ -2168,12 +2168,12 @@ Nodes (0):
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `trim()` connect `Enrich site Supabase` to `Corpus Supabase`, `Auth Supabase`, `Vapi client Supabase`, `Connectors Crm Supabase`, `Integrations Var`, `Support Feature roadmap Affiliate`, `Setup readiness Supabase`, `Addon lifecycle Real`, `Addon provision Login`, `Provisioning Autoprovision preflight Client`, `Magic link jwt Supabase`, `Wizard Assistant`, `Compendium Extract Claude`, `Magic link review decision Supabase`, `Calcom client Supabase`, `Clients Client detail`, `Brain Handle`, `Email attachment parser Supabase`, `Assistant chat Widget`, `Gc Gcsub Line`, `Debug Debug feedback overlay`, `Roof report Supabase`, `Magic link intake`, `Leads Handle`, `Gc Gcprojects Format`?**
-  _High betweenness centrality (0.077) - this node is a cross-community bridge._
 - **Why does `toLocaleDateString()` connect `Support Feature roadmap Affiliate` to `Vapi client Supabase`, `Integrations Var`, `Enrich site Supabase`, `Gc Gcsub Line`, `Roof report Supabase`, `Sign Sign documents Auth`, `Addon provision Login`, `Provisioning Autoprovision preflight Client`, `Cogs export generator Supabase`, `Leads Handle`, `Wizard Assistant`, `Finance Brain`, `Clients Client detail`, `Gc Gcprojects Format`?**
-  _High betweenness centrality (0.051) - this node is a cross-community bridge._
+  _High betweenness centrality (0.088) - this node is a cross-community bridge._
+- **Why does `trim()` connect `Enrich site Supabase` to `Corpus Supabase`, `Auth Supabase`, `Vapi client Supabase`, `Connectors Crm Supabase`, `Integrations Var`, `Support Feature roadmap Affiliate`, `Setup readiness Supabase`, `Addon lifecycle Real`, `Addon provision Login`, `Provisioning Autoprovision preflight Client`, `Magic link jwt Supabase`, `Wizard Assistant`, `Compendium Extract Claude`, `Magic link review decision Supabase`, `Calcom client Supabase`, `Clients Client detail`, `Brain Handle`, `Email attachment parser Supabase`, `Assistant chat Widget`, `Gc Gcsub Line`, `Debug Debug feedback overlay`, `Roof report Supabase`, `Magic link intake`, `Leads Handle`, `Gc Gcprojects Format`?**
+  _High betweenness centrality (0.082) - this node is a cross-community bridge._
 - **Why does `update()` connect `Connectors Crm Supabase` to `Stripe webhook Lifecycle state Supabase`, `Vapi client Supabase`, `Stripe webhook Demo conversion Supabase`, `Integrations Var`, `Support Feature roadmap Affiliate`, `Setup readiness Supabase`, `Addon provision Login`, `Cogs export generator Supabase`, `Clients Clients Badge`, `Wizard Assistant`, `Connectors Crm Local`, `Brain Handle`?**
-  _High betweenness centrality (0.027) - this node is a cross-community bridge._
+  _High betweenness centrality (0.029) - this node is a cross-community bridge._
 - **Are the 99 inferred relationships involving `text()` (e.g. with `sendReminderSMS()` and `sendSms()`) actually correct?**
   _`text()` has 99 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 96 inferred relationships involving `trim()` (e.g. with `normalizePhone()` and `sha256Hash()`) actually correct?**
