@@ -1,5 +1,5 @@
 {
-  "expected_execution_root": "/tmp/issue-559-five-new-agents",
+  "expected_execution_root": ".",
   "expected_branch": "issue-559-five-new-agents-20260422",
   "allowed_write_paths": [
     "agents/codex-brief.md",
@@ -16,8 +16,8 @@
     "raw/validation/2026-04-22-issue-559-five-new-agents.md",
     "CLAUDE.md",
     "OVERLORD_BACKLOG.md",
-    "graphify-out/hldpro-governance/GRAPH_REPORT.md",
-    "graphify-out/hldpro-governance/graph.json"
+    "graphify-out/",
+    "wiki/"
   ],
   "forbidden_roots": [],
   "execution_mode": "implementation_ready",
@@ -33,7 +33,7 @@
     "implementer_model": "claude-sonnet-4-6",
     "accepted_at": "2026-04-22T00:00:00Z",
     "evidence_paths": ["docs/plans/issue-559-five-new-agents-structured-agent-cycle-plan.json"],
-    "active_exception_ref": "same-model-planner-implementer",
-    "active_exception_expires_at": "2026-04-22T23:59:59Z"
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
   }
 }
