@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import os
 import re
@@ -14,6 +15,20 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+
+_VERIFIER_PATH = Path(__file__).parent / "pages_deploy_verifier.py"
+
+
+def _load_verifier() -> Any:
+    if "pages_deploy_verifier" in sys.modules:
+        return sys.modules["pages_deploy_verifier"]
+    spec = importlib.util.spec_from_file_location("pages_deploy_verifier", _VERIFIER_PATH)
+    if spec is None or spec.loader is None:
+        raise GateError("POST_DEPLOY_VERIFY_ERROR: verifier module not found")
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules["pages_deploy_verifier"] = mod
+    spec.loader.exec_module(mod)  # type: ignore[union-attr]
+    return mod
 
 
 REQUIRED_CONFIG_KEYS = (
@@ -392,6 +407,20 @@ def extract_deployment_url(output: str) -> str | None:
     return None
 
 
+def _run_post_deploy_verification(config: dict[str, Any], source_sha: str, env: dict[str, str]) -> None:
+    log("post_deploy_verify: starting", env)
+    verifier = _load_verifier()
+    try:
+        report = verifier.build_report(config, source_sha)
+    except verifier.PagesDeployVerifierError as exc:
+        raise GateError(f"POST_DEPLOY_VERIFY_ERROR: {exc}") from exc
+    log(json.dumps(report, sort_keys=True), env)
+    if report.get("status") != "passed":
+        failures = "; ".join(str(f) for f in report.get("failures", []))
+        raise GateError(f"POST_DEPLOY_VERIFY_FAIL: {failures or 'verifier reported failure'}")
+    log("post_deploy_verify: passed", env)
+
+
 def emit_evidence(
     *,
     deployment_url: str,
@@ -446,6 +475,7 @@ def run_gate(config_path: Path, *, dry_run: bool = False, env: dict[str, str] | 
     _check_pages_limits(config, list(output_dir.rglob("*")))
     source_sha = git_head()
     deployment_url = deploy(config, output_dir, source_sha, gate_env)
+    _run_post_deploy_verification(config, source_sha, gate_env)
 
     emit_evidence(
         deployment_url=deployment_url,
