@@ -2124,11 +2124,11 @@ Nodes (0):
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `trim()` connect `Brain Supabase` to `Cogs export generator Supabase`, `Vapi client Supabase`, `Client signal scorer Supabase`, `Setup readiness Supabase`, `Connectors Crm Supabase`, `Integrations Var`, `Connectors Crm Supabase`, `Support Feature roadmap Var`, `Addon lifecycle Real`, `Notifications Supabase`, `Provisioning Autoprovision preflight Client`, `Magic link jwt Supabase`, `Magic link review decision Supabase`, `Wizard Assistant`, `Compendium Extract Claude`, `Connectors Ad Supabase`, `Calcom client Supabase`, `Clients Client detail`, `Stripe webhook Demo conversion Supabase`, `Assistant chat Widget`, `Gc Gcsub Line`, `Debug Debug feedback overlay`, `Roof report Supabase`, `Leads Handle`?**
-  _High betweenness centrality (0.103) - this node is a cross-community bridge._
+  _High betweenness centrality (0.089) - this node is a cross-community bridge._
 - **Why does `toLocaleDateString()` connect `Support Feature roadmap Var` to `Cogs export generator Supabase`, `Vapi client Supabase`, `Roof report Supabase`, `Gc Gcsub Line`, `Leads Handle`, `Integrations Var`, `Connectors Crm Supabase`, `Brain Supabase`, `Sign Sign documents Auth`, `Notifications Supabase`, `Provisioning Autoprovision preflight Client`, `Wizard Assistant`, `Finance Brain`, `Clients Client detail`?**
-  _High betweenness centrality (0.076) - this node is a cross-community bridge._
-- **Why does `TrialBanner()` connect `Sign Sign documents Auth` to `Support Feature roadmap Var`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+  _High betweenness centrality (0.065) - this node is a cross-community bridge._
+- **Why does `text()` connect `Vapi client Supabase` to `Cogs export generator Supabase`, `Client signal scorer Supabase`, `Connectors Crm Supabase`, `Integrations Var`, `Connectors Crm Supabase`, `Brain Supabase`, `Addon lifecycle Real`, `Notifications Supabase`, `Provisioning Autoprovision preflight Client`, `Magic link jwt Supabase`, `Magic link review decision Supabase`, `N8n client Supervisor`, `Connectors Crm Twenty`, `Solar monitoring sync Supabase`, `Calcom client Supabase`, `Oauth state Supabase`?**
+  _High betweenness centrality (0.043) - this node is a cross-community bridge._
 - **Are the 99 inferred relationships involving `text()` (e.g. with `sendReminderSMS()` and `sendSms()`) actually correct?**
   _`text()` has 99 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 95 inferred relationships involving `trim()` (e.g. with `normalizePhone()` and `sha256Hash()`) actually correct?**
