@@ -33,12 +33,10 @@ N/A — script and contract test, no schema versioning.
 
 ## Review And Gate Identity
 - Local CI gate: bootstrap-env-contract PASS, overlord-backlog-alignment PASS, governance-surface-planning PASS
+- Gate command result: all applicable blockers PASS on local-ci-gate run 20260422T170651Z
 
 Review artifact refs:
 - N/A - implementation only
-
-Gate artifact refs:
-- Local CI gate run: all applicable blockers PASS
 
 ## Wired Checks Run
 - `python3 scripts/test_bootstrap_repo_env_contract.py` — PASS
@@ -65,7 +63,7 @@ Validation artifact:
 - `raw/validation/2026-04-22-issue-385-bootstrap-ssot-api-keys.md` (inline — commands listed above)
 
 Gate artifact refs:
-- `cache/local-ci-gate/reports/20260422T170651Z-hldpro-governance-explicit-args/` — bootstrap-env-contract PASS, overlord-backlog-alignment PASS
+- Local CI gate run 20260422T170651Z: bootstrap-env-contract PASS, overlord-backlog-alignment PASS
 
 ## Tier Evidence Used
 N/A — script update, no cross-review required.

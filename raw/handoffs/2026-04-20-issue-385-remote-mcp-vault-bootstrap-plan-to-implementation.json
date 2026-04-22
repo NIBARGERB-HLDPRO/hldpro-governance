@@ -32,9 +32,7 @@
     "python3 scripts/overlord/check_overlord_backlog_github_alignment.py"
   ],
   "review_artifact_refs": [],
-  "gate_artifact_refs": [
-    "cache/local-ci-gate/reports/20260422T170651Z-hldpro-governance-explicit-args/local-ci-20260422T170654Z.json"
-  ],
+  "gate_artifact_refs": [],
   "artifact_refs": [
     "scripts/bootstrap-repo-env.sh",
     "scripts/test_bootstrap_repo_env_contract.py",
