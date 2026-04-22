@@ -38,12 +38,13 @@
 ## Source Files
 
 - `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/factory.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/gate-checks.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
+- `ai-integration-services/backend/supabase/functions/affiliate-approve/index.ts`
 - `ai-integration-services/backend/supabase/functions/auto-written-estimate-send/index.ts`
 - `ai-integration-services/backend/supabase/functions/brain-ingest/index.ts`
 - `ai-integration-services/backend/supabase/functions/brain-pdf-parser/index.ts`
@@ -56,12 +57,11 @@
 - `ai-integration-services/backend/supabase/functions/cogs-client-detail/index.ts`
 - `ai-integration-services/backend/supabase/functions/corpus-health-monitor/index.ts`
 - `ai-integration-services/backend/supabase/functions/cos-alert-dispatcher/index.ts`
-- `ai-integration-services/backend/supabase/functions/demo-upgrade-link/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 2562 (98%)
-- INFERRED: 54 (2%)
+- EXTRACTED: 2564 (98%)
+- INFERRED: 56 (2%)
 - AMBIGUOUS: 0 (0%)
 
 ---

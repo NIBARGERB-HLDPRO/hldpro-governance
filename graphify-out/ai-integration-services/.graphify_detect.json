@@ -2149,9 +2149,9 @@
     ]
   },
   "total_files": 2138,
-  "total_words": 2801212,
+  "total_words": 2801466,
   "needs_graph": true,
-  "warning": "Large corpus: 2138 files \u00b7 ~2,801,212 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
+  "warning": "Large corpus: 2138 files \u00b7 ~2,801,466 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
   "skipped_sensitive": [
     "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/migrations/031_qb_token_status.sql",
     "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/ad-token-refresh/index.ts",

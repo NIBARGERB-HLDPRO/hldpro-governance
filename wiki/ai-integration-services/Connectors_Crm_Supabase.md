@@ -12,7 +12,7 @@
 - **GHLCRMConnector** (26 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - **jsonResponse()** (25 connections) — `ai-integration-services/backend/supabase/functions/som-hitl-relay-bridge/index.ts`
 - **emitCOGS()** (24 connections) — `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
-- **resolveClientId()** (21 connections) — `ai-integration-services/backend/supabase/functions/setup-compliance-sync/index.ts`
+- **resolveClientId()** (23 connections) — `ai-integration-services/backend/supabase/functions/setup-compliance-sync/index.ts`
 - **.ghlFetch()** (19 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - **index.ts** (17 connections) — `ai-integration-services/backend/supabase/functions/plaid-webhook/index.ts`
 - **index.ts** (17 connections) — `ai-integration-services/backend/supabase/functions/quickbooks-oauth/index.ts`
@@ -60,8 +60,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 841 (68%)
-- INFERRED: 403 (32%)
+- EXTRACTED: 842 (68%)
+- INFERRED: 404 (32%)
 - AMBIGUOUS: 0 (0%)
 
 ---

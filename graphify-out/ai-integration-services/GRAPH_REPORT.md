@@ -1,22 +1,22 @@
 # Graph Report - ai-integration-services  (2026-04-22)
 
 ## Corpus Check
-- Large corpus: 2138 files · ~2,801,212 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 2138 files · ~2,801,466 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 3456 nodes · 8471 edges · 349 communities detected
-- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 967 edges (avg confidence: 0.8)
+- 3456 nodes · 8473 edges · 351 communities detected
+- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 968 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
 - [[_COMMUNITY_Corpus Supabase|Corpus Supabase]]
-- [[_COMMUNITY_Vapi client Supabase|Vapi client Supabase]]
 - [[_COMMUNITY_Auth Supabase|Auth Supabase]]
+- [[_COMMUNITY_Vapi client Supabase|Vapi client Supabase]]
 - [[_COMMUNITY_Connectors Crm Supabase|Connectors Crm Supabase]]
-- [[_COMMUNITY_Setup readiness Supabase|Setup readiness Supabase]]
-- [[_COMMUNITY_Brain Supabase|Brain Supabase]]
 - [[_COMMUNITY_Integrations Var|Integrations Var]]
+- [[_COMMUNITY_Enrich site Supabase|Enrich site Supabase]]
 - [[_COMMUNITY_Support Feature roadmap Affiliate|Support Feature roadmap Affiliate]]
+- [[_COMMUNITY_Setup readiness Supabase|Setup readiness Supabase]]
 - [[_COMMUNITY_Addon lifecycle Real|Addon lifecycle Real]]
 - [[_COMMUNITY_Sign Sign documents Auth|Sign Sign documents Auth]]
 - [[_COMMUNITY_Addon provision Login|Addon provision Login]]
@@ -37,6 +37,7 @@
 - [[_COMMUNITY_Training Train qwen3 lora|Training Train qwen3 lora]]
 - [[_COMMUNITY_Cli session supervisor|Cli session supervisor]]
 - [[_COMMUNITY_Oauth state Supabase|Oauth state Supabase]]
+- [[_COMMUNITY_Brain Handle|Brain Handle]]
 - [[_COMMUNITY_Analytics db Supabase|Analytics db Supabase]]
 - [[_COMMUNITY_Hvac serial decode Supabase|Hvac serial decode Supabase]]
 - [[_COMMUNITY_Email attachment parser Supabase|Email attachment parser Supabase]]
@@ -50,13 +51,14 @@
 - [[_COMMUNITY_Roof report Supabase|Roof report Supabase]]
 - [[_COMMUNITY_Roof overlay Pitch|Roof overlay Pitch]]
 - [[_COMMUNITY_Magic link intake|Magic link intake]]
+- [[_COMMUNITY_Leads Handle|Leads Handle]]
 - [[_COMMUNITY_Estimate builder Line|Estimate builder Line]]
 - [[_COMMUNITY_Clients Clients Badge|Clients Clients Badge]]
 - [[_COMMUNITY_Analytics Plan|Analytics Plan]]
 - [[_COMMUNITY_Auth Login|Auth Login]]
-- [[_COMMUNITY_Api Clients Use|Api Clients Use]]
 - [[_COMMUNITY_Api Prompts Use|Api Prompts Use]]
 - [[_COMMUNITY_Cogs Cogsmonthly Toggle|Cogs Cogsmonthly Toggle]]
+- [[_COMMUNITY_Api Clients Use|Api Clients Use]]
 - [[_COMMUNITY_Owner briefing line Supabase|Owner briefing line Supabase]]
 - [[_COMMUNITY_Client signal scorer Supabase|Client signal scorer Supabase]]
 - [[_COMMUNITY_Solar savings Supabase|Solar savings Supabase]]
@@ -67,13 +69,12 @@
 - [[_COMMUNITY_Connectors Null Supabase|Connectors Null Supabase]]
 - [[_COMMUNITY_Solar monitoring sync Supabase|Solar monitoring sync Supabase]]
 - [[_COMMUNITY_Magic link intake|Magic link intake]]
-- [[_COMMUNITY_Chief of staff Handle|Chief of staff Handle]]
 - [[_COMMUNITY_Gc Gcprojects Format|Gc Gcprojects Format]]
 - [[_COMMUNITY_Api Support Use|Api Support Use]]
 - [[_COMMUNITY_Cogs Cogsresellers Margin|Cogs Cogsresellers Margin]]
-- [[_COMMUNITY_Analytics Platform analytics Handle|Analytics Platform analytics Handle]]
-- [[_COMMUNITY_Pwa Public Drain|Pwa Public Drain]]
 - [[_COMMUNITY_Analytics Intelligence Use|Analytics Intelligence Use]]
+- [[_COMMUNITY_Pwa Public Drain|Pwa Public Drain]]
+- [[_COMMUNITY_Analytics Platform analytics Handle|Analytics Platform analytics Handle]]
 - [[_COMMUNITY_Stripe webhook Lifecycle state Supabase|Stripe webhook Lifecycle state Supabase]]
 - [[_COMMUNITY_Seed Generate|Seed Generate]]
 - [[_COMMUNITY_Compendium Upload claude|Compendium Upload claude]]
@@ -84,6 +85,7 @@
 - [[_COMMUNITY_Website Update|Website Update]]
 - [[_COMMUNITY_Var Worktrees Nav|Var Worktrees Nav]]
 - [[_COMMUNITY_Affiliate Affiliate Var|Affiliate Affiliate Var]]
+- [[_COMMUNITY_Cogs export Csv|Cogs export Csv]]
 - [[_COMMUNITY_Email inbox Handle|Email inbox Handle]]
 - [[_COMMUNITY_Outbound call scheduler Supabase|Outbound call scheduler Supabase]]
 - [[_COMMUNITY_Routing engine Supabase|Routing engine Supabase]]
@@ -93,6 +95,8 @@
 - [[_COMMUNITY_Packages Format|Packages Format]]
 - [[_COMMUNITY_Cross domain links|Cross domain links]]
 - [[_COMMUNITY_Activating Var|Activating Var]]
+- [[_COMMUNITY_Mfaenroll Var|Mfaenroll Var]]
+- [[_COMMUNITY_Ads campaigns Var|Ads campaigns Var]]
 - [[_COMMUNITY_Referrals Var|Referrals Var]]
 - [[_COMMUNITY_Gc Gcproject board Var|Gc Gcproject board Var]]
 - [[_COMMUNITY_Faq Reseller|Faq Reseller]]
@@ -100,8 +104,6 @@
 - [[_COMMUNITY_Api Provisioning Use|Api Provisioning Use]]
 - [[_COMMUNITY_Api A2p tracking|Api A2p tracking]]
 - [[_COMMUNITY_Clients Chief of staff tab|Clients Chief of staff tab]]
-- [[_COMMUNITY_Mfaenroll Var|Mfaenroll Var]]
-- [[_COMMUNITY_Ads campaigns Var|Ads campaigns Var]]
 - [[_COMMUNITY_Sections Value stack|Sections Value stack]]
 - [[_COMMUNITY_Var Worktrees Playwright|Var Worktrees Playwright]]
 - [[_COMMUNITY_Analyze bugs Categorize|Analyze bugs Categorize]]
@@ -118,24 +120,24 @@
 - [[_COMMUNITY_Vapi owner Supabase|Vapi owner Supabase]]
 - [[_COMMUNITY_Bugfix verification Settle|Bugfix verification Settle]]
 - [[_COMMUNITY_Seam contracts Auth|Seam contracts Auth]]
-- [[_COMMUNITY_Reseller Load|Reseller Load]]
 - [[_COMMUNITY_Reseller Reseller roi Calculate|Reseller Reseller roi Calculate]]
 - [[_COMMUNITY_Brand settings Reseller|Brand settings Reseller]]
-- [[_COMMUNITY_Billing Reseller|Billing Reseller]]
 - [[_COMMUNITY_Affiliate program Reseller|Affiliate program Reseller]]
 - [[_COMMUNITY_Shell Nav|Shell Nav]]
 - [[_COMMUNITY_Var Worktrees Format|Var Worktrees Format]]
 - [[_COMMUNITY_Alerts Health alerts Overall|Alerts Health alerts Overall]]
 - [[_COMMUNITY_Knowledge Knowledge base Use|Knowledge Knowledge base Use]]
-- [[_COMMUNITY_Prompts Prompt editor|Prompts Prompt editor]]
 - [[_COMMUNITY_Maintenance Maintenance board Health|Maintenance Maintenance board Health]]
 - [[_COMMUNITY_Webhooks Webhook monitor|Webhooks Webhook monitor]]
 - [[_COMMUNITY_Cogs Cogsclient detail|Cogs Cogsclient detail]]
 - [[_COMMUNITY_Analytics Abtest manager|Analytics Abtest manager]]
+- [[_COMMUNITY_Debug Debug feedback backlog|Debug Debug feedback backlog]]
+- [[_COMMUNITY_Reseller Load|Reseller Load]]
+- [[_COMMUNITY_Billing Reseller|Billing Reseller]]
 - [[_COMMUNITY_Api Testing Use|Api Testing Use]]
 - [[_COMMUNITY_Provisioning Provisioning monitor Step|Provisioning Provisioning monitor Step]]
 - [[_COMMUNITY_Workflows Workflow status|Workflows Workflow status]]
-- [[_COMMUNITY_Debug Debug feedback backlog|Debug Debug feedback backlog]]
+- [[_COMMUNITY_Prompts Prompt editor|Prompts Prompt editor]]
 - [[_COMMUNITY_Audit error handlers|Audit error handlers]]
 - [[_COMMUNITY_Gc project Sign|Gc project Sign]]
 - [[_COMMUNITY_Site Open|Site Open]]
@@ -269,7 +271,7 @@
 - [[_COMMUNITY_Packages Vite|Packages Vite]]
 - [[_COMMUNITY_Packages|Packages]]
 - [[_COMMUNITY_Packages Supabase|Packages Supabase]]
-- [[_COMMUNITY_Community 260|Community 260]]
+- [[_COMMUNITY_Community 262|Community 262]]
 - [[_COMMUNITY_Finance workflow|Finance workflow]]
 - [[_COMMUNITY_Coupon checkout|Coupon checkout]]
 - [[_COMMUNITY_Render contracts critical|Render contracts critical]]
@@ -302,7 +304,7 @@
 - [[_COMMUNITY_Tailwind|Tailwind]]
 - [[_COMMUNITY_Vite|Vite]]
 - [[_COMMUNITY_Postcss|Postcss]]
-- [[_COMMUNITY_Community 293|Community 293]]
+- [[_COMMUNITY_Community 295|Community 295]]
 - [[_COMMUNITY_Vite|Vite]]
 - [[_COMMUNITY_Supabase|Supabase]]
 - [[_COMMUNITY_Reviews|Reviews]]
@@ -323,8 +325,8 @@
 - [[_COMMUNITY_Tailwind|Tailwind]]
 - [[_COMMUNITY_Vite|Vite]]
 - [[_COMMUNITY_Postcss|Postcss]]
-- [[_COMMUNITY_Community 314|Community 314]]
-- [[_COMMUNITY_Community 315|Community 315]]
+- [[_COMMUNITY_Community 316|Community 316]]
+- [[_COMMUNITY_Community 317|Community 317]]
 - [[_COMMUNITY_Vite|Vite]]
 - [[_COMMUNITY_Products|Products]]
 - [[_COMMUNITY_Corpus Corpus|Corpus Corpus]]
@@ -339,7 +341,7 @@
 - [[_COMMUNITY_Tailwind|Tailwind]]
 - [[_COMMUNITY_Vite|Vite]]
 - [[_COMMUNITY_Postcss|Postcss]]
-- [[_COMMUNITY_Community 330|Community 330]]
+- [[_COMMUNITY_Community 332|Community 332]]
 - [[_COMMUNITY_Vite|Vite]]
 - [[_COMMUNITY_Supabase|Supabase]]
 - [[_COMMUNITY_Reviews|Reviews]]
@@ -361,7 +363,7 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `text()` - 101 edges
-2. `trim()` - 99 edges
+2. `trim()` - 100 edges
 3. `getSupabaseServiceClient()` - 68 edges
 4. `update()` - 63 edges
 5. `toLocaleDateString()` - 36 edges
@@ -387,35 +389,35 @@
 
 ### Community 0 - "Corpus Supabase"
 Cohesion: 0.02
-Nodes (88): getModelTier(), trackClaudeUsage(), callClaude(), getAnthropicApiKey(), getModelTier(), logToCorpus(), isExcludedDocumentType(), getServiceConnector() (+80 more)
+Nodes (88): getModelTier(), trackClaudeUsage(), callClaude(), getAnthropicApiKey(), getModelTier(), logToCorpus(), generateEmbedding(), hashEmbedding() (+80 more)
 
-### Community 1 - "Vapi client Supabase"
-Cohesion: 0.01
-Nodes (140): handleSubmit(), main(), csvEscape(), exportCSV(), exportJSON(), triggerAsyncExport(), triggerBrowserDownload(), openBillingPortal() (+132 more)
-
-### Community 2 - "Auth Supabase"
+### Community 1 - "Auth Supabase"
 Cohesion: 0.02
 Nodes (66): decodeJwtPayload(), getProjectRefFromSupabaseUrl(), getSupabaseClient(), getUserFromAuthRest(), hasServiceRoleClaimsForProject(), isVerifiedServiceRoleJwtForProject(), resolveAuthContext(), getAllowedOrigins() (+58 more)
+
+### Community 2 - "Vapi client Supabase"
+Cohesion: 0.01
+Nodes (132): handleSubmit(), main(), openBillingPortal(), fetchLifecycleRows(), siteUrl(), getApiKey(), sendEmail(), sanitizeDetail() (+124 more)
 
 ### Community 3 - "Connectors Crm Supabase"
 Cohesion: 0.02
 Nodes (126): createExperiment(), fetchExperiments(), updateExperimentStatus(), updateTrafficPct(), advanceSigningWorkflow(), emitAuditLog(), getSupabaseServiceClient(), readCalcomResponseValue() (+118 more)
 
-### Community 4 - "Setup readiness Supabase"
-Cohesion: 0.03
-Nodes (94): classifyPrimaryIntent(), findHostMatch(), findPathMatch(), hostnameMatches(), isValidIntent(), normalizeIndustry(), parseHostname(), buildForwardingInstructionsHtml() (+86 more)
-
-### Community 5 - "Brain Supabase"
-Cohesion: 0.03
-Nodes (92): buildMatchingPrompt(), callClaudeForMatching(), getReconciliationAction(), matchTransactions(), parseAndValidateMatches(), assembleOverview(), extractSection(), readFile() (+84 more)
-
-### Community 6 - "Integrations Var"
+### Community 4 - "Integrations Var"
 Cohesion: 0.03
 Nodes (76): callEdgeFunction(), getStageIndex(), handleApprove(), handleCancel(), handleExecute(), handleNewBooking(), PipelineProgressBar(), costItemBadge() (+68 more)
 
-### Community 7 - "Support Feature roadmap Affiliate"
+### Community 5 - "Enrich site Supabase"
+Cohesion: 0.03
+Nodes (84): buildMatchingPrompt(), callClaudeForMatching(), getReconciliationAction(), matchTransactions(), parseAndValidateMatches(), assembleOverview(), extractSection(), readFile() (+76 more)
+
+### Community 6 - "Support Feature roadmap Affiliate"
 Cohesion: 0.03
 Nodes (80): formatCents(), formatDate(), loadConversions(), formatCents(), formatDate(), initiateStripeConnect(), loadPayoutData(), saveThreshold() (+72 more)
+
+### Community 7 - "Setup readiness Supabase"
+Cohesion: 0.04
+Nodes (87): buildForwardingInstructionsHtml(), alertOperator(), canRun(), executeStep(), getStep(), isOperatorJwt(), markStep(), mergeClientProductConfig() (+79 more)
 
 ### Community 8 - "Addon lifecycle Real"
 Cohesion: 0.04
@@ -497,345 +499,345 @@ Nodes (15): append_jsonl(), AttemptResult, build_command(), event_paths(), kill_
 Cohesion: 0.23
 Nodes (12): hmacSha1(), hmacSha256(), timingSafeEqual(), handleList(), hmacSha256(), uploadToR2(), verifyWebhookSignature(), decodeBase64Url() (+4 more)
 
-### Community 28 - "Analytics db Supabase"
+### Community 28 - "Brain Handle"
+Cohesion: 0.36
+Nodes (14): handleBulkApprove(), handleBulkDelete(), handleFileUpload(), handleManualSubmit(), handlePdfUpload(), handlePricingApproval(), handlePricingEdit(), handleWebScrape() (+6 more)
+
+### Community 29 - "Analytics db Supabase"
 Cohesion: 0.31
 Nodes (12): analyticsInsert(), analyticsSelect(), analyticsUpdate(), analyticsUpsert(), buildHeaders(), buildUrl(), fetchNewReviews(), generateReviewResponse() (+4 more)
 
-### Community 29 - "Hvac serial decode Supabase"
+### Community 30 - "Hvac serial decode Supabase"
 Cohesion: 0.28
 Nodes (12): decodeByPattern(), decodeWithAI(), tryCarrierBryant(), tryGoodman(), tryLennox(), tryRheem(), tryTrane(), callClaudeAndWrap() (+4 more)
 
-### Community 30 - "Email attachment parser Supabase"
+### Community 31 - "Email attachment parser Supabase"
 Cohesion: 0.26
 Nodes (10): extractPdfText(), haikuVerify(), heuristicScore(), inferTaskType(), ocrImage(), parseAttachment(), parseCsv(), parseCsvLine() (+2 more)
 
-### Community 31 - "Som hitl relay Bridge Supabase"
+### Community 32 - "Som hitl relay Bridge Supabase"
 Cohesion: 0.3
 Nodes (9): acceptNotificationRequest(), buildInboundResponseEvent(), deadLetter(), hasRequiredRequestFields(), isSensitive(), parseIso(), stableHash(), delivered() (+1 more)
 
-### Community 32 - "Assistant chat Widget"
+### Community 33 - "Assistant chat Widget"
 Cohesion: 0.3
 Nodes (7): apiConfirmTool(), apiSendMessage(), clsx(), formatToolPreview(), getSpeechRecognition(), handleKeyDown(), handleSend()
 
-### Community 33 - "Api Admin Use"
+### Community 34 - "Api Admin Use"
 Cohesion: 0.25
 Nodes (13): getFunctionErrorMessage(), isMissingDemoLifecycleColumn(), useAdminNotes(), useClientActivity(), useClientBilling(), useClientsWithPlans(), useCreateAdminNote(), useGenerateDemoUpgradeLink() (+5 more)
 
-### Community 34 - "Api Referrals Use"
+### Community 35 - "Api Referrals Use"
 Cohesion: 0.21
 Nodes (9): useAffiliateAccounts(), useOutstandingPayoutTotal(), useReferralCodes(), useReferralEvents(), useReferralKPIs(), useReferralPayouts(), useToggleReferralCode(), useTopReferrers() (+1 more)
 
-### Community 35 - "Stripe webhook Demo conversion Supabase"
+### Community 36 - "Stripe webhook Demo conversion Supabase"
 Cohesion: 0.26
 Nodes (9): auditConflict(), auditOrphan(), handleDemoCheckoutSession(), jsonBody(), getDemoBillingStatus(), getSessionPriceId(), isPotentialDemoCheckout(), parseDemoClientReference() (+1 more)
 
-### Community 36 - "Gc Gcsub Line"
+### Community 37 - "Gc Gcsub Line"
 Cohesion: 0.48
 Nodes (10): addLineItem(), apiFetch(), fmt$(), fmtDate(), getToken(), handleSend(), handleSubmit(), handleUpload() (+2 more)
 
-### Community 37 - "Debug Debug feedback overlay"
+### Community 38 - "Debug Debug feedback overlay"
 Cohesion: 0.5
 Nodes (9): canvasToCompressedScreenshot(), captureViewport(), debugFeedbackFunctionUrl(), environmentForHost(), handleCapture(), handleSubmit(), isOverlayEnabledForHost(), routeLabel() (+1 more)
 
-### Community 38 - "Roof report Supabase"
+### Community 39 - "Roof report Supabase"
 Cohesion: 0.33
 Nodes (8): buildHtml(), buildModel(), buildPdf(), esc(), fmt(), normalizeSegment(), calculateTakeoff(), round2()
 
-### Community 39 - "Roof overlay Pitch"
+### Community 40 - "Roof overlay Pitch"
 Cohesion: 0.53
 Nodes (8): buildLegend(), layoutSegments(), LegendSwatch(), parsePitch(), pitchColor(), pitchStroke(), RoofOverlay(), roundRect()
 
-### Community 40 - "Magic link intake"
+### Community 41 - "Magic link intake"
 Cohesion: 0.39
 Nodes (10): applyConditionalRequired(), buildFieldList(), decodeJwtUnverified(), getSupabaseUrl(), humanizeLabel(), onReviewDecision(), onSubmit(), submitIntake() (+2 more)
 
-### Community 41 - "Estimate builder Line"
+### Community 42 - "Leads Handle"
+Cohesion: 0.52
+Nodes (8): dedupLeads(), extractLeadFromAuditEntry(), formatDate(), handleAddContact(), handleExport(), handleMoveStage(), inferSource(), leadsToCSV()
+
+### Community 43 - "Estimate builder Line"
 Cohesion: 0.55
 Nodes (7): addLineItem(), applyTemplate(), callEdge(), handleGenerate(), handleSend(), removeLineItem(), updateLineItem()
 
-### Community 42 - "Clients Clients Badge"
+### Community 44 - "Clients Clients Badge"
 Cohesion: 0.33
 Nodes (9): demoBillingBadge(), exportCSV(), formatCents(), healthDot(), optionalSetupLabel(), readinessBadge(), runBulkAction(), toggleSelect() (+1 more)
 
-### Community 43 - "Analytics Plan"
+### Community 45 - "Analytics Plan"
 Cohesion: 0.33
 Nodes (7): trackCheckoutStarted(), trackCtaClick(), trackEvent(), trackPageView(), trackPlanSelected(), getCookie(), handleGetStartedClick()
 
-### Community 44 - "Auth Login"
+### Community 46 - "Auth Login"
 Cohesion: 0.22
 Nodes (4): AuthProvider(), useAuth(), Login(), ProtectedRoute()
 
-### Community 45 - "Api Clients Use"
-Cohesion: 0.29
-Nodes (5): useClient(), useClientProducts(), useClients(), useCreateClient(), useUpdateClient()
-
-### Community 46 - "Api Prompts Use"
+### Community 47 - "Api Prompts Use"
 Cohesion: 0.38
 Nodes (8): useCreatePromptVersion(), usePromptInteractions(), usePromptTemplate(), usePromptTemplates(), usePromptVersions(), useRollbackPromptVersion(), useSavePromptTemplate(), useUpdateAbWeight()
 
-### Community 47 - "Cogs Cogsmonthly Toggle"
+### Community 48 - "Cogs Cogsmonthly Toggle"
 Cohesion: 0.36
 Nodes (8): clsx(), fmt(), marginBg(), marginColor(), SortIcon(), togglePeriod(), togglePlan(), toggleSort()
 
-### Community 48 - "Owner briefing line Supabase"
+### Community 49 - "Api Clients Use"
+Cohesion: 0.29
+Nodes (5): useClient(), useClientProducts(), useClients(), useCreateClient(), useUpdateClient()
+
+### Community 50 - "Owner briefing line Supabase"
 Cohesion: 0.56
 Nodes (7): extractToolCall(), getClientIdFromUrl(), handleAlerts(), handleAnalytics(), handleEndOfCall(), handleRecentCalls(), toolResult()
 
-### Community 49 - "Client signal scorer Supabase"
+### Community 51 - "Client signal scorer Supabase"
 Cohesion: 0.39
 Nodes (7): detectCallVolumeAnomalies(), detectChurnRisks(), detectMinuteUsageApproaching(), detectStaleTickets(), detectUpsellOpportunities(), dispatchAlert(), insertBriefingItem()
 
-### Community 50 - "Solar savings Supabase"
+### Community 52 - "Solar savings Supabase"
 Cohesion: 0.42
 Nodes (7): calculateIRR(), calculateITC(), calculateSavings(), environmentalImpact(), estimateProductionFromGoogle(), panelCountFromArea(), systemSizeKw()
 
-### Community 51 - "Solar financing options Supabase"
+### Community 53 - "Solar financing options Supabase"
 Cohesion: 0.44
 Nodes (7): amortize(), calculateCash(), calculateLease(), calculateLoan(), calculatePACE(), calculatePPA(), estimate25yrElectricityCostWithoutSolar()
 
-### Community 52 - "Forms Form fields"
+### Community 54 - "Forms Form fields"
 Cohesion: 0.56
 Nodes (5): FormSection(), SelectInput(), TextArea(), TextInput(), Toggle()
 
-### Community 53 - "Api Plans Use"
+### Community 55 - "Api Plans Use"
 Cohesion: 0.39
 Nodes (7): normalizeIncludedProducts(), useBulkVerifyWebhooks(), useCreatePlan(), usePlans(), useUpdatePlan(), useVerifyWebhook(), useWebhookConfigs()
 
-### Community 54 - "Demo lifecycle enforcer Supabase"
+### Community 56 - "Demo lifecycle enforcer Supabase"
 Cohesion: 0.39
 Nodes (4): deriveBillingPaymentMethodStatus(), deriveDemoTrialStatus(), mergeDemoBillingStatus(), parseTrialExpiry()
 
-### Community 55 - "Connectors Null Supabase"
+### Community 57 - "Connectors Null Supabase"
 Cohesion: 0.32
 Nodes (1): NullServiceConnector
 
-### Community 56 - "Solar monitoring sync Supabase"
+### Community 58 - "Solar monitoring sync Supabase"
 Cohesion: 0.5
 Nodes (6): checkAnomaly(), fetchEnphaseProduction(), fetchProductionData(), fetchSolarEdgeProduction(), fireMonitoringAlert(), resolveApiKey()
 
-### Community 57 - "Magic link intake"
+### Community 59 - "Magic link intake"
 Cohesion: 0.54
 Nodes (6): buildClientUnsignedJwt(), encodeBase64Url(), encodeJwtPart(), hasAsteriskLabel(), sha256Hex(), signTestJwt()
 
-### Community 58 - "Chief of staff Handle"
-Cohesion: 0.64
-Nodes (4): getConversationHistory(), handleKeyDown(), handleSend(), loadPrefs()
-
-### Community 59 - "Gc Gcprojects Format"
+### Community 60 - "Gc Gcprojects Format"
 Cohesion: 0.57
 Nodes (4): formatCurrency(), formatDate(), handleCreate(), updateField()
 
-### Community 60 - "Api Support Use"
+### Community 61 - "Api Support Use"
 Cohesion: 0.43
 Nodes (6): useAddComment(), useCreateTicket(), useResolveTicket(), useTicket(), useTickets(), useUpdateTicket()
 
-### Community 61 - "Cogs Cogsresellers Margin"
+### Community 62 - "Cogs Cogsresellers Margin"
 Cohesion: 0.36
 Nodes (4): fmt(), marginBg(), marginColor(), toggleExpand()
 
-### Community 62 - "Analytics Platform analytics Handle"
-Cohesion: 0.46
-Nodes (6): formatCents(), handleCancel(), handleSave(), loadTargets(), saveTargets(), useAnalyticsData()
-
-### Community 63 - "Pwa Public Drain"
-Cohesion: 0.54
-Nodes (6): drainQueue(), enqueue(), isAuthEndpoint(), isJobsApiRequest(), isSupabaseMutation(), openDB()
-
-### Community 64 - "Analytics Intelligence Use"
+### Community 63 - "Analytics Intelligence Use"
 Cohesion: 0.43
 Nodes (6): formatMetric(), useBenchmarks(), useCallAnalytics(), useChurnRisks(), useClients(), useUpsellSignals()
 
-### Community 65 - "Stripe webhook Lifecycle state Supabase"
+### Community 64 - "Pwa Public Drain"
+Cohesion: 0.54
+Nodes (6): drainQueue(), enqueue(), isAuthEndpoint(), isJobsApiRequest(), isSupabaseMutation(), openDB()
+
+### Community 65 - "Analytics Platform analytics Handle"
+Cohesion: 0.46
+Nodes (6): formatCents(), handleCancel(), handleSave(), loadTargets(), saveTargets(), useAnalyticsData()
+
+### Community 66 - "Stripe webhook Lifecycle state Supabase"
 Cohesion: 0.38
 Nodes (3): mergeBillingLifecycle(), readinessPatchForPaymentState(), updateClientBillingLifecycle()
 
-### Community 66 - "Seed Generate"
+### Community 67 - "Seed Generate"
 Cohesion: 0.67
 Nodes (5): generateAuditLogs(), generateInvoices(), generateProvisioningSteps(), generateTransactions(), seed()
 
-### Community 67 - "Compendium Upload claude"
+### Community 68 - "Compendium Upload claude"
 Cohesion: 0.67
 Nodes (5): deleteExistingFiles(), getPackFiles(), loadConfig(), main(), uploadFiles()
 
-### Community 68 - "Assistant button Var"
+### Community 69 - "Assistant button Var"
 Cohesion: 0.29
 Nodes (1): AssistantButton()
 
-### Community 69 - "Solar Solar proposal builder"
+### Community 70 - "Solar Solar proposal builder"
 Cohesion: 0.62
 Nodes (3): fmt(), fmtPct(), fmtUsd()
 
-### Community 70 - "Marketplace Var"
+### Community 71 - "Marketplace Var"
 Cohesion: 0.57
 Nodes (3): daysAgo(), formatCents(), sequenceProgress()
 
-### Community 71 - "Home Var"
+### Community 72 - "Home Var"
 Cohesion: 0.57
 Nodes (3): formatEventName(), StatusBadge(), timeAgo()
 
-### Community 72 - "Website Update"
+### Community 73 - "Website Update"
 Cohesion: 0.62
 Nodes (3): handleSave(), update(), updateTestimonial()
 
-### Community 73 - "Var Worktrees Nav"
+### Community 74 - "Var Worktrees Nav"
 Cohesion: 0.57
 Nodes (3): loadNavState(), normalizeAddonVerticals(), saveNavState()
 
-### Community 74 - "Affiliate Affiliate Var"
+### Community 75 - "Affiliate Affiliate Var"
 Cohesion: 0.57
 Nodes (3): copyReferralLink(), formatCents(), loadAffiliateData()
 
-### Community 75 - "Email inbox Handle"
+### Community 76 - "Cogs export Csv"
+Cohesion: 0.57
+Nodes (5): csvEscape(), exportCSV(), exportJSON(), triggerAsyncExport(), triggerBrowserDownload()
+
+### Community 77 - "Email inbox Handle"
 Cohesion: 0.38
 Nodes (3): getSnoozeUntil(), handleClick(), handleTriage()
 
-### Community 76 - "Outbound call scheduler Supabase"
+### Community 78 - "Outbound call scheduler Supabase"
 Cohesion: 0.73
 Nodes (4): computeScheduledAt(), parseTime(), randomInt(), toClientLocal()
 
-### Community 77 - "Routing engine Supabase"
+### Community 79 - "Routing engine Supabase"
 Cohesion: 0.67
 Nodes (4): estimateDriveMinutes(), haversineKm(), rankWorkers(), scoreWorker()
 
-### Community 78 - "Generate one tap qr"
+### Community 80 - "Generate one tap qr"
 Cohesion: 0.53
 Nodes (4): base64UrlJson(), escapeHtml(), loadDemoAccounts(), renderQr()
 
-### Community 79 - "Tester guide docx"
+### Community 81 - "Tester guide docx"
 Cohesion: 0.53
 Nodes (4): annotate_screenshot(), build_docx(), Build HLD Pro V1 Alpha Tester Guide as .docx with annotated screenshots. Adds re, Add red boxes and labels to a screenshot.
 
-### Community 80 - "Status Status badge Packages"
+### Community 82 - "Status Status badge Packages"
 Cohesion: 0.53
 Nodes (2): ProductBadge(), StatusBadge()
 
-### Community 81 - "Packages Format"
+### Community 83 - "Packages Format"
 Cohesion: 0.53
 Nodes (4): formatCurrency(), formatDate(), formatRelativeTime(), truncate()
 
-### Community 82 - "Cross domain links"
+### Community 84 - "Cross domain links"
 Cohesion: 0.53
 Nodes (4): checkBrokenImages(), collectImages(), collectInternalLinks(), screenshot()
 
-### Community 83 - "Activating Var"
+### Community 85 - "Activating Var"
 Cohesion: 0.53
 Nodes (2): loadSetupQueue(), StepIcon()
 
-### Community 84 - "Referrals Var"
-Cohesion: 0.53
-Nodes (2): handleCopy(), loadReferralData()
-
-### Community 85 - "Gc Gcproject board Var"
-Cohesion: 0.53
-Nodes (2): fmt$(), GateCheckModal()
-
-### Community 86 - "Faq Reseller"
-Cohesion: 0.53
-Nodes (2): clsx(), toggle()
-
-### Community 87 - "Tour Position"
-Cohesion: 0.53
-Nodes (4): getTooltipPosition(), handler(), startTour(), updatePosition()
-
-### Community 88 - "Api Provisioning Use"
-Cohesion: 0.47
-Nodes (3): useProvisioningClients(), useProvisioningSteps(), useRetryProvisioning()
-
-### Community 89 - "Api A2p tracking"
-Cohesion: 0.53
-Nodes (4): getBusinessName(), toRegistrationStatus(), useA2PStatuses(), useCheckA2PStatus()
-
-### Community 90 - "Clients Chief of staff tab"
-Cohesion: 0.53
-Nodes (4): ChiefOfStaffTab(), formatCents(), handleEdit(), handleSave()
-
-### Community 91 - "Mfaenroll Var"
+### Community 86 - "Mfaenroll Var"
 Cohesion: 0.53
 Nodes (2): enroll(), handleVerify()
 
-### Community 92 - "Ads campaigns Var"
+### Community 87 - "Ads campaigns Var"
 Cohesion: 0.53
 Nodes (2): fmt(), handleExpand()
 
-### Community 93 - "Sections Value stack"
+### Community 88 - "Referrals Var"
+Cohesion: 0.53
+Nodes (2): handleCopy(), loadReferralData()
+
+### Community 89 - "Gc Gcproject board Var"
+Cohesion: 0.53
+Nodes (2): fmt$(), GateCheckModal()
+
+### Community 90 - "Faq Reseller"
+Cohesion: 0.53
+Nodes (2): clsx(), toggle()
+
+### Community 91 - "Tour Position"
+Cohesion: 0.53
+Nodes (4): getTooltipPosition(), handler(), startTour(), updatePosition()
+
+### Community 92 - "Api Provisioning Use"
+Cohesion: 0.47
+Nodes (3): useProvisioningClients(), useProvisioningSteps(), useRetryProvisioning()
+
+### Community 93 - "Api A2p tracking"
+Cohesion: 0.53
+Nodes (4): getBusinessName(), toRegistrationStatus(), useA2PStatuses(), useCheckA2PStatus()
+
+### Community 94 - "Clients Chief of staff tab"
+Cohesion: 0.53
+Nodes (4): ChiefOfStaffTab(), formatCents(), handleEdit(), handleSave()
+
+### Community 95 - "Sections Value stack"
 Cohesion: 0.6
 Nodes (4): Check(), Dash(), planSavings(), planTotal()
 
-### Community 94 - "Var Worktrees Playwright"
+### Community 96 - "Var Worktrees Playwright"
 Cohesion: 0.8
 Nodes (3): isLocalUrl(), resolveAppUrl(), resolvePortalBaseUrl()
 
-### Community 95 - "Analyze bugs Categorize"
+### Community 97 - "Analyze bugs Categorize"
 Cohesion: 0.6
 Nodes (3): categorizeBug(), diagnoseEdgeFunction(), main()
 
-### Community 96 - "Critical journeys auth"
+### Community 98 - "Critical journeys auth"
 Cohesion: 0.6
 Nodes (3): expectLoginForm(), expectPortalDashboardLanding(), expectResellerDashboardLanding()
 
-### Community 97 - "Chatbot Open"
+### Community 99 - "Chatbot Open"
 Cohesion: 0.6
 Nodes (3): chatInput(), openChat(), openMarketingPage()
 
-### Community 98 - "Var Worktrees Open"
+### Community 100 - "Var Worktrees Open"
 Cohesion: 0.6
 Nodes (3): openNewSupportTicketForm(), openSupportRoute(), signInAsGC()
 
-### Community 99 - "Wizard Wizard step5 Var"
+### Community 101 - "Wizard Wizard step5 Var"
 Cohesion: 0.4
 Nodes (1): WizardStep5()
 
-### Community 100 - "Wizard Wizard Var"
+### Community 102 - "Wizard Wizard Var"
 Cohesion: 0.4
 Nodes (1): StepIcon()
 
-### Community 101 - "Mfaverify Var"
+### Community 103 - "Mfaverify Var"
 Cohesion: 0.4
 Nodes (1): handleVerify()
 
-### Community 102 - "Rankings Var"
+### Community 104 - "Rankings Var"
 Cohesion: 0.4
 Nodes (1): return()
 
-### Community 103 - "Ads Var"
+### Community 105 - "Ads Var"
 Cohesion: 0.4
 Nodes (1): fmt()
 
-### Community 104 - "Templates Handlebars Variables"
+### Community 106 - "Templates Handlebars Variables"
 Cohesion: 0.7
 Nodes (3): extractVariables(), renderTemplate(), validateVariables()
 
-### Community 105 - "Flow diagram Connector"
+### Community 107 - "Flow diagram Connector"
 Cohesion: 0.6
 Nodes (3): Connector(), FlowDiagram(), MobileConnector()
 
-### Community 106 - "Vapi owner Supabase"
+### Community 108 - "Vapi owner Supabase"
 Cohesion: 0.67
 Nodes (2): getOwnerBriefingTools(), getOwnerSystemPrompt()
 
-### Community 107 - "Bugfix verification Settle"
+### Community 109 - "Bugfix verification Settle"
 Cohesion: 0.67
 Nodes (2): settlePage(), signInAndGo()
 
-### Community 108 - "Seam contracts Auth"
+### Community 110 - "Seam contracts Auth"
 Cohesion: 0.67
 Nodes (2): authHeaders(), parseJson()
 
-### Community 109 - "Reseller Load"
-Cohesion: 0.67
-Nodes (2): loadExpandedGroups(), toggleGroup()
-
-### Community 110 - "Reseller Reseller roi Calculate"
+### Community 111 - "Reseller Reseller roi Calculate"
 Cohesion: 0.67
 Nodes (2): calculateResellerROI(), formatDollars()
 
-### Community 111 - "Brand settings Reseller"
+### Community 112 - "Brand settings Reseller"
 Cohesion: 0.67
 Nodes (2): handleSave(), update()
-
-### Community 112 - "Billing Reseller"
-Cohesion: 0.67
-Nodes (2): getTier(), openStripePortal()
 
 ### Community 113 - "Affiliate program Reseller"
 Cohesion: 0.67
@@ -857,203 +859,203 @@ Nodes (2): OverallBadge(), StatusIcon()
 Cohesion: 0.67
 Nodes (2): useArticles(), useGaps()
 
-### Community 118 - "Prompts Prompt editor"
-Cohesion: 0.67
-Nodes (2): clsx(), handleSave()
-
-### Community 119 - "Maintenance Maintenance board Health"
+### Community 118 - "Maintenance Maintenance board Health"
 Cohesion: 0.67
 Nodes (2): HealthDot(), ResultRow()
 
-### Community 120 - "Webhooks Webhook monitor"
+### Community 119 - "Webhooks Webhook monitor"
 Cohesion: 0.67
 Nodes (2): DirectionBadge(), StatusBadge()
 
-### Community 121 - "Cogs Cogsclient detail"
+### Community 120 - "Cogs Cogsclient detail"
 Cohesion: 0.67
 Nodes (2): fmt(), marginColor()
 
-### Community 122 - "Analytics Abtest manager"
+### Community 121 - "Analytics Abtest manager"
 Cohesion: 0.67
 Nodes (2): useActiveTests(), useHistoricalTests()
 
-### Community 123 - "Api Testing Use"
-Cohesion: 0.67
-Nodes (2): useClientHealth(), useTestResults()
-
-### Community 124 - "Provisioning Provisioning monitor Step"
-Cohesion: 0.67
-Nodes (2): StepRow(), wizardProgress()
-
-### Community 125 - "Workflows Workflow status"
-Cohesion: 0.67
-Nodes (2): timeAgo(), useWorkflowStatus()
-
-### Community 126 - "Debug Debug feedback backlog"
+### Community 122 - "Debug Debug feedback backlog"
 Cohesion: 0.67
 Nodes (2): formatDate(), ScreenshotPreview()
 
-### Community 127 - "Audit error handlers"
+### Community 123 - "Reseller Load"
+Cohesion: 0.67
+Nodes (2): loadExpandedGroups(), toggleGroup()
+
+### Community 124 - "Billing Reseller"
+Cohesion: 0.67
+Nodes (2): getTier(), openStripePortal()
+
+### Community 125 - "Api Testing Use"
+Cohesion: 0.67
+Nodes (2): useClientHealth(), useTestResults()
+
+### Community 126 - "Provisioning Provisioning monitor Step"
+Cohesion: 0.67
+Nodes (2): StepRow(), wizardProgress()
+
+### Community 127 - "Workflows Workflow status"
+Cohesion: 0.67
+Nodes (2): timeAgo(), useWorkflowStatus()
+
+### Community 128 - "Prompts Prompt editor"
+Cohesion: 0.67
+Nodes (2): clsx(), handleSave()
+
+### Community 129 - "Audit error handlers"
 Cohesion: 0.67
 Nodes (1): classifyFunction()
 
-### Community 128 - "Gc project Sign"
+### Community 130 - "Gc project Sign"
 Cohesion: 0.67
 Nodes (1): signInAsGC()
 
-### Community 129 - "Site Open"
+### Community 131 - "Site Open"
 Cohesion: 0.67
 Nodes (1): openMarketingChat()
 
-### Community 130 - "Preflight Run"
+### Community 132 - "Preflight Run"
 Cohesion: 0.67
 Nodes (1): runPreflight()
 
-### Community 131 - "Gc phase2 Sign"
+### Community 133 - "Gc phase2 Sign"
 Cohesion: 0.67
 Nodes (1): signInAsGC()
 
-### Community 132 - "Real enrollment Sign"
+### Community 134 - "Real enrollment Sign"
 Cohesion: 0.67
 Nodes (1): signInBrowser()
 
-### Community 133 - "Reseller site Sign"
+### Community 135 - "Reseller site Sign"
 Cohesion: 0.67
 Nodes (1): signInAsReseller()
 
-### Community 134 - "Partners Persona cards Reseller"
+### Community 136 - "Partners Persona cards Reseller"
 Cohesion: 0.67
 Nodes (1): PersonaCards()
 
-### Community 135 - "Partners Roicalculator Reseller"
+### Community 137 - "Partners Roicalculator Reseller"
 Cohesion: 0.67
 Nodes (1): fmt()
 
-### Community 136 - "Terms Reseller"
+### Community 138 - "Terms Reseller"
 Cohesion: 0.67
 Nodes (1): Terms()
 
-### Community 137 - "Client Reseller"
+### Community 139 - "Client Reseller"
 Cohesion: 0.67
 Nodes (1): getWholesaleCost()
 
-### Community 138 - "Partner landing Reseller"
+### Community 140 - "Partner landing Reseller"
 Cohesion: 0.67
 Nodes (1): Hero()
 
-### Community 139 - "Clients A2 ptracking Pbadge"
+### Community 141 - "Clients A2 ptracking Pbadge"
 Cohesion: 0.67
 Nodes (1): A2PBadge()
 
-### Community 140 - "Plans Plan editor"
+### Community 142 - "Plans Plan editor"
 Cohesion: 0.67
 Nodes (1): InlineEditForm()
 
-### Community 141 - "Security Audit Time"
+### Community 143 - "Security Audit Time"
 Cohesion: 0.67
 Nodes (1): timeAgo()
 
-### Community 142 - "Operations Operations Var"
+### Community 144 - "Operations Operations Var"
 Cohesion: 0.67
 Nodes (1): Operations()
 
-### Community 143 - "Testing Scenarios Var"
+### Community 145 - "Testing Scenarios Var"
 Cohesion: 0.67
 Nodes (1): TestScenarios()
 
-### Community 144 - "Testing Runner Var"
+### Community 146 - "Testing Runner Var"
 Cohesion: 0.67
 Nodes (1): TestRunner()
 
-### Community 145 - "Prompts Client prompt versions"
+### Community 147 - "Prompts Client prompt versions"
 Cohesion: 0.67
 Nodes (1): clsx()
 
-### Community 146 - "Analytics Client analytics Stat"
+### Community 148 - "Analytics Client analytics Stat"
 Cohesion: 0.67
 Nodes (1): StatCard()
 
-### Community 147 - "Analytics Simulation Handle"
+### Community 149 - "Analytics Simulation Handle"
 Cohesion: 0.67
 Nodes (1): handleExport()
 
-### Community 148 - "Pwa Var"
+### Community 150 - "Pwa Var"
 Cohesion: 0.67
 Nodes (1): App()
 
-### Community 149 - "Offline indicator Pwa"
+### Community 151 - "Offline indicator Pwa"
 Cohesion: 0.67
 Nodes (1): OfflineIndicator()
 
-### Community 150 - "Checkout success Var"
+### Community 152 - "Checkout success Var"
 Cohesion: 0.67
 Nodes (1): CheckoutSuccess()
 
-### Community 151 - "Stat card Var"
+### Community 153 - "Stat card Var"
 Cohesion: 0.67
 Nodes (1): StatCard()
 
-### Community 152 - "Ticker bar Var"
+### Community 154 - "Ticker bar Var"
 Cohesion: 0.67
 Nodes (1): TickerBar()
 
-### Community 153 - "Demo call banner"
+### Community 155 - "Demo call banner"
 Cohesion: 0.67
 Nodes (1): DemoCallBanner()
 
-### Community 154 - "Sections How it works section"
+### Community 156 - "Sections How it works section"
 Cohesion: 0.67
 Nodes (1): clsx()
 
-### Community 155 - "Sections Closing cta"
+### Community 157 - "Sections Closing cta"
 Cohesion: 0.67
 Nodes (1): ClosingCta()
 
-### Community 156 - "Sections Solution Var"
+### Community 158 - "Sections Solution Var"
 Cohesion: 0.67
 Nodes (1): Solution()
 
-### Community 157 - "Sections Problem Var"
+### Community 159 - "Sections Problem Var"
 Cohesion: 0.67
 Nodes (1): Problem()
 
-### Community 158 - "Nav Var"
+### Community 160 - "Nav Var"
 Cohesion: 0.67
 Nodes (1): Nav()
 
-### Community 159 - "Footer Var"
+### Community 161 - "Footer Var"
 Cohesion: 0.67
 Nodes (1): Footer()
 
-### Community 160 - "How it works Product"
+### Community 162 - "How it works Product"
 Cohesion: 0.67
 Nodes (1): ProductAccordion()
 
-### Community 161 - "Home Var"
+### Community 163 - "Home Var"
 Cohesion: 0.67
 Nodes (1): Home()
 
-### Community 162 - "Industries Industry"
+### Community 164 - "Industries Industry"
 Cohesion: 0.67
 Nodes (1): IndustryCard()
 
-### Community 163 - "Legal Switch"
+### Community 165 - "Legal Switch"
 Cohesion: 0.67
 Nodes (1): switchTab()
 
-### Community 164 - "Pentagi Pentagi flow Var"
+### Community 166 - "Pentagi Pentagi flow Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 165 - "Var Worktrees Vite"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 166 - "Var Worktrees Issue"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 167 - "Var Worktrees Issue"
+### Community 167 - "Var Worktrees Vite"
 Cohesion: 1.0
 Nodes (0): 
 
@@ -1061,259 +1063,259 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 169 - "Finance workflow Var"
+### Community 169 - "Var Worktrees Issue"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 170 - "Coupon checkout Var"
+### Community 170 - "Var Worktrees Issue"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 171 - "Render contracts critical"
+### Community 171 - "Finance workflow Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 172 - "Api Var"
+### Community 172 - "Coupon checkout Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 173 - "Pwa hardened Var"
+### Community 173 - "Render contracts critical"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 174 - "Report generation Var"
+### Community 174 - "Api Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 175 - "Contact lead Var"
+### Community 175 - "Pwa hardened Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 176 - "Plaid mfa screenshots"
+### Community 176 - "Report generation Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 177 - "Account upgrade Var"
+### Community 177 - "Contact lead Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 178 - "Plaid screenshots Var"
+### Community 178 - "Plaid mfa screenshots"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 179 - "Brain ingestion Var"
+### Community 179 - "Account upgrade Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 180 - "Reseller hldpro dev"
+### Community 180 - "Plaid screenshots Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 181 - "Pwa field Var"
+### Community 181 - "Brain ingestion Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 182 - "Vapi call flow"
+### Community 182 - "Reseller hldpro dev"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 183 - "Esign workflow Var"
+### Community 183 - "Pwa field Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 184 - "Resolution Var"
+### Community 184 - "Vapi call flow"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 185 - "Full platform review"
+### Community 185 - "Esign workflow Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 186 - "Fixtures Verticals Var"
+### Community 186 - "Resolution Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 187 - "Fixtures Verticals Hvac"
+### Community 187 - "Full platform review"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 188 - "Fixtures Verticals Pest"
+### Community 188 - "Fixtures Verticals Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 189 - "Fixtures Verticals Solar"
+### Community 189 - "Fixtures Verticals Hvac"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 190 - "Fixtures Verticals Auto"
+### Community 190 - "Fixtures Verticals Pest"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 191 - "Fixtures Verticals Legal"
+### Community 191 - "Fixtures Verticals Solar"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 192 - "Fixtures Verticals Real"
+### Community 192 - "Fixtures Verticals Auto"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 193 - "Fixtures Verticals Dental"
+### Community 193 - "Fixtures Verticals Legal"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 194 - "Fixtures Verticals Roofing"
+### Community 194 - "Fixtures Verticals Real"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 195 - "Fixtures Verticals Var"
+### Community 195 - "Fixtures Verticals Dental"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 196 - "Fixtures Verticals Types"
+### Community 196 - "Fixtures Verticals Roofing"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 197 - "Fixtures Verticals Trades"
+### Community 197 - "Fixtures Verticals Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 198 - "Var Worktrees Tailwind"
+### Community 198 - "Fixtures Verticals Types"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 199 - "Var Worktrees Vite"
+### Community 199 - "Fixtures Verticals Trades"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 200 - "Var Worktrees Postcss"
+### Community 200 - "Var Worktrees Tailwind"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 201 - "Var Worktrees Issue"
+### Community 201 - "Var Worktrees Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 202 - "Var Worktrees Vite"
+### Community 202 - "Var Worktrees Postcss"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 203 - "Var Worktrees Supabase"
+### Community 203 - "Var Worktrees Issue"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 204 - "Reviews Var"
+### Community 204 - "Var Worktrees Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 205 - "Sites Client site Var"
+### Community 205 - "Var Worktrees Supabase"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 206 - "Var Worktrees Tailwind"
+### Community 206 - "Reviews Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 207 - "Var Worktrees Vite"
+### Community 207 - "Sites Client site Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 208 - "Var Worktrees Postcss"
+### Community 208 - "Var Worktrees Tailwind"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 209 - "Var Worktrees Issue"
+### Community 209 - "Var Worktrees Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 210 - "Var Worktrees Vite"
+### Community 210 - "Var Worktrees Postcss"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 211 - "Partners Tier comparison Var"
+### Community 211 - "Var Worktrees Issue"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 212 - "Partners Product pricing cards"
+### Community 212 - "Var Worktrees Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 213 - "Partners Brand demo Var"
+### Community 213 - "Partners Tier comparison Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 214 - "Partners Partner value stack"
+### Community 214 - "Partners Product pricing cards"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 215 - "Var Worktrees Reseller"
+### Community 215 - "Partners Brand demo Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 216 - "Reseller Var"
+### Community 216 - "Partners Partner value stack"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 217 - "Commissions Var"
+### Community 217 - "Var Worktrees Reseller"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 218 - "Partner apply Var"
+### Community 218 - "Reseller Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 219 - "Var Worktrees Tailwind"
+### Community 219 - "Commissions Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 220 - "Var Worktrees Vite"
+### Community 220 - "Partner apply Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 221 - "Var Worktrees Postcss"
+### Community 221 - "Var Worktrees Tailwind"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 222 - "Var Worktrees Issue"
+### Community 222 - "Var Worktrees Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 223 - "Var Worktrees Issue"
+### Community 223 - "Var Worktrees Postcss"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 224 - "Var Worktrees Vite"
+### Community 224 - "Var Worktrees Issue"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 225 - "Corpus Corpus Var"
+### Community 225 - "Var Worktrees Issue"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 226 - "Prompts Prompt templates Var"
+### Community 226 - "Var Worktrees Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 227 - "Cogs Cogslayout Var"
+### Community 227 - "Corpus Corpus Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 228 - "Var Worktrees Tailwind"
+### Community 228 - "Prompts Prompt templates Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 229 - "Var Worktrees Vite"
+### Community 229 - "Cogs Cogslayout Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 230 - "Var Worktrees Postcss"
+### Community 230 - "Var Worktrees Tailwind"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 231 - "Var Worktrees Issue"
+### Community 231 - "Var Worktrees Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 232 - "Var Worktrees Vite"
+### Community 232 - "Var Worktrees Postcss"
 Cohesion: 1.0
 Nodes (0): 
 
@@ -1321,371 +1323,371 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 234 - "Var Worktrees Tailwind"
+### Community 234 - "Var Worktrees Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 235 - "Var Worktrees Vite"
+### Community 235 - "Var Worktrees Issue"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 236 - "Var Worktrees Postcss"
+### Community 236 - "Var Worktrees Tailwind"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 237 - "Var Worktrees Issue"
+### Community 237 - "Var Worktrees Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 238 - "Var Worktrees Vite"
+### Community 238 - "Var Worktrees Postcss"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 239 - "Var Worktrees Supabase"
+### Community 239 - "Var Worktrees Issue"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 240 - "Reviews Var"
+### Community 240 - "Var Worktrees Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 241 - "Sites Layouts Shell"
+### Community 241 - "Var Worktrees Supabase"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 242 - "Sites Layouts Demo"
+### Community 242 - "Reviews Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 243 - "Sites Layouts Types"
+### Community 243 - "Sites Layouts Shell"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 244 - "Sites Layouts Lead"
+### Community 244 - "Sites Layouts Demo"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 245 - "Sites Layouts Booking"
+### Community 245 - "Sites Layouts Types"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 246 - "Sites Layouts Ordering"
+### Community 246 - "Sites Layouts Lead"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 247 - "Testimonial card Var"
+### Community 247 - "Sites Layouts Booking"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 248 - "Sections Hero Var"
+### Community 248 - "Sites Layouts Ordering"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 249 - "Sections Social proof Var"
+### Community 249 - "Testimonial card Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 250 - "Sections Pricing section Var"
+### Community 250 - "Sections Hero Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 251 - "Var Worktrees Industries"
+### Community 251 - "Sections Social proof Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 252 - "Var Worktrees Plans"
+### Community 252 - "Sections Pricing section Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 253 - "Var Worktrees Stats"
+### Community 253 - "Var Worktrees Industries"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 254 - "Var Worktrees Testimonials"
+### Community 254 - "Var Worktrees Plans"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 255 - "Pricing Var"
+### Community 255 - "Var Worktrees Stats"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 256 - "Pentagi Pentagi flow"
+### Community 256 - "Var Worktrees Testimonials"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 257 - "Packages Vite"
+### Community 257 - "Pricing Var"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 258 - "Packages"
+### Community 258 - "Pentagi Pentagi flow"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 259 - "Packages Supabase"
+### Community 259 - "Packages Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 260 - "Community 260"
+### Community 260 - "Packages"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 261 - "Finance workflow"
+### Community 261 - "Packages Supabase"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 262 - "Coupon checkout"
+### Community 262 - "Community 262"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 263 - "Render contracts critical"
+### Community 263 - "Finance workflow"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 264 - "Api"
+### Community 264 - "Coupon checkout"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 265 - "Pwa hardened"
+### Community 265 - "Render contracts critical"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 266 - "Report generation"
+### Community 266 - "Api"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 267 - "Contact lead"
+### Community 267 - "Pwa hardened"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 268 - "Plaid mfa screenshots"
+### Community 268 - "Report generation"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 269 - "Account upgrade"
+### Community 269 - "Contact lead"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 270 - "Plaid screenshots"
+### Community 270 - "Plaid mfa screenshots"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 271 - "Brain ingestion"
+### Community 271 - "Account upgrade"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 272 - "Reseller hldpro dev"
+### Community 272 - "Plaid screenshots"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 273 - "Pwa field"
+### Community 273 - "Brain ingestion"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 274 - "Vapi call flow"
+### Community 274 - "Reseller hldpro dev"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 275 - "Esign workflow"
+### Community 275 - "Pwa field"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 276 - "Resolution"
+### Community 276 - "Vapi call flow"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 277 - "Full platform review"
+### Community 277 - "Esign workflow"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 278 - "Fixtures Verticals"
+### Community 278 - "Resolution"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 279 - "Fixtures Verticals Hvac"
+### Community 279 - "Full platform review"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 280 - "Fixtures Verticals Pest"
+### Community 280 - "Fixtures Verticals"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 281 - "Fixtures Verticals Solar"
+### Community 281 - "Fixtures Verticals Hvac"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 282 - "Fixtures Verticals Auto"
+### Community 282 - "Fixtures Verticals Pest"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 283 - "Fixtures Verticals Legal"
+### Community 283 - "Fixtures Verticals Solar"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 284 - "Fixtures Verticals Real"
+### Community 284 - "Fixtures Verticals Auto"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 285 - "Fixtures Verticals Dental"
+### Community 285 - "Fixtures Verticals Legal"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 286 - "Fixtures Verticals Roofing"
+### Community 286 - "Fixtures Verticals Real"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 287 - "Fixtures Verticals"
+### Community 287 - "Fixtures Verticals Dental"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 288 - "Fixtures Verticals Types"
+### Community 288 - "Fixtures Verticals Roofing"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 289 - "Fixtures Verticals Trades"
+### Community 289 - "Fixtures Verticals"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 290 - "Tailwind"
+### Community 290 - "Fixtures Verticals Types"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 291 - "Vite"
+### Community 291 - "Fixtures Verticals Trades"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 292 - "Postcss"
+### Community 292 - "Tailwind"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 293 - "Community 293"
+### Community 293 - "Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 294 - "Vite"
+### Community 294 - "Postcss"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 295 - "Supabase"
+### Community 295 - "Community 295"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 296 - "Reviews"
+### Community 296 - "Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 297 - "Sites Client site"
+### Community 297 - "Supabase"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 298 - "Reseller Tailwind"
+### Community 298 - "Reviews"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 299 - "Reseller Vite"
+### Community 299 - "Sites Client site"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 300 - "Reseller Postcss"
+### Community 300 - "Reseller Tailwind"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 301 - "Reseller"
+### Community 301 - "Reseller Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 302 - "Reseller Vite"
+### Community 302 - "Reseller Postcss"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 303 - "Partners Tier comparison Reseller"
+### Community 303 - "Reseller"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 304 - "Partners Product pricing cards"
+### Community 304 - "Reseller Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 305 - "Partners Brand demo Reseller"
+### Community 305 - "Partners Tier comparison Reseller"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 306 - "Partners Partner value stack"
+### Community 306 - "Partners Product pricing cards"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 307 - "Reseller Reseller tiers"
+### Community 307 - "Partners Brand demo Reseller"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 308 - "Reseller"
+### Community 308 - "Partners Partner value stack"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 309 - "Commissions Reseller"
+### Community 309 - "Reseller Reseller tiers"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 310 - "Partner apply Reseller"
+### Community 310 - "Reseller"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 311 - "Tailwind"
+### Community 311 - "Commissions Reseller"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 312 - "Vite"
+### Community 312 - "Partner apply Reseller"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 313 - "Postcss"
+### Community 313 - "Tailwind"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 314 - "Community 314"
+### Community 314 - "Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 315 - "Community 315"
+### Community 315 - "Postcss"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 316 - "Vite"
+### Community 316 - "Community 316"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 317 - "Products"
+### Community 317 - "Community 317"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 318 - "Corpus Corpus"
+### Community 318 - "Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 319 - "Prompts Prompt templates"
+### Community 319 - "Products"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 320 - "Cogs Cogslayout"
+### Community 320 - "Corpus Corpus"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 321 - "Pwa Tailwind"
+### Community 321 - "Prompts Prompt templates"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 322 - "Pwa Vite"
+### Community 322 - "Cogs Cogslayout"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 323 - "Pwa Postcss"
+### Community 323 - "Pwa Tailwind"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 324 - "Pwa"
+### Community 324 - "Pwa Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 325 - "Pwa Vite"
+### Community 325 - "Pwa Postcss"
 Cohesion: 1.0
 Nodes (0): 
 
@@ -1693,91 +1695,99 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 327 - "Tailwind"
+### Community 327 - "Pwa Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 328 - "Vite"
+### Community 328 - "Pwa"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 329 - "Postcss"
+### Community 329 - "Tailwind"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 330 - "Community 330"
+### Community 330 - "Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 331 - "Vite"
+### Community 331 - "Postcss"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 332 - "Supabase"
+### Community 332 - "Community 332"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 333 - "Reviews"
+### Community 333 - "Vite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 334 - "Sites Layouts Shell"
+### Community 334 - "Supabase"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 335 - "Sites Layouts Demo"
+### Community 335 - "Reviews"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 336 - "Sites Layouts Types"
+### Community 336 - "Sites Layouts Shell"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 337 - "Sites Layouts Lead"
+### Community 337 - "Sites Layouts Demo"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 338 - "Sites Layouts Booking"
+### Community 338 - "Sites Layouts Types"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 339 - "Sites Layouts Ordering"
+### Community 339 - "Sites Layouts Lead"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 340 - "Testimonial card"
+### Community 340 - "Sites Layouts Booking"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 341 - "Sections Hero"
+### Community 341 - "Sites Layouts Ordering"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 342 - "Sections Social proof"
+### Community 342 - "Testimonial card"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 343 - "Sections Pricing section"
+### Community 343 - "Sections Hero"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 344 - "Industries"
+### Community 344 - "Sections Social proof"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 345 - "Plans"
+### Community 345 - "Sections Pricing section"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 346 - "Stats"
+### Community 346 - "Industries"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 347 - "Testimonials"
+### Community 347 - "Plans"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 348 - "Pricing"
+### Community 348 - "Stats"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 349 - "Testimonials"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 350 - "Pricing"
 Cohesion: 1.0
 Nodes (0): 
 
@@ -1976,7 +1986,7 @@ Nodes (0):
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Packages Supabase`** (1 nodes): `index.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 260`** (1 nodes): `marketing-portal.spec.ts`
+- **Thin community `Community 262`** (1 nodes): `marketing-portal.spec.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Finance workflow`** (1 nodes): `finance-workflow.spec.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -2042,7 +2052,7 @@ Nodes (0):
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Postcss`** (1 nodes): `postcss.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 293`** (1 nodes): `main.tsx`
+- **Thin community `Community 295`** (1 nodes): `main.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Vite`** (1 nodes): `vite-env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -2084,9 +2094,9 @@ Nodes (0):
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Postcss`** (1 nodes): `postcss.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 314`** (1 nodes): `main.tsx`
+- **Thin community `Community 316`** (1 nodes): `main.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 315`** (1 nodes): `router.tsx`
+- **Thin community `Community 317`** (1 nodes): `router.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Vite`** (1 nodes): `vite-env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -2116,7 +2126,7 @@ Nodes (0):
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Postcss`** (1 nodes): `postcss.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 330`** (1 nodes): `main.tsx`
+- **Thin community `Community 332`** (1 nodes): `main.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Vite`** (1 nodes): `vite-env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -2158,16 +2168,16 @@ Nodes (0):
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `trim()` connect `Brain Supabase` to `Corpus Supabase`, `Vapi client Supabase`, `Auth Supabase`, `Connectors Crm Supabase`, `Setup readiness Supabase`, `Integrations Var`, `Support Feature roadmap Affiliate`, `Addon lifecycle Real`, `Addon provision Login`, `Provisioning Autoprovision preflight Client`, `Magic link jwt Supabase`, `Wizard Assistant`, `Compendium Extract Claude`, `Magic link review decision Supabase`, `Calcom client Supabase`, `Clients Client detail`, `Email attachment parser Supabase`, `Assistant chat Widget`, `Gc Gcsub Line`, `Debug Debug feedback overlay`, `Roof report Supabase`, `Magic link intake`, `Chief of staff Handle`, `Gc Gcprojects Format`?**
-  _High betweenness centrality (0.116) - this node is a cross-community bridge._
-- **Why does `toLocaleDateString()` connect `Support Feature roadmap Affiliate` to `Vapi client Supabase`, `Gc Gcsub Line`, `Brain Supabase`, `Roof report Supabase`, `Integrations Var`, `Sign Sign documents Auth`, `Addon provision Login`, `Provisioning Autoprovision preflight Client`, `Cogs export generator Supabase`, `Wizard Assistant`, `Finance Brain`, `Clients Client detail`, `Gc Gcprojects Format`?**
-  _High betweenness centrality (0.094) - this node is a cross-community bridge._
-- **Why does `update()` connect `Connectors Crm Supabase` to `Stripe webhook Lifecycle state Supabase`, `Vapi client Supabase`, `Stripe webhook Demo conversion Supabase`, `Setup readiness Supabase`, `Brain Supabase`, `Integrations Var`, `Support Feature roadmap Affiliate`, `Addon provision Login`, `Clients Clients Badge`, `Cogs export generator Supabase`, `Wizard Assistant`, `Connectors Crm Local`?**
-  _High betweenness centrality (0.048) - this node is a cross-community bridge._
+- **Why does `trim()` connect `Enrich site Supabase` to `Corpus Supabase`, `Auth Supabase`, `Vapi client Supabase`, `Connectors Crm Supabase`, `Integrations Var`, `Support Feature roadmap Affiliate`, `Setup readiness Supabase`, `Addon lifecycle Real`, `Addon provision Login`, `Provisioning Autoprovision preflight Client`, `Magic link jwt Supabase`, `Wizard Assistant`, `Compendium Extract Claude`, `Magic link review decision Supabase`, `Calcom client Supabase`, `Clients Client detail`, `Brain Handle`, `Email attachment parser Supabase`, `Assistant chat Widget`, `Gc Gcsub Line`, `Debug Debug feedback overlay`, `Roof report Supabase`, `Magic link intake`, `Leads Handle`, `Gc Gcprojects Format`?**
+  _High betweenness centrality (0.077) - this node is a cross-community bridge._
+- **Why does `toLocaleDateString()` connect `Support Feature roadmap Affiliate` to `Vapi client Supabase`, `Integrations Var`, `Enrich site Supabase`, `Gc Gcsub Line`, `Roof report Supabase`, `Sign Sign documents Auth`, `Addon provision Login`, `Provisioning Autoprovision preflight Client`, `Cogs export generator Supabase`, `Leads Handle`, `Wizard Assistant`, `Finance Brain`, `Clients Client detail`, `Gc Gcprojects Format`?**
+  _High betweenness centrality (0.051) - this node is a cross-community bridge._
+- **Why does `update()` connect `Connectors Crm Supabase` to `Stripe webhook Lifecycle state Supabase`, `Vapi client Supabase`, `Stripe webhook Demo conversion Supabase`, `Integrations Var`, `Support Feature roadmap Affiliate`, `Setup readiness Supabase`, `Addon provision Login`, `Cogs export generator Supabase`, `Clients Clients Badge`, `Wizard Assistant`, `Connectors Crm Local`, `Brain Handle`?**
+  _High betweenness centrality (0.027) - this node is a cross-community bridge._
 - **Are the 99 inferred relationships involving `text()` (e.g. with `sendReminderSMS()` and `sendSms()`) actually correct?**
   _`text()` has 99 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 95 inferred relationships involving `trim()` (e.g. with `normalizePhone()` and `sha256Hash()`) actually correct?**
-  _`trim()` has 95 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 96 inferred relationships involving `trim()` (e.g. with `normalizePhone()` and `sha256Hash()`) actually correct?**
+  _`trim()` has 96 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 66 inferred relationships involving `getSupabaseServiceClient()` (e.g. with `resolveClientId()` and `handleCallback()`) actually correct?**
   _`getSupabaseServiceClient()` has 66 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 61 inferred relationships involving `update()` (e.g. with `handleCallback()` and `handleSync()`) actually correct?**

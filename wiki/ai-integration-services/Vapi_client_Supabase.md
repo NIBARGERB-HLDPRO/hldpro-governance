@@ -1,6 +1,6 @@
 # Vapi client Supabase
 
-> 304 nodes · cohesion 0.01
+> 290 nodes · cohesion 0.01
 
 ## Key Concepts
 
@@ -29,7 +29,7 @@
 - **voice-presets.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
 - **load-test-provisioning.spec.ts** (9 connections) — `ai-integration-services/e2e/load-test-provisioning.spec.ts`
 - **vapi-helpers.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/vapi-helpers.ts`
-- *... and 279 more nodes in this community*
+- *... and 265 more nodes in this community*
 
 ## Relationships
 
@@ -38,30 +38,30 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/lib/supabase.ts`
-- `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
 - `ai-integration-services/apps/marketing/src/pages/Trial.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/PlanSelection.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/affiliate/AffiliateApply.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBilling.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardHelp.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/RoofEstimate.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/gc/GCOwnerPortal.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/sign/SignDocument.tsx`
 - `ai-integration-services/apps/portal/src/pages/PlanSelection.tsx`
 - `ai-integration-services/apps/portal/src/pages/affiliate/AffiliateApply.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardBilling.tsx`
-- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardHelp.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/RoofEstimate.tsx`
 - `ai-integration-services/apps/portal/src/pages/gc/GCOwnerPortal.tsx`
 - `ai-integration-services/apps/portal/src/pages/sign/SignDocument.tsx`
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/twenty.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/service/google-calendar.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/servicetitan.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/email.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 992 (63%)
-- INFERRED: 582 (37%)
+- EXTRACTED: 942 (62%)
+- INFERRED: 578 (38%)
 - AMBIGUOUS: 0 (0%)
 
 ---

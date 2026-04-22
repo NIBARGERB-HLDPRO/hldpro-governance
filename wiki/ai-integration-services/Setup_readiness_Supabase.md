@@ -1,6 +1,6 @@
 # Setup readiness Supabase
 
-> 136 nodes · cohesion 0.03
+> 125 nodes · cohesion 0.04
 
 ## Key Concepts
 
@@ -22,14 +22,14 @@
 - **n8n-workflow-templates.ts** (10 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/n8n-workflow-templates.ts`
 - **runStep()** (9 connections) — `ai-integration-services/backend/supabase/functions/portal-provision/index.ts`
 - **syncSetupComplianceGatesForClient()** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- **classify-primary-intent.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.ts`
 - **provisioning-service-matrix.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-service-matrix.ts`
-- **classify-primary-intent.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/classify-primary-intent.ts`
 - **provisioning-service-matrix.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/provisioning-service-matrix.ts`
 - **nonEmpty()** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
 - **index.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/setup-compliance-sync/index.ts`
 - **provisioning-probes.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-probes.ts`
-- *... and 111 more nodes in this community*
+- **setup-plan.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-plan.ts`
+- **index.ts** (8 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/setup-compliance-sync/index.ts`
+- *... and 100 more nodes in this community*
 
 ## Relationships
 
@@ -37,8 +37,6 @@
 
 ## Source Files
 
-- `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.test.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/forwarding-instructions.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/n8n-workflow-templates.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/n8n-workflow-templates.ts`
@@ -57,11 +55,13 @@
 - `ai-integration-services/backend/supabase/functions/_shared/setup-readiness.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/vapi-brain-tool.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/voice-config.ts`
+- `ai-integration-services/backend/supabase/functions/portal-provision/index.ts`
+- `ai-integration-services/backend/supabase/functions/setup-compliance-sync/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 701 (93%)
-- INFERRED: 55 (7%)
+- EXTRACTED: 655 (93%)
+- INFERRED: 53 (7%)
 - AMBIGUOUS: 0 (0%)
 
 ---

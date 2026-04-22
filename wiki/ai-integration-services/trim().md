@@ -1,10 +1,11 @@
 # trim()
 
-> God node · 99 connections · `ai-integration-services/backend/supabase/functions/purchase-session/index.ts`
+> God node · 100 connections · `ai-integration-services/backend/supabase/functions/purchase-session/index.ts`
 
 ## Connections by Relation
 
 ### calls
+- [[resolveClientId()]] `INFERRED`
 - [[createFeedback()]] `INFERRED`
 - [[tryReadEnvSecret()]] `INFERRED`
 - [[readEnvSecret()]] `INFERRED`
@@ -24,7 +25,6 @@
 - [[handlePostComment()]] `INFERRED`
 - [[classifyIntent()]] `INFERRED`
 - [[pickString()]] `INFERRED`
-- [[getWizardValue()]] `INFERRED`
 
 ### contains
 - [[index.ts]] `EXTRACTED`
