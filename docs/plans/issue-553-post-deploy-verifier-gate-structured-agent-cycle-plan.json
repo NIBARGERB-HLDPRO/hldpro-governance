@@ -1,0 +1,100 @@
+{
+  "session_id": "session-20260422-issue-553-post-deploy-verifier-gate",
+  "issue_number": 553,
+  "objective": "Wire pages_deploy_verifier.py into pages_deploy_gate.py so the gate automatically runs post-deploy verification after every successful deploy; gate raises GateError on verifier failure.",
+  "tier": 2,
+  "scope_boundary": [
+    "Child sprint of pages-deploy epic #467; adds post-deploy verification call inside run_gate().",
+    "No writes to downstream consumer repos; downstream adoption already uses the gate script."
+  ],
+  "out_of_scope": [
+    "New verifier checks (domain probing, title matching) — covered by sibling issue #554.",
+    "Changes to the consumer schema — covered by sibling issue #554.",
+    "Any writes to seek-and-ponder or other downstream repos."
+  ],
+  "research_summary": "Epic #467 Sprint 3. Both pages_deploy_gate.py and pages_deploy_verifier.py are co-located under scripts/pages-deploy/. The verifier exposes build_report(config, source_sha) returning a status/failures dict. Gate must load the verifier via importlib.util (sys.modules registration required to prevent @dataclass module-scope AttributeError) and raise GateError on verifier failure. dry_run mode must skip verification.",
+  "research_artifacts": [
+    "docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/553",
+    "scripts/pages-deploy/pages_deploy_gate.py",
+    "scripts/pages-deploy/pages_deploy_verifier.py",
+    "scripts/pages-deploy/tests/test_pages_deploy_gate.py"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 3 - Wire verifier into gate (issue #553)",
+      "goal": "Add _load_verifier() and _run_post_deploy_verification() to pages_deploy_gate.py; call after deploy() in run_gate(); add 3 pytest cases; 36 total tests pass.",
+      "tasks": [
+        "Add importlib.util import and _VERIFIER_PATH constant to pages_deploy_gate.py.",
+        "_load_verifier(): load via importlib.util.spec_from_file_location, register in sys.modules before exec_module to prevent dataclass scope error.",
+        "_run_post_deploy_verification(config, source_sha, env): call verifier.build_report(); raise GateError on status != passed.",
+        "Wire _run_post_deploy_verification() into run_gate() after deploy(), skip in dry_run.",
+        "Add 3 tests: verify called with source_sha, verify failure propagates, verify skipped on dry_run.",
+        "Create governance artifact chain: closeout, PDCAR, execution scope, handoff, validation."
+      ],
+      "acceptance_criteria": [
+        "pages_deploy_gate.py calls _run_post_deploy_verification() after successful deploy in non-dry-run mode.",
+        "GateError is raised with POST_DEPLOY_VERIFY_FAIL prefix when verifier status != passed.",
+        "dry_run=True skips verification entirely.",
+        "sys.modules registration prevents @dataclass AttributeError when loading verifier via importlib.",
+        "36 pytest cases pass (33 existing + 3 new)."
+      ],
+      "file_paths": [
+        "scripts/pages-deploy/pages_deploy_gate.py",
+        "scripts/pages-deploy/tests/test_pages_deploy_gate.py",
+        "docs/plans/2026-04-22-issue-553-post-deploy-verifier-gate-pdcar.json",
+        "docs/plans/issue-553-post-deploy-verifier-gate-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-22-issue-553-post-deploy-verifier-gate-implementation.json",
+        "raw/handoffs/2026-04-22-issue-553-post-deploy-verifier-gate.json",
+        "raw/validation/2026-04-22-issue-553-post-deploy-verifier-gate.md",
+        "raw/closeouts/2026-04-22-issue-553-post-deploy-verifier-gate.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "claude-sonnet-4-6 (dispatcher / orchestrator)",
+      "role": "Sprint 3 implementer",
+      "focus": "Verifier-gate wiring; importlib module loading; post-deploy verification integration; test coverage.",
+      "status": "accepted",
+      "summary": "Implementation complete; 36/36 pytest cases pass covering all Sprint 3 acceptance criteria.",
+      "evidence": [
+        "scripts/pages-deploy/pages_deploy_gate.py",
+        "scripts/pages-deploy/tests/test_pages_deploy_gate.py",
+        "raw/validation/2026-04-22-issue-553-post-deploy-verifier-gate.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "n/a - covered by parent plan review",
+    "model_family": "n/a",
+    "status": "not_required",
+    "summary": "Sprint 3 is a child implementation sprint fully specified under the pre-approved parent plan (issue-467-pages-deploy-gate-structured-agent-cycle-plan.json). No new architecture beyond wiring existing verifier into existing gate. Wiring approach (importlib + sys.modules) is a well-understood Python pattern with no architectural novelty.",
+    "evidence": [
+      "docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/553"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-sonnet-4-6",
+    "execution_mode": "implementation_complete",
+    "approved_scope_summary": "Sprint 3 verifier-gate wiring complete; 36 tests pass; all governance artifacts committed on issue-553-pages-deploy-post-deploy-verification-20260422 branch.",
+    "next_execution_step": "Orchestrator merges PR #555 then fires Sprint 4 (issue #554 content identity + branch preflight).",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-22-issue-553-post-deploy-verifier-gate-implementation.json",
+    "next_role": "orchestrator",
+    "qa_gate_required": false
+  },
+  "material_deviation_rules": [
+    "No writes to downstream repos from this lane.",
+    "Sprint expansion: if implementation discovers work outside acceptance criteria, open a new governance issue before closing this sprint.",
+    "The importlib sys.modules registration pattern is required to prevent @dataclass scope error — do not replace with a direct import."
+  ],
+  "approved": true,
+  "approved_by": [
+    "claude-sonnet-4-6 (Sprint 3 implementer; parent plan pre-approved under epic #467)"
+  ],
+  "approved_at": "2026-04-22T15:00:00Z"
+}
