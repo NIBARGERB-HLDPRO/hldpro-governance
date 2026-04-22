@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "issue_number": 561,
+  "branch": "issue-561-sim-runner-deployer-path-20260422",
+  "base_branch": "issue-559-five-new-agents-20260422",
+  "execution_mode": "implementation_complete",
+  "created_at": "2026-04-22T00:00:00Z",
+  "session_agent": "claude-sonnet-4-6",
+  "lane_claim": {
+    "issue_number": 561,
+    "claimed_at": "2026-04-22T00:00:00Z",
+    "env_flag": "HLDPRO_LANE_CLAIM_BOOTSTRAP=1"
+  },
+  "allowed_write_paths": [
+    "agents/sim-runner.md",
+    "docs/agents-adoption-guide.md",
+    "docs/plans/issue-561-sim-runner-deployer-path-structured-agent-cycle-plan.json",
+    "docs/plans/issue-561-sim-runner-deployer-path-pdcar.md",
+    "raw/execution-scopes/2026-04-22-issue-561-sim-runner-deployer-path-implementation.json",
+    "raw/closeouts/2026-04-22-issue-561-sim-runner-deployer-path.md"
+  ],
+  "forbidden_roots": [
+    "STANDARDS.md",
+    "OVERLORD_BACKLOG.md",
+    "scripts/",
+    "packages/",
+    "docs/hldpro-sim-consumer-pull-state.json",
+    ".github/"
+  ],
+  "structured_plan_ref": "docs/plans/issue-561-sim-runner-deployer-path-structured-agent-cycle-plan.json",
+  "governing_issue": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/561"
+}

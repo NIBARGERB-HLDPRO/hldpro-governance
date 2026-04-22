@@ -11,19 +11,9 @@ You are the **sim-runner** agent. Your job is to invoke hldpro-sim for a given s
 
 ### Step 1 — Confirm hldpro-sim is installed
 
-```bash
-python3 -c "import hldprosim; print(hldprosim.__version__)"
-```
-
-If ImportError: install from the governance package:
-```bash
-pip install -e packages/hldpro-sim/
-```
-
-If `packages/hldpro-sim/` does not exist in this repo, check if it is deployed as a tagged release:
-```bash
-pip install hldpro-sim==0.1.0
-```
+1. Confirm hldpro-sim is deployed: check `.hldpro/hldpro-sim.json` exists in the consumer repo root.
+   If absent, run the deployer first: `bash <governance-root>/scripts/deployer/deploy-hldpro-sim.sh <consumer-repo-path>`
+   The deployer installs the package (pip-editable or directory-copy fallback) AND deploys managed personas to `sim-personas/shared/`.
 
 ### Step 2 — Confirm codex is in PATH
 
@@ -39,7 +29,7 @@ Note: `AnthropicApiProvider` is NOT available — it raises `NotImplementedError
 
 Check local registry first, then shared fallback:
 1. `sim-personas/local/<persona_id>.json` (repo-local override)
-2. `packages/hldpro-sim/personas/<persona_id>.json` (shared registry)
+2. `sim-personas/shared/<persona_id>.json` (shared registry — deployed by deployer)
 
 If neither exists: HALT — "HALT: Persona '<persona_id>' not found in local or shared registry."
 
