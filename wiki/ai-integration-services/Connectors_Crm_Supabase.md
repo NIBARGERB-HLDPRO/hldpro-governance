@@ -1,6 +1,6 @@
 # Connectors Crm Supabase
 
-> 119 nodes · cohesion 0.03
+> 127 nodes · cohesion 0.03
 
 ## Key Concepts
 
@@ -21,15 +21,15 @@
 - **agentIntake()** (7 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
 - **agentPackager()** (7 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
 - **agentPresenter()** (7 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
-- **trackVoiceUsage()** (7 connections) — `ai-integration-services/backend/supabase/functions/webhook-receiver/index.ts`
 - **advanceSigningWorkflow()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/advance.ts`
-- **handleRefreshAnalysis()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsInsights.tsx`
 - **logSignEvent()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
 - **updateDocumentStatus()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
 - **computeCost()** (6 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
-- **updateRecommendationStatus()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsInsights.tsx`
+- **formatDate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/affiliate/AffiliatePayouts.tsx`
+- **saveThreshold()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/affiliate/AffiliatePayouts.tsx`
 - **markActioned()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBriefing.tsx`
-- *... and 94 more nodes in this community*
+- **markRead()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBriefing.tsx`
+- *... and 102 more nodes in this community*
 
 ## Relationships
 
@@ -41,12 +41,12 @@
 - `ai-integration-services/apps/dashboard/src/pages/clients/ClientsList.tsx`
 - `ai-integration-services/apps/dashboard/src/pages/corpus/ABExperiments.tsx`
 - `ai-integration-services/apps/marketing/src/pages/Contact.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsInsights.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/affiliate/AffiliatePayouts.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBriefing.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardRoadmap.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/PlaidConsent.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/wizard/WizardStep4Pricing.tsx`
-- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardAdsInsights.tsx`
+- `ai-integration-services/apps/portal/src/pages/affiliate/AffiliatePayouts.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardBriefing.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardRoadmap.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/PlaidConsent.tsx`
@@ -60,8 +60,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 368 (69%)
-- INFERRED: 167 (31%)
+- EXTRACTED: 403 (71%)
+- INFERRED: 165 (29%)
 - AMBIGUOUS: 0 (0%)
 
 ---

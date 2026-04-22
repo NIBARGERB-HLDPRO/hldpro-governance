@@ -1,6 +1,6 @@
 # N8n client Supabase
 
-> 295 nodes · cohesion 0.01
+> 294 nodes · cohesion 0.01
 
 ## Key Concepts
 
@@ -12,8 +12,10 @@
 - **index.ts** (16 connections) — `ai-integration-services/backend/supabase/functions/health-check/index.ts`
 - **operator-context-governance.ts** (16 connections) — `ai-integration-services/backend/supabase/functions/_shared/operator-context-governance.ts`
 - **index.ts** (16 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/health-check/index.ts`
+- **analytics-db.ts** (16 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/analytics-db.ts`
 - **operator-context-governance.ts** (16 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/operator-context-governance.ts`
 - **VoiceflowClient** (15 connections) — `ai-integration-services/backend/supabase/functions/_shared/voiceflow-client.ts`
+- **index.ts** (14 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/gbp-review-monitor/index.ts`
 - **.buildApiError()** (13 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
 - **GoogleCalendarConnector** (12 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/google-calendar.ts`
 - **.n8nFetch()** (12 connections) — `ai-integration-services/backend/supabase/functions/_shared/n8n-client.ts`
@@ -23,13 +25,11 @@
 - **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/logs-watcher/index.ts`
 - **index.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/logs-watcher/index.ts`
 - **writeOperatorContextToGovernance()** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/operator-context-governance.ts`
-- **MagicLinkIntake.tsx** (10 connections) — `ai-integration-services/apps/marketing/src/portal/pages/MagicLinkIntake.tsx`
-- **MagicLinkIntake.tsx** (10 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/MagicLinkIntake.tsx`
 - **readEnvSecret()** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/vault.ts`
 - **.twilioFetch()** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
 - **vapi-helpers.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
 - **voice-presets.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
-- *... and 270 more nodes in this community*
+- *... and 269 more nodes in this community*
 
 ## Relationships
 
@@ -38,7 +38,6 @@
 ## Source Files
 
 - `ai-integration-services/apps/marketing/src/pages/Trial.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/MagicLinkIntake.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/PlanSelection.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/affiliate/AffiliateApply.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBilling.tsx`
@@ -51,17 +50,18 @@
 - `ai-integration-services/apps/portal/src/pages/dashboard/RoofEstimate.tsx`
 - `ai-integration-services/apps/portal/src/pages/gc/GCOwnerPortal.tsx`
 - `ai-integration-services/apps/portal/src/pages/sign/SignDocument.tsx`
+- `ai-integration-services/apps/pwa/public/sw.js`
 - `ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/twenty.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/service/google-calendar.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/service/servicetitan.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/email.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 984 (63%)
-- INFERRED: 580 (37%)
+- EXTRACTED: 1009 (64%)
+- INFERRED: 577 (36%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -1,15 +1,18 @@
 # Ai matcher Supabase
 
-> 6 nodes · cohesion 0.53
+> 9 nodes · cohesion 0.42
 
 ## Key Concepts
 
-- **ai-matcher.ts** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
-- **matchTransactions()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
-- **buildMatchingPrompt()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
-- **callClaudeForMatching()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
-- **parseAndValidateMatches()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
-- **getReconciliationAction()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
+- **ai-matcher.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
+- **ai-matcher.ts** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/ai-matcher.ts`
+- **matchTransactions()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
+- **parseAndValidateMatches()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
+- **buildMatchingPrompt()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
+- **callClaudeForMatching()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
+- **getReconciliationAction()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
+- **finance-types.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/finance-types.ts`
+- **finance-types.ts** (1 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/finance-types.ts`
 
 ## Relationships
 
@@ -18,11 +21,14 @@
 ## Source Files
 
 - `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/finance-types.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/ai-matcher.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/finance-types.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 10 (62%)
-- INFERRED: 6 (38%)
+- EXTRACTED: 32 (97%)
+- INFERRED: 1 (3%)
 - AMBIGUOUS: 0 (0%)
 
 ---
