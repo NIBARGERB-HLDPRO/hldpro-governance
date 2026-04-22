@@ -37,7 +37,11 @@
     "raw/execution-scopes/2026-04-20-issue-385-remote-mcp-vault-bootstrap-implementation.json",
     "raw/remote-mcp-vault-bootstrap/",
     "raw/validation/2026-04-20-issue-385-remote-mcp-vault-bootstrap.md",
+    "raw/validation/2026-04-22-issue-385-bootstrap-ssot-api-keys.md",
     "raw/closeouts/2026-04-20-issue-385-remote-mcp-vault-bootstrap.md",
+    "raw/handoffs/2026-04-20-issue-385-remote-mcp-vault-bootstrap-plan-to-implementation.json",
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/test_bootstrap_repo_env_contract.py",
     "scripts/som-client/som_client.py",
     "scripts/som-client/tests/test_som_client.py",
     "wiki/"
