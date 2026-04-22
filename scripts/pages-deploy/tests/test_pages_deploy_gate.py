@@ -83,7 +83,9 @@ def run_gate(config_path: Path, tmp_path: Path, *, env: dict[str, str] | None = 
     calls, fake_run = make_runner(tmp_path, **runner_kwargs)
     with mock.patch.object(gate.shutil, "which", return_value="/usr/bin/tool"), mock.patch.object(
         gate.subprocess, "run", side_effect=fake_run
-    ), mock.patch.object(gate, "branch_binding_preflight"):
+    ), mock.patch.object(gate, "branch_binding_preflight"), mock.patch.object(
+        gate, "_run_post_deploy_verification"
+    ):
         code = gate.run_gate(config_path, dry_run=dry_run, env=env or default_env())
     return code, calls
 
@@ -100,7 +102,9 @@ def run_gate_expect_error(
     calls, fake_run = make_runner(tmp_path, **runner_kwargs)
     with mock.patch.object(gate.shutil, "which", return_value=which_return), mock.patch.object(
         gate.subprocess, "run", side_effect=fake_run
-    ), mock.patch.object(gate, "branch_binding_preflight"):
+    ), mock.patch.object(gate, "branch_binding_preflight"), mock.patch.object(
+        gate, "_run_post_deploy_verification"
+    ):
         with pytest.raises(gate.GateError) as exc:
             gate.run_gate(config_path, dry_run=dry_run, env=env or default_env())
     return str(exc.value), calls
@@ -412,3 +416,53 @@ def test_branch_binding_preflight_skips_on_api_error(tmp_path):
 
     with mock.patch.object(gate.urllib.request, "urlopen", side_effect=OSError("network error")):
         gate.branch_binding_preflight(config, env)
+
+
+def test_post_deploy_verify_called_with_source_sha(tmp_path):
+    config = write_config(tmp_path)
+    calls, fake_run = make_runner(tmp_path)
+    captured: list[tuple] = []
+
+    def fake_verify(cfg, sha, env):
+        captured.append((cfg, sha, env))
+
+    with mock.patch.object(gate.shutil, "which", return_value="/usr/bin/tool"), mock.patch.object(
+        gate.subprocess, "run", side_effect=fake_run
+    ), mock.patch.object(gate, "_run_post_deploy_verification", side_effect=fake_verify):
+        gate.run_gate(config, env=default_env())
+
+    assert len(captured) == 1
+    _cfg, sha, _env = captured[0]
+    assert sha == "abc123"
+
+
+def test_post_deploy_verify_failure_propagates(tmp_path):
+    config = write_config(tmp_path)
+    calls, fake_run = make_runner(tmp_path)
+
+    def fake_verify(cfg, sha, env):
+        raise gate.GateError("POST_DEPLOY_VERIFY_FAIL: domain mismatch")
+
+    with mock.patch.object(gate.shutil, "which", return_value="/usr/bin/tool"), mock.patch.object(
+        gate.subprocess, "run", side_effect=fake_run
+    ), mock.patch.object(gate, "_run_post_deploy_verification", side_effect=fake_verify):
+        with pytest.raises(gate.GateError) as exc:
+            gate.run_gate(config, env=default_env())
+
+    assert "POST_DEPLOY_VERIFY_FAIL" in str(exc.value)
+
+
+def test_post_deploy_verify_not_called_on_dry_run(tmp_path):
+    config = write_config(tmp_path)
+    calls, fake_run = make_runner(tmp_path)
+    captured: list[tuple] = []
+
+    def fake_verify(cfg, sha, env):
+        captured.append((cfg, sha, env))
+
+    with mock.patch.object(gate.shutil, "which", return_value="/usr/bin/tool"), mock.patch.object(
+        gate.subprocess, "run", side_effect=fake_run
+    ), mock.patch.object(gate, "_run_post_deploy_verification", side_effect=fake_verify):
+        gate.run_gate(config, dry_run=True, env=default_env())
+
+    assert len(captured) == 0

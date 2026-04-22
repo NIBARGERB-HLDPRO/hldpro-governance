@@ -1,0 +1,46 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-553-post-deploy-verifier-gate",
+  "issue_number": 553,
+  "parent_epic_number": 467,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "dispatcher",
+  "to_role": "dispatcher",
+  "structured_plan_ref": "docs/plans/2026-04-22-issue-553-post-deploy-verifier-gate-pdcar.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-22-issue-553-post-deploy-verifier-gate-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "run_gate() calls _run_post_deploy_verification() after every successful deploy with the source SHA.",
+      "verification_refs": ["raw/validation/2026-04-22-issue-553-post-deploy-verifier-gate.md"]
+    },
+    {
+      "id": "AC2",
+      "statement": "Gate exits non-zero if any domain SHA does not match the deployed source SHA.",
+      "verification_refs": ["raw/validation/2026-04-22-issue-553-post-deploy-verifier-gate.md"]
+    },
+    {
+      "id": "AC3",
+      "statement": "Dry-run skips post-deploy verification. All 36 tests pass.",
+      "verification_refs": ["raw/validation/2026-04-22-issue-553-post-deploy-verifier-gate.md"]
+    }
+  ],
+  "validation_commands": [
+    "pytest scripts/pages-deploy/ -q",
+    "python3 -m py_compile scripts/pages-deploy/pages_deploy_gate.py"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": ["raw/validation/2026-04-22-issue-553-post-deploy-verifier-gate.md"],
+  "artifact_refs": [
+    "scripts/pages-deploy/pages_deploy_gate.py",
+    "scripts/pages-deploy/tests/test_pages_deploy_gate.py"
+  ],
+  "audit_refs": ["raw/validation/2026-04-22-issue-553-post-deploy-verifier-gate.md"],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "draft",
+  "created_at": "2026-04-22T15:00:00Z",
+  "notes": "Dispatcher-authored implementation. No Codex handoff. All changes additive to existing pages_deploy_gate.py."
+}
