@@ -1,35 +1,35 @@
 # Magic link review decision Supabase
 
-> 28 nodes · cohesion 0.16
+> 44 nodes · cohesion 0.10
 
 ## Key Concepts
 
 - **index.ts** (19 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
 - **index.ts** (19 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/magic-link-review-decision/index.ts`
 - **tryReadEnvSecret()** (13 connections) — `ai-integration-services/backend/supabase/functions/_shared/vault.ts`
+- **getCorsHeaders()** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
+- **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
 - **intake-validator.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
+- **index.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/owner-briefing-line/index.ts`
 - **intake-validator.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/intake-validator.ts`
+- **safeHeaders()** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
+- **responseJson()** (7 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
 - **isObject()** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
 - **validateAgainstSchema()** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
 - **createTrialCoupon()** (6 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
 - **sendDenySms()** (6 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
+- **toolResult()** (6 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
 - **schemaMatches()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
+- **extractToolCall()** (5 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
 - **sendReviewSms()** (5 connections) — `ai-integration-services/backend/supabase/functions/magic-link-intake-submit/index.ts`
+- **getSecurityHeaders()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
+- **handleAlerts()** (4 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
+- **handleAnalytics()** (4 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
+- **handleEndOfCall()** (4 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
+- **handleRecentCalls()** (4 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
 - **isExpired()** (4 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
 - **resolveTwilioFrom()** (4 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- **reviewPhone()** (4 connections) — `ai-integration-services/backend/supabase/functions/magic-link-intake-submit/index.ts`
-- **schemaMatchesType()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
-- **mergeOperatorOverride()** (3 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- **normalizePhone()** (3 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- **payloadFromIntake()** (3 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- **slugifyBusinessName()** (3 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- **addDetail()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
-- **joinPath()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
-- **schemaAnyOfMatches()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
-- **validatePayload()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
-- **buildLamPayload()** (2 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- **isAllowedDecisionStatus()** (2 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- *... and 3 more nodes in this community*
+- *... and 19 more nodes in this community*
 
 ## Relationships
 
@@ -37,19 +37,24 @@
 
 ## Source Files
 
+- `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/intake-validator.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/vault.ts`
+- `ai-integration-services/backend/supabase/functions/consent-confirm/index.ts`
 - `ai-integration-services/backend/supabase/functions/magic-link-intake-submit/index.ts`
 - `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
+- `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/intake-validator.test.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/intake-validator.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/magic-link-review-decision/index.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/owner-briefing-line/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 132 (84%)
-- INFERRED: 26 (16%)
+- EXTRACTED: 205 (83%)
+- INFERRED: 42 (17%)
 - AMBIGUOUS: 0 (0%)
 
 ---

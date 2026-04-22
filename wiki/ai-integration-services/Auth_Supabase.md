@@ -1,16 +1,17 @@
 # Auth Supabase
 
-> 283 nodes · cohesion 0.03
+> 288 nodes · cohesion 0.02
 
 ## Key Concepts
 
-- **auth.ts** (237 connections) — `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
-- **error-handler.ts** (220 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
-- **cors.ts** (214 connections) — `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
-- **audit.ts** (161 connections) — `ai-integration-services/backend/supabase/functions/_shared/audit.ts`
+- **auth.ts** (238 connections) — `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
+- **error-handler.ts** (221 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
+- **cors.ts** (215 connections) — `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
+- **audit.ts** (162 connections) — `ai-integration-services/backend/supabase/functions/_shared/audit.ts`
 - **corpus.ts** (44 connections) — `ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
 - **email.ts** (41 connections) — `ai-integration-services/backend/supabase/functions/_shared/email.ts`
 - **vault.ts** (41 connections) — `ai-integration-services/backend/supabase/functions/_shared/vault.ts`
+- **index.ts** (28 connections) — `ai-integration-services/backend/supabase/functions/webhook-receiver/index.ts`
 - **config.ts** (26 connections) — `ai-integration-services/backend/supabase/functions/_shared/config.ts`
 - **cogs.ts** (24 connections) — `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
 - **esign.ts** (22 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
@@ -28,8 +29,7 @@
 - **embeddings.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
 - **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/support-tickets/index.ts`
 - **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/test-runner/index.ts`
-- **index.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/ad-connect-oauth/index.ts`
-- *... and 258 more nodes in this community*
+- *... and 263 more nodes in this community*
 
 ## Relationships
 
@@ -60,8 +60,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 2532 (99%)
-- INFERRED: 22 (1%)
+- EXTRACTED: 2568 (99%)
+- INFERRED: 18 (1%)
 - AMBIGUOUS: 0 (0%)
 
 ---

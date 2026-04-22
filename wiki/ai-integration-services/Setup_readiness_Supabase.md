@@ -1,6 +1,6 @@
 # Setup readiness Supabase
 
-> 135 nodes · cohesion 0.04
+> 130 nodes · cohesion 0.04
 
 ## Key Concepts
 
@@ -27,9 +27,9 @@
 - **classify-primary-intent.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/classify-primary-intent.ts`
 - **provisioning-service-matrix.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/provisioning-service-matrix.ts`
 - **nonEmpty()** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **provisioning-plan.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
 - **provisioning-probes.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-probes.ts`
-- *... and 110 more nodes in this community*
+- **setup-plan.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-plan.ts`
+- *... and 105 more nodes in this community*
 
 ## Relationships
 
@@ -45,7 +45,6 @@
 - `ai-integration-services/backend/supabase/functions/_shared/optional-product-setup.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/optional-product-setup.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/provisioning-probes.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/provisioning-probes.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/provisioning-service-matrix.ts`
@@ -57,11 +56,12 @@
 - `ai-integration-services/backend/supabase/functions/_shared/vapi-brain-tool.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/voice-config.ts`
 - `ai-integration-services/backend/supabase/functions/portal-provision/index.ts`
+- `ai-integration-services/backend/supabase/functions/sync-compliance-gates/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 696 (93%)
-- INFERRED: 55 (7%)
+- EXTRACTED: 674 (92%)
+- INFERRED: 55 (8%)
 - AMBIGUOUS: 0 (0%)
 
 ---

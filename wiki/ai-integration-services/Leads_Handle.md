@@ -1,19 +1,21 @@
 # Leads Handle
 
-> 10 nodes · cohesion 0.40
+> 12 nodes · cohesion 0.52
 
 ## Key Concepts
 
 - **DashboardLeads.tsx** (8 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardLeads.tsx`
 - **DashboardLeads.tsx** (8 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardLeads.tsx`
-- **extractLeadFromAuditEntry()** (4 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardLeads.tsx`
-- **formatDate()** (3 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardLeads.tsx`
-- **handleAddContact()** (3 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardLeads.tsx`
-- **handleExport()** (3 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardLeads.tsx`
-- **inferSource()** (3 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardLeads.tsx`
-- **leadsToCSV()** (3 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardLeads.tsx`
-- **dedupLeads()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardLeads.tsx`
-- **handleMoveStage()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardLeads.tsx`
+- **DashboardLeads.tsx** (8 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/dashboard/DashboardLeads.tsx`
+- **DashboardLeads.tsx** (8 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/DashboardLeads.tsx`
+- **extractLeadFromAuditEntry()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardLeads.tsx`
+- **formatDate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardLeads.tsx`
+- **handleAddContact()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardLeads.tsx`
+- **handleExport()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardLeads.tsx`
+- **inferSource()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardLeads.tsx`
+- **leadsToCSV()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardLeads.tsx`
+- **dedupLeads()** (4 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardLeads.tsx`
+- **handleMoveStage()** (4 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardLeads.tsx`
 
 ## Relationships
 
@@ -23,11 +25,13 @@
 
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardLeads.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardLeads.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/dashboard/DashboardLeads.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/DashboardLeads.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 36 (92%)
-- INFERRED: 3 (8%)
+- EXTRACTED: 68 (96%)
+- INFERRED: 3 (4%)
 - AMBIGUOUS: 0 (0%)
 
 ---

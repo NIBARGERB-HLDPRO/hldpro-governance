@@ -790,6 +790,7 @@
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/voiceflow-setup/index.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/permit-monitor/index.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/addon-provision/index.ts",
+      "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/operator-demo-provision/index.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/hvac-refrigerant-tracker/index.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/cogs-overview/index.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/stripe-demo-repair/index.ts",
@@ -1788,6 +1789,7 @@
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/landing-intent-waterfall-pdcar.md",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/graphify-governance-output-drift-pdcar.md",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/issue-838-full-provisioning-systemization-pdcar.md",
+      "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/operator-demo-provisioning-pdcar.md",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/design-refresh-implementation-plan.md",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/issue-1210-ssot-v02-consumer-pdcar.md",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/issue-1207-som-waterfall-routing-pdcar.md",
@@ -2053,6 +2055,8 @@
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plaid-compliance/screenshots/11-dashboard-leads.png",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plaid-compliance/screenshots/06-tos-acceptance-signup.png",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/test-results/live-cogs-resellers-post-merge.png",
+      "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/test-results/operator-demo-provisioning-client-detail.png",
+      "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/test-results/operator-demo-provisioning-debug.png",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/pwa/public/icon-192.png",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/apps/pwa/public/icon-512.png"
     ],
@@ -2060,10 +2064,10 @@
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/test-results/render-contracts-critical--972b9--deployed-response-contract/video.webm"
     ]
   },
-  "total_files": 2050,
-  "total_words": 2669942,
+  "total_files": 2054,
+  "total_words": 2674373,
   "needs_graph": true,
-  "warning": "Large corpus: 2050 files \u00b7 ~2,669,942 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
+  "warning": "Large corpus: 2054 files \u00b7 ~2,674,373 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
   "skipped_sensitive": [
     "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/migrations/031_qb_token_status.sql",
     "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/ad-token-refresh/index.ts",
