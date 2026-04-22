@@ -1,6 +1,6 @@
 # Integrations Sign
 
-> 134 nodes · cohesion 0.03
+> 127 nodes · cohesion 0.03
 
 ## Key Concepts
 
@@ -14,6 +14,8 @@
 - **handleResync()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
 - **handleSendComment()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
 - **handleSubmit()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
+- **debugFeedbackFetch()** (7 connections) — `ai-integration-services/apps/dashboard/src/lib/api/debugFeedback.ts`
+- **debugFeedback.ts** (7 connections) — `ai-integration-services/apps/dashboard/src/lib/api/debugFeedback.ts`
 - **COGSOverview.tsx** (7 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSOverview.tsx`
 - **DashboardSupport.tsx** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
 - **DashboardSupport.tsx** (7 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardSupport.tsx`
@@ -27,9 +29,7 @@
 - **lookupCRM()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailAssistant.tsx`
 - **handleConnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailSettings.tsx`
 - **handleDisconnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailSettings.tsx`
-- **fetchSyncLogs()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- **handleConnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- *... and 109 more nodes in this community*
+- *... and 102 more nodes in this community*
 
 ## Relationships
 
@@ -50,18 +50,18 @@
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailAssistant.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailSettings.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardRoofMeasure.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/sign/SignDocuments.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/sign/SignTemplates.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/solar/SolarMonitoring.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardAddons.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardAdsConnect.tsx`
+- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardAdsInsights.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 518 (85%)
-- INFERRED: 88 (15%)
+- EXTRACTED: 492 (86%)
+- INFERRED: 82 (14%)
 - AMBIGUOUS: 0 (0%)
 
 ---

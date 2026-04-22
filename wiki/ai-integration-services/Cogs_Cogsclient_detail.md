@@ -1,12 +1,14 @@
 # Cogs Cogsclient detail
 
-> 4 nodes · cohesion 0.67
+> 6 nodes · cohesion 0.47
 
 ## Key Concepts
 
+- **COGSClientDetail.tsx** (4 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSClientDetail.tsx`
+- **dollarsToCents()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSClientDetail.tsx`
 - **fmt()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSClientDetail.tsx`
 - **marginColor()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSClientDetail.tsx`
-- **COGSClientDetail.tsx** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSClientDetail.tsx`
+- **normalizeClientDetail()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSClientDetail.tsx`
 - **COGSClientDetail.tsx** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/cogs/COGSClientDetail.tsx`
 
 ## Relationships
@@ -20,7 +22,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 14 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

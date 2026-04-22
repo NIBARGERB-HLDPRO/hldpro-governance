@@ -1,6 +1,6 @@
 # Setup readiness Supabase
 
-> 125 nodes · cohesion 0.04
+> 142 nodes · cohesion 0.03
 
 ## Key Concepts
 
@@ -19,17 +19,17 @@
 - **optional-product-setup.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/optional-product-setup.ts`
 - **optional-product-setup.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/optional-product-setup.ts`
 - **n8n-workflow-templates.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/n8n-workflow-templates.ts`
+- **provisioning-plan.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
 - **n8n-workflow-templates.ts** (10 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/n8n-workflow-templates.ts`
 - **runStep()** (9 connections) — `ai-integration-services/backend/supabase/functions/portal-provision/index.ts`
 - **syncSetupComplianceGatesForClient()** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **classify-primary-intent.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.ts`
 - **provisioning-service-matrix.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-service-matrix.ts`
+- **classify-primary-intent.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/classify-primary-intent.ts`
 - **provisioning-service-matrix.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/provisioning-service-matrix.ts`
 - **nonEmpty()** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
 - **index.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/setup-compliance-sync/index.ts`
-- **provisioning-probes.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-probes.ts`
-- **setup-plan.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-plan.ts`
-- **index.ts** (8 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/setup-compliance-sync/index.ts`
-- *... and 100 more nodes in this community*
+- *... and 117 more nodes in this community*
 
 ## Relationships
 
@@ -37,12 +37,15 @@
 
 ## Source Files
 
+- `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.test.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/forwarding-instructions.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/n8n-workflow-templates.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/n8n-workflow-templates.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/optional-product-setup.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/optional-product-setup.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/provisioning-probes.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/provisioning-probes.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/provisioning-service-matrix.ts`
@@ -54,14 +57,11 @@
 - `ai-integration-services/backend/supabase/functions/_shared/setup-readiness.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/setup-readiness.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/vapi-brain-tool.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/voice-config.ts`
-- `ai-integration-services/backend/supabase/functions/portal-provision/index.ts`
-- `ai-integration-services/backend/supabase/functions/setup-compliance-sync/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 655 (93%)
-- INFERRED: 53 (7%)
+- EXTRACTED: 726 (93%)
+- INFERRED: 55 (7%)
 - AMBIGUOUS: 0 (0%)
 
 ---
