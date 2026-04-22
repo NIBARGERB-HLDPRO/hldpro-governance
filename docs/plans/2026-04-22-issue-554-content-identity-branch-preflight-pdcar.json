@@ -1,0 +1,8 @@
+{
+  "issue_number": 554,
+  "type": "pdcar",
+  "title": "Content-identity assertion and branch binding preflight for pages deploy gate",
+  "decision": "Add expected_title to consumer schema; extend verifier build_report() to probe title on active domains when set; add branch_binding_preflight() to gate to check CF Pages production_branch before deploy. All changes additive to existing scripts and schema.",
+  "constraints": ["Extend existing scripts only — no new files", "CF API failure is non-blocking (warns only)", "branch_binding_preflight skippable via PAGES_SKIP_BRANCH_PREFLIGHT=1"],
+  "approved": true
+}

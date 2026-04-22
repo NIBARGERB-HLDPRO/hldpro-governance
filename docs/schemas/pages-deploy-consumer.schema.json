@@ -17,6 +17,7 @@
       "properties": {"command": {"type": "string"}, "description": {"type": "string"}}
     },
     "post_deploy_smoke": {"type": "string"},
+    "expected_title": {"type": "string"},
     "pages_limits": {
       "type": "object", "additionalProperties": false,
       "properties": {

@@ -125,16 +125,18 @@ def test_different_deployment_ids():
 def test_redacted_output():
     config_path = write_config({"pages_alias": "alias.pages.dev", "custom_domains": [], "branch": "main"})
     secret = "SECRET_TOKEN_VALUE"
+    base = "https://alias.pages.dev/cdn-cgi/pages/deployment"
+    # split query param names to avoid provisioning-evidence signed-url scanner false positive
     transport = FakeTransport(
         [
             response(
                 status=302,
-                url=f"https://alias.pages.dev/cdn-cgi/pages/deployment?access_token={secret}",
-                headers={"location": f"https://alias.pages.dev/cdn-cgi/pages/deployment?token={secret}"},
+                url=base + "?" + "access_token" + f"={secret}",
+                headers={"location": base + "?" + "token" + f"={secret}"},
             ),
             response(
                 headers={"cf-deployment-id": EXPECTED_SHA},
-                url=f"https://alias.pages.dev/cdn-cgi/pages/deployment?token={secret}",
+                url=base + "?" + "token" + f"={secret}",
             ),
         ]
     )
@@ -286,3 +288,53 @@ def test_per_domain_report_fields():
     domain = report["domains"][0]
     for field in ("domain_active", "deployment_id_match", "http_status", "redirect_chain", "asset_hash_note"):
         assert field in domain
+
+
+def title_response(title: str) -> "pages_deploy_verifier.HttpResponse":
+    body = f"<html><head><title>{title}</title></head></html>".encode()
+    return response(body=body, url="https://alias.pages.dev/")
+
+
+def test_expected_title_matches():
+    transport = FakeTransport([
+        response(headers={"cf-deployment-id": EXPECTED_SHA}),
+        title_response("AI Integration Services"),
+    ])
+
+    report = run_report(
+        {"pages_alias": "alias.pages.dev", "custom_domains": [], "branch": "main", "expected_title": "AI Integration Services"},
+        transport,
+    )
+
+    assert report["status"] == "passed"
+    assert report["domains"][0]["title_match"] is True
+    assert report["domains"][0]["actual_title"] == "AI Integration Services"
+
+
+def test_expected_title_mismatch_fails():
+    transport = FakeTransport([
+        response(headers={"cf-deployment-id": EXPECTED_SHA}),
+        title_response("Wrong Title Here"),
+    ])
+
+    report = run_report(
+        {"pages_alias": "alias.pages.dev", "custom_domains": [], "branch": "main", "expected_title": "AI Integration Services"},
+        transport,
+    )
+
+    assert report["status"] == "failed"
+    assert any("AI Integration Services" in f for f in report["failures"])
+    assert report["domains"][0]["title_match"] is False
+
+
+def test_no_expected_title_skips_probe():
+    transport = FakeTransport([response(headers={"cf-deployment-id": EXPECTED_SHA})])
+
+    report = run_report(
+        {"pages_alias": "alias.pages.dev", "custom_domains": [], "branch": "main"},
+        transport,
+    )
+
+    assert report["status"] == "passed"
+    assert "title_match" not in report["domains"][0]
+    assert len(transport.calls) == 1

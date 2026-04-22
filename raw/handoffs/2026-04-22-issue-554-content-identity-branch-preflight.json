@@ -1,0 +1,50 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-554-content-identity-branch-preflight",
+  "issue_number": 554,
+  "parent_epic_number": 467,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "dispatcher",
+  "to_role": "dispatcher",
+  "structured_plan_ref": "docs/plans/2026-04-22-issue-554-content-identity-branch-preflight-pdcar.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-22-issue-554-content-identity-branch-preflight-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "branch_binding_preflight() checks CF Pages production_branch before deploy; fails on mismatch; skips gracefully on API failure or PAGES_SKIP_BRANCH_PREFLIGHT=1.",
+      "verification_refs": ["raw/validation/2026-04-22-issue-554-content-identity-branch-preflight.md"]
+    },
+    {
+      "id": "AC2",
+      "statement": "expected_title added to consumer schema; verifier probes title on active domains when set; mismatch is hard failure.",
+      "verification_refs": ["raw/validation/2026-04-22-issue-554-content-identity-branch-preflight.md"]
+    },
+    {
+      "id": "AC3",
+      "statement": "All 41 tests pass including 8 new tests.",
+      "verification_refs": ["raw/validation/2026-04-22-issue-554-content-identity-branch-preflight.md"]
+    }
+  ],
+  "validation_commands": [
+    "pytest scripts/pages-deploy/ -q",
+    "python3 -m py_compile scripts/pages-deploy/pages_deploy_gate.py",
+    "python3 -m py_compile scripts/pages-deploy/pages_deploy_verifier.py"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": ["raw/validation/2026-04-22-issue-554-content-identity-branch-preflight.md"],
+  "artifact_refs": [
+    "scripts/pages-deploy/pages_deploy_gate.py",
+    "scripts/pages-deploy/pages_deploy_verifier.py",
+    "scripts/pages-deploy/tests/test_pages_deploy_gate.py",
+    "scripts/pages-deploy/tests/test_pages_deploy_verifier.py",
+    "docs/schemas/pages-deploy-consumer.schema.json"
+  ],
+  "audit_refs": ["raw/validation/2026-04-22-issue-554-content-identity-branch-preflight.md"],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "draft",
+  "created_at": "2026-04-22T15:00:00Z",
+  "notes": "Dispatcher-authored implementation. No Codex handoff. All changes additive to existing scripts and schema."
+}

@@ -18,13 +18,13 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Wire post-deploy verifier into pages_deploy_gate | [#553](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/553) | HIGH | 1 | Additive to pages_deploy_gate.py run_gate(); call build_report() after deploy; child of #467. PR #555. |
 | Content-identity assertion and branch binding preflight | [#554](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/554) | HIGH | 1 | Add expected_title to schema + verifier; add branch_binding_preflight to gate; child of #467. PR #556. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Wire post-deploy verifier into pages_deploy_gate | 2026-04-22 | Issue [#553](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/553). Merged via PR [#555](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/555); 36 tests pass; child of epic #467. |
 | Stampede adoption of hldpro-sim v0.1.0 | 2026-04-22 | Issue [#425](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/425). Closed 2026-04-22T03:01:34Z — feat(stampede): adopt hldpro-sim v0.1.0, wire Slice 6 simulation runner. |
 | Cloudflare Pages direct-upload deploy gate epic | 2026-04-21 | Issue [#467](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/467) completed through child issues #468 planning, #469 gate, #470 verifier, #471 Seek adoption, and #472 inventory. |
 | Self-learning loop operational proof gap | 2026-04-21 | Issue [#475](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/475). PR [#477](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/477) merged `c3291dad93893596ae83e99ee11dfe934d9d9341`, follow-up issue [#481](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/481) merged `181006e8cab176894a29dcd8a7ef4400e582f760`, and Overlord Sweep run `24741910552` proved the self-learning report step ran and wrote `metrics/self-learning/latest.json` / `.md`. |

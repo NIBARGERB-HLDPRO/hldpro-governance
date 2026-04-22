@@ -1,0 +1,114 @@
+{
+  "session_id": "session-20260422-issue-554-content-identity-branch-preflight",
+  "issue_number": 554,
+  "objective": "Add branch_binding_preflight() to pages_deploy_gate.py and _probe_title() to pages_deploy_verifier.py to prevent silent CF Pages deploy failures caused by wrong branch binding or wrong content being served.",
+  "tier": 2,
+  "scope_boundary": [
+    "Child sprint of pages-deploy epic #467; adds branch preflight to gate and title probing to verifier.",
+    "Adds optional expected_title field to pages-deploy-consumer.schema.json.",
+    "No writes to downstream consumer repos."
+  ],
+  "out_of_scope": [
+    "Post-deploy verifier wiring into gate — covered by sibling issue #553.",
+    "Any writes to seek-and-ponder or other downstream repos.",
+    "CF Pages dashboard manual fixes (separate operator task)."
+  ],
+  "research_summary": "Epic #467 Sprint 4. Two classes of silent CF Pages deploy failure identified: (1) wrong content served because branch binding creates preview instead of production deploy, (2) correct SHA but wrong branch. branch_binding_preflight() calls the CF Pages API to verify production_branch == config['branch'] before deploy; skips gracefully on API unavailability or PAGES_SKIP_BRANCH_PREFLIGHT=1. _probe_title() fetches the active domain root URL and checks <title> tag against expected_title in consumer config. Both checks use skip-on-unavailable semantics bounded by existing retry/timeout limits.",
+  "research_artifacts": [
+    "docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/554",
+    "scripts/pages-deploy/pages_deploy_gate.py",
+    "scripts/pages-deploy/pages_deploy_verifier.py",
+    "docs/schemas/pages-deploy-consumer.schema.json",
+    "scripts/pages-deploy/tests/test_pages_deploy_gate.py",
+    "scripts/pages-deploy/tests/test_pages_deploy_verifier.py"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 4 - Content identity + branch preflight (issue #554)",
+      "goal": "Add branch_binding_preflight() to gate, _probe_title() to verifier, expected_title to schema; 5 gate + 3 verifier new tests; 41 total tests pass.",
+      "tasks": [
+        "Add urllib.error and urllib.request imports to pages_deploy_gate.py.",
+        "Implement branch_binding_preflight(config, env): call CF Pages API, check production_branch vs config['branch'], raise GateError('BRANCH_BINDING_MISMATCH:...') on mismatch, skip on API error/no-creds/flag.",
+        "Wire branch_binding_preflight() into run_gate() before get_wrangler_version().",
+        "Add _TITLE_RE and _extract_title() to pages_deploy_verifier.py.",
+        "Add _probe_title(domain, expected_title, *, http_get) -> tuple[bool, str] to verifier.",
+        "Extend build_report() to call _probe_title() per active domain when expected_title is in config.",
+        "Add expected_title string field (optional) to docs/schemas/pages-deploy-consumer.schema.json.",
+        "Add 5 gate tests (branch preflight pass/fail/skip variants) and 3 verifier tests (title match/mismatch/skip).",
+        "Create governance artifact chain: closeout, PDCAR, execution scope, handoff, validation."
+      ],
+      "acceptance_criteria": [
+        "branch_binding_preflight() raises GateError('BRANCH_BINDING_MISMATCH:...') when CF API returns production_branch != config['branch'].",
+        "branch_binding_preflight() skips gracefully when CF credentials absent, API unreachable, or PAGES_SKIP_BRANCH_PREFLIGHT=1.",
+        "_probe_title() returns (False, actual_title) on title mismatch; (True, title) on match.",
+        "build_report() appends title failures to failures list when expected_title is set.",
+        "No title probe when expected_title absent from config.",
+        "41 pytest cases pass (33 pre-existing + 5 branch preflight + 3 title).",
+        "pages-deploy-consumer.schema.json includes optional expected_title string field."
+      ],
+      "file_paths": [
+        "scripts/pages-deploy/pages_deploy_gate.py",
+        "scripts/pages-deploy/pages_deploy_verifier.py",
+        "scripts/pages-deploy/tests/test_pages_deploy_gate.py",
+        "scripts/pages-deploy/tests/test_pages_deploy_verifier.py",
+        "docs/schemas/pages-deploy-consumer.schema.json",
+        "docs/plans/2026-04-22-issue-554-content-identity-branch-preflight-pdcar.json",
+        "docs/plans/issue-554-content-identity-branch-preflight-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-22-issue-554-content-identity-branch-preflight-implementation.json",
+        "raw/handoffs/2026-04-22-issue-554-content-identity-branch-preflight.json",
+        "raw/validation/2026-04-22-issue-554-content-identity-branch-preflight.md",
+        "raw/closeouts/2026-04-22-issue-554-content-identity-branch-preflight.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "claude-sonnet-4-6 (dispatcher / orchestrator)",
+      "role": "Sprint 4 implementer",
+      "focus": "Branch binding preflight; title probing; consumer schema extension; test coverage.",
+      "status": "accepted",
+      "summary": "Implementation complete; 41/41 pytest cases pass covering all Sprint 4 acceptance criteria.",
+      "evidence": [
+        "scripts/pages-deploy/pages_deploy_gate.py",
+        "scripts/pages-deploy/pages_deploy_verifier.py",
+        "scripts/pages-deploy/tests/test_pages_deploy_gate.py",
+        "scripts/pages-deploy/tests/test_pages_deploy_verifier.py",
+        "raw/validation/2026-04-22-issue-554-content-identity-branch-preflight.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "n/a - covered by parent plan review",
+    "model_family": "n/a",
+    "status": "not_required",
+    "summary": "Sprint 4 is a child implementation sprint under the pre-approved parent plan (epic #467). Both the branch preflight (CF API read-only call, skip-on-unavailable) and title probe (HTTP GET, skip-on-missing) are narrowly scoped additions with no new architecture. No new third-party dependencies introduced.",
+    "evidence": [
+      "docs/plans/issue-467-pages-deploy-gate-structured-agent-cycle-plan.json",
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/554"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-sonnet-4-6",
+    "execution_mode": "implementation_complete",
+    "approved_scope_summary": "Sprint 4 content identity + branch preflight complete; 41 tests pass; all governance artifacts committed on issue-554-pages-deploy-content-identity-branch-preflight-20260422 branch.",
+    "next_execution_step": "Orchestrator merges PR #556; epic #467 Sprint 4 complete.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-22-issue-554-content-identity-branch-preflight-implementation.json",
+    "next_role": "orchestrator",
+    "qa_gate_required": false
+  },
+  "material_deviation_rules": [
+    "No writes to downstream repos from this lane.",
+    "Sprint expansion: if implementation discovers work outside acceptance criteria, open a new governance issue before closing this sprint.",
+    "CF API branch preflight must use skip-on-unavailable semantics — never block deploy on API timeout or missing credentials.",
+    "Title probe must not introduce new network dependencies beyond the existing active domain verification pattern in the verifier."
+  ],
+  "approved": true,
+  "approved_by": [
+    "claude-sonnet-4-6 (Sprint 4 implementer; parent plan pre-approved under epic #467)"
+  ],
+  "approved_at": "2026-04-22T15:00:00Z"
+}
