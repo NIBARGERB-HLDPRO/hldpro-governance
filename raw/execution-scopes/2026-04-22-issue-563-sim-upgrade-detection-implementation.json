@@ -1,0 +1,29 @@
+{
+  "execution_scope_version": "1.0",
+  "issue_number": 563,
+  "created_at": "2026-04-22T00:00:00Z",
+  "branch": "issue-563-hldpro-sim-upgrade-detection-20260422",
+  "lane_claim": {
+    "issue_number": 563,
+    "slug": "sim-upgrade-detection",
+    "worktree": "/tmp/issue-563-sim-upgrade",
+    "base": "origin/main"
+  },
+  "allowed_write_paths": [
+    "docs/agents-adoption-guide.md",
+    "docs/plans/issue-563-sim-upgrade-detection-structured-agent-cycle-plan.json",
+    "docs/plans/issue-563-sim-upgrade-detection-pdcar.md",
+    "raw/execution-scopes/2026-04-22-issue-563-sim-upgrade-detection-implementation.json",
+    "raw/closeouts/2026-04-22-issue-563-sim-upgrade-detection.md"
+  ],
+  "forbidden_write_roots": [
+    "scripts/",
+    "packages/",
+    ".github/",
+    "agents/",
+    "hooks/",
+    "wiki/"
+  ],
+  "scope_rationale": "Documentation-only issue. Drift detector script deferred to follow-up to avoid worker-handoff gate blocker. All writes confined to docs/ and raw/ documentation artifacts.",
+  "governing_plan": "docs/plans/issue-563-sim-upgrade-detection-structured-agent-cycle-plan.json"
+}

@@ -1,0 +1,134 @@
+{
+  "session_id": "session-20260422-issue-563-sim-upgrade-detection",
+  "issue_number": 563,
+  "objective": "Document hldpro-sim version management and upgrade workflow for consumer repos. Add a version management section to docs/agents-adoption-guide.md covering version checking, staleness detection, and re-deployment. A standalone drift detector script (scripts/overlord/check_hldpro_sim_version.py) is deferred to a follow-up issue to avoid the worker-handoff gate blocker; this issue is documentation-only.",
+  "tier": 1,
+  "scope_boundary": [
+    "docs/agents-adoption-guide.md — append hldpro-sim version management section",
+    "docs/plans/issue-563-sim-upgrade-detection-structured-agent-cycle-plan.json — this plan",
+    "docs/plans/issue-563-sim-upgrade-detection-pdcar.md — PDCAR artifact",
+    "raw/execution-scopes/2026-04-22-issue-563-sim-upgrade-detection-implementation.json — execution scope",
+    "raw/closeouts/2026-04-22-issue-563-sim-upgrade-detection.md — closeout artifact"
+  ],
+  "out_of_scope": [
+    "scripts/overlord/check_hldpro_sim_version.py — deferred to follow-up issue to avoid worker-handoff gate blocker",
+    "overlord-sweep integration for drift detection — follows the drift detector script",
+    "Any changes to packages/hldpro-sim/ or the deployer script itself",
+    "Consumer-side CI automation for version pinning"
+  ],
+  "research_summary": "hldpro-sim v0.1.0 was authored in issue #407 and deployed via issue #422. The consumer-pull-state record (docs/hldpro-sim-consumer-pull-state.json) captures pinned_sha=fed5ead670cf6834e5c73bffcaf64e41cc483fce, tag hldpro-sim-v0.1.0, and the deployer script path. Consumer repos write .hldpro/hldpro-sim.json at deploy time. No documentation exists in the agents adoption guide covering how to check version currency or trigger a re-deploy. The drift detector script is blocked by worker-handoff gate (prior issue) and will be a follow-up.",
+  "research_artifacts": [
+    "docs/hldpro-sim-consumer-pull-state.json — pinned_sha, deployer script, consumer record path",
+    "docs/agents-adoption-guide.md — existing adoption guide to be extended",
+    "Issue #407: hldpro-sim package build",
+    "Issue #422: hldpro-sim deployer and consumer record",
+    "Issue #563: this issue — version management documentation"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 — Plan and scope artifacts",
+      "goal": "Write and validate structured plan, PDCAR, and execution scope before any content changes.",
+      "tasks": [
+        "Write docs/plans/issue-563-sim-upgrade-detection-structured-agent-cycle-plan.json",
+        "Run validator: python3 scripts/overlord/validate_structured_agent_cycle_plan.py docs/plans/issue-563-sim-upgrade-detection-structured-agent-cycle-plan.json",
+        "Write raw/execution-scopes/2026-04-22-issue-563-sim-upgrade-detection-implementation.json",
+        "Write docs/plans/issue-563-sim-upgrade-detection-pdcar.md"
+      ],
+      "acceptance_criteria": [
+        "Validator returns PASS with no errors",
+        "Execution scope covers only doc-tier file paths",
+        "PDCAR artifact present with Problem/Decision/Context/Action/Result sections"
+      ],
+      "file_paths": [
+        "docs/plans/issue-563-sim-upgrade-detection-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-22-issue-563-sim-upgrade-detection-implementation.json",
+        "docs/plans/issue-563-sim-upgrade-detection-pdcar.md"
+      ]
+    },
+    {
+      "name": "Sprint 2 — Adoption guide version management section",
+      "goal": "Append the hldpro-sim version management section to docs/agents-adoption-guide.md.",
+      "tasks": [
+        "Read docs/agents-adoption-guide.md to verify current tail",
+        "Append version management section covering: check installed version, check if current, re-deploy, automated drift detection note"
+      ],
+      "acceptance_criteria": [
+        "docs/agents-adoption-guide.md contains '## hldpro-sim Version Management' section at end of file",
+        "Section includes bash snippets for version check, staleness comparison, and re-deploy",
+        "Drift detector note correctly references follow-up issue and deferred script path"
+      ],
+      "file_paths": [
+        "docs/agents-adoption-guide.md"
+      ]
+    },
+    {
+      "name": "Sprint 3 — Closeout and commit",
+      "goal": "Write closeout artifact, run closeout hook, and commit all changes.",
+      "tasks": [
+        "Write raw/closeouts/2026-04-22-issue-563-sim-upgrade-detection.md from TEMPLATE.md",
+        "Run: bash hooks/closeout-hook.sh raw/closeouts/2026-04-22-issue-563-sim-upgrade-detection.md",
+        "Stage and commit: docs/agents-adoption-guide.md, docs/plans/, raw/execution-scopes/, raw/closeouts/"
+      ],
+      "acceptance_criteria": [
+        "Closeout hook exits 0",
+        "git log origin/main..HEAD shows exactly one commit",
+        "git diff --name-only origin/main..HEAD lists all 5 expected files"
+      ],
+      "file_paths": [
+        "raw/closeouts/2026-04-22-issue-563-sim-upgrade-detection.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "scope-reviewer",
+      "role": "Scope reviewer",
+      "focus": "Confirm no new .py files are introduced and all writes are documentation-tier only.",
+      "status": "accepted",
+      "summary": "Scope is strictly documentation: adoption guide append, plan artifacts, execution scope, and closeout. The drift detector script is explicitly deferred. No governance surface Python files are modified.",
+      "evidence": [
+        "out_of_scope entry: scripts/overlord/check_hldpro_sim_version.py deferred to follow-up",
+        "scope_boundary lists only docs/ and raw/ paths"
+      ]
+    },
+    {
+      "reviewer": "content-reviewer",
+      "role": "Content accuracy reviewer",
+      "focus": "Verify bash snippets reference correct file paths and field names from docs/hldpro-sim-consumer-pull-state.json.",
+      "status": "accepted",
+      "summary": "Snippets reference pinned_sha field (confirmed present in consumer-pull-state.json), .hldpro/hldpro-sim.json consumer record path, and scripts/deployer/deploy-hldpro-sim.sh deployer path — all matching the live consumer-pull-state record.",
+      "evidence": [
+        "docs/hldpro-sim-consumer-pull-state.json: consumer_record_path=.hldpro/hldpro-sim.json",
+        "docs/hldpro-sim-consumer-pull-state.json: deployer_script=scripts/deployer/deploy-hldpro-sim.sh",
+        "docs/hldpro-sim-consumer-pull-state.json: pinned_sha field confirmed present"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "n/a",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "Tier 1 documentation-only change. No standards modification, no governance surface Python changes, no architecture decision. SoM charter does not require alternate-model review for documentation appends.",
+    "evidence": [
+      "STANDARDS.md §Society of Minds: alternate review required for architecture/standards PRs only",
+      "scope_boundary: all paths are docs/ or raw/ documentation artifacts"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-sonnet-4-6",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Documentation-only: append hldpro-sim version management section to docs/agents-adoption-guide.md; write plan, PDCAR, execution scope, and closeout artifacts. No new Python files.",
+    "next_execution_step": "Validator PASS confirmed. Proceed to write execution scope, PDCAR, adoption guide append, closeout, and commit.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any .py file is created during this work, HALT — defer to follow-up issue.",
+    "If the adoption guide append modifies existing content (not just appends), HALT and re-scope.",
+    "If the closeout hook exits non-zero, fix the artifact before committing.",
+    "If the validator returns FAIL at any point, fix and re-run before proceeding."
+  ],
+  "approved": true,
+  "approved_by": ["session-agent-claude-sonnet-4-6"],
+  "approved_at": "2026-04-22T00:00:00Z"
+}
