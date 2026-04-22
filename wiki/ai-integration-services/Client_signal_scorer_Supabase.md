@@ -1,35 +1,18 @@
 # Client signal scorer Supabase
 
-> 284 nodes · cohesion 0.02
+> 9 nodes · cohesion 0.39
 
 ## Key Concepts
 
-- **auth.ts** (239 connections) — `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
-- **error-handler.ts** (222 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
-- **cors.ts** (216 connections) — `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
-- **audit.ts** (163 connections) — `ai-integration-services/backend/supabase/functions/_shared/audit.ts`
-- **corpus.ts** (44 connections) — `ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
-- **vault.ts** (42 connections) — `ai-integration-services/backend/supabase/functions/_shared/vault.ts`
-- **email.ts** (41 connections) — `ai-integration-services/backend/supabase/functions/_shared/email.ts`
-- **config.ts** (26 connections) — `ai-integration-services/backend/supabase/functions/_shared/config.ts`
-- **cogs.ts** (24 connections) — `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
-- **callClaude()** (22 connections) — `ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
-- **esign.ts** (22 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **index.ts** (19 connections) — `ai-integration-services/backend/supabase/functions/addon-provision/index.ts`
-- **analytics-db.ts** (16 connections) — `ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
-- **index.ts** (15 connections) — `ai-integration-services/backend/supabase/functions/assistant-chat/index.ts`
-- **index.ts** (14 connections) — `ai-integration-services/backend/supabase/functions/finance-api/index.ts`
-- **index.ts** (14 connections) — `ai-integration-services/backend/supabase/functions/gbp-review-monitor/index.ts`
-- **index.ts** (12 connections) — `ai-integration-services/backend/supabase/functions/hvac-maintenance-alert/index.ts`
-- **index.ts** (12 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/index.ts`
-- **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/brain-pdf-parser/index.ts`
 - **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
-- **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/magic-link-intake-submit/index.ts`
-- **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/service-connect/index.ts`
-- **factory.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/factory.ts`
-- **embeddings.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
-- **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/support-tickets/index.ts`
-- *... and 259 more nodes in this community*
+- **index.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/client-signal-scorer/index.ts`
+- **dispatchAlert()** (3 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **detectCallVolumeAnomalies()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **detectChurnRisks()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **detectMinuteUsageApproaching()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **detectStaleTickets()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **detectUpsellOpportunities()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **insertBriefingItem()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
 
 ## Relationships
 
@@ -37,31 +20,13 @@
 
 ## Source Files
 
-- `ai-integration-services/backend/supabase/functions/_shared/advance.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/audit.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/config.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/interface.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/local.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/twenty.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/index.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/factory.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/google-calendar.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/interface.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/null.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/servicetitan.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
+- `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/client-signal-scorer/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 2518 (98%)
-- INFERRED: 53 (2%)
+- EXTRACTED: 36 (97%)
+- INFERRED: 1 (3%)
 - AMBIGUOUS: 0 (0%)
 
 ---

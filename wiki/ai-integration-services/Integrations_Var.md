@@ -1,6 +1,6 @@
 # Integrations Var
 
-> 129 nodes · cohesion 0.03
+> 130 nodes · cohesion 0.03
 
 ## Key Concepts
 
@@ -14,6 +14,8 @@
 - **handleResync()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
 - **handleSendComment()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
 - **handleSubmit()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
+- **debugFeedbackFetch()** (7 connections) — `ai-integration-services/apps/dashboard/src/lib/api/debugFeedback.ts`
+- **debugFeedback.ts** (7 connections) — `ai-integration-services/apps/dashboard/src/lib/api/debugFeedback.ts`
 - **COGSOverview.tsx** (7 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSOverview.tsx`
 - **DashboardSupport.tsx** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
 - **Bookings.tsx** (7 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
@@ -27,9 +29,7 @@
 - **handleRefreshAnalysis()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsInsights.tsx`
 - **generateDraft()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailAssistant.tsx`
 - **lookupCRM()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailAssistant.tsx`
-- **handleConnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailSettings.tsx`
-- **handleDisconnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailSettings.tsx`
-- *... and 104 more nodes in this community*
+- *... and 105 more nodes in this community*
 
 ## Relationships
 
@@ -60,8 +60,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 496 (85%)
-- INFERRED: 85 (15%)
+- EXTRACTED: 502 (86%)
+- INFERRED: 85 (14%)
 - AMBIGUOUS: 0 (0%)
 
 ---
