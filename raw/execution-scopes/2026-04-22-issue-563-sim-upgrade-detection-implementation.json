@@ -1,0 +1,32 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-563-hldpro-sim-upgrade-detection-20260422",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "docs/agents-adoption-guide.md",
+    "docs/plans/issue-563-sim-upgrade-detection-structured-agent-cycle-plan.json",
+    "docs/plans/issue-563-sim-upgrade-detection-pdcar.md",
+    "raw/execution-scopes/2026-04-22-issue-563-sim-upgrade-detection-implementation.json",
+    "raw/closeouts/2026-04-22-issue-563-sim-upgrade-detection.md",
+    "raw/handoffs/2026-04-22-issue-563-sim-upgrade-detection-plan-to-implementation.json",
+    "raw/validation/2026-04-22-issue-563-sim-upgrade-detection.md",
+    "graphify-out/",
+    "wiki/"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "lane_claim": {
+    "issue_number": 563,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/563",
+    "claimed_by": "dispatcher",
+    "claimed_at": "2026-04-22T00:00:00Z"
+  },
+  "scope_rationale": "Documentation-only issue. Drift detector script deferred to follow-up to avoid worker-handoff gate blocker. All writes confined to docs/ and raw/ documentation artifacts. graphify-out/ and wiki/ included to cover auto-commit artifacts.",
+  "governing_plan": "docs/plans/issue-563-sim-upgrade-detection-structured-agent-cycle-plan.json"
+}
