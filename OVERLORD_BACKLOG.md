@@ -9,7 +9,6 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Stampede adoption of hldpro-sim v0.1.0 | [#425](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/425) | HIGH | 2-3 | Run deploy-hldpro-sim.sh in Stampede repo, wire Slice 6 simulation runner to hldpro_sim package. Unblocked by PR #424. |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | [#177](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/177) | LOW-MEDIUM | 2-3 | Post-outage code review. Gate: live-fallback rate < 2% for 2 weeks post-merge (window now passed). |
 | Qwen-Coder MLX driver stub-emission bug | [#105](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/105) | LOW | 1-2 | Qwen2.5-Coder-7B throws truncated output on edge cases (>200 lines). Workarounds in `docs/runbooks/qwen-coder-driver.md`. |
 | SoM Stage 5: som-worker daemon (always-warm Qwen-Coder + packet queue pipeline) | [#178](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/178) | LOW | 6-8 | Qwen watches raw/packets/inbound/, processes to raw/packets/outbound/, Sonnet reviews async. |
@@ -19,11 +18,14 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Wire post-deploy verifier into pages_deploy_gate | [#553](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/553) | HIGH | 1 | Additive to pages_deploy_gate.py run_gate(); call build_report() after deploy; child of #467. PR #555. |
+| Content-identity assertion and branch binding preflight | [#554](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/554) | HIGH | 1 | Add expected_title to schema + verifier; add branch_binding_preflight to gate; child of #467. PR #556. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Stampede adoption of hldpro-sim v0.1.0 | 2026-04-22 | Issue [#425](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/425). Closed 2026-04-22T03:01:34Z — feat(stampede): adopt hldpro-sim v0.1.0, wire Slice 6 simulation runner. |
 | Cloudflare Pages direct-upload deploy gate epic | 2026-04-21 | Issue [#467](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/467) completed through child issues #468 planning, #469 gate, #470 verifier, #471 Seek adoption, and #472 inventory. |
 | Self-learning loop operational proof gap | 2026-04-21 | Issue [#475](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/475). PR [#477](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/477) merged `c3291dad93893596ae83e99ee11dfe934d9d9341`, follow-up issue [#481](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/481) merged `181006e8cab176894a29dcd8a7ef4400e582f760`, and Overlord Sweep run `24741910552` proved the self-learning report step ran and wrote `metrics/self-learning/latest.json` / `.md`. |
 | Secret Provisioning UX and no-secret evidence contract | 2026-04-21 | Epic [#507](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/507) completed through child issues #508-#513 and PRs #516-#528. Stage 6 closeout is tracked by issue [#529](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/529). |
