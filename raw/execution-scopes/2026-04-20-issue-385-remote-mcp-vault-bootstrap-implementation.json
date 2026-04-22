@@ -38,6 +38,8 @@
     "raw/remote-mcp-vault-bootstrap/",
     "raw/validation/2026-04-20-issue-385-remote-mcp-vault-bootstrap.md",
     "raw/closeouts/2026-04-20-issue-385-remote-mcp-vault-bootstrap.md",
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/test_bootstrap_repo_env_contract.py",
     "scripts/som-client/som_client.py",
     "scripts/som-client/tests/test_som_client.py",
     "wiki/"

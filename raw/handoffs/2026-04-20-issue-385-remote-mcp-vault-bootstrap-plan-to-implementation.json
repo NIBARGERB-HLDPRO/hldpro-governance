@@ -1,0 +1,53 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-385-remote-mcp-vault-bootstrap-plan-to-implementation",
+  "issue_number": 385,
+  "parent_epic_number": null,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "operator-directive",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-385-remote-mcp-vault-bootstrap-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-20-issue-385-remote-mcp-vault-bootstrap-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "bootstrap-repo-env.sh maps project-specific SSOT API key vars for HP, AIS, seek, and stampede sections.",
+      "verification_refs": [
+        "scripts/bootstrap-repo-env.sh",
+        "scripts/test_bootstrap_repo_env_contract.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "bootstrap-env-contract CI gate passes with updated synthetic vaults.",
+      "verification_refs": [
+        "scripts/test_bootstrap_repo_env_contract.py"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/test_bootstrap_repo_env_contract.py",
+    "python3 scripts/overlord/check_overlord_backlog_github_alignment.py"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [
+    "cache/local-ci-gate/reports/20260422T170651Z-hldpro-governance-explicit-args/local-ci-20260422T170654Z.json"
+  ],
+  "artifact_refs": [
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/test_bootstrap_repo_env_contract.py",
+    "OVERLORD_BACKLOG.md",
+    "docs/plans/issue-385-remote-mcp-vault-bootstrap-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-20-issue-385-remote-mcp-vault-bootstrap-implementation.json"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-22-issue-385-bootstrap-ssot-api-keys.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-04-22-issue-385-bootstrap-ssot-api-keys.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-20T14:40:00Z",
+  "notes": "Operator-directive for issue #385 / #557: update bootstrap SSOT key mappings to project-specific vars."
+}
