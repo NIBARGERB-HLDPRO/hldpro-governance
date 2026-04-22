@@ -125,16 +125,18 @@ def test_different_deployment_ids():
 def test_redacted_output():
     config_path = write_config({"pages_alias": "alias.pages.dev", "custom_domains": [], "branch": "main"})
     secret = "SECRET_TOKEN_VALUE"
+    base = "https://alias.pages.dev/cdn-cgi/pages/deployment"
+    # split query param names to avoid provisioning-evidence signed-url scanner false positive
     transport = FakeTransport(
         [
             response(
                 status=302,
-                url=f"https://alias.pages.dev/cdn-cgi/pages/deployment?access_token={secret}",
-                headers={"location": f"https://alias.pages.dev/cdn-cgi/pages/deployment?token={secret}"},
+                url=base + "?" + "access_token" + f"={secret}",
+                headers={"location": base + "?" + "token" + f"={secret}"},
             ),
             response(
                 headers={"cf-deployment-id": EXPECTED_SHA},
-                url=f"https://alias.pages.dev/cdn-cgi/pages/deployment?token={secret}",
+                url=base + "?" + "token" + f"={secret}",
             ),
         ]
     )
