@@ -9,21 +9,33 @@ You are the **sim-runner** agent. Your job is to invoke hldpro-sim for a given s
 
 ## Workflow
 
+### Step 0 — Pre-flight
+
+Before doing anything else, validate that hldpro-sim is deployed in the consumer repo and that its version matches governance.
+
+1. **Check consumer record exists.** Look for `.hldpro/hldpro-sim.json` in the consumer repo root.
+   - If absent: HALT — "hldpro-sim not deployed. Run: bash <governance-root>/scripts/deployer/deploy-hldpro-sim.sh <consumer-repo-path>"
+
+2. **Read consumer pinned SHA.** From `.hldpro/hldpro-sim.json`, read the `pinned_sha` field.
+
+3. **Read canonical pinned SHA.** From `<governance-root>/docs/hldpro-sim-consumer-pull-state.json`, read the `pinned_sha` field.
+
+4. **Compare SHAs.**
+   - If they match: print `hldpro-sim CURRENT (sha: <sha[:8]>)` and continue to Step 1.
+   - If they differ: print the following WARNING (do NOT halt — proceed to Step 1 anyway):
+     ```
+     WARNING: hldpro-sim version mismatch.
+       Consumer:   <consumer_sha[:8]>
+       Governance: <canonical_sha[:8]>
+     Re-deploy recommended: bash <governance-root>/scripts/deployer/deploy-hldpro-sim.sh <consumer-repo-path>
+     Proceeding anyway.
+     ```
+
 ### Step 1 — Confirm hldpro-sim is installed
 
-```bash
-python3 -c "import hldprosim; print(hldprosim.__version__)"
-```
-
-If ImportError: install from the governance package:
-```bash
-pip install -e packages/hldpro-sim/
-```
-
-If `packages/hldpro-sim/` does not exist in this repo, check if it is deployed as a tagged release:
-```bash
-pip install hldpro-sim==0.1.0
-```
+1. Confirm hldpro-sim is deployed: check `.hldpro/hldpro-sim.json` exists in the consumer repo root.
+   If absent, run the deployer first: `bash <governance-root>/scripts/deployer/deploy-hldpro-sim.sh <consumer-repo-path>`
+   The deployer installs the package (pip-editable or directory-copy fallback) AND deploys managed personas to `sim-personas/shared/`.
 
 ### Step 2 — Confirm codex is in PATH
 
@@ -39,7 +51,7 @@ Note: `AnthropicApiProvider` is NOT available — it raises `NotImplementedError
 
 Check local registry first, then shared fallback:
 1. `sim-personas/local/<persona_id>.json` (repo-local override)
-2. `packages/hldpro-sim/personas/<persona_id>.json` (shared registry)
+2. `sim-personas/shared/<persona_id>.json` (shared registry — deployed by deployer)
 
 If neither exists: HALT — "HALT: Persona '<persona_id>' not found in local or shared registry."
 

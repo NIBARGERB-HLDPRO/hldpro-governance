@@ -1,0 +1,58 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-562-sim-runner-preflight-plan-to-implementation",
+  "issue_number": 562,
+  "parent_epic_number": 561,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "claude-dispatcher-planner",
+  "to_role": "claude-dispatcher-implementation-worker",
+  "structured_plan_ref": "docs/plans/issue-562-sim-runner-preflight-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-22-issue-562-sim-runner-preflight-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "agents/sim-runner.md has a Step 0 Pre-flight block appearing before Step 1.",
+      "verification_refs": [
+        "agents/sim-runner.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Step 0 HALTs with deploy command if .hldpro/hldpro-sim.json is absent.",
+      "verification_refs": [
+        "agents/sim-runner.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Step 0 compares consumer pinned_sha vs docs/hldpro-sim-consumer-pull-state.json pinned_sha: CURRENT message on match, WARNING (not HALT) on mismatch with both sha[:8] values.",
+      "verification_refs": [
+        "agents/sim-runner.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-562-sim-runner-preflight-20260422",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-22-issue-562-sim-runner-preflight-plan-to-implementation.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-22-issue-562-sim-runner-preflight.md --root .",
+    "git diff --name-only origin/issue-561-sim-runner-deployer-path-20260422..HEAD"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "agents/sim-runner.md",
+    "docs/plans/issue-562-sim-runner-preflight-structured-agent-cycle-plan.json",
+    "docs/plans/issue-562-sim-runner-preflight-pdcar.md",
+    "raw/execution-scopes/2026-04-22-issue-562-sim-runner-preflight-implementation.json"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-22-issue-562-sim-runner-preflight.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-04-22-issue-562-sim-runner-preflight.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-22T00:00:00Z",
+  "notes": "Tier 1 documentation edit. No Codex packet required. Dispatcher worker performed both planning and implementation in a single session. Handoff lifecycle is self-referential: planner and implementation worker are the same model in the same session."
+}

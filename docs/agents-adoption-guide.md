@@ -81,10 +81,26 @@ For each governance agent to work correctly in a repo, the following infrastruct
 - [ ] `HLDPRO_LANE_CLAIM_BOOTSTRAP=1` environment variable support (no config needed — used as prefix on git command)
 
 ### `sim-runner`
-- [ ] `hldpro-sim` installed: `python3 -c "import hldprosim"` passes
+
+#### Installation (required before first run)
+
+Canonical install via the governance deployer:
+```bash
+bash <governance-root>/scripts/deployer/deploy-hldpro-sim.sh <consumer-repo-path>
+```
+
+The deployer:
+- Installs the `hldpro-sim` package (pip-editable, with directory-copy fallback)
+- Deploys managed personas to `sim-personas/shared/` — **commit this directory**
+- Writes `.hldpro/hldpro-sim.json` (consumer record) — **commit this file**
+
+Verify install: check `.hldpro/hldpro-sim.json` exists and `pinned_sha` matches the value in `docs/hldpro-sim-consumer-pull-state.json` in hldpro-governance.
+
+#### Checklist
+- [ ] `hldpro-sim` deployed via deployer: `.hldpro/hldpro-sim.json` present in consumer repo root
 - [ ] `codex` CLI in PATH
 - [ ] `raw/packets/outbound/` directory exists
-- [ ] Persona files in `sim-personas/local/` or `packages/hldpro-sim/personas/`
+- [ ] Persona files in `sim-personas/local/` (local overrides) or `sim-personas/shared/` (deployer-managed)
 - [ ] Outcome schema JSON prepared with `additionalProperties: false`
 
 ### `backlog-promoter`

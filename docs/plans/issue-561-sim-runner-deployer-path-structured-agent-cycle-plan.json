@@ -1,0 +1,116 @@
+{
+  "session_id": "session-20260422-issue-561-sim-runner-deployer-path",
+  "issue_number": 561,
+  "objective": "Fix agents/sim-runner.md to document the deployer script as the canonical hldpro-sim install path (replacing stale PyPI and editable-install references), and fix the shared persona fallback path from packages/hldpro-sim/personas/ to sim-personas/shared/ (where the deployer actually puts them). Update docs/agents-adoption-guide.md to document the deployer-based install flow for the sim-runner prerequisite block.",
+  "tier": 1,
+  "scope_boundary": [
+    "agents/sim-runner.md — Step 1 (install check) and Step 3 (persona fallback path) surgical edits",
+    "docs/agents-adoption-guide.md — sim-runner prerequisite block: add deployer-based install subsection",
+    "docs/plans/issue-561-sim-runner-deployer-path-structured-agent-cycle-plan.json — this plan",
+    "docs/plans/issue-561-sim-runner-deployer-path-pdcar.md — PDCAR artifact",
+    "raw/execution-scopes/2026-04-22-issue-561-sim-runner-deployer-path-implementation.json — execution scope",
+    "raw/closeouts/2026-04-22-issue-561-sim-runner-deployer-path.md — closeout artifact"
+  ],
+  "out_of_scope": [
+    "scripts/deployer/deploy-hldpro-sim.sh — deployer script is correct as-is; no changes needed",
+    "docs/hldpro-sim-consumer-pull-state.json — read-only reference; no changes",
+    "packages/hldpro-sim/ — library package; no changes",
+    "sim-runner Step 4 (Python invocation pattern) — PersonaLoader shared_dir wiring is a follow-on concern",
+    "Any changes to STANDARDS.md, OVERLORD_BACKLOG.md, or other governance surface files not listed in scope_boundary"
+  ],
+  "research_summary": "Reviewed agents/sim-runner.md (Step 1 references pip install hldpro-sim==0.1.0 from PyPI as a fallback, and Step 3 uses packages/hldpro-sim/personas/ as the shared persona path). Reviewed scripts/deployer/deploy-hldpro-sim.sh — it installs via pip-editable or directory-copy fallback and deploys managed personas to sim-personas/shared/. Reviewed docs/hldpro-sim-consumer-pull-state.json confirming consumer_target is sim-personas/shared/ and consumer_record_path is .hldpro/hldpro-sim.json. The deployer is the canonical mechanism; the agent must reference it rather than a non-existent PyPI package.",
+  "research_artifacts": [
+    "agents/sim-runner.md — Step 1 (stale pip install hldpro-sim==0.1.0) and Step 3 (stale shared path)",
+    "scripts/deployer/deploy-hldpro-sim.sh — canonical install mechanism; deploys to sim-personas/shared/",
+    "docs/hldpro-sim-consumer-pull-state.json — contract: consumer_target=sim-personas/shared/, consumer_record_path=.hldpro/hldpro-sim.json",
+    "Issue #561: sim-runner references stale PyPI path + wrong shared persona directory"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 — Fix agents/sim-runner.md (Step 1 + Step 3)",
+      "goal": "Replace stale PyPI fallback in Step 1 with deployer-first install check, and fix Step 3 shared persona path to sim-personas/shared/.",
+      "tasks": [
+        "Edit Step 1: replace pip install hldpro-sim==0.1.0 block with deployer check (.hldpro/hldpro-sim.json exists) + deployer run instruction",
+        "Edit Step 3: replace packages/hldpro-sim/personas/<persona_id>.json fallback path with sim-personas/shared/<persona_id>.json"
+      ],
+      "acceptance_criteria": [
+        "No reference to pip install hldpro-sim==0.1.0 or PyPI in agents/sim-runner.md",
+        "Step 1 instructs agent to check .hldpro/hldpro-sim.json and run deployer if absent",
+        "Step 3 shared fallback path is sim-personas/shared/<persona_id>.json",
+        "File remains valid Markdown with correct YAML frontmatter"
+      ],
+      "file_paths": [
+        "agents/sim-runner.md"
+      ]
+    },
+    {
+      "name": "Sprint 2 — Update docs/agents-adoption-guide.md sim-runner block",
+      "goal": "Add deployer-based install subsection to the sim-runner prerequisite block so operators know canonical install flow.",
+      "tasks": [
+        "Find sim-runner section in docs/agents-adoption-guide.md",
+        "Add Installation subsection: deployer command, .hldpro/hldpro-sim.json consumer record, sim-personas/shared/ persona target, pinned_sha verification against docs/hldpro-sim-consumer-pull-state.json"
+      ],
+      "acceptance_criteria": [
+        "sim-runner section in adoption guide references bash <governance-root>/scripts/deployer/deploy-hldpro-sim.sh <consumer-repo-path>",
+        ".hldpro/hldpro-sim.json consumer record is documented as commit-required",
+        "sim-personas/shared/ is documented as commit-required persona target",
+        "pinned_sha verification step against docs/hldpro-sim-consumer-pull-state.json is present"
+      ],
+      "file_paths": [
+        "docs/agents-adoption-guide.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "scope-reviewer",
+      "role": "Scope reviewer",
+      "focus": "Confirm edits are surgical: only Step 1 install block and Step 3 persona path in sim-runner.md, plus sim-runner prerequisite block in adoption guide. No other governance surface files touched.",
+      "status": "accepted",
+      "summary": "Scope tightly bounded to two files. Both edits traceable to docs/hldpro-sim-consumer-pull-state.json contract and deploy-hldpro-sim.sh implementation. No standards changes, no OVERLORD_BACKLOG changes.",
+      "evidence": [
+        "agents/sim-runner.md — two surgical edits only",
+        "docs/agents-adoption-guide.md — sim-runner block only",
+        "docs/hldpro-sim-consumer-pull-state.json — confirms consumer_target and consumer_record_path"
+      ]
+    },
+    {
+      "reviewer": "contract-reviewer",
+      "role": "Deployer contract reviewer",
+      "focus": "Verify the deployer path, persona target dir, and consumer record path match what deploy-hldpro-sim.sh actually writes.",
+      "status": "accepted",
+      "summary": "deploy-hldpro-sim.sh writes personas to $CONSUMER/sim-personas/shared/ and consumer record to $CONSUMER/.hldpro/hldpro-sim.json. Both paths now match the corrected agent documentation.",
+      "evidence": [
+        "scripts/deployer/deploy-hldpro-sim.sh lines 49-58 (PERSONAS_DEST) and 62-96 (RECORD_FILE)",
+        "docs/hldpro-sim-consumer-pull-state.json: consumer_target=sim-personas/shared/, consumer_record_path=.hldpro/hldpro-sim.json"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "n/a",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "Tier 1 documentation fix. Two surgical edits to agent markdown files. Not a standards change, not a governance surface schema change. SoM charter does not require alternate-model review for documentation corrections.",
+    "evidence": [
+      "STANDARDS.md §Society of Minds — alternate review required for architecture/standards changes only",
+      "Issue #561 — documentation path fix, no schema changes"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-sonnet-4-6",
+    "execution_mode": "implementation_complete",
+    "approved_scope_summary": "Two surgical edits to agents/sim-runner.md (Step 1 deploy-first install check, Step 3 shared persona path fix) and addition of deployer install subsection to docs/agents-adoption-guide.md sim-runner block. All governance paperwork written. No push, no PR — dispatcher handles.",
+    "next_execution_step": "Dispatcher: review diff, push branch issue-561-sim-runner-deployer-path-20260422, open PR against issue-559-five-new-agents-20260422.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any edit touches files outside scope_boundary, HALT and report to dispatcher.",
+    "If Step 4 PersonaLoader shared_dir wiring is found to also be wrong, open a new issue — do not absorb into this slice.",
+    "If deploy-hldpro-sim.sh changes its persona target path in a future PR, agents/sim-runner.md and adoption guide must be updated in the same PR.",
+    "If hldpro-sim is ever published to PyPI under a different version, the deployer remains the canonical path — PyPI is not an alternative install method for governance agents."
+  ],
+  "approved": true,
+  "approved_by": ["session-agent-claude-sonnet-4-6"],
+  "approved_at": "2026-04-22T00:00:00Z"
+}

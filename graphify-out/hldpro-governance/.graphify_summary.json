@@ -1,8 +1,8 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/private/tmp/issue-559-five-new-agents/graphify-out/hldpro-governance",
-  "wiki_dir": "/private/tmp/issue-559-five-new-agents/wiki/hldpro",
+  "output": "/private/tmp/issue-562-sim-preflight/graphify-out/hldpro-governance",
+  "wiki_dir": "/private/tmp/issue-562-sim-preflight/wiki/hldpro",
   "nodes": 1941,
   "edges": 3898,
   "communities": 93,
