@@ -8,9 +8,9 @@
 - [[upsert()]] `INFERRED`
 - [[callClaude()]] `INFERRED`
 - [[sendSms()]] `INFERRED`
+- [[.buildApiError()]] `INFERRED`
 - [[handleCallback()]] `INFERRED`
 - [[executeTool()]] `INFERRED`
-- [[.buildApiError()]] `INFERRED`
 - [[handleSync()]] `INFERRED`
 - [[sendTwilioSms()]] `INFERRED`
 - [[refreshAccessToken()]] `INFERRED`

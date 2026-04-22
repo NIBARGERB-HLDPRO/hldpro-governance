@@ -1,10 +1,10 @@
 # Api Clients Use
 
-> 9 nodes · cohesion 0.33
+> 10 nodes · cohesion 0.29
 
 ## Key Concepts
 
-- **clients.ts** (7 connections) — `ai-integration-services/apps/dashboard/src/lib/api/clients.ts`
+- **clients.ts** (8 connections) — `ai-integration-services/apps/dashboard/src/lib/api/clients.ts`
 - **clients.ts** (5 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/lib/api/clients.ts`
 - **useClient()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/clients.ts`
 - **useClientProducts()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/clients.ts`
@@ -12,6 +12,7 @@
 - **useCreateClient()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/clients.ts`
 - **useUpdateClient()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/clients.ts`
 - **useAddClientProduct()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/api/clients.ts`
+- **useClientDecommission()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/api/clients.ts`
 - **useRemoveClientProduct()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/api/clients.ts`
 
 ## Relationships
@@ -25,7 +26,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 24 (100%)
+- EXTRACTED: 26 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

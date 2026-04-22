@@ -801,6 +801,9 @@
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/reseller-auth/index.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/inbound-sms-magic-link/index.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/legal-attorney-router/index.ts",
+      "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/operator-client-decommission/helpers.ts",
+      "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/operator-client-decommission/helpers.test.ts",
+      "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/operator-client-decommission/index.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/ad-conversion-event/index.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/outbound-call-scheduler/index.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/reseller-performance-check/index.ts",
@@ -1800,6 +1803,7 @@
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/issue-1144-hitl-relay-bridge-pdcar.md",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/demo-account-paid-conversion-contract.md",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/issue-920-elevenlabs-voice-pdcar.md",
+      "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/operator-client-decommission-pdcar.md",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/submitted-feedback-bug-batch-pdcar.md",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/reviewed/GC_Addon_Versioning_Roadmap.md",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/docs/plans/reviewed/HLD_Pro_Full_Customer_Provisioning_Automation_Plan.md",
@@ -2073,10 +2077,10 @@
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/test-results/render-contracts-critical--972b9--deployed-response-contract/video.webm"
     ]
   },
-  "total_files": 2063,
-  "total_words": 2692502,
+  "total_files": 2067,
+  "total_words": 2695122,
   "needs_graph": true,
-  "warning": "Large corpus: 2063 files \u00b7 ~2,692,502 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
+  "warning": "Large corpus: 2067 files \u00b7 ~2,695,122 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
   "skipped_sensitive": [
     "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/migrations/031_qb_token_status.sql",
     "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/ad-token-refresh/index.ts",

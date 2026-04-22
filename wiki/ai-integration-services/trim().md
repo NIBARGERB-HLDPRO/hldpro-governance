@@ -1,6 +1,6 @@
 # trim()
 
-> God node · 96 connections · `ai-integration-services/backend/supabase/functions/purchase-session/index.ts`
+> God node · 98 connections · `ai-integration-services/backend/supabase/functions/purchase-session/index.ts`
 
 ## Connections by Relation
 

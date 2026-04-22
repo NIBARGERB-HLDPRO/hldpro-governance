@@ -1,6 +1,6 @@
 # emitAuditLog()
 
-> God node · 27 connections · `ai-integration-services/backend/supabase/functions/_shared/audit.ts`
+> God node · 28 connections · `ai-integration-services/backend/supabase/functions/_shared/audit.ts`
 
 ## Connections by Relation
 
@@ -16,6 +16,7 @@
 - [[processClientReviews()]] `INFERRED`
 - [[processWebhook()]] `INFERRED`
 - [[ensureReferralTracking()]] `INFERRED`
+- [[cleanupProducts()]] `INFERRED`
 - [[sendWarning60()]] `INFERRED`
 - [[sendWarning80()]] `INFERRED`
 - [[transitionToAffiliate()]] `INFERRED`
@@ -24,7 +25,6 @@
 - [[handleItemError()]] `INFERRED`
 - [[alertOperator()]] `INFERRED`
 - [[voiceflowHandler()]] `INFERRED`
-- [[handleTransactionsRemoved()]] `INFERRED`
 
 ### contains
 - [[audit.ts]] `EXTRACTED`

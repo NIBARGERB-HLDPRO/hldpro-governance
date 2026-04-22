@@ -9,7 +9,7 @@
 - **calcom-finalization.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/calcom-finalization.ts`
 - **.calFetch()** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-client.ts`
 - **buildCalcomFinalizeDefaults()** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-finalization.ts`
-- **calcom-client.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-client.ts`
+- **calcom-client.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-client.ts`
 - **calcom-client.ts** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/calcom-client.ts`
 - **.createEventType()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-client.ts`
 - **.updateEventType()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-client.ts`
@@ -46,7 +46,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 112 (93%)
+- EXTRACTED: 113 (93%)
 - INFERRED: 8 (7%)
 - AMBIGUOUS: 0 (0%)
 
