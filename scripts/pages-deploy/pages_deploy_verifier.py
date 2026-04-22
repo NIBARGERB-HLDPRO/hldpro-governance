@@ -362,6 +362,37 @@ def probe_domain(
     return _error_domain_result(domain, last_error or "request did not complete", MAX_ATTEMPTS)
 
 
+_TITLE_RE = re.compile(r"<title[^>]*>([^<]*)</title>", re.IGNORECASE)
+
+
+def _extract_title(body: bytes) -> str:
+    text = body.decode("utf-8", errors="replace")
+    match = _TITLE_RE.search(text)
+    return match.group(1).strip() if match else ""
+
+
+def _probe_title(
+    domain: str,
+    expected_title: str,
+    *,
+    http_get: HttpGet | None = None,
+) -> tuple[bool, str]:
+    if http_get is None:
+        http_get = _urllib_get
+    label = _domain_label(domain)
+    url = f"https://{label}/"
+    headers = {
+        "Cache-Control": "no-cache",
+        "User-Agent": "hldpro-pages-deploy-verifier/1.0",
+    }
+    try:
+        response, _ = _fetch_with_redirects(url, headers, http_get)
+    except Exception as exc:  # noqa: BLE001
+        return False, f"title probe request failed: {_sanitize_text(str(exc))}"
+    actual = _extract_title(response.body)
+    return actual == expected_title, actual
+
+
 def stale_checkout_guard(repo_root: Path, branch: str) -> None:
     fetch = subprocess.run(
         ["git", "fetch", "origin", branch],
@@ -427,6 +458,17 @@ def build_report(
 
     if len(observed_active_ids) > 1:
         failures.append(f"active domains reported different deployment ids: {sorted(observed_active_ids)}")
+
+    expected_title = config.get("expected_title")
+    if expected_title and isinstance(expected_title, str):
+        for domain in active_domains:
+            title_match, actual_title = _probe_title(domain["domain"], expected_title, http_get=http_get)
+            domain["title_match"] = title_match
+            domain["actual_title"] = actual_title
+            if not title_match:
+                failures.append(
+                    f"{domain['domain']} title '{actual_title}' did not match expected '{expected_title}'"
+                )
 
     return {
         "status": "failed" if failures else "passed",

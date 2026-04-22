@@ -83,7 +83,7 @@ def run_gate(config_path: Path, tmp_path: Path, *, env: dict[str, str] | None = 
     calls, fake_run = make_runner(tmp_path, **runner_kwargs)
     with mock.patch.object(gate.shutil, "which", return_value="/usr/bin/tool"), mock.patch.object(
         gate.subprocess, "run", side_effect=fake_run
-    ):
+    ), mock.patch.object(gate, "branch_binding_preflight"):
         code = gate.run_gate(config_path, dry_run=dry_run, env=env or default_env())
     return code, calls
 
@@ -100,7 +100,7 @@ def run_gate_expect_error(
     calls, fake_run = make_runner(tmp_path, **runner_kwargs)
     with mock.patch.object(gate.shutil, "which", return_value=which_return), mock.patch.object(
         gate.subprocess, "run", side_effect=fake_run
-    ):
+    ), mock.patch.object(gate, "branch_binding_preflight"):
         with pytest.raises(gate.GateError) as exc:
             gate.run_gate(config_path, dry_run=dry_run, env=env or default_env())
     return str(exc.value), calls
@@ -348,3 +348,67 @@ def test_wrangler_uses_ci_without_removed_noninteractive_flag(tmp_path):
     command, kwargs = deploy_call
     assert "--non-interactive" not in command
     assert kwargs["env"]["CI"] == "true"
+
+
+def _make_cf_response(production_branch: str) -> object:
+    import json as _json
+    body = _json.dumps({"result": {"production_branch": production_branch}}).encode()
+
+    class FakeResponse:
+        def __init__(self):
+            self._body = body
+
+        def read(self):
+            return self._body
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            pass
+
+    return FakeResponse()
+
+
+def test_branch_binding_preflight_passes_on_match(tmp_path):
+    config = {"project_name": "my-proj", "branch": "main"}
+    env = {"CLOUDFLARE_API_TOKEN": "tok", "CLOUDFLARE_ACCOUNT_ID": "acct"}
+
+    with mock.patch.object(gate.urllib.request, "urlopen", return_value=_make_cf_response("main")):
+        gate.branch_binding_preflight(config, env)
+
+
+def test_branch_binding_preflight_fails_on_mismatch(tmp_path):
+    config = {"project_name": "my-proj", "branch": "main"}
+    env = {"CLOUDFLARE_API_TOKEN": "tok", "CLOUDFLARE_ACCOUNT_ID": "acct"}
+
+    with mock.patch.object(gate.urllib.request, "urlopen", return_value=_make_cf_response("production")):
+        with pytest.raises(gate.GateError) as exc:
+            gate.branch_binding_preflight(config, env)
+
+    assert "BRANCH_BINDING_MISMATCH" in str(exc.value)
+    assert "production" in str(exc.value)
+
+
+def test_branch_binding_preflight_skips_without_token(tmp_path):
+    config = {"project_name": "my-proj", "branch": "main"}
+    env = {}
+
+    with mock.patch.object(gate.urllib.request, "urlopen", side_effect=AssertionError("should not be called")):
+        gate.branch_binding_preflight(config, env)
+
+
+def test_branch_binding_preflight_skips_via_env_flag(tmp_path):
+    config = {"project_name": "my-proj", "branch": "main"}
+    env = {"CLOUDFLARE_API_TOKEN": "tok", "CLOUDFLARE_ACCOUNT_ID": "acct", "PAGES_SKIP_BRANCH_PREFLIGHT": "1"}
+
+    with mock.patch.object(gate.urllib.request, "urlopen", side_effect=AssertionError("should not be called")):
+        gate.branch_binding_preflight(config, env)
+
+
+def test_branch_binding_preflight_skips_on_api_error(tmp_path):
+    config = {"project_name": "my-proj", "branch": "main"}
+    env = {"CLOUDFLARE_API_TOKEN": "tok", "CLOUDFLARE_ACCOUNT_ID": "acct"}
+
+    with mock.patch.object(gate.urllib.request, "urlopen", side_effect=OSError("network error")):
+        gate.branch_binding_preflight(config, env)

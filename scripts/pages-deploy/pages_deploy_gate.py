@@ -11,6 +11,8 @@ import shutil
 import subprocess
 import sys
 import time
+import urllib.error
+import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -244,6 +246,39 @@ def preflight_tools() -> None:
         raise GateError("PREFLIGHT_FAIL: wrangler not found on PATH")
 
 
+def branch_binding_preflight(config: dict[str, Any], env: dict[str, str]) -> None:
+    if env.get("PAGES_SKIP_BRANCH_PREFLIGHT") == "1":
+        log("branch_binding_preflight: skipped via PAGES_SKIP_BRANCH_PREFLIGHT", env)
+        return
+    token = env.get("CLOUDFLARE_API_TOKEN") or os.environ.get("CLOUDFLARE_API_TOKEN", "")
+    account_id = env.get("CLOUDFLARE_ACCOUNT_ID") or os.environ.get("CLOUDFLARE_ACCOUNT_ID", "")
+    if not token or not account_id:
+        log("branch_binding_preflight: skipped (CLOUDFLARE_API_TOKEN or CLOUDFLARE_ACCOUNT_ID not set)", env)
+        return
+    project_name = config["project_name"]
+    api_url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/pages/projects/{project_name}"
+    request = urllib.request.Request(api_url, headers={"Authorization": f"Bearer {token}"}, method="GET")
+    try:
+        with urllib.request.urlopen(request, timeout=10) as response:
+            payload = json.loads(response.read())
+    except urllib.error.HTTPError as exc:
+        log(f"branch_binding_preflight: CF API returned HTTP {exc.code}; skipping check", env)
+        return
+    except Exception as exc:  # noqa: BLE001
+        log(f"branch_binding_preflight: CF API unreachable ({type(exc).__name__}); skipping check", env)
+        return
+    result = payload.get("result") or {}
+    production_branch = result.get("production_branch", "")
+    configured_branch = config["branch"]
+    if production_branch and production_branch != configured_branch:
+        raise GateError(
+            f"BRANCH_BINDING_MISMATCH: CF Pages project '{project_name}' production_branch is "
+            f"'{production_branch}' but config branch is '{configured_branch}'; "
+            "deploy would create a preview, not a production deployment"
+        )
+    log(f"branch_binding_preflight: passed (production_branch={production_branch or 'unknown'})", env)
+
+
 def get_wrangler_version(env: dict[str, str]) -> str:
     result = run_command(["wrangler", "--version"], env=env)
     if result.returncode != 0:
@@ -426,6 +461,7 @@ def run_gate(config_path: Path, *, dry_run: bool = False, env: dict[str, str] | 
 
     preflight_tools()
     preflight_env(config["required_env"], gate_env, dry_run=dry_run)
+    branch_binding_preflight(config, gate_env)
     wrangler_version = get_wrangler_version(gate_env)
     run_pre_deploy(config, app_root, gate_env)
 
