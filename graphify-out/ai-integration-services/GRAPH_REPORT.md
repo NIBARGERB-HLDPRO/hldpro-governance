@@ -1,7 +1,7 @@
 # Graph Report - ai-integration-services  (2026-04-22)
 
 ## Corpus Check
-- Large corpus: 2083 files · ~2,705,739 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 2081 files · ~2,723,907 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
 - 3470 nodes · 8496 edges · 346 communities detected
@@ -2144,11 +2144,11 @@ Nodes (0):
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `trim()` connect `Real enrollment founder Compendium` to `Auth Supabase`, `Brain web scraper Supabase`, `Vapi client Supabase`, `N8n client Supabase`, `Integrations Sign`, `Setup readiness Supabase`, `Connectors Crm Supabase`, `Support Feature roadmap Var`, `Connectors Crm Supabase`, `Magic link jwt Supabase`, `Provisioning Autoprovision preflight Client`, `Addon lifecycle Operator`, `Hvac serial decode Supabase`, `Wizard Assistant`, `Addon provision Seed`, `Connectors Ad Supabase`, `Magic link review decision Supabase`, `Clients Client detail`, `Brain Handle`, `Enrich site Supabase`, `Assistant chat Widget`, `Gc Gcsub Line`, `Debug Debug feedback overlay`, `Roof report Supabase`, `Ai matcher Supabase`?**
-  _High betweenness centrality (0.138) - this node is a cross-community bridge._
+  _High betweenness centrality (0.115) - this node is a cross-community bridge._
 - **Why does `toLocaleDateString()` connect `Support Feature roadmap Var` to `Brain web scraper Supabase`, `Gc Gcsub Line`, `N8n client Supabase`, `Real enrollment founder Compendium`, `Integrations Sign`, `Roof report Supabase`, `Connectors Crm Supabase`, `Auth Reseller`, `Wizard Assistant`, `Addon provision Seed`, `Support tickets Supabase`, `Finance Brain`, `Clients Client detail`?**
-  _High betweenness centrality (0.062) - this node is a cross-community bridge._
-- **Why does `update()` connect `Connectors Crm Supabase` to `Stripe webhook Demo conversion Supabase`, `Brain web scraper Supabase`, `N8n client Supabase`, `Vapi client Supabase`, `Setup readiness Supabase`, `Connectors Crm Supabase`, `Support Feature roadmap Var`, `Stripe webhook Lifecycle Supabase`, `Magic link jwt Supabase`, `Wizard Assistant`, `Addon provision Seed`, `Support tickets Supabase`, `Brain Handle`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
+  _High betweenness centrality (0.072) - this node is a cross-community bridge._
+- **Why does `text()` connect `N8n client Supabase` to `Auth Supabase`, `Brain web scraper Supabase`, `Vapi client Supabase`, `Integrations Sign`, `Connectors Crm Supabase`, `Connectors Crm Supabase`, `Magic link jwt Supabase`, `Provisioning Autoprovision preflight Client`, `Addon lifecycle Operator`, `Hvac serial decode Supabase`, `Addon provision Seed`, `Support tickets Supabase`, `Magic link review decision Supabase`, `Connectors Crm Twenty`, `Solar monitoring sync Supabase`, `Oauth state Supabase`, `Brain Handle`?**
+  _High betweenness centrality (0.035) - this node is a cross-community bridge._
 - **Are the 97 inferred relationships involving `trim()` (e.g. with `normalizePhone()` and `sha256Hash()`) actually correct?**
   _`trim()` has 97 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 99 inferred relationships involving `text()` (e.g. with `sendReminderSMS()` and `sendSms()`) actually correct?**
