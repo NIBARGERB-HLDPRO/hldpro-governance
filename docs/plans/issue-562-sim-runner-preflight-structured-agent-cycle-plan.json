@@ -1,0 +1,100 @@
+{
+  "session_id": "session-20260422-issue-562-sim-runner-preflight",
+  "issue_number": 562,
+  "objective": "Add Step 0 Pre-flight to agents/sim-runner.md: check consumer record exists, compare pinned_sha from .hldpro/hldpro-sim.json against canonical docs/hldpro-sim-consumer-pull-state.json, and emit current/mismatch message before any simulation run.",
+  "tier": 1,
+  "scope_boundary": [
+    "agents/sim-runner.md — add Step 0 Pre-flight block before existing Step 1",
+    "Pre-flight checks .hldpro/hldpro-sim.json existence and pinned_sha against docs/hldpro-sim-consumer-pull-state.json",
+    "HALT on missing consumer record; WARNING (not HALT) on SHA mismatch; continue in both cases after warning"
+  ],
+  "out_of_scope": [
+    "Modifications to docs/hldpro-sim-consumer-pull-state.json or any other canonical state file",
+    "Changes to deployer scripts (scripts/deployer/deploy-hldpro-sim.sh)",
+    "Changes to hldpro-sim package source in packages/hldpro-sim/",
+    "Any OVERLORD_BACKLOG.md or wiki/ changes",
+    "Changes to any agents other than sim-runner.md"
+  ],
+  "research_summary": "Issue #561 added the deployer reference to Step 1 of agents/sim-runner.md. Issue #562 extends the agent with an explicit pre-flight step that validates the consumer record before proceeding. The canonical pinned_sha is in docs/hldpro-sim-consumer-pull-state.json (fed5ead670cf6834e5c73bffcaf64e41cc483fce, v0.1.0). The consumer record path is .hldpro/hldpro-sim.json. SHA mismatch is a soft warning, not a hard HALT, to avoid blocking workflows when redeployment is pending.",
+  "research_artifacts": [
+    "agents/sim-runner.md — current state from issue #561",
+    "docs/hldpro-sim-consumer-pull-state.json — canonical pinned_sha source",
+    "Issue #561: sim-runner deployer path documentation",
+    "Issue #562: sim-runner pre-flight consumer record + SHA validation"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 — Add Step 0 Pre-flight block to sim-runner.md",
+      "goal": "Insert Step 0 Pre-flight before existing Step 1 in agents/sim-runner.md with consumer record existence check and SHA comparison logic.",
+      "tasks": [
+        "Read current agents/sim-runner.md to understand insertion point",
+        "Insert Step 0 Pre-flight block: check .hldpro/hldpro-sim.json exists, HALT with deploy message if absent",
+        "Read pinned_sha from .hldpro/hldpro-sim.json",
+        "Read canonical pinned_sha from <governance-root>/docs/hldpro-sim-consumer-pull-state.json",
+        "If SHAs match: print CURRENT message and continue",
+        "If SHAs differ: print WARNING with consumer and governance SHAs (first 8 chars) and re-deploy recommendation, then continue"
+      ],
+      "acceptance_criteria": [
+        "agents/sim-runner.md Step 0 block appears before Step 1",
+        "HALT message includes exact deploy command: bash <governance-root>/scripts/deployer/deploy-hldpro-sim.sh <consumer-repo-path>",
+        "SHA match path prints: hldpro-sim CURRENT (sha: <sha[:8]>)",
+        "SHA mismatch path prints WARNING (not HALT) with both SHAs and re-deploy recommendation",
+        "Step 1 and subsequent steps are unchanged"
+      ],
+      "file_paths": [
+        "agents/sim-runner.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "scope-reviewer",
+      "role": "Scope reviewer",
+      "focus": "Confirm change is limited to agents/sim-runner.md with no governance surface side effects.",
+      "status": "accepted",
+      "summary": "Single-file edit to agents/sim-runner.md. No deployer, package, schema, or OVERLORD_BACKLOG changes. Pre-flight logic is documentation-only (agent instructions), not executable script.",
+      "evidence": [
+        "agents/sim-runner.md is the only file in scope_boundary",
+        "No changes to scripts/, packages/, docs/schemas/, or wiki/"
+      ]
+    },
+    {
+      "reviewer": "ux-reviewer",
+      "role": "Agent UX reviewer",
+      "focus": "Verify pre-flight messaging is actionable: HALT message includes full deploy command; mismatch is WARNING not HALT.",
+      "status": "accepted",
+      "summary": "HALT message includes exact bash command with placeholder args. SHA mismatch is explicitly a WARNING with proceed-anyway behavior. Both paths include the first 8 chars of the relevant SHA for traceability.",
+      "evidence": [
+        "Step 0 HALT message: hldpro-sim not deployed. Run: bash <governance-root>/scripts/deployer/deploy-hldpro-sim.sh <consumer-repo-path>",
+        "Step 0 mismatch message: WARNING (not hard HALT) with sha[:8] for both sides and re-deploy recommendation"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "n/a",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "Tier 1 single-file documentation edit to an agent markdown file. Not a standards change, not a governance surface schema modification. SoM charter does not require alternate-model review for implementation-only agent documentation edits.",
+    "evidence": [
+      "STANDARDS.md §Society of Minds — alternate review required for architecture/standards PRs only",
+      "agents/sim-runner.md is not in GOVERNANCE_SURFACE_PREFIXES"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-sonnet-4-6",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Edit agents/sim-runner.md to insert Step 0 Pre-flight block before Step 1. Pre-flight checks .hldpro/hldpro-sim.json, compares pinned_sha to canonical docs/hldpro-sim-consumer-pull-state.json, HALTs on missing record, warns on mismatch, continues in both outcome paths after HALT/warning.",
+    "next_execution_step": "Use Edit tool to insert Step 0 Pre-flight block in agents/sim-runner.md before the existing Step 1 section.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If the pre-flight HALT is changed to a WARNING, revert — missing consumer record must be a hard HALT.",
+    "If the SHA mismatch is changed to a HALT, revert — mismatch must remain a soft WARNING to avoid blocking workflows.",
+    "If any file other than agents/sim-runner.md is modified, open a new issue before proceeding.",
+    "If the deployer script path changes, update Step 0 HALT message to match."
+  ],
+  "approved": true,
+  "approved_by": ["session-agent-claude-sonnet-4-6"],
+  "approved_at": "2026-04-22T00:00:00Z"
+}
