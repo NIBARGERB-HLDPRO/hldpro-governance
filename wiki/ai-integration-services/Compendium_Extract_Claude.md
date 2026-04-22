@@ -1,6 +1,6 @@
 # Compendium Extract Claude
 
-> 44 nodes · cohesion 0.08
+> 42 nodes · cohesion 0.09
 
 ## Key Concepts
 
@@ -21,7 +21,6 @@
 - **extractPurpose()** (4 connections) — `ai-integration-services/scripts/compendium/extract-shared-utils.ts`
 - **extractSharedUtils()** (4 connections) — `ai-integration-services/scripts/compendium/extract-shared-utils.ts`
 - **withHeader()** (4 connections) — `ai-integration-services/scripts/generate-compendium.ts`
-- **walk()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/input-validator.ts`
 - **extract-shared-utils.ts** (4 connections) — `ai-integration-services/scripts/compendium/extract-shared-utils.ts`
 - **extract-shared-utils.ts** (4 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/compendium/extract-shared-utils.ts`
 - **readFileIfExists()** (3 connections) — `ai-integration-services/scripts/compendium/assemble-patterns.ts`
@@ -29,7 +28,8 @@
 - **readModular()** (3 connections) — `ai-integration-services/scripts/compendium/consolidate.ts`
 - **copyAsTxt()** (3 connections) — `ai-integration-services/scripts/compendium/copy-notebook-extras.ts`
 - **walkMarkdownFiles()** (3 connections) — `ai-integration-services/scripts/compendium/copy-notebook-extras.ts`
-- *... and 19 more nodes in this community*
+- **detectHandlerType()** (3 connections) — `ai-integration-services/scripts/compendium/extract-edge-functions.ts`
+- *... and 17 more nodes in this community*
 
 ## Relationships
 
@@ -37,7 +37,6 @@
 
 ## Source Files
 
-- `ai-integration-services/backend/supabase/functions/_shared/input-validator.ts`
 - `ai-integration-services/scripts/compendium/assemble-patterns.ts`
 - `ai-integration-services/scripts/compendium/consolidate.ts`
 - `ai-integration-services/scripts/compendium/copy-notebook-extras.ts`
@@ -57,8 +56,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 148 (88%)
-- INFERRED: 21 (12%)
+- EXTRACTED: 142 (88%)
+- INFERRED: 20 (12%)
 - AMBIGUOUS: 0 (0%)
 
 ---

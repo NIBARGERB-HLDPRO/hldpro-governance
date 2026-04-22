@@ -1,6 +1,6 @@
 # Integrations Var
 
-> 120 nodes · cohesion 0.04
+> 112 nodes · cohesion 0.04
 
 ## Key Concepts
 
@@ -29,7 +29,7 @@
 - **fetchSyncLogs()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
 - **handleConnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
 - **handleDisconnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- *... and 95 more nodes in this community*
+- *... and 87 more nodes in this community*
 
 ## Relationships
 
@@ -39,7 +39,6 @@
 
 - `ai-integration-services/apps/dashboard/src/components/PreflightSimulationModal.tsx`
 - `ai-integration-services/apps/dashboard/src/lib/api/coupons.ts`
-- `ai-integration-services/apps/dashboard/src/lib/api/debugFeedback.ts`
 - `ai-integration-services/apps/dashboard/src/pages/cogs/COGSEventLog.tsx`
 - `ai-integration-services/apps/dashboard/src/pages/cogs/COGSOverview.tsx`
 - `ai-integration-services/apps/dashboard/src/pages/corpus/CorpusDashboard.tsx`
@@ -57,11 +56,12 @@
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardAdsConnect.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardAdsInsights.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardEmailAssistant.tsx`
+- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardEmailSettings.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 458 (85%)
-- INFERRED: 81 (15%)
+- EXTRACTED: 426 (85%)
+- INFERRED: 78 (15%)
 - AMBIGUOUS: 0 (0%)
 
 ---

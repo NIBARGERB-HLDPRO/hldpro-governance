@@ -1,6 +1,6 @@
 # Webhook receiver Supabase
 
-> 125 nodes · cohesion 0.04
+> 126 nodes · cohesion 0.04
 
 ## Key Concepts
 
@@ -8,7 +8,7 @@
 - **index.ts** (28 connections) — `ai-integration-services/backend/supabase/functions/webhook-receiver/index.ts`
 - **emitAuditLog()** (27 connections) — `ai-integration-services/backend/supabase/functions/_shared/audit.ts`
 - **index.ts** (27 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/webhook-receiver/index.ts`
-- **jsonResponse()** (21 connections) — `ai-integration-services/backend/supabase/functions/som-hitl-relay-bridge/index.ts`
+- **jsonResponse()** (23 connections) — `ai-integration-services/backend/supabase/functions/som-hitl-relay-bridge/index.ts`
 - **resolveClientId()** (21 connections) — `ai-integration-services/backend/supabase/functions/setup-compliance-sync/index.ts`
 - **index.ts** (17 connections) — `ai-integration-services/backend/supabase/functions/plaid-webhook/index.ts`
 - **index.ts** (17 connections) — `ai-integration-services/backend/supabase/functions/quickbooks-oauth/index.ts`
@@ -29,7 +29,7 @@
 - **oauth-state.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/oauth-state.ts`
 - **plaid-client.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/plaid-client.ts`
 - **oauth-state.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/oauth-state.ts`
-- *... and 100 more nodes in this community*
+- *... and 101 more nodes in this community*
 
 ## Relationships
 
@@ -60,8 +60,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 618 (72%)
-- INFERRED: 240 (28%)
+- EXTRACTED: 622 (72%)
+- INFERRED: 242 (28%)
 - AMBIGUOUS: 0 (0%)
 
 ---

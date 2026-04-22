@@ -1,93 +1,94 @@
 # Graph Report - ai-integration-services  (2026-04-22)
 
 ## Corpus Check
-- Large corpus: 2061 files · ~2,691,745 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
+- Large corpus: 2062 files · ~2,692,333 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.
 
 ## Summary
-- 3416 nodes · 8383 edges · 349 communities detected
-- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 951 edges (avg confidence: 0.8)
+- 3417 nodes · 8385 edges · 349 communities detected
+- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 952 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Notification dispatcher Supabase|Notification dispatcher Supabase]]
-- [[_COMMUNITY_N8n client Supabase|N8n client Supabase]]
 - [[_COMMUNITY_Auth Supabase|Auth Supabase]]
+- [[_COMMUNITY_Outreach dispatcher Supabase|Outreach dispatcher Supabase]]
+- [[_COMMUNITY_Vapi client Supabase|Vapi client Supabase]]
+- [[_COMMUNITY_N8n client Supabase|N8n client Supabase]]
 - [[_COMMUNITY_Connectors Crm Supabase|Connectors Crm Supabase]]
-- [[_COMMUNITY_Clients Client detail Var|Clients Client detail Var]]
+- [[_COMMUNITY_Enrich site Supabase|Enrich site Supabase]]
+- [[_COMMUNITY_Webhook receiver Supabase|Webhook receiver Supabase]]
 - [[_COMMUNITY_Setup readiness Supabase|Setup readiness Supabase]]
-- [[_COMMUNITY_Connectors Crm Supabase|Connectors Crm Supabase]]
+- [[_COMMUNITY_Support Feature roadmap Affiliate|Support Feature roadmap Affiliate]]
 - [[_COMMUNITY_Integrations Var|Integrations Var]]
-- [[_COMMUNITY_Brain Supabase|Brain Supabase]]
 - [[_COMMUNITY_Sign Sign documents Auth|Sign Sign documents Auth]]
 - [[_COMMUNITY_Real enrollment founder|Real enrollment founder]]
-- [[_COMMUNITY_Addon provision Login|Addon provision Login]]
 - [[_COMMUNITY_Provisioning Autoprovision preflight Client|Provisioning Autoprovision preflight Client]]
 - [[_COMMUNITY_Magic link jwt Supabase|Magic link jwt Supabase]]
-- [[_COMMUNITY_Wizard Assistant|Wizard Assistant]]
 - [[_COMMUNITY_Magic link review decision Supabase|Magic link review decision Supabase]]
+- [[_COMMUNITY_Wizard Assistant|Wizard Assistant]]
+- [[_COMMUNITY_Addon provision Seed|Addon provision Seed]]
 - [[_COMMUNITY_Compendium Extract Claude|Compendium Extract Claude]]
-- [[_COMMUNITY_Connectors Ad Supabase|Connectors Ad Supabase]]
 - [[_COMMUNITY_Addon lifecycle Expect|Addon lifecycle Expect]]
+- [[_COMMUNITY_Connectors Crm Supabase|Connectors Crm Supabase]]
+- [[_COMMUNITY_Connectors Ad Supabase|Connectors Ad Supabase]]
 - [[_COMMUNITY_Connectors Crm Twenty|Connectors Crm Twenty]]
 - [[_COMMUNITY_Finance Brain|Finance Brain]]
 - [[_COMMUNITY_Calcom client Supabase|Calcom client Supabase]]
 - [[_COMMUNITY_Roof math Supabase|Roof math Supabase]]
 - [[_COMMUNITY_Connectors Crm Null|Connectors Crm Null]]
-- [[_COMMUNITY_Training Train qwen3 lora|Training Train qwen3 lora]]
 - [[_COMMUNITY_Stripe webhook Demo conversion Supabase|Stripe webhook Demo conversion Supabase]]
+- [[_COMMUNITY_Training Train qwen3 lora|Training Train qwen3 lora]]
+- [[_COMMUNITY_Brain Handle|Brain Handle]]
 - [[_COMMUNITY_Email attachment parser Supabase|Email attachment parser Supabase]]
-- [[_COMMUNITY_Enrich site Supabase|Enrich site Supabase]]
 - [[_COMMUNITY_Som hitl relay Bridge Supabase|Som hitl relay Bridge Supabase]]
-- [[_COMMUNITY_Assistant chat Widget|Assistant chat Widget]]
 - [[_COMMUNITY_Api Admin Use|Api Admin Use]]
-- [[_COMMUNITY_Gc Gcsub Line|Gc Gcsub Line]]
+- [[_COMMUNITY_Assistant chat Widget|Assistant chat Widget]]
 - [[_COMMUNITY_Cogs export generator Supabase|Cogs export generator Supabase]]
+- [[_COMMUNITY_Gc Gcsub Line|Gc Gcsub Line]]
+- [[_COMMUNITY_Clients Client detail|Clients Client detail]]
 - [[_COMMUNITY_Cli session supervisor|Cli session supervisor]]
 - [[_COMMUNITY_Debug Debug feedback overlay|Debug Debug feedback overlay]]
 - [[_COMMUNITY_Roof report Supabase|Roof report Supabase]]
 - [[_COMMUNITY_Roof overlay Pitch|Roof overlay Pitch]]
-- [[_COMMUNITY_Leads Handle|Leads Handle]]
-- [[_COMMUNITY_Magic link intake|Magic link intake]]
 - [[_COMMUNITY_Estimate builder Line|Estimate builder Line]]
 - [[_COMMUNITY_Api Referrals Use|Api Referrals Use]]
 - [[_COMMUNITY_Analytics Plan|Analytics Plan]]
+- [[_COMMUNITY_Login Var|Login Var]]
+- [[_COMMUNITY_Reports Load|Reports Load]]
 - [[_COMMUNITY_Auth Login|Auth Login]]
 - [[_COMMUNITY_Api Prompts Use|Api Prompts Use]]
 - [[_COMMUNITY_Cogs Cogsmonthly Toggle|Cogs Cogsmonthly Toggle]]
 - [[_COMMUNITY_Client signal scorer Supabase|Client signal scorer Supabase]]
-- [[_COMMUNITY_Hvac serial decode Supabase|Hvac serial decode Supabase]]
 - [[_COMMUNITY_Solar savings Supabase|Solar savings Supabase]]
-- [[_COMMUNITY_Ai matcher Supabase|Ai matcher Supabase]]
+- [[_COMMUNITY_Demo site activation link|Demo site activation link]]
 - [[_COMMUNITY_Solar financing options Supabase|Solar financing options Supabase]]
 - [[_COMMUNITY_Forms Form fields|Forms Form fields]]
 - [[_COMMUNITY_Bookings Handle|Bookings Handle]]
 - [[_COMMUNITY_Api Plans Use|Api Plans Use]]
 - [[_COMMUNITY_Api Clients Use|Api Clients Use]]
-- [[_COMMUNITY_Demo lifecycle enforcer Supabase|Demo lifecycle enforcer Supabase]]
 - [[_COMMUNITY_Connectors Null Supabase|Connectors Null Supabase]]
-- [[_COMMUNITY_Solar monitoring sync Supabase|Solar monitoring sync Supabase]]
 - [[_COMMUNITY_Magic link intake|Magic link intake]]
+- [[_COMMUNITY_Chief of staff Handle|Chief of staff Handle]]
+- [[_COMMUNITY_Gc Gcprojects Format|Gc Gcprojects Format]]
+- [[_COMMUNITY_Api Support Use|Api Support Use]]
 - [[_COMMUNITY_Cogs Cogsresellers Margin|Cogs Cogsresellers Margin]]
 - [[_COMMUNITY_Analytics Intelligence Use|Analytics Intelligence Use]]
 - [[_COMMUNITY_Analytics Platform analytics Handle|Analytics Platform analytics Handle]]
-- [[_COMMUNITY_Api Support Use|Api Support Use]]
+- [[_COMMUNITY_Pwa Public Drain|Pwa Public Drain]]
+- [[_COMMUNITY_Demo lifecycle enforcer Supabase|Demo lifecycle enforcer Supabase]]
 - [[_COMMUNITY_Seed Generate|Seed Generate]]
 - [[_COMMUNITY_Compendium Setup browser|Compendium Setup browser]]
 - [[_COMMUNITY_Compendium Upload claude|Compendium Upload claude]]
 - [[_COMMUNITY_Assistant button Var|Assistant button Var]]
 - [[_COMMUNITY_Solar Solar proposal builder|Solar Solar proposal builder]]
+- [[_COMMUNITY_Marketplace Var|Marketplace Var]]
 - [[_COMMUNITY_Home Var|Home Var]]
 - [[_COMMUNITY_Website Update|Website Update]]
-- [[_COMMUNITY_Help Handle|Help Handle]]
 - [[_COMMUNITY_Var Worktrees Nav|Var Worktrees Nav]]
-- [[_COMMUNITY_Cogs export Csv|Cogs export Csv]]
-- [[_COMMUNITY_Email inbox Handle|Email inbox Handle]]
-- [[_COMMUNITY_Marketplace Var|Marketplace Var]]
 - [[_COMMUNITY_Affiliate Affiliate Var|Affiliate Affiliate Var]]
+- [[_COMMUNITY_Email inbox Handle|Email inbox Handle]]
 - [[_COMMUNITY_Outbound call scheduler Supabase|Outbound call scheduler Supabase]]
 - [[_COMMUNITY_Routing engine Supabase|Routing engine Supabase]]
-- [[_COMMUNITY_Generate one tap qr|Generate one tap qr]]
-- [[_COMMUNITY_Tester guide docx|Tester guide docx]]
+- [[_COMMUNITY_Status Status badge Packages|Status Status badge Packages]]
 - [[_COMMUNITY_Packages Format|Packages Format]]
 - [[_COMMUNITY_Cross domain links|Cross domain links]]
 - [[_COMMUNITY_Activating Var|Activating Var]]
@@ -95,13 +96,13 @@
 - [[_COMMUNITY_Ads campaigns Var|Ads campaigns Var]]
 - [[_COMMUNITY_Gc Gcproject board Var|Gc Gcproject board Var]]
 - [[_COMMUNITY_Faq Reseller|Faq Reseller]]
-- [[_COMMUNITY_Status Status badge Packages|Status Status badge Packages]]
+- [[_COMMUNITY_Tour Position|Tour Position]]
 - [[_COMMUNITY_Api Provisioning Use|Api Provisioning Use]]
 - [[_COMMUNITY_Api A2p tracking|Api A2p tracking]]
 - [[_COMMUNITY_Clients Chief of staff tab|Clients Chief of staff tab]]
 - [[_COMMUNITY_Referrals Var|Referrals Var]]
 - [[_COMMUNITY_Sections Value stack|Sections Value stack]]
-- [[_COMMUNITY_Tour Position|Tour Position]]
+- [[_COMMUNITY_Generate one tap qr|Generate one tap qr]]
 - [[_COMMUNITY_Var Worktrees Playwright|Var Worktrees Playwright]]
 - [[_COMMUNITY_Analyze bugs Categorize|Analyze bugs Categorize]]
 - [[_COMMUNITY_Critical journeys auth|Critical journeys auth]]
@@ -116,25 +117,25 @@
 - [[_COMMUNITY_Flow diagram Connector|Flow diagram Connector]]
 - [[_COMMUNITY_Vapi owner Supabase|Vapi owner Supabase]]
 - [[_COMMUNITY_Bugfix verification Settle|Bugfix verification Settle]]
+- [[_COMMUNITY_Seam contracts Auth|Seam contracts Auth]]
 - [[_COMMUNITY_Reseller Load|Reseller Load]]
 - [[_COMMUNITY_Reseller Reseller roi Calculate|Reseller Reseller roi Calculate]]
-- [[_COMMUNITY_Brand settings Reseller|Brand settings Reseller]]
-- [[_COMMUNITY_Billing Reseller|Billing Reseller]]
+- [[_COMMUNITY_Affiliate program Reseller|Affiliate program Reseller]]
 - [[_COMMUNITY_Shell Nav|Shell Nav]]
 - [[_COMMUNITY_Api Testing Use|Api Testing Use]]
 - [[_COMMUNITY_Var Worktrees Format|Var Worktrees Format]]
 - [[_COMMUNITY_Provisioning Provisioning monitor Step|Provisioning Provisioning monitor Step]]
 - [[_COMMUNITY_Workflows Workflow status|Workflows Workflow status]]
-- [[_COMMUNITY_Alerts Health alerts Overall|Alerts Health alerts Overall]]
 - [[_COMMUNITY_Knowledge Knowledge base Use|Knowledge Knowledge base Use]]
 - [[_COMMUNITY_Prompts Prompt editor|Prompts Prompt editor]]
 - [[_COMMUNITY_Maintenance Maintenance board Health|Maintenance Maintenance board Health]]
+- [[_COMMUNITY_Webhooks Webhook monitor|Webhooks Webhook monitor]]
 - [[_COMMUNITY_Cogs Cogsclient detail|Cogs Cogsclient detail]]
 - [[_COMMUNITY_Analytics Abtest manager|Analytics Abtest manager]]
 - [[_COMMUNITY_Debug Debug feedback backlog|Debug Debug feedback backlog]]
-- [[_COMMUNITY_Seam contracts Auth|Seam contracts Auth]]
-- [[_COMMUNITY_Affiliate program Reseller|Affiliate program Reseller]]
-- [[_COMMUNITY_Webhooks Webhook monitor|Webhooks Webhook monitor]]
+- [[_COMMUNITY_Brand settings Reseller|Brand settings Reseller]]
+- [[_COMMUNITY_Billing Reseller|Billing Reseller]]
+- [[_COMMUNITY_Alerts Health alerts Overall|Alerts Health alerts Overall]]
 - [[_COMMUNITY_Audit error handlers|Audit error handlers]]
 - [[_COMMUNITY_Gc project Sign|Gc project Sign]]
 - [[_COMMUNITY_Site Open|Site Open]]
@@ -147,7 +148,6 @@
 - [[_COMMUNITY_Terms Reseller|Terms Reseller]]
 - [[_COMMUNITY_Client Reseller|Client Reseller]]
 - [[_COMMUNITY_Partner landing Reseller|Partner landing Reseller]]
-- [[_COMMUNITY_Supabase Invoke|Supabase Invoke]]
 - [[_COMMUNITY_Clients A2 ptracking Pbadge|Clients A2 ptracking Pbadge]]
 - [[_COMMUNITY_Plans Plan editor|Plans Plan editor]]
 - [[_COMMUNITY_Security Audit Time|Security Audit Time]]
@@ -360,7 +360,7 @@
 - [[_COMMUNITY_Pricing|Pricing]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `text()` - 100 edges
+1. `text()` - 101 edges
 2. `trim()` - 96 edges
 3. `getSupabaseServiceClient()` - 68 edges
 4. `update()` - 61 edges
@@ -385,53 +385,53 @@
 
 ## Communities
 
-### Community 0 - "Notification dispatcher Supabase"
+### Community 0 - "Auth Supabase"
 Cohesion: 0.02
-Nodes (96): getModelTier(), trackClaudeUsage(), callClaude(), getAnthropicApiKey(), getModelTier(), logToCorpus(), isEmailConfigured(), isExcludedDocumentType() (+88 more)
+Nodes (62): decodeJwtPayload(), getProjectRefFromSupabaseUrl(), getSupabaseClient(), getUserFromAuthRest(), hasServiceRoleClaimsForProject(), isVerifiedServiceRoleJwtForProject(), resolveAuthContext(), getApiKey() (+54 more)
 
-### Community 1 - "N8n client Supabase"
-Cohesion: 0.01
-Nodes (145): handleSubmit(), analyticsInsert(), analyticsSelect(), analyticsUpdate(), analyticsUpsert(), buildHeaders(), buildUrl(), openBillingPortal() (+137 more)
-
-### Community 2 - "Auth Supabase"
+### Community 1 - "Outreach dispatcher Supabase"
 Cohesion: 0.02
-Nodes (62): decodeJwtPayload(), getProjectRefFromSupabaseUrl(), getSupabaseClient(), getUserFromAuthRest(), hasServiceRoleClaimsForProject(), isVerifiedServiceRoleJwtForProject(), resolveAuthContext(), generateEmbedding() (+54 more)
+Nodes (68): getModelTier(), trackClaudeUsage(), callClaude(), getAnthropicApiKey(), getModelTier(), logToCorpus(), isExcludedDocumentType(), getServiceConnector() (+60 more)
 
-### Community 3 - "Connectors Crm Supabase"
+### Community 2 - "Vapi client Supabase"
+Cohesion: 0.02
+Nodes (96): handleSubmit(), analyticsInsert(), analyticsSelect(), analyticsUpdate(), analyticsUpsert(), buildHeaders(), buildUrl(), csvEscape() (+88 more)
+
+### Community 3 - "N8n client Supabase"
+Cohesion: 0.02
+Nodes (79): annotate_screenshot(), build_docx(), Build HLD Pro V1 Alpha Tester Guide as .docx with annotated screenshots. Adds re, Add red boxes and labels to a screenshot., fetchLifecycleRows(), siteUrl(), fetchView(), fmtDate() (+71 more)
+
+### Community 4 - "Connectors Crm Supabase"
+Cohesion: 0.02
+Nodes (82): createExperiment(), fetchExperiments(), updateExperimentStatus(), updateTrafficPct(), advanceSigningWorkflow(), demoBillingBadge(), exportCSV(), formatCents() (+74 more)
+
+### Community 5 - "Enrich site Supabase"
 Cohesion: 0.03
+Nodes (89): buildMatchingPrompt(), callClaudeForMatching(), getReconciliationAction(), matchTransactions(), parseAndValidateMatches(), assembleOverview(), extractSection(), readFile() (+81 more)
+
+### Community 6 - "Webhook receiver Supabase"
+Cohesion: 0.04
 Nodes (100): emitAuditLog(), getSupabaseServiceClient(), readCalcomResponseValue(), hmacSha1(), hmacSha256(), timingSafeEqual(), allPartiesSigned(), getNextParty() (+92 more)
 
-### Community 4 - "Clients Client detail Var"
+### Community 7 - "Setup readiness Supabase"
+Cohesion: 0.04
+Nodes (88): buildForwardingInstructionsHtml(), alertOperator(), canRun(), executeStep(), getStep(), markStep(), mergeClientProductConfig(), queueDeferred() (+80 more)
+
+### Community 8 - "Support Feature roadmap Affiliate"
 Cohesion: 0.03
-Nodes (82): formatCents(), formatDate(), loadConversions(), getConsentType(), clsx(), daysSince(), demoStatusLabel(), formatCents() (+74 more)
+Nodes (76): formatCents(), formatDate(), loadConversions(), formatCents(), formatDate(), initiateStripeConnect(), loadPayoutData(), saveThreshold() (+68 more)
 
-### Community 5 - "Setup readiness Supabase"
+### Community 9 - "Integrations Var"
 Cohesion: 0.04
-Nodes (92): classifyPrimaryIntent(), findHostMatch(), findPathMatch(), hostnameMatches(), isValidIntent(), normalizeIndustry(), parseHostname(), buildForwardingInstructionsHtml() (+84 more)
+Nodes (62): costItemBadge(), fetchEvents(), fmt(), toggleSort(), useFiltersFromParams(), fetchOverview(), fmt(), marginBg() (+54 more)
 
-### Community 6 - "Connectors Crm Supabase"
-Cohesion: 0.03
-Nodes (65): createExperiment(), fetchExperiments(), updateExperimentStatus(), updateTrafficPct(), advanceSigningWorkflow(), formatCents(), formatDate(), initiateStripeConnect() (+57 more)
-
-### Community 7 - "Integrations Var"
-Cohesion: 0.04
-Nodes (68): costItemBadge(), fetchEvents(), fmt(), toggleSort(), useFiltersFromParams(), fetchOverview(), fmt(), marginBg() (+60 more)
-
-### Community 8 - "Brain Supabase"
-Cohesion: 0.04
-Nodes (81): assembleOverview(), extractSection(), readFile(), getConversationHistory(), handleKeyDown(), handleSend(), loadPrefs(), handleSubmit() (+73 more)
-
-### Community 9 - "Sign Sign documents Auth"
+### Community 10 - "Sign Sign documents Auth"
 Cohesion: 0.03
 Nodes (37): AddClient(), ClientDetail(), DashboardProfile(), compressImage(), getCurrentPosition(), getDefaultChecklist(), JobDetail(), MFAGate() (+29 more)
 
-### Community 10 - "Real enrollment founder"
+### Community 11 - "Real enrollment founder"
 Cohesion: 0.07
 Nodes (54): openReferrals(), openNewTicket(), openSupport(), browserSignIn(), callEdgeFunction(), callEdgeFunctionMethod(), cleanupClientByEmail(), cleanupTestClient() (+46 more)
-
-### Community 11 - "Addon provision Login"
-Cohesion: 0.06
-Nodes (40): channelLabel(), formatLogDate(), handleSave(), thresholdLabel(), updatePref(), ensureCustomerClient(), ensurePlanId(), ensureResellerAccount() (+32 more)
 
 ### Community 12 - "Provisioning Autoprovision preflight Client"
 Cohesion: 0.09
@@ -441,417 +441,417 @@ Nodes (49): firstPlan(), getWizardValue(), hasClientValue(), main(), missingInpu
 Cohesion: 0.07
 Nodes (32): buildMagicLinkTwiml(), disambiguateTwiml(), emptyTwiml(), enforceLatencyFloor(), getServiceClient(), parseFormBody(), portalUrl(), rateLimitTwiml() (+24 more)
 
-### Community 14 - "Wizard Assistant"
+### Community 14 - "Magic link review decision Supabase"
+Cohesion: 0.09
+Nodes (39): getAllowedOrigins(), getCorsHeaders(), getSecurityHeaders(), handleCors(), safeErrorResponse(), safeHeaders(), buildLamPayload(), createTrialCoupon() (+31 more)
+
+### Community 15 - "Wizard Assistant"
 Cohesion: 0.09
 Nodes (21): addService(), handleResync(), handleSave(), removeService(), updateService(), createDefaultSetupPlan(), derivePlanKey(), fireProvisioningTrigger() (+13 more)
 
-### Community 15 - "Magic link review decision Supabase"
-Cohesion: 0.1
-Nodes (36): getAllowedOrigins(), getCorsHeaders(), getSecurityHeaders(), handleCors(), safeHeaders(), buildLamPayload(), createTrialCoupon(), extractToolCall() (+28 more)
+### Community 16 - "Addon provision Seed"
+Cohesion: 0.09
+Nodes (30): channelLabel(), formatLogDate(), handleSave(), thresholdLabel(), updatePref(), ensureCustomerClient(), ensurePlanId(), ensureResellerAccount() (+22 more)
 
-### Community 16 - "Compendium Extract Claude"
-Cohesion: 0.08
-Nodes (28): assemblePatterns(), readFileIfExists(), truncateFailFastLog(), consolidateClaudePack(), readModular(), copyAsTxt(), copyNotebookExtras(), walkMarkdownFiles() (+20 more)
-
-### Community 17 - "Connectors Ad Supabase"
-Cohesion: 0.08
-Nodes (6): getAdConnector(), getAllAdConnectors(), GoogleAdsConnector, sha256Hash(), MetaAdConnector, NextdoorAdConnector
+### Community 17 - "Compendium Extract Claude"
+Cohesion: 0.09
+Nodes (26): assemblePatterns(), readFileIfExists(), truncateFailFastLog(), consolidateClaudePack(), readModular(), copyAsTxt(), copyNotebookExtras(), walkMarkdownFiles() (+18 more)
 
 ### Community 18 - "Addon lifecycle Expect"
 Cohesion: 0.12
 Nodes (31): accountForAddon(), activateAddon(), assertBackendArtifact(), callFunction(), cancelAddonFromUi(), cleanupAddonState(), ensureEnvironment(), escapeRegex() (+23 more)
 
-### Community 19 - "Connectors Crm Twenty"
+### Community 19 - "Connectors Crm Supabase"
+Cohesion: 0.11
+Nodes (10): GHLCRMConnector, callClaudeAssistant(), decodeByPattern(), decodeWithAI(), executeTool(), tryCarrierBryant(), tryGoodman(), tryLennox() (+2 more)
+
+### Community 20 - "Connectors Ad Supabase"
+Cohesion: 0.1
+Nodes (5): getAdConnector(), getAllAdConnectors(), sha256Hash(), MetaAdConnector, NextdoorAdConnector
+
+### Community 21 - "Connectors Crm Twenty"
 Cohesion: 0.12
 Nodes (1): TwentyCRMConnector
 
-### Community 20 - "Finance Brain"
+### Community 22 - "Finance Brain"
 Cohesion: 0.26
 Nodes (19): addCustomRow(), badge(), handleSave(), resetRow(), resolveVerticals(), updateRow(), UploadAndSeedSection(), addLineItem() (+11 more)
 
-### Community 21 - "Calcom client Supabase"
+### Community 23 - "Calcom client Supabase"
 Cohesion: 0.16
 Nodes (9): CalcomClient, toCalcomApiBookingFields(), buildCalcomBookingLink(), buildCalcomFinalizeDefaults(), buildServiceAppointmentBookingFields(), normalizeAvailability(), normalizeDuration(), normalizeTimeZone() (+1 more)
 
-### Community 22 - "Roof math Supabase"
+### Community 24 - "Roof math Supabase"
 Cohesion: 0.2
 Nodes (20): assessConfidence(), emptyResults(), extractLinearMeasurements(), getTagDoubles(), getTagValue(), parseDSM(), parseTiffTags(), processBuildingInsights() (+12 more)
 
-### Community 23 - "Connectors Crm Null"
+### Community 25 - "Connectors Crm Null"
 Cohesion: 0.11
 Nodes (1): NullCRMConnector
 
-### Community 24 - "Training Train qwen3 lora"
-Cohesion: 0.19
-Nodes (18): export_gguf(), load_dataset(), main(), parse_args(), HLD Pro — Qwen3-8B QLoRA Fine-Tuning Script Runs on RunPod A100 80GB GPU  Usage:, Step 1: Load JSONL dataset from local path or R2/S3.      Expected JSONL format, # TODO: Implement when RunPod environment is ready, Step 2: Load base model with 4-bit quantization + configure LoRA.      Uses Unsl (+10 more)
-
-### Community 25 - "Stripe webhook Demo conversion Supabase"
+### Community 26 - "Stripe webhook Demo conversion Supabase"
 Cohesion: 0.19
 Nodes (12): auditConflict(), auditOrphan(), handleDemoCheckoutSession(), jsonBody(), getDemoBillingStatus(), getSessionPriceId(), isPotentialDemoCheckout(), parseDemoClientReference() (+4 more)
 
-### Community 26 - "Email attachment parser Supabase"
+### Community 27 - "Training Train qwen3 lora"
+Cohesion: 0.19
+Nodes (18): export_gguf(), load_dataset(), main(), parse_args(), HLD Pro — Qwen3-8B QLoRA Fine-Tuning Script Runs on RunPod A100 80GB GPU  Usage:, Step 1: Load JSONL dataset from local path or R2/S3.      Expected JSONL format, # TODO: Implement when RunPod environment is ready, Step 2: Load base model with 4-bit quantization + configure LoRA.      Uses Unsl (+10 more)
+
+### Community 28 - "Brain Handle"
+Cohesion: 0.36
+Nodes (14): handleBulkApprove(), handleBulkDelete(), handleFileUpload(), handleManualSubmit(), handlePdfUpload(), handlePricingApproval(), handlePricingEdit(), handleWebScrape() (+6 more)
+
+### Community 29 - "Email attachment parser Supabase"
 Cohesion: 0.26
 Nodes (10): extractPdfText(), haikuVerify(), heuristicScore(), inferTaskType(), ocrImage(), parseAttachment(), parseCsv(), parseCsvLine() (+2 more)
 
-### Community 27 - "Enrich site Supabase"
-Cohesion: 0.36
-Nodes (11): diffSiteConfig(), enrichSiteConfig(), extractBrainChunks(), extractBrainStructured(), extractWizard(), genericFallback(), isGenericDefault(), isMeaningful() (+3 more)
-
-### Community 28 - "Som hitl relay Bridge Supabase"
+### Community 30 - "Som hitl relay Bridge Supabase"
 Cohesion: 0.3
 Nodes (9): acceptNotificationRequest(), buildInboundResponseEvent(), deadLetter(), hasRequiredRequestFields(), isSensitive(), parseIso(), stableHash(), delivered() (+1 more)
 
-### Community 29 - "Assistant chat Widget"
-Cohesion: 0.3
-Nodes (7): apiConfirmTool(), apiSendMessage(), clsx(), formatToolPreview(), getSpeechRecognition(), handleKeyDown(), handleSend()
-
-### Community 30 - "Api Admin Use"
+### Community 31 - "Api Admin Use"
 Cohesion: 0.25
 Nodes (13): getFunctionErrorMessage(), isMissingDemoLifecycleColumn(), useAdminNotes(), useClientActivity(), useClientBilling(), useClientsWithPlans(), useCreateAdminNote(), useGenerateDemoUpgradeLink() (+5 more)
 
-### Community 31 - "Gc Gcsub Line"
-Cohesion: 0.48
-Nodes (10): addLineItem(), apiFetch(), fmt$(), fmtDate(), getToken(), handleSend(), handleSubmit(), handleUpload() (+2 more)
+### Community 32 - "Assistant chat Widget"
+Cohesion: 0.3
+Nodes (7): apiConfirmTool(), apiSendMessage(), clsx(), formatToolPreview(), getSpeechRecognition(), handleKeyDown(), handleSend()
 
-### Community 32 - "Cogs export generator Supabase"
+### Community 33 - "Cogs export generator Supabase"
 Cohesion: 0.29
 Nodes (12): applyEventFilters(), csvEscape(), fetchEventLogRows(), fetchMonthlyRows(), fetchResellersRows(), fetchTokensRows(), formatNumber(), gzipCompress() (+4 more)
 
-### Community 33 - "Cli session supervisor"
+### Community 34 - "Gc Gcsub Line"
+Cohesion: 0.48
+Nodes (10): addLineItem(), apiFetch(), fmt$(), fmtDate(), getToken(), handleSend(), handleSubmit(), handleUpload() (+2 more)
+
+### Community 35 - "Clients Client detail"
+Cohesion: 0.22
+Nodes (8): clsx(), daysSince(), demoStatusLabel(), formatCents(), formatDate(), handleAddNote(), handleCopyDemoUpgradeLink(), timeAgo()
+
+### Community 36 - "Cli session supervisor"
 Cohesion: 0.41
 Nodes (11): append_jsonl(), AttemptResult, build_command(), event_paths(), kill_group(), main(), parse_args(), session_id() (+3 more)
 
-### Community 34 - "Debug Debug feedback overlay"
+### Community 37 - "Debug Debug feedback overlay"
 Cohesion: 0.5
 Nodes (9): canvasToCompressedScreenshot(), captureViewport(), debugFeedbackFunctionUrl(), environmentForHost(), handleCapture(), handleSubmit(), isOverlayEnabledForHost(), routeLabel() (+1 more)
 
-### Community 35 - "Roof report Supabase"
+### Community 38 - "Roof report Supabase"
 Cohesion: 0.33
 Nodes (8): buildHtml(), buildModel(), buildPdf(), esc(), fmt(), normalizeSegment(), calculateTakeoff(), round2()
 
-### Community 36 - "Roof overlay Pitch"
+### Community 39 - "Roof overlay Pitch"
 Cohesion: 0.53
 Nodes (8): buildLegend(), layoutSegments(), LegendSwatch(), parsePitch(), pitchColor(), pitchStroke(), RoofOverlay(), roundRect()
 
-### Community 37 - "Leads Handle"
-Cohesion: 0.52
-Nodes (8): dedupLeads(), extractLeadFromAuditEntry(), formatDate(), handleAddContact(), handleExport(), handleMoveStage(), inferSource(), leadsToCSV()
-
-### Community 38 - "Magic link intake"
-Cohesion: 0.39
-Nodes (10): applyConditionalRequired(), buildFieldList(), decodeJwtUnverified(), getSupabaseUrl(), humanizeLabel(), onReviewDecision(), onSubmit(), submitIntake() (+2 more)
-
-### Community 39 - "Estimate builder Line"
+### Community 40 - "Estimate builder Line"
 Cohesion: 0.55
 Nodes (7): addLineItem(), applyTemplate(), callEdge(), handleGenerate(), handleSend(), removeLineItem(), updateLineItem()
 
-### Community 40 - "Api Referrals Use"
+### Community 41 - "Api Referrals Use"
 Cohesion: 0.33
 Nodes (9): useAffiliateAccounts(), useOutstandingPayoutTotal(), useReferralCodes(), useReferralEvents(), useReferralKPIs(), useReferralPayouts(), useToggleReferralCode(), useTopReferrers() (+1 more)
 
-### Community 41 - "Analytics Plan"
+### Community 42 - "Analytics Plan"
 Cohesion: 0.33
 Nodes (7): trackCheckoutStarted(), trackCtaClick(), trackEvent(), trackPageView(), trackPlanSelected(), getCookie(), handleGetStartedClick()
 
-### Community 42 - "Auth Login"
+### Community 43 - "Login Var"
+Cohesion: 0.31
+Nodes (2): handleForgotPassword(), handleSubmit()
+
+### Community 44 - "Reports Load"
+Cohesion: 0.51
+Nodes (6): formatReportDate(), generateReport(), loadBenchmarks(), loadCurrentMonthPreview(), loadNarrative(), loadReports()
+
+### Community 45 - "Auth Login"
 Cohesion: 0.22
 Nodes (4): AuthProvider(), useAuth(), Login(), ProtectedRoute()
 
-### Community 43 - "Api Prompts Use"
+### Community 46 - "Api Prompts Use"
 Cohesion: 0.38
 Nodes (8): useCreatePromptVersion(), usePromptInteractions(), usePromptTemplate(), usePromptTemplates(), usePromptVersions(), useRollbackPromptVersion(), useSavePromptTemplate(), useUpdateAbWeight()
 
-### Community 44 - "Cogs Cogsmonthly Toggle"
+### Community 47 - "Cogs Cogsmonthly Toggle"
 Cohesion: 0.36
 Nodes (8): clsx(), fmt(), marginBg(), marginColor(), SortIcon(), togglePeriod(), togglePlan(), toggleSort()
 
-### Community 45 - "Client signal scorer Supabase"
+### Community 48 - "Client signal scorer Supabase"
 Cohesion: 0.39
 Nodes (7): detectCallVolumeAnomalies(), detectChurnRisks(), detectMinuteUsageApproaching(), detectStaleTickets(), detectUpsellOpportunities(), dispatchAlert(), insertBriefingItem()
 
-### Community 46 - "Hvac serial decode Supabase"
-Cohesion: 0.53
-Nodes (7): decodeByPattern(), decodeWithAI(), tryCarrierBryant(), tryGoodman(), tryLennox(), tryRheem(), tryTrane()
-
-### Community 47 - "Solar savings Supabase"
+### Community 49 - "Solar savings Supabase"
 Cohesion: 0.42
 Nodes (7): calculateIRR(), calculateITC(), calculateSavings(), environmentalImpact(), estimateProductionFromGoogle(), panelCountFromArea(), systemSizeKw()
 
-### Community 48 - "Ai matcher Supabase"
-Cohesion: 0.42
-Nodes (5): buildMatchingPrompt(), callClaudeForMatching(), getReconciliationAction(), matchTransactions(), parseAndValidateMatches()
+### Community 50 - "Demo site activation link"
+Cohesion: 0.39
+Nodes (5): buildCheckoutCancelUrl(), buildCheckoutParams(), buildCheckoutSuccessUrl(), isDemoSiteActivationEligible(), normalizeSiteSlug()
 
-### Community 49 - "Solar financing options Supabase"
+### Community 51 - "Solar financing options Supabase"
 Cohesion: 0.44
 Nodes (7): amortize(), calculateCash(), calculateLease(), calculateLoan(), calculatePACE(), calculatePPA(), estimate25yrElectricityCostWithoutSolar()
 
-### Community 50 - "Forms Form fields"
+### Community 52 - "Forms Form fields"
 Cohesion: 0.56
 Nodes (5): FormSection(), SelectInput(), TextArea(), TextInput(), Toggle()
 
-### Community 51 - "Bookings Handle"
+### Community 53 - "Bookings Handle"
 Cohesion: 0.53
 Nodes (7): callEdgeFunction(), getStageIndex(), handleApprove(), handleCancel(), handleExecute(), handleNewBooking(), PipelineProgressBar()
 
-### Community 52 - "Api Plans Use"
+### Community 54 - "Api Plans Use"
 Cohesion: 0.39
 Nodes (7): normalizeIncludedProducts(), useBulkVerifyWebhooks(), useCreatePlan(), usePlans(), useUpdatePlan(), useVerifyWebhook(), useWebhookConfigs()
 
-### Community 53 - "Api Clients Use"
+### Community 55 - "Api Clients Use"
 Cohesion: 0.33
 Nodes (5): useClient(), useClientProducts(), useClients(), useCreateClient(), useUpdateClient()
 
-### Community 54 - "Demo lifecycle enforcer Supabase"
-Cohesion: 0.39
-Nodes (4): deriveBillingPaymentMethodStatus(), deriveDemoTrialStatus(), mergeDemoBillingStatus(), parseTrialExpiry()
-
-### Community 55 - "Connectors Null Supabase"
+### Community 56 - "Connectors Null Supabase"
 Cohesion: 0.32
 Nodes (1): NullServiceConnector
-
-### Community 56 - "Solar monitoring sync Supabase"
-Cohesion: 0.5
-Nodes (6): checkAnomaly(), fetchEnphaseProduction(), fetchProductionData(), fetchSolarEdgeProduction(), fireMonitoringAlert(), resolveApiKey()
 
 ### Community 57 - "Magic link intake"
 Cohesion: 0.54
 Nodes (6): buildClientUnsignedJwt(), encodeBase64Url(), encodeJwtPart(), hasAsteriskLabel(), sha256Hex(), signTestJwt()
 
-### Community 58 - "Cogs Cogsresellers Margin"
-Cohesion: 0.36
-Nodes (4): fmt(), marginBg(), marginColor(), toggleExpand()
+### Community 58 - "Chief of staff Handle"
+Cohesion: 0.64
+Nodes (4): getConversationHistory(), handleKeyDown(), handleSend(), loadPrefs()
 
-### Community 59 - "Analytics Intelligence Use"
-Cohesion: 0.43
-Nodes (6): formatMetric(), useBenchmarks(), useCallAnalytics(), useChurnRisks(), useClients(), useUpsellSignals()
+### Community 59 - "Gc Gcprojects Format"
+Cohesion: 0.57
+Nodes (4): formatCurrency(), formatDate(), handleCreate(), updateField()
 
-### Community 60 - "Analytics Platform analytics Handle"
-Cohesion: 0.46
-Nodes (6): formatCents(), handleCancel(), handleSave(), loadTargets(), saveTargets(), useAnalyticsData()
-
-### Community 61 - "Api Support Use"
+### Community 60 - "Api Support Use"
 Cohesion: 0.43
 Nodes (6): useAddComment(), useCreateTicket(), useResolveTicket(), useTicket(), useTickets(), useUpdateTicket()
 
-### Community 62 - "Seed Generate"
+### Community 61 - "Cogs Cogsresellers Margin"
+Cohesion: 0.36
+Nodes (4): fmt(), marginBg(), marginColor(), toggleExpand()
+
+### Community 62 - "Analytics Intelligence Use"
+Cohesion: 0.43
+Nodes (6): formatMetric(), useBenchmarks(), useCallAnalytics(), useChurnRisks(), useClients(), useUpsellSignals()
+
+### Community 63 - "Analytics Platform analytics Handle"
+Cohesion: 0.46
+Nodes (6): formatCents(), handleCancel(), handleSave(), loadTargets(), saveTargets(), useAnalyticsData()
+
+### Community 64 - "Pwa Public Drain"
+Cohesion: 0.54
+Nodes (6): drainQueue(), enqueue(), isAuthEndpoint(), isJobsApiRequest(), isSupabaseMutation(), openDB()
+
+### Community 65 - "Demo lifecycle enforcer Supabase"
+Cohesion: 0.39
+Nodes (4): deriveBillingPaymentMethodStatus(), deriveDemoTrialStatus(), mergeDemoBillingStatus(), parseTrialExpiry()
+
+### Community 66 - "Seed Generate"
 Cohesion: 0.67
 Nodes (5): generateAuditLogs(), generateInvoices(), generateProvisioningSteps(), generateTransactions(), seed()
 
-### Community 63 - "Compendium Setup browser"
+### Community 67 - "Compendium Setup browser"
 Cohesion: 0.62
 Nodes (5): loadConfig(), main(), prompt(), saveConfig(), setupProfile()
 
-### Community 64 - "Compendium Upload claude"
+### Community 68 - "Compendium Upload claude"
 Cohesion: 0.67
 Nodes (5): deleteExistingFiles(), getPackFiles(), loadConfig(), main(), uploadFiles()
 
-### Community 65 - "Assistant button Var"
+### Community 69 - "Assistant button Var"
 Cohesion: 0.29
 Nodes (1): AssistantButton()
 
-### Community 66 - "Solar Solar proposal builder"
+### Community 70 - "Solar Solar proposal builder"
 Cohesion: 0.62
 Nodes (3): fmt(), fmtPct(), fmtUsd()
 
-### Community 67 - "Home Var"
-Cohesion: 0.57
-Nodes (3): formatEventName(), StatusBadge(), timeAgo()
-
-### Community 68 - "Website Update"
-Cohesion: 0.62
-Nodes (3): handleSave(), update(), updateTestimonial()
-
-### Community 69 - "Help Handle"
-Cohesion: 0.62
-Nodes (3): fetchQuickAnswer(), handleOpenAssistant(), handleSearch()
-
-### Community 70 - "Var Worktrees Nav"
-Cohesion: 0.57
-Nodes (3): loadNavState(), normalizeAddonVerticals(), saveNavState()
-
-### Community 71 - "Cogs export Csv"
-Cohesion: 0.57
-Nodes (5): csvEscape(), exportCSV(), exportJSON(), triggerAsyncExport(), triggerBrowserDownload()
-
-### Community 72 - "Email inbox Handle"
-Cohesion: 0.38
-Nodes (3): getSnoozeUntil(), handleClick(), handleTriage()
-
-### Community 73 - "Marketplace Var"
+### Community 71 - "Marketplace Var"
 Cohesion: 0.57
 Nodes (3): daysAgo(), formatCents(), sequenceProgress()
 
-### Community 74 - "Affiliate Affiliate Var"
+### Community 72 - "Home Var"
+Cohesion: 0.57
+Nodes (3): formatEventName(), StatusBadge(), timeAgo()
+
+### Community 73 - "Website Update"
+Cohesion: 0.62
+Nodes (3): handleSave(), update(), updateTestimonial()
+
+### Community 74 - "Var Worktrees Nav"
+Cohesion: 0.57
+Nodes (3): loadNavState(), normalizeAddonVerticals(), saveNavState()
+
+### Community 75 - "Affiliate Affiliate Var"
 Cohesion: 0.57
 Nodes (3): copyReferralLink(), formatCents(), loadAffiliateData()
 
-### Community 75 - "Outbound call scheduler Supabase"
+### Community 76 - "Email inbox Handle"
+Cohesion: 0.38
+Nodes (3): getSnoozeUntil(), handleClick(), handleTriage()
+
+### Community 77 - "Outbound call scheduler Supabase"
 Cohesion: 0.73
 Nodes (4): computeScheduledAt(), parseTime(), randomInt(), toClientLocal()
 
-### Community 76 - "Routing engine Supabase"
+### Community 78 - "Routing engine Supabase"
 Cohesion: 0.67
 Nodes (4): estimateDriveMinutes(), haversineKm(), rankWorkers(), scoreWorker()
 
-### Community 77 - "Generate one tap qr"
-Cohesion: 0.53
-Nodes (4): base64UrlJson(), escapeHtml(), loadDemoAccounts(), renderQr()
-
-### Community 78 - "Tester guide docx"
-Cohesion: 0.53
-Nodes (4): annotate_screenshot(), build_docx(), Build HLD Pro V1 Alpha Tester Guide as .docx with annotated screenshots. Adds re, Add red boxes and labels to a screenshot.
-
-### Community 79 - "Packages Format"
-Cohesion: 0.53
-Nodes (4): formatCurrency(), formatDate(), formatRelativeTime(), truncate()
-
-### Community 80 - "Cross domain links"
-Cohesion: 0.53
-Nodes (4): checkBrokenImages(), collectImages(), collectInternalLinks(), screenshot()
-
-### Community 81 - "Activating Var"
-Cohesion: 0.53
-Nodes (2): loadSetupQueue(), StepIcon()
-
-### Community 82 - "Mfaenroll Var"
-Cohesion: 0.53
-Nodes (2): enroll(), handleVerify()
-
-### Community 83 - "Ads campaigns Var"
-Cohesion: 0.53
-Nodes (2): fmt(), handleExpand()
-
-### Community 84 - "Gc Gcproject board Var"
-Cohesion: 0.53
-Nodes (2): fmt$(), GateCheckModal()
-
-### Community 85 - "Faq Reseller"
-Cohesion: 0.53
-Nodes (2): clsx(), toggle()
-
-### Community 86 - "Status Status badge Packages"
+### Community 79 - "Status Status badge Packages"
 Cohesion: 0.53
 Nodes (2): ProductBadge(), StatusBadge()
 
-### Community 87 - "Api Provisioning Use"
-Cohesion: 0.47
-Nodes (3): useProvisioningClients(), useProvisioningSteps(), useRetryProvisioning()
-
-### Community 88 - "Api A2p tracking"
+### Community 80 - "Packages Format"
 Cohesion: 0.53
-Nodes (4): getBusinessName(), toRegistrationStatus(), useA2PStatuses(), useCheckA2PStatus()
+Nodes (4): formatCurrency(), formatDate(), formatRelativeTime(), truncate()
 
-### Community 89 - "Clients Chief of staff tab"
+### Community 81 - "Cross domain links"
 Cohesion: 0.53
-Nodes (4): ChiefOfStaffTab(), formatCents(), handleEdit(), handleSave()
+Nodes (4): checkBrokenImages(), collectImages(), collectInternalLinks(), screenshot()
 
-### Community 90 - "Referrals Var"
+### Community 82 - "Activating Var"
 Cohesion: 0.53
-Nodes (2): handleCopy(), loadReferralData()
+Nodes (2): loadSetupQueue(), StepIcon()
 
-### Community 91 - "Sections Value stack"
-Cohesion: 0.6
-Nodes (4): Check(), Dash(), planSavings(), planTotal()
+### Community 83 - "Mfaenroll Var"
+Cohesion: 0.53
+Nodes (2): enroll(), handleVerify()
 
-### Community 92 - "Tour Position"
+### Community 84 - "Ads campaigns Var"
+Cohesion: 0.53
+Nodes (2): fmt(), handleExpand()
+
+### Community 85 - "Gc Gcproject board Var"
+Cohesion: 0.53
+Nodes (2): fmt$(), GateCheckModal()
+
+### Community 86 - "Faq Reseller"
+Cohesion: 0.53
+Nodes (2): clsx(), toggle()
+
+### Community 87 - "Tour Position"
 Cohesion: 0.53
 Nodes (4): getTooltipPosition(), handler(), startTour(), updatePosition()
 
-### Community 93 - "Var Worktrees Playwright"
+### Community 88 - "Api Provisioning Use"
+Cohesion: 0.47
+Nodes (3): useProvisioningClients(), useProvisioningSteps(), useRetryProvisioning()
+
+### Community 89 - "Api A2p tracking"
+Cohesion: 0.53
+Nodes (4): getBusinessName(), toRegistrationStatus(), useA2PStatuses(), useCheckA2PStatus()
+
+### Community 90 - "Clients Chief of staff tab"
+Cohesion: 0.53
+Nodes (4): ChiefOfStaffTab(), formatCents(), handleEdit(), handleSave()
+
+### Community 91 - "Referrals Var"
+Cohesion: 0.53
+Nodes (2): handleCopy(), loadReferralData()
+
+### Community 92 - "Sections Value stack"
+Cohesion: 0.6
+Nodes (4): Check(), Dash(), planSavings(), planTotal()
+
+### Community 93 - "Generate one tap qr"
+Cohesion: 0.53
+Nodes (4): base64UrlJson(), escapeHtml(), loadDemoAccounts(), renderQr()
+
+### Community 94 - "Var Worktrees Playwright"
 Cohesion: 0.8
 Nodes (3): isLocalUrl(), resolveAppUrl(), resolvePortalBaseUrl()
 
-### Community 94 - "Analyze bugs Categorize"
+### Community 95 - "Analyze bugs Categorize"
 Cohesion: 0.6
 Nodes (3): categorizeBug(), diagnoseEdgeFunction(), main()
 
-### Community 95 - "Critical journeys auth"
+### Community 96 - "Critical journeys auth"
 Cohesion: 0.6
 Nodes (3): expectLoginForm(), expectPortalDashboardLanding(), expectResellerDashboardLanding()
 
-### Community 96 - "Chatbot Open"
+### Community 97 - "Chatbot Open"
 Cohesion: 0.6
 Nodes (3): chatInput(), openChat(), openMarketingPage()
 
-### Community 97 - "Var Worktrees Open"
+### Community 98 - "Var Worktrees Open"
 Cohesion: 0.6
 Nodes (3): openNewSupportTicketForm(), openSupportRoute(), signInAsGC()
 
-### Community 98 - "Wizard Wizard step5 Var"
+### Community 99 - "Wizard Wizard step5 Var"
 Cohesion: 0.4
 Nodes (1): WizardStep5()
 
-### Community 99 - "Wizard Wizard Var"
+### Community 100 - "Wizard Wizard Var"
 Cohesion: 0.4
 Nodes (1): StepIcon()
 
-### Community 100 - "Mfaverify Var"
+### Community 101 - "Mfaverify Var"
 Cohesion: 0.4
 Nodes (1): handleVerify()
 
-### Community 101 - "Rankings Var"
+### Community 102 - "Rankings Var"
 Cohesion: 0.4
 Nodes (1): return()
 
-### Community 102 - "Ads Var"
+### Community 103 - "Ads Var"
 Cohesion: 0.4
 Nodes (1): fmt()
 
-### Community 103 - "Templates Handlebars Variables"
+### Community 104 - "Templates Handlebars Variables"
 Cohesion: 0.7
 Nodes (3): extractVariables(), renderTemplate(), validateVariables()
 
-### Community 104 - "Flow diagram Connector"
+### Community 105 - "Flow diagram Connector"
 Cohesion: 0.6
 Nodes (3): Connector(), FlowDiagram(), MobileConnector()
 
-### Community 105 - "Vapi owner Supabase"
+### Community 106 - "Vapi owner Supabase"
 Cohesion: 0.67
 Nodes (2): getOwnerBriefingTools(), getOwnerSystemPrompt()
 
-### Community 106 - "Bugfix verification Settle"
+### Community 107 - "Bugfix verification Settle"
 Cohesion: 0.67
 Nodes (2): settlePage(), signInAndGo()
 
-### Community 107 - "Reseller Load"
+### Community 108 - "Seam contracts Auth"
+Cohesion: 0.67
+Nodes (2): authHeaders(), parseJson()
+
+### Community 109 - "Reseller Load"
 Cohesion: 0.67
 Nodes (2): loadExpandedGroups(), toggleGroup()
 
-### Community 108 - "Reseller Reseller roi Calculate"
+### Community 110 - "Reseller Reseller roi Calculate"
 Cohesion: 0.67
 Nodes (2): calculateResellerROI(), formatDollars()
 
-### Community 109 - "Brand settings Reseller"
+### Community 111 - "Affiliate program Reseller"
 Cohesion: 0.67
-Nodes (2): handleSave(), update()
+Nodes (2): Affiliates(), EarningsCalculator()
 
-### Community 110 - "Billing Reseller"
-Cohesion: 0.67
-Nodes (2): getTier(), openStripePortal()
-
-### Community 111 - "Shell Nav"
+### Community 112 - "Shell Nav"
 Cohesion: 0.67
 Nodes (2): loadNavState(), saveNavState()
 
-### Community 112 - "Api Testing Use"
+### Community 113 - "Api Testing Use"
 Cohesion: 0.67
 Nodes (2): useClientHealth(), useTestResults()
 
-### Community 113 - "Var Worktrees Format"
+### Community 114 - "Var Worktrees Format"
 Cohesion: 0.67
 Nodes (2): formatCents(), timeAgo()
 
-### Community 114 - "Provisioning Provisioning monitor Step"
+### Community 115 - "Provisioning Provisioning monitor Step"
 Cohesion: 0.67
 Nodes (2): StepRow(), wizardProgress()
 
-### Community 115 - "Workflows Workflow status"
+### Community 116 - "Workflows Workflow status"
 Cohesion: 0.67
 Nodes (2): timeAgo(), useWorkflowStatus()
-
-### Community 116 - "Alerts Health alerts Overall"
-Cohesion: 0.67
-Nodes (2): OverallBadge(), StatusIcon()
 
 ### Community 117 - "Knowledge Knowledge base Use"
 Cohesion: 0.67
@@ -865,81 +865,81 @@ Nodes (2): clsx(), handleSave()
 Cohesion: 0.67
 Nodes (2): HealthDot(), ResultRow()
 
-### Community 120 - "Cogs Cogsclient detail"
-Cohesion: 0.67
-Nodes (2): fmt(), marginColor()
-
-### Community 121 - "Analytics Abtest manager"
-Cohesion: 0.67
-Nodes (2): useActiveTests(), useHistoricalTests()
-
-### Community 122 - "Debug Debug feedback backlog"
-Cohesion: 0.67
-Nodes (2): formatDate(), ScreenshotPreview()
-
-### Community 123 - "Seam contracts Auth"
-Cohesion: 0.67
-Nodes (2): authHeaders(), parseJson()
-
-### Community 124 - "Affiliate program Reseller"
-Cohesion: 0.67
-Nodes (2): Affiliates(), EarningsCalculator()
-
-### Community 125 - "Webhooks Webhook monitor"
+### Community 120 - "Webhooks Webhook monitor"
 Cohesion: 0.67
 Nodes (2): DirectionBadge(), StatusBadge()
 
-### Community 126 - "Audit error handlers"
+### Community 121 - "Cogs Cogsclient detail"
+Cohesion: 0.67
+Nodes (2): fmt(), marginColor()
+
+### Community 122 - "Analytics Abtest manager"
+Cohesion: 0.67
+Nodes (2): useActiveTests(), useHistoricalTests()
+
+### Community 123 - "Debug Debug feedback backlog"
+Cohesion: 0.67
+Nodes (2): formatDate(), ScreenshotPreview()
+
+### Community 124 - "Brand settings Reseller"
+Cohesion: 0.67
+Nodes (2): handleSave(), update()
+
+### Community 125 - "Billing Reseller"
+Cohesion: 0.67
+Nodes (2): getTier(), openStripePortal()
+
+### Community 126 - "Alerts Health alerts Overall"
+Cohesion: 0.67
+Nodes (2): OverallBadge(), StatusIcon()
+
+### Community 127 - "Audit error handlers"
 Cohesion: 0.67
 Nodes (1): classifyFunction()
 
-### Community 127 - "Gc project Sign"
+### Community 128 - "Gc project Sign"
 Cohesion: 0.67
 Nodes (1): signInAsGC()
 
-### Community 128 - "Site Open"
+### Community 129 - "Site Open"
 Cohesion: 0.67
 Nodes (1): openMarketingChat()
 
-### Community 129 - "Preflight Run"
+### Community 130 - "Preflight Run"
 Cohesion: 0.67
 Nodes (1): runPreflight()
 
-### Community 130 - "Gc phase2 Sign"
+### Community 131 - "Gc phase2 Sign"
 Cohesion: 0.67
 Nodes (1): signInAsGC()
 
-### Community 131 - "Real enrollment Sign"
+### Community 132 - "Real enrollment Sign"
 Cohesion: 0.67
 Nodes (1): signInBrowser()
 
-### Community 132 - "Reseller site Sign"
+### Community 133 - "Reseller site Sign"
 Cohesion: 0.67
 Nodes (1): signInAsReseller()
 
-### Community 133 - "Partners Persona cards Reseller"
+### Community 134 - "Partners Persona cards Reseller"
 Cohesion: 0.67
 Nodes (1): PersonaCards()
 
-### Community 134 - "Partners Roicalculator Reseller"
+### Community 135 - "Partners Roicalculator Reseller"
 Cohesion: 0.67
 Nodes (1): fmt()
 
-### Community 135 - "Terms Reseller"
+### Community 136 - "Terms Reseller"
 Cohesion: 0.67
 Nodes (1): Terms()
 
-### Community 136 - "Client Reseller"
+### Community 137 - "Client Reseller"
 Cohesion: 0.67
 Nodes (1): getWholesaleCost()
 
-### Community 137 - "Partner landing Reseller"
+### Community 138 - "Partner landing Reseller"
 Cohesion: 0.67
 Nodes (1): Hero()
-
-### Community 138 - "Supabase Invoke"
-Cohesion: 0.67
-Nodes (1): invokeFunction()
 
 ### Community 139 - "Clients A2 ptracking Pbadge"
 Cohesion: 0.67
@@ -2158,14 +2158,14 @@ Nodes (0):
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `trim()` connect `Brain Supabase` to `Notification dispatcher Supabase`, `N8n client Supabase`, `Auth Supabase`, `Connectors Crm Supabase`, `Clients Client detail Var`, `Setup readiness Supabase`, `Connectors Crm Supabase`, `Integrations Var`, `Real enrollment founder`, `Addon provision Login`, `Provisioning Autoprovision preflight Client`, `Magic link jwt Supabase`, `Wizard Assistant`, `Magic link review decision Supabase`, `Compendium Extract Claude`, `Connectors Ad Supabase`, `Addon lifecycle Expect`, `Calcom client Supabase`, `Stripe webhook Demo conversion Supabase`, `Email attachment parser Supabase`, `Enrich site Supabase`, `Assistant chat Widget`, `Gc Gcsub Line`, `Debug Debug feedback overlay`, `Roof report Supabase`, `Leads Handle`, `Magic link intake`, `Ai matcher Supabase`, `Bookings Handle`, `Help Handle`?**
-  _High betweenness centrality (0.073) - this node is a cross-community bridge._
-- **Why does `toLocaleDateString()` connect `Clients Client detail Var` to `Notification dispatcher Supabase`, `N8n client Supabase`, `Roof report Supabase`, `Leads Handle`, `Connectors Crm Supabase`, `Integrations Var`, `Brain Supabase`, `Sign Sign documents Auth`, `Addon provision Login`, `Provisioning Autoprovision preflight Client`, `Wizard Assistant`, `Finance Brain`, `Gc Gcsub Line`?**
-  _High betweenness centrality (0.071) - this node is a cross-community bridge._
-- **Why does `getSupabaseServiceClient()` connect `Connectors Crm Supabase` to `Notification dispatcher Supabase`, `N8n client Supabase`, `Auth Supabase`, `Setup readiness Supabase`, `Connectors Crm Supabase`, `Brain Supabase`, `Magic link jwt Supabase`, `Connectors Ad Supabase`, `Connectors Crm Twenty`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **Are the 98 inferred relationships involving `text()` (e.g. with `sendReminderSMS()` and `sendSms()`) actually correct?**
-  _`text()` has 98 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `trim()` connect `Enrich site Supabase` to `Auth Supabase`, `Outreach dispatcher Supabase`, `Vapi client Supabase`, `N8n client Supabase`, `Connectors Crm Supabase`, `Webhook receiver Supabase`, `Setup readiness Supabase`, `Support Feature roadmap Affiliate`, `Integrations Var`, `Real enrollment founder`, `Provisioning Autoprovision preflight Client`, `Magic link jwt Supabase`, `Magic link review decision Supabase`, `Wizard Assistant`, `Addon provision Seed`, `Compendium Extract Claude`, `Addon lifecycle Expect`, `Connectors Ad Supabase`, `Calcom client Supabase`, `Stripe webhook Demo conversion Supabase`, `Brain Handle`, `Email attachment parser Supabase`, `Assistant chat Widget`, `Gc Gcsub Line`, `Clients Client detail`, `Debug Debug feedback overlay`, `Roof report Supabase`, `Demo site activation link`, `Bookings Handle`, `Chief of staff Handle`, `Gc Gcprojects Format`?**
+  _High betweenness centrality (0.103) - this node is a cross-community bridge._
+- **Why does `toLocaleDateString()` connect `Support Feature roadmap Affiliate` to `Gc Gcsub Line`, `N8n client Supabase`, `Connectors Crm Supabase`, `Enrich site Supabase`, `Roof report Supabase`, `Clients Client detail`, `Integrations Var`, `Sign Sign documents Auth`, `Provisioning Autoprovision preflight Client`, `Reports Load`, `Wizard Assistant`, `Addon provision Seed`, `Finance Brain`, `Gc Gcprojects Format`?**
+  _High betweenness centrality (0.049) - this node is a cross-community bridge._
+- **Why does `text()` connect `N8n client Supabase` to `Auth Supabase`, `Outreach dispatcher Supabase`, `Vapi client Supabase`, `Connectors Crm Supabase`, `Enrich site Supabase`, `Webhook receiver Supabase`, `Support Feature roadmap Affiliate`, `Provisioning Autoprovision preflight Client`, `Magic link jwt Supabase`, `Magic link review decision Supabase`, `Addon provision Seed`, `Addon lifecycle Expect`, `Connectors Crm Supabase`, `Connectors Crm Twenty`, `Bookings Handle`, `Calcom client Supabase`, `Brain Handle`?**
+  _High betweenness centrality (0.043) - this node is a cross-community bridge._
+- **Are the 99 inferred relationships involving `text()` (e.g. with `sendReminderSMS()` and `sendSms()`) actually correct?**
+  _`text()` has 99 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 92 inferred relationships involving `trim()` (e.g. with `normalizePhone()` and `sha256Hash()`) actually correct?**
   _`trim()` has 92 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 66 inferred relationships involving `getSupabaseServiceClient()` (e.g. with `resolveClientId()` and `handleCallback()`) actually correct?**

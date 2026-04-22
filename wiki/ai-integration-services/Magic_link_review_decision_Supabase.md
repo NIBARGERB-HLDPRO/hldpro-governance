@@ -1,6 +1,6 @@
 # Magic link review decision Supabase
 
-> 44 nodes · cohesion 0.10
+> 47 nodes · cohesion 0.09
 
 ## Key Concepts
 
@@ -21,15 +21,15 @@
 - **toolResult()** (6 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
 - **schemaMatches()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
 - **extractToolCall()** (5 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
+- **getStripeKey()** (5 connections) — `ai-integration-services/backend/supabase/functions/coupon-manager/index.ts`
 - **sendReviewSms()** (5 connections) — `ai-integration-services/backend/supabase/functions/magic-link-intake-submit/index.ts`
 - **getSecurityHeaders()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
+- **safeErrorResponse()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
 - **handleAlerts()** (4 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
 - **handleAnalytics()** (4 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
 - **handleEndOfCall()** (4 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
 - **handleRecentCalls()** (4 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
-- **isExpired()** (4 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- **resolveTwilioFrom()** (4 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- *... and 19 more nodes in this community*
+- *... and 22 more nodes in this community*
 
 ## Relationships
 
@@ -43,6 +43,7 @@
 - `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/vault.ts`
 - `ai-integration-services/backend/supabase/functions/consent-confirm/index.ts`
+- `ai-integration-services/backend/supabase/functions/coupon-manager/index.ts`
 - `ai-integration-services/backend/supabase/functions/magic-link-intake-submit/index.ts`
 - `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
 - `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
@@ -53,8 +54,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 205 (83%)
-- INFERRED: 42 (17%)
+- EXTRACTED: 215 (83%)
+- INFERRED: 45 (17%)
 - AMBIGUOUS: 0 (0%)
 
 ---
