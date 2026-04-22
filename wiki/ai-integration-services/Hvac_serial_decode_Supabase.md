@@ -1,6 +1,6 @@
 # Hvac serial decode Supabase
 
-> 45 nodes · cohesion 0.08
+> 48 nodes · cohesion 0.08
 
 ## Key Concepts
 
@@ -9,6 +9,8 @@
 - **index.ts** (12 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/hvac-serial-decode/index.ts`
 - **index.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/email-attachment-parser/index.ts`
 - **index.ts** (10 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/email-attachment-parser/index.ts`
+- **index.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/corpus-scorer/index.ts`
+- **index.ts** (8 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/corpus-scorer/index.ts`
 - **trackClaudeUsage()** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
 - **getAnthropicApiKey()** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/corpus.ts`
 - **callClaudeWithTools()** (7 connections) — `ai-integration-services/backend/supabase/functions/chief-of-staff-responder/index.ts`
@@ -27,9 +29,7 @@
 - **extractPdfText()** (4 connections) — `ai-integration-services/backend/supabase/functions/email-attachment-parser/index.ts`
 - **generateBriefing()** (4 connections) — `ai-integration-services/backend/supabase/functions/briefing-job/index.ts`
 - **generateReactivationMessage()** (4 connections) — `ai-integration-services/backend/supabase/functions/reactivation-campaign/index.ts`
-- **ocrImage()** (4 connections) — `ai-integration-services/backend/supabase/functions/email-attachment-parser/index.ts`
-- **parseCsvLine()** (4 connections) — `ai-integration-services/backend/supabase/functions/email-attachment-parser/index.ts`
-- *... and 20 more nodes in this community*
+- *... and 23 more nodes in this community*
 
 ## Relationships
 
@@ -56,12 +56,12 @@
 - `ai-integration-services/backend/supabase/functions/webhook-receiver/index.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/llm-router.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/pii.ts`
-- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/email-attachment-parser/index.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/corpus-scorer/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 183 (76%)
-- INFERRED: 59 (24%)
+- EXTRACTED: 201 (77%)
+- INFERRED: 59 (23%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -1,6 +1,6 @@
 # Support Feature roadmap Var
 
-> 116 nodes · cohesion 0.03
+> 131 nodes · cohesion 0.03
 
 ## Key Concepts
 
@@ -13,9 +13,11 @@
 - **estimate-engine.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/estimate-engine.ts`
 - **estimate-engine.ts** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/estimate-engine.ts`
 - **triggerCampaign()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardCampaigns.tsx`
+- **DemoAnalytics.tsx** (6 connections) — `ai-integration-services/apps/dashboard/src/pages/demo/DemoAnalytics.tsx`
 - **UpsellTasks.tsx** (6 connections) — `ai-integration-services/apps/dashboard/src/pages/upsell/UpsellTasks.tsx`
 - **DashboardReports.tsx** (6 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardReports.tsx`
 - **JobQueue.tsx** (6 connections) — `ai-integration-services/apps/pwa/src/pages/JobQueue.tsx`
+- **DemoAnalytics.tsx** (6 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/demo/DemoAnalytics.tsx`
 - **UpsellTasks.tsx** (6 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/upsell/UpsellTasks.tsx`
 - **DashboardReports.tsx** (6 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/DashboardReports.tsx`
 - **JobQueue.tsx** (6 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/pwa/src/pages/JobQueue.tsx`
@@ -27,9 +29,7 @@
 - **loadCampaigns()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardCampaigns.tsx`
 - **formatReportDate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardReports.tsx`
 - **loadReports()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardReports.tsx`
-- **formatDate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/gc/GCProjects.tsx`
-- **handleCreate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/gc/GCProjects.tsx`
-- *... and 91 more nodes in this community*
+- *... and 106 more nodes in this community*
 
 ## Relationships
 
@@ -46,6 +46,7 @@
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardCalls.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardCampaigns.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardReports.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardRoadmap.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/gc/GCProjects.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/sites/DemoActivationBanner.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/solar/SolarLeadPipeline.tsx`
@@ -53,15 +54,14 @@
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardCalls.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardCampaigns.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardReports.tsx`
+- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardRoadmap.tsx`
 - `ai-integration-services/apps/portal/src/pages/gc/GCProjects.tsx`
 - `ai-integration-services/apps/portal/src/pages/solar/SolarLeadPipeline.tsx`
-- `ai-integration-services/apps/pwa/src/pages/JobQueue.tsx`
-- `ai-integration-services/backend/supabase/functions/_shared/area-code-consent.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 434 (89%)
-- INFERRED: 56 (11%)
+- EXTRACTED: 494 (89%)
+- INFERRED: 58 (11%)
 - AMBIGUOUS: 0 (0%)
 
 ---

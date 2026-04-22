@@ -1,6 +1,6 @@
 # Brain web scraper Supabase
 
-> 271 nodes · cohesion 0.03
+> 281 nodes · cohesion 0.03
 
 ## Key Concepts
 
@@ -19,6 +19,7 @@
 - **index.ts** (15 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/assistant-chat/index.ts`
 - **index.ts** (14 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/finance-api/index.ts`
 - **index.ts** (14 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/gbp-review-monitor/index.ts`
+- **index.ts** (14 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/notification-dispatcher/index.ts`
 - **index.ts** (14 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/reseller-manager/index.ts`
 - **index.ts** (13 connections) — `ai-integration-services/backend/supabase/functions/brain-web-scraper/index.ts`
 - **index.ts** (13 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/brain-web-scraper/index.ts`
@@ -28,8 +29,7 @@
 - **index.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/magic-link-intake-submit/index.ts`
 - **index.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/service-connect/index.ts`
 - **factory.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/connectors/service/factory.ts`
-- **embeddings.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/embeddings.ts`
-- *... and 246 more nodes in this community*
+- *... and 256 more nodes in this community*
 
 ## Relationships
 
@@ -38,30 +38,30 @@
 ## Source Files
 
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/service/factory.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/email.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/gate-checks.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
-- `ai-integration-services/backend/supabase/functions/affiliate-approve/index.ts`
-- `ai-integration-services/backend/supabase/functions/benchmark-compute/index.ts`
+- `ai-integration-services/backend/supabase/functions/auto-written-estimate-send/index.ts`
 - `ai-integration-services/backend/supabase/functions/brain-ingest/index.ts`
 - `ai-integration-services/backend/supabase/functions/brain-pdf-parser/index.ts`
 - `ai-integration-services/backend/supabase/functions/brain-web-scraper/index.ts`
 - `ai-integration-services/backend/supabase/functions/buyer-score-job/index.ts`
+- `ai-integration-services/backend/supabase/functions/capacity-watcher/index.ts`
 - `ai-integration-services/backend/supabase/functions/chief-of-staff-responder/index.ts`
 - `ai-integration-services/backend/supabase/functions/churn-risk-scorer/index.ts`
 - `ai-integration-services/backend/supabase/functions/cma-generator/index.ts`
+- `ai-integration-services/backend/supabase/functions/cogs-client-detail/index.ts`
 - `ai-integration-services/backend/supabase/functions/email-oauth-connect/index.ts`
-- `ai-integration-services/backend/supabase/functions/estimate-send/index.ts`
+- `ai-integration-services/backend/supabase/functions/esign-artifact-url/index.ts`
+- `ai-integration-services/backend/supabase/functions/finance-api/index.ts`
 - `ai-integration-services/backend/supabase/functions/gc-lien-waiver-issue/index.ts`
 - `ai-integration-services/backend/supabase/functions/gc-notify-sub/index.ts`
-- `ai-integration-services/backend/supabase/functions/marketplace-lead-capture/index.ts`
-- `ai-integration-services/backend/supabase/functions/memory-writer/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 2501 (99%)
-- INFERRED: 16 (1%)
+- EXTRACTED: 2546 (99%)
+- INFERRED: 20 (1%)
 - AMBIGUOUS: 0 (0%)
 
 ---

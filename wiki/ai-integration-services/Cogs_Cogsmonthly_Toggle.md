@@ -1,12 +1,16 @@
 # Cogs Cogsmonthly Toggle
 
-> 10 nodes · cohesion 0.36
+> 14 nodes · cohesion 0.25
 
 ## Key Concepts
 
-- **COGSMonthly.tsx** (8 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSMonthly.tsx`
+- **COGSMonthly.tsx** (12 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSMonthly.tsx`
 - **COGSMonthly.tsx** (8 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/cogs/COGSMonthly.tsx`
+- **normalizeMonthly()** (4 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSMonthly.tsx`
+- **bucketCostItem()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSMonthly.tsx`
+- **cents()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSMonthly.tsx`
 - **clsx()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSMonthly.tsx`
+- **dollarsToCents()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSMonthly.tsx`
 - **fmt()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSMonthly.tsx`
 - **marginBg()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSMonthly.tsx`
 - **marginColor()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSMonthly.tsx`
@@ -26,7 +30,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 32 (100%)
+- EXTRACTED: 46 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

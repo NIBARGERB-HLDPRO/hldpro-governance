@@ -1,35 +1,24 @@
 # Enrich site Supabase
 
-> 128 nodes · cohesion 0.03
+> 15 nodes · cohesion 0.36
 
 ## Key Concepts
 
-- **trim()** (100 connections) — `ai-integration-services/backend/supabase/functions/purchase-session/index.ts`
 - **enrich-site-config.ts** (13 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
 - **enrich-site-config.ts** (13 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/enrich-site-config.ts`
-- **index.ts** (12 connections) — `ai-integration-services/backend/supabase/functions/service-offering-suggest/index.ts`
-- **index.ts** (12 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/service-offering-suggest/index.ts`
-- **SupportQueue.tsx** (11 connections) — `ai-integration-services/apps/dashboard/src/pages/support/SupportQueue.tsx`
-- **SupportQueue.tsx** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/support/SupportQueue.tsx`
 - **enrichSiteConfig()** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
-- **classify-primary-intent.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.ts`
-- **classify-primary-intent.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/classify-primary-intent.ts`
-- **handleSend()** (8 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/ChiefOfStaff.tsx`
-- **handleSearch()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardHelp.tsx`
-- **helpers.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
-- **ai-matcher.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
-- **helpers.ts** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/demo-site-activation-link/helpers.ts`
-- **ai-matcher.ts** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/ai-matcher.ts`
-- **assembleOverview()** (6 connections) — `ai-integration-services/scripts/compendium/assemble-overview.ts`
-- **classifyPrimaryIntent()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.ts`
-- **fetchQuickAnswer()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardHelp.tsx`
 - **pickString()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
-- **main()** (6 connections) — `ai-integration-services/scripts/compendium/upload-notebooklm.ts`
-- **matchTransactions()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
-- **getConversationHistory()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/ChiefOfStaff.tsx`
-- **handleKeyDown()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/ChiefOfStaff.tsx`
-- **findHostMatch()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.ts`
-- *... and 103 more nodes in this community*
+- **extractBrainStructured()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
+- **extractWizard()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
+- **isMeaningful()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
+- **mergeLayer()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
+- **pickUrl()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
+- **extractBrainChunks()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
+- **isGenericDefault()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
+- **genericFallback()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
+- **diffSiteConfig()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
+- **enrich-site-config.test.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.test.ts`
+- **enrich-site-config.test.ts** (1 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/enrich-site-config.test.ts`
 
 ## Relationships
 
@@ -37,31 +26,15 @@
 
 ## Source Files
 
-- `ai-integration-services/apps/dashboard/src/pages/clients/ClientOnboard.tsx`
-- `ai-integration-services/apps/dashboard/src/pages/support/SupportQueue.tsx`
-- `ai-integration-services/apps/marketing/src/components/ui/LeadCaptureModal.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/ChiefOfStaff.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardHelp.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/gc/GCProjectDetail.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/sites/ClientSite.tsx`
-- `ai-integration-services/apps/portal/src/pages/dashboard/ChiefOfStaff.tsx`
-- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardHelp.tsx`
-- `ai-integration-services/apps/portal/src/pages/gc/GCProjectDetail.tsx`
-- `ai-integration-services/apps/reseller/src/pages/Signup.tsx`
-- `ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.test.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/enrich-site-config.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/finance-types.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/rate-limiter.ts`
-- `ai-integration-services/backend/supabase/functions/ad-conversion-event/index.ts`
-- `ai-integration-services/backend/supabase/functions/assistant-chat/index.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/enrich-site-config.test.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/enrich-site-config.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 490 (79%)
-- INFERRED: 134 (21%)
+- EXTRACTED: 78 (96%)
+- INFERRED: 3 (4%)
 - AMBIGUOUS: 0 (0%)
 
 ---
