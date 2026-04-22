@@ -1,0 +1,8 @@
+{
+  "issue_number": 553,
+  "type": "pdcar",
+  "title": "Wire post-deploy verifier into pages_deploy_gate run_gate()",
+  "decision": "Extend existing pages_deploy_gate.py run_gate() to call build_report() from pages_deploy_verifier after every successful deploy. Gate exits non-zero on SHA mismatch. No new scripts or workflows needed.",
+  "constraints": ["Existing pages_deploy_gate.py and pages_deploy_verifier.py only — no new files", "Gate must still pass all existing 33 tests after change"],
+  "approved": true
+}
