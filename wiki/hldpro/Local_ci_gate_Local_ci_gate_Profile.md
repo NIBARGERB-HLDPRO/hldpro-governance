@@ -1,10 +1,10 @@
 # Local ci gate Local ci gate Profile
 
-> 25 nodes · cohesion 0.08
+> 26 nodes · cohesion 0.08
 
 ## Key Concepts
 
-- **TestLocalCiGate** (24 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
+- **TestLocalCiGate** (25 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **test_local_ci_gate.py** (2 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.setUp()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.tearDown()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
@@ -19,6 +19,7 @@
 - **.test_execution_scope_resolution_requires_matching_lane_claim()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_runs_handoff_validator_for_handoff_paths()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_runs_provisioning_evidence_validator_for_runbooks()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
+- **.test_governance_profile_runs_sql_schema_drift_probe_contract_for_contract_surfaces()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_skips_handoff_validator_for_unrelated_paths()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_skips_provisioning_evidence_validator_for_unrelated_paths()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_uses_active_execution_scope_placeholder()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
@@ -28,7 +29,7 @@
 - **.test_profile_rejects_duplicate_check_ids()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_profile_rejects_malformed_dependency_metadata()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_report_json_is_machine_readable()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
-- **.test_resolves_changed_files_from_git_and_writes_report()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
+- *... and 1 more nodes in this community*
 
 ## Relationships
 
@@ -40,7 +41,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 49 (100%)
+- EXTRACTED: 51 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
