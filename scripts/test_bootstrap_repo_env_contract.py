@@ -272,8 +272,8 @@ def run_synthetic_seek_bootstrap() -> None:
     SEEK_LOCAL_SUPABASE_URL=http://127.0.0.1:54321
     SEEK_LOCAL_SUPABASE_ANON_KEY=synthetic-seek-local-anon
     SEEK_LOCAL_SUPABASE_SERVICE_ROLE_KEY=synthetic-seek-local-service
-    OPENAI_API_KEY=synthetic-openai-secret
-    ANTHROPIC_API_KEY=synthetic-anthropic-secret
+    SEEK_OPENAI_API_KEY=synthetic-openai-secret
+    SEEK_ANTHROPIC_API_KEY=synthetic-anthropic-secret
     SUPABASE_ACCESS_TOKEN=synthetic-supabase-token
     STRIPE_SECRET_KEY=synthetic-stripe-secret
     STRIPE_WEBHOOK_SECRET=synthetic-webhook-secret
@@ -335,6 +335,8 @@ def run_synthetic_stampede_bootstrap() -> None:
     TRADIER_ACCOUNT_ID=synthetic-tradier-account
     TRADIER_PRODUCTION_BASE_URL=https://api.tradier.example.test/v1
     X_BEARER_TOKEN=synthetic-x-bearer
+    STAMPEDE_ANTHROPIC_API_KEY=synthetic-stampede-anthropic
+    STAMPEDE_OPENAI_API_KEY=synthetic-stampede-openai
     """
 
     with tempfile.TemporaryDirectory() as tmp:
