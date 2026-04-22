@@ -1,0 +1,67 @@
+{
+  "schema_version": "v1",
+  "contract_id": "healthcareplatform-maintenance-reset",
+  "repo": "HealthcarePlatform",
+  "placement": "repo-local-local-ci-profile",
+  "sql_surface": true,
+  "metadata_probe": {
+    "id": "organizations-column-probe",
+    "dialect": "postgres",
+    "metadata_source": "information_schema.columns",
+    "metadata_query": "select column_name from information_schema.columns where table_schema = 'public' and table_name = 'organizations'",
+    "required_columns": [
+      {
+        "schema": "public",
+        "table": "organizations",
+        "column": "organization_id"
+      }
+    ]
+  },
+  "destructive_operations": [
+    {
+      "path": "scripts/maintenance/reset-organizations.sql",
+      "operation": "wipe",
+      "preflight_probe_id": "organizations-column-probe",
+      "preflight_required_before_mutation": true
+    }
+  ],
+  "schema_fixture": {
+    "relations": [
+      {
+        "schema": "public",
+        "table": "organizations",
+        "columns": [
+          "organization_id",
+          "name",
+          "created_at"
+        ]
+      }
+    ]
+  },
+  "negative_controls": [
+    {
+      "name": "stale-org-id-column",
+      "stale_reference": {
+        "schema": "public",
+        "table": "organizations",
+        "column": "org_id"
+      },
+      "expected_failure": "missing column before destructive mutation"
+    }
+  ],
+  "local_ci_profile_hook": {
+    "profile": "healthcareplatform",
+    "check_id": "sql-schema-drift-probe",
+    "paths": [
+      "scripts/maintenance/**",
+      "supabase/migrations/**"
+    ],
+    "command": [
+      "python3",
+      "scripts/ops/sql_schema_probe.py",
+      "--contract",
+      "docs/sql-schema-probes/maintenance-reset.json"
+    ]
+  },
+  "residual_risk": "Repos without SQL/destructive maintenance surfaces declare sql_surface=false and record the deferral in their repo-local profile or issue."
+}

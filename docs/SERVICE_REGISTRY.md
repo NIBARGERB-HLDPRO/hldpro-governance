@@ -1,6 +1,6 @@
 # Service Registry
 
-**Last Updated:** 2026-04-20
+**Last Updated:** 2026-04-21
 **Scope:** hldpro-governance — meta-governance repo
 **Source of truth:** This file inventories the scripts, agents, CI workflows, and hooks that constitute the active "services" enforced or provided by hldpro-governance across the governed org.
 
@@ -44,6 +44,7 @@
 | assert_execution_scope.py | `scripts/overlord/assert_execution_scope.py` | Asserts issue work runs from the declared root/branch, enforces planning-only `allowed_write_paths`, requires accepted pinned-agent handoff evidence for non-planning diffs, and can require `lane_claim` issue ownership |
 | check_execution_environment.py | `scripts/overlord/check_execution_environment.py` | Session-start execution-scope preflight for root, branch, write paths, sibling roots, and optional lane-claim enforcement |
 | validate_provisioning_evidence.py | `scripts/overlord/validate_provisioning_evidence.py` | Scans provisioning evidence for secret-like values while reporting only file paths and matched classes |
+| validate_sql_schema_probe_contract.py | `scripts/overlord/validate_sql_schema_probe_contract.py` | Validates repo-local SQL schema drift probe contracts, destructive-operation preflight requirements, fixtures, negative controls, profile hooks, and SQL-surface deferrals |
 | validate_governed_repos.py | `scripts/overlord/validate_governed_repos.py` | Validates `docs/governed_repos.json` and reconciles it with graphify targets |
 | governed_repos.py | `scripts/overlord/governed_repos.py` | Shared adapter for executable governed repo registry consumers |
 | codex_ingestion.py | `scripts/overlord/codex_ingestion.py` | Codex review ingestion: generate, qualify, promote; Codex QA remains distinct from Worker authority |

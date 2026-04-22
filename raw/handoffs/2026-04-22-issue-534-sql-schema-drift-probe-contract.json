@@ -1,0 +1,90 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-534-sql-schema-drift-probe-contract",
+  "issue_number": 534,
+  "parent_epic_number": 533,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-qa",
+  "structured_plan_ref": "docs/plans/issue-534-sql-schema-drift-probe-contract-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-22-issue-534-sql-schema-drift-probe-contract-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "The contract placement decision is repo-local Local CI profile hooks rather than a broad global SQL abstraction.",
+      "verification_refs": [
+        "docs/runbooks/sql-schema-drift-probes.md",
+        "docs/plans/issue-534-sql-schema-drift-probe-contract-pdcar.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "The reusable probe contract validates schema metadata queries, fixtures, stale-column negative controls, destructive preflight requirements, and residual-risk deferrals.",
+      "verification_refs": [
+        "scripts/overlord/validate_sql_schema_probe_contract.py",
+        "scripts/overlord/test_validate_sql_schema_probe_contract.py",
+        "raw/validation/2026-04-22-issue-534-sql-schema-drift-probe-contract.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "A concrete HealthcarePlatform-style example documents organization_id as required and org_id as the stale negative control.",
+      "verification_refs": [
+        "docs/examples/sql-schema-drift/healthcareplatform-maintenance-reset.json",
+        "raw/validation/2026-04-22-issue-534-sql-schema-drift-probe-contract.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "The hldpro-governance Local CI profile runs focused SQL schema drift probe contract tests when contract surfaces change.",
+      "verification_refs": [
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py",
+        "raw/validation/2026-04-22-issue-534-sql-schema-drift-probe-contract.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "Session-error and self-learning evidence link SQL schema drift to the chosen contract and validator.",
+      "verification_refs": [
+        "docs/runbooks/session-error-patterns.md",
+        "docs/ERROR_PATTERNS.md",
+        "docs/FAIL_FAST_LOG.md",
+        "raw/operator-context/self-learning/2026-04-22-issue-534-sql-schema-drift-probe-contract.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_validate_sql_schema_probe_contract.py",
+    "python3 scripts/overlord/validate_sql_schema_probe_contract.py --root .",
+    "python3 -m unittest tools.local-ci-gate.tests.test_local_ci_gate",
+    "python3 -m py_compile scripts/overlord/validate_sql_schema_probe_contract.py",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-22-issue-534-sql-schema-drift-probe-contract.json",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-534-sql-schema-drift-contract --changed-files-file /tmp/issue-534-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-22-issue-534-sql-schema-drift-probe-contract-implementation.json --changed-files-file /tmp/issue-534-changed-files.txt --require-lane-claim"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-22-issue-534-sql-schema-drift-probe-contract.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-22-issue-534-sql-schema-drift-probe-contract.md"
+  ],
+  "artifact_refs": [
+    "docs/examples/sql-schema-drift/healthcareplatform-maintenance-reset.json",
+    "docs/runbooks/sql-schema-drift-probes.md",
+    "OVERLORD_BACKLOG.md",
+    "scripts/overlord/validate_sql_schema_probe_contract.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-22-issue-534-sql-schema-drift-probe-contract.md",
+    "raw/operator-context/self-learning/2026-04-22-issue-534-sql-schema-drift-probe-contract.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-22T00:30:50Z",
+  "notes": "Issue #534 implements the remaining #533 SQL/schema drift slice as governance-owned contract validation plus downstream repo-local adoption guidance."
+}
