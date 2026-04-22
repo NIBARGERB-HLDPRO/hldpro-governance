@@ -23,6 +23,7 @@
 
 | Item | Date | Notes |
 |------|------|-------|
+| Add 5 governance agents + cross-repo adoption guide | 2026-04-22 | Issue [#559](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/559). Added codex-brief, som-worker-triage, issue-lane-bootstrap, sim-runner, backlog-promoter agents to agents/; updated CLAUDE.md routing table; added docs/agents-adoption-guide.md for cross-repo adoption. |
 | Wire post-deploy verifier into pages_deploy_gate | 2026-04-22 | Issue [#553](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/553). Merged via PR [#555](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/555); 36 tests pass; child of epic #467. |
 | Stampede adoption of hldpro-sim v0.1.0 | 2026-04-22 | Issue [#425](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/425). Closed 2026-04-22T03:01:34Z — feat(stampede): adopt hldpro-sim v0.1.0, wire Slice 6 simulation runner. |
 | Cloudflare Pages direct-upload deploy gate epic | 2026-04-21 | Issue [#467](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/467). Reusable gate + verifier package complete: gate (#469 / PR #484), verifier (#470 / PR #482), post-deploy verification wired into gate (#553 / PR #555), branch preflight + title identity (#554 / PR #556). Closed 2026-04-21T23:18Z. |
