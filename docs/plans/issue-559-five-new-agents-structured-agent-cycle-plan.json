@@ -1,0 +1,150 @@
+{
+  "session_id": "session-20260422-issue-559-five-new-agents",
+  "issue_number": 559,
+  "objective": "Add five governance agents to agents/: codex-brief, som-worker-triage, issue-lane-bootstrap, sim-runner, and backlog-promoter. Update CLAUDE.md routing table and delegation rules. Write docs/agents-adoption-guide.md covering all 9 governance agents with per-repo configuration checklist. Complete Stage 6 closeout.",
+  "tier": 1,
+  "scope_boundary": [
+    "agents/codex-brief.md — authors and validates Codex Spark dispatch briefs encoding all 5 dispatch prerequisites",
+    "agents/som-worker-triage.md — reads raw/packets/inbound/, applies SoM routing table, checks Worker availability, emits triage table",
+    "agents/issue-lane-bootstrap.md — bootstraps a new governance issue lane: worktree, branch, execution-scope skeleton",
+    "agents/sim-runner.md — invokes hldpro-sim via CodexCliProvider, writes run artifacts to raw/packets/outbound/",
+    "agents/backlog-promoter.md — HITL agent promoting CODEX-FLAGGED ingestion findings to PROGRESS.md or FAIL_FAST_LOG.md",
+    "docs/agents-adoption-guide.md — cross-repo adoption guide for all 9 governance agents",
+    "CLAUDE.md — routing table and delegation rules updated with 5 new agent rows",
+    "OVERLORD_BACKLOG.md — Done section updated with issue #559 entry",
+    "docs/plans/issue-559-five-new-agents-pdcar.md — planning document",
+    "docs/plans/issue-559-five-new-agents-structured-agent-cycle-plan.json — this plan file",
+    "raw/execution-scopes/2026-04-22-issue-559-five-new-agents-implementation.json — execution scope contract",
+    "raw/closeouts/2026-04-22-issue-559-five-new-agents.md — Stage 6 closeout"
+  ],
+  "out_of_scope": [
+    "Changes to existing overlord, overlord-sweep, overlord-audit, or verify-completion agent files",
+    "Changes to any code under scripts/, packages/, or .github/workflows/",
+    "Live invocation of codex exec or any Worker model",
+    "Changes to any downstream repo (AIS, HealthcarePlatform, LAM, knocktracker, Stampede)",
+    "Writing raw/packets/ inbound or outbound content (the new agents handle that at runtime)",
+    "Changes to STANDARDS.md or docs/exception-register.md"
+  ],
+  "research_summary": "Four governance agents already exist in agents/ (overlord, overlord-sweep, overlord-audit, verify-completion). The codex-brief template is at docs/templates/codex-spark-dispatch-brief.md per issue #412/PR #417. The SoM routing table is canonical in STANDARDS.md §Society of Minds. The hldpro-sim package (issue #407) is released as v0.1.0 and consumed by Stampede (issue #425). The codex-ingestion flow is established and CODEX-FLAGGED entries appear in ~/.codex-ingestion/*/backlog-*.md. Agent frontmatter must include name, description, model, tools per STANDARDS.md §DA agent schema.",
+  "research_artifacts": [
+    "agents/overlord.md, agents/overlord-sweep.md, agents/overlord-audit.md, agents/verify-completion.md — existing agent examples",
+    "docs/templates/codex-spark-dispatch-brief.md — Codex dispatch brief template (issue #412)",
+    "STANDARDS.md §Society of Minds — SoM routing table + Worker availability rules",
+    "packages/hldpro-sim/ — hldpro-sim v0.1.0 package (issue #407)",
+    "Issue #559: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/559"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 — Five agent files",
+      "goal": "Write all five agent files to agents/ with correct frontmatter and body content.",
+      "tasks": [
+        "Write agents/codex-brief.md with haiku model pin and 7-step dispatch brief authoring procedure",
+        "Write agents/som-worker-triage.md with haiku model pin and Worker availability checking procedure",
+        "Write agents/issue-lane-bootstrap.md with haiku model pin and lane bootstrap procedure",
+        "Write agents/sim-runner.md with claude-sonnet-4-6 model pin and hldpro-sim invocation procedure",
+        "Write agents/backlog-promoter.md with claude-sonnet-4-6 model pin and HITL CODEX-FLAGGED promotion procedure"
+      ],
+      "acceptance_criteria": [
+        "All 5 agent files have name, description, model, tools frontmatter fields",
+        "codex-brief.md references scripts/codex-preflight.sh and docs/templates/codex-spark-dispatch-brief.md",
+        "som-worker-triage.md references STANDARDS.md §Society of Minds routing table",
+        "issue-lane-bootstrap.md produces execution-scope skeleton at raw/execution-scopes/",
+        "sim-runner.md specifies CodexCliProvider only — AnthropicApiProvider is explicitly excluded",
+        "backlog-promoter.md requires explicit per-finding operator confirmation before any write"
+      ],
+      "file_paths": [
+        "agents/codex-brief.md",
+        "agents/som-worker-triage.md",
+        "agents/issue-lane-bootstrap.md",
+        "agents/sim-runner.md",
+        "agents/backlog-promoter.md"
+      ]
+    },
+    {
+      "name": "Sprint 2 — Adoption guide + CLAUDE.md + OVERLORD_BACKLOG.md",
+      "goal": "Write cross-repo adoption guide, update CLAUDE.md routing table and delegation rules, and add Done entry to OVERLORD_BACKLOG.md.",
+      "tasks": [
+        "Write docs/agents-adoption-guide.md covering all 9 governance agents (4 existing + 5 new) with trigger phrases, model pins, and per-repo configuration checklist",
+        "Update CLAUDE.md Routing Table with 5 new rows for new agents",
+        "Update CLAUDE.md Delegation Rules with 5 new DO NOT rules",
+        "Update OVERLORD_BACKLOG.md Done section with issue #559 entry"
+      ],
+      "acceptance_criteria": [
+        "docs/agents-adoption-guide.md has complete table of all 9 agents",
+        "CLAUDE.md routing table has codex-brief, som-worker-triage, issue-lane-bootstrap, sim-runner, backlog-promoter rows",
+        "CLAUDE.md delegation rules explicitly prohibit dispatcher from doing these tasks directly",
+        "OVERLORD_BACKLOG.md Done section has issue #559 row at the top"
+      ],
+      "file_paths": [
+        "docs/agents-adoption-guide.md",
+        "CLAUDE.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "name": "Sprint 3 — Governance artifacts + closeout",
+      "goal": "Write PDCAR, execution scope, and Stage 6 closeout. Run closeout hook.",
+      "tasks": [
+        "Write docs/plans/issue-559-five-new-agents-pdcar.md",
+        "Write raw/execution-scopes/2026-04-22-issue-559-five-new-agents-implementation.json",
+        "Write raw/closeouts/2026-04-22-issue-559-five-new-agents.md from TEMPLATE.md",
+        "Run hooks/closeout-hook.sh to verify closeout"
+      ],
+      "acceptance_criteria": [
+        "Structured plan JSON passes validate_structured_agent_cycle_plan.py",
+        "Execution scope JSON is valid and references this plan",
+        "Closeout fills all required TEMPLATE.md fields",
+        "hooks/closeout-hook.sh exits 0"
+      ],
+      "file_paths": [
+        "docs/plans/issue-559-five-new-agents-pdcar.md",
+        "docs/plans/issue-559-five-new-agents-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-22-issue-559-five-new-agents-implementation.json",
+        "raw/closeouts/2026-04-22-issue-559-five-new-agents.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "scope-reviewer",
+      "role": "Scope reviewer",
+      "focus": "Confirm all writes stay within the 12 declared allowed_write_paths. No code files, no workflow files, no downstream repo files.",
+      "status": "accepted",
+      "summary": "All changes are documentation and agent files under agents/, docs/plans/, docs/, raw/, CLAUDE.md, and OVERLORD_BACKLOG.md. No scripts, packages, or workflow files are modified.",
+      "evidence": ["agents/ directory — agent markdown only", "CLAUDE.md — routing and delegation rules only", "raw/execution-scopes/ — execution scope JSON only"]
+    },
+    {
+      "reviewer": "agent-schema-reviewer",
+      "role": "Agent frontmatter schema reviewer",
+      "focus": "Verify all 5 new agents have required frontmatter: name, description, model, tools; model pins match SoM routing charter.",
+      "status": "accepted",
+      "summary": "codex-brief and som-worker-triage and issue-lane-bootstrap are pinned to haiku (Tier 1 orchestration). sim-runner and backlog-promoter are pinned to claude-sonnet-4-6 (Tier 0 review/complex reasoning). All match SoM routing table.",
+      "evidence": ["STANDARDS.md §Society of Minds — model routing table", "agents/overlord.md — existing haiku-pinned example"]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "n/a",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This is an agent documentation and routing update — no standards changes, no new architecture, no new CI enforcement. SoM charter does not require alternate-model review for documentation-only governance surface writes.",
+    "evidence": ["STANDARDS.md §Society of Minds — alternate review triggers: architecture PRs and standards changes only", "No STANDARDS.md modifications in scope"]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-sonnet-4-6",
+    "execution_mode": "implementation_complete",
+    "approved_scope_summary": "All 3 sprints implemented by claude-sonnet-4-6 in worktree issue-559-five-new-agents-20260422. Dispatcher reviews commit log and opens PR.",
+    "next_execution_step": "Dispatcher: review git log --oneline origin/main..HEAD; verify all 12 files staged; push branch and open PR against main.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If any agent file modifies files outside agents/ or docs/, HALT and re-scope.",
+    "If CLAUDE.md exceeds 60 lines after update, audit for bloat before committing.",
+    "If closeout-hook.sh exits non-zero, fix the closeout before committing.",
+    "If validate_structured_agent_cycle_plan.py returns FAIL, fix the JSON before any other commit.",
+    "If a new agent references a Worker model other than haiku or claude-sonnet-4-6, verify against SoM routing table before proceeding."
+  ],
+  "approved": true,
+  "approved_by": ["session-agent-claude-sonnet-4-6"],
+  "approved_at": "2026-04-22T00:00:00Z"
+}

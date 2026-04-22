@@ -25,11 +25,21 @@ For architecture or standards PRs, a dual-signed cross-review artifact under `ra
 | Weekly audit / metrics | `overlord-sweep` | "run sweep", "weekly audit", "check all repos" |
 | Deep pattern analysis | `overlord-audit` | "deep audit", "analyze patterns", "PR recommendations" |
 | Completion verification | `verify-completion` | "verify done", "check artifacts", "mark complete" |
+| Codex dispatch brief | `codex-brief` | "fire codex", "dispatch to spark", "write the brief", "brief issue #NNN" |
+| SoM packet triage | `som-worker-triage` | "triage packets", "process inbound", "what's in the queue", "route packets" |
+| Issue lane bootstrap | `issue-lane-bootstrap` | "start work on #NNN", "bootstrap issue", "claim lane", "set up issue lane" |
+| hldpro-sim invocation | `sim-runner` | "run simulation", "test persona", "simulate slice", "run sim for" |
+| Codex finding promotion | `backlog-promoter` | "promote codex findings", "review ingestion", "promote to progress", "process backlog findings" |
 
 ## Delegation Rules
 - DO NOT answer governance questions yourself — route to overlord
 - DO NOT run audits yourself — route to overlord-sweep
 - DO NOT verify completion yourself — route to verify-completion
+- DO NOT author Codex dispatch briefs yourself — route to codex-brief
+- DO NOT triage SoM packets yourself — route to som-worker-triage
+- DO NOT set up issue lanes manually — route to issue-lane-bootstrap
+- DO NOT invoke hldpro-sim yourself — route to sim-runner
+- DO NOT promote Codex findings yourself — route to backlog-promoter
 - If the request doesn't match any agent: say which agent is closest and ask for clarification
 - NEVER skip pre-session context reads (wiki/index.md + graphify-out/hldpro-governance/GRAPH_REPORT.md)
 

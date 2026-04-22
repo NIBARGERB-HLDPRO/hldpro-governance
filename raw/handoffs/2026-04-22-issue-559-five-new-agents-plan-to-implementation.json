@@ -1,0 +1,77 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-559-five-new-agents-plan-to-implementation",
+  "issue_number": 559,
+  "parent_epic_number": null,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "planner",
+  "to_role": "dispatcher",
+  "structured_plan_ref": "docs/plans/issue-559-five-new-agents-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-22-issue-559-five-new-agents-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "agents/codex-brief.md exists with name, description, model, tools frontmatter",
+      "verification_refs": ["raw/validation/2026-04-22-issue-559-five-new-agents.md"]
+    },
+    {
+      "id": "AC2",
+      "statement": "agents/som-worker-triage.md exists with name, description, model, tools frontmatter",
+      "verification_refs": ["raw/validation/2026-04-22-issue-559-five-new-agents.md"]
+    },
+    {
+      "id": "AC3",
+      "statement": "agents/issue-lane-bootstrap.md exists with name, description, model, tools frontmatter",
+      "verification_refs": ["raw/validation/2026-04-22-issue-559-five-new-agents.md"]
+    },
+    {
+      "id": "AC4",
+      "statement": "agents/sim-runner.md exists with name, description, model, tools frontmatter",
+      "verification_refs": ["raw/validation/2026-04-22-issue-559-five-new-agents.md"]
+    },
+    {
+      "id": "AC5",
+      "statement": "agents/backlog-promoter.md exists with name, description, model, tools frontmatter",
+      "verification_refs": ["raw/validation/2026-04-22-issue-559-five-new-agents.md"]
+    },
+    {
+      "id": "AC6",
+      "statement": "CLAUDE.md routing table has 5 new rows; delegation rules have 5 new DO NOT rows",
+      "verification_refs": ["raw/validation/2026-04-22-issue-559-five-new-agents.md"]
+    },
+    {
+      "id": "AC7",
+      "statement": "docs/agents-adoption-guide.md exists with complete table of all 9 governance agents",
+      "verification_refs": ["raw/validation/2026-04-22-issue-559-five-new-agents.md"]
+    },
+    {
+      "id": "AC8",
+      "statement": "Structured plan passes validate_structured_agent_cycle_plan.py",
+      "verification_refs": ["raw/validation/2026-04-22-issue-559-five-new-agents.md"]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-559-five-new-agents-20260422",
+    "git diff --name-only origin/main..HEAD"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": ["raw/validation/2026-04-22-issue-559-five-new-agents.md"],
+  "artifact_refs": [
+    "agents/codex-brief.md",
+    "agents/som-worker-triage.md",
+    "agents/issue-lane-bootstrap.md",
+    "agents/sim-runner.md",
+    "agents/backlog-promoter.md",
+    "docs/agents-adoption-guide.md",
+    "CLAUDE.md",
+    "OVERLORD_BACKLOG.md"
+  ],
+  "audit_refs": ["raw/validation/2026-04-22-issue-559-five-new-agents.md"],
+  "closeout_ref": "raw/closeouts/2026-04-22-issue-559-five-new-agents.md",
+  "blocked_on": [],
+  "handoff_decision": "draft",
+  "created_at": "2026-04-22T00:00:00Z",
+  "notes": "Dispatcher-authored implementation. Documentation-only scope: agent files, adoption guide, CLAUDE.md routing table. No Codex handoff required. Same-model planner/implementer exception active."
+}
