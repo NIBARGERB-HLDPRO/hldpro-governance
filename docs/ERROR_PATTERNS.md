@@ -187,3 +187,34 @@ The consumer verifier already covered several drift classes, but `--governance-r
 - Treat consumer verifier output as acceptance evidence for consumer-managed changes, not as optional late validation.
 - Add focused fixtures for every newly discovered verifier drift class.
 - Keep Worker route and execution-scope evidence refs safe repo-relative paths.
+
+## Pattern: sql-schema-drift-stale-column
+
+### Symptom
+Destructive SQL maintenance, wipe, reset, or migration work reaches late statements before failing because a query references a stale column name such as `organizations.org_id` when the expected schema uses `organizations.organization_id`.
+
+### Root Cause
+The SQL path relied on remembered schema assumptions instead of a repo-local preflight that queries schema metadata before mutation. Governance had local CI and workflow contracts, but no concrete SQL drift probe contract with a stale-column negative control.
+
+### Detection
+- Destructive maintenance script contains wipe/reset/truncate/drop/delete behavior and no schema preflight before mutation.
+- SQL failure reports a missing column after earlier mutation-capable statements have already run.
+- Contract fixture includes the stale column that should be absent, or required live columns are not represented in fixture metadata.
+
+### Resolution Playbook
+1. Add a repo-local SQL schema probe contract following `docs/runbooks/sql-schema-drift-probes.md`.
+2. Query metadata through `information_schema.columns`, `pg_catalog`, or SQLite `pragma_table_info` before destructive operations.
+3. Require `preflight_required_before_mutation: true` for each destructive operation.
+4. Preserve a negative control where the stale column reference is absent from the expected fixture.
+5. Wire the consumer repo's Local CI profile to run the probe for migration and maintenance SQL paths.
+6. For repos without SQL/destructive maintenance surfaces, record `sql_surface: false` with residual risk.
+
+### Instances
+| Date | Incident | Notes |
+|------|----------|-------|
+| 2026-04-21 | [2026-04-21](FAIL_FAST_LOG.md) | Issue #534 added the repo-local SQL schema drift probe contract, HealthcarePlatform-style example, stale-column negative control, validator, and Local CI profile hook. |
+
+### Prevention
+- Keep SQL drift checks repo-local so they can use the real database dialect, migration layout, and maintenance command surface.
+- Prefer metadata queries over hardcoded stale assumptions.
+- Treat destructive SQL preflight as a gate before mutation, not post-failure diagnosis.

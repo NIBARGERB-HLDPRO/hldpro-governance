@@ -1,0 +1,122 @@
+{
+  "session_id": "issue-534-sql-schema-drift-probe-contract-20260422",
+  "issue_number": 534,
+  "objective": "Define and validate a repo-local SQL schema drift probe contract for destructive maintenance surfaces.",
+  "tier": 2,
+  "scope_boundary": [
+    "Add governance-owned SQL schema drift probe contract documentation and example fixtures.",
+    "Add a deterministic validator plus focused tests for the contract.",
+    "Wire hldpro-governance Local CI to run the contract tests when SQL drift contract surfaces change.",
+    "Record governance evidence, registries, progress, fail-fast, and self-learning updates for issue #534."
+  ],
+  "out_of_scope": [
+    "Mutating downstream product repositories.",
+    "Creating a broad global SQL abstraction or migration runner.",
+    "Changing baseline STANDARDS.md.",
+    "Running live destructive SQL operations."
+  ],
+  "research_summary": "Issue #534 remains open under parent #533. Issue #535 added the SQL schema drift session-error KB entry but explicitly did not implement schema drift probes. The current repo has Local CI profile and validator patterns suitable for a governance-owned contract with repo-local consumer hooks. The accepted decision is repo-local Local CI profile placement: governance validates the contract shape, product repos own dialect-specific live probes and adoption PRs.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/534",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/533",
+    "docs/runbooks/session-error-patterns.md",
+    "raw/closeouts/2026-04-21-issue-535-session-error-patterns-kb.md"
+  ],
+  "sprints": [
+    {
+      "name": "Repo-local SQL schema drift probe contract",
+      "goal": "Prevent destructive SQL maintenance from relying on stale schema assumptions without a pre-mutation metadata probe.",
+      "tasks": [
+        "Document the repo-local Local CI profile placement decision.",
+        "Define the v1 contract fields for metadata probes, required columns, destructive operations, fixtures, negative controls, Local CI hooks, and residual risk.",
+        "Add a HealthcarePlatform-style example for organizations.organization_id and stale org_id.",
+        "Add validator and focused negative-control tests.",
+        "Wire hldpro-governance Local CI profile coverage.",
+        "Update registries, self-learning links, progress, validation, and closeout evidence."
+      ],
+      "acceptance_criteria": [
+        "The implementation decides governance standards versus consumer profiles versus repo-local Local CI profile placement.",
+        "The contract queries schema metadata rather than hardcoding stale assumptions.",
+        "A concrete example fixture and documented profile hook are present.",
+        "Destructive SQL maintenance scripts are required to run preflight probes before mutation where applicable.",
+        "The scope remains repo-specific with no broad global SQL abstraction.",
+        "Repos without SQL surfaces have an accepted residual-risk deferral path."
+      ],
+      "file_paths": [
+        "docs/examples/sql-schema-drift/healthcareplatform-maintenance-reset.json",
+        "docs/runbooks/sql-schema-drift-probes.md",
+        "docs/runbooks/local-ci-gate-toolkit.md",
+        "docs/runbooks/session-error-patterns.md",
+        "docs/ERROR_PATTERNS.md",
+        "docs/FAIL_FAST_LOG.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/SERVICE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "OVERLORD_BACKLOG.md",
+        "scripts/overlord/validate_sql_schema_probe_contract.py",
+        "scripts/overlord/test_validate_sql_schema_probe_contract.py",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "codex-orchestrator",
+      "role": "implementation-review",
+      "focus": "Repo-local contract boundary, deterministic validation, and Local CI enforceability",
+      "status": "accepted",
+      "summary": "The plan keeps SQL probing repo-specific while adding governance-owned validation and a concrete stale-column negative control.",
+      "evidence": [
+        "docs/runbooks/sql-schema-drift-probes.md",
+        "scripts/overlord/test_validate_sql_schema_probe_contract.py",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "n/a",
+    "model_family": "n/a",
+    "status": "not_required",
+    "summary": "Bounded governance validator/profile contract slice; no baseline STANDARDS.md change or broad global abstraction is introduced.",
+    "evidence": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/534"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implementation may update the SQL schema drift probe contract, validator, focused tests, hldpro-governance Local CI profile, registries, runbooks, and required issue #534 governance evidence only.",
+    "next_execution_step": "Run focused tests, governance validators, Local CI, then open and merge PR after required checks pass.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/2026-04-22-issue-534-sql-schema-drift-probe-contract-implementation.json",
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-22-issue-534-sql-schema-drift-probe-contract.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-22-issue-534-sql-schema-drift-probe-contract.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-22-issue-534-sql-schema-drift-probe-contract.md",
+    "next_role": "codex-qa",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Focused SQL schema probe contract tests pass.",
+      "Contract example includes a stale-column negative control.",
+      "Local CI profile plans the SQL schema drift probe contract check for contract surface changes.",
+      "Execution remains inside the issue #534 write scope."
+    ]
+  },
+  "material_deviation_rules": [
+    "If downstream product repo edits are required, stop and open repo-specific follow-up issues or PRs.",
+    "If live database access is needed, split to the owning product repo and do not run destructive SQL from governance.",
+    "If always-on Local CI exposes stale backlog mirror drift, update only the GitHub-backed mirror row required to make the gate authoritative.",
+    "If baseline STANDARDS.md changes become necessary, require the standards cross-review path before merge."
+  ],
+  "approved": true,
+  "approved_by": [
+    "codex-orchestrator"
+  ],
+  "approved_at": "2026-04-22T00:30:50Z"
+}

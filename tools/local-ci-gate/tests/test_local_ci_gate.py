@@ -374,6 +374,20 @@ profile:
 
         self.assertEqual(statuses["provisioning-evidence-safety"], "skipped")
 
+    def test_governance_profile_runs_sql_schema_drift_probe_contract_for_contract_surfaces(self) -> None:
+        profile = gate.load_profile(PROFILES_DIR / "hldpro-governance.yml")
+        changed = gate.resolve_changed_files(
+            self.root,
+            explicit_files=["docs/examples/sql-schema-drift/healthcareplatform-maintenance-reset.json"],
+            include_untracked=False,
+        )
+
+        report = gate.run_checks(self.root, profile, changed, dry_run=True, report_dir=self.root / "reports")
+        sql_contract = next(result for result in report.results if result.check.id == "sql-schema-drift-probe-contract")
+
+        self.assertEqual(sql_contract.status, "planned")
+        self.assertIn("scripts/overlord/test_validate_sql_schema_probe_contract.py", sql_contract.command)
+
     def test_execution_scope_resolution_prefers_active_issue_implementation_scope(self) -> None:
         scope_dir = self.root / "raw" / "execution-scopes"
         scope_dir.mkdir(parents=True)

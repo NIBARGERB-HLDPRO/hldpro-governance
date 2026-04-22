@@ -41,6 +41,7 @@
 
 | Item | Issue | Date | Notes |
 |------|-------|------|-------|
+| Repo-local SQL schema drift probe contract | #534 #533 | 2026-04-21 | Added the SQL schema drift probe contract runbook, HealthcarePlatform-style example, stale-column negative-control fixture, deterministic validator/tests, hldpro-governance Local CI wiring, and self-learning links for destructive SQL maintenance preflight. |
 | Cloudflare Pages Direct Upload inventory rollout | #472 #467 | 2026-04-21 | Added the Pages inventory script and no-secret inventory artifacts for `seek-and-ponder`, `hldpro-dashboard`, `hldpro-marketing`, `hldpro-pwa`, and `hldpro-reseller`; recorded Seek as covered and opened HealthcarePlatform#1478 plus ai-integration-services#1217 for uncovered governed consumers. |
 | Session error patterns KB and self-learning index | #535 #533 | 2026-04-21 | Adds `docs/runbooks/session-error-patterns.md` for exact session error signatures, validates required runbook fields and seed entries, indexes the runbook as `session_error_pattern` in self-learning lookup/report output, and keeps `docs/FAIL_FAST_LOG.md` as the formal ledger rather than expanding the external services runbook. |
 | Self-learning loop operational proof gap | #475 #481 | 2026-04-21 | PR #477 merged the local proof, PR #483 closed the CI memory-audit blocker, and Overlord Sweep run `24741910552` proved the self-learning report step ran and wrote `metrics/self-learning/latest.json` / `.md`. |

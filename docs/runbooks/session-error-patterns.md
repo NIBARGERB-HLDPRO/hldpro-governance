@@ -136,9 +136,9 @@ Use this schema for new entries:
 | Category | schema drift |
 | Root Cause | SQL referenced a stale column name not covered by a schema probe before destructive or late-stage operations. |
 | Correction | Update the query to the canonical column name and add a schema probe that checks expected columns before executing the wipe or migration sequence. |
-| Guardrail | Schema drift probe contract blocks stale column references before late SQL execution. |
-| Validation | SQL/schema probe test exercises the live or fixture schema and fails on stale column names. |
-| Related Files | Issue-specific SQL migration/wipe script, `docs/DATA_DICTIONARY.md` |
+| Guardrail | Repo-local SQL schema drift probe contract blocks stale column references before late SQL execution. |
+| Validation | `python3 scripts/overlord/test_validate_sql_schema_probe_contract.py` and the consumer repo's profile hook exercise live or fixture schema metadata before mutation. |
+| Related Files | `docs/runbooks/sql-schema-drift-probes.md`, `docs/examples/sql-schema-drift/healthcareplatform-maintenance-reset.json`, `scripts/overlord/validate_sql_schema_probe_contract.py` |
 | First Observed | 2026-04-21 |
 | Prevented By | Issue #534 |
 
@@ -155,4 +155,3 @@ Use this schema for new entries:
 | Related Files | `scripts/overlord/check_stage6_closeout.py`, `raw/closeouts/TEMPLATE.md` |
 | First Observed | 2026-04-21 |
 | Prevented By | Issue #541, pattern `stage6-closeout-passive-gate` |
-

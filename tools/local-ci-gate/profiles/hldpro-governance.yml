@@ -216,6 +216,19 @@ profile:
         - unittest
         - scripts.overlord.test_report_governance_consumer_status
 
+    - id: sql-schema-drift-probe-contract
+      title: SQL schema drift probe contract tests
+      severity: blocker
+      scope: changed
+      paths:
+        - docs/examples/sql-schema-drift/
+        - docs/runbooks/sql-schema-drift-probes.md
+        - scripts/overlord/validate_sql_schema_probe_contract.py
+        - scripts/overlord/test_validate_sql_schema_probe_contract.py
+      command:
+        - python3
+        - scripts/overlord/test_validate_sql_schema_probe_contract.py
+
     - id: governance-tooling-deployer-tests
       title: Governance tooling deployer tests
       severity: blocker

@@ -54,6 +54,7 @@ It runs or plans:
 - Planner-boundary execution-scope assertion when planner-boundary paths changed.
 - `git diff --check`.
 - Secret provisioning evidence safety checks when standards, env registry, runbooks, validation artifacts, Pages deploy tooling, or Remote MCP tooling change.
+- SQL schema drift probe contract tests when the governance contract, examples, runbook, validator, or focused tests change.
 - Focused Local CI Gate tests when `tools/local-ci-gate/` changed.
 
 The runner continues through all checks it can run and exits non-zero only for blocker failures. Advisory failures are reported but do not block by default.
@@ -145,6 +146,21 @@ python3 /path/to/hldpro-governance/tools/local-ci-gate/bin/hldpro-local-ci run \
 LAM currently uses direct Python, Deno, and bash workflow commands rather than `package.json` scripts. Do not add wrapper scripts in governance; if LAM needs wrapper commands, create a separate LAM issue-backed PR.
 
 LAM managed shim rollout must happen in a separate LAM issue-backed PR after the governance profile lands.
+
+## SQL Schema Drift Probe Contract
+
+Repos with destructive SQL maintenance scripts should add a repo-local Local CI profile check for schema drift probes. Governance owns the contract shape and example under `docs/runbooks/sql-schema-drift-probes.md` and `docs/examples/sql-schema-drift/`; product repos own their live metadata query, fixture, destructive script path, and Local CI hook.
+
+The probe must query schema metadata before mutation. For example, a PostgreSQL repo should query `information_schema.columns` or `pg_catalog` for required columns, fail when a stale column reference appears in the negative fixture, and run before wipe/reset/truncate/drop/delete maintenance steps.
+
+Governance validates the example contract with:
+
+```bash
+python3 scripts/overlord/validate_sql_schema_probe_contract.py --root .
+python3 scripts/overlord/test_validate_sql_schema_probe_contract.py
+```
+
+Repos without SQL or destructive maintenance surfaces should record a `sql_surface: false` deferral with residual risk instead of adding inert SQL checks.
 
 ## Managed Shim Deployer
 
