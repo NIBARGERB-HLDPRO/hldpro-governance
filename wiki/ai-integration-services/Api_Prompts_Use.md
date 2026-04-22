@@ -1,18 +1,19 @@
 # Api Prompts Use
 
-> 9 nodes · cohesion 0.25
+> 10 nodes · cohesion 0.38
 
 ## Key Concepts
 
 - **prompts.ts** (8 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
-- **useCreatePromptVersion()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
-- **useRollbackPromptVersion()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
-- **usePromptInteractions()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
-- **usePromptTemplate()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
-- **usePromptTemplates()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
-- **usePromptVersions()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
-- **useSavePromptTemplate()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
-- **useUpdateAbWeight()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
+- **prompts.ts** (8 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/lib/api/prompts.ts`
+- **useCreatePromptVersion()** (3 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
+- **useRollbackPromptVersion()** (3 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
+- **usePromptInteractions()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
+- **usePromptTemplate()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
+- **usePromptTemplates()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
+- **usePromptVersions()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
+- **useSavePromptTemplate()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
+- **useUpdateAbWeight()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
 
 ## Relationships
 
@@ -21,10 +22,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/lib/api/prompts.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/lib/api/prompts.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 18 (100%)
+- EXTRACTED: 34 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

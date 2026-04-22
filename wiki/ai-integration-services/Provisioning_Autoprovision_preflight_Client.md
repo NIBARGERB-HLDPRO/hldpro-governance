@@ -1,35 +1,35 @@
 # Provisioning Autoprovision preflight Client
 
-> 55 nodes · cohesion 0.08
+> 61 nodes · cohesion 0.09
 
 ## Key Concepts
 
 - **shared.ts** (19 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
-- **main()** (17 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
+- **shared.ts** (19 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/provisioning/shared.ts`
+- **main()** (18 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
 - **autoprovision-preflight.ts** (16 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
-- **main()** (13 connections) — `ai-integration-services/scripts/provisioning/audit-client.ts`
+- **autoprovision-preflight.ts** (16 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/provisioning/autoprovision-preflight.ts`
+- **main()** (14 connections) — `ai-integration-services/scripts/provisioning/audit-client.ts`
+- **main()** (10 connections) — `ai-integration-services/scripts/provisioning/resume-client.ts`
+- **main()** (9 connections) — `ai-integration-services/scripts/provisioning/audit-live-readiness.ts`
 - **audit-client.ts** (9 connections) — `ai-integration-services/scripts/provisioning/audit-client.ts`
-- **main()** (9 connections) — `ai-integration-services/scripts/provisioning/resume-client.ts`
-- **main()** (8 connections) — `ai-integration-services/scripts/provisioning/audit-live-readiness.ts`
-- **summarizeError()** (7 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
-- **getSupabaseContext()** (7 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
+- **audit-client.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/provisioning/audit-client.ts`
+- **summarizeError()** (8 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
+- **getSupabaseContext()** (8 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
+- **restGet()** (7 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
+- **getWizardValue()** (6 connections) — `ai-integration-services/scripts/provisioning/audit-client.ts`
+- **checkFunctions()** (6 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
+- **loadDotEnv()** (6 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
+- **parseArgs()** (6 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
+- **printJson()** (6 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
+- **shouldShowHelp()** (6 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
 - **DemoAnalytics.tsx** (6 connections) — `ai-integration-services/apps/dashboard/src/pages/demo/DemoAnalytics.tsx`
-- **restGet()** (6 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
-- **getWizardValue()** (5 connections) — `ai-integration-services/scripts/provisioning/audit-client.ts`
-- **checkFunctions()** (5 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
-- **resume-client.ts** (5 connections) — `ai-integration-services/scripts/provisioning/resume-client.ts`
-- **loadDotEnv()** (5 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
-- **parseArgs()** (5 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
-- **printJson()** (5 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
-- **shouldShowHelp()** (5 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
-- **checkAuth()** (4 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
-- **checkEnv()** (4 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
-- **checkMigrationMetadata()** (4 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
-- **checkRest()** (4 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
-- **authAdminGet()** (4 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
-- **requireStringArg()** (4 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
-- **restHead()** (4 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
-- *... and 30 more nodes in this community*
+- **DemoAnalytics.tsx** (6 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/demo/DemoAnalytics.tsx`
+- **checkAuth()** (5 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
+- **checkEnv()** (5 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
+- **checkMigrationMetadata()** (5 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
+- **checkRest()** (5 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
+- *... and 36 more nodes in this community*
 
 ## Relationships
 
@@ -43,11 +43,17 @@
 - `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
 - `ai-integration-services/scripts/provisioning/resume-client.ts`
 - `ai-integration-services/scripts/provisioning/shared.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/demo/DemoAnalytics.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/provisioning/audit-client.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/provisioning/audit-live-readiness.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/provisioning/autoprovision-preflight.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/provisioning/resume-client.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/provisioning/shared.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 169 (69%)
-- INFERRED: 75 (31%)
+- EXTRACTED: 276 (79%)
+- INFERRED: 75 (21%)
 - AMBIGUOUS: 0 (0%)
 
 ---

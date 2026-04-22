@@ -1,11 +1,12 @@
 # Audit error handlers
 
-> 2 nodes · cohesion 1.00
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- **classifyFunction()** (1 connections) — `ai-integration-services/scripts/audit-error-handlers.mjs`
+- **classifyFunction()** (2 connections) — `ai-integration-services/scripts/audit-error-handlers.mjs`
 - **audit-error-handlers.mjs** (1 connections) — `ai-integration-services/scripts/audit-error-handlers.mjs`
+- **audit-error-handlers.mjs** (1 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/audit-error-handlers.mjs`
 
 ## Relationships
 
@@ -14,10 +15,11 @@
 ## Source Files
 
 - `ai-integration-services/scripts/audit-error-handlers.mjs`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/audit-error-handlers.mjs`
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

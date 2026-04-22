@@ -1,12 +1,13 @@
 # Api Testing Use
 
-> 3 nodes · cohesion 0.67
+> 4 nodes · cohesion 0.67
 
 ## Key Concepts
 
+- **useClientHealth()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/testing.ts`
+- **useTestResults()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/testing.ts`
 - **testing.ts** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/testing.ts`
-- **useClientHealth()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/api/testing.ts`
-- **useTestResults()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/api/testing.ts`
+- **testing.ts** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/lib/api/testing.ts`
 
 ## Relationships
 
@@ -15,10 +16,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/lib/api/testing.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/lib/api/testing.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

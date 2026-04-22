@@ -1,6 +1,6 @@
 # trim()
 
-> God node · 92 connections · `ai-integration-services/backend/supabase/functions/purchase-session/index.ts`
+> God node · 96 connections · `ai-integration-services/backend/supabase/functions/purchase-session/index.ts`
 
 ## Connections by Relation
 
@@ -8,25 +8,27 @@
 - [[createFeedback()]] `INFERRED`
 - [[tryReadEnvSecret()]] `INFERRED`
 - [[readEnvSecret()]] `INFERRED`
-- [[buildCalcomFinalizeDefaults()]] `INFERRED`
 - [[handleSubmit()]] `INFERRED`
+- [[buildCalcomFinalizeDefaults()]] `INFERRED`
 - [[agentResearcher()]] `INFERRED`
 - [[nonEmpty()]] `INFERRED`
-- [[supaRest()]] `INFERRED`
 - [[handleWebScrape()]] `INFERRED`
 - [[handleSend()]] `INFERRED`
-- [[testLink()]] `INFERRED`
-- [[getWizardValue()]] `INFERRED`
-- [[loadDotEnv()]] `INFERRED`
-- [[assembleOverview()]] `INFERRED`
-- [[classifyIntent()]] `INFERRED`
-- [[pickString()]] `INFERRED`
-- [[handlePostComment()]] `INFERRED`
+- [[chunkText()]] `INFERRED`
+- [[supaRest()]] `INFERRED`
+- [[loadWizardData()]] `INFERRED`
+- [[handleSubmit()]] `INFERRED`
+- [[handleSendComment()]] `INFERRED`
 - [[handleManualSubmit()]] `INFERRED`
 - [[handleSearch()]] `INFERRED`
-- [[handleSubmit()]] `INFERRED`
+- [[handlePostComment()]] `INFERRED`
+- [[classifyIntent()]] `INFERRED`
+- [[pickString()]] `INFERRED`
+- [[getWizardValue()]] `INFERRED`
 
 ### contains
+- [[index.ts]] `EXTRACTED`
+- [[index.ts]] `EXTRACTED`
 - [[index.ts]] `EXTRACTED`
 - [[index.ts]] `EXTRACTED`
 

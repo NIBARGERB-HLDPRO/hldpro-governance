@@ -1,12 +1,13 @@
 # Seam contracts Auth
 
-> 3 nodes · cohesion 0.67
+> 4 nodes · cohesion 0.67
 
 ## Key Concepts
 
+- **authHeaders()** (2 connections) — `ai-integration-services/e2e/edge-seam-contracts.spec.ts`
+- **parseJson()** (2 connections) — `ai-integration-services/e2e/edge-seam-contracts.spec.ts`
 - **edge-seam-contracts.spec.ts** (2 connections) — `ai-integration-services/e2e/edge-seam-contracts.spec.ts`
-- **authHeaders()** (1 connections) — `ai-integration-services/e2e/edge-seam-contracts.spec.ts`
-- **parseJson()** (1 connections) — `ai-integration-services/e2e/edge-seam-contracts.spec.ts`
+- **edge-seam-contracts.spec.ts** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/edge-seam-contracts.spec.ts`
 
 ## Relationships
 
@@ -15,10 +16,11 @@
 ## Source Files
 
 - `ai-integration-services/e2e/edge-seam-contracts.spec.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/edge-seam-contracts.spec.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

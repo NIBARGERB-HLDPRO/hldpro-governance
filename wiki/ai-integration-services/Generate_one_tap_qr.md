@@ -1,14 +1,15 @@
 # Generate one tap qr
 
-> 5 nodes · cohesion 0.40
+> 6 nodes · cohesion 0.53
 
 ## Key Concepts
 
 - **generate-staging-one-tap-qr.mjs** (4 connections) — `ai-integration-services/scripts/generate-staging-one-tap-qr.mjs`
-- **base64UrlJson()** (1 connections) — `ai-integration-services/scripts/generate-staging-one-tap-qr.mjs`
-- **escapeHtml()** (1 connections) — `ai-integration-services/scripts/generate-staging-one-tap-qr.mjs`
-- **loadDemoAccounts()** (1 connections) — `ai-integration-services/scripts/generate-staging-one-tap-qr.mjs`
-- **renderQr()** (1 connections) — `ai-integration-services/scripts/generate-staging-one-tap-qr.mjs`
+- **generate-staging-one-tap-qr.mjs** (4 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/generate-staging-one-tap-qr.mjs`
+- **base64UrlJson()** (2 connections) — `ai-integration-services/scripts/generate-staging-one-tap-qr.mjs`
+- **escapeHtml()** (2 connections) — `ai-integration-services/scripts/generate-staging-one-tap-qr.mjs`
+- **loadDemoAccounts()** (2 connections) — `ai-integration-services/scripts/generate-staging-one-tap-qr.mjs`
+- **renderQr()** (2 connections) — `ai-integration-services/scripts/generate-staging-one-tap-qr.mjs`
 
 ## Relationships
 
@@ -17,10 +18,11 @@
 ## Source Files
 
 - `ai-integration-services/scripts/generate-staging-one-tap-qr.mjs`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/generate-staging-one-tap-qr.mjs`
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 16 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

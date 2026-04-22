@@ -1,14 +1,15 @@
 # Routing engine Supabase
 
-> 5 nodes · cohesion 0.60
+> 6 nodes · cohesion 0.67
 
 ## Key Concepts
 
 - **routing-engine.ts** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
-- **scoreWorker()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
-- **estimateDriveMinutes()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
-- **haversineKm()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
-- **rankWorkers()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
+- **routing-engine.ts** (5 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/routing-engine.ts`
+- **scoreWorker()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
+- **estimateDriveMinutes()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
+- **haversineKm()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
+- **rankWorkers()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
 
 ## Relationships
 
@@ -17,10 +18,11 @@
 ## Source Files
 
 - `ai-integration-services/backend/supabase/functions/_shared/routing-engine.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/routing-engine.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 13 (100%)
+- EXTRACTED: 22 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

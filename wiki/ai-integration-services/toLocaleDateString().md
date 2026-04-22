@@ -1,32 +1,33 @@
 # toLocaleDateString()
 
-> God node · 35 connections · `ai-integration-services/apps/dashboard/src/pages/demo/DemoAnalytics.tsx`
+> God node · 36 connections · `ai-integration-services/apps/dashboard/src/pages/demo/DemoAnalytics.tsx`
 
 ## Connections by Relation
 
 ### calls
 - [[fireCallbackCall()]] `INFERRED`
 - [[sendNotification()]] `INFERRED`
-- [[buildDay1Prompt()]] `INFERRED`
 - [[TrialBanner()]] `INFERRED`
-- [[main()]] `INFERRED`
-- [[buildModel()]] `INFERRED`
-- [[generateEstimateHtml()]] `INFERRED`
-- [[buildDay3Prompt()]] `INFERRED`
-- [[formatEstimateForPdf()]] `INFERRED`
+- [[buildDay1Prompt()]] `INFERRED`
 - [[formatDate()]] `INFERRED`
 - [[formatDate()]] `INFERRED`
-- [[formatDate()]] `INFERRED`
-- [[fmtDate()]] `INFERRED`
-- [[fmtDate()]] `INFERRED`
-- [[formatDate()]] `INFERRED`
-- [[fmtDate()]] `INFERRED`
-- [[formatReportDate()]] `INFERRED`
 - [[getNextCampaignDate()]] `INFERRED`
+- [[formatDate()]] `INFERRED`
+- [[formatDate()]] `INFERRED`
+- [[formatReportDate()]] `INFERRED`
+- [[formatDateTime()]] `INFERRED`
+- [[formatDate()]] `INFERRED`
+- [[formatLogDate()]] `INFERRED`
 - [[badge()]] `INFERRED`
+- [[formatDate()]] `INFERRED`
+- [[fmtDate()]] `INFERRED`
+- [[fmtDate()]] `INFERRED`
+- [[fmtDate()]] `INFERRED`
+- [[formatDate()]] `INFERRED`
 - [[formatDate()]] `INFERRED`
 
 ### contains
+- [[DemoAnalytics.tsx]] `EXTRACTED`
 - [[DemoAnalytics.tsx]] `EXTRACTED`
 
 ---

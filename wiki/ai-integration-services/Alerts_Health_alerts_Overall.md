@@ -1,12 +1,13 @@
 # Alerts Health alerts Overall
 
-> 3 nodes · cohesion 0.67
+> 4 nodes · cohesion 0.67
 
 ## Key Concepts
 
+- **OverallBadge()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/alerts/HealthAlerts.tsx`
+- **StatusIcon()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/alerts/HealthAlerts.tsx`
 - **HealthAlerts.tsx** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/alerts/HealthAlerts.tsx`
-- **OverallBadge()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/alerts/HealthAlerts.tsx`
-- **StatusIcon()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/alerts/HealthAlerts.tsx`
+- **HealthAlerts.tsx** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/alerts/HealthAlerts.tsx`
 
 ## Relationships
 
@@ -15,10 +16,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/pages/alerts/HealthAlerts.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/alerts/HealthAlerts.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -1,14 +1,15 @@
 # Clients Chief of staff tab
 
-> 5 nodes · cohesion 0.40
+> 6 nodes · cohesion 0.53
 
 ## Key Concepts
 
 - **ChiefOfStaffTab.tsx** (4 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ChiefOfStaffTab.tsx`
-- **ChiefOfStaffTab()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ChiefOfStaffTab.tsx`
-- **formatCents()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ChiefOfStaffTab.tsx`
-- **handleEdit()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ChiefOfStaffTab.tsx`
-- **handleSave()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ChiefOfStaffTab.tsx`
+- **ChiefOfStaffTab.tsx** (4 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/clients/ChiefOfStaffTab.tsx`
+- **ChiefOfStaffTab()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ChiefOfStaffTab.tsx`
+- **formatCents()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ChiefOfStaffTab.tsx`
+- **handleEdit()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ChiefOfStaffTab.tsx`
+- **handleSave()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ChiefOfStaffTab.tsx`
 
 ## Relationships
 
@@ -17,10 +18,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/pages/clients/ChiefOfStaffTab.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/clients/ChiefOfStaffTab.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 16 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

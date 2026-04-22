@@ -1,22 +1,19 @@
 # Connectors Crm Null
 
-> 30 nodes · cohesion 0.09
+> 23 nodes · cohesion 0.11
 
 ## Key Concepts
 
-- **NullCRMConnector** (21 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
-- **NullServiceConnector** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/null.ts`
+- **NullCRMConnector** (22 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
 - **.id()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
 - **.createContact()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
-- **.id()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/null.ts`
-- **null.ts** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/null.ts`
 - **.createDeal()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
 - **.createInvoiceRecord()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
 - **.createPipeline()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
 - **.createStage()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
 - **.upsertContact()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
-- **.createClient()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/null.ts`
-- **.createJob()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/null.ts`
+- **null.ts** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
+- **null.ts** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/connectors/crm/null.ts`
 - **.addNote()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
 - **.addTags()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
 - **.deleteContact()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
@@ -29,7 +26,7 @@
 - **.sendSMS()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
 - **.triggerWorkflow()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
 - **.updateContact()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
-- *... and 5 more nodes in this community*
+- **.updateInvoiceStatus()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
 
 ## Relationships
 
@@ -38,12 +35,12 @@
 ## Source Files
 
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/null.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/null.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/connectors/crm/null.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 58 (78%)
-- INFERRED: 16 (22%)
+- EXTRACTED: 58 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

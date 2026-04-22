@@ -1,12 +1,12 @@
 {
   "repo_slug": "ai-integration-services",
   "source": "ai-integration-services",
-  "output": "/home/runner/work/hldpro-governance/hldpro-governance/graphify-out/ai-integration-services",
-  "wiki_dir": "/home/runner/work/hldpro-governance/hldpro-governance/wiki/ai-integration-services",
-  "nodes": 2648,
-  "edges": 5133,
-  "communities": 246,
-  "articles": 256,
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/graphify-out/ai-integration-services",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/wiki/ai-integration-services",
+  "nodes": 3409,
+  "edges": 8368,
+  "communities": 352,
+  "articles": 362,
   "html_status": "skipped",
-  "code_files": 741
+  "code_files": 1488
 }

@@ -1,12 +1,13 @@
 # Provisioning Provisioning monitor Step
 
-> 3 nodes · cohesion 0.67
+> 4 nodes · cohesion 0.67
 
 ## Key Concepts
 
+- **StepRow()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/provisioning/ProvisioningMonitor.tsx`
+- **wizardProgress()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/provisioning/ProvisioningMonitor.tsx`
 - **ProvisioningMonitor.tsx** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/provisioning/ProvisioningMonitor.tsx`
-- **StepRow()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/provisioning/ProvisioningMonitor.tsx`
-- **wizardProgress()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/provisioning/ProvisioningMonitor.tsx`
+- **ProvisioningMonitor.tsx** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/provisioning/ProvisioningMonitor.tsx`
 
 ## Relationships
 
@@ -15,10 +16,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/pages/provisioning/ProvisioningMonitor.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/provisioning/ProvisioningMonitor.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -1,14 +1,15 @@
 # Sections Value stack
 
-> 5 nodes · cohesion 0.50
+> 6 nodes · cohesion 0.60
 
 ## Key Concepts
 
 - **ValueStack.tsx** (4 connections) — `ai-integration-services/apps/marketing/src/components/sections/ValueStack.tsx`
-- **planSavings()** (2 connections) — `ai-integration-services/apps/marketing/src/components/sections/ValueStack.tsx`
-- **planTotal()** (2 connections) — `ai-integration-services/apps/marketing/src/components/sections/ValueStack.tsx`
-- **Check()** (1 connections) — `ai-integration-services/apps/marketing/src/components/sections/ValueStack.tsx`
-- **Dash()** (1 connections) — `ai-integration-services/apps/marketing/src/components/sections/ValueStack.tsx`
+- **ValueStack.tsx** (4 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/components/sections/ValueStack.tsx`
+- **planSavings()** (3 connections) — `ai-integration-services/apps/marketing/src/components/sections/ValueStack.tsx`
+- **planTotal()** (3 connections) — `ai-integration-services/apps/marketing/src/components/sections/ValueStack.tsx`
+- **Check()** (2 connections) — `ai-integration-services/apps/marketing/src/components/sections/ValueStack.tsx`
+- **Dash()** (2 connections) — `ai-integration-services/apps/marketing/src/components/sections/ValueStack.tsx`
 
 ## Relationships
 
@@ -17,10 +18,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/marketing/src/components/sections/ValueStack.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/components/sections/ValueStack.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 10 (100%)
+- EXTRACTED: 18 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

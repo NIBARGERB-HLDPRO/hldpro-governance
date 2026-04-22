@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **DashboardReviews.tsx** (0 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardReviews.tsx`
+- **DashboardReviews.tsx** (0 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardReviews.tsx`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardReviews.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardReviews.tsx`
 
 ## Audit Trail
 

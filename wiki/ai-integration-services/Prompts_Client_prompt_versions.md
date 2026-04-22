@@ -1,11 +1,12 @@
 # Prompts Client prompt versions
 
-> 2 nodes · cohesion 1.00
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- **clsx()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/prompts/ClientPromptVersions.tsx`
+- **clsx()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/prompts/ClientPromptVersions.tsx`
 - **ClientPromptVersions.tsx** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/prompts/ClientPromptVersions.tsx`
+- **ClientPromptVersions.tsx** (1 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/prompts/ClientPromptVersions.tsx`
 
 ## Relationships
 
@@ -14,10 +15,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/pages/prompts/ClientPromptVersions.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/prompts/ClientPromptVersions.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

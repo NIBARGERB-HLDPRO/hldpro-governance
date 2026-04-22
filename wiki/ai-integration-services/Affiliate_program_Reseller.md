@@ -1,12 +1,13 @@
 # Affiliate program Reseller
 
-> 3 nodes · cohesion 0.67
+> 4 nodes · cohesion 0.67
 
 ## Key Concepts
 
+- **Affiliates()** (2 connections) — `ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
+- **EarningsCalculator()** (2 connections) — `ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
 - **AffiliateProgram.tsx** (2 connections) — `ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
-- **Affiliates()** (1 connections) — `ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
-- **EarningsCalculator()** (1 connections) — `ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
+- **AffiliateProgram.tsx** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
 
 ## Relationships
 
@@ -15,10 +16,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/reseller/src/pages/marketing/AffiliateProgram.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

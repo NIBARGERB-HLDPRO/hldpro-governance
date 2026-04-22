@@ -1,14 +1,16 @@
 # Email inbox Handle
 
-> 5 nodes · cohesion 0.40
+> 7 nodes · cohesion 0.38
 
 ## Key Concepts
 
+- **handleTriage()** (4 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailInbox.tsx`
 - **DashboardEmailInbox.tsx** (3 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailInbox.tsx`
-- **handleTriage()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardEmailInbox.tsx`
-- **getSnoozeUntil()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailInbox.tsx`
-- **handleClick()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailInbox.tsx`
+- **DashboardEmailInbox.tsx** (3 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/dashboard/DashboardEmailInbox.tsx`
+- **getSnoozeUntil()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailInbox.tsx`
+- **handleClick()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailInbox.tsx`
 - **DashboardEmailInbox.tsx** (1 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardEmailInbox.tsx`
+- **DashboardEmailInbox.tsx** (1 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/DashboardEmailInbox.tsx`
 
 ## Relationships
 
@@ -18,10 +20,12 @@
 
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailInbox.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardEmailInbox.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/dashboard/DashboardEmailInbox.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/DashboardEmailInbox.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 16 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

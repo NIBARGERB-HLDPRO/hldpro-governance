@@ -1,12 +1,13 @@
 # Vapi owner Supabase
 
-> 3 nodes · cohesion 0.67
+> 4 nodes · cohesion 0.67
 
 ## Key Concepts
 
 - **vapi-owner-tools.ts** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
-- **getOwnerBriefingTools()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
-- **getOwnerSystemPrompt()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
+- **vapi-owner-tools.ts** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/vapi-owner-tools.ts`
+- **getOwnerBriefingTools()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
+- **getOwnerSystemPrompt()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
 
 ## Relationships
 
@@ -15,10 +16,11 @@
 ## Source Files
 
 - `ai-integration-services/backend/supabase/functions/_shared/vapi-owner-tools.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/vapi-owner-tools.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

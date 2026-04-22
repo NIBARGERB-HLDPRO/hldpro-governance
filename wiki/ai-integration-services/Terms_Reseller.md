@@ -1,11 +1,12 @@
 # Terms Reseller
 
-> 2 nodes · cohesion 1.00
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
+- **Terms()** (2 connections) — `ai-integration-services/apps/reseller/src/pages/Terms.tsx`
 - **Terms.tsx** (1 connections) — `ai-integration-services/apps/reseller/src/pages/Terms.tsx`
-- **Terms()** (1 connections) — `ai-integration-services/apps/reseller/src/pages/Terms.tsx`
+- **Terms.tsx** (1 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/reseller/src/pages/Terms.tsx`
 
 ## Relationships
 
@@ -14,10 +15,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/reseller/src/pages/Terms.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/reseller/src/pages/Terms.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

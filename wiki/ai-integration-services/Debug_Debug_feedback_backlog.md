@@ -1,12 +1,13 @@
 # Debug Debug feedback backlog
 
-> 3 nodes · cohesion 0.67
+> 4 nodes · cohesion 0.67
 
 ## Key Concepts
 
+- **formatDate()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/debug/DebugFeedbackBacklog.tsx`
+- **ScreenshotPreview()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/debug/DebugFeedbackBacklog.tsx`
 - **DebugFeedbackBacklog.tsx** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/debug/DebugFeedbackBacklog.tsx`
-- **formatDate()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/debug/DebugFeedbackBacklog.tsx`
-- **ScreenshotPreview()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/debug/DebugFeedbackBacklog.tsx`
+- **DebugFeedbackBacklog.tsx** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/debug/DebugFeedbackBacklog.tsx`
 
 ## Relationships
 
@@ -15,10 +16,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/pages/debug/DebugFeedbackBacklog.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/debug/DebugFeedbackBacklog.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

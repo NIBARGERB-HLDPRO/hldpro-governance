@@ -1,13 +1,14 @@
 # Critical journeys auth
 
-> 4 nodes · cohesion 0.50
+> 5 nodes · cohesion 0.60
 
 ## Key Concepts
 
 - **critical-journeys-auth.spec.ts** (3 connections) — `ai-integration-services/e2e/critical-journeys-auth.spec.ts`
-- **expectLoginForm()** (1 connections) — `ai-integration-services/e2e/critical-journeys-auth.spec.ts`
-- **expectPortalDashboardLanding()** (1 connections) — `ai-integration-services/e2e/critical-journeys-auth.spec.ts`
-- **expectResellerDashboardLanding()** (1 connections) — `ai-integration-services/e2e/critical-journeys-auth.spec.ts`
+- **critical-journeys-auth.spec.ts** (3 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/critical-journeys-auth.spec.ts`
+- **expectLoginForm()** (2 connections) — `ai-integration-services/e2e/critical-journeys-auth.spec.ts`
+- **expectPortalDashboardLanding()** (2 connections) — `ai-integration-services/e2e/critical-journeys-auth.spec.ts`
+- **expectResellerDashboardLanding()** (2 connections) — `ai-integration-services/e2e/critical-journeys-auth.spec.ts`
 
 ## Relationships
 
@@ -16,10 +17,11 @@
 ## Source Files
 
 - `ai-integration-services/e2e/critical-journeys-auth.spec.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/critical-journeys-auth.spec.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
+- EXTRACTED: 12 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

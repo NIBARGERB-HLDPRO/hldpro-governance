@@ -1,13 +1,14 @@
 # Templates Handlebars Variables
 
-> 4 nodes · cohesion 0.67
+> 5 nodes · cohesion 0.70
 
 ## Key Concepts
 
+- **extractVariables()** (3 connections) — `ai-integration-services/apps/dashboard/src/lib/templates/handlebars.ts`
+- **validateVariables()** (3 connections) — `ai-integration-services/apps/dashboard/src/lib/templates/handlebars.ts`
 - **handlebars.ts** (3 connections) — `ai-integration-services/apps/dashboard/src/lib/templates/handlebars.ts`
-- **extractVariables()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/templates/handlebars.ts`
-- **validateVariables()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/templates/handlebars.ts`
-- **renderTemplate()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/templates/handlebars.ts`
+- **handlebars.ts** (3 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/lib/templates/handlebars.ts`
+- **renderTemplate()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/templates/handlebars.ts`
 
 ## Relationships
 
@@ -16,10 +17,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/lib/templates/handlebars.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/lib/templates/handlebars.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 14 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

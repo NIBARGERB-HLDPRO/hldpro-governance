@@ -1,34 +1,34 @@
 # update()
 
-> God node · 62 connections · `ai-integration-services/apps/portal/src/pages/dashboard/DashboardWebsite.tsx`
+> God node · 61 connections · `ai-integration-services/apps/marketing/src/pages/Contact.tsx`
 
 ## Connections by Relation
 
 ### calls
 - [[finalizePortalPurchase()]] `INFERRED`
-- [[syncSetupConnectionTasksForClient()]] `INFERRED`
 - [[handleCallback()]] `INFERRED`
-- [[createFeedback()]] `INFERRED`
 - [[executeTool()]] `INFERRED`
-- [[finalizeDocumentCore()]] `INFERRED`
+- [[syncSetupConnectionTasksForClient()]] `INFERRED`
 - [[handleDemoCheckoutSession()]] `INFERRED`
+- [[createFeedback()]] `INFERRED`
+- [[finalizeDocumentCore()]] `INFERRED`
 - [[handleDisconnect()]] `INFERRED`
-- [[notifyPartyCore()]] `INFERRED`
 - [[handleSync()]] `INFERRED`
+- [[notifyPartyCore()]] `INFERRED`
 - [[handleTransactionSync()]] `INFERRED`
+- [[saveWizardData()]] `INFERRED`
 - [[logAgentTransaction()]] `INFERRED`
 - [[agentResearcher()]] `INFERRED`
-- [[saveWizardData()]] `INFERRED`
+- [[syncClientSetupReadiness()]] `INFERRED`
+- [[syncOneClient()]] `INFERRED`
 - [[agentIntake()]] `INFERRED`
 - [[agentCritic()]] `INFERRED`
 - [[agentPresenter()]] `INFERRED`
 - [[agentPackager()]] `INFERRED`
-- [[syncClientSetupReadiness()]] `INFERRED`
-- [[ensureReferralTracking()]] `INFERRED`
 
 ### contains
-- [[DashboardWebsite.tsx]] `EXTRACTED`
-- [[DashboardWebsite.tsx]] `EXTRACTED`
+- [[Contact.tsx]] `EXTRACTED`
+- [[Contact.tsx]] `EXTRACTED`
 
 ---
 

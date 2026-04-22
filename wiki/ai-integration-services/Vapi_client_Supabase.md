@@ -1,25 +1,35 @@
 # Vapi client Supabase
 
-> 16 nodes · cohesion 0.30
+> 266 nodes · cohesion 0.02
 
 ## Key Concepts
 
-- **VapiClient** (15 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.fetch()** (12 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.buildApiError()** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.uploadFile()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.createAssistant()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.createOutboundCall()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.createSquad()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.createWebCall()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.endCall()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.getApiKey()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.getCall()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.provisionPhoneNumber()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.updateAssistant()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.importPhoneNumber()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **vapi-client.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
-- **.constructor()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
+- **.fetch()** (260 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
+- **text()** (100 connections) — `ai-integration-services/scripts/seed-esign-templates.ts`
+- **VapiClient** (18 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
+- **TwilioClient** (17 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **index.ts** (16 connections) — `ai-integration-services/backend/supabase/functions/health-check/index.ts`
+- **operator-context-governance.ts** (16 connections) — `ai-integration-services/backend/supabase/functions/_shared/operator-context-governance.ts`
+- **index.ts** (16 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/health-check/index.ts`
+- **operator-context-governance.ts** (16 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/operator-context-governance.ts`
+- **VoiceflowClient** (15 connections) — `ai-integration-services/backend/supabase/functions/_shared/voiceflow-client.ts`
+- **.buildApiError()** (13 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
+- **GoogleCalendarConnector** (12 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/google-calendar.ts`
+- **ServiceTitanConnector** (12 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/servicetitan.ts`
+- **sanitizeDetail()** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
+- **HousecallProConnector** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/logs-watcher/index.ts`
+- **index.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/logs-watcher/index.ts`
+- **writeOperatorContextToGovernance()** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/operator-context-governance.ts`
+- **readEnvSecret()** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/vault.ts`
+- **.twilioFetch()** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-client.ts`
+- **vapi-helpers.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **voice-presets.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
+- **load-test-provisioning.spec.ts** (9 connections) — `ai-integration-services/e2e/load-test-provisioning.spec.ts`
+- **vapi-helpers.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **voice-presets.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/voice-presets.ts`
+- **load-test-provisioning.spec.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/load-test-provisioning.spec.ts`
+- *... and 241 more nodes in this community*
 
 ## Relationships
 
@@ -27,12 +37,31 @@
 
 ## Source Files
 
-- `ai-integration-services/backend/supabase/functions/_shared/vapi-client.ts`
+- `ai-integration-services/apps/marketing/src/pages/Trial.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/PlanSelection.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/affiliate/AffiliateApply.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBilling.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/RoofEstimate.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/gc/GCOwnerPortal.tsx`
+- `ai-integration-services/apps/marketing/src/portal/pages/sign/SignDocument.tsx`
+- `ai-integration-services/apps/portal/src/pages/PlanSelection.tsx`
+- `ai-integration-services/apps/portal/src/pages/affiliate/AffiliateApply.tsx`
+- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardBilling.tsx`
+- `ai-integration-services/apps/portal/src/pages/dashboard/RoofEstimate.tsx`
+- `ai-integration-services/apps/portal/src/pages/gc/GCOwnerPortal.tsx`
+- `ai-integration-services/apps/portal/src/pages/sign/SignDocument.tsx`
+- `ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/google-calendar.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/housecall.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/servicetitan.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/email.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/operator-context-governance.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 30 (42%)
-- INFERRED: 42 (58%)
+- EXTRACTED: 884 (61%)
+- INFERRED: 562 (39%)
 - AMBIGUOUS: 0 (0%)
 
 ---

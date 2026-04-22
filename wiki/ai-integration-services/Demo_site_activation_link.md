@@ -1,16 +1,18 @@
 # Demo site activation link
 
-> 7 nodes · cohesion 0.38
+> 9 nodes · cohesion 0.39
 
 ## Key Concepts
 
 - **helpers.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
-- **buildCheckoutParams()** (3 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
-- **buildCheckoutCancelUrl()** (2 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
-- **buildCheckoutSuccessUrl()** (2 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
-- **normalizeSiteSlug()** (2 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
-- **isDemoSiteActivationEligible()** (1 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
+- **helpers.ts** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/demo-site-activation-link/helpers.ts`
+- **buildCheckoutParams()** (4 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
+- **buildCheckoutCancelUrl()** (3 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
+- **buildCheckoutSuccessUrl()** (3 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
+- **normalizeSiteSlug()** (3 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
+- **isDemoSiteActivationEligible()** (2 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
 - **helpers.test.ts** (1 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.test.ts`
+- **helpers.test.ts** (1 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/demo-site-activation-link/helpers.test.ts`
 
 ## Relationships
 
@@ -20,11 +22,13 @@
 
 - `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.test.ts`
 - `ai-integration-services/backend/supabase/functions/demo-site-activation-link/helpers.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/demo-site-activation-link/helpers.test.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/demo-site-activation-link/helpers.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 17 (94%)
-- INFERRED: 1 (6%)
+- EXTRACTED: 30 (97%)
+- INFERRED: 1 (3%)
 - AMBIGUOUS: 0 (0%)
 
 ---

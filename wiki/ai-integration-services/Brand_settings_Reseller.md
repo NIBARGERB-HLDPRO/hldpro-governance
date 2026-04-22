@@ -1,12 +1,13 @@
 # Brand settings Reseller
 
-> 3 nodes · cohesion 0.67
+> 4 nodes · cohesion 0.67
 
 ## Key Concepts
 
+- **handleSave()** (2 connections) — `ai-integration-services/apps/reseller/src/pages/BrandSettings.tsx`
+- **update()** (2 connections) — `ai-integration-services/apps/reseller/src/pages/BrandSettings.tsx`
 - **BrandSettings.tsx** (2 connections) — `ai-integration-services/apps/reseller/src/pages/BrandSettings.tsx`
-- **handleSave()** (1 connections) — `ai-integration-services/apps/reseller/src/pages/BrandSettings.tsx`
-- **update()** (1 connections) — `ai-integration-services/apps/reseller/src/pages/BrandSettings.tsx`
+- **BrandSettings.tsx** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/reseller/src/pages/BrandSettings.tsx`
 
 ## Relationships
 
@@ -15,10 +16,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/reseller/src/pages/BrandSettings.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/reseller/src/pages/BrandSettings.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

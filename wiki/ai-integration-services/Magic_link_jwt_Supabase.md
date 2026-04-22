@@ -1,35 +1,35 @@
 # Magic link jwt Supabase
 
-> 45 nodes · cohesion 0.07
+> 56 nodes · cohesion 0.07
 
 ## Key Concepts
 
-- **index.ts** (19 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
 - **magic-link-jwt.ts** (19 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
-- **tryReadEnvSecret()** (12 connections) — `ai-integration-services/backend/supabase/functions/_shared/vault.ts`
-- **intake-validator.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
-- **index.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/magic-link-session-fetch/index.ts`
-- **isObject()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
-- **validateAgainstSchema()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
-- **generateEmbedding()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
-- **createTrialCoupon()** (5 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- **sendDenySms()** (5 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- **schemaMatches()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
-- **responseJson()** (4 connections) — `ai-integration-services/backend/supabase/functions/magic-link-intake-submit/index.ts`
-- **sendReviewSms()** (4 connections) — `ai-integration-services/backend/supabase/functions/magic-link-intake-submit/index.ts`
-- **signMagicLink()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
-- **verifyMagicLink()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
-- **resolveTwilioFrom()** (3 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- **reviewPhone()** (3 connections) — `ai-integration-services/backend/supabase/functions/magic-link-intake-submit/index.ts`
-- **schemaMatchesType()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
-- **base64UrlDecodeToBytes()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
-- **base64UrlDecodeToString()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
-- **base64UrlEncode()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
-- **base64UrlEncodeString()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
-- **hmacSha256()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
-- **hashEmbedding()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
-- **generateEmbeddings()** (2 connections) — `ai-integration-services/backend/supabase/functions/brain-ingest/index.ts`
-- *... and 20 more nodes in this community*
+- **magic-link-jwt.ts** (19 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/magic-link-jwt.ts`
+- **index.ts** (15 connections) — `ai-integration-services/backend/supabase/functions/inbound-sms-magic-link/index.ts`
+- **index.ts** (15 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/inbound-sms-magic-link/index.ts`
+- **JobberConnector** (12 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **.refreshToken()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **twimlMessage()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/twiml-response.ts`
+- **twiml-response.ts** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/twiml-response.ts`
+- **twiml-response.ts** (6 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/twiml-response.ts`
+- **signMagicLink()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
+- **verifyMagicLink()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
+- **verifyTwilioSignature()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-signature.ts`
+- **twimlEmptyResponse()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/twiml-response.ts`
+- **twimlResponse()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/twiml-response.ts`
+- **twilio-signature.ts** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-signature.ts`
+- **twilio-signature.ts** (5 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/twilio-signature.ts`
+- **buildMagicLinkTwiml()** (4 connections) — `ai-integration-services/backend/supabase/functions/inbound-sms-magic-link/index.ts`
+- **.createClient()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
+- **base64UrlDecodeToBytes()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
+- **base64UrlDecodeToString()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
+- **base64UrlEncode()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
+- **base64UrlEncodeString()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
+- **hmacSha256()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
+- **parseOpsCommand()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/ops-command-parser.ts`
+- **reconstructCanonicalUrl()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/twilio-signature.ts`
+- *... and 31 more nodes in this community*
 
 ## Relationships
 
@@ -37,20 +37,26 @@
 
 ## Source Files
 
-- `ai-integration-services/backend/supabase/functions/_shared/embeddings.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/intake-validator.test.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/service/jobber.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/magic-link-jwt.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/vault.ts`
-- `ai-integration-services/backend/supabase/functions/brain-ingest/index.ts`
-- `ai-integration-services/backend/supabase/functions/magic-link-intake-submit/index.ts`
-- `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- `ai-integration-services/backend/supabase/functions/magic-link-session-fetch/index.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/magic-link.test.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/ops-command-parser.test.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/ops-command-parser.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/twilio-signature.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/twiml-response.ts`
+- `ai-integration-services/backend/supabase/functions/inbound-sms-magic-link/index.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/magic-link-jwt.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/magic-link.test.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/ops-command-parser.test.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/ops-command-parser.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/twilio-signature.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/twiml-response.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/inbound-sms-magic-link/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 142 (82%)
-- INFERRED: 31 (18%)
+- EXTRACTED: 222 (91%)
+- INFERRED: 22 (9%)
 - AMBIGUOUS: 0 (0%)
 
 ---

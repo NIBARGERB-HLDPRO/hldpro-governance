@@ -1,11 +1,12 @@
 # Gc project Sign
 
-> 2 nodes · cohesion 1.00
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- **signInAsGC()** (1 connections) — `ai-integration-services/e2e/gc-project.spec.ts`
+- **signInAsGC()** (2 connections) — `ai-integration-services/e2e/gc-project.spec.ts`
 - **gc-project.spec.ts** (1 connections) — `ai-integration-services/e2e/gc-project.spec.ts`
+- **gc-project.spec.ts** (1 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/gc-project.spec.ts`
 
 ## Relationships
 
@@ -14,10 +15,11 @@
 ## Source Files
 
 - `ai-integration-services/e2e/gc-project.spec.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/gc-project.spec.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

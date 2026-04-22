@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **postcss.config.js** (0 connections) — `ai-integration-services/apps/portal/postcss.config.js`
+- **postcss.config.js** (0 connections) — `ai-integration-services/apps/marketing/postcss.config.js`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `ai-integration-services/apps/portal/postcss.config.js`
+- `ai-integration-services/apps/marketing/postcss.config.js`
 
 ## Audit Trail
 

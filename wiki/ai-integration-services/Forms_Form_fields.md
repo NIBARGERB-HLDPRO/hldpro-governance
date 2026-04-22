@@ -1,16 +1,18 @@
 # Forms Form fields
 
-> 7 nodes · cohesion 0.48
+> 9 nodes · cohesion 0.56
 
 ## Key Concepts
 
 - **FormFields.tsx** (5 connections) — `ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx`
 - **FormFields.tsx** (5 connections) — `ai-integration-services/packages/ui/src/FormFields.tsx`
-- **FormSection()** (2 connections) — `ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx`
-- **SelectInput()** (2 connections) — `ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx`
-- **TextArea()** (2 connections) — `ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx`
-- **TextInput()** (2 connections) — `ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx`
-- **Toggle()** (2 connections) — `ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx`
+- **FormFields.tsx** (5 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/components/forms/FormFields.tsx`
+- **FormFields.tsx** (5 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/packages/ui/src/FormFields.tsx`
+- **FormSection()** (4 connections) — `ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx`
+- **SelectInput()** (4 connections) — `ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx`
+- **TextArea()** (4 connections) — `ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx`
+- **TextInput()** (4 connections) — `ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx`
+- **Toggle()** (4 connections) — `ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx`
 
 ## Relationships
 
@@ -20,10 +22,12 @@
 
 - `ai-integration-services/apps/dashboard/src/components/forms/FormFields.tsx`
 - `ai-integration-services/packages/ui/src/FormFields.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/components/forms/FormFields.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/packages/ui/src/FormFields.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 20 (100%)
+- EXTRACTED: 40 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

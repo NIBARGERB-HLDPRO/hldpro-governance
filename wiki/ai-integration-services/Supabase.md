@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **supabase.ts** (0 connections) — `ai-integration-services/apps/portal/src/lib/supabase.ts`
+- **supabase.ts** (0 connections) — `ai-integration-services/apps/marketing/src/portal/lib/supabase.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `ai-integration-services/apps/portal/src/lib/supabase.ts`
+- `ai-integration-services/apps/marketing/src/portal/lib/supabase.ts`
 
 ## Audit Trail
 

@@ -1,14 +1,15 @@
 # Packages Format
 
-> 5 nodes · cohesion 0.40
+> 6 nodes · cohesion 0.53
 
 ## Key Concepts
 
+- **formatDate()** (4 connections) — `ai-integration-services/packages/lib/src/index.ts`
 - **index.ts** (4 connections) — `ai-integration-services/packages/lib/src/index.ts`
-- **formatDate()** (2 connections) — `ai-integration-services/packages/lib/src/index.ts`
-- **formatCurrency()** (1 connections) — `ai-integration-services/packages/lib/src/index.ts`
-- **formatRelativeTime()** (1 connections) — `ai-integration-services/packages/lib/src/index.ts`
-- **truncate()** (1 connections) — `ai-integration-services/packages/lib/src/index.ts`
+- **index.ts** (4 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/packages/lib/src/index.ts`
+- **formatCurrency()** (2 connections) — `ai-integration-services/packages/lib/src/index.ts`
+- **formatRelativeTime()** (2 connections) — `ai-integration-services/packages/lib/src/index.ts`
+- **truncate()** (2 connections) — `ai-integration-services/packages/lib/src/index.ts`
 
 ## Relationships
 
@@ -17,10 +18,11 @@
 ## Source Files
 
 - `ai-integration-services/packages/lib/src/index.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/packages/lib/src/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 9 (100%)
+- EXTRACTED: 18 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

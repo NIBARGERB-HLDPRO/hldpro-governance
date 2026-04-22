@@ -1,32 +1,33 @@
 # text()
 
-> God node · 99 connections · `ai-integration-services/scripts/seed-esign-templates.ts`
+> God node · 100 connections · `ai-integration-services/scripts/seed-esign-templates.ts`
 
 ## Connections by Relation
 
 ### calls
 - [[upsert()]] `INFERRED`
 - [[callClaude()]] `INFERRED`
-- [[sendEmail()]] `INFERRED`
-- [[.buildApiError()]] `INFERRED`
+- [[sendSms()]] `INFERRED`
 - [[handleCallback()]] `INFERRED`
 - [[executeTool()]] `INFERRED`
-- [[sendSms()]] `INFERRED`
+- [[.buildApiError()]] `INFERRED`
 - [[handleSync()]] `INFERRED`
+- [[sendTwilioSms()]] `INFERRED`
+- [[refreshAccessToken()]] `INFERRED`
 - [[callClaude()]] `INFERRED`
 - [[plaidFetch()]] `INFERRED`
-- [[refreshAccessToken()]] `INFERRED`
 - [[callEdgeFunction()]] `INFERRED`
-- [[supaRest()]] `INFERRED`
-- [[restGet()]] `INFERRED`
-- [[sendTwilioSms()]] `INFERRED`
-- [[callClaudeWithTools()]] `INFERRED`
 - [[sendReminderSMS()]] `INFERRED`
+- [[callClaudeWithTools()]] `INFERRED`
 - [[sendPortalAccessEmail()]] `INFERRED`
 - [[sendSigningSms()]] `INFERRED`
-- [[.interact()]] `INFERRED`
+- [[restGet()]] `INFERRED`
+- [[supaRest()]] `INFERRED`
+- [[handleFileUpload()]] `INFERRED`
+- [[handlePostComment()]] `INFERRED`
 
 ### contains
+- [[seed-esign-templates.ts]] `EXTRACTED`
 - [[seed-esign-templates.ts]] `EXTRACTED`
 
 ---

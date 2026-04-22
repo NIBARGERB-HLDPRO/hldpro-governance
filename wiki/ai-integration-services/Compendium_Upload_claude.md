@@ -1,15 +1,16 @@
 # Compendium Upload claude
 
-> 6 nodes · cohesion 0.60
+> 7 nodes · cohesion 0.67
 
 ## Key Concepts
 
+- **main()** (6 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
 - **upload-claude.ts** (5 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
-- **main()** (5 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
-- **deleteExistingFiles()** (2 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
-- **getPackFiles()** (2 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
-- **loadConfig()** (2 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
-- **uploadFiles()** (2 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
+- **upload-claude.ts** (5 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/compendium/upload-claude.ts`
+- **deleteExistingFiles()** (3 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
+- **getPackFiles()** (3 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
+- **loadConfig()** (3 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
+- **uploadFiles()** (3 connections) — `ai-integration-services/scripts/compendium/upload-claude.ts`
 
 ## Relationships
 
@@ -18,10 +19,11 @@
 ## Source Files
 
 - `ai-integration-services/scripts/compendium/upload-claude.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/compendium/upload-claude.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 18 (100%)
+- EXTRACTED: 28 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

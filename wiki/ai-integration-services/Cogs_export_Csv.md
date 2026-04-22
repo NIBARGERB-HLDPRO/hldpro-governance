@@ -1,15 +1,16 @@
 # Cogs export Csv
 
-> 6 nodes · cohesion 0.47
+> 7 nodes · cohesion 0.57
 
 ## Key Concepts
 
 - **cogs-export.ts** (5 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
-- **triggerBrowserDownload()** (3 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
-- **exportCSV()** (2 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
-- **exportJSON()** (2 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
-- **csvEscape()** (1 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
-- **triggerAsyncExport()** (1 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- **cogs-export.ts** (5 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/utils/cogs-export.ts`
+- **triggerBrowserDownload()** (4 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- **exportCSV()** (3 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- **exportJSON()** (3 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- **triggerAsyncExport()** (3 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- **csvEscape()** (2 connections) — `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
 
 ## Relationships
 
@@ -18,11 +19,12 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/utils/cogs-export.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/utils/cogs-export.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 10 (71%)
-- INFERRED: 4 (29%)
+- EXTRACTED: 24 (96%)
+- INFERRED: 1 (4%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -1,10 +1,11 @@
 # TwentyCRMConnector
 
-> God node · 29 connections · `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/twenty.ts`
+> God node · 30 connections · `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/twenty.ts`
 
 ## Connections by Relation
 
 ### contains
+- [[twenty.ts]] `EXTRACTED`
 - [[twenty.ts]] `EXTRACTED`
 
 ### method

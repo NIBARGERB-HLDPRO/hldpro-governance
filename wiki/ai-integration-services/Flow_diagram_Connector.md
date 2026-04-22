@@ -1,13 +1,14 @@
 # Flow diagram Connector
 
-> 4 nodes · cohesion 0.50
+> 5 nodes · cohesion 0.60
 
 ## Key Concepts
 
 - **FlowDiagram.tsx** (3 connections) — `ai-integration-services/apps/marketing/src/components/ui/FlowDiagram.tsx`
-- **Connector()** (1 connections) — `ai-integration-services/apps/marketing/src/components/ui/FlowDiagram.tsx`
-- **FlowDiagram()** (1 connections) — `ai-integration-services/apps/marketing/src/components/ui/FlowDiagram.tsx`
-- **MobileConnector()** (1 connections) — `ai-integration-services/apps/marketing/src/components/ui/FlowDiagram.tsx`
+- **FlowDiagram.tsx** (3 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/components/ui/FlowDiagram.tsx`
+- **Connector()** (2 connections) — `ai-integration-services/apps/marketing/src/components/ui/FlowDiagram.tsx`
+- **FlowDiagram()** (2 connections) — `ai-integration-services/apps/marketing/src/components/ui/FlowDiagram.tsx`
+- **MobileConnector()** (2 connections) — `ai-integration-services/apps/marketing/src/components/ui/FlowDiagram.tsx`
 
 ## Relationships
 
@@ -16,10 +17,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/marketing/src/components/ui/FlowDiagram.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/components/ui/FlowDiagram.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
+- EXTRACTED: 12 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

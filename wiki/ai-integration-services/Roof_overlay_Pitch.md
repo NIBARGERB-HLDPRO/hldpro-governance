@@ -1,19 +1,21 @@
 # Roof overlay Pitch
 
-> 10 nodes · cohesion 0.42
+> 12 nodes · cohesion 0.53
 
 ## Key Concepts
 
 - **RoofOverlay.tsx** (8 connections) — `ai-integration-services/apps/marketing/src/portal/components/RoofOverlay.tsx`
 - **RoofOverlay.tsx** (8 connections) — `ai-integration-services/apps/portal/src/components/RoofOverlay.tsx`
-- **buildLegend()** (5 connections) — `ai-integration-services/apps/portal/src/components/RoofOverlay.tsx`
-- **parsePitch()** (3 connections) — `ai-integration-services/apps/portal/src/components/RoofOverlay.tsx`
-- **pitchColor()** (3 connections) — `ai-integration-services/apps/portal/src/components/RoofOverlay.tsx`
-- **RoofOverlay()** (3 connections) — `ai-integration-services/apps/portal/src/components/RoofOverlay.tsx`
-- **layoutSegments()** (2 connections) — `ai-integration-services/apps/portal/src/components/RoofOverlay.tsx`
-- **LegendSwatch()** (2 connections) — `ai-integration-services/apps/portal/src/components/RoofOverlay.tsx`
-- **pitchStroke()** (2 connections) — `ai-integration-services/apps/portal/src/components/RoofOverlay.tsx`
-- **roundRect()** (2 connections) — `ai-integration-services/apps/portal/src/components/RoofOverlay.tsx`
+- **RoofOverlay.tsx** (8 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/components/RoofOverlay.tsx`
+- **RoofOverlay.tsx** (8 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/components/RoofOverlay.tsx`
+- **buildLegend()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/components/RoofOverlay.tsx`
+- **parsePitch()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/components/RoofOverlay.tsx`
+- **pitchColor()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/components/RoofOverlay.tsx`
+- **RoofOverlay()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/components/RoofOverlay.tsx`
+- **layoutSegments()** (4 connections) — `ai-integration-services/apps/marketing/src/portal/components/RoofOverlay.tsx`
+- **LegendSwatch()** (4 connections) — `ai-integration-services/apps/marketing/src/portal/components/RoofOverlay.tsx`
+- **pitchStroke()** (4 connections) — `ai-integration-services/apps/marketing/src/portal/components/RoofOverlay.tsx`
+- **roundRect()** (4 connections) — `ai-integration-services/apps/marketing/src/portal/components/RoofOverlay.tsx`
 
 ## Relationships
 
@@ -23,10 +25,12 @@
 
 - `ai-integration-services/apps/marketing/src/portal/components/RoofOverlay.tsx`
 - `ai-integration-services/apps/portal/src/components/RoofOverlay.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/components/RoofOverlay.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/components/RoofOverlay.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 38 (100%)
+- EXTRACTED: 70 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

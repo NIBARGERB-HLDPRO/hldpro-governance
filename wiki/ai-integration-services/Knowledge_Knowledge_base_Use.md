@@ -1,12 +1,13 @@
 # Knowledge Knowledge base Use
 
-> 3 nodes · cohesion 0.67
+> 4 nodes · cohesion 0.67
 
 ## Key Concepts
 
+- **useArticles()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/knowledge/KnowledgeBase.tsx`
+- **useGaps()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/knowledge/KnowledgeBase.tsx`
 - **KnowledgeBase.tsx** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/knowledge/KnowledgeBase.tsx`
-- **useArticles()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/knowledge/KnowledgeBase.tsx`
-- **useGaps()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/knowledge/KnowledgeBase.tsx`
+- **KnowledgeBase.tsx** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/knowledge/KnowledgeBase.tsx`
 
 ## Relationships
 
@@ -15,10 +16,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/pages/knowledge/KnowledgeBase.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/knowledge/KnowledgeBase.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -1,16 +1,17 @@
 # Analytics Platform analytics Handle
 
-> 7 nodes · cohesion 0.33
+> 8 nodes · cohesion 0.46
 
 ## Key Concepts
 
 - **PlatformAnalytics.tsx** (6 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
-- **handleSave()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
-- **saveTargets()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
-- **formatCents()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
-- **handleCancel()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
-- **loadTargets()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
-- **useAnalyticsData()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
+- **PlatformAnalytics.tsx** (6 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
+- **handleSave()** (3 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
+- **saveTargets()** (3 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
+- **formatCents()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
+- **handleCancel()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
+- **loadTargets()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
+- **useAnalyticsData()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
 
 ## Relationships
 
@@ -19,10 +20,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/analytics/PlatformAnalytics.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 14 (100%)
+- EXTRACTED: 26 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

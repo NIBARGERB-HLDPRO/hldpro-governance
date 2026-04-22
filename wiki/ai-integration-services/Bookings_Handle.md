@@ -1,17 +1,18 @@
 # Bookings Handle
 
-> 8 nodes · cohesion 0.43
+> 9 nodes · cohesion 0.53
 
 ## Key Concepts
 
-- **Bookings.tsx** (9 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **callEdgeFunction()** (5 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **getStageIndex()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **handleApprove()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **handleCancel()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **handleExecute()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **handleNewBooking()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
-- **PipelineProgressBar()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **callEdgeFunction()** (9 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **Bookings.tsx** (7 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **Bookings.tsx** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **handleNewBooking()** (4 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **getStageIndex()** (3 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **handleApprove()** (3 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **handleCancel()** (3 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **handleExecute()** (3 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- **PipelineProgressBar()** (3 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
 
 ## Relationships
 
@@ -20,11 +21,12 @@
 ## Source Files
 
 - `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/Bookings.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 16 (62%)
-- INFERRED: 10 (38%)
+- EXTRACTED: 38 (90%)
+- INFERRED: 4 (10%)
 - AMBIGUOUS: 0 (0%)
 
 ---

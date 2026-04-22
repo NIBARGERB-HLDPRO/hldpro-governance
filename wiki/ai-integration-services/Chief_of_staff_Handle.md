@@ -1,14 +1,17 @@
 # Chief of staff Handle
 
-> 5 nodes · cohesion 0.60
+> 8 nodes · cohesion 0.64
 
 ## Key Concepts
 
-- **ChiefOfStaff.tsx** (6 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/ChiefOfStaff.tsx`
-- **handleSend()** (3 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/ChiefOfStaff.tsx`
-- **getConversationHistory()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/ChiefOfStaff.tsx`
-- **handleKeyDown()** (2 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/ChiefOfStaff.tsx`
-- **loadPrefs()** (1 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/ChiefOfStaff.tsx`
+- **handleSend()** (8 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/ChiefOfStaff.tsx`
+- **getConversationHistory()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/ChiefOfStaff.tsx`
+- **handleKeyDown()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/ChiefOfStaff.tsx`
+- **loadPrefs()** (4 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/ChiefOfStaff.tsx`
+- **ChiefOfStaff.tsx** (4 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/ChiefOfStaff.tsx`
+- **ChiefOfStaff.tsx** (4 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/ChiefOfStaff.tsx`
+- **ChiefOfStaff.tsx** (4 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/dashboard/ChiefOfStaff.tsx`
+- **ChiefOfStaff.tsx** (4 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/ChiefOfStaff.tsx`
 
 ## Relationships
 
@@ -16,12 +19,15 @@
 
 ## Source Files
 
+- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/ChiefOfStaff.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/ChiefOfStaff.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/dashboard/ChiefOfStaff.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/ChiefOfStaff.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 10 (71%)
-- INFERRED: 4 (29%)
+- EXTRACTED: 36 (95%)
+- INFERRED: 2 (5%)
 - AMBIGUOUS: 0 (0%)
 
 ---

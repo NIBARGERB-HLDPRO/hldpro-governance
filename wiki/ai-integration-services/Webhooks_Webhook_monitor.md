@@ -1,12 +1,13 @@
 # Webhooks Webhook monitor
 
-> 3 nodes · cohesion 0.67
+> 4 nodes · cohesion 0.67
 
 ## Key Concepts
 
 - **WebhookMonitor.tsx** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/webhooks/WebhookMonitor.tsx`
-- **DirectionBadge()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/webhooks/WebhookMonitor.tsx`
-- **StatusBadge()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/webhooks/WebhookMonitor.tsx`
+- **WebhookMonitor.tsx** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/webhooks/WebhookMonitor.tsx`
+- **DirectionBadge()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/webhooks/WebhookMonitor.tsx`
+- **StatusBadge()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/webhooks/WebhookMonitor.tsx`
 
 ## Relationships
 
@@ -15,10 +16,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/pages/webhooks/WebhookMonitor.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/webhooks/WebhookMonitor.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

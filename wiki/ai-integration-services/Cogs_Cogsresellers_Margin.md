@@ -1,14 +1,17 @@
 # Cogs Cogsresellers Margin
 
-> 5 nodes · cohesion 0.40
+> 8 nodes · cohesion 0.36
 
 ## Key Concepts
 
-- **COGSResellers.tsx** (4 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
-- **fmt()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
-- **marginBg()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
-- **marginColor()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
-- **toggleExpand()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
+- **COGSResellers.tsx** (6 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
+- **COGSResellers.tsx** (4 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
+- **fmt()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
+- **marginBg()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
+- **marginColor()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
+- **toggleExpand()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
+- **dollarsToCents()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
+- **normalizeResellers()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
 
 ## Relationships
 
@@ -17,10 +20,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/cogs/COGSResellers.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 20 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -1,17 +1,20 @@
 # Estimate builder Line
 
-> 8 nodes · cohesion 0.32
+> 11 nodes · cohesion 0.55
 
 ## Key Concepts
 
-- **EstimateBuilder.tsx** (9 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
-- **callEdge()** (3 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
-- **handleGenerate()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
-- **handleSend()** (2 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
-- **addLineItem()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
-- **applyTemplate()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
-- **removeLineItem()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
-- **updateLineItem()** (1 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
+- **callEdge()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
+- **EstimateBuilder.tsx** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
+- **EstimateBuilder.tsx** (7 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/EstimateBuilder.tsx`
+- **EstimateBuilder.tsx** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
+- **EstimateBuilder.tsx** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/EstimateBuilder.tsx`
+- **handleGenerate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
+- **handleSend()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
+- **addLineItem()** (4 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
+- **applyTemplate()** (4 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
+- **removeLineItem()** (4 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
+- **updateLineItem()** (4 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
 
 ## Relationships
 
@@ -20,11 +23,14 @@
 ## Source Files
 
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
+- `ai-integration-services/apps/portal/src/pages/dashboard/EstimateBuilder.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/dashboard/EstimateBuilder.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/EstimateBuilder.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 16 (80%)
-- INFERRED: 4 (20%)
+- EXTRACTED: 60 (98%)
+- INFERRED: 1 (2%)
 - AMBIGUOUS: 0 (0%)
 
 ---

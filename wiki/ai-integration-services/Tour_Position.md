@@ -1,14 +1,15 @@
 # Tour Position
 
-> 5 nodes · cohesion 0.40
+> 6 nodes · cohesion 0.53
 
 ## Key Concepts
 
 - **DashboardTour.tsx** (4 connections) — `ai-integration-services/apps/dashboard/src/components/DashboardTour.tsx`
-- **getTooltipPosition()** (1 connections) — `ai-integration-services/apps/dashboard/src/components/DashboardTour.tsx`
-- **handler()** (1 connections) — `ai-integration-services/apps/dashboard/src/components/DashboardTour.tsx`
-- **startTour()** (1 connections) — `ai-integration-services/apps/dashboard/src/components/DashboardTour.tsx`
-- **updatePosition()** (1 connections) — `ai-integration-services/apps/dashboard/src/components/DashboardTour.tsx`
+- **DashboardTour.tsx** (4 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/components/DashboardTour.tsx`
+- **getTooltipPosition()** (2 connections) — `ai-integration-services/apps/dashboard/src/components/DashboardTour.tsx`
+- **handler()** (2 connections) — `ai-integration-services/apps/dashboard/src/components/DashboardTour.tsx`
+- **startTour()** (2 connections) — `ai-integration-services/apps/dashboard/src/components/DashboardTour.tsx`
+- **updatePosition()** (2 connections) — `ai-integration-services/apps/dashboard/src/components/DashboardTour.tsx`
 
 ## Relationships
 
@@ -17,10 +18,11 @@
 ## Source Files
 
 - `ai-integration-services/apps/dashboard/src/components/DashboardTour.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/components/DashboardTour.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 16 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -1,13 +1,15 @@
 # Faq Reseller
 
-> 4 nodes · cohesion 0.67
+> 6 nodes · cohesion 0.53
 
 ## Key Concepts
 
-- **clsx()** (2 connections) — `ai-integration-services/apps/reseller/src/components/ui/Faq.tsx`
-- **toggle()** (2 connections) — `ai-integration-services/apps/reseller/src/components/ui/Faq.tsx`
+- **clsx()** (4 connections) — `ai-integration-services/apps/marketing/src/components/ui/Faq.tsx`
+- **toggle()** (4 connections) — `ai-integration-services/apps/marketing/src/components/ui/Faq.tsx`
 - **Faq.tsx** (2 connections) — `ai-integration-services/apps/marketing/src/components/ui/Faq.tsx`
 - **Faq.tsx** (2 connections) — `ai-integration-services/apps/reseller/src/components/ui/Faq.tsx`
+- **Faq.tsx** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/components/ui/Faq.tsx`
+- **Faq.tsx** (2 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/reseller/src/components/ui/Faq.tsx`
 
 ## Relationships
 
@@ -17,10 +19,12 @@
 
 - `ai-integration-services/apps/marketing/src/components/ui/Faq.tsx`
 - `ai-integration-services/apps/reseller/src/components/ui/Faq.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/components/ui/Faq.tsx`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/reseller/src/components/ui/Faq.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 8 (100%)
+- EXTRACTED: 16 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

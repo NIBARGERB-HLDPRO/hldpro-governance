@@ -1,6 +1,6 @@
 # getSession()
 
-> God node · 32 connections · `ai-integration-services/apps/portal/src/pages/dashboard/DashboardEmailSettings.tsx`
+> God node · 34 connections · `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailSettings.tsx`
 
 ## Connections by Relation
 
@@ -8,25 +8,27 @@
 - [[handleSubmit()]] `INFERRED`
 - [[callEdgeFunction()]] `INFERRED`
 - [[handleCancel()]] `INFERRED`
-- [[handleResync()]] `INFERRED`
 - [[handleSubmit()]] `INFERRED`
 - [[handleSendComment()]] `INFERRED`
+- [[handleResync()]] `INFERRED`
 - [[handleConnect()]] `EXTRACTED`
 - [[handleDisconnect()]] `EXTRACTED`
-- [[openArtifact()]] `INFERRED`
-- [[handleResend()]] `INFERRED`
-- [[handleVoid()]] `INFERRED`
-- [[openTemplatePdf()]] `INFERRED`
+- [[handleSync()]] `INFERRED`
 - [[handlePurchase()]] `INFERRED`
+- [[handleConnect()]] `INFERRED`
+- [[handleDisconnect()]] `INFERRED`
 - [[resolveSatelliteUrl()]] `INFERRED`
 - [[openRoofArtifact()]] `INFERRED`
+- [[lookupCRM()]] `INFERRED`
+- [[generateDraft()]] `INFERRED`
+- [[handleConnect()]] `INFERRED`
+- [[handleDisconnect()]] `INFERRED`
 - [[handleRefreshAnalysis()]] `INFERRED`
-- [[handleConnect()]] `INFERRED`
-- [[handleDisconnect()]] `INFERRED`
-- [[handleConnect()]] `INFERRED`
-- [[handleDisconnect()]] `INFERRED`
+- [[openArtifact()]] `INFERRED`
 
 ### contains
+- [[DashboardEmailSettings.tsx]] `EXTRACTED`
+- [[DashboardEmailSettings.tsx]] `EXTRACTED`
 - [[DashboardEmailSettings.tsx]] `EXTRACTED`
 - [[DashboardEmailSettings.tsx]] `EXTRACTED`
 

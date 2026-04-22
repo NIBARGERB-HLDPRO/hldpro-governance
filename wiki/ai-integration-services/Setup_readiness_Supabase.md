@@ -1,35 +1,35 @@
 # Setup readiness Supabase
 
-> 120 nodes · cohesion 0.03
+> 135 nodes · cohesion 0.04
 
 ## Key Concepts
 
 - **index.ts** (38 connections) — `ai-integration-services/backend/supabase/functions/portal-provision/index.ts`
+- **index.ts** (38 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/portal-provision/index.ts`
 - **setup-connection-tasks.ts** (22 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
+- **setup-connection-tasks.ts** (22 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/setup-connection-tasks.ts`
 - **portal-purchase.ts** (20 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
 - **setup-compliance-gates.ts** (20 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **portal-purchase.ts** (20 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/portal-purchase.ts`
+- **setup-compliance-gates.ts** (20 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/setup-compliance-gates.ts`
 - **setup-readiness.ts** (19 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-readiness.ts`
-- **finalizePortalPurchase()** (17 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **index.ts** (14 connections) — `ai-integration-services/backend/supabase/functions/reseller-manager/index.ts`
-- **syncSetupConnectionTasksForClient()** (13 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
-- **CalcomClient** (12 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-client.ts`
-- **calcom-finalization.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-finalization.ts`
+- **setup-readiness.ts** (19 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/setup-readiness.ts`
+- **finalizePortalPurchase()** (18 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- **syncSetupConnectionTasksForClient()** (14 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
 - **optional-product-setup.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/optional-product-setup.ts`
-- **.calFetch()** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-client.ts`
+- **optional-product-setup.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/optional-product-setup.ts`
+- **n8n-workflow-templates.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/n8n-workflow-templates.ts`
+- **n8n-workflow-templates.ts** (10 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/n8n-workflow-templates.ts`
+- **runStep()** (9 connections) — `ai-integration-services/backend/supabase/functions/portal-provision/index.ts`
+- **syncSetupComplianceGatesForClient()** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
+- **classify-primary-intent.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.ts`
 - **provisioning-service-matrix.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-service-matrix.ts`
-- **buildCalcomFinalizeDefaults()** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-finalization.ts`
+- **classify-primary-intent.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/classify-primary-intent.ts`
+- **provisioning-service-matrix.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/provisioning-service-matrix.ts`
+- **nonEmpty()** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
 - **provisioning-plan.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
 - **provisioning-probes.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-probes.ts`
-- **setup-plan.ts** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-plan.ts`
-- **runStep()** (8 connections) — `ai-integration-services/backend/supabase/functions/portal-provision/index.ts`
-- **syncSetupComplianceGatesForClient()** (8 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- **calcom-client.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-client.ts`
-- **nonEmpty()** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **syncClientSetupReadiness()** (6 connections) — `ai-integration-services/backend/supabase/functions/portal-provision/index.ts`
-- **syncOneClient()** (6 connections) — `ai-integration-services/backend/supabase/functions/sync-compliance-gates/index.ts`
-- **ensureReferralTracking()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
-- **derivePlaidGate()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
-- *... and 95 more nodes in this community*
+- *... and 110 more nodes in this community*
 
 ## Relationships
 
@@ -37,10 +37,11 @@
 
 ## Source Files
 
-- `ai-integration-services/backend/supabase/functions/_shared/calcom-client.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/calcom-finalization.test.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/calcom-finalization.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.test.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/forwarding-instructions.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/n8n-workflow-templates.test.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/n8n-workflow-templates.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/optional-product-setup.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/optional-product-setup.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
@@ -54,14 +55,13 @@
 - `ai-integration-services/backend/supabase/functions/_shared/setup-readiness.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/setup-readiness.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/vapi-brain-tool.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/voice-config.ts`
 - `ai-integration-services/backend/supabase/functions/portal-provision/index.ts`
-- `ai-integration-services/backend/supabase/functions/reseller-auth/index.ts`
-- `ai-integration-services/backend/supabase/functions/reseller-manager/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 439 (89%)
-- INFERRED: 57 (11%)
+- EXTRACTED: 696 (93%)
+- INFERRED: 55 (7%)
 - AMBIGUOUS: 0 (0%)
 
 ---

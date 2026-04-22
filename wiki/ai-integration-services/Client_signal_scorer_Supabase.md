@@ -1,17 +1,18 @@
 # Client signal scorer Supabase
 
-> 8 nodes · cohesion 0.25
+> 9 nodes · cohesion 0.39
 
 ## Key Concepts
 
 - **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
-- **dispatchAlert()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
-- **detectCallVolumeAnomalies()** (1 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
-- **detectChurnRisks()** (1 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
-- **detectMinuteUsageApproaching()** (1 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
-- **detectStaleTickets()** (1 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
-- **detectUpsellOpportunities()** (1 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
-- **insertBriefingItem()** (1 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **index.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/client-signal-scorer/index.ts`
+- **dispatchAlert()** (3 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **detectCallVolumeAnomalies()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **detectChurnRisks()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **detectMinuteUsageApproaching()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **detectStaleTickets()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **detectUpsellOpportunities()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- **insertBriefingItem()** (2 connections) — `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
 
 ## Relationships
 
@@ -20,11 +21,12 @@
 ## Source Files
 
 - `ai-integration-services/backend/supabase/functions/client-signal-scorer/index.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/client-signal-scorer/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 18 (95%)
-- INFERRED: 1 (5%)
+- EXTRACTED: 36 (97%)
+- INFERRED: 1 (3%)
 - AMBIGUOUS: 0 (0%)
 
 ---

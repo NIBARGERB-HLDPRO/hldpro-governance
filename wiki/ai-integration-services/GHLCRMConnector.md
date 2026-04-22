@@ -1,25 +1,26 @@
 # GHLCRMConnector
 
-> God node · 25 connections · `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+> God node · 26 connections · `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 
 ## Connections by Relation
 
 ### contains
 - [[ghl.ts]] `EXTRACTED`
+- [[ghl.ts]] `EXTRACTED`
 
 ### method
 - [[.ghlFetch()]] `EXTRACTED`
 - [[.getAccessToken()]] `EXTRACTED`
+- [[.upsertContact()]] `EXTRACTED`
 - [[.mapGHLContact()]] `EXTRACTED`
 - [[.refreshOAuthToken()]] `EXTRACTED`
 - [[.createContact()]] `EXTRACTED`
-- [[.upsertContact()]] `EXTRACTED`
 - [[.getContact()]] `EXTRACTED`
 - [[.updateContact()]] `EXTRACTED`
 - [[.searchContacts()]] `EXTRACTED`
+- [[.moveDeal()]] `EXTRACTED`
 - [[.deleteContact()]] `EXTRACTED`
 - [[.createDeal()]] `EXTRACTED`
-- [[.moveDeal()]] `EXTRACTED`
 - [[.getPipeline()]] `EXTRACTED`
 - [[.enrollInSequence()]] `EXTRACTED`
 - [[.addNote()]] `EXTRACTED`

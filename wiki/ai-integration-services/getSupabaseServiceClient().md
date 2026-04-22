@@ -1,6 +1,6 @@
 # getSupabaseServiceClient()
 
-> God node · 67 connections · `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
+> God node · 68 connections · `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
 
 ## Connections by Relation
 
@@ -8,25 +8,26 @@
 - [[emitAuditLog()]] `INFERRED`
 - [[emitCOGS()]] `INFERRED`
 - [[resolveClientId()]] `INFERRED`
-- [[readSecret()]] `INFERRED`
 - [[handleCallback()]] `INFERRED`
-- [[createFeedback()]] `INFERRED`
+- [[getAccessToken()]] `INFERRED`
 - [[executeTool()]] `INFERRED`
+- [[readSecret()]] `INFERRED`
+- [[createFeedback()]] `INFERRED`
 - [[finalizeDocumentCore()]] `INFERRED`
 - [[handleDisconnect()]] `INFERRED`
-- [[notifyPartyCore()]] `INFERRED`
 - [[handleSync()]] `INFERRED`
-- [[getAccessToken()]] `INFERRED`
 - [[vapiHandler()]] `INFERRED`
+- [[notifyPartyCore()]] `INFERRED`
 - [[handleTransactionSync()]] `INFERRED`
+- [[trackVoiceUsage()]] `INFERRED`
 - [[emitCallAnalytics()]] `INFERRED`
 - [[getAccountsByItemId()]] `INFERRED`
-- [[.refreshToken()]] `INFERRED`
-- [[.refreshToken()]] `INFERRED`
-- [[.refreshToken()]] `INFERRED`
-- [[.refreshToken()]] `INFERRED`
+- [[resolveResellerContext()]] `INFERRED`
+- [[loadClientConfig()]] `INFERRED`
+- [[processOnboardingCallCompletion()]] `INFERRED`
 
 ### contains
+- [[auth.ts]] `EXTRACTED`
 - [[auth.ts]] `EXTRACTED`
 
 ---
