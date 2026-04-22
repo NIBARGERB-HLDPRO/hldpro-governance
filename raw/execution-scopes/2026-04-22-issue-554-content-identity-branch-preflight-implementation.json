@@ -1,7 +1,7 @@
 {
   "expected_execution_root": ".",
   "expected_branch": "issue-554-pages-deploy-content-identity-branch-preflight-20260422",
-  "execution_mode": "implementation_ready",
+  "execution_mode": "planning_only",
   "allowed_write_paths": [
     "scripts/pages-deploy/pages_deploy_gate.py",
     "scripts/pages-deploy/pages_deploy_verifier.py",
@@ -9,6 +9,7 @@
     "scripts/pages-deploy/tests/test_pages_deploy_verifier.py",
     "docs/schemas/pages-deploy-consumer.schema.json",
     "docs/plans/2026-04-22-issue-554-content-identity-branch-preflight-pdcar.json",
+    "docs/plans/issue-554-content-identity-branch-preflight-structured-agent-cycle-plan.json",
     "raw/execution-scopes/2026-04-22-issue-554-content-identity-branch-preflight-implementation.json",
     "raw/handoffs/2026-04-22-issue-554-content-identity-branch-preflight.json",
     "raw/validation/2026-04-22-issue-554-content-identity-branch-preflight.md",
@@ -25,6 +26,7 @@
   ],
   "lane_claim": {
     "issue_number": 554,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/554",
     "claimed_by": "dispatcher",
     "claimed_at": "2026-04-22T15:00:00Z"
   }
