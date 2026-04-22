@@ -1,6 +1,6 @@
 # Addon lifecycle Real
 
-> 105 nodes · cohesion 0.04
+> 107 nodes · cohesion 0.04
 
 ## Key Concepts
 
@@ -11,11 +11,11 @@
 - **real-enrollment-founder.spec.ts** (13 connections) — `ai-integration-services/e2e/real-enrollment-founder.spec.ts`
 - **real-enrollment-founder.spec.ts** (13 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/real-enrollment-founder.spec.ts`
 - **signInAsCustomer()** (10 connections) — `ai-integration-services/e2e/helpers.ts`
+- **signInAsOperator()** (8 connections) — `ai-integration-services/e2e/helpers.ts`
+- **screenshot()** (8 connections) — `ai-integration-services/e2e/operator-dashboard.spec.ts`
 - **getAuthTokens()** (7 connections) — `ai-integration-services/e2e/helpers.ts`
 - **navigateWithRetry()** (7 connections) — `ai-integration-services/e2e/helpers.ts`
 - **openAuthenticatedRoute()** (7 connections) — `ai-integration-services/e2e/helpers.ts`
-- **signInAsOperator()** (7 connections) — `ai-integration-services/e2e/helpers.ts`
-- **screenshot()** (7 connections) — `ai-integration-services/e2e/operator-dashboard.spec.ts`
 - **link-crawler.spec.ts** (7 connections) — `ai-integration-services/e2e/link-crawler.spec.ts`
 - **link-crawler.spec.ts** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/link-crawler.spec.ts`
 - **cancelAddonFromUi()** (6 connections) — `ai-integration-services/e2e/addon-ui-lifecycle.spec.ts`
@@ -26,10 +26,10 @@
 - **cleanupClientByEmail()** (6 connections) — `ai-integration-services/e2e/helpers.ts`
 - **signInAsPartner()** (6 connections) — `ai-integration-services/e2e/helpers.ts`
 - **testLink()** (6 connections) — `ai-integration-services/e2e/link-crawler.spec.ts`
+- **assertRouteContract()** (6 connections) — `ai-integration-services/e2e/operator-dashboard-live-route-contract.spec.ts`
 - **inspectPortalPage()** (6 connections) — `ai-integration-services/e2e/post-bugfix-staging-inspection.spec.ts`
 - **loadPurchaseSeed()** (6 connections) — `ai-integration-services/e2e/real-enrollment-founder.spec.ts`
-- **escapeRegex()** (5 connections) — `ai-integration-services/e2e/addon-ui-lifecycle.spec.ts`
-- *... and 80 more nodes in this community*
+- *... and 82 more nodes in this community*
 
 ## Relationships
 
@@ -42,11 +42,11 @@
 - `ai-integration-services/e2e/feature-request.spec.ts`
 - `ai-integration-services/e2e/helpers.ts`
 - `ai-integration-services/e2e/link-crawler.spec.ts`
+- `ai-integration-services/e2e/operator-dashboard-live-route-contract.spec.ts`
 - `ai-integration-services/e2e/operator-dashboard.spec.ts`
 - `ai-integration-services/e2e/post-bugfix-staging-inspection.spec.ts`
 - `ai-integration-services/e2e/real-enrollment-founder.spec.ts`
 - `ai-integration-services/e2e/support-ticket.spec.ts`
-- `ai-integration-services/scripts/capture-tester-guide-screenshots.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/addon-ui-lifecycle.spec.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/affiliate-tracking.spec.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/feature-request.spec.ts`
@@ -56,12 +56,11 @@
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/post-bugfix-staging-inspection.spec.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/real-enrollment-founder.spec.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/support-ticket.spec.ts`
-- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/capture-tester-guide-screenshots.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 450 (89%)
-- INFERRED: 58 (11%)
+- EXTRACTED: 458 (88%)
+- INFERRED: 62 (12%)
 - AMBIGUOUS: 0 (0%)
 
 ---
