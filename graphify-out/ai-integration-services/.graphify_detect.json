@@ -970,6 +970,7 @@
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/optional-product-setup.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/cogs-catalog.test.ts",
+      "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.test.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/analytics-db.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/setup-readiness.test.ts",
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/backend/supabase/functions/_shared/ai-matcher.ts",
@@ -2072,10 +2073,10 @@
       "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/test-results/render-contracts-critical--972b9--deployed-response-contract/video.webm"
     ]
   },
-  "total_files": 2062,
-  "total_words": 2692333,
+  "total_files": 2063,
+  "total_words": 2692502,
   "needs_graph": true,
-  "warning": "Large corpus: 2062 files \u00b7 ~2,692,333 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
+  "warning": "Large corpus: 2063 files \u00b7 ~2,692,502 words. Semantic extraction will be expensive (many Claude tokens). Consider running on a subfolder, or use --no-semantic to run AST-only.",
   "skipped_sensitive": [
     "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/migrations/031_qb_token_status.sql",
     "/Users/bennibarger/Developer/HLDPRO/ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/ad-token-refresh/index.ts",

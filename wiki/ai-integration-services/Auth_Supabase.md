@@ -1,6 +1,6 @@
 # Auth Supabase
 
-> 286 nodes · cohesion 0.02
+> 279 nodes · cohesion 0.03
 
 ## Key Concepts
 
@@ -20,7 +20,6 @@
 - **index.ts** (14 connections) — `ai-integration-services/backend/supabase/functions/gbp-review-monitor/index.ts`
 - **index.ts** (14 connections) — `ai-integration-services/backend/supabase/functions/reseller-manager/index.ts`
 - **index.ts** (12 connections) — `ai-integration-services/backend/supabase/functions/brain-ingest/index.ts`
-- **index.ts** (12 connections) — `ai-integration-services/backend/supabase/functions/hvac-maintenance-alert/index.ts`
 - **index.ts** (12 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/index.ts`
 - **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/magic-link-intake-submit/index.ts`
 - **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/service-connect/index.ts`
@@ -29,7 +28,8 @@
 - **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/support-tickets/index.ts`
 - **index.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/test-runner/index.ts`
 - **index.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/ad-connect-oauth/index.ts`
-- *... and 261 more nodes in this community*
+- **index.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/demo-site-activation-link/index.ts`
+- *... and 254 more nodes in this community*
 
 ## Relationships
 
@@ -60,8 +60,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 2518 (99%)
-- INFERRED: 22 (1%)
+- EXTRACTED: 2494 (99%)
+- INFERRED: 21 (1%)
 - AMBIGUOUS: 0 (0%)
 
 ---

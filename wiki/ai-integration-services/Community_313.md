@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **main.tsx** (0 connections) — `ai-integration-services/apps/dashboard/src/main.tsx`
+- **router.tsx** (0 connections) — `ai-integration-services/apps/dashboard/src/router.tsx`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `ai-integration-services/apps/dashboard/src/main.tsx`
+- `ai-integration-services/apps/dashboard/src/router.tsx`
 
 ## Audit Trail
 
