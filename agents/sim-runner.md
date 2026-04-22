@@ -9,6 +9,28 @@ You are the **sim-runner** agent. Your job is to invoke hldpro-sim for a given s
 
 ## Workflow
 
+### Step 0 — Pre-flight
+
+Before doing anything else, validate that hldpro-sim is deployed in the consumer repo and that its version matches governance.
+
+1. **Check consumer record exists.** Look for `.hldpro/hldpro-sim.json` in the consumer repo root.
+   - If absent: HALT — "hldpro-sim not deployed. Run: bash <governance-root>/scripts/deployer/deploy-hldpro-sim.sh <consumer-repo-path>"
+
+2. **Read consumer pinned SHA.** From `.hldpro/hldpro-sim.json`, read the `pinned_sha` field.
+
+3. **Read canonical pinned SHA.** From `<governance-root>/docs/hldpro-sim-consumer-pull-state.json`, read the `pinned_sha` field.
+
+4. **Compare SHAs.**
+   - If they match: print `hldpro-sim CURRENT (sha: <sha[:8]>)` and continue to Step 1.
+   - If they differ: print the following WARNING (do NOT halt — proceed to Step 1 anyway):
+     ```
+     WARNING: hldpro-sim version mismatch.
+       Consumer:   <consumer_sha[:8]>
+       Governance: <canonical_sha[:8]>
+     Re-deploy recommended: bash <governance-root>/scripts/deployer/deploy-hldpro-sim.sh <consumer-repo-path>
+     Proceeding anyway.
+     ```
+
 ### Step 1 — Confirm hldpro-sim is installed
 
 1. Confirm hldpro-sim is deployed: check `.hldpro/hldpro-sim.json` exists in the consumer repo root.
