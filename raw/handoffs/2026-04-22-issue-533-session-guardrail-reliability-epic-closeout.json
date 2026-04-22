@@ -1,0 +1,83 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-533-session-guardrail-reliability-epic-closeout",
+  "issue_number": 533,
+  "parent_epic_number": null,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-qa",
+  "structured_plan_ref": "docs/plans/issue-533-session-guardrail-reliability-epic-closeout-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "All tracked #533 child sprint issues are closed by merged PRs.",
+      "verification_refs": [
+        "raw/validation/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout.md",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/533"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Child sprint closeouts and validation artifacts exist for #534, #535, #536, #537, #538, and #541.",
+      "verification_refs": [
+        "raw/validation/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout.md",
+        "raw/closeouts/2026-04-22-issue-534-sql-schema-drift-probe-contract.md",
+        "raw/closeouts/2026-04-21-issue-535-session-error-patterns-kb.md",
+        "raw/closeouts/2026-04-21-issue-536-cli-supervisor-pr-contracts.md",
+        "raw/closeouts/2026-04-21-issue-537-consumer-worker-acceptance.md",
+        "raw/closeouts/2026-04-21-issue-538-hook-guardrail-reliability.md",
+        "raw/closeouts/2026-04-21-issue-541-stage6-closeout-enforcement.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Session guardrail and self-learning patterns are represented in FAIL_FAST, ERROR_PATTERNS, session-error KB, and self-learning evidence.",
+      "verification_refs": [
+        "docs/FAIL_FAST_LOG.md",
+        "docs/ERROR_PATTERNS.md",
+        "docs/runbooks/session-error-patterns.md",
+        "raw/validation/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Final epic closeout and progress evidence validate locally.",
+      "verification_refs": [
+        "docs/PROGRESS.md",
+        "raw/closeouts/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout.md",
+        "raw/validation/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout.json",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-533-guardrail-epic-closeout --changed-files-file /tmp/issue-533-changed-files.txt --enforce-governance-surface --enforce-planner-boundary-scope",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout-implementation.json --changed-files-file /tmp/issue-533-changed-files.txt --require-lane-claim",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout.md --root .",
+    "python3 scripts/overlord/validate_provisioning_evidence.py --root . --changed-files-file /tmp/issue-533-changed-files.txt",
+    "git diff --check",
+    "tools/local-ci-gate/bin/hldpro-local-ci --profile hldpro-governance --changed-files-file /tmp/issue-533-changed-files.txt"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout.md"
+  ],
+  "artifact_refs": [
+    "docs/PROGRESS.md",
+    "raw/exceptions/2026-04-22-issue-533-same-family-epic-closeout.md",
+    "raw/closeouts/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout.md"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-04-22-issue-533-session-guardrail-reliability-epic-closeout.md"
+  ],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-22T03:24:00Z",
+  "notes": "Final evidence package for closing epic #533 after all child sprints merged and closed."
+}
