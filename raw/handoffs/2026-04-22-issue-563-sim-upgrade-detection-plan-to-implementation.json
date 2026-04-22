@@ -1,0 +1,55 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-563-sim-upgrade-detection-plan-to-implementation",
+  "issue_number": 563,
+  "parent_epic_number": null,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "session-planner",
+  "to_role": "session-agent-claude-sonnet-4-6",
+  "structured_plan_ref": "docs/plans/issue-563-sim-upgrade-detection-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-22-issue-563-sim-upgrade-detection-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "docs/agents-adoption-guide.md contains '## hldpro-sim Version Management' section with version check, staleness comparison, re-deploy, and drift detector follow-up note.",
+      "verification_refs": [
+        "docs/agents-adoption-guide.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "validate_structured_agent_cycle_plan.py --root . returns PASS.",
+      "verification_refs": [
+        "docs/plans/issue-563-sim-upgrade-detection-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "No new .py files are introduced; all writes are confined to docs/ and raw/ paths.",
+      "verification_refs": [
+        "raw/execution-scopes/2026-04-22-issue-563-sim-upgrade-detection-implementation.json"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-563-hldpro-sim-upgrade-detection-20260422",
+    "bash hooks/closeout-hook.sh raw/closeouts/2026-04-22-issue-563-sim-upgrade-detection.md"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "docs/agents-adoption-guide.md",
+    "docs/plans/issue-563-sim-upgrade-detection-structured-agent-cycle-plan.json",
+    "docs/plans/issue-563-sim-upgrade-detection-pdcar.md",
+    "raw/execution-scopes/2026-04-22-issue-563-sim-upgrade-detection-implementation.json",
+    "raw/closeouts/2026-04-22-issue-563-sim-upgrade-detection.md"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-22T00:00:00Z",
+  "notes": "Documentation-only issue. No new .py files. Drift detector script deferred to follow-up issue."
+}

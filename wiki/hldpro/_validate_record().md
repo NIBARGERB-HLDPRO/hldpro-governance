@@ -6,9 +6,9 @@
 
 ### calls
 - [[verify()]] `INFERRED`
+- [[_is_relative_to()]] `INFERRED`
 - [[_forbidden_override_failures()]] `INFERRED`
 - [[_known_profiles()]] `INFERRED`
-- [[_is_relative_to()]] `INFERRED`
 - [[_is_v2_record()]] `INFERRED`
 - [[_profile_required_constraints()]] `INFERRED`
 - [[_override_records()]] `INFERRED`

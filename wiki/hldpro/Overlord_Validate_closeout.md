@@ -1,19 +1,20 @@
 # Overlord Validate closeout
 
-> 35 nodes · cohesion 0.13
+> 39 nodes · cohesion 0.11
 
 ## Key Concepts
 
-- **validate_closeout.py** (12 connections) — `scripts/overlord/validate_closeout.py`
-- **validate_handoff_package.py** (11 connections) — `scripts/overlord/validate_handoff_package.py`
+- **validate_handoff_package.py** (15 connections) — `scripts/overlord/validate_handoff_package.py`
+- **validate_closeout.py** (13 connections) — `scripts/overlord/validate_closeout.py`
 - **TestValidateCloseout** (10 connections) — `scripts/overlord/test_validate_closeout.py`
 - **._repo()** (9 connections) — `scripts/overlord/test_validate_closeout.py`
+- **validate_package()** (9 connections) — `scripts/overlord/validate_handoff_package.py`
 - **._closeout()** (8 connections) — `scripts/overlord/test_validate_closeout.py`
-- **validate_package()** (8 connections) — `scripts/overlord/validate_handoff_package.py`
 - **validate_closeout()** (7 connections) — `scripts/overlord/validate_closeout.py`
 - **_is_url()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
 - **_repo_file_exists()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
 - **_validate_acceptance_criteria()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
+- **_validate_consumer_verifier_acceptance()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
 - **_validate_ref_array()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
 - **test_validate_closeout.py** (4 connections) — `scripts/overlord/test_validate_closeout.py`
 - **_write()** (4 connections) — `scripts/overlord/test_validate_closeout.py`
@@ -28,8 +29,7 @@
 - **.test_residual_without_issue_ref_fails()** (3 connections) — `scripts/overlord/test_validate_closeout.py`
 - **.test_valid_closeout_passes()** (3 connections) — `scripts/overlord/test_validate_closeout.py`
 - **main()** (3 connections) — `scripts/overlord/validate_closeout.py`
-- **_load_json()** (3 connections) — `scripts/overlord/validate_handoff_package.py`
-- *... and 10 more nodes in this community*
+- *... and 14 more nodes in this community*
 
 ## Relationships
 
@@ -43,8 +43,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 68 (45%)
-- INFERRED: 84 (55%)
+- EXTRACTED: 77 (46%)
+- INFERRED: 92 (54%)
 - AMBIGUOUS: 0 (0%)
 
 ---
