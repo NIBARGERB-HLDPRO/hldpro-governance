@@ -109,12 +109,12 @@ def run_synthetic_lam_bootstrap() -> None:
     SOM_OPERATOR_INBOUND_QUEUE_ROOT=/tmp/synthetic queue root
     TWILIO_ACCOUNT_SID=synthetic-twilio-sid
     TWILIO_AUTH_TOKEN=synthetic-twilio-secret
-    TWILIO_FROM_NUMBER=+15557654321
-    TWILIO_SMS_FROM=+15557654321
-    SOM_TWILIO_FROM_NUMBER=+15557654321
-    TWILIO_TEST_CONSUMER_NUMBER=+15551234567
-    OPERATOR_SMS_PHONE=+15551234567
-    SOM_OPERATOR_SMS_PHONE=+15551234567
+    TWILIO_FROM_NUMBER=SYNTHETIC-FROM-555
+    TWILIO_SMS_FROM=SYNTHETIC-FROM-555
+    SOM_TWILIO_FROM_NUMBER=SYNTHETIC-FROM-555
+    TWILIO_TEST_CONSUMER_NUMBER=SYNTHETIC-CONSUMER-555
+    OPERATOR_SMS_PHONE=SYNTHETIC-CONSUMER-555
+    SOM_OPERATOR_SMS_PHONE=SYNTHETIC-CONSUMER-555
     """
 
     with tempfile.TemporaryDirectory() as tmp:
@@ -159,8 +159,8 @@ def run_synthetic_lam_bootstrap() -> None:
             "synthetic-cloudflare-secret",
             "synthetic-hmac-secret",
             "synthetic-twilio-secret",
-            "+15557654321",
-            "+15551234567",
+            "SYNTHETIC-FROM-555",
+            "SYNTHETIC-CONSUMER-555",
         ]:
             check(secret_value not in output, f"dry-run leaked synthetic value {secret_value}")
 
@@ -188,12 +188,12 @@ def run_sibling_worktree_lam_bootstrap() -> None:
                 CLOUDFLARE_TUNNEL_ID=synthetic-tunnel
                 CF_TEAM_DOMAIN=synthetic-team
                 CF_ACCESS_AUD_TAG=synthetic-aud
-                TWILIO_TEST_CONSUMER_NUMBER=+15551234567
-                TWILIO_FROM_NUMBER=+15557654321
-                TWILIO_SMS_FROM=+15557654321
-                SOM_TWILIO_FROM_NUMBER=+15557654321
-                OPERATOR_SMS_PHONE=+15551234567
-                SOM_OPERATOR_SMS_PHONE=+15551234567
+                TWILIO_TEST_CONSUMER_NUMBER=SYNTHETIC-CONSUMER-555
+                TWILIO_FROM_NUMBER=SYNTHETIC-FROM-555
+                TWILIO_SMS_FROM=SYNTHETIC-FROM-555
+                SOM_TWILIO_FROM_NUMBER=SYNTHETIC-FROM-555
+                OPERATOR_SMS_PHONE=SYNTHETIC-CONSUMER-555
+                SOM_OPERATOR_SMS_PHONE=SYNTHETIC-CONSUMER-555
                 """
             ).strip()
             + "\n",
@@ -238,8 +238,8 @@ def run_nested_var_worktree_lam_bootstrap() -> None:
                 CLOUDFLARE_TUNNEL_ID=synthetic-tunnel
                 CF_TEAM_DOMAIN=synthetic-team
                 CF_ACCESS_AUD_TAG=synthetic-aud
-                OPERATOR_SMS_PHONE=+15551234567
-                SOM_OPERATOR_SMS_PHONE=+15551234567
+                OPERATOR_SMS_PHONE=SYNTHETIC-CONSUMER-555
+                SOM_OPERATOR_SMS_PHONE=SYNTHETIC-CONSUMER-555
                 """
             ).strip()
             + "\n",
