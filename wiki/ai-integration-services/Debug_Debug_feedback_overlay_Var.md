@@ -1,11 +1,12 @@
 # Debug Debug feedback overlay Var
 
-> 128 nodes · cohesion 0.04
+> 129 nodes · cohesion 0.03
 
 ## Key Concepts
 
 - **getSession()** (34 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailSettings.tsx`
 - **handleSubmit()** (10 connections) — `ai-integration-services/apps/marketing/src/components/debug/DebugFeedbackOverlay.tsx`
+- **callEdgeFunction()** (9 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
 - **DebugFeedbackOverlay.tsx** (9 connections) — `ai-integration-services/apps/marketing/src/components/debug/DebugFeedbackOverlay.tsx`
 - **DebugFeedbackOverlay.tsx** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/components/debug/DebugFeedbackOverlay.tsx`
 - **DashboardIntegrations.tsx** (8 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
@@ -22,14 +23,13 @@
 - **debugFeedback.ts** (7 connections) — `ai-integration-services/apps/dashboard/src/lib/api/debugFeedback.ts`
 - **COGSOverview.tsx** (7 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSOverview.tsx`
 - **DashboardSupport.tsx** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
+- **Bookings.tsx** (7 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
 - **DashboardSupport.tsx** (7 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardSupport.tsx`
 - **DashboardSupport.tsx** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
+- **Bookings.tsx** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/Bookings.tsx`
 - **DashboardSupport.tsx** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/DashboardSupport.tsx`
 - **handlePurchase()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAddons.tsx`
-- **handleConnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsConnect.tsx`
-- **handleDisconnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsConnect.tsx`
-- **generateDraft()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailAssistant.tsx`
-- *... and 103 more nodes in this community*
+- *... and 104 more nodes in this community*
 
 ## Relationships
 
@@ -49,10 +49,10 @@
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailAssistant.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailSettings.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardRoofMeasure.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/sign/SignTemplates.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/solar/SolarMonitoring.tsx`
+- `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardAddons.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardAdsConnect.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardEmailAssistant.tsx`
@@ -60,8 +60,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 526 (87%)
-- INFERRED: 81 (13%)
+- EXTRACTED: 532 (87%)
+- INFERRED: 79 (13%)
 - AMBIGUOUS: 0 (0%)
 
 ---
