@@ -1,6 +1,6 @@
 # Magic link review decision Supabase
 
-> 29 nodes · cohesion 0.16
+> 28 nodes · cohesion 0.16
 
 ## Key Concepts
 
@@ -9,7 +9,6 @@
 - **tryReadEnvSecret()** (13 connections) — `ai-integration-services/backend/supabase/functions/_shared/vault.ts`
 - **intake-validator.ts** (11 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
 - **intake-validator.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/intake-validator.ts`
-- **responseJson()** (7 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
 - **isObject()** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
 - **validateAgainstSchema()** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
 - **createTrialCoupon()** (6 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
@@ -29,7 +28,8 @@
 - **schemaAnyOfMatches()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
 - **validatePayload()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/intake-validator.ts`
 - **buildLamPayload()** (2 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
-- *... and 4 more nodes in this community*
+- **isAllowedDecisionStatus()** (2 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
+- *... and 3 more nodes in this community*
 
 ## Relationships
 
@@ -48,8 +48,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 138 (84%)
-- INFERRED: 27 (16%)
+- EXTRACTED: 132 (84%)
+- INFERRED: 26 (16%)
 - AMBIGUOUS: 0 (0%)
 
 ---

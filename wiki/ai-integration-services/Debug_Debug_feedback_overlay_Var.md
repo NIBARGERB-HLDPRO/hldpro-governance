@@ -1,6 +1,6 @@
 # Debug Debug feedback overlay Var
 
-> 127 nodes · cohesion 0.04
+> 128 nodes · cohesion 0.04
 
 ## Key Concepts
 
@@ -18,6 +18,8 @@
 - **handleResync()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
 - **handleSendComment()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
 - **handleSubmit()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
+- **debugFeedbackFetch()** (7 connections) — `ai-integration-services/apps/dashboard/src/lib/api/debugFeedback.ts`
+- **debugFeedback.ts** (7 connections) — `ai-integration-services/apps/dashboard/src/lib/api/debugFeedback.ts`
 - **COGSOverview.tsx** (7 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSOverview.tsx`
 - **DashboardSupport.tsx** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
 - **DashboardSupport.tsx** (7 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardSupport.tsx`
@@ -27,9 +29,7 @@
 - **handleConnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsConnect.tsx`
 - **handleDisconnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsConnect.tsx`
 - **generateDraft()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailAssistant.tsx`
-- **lookupCRM()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailAssistant.tsx`
-- **handleConnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardEmailSettings.tsx`
-- *... and 102 more nodes in this community*
+- *... and 103 more nodes in this community*
 
 ## Relationships
 
@@ -60,7 +60,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 520 (87%)
+- EXTRACTED: 526 (87%)
 - INFERRED: 81 (13%)
 - AMBIGUOUS: 0 (0%)
 

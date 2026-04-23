@@ -1,6 +1,6 @@
 # Provisioning Autoprovision preflight Client
 
-> 55 nodes · cohesion 0.11
+> 61 nodes · cohesion 0.09
 
 ## Key Concepts
 
@@ -23,13 +23,13 @@
 - **parseArgs()** (6 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
 - **printJson()** (6 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
 - **shouldShowHelp()** (6 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
+- **DemoAnalytics.tsx** (6 connections) — `ai-integration-services/apps/dashboard/src/pages/demo/DemoAnalytics.tsx`
+- **DemoAnalytics.tsx** (6 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/demo/DemoAnalytics.tsx`
 - **checkAuth()** (5 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
 - **checkEnv()** (5 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
 - **checkMigrationMetadata()** (5 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
 - **checkRest()** (5 connections) — `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
-- **authAdminGet()** (5 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
-- **requireStringArg()** (5 connections) — `ai-integration-services/scripts/provisioning/shared.ts`
-- *... and 30 more nodes in this community*
+- *... and 36 more nodes in this community*
 
 ## Relationships
 
@@ -43,6 +43,7 @@
 - `ai-integration-services/scripts/provisioning/autoprovision-preflight.ts`
 - `ai-integration-services/scripts/provisioning/resume-client.ts`
 - `ai-integration-services/scripts/provisioning/shared.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/demo/DemoAnalytics.tsx`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/provisioning/audit-client.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/provisioning/audit-live-readiness.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/scripts/provisioning/autoprovision-preflight.ts`
@@ -51,8 +52,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 256 (77%)
-- INFERRED: 75 (23%)
+- EXTRACTED: 276 (79%)
+- INFERRED: 75 (21%)
 - AMBIGUOUS: 0 (0%)
 
 ---
