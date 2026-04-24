@@ -1,0 +1,119 @@
+{
+  "session_id": "session-20260424-issue-567-scholar-scaffold",
+  "issue_number": 567,
+  "objective": "Add an initial Scholar specialty-agent scaffold inside packages/hldpro-sim for downstream Stampede consumption: packaged pointer/spec bundle, small loader/validator surface, bundled Scholar persona, and bounded consumer-proof tests.",
+  "tier": 2,
+  "scope_boundary": [
+    "packages/hldpro-sim/hldprosim/scholar.py",
+    "packages/hldpro-sim/hldprosim/__init__.py export update",
+    "packages/hldpro-sim/personas/scholar-technical-analyst.json",
+    "packages/hldpro-sim/scholar/pointer.yaml",
+    "packages/hldpro-sim/scholar/dow_theorist.md",
+    "packages/hldpro-sim/scholar/wyckoff_analyst.md",
+    "packages/hldpro-sim/scholar/elliott_wave_technician.md",
+    "packages/hldpro-sim/scholar/classical_chart_pattern_analyst.md",
+    "packages/hldpro-sim/scholar/momentum_indicator_technician.md",
+    "packages/hldpro-sim/tests/test_scholar.py",
+    "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+    "raw/validation/2026-04-24-issue-567-scholar-scaffold.md",
+    "docs/plans/2026-04-24-issue-567-scholar-scaffold-pdcar.md",
+    "docs/plans/issue-567-scholar-scaffold-structured-agent-cycle-plan.json",
+    "OVERLORD_BACKLOG.md"
+  ],
+  "out_of_scope": [
+    "full canonical-source research completion and page-level citations",
+    "full fitness-test harness across canonical literature examples",
+    "new provider implementations or cloud API support",
+    "predictive experiments or KG integration",
+    "downstream product-repo adoption beyond bounded proof tests"
+  ],
+  "research_summary": "The current hldpro-sim package is persona-driven and generic: SimulationEngine, PersonaLoader, Runner, ArtifactWriter. A new specialty agent does not require a new provider/runner contract. The smallest real Scholar slice is a packaged capability surface plus one bundled Scholar persona and tests proving the capability can be loaded and invoked through the existing tooling. The operator-input runbook already fixes the five initial perspectives and the pointer-plus-spec architecture.",
+  "research_artifacts": [
+    "packages/hldpro-sim/hldprosim/engine.py",
+    "packages/hldpro-sim/hldprosim/personas.py",
+    "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
+    "Issue #567",
+    "Scholar operator-input runbook text provided 2026-04-24"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 — Scholar package surface",
+      "goal": "Package the Scholar pointer/spec bundle and add a loader/validator surface.",
+      "tasks": [
+        "add scholar.py loader/validator module",
+        "bundle pointer.yaml and five perspective markdown files",
+        "export Scholar symbols from hldprosim/__init__.py"
+      ],
+      "acceptance_criteria": [
+        "pointer file parses and resolves package-local perspective files",
+        "five committed perspectives are present and addressable by id",
+        "selected perspective requests return only requested specs"
+      ],
+      "file_paths": [
+        "packages/hldpro-sim/hldprosim/scholar.py",
+        "packages/hldpro-sim/hldprosim/__init__.py",
+        "packages/hldpro-sim/scholar/pointer.yaml",
+        "packages/hldpro-sim/scholar/*.md"
+      ]
+    },
+    {
+      "name": "Sprint 2 — Scholar persona and tests",
+      "goal": "Prove Scholar can be pulled through the existing simulation seams without new engine/provider behavior.",
+      "tasks": [
+        "add bundled scholar-technical-analyst persona JSON",
+        "add test_scholar.py for pointer/selection validation",
+        "extend Stampede consumer proof with a Scholar-oriented invocation"
+      ],
+      "acceptance_criteria": [
+        "PersonaLoader resolves scholar-technical-analyst from package personas",
+        "bounded consumer proof passes through SimulationEngine, Runner, and ArtifactWriter",
+        "tests stay hermetic with mock providers only"
+      ],
+      "file_paths": [
+        "packages/hldpro-sim/personas/scholar-technical-analyst.json",
+        "packages/hldpro-sim/tests/test_scholar.py",
+        "packages/hldpro-sim/tests/test_stampede_consumer_proof.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "pattern-reviewer",
+      "role": "Package pattern reviewer",
+      "focus": "Confirm Scholar fits the current hldpro-sim specialty-agent shape and does not require a new engine or provider abstraction.",
+      "status": "accepted",
+      "summary": "Current package is file-driven and persona-driven; a new capability can land as packaged data plus a small loader surface and bounded tests.",
+      "evidence": [
+        "packages/hldpro-sim/hldprosim/engine.py",
+        "packages/hldpro-sim/hldprosim/personas.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": false,
+    "reviewer": "n/a",
+    "model_family": "n/a",
+    "status": "not_requested",
+    "summary": "This is a governance-owned package implementation slice, not a standards charter change.",
+    "evidence": [
+      "STANDARDS.md §Society of Minds"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement package-local Scholar scaffold, tests, and validation evidence only.",
+    "next_execution_step": "Add scholar.py, package data, tests, and validation evidence; run bounded pytest commands and publish via PR.",
+    "blocked_on": []
+  },
+  "material_deviation_rules": [
+    "If implementation requires provider contract changes, HALT and open a follow-on issue.",
+    "If the five bundled perspective specs cannot remain bounded and package-local, HALT and split documentation research from runtime scaffold.",
+    "If tests require live model calls, HALT — this slice must remain hermetic."
+  ],
+  "approved": true,
+  "approved_by": [
+    "codex"
+  ],
+  "approved_at": "2026-04-24T00:00:00Z"
+}

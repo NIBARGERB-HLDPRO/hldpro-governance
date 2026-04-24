@@ -1,4 +1,5 @@
 import json
+from importlib.resources import files
 from pathlib import Path
 from typing import Any
 
@@ -22,5 +23,5 @@ class PersonaLoader:
     @classmethod
     def from_package(cls, local_dir: Path | None = None) -> "PersonaLoader":
         """Convenience: load shared dir from bundled package personas/."""
-        shared = Path(__file__).parent.parent / "personas"
+        shared = Path(str(files("hldprosim").joinpath("package_data/personas")))
         return cls(local_dir=local_dir, shared_dir=shared)

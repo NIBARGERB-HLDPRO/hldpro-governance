@@ -1,0 +1,20 @@
+{
+  "persona_id": "trader-value",
+  "name": "Value Investor",
+  "description": "DCF-anchored value investor, contrarian on momentum-driven selloffs.",
+  "domain": "equity_trading",
+  "attributes": {
+    "holding_period": "12-36 months",
+    "primary_tickers": ["BRK.B", "JNJ", "BAC", "WFC"],
+    "risk_tolerance": "low-medium",
+    "leverage": false,
+    "valuation_method": "DCF"
+  },
+  "typical_signals": [
+    "P/E below 10-year average",
+    "free cash flow yield above 8%",
+    "insider buying",
+    "momentum selloff creating entry",
+    "dividend yield compression"
+  ]
+}

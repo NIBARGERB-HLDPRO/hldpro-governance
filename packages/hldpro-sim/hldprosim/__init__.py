@@ -4,6 +4,7 @@ from .personas import PersonaLoader
 from .aggregator import BaseAggregator
 from .runner import Runner
 from .artifacts import ArtifactWriter, RunManifest
+from .scholar import ScholarCatalog, ScholarLoader, ScholarPerspective, ScholarValidationError
 
 __all__ = [
     "SimulationEngine",
@@ -14,4 +15,8 @@ __all__ = [
     "Runner",
     "ArtifactWriter",
     "RunManifest",
+    "ScholarCatalog",
+    "ScholarLoader",
+    "ScholarPerspective",
+    "ScholarValidationError",
 ]

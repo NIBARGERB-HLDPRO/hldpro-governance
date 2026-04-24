@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ticker": {
+      "type": "string"
+    },
+    "timeframe": {
+      "type": "string"
+    },
+    "ohlcv_window": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "comparison_instruments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prior_context": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "ticker",
+    "timeframe",
+    "ohlcv_window"
+  ]
+}

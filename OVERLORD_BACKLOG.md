@@ -18,6 +18,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| hldpro-sim Scholar specialty-agent scaffold for Stampede consumption | [#567](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/567) | MEDIUM | 4-6 | Add initial Scholar package surface, bundled pointer/spec files for the five committed perspectives, bounded validation, and a Stampede-oriented consumer proof without taking on the full canonical fitness harness. |
 
 ## Done
 

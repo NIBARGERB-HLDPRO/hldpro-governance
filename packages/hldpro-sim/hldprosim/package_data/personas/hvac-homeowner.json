@@ -1,0 +1,20 @@
+{
+  "persona_id": "hvac-homeowner",
+  "name": "HVAC Homeowner",
+  "description": "Homeowner calling about AC failure in summer, price-sensitive and urgency-driven.",
+  "domain": "home_services",
+  "attributes": {
+    "home_age_years": 15,
+    "system_age_years": 12,
+    "budget_sensitivity": "high",
+    "urgency": "high",
+    "decision_style": "needs_reassurance"
+  },
+  "typical_signals": [
+    "unit not cooling",
+    "unusual noise",
+    "high utility bill",
+    "thermostat unresponsive",
+    "summer heat event"
+  ]
+}

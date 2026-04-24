@@ -1,0 +1,62 @@
+capability_id: scholar
+version: 0.1.0
+description: |
+  Scholar is a technical-analysis specialty agent for hldpro-sim. It exposes
+  independent perspective specifications side-by-side without synthesis.
+bundles:
+  full_library:
+    - dow_theorist
+    - wyckoff_analyst
+    - elliott_wave_technician
+    - classical_chart_pattern_analyst
+    - momentum_indicator_technician
+  trend_confirmation:
+    - dow_theorist
+    - elliott_wave_technician
+  accumulation_distribution_check:
+    - wyckoff_analyst
+    - momentum_indicator_technician
+  pattern_scan:
+    - classical_chart_pattern_analyst
+    - momentum_indicator_technician
+perspectives:
+  - id: dow_theorist
+    name: Dow Theorist
+    path: dow_theorist.md
+    contract_version: 0.1.0
+    input_schema_ref: schemas/technical_analysis_input.schema.json
+    output_schema_ref: schemas/perspective_extraction.schema.json
+    lineage_summary: Dow Theory trend-structure and confirmation analysis.
+    status: active
+  - id: wyckoff_analyst
+    name: Wyckoff Analyst
+    path: wyckoff_analyst.md
+    contract_version: 0.1.0
+    input_schema_ref: schemas/technical_analysis_input.schema.json
+    output_schema_ref: schemas/perspective_extraction.schema.json
+    lineage_summary: Wyckoff price-volume phase analysis for accumulation and distribution.
+    status: active
+  - id: elliott_wave_technician
+    name: Elliott Wave Technician
+    path: elliott_wave_technician.md
+    contract_version: 0.1.0
+    input_schema_ref: schemas/technical_analysis_input.schema.json
+    output_schema_ref: schemas/perspective_extraction.schema.json
+    lineage_summary: Elliott Wave count extraction with alternate-count handling.
+    status: active
+  - id: classical_chart_pattern_analyst
+    name: Classical Chart Pattern Analyst
+    path: classical_chart_pattern_analyst.md
+    contract_version: 0.1.0
+    input_schema_ref: schemas/technical_analysis_input.schema.json
+    output_schema_ref: schemas/perspective_extraction.schema.json
+    lineage_summary: Canonical chart-pattern identification with validation discipline.
+    status: active
+  - id: momentum_indicator_technician
+    name: Momentum/Indicator Technician
+    path: momentum_indicator_technician.md
+    contract_version: 0.1.0
+    input_schema_ref: schemas/technical_analysis_input.schema.json
+    output_schema_ref: schemas/perspective_extraction.schema.json
+    lineage_summary: Deterministic indicator computation and momentum interpretation.
+    status: active

@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "perspective_id": {
+      "type": "string"
+    },
+    "contract_version": {
+      "type": "string"
+    },
+    "analysis_scope": {
+      "type": "string"
+    },
+    "identified_structures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "input_quality_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "perspective_id",
+    "contract_version",
+    "analysis_scope",
+    "identified_structures",
+    "confidence_notes",
+    "input_quality_flags"
+  ]
+}
