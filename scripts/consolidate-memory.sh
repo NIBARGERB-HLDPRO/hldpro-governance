@@ -8,7 +8,7 @@ REPO_SLUG=""
 DRY_RUN=0
 
 usage() {
-  cat <<'EOF'
+  cat <<'EOF_USAGE'
 Usage: consolidate-memory.sh [--repo <repo-slug>] [--dry-run]
 
 Updates the governed repository MEMORY.md pointer for recent operator_context
@@ -20,7 +20,7 @@ Options:
                   local-ai-machine, knocktracker, hldpro-governance
   --dry-run       Print planned changes without writing MEMORY.md
   --help          Show this help text
-EOF
+EOF_USAGE
 }
 
 while [ "$#" -gt 0 ]; do
@@ -64,8 +64,10 @@ case "$REPO_SLUG" in
     ;;
 esac
 
+GOVERNANCE_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || echo "$PWD")"
 MEMORY_PATH="${HOME}/.claude/projects/-Users-bennibarger-Developer-HLDPRO-${REPO_SLUG}/memory/MEMORY.md"
 MEMORY_DIR_LINK="../../.claude/projects/-Users-bennibarger-Developer-HLDPRO-${REPO_SLUG}/memory/"
+CLOSEOUT_DIR="${GOVERNANCE_ROOT}/raw/closeouts"
 LATEST_POINTER_RE='^- \[Recent operator_context learnings\]\([^)]+\)\s*— .*\; grep operator_context for [^ ]+ to inspect$'
 
 if [ ! -f "$MEMORY_PATH" ]; then
@@ -84,6 +86,16 @@ get_file_epoch() {
     return 0
   fi
   return 1
+}
+
+was_modified_since() {
+  local file="$1"
+  local ref_epoch="$2"
+  local file_epoch
+  if ! file_epoch="$(get_file_epoch "$file")"; then
+    return 1
+  fi
+  [ "$file_epoch" -gt "$ref_epoch" ]
 }
 
 to_iso_timestamp() {
@@ -114,46 +126,32 @@ else
   cat "$MEMORY_PATH" > "$TMP_BASE"
 fi
 
-if ! MSECS="$(get_file_epoch "$MEMORY_PATH")"; then
+if ! LAST_UPDATE_EPOCH="$(get_file_epoch "$MEMORY_PATH")"; then
   LAST_UPDATE_TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+  LAST_UPDATE_EPOCH="$(date -u +%s)"
 else
-  if ! LAST_UPDATE_TS="$(to_iso_timestamp "$MSECS")"; then
+  if ! LAST_UPDATE_TS="$(to_iso_timestamp "$LAST_UPDATE_EPOCH")"; then
     LAST_UPDATE_TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+    LAST_UPDATE_EPOCH="$(date -u +%s)"
   fi
 fi
 LAST_UPDATE_DAY="${LAST_UPDATE_TS%%T*}"
 
-if [ -z "${AIS_SUPABASE_ANON_KEY:-}" ]; then
-  echo "memory-writer credentials not configured; skipping consolidate"
-  exit 0
-fi
-
-if [ -z "${AIS_SUPABASE_URL:-}" ]; then
-  echo "memory-writer unreachable, skipping consolidate"
-  exit 0
-fi
-
-ENCODED_TS="${LAST_UPDATE_TS//:/\%3A}"
-QUERY_URL="${AIS_SUPABASE_URL}/functions/v1/memory-writer?action=count_since&repo=${REPO_SLUG}&since=${ENCODED_TS}"
-RESPONSE_PATH="$(mktemp)"
-trap 'rm -f "$TMP_BASE" "$TMP_FILTER" "$TMP_NEXT" "$TMP_WORK" "$RESPONSE_PATH"' EXIT
-
-HTTP_STATUS="$(curl -m 5 --connect-timeout 5 \
-  -H "Authorization: Bearer ${AIS_SUPABASE_ANON_KEY}" \
-  -H "Accept: application/json" \
-  -sS \
-  -o "$RESPONSE_PATH" \
-  -w "%{http_code}" "$QUERY_URL" || true)"
-
-if [ -z "$HTTP_STATUS" ] || [ "$HTTP_STATUS" != "200" ]; then
-  echo "memory-writer unreachable, skipping consolidate"
-  exit 0
-fi
-
-RESPONSE="$(cat "$RESPONSE_PATH")"
-ENTRY_COUNT="$(printf '%s' "$RESPONSE" | sed -nE 's/.*"count"[[:space:]]*:[[:space:]]*([0-9]+).*/\1/p' | head -n 1)"
-if ! printf '%s' "$ENTRY_COUNT" | grep -Eq '^[0-9]+$'; then
-  ENTRY_COUNT="0"
+ENTRY_COUNT="0"
+if [ -d "$CLOSEOUT_DIR" ]; then
+  shopt -s nullglob
+  for closeout_file in "$CLOSEOUT_DIR"/*.md; do
+    if [ ! -f "$closeout_file" ]; then
+      continue
+    fi
+    if [ "$(basename "$closeout_file")" = "TEMPLATE.md" ]; then
+      continue
+    fi
+    if was_modified_since "$closeout_file" "$LAST_UPDATE_EPOCH"; then
+      ENTRY_COUNT=$((ENTRY_COUNT + 1))
+    fi
+  done
+  shopt -u nullglob
 fi
 
 if [ "$ENTRY_COUNT" -eq 0 ]; then
