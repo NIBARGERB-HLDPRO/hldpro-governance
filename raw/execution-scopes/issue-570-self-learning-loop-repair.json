@@ -1,0 +1,47 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-570-self-learning-loop-repair-20260424",
+  "execution_mode": "implementation_complete",
+  "allowed_write_paths": [
+    "scripts/consolidate-memory.sh",
+    "scripts/bootstrap-repo-env.sh",
+    "hooks/closeout-hook.sh",
+    "docs/runbooks/always-on-governance.md",
+    "docs/plans/issue-570-self-learning-loop-repair-pdcar.md",
+    "docs/plans/issue-570-self-learning-loop-repair-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/issue-570-self-learning-loop-repair.json",
+    "raw/cross-review/2026-04-24-issue-570-self-learning-loop-repair.md",
+    "raw/closeouts/2026-04-24-issue-570-self-learning-loop-repair.md",
+    "raw/handoffs/2026-04-24-issue-570-self-learning-loop-repair.json",
+    "raw/validation/2026-04-24-issue-570-self-learning-loop-repair.md",
+    "OVERLORD_BACKLOG.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [],
+  "lane_claim": {
+    "issue_number": 570,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/570",
+    "claimed_by": "claude-sonnet-4-6",
+    "claimed_at": "2026-04-24T00:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-sonnet-4-6",
+    "implementer_model": "gpt-5.3-codex-spark",
+    "accepted_at": "2026-04-24T00:00:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-570-self-learning-loop-repair-pdcar.md",
+      "docs/plans/issue-570-self-learning-loop-repair-structured-agent-cycle-plan.json"
+    ],
+    "active_exception_ref": "operator-approved-2026-04-24",
+    "active_exception_expires_at": "2026-04-25T00:00:00Z"
+  }
+}

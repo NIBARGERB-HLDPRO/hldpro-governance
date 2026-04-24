@@ -1,0 +1,150 @@
+{
+  "session_id": "issue-570-planning-2026-04-24",
+  "issue_number": 570,
+  "objective": "Repair the HLD Pro self-learning loop by fixing three structural gaps: (1) remove the missing count_since Supabase call from consolidate-memory.sh and replace with local file-based logic, (2) add AIS_SUPABASE_URL and AIS_SUPABASE_ANON_KEY to the governance bootstrap target, and (3) add memory_integrity.py to closeout-hook.sh so CI SKIP never silences integrity failures at local closeout.",
+  "tier": 1,
+  "scope_boundary": [
+    "Rewrite the count_since block in scripts/consolidate-memory.sh to use local file state only — no Supabase GET call.",
+    "Add AIS_SUPABASE_URL and AIS_SUPABASE_ANON_KEY to the governance target block in scripts/bootstrap-repo-env.sh.",
+    "Add a DRY_RUN=1 test confirming both vars appear in the governance target output.",
+    "Add memory_integrity.py invocation (without --allow-missing) to hooks/closeout-hook.sh after the consolidate-memory step, scoped to governance repo.",
+    "Update docs/runbooks/always-on-governance.md with AIS credential prerequisite and memory integrity check documentation.",
+    "Produce planning artifacts: PDCAR, structured plan, execution scope, OVERLORD_BACKLOG row."
+  ],
+  "out_of_scope": [
+    "Implementing count_since or any GET handler in the AIS memory-writer edge function (ai-integration-services repo).",
+    "Changing any file in ai-integration-services/backend/supabase/functions/memory-writer/.",
+    "Removing or changing the --allow-missing flag on the CI overlord-sweep.yml step — the runner constraint is unresolvable without self-hosted runners.",
+    "Writing implementation code in this planning session.",
+    "Changing product repos outside hldpro-governance.",
+    "Modifying the AIS memory-writer write path or schema."
+  ],
+  "research_summary": "Audit on 2026-04-24 identified three structural gaps preventing the operator_context to MEMORY.md write-back loop from executing. Gap 1: scripts/consolidate-memory.sh line 137 calls the AIS memory-writer with action=count_since but the edge function only accepts POST writes — no GET handler exists — so every closeout-hook invocation receives a 405 and skips. Gap 2: the governance bootstrap target in scripts/bootstrap-repo-env.sh does not emit AIS_SUPABASE_URL or AIS_SUPABASE_ANON_KEY, so consolidate-memory.sh exits at the credential guard before the API call. Gap 3: overlord-sweep.yml runs memory_integrity.py --allow-missing on ubuntu-latest where the project memory directory does not exist, so all 6 repos SKIP. The working reference for local file-based consolidation is scripts/orchestrator/self_learning.py which uses Path-based traversal with no Supabase calls.",
+  "research_artifacts": [
+    "scripts/consolidate-memory.sh (lines 126-149)",
+    "scripts/bootstrap-repo-env.sh (lines 199-210, 440-448)",
+    "hooks/closeout-hook.sh (lines 69-74)",
+    "scripts/overlord/memory_integrity.py",
+    ".github/workflows/overlord-sweep.yml",
+    "scripts/orchestrator/self_learning.py",
+    "docs/plans/issue-230-self-learning-pdcar.md",
+    "docs/runbooks/always-on-governance.md"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 — Fix count_since: local-only consolidation",
+      "goal": "Remove the Supabase count_since HTTP call from consolidate-memory.sh and replace with local file-based counting matching the self_learning.py pattern, so the consolidate step runs without network dependencies or missing-endpoint failures.",
+      "tasks": [
+        "Remove the AIS credential guard block from scripts/consolidate-memory.sh — no Supabase read credentials are needed for the local-only path.",
+        "Remove the QUERY_URL construction and curl call that called count_since.",
+        "Add local file-based logic to count recent closeout artifacts under raw/closeouts/ since LAST_UPDATE_TS, mirroring the Path-based traversal in scripts/orchestrator/self_learning.py.",
+        "Ensure the script remains fail-open: if local file counting fails, log a warning and continue rather than exiting.",
+        "Verify the script exits 0 in --dry-run mode without any AIS credentials set."
+      ],
+      "acceptance_criteria": [
+        "bash scripts/consolidate-memory.sh --repo hldpro-governance --dry-run exits 0 with no AIS credentials in the environment.",
+        "No HTTP request to AIS_SUPABASE_URL is made during consolidate-memory execution.",
+        "The MEMORY.md recent-learnings line is updated based on local raw/closeouts/ file count.",
+        "The script remains idempotent on repeated invocation."
+      ],
+      "file_paths": [
+        "scripts/consolidate-memory.sh"
+      ]
+    },
+    {
+      "name": "Sprint 2 — Wire AIS credentials into governance bootstrap target",
+      "goal": "Ensure AIS_SUPABASE_URL and AIS_SUPABASE_ANON_KEY are emitted by the governance bootstrap target so any future consolidate step that writes to Supabase has credentials available without manual env var injection.",
+      "tasks": [
+        "Add AIS_SUPABASE_URL and AIS_SUPABASE_ANON_KEY to the governance target write_env block in scripts/bootstrap-repo-env.sh after the SUPABASE_ACCESS_TOKEN line.",
+        "Add a DRY_RUN=1 smoke test confirming both var names appear in the emitted output.",
+        "Update docs/runbooks/always-on-governance.md to document the AIS credential prerequisite."
+      ],
+      "acceptance_criteria": [
+        "DRY_RUN=1 bash scripts/bootstrap-repo-env.sh governance output contains both AIS_SUPABASE_URL and AIS_SUPABASE_ANON_KEY.",
+        "docs/runbooks/always-on-governance.md documents the prerequisite.",
+        "No secrets appear in the DRY_RUN=1 output — only var names or placeholder indicators."
+      ],
+      "file_paths": [
+        "scripts/bootstrap-repo-env.sh",
+        "docs/runbooks/always-on-governance.md"
+      ]
+    },
+    {
+      "name": "Sprint 3 — Add memory_integrity.py to closeout-hook for real local validation",
+      "goal": "Provide real MEMORY.md integrity validation at every local closeout by invoking memory_integrity.py without --allow-missing from hooks/closeout-hook.sh, so CI SKIP never silences integrity failures caught on the operator machine.",
+      "tasks": [
+        "Add a memory_integrity.py invocation after the consolidate-memory step in hooks/closeout-hook.sh, scoped to the governance repo slug.",
+        "Run without --allow-missing so a missing or malformed MEMORY.md produces a loud warning.",
+        "Make the failure non-fatal (warn and continue) to match the existing consolidate-memory failure mode.",
+        "Confirm the overlord-sweep.yml --allow-missing flag remains unchanged."
+      ],
+      "acceptance_criteria": [
+        "hooks/closeout-hook.sh invokes python3 scripts/overlord/memory_integrity.py after consolidate-memory.",
+        "When MEMORY.md is present and valid, the invocation exits 0 and the hook continues.",
+        "When MEMORY.md is absent or malformed, the hook logs a clear warning but does not exit non-zero.",
+        "overlord-sweep.yml --allow-missing flag is unchanged."
+      ],
+      "file_paths": [
+        "hooks/closeout-hook.sh"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "gpt-5.3-codex-spark",
+      "role": "implementation-review",
+      "focus": "Confirm the local-only fix approach for count_since is sound, that no cross-repo edge-function changes are introduced, and that the closeout-hook memory integrity invocation does not break existing fail-open semantics.",
+      "status": "accepted",
+      "summary": "All three sprints reviewed post-implementation. Local-only consolidation is correct and idempotent. AIS credential wiring exposes only var names in DRY_RUN=1 output. memory_integrity.py invocation is non-fatal. Invalid --repo-slug flag corrected by dispatcher.",
+      "evidence": [
+        "docs/plans/issue-570-self-learning-loop-repair-pdcar.md",
+        "docs/plans/issue-570-self-learning-loop-repair-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/issue-570-self-learning-loop-repair.json",
+        "raw/cross-review/2026-04-24-issue-570-self-learning-loop-repair.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.3-codex-spark",
+    "model_family": "codex",
+    "status": "accepted",
+    "summary": "Reviewed post-implementation on 2026-04-24. All three acceptance criteria checklists pass. No network dependencies introduced, no secret exposure risk from bootstrap var addition, closeout-hook integrity invocation is correctly scoped and fail-open.",
+    "evidence": [
+      "docs/plans/issue-570-self-learning-loop-repair-pdcar.md",
+      "docs/plans/issue-570-self-learning-loop-repair-structured-agent-cycle-plan.json",
+      "raw/cross-review/2026-04-24-issue-570-self-learning-loop-repair.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-sonnet-4-6",
+    "execution_mode": "implementation_complete",
+    "approved_scope_summary": "Three-sprint implementation complete. consolidate-memory.sh rewritten to local-only file counting. AIS credentials added to governance bootstrap target. memory_integrity.py wired to closeout-hook.sh as non-fatal check. Stage 6 closeout filed. PR #572 open.",
+    "next_execution_step": "Operator merges PR #572. Bootstrap gap tracked in issue #571 for future implementation.",
+    "blocked_on": [],
+    "execution_scope_ref": "raw/execution-scopes/issue-570-self-learning-loop-repair.json",
+    "handoff_package_ref": "raw/handoffs/2026-04-24-issue-570-self-learning-loop-repair.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": ["raw/validation/2026-04-24-issue-570-self-learning-loop-repair.md"],
+    "review_artifact_refs": ["raw/cross-review/2026-04-24-issue-570-self-learning-loop-repair.md"],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-24-issue-570-self-learning-loop-repair.md",
+    "next_role": "implementation agent (Tier 1, approved scope)",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Operator has reviewed and approved the three-sprint plan.",
+      "Alternate-family review is recorded at raw/cross-review/2026-04-24-issue-570-self-learning-loop-repair.md.",
+      "All three acceptance-criteria checklists pass before PR is opened."
+    ]
+  },
+  "material_deviation_rules": [
+    "Do NOT implement a count_since GET handler or any read endpoint in the AIS memory-writer edge function. The local-only approach using raw/closeouts/ file state is mandated. Any deviation requires operator approval and a new issue.",
+    "Do NOT change the --allow-missing flag or remove skip behavior in .github/workflows/overlord-sweep.yml — the CI runner constraint is unresolvable without self-hosted runners.",
+    "Do NOT make the closeout-hook memory_integrity.py invocation fail-closed. The hook must remain fail-open to match the existing consolidate-memory failure mode.",
+    "Do NOT write to any file outside the three sprint file_paths lists without opening a new issue."
+  ],
+  "approved": true,
+  "approved_by": ["operator-Benji", "gpt-5.3-codex-spark"],
+  "approved_at": "2026-04-24T00:00:00Z"
+}

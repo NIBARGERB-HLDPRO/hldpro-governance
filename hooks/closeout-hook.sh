@@ -4,8 +4,21 @@
 
 set -e
 
+DRY_RUN=0
+if [ "${1:-}" = "--dry-run" ]; then
+  DRY_RUN=1
+  shift
+fi
+
 CLOSEOUT_FILE="$1"
 GOVERNANCE_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+if [ ! -f "$CLOSEOUT_FILE" ]; then
+  if [ -f "$GOVERNANCE_ROOT/$CLOSEOUT_FILE" ]; then
+    CLOSEOUT_FILE="$GOVERNANCE_ROOT/$CLOSEOUT_FILE"
+  elif [ -f "$GOVERNANCE_ROOT/${CLOSEOUT_FILE#docs/}" ]; then
+    CLOSEOUT_FILE="$GOVERNANCE_ROOT/${CLOSEOUT_FILE#docs/}"
+  fi
+fi
 REPO_ROOT="$GOVERNANCE_ROOT"
 BUILD_SCRIPT="${GOVERNANCE_ROOT}/scripts/knowledge_base/build_graph.py"
 TARGET_SCRIPT="${GOVERNANCE_ROOT}/scripts/knowledge_base/graphify_targets.py"
@@ -40,8 +53,13 @@ if [ ! -f "$CLOSEOUT_VALIDATOR" ]; then
   echo "ERROR: Closeout validator not found: $CLOSEOUT_VALIDATOR"
   exit 1
 fi
-python3 "$CLOSEOUT_VALIDATOR" "$CLOSEOUT_FILE" --root "$GOVERNANCE_ROOT"
-echo "  ✓ Template validated"
+if python3 "$CLOSEOUT_VALIDATOR" "$CLOSEOUT_FILE" --root "$GOVERNANCE_ROOT"; then
+  echo "  ✓ Template validated"
+elif [ "$DRY_RUN" -eq 1 ]; then
+  echo "  ⚠ template validation failed in dry-run; continuing closeout"
+else
+  exit 1
+fi
 
 # 2. Refresh the governance graph target defined for closeout
 echo "[2/4] Updating knowledge graph..."
@@ -72,6 +90,8 @@ if [ -x "$REPO_ROOT/scripts/consolidate-memory.sh" ]; then
     bash "$REPO_ROOT/scripts/consolidate-memory.sh" --repo hldpro-governance || \
     echo "note: consolidate-memory non-fatal failure; continuing closeout"
 fi
+python3 "$(git rev-parse --show-toplevel)/scripts/overlord/memory_integrity.py" 2>&1 \
+  | sed 's/^/[memory-integrity] /' || echo "[memory-integrity] WARN: integrity check failed (non-fatal)"
 
 # 3. Remind to create operator_context row
 echo "[3/4] operator_context check..."
@@ -88,9 +108,13 @@ fi
 # 4. Commit closeout to governance repo (include graphify-out + wiki if updated in step 2)
 echo "[4/4] Committing closeout..."
 cd "$GOVERNANCE_ROOT"
-git add "$CLOSEOUT_FILE"
-git add graphify-out/ wiki/ 2>/dev/null || true
-git commit -m "docs(closeout): $(basename "$CLOSEOUT_FILE" .md)"
+if [ "$DRY_RUN" -eq 1 ]; then
+  echo "  ⚠ dry-run enabled — skipping git commit"
+else
+  git add "$CLOSEOUT_FILE"
+  git add graphify-out/ wiki/ 2>/dev/null || true
+  git commit -m "docs(closeout): $(basename "$CLOSEOUT_FILE" .md)"
+fi
 
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

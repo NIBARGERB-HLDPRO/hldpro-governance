@@ -4,6 +4,19 @@
 
 The read-only observer generates per-repo governance health reports from existing local artifacts. It does not enqueue packets, dispatch workers, call models, or mutate governed repositories.
 
+## Prerequisites
+
+- The Supabase write path for `scripts/consolidate-memory.sh` requires AIS credentials in environment:
+  - `AIS_SUPABASE_URL`
+  - `AIS_SUPABASE_ANON_KEY`
+- Populate them via:
+
+```bash
+bash scripts/bootstrap-repo-env.sh governance
+```
+
+- Use these values when consolidating MEMORY.md so `.md` closeout counts can be written.
+
 ## Manual Run
 
 From the governance repo root:
