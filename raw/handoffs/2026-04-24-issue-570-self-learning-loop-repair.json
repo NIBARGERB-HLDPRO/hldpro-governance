@@ -1,0 +1,65 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-570-self-learning-loop-repair",
+  "issue_number": 570,
+  "parent_epic_number": 570,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "claude-sonnet-4-6-planner",
+  "to_role": "gpt-5.3-codex-spark-implementer",
+  "structured_plan_ref": "docs/plans/issue-570-self-learning-loop-repair-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/issue-570-self-learning-loop-repair.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "bash scripts/consolidate-memory.sh --repo hldpro-governance --dry-run exits 0 with no AIS credentials in environment and no Supabase GET call.",
+      "verification_refs": [
+        "scripts/consolidate-memory.sh",
+        "raw/validation/2026-04-24-issue-570-self-learning-loop-repair.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "DRY_RUN=1 bash scripts/bootstrap-repo-env.sh governance output contains both AIS_SUPABASE_URL and AIS_SUPABASE_ANON_KEY var names without exposing secret values.",
+      "verification_refs": [
+        "scripts/bootstrap-repo-env.sh",
+        "docs/runbooks/always-on-governance.md",
+        "raw/validation/2026-04-24-issue-570-self-learning-loop-repair.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "hooks/closeout-hook.sh invokes python3 scripts/overlord/memory_integrity.py after consolidate-memory without --allow-missing and failure is non-fatal.",
+      "verification_refs": [
+        "hooks/closeout-hook.sh",
+        "raw/validation/2026-04-24-issue-570-self-learning-loop-repair.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "bash scripts/consolidate-memory.sh --repo hldpro-governance --dry-run",
+    "DRY_RUN=1 bash scripts/bootstrap-repo-env.sh governance",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-24-issue-570-self-learning-loop-repair.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-24-issue-570-self-learning-loop-repair.md --root ."
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-24-issue-570-self-learning-loop-repair.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-24-issue-570-self-learning-loop-repair.md"
+  ],
+  "artifact_refs": [
+    "scripts/consolidate-memory.sh",
+    "scripts/bootstrap-repo-env.sh",
+    "hooks/closeout-hook.sh",
+    "docs/runbooks/always-on-governance.md",
+    "OVERLORD_BACKLOG.md"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-24T00:00:00Z"
+}

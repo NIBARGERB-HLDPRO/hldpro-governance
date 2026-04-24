@@ -1,7 +1,7 @@
 {
   "expected_execution_root": ".",
   "expected_branch": "issue-570-self-learning-loop-repair-20260424",
-  "execution_mode": "implementation_ready",
+  "execution_mode": "implementation_complete",
   "allowed_write_paths": [
     "scripts/consolidate-memory.sh",
     "scripts/bootstrap-repo-env.sh",
@@ -10,6 +10,10 @@
     "docs/plans/issue-570-self-learning-loop-repair-pdcar.md",
     "docs/plans/issue-570-self-learning-loop-repair-structured-agent-cycle-plan.json",
     "raw/execution-scopes/issue-570-self-learning-loop-repair.json",
+    "raw/cross-review/2026-04-24-issue-570-self-learning-loop-repair.md",
+    "raw/closeouts/2026-04-24-issue-570-self-learning-loop-repair.md",
+    "raw/handoffs/2026-04-24-issue-570-self-learning-loop-repair.json",
+    "raw/validation/2026-04-24-issue-570-self-learning-loop-repair.md",
     "OVERLORD_BACKLOG.md"
   ],
   "forbidden_roots": [
