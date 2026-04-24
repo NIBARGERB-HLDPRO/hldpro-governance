@@ -1,6 +1,6 @@
 # Setup readiness Supabase
 
-> 158 nodes · cohesion 0.03
+> 160 nodes · cohesion 0.03
 
 ## Key Concepts
 
@@ -23,13 +23,13 @@
 - **optional-product-setup.ts** (11 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/optional-product-setup.ts`
 - **.calFetch()** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-client.ts`
 - **n8n-workflow-templates.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/n8n-workflow-templates.ts`
+- **provisioning-plan.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
 - **n8n-workflow-templates.ts** (10 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/n8n-workflow-templates.ts`
 - **buildCalcomFinalizeDefaults()** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/calcom-finalization.ts`
 - **runStep()** (9 connections) — `ai-integration-services/backend/supabase/functions/portal-provision/index.ts`
 - **syncSetupComplianceGatesForClient()** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/setup-compliance-gates.ts`
 - **classify-primary-intent.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/classify-primary-intent.ts`
-- **provisioning-service-matrix.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/provisioning-service-matrix.ts`
-- *... and 133 more nodes in this community*
+- *... and 135 more nodes in this community*
 
 ## Relationships
 
@@ -48,6 +48,7 @@
 - `ai-integration-services/backend/supabase/functions/_shared/optional-product-setup.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/optional-product-setup.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/portal-purchase.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/provisioning-plan.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/provisioning-probes.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/provisioning-probes.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/provisioning-service-matrix.ts`
@@ -56,12 +57,11 @@
 - `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.test.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/setup-connection-tasks.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/setup-plan.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/setup-readiness.test.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 791 (93%)
-- INFERRED: 63 (7%)
+- EXTRACTED: 804 (93%)
+- INFERRED: 61 (7%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -1,11 +1,15 @@
 # Testing Runner
 
-> 2 nodes · cohesion 1.00
+> 6 nodes · cohesion 0.33
 
 ## Key Concepts
 
-- **TestRunner.tsx** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/testing/TestRunner.tsx`
-- **TestRunner()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/testing/TestRunner.tsx`
+- **TestRunner.tsx** (5 connections) — `ai-integration-services/apps/dashboard/src/pages/testing/TestRunner.tsx`
+- **formatTimestamp()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/testing/TestRunner.tsx`
+- **normalizeRunResponse()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/testing/TestRunner.tsx`
+- **outcomeTone()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/testing/TestRunner.tsx`
+- **runAll()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/testing/TestRunner.tsx`
+- **runSelected()** (1 connections) — `ai-integration-services/apps/dashboard/src/pages/testing/TestRunner.tsx`
 
 ## Relationships
 
@@ -17,7 +21,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 2 (100%)
+- EXTRACTED: 10 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

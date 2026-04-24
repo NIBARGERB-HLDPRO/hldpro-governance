@@ -1,35 +1,35 @@
 # Connectors Crm Supabase
 
-> 118 nodes · cohesion 0.03
+> 28 nodes · cohesion 0.13
 
 ## Key Concepts
 
-- **update()** (63 connections) — `ai-integration-services/apps/marketing/src/pages/Contact.tsx`
-- **emitCOGS()** (24 connections) — `ai-integration-services/backend/supabase/functions/_shared/cogs.ts`
-- **LocalCRMConnector** (24 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/local.ts`
-- **index.ts** (15 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
-- **index.ts** (15 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/booking-pipeline/index.ts`
-- **finalizeDocumentCore()** (13 connections) — `ai-integration-services/backend/supabase/functions/_shared/finalize.ts`
-- **notifyPartyCore()** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/notify.ts`
-- **readEnvSecret()** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/vault.ts`
-- **callClaude()** (9 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
-- **agentResearcher()** (8 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
-- **logAgentTransaction()** (8 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
-- **sendSigningSms()** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **agentCritic()** (7 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
-- **agentIntake()** (7 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
-- **agentPackager()** (7 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
-- **agentPresenter()** (7 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
-- **sendPortalAccessEmail()** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/purchase-access-email.ts`
-- **advanceSigningWorkflow()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/advance.ts`
-- **handleRefreshAnalysis()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsInsights.tsx`
-- **logSignEvent()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **updateDocumentStatus()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/esign.ts`
-- **computeCost()** (6 connections) — `ai-integration-services/backend/supabase/functions/booking-pipeline/index.ts`
-- **formatDate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/affiliate/AffiliatePayouts.tsx`
-- **saveThreshold()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/affiliate/AffiliatePayouts.tsx`
-- **updateRecommendationStatus()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsInsights.tsx`
-- *... and 93 more nodes in this community*
+- **GHLCRMConnector** (26 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.ghlFetch()** (19 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **executeTool()** (14 connections) — `ai-integration-services/backend/supabase/functions/assistant-chat/index.ts`
+- **.getAccessToken()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.upsertContact()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.mapGHLContact()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **getCRMConnector()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/index.ts`
+- **.createContact()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.refreshOAuthToken()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.getContact()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.moveDeal()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.searchContacts()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.updateContact()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **callClaudeAssistant()** (3 connections) — `ai-integration-services/backend/supabase/functions/assistant-chat/index.ts`
+- **.addNote()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.addTags()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.createDeal()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.createInvoiceRecord()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.deleteContact()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.enrollInSequence()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.getPipeline()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.getSMSHistory()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.sendSMS()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.updateInvoiceStatus()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **.constructor()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- *... and 3 more nodes in this community*
 
 ## Relationships
 
@@ -37,31 +37,14 @@
 
 ## Source Files
 
-- `ai-integration-services/apps/dashboard/src/components/NotificationCenter.tsx`
-- `ai-integration-services/apps/dashboard/src/pages/corpus/ABExperiments.tsx`
-- `ai-integration-services/apps/marketing/src/pages/Contact.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/affiliate/AffiliatePayouts.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsInsights.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardBriefing.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardRoadmap.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/PlaidConsent.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/wizard/WizardStep4Pricing.tsx`
-- `ai-integration-services/apps/portal/src/pages/affiliate/AffiliatePayouts.tsx`
-- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardAdsInsights.tsx`
-- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardBriefing.tsx`
-- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardRoadmap.tsx`
-- `ai-integration-services/apps/portal/src/pages/dashboard/PlaidConsent.tsx`
-- `ai-integration-services/apps/portal/src/pages/wizard/WizardStep4Pricing.tsx`
-- `ai-integration-services/apps/pwa/src/components/StatusBar.tsx`
-- `ai-integration-services/backend/supabase/functions/_shared/advance.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/cogs-catalog.test.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/cogs-catalog.ts`
-- `ai-integration-services/backend/supabase/functions/_shared/cogs-cost-items-static.test.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- `ai-integration-services/backend/supabase/functions/_shared/connectors/index.ts`
+- `ai-integration-services/backend/supabase/functions/assistant-chat/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 373 (68%)
-- INFERRED: 178 (32%)
+- EXTRACTED: 105 (82%)
+- INFERRED: 23 (18%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -3,10 +3,10 @@
   "source": "ai-integration-services",
   "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/graphify-out/ai-integration-services",
   "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/wiki/ai-integration-services",
-  "nodes": 3502,
-  "edges": 8556,
-  "communities": 349,
-  "articles": 359,
+  "nodes": 3528,
+  "edges": 8592,
+  "communities": 353,
+  "articles": 363,
   "html_status": "skipped",
-  "code_files": 1500
+  "code_files": 1501
 }

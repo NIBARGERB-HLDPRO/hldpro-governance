@@ -1,6 +1,6 @@
 # Cogs export generator Supabase
 
-> 50 nodes · cohesion 0.08
+> 51 nodes · cohesion 0.08
 
 ## Key Concepts
 
@@ -29,7 +29,7 @@
 - **TWILIO_FROM_NUMBER()** (6 connections) — `ai-integration-services/backend/supabase/functions/permit-monitor/index.ts`
 - **isEmailConfigured()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/email.ts`
 - **fireEdgeFunction()** (5 connections) — `ai-integration-services/backend/supabase/functions/trial-lifecycle/index.ts`
-- *... and 25 more nodes in this community*
+- *... and 26 more nodes in this community*
 
 ## Relationships
 
@@ -38,6 +38,7 @@
 ## Source Files
 
 - `ai-integration-services/backend/supabase/functions/_shared/email.ts`
+- `ai-integration-services/backend/supabase/functions/addon-provision/index.ts`
 - `ai-integration-services/backend/supabase/functions/briefing-job/index.ts`
 - `ai-integration-services/backend/supabase/functions/cogs-export-generator/index.ts`
 - `ai-integration-services/backend/supabase/functions/cogs-query/index.ts`
@@ -56,12 +57,11 @@
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/cogs-export-generator/index.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/hvac-maintenance-alert/index.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/permit-monitor/index.ts`
-- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/reseller-performance-check/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 245 (83%)
-- INFERRED: 51 (17%)
+- EXTRACTED: 247 (83%)
+- INFERRED: 52 (17%)
 - AMBIGUOUS: 0 (0%)
 
 ---

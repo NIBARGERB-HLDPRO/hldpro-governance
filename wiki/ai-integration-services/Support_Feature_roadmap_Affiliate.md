@@ -1,6 +1,6 @@
 # Support Feature roadmap Affiliate
 
-> 134 nodes · cohesion 0.03
+> 124 nodes · cohesion 0.03
 
 ## Key Concepts
 
@@ -14,10 +14,8 @@
 - **estimate-engine.ts** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/estimate-engine.ts`
 - **triggerCampaign()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardCampaigns.tsx`
 - **UpsellTasks.tsx** (6 connections) — `ai-integration-services/apps/dashboard/src/pages/upsell/UpsellTasks.tsx`
-- **DashboardReports.tsx** (6 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/DashboardReports.tsx`
 - **JobQueue.tsx** (6 connections) — `ai-integration-services/apps/pwa/src/pages/JobQueue.tsx`
 - **UpsellTasks.tsx** (6 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/upsell/UpsellTasks.tsx`
-- **DashboardReports.tsx** (6 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/DashboardReports.tsx`
 - **JobQueue.tsx** (6 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/pwa/src/pages/JobQueue.tsx`
 - **formatDate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/affiliate/AffiliateConversions.tsx`
 - **formatDate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/affiliate/AffiliatePayouts.tsx`
@@ -27,9 +25,11 @@
 - **inferOutcome()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardCalls.tsx`
 - **getNextCampaignDate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardCampaigns.tsx`
 - **loadCampaigns()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardCampaigns.tsx`
-- **formatReportDate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardReports.tsx`
-- **loadReports()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardReports.tsx`
-- *... and 109 more nodes in this community*
+- **formatDate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardRoadmap.tsx`
+- **handleVote()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardRoadmap.tsx`
+- **formatDate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/gc/GCProjects.tsx`
+- **handleCreate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/gc/GCProjects.tsx`
+- *... and 99 more nodes in this community*
 
 ## Relationships
 
@@ -46,7 +46,6 @@
 - `ai-integration-services/apps/marketing/src/portal/pages/affiliate/AffiliatePayouts.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardCalls.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardCampaigns.tsx`
-- `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardReports.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardRoadmap.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/gc/GCProjects.tsx`
 - `ai-integration-services/apps/marketing/src/portal/pages/sites/DemoActivationBanner.tsx`
@@ -55,13 +54,14 @@
 - `ai-integration-services/apps/portal/src/pages/affiliate/AffiliatePayouts.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardCalls.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardCampaigns.tsx`
-- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardReports.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardRoadmap.tsx`
+- `ai-integration-services/apps/portal/src/pages/gc/GCProjects.tsx`
+- `ai-integration-services/apps/portal/src/pages/solar/SolarLeadPipeline.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 514 (90%)
-- INFERRED: 60 (10%)
+- EXTRACTED: 468 (89%)
+- INFERRED: 58 (11%)
 - AMBIGUOUS: 0 (0%)
 
 ---

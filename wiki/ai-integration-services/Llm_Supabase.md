@@ -1,15 +1,16 @@
 # Llm Supabase
 
-> 6 nodes · cohesion 0.60
+> 7 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- **llm-router.ts** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
-- **routeLLM()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
-- **callClaudeAndWrap()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
-- **callLocal()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
-- **findActiveExperiment()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
-- **logRoutingDecision()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- **llm-router.ts** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- **llm-router.ts** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/llm-router.ts`
+- **routeLLM()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- **callLocal()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- **callClaudeAndWrap()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- **findActiveExperiment()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- **logRoutingDecision()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
 
 ## Relationships
 
@@ -18,11 +19,12 @@
 ## Source Files
 
 - `ai-integration-services/backend/supabase/functions/_shared/llm-router.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/llm-router.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 10 (56%)
-- INFERRED: 8 (44%)
+- EXTRACTED: 32 (86%)
+- INFERRED: 5 (14%)
 - AMBIGUOUS: 0 (0%)
 
 ---

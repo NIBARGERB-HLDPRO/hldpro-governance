@@ -1,6 +1,6 @@
 # Magic link review decision Supabase
 
-> 47 nodes · cohesion 0.09
+> 46 nodes · cohesion 0.09
 
 ## Key Concepts
 
@@ -24,12 +24,12 @@
 - **getStripeKey()** (5 connections) — `ai-integration-services/backend/supabase/functions/coupon-manager/index.ts`
 - **sendReviewSms()** (5 connections) — `ai-integration-services/backend/supabase/functions/magic-link-intake-submit/index.ts`
 - **getSecurityHeaders()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/cors.ts`
-- **safeErrorResponse()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/error-handler.ts`
 - **handleAlerts()** (4 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
 - **handleAnalytics()** (4 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
 - **handleEndOfCall()** (4 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
 - **handleRecentCalls()** (4 connections) — `ai-integration-services/backend/supabase/functions/owner-briefing-line/index.ts`
-- *... and 22 more nodes in this community*
+- **isExpired()** (4 connections) — `ai-integration-services/backend/supabase/functions/magic-link-review-decision/index.ts`
+- *... and 21 more nodes in this community*
 
 ## Relationships
 
@@ -54,8 +54,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 215 (83%)
-- INFERRED: 45 (17%)
+- EXTRACTED: 211 (82%)
+- INFERRED: 45 (18%)
 - AMBIGUOUS: 0 (0%)
 
 ---

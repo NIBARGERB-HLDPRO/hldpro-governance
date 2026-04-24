@@ -1,6 +1,6 @@
 # Addon provision Login
 
-> 62 nodes · cohesion 0.06
+> 65 nodes · cohesion 0.06
 
 ## Key Concepts
 
@@ -16,6 +16,7 @@
 - **handleSave()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardNotifications.tsx`
 - **signInWithPassword()** (6 connections) — `ai-integration-services/e2e/live-e2e-full.spec.ts`
 - **handleForgotPassword()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/Login.tsx`
+- **main()** (6 connections) — `ai-integration-services/scripts/seed-demo-accounts.ts`
 - **formatLogDate()** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardNotifications.tsx`
 - **signInAndInject()** (5 connections) — `ai-integration-services/e2e/live-e2e-full.spec.ts`
 - **DashboardNotifications.tsx** (5 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardNotifications.tsx`
@@ -28,8 +29,7 @@
 - **ensureCustomerClient()** (4 connections) — `ai-integration-services/scripts/ensure-staging-e2e-fixtures.mjs`
 - **ensureResellerAccount()** (4 connections) — `ai-integration-services/scripts/ensure-staging-e2e-fixtures.mjs`
 - **ensureUser()** (4 connections) — `ai-integration-services/scripts/ensure-staging-e2e-fixtures.mjs`
-- **verifySignIn()** (4 connections) — `ai-integration-services/scripts/ensure-staging-e2e-fixtures.mjs`
-- *... and 37 more nodes in this community*
+- *... and 40 more nodes in this community*
 
 ## Relationships
 
@@ -47,6 +47,7 @@
 - `ai-integration-services/backend/supabase/functions/brain-ingest/index.ts`
 - `ai-integration-services/e2e/live-e2e-full.spec.ts`
 - `ai-integration-services/scripts/ensure-staging-e2e-fixtures.mjs`
+- `ai-integration-services/scripts/seed-demo-accounts.ts`
 - `ai-integration-services/scripts/seed-finance-demo.ts`
 - `ai-integration-services/scripts/seed-report-data.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/Login.tsx`
@@ -56,12 +57,11 @@
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/pwa/src/pages/Login.tsx`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/reseller/src/pages/Login.tsx`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/addon-provision/index.ts`
-- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/e2e/live-e2e-full.spec.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 236 (84%)
-- INFERRED: 46 (16%)
+- EXTRACTED: 240 (83%)
+- INFERRED: 50 (17%)
 - AMBIGUOUS: 0 (0%)
 
 ---
