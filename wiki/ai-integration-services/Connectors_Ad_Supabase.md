@@ -1,6 +1,6 @@
 # Connectors Ad Supabase
 
-> 34 nodes · cohesion 0.10
+> 32 nodes · cohesion 0.10
 
 ## Key Concepts
 
@@ -9,13 +9,11 @@
 - **factory.ts** (10 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/factory.ts`
 - **factory.ts** (10 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/connectors/ad/factory.ts`
 - **.apiGet()** (7 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
-- **index.ts** (6 connections) — `ai-integration-services/backend/supabase/functions/ad-conversion-event/index.ts`
 - **.apiGet()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
 - **interface.ts** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/interface.ts`
 - **interface.ts** (5 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/connectors/ad/interface.ts`
 - **getAdConnector()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/factory.ts`
 - **getAllAdConnectors()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/factory.ts`
-- **sha256Hash()** (3 connections) — `ai-integration-services/backend/supabase/functions/ad-conversion-event/index.ts`
 - **.apiPost()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
 - **.apiPost()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
 - **.listAccounts()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
@@ -29,7 +27,9 @@
 - **.listAccounts()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
 - **.pullCampaigns()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
 - **.pullPerformance()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
-- *... and 9 more nodes in this community*
+- **.refreshToken()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- **.sendConversion()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
+- *... and 7 more nodes in this community*
 
 ## Relationships
 
@@ -42,7 +42,6 @@
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/interface.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/meta.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/ad/nextdoor.ts`
-- `ai-integration-services/backend/supabase/functions/ad-conversion-event/index.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/connectors/ad/factory.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/connectors/ad/google.ts`
 - `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/connectors/ad/interface.ts`
@@ -51,8 +50,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 124 (94%)
-- INFERRED: 8 (6%)
+- EXTRACTED: 116 (94%)
+- INFERRED: 7 (6%)
 - AMBIGUOUS: 0 (0%)
 
 ---

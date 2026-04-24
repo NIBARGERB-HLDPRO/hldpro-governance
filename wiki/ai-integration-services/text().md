@@ -1,6 +1,6 @@
 # text()
 
-> God node · 105 connections · `ai-integration-services/scripts/seed-esign-templates.ts`
+> God node · 126 connections · `ai-integration-services/scripts/seed-esign-templates.ts`
 
 ## Connections by Relation
 

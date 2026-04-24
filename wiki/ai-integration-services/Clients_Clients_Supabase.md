@@ -1,14 +1,15 @@
 # Clients Clients Supabase
 
-> 14 nodes · cohesion 0.23
+> 15 nodes · cohesion 0.22
 
 ## Key Concepts
 
-- **ClientsList.tsx** (9 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ClientsList.tsx`
+- **ClientsList.tsx** (10 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ClientsList.tsx`
 - **ClientsList.tsx** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/pages/clients/ClientsList.tsx`
-- **runBulkAction()** (5 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ClientsList.tsx`
+- **runBulkAction()** (6 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ClientsList.tsx`
 - **invokeFunction()** (4 connections) — `ai-integration-services/apps/dashboard/src/lib/supabase.ts`
 - **demoBillingBadge()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ClientsList.tsx`
+- **deriveRetryTrigger()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ClientsList.tsx`
 - **exportCSV()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ClientsList.tsx`
 - **formatCents()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ClientsList.tsx`
 - **healthDot()** (2 connections) — `ai-integration-services/apps/dashboard/src/pages/clients/ClientsList.tsx`
@@ -32,8 +33,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 40 (89%)
-- INFERRED: 5 (11%)
+- EXTRACTED: 44 (90%)
+- INFERRED: 5 (10%)
 - AMBIGUOUS: 0 (0%)
 
 ---

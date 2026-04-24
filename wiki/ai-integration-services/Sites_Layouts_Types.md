@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- **types.ts** (0 connections) — `ai-integration-services/apps/marketing/src/portal/pages/sites/layouts/types.ts`
+- **types.ts** (0 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/sites/layouts/types.ts`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `ai-integration-services/apps/marketing/src/portal/pages/sites/layouts/types.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/marketing/src/portal/pages/sites/layouts/types.ts`
 
 ## Audit Trail
 

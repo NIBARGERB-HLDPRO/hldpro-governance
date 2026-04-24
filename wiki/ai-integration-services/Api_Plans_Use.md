@@ -1,10 +1,10 @@
 # Api Plans Use
 
-> 9 nodes · cohesion 0.39
+> 10 nodes · cohesion 0.33
 
 ## Key Concepts
 
-- **plans.ts** (7 connections) — `ai-integration-services/apps/dashboard/src/lib/api/plans.ts`
+- **plans.ts** (8 connections) — `ai-integration-services/apps/dashboard/src/lib/api/plans.ts`
 - **plans.ts** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/dashboard/src/lib/api/plans.ts`
 - **normalizeIncludedProducts()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/plans.ts`
 - **useBulkVerifyWebhooks()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/plans.ts`
@@ -13,6 +13,7 @@
 - **useUpdatePlan()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/plans.ts`
 - **useVerifyWebhook()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/plans.ts`
 - **useWebhookConfigs()** (2 connections) — `ai-integration-services/apps/dashboard/src/lib/api/plans.ts`
+- **serializeIncludedProducts()** (1 connections) — `ai-integration-services/apps/dashboard/src/lib/api/plans.ts`
 
 ## Relationships
 
@@ -25,7 +26,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 28 (100%)
+- EXTRACTED: 30 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

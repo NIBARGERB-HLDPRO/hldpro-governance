@@ -1,6 +1,6 @@
 # Debug Debug feedback overlay Var
 
-> 129 nodes · cohesion 0.03
+> 120 nodes · cohesion 0.04
 
 ## Key Concepts
 
@@ -19,8 +19,6 @@
 - **handleResync()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardIntegrations.tsx`
 - **handleSendComment()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
 - **handleSubmit()** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
-- **debugFeedbackFetch()** (7 connections) — `ai-integration-services/apps/dashboard/src/lib/api/debugFeedback.ts`
-- **debugFeedback.ts** (7 connections) — `ai-integration-services/apps/dashboard/src/lib/api/debugFeedback.ts`
 - **COGSOverview.tsx** (7 connections) — `ai-integration-services/apps/dashboard/src/pages/cogs/COGSOverview.tsx`
 - **DashboardSupport.tsx** (7 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardSupport.tsx`
 - **Bookings.tsx** (7 connections) — `ai-integration-services/apps/portal/src/pages/dashboard/Bookings.tsx`
@@ -29,7 +27,9 @@
 - **Bookings.tsx** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/Bookings.tsx`
 - **DashboardSupport.tsx** (7 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/apps/portal/src/pages/dashboard/DashboardSupport.tsx`
 - **handlePurchase()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAddons.tsx`
-- *... and 104 more nodes in this community*
+- **handleConnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsConnect.tsx`
+- **handleDisconnect()** (6 connections) — `ai-integration-services/apps/marketing/src/portal/pages/dashboard/DashboardAdsConnect.tsx`
+- *... and 95 more nodes in this community*
 
 ## Relationships
 
@@ -39,7 +39,6 @@
 
 - `ai-integration-services/apps/dashboard/src/components/PreflightSimulationModal.tsx`
 - `ai-integration-services/apps/dashboard/src/lib/api/coupons.ts`
-- `ai-integration-services/apps/dashboard/src/lib/api/debugFeedback.ts`
 - `ai-integration-services/apps/dashboard/src/pages/cogs/COGSEventLog.tsx`
 - `ai-integration-services/apps/dashboard/src/pages/cogs/COGSOverview.tsx`
 - `ai-integration-services/apps/dashboard/src/pages/corpus/CorpusDashboard.tsx`
@@ -57,11 +56,12 @@
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardAdsConnect.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardEmailAssistant.tsx`
 - `ai-integration-services/apps/portal/src/pages/dashboard/DashboardEmailSettings.tsx`
+- `ai-integration-services/apps/portal/src/pages/dashboard/DashboardIntegrations.tsx`
 
 ## Audit Trail
 
-- EXTRACTED: 532 (87%)
-- INFERRED: 79 (13%)
+- EXTRACTED: 494 (87%)
+- INFERRED: 76 (13%)
 - AMBIGUOUS: 0 (0%)
 
 ---

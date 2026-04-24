@@ -1,6 +1,6 @@
 # Live full Login
 
-> 53 nodes · cohesion 0.07
+> 55 nodes · cohesion 0.06
 
 ## Key Concepts
 
@@ -29,7 +29,7 @@
 - **ensureUser()** (4 connections) — `ai-integration-services/scripts/ensure-staging-e2e-fixtures.mjs`
 - **verifySignIn()** (4 connections) — `ai-integration-services/scripts/ensure-staging-e2e-fixtures.mjs`
 - **extractPricingPatterns()** (4 connections) — `ai-integration-services/backend/supabase/functions/brain-ingest/index.ts`
-- *... and 28 more nodes in this community*
+- *... and 30 more nodes in this community*
 
 ## Relationships
 
@@ -60,8 +60,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 174 (78%)
-- INFERRED: 48 (22%)
+- EXTRACTED: 180 (79%)
+- INFERRED: 49 (21%)
 - AMBIGUOUS: 0 (0%)
 
 ---

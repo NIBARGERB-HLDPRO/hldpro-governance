@@ -1,21 +1,23 @@
 # Vapi Voice
 
-> 12 nodes · cohesion 0.24
+> 14 nodes · cohesion 0.30
 
 ## Key Concepts
 
 - **vapi-helpers.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
 - **voice-presets.ts** (9 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
-- **getVapiKey()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
-- **vapiGet()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
-- **vapiPatch()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
-- **getVoiceV3NativeConfig()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
-- **VOICE_V25()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
-- **VOICE_V3_NATIVE()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
-- **getVoiceV25Config()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
-- **getVoiceV3WithFallbackPlan()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
-- **VOICE_V3_PROXY()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
-- **getConfiguredElevenLabsVoiceId()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
+- **vapi-helpers.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **voice-presets.ts** (9 connections) — `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/voice-presets.ts`
+- **getVapiKey()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **vapiGet()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **vapiPatch()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **getVoiceV3NativeConfig()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
+- **VOICE_V25()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **VOICE_V3_NATIVE()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **getVoiceV25Config()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
+- **getVoiceV3WithFallbackPlan()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
+- **VOICE_V3_PROXY()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
+- **getConfiguredElevenLabsVoiceId()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
 
 ## Relationships
 
@@ -25,11 +27,13 @@
 
 - `ai-integration-services/backend/supabase/functions/_shared/vapi-helpers.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/voice-presets.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/vapi-helpers.ts`
+- `ai-integration-services/var/worktrees/issue-1211-sweep-claude-supervisor/backend/supabase/functions/_shared/voice-presets.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 34 (85%)
-- INFERRED: 6 (15%)
+- EXTRACTED: 62 (91%)
+- INFERRED: 6 (9%)
 - AMBIGUOUS: 0 (0%)
 
 ---

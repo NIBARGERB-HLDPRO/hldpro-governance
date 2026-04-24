@@ -1,6 +1,6 @@
 # getSupabaseServiceClient()
 
-> God node · 68 connections · `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
+> God node · 69 connections · `ai-integration-services/backend/supabase/functions/_shared/auth.ts`
 
 ## Connections by Relation
 

@@ -1,18 +1,20 @@
 # Connectors Crm Supabase
 
-> 28 nodes · cohesion 0.13
+> 30 nodes · cohesion 0.12
 
 ## Key Concepts
 
 - **GHLCRMConnector** (26 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - **.ghlFetch()** (19 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - **executeTool()** (14 connections) — `ai-integration-services/backend/supabase/functions/assistant-chat/index.ts`
+- **processWebhook()** (7 connections) — `ai-integration-services/backend/supabase/functions/webhook-receiver/index.ts`
 - **.getAccessToken()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - **.upsertContact()** (6 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - **.mapGHLContact()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - **getCRMConnector()** (5 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/index.ts`
 - **.createContact()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - **.refreshOAuthToken()** (4 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
+- **logPromptInteraction()** (4 connections) — `ai-integration-services/backend/supabase/functions/webhook-receiver/index.ts`
 - **.getContact()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - **.moveDeal()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - **.searchContacts()** (3 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
@@ -27,9 +29,7 @@
 - **.getPipeline()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - **.getSMSHistory()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - **.sendSMS()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
-- **.updateInvoiceStatus()** (2 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
-- **.constructor()** (1 connections) — `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
-- *... and 3 more nodes in this community*
+- *... and 5 more nodes in this community*
 
 ## Relationships
 
@@ -40,11 +40,12 @@
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/crm/ghl.ts`
 - `ai-integration-services/backend/supabase/functions/_shared/connectors/index.ts`
 - `ai-integration-services/backend/supabase/functions/assistant-chat/index.ts`
+- `ai-integration-services/backend/supabase/functions/webhook-receiver/index.ts`
 
 ## Audit Trail
 
-- EXTRACTED: 105 (82%)
-- INFERRED: 23 (18%)
+- EXTRACTED: 112 (81%)
+- INFERRED: 27 (19%)
 - AMBIGUOUS: 0 (0%)
 
 ---
