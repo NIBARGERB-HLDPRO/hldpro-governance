@@ -90,8 +90,7 @@ if [ -x "$REPO_ROOT/scripts/consolidate-memory.sh" ]; then
     bash "$REPO_ROOT/scripts/consolidate-memory.sh" --repo hldpro-governance || \
     echo "note: consolidate-memory non-fatal failure; continuing closeout"
 fi
-python3 "$(git rev-parse --show-toplevel)/scripts/overlord/memory_integrity.py" \
-  --repo-slug hldpro-governance 2>&1 \
+python3 "$(git rev-parse --show-toplevel)/scripts/overlord/memory_integrity.py" 2>&1 \
   | sed 's/^/[memory-integrity] /' || echo "[memory-integrity] WARN: integrity check failed (non-fatal)"
 
 # 3. Remind to create operator_context row
