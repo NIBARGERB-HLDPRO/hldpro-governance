@@ -287,6 +287,24 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("execution_mode must be", result.stdout)
 
+    def test_planning_evidence_only_changes_allow_planning_only_mode(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-226-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(json.dumps(_plan(226, mode="planning_only")), encoding="utf-8")
+            result = self._run(
+                root,
+                "issue-226-test",
+                [
+                    "docs/plans/issue-226-structured-agent-cycle-plan.json",
+                    "raw/validation/2026-04-28-issue-226.md",
+                    "raw/closeouts/2026-04-28-issue-226.md",
+                    "raw/handoffs/2026-04-28-issue-226.json",
+                ],
+            )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
     def test_required_alternate_review_must_be_accepted(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)

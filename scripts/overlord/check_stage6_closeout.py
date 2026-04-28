@@ -37,8 +37,11 @@ GOVERNANCE_SURFACE_FILES = {
 
 PLANNING_ONLY_PREFIXES = (
     "docs/plans/",
+    "raw/closeouts/",
     "raw/cross-review/",
     "raw/execution-scopes/",
+    "raw/handoffs/",
+    "raw/validation/",
 )
 PLANNING_ONLY_FILES = {
     "OVERLORD_BACKLOG.md",

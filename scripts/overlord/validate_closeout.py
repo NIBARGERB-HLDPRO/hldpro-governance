@@ -80,6 +80,10 @@ def _load_json(path: Path, failures: list[str]) -> Any | None:
         return None
 
 
+def _execution_scope_refs(refs: list[str]) -> list[str]:
+    return [ref for ref in refs if ref.startswith("raw/execution-scopes/")]
+
+
 def _validate_residuals(closeout_path: Path, sections: dict[str, str], failures: list[str]) -> None:
     residuals = sections.get("Residual Risks / Follow-Up", "").strip()
     if not residuals:
@@ -149,6 +153,28 @@ def _validate_handoff_refs(root: Path, closeout_path: Path, refs: list[str], tex
                     f"but closeout_ref is not {closeout_ref!r}"
                 )
             continue
+
+
+def resolve_closeout_execution_mode(root: Path, closeout_path: Path) -> str | None:
+    if not closeout_path.is_absolute():
+        closeout_path = root / closeout_path
+    if not closeout_path.is_file():
+        return None
+
+    refs = _extract_repo_refs(closeout_path.read_text(encoding="utf-8"))
+    scope_refs = _execution_scope_refs(refs)
+    if len(scope_refs) != 1:
+        return None
+
+    failures: list[str] = []
+    payload = _load_json(root / scope_refs[0], failures)
+    if failures or not isinstance(payload, dict):
+        return None
+
+    execution_mode = payload.get("execution_mode")
+    if isinstance(execution_mode, str) and execution_mode:
+        return execution_mode
+    return "planning_only"
 
 
 def validate_closeout(root: Path, closeout_path: Path) -> list[str]:

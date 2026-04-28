@@ -108,10 +108,10 @@ bash scripts/model-fallback-log.sh \
 
 ## 2. Claude Code CLI (Anthropic)
 
-**Purpose:** Planner (`claude-opus-4-6`), planning fallback and primary Worker (`claude-sonnet-4-6`), and completion/gate verifier (`claude-haiku-4-5-20251001` where allowed). Also serves as cross-model reviewer invoked FROM codex via `scripts/codex-review.sh claude`.
+**Purpose:** Planner (`claude-opus-4-6`), planning fallback and primary Worker (`claude-sonnet-4-6`), and completion/gate verifier (`claude-haiku-4-5-20251001` where allowed). Also serves as cross-model reviewer invoked FROM codex via the operator-facing wrapper `scripts/codex-review.sh claude`.
 
 ### Auth
-- `CLAUDE_CODE_OAUTH_TOKEN` in repo-level `.env` (NOT committed)
+- `CLAUDE_CODE_OAUTH_TOKEN` in the repo's bootstrap-generated env surface (governance: `.env.local`)
 - Issued via `claude setup-token` (operator Max subscription)
 - 1-year expiry; current token: 2026-04-09
 - Same token shared across all HLD Pro repos
@@ -123,8 +123,9 @@ claude -p "say ok" 2>&1 | tail -3
 
 ### Rotation
 1. `claude setup-token` (browser OAuth)
-2. Update `.env` in every governed repo (governance, AIS, HP, knocktracker, local-ai-machine)
-3. Note rotation in this runbook's Changelog
+2. Update `hldpro-governance/.env.shared`
+3. Re-run `bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh <repo>` for each governed repo that needs the refreshed token
+4. Note rotation in this runbook's Changelog
 
 ### Canonical bootstrap command
 
@@ -368,7 +369,15 @@ gh api /repos/NIBARGERB-HLDPRO/<repo>/branches/main/protection --jq '.required_s
 
 ## 6. Claude ↔ Codex cross-model review
 
-Pointer only — owned by AIS runbook §Claude Code (Cross-Model Agent Review). The governance repo uses the same `CLAUDE_CODE_OAUTH_TOKEN` and `scripts/codex-review-template.sh` template. Per-repo wrappers live in each governed repo (`scripts/codex-review.sh`).
+Canonical operator-facing path in governed repos:
+
+```bash
+bash scripts/codex-review.sh claude "<prompt>"
+```
+
+Implementation detail only:
+- `scripts/codex-review-template.sh` is the shared implementation source behind repo-local wrappers
+- `scripts/cli_session_supervisor.py` is the lower-level subprocess helper and is not an operator-facing alternate path
 
 ---
 

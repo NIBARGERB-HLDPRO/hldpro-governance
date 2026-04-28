@@ -1,35 +1,24 @@
 # Overlord Validate closeout
 
-> 41 nodes · cohesion 0.11
+> 15 nodes · cohesion 0.32
 
 ## Key Concepts
 
-- **validate_handoff_package.py** (17 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **validate_closeout.py** (13 connections) — `scripts/overlord/validate_closeout.py`
-- **validate_package()** (11 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **TestValidateCloseout** (10 connections) — `scripts/overlord/test_validate_closeout.py`
-- **._repo()** (9 connections) — `scripts/overlord/test_validate_closeout.py`
-- **._closeout()** (8 connections) — `scripts/overlord/test_validate_closeout.py`
-- **validate_closeout()** (7 connections) — `scripts/overlord/validate_closeout.py`
-- **_is_url()** (5 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **_repo_file_exists()** (5 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **_validate_acceptance_criteria()** (5 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **_validate_consumer_verifier_acceptance()** (5 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **_validate_ref_array()** (5 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **test_validate_closeout.py** (4 connections) — `scripts/overlord/test_validate_closeout.py`
-- **_write()** (4 connections) — `scripts/overlord/test_validate_closeout.py`
-- **_validate_handoff_refs()** (4 connections) — `scripts/overlord/validate_closeout.py`
-- **_normalize_repo_path()** (4 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **_read_json_ref()** (4 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **_json()** (3 connections) — `scripts/overlord/test_validate_closeout.py`
-- **.test_gate_evidence_requires_artifact_or_command_result()** (3 connections) — `scripts/overlord/test_validate_closeout.py`
-- **.test_handoff_without_lifecycle_record_fails()** (3 connections) — `scripts/overlord/test_validate_closeout.py`
-- **.test_missing_referenced_artifact_fails()** (3 connections) — `scripts/overlord/test_validate_closeout.py`
-- **.test_placeholder_text_in_required_section_fails()** (3 connections) — `scripts/overlord/test_validate_closeout.py`
-- **.test_residual_without_issue_ref_fails()** (3 connections) — `scripts/overlord/test_validate_closeout.py`
-- **.test_valid_closeout_passes()** (3 connections) — `scripts/overlord/test_validate_closeout.py`
-- **main()** (3 connections) — `scripts/overlord/validate_closeout.py`
-- *... and 16 more nodes in this community*
+- **TestValidateCloseout** (12 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **._repo()** (11 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **._closeout()** (10 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **_write()** (4 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **test_validate_closeout.py** (3 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **_json()** (3 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **.test_gate_evidence_requires_artifact_or_command_result()** (3 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **.test_handoff_without_lifecycle_record_fails()** (3 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **.test_missing_referenced_artifact_fails()** (3 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **.test_placeholder_text_in_required_section_fails()** (3 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **.test_residual_without_issue_ref_fails()** (3 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **.test_resolve_closeout_execution_mode_defaults_planning_only()** (3 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **.test_resolve_closeout_execution_mode_reads_scope()** (3 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **.test_valid_closeout_passes()** (3 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
+- **.test_hook_invokes_validator_before_graph_refresh()** (1 connections) — `hldpro-governance/scripts/overlord/test_validate_closeout.py`
 
 ## Relationships
 
@@ -37,14 +26,12 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- `scripts/overlord/test_validate_closeout.py`
-- `scripts/overlord/validate_closeout.py`
+- `hldpro-governance/scripts/overlord/test_validate_closeout.py`
 
 ## Audit Trail
 
-- EXTRACTED: 81 (46%)
-- INFERRED: 96 (54%)
+- EXTRACTED: 28 (41%)
+- INFERRED: 40 (59%)
 - AMBIGUOUS: 0 (0%)
 
 ---

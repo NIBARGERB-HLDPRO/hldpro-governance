@@ -4,10 +4,10 @@
 
 ## Key Concepts
 
-- **validate_session_contract_surfaces.py** (3 connections) — `hldpro-governance/scripts/overlord/validate_session_contract_surfaces.py`
-- **validate()** (3 connections) — `hldpro-governance/scripts/overlord/validate_session_contract_surfaces.py`
-- **_find_hook_command()** (2 connections) — `hldpro-governance/scripts/overlord/validate_session_contract_surfaces.py`
-- **main()** (2 connections) — `hldpro-governance/scripts/overlord/validate_session_contract_surfaces.py`
+- **validate_session_contract_surfaces.py** (3 connections) — `scripts/overlord/validate_session_contract_surfaces.py`
+- **validate()** (3 connections) — `scripts/overlord/validate_session_contract_surfaces.py`
+- **_find_hook_command()** (2 connections) — `scripts/overlord/validate_session_contract_surfaces.py`
+- **main()** (2 connections) — `scripts/overlord/validate_session_contract_surfaces.py`
 
 ## Relationships
 
@@ -15,7 +15,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/overlord/validate_session_contract_surfaces.py`
+- `scripts/overlord/validate_session_contract_surfaces.py`
 
 ## Audit Trail
 

@@ -43,9 +43,25 @@ fi
 python3 "$CLOSEOUT_VALIDATOR" "$CLOSEOUT_FILE" --root "$GOVERNANCE_ROOT"
 echo "  ✓ Template validated"
 
+CLOSEOUT_MODE="$(python3 - "$GOVERNANCE_ROOT" "$CLOSEOUT_FILE" <<'PY'
+from pathlib import Path
+import sys
+
+root = Path(sys.argv[1]).resolve()
+closeout = Path(sys.argv[2])
+sys.path.insert(0, str(root / "scripts" / "overlord"))
+import validate_closeout  # type: ignore
+
+print(validate_closeout.resolve_closeout_execution_mode(root, closeout) or "planning_only")
+PY
+)"
+echo "  • execution_mode: ${CLOSEOUT_MODE}"
+
 # 2. Refresh the governance graph target defined for closeout
 echo "[2/4] Updating knowledge graph..."
-if [ -f "$BUILD_SCRIPT" ] && [ -f "$TARGET_SCRIPT" ] && [ -f "$INDEX_SCRIPT" ]; then
+if [ "$CLOSEOUT_MODE" = "planning_only" ]; then
+  echo "  ✓ Planning-only closeout: graph/wiki refresh skipped"
+elif [ -f "$BUILD_SCRIPT" ] && [ -f "$TARGET_SCRIPT" ] && [ -f "$INDEX_SCRIPT" ]; then
   if command -v python3.11 >/dev/null 2>&1 && python3.11 -c "import graphify" >/dev/null 2>&1; then
     eval "$(python3 "$TARGET_SCRIPT" show --repo-slug hldpro-governance --format shell)"
     if python3.11 "$BUILD_SCRIPT" \
@@ -89,7 +105,9 @@ fi
 echo "[4/4] Committing closeout..."
 cd "$GOVERNANCE_ROOT"
 git add "$CLOSEOUT_FILE"
-git add graphify-out/ wiki/ 2>/dev/null || true
+if [ "$CLOSEOUT_MODE" != "planning_only" ]; then
+  git add graphify-out/ wiki/ 2>/dev/null || true
+fi
 git commit -m "docs(closeout): $(basename "$CLOSEOUT_FILE" .md)"
 
 echo ""

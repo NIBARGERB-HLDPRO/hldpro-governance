@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# codex-review.sh — Codex CLI wrapper for structured code review
+# Shared implementation for repo-local codex-review wrappers.
 #
 # Usage:
 #   bash scripts/codex-review.sh review [branch]    # PR/diff review against branch (default: main)
@@ -136,18 +136,30 @@ Write your findings to docs/codex-reviews/${DATE}-critique.md using the format d
   claude)
     echo "Calling Claude Code as specialist reviewer for: $TARGET"
 
-    # Source token from .env if not already set
-    if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] && [ -f "$REPO_ROOT/.env" ]; then
-      CLAUDE_CODE_OAUTH_TOKEN=$(grep '^CLAUDE_CODE_OAUTH_TOKEN=' "$REPO_ROOT/.env" | cut -d= -f2-)
-      export CLAUDE_CODE_OAUTH_TOKEN
+    if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
+      ENV_CANDIDATES=()
+      if [ -n "${CLAUDE_REVIEW_ENV_FILE:-}" ]; then
+        ENV_CANDIDATES+=("${CLAUDE_REVIEW_ENV_FILE}")
+      else
+        ENV_CANDIDATES+=("$REPO_ROOT/.env.local" "$REPO_ROOT/.env")
+      fi
+      for env_file in "${ENV_CANDIDATES[@]}"; do
+        if [ -f "$env_file" ]; then
+          CLAUDE_CODE_OAUTH_TOKEN=$(grep '^CLAUDE_CODE_OAUTH_TOKEN=' "$env_file" | cut -d= -f2- || true)
+          if [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
+            export CLAUDE_CODE_OAUTH_TOKEN
+            break
+          fi
+        fi
+      done
     fi
 
     if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
-      echo "ERROR: CLAUDE_CODE_OAUTH_TOKEN not set. Run 'claude setup-token' and add to .env" >&2
+      echo "ERROR: CLAUDE_CODE_OAUTH_TOKEN not set. Run the canonical bootstrap path for this repo and retry." >&2
       exit 1
     fi
 
-    PROMPT="You are reviewing code in the HLD Pro AI Integration Services repo.
+    PROMPT="You are performing specialist review in the governed HLD Pro repo.
 
 ${PERSONA_CONTENT}
 
@@ -157,6 +169,14 @@ Read the relevant files, then provide your findings in markdown format."
 
     prompt_file="$(mktemp "${TMPDIR:-/tmp}/claude-review-prompt.XXXXXX")" || exit 1
     printf '%s\n' "$PROMPT" >"$prompt_file"
+
+    if [ "${CODEX_REVIEW_DRY_RUN:-0}" = "1" ]; then
+      echo "DRY_RUN claude mode ready"
+      echo "env_surface=${CLAUDE_REVIEW_ENV_FILE:-auto}"
+      echo "prompt_file=${prompt_file}"
+      rm -f "$prompt_file"
+      exit 0
+    fi
 
     if ! python3 "$REPO_ROOT/scripts/cli_session_supervisor.py" \
       --tool claude \
@@ -173,7 +193,7 @@ Read the relevant files, then provide your findings in markdown format."
       --terminate-grace-sec "${CLAUDE_REVIEW_TERMINATE_GRACE_SECONDS:-5}" \
       --permission-mode "${CLAUDE_REVIEW_PERMISSION_MODE:-bypassPermissions}" \
       --allowed-tools "Read Grep Glob" \
-      --max-turns 5 \
+      --max-turns "${CLAUDE_REVIEW_MAX_TURNS:-5}" \
       --max-budget-usd "${CLAUDE_REVIEW_MAX_BUDGET_USD:-1.00}" \
       --no-session-persistence; then
       echo "Claude review failed; see raw/cli-session-events for session evidence." >&2
