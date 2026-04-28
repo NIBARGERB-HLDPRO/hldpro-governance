@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| Downstream thin session-contract adapter rollout epic | #579 | IN PROGRESS | HIGH | 6-10 | Governance epic, downstream child issue map, thin-adapter rollout across LAM/AIS/Seek/KT/Stampede/HP/ASC | Opened from approved plan #575 after governance-source SSOT reconciliation #576 merged |
 | Session waterfall runbook enforcement at session start | #573 | IN PROGRESS | HIGH | 4-6 | CODEX session contract, bootstrap sentinel, validator/package/CI enforcement, issue evidence | Governance-first slice only; downstream repo adoption remains follow-up work |
 | Consumer-pulled governance adoption rollout | #403 | DONE | MEDIUM | 4-6 | Knocktracker pilot merged through downstream PRs #178 and #179; governance PR #406 records evidence | Uses knocktracker #177 as the first repo-side consumer-pull pilot |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | #177 | PLANNED | LOW-MEDIUM | 2-3 | Codex review findings, follow-up issues | Gate: live-fallback rate < 2% confirmed |

@@ -18,6 +18,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Downstream thin session-contract adapter rollout epic | [#579](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/579) | HIGH | 6-10 | Governance execution epic opened from approved plan #575 after SSOT reconciliation #576; child issues opened in LAM, AIS, Seek, Knocktracker, Stampede, HealthcarePlatform, and ASC-Evaluator. |
 
 ## Done
 
