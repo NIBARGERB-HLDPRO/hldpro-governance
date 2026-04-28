@@ -22,6 +22,8 @@
 - **Hook commands in `.claude/settings.json` must use absolute paths** (e.g. `bash $HOME/Developer/HLDPRO/<repo>/.claude/hooks/<hook>.sh`) — relative paths break silently when the session CWD shifts to a subdirectory, causing the hook to no-op without a hard error
 - Session start must check `~/Developer/hldpro/.codex-ingestion/{repo}/backlog-*.md` for pending Codex findings — surface to user if any exist
 - If repo governance requires specialist agents/subagents, the session must use them. Codex sessions may satisfy this by spawning equivalent Codex subagents and loading the repo's persona definitions from `CODEX.md`, `AGENTS.md`, `.agents/`, or repo-local standards instead of relying on Claude-only agent files.
+- Governance repos and governed session-contract repos must use one canonical bootstrap helper path for session start, not duplicate checklist logic across multiple hook implementations.
+- The canonical session-start helper must emit a machine-checkable sentinel proving that the repo session contract, `docs/EXTERNAL_SERVICES_RUNBOOK.md`, and `STANDARDS.md §Society of Minds` were loaded or surfaced for the current session. Missing files must be recorded as warnings in the sentinel output.
 - Conventional commits: `feat/fix/docs/chore` with scope
 - **Branch naming (all repos):** Use standard SoM prefixes: `feature/<slug>`, `fix/<slug>`, `docs/<slug>`, `chore/<slug>`. Optional `-YYYYMMDD` date suffix is allowed on any prefix.
   - **LAM high-risk lane exception:** `riskfix/<slug>-YYYYMMDD` is the designated prefix for LAM high-risk fixes in `local-ai-machine`. The date suffix is **mandatory** and one PR per lane family is enforced by `breaker-mcp-contract`. This prefix is complementary to, not conflicting with, the standard SoM prefixes — it applies only to the `riskfix/` lane. All other work in LAM (and all work in every other repo) uses the standard SoM prefixes above. See `docs/exception-register.md §SOM-LAM-BRANCH-001` (resolved).
@@ -207,6 +209,11 @@ Each repo has a security tier that determines which security artifacts the overl
 | ASC-Evaluator | Knowledge repo (no code) | Exempt from code governance | Exempt |
 
 > **hldpro-governance hook path note:** Product repos store hooks under `.claude/hooks/` (local-only, gitignored). hldpro-governance stores its committed hooks under `hooks/` at repo root (checked in, enforced repo-wide). Both satisfy the Required Governance hook contract — the difference is scope: local session vs. repo-wide enforcement. Hook *scripts* (e.g. `hooks/pre-session-context.sh`) are committed for repo-wide discoverability; the local `settings.json` that wires them into Claude Code sessions is gitignored and set up per-developer.
+
+For `hldpro-governance`, `scripts/session_bootstrap_contract.py` is the
+canonical session-start implementation path. `hooks/pre-session-context.sh` and
+any `.claude/hooks/pre-session-context.sh` compatibility wrapper must call that
+helper instead of maintaining separate bootstrap logic.
 
 ## Cross-Model Review
 
@@ -410,6 +417,18 @@ Codex is the primary local orchestrator for governance work. The orchestrator
 coordinates handoffs, integrates approved plans, updates local docs and GitHub
 issues, and records evidence. Orchestration is not approval authority: the
 orchestrator cannot plan, implement, review, and gate the same work.
+
+Session-start enforcement must surface this waterfall before implementation
+authority is exercised. The minimum governance session contract is:
+
+1. Load repo `CODEX.md`.
+2. Load repo `CLAUDE.md`.
+3. Load `docs/PROGRESS.md`.
+4. Load `docs/FAIL_FAST_LOG.md`.
+5. Load `STANDARDS.md §Society of Minds`.
+6. Load `docs/EXTERNAL_SERVICES_RUNBOOK.md`.
+7. Surface pending Codex backlog findings if any exist.
+8. Record a bootstrap sentinel proving steps 1, 5, and 6 were loaded or surfaced.
 
 | Stage | Role | Primary | Fallback / Constraint |
 |---|---|---|---|

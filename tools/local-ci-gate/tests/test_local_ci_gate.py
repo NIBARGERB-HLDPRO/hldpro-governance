@@ -333,7 +333,7 @@ profile:
         self.assertIn("scripts/overlord/validate_handoff_package.py", handoff.command)
         self.assertIn("--root", handoff.command)
 
-    def test_governance_profile_skips_handoff_validator_for_unrelated_paths(self) -> None:
+    def test_governance_profile_runs_handoff_validator_for_unrelated_paths(self) -> None:
         profile = gate.load_profile(PROFILES_DIR / "hldpro-governance.yml")
         changed = gate.resolve_changed_files(
             self.root,
@@ -344,7 +344,7 @@ profile:
         report = gate.run_checks(self.root, profile, changed, dry_run=True, report_dir=self.root / "reports")
         statuses = {result.check.id: result.status for result in report.results}
 
-        self.assertEqual(statuses["handoff-package-integrity"], "skipped")
+        self.assertEqual(statuses["handoff-package-integrity"], "planned")
 
     def test_governance_profile_runs_provisioning_evidence_validator_for_runbooks(self) -> None:
         profile = gate.load_profile(PROFILES_DIR / "hldpro-governance.yml")

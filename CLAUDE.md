@@ -9,11 +9,22 @@ Your only job: recognize intent and delegate to the right agent.
 1. Read `wiki/index.md` — current knowledge base state
 2. Read `graphify-out/hldpro-governance/GRAPH_REPORT.md` — governance repo god nodes and community structure
 3. Read `OVERLORD_BACKLOG.md` — cross-repo governance work tracking
-4. Read `STANDARDS.md §Society of Minds` — activity → model routing, fallback ladder, enforcement
+4. Read `CODEX.md` — Codex supervisor/orchestrator contract for governance sessions
+5. Read `docs/EXTERNAL_SERVICES_RUNBOOK.md` — exact Codex/Claude CLI, auth, and bootstrap path
+6. Read `STANDARDS.md §Society of Minds` — activity → model routing, fallback ladder, enforcement
+
+The canonical session-start bootstrap path is `python3 scripts/session_bootstrap_contract.py --emit-hook-note`.
+The bootstrap helper must emit a machine-checkable sentinel proving that
+`CODEX.md`, `docs/EXTERNAL_SERVICES_RUNBOOK.md`, and `STANDARDS.md §Society of
+Minds` were loaded or surfaced for the session.
 
 ## Society of Minds — SoT pointer
 
 Model routing, fallback ladder, cross-review protocol, and LAM-lane rules are defined in [`STANDARDS.md §Society of Minds`](STANDARDS.md) (Model Routing Charter, 2026-04-14). Every Claude agent file under `agents/` must have a `model:` frontmatter pin; every `codex exec` invocation must specify `-m` + `model_reasoning_effort`. Enforcement is CI-verifiable via `.github/workflows/check-*.yml`.
+
+For governance implementation slices, Codex remains the orchestrator and must
+not skip the plan -> alternate-family review -> integrated handoff -> worker ->
+QA -> deterministic gate sequence defined by `CODEX.md` and `STANDARDS.md`.
 
 For architecture or standards PRs, a dual-signed cross-review artifact under `raw/cross-review/YYYY-MM-DD-*.md` is required before merge — see the exact schema in STANDARDS.md.
 

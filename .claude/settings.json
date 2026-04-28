@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash -c 'bash \"$(git rev-parse --show-toplevel 2>/dev/null || echo $PWD)/hooks/pre-session-context.sh\"'",
+            "command": "bash $HOME/Developer/HLDPRO/hldpro-governance/hooks/pre-session-context.sh",
             "timeout": 5000
           }
         ]
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash -c 'bash \"$(git rev-parse --show-toplevel 2>/dev/null || echo $PWD)/hooks/schema-guard.sh\"'",
+            "command": "bash $HOME/Developer/HLDPRO/hldpro-governance/hooks/schema-guard.sh",
             "timeout": 5000
           }
         ]
@@ -27,7 +27,19 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash -c 'bash \"$(git rev-parse --show-toplevel 2>/dev/null || echo $PWD)/hooks/code-write-gate.sh\"'",
+            "command": "bash $HOME/Developer/HLDPRO/hldpro-governance/hooks/code-write-gate.sh",
+            "timeout": 5000
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $HOME/Developer/HLDPRO/hldpro-governance/hooks/check-errors.sh",
             "timeout": 5000
           }
         ]

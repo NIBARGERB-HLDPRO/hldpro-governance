@@ -106,7 +106,7 @@ def _consumer_scope(issue_number: int) -> dict[str, Any]:
     return scope
 
 
-def _handoff(issue_number: int) -> dict[str, Any]:
+def _handoff(issue_number: int, *, created_at: str = "2026-04-28T20:45:00Z") -> dict[str, Any]:
     return {
         "schema_version": "v1",
         "handoff_id": f"issue-{issue_number}-plan-to-implementation",
@@ -128,13 +128,13 @@ def _handoff(issue_number: int) -> dict[str, Any]:
         ],
         "validation_commands": ["python3 scripts/overlord/test_validate_handoff_package.py"],
         "review_artifact_refs": ["raw/cross-review/example.md"],
-        "gate_artifact_refs": [],
+        "gate_artifact_refs": ["raw/gate/example.md"],
         "artifact_refs": ["docs/schemas/package-handoff.schema.json"],
         "audit_refs": [],
         "closeout_ref": None,
         "blocked_on": [],
         "handoff_decision": "accepted",
-        "created_at": "2026-04-21T09:30:00-05:00",
+        "created_at": created_at,
     }
 
 
@@ -151,6 +151,7 @@ def _write_supporting_files(root: Path, issue_number: int = 438) -> Path:
     for relative_path in [
         "docs/schemas/package-handoff.schema.json",
         "raw/cross-review/example.md",
+        "raw/gate/example.md",
         "scripts/overlord/test_validate_handoff_package.py",
     ]:
         path = root / relative_path
@@ -225,6 +226,80 @@ class TestValidateHandoffPackage(unittest.TestCase):
             code, output = self._run_main(root, str(package))
         self.assertNotEqual(code, 0)
         self.assertIn("requires `packet_ref`", output)
+
+    def test_implementation_ready_requires_non_empty_review_artifact_refs(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            payload = _handoff(438)
+            payload["review_artifact_refs"] = []
+            _write_json(root, str(package.relative_to(root)), payload)
+            code, output = self._run_main(root, str(package))
+        self.assertNotEqual(code, 0)
+        self.assertIn("requires non-empty `review_artifact_refs`", output)
+
+    def test_in_progress_requires_non_empty_gate_artifact_refs(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            payload = _handoff(438)
+            payload["lifecycle_state"] = "in_progress"
+            payload["gate_artifact_refs"] = []
+            _write_json(root, str(package.relative_to(root)), payload)
+            code, output = self._run_main(root, str(package))
+        self.assertNotEqual(code, 0)
+        self.assertIn("requires non-empty `gate_artifact_refs`", output)
+
+    def test_historical_implementation_ready_package_is_grandfathered_without_new_evidence_refs(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            payload = _handoff(438, created_at="2026-04-21T09:30:00-05:00")
+            payload["review_artifact_refs"] = []
+            payload["gate_artifact_refs"] = []
+            _write_json(root, str(package.relative_to(root)), payload)
+            code, output = self._run_main(root, str(package))
+        self.assertEqual(code, 0, output)
+
+    def test_validation_ready_requires_non_empty_review_and_gate_artifact_refs(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            payload = _handoff(438)
+            payload["lifecycle_state"] = "validation_ready"
+            payload["packet_ref"] = "raw/packets/issue-438-validation.md"
+            payload["review_artifact_refs"] = []
+            payload["gate_artifact_refs"] = []
+            packet = root / "raw/packets/issue-438-validation.md"
+            packet.parent.mkdir(parents=True, exist_ok=True)
+            packet.write_text("packet\n", encoding="utf-8")
+            _write_json(root, str(package.relative_to(root)), payload)
+            code, output = self._run_main(root, str(package))
+        self.assertNotEqual(code, 0)
+        self.assertIn("requires non-empty `review_artifact_refs`", output)
+        self.assertIn("requires non-empty `gate_artifact_refs`", output)
+
+    def test_accepted_requires_non_empty_review_and_gate_artifact_refs(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            payload = _handoff(438)
+            payload["lifecycle_state"] = "accepted"
+            payload["packet_ref"] = "raw/packets/issue-438-release.md"
+            payload["closeout_ref"] = "raw/closeouts/issue-438.md"
+            payload["review_artifact_refs"] = []
+            payload["gate_artifact_refs"] = []
+            packet = root / "raw/packets/issue-438-release.md"
+            packet.parent.mkdir(parents=True, exist_ok=True)
+            packet.write_text("packet\n", encoding="utf-8")
+            closeout = root / "raw/closeouts/issue-438.md"
+            closeout.parent.mkdir(parents=True, exist_ok=True)
+            closeout.write_text("closeout\n", encoding="utf-8")
+            _write_json(root, str(package.relative_to(root)), payload)
+            code, output = self._run_main(root, str(package))
+        self.assertNotEqual(code, 0)
+        self.assertIn("requires non-empty `review_artifact_refs`", output)
+        self.assertIn("requires non-empty `gate_artifact_refs`", output)
 
     def test_missing_structured_plan_ref_fails(self) -> None:
         with tempfile.TemporaryDirectory() as raw:

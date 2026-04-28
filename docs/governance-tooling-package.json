@@ -216,6 +216,7 @@
       "paths": [
         "hooks/*.sh",
         ".claude/settings.json pointer contracts",
+        "CODEX.md tracked session contracts declared in consumer records",
         "repo-local hook adapters declared in consumer records"
       ],
       "consumer_mode": "managed_or_declared_local_override",
@@ -223,7 +224,7 @@
       "verification": [
         "python3 scripts/overlord/verify_governance_consumer.py --target-repo <consumer> --profile <profile> --governance-ref <sha>"
       ],
-      "notes": "Hook behavior may be stricter in consumer repos, but stricter local behavior must be declared with owner, reason, and review cadence."
+      "notes": "Hook behavior may be stricter in consumer repos, but stricter local behavior must be declared with owner, reason, and review cadence. Consumer records may represent managed shell hooks, tracked session-contract files such as CODEX.md, and hook-settings contracts such as `.claude/settings.json` matcher requirements."
     },
     {
       "id": "reusable-workflow-refs",
@@ -419,6 +420,12 @@
       "# hldpro-governance managed",
       "# Managed by hldpro-governance"
     ],
+    "typed_expectations": {
+      "local_ci_shim": "Requires the managed marker and the pinned governance_ref in file content.",
+      "managed_hook": "Requires one of the managed markers unless a stricter declared override is recorded.",
+      "tracked_session_contract": "Marker-free tracked contract file; may require checksum and required_strings evidence.",
+      "hook_settings_contract": "Marker-free `.claude/settings.json` style contract; may require checksum plus required PreToolUse/PostToolUse matcher expectations."
+    },
     "allowed_paths": [
       ".hldpro/local-ci.sh",
       ".governance/local-ci.sh",

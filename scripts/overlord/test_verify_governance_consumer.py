@@ -612,6 +612,134 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         self.assertEqual(payload["failures"], [])
         self.assertEqual(payload["observed_overrides"][0]["owner"], "governance")
 
+    def test_verify_fails_for_tracked_session_contract_missing_required_content(self) -> None:
+        self._deploy()
+        codex = self.product / "CODEX.md"
+        codex.write_text("Supervisor summary only\n", encoding="utf-8")
+        record = self._read_record()
+        record["managed_files"].append(
+            {
+                "path": "CODEX.md",
+                "type": "tracked_session_contract",
+                "required_strings": ["Codex is the supervisor/orchestrator"],
+                "sha256": hashlib.sha256(codex.read_bytes()).hexdigest(),
+            }
+        )
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        self.assertIn("managed file missing required content", "\n".join(payload["failures"]))
+        self.assertIn("CODEX.md", "\n".join(payload["failures"]))
+
+    def test_verify_fails_for_hook_settings_contract_missing_post_tool_use_matcher(self) -> None:
+        self._deploy()
+        settings = self.product / ".claude" / "settings.json"
+        settings.parent.mkdir(parents=True)
+        settings.write_text(
+            json.dumps(
+                {
+                    "hooks": {
+                        "PreToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": "echo pre"}]}],
+                        "PostToolUse": [{"matcher": "Write", "hooks": [{"type": "command", "command": "echo post"}]}],
+                    }
+                }
+            ),
+            encoding="utf-8",
+        )
+        record = self._read_record()
+        record["managed_files"].append(
+            {
+                "path": ".claude/settings.json",
+                "type": "hook_settings_contract",
+                "required_pre_tool_use_matchers": ["Bash"],
+                "required_post_tool_use_matchers": ["*"],
+                "sha256": hashlib.sha256(settings.read_bytes()).hexdigest(),
+            }
+        )
+        self._write_record(record)
+
+        code, stdout, stderr = self._invoke(*self._base_args())
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        self.assertIn("hook settings contract missing PostToolUse matcher '*'", "\n".join(payload["failures"]))
+
+    def test_verify_passes_for_session_contract_and_hook_settings_contract_entries(self) -> None:
+        next_version = self._next_package_version()
+        self._deploy(profile="healthcareplatform", package_version=next_version)
+        hook = self.product / ".claude" / "hooks" / "pre-tool-use.sh"
+        hook.parent.mkdir(parents=True)
+        hook.write_text("# hldpro-governance managed\necho ok\n", encoding="utf-8")
+        codex = self.product / "CODEX.md"
+        codex.write_text("Codex is the supervisor/orchestrator.\n", encoding="utf-8")
+        settings = self.product / ".claude" / "settings.json"
+        settings.parent.mkdir(parents=True, exist_ok=True)
+        settings.write_text(
+            json.dumps(
+                {
+                    "hooks": {
+                        "PreToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": "echo pre"}]}],
+                        "PostToolUse": [{"matcher": "*", "hooks": [{"type": "command", "command": "echo post"}]}],
+                    }
+                }
+            ),
+            encoding="utf-8",
+        )
+        record = self._read_record()
+        record["schema_version"] = 2
+        record["profile_constraints"] = self._required_constraints("healthcareplatform")
+        record["managed_files"].append(
+            {
+                "path": ".claude/hooks/pre-tool-use.sh",
+                "type": "managed_hook",
+                "sha256": hashlib.sha256(hook.read_bytes()).hexdigest(),
+            }
+        )
+        record["managed_files"].append(
+            {
+                "path": "CODEX.md",
+                "type": "tracked_session_contract",
+                "required_strings": ["supervisor/orchestrator"],
+                "sha256": hashlib.sha256(codex.read_bytes()).hexdigest(),
+            }
+        )
+        record["managed_files"].append(
+            {
+                "path": ".claude/settings.json",
+                "type": "hook_settings_contract",
+                "required_pre_tool_use_matchers": ["Bash"],
+                "required_post_tool_use_matchers": ["*"],
+                "sha256": hashlib.sha256(settings.read_bytes()).hexdigest(),
+            }
+        )
+        self._write_record(record)
+        workflow = self.product / ".github" / "workflows" / "governance.yml"
+        workflow.parent.mkdir(parents=True)
+        workflow.write_text(
+            f"jobs:\n  check:\n    uses: NIBARGERB-HLDPRO/hldpro-governance/.github/workflows/governance-check.yml@{self.ref}\n",
+            encoding="utf-8",
+        )
+
+        code, stdout, stderr = self._invoke(
+            "--governance-root",
+            str(REPO_ROOT),
+            "--target-repo",
+            str(self.product),
+            "--profile",
+            "healthcareplatform",
+            "--governance-ref",
+            self.ref,
+            "--package-version",
+            next_version,
+        )
+
+        self.assertEqual(code, 0, stderr)
+        payload = json.loads(stdout)
+        self.assertEqual(payload["status"], "passed")
+
 
 if __name__ == "__main__":
     unittest.main()
