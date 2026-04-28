@@ -121,6 +121,11 @@ jobs:
         run: |
           python3 scripts/overlord/check_overlord_backlog_github_alignment.py
 
+      - name: Check governance session contract surfaces
+        if: github.repository == 'NIBARGERB-HLDPRO/hldpro-governance'
+        run: |
+          python3 scripts/overlord/validate_session_contract_surfaces.py --root .
+
       - name: Check PROGRESS.md ↔ GitHub issue staleness
         if: github.repository != 'NIBARGERB-HLDPRO/hldpro-governance'
         env:

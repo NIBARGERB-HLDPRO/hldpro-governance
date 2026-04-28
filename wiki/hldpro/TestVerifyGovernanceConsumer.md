@@ -1,6 +1,6 @@
 # TestVerifyGovernanceConsumer
 
-> God node · 43 connections · `scripts/overlord/test_verify_governance_consumer.py`
+> God node · 46 connections · `hldpro-governance/scripts/overlord/test_verify_governance_consumer.py`
 
 ## Connections by Relation
 
@@ -24,10 +24,10 @@
 - [[.test_verify_fails_override_dry_run_as_live_evidence()]] `EXTRACTED`
 - [[.test_verify_fails_when_healthcareplatform_v2_profile_weakens_constraints()]] `EXTRACTED`
 - [[.test_verify_passes_for_valid_v2_managed_consumer()]] `EXTRACTED`
+- [[.test_verify_passes_for_session_contract_and_hook_settings_contract_entries()]] `EXTRACTED`
 - [[.test_verify_fails_when_profile_is_missing()]] `EXTRACTED`
 - [[.test_verify_fails_for_managed_hook_checksum_drift()]] `EXTRACTED`
 - [[.test_verify_fails_for_managed_hook_missing_marker()]] `EXTRACTED`
-- [[.test_verify_fails_for_invalid_override_metadata_and_reports_observed_override()]] `EXTRACTED`
 
 ---
 

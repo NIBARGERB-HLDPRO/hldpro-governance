@@ -1,0 +1,201 @@
+{
+  "session_id": "session-20260428-issue-573-session-waterfall-runbook",
+  "issue_number": 573,
+  "objective": "Make the Society of Minds waterfall and external-services runbook an enforced session contract so Codex starts in supervisor mode, uses the approved Claude/Codex CLI path, and requires plan, alternate-family review, handoff, worker execution, QA, and deterministic gate sequencing before implementation-ready work proceeds.",
+  "tier": 1,
+  "scope_boundary": [
+    "Governance-first slice only in hldpro-governance.",
+    "Define and enforce a tracked session contract for Codex sessions.",
+    "Require external-services runbook loading and exact governed CLI/auth/bootstrap path visibility at session start.",
+    "Tighten plan, handoff, and consumer-package validation only as needed to require the waterfall lifecycle for implementation-ready governance work.",
+    "Preserve downstream repo adoption as issue-backed follow-up work after the governance source changes land."
+  ],
+  "out_of_scope": [
+    "Direct downstream repo mutations in Stampede or other governed product repos.",
+    "A new autonomous orchestration layer or daemon.",
+    "Weakening planner-boundary, lane-claim, or alternate-review rules.",
+    "Replacing the external-services runbook with duplicated inline instructions."
+  ],
+  "research_summary": "Read-only audits confirmed the systemic gap. The governance repo documents the waterfall in STANDARDS.md and the CLI/auth/bootstrap path in docs/EXTERNAL_SERVICES_RUNBOOK.md, but session-start wiring only injects wiki/index.md and graph/report context. There is no tracked CODEX.md session contract, no bootstrap sentinel proving the runbook was loaded, and no consumer/verifier or plan/handoff enforcement that makes supervisor-first plus alternate-family review unavoidable for implementation-ready waterfall work.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/573",
+    "CLAUDE.md",
+    "STANDARDS.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    ".claude/settings.json",
+    "hooks/pre-session-context.sh",
+    "hooks/code-write-gate.sh",
+    "docs/governance-tooling-package.json",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/validate_handoff_package.py",
+    "subagent 019dd479-e03d-7942-b772-8eb5aa6483be final handoff",
+    "subagent 019dd479-f345-7b93-8846-8a388dca7538 final handoff"
+  ],
+  "sprints": [
+    {
+      "name": "Session contract source of truth",
+      "goal": "Create a tracked Codex-facing session contract and bootstrap checklist that forces the supervisor-first waterfall and the external-services runbook path into session start.",
+      "tasks": [
+        "Add a tracked CODEX.md contract for governance sessions.",
+        "Expand the session-start contract in CLAUDE.md, STANDARDS.md, and docs/EXTERNAL_SERVICES_RUNBOOK.md.",
+        "Refactor the governance pre-session hook path so the bootstrap checklist is canonical and machine-checkable.",
+        "Ensure the bootstrap output surfaces exact governed CLI/auth/bootstrap paths instead of generic discovery.",
+        "Bring .claude/settings.json up to the STANDARDS-required PostToolUse matcher contract for check-errors coverage.",
+        "Track the compatible .claude wrapper path in git so CI can verify the local hook shim that settings.json invokes."
+      ],
+      "acceptance_criteria": [
+        "A tracked CODEX.md explicitly states Codex is the supervisor/orchestrator, delegates bounded work, and does not collapse planning, worker, review, and QA authority into one role by default.",
+        "Session start requires or emits a deterministic checklist covering CODEX.md, CLAUDE.md, docs/PROGRESS.md, docs/FAIL_FAST_LOG.md, STANDARDS.md Society of Minds, docs/EXTERNAL_SERVICES_RUNBOOK.md, and pending Codex backlog status.",
+        "The bootstrap output cites the approved Claude/Codex CLI and auth/bootstrap path from the external-services runbook rather than leaving discovery to ad hoc search.",
+        "The governance repo uses one canonical pre-session implementation path instead of allowing duplicate hook behavior to drift.",
+        "The session-start path emits a deterministic, machine-checkable sentinel proving CODEX.md, docs/EXTERNAL_SERVICES_RUNBOOK.md, and STANDARDS.md Society of Minds were loaded or surfaced, with warnings when a required contract file is missing.",
+        ".claude/settings.json wires the STANDARDS-required PostToolUse matcher '*' for check-errors coverage, or a documented exception is recorded."
+      ],
+      "file_paths": [
+        "CODEX.md",
+        "CLAUDE.md",
+        "STANDARDS.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "hooks/pre-session-context.sh",
+        ".claude/hooks/pre-session-context.sh",
+        ".claude/settings.json"
+        ,
+        ".gitignore"
+      ]
+    },
+    {
+      "name": "Waterfall evidence enforcement",
+      "goal": "Tighten validators and package surfaces so implementation-ready governance work requires alternate-family review, handoff evidence, QA evidence, and required session-contract surfaces.",
+      "tasks": [
+        "Tighten structured-plan validation for implementation-ready waterfall work.",
+        "Tighten handoff validation for review and QA evidence expectations.",
+        "Extend governance package and consumer verification surfaces to represent the tracked session contract and managed hook expectations.",
+        "Wire the stricter checks into governance CI and the governance local-CI profile.",
+        "Add a reusable session-contract surface validator so GitHub Actions and local CI enforce the same bootstrap wiring."
+      ],
+      "acceptance_criteria": [
+        "Implementation-ready governance waterfall plans require alternate_model_review.required to be true and accepted before code changes are considered governance-ready.",
+        "Implementation-ready governance waterfall plans require non-empty handoff package, validation artifact, review artifact, and QA gate references.",
+        "The package/verifier contract can represent tracked session-contract files and managed hook expectations without weakening stricter repo-local policies.",
+        "Governance CI and local CI both fail when required session-contract or waterfall-evidence surfaces are missing.",
+        "validate_handoff_package.py rejects implementation_ready, in_progress, validation_ready, and accepted handoffs when review_artifact_refs or gate_artifact_refs are empty.",
+        "validate_structured_agent_cycle_plan.py rejects implementation-ready plans with required alternate_model_review statuses outside accepted states in all validation paths for issue-573-and-later implementation-ready plans, without retroactively invalidating preserved historical artifacts.",
+        "A reusable session-contract surface validator proves both UserPromptSubmit bootstrap wiring and PostToolUse '*' check-errors coverage in GitHub Actions and local CI."
+      ],
+      "file_paths": [
+        "docs/governance-tooling-package.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/validate_handoff_package.py",
+        "scripts/overlord/test_validate_handoff_package.py",
+        "scripts/overlord/validate_session_contract_surfaces.py",
+        "scripts/overlord/test_validate_session_contract_surfaces.py",
+        "scripts/overlord/verify_governance_consumer.py",
+        "scripts/overlord/test_verify_governance_consumer.py",
+        ".github/workflows/governance-check.yml",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py"
+      ]
+    },
+    {
+      "name": "Issue evidence and mirrors",
+      "goal": "Keep the issue-backed governance evidence chain and repo mirrors aligned with the new session contract.",
+      "tasks": [
+        "Update docs/PROGRESS.md, docs/FEATURE_REGISTRY.md, and docs/FAIL_FAST_LOG.md for the new contract and drift pattern.",
+        "Capture alternate-family review, validation, and closeout evidence.",
+        "Preserve any residual downstream adoption work as follow-up issues instead of broadening this branch."
+      ],
+      "acceptance_criteria": [
+        "PROGRESS, FEATURE_REGISTRY, and FAIL_FAST_LOG record the session-contract change and the failure mode it prevents.",
+        "The issue evidence chain includes PDCA/R, execution scope, handoff package, alternate-family review, validation artifact, and closeout.",
+        "Any downstream adoption work remains issue-backed follow-up work."
+      ],
+      "file_paths": [
+        "docs/PROGRESS.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/FAIL_FAST_LOG.md",
+        "docs/plans/issue-573-session-waterfall-runbook-pdcar.md",
+        "docs/plans/issue-573-session-waterfall-runbook-structured-agent-cycle-plan.json",
+        "graphify-out/",
+        "raw/execution-scopes/2026-04-28-issue-573-session-waterfall-runbook-planning.json",
+        "raw/handoffs/2026-04-28-issue-573-session-waterfall-runbook.json",
+        "raw/cross-review/2026-04-28-issue-573-session-waterfall-runbook.md",
+        "raw/validation/2026-04-28-issue-573-session-waterfall-runbook.md",
+        "raw/closeouts/2026-04-28-issue-573-session-waterfall-runbook.md",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Schrodinger",
+      "role": "read-only session-start/runbook auditor",
+      "focus": "Current bootstrap behavior versus the desired supervisor-first waterfall and external-services runbook loading path.",
+      "status": "accepted",
+      "summary": "Confirmed that governance session start currently injects only wiki/graph context, does not require runbook loading, has no bootstrap sentinel, and has no tracked CODEX.md contract.",
+      "evidence": [
+        "subagent 019dd479-e03d-7942-b772-8eb5aa6483be final handoff"
+      ]
+    },
+    {
+      "reviewer": "Hypatia",
+      "role": "read-only validator and artifact auditor",
+      "focus": "Current plan, handoff, QA, and consumer-package enforcement gaps that still allow orchestrator or review drift.",
+      "status": "accepted",
+      "summary": "Confirmed that the repo already enforces many artifact shapes, but implementation-ready work can still avoid mandatory alternate-family review, strong handoff refs, and session-contract package coverage.",
+      "evidence": [
+        "subagent 019dd479-f345-7b93-8846-8a388dca7538 final handoff"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Claude Opus 4.6 approved the planning packet with changes: add a machine-checkable bootstrap sentinel, require non-empty review/gate refs in implementation handoffs, make implementation-ready alternate-review acceptance unconditional across validation paths, and bring .claude/settings.json to the STANDARDS-required PostToolUse '*' contract.",
+    "evidence": [
+      "raw/cross-review/2026-04-28-issue-573-session-waterfall-runbook.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement the governance-first session contract, bootstrap sentinel, validator/package enforcement, CI/local-CI wiring, and issue evidence for issue #573 only.",
+    "next_execution_step": "Implementation completed. Final state is deterministic validation, Stage 6 closeout evidence, and QA review before PR publication.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-28-issue-573-session-waterfall-runbook.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-28-issue-573-session-waterfall-runbook-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-28-issue-573-session-waterfall-runbook.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-28-issue-573-session-waterfall-runbook.md"
+    ],
+    "gate_artifact_refs": [
+      "raw/validation/2026-04-28-issue-573-session-waterfall-runbook.md"
+    ],
+    "closeout_ref": "raw/closeouts/2026-04-28-issue-573-session-waterfall-runbook.md",
+    "next_role": "codex-worker-subagents",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "The planning packet is reviewed through the governed Claude CLI path defined by docs/EXTERNAL_SERVICES_RUNBOOK.md.",
+      "The implementation slice must add a machine-checkable bootstrap sentinel and the required validator/package enforcement identified in the alternate-family review.",
+      "The final implementation branch retains supervisor-first, alternate-review, handoff, and QA evidence requirements."
+    ]
+  },
+  "material_deviation_rules": [
+    "If downstream repo adoption is required, stop and open issue-backed follow-up work instead of editing consumer repos in this branch.",
+    "If the current hook shape cannot enforce the contract without duplication, introduce one governed wrapper/helper rather than diverging multiple hook copies.",
+    "If alternate-family review is unavailable, log the governed availability failure and stop instead of implementing governance-surface changes without the review.",
+    "If same-family Codex planning and Codex subagent implementation extends beyond the active exception window, renew the issue-backed exception or switch the implementation path before continuing."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: hand plan to Opus for review, then update PDCA/R, detailed ACs, implement, verify",
+    "codex-orchestrator"
+  ],
+  "approved_at": "2026-04-28T19:00:00Z"
+}

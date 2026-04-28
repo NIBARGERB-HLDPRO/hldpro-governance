@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/private/tmp/issue-563-sim-upgrade/graphify-out/hldpro-governance",
-  "wiki_dir": "/private/tmp/issue-563-sim-upgrade/wiki/hldpro",
-  "nodes": 1941,
-  "edges": 3898,
-  "communities": 93,
-  "articles": 103,
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-573-session-waterfall-runbook/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-573-session-waterfall-runbook/wiki/hldpro",
+  "nodes": 1991,
+  "edges": 4018,
+  "communities": 97,
+  "articles": 107,
   "html_status": "skipped",
-  "code_files": 141
+  "code_files": 145
 }

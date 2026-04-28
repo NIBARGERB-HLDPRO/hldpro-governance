@@ -4,6 +4,11 @@ Version: 2026-04-16
 Owner: Operator (nibarger.ben@gmail.com)
 Scope: **SSOT for all HLDPRO external services.** This runbook supersedes the downstream repo runbooks (`ai-integration-services/docs/EXTERNAL_SERVICES_RUNBOOK.md`, `HealthcarePlatform/docs/EXTERNAL_SERVICES_RUNBOOK.md`). Those files may be kept as stubs pointing here but should not be independently maintained.
 
+Session-start contract note: governance sessions must surface this runbook via
+`python3 scripts/session_bootstrap_contract.py --emit-hook-note` before
+implementation-ready work. Do not search ad hoc for CLI/auth/bootstrap paths
+that are already defined here.
+
 ## 1. Codex CLI (OpenAI)
 
 **Purpose:** Codex orchestrator, GPT-5.4 high plan reviewer, Spark fallback/specialist critique when GPT-5.4 is unavailable, and Codex QA in the Society of Minds charter. See `STANDARDS.md §Society of Minds` and the charter decision at `wiki/decisions/2026-04-14-society-of-minds-charter.md`.
@@ -120,6 +125,15 @@ claude -p "say ok" 2>&1 | tail -3
 1. `claude setup-token` (browser OAuth)
 2. Update `.env` in every governed repo (governance, AIS, HP, knocktracker, local-ai-machine)
 3. Note rotation in this runbook's Changelog
+
+### Canonical bootstrap command
+
+For governed repo env refreshes, use this exact path rather than rediscovering
+it during sessions:
+
+```bash
+bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh <repo>
+```
 
 ### Verified
 | Date | Check | Result |

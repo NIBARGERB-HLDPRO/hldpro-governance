@@ -254,6 +254,12 @@ def _managed_file_entry(record: dict[str, Any], relpath: str) -> dict[str, Any]:
     return {}
 
 
+def _string_list(value: Any) -> list[str]:
+    if isinstance(value, list) and all(isinstance(item, str) for item in value):
+        return value
+    return []
+
+
 def _managed_markers(manifest: dict[str, Any]) -> list[str]:
     contract = manifest.get("managed_file_contract")
     if isinstance(contract, dict):
@@ -261,6 +267,51 @@ def _managed_markers(manifest: dict[str, Any]) -> list[str]:
         if isinstance(markers, list) and all(isinstance(item, str) for item in markers):
             return markers
     return [MANAGED_LOCAL_CI_MARKER, "# hldpro-governance managed", "# Managed by hldpro-governance"]
+
+
+def _managed_settings_matchers(settings_payload: Any, hook_name: str) -> set[str]:
+    if not isinstance(settings_payload, dict):
+        return set()
+    hooks = settings_payload.get("hooks")
+    if not isinstance(hooks, dict):
+        return set()
+    hook_entries = hooks.get(hook_name)
+    if not isinstance(hook_entries, list):
+        return set()
+    matchers: set[str] = set()
+    for entry in hook_entries:
+        if isinstance(entry, dict) and isinstance(entry.get("matcher"), str):
+            matchers.add(entry["matcher"])
+    return matchers
+
+
+def _managed_file_content_failures(candidate: Path, entry: dict[str, Any], relpath: str) -> list[str]:
+    failures: list[str] = []
+    required_strings = _string_list(entry.get("required_strings"))
+    if required_strings:
+        text = candidate.read_text(encoding="utf-8", errors="replace")
+        for needle in required_strings:
+            if needle not in text:
+                failures.append(f"managed file missing required content {needle!r}: {relpath}")
+
+    file_type = entry.get("type")
+    if file_type != "hook_settings_contract":
+        return failures
+
+    try:
+        settings_payload = json.loads(candidate.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as exc:
+        return [f"hook settings contract could not be parsed as JSON: {relpath}: {exc}"]
+
+    pre_matchers = _managed_settings_matchers(settings_payload, "PreToolUse")
+    post_matchers = _managed_settings_matchers(settings_payload, "PostToolUse")
+    for matcher in _string_list(entry.get("required_pre_tool_use_matchers")):
+        if matcher not in pre_matchers:
+            failures.append(f"hook settings contract missing PreToolUse matcher {matcher!r}: {relpath}")
+    for matcher in _string_list(entry.get("required_post_tool_use_matchers")):
+        if matcher not in post_matchers:
+            failures.append(f"hook settings contract missing PostToolUse matcher {matcher!r}: {relpath}")
+    return failures
 
 
 def _expected_checksum(entry: dict[str, Any]) -> str:
@@ -441,16 +492,19 @@ def _validate_record(
         if not candidate.exists():
             failures.append(f"managed file missing on disk: {relpath}")
             continue
-        if _managed_file_type(payload, relpath) == "local_ci_shim":
+        entry = _managed_file_entry(payload, relpath)
+        managed_type = _managed_file_type(payload, relpath)
+        if managed_type == "local_ci_shim":
             text = candidate.read_text(encoding="utf-8", errors="replace")
             if MANAGED_LOCAL_CI_MARKER not in text:
                 failures.append(f"managed local CI shim missing marker: {relpath}")
             if isinstance(governance_ref, str) and governance_ref and governance_ref not in text:
                 failures.append(f"managed local CI shim does not reference governance_ref: {relpath}")
-        elif _managed_file_type(payload, relpath) not in {"consumer_record", ""}:
+        elif managed_type not in {"consumer_record", "", "tracked_session_contract", "hook_settings_contract"}:
             text = candidate.read_text(encoding="utf-8", errors="replace")
             if not any(marker in text for marker in _managed_markers(manifest)):
                 failures.append(f"managed file missing marker: {relpath}")
+        failures.extend(_managed_file_content_failures(candidate, entry, relpath))
         checksum = _expected_checksum(_managed_file_entry(payload, relpath))
         if checksum:
             actual_checksum = hashlib.sha256(candidate.read_bytes()).hexdigest()

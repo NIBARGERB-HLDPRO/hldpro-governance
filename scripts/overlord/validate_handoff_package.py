@@ -59,6 +59,8 @@ SCOPE_REQUIRED_STATES = {
 }
 PACKET_REQUIRED_STATES = {"validation_ready", "accepted", "released", "consumed"}
 CLOSEOUT_REQUIRED_STATES = {"accepted", "released", "consumed", "deprecated", "rolled_back", "archived"}
+EVIDENCE_REQUIRED_STATES = {"implementation_ready", "in_progress", "validation_ready", "accepted"}
+EVIDENCE_REFS_GATE_CREATED_AT = "2026-04-28T20:45:00Z"
 CONSUMER_VERIFIER_COMMAND = "verify_governance_consumer.py"
 CONSUMER_VERIFIER_ACCEPTANCE_GATE_CREATED_AT = "2026-04-21T22:33:23Z"
 CONSUMER_MANAGED_PATH_PREFIXES = (
@@ -133,6 +135,27 @@ def _validate_ref_array(
             continue
         if not _repo_file_exists(root, ref):
             failures.append(f"{package_path}: `{field_name}[{index}]` does not exist: {ref}")
+
+
+def _validate_non_empty_ref_array_for_state(
+    package_path: Path,
+    payload: dict[str, Any],
+    field_name: str,
+    lifecycle_state: str,
+    failures: list[str],
+) -> None:
+    value = payload.get(field_name)
+    if not isinstance(value, list) or not value:
+        failures.append(
+            f"{package_path}: lifecycle_state {lifecycle_state!r} requires non-empty `{field_name}`"
+        )
+
+
+def _evidence_ref_gate_applies(payload: dict[str, Any]) -> bool:
+    created_at = payload.get("created_at")
+    if not isinstance(created_at, str) or not created_at:
+        return True
+    return created_at >= EVIDENCE_REFS_GATE_CREATED_AT
 
 
 def _validate_acceptance_criteria(
@@ -338,6 +361,10 @@ def validate_package(root: Path, package_path: Path) -> list[str]:
         not isinstance(validation_commands, list) or not validation_commands
     ):
         failures.append(f"{package_path}: lifecycle_state {lifecycle_state!r} requires non-empty `validation_commands`")
+
+    if lifecycle_state in EVIDENCE_REQUIRED_STATES and _evidence_ref_gate_applies(payload):
+        for field_name in ("review_artifact_refs", "gate_artifact_refs"):
+            _validate_non_empty_ref_array_for_state(package_path, payload, field_name, lifecycle_state, failures)
 
     _validate_acceptance_criteria(root, package_path, payload, failures)
     _validate_consumer_verifier_acceptance(package_path, payload, scope_payload, failures)

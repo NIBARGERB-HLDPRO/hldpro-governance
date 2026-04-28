@@ -18,6 +18,8 @@ def _plan(
     approved: bool = True,
     mode: str = "implementation_ready",
     review_status: str = "accepted",
+    review_required: bool = True,
+    approved_at: str = "2026-04-28T19:00:00Z",
 ) -> dict:
     return {
         "session_id": f"test-{issue_number}",
@@ -48,7 +50,7 @@ def _plan(
             }
         ],
         "alternate_model_review": {
-            "required": True,
+            "required": review_required,
             "reviewer": "test",
             "model_family": "anthropic",
             "status": review_status,
@@ -65,7 +67,7 @@ def _plan(
         "material_deviation_rules": ["test"],
         "approved": approved,
         "approved_by": ["test"],
-        "approved_at": "2026-04-17T10:00:00-05:00",
+        "approved_at": approved_at,
     }
 
 
@@ -293,7 +295,105 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
             plan_path.write_text(json.dumps(_plan(226, review_status="not_requested")), encoding="utf-8")
             result = self._run(root, "issue-226-test", ["scripts/knowledge_base/build_graph.py"])
         self.assertNotEqual(result.returncode, 0)
-        self.assertIn("required alternate_model_review must be accepted", result.stdout)
+        self.assertIn("requires accepted alternate_model_review", result.stdout)
+
+    def test_active_issue_branch_validates_matching_plan_review_gate_without_governance_surface_flag(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-226-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(json.dumps(_plan(226, review_status="not_requested")), encoding="utf-8")
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    "issue-226-test",
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("implementation-ready plan requires accepted alternate_model_review", result.stdout)
+
+    def test_active_issue_branch_requires_review_gate_to_be_marked_required(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-226-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(json.dumps(_plan(226, review_required=False)), encoding="utf-8")
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    "issue-226-test",
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("alternate_model_review.required` to true", result.stdout)
+
+    def test_historical_implementation_ready_plan_does_not_fail_without_matching_issue_branch(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-226-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(
+                json.dumps(
+                    _plan(226, review_status="not_requested", approved_at="2026-04-17T10:00:00-05:00")
+                ),
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                ["python3", str(VALIDATOR), "--root", str(root)],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("PASS validated 1 structured agent cycle plan file", result.stdout)
+
+    def test_historical_issue_branch_plan_is_grandfathered_before_review_gate_cutover(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-109-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(
+                json.dumps(
+                    _plan(
+                        109,
+                        review_status="accepted_with_followup",
+                        review_required=False,
+                        approved_at="2026-04-19T19:25:00Z",
+                    )
+                ),
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    "issue-109-stage-a-test",
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def test_malformed_json_reports_structured_fail_without_traceback(self) -> None:
         with tempfile.TemporaryDirectory() as raw:

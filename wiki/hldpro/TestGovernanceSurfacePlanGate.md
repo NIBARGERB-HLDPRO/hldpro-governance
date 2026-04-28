@@ -1,6 +1,6 @@
 # TestGovernanceSurfacePlanGate
 
-> God node · 24 connections · `scripts/overlord/test_validate_structured_agent_cycle_plan.py`
+> God node · 28 connections · `hldpro-governance/scripts/overlord/test_validate_structured_agent_cycle_plan.py`
 
 ## Connections by Relation
 

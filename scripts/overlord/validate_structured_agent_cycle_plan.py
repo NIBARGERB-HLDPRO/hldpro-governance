@@ -48,6 +48,7 @@ GOVERNANCE_SURFACE_FILES = {
 }
 IMPLEMENTATION_READY_MODES = {"implementation_ready", "implementation_complete"}
 ACCEPTED_REVIEW_STATES = {"accepted", "accepted_with_followup"}
+IMPLEMENTATION_READY_REVIEW_GATE_APPROVED_AT = "2026-04-28T19:00:00Z"
 
 
 def _display_path(path: Path, root: Path) -> Path:
@@ -164,14 +165,42 @@ def _validate_implementation_ready_plan(path: Path, payload: object, failures: l
             f"{path}: governance-surface plan execution_mode must be one of {sorted(IMPLEMENTATION_READY_MODES)}, got {mode!r}",
             failures,
         )
+    _validate_implementation_ready_alternate_review(path, payload, failures, scope="governance-surface")
+
+
+def _validate_implementation_ready_alternate_review(
+    path: Path,
+    payload: dict[str, object],
+    failures: list[str],
+    *,
+    scope: str,
+) -> None:
+    execution_handoff = payload.get("execution_handoff")
+    if not isinstance(execution_handoff, dict):
+        return
+    mode = execution_handoff.get("execution_mode")
+    if mode not in IMPLEMENTATION_READY_MODES:
+        return
+    approved_at = payload.get("approved_at")
+    if isinstance(approved_at, str) and approved_at and approved_at < IMPLEMENTATION_READY_REVIEW_GATE_APPROVED_AT:
+        return
+
     review = payload.get("alternate_model_review")
-    if isinstance(review, dict) and review.get("required") is True:
-        status = review.get("status")
-        _require(
-            status in ACCEPTED_REVIEW_STATES,
-            f"{path}: required alternate_model_review must be accepted before governance-surface implementation, got {status!r}",
-            failures,
-        )
+    if not isinstance(review, dict):
+        failures.append(f"{path}: implementation-ready plan must include `alternate_model_review`")
+        return
+
+    _require(
+        review.get("required") is True,
+        f"{path}: implementation-ready plan must set `alternate_model_review.required` to true before {scope} execution",
+        failures,
+    )
+    status = review.get("status")
+    _require(
+        status in ACCEPTED_REVIEW_STATES,
+        f"{path}: implementation-ready plan requires accepted alternate_model_review before {scope} execution, got {status!r}",
+        failures,
+    )
 
 
 def _validate_file(path: Path, payload: object, failures: list[str]) -> None:
@@ -251,7 +280,6 @@ def _validate_file(path: Path, payload: object, failures: list[str]) -> None:
             _require(key in execution_handoff, f"{path}: `execution_handoff` missing `{key}`", failures)
         _require(isinstance(execution_handoff.get("blocked_on"), list), f"{path}: `execution_handoff.blocked_on` must be an array", failures)
 
-
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate structured agent cycle plan files.")
     parser.add_argument("--root", default=".", help="Repo root to scan.")
@@ -275,25 +303,34 @@ def main() -> int:
 
     changed_files = _read_changed_files(args.changed_files_file)
     governance_surface_changes = [path for path in changed_files if _is_governance_surface(path)]
+    active_issue_number = _branch_issue_number(args.branch_name)
+    governance_validated_paths: set[Path] = set()
     if args.enforce_governance_surface and governance_surface_changes:
-        issue_number = _branch_issue_number(args.branch_name)
-        if issue_number is None:
+        if active_issue_number is None:
             failures.append(
                 "governance-surface changes require a branch name containing `issue-<number>` and a matching canonical structured plan; changed paths: "
                 + ", ".join(governance_surface_changes)
             )
-        matches = _matching_plan_payloads(loaded_plans, root, issue_number)
+        matches = _matching_plan_payloads(loaded_plans, root, active_issue_number)
         if not matches:
-            issue_label = f"issue #{issue_number}" if issue_number is not None else "this branch"
+            issue_label = f"issue #{active_issue_number}" if active_issue_number is not None else "this branch"
             failures.append(
                 f"governance-surface changes require a canonical structured plan for {issue_label}; changed paths: "
                 + ", ".join(governance_surface_changes)
             )
         for rel_path, payload in matches:
             _validate_implementation_ready_plan(rel_path, payload, failures)
+            governance_validated_paths.add(rel_path)
 
     if args.enforce_planner_boundary_scope:
         _validate_planner_boundary_scope_presence(root, args.branch_name, changed_files, failures)
+
+    if active_issue_number is not None:
+        matches = _matching_plan_payloads(loaded_plans, root, active_issue_number)
+        for rel_path, payload in matches:
+            if rel_path in governance_validated_paths:
+                continue
+            _validate_implementation_ready_alternate_review(rel_path, payload, failures, scope="implementation")
 
     for file_path, payload in loaded_plans:
         if payload is not None:

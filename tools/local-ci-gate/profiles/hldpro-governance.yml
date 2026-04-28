@@ -31,23 +31,28 @@ profile:
     - id: handoff-package-integrity
       title: Handoff package integrity validation
       severity: blocker
-      scope: changed
-      paths:
-        # Any plan update can change handoff refs or ACs; keep this trigger conservative.
-        - docs/plans/
-        - docs/schemas/package-handoff.schema.json
-        - docs/schemas/examples/package-handoff/
-        - raw/closeouts/
-        - raw/cross-review/
-        - raw/execution-scopes/
-        - raw/handoffs/
-        - raw/packets/
-        - raw/validation/
-        - scripts/overlord/validate_handoff_package.py
-        - scripts/overlord/test_validate_handoff_package.py
+      scope: always
       command:
         - python3
         - scripts/overlord/validate_handoff_package.py
+        - --root
+        - .
+
+    - id: session-contract-surfaces
+      title: Governance session contract surfaces
+      severity: blocker
+      scope: changed
+      paths:
+        - .claude/
+        - .github/workflows/governance-check.yml
+        - CODEX.md
+        - CLAUDE.md
+        - STANDARDS.md
+        - hooks/
+        - scripts/overlord/validate_session_contract_surfaces.py
+      command:
+        - python3
+        - scripts/overlord/validate_session_contract_surfaces.py
         - --root
         - .
 

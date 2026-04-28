@@ -44,9 +44,10 @@ raw/**/*.mp3
 raw/**/*.wav
 
 # Claude Code local tooling state (worktrees, local settings)
-.claude/
+.claude/*
 !.claude/settings.json
 !.claude/hooks/
+!.claude/hooks/pre-session-context.sh
 
 # OS
 .DS_Store

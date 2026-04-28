@@ -1,6 +1,6 @@
 # TestLocalCiGate
 
-> God node · 25 connections · `tools/local-ci-gate/tests/test_local_ci_gate.py`
+> God node · 25 connections · `hldpro-governance/tools/local-ci-gate/tests/test_local_ci_gate.py`
 
 ## Connections by Relation
 
@@ -23,7 +23,7 @@
 - [[.test_bundled_profiles_load()]] `EXTRACTED`
 - [[.test_governance_profile_uses_active_execution_scope_placeholder()]] `EXTRACTED`
 - [[.test_governance_profile_runs_handoff_validator_for_handoff_paths()]] `EXTRACTED`
-- [[.test_governance_profile_skips_handoff_validator_for_unrelated_paths()]] `EXTRACTED`
+- [[.test_governance_profile_runs_handoff_validator_for_unrelated_paths()]] `EXTRACTED`
 - [[.test_governance_profile_runs_provisioning_evidence_validator_for_runbooks()]] `EXTRACTED`
 - [[.test_governance_profile_skips_provisioning_evidence_validator_for_unrelated_paths()]] `EXTRACTED`
 - [[.test_governance_profile_runs_sql_schema_drift_probe_contract_for_contract_surfaces()]] `EXTRACTED`
