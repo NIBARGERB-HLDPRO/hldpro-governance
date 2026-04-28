@@ -1,0 +1,60 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-575-thin-session-contract-rollout",
+  "issue_number": 575,
+  "parent_epic_number": 575,
+  "lifecycle_state": "planned",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-575-thin-session-contract-rollout-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-28-issue-575-thin-session-contract-rollout-planning.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "The rollout plan preserves hldpro-governance as the thick source of truth while defining thin CLAUDE.md and CODEX.md adapter expectations for consumer repos, and it blocks downstream rollout until dedicated child issue lanes reconcile the identified governance-source SSOT conflicts.",
+      "verification_refs": [
+        "docs/plans/issue-575-thin-session-contract-rollout-pdcar.md",
+        "docs/plans/issue-575-thin-session-contract-rollout-structured-agent-cycle-plan.json",
+        "STANDARDS.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "The rollout plan sequences governed repos into explicit waves based on current adapter drift and local availability.",
+      "verification_refs": [
+        "docs/plans/issue-575-thin-session-contract-rollout-pdcar.md",
+        "docs/plans/issue-575-thin-session-contract-rollout-structured-agent-cycle-plan.json",
+        "docs/governance-tooling-package.json"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Issue #575 remains planning-only and routes downstream repo mutations to dedicated child issues or follow-up rollout slices with full governed evidence after governance-source reconciliation is merged.",
+      "verification_refs": [
+        "docs/plans/issue-575-thin-session-contract-rollout-pdcar.md",
+        "raw/execution-scopes/2026-04-28-issue-575-thin-session-contract-rollout-planning.json",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/575",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/576"
+      ]
+    }
+  ],
+  "validation_commands": [],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-28-issue-575-thin-session-contract-rollout.md"
+  ],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "docs/plans/issue-575-thin-session-contract-rollout-pdcar.md",
+    "docs/plans/issue-575-thin-session-contract-rollout-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-28-issue-575-thin-session-contract-rollout-planning.json"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-28T20:10:00Z",
+  "notes": "Planning-only handoff accepted after alternate-family review. Issue #576 delivered the governance-source SSOT reconciliation on main; issue #575 remains the rollout map and does not widen into downstream repo execution."
+}

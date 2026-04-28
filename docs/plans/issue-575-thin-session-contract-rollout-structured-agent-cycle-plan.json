@@ -1,0 +1,221 @@
+{
+  "session_id": "session-20260428-issue-575-thin-session-contract-rollout",
+  "issue_number": 575,
+  "objective": "Produce the governed rollout plan for propagating the issue-573 session-bootstrap contract across governed repos using thin CLAUDE.md and CODEX.md adapters, explicit rollout waves, issue-backed downstream execution slices, preserved governance SSOT ownership, and elimination of conflicting governance-source entrypoints before consumer rollout begins.",
+  "tier": 1,
+  "scope_boundary": [
+    "Planning-only slice in hldpro-governance for issue #575.",
+    "Define the consumer thin-adapter rule and rollout wave ordering.",
+    "Record governance-source conflicts where policy, runbook, and wrapper docs currently point to multiple review or bootstrap entrypoints.",
+    "Require governance-source SSOT reconciliation before downstream rollout execution.",
+    "Capture governed alternate-family review, handoff, validation, and closeout evidence for the rollout plan itself.",
+    "Preserve downstream repo execution as child issues or later rollout slices."
+  ],
+  "out_of_scope": [
+    "Direct edits to downstream governed consumer repos in this branch.",
+    "Expanding consumer CLAUDE.md or CODEX.md files into thick local standards manuals.",
+    "Changing the issue-573 session-bootstrap source contract instead of rolling it out.",
+    "Creating a second bootstrap doctrine outside STANDARDS.md and docs/EXTERNAL_SERVICES_RUNBOOK.md."
+  ],
+  "research_summary": "Issue #573 merged the governance-source session bootstrap contract, but downstream repo adoption still varied and the governance repo initially contained conflicting entrypoint signals. Read-only audits showed several consumer repos already use thin adapter markdowns, Stampede is missing CODEX.md, and thicker legacy contracts remain in HealthcarePlatform and ASC-Evaluator. The same audit found that STANDARDS.md and docs/EXTERNAL_SERVICES_RUNBOOK.md declared wrapper-based Codex-to-Claude review as the canonical path while scripts/codex-review-template.sh still exposed the lower-level cli_session_supervisor implementation path directly, and bootstrap/session-start docs split the effective contract across CLAUDE.md, hooks/pre-session-context.sh, .claude/settings.json, ENV_REGISTRY, and bootstrap-repo-env.sh search behavior. Issue #576 resolved those governance-source SSOT conflicts on main, so this issue now stands as the approved planning packet for downstream wave execution: low-risk thin consumers first, gap-fill repos next, and legacy thick-contract normalization last.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/575",
+    "CLAUDE.md",
+    "STANDARDS.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/ENV_REGISTRY.md",
+    "docs/governance-tooling-package.json",
+    "hooks/pre-session-context.sh",
+    ".claude/settings.json",
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/codex-review-template.sh",
+    "scripts/cli_session_supervisor.py",
+    "subagent 019dd56a-287b-7513-bcdd-b5236aab452a final handoff",
+    "subagent 019dd56c-9541-7d82-b56d-14e2fa28ba9a final handoff",
+    "subagent 019dd479-e03d-7942-b772-8eb5aa6483be final handoff",
+    "subagent 019dd479-f345-7b93-8846-8a388dca7538 final handoff",
+    "subagent 019dd53a-6322-72c1-a524-24cfd051031e final handoff"
+  ],
+  "sprints": [
+    {
+      "name": "Governance-source SSOT reconciliation",
+      "goal": "Eliminate conflicting governance-source instructions so review routing, session bootstrap, secret/bootstrap flow, and thin-consumer ownership each have one canonical path before downstream rollout begins.",
+      "tasks": [
+        "Record the conflict between STANDARDS/runbook wrapper guidance and lower-level direct review implementation exposure.",
+        "Record the split bootstrap contract across CLAUDE.md, hooks/pre-session-context.sh, .claude/settings.json, ENV_REGISTRY, and bootstrap-repo-env.sh search behavior.",
+        "Define one canonical policy path, one runbook path, and one implementation path for alternate-family review and bootstrap.",
+        "Define canonical wording that keeps governance package logic thick in hldpro-governance and consumer repos thin adapters only."
+      ],
+      "acceptance_criteria": [
+        "The accepted plan states that Codex-to-Claude alternate-family review is declared through one canonical wrapper entrypoint, with templates and subprocess supervisors treated as implementation details rather than parallel operator-facing paths.",
+        "The accepted plan states one canonical bootstrap and secret-seeding flow anchored to governance SSOT surfaces, and it flags multi-root search behavior or split hook contracts as drift to remove.",
+        "The accepted plan states that governance package logic is owned by hldpro-governance and consumer repos carry only reviewed thin adapters or declared exceptions.",
+        "The accepted plan names at least one dedicated child issue or follow-up branch responsible for resolving the identified governance-source SSOT conflicts before downstream consumer rollout begins."
+      ],
+      "file_paths": [
+        "docs/plans/issue-575-thin-session-contract-rollout-pdcar.md",
+        "docs/plans/issue-575-thin-session-contract-rollout-structured-agent-cycle-plan.json",
+        "raw/handoffs/2026-04-28-issue-575-thin-session-contract-rollout.json"
+      ]
+    },
+    {
+      "name": "Consumer inventory and rollout waves",
+      "goal": "Classify governed repos by current adapter shape, missing surfaces, and normalization risk so the rollout uses the safest wave ordering first.",
+      "tasks": [
+        "Inventory locally available governed repos for CLAUDE.md and CODEX.md shape.",
+        "Classify repos into thin-ready, gap-fill, and legacy-thick normalization buckets.",
+        "Record any unavailable repos as explicit follow-ups instead of assuming parity."
+      ],
+      "acceptance_criteria": [
+        "The rollout plan names the initial low-risk wave of governed repos already close to the thin-adapter model.",
+        "The rollout plan isolates repos missing only one thin adapter surface into a separate gap-fill wave.",
+        "The rollout plan assigns thicker legacy contracts to a later normalization wave with dedicated follow-up handling.",
+        "The rollout wave ordering reflects current local audit results: local-ai-machine first, then ai-integration-services, seek-and-ponder, knocktracker, Stampede, HealthcarePlatform, and ASC-Evaluator last, with EmailAssistant excluded until locally available and bootstrap-ready."
+      ],
+      "file_paths": [
+        "docs/plans/issue-575-thin-session-contract-rollout-pdcar.md",
+        "docs/plans/issue-575-thin-session-contract-rollout-structured-agent-cycle-plan.json",
+        "raw/handoffs/2026-04-28-issue-575-thin-session-contract-rollout.json"
+      ]
+    },
+    {
+      "name": "Thin-adapter rollout contract",
+      "goal": "Define the governed acceptance criteria for downstream rollout slices so consumer repos stay thin and route behavior to governance SSOT surfaces.",
+      "tasks": [
+        "Define thin CLAUDE.md and CODEX.md expectations for consumer repos.",
+        "Require downstream session bootstrap references to STANDARDS.md, docs/EXTERNAL_SERVICES_RUNBOOK.md, and the canonical bootstrap helper rather than duplicated prose.",
+        "Specify tracked-versus-local surfaces for hook wrappers, settings wiring, and review scripts."
+      ],
+      "acceptance_criteria": [
+        "Consumer CLAUDE.md and CODEX.md files remain thin adapters that point to governance SSOT and repo-specific deltas only.",
+        "Downstream rollout slices keep thick standards, waterfall doctrine, and CLI/auth/bootstrap detail in hldpro-governance rather than copying them into consumer repos.",
+        "The rollout contract distinguishes tracked repo-owned hook/wrapper surfaces from developer-local absolute-path settings.json wiring.",
+        "The rollout contract names the one canonical alternate-family review entrypoint and does not leave lower-level implementation helpers documented as equivalent operator choices."
+      ],
+      "file_paths": [
+        "docs/plans/issue-575-thin-session-contract-rollout-pdcar.md",
+        "docs/plans/issue-575-thin-session-contract-rollout-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-28-issue-575-thin-session-contract-rollout-planning.json",
+        "raw/handoffs/2026-04-28-issue-575-thin-session-contract-rollout.json"
+      ]
+    },
+    {
+      "name": "Issue-backed execution packaging",
+      "goal": "Package the rollout as governed child slices with complete review, validation, and closeout expectations before any consumer repo mutation begins.",
+      "tasks": [
+        "Require alternate-family review before accepting the rollout plan.",
+        "Bind the plan, execution scope, handoff packet, validation, and closeout evidence for issue #575.",
+        "Route downstream repo execution to child issues or follow-up rollout branches rather than widening this planning slice."
+      ],
+      "acceptance_criteria": [
+        "The issue-575 evidence chain includes PDCAR, structured plan, planning execution scope, alternate-family review, handoff packet, validation, and closeout artifacts.",
+        "The accepted rollout plan names child execution expectations instead of performing downstream repo edits in this branch.",
+        "Validation evidence proves the packet remained planning-only and conformed to the current governance validators."
+      ],
+      "file_paths": [
+        "docs/plans/issue-575-thin-session-contract-rollout-pdcar.md",
+        "docs/plans/issue-575-thin-session-contract-rollout-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-28-issue-575-thin-session-contract-rollout-planning.json",
+        "raw/handoffs/2026-04-28-issue-575-thin-session-contract-rollout.json",
+        "raw/cross-review/2026-04-28-issue-575-thin-session-contract-rollout.md",
+        "raw/validation/2026-04-28-issue-575-thin-session-contract-rollout.md",
+        "raw/closeouts/2026-04-28-issue-575-thin-session-contract-rollout.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Lovelace",
+      "role": "read-only governed repo adapter auditor",
+      "focus": "Current CLAUDE.md and CODEX.md thin-versus-thick shape across governed consumer repos.",
+      "status": "accepted",
+      "summary": "Confirmed that ai-integration-services, local-ai-machine, seek-and-ponder, and knocktracker are already near the thin-adapter target; Stampede is missing CODEX.md; HealthcarePlatform and ASC-Evaluator still carry heavier local doctrine and should be normalized later.",
+      "evidence": [
+        "subagent 019dd56a-287b-7513-bcdd-b5236aab452a final handoff"
+      ]
+    },
+    {
+      "reviewer": "Schrodinger",
+      "role": "read-only cross-model review path auditor",
+      "focus": "Conflicts between policy, runbook, wrapper, and low-level implementation for Codex-to-Claude alternate-family review.",
+      "status": "accepted",
+      "summary": "Confirmed that STANDARDS.md and the runbook declare wrapper-based Codex-to-Claude review as canonical, while scripts/codex-review-template.sh still exposes cli_session_supervisor.py as a callable lower-level path and the governance repo lacks a checked-in scripts/codex-review.sh wrapper surface.",
+      "evidence": [
+        "subagent 019dd479-e03d-7942-b772-8eb5aa6483be final handoff"
+      ]
+    },
+    {
+      "reviewer": "Hypatia",
+      "role": "read-only bootstrap and secret-flow auditor",
+      "focus": "Conflicts between session-start docs, hook wiring, and secret/bootstrap SSOT guidance.",
+      "status": "accepted",
+      "summary": "Confirmed that session-start obligations are split across CLAUDE.md, hooks/pre-session-context.sh, and .claude/settings.json while secret/bootstrap guidance is split between .env.shared SSOT claims and multiple alternate provisioning or search paths.",
+      "evidence": [
+        "subagent 019dd479-f345-7b93-8846-8a388dca7538 final handoff"
+      ]
+    },
+    {
+      "reviewer": "Tesla",
+      "role": "read-only thin-consumer ownership auditor",
+      "focus": "Conflicts between STANDARDS.md and package docs about whether consumer repos own thick governance logic or only thin adapters.",
+      "status": "accepted",
+      "summary": "Confirmed that docs/governance-tooling-package.json and prior rollout evidence describe thin pinned consumers, while STANDARDS.md still reads as if every consumer repo directly owns hook, wrapper, and review implementation surfaces.",
+      "evidence": [
+        "subagent 019dd53a-6322-72c1-a524-24cfd051031e final handoff"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Claude Opus 4.6 approved the planning packet with changes: bind the planning execution scope in the handoff, clarify that reconciliation occurs in dedicated child issue lanes rather than in the plan artifact itself, and name at least one child issue that owns the governance-source SSOT reconciliation before downstream rollout begins.",
+    "evidence": [
+      "raw/cross-review/2026-04-28-issue-575-thin-session-contract-rollout.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "planning_only",
+    "approved_scope_summary": "Draft and refine the issue-575 rollout-planning packet, incorporate the governance-source SSOT conflict audit, obtain alternate-family review through the canonical wrapper path, and finalize planning evidence without mutating downstream consumer repos.",
+    "next_execution_step": "Use this accepted planning packet to open or advance downstream child rollout slices now that issue #576 is merged, while keeping issue #575 itself planning-only.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-28-issue-575-thin-session-contract-rollout.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-28-issue-575-thin-session-contract-rollout-planning.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-28-issue-575-thin-session-contract-rollout.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-28-issue-575-thin-session-contract-rollout.md"
+    ],
+    "gate_artifact_refs": [
+      "raw/validation/2026-04-28-issue-575-thin-session-contract-rollout.md"
+    ],
+    "closeout_ref": "raw/closeouts/2026-04-28-issue-575-thin-session-contract-rollout.md",
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "The accepted rollout plan declares that governance-source SSOT conflicts must be resolved in dedicated child issue lanes before any downstream consumer rollout slice executes, and it names the specific conflicts blocking rollout.",
+      "The rollout plan keeps hldpro-governance as the thick source of truth and consumer repos as thin adapters.",
+      "The rollout plan names wave ordering and child execution slices rather than editing downstream repos directly in issue #575.",
+      "The governed Claude review confirms that the external-services runbook path remains the canonical cross-family review route and that lower-level subprocess helpers are implementation details only.",
+      "Issue #576 was the governance-source SSOT reconciliation slice; downstream rollout may proceed only after its merged state is confirmed."
+    ]
+  },
+  "material_deviation_rules": [
+    "If governance-source docs still expose multiple 'correct' operator entrypoints, stop downstream rollout and fix the source contract first.",
+    "If a candidate consumer repo lacks enough local context to classify adapter drift confidently, stop and record a follow-up issue instead of guessing.",
+    "If a repo requires thick local doctrine to remain functional, route it to a dedicated normalization issue and do not include it in the first rollout wave.",
+    "If alternate-family review is unavailable, stop before accepting the rollout packet.",
+    "If downstream repo edits become necessary, open child issues or follow-up rollout branches instead of widening issue #575."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: pdcar the repo wide roll out, follow repo rules, you are the orchestrator, alt family review, handoff packets, proof, etc.",
+    "codex-orchestrator"
+  ],
+  "approved_at": "2026-04-28T20:10:00Z"
+}
