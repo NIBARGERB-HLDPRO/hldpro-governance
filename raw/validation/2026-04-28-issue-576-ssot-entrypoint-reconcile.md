@@ -29,7 +29,7 @@ Branch: `issue-576-ssot-entrypoint-reconcile-20260428`
 - Issue-576 planner-boundary replay: pass after adding the hook/validator/test surfaces and Stage 6 derived graph/wiki roots to the execution scope
 - Issue-575 governance-surface planning replay: pass with the updated validator when the branch changes only planning evidence surfaces
 - Issue-575 Stage 6 replay: pass as `planning_only_changes`, proving planning closeouts no longer need graph/wiki writeback
-- Local CI Gate: pass; report directory `cache/local-ci-gate/reports/20260428T200011Z-hldpro-governance-git`
+- Local CI Gate: pass on the full issue-576 branch diff; latest local run report directory was `cache/local-ci-gate/reports/20260428T202724Z-hldpro-governance-git`
 
 ## Notes
 

@@ -40,7 +40,7 @@ alternatives to the canonical wrapper/bootstrap path, and it closes the Stage
 
 - Cross-review: `raw/cross-review/2026-04-28-issue-576-ssot-entrypoint-reconcile.md`
 - Gate artifact: `raw/validation/2026-04-28-issue-576-ssot-entrypoint-reconcile.md`
-- Local CI Gate report: `cache/local-ci-gate/reports/20260428T200011Z-hldpro-governance-git`
+- Gate: local-ci command result PASS.
 - Handoff lifecycle: accepted
 
 ## Validation Commands
