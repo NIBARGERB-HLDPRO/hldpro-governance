@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-573-session-waterfall-runbook/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-573-session-waterfall-runbook/wiki/hldpro",
-  "nodes": 1991,
-  "edges": 4018,
-  "communities": 97,
-  "articles": 107,
+  "output": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-576-ssot-entrypoint-reconcile/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/_worktrees/gov-issue-576-ssot-entrypoint-reconcile/wiki/hldpro",
+  "nodes": 1999,
+  "edges": 4037,
+  "communities": 98,
+  "articles": 108,
   "html_status": "skipped",
   "code_files": 145
 }

@@ -4,12 +4,12 @@
 
 ## Key Concepts
 
-- **test_session_bootstrap_contract.py** (3 connections) — `hldpro-governance/scripts/test_session_bootstrap_contract.py`
-- **make_repo()** (3 connections) — `hldpro-governance/scripts/test_session_bootstrap_contract.py`
-- **run_contract()** (3 connections) — `hldpro-governance/scripts/test_session_bootstrap_contract.py`
-- **SessionBootstrapContractTests** (3 connections) — `hldpro-governance/scripts/test_session_bootstrap_contract.py`
-- **.test_emit_hook_note_writes_sentinel_and_surfaces_runbook_paths()** (3 connections) — `hldpro-governance/scripts/test_session_bootstrap_contract.py`
-- **.test_missing_required_file_is_recorded_as_warning()** (3 connections) — `hldpro-governance/scripts/test_session_bootstrap_contract.py`
+- **test_session_bootstrap_contract.py** (3 connections) — `scripts/test_session_bootstrap_contract.py`
+- **make_repo()** (3 connections) — `scripts/test_session_bootstrap_contract.py`
+- **run_contract()** (3 connections) — `scripts/test_session_bootstrap_contract.py`
+- **SessionBootstrapContractTests** (3 connections) — `scripts/test_session_bootstrap_contract.py`
+- **.test_emit_hook_note_writes_sentinel_and_surfaces_runbook_paths()** (3 connections) — `scripts/test_session_bootstrap_contract.py`
+- **.test_missing_required_file_is_recorded_as_warning()** (3 connections) — `scripts/test_session_bootstrap_contract.py`
 
 ## Relationships
 
@@ -17,7 +17,7 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/test_session_bootstrap_contract.py`
+- `scripts/test_session_bootstrap_contract.py`
 
 ## Audit Trail
 

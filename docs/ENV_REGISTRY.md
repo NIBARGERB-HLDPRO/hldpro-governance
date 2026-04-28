@@ -2,7 +2,7 @@
 
 **Version:** 2026-04-21
 **Owner:** Operator (nibarger.ben@gmail.com)
-**SSOT file:** `hldpro-governance/.env.shared` (gitignored — never commit)
+**SSOT file:** `~/Developer/HLDPRO/hldpro-governance/.env.shared` (gitignored — never commit)
 **Bootstrap:** `bash scripts/bootstrap-repo-env.sh <repo> [target-path]`
 
 All operator credentials live in `.env.shared`. Repo-local `.env.local` files are **generated artifacts** — never edited by hand. Re-run bootstrap to refresh.
@@ -41,7 +41,7 @@ Missing-secret diagnostics and deploy preflights must be actionable without aski
 | Surface | Use | Evidence allowed |
 |---|---|---|
 | `hldpro-governance/.env.shared` | Local operator-managed credential SSOT. This file is gitignored and must never be committed. | Variable names, target repo key names, and redacted dry-run output only. |
-| `scripts/bootstrap-repo-env.sh` generated files | Repo-local `.env.local` or equivalent generated artifacts for local execution. | Target file path, command exit status, and redacted preview output. |
+| `scripts/bootstrap-repo-env.sh` generated files | Repo-local generated env artifacts for local execution (governance uses `.env.local`). | Target file path, command exit status, and redacted preview output. |
 | Provider dashboard or vault | Provider-owned rotation and account-scoped secret creation. | Provider name, secret name, scope description, and rotation timestamp. |
 | GitHub Actions secrets or vars | CI-only credentials and deploy approvals. | Secret or variable names and repository/org scope; never values. |
 

@@ -1,11 +1,20 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import importlib.util
+import sys
 import tempfile
 import unittest
 from pathlib import Path
 
-import check_stage6_closeout
+
+MODULE_PATH = Path(__file__).with_name("check_stage6_closeout.py")
+SPEC = importlib.util.spec_from_file_location("check_stage6_closeout", MODULE_PATH)
+assert SPEC is not None
+assert SPEC.loader is not None
+check_stage6_closeout = importlib.util.module_from_spec(SPEC)
+sys.modules[SPEC.name] = check_stage6_closeout
+SPEC.loader.exec_module(check_stage6_closeout)
 
 
 def _write(path: Path, text: str = "") -> None:
@@ -22,7 +31,10 @@ class TestCheckStage6Closeout(unittest.TestCase):
         tmp = tempfile.TemporaryDirectory()
         root = Path(tmp.name)
         _json(root / "docs/plans/issue-541-structured-agent-cycle-plan.json", '{"issue_number": 541}')
-        _json(root / "raw/execution-scopes/2026-04-21-issue-541-implementation.json", '{"lane_claim": {"issue_number": 541}}')
+        _json(
+            root / "raw/execution-scopes/2026-04-21-issue-541-implementation.json",
+            '{"execution_mode": "implementation_ready", "lane_claim": {"issue_number": 541}}',
+        )
         _write(root / "raw/validation/2026-04-21-issue-541.md", "validation")
         _write(root / "raw/cross-review/2026-04-21-issue-541.md", "review")
         _write(root / "scripts/overlord/check_stage6_closeout.py", "validator")
@@ -106,6 +118,23 @@ None.
                 root,
                 "issue-541-stage6-closeout-enforcement",
                 ["docs/plans/issue-541-stage6-closeout-enforcement-pdcar.md", "raw/execution-scopes/issue-541.json"],
+            )
+
+        self.assertFalse(decision.required)
+        self.assertEqual(decision.reason, "planning_only_changes")
+
+    def test_planning_evidence_surfaces_remain_planning_only(self) -> None:
+        tmp, root = self._repo()
+        with tmp:
+            decision = check_stage6_closeout.evaluate(
+                root,
+                "issue-541-stage6-closeout-enforcement",
+                [
+                    "docs/plans/issue-541-stage6-closeout-enforcement-pdcar.md",
+                    "raw/closeouts/2026-04-21-issue-541.md",
+                    "raw/handoffs/2026-04-21-issue-541.json",
+                    "raw/validation/2026-04-21-issue-541.md",
+                ],
             )
 
         self.assertFalse(decision.required)

@@ -1,11 +1,20 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import importlib.util
+import sys
 import tempfile
 import unittest
 from pathlib import Path
 
-import validate_closeout
+
+MODULE_PATH = Path(__file__).with_name("validate_closeout.py")
+SPEC = importlib.util.spec_from_file_location("validate_closeout", MODULE_PATH)
+assert SPEC is not None
+assert SPEC.loader is not None
+validate_closeout = importlib.util.module_from_spec(SPEC)
+sys.modules[SPEC.name] = validate_closeout
+SPEC.loader.exec_module(validate_closeout)
 
 
 def _write(path: Path, text: str = "") -> None:
@@ -27,7 +36,7 @@ class TestValidateCloseout(unittest.TestCase):
         )
         _json(
             root / "raw/execution-scopes/2026-04-21-issue-436-implementation.json",
-            '{"lane_claim": {"issue_number": 436}}',
+            '{"execution_mode": "implementation_ready", "lane_claim": {"issue_number": 436}}',
         )
         _write(root / "raw/validation/2026-04-21-issue-436.md", "validation")
         _write(root / "raw/cross-review/2026-04-21-issue-436.md", "review")
@@ -149,10 +158,29 @@ Validation: raw/validation/2026-04-21-issue-436.md
             failures = validate_closeout.validate_closeout(root, closeout)
         self.assertTrue(any("missing gate artifact reference" in failure for failure in failures), failures)
 
+    def test_resolve_closeout_execution_mode_reads_scope(self) -> None:
+        tmp, root = self._repo()
+        with tmp:
+            closeout = self._closeout(root)
+            mode = validate_closeout.resolve_closeout_execution_mode(root, closeout)
+        self.assertEqual(mode, "implementation_ready")
+
+    def test_resolve_closeout_execution_mode_defaults_planning_only(self) -> None:
+        tmp, root = self._repo()
+        with tmp:
+            (root / "raw/execution-scopes/2026-04-21-issue-436-implementation.json").write_text(
+                '{"lane_claim": {"issue_number": 436}}',
+                encoding="utf-8",
+            )
+            closeout = self._closeout(root)
+            mode = validate_closeout.resolve_closeout_execution_mode(root, closeout)
+        self.assertEqual(mode, "planning_only")
+
     def test_hook_invokes_validator_before_graph_refresh(self) -> None:
         hook = Path("hooks/closeout-hook.sh").read_text(encoding="utf-8")
         self.assertIn("scripts/overlord/validate_closeout.py", hook)
         self.assertLess(hook.index("$CLOSEOUT_VALIDATOR"), hook.index("[2/4] Updating knowledge graph"))
+        self.assertIn('if [ "$CLOSEOUT_MODE" = "planning_only" ]; then', hook)
 
 
 if __name__ == "__main__":
