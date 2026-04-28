@@ -1,0 +1,64 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-579-thin-session-adapter-rollout-epic",
+  "issue_number": 579,
+  "parent_epic_number": 579,
+  "lifecycle_state": "planned",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-579-thin-session-adapter-rollout-epic-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-28-issue-579-thin-session-adapter-rollout-epic-planning.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Governance epic #579 exists and lists all seven downstream child issues in the approved rollout order from issue #575.",
+      "verification_refs": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/579",
+        "docs/plans/issue-579-thin-session-adapter-rollout-epic-pdcar.md",
+        "docs/plans/issue-579-thin-session-adapter-rollout-epic-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Every downstream child issue contains repo-specific thin-adapter acceptance criteria instead of a generic placeholder body.",
+      "verification_refs": [
+        "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/issues/515",
+        "https://github.com/NIBARGERB-HLDPRO/ai-integration-services/issues/1405",
+        "https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/issues/190",
+        "https://github.com/NIBARGERB-HLDPRO/knocktracker/issues/187",
+        "https://github.com/NIBARGERB-HLDPRO/Stampede/issues/195",
+        "https://github.com/NIBARGERB-HLDPRO/HealthcarePlatform/issues/1513",
+        "https://github.com/NIBARGERB-HLDPRO/ASC-Evaluator/issues/15"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "This issue-579 branch remains planning-only and limits repo writes to governance mirrors and packet evidence while downstream repo mutations stay in child lanes.",
+      "verification_refs": [
+        "raw/execution-scopes/2026-04-28-issue-579-thin-session-adapter-rollout-epic-planning.json",
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "validation_commands": [],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-28-issue-579-thin-session-adapter-rollout-epic.md"
+  ],
+  "gate_artifact_refs": [],
+  "artifact_refs": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-579-thin-session-adapter-rollout-epic-pdcar.md",
+    "docs/plans/issue-579-thin-session-adapter-rollout-epic-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-28-issue-579-thin-session-adapter-rollout-epic-planning.json"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-28T21:05:00Z",
+  "notes": "Planning-only handoff accepted for epic opening. Issue #579 creates the execution tracker and child issue map; downstream repo writes remain separate child slices."
+}

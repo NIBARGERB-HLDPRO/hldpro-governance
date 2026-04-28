@@ -1,0 +1,157 @@
+{
+  "session_id": "session-20260428-issue-579-thin-session-adapter-rollout-epic",
+  "issue_number": 579,
+  "objective": "Open the governance execution epic and downstream child issue map for the approved thin session-contract adapter rollout, mirror the issue-backed execution contract in governance artifacts, and keep the branch planning-only while downstream repo mutations remain separate child slices.",
+  "tier": 1,
+  "scope_boundary": [
+    "Create governance epic #579 and the downstream child issue map.",
+    "Record repo-specific acceptance criteria for each downstream child issue.",
+    "Update governance backlog/progress mirrors for the open epic.",
+    "Capture review, validation, and closeout evidence for the epic-opening slice itself.",
+    "Keep downstream repo execution outside this branch."
+  ],
+  "out_of_scope": [
+    "Direct edits to local-ai-machine, ai-integration-services, seek-and-ponder, knocktracker, Stampede, HealthcarePlatform, or ASC-Evaluator in this branch.",
+    "Reopening governance-source SSOT decisions settled by issue #576.",
+    "Adding repos outside the approved rollout wave order.",
+    "Expanding consumer repos into thick local governance manuals."
+  ],
+  "research_summary": "Issue #575 approved the thin session-contract adapter rollout map and issue #576 merged the governance-source SSOT reconciliation. The remaining missing step was the execution tracker itself: a governance epic and downstream child issue set with repo-specific acceptance criteria. Prior rollout epics such as #439 and #507 used a governance epic plus explicit child stories. This slice applies that same pattern to the thin-adapter rollout so downstream repo work proceeds through named lanes instead of ad hoc reminders.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/575",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/576",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/579",
+    "https://github.com/NIBARGERB-HLDPRO/local-ai-machine/issues/515",
+    "https://github.com/NIBARGERB-HLDPRO/ai-integration-services/issues/1405",
+    "https://github.com/NIBARGERB-HLDPRO/seek-and-ponder/issues/190",
+    "https://github.com/NIBARGERB-HLDPRO/knocktracker/issues/187",
+    "https://github.com/NIBARGERB-HLDPRO/Stampede/issues/195",
+    "https://github.com/NIBARGERB-HLDPRO/HealthcarePlatform/issues/1513",
+    "https://github.com/NIBARGERB-HLDPRO/ASC-Evaluator/issues/15",
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md"
+  ],
+  "sprints": [
+    {
+      "name": "Epic and child issue creation",
+      "goal": "Create the governance execution epic and the downstream child issue map in the approved rollout order.",
+      "tasks": [
+        "Open governance epic #579 with epic-level acceptance criteria.",
+        "Open repo-native child issues for all seven governed repos in wave order.",
+        "Update the epic body with the concrete downstream issue links."
+      ],
+      "acceptance_criteria": [
+        "Epic #579 exists and lists all seven downstream child issues.",
+        "The downstream child issues exist in the correct repos.",
+        "The child issue set matches the rollout order approved in issue #575."
+      ],
+      "file_paths": [
+        "docs/plans/issue-579-thin-session-adapter-rollout-epic-pdcar.md",
+        "docs/plans/issue-579-thin-session-adapter-rollout-epic-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "name": "Repo-specific acceptance criteria",
+      "goal": "Ensure each downstream issue has enforceable repo-specific acceptance criteria rather than generic rollout text.",
+      "tasks": [
+        "Bind thin-adapter, SSOT-pointer, and tracked-versus-local wiring expectations into each child issue.",
+        "Record repo-specific preservation constraints such as riskfix lanes, HIPAA/PII floors, and knowledge-repo exceptions."
+      ],
+      "acceptance_criteria": [
+        "Every child issue requires thin CLAUDE.md/CODEX.md adapters that point to governance SSOT surfaces.",
+        "Every child issue prohibits conflicting operator-facing bootstrap/review paths.",
+        "Repo-specific constraints are preserved where applicable."
+      ],
+      "file_paths": [
+        "docs/plans/issue-579-thin-session-adapter-rollout-epic-pdcar.md",
+        "docs/plans/issue-579-thin-session-adapter-rollout-epic-structured-agent-cycle-plan.json",
+        "raw/handoffs/2026-04-28-issue-579-thin-session-adapter-rollout-epic.json"
+      ]
+    },
+    {
+      "name": "Governance mirror and evidence sync",
+      "goal": "Mirror the open epic in repo artifacts and record the planning-only proof for the issue-creation slice.",
+      "tasks": [
+        "Update OVERLORD_BACKLOG.md and docs/PROGRESS.md for the open epic.",
+        "Create execution scope, handoff, review, validation, and closeout artifacts.",
+        "Run planning-only validation and closeout under the corrected Stage 6 contract."
+      ],
+      "acceptance_criteria": [
+        "OVERLORD_BACKLOG.md and docs/PROGRESS.md reflect the open rollout epic.",
+        "The planning packet validates without downstream repo writes.",
+        "Stage 6 closeout runs in planning_only mode and does not refresh graph/wiki artifacts."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md",
+        "raw/execution-scopes/2026-04-28-issue-579-thin-session-adapter-rollout-epic-planning.json",
+        "raw/handoffs/2026-04-28-issue-579-thin-session-adapter-rollout-epic.json",
+        "raw/cross-review/2026-04-28-issue-579-thin-session-adapter-rollout-epic.md",
+        "raw/validation/2026-04-28-issue-579-thin-session-adapter-rollout-epic.md",
+        "raw/closeouts/2026-04-28-issue-579-thin-session-adapter-rollout-epic.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Lovelace",
+      "role": "read-only downstream issue-map auditor",
+      "focus": "Verify that epic #579 and all seven downstream child issues faithfully mirror the rollout order and thin-adapter acceptance criteria approved in issues #575 and #576.",
+      "status": "accepted",
+      "summary": "Confirmed that epic #579, local-ai-machine#515, ai-integration-services#1405, seek-and-ponder#190, knocktracker#187, Stampede#195, HealthcarePlatform#1513, and ASC-Evaluator#15 now align with the governance plan and SSOT reconciliation. The only residual risk is future execution drift during downstream implementation, not issue-map inconsistency.",
+      "evidence": [
+        "subagent 019dd56a-287b-7513-bcdd-b5236aab452a corrected final handoff"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted",
+    "summary": "Claude Opus 4.6 returned no blocking findings. The review requested status-alignment cleanup between OVERLORD_BACKLOG.md and docs/PROGRESS.md, correction of a typo in approved_by, and completion of the expected cross-review/validation/closeout evidence. Those follow-ups were incorporated in this planning slice.",
+    "evidence": [
+      "raw/cross-review/2026-04-28-issue-579-thin-session-adapter-rollout-epic.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "planning_only",
+    "approved_scope_summary": "Create the governance rollout epic, open the downstream child issue map, mirror the open epic in governance repo artifacts, and capture planning-only review and validation evidence without mutating downstream repos.",
+    "next_execution_step": "Route the drafted planning packet through the governed Claude review wrapper, incorporate any required changes, and finalize validation and closeout for the epic-opening slice.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-28-issue-579-thin-session-adapter-rollout-epic.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-28-issue-579-thin-session-adapter-rollout-epic-planning.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-28-issue-579-thin-session-adapter-rollout-epic.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-28-issue-579-thin-session-adapter-rollout-epic.md"
+    ],
+    "gate_artifact_refs": [
+      "raw/validation/2026-04-28-issue-579-thin-session-adapter-rollout-epic.md"
+    ],
+    "closeout_ref": "raw/closeouts/2026-04-28-issue-579-thin-session-adapter-rollout-epic.md",
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Epic #579 and all seven downstream child issues exist with the approved rollout order and repo-specific acceptance criteria.",
+      "The planning packet keeps downstream repo writes out of this branch.",
+      "Governance mirrors are updated to reflect the open rollout epic.",
+      "Alternate-family review confirms that the issue map faithfully mirrors issues #575 and #576."
+    ]
+  },
+  "material_deviation_rules": [
+    "If a downstream repo needs direct edits, stop and route the work to that repo's issue lane rather than widening issue #579.",
+    "If any child issue body lacks repo-specific acceptance criteria, fix the issue map before closeout.",
+    "If alternate-family review rejects the epic-opening packet, stop and revise before publishing the planning PR."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: Create epic, issues, ACs, fix, verify with proof, follow repo rules exactly",
+    "codex-orchestrator"
+  ],
+  "approved_at": "2026-04-28T21:05:00Z"
+}
