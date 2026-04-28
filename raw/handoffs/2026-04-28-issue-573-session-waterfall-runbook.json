@@ -82,8 +82,7 @@
     "raw/cross-review/2026-04-28-issue-573-session-waterfall-runbook.md"
   ],
   "gate_artifact_refs": [
-    "raw/validation/2026-04-28-issue-573-session-waterfall-runbook.md",
-    "cache/local-ci-gate/reports/20260428T181751Z-hldpro-governance-git/local-ci-20260428T181758Z.json"
+    "raw/validation/2026-04-28-issue-573-session-waterfall-runbook.md"
   ],
   "notes": "Promoted to implementation-ready after the governed Claude Opus review returned APPROVED WITH CHANGES and the detailed acceptance criteria were updated accordingly."
 }

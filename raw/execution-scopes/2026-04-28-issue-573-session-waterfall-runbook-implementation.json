@@ -17,6 +17,7 @@
     "docs/governance-tooling-package.json",
     "docs/plans/issue-573-session-waterfall-runbook-pdcar.md",
     "docs/plans/issue-573-session-waterfall-runbook-structured-agent-cycle-plan.json",
+    "graphify-out/",
     "hooks/pre-session-context.sh",
     "raw/closeouts/2026-04-28-issue-573-session-waterfall-runbook.md",
     "raw/cross-review/2026-04-28-issue-573-session-waterfall-runbook.md",
@@ -35,7 +36,8 @@
     "scripts/session_bootstrap_contract.py",
     "scripts/test_session_bootstrap_contract.py",
     "tools/local-ci-gate/tests/test_local_ci_gate.py",
-    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "wiki/"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",

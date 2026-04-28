@@ -116,11 +116,13 @@
         "docs/FAIL_FAST_LOG.md",
         "docs/plans/issue-573-session-waterfall-runbook-pdcar.md",
         "docs/plans/issue-573-session-waterfall-runbook-structured-agent-cycle-plan.json",
+        "graphify-out/",
         "raw/execution-scopes/2026-04-28-issue-573-session-waterfall-runbook-planning.json",
         "raw/handoffs/2026-04-28-issue-573-session-waterfall-runbook.json",
         "raw/cross-review/2026-04-28-issue-573-session-waterfall-runbook.md",
         "raw/validation/2026-04-28-issue-573-session-waterfall-runbook.md",
-        "raw/closeouts/2026-04-28-issue-573-session-waterfall-runbook.md"
+        "raw/closeouts/2026-04-28-issue-573-session-waterfall-runbook.md",
+        "wiki/"
       ]
     }
   ],
@@ -173,8 +175,7 @@
       "raw/cross-review/2026-04-28-issue-573-session-waterfall-runbook.md"
     ],
     "gate_artifact_refs": [
-      "raw/validation/2026-04-28-issue-573-session-waterfall-runbook.md",
-      "cache/local-ci-gate/reports/20260428T181751Z-hldpro-governance-git/local-ci-20260428T181758Z.json"
+      "raw/validation/2026-04-28-issue-573-session-waterfall-runbook.md"
     ],
     "closeout_ref": "raw/closeouts/2026-04-28-issue-573-session-waterfall-runbook.md",
     "next_role": "codex-worker-subagents",

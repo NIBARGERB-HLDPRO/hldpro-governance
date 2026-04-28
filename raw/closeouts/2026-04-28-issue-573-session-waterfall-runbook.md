@@ -75,7 +75,6 @@ Review artifact refs:
 - `raw/cross-review/2026-04-28-issue-573-session-waterfall-runbook.md`
 
 Gate artifact refs:
-- `cache/local-ci-gate/reports/20260428T181751Z-hldpro-governance-git/local-ci-20260428T181758Z.json`
 - command result: PASS `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json`
 
 ## Wired Checks Run
