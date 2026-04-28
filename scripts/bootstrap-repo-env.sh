@@ -30,39 +30,17 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 GOV_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-PRIMARY_GOV_ROOT="$GOV_ROOT"
-if [[ ! -f "$PRIMARY_GOV_ROOT/.env.shared" ]]; then
-  SEARCH_ROOT="$GOV_ROOT"
-  while [[ "$SEARCH_ROOT" != "/" ]]; do
-    if [[ "$(basename "$SEARCH_ROOT")" == "hldpro-governance" && -f "$SEARCH_ROOT/.env.shared" ]]; then
-      PRIMARY_GOV_ROOT="$SEARCH_ROOT"
-      break
-    fi
-    HLDPRO_PRIMARY_GOV_ROOT="$SEARCH_ROOT/hldpro-governance"
-    if [[ -f "$HLDPRO_PRIMARY_GOV_ROOT/.env.shared" ]]; then
-      PRIMARY_GOV_ROOT="$HLDPRO_PRIMARY_GOV_ROOT"
-      break
-    fi
-    SEARCH_ROOT="$(dirname "$SEARCH_ROOT")"
-  done
-fi
-if [[ ! -f "$PRIMARY_GOV_ROOT/.env.shared" ]]; then
-  SIBLING_PRIMARY_GOV_ROOT="$(cd "$GOV_ROOT/.." && pwd)/hldpro-governance"
-  if [[ -f "$SIBLING_PRIMARY_GOV_ROOT/.env.shared" ]]; then
-    PRIMARY_GOV_ROOT="$SIBLING_PRIMARY_GOV_ROOT"
-  fi
-  # Also check grandparent (worktree parent like _worktrees/ -> HLDPRO/)
-  GRANDPARENT_GOV_ROOT="$(cd "$GOV_ROOT/../.." && pwd)/hldpro-governance"
-  if [[ -f "$GRANDPARENT_GOV_ROOT/.env.shared" ]]; then
-    PRIMARY_GOV_ROOT="$GRANDPARENT_GOV_ROOT"
-  fi
+PRIMARY_GOV_ROOT="${HOME}/Developer/HLDPRO/hldpro-governance"
+if [[ ! -d "$PRIMARY_GOV_ROOT" ]]; then
+  echo "ERROR: canonical governance root not found at $PRIMARY_GOV_ROOT" >&2
+  exit 1
 fi
 
 SHARED_ENV="$PRIMARY_GOV_ROOT/.env.shared"
 HLDPRO_ROOT="$(cd "$PRIMARY_GOV_ROOT/.." && pwd)"
 
 if [[ ! -f "$SHARED_ENV" ]]; then
-  echo "ERROR: .env.shared not found in this checkout or a parent hldpro-governance root." >&2
+  echo "ERROR: .env.shared not found at canonical governance root $PRIMARY_GOV_ROOT." >&2
   exit 1
 fi
 

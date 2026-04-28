@@ -1,6 +1,6 @@
 # _write_supporting_files()
 
-> God node · 23 connections · `hldpro-governance/scripts/overlord/test_validate_handoff_package.py`
+> God node · 23 connections · `scripts/overlord/test_validate_handoff_package.py`
 
 ## Connections by Relation
 

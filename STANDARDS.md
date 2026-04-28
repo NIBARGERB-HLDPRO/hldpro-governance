@@ -229,10 +229,10 @@ Both Claude and Codex sessions can invoke each other as specialist reviewers:
 
 **Auth requirements:**
 - Codex sessions: `OPENAI_API_KEY` or `~/.codex/auth.json` (ChatGPT account, `gpt-5.4` default)
-- Claude calls from Codex: `CLAUDE_CODE_OAUTH_TOKEN` in repo `.env` (operator runs `claude setup-token` once, valid 1 year)
+- Claude calls from Codex: use the canonical bootstrap command `bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh <repo>` so the repo wrapper's generated env surface contains `CLAUDE_CODE_OAUTH_TOKEN`; do not hand-source tokens
 - Codex config must inherit the token: `shell_environment_policy.inherit = "all"` in `~/.codex/config.toml`
 
-**Script contract:** Every code repo must have `scripts/codex-review.sh` with at minimum the `review` and `claude` modes. Use `hldpro-governance/scripts/codex-review-template.sh` as the canonical source.
+**Script contract:** Every code repo must have `scripts/codex-review.sh` with at minimum the `review` and `claude` modes. `scripts/codex-review.sh` is the only operator-facing path. Use `hldpro-governance/scripts/codex-review-template.sh` only as the shared implementation source behind that wrapper.
 
 ### Weekly Sweep (Codex → Repos)
 

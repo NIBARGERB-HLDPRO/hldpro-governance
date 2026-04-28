@@ -1,0 +1,161 @@
+{
+  "session_id": "session-20260428-issue-576-ssot-entrypoint-reconcile",
+  "issue_number": 576,
+  "objective": "Reconcile governance-source SSOT entrypoints by introducing the canonical governance codex-review wrapper, collapsing review/bootstrap docs to one operator-facing path, and clarifying thick governance ownership versus thin consumer adapters before downstream rollout begins.",
+  "tier": 1,
+  "scope_boundary": [
+    "Issue-576 implementation slice in hldpro-governance only.",
+    "Add the canonical governance scripts/codex-review.sh wrapper surface.",
+    "Normalize policy, runbook, env, and template docs to one review path and one bootstrap path.",
+    "Clarify thick governance ownership and thin consumer adapter ownership in source docs only."
+  ],
+  "out_of_scope": [
+    "Direct downstream governed repo edits.",
+    "Changing the session-waterfall routing model introduced by issue #573.",
+    "Weakening existing review, QA, or deterministic gate requirements.",
+    "Creating parallel operator-facing bootstrap or review entrypoints."
+  ],
+  "research_summary": "Issue #575 planning and alternate-family review confirmed three governance-source SSOT conflicts: review routing is declared through scripts/codex-review.sh while the governance repo lacked that wrapper and exposed the lower-level cli_session_supervisor path; bootstrap guidance splits between repo-level env assumptions, .env.shared SSOT claims, and multi-root bootstrap search behavior; and STANDARDS.md still reads as if consumer repos own thick governance logic despite package docs defining thin consumers. This slice fixes those governance-source contradictions before any downstream rollout can proceed.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/576",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/575",
+    "docs/plans/issue-575-thin-session-contract-rollout-pdcar.md",
+    "docs/plans/issue-575-thin-session-contract-rollout-structured-agent-cycle-plan.json",
+    "raw/cross-review/2026-04-28-issue-575-thin-session-contract-rollout.md",
+    "CODEX.md",
+    "CLAUDE.md",
+    "STANDARDS.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/ENV_REGISTRY.md",
+    "docs/governance-tooling-package.json",
+    "scripts/bootstrap-repo-env.sh",
+    "scripts/codex-review-template.sh",
+    "scripts/session_bootstrap_contract.py"
+  ],
+  "sprints": [
+    {
+      "name": "Canonical review path",
+      "goal": "Expose one governance review wrapper path and demote lower-level subprocess helpers to implementation details.",
+      "tasks": [
+        "Add scripts/codex-review.sh as the governance wrapper surface.",
+        "Define scripts/codex-review.sh as a thin operator-facing wrapper that delegates to scripts/codex-review-template.sh within the governance repo.",
+        "Update scripts/codex-review-template.sh so its comments, prompts, environment-loading behavior, and optional dry-run validation support the wrapper contract cleanly.",
+        "Make the .env.local versus .env token-sourcing fix explicit in the Claude review path.",
+        "Update policy and runbook docs to name only the wrapper as the operator-facing Codex-to-Claude path."
+      ],
+      "acceptance_criteria": [
+        "The governance repo has a tracked scripts/codex-review.sh thin wrapper that is the canonical operator-facing path for Codex-to-Claude review and delegates to scripts/codex-review-template.sh as an implementation detail.",
+        "STANDARDS.md and docs/EXTERNAL_SERVICES_RUNBOOK.md name scripts/codex-review.sh claude as the one operator-facing review path and treat templates/supervisors as implementation details only.",
+        "The governed review wrapper works in the issue-576 worktree using the bootstrap-generated governance env surface.",
+        "The Claude review path resolves CLAUDE_CODE_OAUTH_TOKEN from the bootstrap-generated governance env surface without requiring ad hoc manual env edits."
+      ],
+      "file_paths": [
+        "scripts/codex-review.sh",
+        "scripts/codex-review-template.sh",
+        "STANDARDS.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md"
+      ]
+    },
+    {
+      "name": "Canonical bootstrap path",
+      "goal": "Collapse bootstrap and secret-seeding docs and script behavior to one governance SSOT root and one bootstrap command.",
+      "tasks": [
+        "Update docs/ENV_REGISTRY.md and docs/EXTERNAL_SERVICES_RUNBOOK.md to name the canonical governance bootstrap command and expected generated env surface.",
+        "Tighten scripts/bootstrap-repo-env.sh to use deterministic governance-root resolution instead of multi-root discovery.",
+        "Align CLAUDE.md session contract pointers so they defer to the canonical bootstrap helper rather than appearing to offer a parallel startup path."
+      ],
+      "acceptance_criteria": [
+        "The canonical governance secret SSOT root is singular and documented consistently.",
+        "The canonical bootstrap command is singular and documented consistently.",
+        "bootstrap-repo-env.sh no longer performs ambiguous multi-root governance SSOT discovery and instead resolves the governance SSOT root through a deterministic path suitable for worktree invocation.",
+        "CLAUDE.md explicitly complements or defers to the canonical bootstrap helper instead of reading like a competing startup path."
+      ],
+      "file_paths": [
+        "docs/ENV_REGISTRY.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "scripts/bootstrap-repo-env.sh",
+        "CLAUDE.md"
+      ]
+    },
+    {
+      "name": "Thin consumer ownership wording",
+      "goal": "Make source docs unambiguous that governance package logic is thick only in hldpro-governance and consumer repos are thin adapters.",
+      "tasks": [
+        "Update STANDARDS.md wording where consumer repos currently read like thick owners of shared governance logic.",
+        "Capture validation and closeout evidence proving the source contract is reconciled."
+      ],
+      "acceptance_criteria": [
+        "STANDARDS.md consistently states that governed repos are thin consumers of governance-owned SSOT surfaces and that repo-local adapters are reviewed shims or explicit exceptions.",
+        "Repo-local adapter or stricter local behavior remains allowed only as declared reviewed adapter surfaces or explicit exceptions.",
+        "Validation evidence proves the issue-576 implementation removed the operator-facing ambiguity that blocked issue-575 rollout."
+      ],
+      "file_paths": [
+        "STANDARDS.md",
+        "raw/validation/2026-04-28-issue-576-ssot-entrypoint-reconcile.md",
+        "raw/closeouts/2026-04-28-issue-576-ssot-entrypoint-reconcile.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "issue-575 alternate-family review",
+      "role": "upstream planning gate",
+      "focus": "Required preconditions for governance-source SSOT reconciliation before consumer rollout.",
+      "status": "accepted",
+      "summary": "Confirmed the three blocking SSOT conflicts and required a dedicated child issue lane before downstream rollout begins.",
+      "evidence": [
+        "raw/cross-review/2026-04-28-issue-575-thin-session-contract-rollout.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude Opus 4.6",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Claude Opus 4.6 approved the issue-576 packet with changes: define the wrapper-to-template delegation explicitly, make deterministic governance-root resolution explicit, call out the .env.local token-sourcing fix, make the CLAUDE.md normalization acceptance-gated, and add a functional wrapper validation step.",
+    "evidence": [
+      "raw/cross-review/2026-04-28-issue-576-ssot-entrypoint-reconcile.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement the governance-source SSOT entrypoint reconciliation in hldpro-governance only after alternate-family review accepts the packet.",
+    "next_execution_step": "Send the packet through the governed Claude review wrapper, then implement the wrapper, doc, and bootstrap changes and finish validation and closeout.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-28-issue-576-ssot-entrypoint-reconcile.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-28-issue-576-ssot-entrypoint-reconcile-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-28-issue-576-ssot-entrypoint-reconcile.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-28-issue-576-ssot-entrypoint-reconcile.md"
+    ],
+    "gate_artifact_refs": [
+      "raw/validation/2026-04-28-issue-576-ssot-entrypoint-reconcile.md"
+    ],
+    "closeout_ref": "raw/closeouts/2026-04-28-issue-576-ssot-entrypoint-reconcile.md",
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "The implementation lands one canonical governance review wrapper path and demotes lower-level helpers to implementation details.",
+      "The implementation lands one canonical governance bootstrap path and removes ambiguous multi-root SSOT discovery.",
+      "The implementation makes thick governance ownership versus thin consumer adapters unambiguous in source docs."
+    ]
+  },
+  "material_deviation_rules": [
+    "If the canonical review wrapper cannot be made functional without breaking the current review pipeline, land the compatibility shim first and document the underlying helper as an implementation detail only.",
+    "If any change would widen this issue into downstream consumer repo edits, stop and leave that work to issue-575 follow-up rollout slices.",
+    "If alternate-family review is unavailable, stop before implementing standards-scope changes.",
+    "If the canonical bootstrap path needs an exception for environments outside the primary HLDPRO workspace root, document it explicitly as a bounded exception rather than reintroducing generic multi-root discovery."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator approval: Update pdcar, alt family review, then new ACs, fix, verify with proof, and follow repo rules exactly",
+    "codex-orchestrator"
+  ],
+  "approved_at": "2026-04-28T19:35:00Z"
+}

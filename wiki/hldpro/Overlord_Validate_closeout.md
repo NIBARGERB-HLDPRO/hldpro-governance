@@ -4,23 +4,23 @@
 
 ## Key Concepts
 
-- **validate_handoff_package.py** (17 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
+- **validate_handoff_package.py** (17 connections) — `scripts/overlord/validate_handoff_package.py`
 - **validate_closeout.py** (13 connections) — `scripts/overlord/validate_closeout.py`
-- **validate_package()** (11 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
+- **validate_package()** (11 connections) — `scripts/overlord/validate_handoff_package.py`
 - **TestValidateCloseout** (10 connections) — `scripts/overlord/test_validate_closeout.py`
 - **._repo()** (9 connections) — `scripts/overlord/test_validate_closeout.py`
 - **._closeout()** (8 connections) — `scripts/overlord/test_validate_closeout.py`
 - **validate_closeout()** (7 connections) — `scripts/overlord/validate_closeout.py`
-- **_is_url()** (5 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **_repo_file_exists()** (5 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **_validate_acceptance_criteria()** (5 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **_validate_consumer_verifier_acceptance()** (5 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **_validate_ref_array()** (5 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
+- **_is_url()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
+- **_repo_file_exists()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
+- **_validate_acceptance_criteria()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
+- **_validate_consumer_verifier_acceptance()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
+- **_validate_ref_array()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
 - **test_validate_closeout.py** (4 connections) — `scripts/overlord/test_validate_closeout.py`
 - **_write()** (4 connections) — `scripts/overlord/test_validate_closeout.py`
 - **_validate_handoff_refs()** (4 connections) — `scripts/overlord/validate_closeout.py`
-- **_normalize_repo_path()** (4 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
-- **_read_json_ref()** (4 connections) — `hldpro-governance/scripts/overlord/validate_handoff_package.py`
+- **_normalize_repo_path()** (4 connections) — `scripts/overlord/validate_handoff_package.py`
+- **_read_json_ref()** (4 connections) — `scripts/overlord/validate_handoff_package.py`
 - **_json()** (3 connections) — `scripts/overlord/test_validate_closeout.py`
 - **.test_gate_evidence_requires_artifact_or_command_result()** (3 connections) — `scripts/overlord/test_validate_closeout.py`
 - **.test_handoff_without_lifecycle_record_fails()** (3 connections) — `scripts/overlord/test_validate_closeout.py`
@@ -37,9 +37,9 @@
 
 ## Source Files
 
-- `hldpro-governance/scripts/overlord/validate_handoff_package.py`
 - `scripts/overlord/test_validate_closeout.py`
 - `scripts/overlord/validate_closeout.py`
+- `scripts/overlord/validate_handoff_package.py`
 
 ## Audit Trail
 

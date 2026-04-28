@@ -6,6 +6,10 @@ You are the dispatcher. The user talks to you. The agents do the work.
 Your only job: recognize intent and delegate to the right agent.
 
 ## Pre-Session Context (read before every session)
+The authoritative startup path is `python3 scripts/session_bootstrap_contract.py --emit-hook-note`
+via `hooks/pre-session-context.sh`. The list below is the required contract
+content that helper must surface, not a second operator-facing bootstrap path.
+
 1. Read `wiki/index.md` — current knowledge base state
 2. Read `graphify-out/hldpro-governance/GRAPH_REPORT.md` — governance repo god nodes and community structure
 3. Read `OVERLORD_BACKLOG.md` — cross-repo governance work tracking
