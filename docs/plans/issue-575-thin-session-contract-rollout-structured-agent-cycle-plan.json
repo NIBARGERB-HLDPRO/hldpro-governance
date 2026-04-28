@@ -17,7 +17,7 @@
     "Changing the issue-573 session-bootstrap source contract instead of rolling it out.",
     "Creating a second bootstrap doctrine outside STANDARDS.md and docs/EXTERNAL_SERVICES_RUNBOOK.md."
   ],
-  "research_summary": "Issue #573 merged the governance-source session bootstrap contract, but downstream repo adoption still varies and the governance repo still contains conflicting entrypoint signals. Read-only audits show several consumer repos already use thin adapter markdowns, Stampede is missing CODEX.md, and thicker legacy contracts remain in HealthcarePlatform and ASC-Evaluator. The same audit also found that STANDARDS.md and docs/EXTERNAL_SERVICES_RUNBOOK.md declare wrapper-based Codex-to-Claude review as the canonical path while scripts/codex-review-template.sh still exposes the lower-level cli_session_supervisor implementation path directly, and bootstrap/session-start docs split the effective contract across CLAUDE.md, hooks/pre-session-context.sh, .claude/settings.json, ENV_REGISTRY, and bootstrap-repo-env.sh search behavior. The rollout therefore needs two phases: first reconcile governance-source SSOT paths, then execute explicit downstream waves with low-risk thin consumers first, gap-fill repos next, and legacy thick-contract normalization last.",
+  "research_summary": "Issue #573 merged the governance-source session bootstrap contract, but downstream repo adoption still varied and the governance repo initially contained conflicting entrypoint signals. Read-only audits showed several consumer repos already use thin adapter markdowns, Stampede is missing CODEX.md, and thicker legacy contracts remain in HealthcarePlatform and ASC-Evaluator. The same audit found that STANDARDS.md and docs/EXTERNAL_SERVICES_RUNBOOK.md declared wrapper-based Codex-to-Claude review as the canonical path while scripts/codex-review-template.sh still exposed the lower-level cli_session_supervisor implementation path directly, and bootstrap/session-start docs split the effective contract across CLAUDE.md, hooks/pre-session-context.sh, .claude/settings.json, ENV_REGISTRY, and bootstrap-repo-env.sh search behavior. Issue #576 resolved those governance-source SSOT conflicts on main, so this issue now stands as the approved planning packet for downstream wave execution: low-risk thin consumers first, gap-fill repos next, and legacy thick-contract normalization last.",
   "research_artifacts": [
     "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/575",
     "CLAUDE.md",
@@ -179,7 +179,7 @@
     "session_agent": "codex-orchestrator",
     "execution_mode": "planning_only",
     "approved_scope_summary": "Draft and refine the issue-575 rollout-planning packet, incorporate the governance-source SSOT conflict audit, obtain alternate-family review through the canonical wrapper path, and finalize planning evidence without mutating downstream consumer repos.",
-    "next_execution_step": "Update the packet with SSOT conflict findings, route the draft through the governed Claude wrapper path, then finalize the accepted rollout waves and detailed acceptance criteria before validation and closeout.",
+    "next_execution_step": "Use this accepted planning packet to open or advance downstream child rollout slices now that issue #576 is merged, while keeping issue #575 itself planning-only.",
     "blocked_on": [],
     "handoff_package_ref": "raw/handoffs/2026-04-28-issue-575-thin-session-contract-rollout.json",
     "execution_scope_ref": "raw/execution-scopes/2026-04-28-issue-575-thin-session-contract-rollout-planning.json",
@@ -202,7 +202,7 @@
       "The rollout plan keeps hldpro-governance as the thick source of truth and consumer repos as thin adapters.",
       "The rollout plan names wave ordering and child execution slices rather than editing downstream repos directly in issue #575.",
       "The governed Claude review confirms that the external-services runbook path remains the canonical cross-family review route and that lower-level subprocess helpers are implementation details only.",
-      "Issue #576 owns the governance-source SSOT reconciliation that blocks downstream rollout until completed."
+      "Issue #576 was the governance-source SSOT reconciliation slice; downstream rollout may proceed only after its merged state is confirmed."
     ]
   },
   "material_deviation_rules": [

@@ -32,7 +32,7 @@
     },
     {
       "id": "AC3",
-      "statement": "Issue #575 remains planning-only and routes governance-source reconciliation plus downstream repo mutations to dedicated child issues or follow-up rollout slices with full governed evidence.",
+      "statement": "Issue #575 remains planning-only and routes downstream repo mutations to dedicated child issues or follow-up rollout slices with full governed evidence after governance-source reconciliation is merged.",
       "verification_refs": [
         "docs/plans/issue-575-thin-session-contract-rollout-pdcar.md",
         "raw/execution-scopes/2026-04-28-issue-575-thin-session-contract-rollout-planning.json",
@@ -56,5 +56,5 @@
   "blocked_on": [],
   "handoff_decision": "accepted",
   "created_at": "2026-04-28T20:10:00Z",
-  "notes": "Planning-only handoff accepted after alternate-family review. Issue #576 owns the governance-source SSOT reconciliation that must land before downstream rollout execution begins."
+  "notes": "Planning-only handoff accepted after alternate-family review. Issue #576 delivered the governance-source SSOT reconciliation on main; issue #575 remains the rollout map and does not widen into downstream repo execution."
 }

@@ -40,7 +40,7 @@ Before the packet is accepted:
 - alternate-family review is captured through the governed Claude path from
   `docs/EXTERNAL_SERVICES_RUNBOOK.md`
 
-After review incorporation:
+After review incorporation and governance-source reconciliation completion:
 
 - the packet records the governance-source SSOT conflicts that must be fixed
   before consumer rollout begins
@@ -48,8 +48,10 @@ After review incorporation:
   canonical bootstrap path, with lower-level helpers treated as implementation
   details only
 - the packet names issue `#576` as the dedicated governance-source
-  reconciliation slice that must complete before downstream consumer rollout
-  branches begin
+  reconciliation slice and records that downstream rollout branches stay
+  blocked until that slice merges
+- once issue `#576` merges, this planning packet remains planning-only and
+  becomes the approved rollout map for downstream child execution slices
 - PDCAR and structured acceptance criteria reflect the thin-adapter rule
 - rollout waves identify the lowest-risk consumer repos first and isolate
   thicker legacy repos into later follow-up slices
@@ -62,7 +64,9 @@ stop and route it to a dedicated child issue instead of widening the first
 rollout wave. If a repo is unavailable locally, keep it in the rollout map as
 an explicit follow-up rather than guessing at its adapter state. If the
 governance repo itself still exposes multiple "correct" review or bootstrap
-entrypoints, stop consumer rollout and fix the source contract first.
+entrypoints, stop consumer rollout and fix the source contract first; after
+that source-contract slice merges, keep issue `#575` planning-only and route
+execution into child rollout issues rather than widening this branch.
 
 ## Review
 
