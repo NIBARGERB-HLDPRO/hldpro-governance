@@ -81,8 +81,8 @@ def main() -> int:
         check(key in REGISTRY, f"ENV registry missing Stampede mapping for {key}")
 
     run_synthetic_lam_bootstrap()
-    run_sibling_worktree_lam_bootstrap()
-    run_nested_var_worktree_lam_bootstrap()
+    run_canonical_root_worktree_lam_bootstrap()
+    run_noncanonical_root_lam_bootstrap_fails_closed()
     run_synthetic_seek_bootstrap()
     run_synthetic_stampede_bootstrap()
 
@@ -119,15 +119,19 @@ def run_synthetic_lam_bootstrap() -> None:
 
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
+        home_root = root / "home"
+        canonical_root = home_root / "Developer" / "HLDPRO" / "hldpro-governance"
         script_dir = root / "scripts"
         script_dir.mkdir()
         script_path = script_dir / "bootstrap-repo-env.sh"
         shutil.copy2("scripts/bootstrap-repo-env.sh", script_path)
         script_path.chmod(0o755)
-        (root / ".env.shared").write_text(textwrap.dedent(required_vault).strip() + "\n", encoding="utf-8")
+        canonical_root.mkdir(parents=True)
+        (canonical_root / ".env.shared").write_text(textwrap.dedent(required_vault).strip() + "\n", encoding="utf-8")
 
         env = os.environ.copy()
         env["DRY_RUN"] = "1"
+        env["HOME"] = str(home_root)
         result = subprocess.run(
             ["bash", str(script_path), "lam", str(root / "local-ai-machine" / ".env")],
             cwd=root,
@@ -165,17 +169,18 @@ def run_synthetic_lam_bootstrap() -> None:
             check(secret_value not in output, f"dry-run leaked synthetic value {secret_value}")
 
 
-def run_sibling_worktree_lam_bootstrap() -> None:
-    """Exercise vault discovery from sibling governance worktrees."""
+def run_canonical_root_worktree_lam_bootstrap() -> None:
+    """Exercise worktree invocation while still resolving the canonical governance root."""
     import tempfile
 
     with tempfile.TemporaryDirectory() as tmp:
-        hldpro_root = Path(tmp) / "HLDPRO"
+        home_root = Path(tmp) / "home"
+        hldpro_root = home_root / "Developer" / "HLDPRO"
         primary_root = hldpro_root / "hldpro-governance"
-        sibling_root = hldpro_root / "hldpro-governance-sibling-worktree"
+        worktree_root = hldpro_root / "var" / "worktrees" / "hldpro-governance-issue-576"
         primary_root.mkdir(parents=True)
-        (sibling_root / "scripts").mkdir(parents=True)
-        script_path = sibling_root / "scripts" / "bootstrap-repo-env.sh"
+        (worktree_root / "scripts").mkdir(parents=True)
+        script_path = worktree_root / "scripts" / "bootstrap-repo-env.sh"
         shutil.copy2("scripts/bootstrap-repo-env.sh", script_path)
         script_path.chmod(0o755)
         (primary_root / ".env.shared").write_text(
@@ -202,52 +207,7 @@ def run_sibling_worktree_lam_bootstrap() -> None:
 
         env = os.environ.copy()
         env["DRY_RUN"] = "1"
-        result = subprocess.run(
-            ["bash", str(script_path), "lam", str(hldpro_root / "local-ai-machine" / ".env")],
-            cwd=sibling_root,
-            env=env,
-            text=True,
-            capture_output=True,
-            check=False,
-        )
-        check(result.returncode == 0, f"sibling worktree lam dry-run failed: {result.stderr.strip()}")
-        check("OPERATOR_SMS_PHONE=<redacted>" in result.stdout, "sibling worktree dry-run missed operator phone")
-        check("SOM_TWILIO_FROM_NUMBER=<redacted>" in result.stdout, "sibling worktree dry-run missed SoM sender")
-
-
-def run_nested_var_worktree_lam_bootstrap() -> None:
-    """Exercise vault discovery from HLDPRO/var/worktrees/* governance worktrees."""
-    import tempfile
-
-    with tempfile.TemporaryDirectory() as tmp:
-        hldpro_root = Path(tmp) / "HLDPRO"
-        primary_root = hldpro_root / "hldpro-governance"
-        worktree_root = hldpro_root / "var" / "worktrees" / "hldpro-governance-issue-430"
-        primary_root.mkdir(parents=True)
-        (worktree_root / "scripts").mkdir(parents=True)
-        script_path = worktree_root / "scripts" / "bootstrap-repo-env.sh"
-        shutil.copy2("scripts/bootstrap-repo-env.sh", script_path)
-        script_path.chmod(0o755)
-        (primary_root / ".env.shared").write_text(
-            textwrap.dedent(
-                """
-                CLAUDE_CODE_OAUTH_TOKEN=synthetic-claude-secret
-                CLOUDFLARE_MASTER_OPS_TOKEN=synthetic-cloudflare-secret
-                CLOUDFLARE_ACCOUNT_ID=synthetic-account
-                CLOUDFLARE_ZONE_ID=synthetic-zone
-                CLOUDFLARE_TUNNEL_ID=synthetic-tunnel
-                CF_TEAM_DOMAIN=synthetic-team
-                CF_ACCESS_AUD_TAG=synthetic-aud
-                OPERATOR_SMS_PHONE=SYNTHETIC-CONSUMER-555
-                SOM_OPERATOR_SMS_PHONE=SYNTHETIC-CONSUMER-555
-                """
-            ).strip()
-            + "\n",
-            encoding="utf-8",
-        )
-
-        env = os.environ.copy()
-        env["DRY_RUN"] = "1"
+        env["HOME"] = str(home_root)
         result = subprocess.run(
             ["bash", str(script_path), "lam", str(hldpro_root / "local-ai-machine" / ".env")],
             cwd=worktree_root,
@@ -256,8 +216,39 @@ def run_nested_var_worktree_lam_bootstrap() -> None:
             capture_output=True,
             check=False,
         )
-        check(result.returncode == 0, f"nested var worktree lam dry-run failed: {result.stderr.strip()}")
-        check("OPERATOR_SMS_PHONE=<redacted>" in result.stdout, "nested var worktree dry-run missed operator phone")
+        check(result.returncode == 0, f"canonical-root worktree lam dry-run failed: {result.stderr.strip()}")
+        check("OPERATOR_SMS_PHONE=<redacted>" in result.stdout, "canonical-root worktree dry-run missed operator phone")
+        check("SOM_TWILIO_FROM_NUMBER=<redacted>" in result.stdout, "canonical-root worktree dry-run missed SoM sender")
+
+
+def run_noncanonical_root_lam_bootstrap_fails_closed() -> None:
+    """Exercise failure when the canonical governance root is absent."""
+    import tempfile
+
+    with tempfile.TemporaryDirectory() as tmp:
+        home_root = Path(tmp) / "home"
+        worktree_root = Path(tmp) / "scratch" / "hldpro-governance-random-worktree"
+        (worktree_root / "scripts").mkdir(parents=True)
+        script_path = worktree_root / "scripts" / "bootstrap-repo-env.sh"
+        shutil.copy2("scripts/bootstrap-repo-env.sh", script_path)
+        script_path.chmod(0o755)
+
+        env = os.environ.copy()
+        env["DRY_RUN"] = "1"
+        env["HOME"] = str(home_root)
+        result = subprocess.run(
+            ["bash", str(script_path), "lam", str(Path(tmp) / "local-ai-machine" / ".env")],
+            cwd=worktree_root,
+            env=env,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        check(result.returncode != 0, "noncanonical root bootstrap should fail when canonical governance root is absent")
+        check(
+            "canonical governance root not found" in result.stderr,
+            f"noncanonical root failure should explain canonical-root requirement: {result.stderr.strip()}",
+        )
 
 
 def run_synthetic_seek_bootstrap() -> None:
@@ -284,15 +275,19 @@ def run_synthetic_seek_bootstrap() -> None:
 
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
+        home_root = root / "home"
+        canonical_root = home_root / "Developer" / "HLDPRO" / "hldpro-governance"
         script_dir = root / "scripts"
         script_dir.mkdir()
         script_path = script_dir / "bootstrap-repo-env.sh"
         shutil.copy2("scripts/bootstrap-repo-env.sh", script_path)
         script_path.chmod(0o755)
-        (root / ".env.shared").write_text(textwrap.dedent(required_vault).strip() + "\n", encoding="utf-8")
+        canonical_root.mkdir(parents=True)
+        (canonical_root / ".env.shared").write_text(textwrap.dedent(required_vault).strip() + "\n", encoding="utf-8")
 
         env = os.environ.copy()
         env["DRY_RUN"] = "1"
+        env["HOME"] = str(home_root)
         result = subprocess.run(
             ["bash", str(script_path), "seek", str(root / "seek-and-ponder" / ".env")],
             cwd=root,
@@ -341,15 +336,19 @@ def run_synthetic_stampede_bootstrap() -> None:
 
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
+        home_root = root / "home"
+        canonical_root = home_root / "Developer" / "HLDPRO" / "hldpro-governance"
         script_dir = root / "scripts"
         script_dir.mkdir()
         script_path = script_dir / "bootstrap-repo-env.sh"
         shutil.copy2("scripts/bootstrap-repo-env.sh", script_path)
         script_path.chmod(0o755)
-        (root / ".env.shared").write_text(textwrap.dedent(required_vault).strip() + "\n", encoding="utf-8")
+        canonical_root.mkdir(parents=True)
+        (canonical_root / ".env.shared").write_text(textwrap.dedent(required_vault).strip() + "\n", encoding="utf-8")
 
         env = os.environ.copy()
         env["DRY_RUN"] = "1"
+        env["HOME"] = str(home_root)
         result = subprocess.run(
             ["bash", str(script_path), "stampede", str(root / "Stampede" / ".env")],
             cwd=root,

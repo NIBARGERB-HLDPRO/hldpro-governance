@@ -81,7 +81,8 @@
     "hooks/closeout-hook.sh",
     "scripts/overlord/validate_structured_agent_cycle_plan.py",
     "scripts/overlord/validate_closeout.py",
-    "scripts/overlord/check_stage6_closeout.py"
+    "scripts/overlord/check_stage6_closeout.py",
+    "scripts/test_bootstrap_repo_env_contract.py"
   ],
   "audit_refs": [],
   "closeout_ref": "raw/closeouts/2026-04-28-issue-576-ssot-entrypoint-reconcile.md",
