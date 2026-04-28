@@ -14,9 +14,19 @@
     "STANDARDS.md",
     "docs/ENV_REGISTRY.md",
     "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "hooks/closeout-hook.sh",
+    "scripts/overlord/check_stage6_closeout.py",
+    "scripts/overlord/validate_closeout.py",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/test_check_stage6_closeout.py",
+    "scripts/overlord/test_validate_closeout.py",
+    "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
     "scripts/bootstrap-repo-env.sh",
     "scripts/codex-review.sh",
-    "scripts/codex-review-template.sh"
+    "scripts/codex-review-template.sh",
+    "graphify-out/hldpro-governance/",
+    "wiki/hldpro/",
+    "wiki/index.md"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",

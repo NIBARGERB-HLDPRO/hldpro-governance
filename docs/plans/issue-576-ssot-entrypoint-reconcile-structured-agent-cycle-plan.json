@@ -1,21 +1,23 @@
 {
   "session_id": "session-20260428-issue-576-ssot-entrypoint-reconcile",
   "issue_number": 576,
-  "objective": "Reconcile governance-source SSOT entrypoints by introducing the canonical governance codex-review wrapper, collapsing review/bootstrap docs to one operator-facing path, and clarifying thick governance ownership versus thin consumer adapters before downstream rollout begins.",
+  "objective": "Reconcile governance-source SSOT entrypoints by introducing the canonical governance codex-review wrapper, collapsing review/bootstrap docs to one operator-facing path, clarifying thick governance ownership versus thin consumer adapters, and fixing the repeated Stage 6 planning-closeout drift before downstream rollout begins.",
   "tier": 1,
   "scope_boundary": [
     "Issue-576 implementation slice in hldpro-governance only.",
     "Add the canonical governance scripts/codex-review.sh wrapper surface.",
     "Normalize policy, runbook, env, and template docs to one review path and one bootstrap path.",
-    "Clarify thick governance ownership and thin consumer adapter ownership in source docs only."
+    "Clarify thick governance ownership and thin consumer adapter ownership in source docs only.",
+    "Split Stage 6 closeout behavior so planning-only slices do not generate derived graph/wiki writeback and planning-evidence-only governance packets stay in planning mode."
   ],
   "out_of_scope": [
     "Direct downstream governed repo edits.",
     "Changing the session-waterfall routing model introduced by issue #573.",
     "Weakening existing review, QA, or deterministic gate requirements.",
-    "Creating parallel operator-facing bootstrap or review entrypoints."
+    "Creating parallel operator-facing bootstrap or review entrypoints.",
+    "Allowing source-code or standards mutations to bypass implementation-ready execution scope requirements."
   ],
-  "research_summary": "Issue #575 planning and alternate-family review confirmed three governance-source SSOT conflicts: review routing is declared through scripts/codex-review.sh while the governance repo lacked that wrapper and exposed the lower-level cli_session_supervisor path; bootstrap guidance splits between repo-level env assumptions, .env.shared SSOT claims, and multi-root bootstrap search behavior; and STANDARDS.md still reads as if consumer repos own thick governance logic despite package docs defining thin consumers. This slice fixes those governance-source contradictions before any downstream rollout can proceed.",
+  "research_summary": "Issue #575 planning and alternate-family review confirmed three governance-source SSOT conflicts: review routing is declared through scripts/codex-review.sh while the governance repo lacked that wrapper and exposed the lower-level cli_session_supervisor path; bootstrap guidance splits between repo-level env assumptions, .env.shared SSOT claims, and multi-root bootstrap search behavior; and STANDARDS.md still reads as if consumer repos own thick governance logic despite package docs defining thin consumers. CI follow-up on PRs #577 and #578 exposed a fourth governance-source mismatch: planning-only branches can still pick up Stage 6 graph/wiki writeback while the governance-surface planning gate treats planning-evidence artifact changes as if they always require implementation-ready mode. This slice fixes those governance-source contradictions before any downstream rollout can proceed.",
   "research_artifacts": [
     "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/576",
     "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/575",
@@ -30,7 +32,12 @@
     "docs/governance-tooling-package.json",
     "scripts/bootstrap-repo-env.sh",
     "scripts/codex-review-template.sh",
-    "scripts/session_bootstrap_contract.py"
+    "scripts/session_bootstrap_contract.py",
+    "hooks/closeout-hook.sh",
+    "scripts/overlord/check_stage6_closeout.py",
+    "scripts/overlord/validate_closeout.py",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "PR #577 and PR #578 CI failure logs for planner-boundary and governance-surface closeout drift"
   ],
   "sprints": [
     {
@@ -94,6 +101,32 @@
         "raw/validation/2026-04-28-issue-576-ssot-entrypoint-reconcile.md",
         "raw/closeouts/2026-04-28-issue-576-ssot-entrypoint-reconcile.md"
       ]
+    },
+    {
+      "name": "Stage 6 planning-closeout contract",
+      "goal": "Make Stage 6 behavior singular so planning-only slices record closeout evidence without derived graph/wiki writes while implementation slices remain the only graph/wiki writeback path.",
+      "tasks": [
+        "Update hooks/closeout-hook.sh so it inspects closeout-linked execution mode and gates both graph/wiki build commands and graphify-out/wiki staging on non-planning execution modes only, failing closed to planning-only behavior if mode discovery is unavailable.",
+        "Update governance validators and tests so planning-evidence-only governance packets may remain planning_only while implementation and standards/code mutations still require implementation-ready mode.",
+        "Authorize Stage 6 derived graph/wiki writeback explicitly in the issue-576 implementation scope and prove the resulting behavior with direct validation commands."
+      ],
+      "acceptance_criteria": [
+        "Planning-only closeouts validate and complete without producing graphify-out/ or wiki/ drift.",
+        "Implementation closeouts continue to refresh graphify-out/ and wiki/ only when the linked execution scope is non-planning.",
+        "Planning-evidence-only governance packets are no longer forced into implementation_ready mode solely because they changed docs/plans, raw/validation, raw/closeouts, or adjacent evidence surfaces.",
+        "Validation evidence proves the issue-575 and issue-576 branch shapes now align with the Stage 6 and planner-boundary contract."
+      ],
+      "file_paths": [
+        "hooks/closeout-hook.sh",
+        "scripts/overlord/check_stage6_closeout.py",
+        "scripts/overlord/validate_closeout.py",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_check_stage6_closeout.py",
+        "scripts/overlord/test_validate_closeout.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "raw/execution-scopes/2026-04-28-issue-576-ssot-entrypoint-reconcile-implementation.json",
+        "raw/validation/2026-04-28-issue-576-ssot-entrypoint-reconcile.md"
+      ]
     }
   ],
   "specialist_reviews": [
@@ -113,7 +146,7 @@
     "reviewer": "Claude Opus 4.6",
     "model_family": "anthropic",
     "status": "accepted_with_followup",
-    "summary": "Claude Opus 4.6 approved the issue-576 packet with changes: define the wrapper-to-template delegation explicitly, make deterministic governance-root resolution explicit, call out the .env.local token-sourcing fix, make the CLAUDE.md normalization acceptance-gated, and add a functional wrapper validation step.",
+    "summary": "Claude Opus 4.6 approved the issue-576 packet with changes: define the wrapper-to-template delegation explicitly, make deterministic governance-root resolution explicit, call out the .env.local token-sourcing fix, make the CLAUDE.md normalization acceptance-gated, add a functional wrapper validation step, and keep any closeout/planner-boundary follow-up aligned to one singular Stage 6 contract rather than issue-local exceptions.",
     "evidence": [
       "raw/cross-review/2026-04-28-issue-576-ssot-entrypoint-reconcile.md"
     ]
@@ -121,8 +154,8 @@
   "execution_handoff": {
     "session_agent": "codex-orchestrator",
     "execution_mode": "implementation_ready",
-    "approved_scope_summary": "Implement the governance-source SSOT entrypoint reconciliation in hldpro-governance only after alternate-family review accepts the packet.",
-    "next_execution_step": "Send the packet through the governed Claude review wrapper, then implement the wrapper, doc, and bootstrap changes and finish validation and closeout.",
+    "approved_scope_summary": "Implement the governance-source SSOT reconciliation in hldpro-governance only after alternate-family review accepts the packet, including the Stage 6 closeout-mode and planning-gate corrections required to keep issue-575 and issue-576 branch shapes inside repo rules.",
+    "next_execution_step": "Send the updated packet through the governed Claude review wrapper, then implement the wrapper, doc, bootstrap, and Stage 6 contract changes and finish validation and closeout.",
     "blocked_on": [],
     "handoff_package_ref": "raw/handoffs/2026-04-28-issue-576-ssot-entrypoint-reconcile.json",
     "execution_scope_ref": "raw/execution-scopes/2026-04-28-issue-576-ssot-entrypoint-reconcile-implementation.json",
@@ -143,14 +176,16 @@
     "handoff_acceptance_criteria": [
       "The implementation lands one canonical governance review wrapper path and demotes lower-level helpers to implementation details.",
       "The implementation lands one canonical governance bootstrap path and removes ambiguous multi-root SSOT discovery.",
-      "The implementation makes thick governance ownership versus thin consumer adapters unambiguous in source docs."
+      "The implementation makes thick governance ownership versus thin consumer adapters unambiguous in source docs.",
+      "The implementation makes Stage 6 closeout behavior singular so planning-only closeouts are evidence-only while implementation closeouts own graph/wiki writeback."
     ]
   },
   "material_deviation_rules": [
     "If the canonical review wrapper cannot be made functional without breaking the current review pipeline, land the compatibility shim first and document the underlying helper as an implementation detail only.",
     "If any change would widen this issue into downstream consumer repo edits, stop and leave that work to issue-575 follow-up rollout slices.",
     "If alternate-family review is unavailable, stop before implementing standards-scope changes.",
-    "If the canonical bootstrap path needs an exception for environments outside the primary HLDPRO workspace root, document it explicitly as a bounded exception rather than reintroducing generic multi-root discovery."
+    "If the canonical bootstrap path needs an exception for environments outside the primary HLDPRO workspace root, document it explicitly as a bounded exception rather than reintroducing generic multi-root discovery.",
+    "If the planning-gate correction would let source-code or standards changes masquerade as planning evidence, reject that path and keep those mutations behind implementation-ready enforcement."
   ],
   "approved": true,
   "approved_by": [

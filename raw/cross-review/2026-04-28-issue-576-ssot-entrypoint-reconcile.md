@@ -112,3 +112,28 @@ on a live Claude API call.
 | `session_bootstrap_contract.py` regex coupling to runbook bootstrap wording | Low | Update helper and runbook together if the canonical command text changes |
 | Execution scope omission for `scripts/session_bootstrap_contract.py` if later needed | Low | Amend scope first if implementation requires touching that helper |
 | Compatibility shim language could preserve ambiguity if applied too loosely | Low | Keep shim behavior tightly documented as implementation detail only |
+
+## Packet Addendum — Stage 6 Contract Review
+
+Follow-up governed Claude Opus 4.6 review of the widened issue-576 packet
+returned `APPROVED_WITH_CHANGES` for the Stage 6 closeout/planning-gate
+contract addition.
+
+Required packet updates incorporated before implementation:
+
+1. Handoff AC5 now uses a closed planning-evidence list:
+   `docs/plans/`, `raw/cross-review/`, `raw/execution-scopes/`,
+   `raw/validation/`, `raw/closeouts/`, and `raw/handoffs/`.
+2. Sprint 4 task 1 now explicitly requires `hooks/closeout-hook.sh` to gate
+   both graph/wiki build commands and `git add graphify-out/ wiki/` staging on
+   non-planning execution modes only, failing closed when execution mode cannot
+   be resolved.
+
+Stage 6 contract reviewed in this addendum:
+
+- planning-only closeouts remain evidence-only with no graph/wiki writeback
+- implementation closeouts remain the only graph/wiki refresh path
+- planning-evidence-only governance packets do not require fake
+  `implementation_ready` escalation
+- source-code and standards mutations remain behind implementation-ready
+  planner-boundary enforcement

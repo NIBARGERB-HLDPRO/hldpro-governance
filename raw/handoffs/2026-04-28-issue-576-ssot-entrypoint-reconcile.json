@@ -37,15 +37,35 @@
         "STANDARDS.md",
         "CLAUDE.md"
       ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Stage 6 closeout behavior is singular: planning-only closeouts stay evidence-only without graph/wiki writeback, while implementation closeouts remain the only path that refreshes derived graph/wiki artifacts.",
+      "verification_refs": [
+        "hooks/closeout-hook.sh",
+        "scripts/overlord/validate_closeout.py",
+        "scripts/overlord/test_validate_closeout.py",
+        "scripts/overlord/test_check_stage6_closeout.py"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "Planning-evidence-only governance packets that change only docs/plans/, raw/cross-review/, raw/execution-scopes/, raw/validation/, raw/closeouts/, or raw/handoffs/ no longer require fake implementation_ready escalation, while source-code and standards mutations still require implementation-ready planner-boundary evidence.",
+      "verification_refs": [
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "raw/validation/2026-04-28-issue-576-ssot-entrypoint-reconcile.md"
+      ]
     }
   ],
   "validation_commands": [
     "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-576-ssot-entrypoint-reconcile-20260428 --require-if-issue-branch",
     "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-28-issue-576-ssot-entrypoint-reconcile.json",
     "bash scripts/cross-review/require-dual-signature.sh raw/cross-review/2026-04-28-issue-576-ssot-entrypoint-reconcile.md",
-    "bash -n scripts/codex-review.sh scripts/codex-review-template.sh scripts/bootstrap-repo-env.sh",
+    "bash -n scripts/codex-review.sh scripts/codex-review-template.sh scripts/bootstrap-repo-env.sh hooks/closeout-hook.sh",
     "CODEX_REVIEW_DRY_RUN=1 bash scripts/codex-review.sh claude \"issue-576 dry run\"",
     "python3 scripts/session_bootstrap_contract.py --json",
+    "python3 -m unittest scripts.overlord.test_validate_structured_agent_cycle_plan scripts.overlord.test_validate_closeout scripts.overlord.test_check_stage6_closeout",
     "python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json"
   ],
   "review_artifact_refs": [
@@ -57,12 +77,16 @@
   "artifact_refs": [
     "docs/plans/issue-576-ssot-entrypoint-reconcile-pdcar.md",
     "docs/plans/issue-576-ssot-entrypoint-reconcile-structured-agent-cycle-plan.json",
-    "raw/execution-scopes/2026-04-28-issue-576-ssot-entrypoint-reconcile-implementation.json"
+    "raw/execution-scopes/2026-04-28-issue-576-ssot-entrypoint-reconcile-implementation.json",
+    "hooks/closeout-hook.sh",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/validate_closeout.py",
+    "scripts/overlord/check_stage6_closeout.py"
   ],
   "audit_refs": [],
   "closeout_ref": "raw/closeouts/2026-04-28-issue-576-ssot-entrypoint-reconcile.md",
   "blocked_on": [],
   "handoff_decision": "accepted",
   "created_at": "2026-04-28T19:35:00Z",
-  "notes": "Implementation-ready issue-576 handoff accepted after alternate-family review with follow-up conditions folded into the structured plan and validation set."
+  "notes": "Implementation-ready issue-576 handoff accepted after alternate-family review with follow-up conditions folded into the structured plan and validation set. Scope now explicitly includes the Stage 6 closeout-mode and planning-gate reconciliation that blocked PRs #577 and #578."
 }

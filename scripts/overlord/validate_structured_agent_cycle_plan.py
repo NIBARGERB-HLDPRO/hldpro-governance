@@ -49,6 +49,19 @@ GOVERNANCE_SURFACE_FILES = {
 IMPLEMENTATION_READY_MODES = {"implementation_ready", "implementation_complete"}
 ACCEPTED_REVIEW_STATES = {"accepted", "accepted_with_followup"}
 IMPLEMENTATION_READY_REVIEW_GATE_APPROVED_AT = "2026-04-28T19:00:00Z"
+PLANNING_EVIDENCE_PREFIXES = (
+    "docs/plans/",
+    "raw/closeouts/",
+    "raw/cross-review/",
+    "raw/execution-scopes/",
+    "raw/handoffs/",
+    "raw/packets/",
+    "raw/validation/",
+)
+PLANNING_EVIDENCE_FILES = {
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+}
 
 
 def _display_path(path: Path, root: Path) -> Path:
@@ -93,6 +106,15 @@ def _read_changed_files(path: Path | None) -> list[str]:
     if path is None:
         return []
     return [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def _is_planning_evidence_surface(path: str) -> bool:
+    normalized = path
+    while normalized.startswith("./"):
+        normalized = normalized[2:]
+    return normalized in PLANNING_EVIDENCE_FILES or any(
+        normalized.startswith(prefix) for prefix in PLANNING_EVIDENCE_PREFIXES
+    )
 
 
 def _matching_plan_payloads(
@@ -166,6 +188,31 @@ def _validate_implementation_ready_plan(path: Path, payload: object, failures: l
             failures,
         )
     _validate_implementation_ready_alternate_review(path, payload, failures, scope="governance-surface")
+
+
+def _validate_planning_evidence_plan(path: Path, payload: object, failures: list[str]) -> None:
+    if not isinstance(payload, dict):
+        failures.append(f"{path}: planning-evidence gate plan must be a JSON object")
+        return
+    _require(payload.get("approved") is True, f"{path}: planning-evidence plan must have `approved: true`", failures)
+    handoff = payload.get("execution_handoff")
+    if not isinstance(handoff, dict):
+        failures.append(f"{path}: planning-evidence plan must include `execution_handoff`")
+    else:
+        mode = handoff.get("execution_mode")
+        _require(
+            mode in {"planning_only"} | IMPLEMENTATION_READY_MODES,
+            f"{path}: planning-evidence plan execution_mode must be one of {sorted({'planning_only'} | IMPLEMENTATION_READY_MODES)}, got {mode!r}",
+            failures,
+        )
+    review = payload.get("alternate_model_review")
+    if isinstance(review, dict) and review.get("required") is True:
+        status = review.get("status")
+        _require(
+            status in ACCEPTED_REVIEW_STATES,
+            f"{path}: planning-evidence plan requires accepted alternate_model_review before closeout, got {status!r}",
+            failures,
+        )
 
 
 def _validate_implementation_ready_alternate_review(
@@ -306,6 +353,7 @@ def main() -> int:
     active_issue_number = _branch_issue_number(args.branch_name)
     governance_validated_paths: set[Path] = set()
     if args.enforce_governance_surface and governance_surface_changes:
+        planning_evidence_only = all(_is_planning_evidence_surface(path) for path in governance_surface_changes)
         if active_issue_number is None:
             failures.append(
                 "governance-surface changes require a branch name containing `issue-<number>` and a matching canonical structured plan; changed paths: "
@@ -319,7 +367,10 @@ def main() -> int:
                 + ", ".join(governance_surface_changes)
             )
         for rel_path, payload in matches:
-            _validate_implementation_ready_plan(rel_path, payload, failures)
+            if planning_evidence_only:
+                _validate_planning_evidence_plan(rel_path, payload, failures)
+            else:
+                _validate_implementation_ready_plan(rel_path, payload, failures)
             governance_validated_paths.add(rel_path)
 
     if args.enforce_planner_boundary_scope:
