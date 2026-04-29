@@ -1,0 +1,151 @@
+{
+  "session_id": "session-20260429-issue-585-residual-som-enforcement",
+  "issue_number": 585,
+  "objective": "Close the residual governance-source enforcement gaps left after issue #583 so the waterfall is hard-gated at source before downstream rollout resumes.",
+  "plan_author": {
+    "role": "codex-orchestrator",
+    "model_id": "gpt-5.4",
+    "model_family": "openai"
+  },
+  "tier": 1,
+  "scope_boundary": [
+    "Issue-585 work in hldpro-governance only.",
+    "Issue-backed plan, scope, handoff, review, validation, and closeout artifacts for the residual source-level enforcement fixes.",
+    "Validator, schema, local-CI profile, workflow, standards, and runbook changes needed to close the residual gaps documented in issue #585.",
+    "Replay proof against existing downstream failure shapes without mutating downstream repos in this lane."
+  ],
+  "out_of_scope": [
+    "Direct product-repo repair in Stampede or other governed consumers in this branch.",
+    "Reopening the already-merged issue-583 source fixes except where required by the residual findings.",
+    "Warning-only or documentation-only treatment of the residual enforcement gaps.",
+    "Unrelated bootstrap, graphify, or provider wiring changes."
+  ],
+  "research_summary": "Post-merge audit of issue #583 confirmed the merged source blocks the originally reproduced bad packet and stale consumer-record shapes, but specialist review found four residual governance-source gaps: feat/issue branch shapes can still bypass mandatory packet creation if no plan exists, alternate_model_review is not yet machine-checked as genuinely alternate-family, handoff/review refs are checked only for shape rather than existence, and session/runbook enforcement still validates mostly presence while runbook-only changes can bypass the local session gate.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/585",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/583",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/579",
+    "STANDARDS.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/validate_handoff_package.py",
+    "scripts/overlord/validate_session_contract_surfaces.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Packet and review",
+      "goal": "Capture the residual source-level gap set, bounded acceptance criteria, and alternate-family review before implementation-ready promotion.",
+      "tasks": [
+        "Write the issue-585 PDCAR, structured plan, planning execution scope, and planned handoff.",
+        "Capture specialist review on whether the residual gaps are correctly bounded and still blocking for downstream rollout.",
+        "Run the governed Claude review path against the packet before implementation."
+      ],
+      "acceptance_criteria": [
+        "The issue-585 packet validates locally as planning_only.",
+        "The packet names the exact residual source gaps and blocks downstream rollout until they are closed.",
+        "Alternate-family review is recorded through the governed wrapper path before implementation-ready promotion."
+      ],
+      "file_paths": [
+        "docs/plans/issue-585-residual-som-enforcement-pdcar.md",
+        "docs/plans/issue-585-residual-som-enforcement-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-29-issue-585-residual-som-enforcement-planning.json",
+        "raw/handoffs/2026-04-29-issue-585-residual-som-enforcement.json",
+        "raw/cross-review/2026-04-29-issue-585-residual-som-enforcement.md",
+        "docs/codex-reviews/2026-04-29-issue-585-claude.md",
+        "raw/validation/2026-04-29-issue-585-residual-som-enforcement.md"
+      ]
+    },
+    {
+      "name": "Residual source hardening",
+      "goal": "Land the minimum governance-source fixes that close the residual enforcement gaps and prove them locally.",
+      "tasks": [
+        "Patch the structured-plan schema, validator, and tests for broader issue-branch coverage, alternate-family identity enforcement, and referenced-artifact existence checks.",
+        "Patch the session-contract validator and local-CI session gate scope so runbook-only changes cannot bypass semantic session-contract enforcement, including the canonical bootstrap command, `--emit-hook-note` helper contract, and wrapper-to-helper path.",
+        "Update standards and runbook text only as needed to keep the source contract aligned with the new machine checks."
+      ],
+      "acceptance_criteria": [
+        "Any branch whose name resolves through `_branch_issue_number()` fails the mandatory-plan gate when no matching structured plan exists, including feat/issue branch shapes.",
+        "Same-family or same-identity alternate review claims fail deterministically, with accepted alternate review carrying `reviewer_model_id` and `reviewer_model_family` fields for machine comparison.",
+        "Missing referenced handoff/review artifacts fail deterministically when the evidence gate applies.",
+        "Runbook-only or session bootstrap helper changes trigger the local session-contract gate.",
+        "The strengthened source checks are covered by regression tests and local proof."
+      ],
+      "file_paths": [
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/validate_session_contract_surfaces.py",
+        "scripts/overlord/test_validate_session_contract_surfaces.py",
+        "scripts/session_bootstrap_contract.py",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py",
+        "STANDARDS.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Post-merge audit synthesis",
+      "reviewer_model_id": "gpt-5.4-mini",
+      "reviewer_model_family": "openai",
+      "role": "scope confirmation",
+      "focus": "Confirm the residual issue-585 source gaps are still blocking for downstream rollout and are correctly bounded.",
+      "status": "accepted",
+      "summary": "The residual gaps are real and source-owned: branch-shape packet enforcement, alternate-family proof, referenced-artifact existence checks, and session/runbook semantic gating still need hardening before downstream rollout resumes.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/585",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/583"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude specialist review via scripts/codex-review.sh claude",
+    "reviewer_model_id": "claude-opus-4-6",
+    "reviewer_model_family": "anthropic",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Accepted with follow-up: implementation-ready promotion may proceed after recording clean revalidation proof and carrying the concrete schema/gate details into the implementation lane.",
+    "evidence": [
+      "docs/codex-reviews/2026-04-29-issue-585-claude.md",
+      "raw/cross-review/2026-04-29-issue-585-residual-som-enforcement.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #585 is approved for the bounded governance-source hardening work: issue-token branch gating, alternate-review identity proof, artifact existence checks, and session/runbook semantic gate coverage.",
+    "next_execution_step": "Apply the source-level validator, schema, local-CI, standards, and runbook fixes inside the implementation scope and verify them with regression proof.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-29-issue-585-residual-som-enforcement.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-585-residual-som-enforcement-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-29-issue-585-residual-som-enforcement.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-29-issue-585-residual-som-enforcement.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": null,
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "The issue-585 implementation remains inside the bounded source-level validator, schema, session-contract, local-CI, bootstrap-helper, runbook, and proof surfaces named in the implementation scope.",
+      "Downstream rollout remains blocked until this residual governance-source lane is closed."
+    ]
+  },
+  "material_deviation_rules": [
+    "Do not resume downstream rollout on the strength of issue-583 alone.",
+    "Do not weaken residual findings into documentation-only warnings.",
+    "Do not widen this governance-source lane into direct consumer-repo implementation work."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-29T16:30:00Z"
+}

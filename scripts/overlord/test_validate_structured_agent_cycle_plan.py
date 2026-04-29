@@ -79,6 +79,8 @@ def _plan(
         "alternate_model_review": {
             "required": review_required,
             "reviewer": "test",
+            "reviewer_model_id": "claude-opus-4-6",
+            "reviewer_model_family": "anthropic",
             "model_family": "anthropic",
             "status": review_status,
             "summary": "test",
@@ -158,6 +160,14 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
             encoding="utf-8",
         )
 
+    def _write_supporting_refs(self, root: Path, issue_number: int) -> None:
+        handoff = root / "raw" / "handoffs" / f"2026-04-17-issue-{issue_number}.json"
+        handoff.parent.mkdir(parents=True, exist_ok=True)
+        handoff.write_text("{}", encoding="utf-8")
+        review = root / "raw" / "cross-review" / "example.md"
+        review.parent.mkdir(parents=True, exist_ok=True)
+        review.write_text("review\n", encoding="utf-8")
+
     def test_non_issue_branch_with_governance_surface_change_fails(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             result = self._run(Path(raw), "main", ["CLAUDE.md"])
@@ -175,11 +185,211 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
         self.assertIn("governance-surface changes require a branch name containing `issue-<number>`", result.stdout)
         self.assertNotIn("execution_mode must be", result.stdout)
 
+    def test_feat_issue_branch_without_matching_plan_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    "feat/issue-184-offline-research-staging-20260426",
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("requires at least one `*structured-agent-cycle-plan.json` file", result.stdout)
+
+    def test_feat_issue_branch_with_unmatched_plan_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-999-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            self._write_supporting_refs(root, 999)
+            plan_path.write_text(json.dumps(_plan(999)), encoding="utf-8")
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    "feat/issue-184-offline-research-staging-20260426",
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("requires a canonical structured plan for issue #184 before execution", result.stdout)
+
     def test_github_scripts_are_governance_surface(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             result = self._run(Path(raw), "main", [".github/scripts/check_agent_model_pins.py"])
         self.assertNotEqual(result.returncode, 0)
         self.assertIn(".github/scripts/check_agent_model_pins.py", result.stdout)
+
+
+class TestActiveIssueBranchContract(unittest.TestCase):
+    def _run(
+        self, root: Path, branch: str, changed: list[str] | None = None
+    ) -> subprocess.CompletedProcess[str]:
+        if changed is None:
+            return subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    branch,
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        changed_file = root / "changed.txt"
+        changed_file.write_text("\n".join(changed) + "\n", encoding="utf-8")
+        return subprocess.run(
+            [
+                "python3",
+                str(VALIDATOR),
+                "--root",
+                str(root),
+                "--branch-name",
+                branch,
+                "--changed-files-file",
+                str(changed_file),
+                "--enforce-governance-surface",
+            ],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+
+    def _run_with_scope_gate(self, root: Path, branch: str, changed: list[str]) -> subprocess.CompletedProcess[str]:
+        changed_file = root / "changed.txt"
+        changed_file.write_text("\n".join(changed) + "\n", encoding="utf-8")
+        return subprocess.run(
+            [
+                "python3",
+                str(VALIDATOR),
+                "--root",
+                str(root),
+                "--branch-name",
+                branch,
+                "--changed-files-file",
+                str(changed_file),
+                "--enforce-governance-surface",
+                "--enforce-planner-boundary-scope",
+            ],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+
+    def _write_scope(self, root: Path, issue_number: int, mode: str = "implementation") -> None:
+        scope_path = root / "raw" / "execution-scopes" / f"2026-04-17-issue-{issue_number}-test-{mode}.json"
+        scope_path.parent.mkdir(parents=True, exist_ok=True)
+        scope_path.write_text(
+            json.dumps(
+                {
+                    "expected_execution_root": ".",
+                    "expected_branch": f"issue-{issue_number}-test",
+                    "execution_mode": "planning_only",
+                    "allowed_write_paths": ["docs/plans/"],
+                    "forbidden_roots": [],
+                }
+            ),
+            encoding="utf-8",
+        )
+
+    def _write_plan(self, root: Path, payload: dict, issue_number: int, *, create_refs: bool = True) -> None:
+        plan_path = root / "docs" / "plans" / f"issue-{issue_number}-structured-agent-cycle-plan.json"
+        plan_path.parent.mkdir(parents=True, exist_ok=True)
+        if create_refs:
+            self._write_supporting_refs(root, issue_number)
+        plan_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    def _write_supporting_refs(self, root: Path, issue_number: int) -> None:
+        handoff = root / "raw" / "handoffs" / f"2026-04-17-issue-{issue_number}.json"
+        handoff.parent.mkdir(parents=True, exist_ok=True)
+        handoff.write_text("{}", encoding="utf-8")
+        review = root / "raw" / "cross-review" / "example.md"
+        review.parent.mkdir(parents=True, exist_ok=True)
+        review.write_text("review\n", encoding="utf-8")
+
+    def test_same_family_alternate_review_fails_after_identity_gate(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            issue_number = 226
+            self._write_supporting_refs(root, issue_number)
+            payload = _plan(issue_number, approved_at="2026-04-29T16:30:00Z")
+            payload["alternate_model_review"]["reviewer_model_family"] = "openai"
+            payload["alternate_model_review"]["reviewer_model_id"] = "gpt-5.3-codex-spark"
+            self._write_plan(root, payload, issue_number)
+            result = self._run(root, "issue-226-test")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("must use an alternate model family", result.stdout)
+
+    def test_same_identity_alternate_review_fails_after_identity_gate(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            issue_number = 226
+            self._write_supporting_refs(root, issue_number)
+            payload = _plan(issue_number, approved_at="2026-04-29T16:30:00Z")
+            payload["alternate_model_review"]["reviewer_model_family"] = "openai"
+            payload["alternate_model_review"]["reviewer_model_id"] = "gpt-5.4"
+            self._write_plan(root, payload, issue_number)
+            result = self._run(root, "issue-226-test")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("cannot use the same model identity", result.stdout)
+
+    def test_missing_alternate_review_identity_fields_fail_after_gate(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            issue_number = 226
+            self._write_supporting_refs(root, issue_number)
+            payload = _plan(issue_number, approved_at="2026-04-29T16:30:00Z")
+            payload["alternate_model_review"].pop("reviewer_model_id")
+            payload["alternate_model_review"].pop("reviewer_model_family")
+            self._write_plan(root, payload, issue_number)
+            result = self._run(root, "issue-226-test")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("must include non-empty `reviewer_model_id`", result.stdout)
+
+    def test_missing_handoff_ref_file_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            issue_number = 226
+            review = root / "raw" / "cross-review" / "example.md"
+            review.parent.mkdir(parents=True, exist_ok=True)
+            review.write_text("review\n", encoding="utf-8")
+            payload = _plan(issue_number)
+            self._write_plan(root, payload, issue_number, create_refs=False)
+            result = self._run(root, "issue-226-test")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("`execution_handoff.handoff_package_ref` does not exist", result.stdout)
+
+    def test_missing_review_artifact_file_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            issue_number = 226
+            handoff = root / "raw" / "handoffs" / f"2026-04-17-issue-{issue_number}.json"
+            handoff.parent.mkdir(parents=True, exist_ok=True)
+            handoff.write_text("{}", encoding="utf-8")
+            payload = _plan(issue_number)
+            self._write_plan(root, payload, issue_number, create_refs=False)
+            result = self._run(root, "issue-226-test")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("`execution_handoff.review_artifact_refs` entry does not exist", result.stdout)
 
     def test_github_workflows_with_leading_dot_are_governance_surface(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -531,6 +741,7 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
     def test_planning_only_active_issue_branch_accepts_bounded_historical_exemption(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
+            self._write_supporting_refs(root, 226)
             plan_path = root / "docs" / "plans" / "issue-226-structured-agent-cycle-plan.json"
             plan_path.parent.mkdir(parents=True)
             plan_path.write_text(

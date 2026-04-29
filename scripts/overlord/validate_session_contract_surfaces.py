@@ -9,10 +9,15 @@ from pathlib import Path
 
 REQUIRED_FILES = (
     Path("CODEX.md"),
+    Path("docs/EXTERNAL_SERVICES_RUNBOOK.md"),
     Path("hooks/pre-session-context.sh"),
     Path(".claude/hooks/pre-session-context.sh"),
     Path(".claude/settings.json"),
+    Path("scripts/session_bootstrap_contract.py"),
 )
+HOOK_HELPER_NEEDLE = 'python3 "$REPO_ROOT/scripts/session_bootstrap_contract.py" --emit-hook-note'
+RUNBOOK_HOOK_NOTE = "python3 scripts/session_bootstrap_contract.py --emit-hook-note"
+RUNBOOK_BOOTSTRAP_COMMAND = "bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh <repo>"
 
 
 def _find_hook_command(entries: object, matcher: str | None, needle: str) -> bool:
@@ -70,6 +75,22 @@ def validate(root: Path) -> list[str]:
         failures.append(
             ".claude/settings.json must expose PostToolUse matcher '*' with a command invoking hooks/check-errors.sh"
         )
+
+    for rel_path in ("hooks/pre-session-context.sh", ".claude/hooks/pre-session-context.sh"):
+        content = (root / rel_path).read_text(encoding="utf-8")
+        if HOOK_HELPER_NEEDLE not in content:
+            failures.append(f"{rel_path} must invoke scripts/session_bootstrap_contract.py with --emit-hook-note")
+
+    runbook_text = (root / "docs/EXTERNAL_SERVICES_RUNBOOK.md").read_text(encoding="utf-8")
+    if RUNBOOK_HOOK_NOTE not in runbook_text:
+        failures.append("docs/EXTERNAL_SERVICES_RUNBOOK.md must document the canonical session bootstrap hook note path")
+    if RUNBOOK_BOOTSTRAP_COMMAND not in runbook_text:
+        failures.append("docs/EXTERNAL_SERVICES_RUNBOOK.md must document the canonical bootstrap command")
+
+    helper_text = (root / "scripts/session_bootstrap_contract.py").read_text(encoding="utf-8")
+    for needle in ('parser.add_argument("--emit-hook-note"', "docs/EXTERNAL_SERVICES_RUNBOOK.md", "docs/FAIL_FAST_LOG.md"):
+        if needle not in helper_text:
+            failures.append(f"scripts/session_bootstrap_contract.py must include `{needle}` in the canonical session contract")
 
     return failures
 

@@ -1,0 +1,63 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-585-residual-som-enforcement",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/PROGRESS.md",
+    "docs/plans/issue-585-residual-som-enforcement-pdcar.md",
+    "docs/plans/issue-585-residual-som-enforcement-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-29-issue-585-residual-som-enforcement-planning.json",
+    "raw/execution-scopes/2026-04-29-issue-585-residual-som-enforcement-implementation.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "raw/handoffs/2026-04-29-issue-585-residual-som-enforcement.json",
+    "raw/cross-review/2026-04-29-issue-585-residual-som-enforcement.md",
+    "raw/validation/2026-04-29-issue-585-residual-som-enforcement.md",
+    "raw/closeouts/2026-04-29-issue-585-residual-som-enforcement.md",
+    "docs/codex-reviews/2026-04-29-issue-585-claude.md",
+    "docs/schemas/structured-agent-cycle-plan.schema.json",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/validate_session_contract_surfaces.py",
+    "scripts/overlord/test_validate_session_contract_surfaces.py",
+    "scripts/session_bootstrap_contract.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "tools/local-ci-gate/tests/test_local_ci_gate.py",
+    "STANDARDS.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout remains on an unrelated dirty branch; issue-585 implementation stays isolated in this clean worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Stampede remains replay-only proof for the governance-source enforcement lane."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 585,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/585",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-29T18:15:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-29T18:15:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-585-residual-som-enforcement-structured-agent-cycle-plan.json",
+      "docs/plans/issue-585-residual-som-enforcement-pdcar.md",
+      "raw/cross-review/2026-04-29-issue-585-residual-som-enforcement.md",
+      "docs/codex-reviews/2026-04-29-issue-585-claude.md"
+    ],
+    "active_exception_ref": "docs/plans/issue-585-residual-som-enforcement-pdcar.md",
+    "active_exception_expires_at": "2026-04-30T18:15:00Z"
+  }
+}

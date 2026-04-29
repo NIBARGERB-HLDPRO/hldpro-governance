@@ -46,12 +46,33 @@ def _settings(pre_session_command: str, post_tool_command: str) -> str:
 
 
 class ValidateSessionContractSurfacesTests(unittest.TestCase):
+    def _write_required_files(self, root: Path) -> None:
+        _write(root, "CODEX.md", "contract\n")
+        _write(
+            root,
+            "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+            "Session-start contract note: governance sessions must surface this runbook via\npython3 scripts/session_bootstrap_contract.py --emit-hook-note before implementation-ready work.\n\nbash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh <repo>\n",
+        )
+        _write(
+            root,
+            "scripts/session_bootstrap_contract.py",
+            'parser.add_argument("--emit-hook-note")\nREQUIRED_DOCS=[\"docs/EXTERNAL_SERVICES_RUNBOOK.md\",\"docs/FAIL_FAST_LOG.md\"]\n',
+        )
+        _write(
+            root,
+            "hooks/pre-session-context.sh",
+            '#!/bin/bash\npython3 "$REPO_ROOT/scripts/session_bootstrap_contract.py" --emit-hook-note\n',
+        )
+        _write(
+            root,
+            ".claude/hooks/pre-session-context.sh",
+            '#!/bin/bash\npython3 "$REPO_ROOT/scripts/session_bootstrap_contract.py" --emit-hook-note\n',
+        )
+
     def test_valid_surfaces_pass(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
-            _write(root, "CODEX.md", "contract\n")
-            _write(root, "hooks/pre-session-context.sh", "#!/bin/bash\n")
-            _write(root, ".claude/hooks/pre-session-context.sh", "#!/bin/bash\n")
+            self._write_required_files(root)
             _write(
                 root,
                 ".claude/settings.json",
@@ -65,8 +86,8 @@ class ValidateSessionContractSurfacesTests(unittest.TestCase):
     def test_missing_wrapper_fails(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
-            _write(root, "CODEX.md", "contract\n")
-            _write(root, "hooks/pre-session-context.sh", "#!/bin/bash\n")
+            self._write_required_files(root)
+            (root / ".claude/hooks/pre-session-context.sh").unlink()
             _write(
                 root,
                 ".claude/settings.json",
@@ -81,9 +102,7 @@ class ValidateSessionContractSurfacesTests(unittest.TestCase):
     def test_missing_user_prompt_submit_command_fails(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
-            _write(root, "CODEX.md", "contract\n")
-            _write(root, "hooks/pre-session-context.sh", "#!/bin/bash\n")
-            _write(root, ".claude/hooks/pre-session-context.sh", "#!/bin/bash\n")
+            self._write_required_files(root)
             _write(
                 root,
                 ".claude/settings.json",
@@ -94,6 +113,38 @@ class ValidateSessionContractSurfacesTests(unittest.TestCase):
             )
             failures = validate(root)
         self.assertTrue(any("UserPromptSubmit" in failure for failure in failures))
+
+    def test_missing_runbook_contract_note_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            self._write_required_files(root)
+            _write(root, "docs/EXTERNAL_SERVICES_RUNBOOK.md", "bootstrap only\n")
+            _write(
+                root,
+                ".claude/settings.json",
+                _settings(
+                    "bash /tmp/repo/hooks/pre-session-context.sh",
+                    "bash /tmp/repo/hooks/check-errors.sh",
+                ),
+            )
+            failures = validate(root)
+        self.assertTrue(any("canonical session bootstrap hook note path" in failure for failure in failures))
+
+    def test_missing_helper_contract_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            self._write_required_files(root)
+            _write(root, "scripts/session_bootstrap_contract.py", "print('noop')\n")
+            _write(
+                root,
+                ".claude/settings.json",
+                _settings(
+                    "bash /tmp/repo/hooks/pre-session-context.sh",
+                    "bash /tmp/repo/hooks/check-errors.sh",
+                ),
+            )
+            failures = validate(root)
+        self.assertTrue(any("scripts/session_bootstrap_contract.py must include" in failure for failure in failures))
 
 
 if __name__ == "__main__":

@@ -49,6 +49,7 @@ GOVERNANCE_SURFACE_FILES = {
 IMPLEMENTATION_READY_MODES = {"implementation_ready", "implementation_complete"}
 ACCEPTED_REVIEW_STATES = {"accepted", "accepted_with_followup"}
 IMPLEMENTATION_READY_REVIEW_GATE_APPROVED_AT = "2026-04-28T19:00:00Z"
+ALTERNATE_REVIEW_IDENTITY_GATE_APPROVED_AT = "2026-04-29T16:30:00Z"
 ALTERNATE_REVIEW_EXEMPTION_TYPES = {
     "historical_grandfathered",
     "alternate_service_outage",
@@ -194,6 +195,13 @@ def _require_repo_ref_array(
     return refs
 
 
+def _repo_ref_exists(root: Path, ref: str) -> bool:
+    normalized = ref.strip()
+    if not normalized or normalized.startswith("/"):
+        return False
+    return (root / normalized).is_file()
+
+
 def _validate_alternate_review_exemption(path: Path, review: dict[str, object], failures: list[str]) -> None:
     exemption = review.get("exemption")
     if not isinstance(exemption, dict):
@@ -224,7 +232,51 @@ def _validate_alternate_review_exemption(path: Path, review: dict[str, object], 
         )
 
 
-def _validate_active_issue_branch_contract(path: Path, payload: dict[str, object], failures: list[str]) -> None:
+def _alternate_review_identity_gate_applies(payload: dict[str, object]) -> bool:
+    approved_at = payload.get("approved_at")
+    if not isinstance(approved_at, str) or not approved_at:
+        return True
+    return approved_at >= ALTERNATE_REVIEW_IDENTITY_GATE_APPROVED_AT
+
+
+def _validate_alternate_review_identity(
+    root: Path,
+    path: Path,
+    payload: dict[str, object],
+    plan_author: dict[str, str] | None,
+    alternate_review: dict[str, object],
+    failures: list[str],
+) -> None:
+    if not _alternate_review_identity_gate_applies(payload):
+        return
+    if alternate_review.get("status") not in ACCEPTED_REVIEW_STATES:
+        return
+    reviewer_model_id = alternate_review.get("reviewer_model_id")
+    reviewer_model_family = alternate_review.get("reviewer_model_family")
+    if not isinstance(reviewer_model_id, str) or not reviewer_model_id.strip():
+        failures.append(f"{path}: accepted `alternate_model_review` must include non-empty `reviewer_model_id`")
+        return
+    if not isinstance(reviewer_model_family, str) or not reviewer_model_family.strip():
+        failures.append(f"{path}: accepted `alternate_model_review` must include non-empty `reviewer_model_family`")
+        return
+    if plan_author is None:
+        return
+    if reviewer_model_family == plan_author["model_family"]:
+        failures.append(
+            f"{path}: accepted `alternate_model_review` must use an alternate model family from `plan_author`"
+        )
+    if (
+        reviewer_model_id == plan_author["model_id"]
+        and reviewer_model_family == plan_author["model_family"]
+    ):
+        failures.append(
+            f"{path}: accepted `alternate_model_review` cannot use the same model identity as `plan_author`"
+        )
+
+
+def _validate_active_issue_branch_contract(
+    root: Path, path: Path, payload: dict[str, object], failures: list[str]
+) -> None:
     plan_author = _require_identity(payload.get("plan_author"), path, "plan_author", failures)
 
     specialist_reviews = payload.get("specialist_reviews")
@@ -258,6 +310,8 @@ def _validate_active_issue_branch_contract(path: Path, payload: dict[str, object
     alternate_review = payload.get("alternate_model_review")
     if isinstance(alternate_review, dict) and alternate_review.get("required") is False:
         _validate_alternate_review_exemption(path, alternate_review, failures)
+    if isinstance(alternate_review, dict):
+        _validate_alternate_review_identity(root, path, payload, plan_author, alternate_review, failures)
 
     execution_handoff = payload.get("execution_handoff")
     if not isinstance(execution_handoff, dict):
@@ -265,13 +319,15 @@ def _validate_active_issue_branch_contract(path: Path, payload: dict[str, object
     handoff_ref = execution_handoff.get("handoff_package_ref")
     if not isinstance(handoff_ref, str) or not handoff_ref.strip():
         failures.append(f"{path}: active issue-branch plans require a non-null `execution_handoff.handoff_package_ref`")
+    elif not _repo_ref_exists(root, handoff_ref):
+        failures.append(f"{path}: `execution_handoff.handoff_package_ref` does not exist: {handoff_ref}")
 
     accepted_alternate_review = (
         isinstance(alternate_review, dict) and alternate_review.get("status") in ACCEPTED_REVIEW_STATES
     )
     mode = execution_handoff.get("execution_mode")
     review_refs_required = accepted_specialist_reviews > 0 or accepted_alternate_review or mode in IMPLEMENTATION_READY_MODES
-    _require_repo_ref_array(
+    review_refs = _require_repo_ref_array(
         execution_handoff.get("review_artifact_refs"),
         path,
         "execution_handoff.review_artifact_refs",
@@ -279,6 +335,10 @@ def _validate_active_issue_branch_contract(path: Path, payload: dict[str, object
         allow_empty=not review_refs_required,
         required_prefix="raw/cross-review/",
     )
+    if review_refs_required:
+        for ref in review_refs:
+            if not _repo_ref_exists(root, ref):
+                failures.append(f"{path}: `execution_handoff.review_artifact_refs` entry does not exist: {ref}")
 
 
 def _validate_planner_boundary_scope_presence(
@@ -485,9 +545,14 @@ def main() -> int:
 
     if args.require_if_issue_branch:
         branch = args.branch_name
-        branch_requires_plan = branch.startswith("issue-") or branch.startswith("riskfix/")
+        issue_number = _branch_issue_number(branch)
+        branch_requires_plan = issue_number is not None or branch.startswith("riskfix/")
         if branch_requires_plan and not files:
             failures.append(f"{branch}: requires at least one `*structured-agent-cycle-plan.json` file before execution.")
+        elif issue_number is not None and not _matching_plan_payloads(loaded_plans, root, issue_number):
+            failures.append(
+                f"{branch}: requires a canonical structured plan for issue #{issue_number} before execution."
+            )
 
     changed_files = _read_changed_files(args.changed_files_file)
     governance_surface_changes = [path for path in changed_files if _is_governance_surface(path)]
@@ -524,7 +589,7 @@ def main() -> int:
                 continue
             _validate_implementation_ready_alternate_review(rel_path, payload, failures, scope="implementation")
             if isinstance(payload, dict):
-                _validate_active_issue_branch_contract(rel_path, payload, failures)
+                _validate_active_issue_branch_contract(root, rel_path, payload, failures)
 
     for file_path, payload in loaded_plans:
         if payload is not None:

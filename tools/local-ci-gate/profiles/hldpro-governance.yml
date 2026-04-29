@@ -48,7 +48,9 @@ profile:
         - CODEX.md
         - CLAUDE.md
         - STANDARDS.md
+        - docs/EXTERNAL_SERVICES_RUNBOOK.md
         - hooks/
+        - scripts/session_bootstrap_contract.py
         - scripts/overlord/validate_session_contract_surfaces.py
       command:
         - python3
