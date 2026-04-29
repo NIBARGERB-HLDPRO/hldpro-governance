@@ -67,6 +67,8 @@ settings contracts, and undeclared specialist availability.
 - `scripts/overlord/test_deploy_governance_tooling.py`
 - `scripts/test_codex_fire.py`
 - `tools/local-ci-gate/profiles/hldpro-governance.yml`
+- `graphify-out/GRAPH_REPORT.md`
+- `graphify-out/graph.json`
 - `docs/plans/issue-587-rollout-blockers-pdcar.md`
 - `docs/plans/issue-587-rollout-blockers-structured-agent-cycle-plan.json`
 - `raw/execution-scopes/2026-04-29-issue-587-rollout-blockers-planning.json`
@@ -103,7 +105,8 @@ settings contracts, and undeclared specialist availability.
   - `docs/codex-reviews/2026-04-29-issue-587-claude.md`
 - Gate artifact refs:
   - `raw/validation/2026-04-29-issue-587-rollout-blockers.md`
-  - `cache/local-ci-gate/reports/20260429T181339Z-hldpro-governance-git`
+- Gate command result:
+  - `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` => `PASS`
 Handoff lifecycle: accepted
 
 ## Execution Scope / Write Boundary

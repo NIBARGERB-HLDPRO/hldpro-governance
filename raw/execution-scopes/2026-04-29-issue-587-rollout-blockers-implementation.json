@@ -53,6 +53,8 @@
     "scripts/packet/test_run_specialist_packet.py",
     "tools/local-ci-gate/profiles/hldpro-governance.yml",
     "tools/local-ci-gate/tests/test_local_ci_gate.py",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
     "STANDARDS.md",
     "CLAUDE.md",
     "CODEX.md",
