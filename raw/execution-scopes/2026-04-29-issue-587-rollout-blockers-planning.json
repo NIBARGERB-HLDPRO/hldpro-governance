@@ -1,0 +1,42 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-587-rollout-blockers",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "docs/PROGRESS.md",
+    "docs/plans/issue-587-rollout-blockers-pdcar.md",
+    "docs/plans/issue-587-rollout-blockers-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-29-issue-587-rollout-blockers-planning.json",
+    "raw/handoffs/2026-04-29-issue-587-rollout-blockers.json",
+    "raw/cross-review/2026-04-29-issue-587-rollout-blockers.md",
+    "raw/packets/2026-04-29-issue-587-claude-review-packet.md",
+    "raw/validation/2026-04-29-issue-587-rollout-blockers.md",
+    "docs/codex-reviews/2026-04-29-claude.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout remains on an unrelated dirty branch; issue-587 planning stays isolated in this clean worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Stampede remains replay-only proof for source governance enforcement."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 587,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/587",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-29T17:15:00Z"
+  },
+  "routing_gate": {
+    "rule": "Bidirectional Codex <> Claude pinned-agent dispatch is required.",
+    "codex_primary_requirement": "If Codex is primary, Claude-owned pinned roles must be dispatched through the governed Claude path.",
+    "claude_primary_requirement": "If Claude is primary, Codex-owned pinned roles must be dispatched through the governed Codex path.",
+    "absorption_forbidden": "Neither side may absorb the other side's pinned role."
+  }
+}

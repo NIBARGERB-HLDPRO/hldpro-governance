@@ -229,15 +229,20 @@ Both Claude and Codex sessions can invoke each other as specialist reviewers:
 |-----------|--------|-------------|
 | Claude → Codex | `bash scripts/codex-review.sh review <branch>` | Second-opinion code review from Codex |
 | Claude → Codex | `bash scripts/codex-review.sh audit <path>` | Codex security audit |
-| Codex → Claude | `bash scripts/codex-review.sh claude "<prompt>"` | Claude specialist review from Codex sessions |
+| Codex → Claude | `bash scripts/codex-review.sh claude <packet-file>` | Claude alternate-family review from Codex sessions |
 
 **Auth requirements:**
 - Codex sessions: `OPENAI_API_KEY` or `~/.codex/auth.json` (ChatGPT account, `gpt-5.4` default)
 - Claude calls from Codex: use the canonical bootstrap command `bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh <repo>` so the repo wrapper's generated env surface contains `CLAUDE_CODE_OAUTH_TOKEN`; do not hand-source tokens
-- `scripts/codex-review.sh claude` is the SSOT packet-review path. The prompt must be self-contained review scope, and the governance wrapper runs Claude in `bypassPermissions` mode by default with no tool access unless the execution scope explicitly enables `CLAUDE_REVIEW_ALLOWED_TOOLS`. This keeps the default path read-only in practice while avoiding plan-mode turn churn. Bounded packet reviews default to `claude-opus-4-6`; execution scopes may override `CLAUDE_REVIEW_MODEL` and `CLAUDE_REVIEW_MAX_TURNS` when a different Claude reviewer or a larger packet is explicitly approved.
+- `scripts/codex-review.sh claude` is the SSOT packet-review path. The packet must be supplied as a self-contained file path, and the governance wrapper runs Claude in `bypassPermissions` mode by default with no tool access unless the execution scope explicitly enables `CLAUDE_REVIEW_ALLOWED_TOOLS`. This keeps the default path read-only in practice while avoiding plan-mode turn churn. Bounded packet reviews default to `claude-opus-4-6`; execution scopes may override `CLAUDE_REVIEW_MODEL` and `CLAUDE_REVIEW_MAX_TURNS` when a different Claude reviewer or a larger packet is explicitly approved.
 - Codex config must inherit the token: `shell_environment_policy.inherit = "all"` in `~/.codex/config.toml`
+- Primary-session dispatch is hard-gated in both directions. If Codex is primary, it must dispatch Claude-owned pinned roles through the governed Claude path. If Claude is primary, it must dispatch Codex-owned pinned roles through the governed Codex path. Neither side may absorb the other side's pinned role.
+- Every governed code/doc/config change must end with a distinct pinned auditor or QA specialist review before merge or closeout.
+- Declared specialist-agent lanes are packet-backed contracts. Structured plans and package handoffs must bind agent identity, packet input, packet output, transport mode, and availability evidence; validators remain authoritative over acceptance.
+- `sim-runner` availability is governed by tracked agent surfaces plus `docs/hldpro-sim-consumer-pull-state.json`; do not treat ad hoc local installs or undeclared personas as validator-legal availability evidence.
+- Governance specialist planner, auditor, and QA lanes must run through `python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>`. They are Codex-side specialist lanes backed by tracked `hldpro-sim` personas and do not replace the pinned Claude alternate-family review lane.
 
-**Script contract:** Every code repo must have `scripts/codex-review.sh` with at minimum the `review` and `claude` modes. `scripts/codex-review.sh` is the only operator-facing path. Use `hldpro-governance/scripts/codex-review-template.sh` only as the shared implementation source behind that wrapper.
+**Script contract:** Every code repo must have `scripts/codex-review.sh` with at minimum the `review` and `claude` modes. `scripts/codex-review.sh` is the only operator-facing path. Use `hldpro-governance/scripts/codex-review-template.sh` only as the shared implementation source behind that wrapper. `claude` mode must consume a packet file path, not ad hoc shell-built prompt text.
 
 ### Weekly Sweep (Codex → Repos)
 

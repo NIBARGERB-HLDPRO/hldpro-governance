@@ -567,6 +567,19 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         hook = self.product / ".claude" / "hooks" / "pre-tool-use.sh"
         hook.parent.mkdir(parents=True)
         hook.write_text("# hldpro-governance managed\necho ok\n", encoding="utf-8")
+        settings = self.product / ".claude" / "settings.json"
+        settings.parent.mkdir(parents=True, exist_ok=True)
+        settings.write_text(
+            json.dumps(
+                {
+                    "hooks": {
+                        "PreToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": "echo pre"}]}],
+                        "PostToolUse": [{"matcher": "*", "hooks": [{"type": "command", "command": "echo post"}]}],
+                    }
+                }
+            ),
+            encoding="utf-8",
+        )
         (self.product / "CLAUDE.md").write_text("See hldpro-governance STANDARDS.md\n", encoding="utf-8")
         (self.product / "CODEX.md").write_text("Codex is the supervisor/orchestrator in hldpro-governance.\n", encoding="utf-8")
         runbook = self.product / "docs" / "EXTERNAL_SERVICES_RUNBOOK.md"
@@ -591,6 +604,15 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
                 "path": ".claude/hooks/pre-tool-use.sh",
                 "type": "managed_hook",
                 "sha256": hashlib.sha256(hook.read_bytes()).hexdigest(),
+            }
+        )
+        record["managed_files"].append(
+            {
+                "path": ".claude/settings.json",
+                "type": "hook_settings_contract",
+                "required_pre_tool_use_matchers": ["Bash"],
+                "required_post_tool_use_matchers": ["*"],
+                "sha256": hashlib.sha256(settings.read_bytes()).hexdigest(),
             }
         )
         self._write_record(record)

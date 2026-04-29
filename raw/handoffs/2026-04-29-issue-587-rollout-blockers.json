@@ -1,0 +1,193 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-587-rollout-blockers",
+  "issue_number": 587,
+  "parent_epic_number": 579,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-587-rollout-blockers-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-587-rollout-blockers-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-29-issue-587-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "specialist_agent": null,
+  "packet_transport": null,
+  "packet_output_ref": null,
+  "availability_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "package-handoff must accept implementation_complete in both schema and validator paths.",
+      "verification_refs": [
+        "docs/schemas/package-handoff.schema.json",
+        "scripts/overlord/validate_handoff_package.py",
+        "raw/validation/2026-04-29-issue-587-rollout-blockers.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "The consumer package contract must require .claude/settings.json where the governed session package requires it.",
+      "verification_refs": [
+        "docs/governance-tooling-package.json",
+        "docs/governance-consumer-pull-state.json",
+        "raw/validation/2026-04-29-issue-587-rollout-blockers.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Session-contract trigger coverage and the managed consumer package surfaces must stay aligned in local proof.",
+      "verification_refs": [
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "tools/local-ci-gate/tests/test_local_ci_gate.py",
+        "raw/validation/2026-04-29-issue-587-rollout-blockers.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Governed Claude review packets are hard-gated to a file-backed packet transport path: scripts/codex-review.sh claude passes a packet file ref through the governed wrapper flow, and inline shell interpolation fails closed.",
+      "verification_refs": [
+        "scripts/codex-review.sh",
+        "scripts/codex-review-template.sh",
+        "raw/validation/2026-04-29-issue-587-rollout-blockers.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "Bidirectional Codex <> Claude primary-session dispatch must be hard-gated: Codex-primary lanes dispatch Claude-owned pinned roles through the governed Claude path, Claude-primary lanes dispatch Codex-owned pinned roles through the governed Codex path, and neither side may absorb the other side's pinned role.",
+      "verification_refs": [
+        "STANDARDS.md",
+        "CODEX.md",
+        "CLAUDE.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "scripts/overlord/validate_session_contract_surfaces.py",
+        "scripts/overlord/test_validate_session_contract_surfaces.py",
+        "scripts/test_session_bootstrap_contract.py",
+        "raw/validation/2026-04-29-issue-587-rollout-blockers.md"
+      ]
+    },
+    {
+      "id": "AC6",
+      "statement": "Every governed code/doc/config change must end with assigned critical specialist auditor review by a distinct pinned auditor or QA lane before merge or closeout.",
+      "verification_refs": [
+        "STANDARDS.md",
+        "CODEX.md",
+        "CLAUDE.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "scripts/overlord/validate_session_contract_surfaces.py",
+        "scripts/overlord/test_validate_session_contract_surfaces.py",
+        "raw/validation/2026-04-29-issue-587-rollout-blockers.md"
+      ]
+    },
+    {
+      "id": "AC7",
+      "statement": "Tracked governance specialist planner, auditor, and QA lanes must be available through shared hldpro-sim persona resources, AGENT_REGISTRY.md, and docs/hldpro-sim-consumer-pull-state.json so downstream repos can consume the same governed specialist surfaces.",
+      "verification_refs": [
+        "AGENT_REGISTRY.md",
+        "docs/hldpro-sim-consumer-pull-state.json",
+        "packages/hldpro-sim/personas/gov-specialist-planner.json",
+        "packages/hldpro-sim/personas/gov-specialist-auditor.json",
+        "packages/hldpro-sim/personas/gov-specialist-qa.json",
+        "raw/validation/2026-04-29-issue-587-rollout-blockers.md"
+      ]
+    },
+    {
+      "id": "AC8",
+      "statement": "Governance specialist planner, auditor, and QA lanes must accept only file-backed structured packets and return only structured packet outputs with tracked packet transport and availability evidence that plan and handoff validators can prove.",
+      "verification_refs": [
+        "docs/schemas/governance-specialist-output.schema.json",
+        "agents/gov-specialist-planner.md",
+        "agents/gov-specialist-auditor.md",
+        "agents/gov-specialist-qa.md",
+        "scripts/packet/run_specialist_packet.py",
+        "scripts/packet/test_run_specialist_packet.py",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/validate_handoff_package.py",
+        "raw/validation/2026-04-29-issue-587-rollout-blockers.md"
+      ]
+    },
+    {
+      "id": "AC9",
+      "statement": "Bidirectional Codex <> Claude dispatch ownership must be machine-readable and wrapper-embedded: governed opposite-family or specialist lanes must declare the pinned wrapper path, packet transport mode, and output artifact contract, and validators must reject opposite-family role absorption or ad hoc call paths.",
+      "verification_refs": [
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "docs/schemas/package-handoff.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/validate_handoff_package.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_handoff_package.py",
+        "raw/validation/2026-04-29-issue-587-rollout-blockers.md"
+      ]
+    },
+    {
+      "id": "AC10",
+      "statement": "Pinned specialist fallback policy must be machine-readable and hard-gated: when a pinned specialist is unavailable or exhausted, fallback may only remain within the owned model family, may only move upward through the approved quality ladder, must emit fallback evidence, and must never permit cross-family role absorption.",
+      "verification_refs": [
+        "STANDARDS.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "docs/schemas/package-handoff.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/validate_handoff_package.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_handoff_package.py",
+        "raw/validation/2026-04-29-issue-587-rollout-blockers.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-587-rollout-blockers --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-29-issue-587-rollout-blockers.json",
+    "python3 scripts/overlord/verify_governance_consumer.py --governance-root . --target-repo /Users/bennibarger/Developer/HLDPRO/Stampede",
+    "python3 -m unittest scripts.packet.test_run_specialist_packet",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-29-issue-587-rollout-blockers.md",
+    "docs/codex-reviews/2026-04-29-issue-587-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-29-issue-587-rollout-blockers.md",
+    "docs/codex-reviews/2026-04-29-issue-587-claude.md"
+  ],
+  "artifact_refs": [
+    "docs/plans/issue-587-rollout-blockers-pdcar.md",
+    "docs/plans/issue-587-rollout-blockers-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-29-issue-587-rollout-blockers-planning.json"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [
+    "Implementation verification and closeout proof"
+  ],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-29T17:15:00Z",
+  "notes": "Implementation-ready handoff for the remaining governance-source rollout blocker lane. The accepted alternate-family review is recorded at docs/codex-reviews/2026-04-29-issue-587-claude.md. Routing is hard-gated in both directions: Codex-primary lanes must dispatch Claude-owned pinned roles through the governed Claude path, Claude-primary lanes must dispatch Codex-owned pinned roles through the governed Codex path, and neither side may absorb the other side's pinned role. When a pinned specialist is unavailable or exhausted, fallback remains inside the owned family, moves only through the approved quality ladder, and is logged as fallback evidence. Every governed code/doc/config change must also end with distinct pinned auditor or QA specialist review before merge or closeout. Governance specialist planner, auditor, and QA lanes must resolve through shared hldpro-sim personas and file-backed packet IO only."
+}

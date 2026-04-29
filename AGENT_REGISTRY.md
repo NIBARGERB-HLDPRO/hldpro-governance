@@ -9,6 +9,11 @@ Self-approval prohibited. Orchestrator may not perform tasks owned by Tier 2 age
 | Agent | Repo | Tier | Role | Model | Max Loops | Write Paths |
 |-------|------|------|------|-------|-----------|-------------|
 | overlord-sweep | hldpro-governance | 0 | supervisor | sonnet | 3 | reports/ |
+| som-worker-triage | hldpro-governance | 1 | worker | haiku | 1 | (read-only) |
+| sim-runner | hldpro-governance | 2 | worker | sonnet | 1 | raw/packets/outbound/ |
+| gov-specialist-planner | hldpro-governance | 2 | worker | gpt-5.4 | 1 | raw/packets/outbound/ |
+| gov-specialist-auditor | hldpro-governance | 2 | worker | gpt-5.4 | 1 | raw/packets/outbound/ |
+| gov-specialist-qa | hldpro-governance | 2 | worker | gpt-5.4-mini | 1 | raw/packets/outbound/ |
 | hldpro-watcher | ai-integration-services | 1 | supervisor | sonnet | 3 | .claude/agents/output/ + ../hldpro-governance/reports/ai-integration-services/ |
 | migration-validator | ai-integration-services | 2 | worker | sonnet | 1 | .claude/agents/output/migration-validator/ |
 | edge-fn-reviewer | ai-integration-services | 2 | worker | sonnet | 1 | .claude/agents/output/edge-fn-reviewer/ |

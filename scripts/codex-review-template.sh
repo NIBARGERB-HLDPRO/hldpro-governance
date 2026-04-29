@@ -5,7 +5,7 @@
 #   bash scripts/codex-review.sh review [branch]    # PR/diff review against branch (default: main)
 #   bash scripts/codex-review.sh audit [target]      # Security-focused audit of target file/dir
 #   bash scripts/codex-review.sh critique [system]   # Architecture critique of a named system
-#   bash scripts/codex-review.sh claude "<prompt>"   # Self-contained Claude packet review
+#   bash scripts/codex-review.sh claude <packet-file> # Self-contained Claude packet review
 #
 # Output: docs/codex-reviews/YYYY-MM-DD-<mode>.md
 # All writes constrained to docs/codex-reviews/ via --sandbox workspace-write
@@ -135,7 +135,7 @@ Write your findings to docs/codex-reviews/${DATE}-critique.md using the format d
     ;;
 
   claude)
-    echo "Calling Claude Code as specialist reviewer for: $TARGET"
+    echo "Calling Claude Code as specialist reviewer for packet: $TARGET"
 
     if [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
       ENV_CANDIDATES=()
@@ -160,19 +160,25 @@ Write your findings to docs/codex-reviews/${DATE}-critique.md using the format d
       exit 1
     fi
 
-    PROMPT="You are the alternate-family specialist reviewer for a governed HLD Pro packet.
-
-${PERSONA_CONTENT}
-
-Use the caller-supplied review packet below as the full review scope.
-Do not explore the repository or request additional tool-driven context unless
-the caller explicitly embedded that material in the review packet.
-Return concise markdown using the persona output format.
-
-${TARGET}"
+    if [ ! -f "$TARGET" ]; then
+      echo "ERROR: claude mode requires a packet file path. Inline shell-built prompt text is not allowed." >&2
+      exit 1
+    fi
 
     prompt_file="$(mktemp "${TMPDIR:-/tmp}/claude-review-prompt.XXXXXX")" || exit 1
-    printf '%s\n' "$PROMPT" >"$prompt_file"
+    packet_source="file"
+    packet_path="$TARGET"
+    packet_content="$(cat "$TARGET")"
+
+    {
+      printf '%s\n\n' "You are the alternate-family specialist reviewer for a governed HLD Pro packet."
+      printf '%s\n\n' "$PERSONA_CONTENT"
+      printf '%s\n' "Use the caller-supplied review packet below as the full review scope."
+      printf '%s\n' "Do not explore the repository or request additional tool-driven context unless"
+      printf '%s\n' "the caller explicitly embedded that material in the review packet."
+      printf '%s\n\n' "Return concise markdown using the persona output format."
+      printf '%s\n' "$packet_content"
+    } >"$prompt_file"
 
     if [ "${CODEX_REVIEW_DRY_RUN:-0}" = "1" ]; then
       echo "DRY_RUN claude mode ready"
@@ -182,6 +188,10 @@ ${TARGET}"
       echo "max_turns=${CLAUDE_REVIEW_MAX_TURNS:-8}"
       echo "allowed_tools=${CLAUDE_REVIEW_ALLOWED_TOOLS:-none}"
       echo "review_contract=self_contained_packet"
+      echo "packet_source=${packet_source}"
+      if [ -n "$packet_path" ]; then
+        echo "packet_path=${packet_path}"
+      fi
       echo "prompt_file=${prompt_file}"
       rm -f "$prompt_file"
       exit 0
@@ -230,7 +240,7 @@ ${TARGET}"
     echo "  review [branch]    — Codex code review against branch (default: main)"
     echo "  audit [path]       — Codex security audit of file or directory"
     echo "  critique [system]  — Codex architecture critique of a named system"
-    echo "  claude [prompt]    — Claude Code specialist review (called from Codex sessions)"
+    echo "  claude [packet]    — Claude Code specialist review (called from Codex sessions)"
     exit 1
     ;;
 esac

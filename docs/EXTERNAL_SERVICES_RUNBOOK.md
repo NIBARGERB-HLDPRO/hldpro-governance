@@ -380,13 +380,18 @@ gh api /repos/NIBARGERB-HLDPRO/<repo>/branches/main/protection --jq '.required_s
 Canonical operator-facing path in governed repos:
 
 ```bash
-bash scripts/codex-review.sh claude "<prompt>"
+bash scripts/codex-review.sh claude <packet-file>
 ```
 
 Contract:
 - pass a self-contained packet/diff review prompt
 - the governance wrapper defaults to Claude `bypassPermissions` mode with no tool access
 - no Claude tool access is granted unless the execution scope explicitly enables `CLAUDE_REVIEW_ALLOWED_TOOLS`
+- the `claude` review path is file-backed only; inline shell-built prompt text is not an allowed transport
+- Codex-primary lanes dispatch Claude-owned pinned roles through this governed Claude path; Claude-primary lanes must dispatch Codex-owned pinned roles through the governed Codex path instead of absorbing those roles
+- every governed code/doc/config change must end with a distinct pinned auditor or QA specialist review before merge or closeout
+- specialist-agent lanes must preserve packet input/output artifacts and tracked availability evidence so structured-plan and handoff validators can bind the request packet to the returned output
+- Codex-side governance specialist planner / auditor / QA lanes run only through `python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>` with tracked `hldpro-sim` personas and registry-backed availability
 - bounded packet reviews default to `claude-opus-4-6`; callers may raise `CLAUDE_REVIEW_MAX_TURNS` or override `CLAUDE_REVIEW_MODEL` only when the execution scope explicitly permits a larger packet or a different reviewer lane
 - `scripts/cli_session_supervisor.py` remains an implementation detail behind the wrapper
 

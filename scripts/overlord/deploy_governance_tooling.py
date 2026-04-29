@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import subprocess
 import sys
@@ -16,6 +17,8 @@ GOVERNANCE_ROOT = Path(__file__).resolve().parents[2]
 PACKAGE_MANIFEST = GOVERNANCE_ROOT / "docs" / "governance-tooling-package.json"
 DESIRED_STATE = GOVERNANCE_ROOT / "docs" / "governance-consumer-pull-state.json"
 CONSUMER_RECORD_PATH = ".hldpro/governance-tooling.json"
+HLDPRO_SIM_CONSUMER_STATE_SOURCE = "docs/hldpro-sim-consumer-pull-state.json"
+HLDPRO_SIM_CONSUMER_RECORD_PATH = ".hldpro/hldpro-sim.json"
 DEFAULT_PROFILE = "hldpro-governance"
 DEFAULT_SHIM_PATH = ".hldpro/local-ci.sh"
 
@@ -41,6 +44,7 @@ class ToolingPlan:
     def managed_files(self) -> list[dict[str, object]]:
         desired_state = _load_json(self.governance_root / "docs" / "governance-consumer-pull-state.json", "consumer pull desired state")
         return _managed_file_contract_entries(
+            self.governance_root,
             desired_state,
             self.profile,
             self.target_repo,
@@ -51,10 +55,18 @@ class ToolingPlan:
         )
 
     def planned_write_set(self) -> list[str]:
-        return [str(self.shim_path), str(self.record_path)]
+        planned = [str(self.shim_path), str(self.record_path)]
+        for entry in self.managed_files():
+            relpath = entry.get("path")
+            if (
+                isinstance(relpath, str)
+                and relpath == HLDPRO_SIM_CONSUMER_RECORD_PATH
+            ):
+                planned.append(str((self.target_repo / relpath).resolve()))
+        return planned
 
     def planned_rollback_set(self) -> list[str]:
-        return [str(self.shim_path), str(self.record_path)]
+        return self.planned_write_set()
 
     def to_json(self) -> dict[str, object]:
         return {
@@ -162,6 +174,7 @@ def _package_version(
 
 
 def _managed_file_contract_entries(
+    governance_root: Path,
     desired_state: dict[str, object],
     profile: str,
     target_repo: Path,
@@ -200,6 +213,10 @@ def _managed_file_contract_entries(
             entry["state"] = existing_record_state
         else:
             entry["state"] = "present" if (target_repo / relpath).exists() else "missing"
+            if relpath == HLDPRO_SIM_CONSUMER_RECORD_PATH:
+                source_path = governance_root / HLDPRO_SIM_CONSUMER_STATE_SOURCE
+                if source_path.is_file():
+                    entry["sha256"] = hashlib.sha256(source_path.read_bytes()).hexdigest()
         entries.append(entry)
     return entries
 
@@ -210,6 +227,46 @@ def _profile_constraints(desired_state: dict[str, object], profile: str) -> list
     if isinstance(raw, list) and all(isinstance(item, str) for item in raw):
         return list(raw)
     return []
+
+
+def _sim_consumer_record_source(governance_root: Path) -> Path:
+    return governance_root / HLDPRO_SIM_CONSUMER_STATE_SOURCE
+
+
+def _sim_consumer_record_path(target_repo: Path) -> Path:
+    return (target_repo / HLDPRO_SIM_CONSUMER_RECORD_PATH).resolve()
+
+
+def _profile_requires_sim_record(plan: ToolingPlan) -> bool:
+    return any(
+        isinstance(entry.get("path"), str) and entry["path"] == HLDPRO_SIM_CONSUMER_RECORD_PATH
+        for entry in plan.managed_files()
+    )
+
+
+def _write_sim_consumer_record(plan: ToolingPlan) -> None:
+    source = _sim_consumer_record_source(plan.governance_root)
+    if not source.is_file():
+        _fail(f"missing hldpro-sim consumer state source: {source}")
+    target = _sim_consumer_record_path(plan.target_repo)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
+
+
+def _sim_consumer_record_state(path: Path, governance_root: Path) -> str:
+    if not path.exists():
+        return "missing"
+    if path.is_dir():
+        return "unmanaged"
+    source = _sim_consumer_record_source(governance_root)
+    if not source.is_file():
+        return "unmanaged"
+    try:
+        actual = json.loads(path.read_text(encoding="utf-8"))
+        expected = json.loads(source.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return "unmanaged"
+    return "managed" if actual == expected else "unmanaged"
 
 
 def _record_state(path: Path) -> str:
@@ -326,6 +383,8 @@ def apply(plan: ToolingPlan, *, allow_dirty_target: bool, force: bool) -> dict[s
     deploy_local_ci_gate._write_managed_shim(local_ci_plan, backup_existing=False, force=force)
     plan.record_path.parent.mkdir(parents=True, exist_ok=True)
     plan.record_path.write_text(json.dumps(_consumer_record(plan), indent=2) + "\n", encoding="utf-8")
+    if _profile_requires_sim_record(plan):
+        _write_sim_consumer_record(plan)
     return {"status": "applied", **plan.to_json()}
 
 
@@ -353,6 +412,10 @@ def verify(plan: ToolingPlan) -> dict[str, object]:
             failures.append(
                 f"consumer record package_version mismatch: expected {plan.package_version}, got {record.get('package_version')}"
             )
+    if _profile_requires_sim_record(plan):
+        sim_path = _sim_consumer_record_path(plan.target_repo)
+        if _sim_consumer_record_state(sim_path, plan.governance_root) != "managed":
+            failures.append(f"hldpro-sim consumer record missing or unmanaged: {sim_path}")
     if failures:
         return {"status": "failed", "failures": failures, **plan.to_json()}
     return {"status": "verified", "failures": [], **plan.to_json()}
@@ -394,6 +457,15 @@ def rollback(plan: ToolingPlan, *, allow_dirty_target: bool, force: bool) -> dic
             "consumer record",
         ),
     ]
+    if _profile_requires_sim_record(plan):
+        sim_path = _sim_consumer_record_path(plan.target_repo)
+        removal_checks.append(
+            (
+                sim_path,
+                _sim_consumer_record_state(sim_path, plan.governance_root) if sim_path.exists() else "missing",
+                "hldpro-sim consumer record",
+            )
+        )
     for path, state, label in removal_checks:
         if path.exists() and state != "managed" and not force:
             _fail(f"refusing to remove unmanaged {label} {path}; use --force")
@@ -405,6 +477,11 @@ def rollback(plan: ToolingPlan, *, allow_dirty_target: bool, force: bool) -> dic
     if plan.record_path.exists():
         plan.record_path.unlink()
         removed.append(str(plan.record_path))
+    if _profile_requires_sim_record(plan):
+        sim_path = _sim_consumer_record_path(plan.target_repo)
+        if sim_path.exists():
+            sim_path.unlink()
+            removed.append(str(sim_path))
     return {"status": "rolled_back", "removed": removed, **plan.to_json()}
 
 

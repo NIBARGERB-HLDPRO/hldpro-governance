@@ -26,11 +26,12 @@
     "consumer_model": "shared_governance_package_with_thin_repo_adapter",
     "required_consumer_surfaces": [
       ".hldpro/governance-tooling.json",
-      ".hldpro/local-ci.sh"
+      ".hldpro/local-ci.sh",
+      ".hldpro/hldpro-sim.json when a governed consumer profile requires shared specialist-persona availability"
     ],
     "optional_consumer_surfaces": [
       ".hldpro/repo-governance-profile.json",
-      ".claude/settings.json pointer or managed shim"
+      ".claude/settings.json hook-settings contract where the session package requires local matcher enforcement"
     ],
     "non_goals": [
       "Do not make downstream repos blind mirrors of hldpro-governance.",

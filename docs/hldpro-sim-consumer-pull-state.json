@@ -11,6 +11,9 @@
     "consumer_target": "sim-personas/shared/",
     "ownership": "governance-managed-read-only",
     "personas": [
+      "gov-specialist-planner.json",
+      "gov-specialist-auditor.json",
+      "gov-specialist-qa.json",
       "asc-medical-director.json",
       "hvac-homeowner.json",
       "trader-growth.json",

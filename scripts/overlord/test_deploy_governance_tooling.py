@@ -128,6 +128,8 @@ class TestDeployGovernanceTooling(unittest.TestCase):
             {
                 ".hldpro/local-ci.sh",
                 ".hldpro/governance-tooling.json",
+                ".hldpro/hldpro-sim.json",
+                ".claude/settings.json",
                 "CLAUDE.md",
                 "CODEX.md",
                 "docs/EXTERNAL_SERVICES_RUNBOOK.md",

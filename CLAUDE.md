@@ -22,6 +22,18 @@ The bootstrap helper must emit a machine-checkable sentinel proving that
 `CODEX.md`, `docs/EXTERNAL_SERVICES_RUNBOOK.md`, and `STANDARDS.md §Society of
 Minds` were loaded or surfaced for the session.
 
+Codex <> Claude routing is explicit and pinned-agent based. Use
+`scripts/codex-review.sh claude <packet-file>` for alternate-family review only;
+if Codex is primary it must dispatch Claude-owned pinned roles through the
+governed Claude path, if Claude is primary it must dispatch Codex-owned pinned
+roles through the governed Codex path, and neither side may absorb the other
+side's pinned role. Every governed code/doc/config change must end with a
+distinct pinned auditor or QA specialist review before merge or closeout. Do
+not improvise review-packet shell transport.
+If Claude is primary and a lane requires a Codex-side governance specialist,
+dispatch it through `python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>`
+using the tracked `hldpro-sim` personas and registry surfaces.
+
 ## Society of Minds — SoT pointer
 
 Model routing, fallback ladder, cross-review protocol, and LAM-lane rules are defined in [`STANDARDS.md §Society of Minds`](STANDARDS.md) (Model Routing Charter, 2026-04-14). Every Claude agent file under `agents/` must have a `model:` frontmatter pin; every `codex exec` invocation must specify `-m` + `model_reasoning_effort`. Enforcement is CI-verifiable via `.github/workflows/check-*.yml`.
