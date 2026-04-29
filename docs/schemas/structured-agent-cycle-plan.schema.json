@@ -238,6 +238,14 @@
           "type": "string",
           "minLength": 1
         },
+        "reviewer_model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer_model_family": {
+          "type": "string",
+          "minLength": 1
+        },
         "model_family": {
           "type": "string",
           "minLength": 1

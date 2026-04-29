@@ -346,6 +346,32 @@ profile:
 
         self.assertEqual(statuses["handoff-package-integrity"], "planned")
 
+    def test_governance_profile_runs_session_contract_surfaces_for_runbook_changes(self) -> None:
+        profile = gate.load_profile(PROFILES_DIR / "hldpro-governance.yml")
+        changed = gate.resolve_changed_files(
+            self.root,
+            explicit_files=["docs/EXTERNAL_SERVICES_RUNBOOK.md"],
+            include_untracked=False,
+        )
+
+        report = gate.run_checks(self.root, profile, changed, dry_run=True, report_dir=self.root / "reports")
+        statuses = {result.check.id: result.status for result in report.results}
+
+        self.assertEqual(statuses["session-contract-surfaces"], "planned")
+
+    def test_governance_profile_runs_session_contract_surfaces_for_bootstrap_helper_changes(self) -> None:
+        profile = gate.load_profile(PROFILES_DIR / "hldpro-governance.yml")
+        changed = gate.resolve_changed_files(
+            self.root,
+            explicit_files=["scripts/session_bootstrap_contract.py"],
+            include_untracked=False,
+        )
+
+        report = gate.run_checks(self.root, profile, changed, dry_run=True, report_dir=self.root / "reports")
+        statuses = {result.check.id: result.status for result in report.results}
+
+        self.assertEqual(statuses["session-contract-surfaces"], "planned")
+
     def test_governance_profile_runs_provisioning_evidence_validator_for_runbooks(self) -> None:
         profile = gate.load_profile(PROFILES_DIR / "hldpro-governance.yml")
         changed = gate.resolve_changed_files(

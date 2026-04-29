@@ -114,6 +114,9 @@ Cross-model review artifacts returned through `scripts/codex-review.sh claude`
 are not optional narrative notes. On active governed issue lanes they are the
 machine-checkable `raw/cross-review/...` evidence that must populate plan and
 handoff review refs before promotion from planning to implementation.
+For new accepted active issue-lane reviews, `alternate_model_review` must also
+carry `reviewer_model_id` and `reviewer_model_family` so validators can reject
+same-family or same-identity review claims against `plan_author`.
 
 ### Auth
 - `CLAUDE_CODE_OAUTH_TOKEN` in the repo's bootstrap-generated env surface (governance: `.env.local`)

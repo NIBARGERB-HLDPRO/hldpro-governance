@@ -1,0 +1,35 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-585-residual-som-enforcement",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "docs/PROGRESS.md",
+    "docs/plans/issue-585-residual-som-enforcement-pdcar.md",
+    "docs/plans/issue-585-residual-som-enforcement-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-29-issue-585-residual-som-enforcement-planning.json",
+    "raw/handoffs/2026-04-29-issue-585-residual-som-enforcement.json",
+    "raw/cross-review/2026-04-29-issue-585-residual-som-enforcement.md",
+    "raw/validation/2026-04-29-issue-585-residual-som-enforcement.md",
+    "docs/codex-reviews/2026-04-29-issue-585-claude.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout remains on an unrelated dirty branch; issue-585 planning stays isolated in this clean worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Stampede remains read-only replay proof for source governance enforcement."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 585,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/585",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-29T16:30:00Z"
+  }
+}

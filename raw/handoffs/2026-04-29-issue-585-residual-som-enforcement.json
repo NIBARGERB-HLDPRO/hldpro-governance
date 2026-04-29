@@ -1,0 +1,78 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-585-residual-som-enforcement",
+  "issue_number": 585,
+  "parent_epic_number": 579,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-585-residual-som-enforcement-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-585-residual-som-enforcement-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Any branch containing an issue token must fail the mandatory-plan gate when no structured plan exists, including feat/issue-shaped branches.",
+      "verification_refs": [
+        "docs/plans/issue-585-residual-som-enforcement-pdcar.md",
+        "docs/plans/issue-585-residual-som-enforcement-structured-agent-cycle-plan.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "alternate_model_review must prove alternate-family or alternate-identity reviewer independence instead of only accepted status.",
+      "verification_refs": [
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "STANDARDS.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Referenced handoff and review artifacts must exist on disk when the evidence gate applies; dead placeholder refs do not satisfy the validator.",
+      "verification_refs": [
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "raw/validation/2026-04-29-issue-585-residual-som-enforcement.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Runbook-only changes must trigger the local session-contract gate, and the session-contract validator must prove the canonical bootstrap/runbook helper contract more concretely than file presence alone.",
+      "verification_refs": [
+        "scripts/overlord/validate_session_contract_surfaces.py",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "STANDARDS.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-585-residual-som-enforcement --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-29-issue-585-residual-som-enforcement.json",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-29-issue-585-residual-som-enforcement.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-29-issue-585-residual-som-enforcement.md",
+    "docs/codex-reviews/2026-04-29-issue-585-claude.md"
+  ],
+  "artifact_refs": [
+    "docs/plans/issue-585-residual-som-enforcement-pdcar.md",
+    "docs/plans/issue-585-residual-som-enforcement-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-29-issue-585-residual-som-enforcement-planning.json"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [
+    "Implementation verification and closeout proof"
+  ],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-29T16:30:00Z",
+  "notes": "Implementation-ready handoff for the residual governance-source hardening lane. Alternate-family review accepted the bounded fix set with follow-up clarifications already reflected in the packet."
+}
