@@ -35,6 +35,9 @@
       "type": "string",
       "minLength": 1
     },
+    "plan_author": {
+      "$ref": "#/$defs/identity"
+    },
     "tier": {
       "type": "integer",
       "minimum": 1,
@@ -174,6 +177,14 @@
           "type": "string",
           "minLength": 1
         },
+        "reviewer_model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer_model_family": {
+          "type": "string",
+          "minLength": 1
+        },
         "role": {
           "type": "string",
           "minLength": 1
@@ -194,6 +205,9 @@
         "summary": {
           "type": "string",
           "minLength": 1
+        },
+        "exemption": {
+          "$ref": "#/$defs/reviewExemption"
         },
         "evidence": {
           "type": "array",
@@ -250,6 +264,60 @@
             "type": "string",
             "minLength": 1
           }
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "model_id",
+        "model_family"
+      ],
+      "properties": {
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_family": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "reviewExemption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exemption_type",
+        "granted_by",
+        "expires_at",
+        "rationale"
+      ],
+      "properties": {
+        "exemption_type": {
+          "type": "string",
+          "enum": [
+            "historical_grandfathered",
+            "alternate_service_outage"
+          ]
+        },
+        "granted_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
         }
       }
     },

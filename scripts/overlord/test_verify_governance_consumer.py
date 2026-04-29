@@ -567,6 +567,14 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         hook = self.product / ".claude" / "hooks" / "pre-tool-use.sh"
         hook.parent.mkdir(parents=True)
         hook.write_text("# hldpro-governance managed\necho ok\n", encoding="utf-8")
+        (self.product / "CLAUDE.md").write_text("See hldpro-governance STANDARDS.md\n", encoding="utf-8")
+        (self.product / "CODEX.md").write_text("Codex is the supervisor/orchestrator in hldpro-governance.\n", encoding="utf-8")
+        runbook = self.product / "docs" / "EXTERNAL_SERVICES_RUNBOOK.md"
+        runbook.parent.mkdir(parents=True, exist_ok=True)
+        runbook.write_text("See hldpro-governance EXTERNAL_SERVICES_RUNBOOK.md\n", encoding="utf-8")
+        review = self.product / "scripts" / "codex-review.sh"
+        review.parent.mkdir(parents=True, exist_ok=True)
+        review.write_text("#!/usr/bin/env bash\n# claude\n", encoding="utf-8")
         record = self._read_record()
         record["schema_version"] = 2
         record["profile_constraints"] = self._required_constraints("healthcareplatform")
@@ -611,6 +619,60 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         self.assertEqual(payload["status"], "passed")
         self.assertEqual(payload["failures"], [])
         self.assertEqual(payload["observed_overrides"][0]["owner"], "governance")
+
+    def test_verify_fails_when_consumer_profile_omits_required_session_contract_entries(self) -> None:
+        self._deploy(profile="stampede", package_version=self._next_package_version())
+
+        code, stdout, stderr = self._invoke(
+            "--governance-root",
+            str(REPO_ROOT),
+            "--target-repo",
+            str(self.product),
+            "--profile",
+            "stampede",
+            "--governance-ref",
+            self.ref,
+        )
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        joined = "\n".join(payload["failures"])
+        self.assertIn("managed file missing on disk", joined)
+        self.assertIn("CLAUDE.md", joined)
+        self.assertIn("CODEX.md", joined)
+        self.assertIn("docs/EXTERNAL_SERVICES_RUNBOOK.md", joined)
+        self.assertIn("scripts/codex-review.sh", joined)
+
+    def test_verify_fails_when_consumer_profile_session_contract_content_is_stale(self) -> None:
+        next_version = self._next_package_version()
+        self._deploy(profile="stampede", package_version=next_version)
+        (self.product / "CLAUDE.md").write_text("Thin pointer only\n", encoding="utf-8")
+        (self.product / "CODEX.md").write_text("Orchestrator only\n", encoding="utf-8")
+        runbook = self.product / "docs" / "EXTERNAL_SERVICES_RUNBOOK.md"
+        runbook.parent.mkdir(parents=True, exist_ok=True)
+        runbook.write_text("Local note only\n", encoding="utf-8")
+        review = self.product / "scripts" / "codex-review.sh"
+        review.parent.mkdir(parents=True, exist_ok=True)
+        review.write_text("#!/usr/bin/env bash\n# claude\n", encoding="utf-8")
+
+        code, stdout, stderr = self._invoke(
+            "--governance-root",
+            str(REPO_ROOT),
+            "--target-repo",
+            str(self.product),
+            "--profile",
+            "stampede",
+            "--governance-ref",
+            self.ref,
+        )
+
+        self.assertEqual(code, 1, stderr)
+        payload = json.loads(stdout)
+        joined = "\n".join(payload["failures"])
+        self.assertIn("managed file missing required content", joined)
+        self.assertIn("CLAUDE.md", joined)
+        self.assertIn("CODEX.md", joined)
+        self.assertIn("docs/EXTERNAL_SERVICES_RUNBOOK.md", joined)
 
     def test_verify_fails_for_tracked_session_contract_missing_required_content(self) -> None:
         self._deploy()
@@ -673,8 +735,16 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         hook = self.product / ".claude" / "hooks" / "pre-tool-use.sh"
         hook.parent.mkdir(parents=True)
         hook.write_text("# hldpro-governance managed\necho ok\n", encoding="utf-8")
+        claude_md = self.product / "CLAUDE.md"
+        claude_md.write_text("Thin governance pointer to hldpro-governance STANDARDS.md.\n", encoding="utf-8")
         codex = self.product / "CODEX.md"
-        codex.write_text("Codex is the supervisor/orchestrator.\n", encoding="utf-8")
+        codex.write_text("Codex is the supervisor/orchestrator in hldpro-governance.\n", encoding="utf-8")
+        runbook = self.product / "docs" / "EXTERNAL_SERVICES_RUNBOOK.md"
+        runbook.parent.mkdir(parents=True, exist_ok=True)
+        runbook.write_text("See ../hldpro-governance/docs/EXTERNAL_SERVICES_RUNBOOK.md\n", encoding="utf-8")
+        review = self.product / "scripts" / "codex-review.sh"
+        review.parent.mkdir(parents=True, exist_ok=True)
+        review.write_text("#!/usr/bin/env bash\n# claude\n", encoding="utf-8")
         settings = self.product / ".claude" / "settings.json"
         settings.parent.mkdir(parents=True, exist_ok=True)
         settings.write_text(
@@ -700,10 +770,34 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         )
         record["managed_files"].append(
             {
+                "path": "CLAUDE.md",
+                "type": "tracked_session_contract",
+                "required_strings": ["hldpro-governance", "STANDARDS.md"],
+                "sha256": hashlib.sha256(claude_md.read_bytes()).hexdigest(),
+            }
+        )
+        record["managed_files"].append(
+            {
                 "path": "CODEX.md",
                 "type": "tracked_session_contract",
-                "required_strings": ["supervisor/orchestrator"],
+                "required_strings": ["hldpro-governance", "supervisor/orchestrator"],
                 "sha256": hashlib.sha256(codex.read_bytes()).hexdigest(),
+            }
+        )
+        record["managed_files"].append(
+            {
+                "path": "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+                "type": "tracked_session_contract",
+                "required_strings": ["hldpro-governance", "EXTERNAL_SERVICES_RUNBOOK.md"],
+                "sha256": hashlib.sha256(runbook.read_bytes()).hexdigest(),
+            }
+        )
+        record["managed_files"].append(
+            {
+                "path": "scripts/codex-review.sh",
+                "type": "tracked_session_contract",
+                "required_strings": ["claude"],
+                "sha256": hashlib.sha256(review.read_bytes()).hexdigest(),
             }
         )
         record["managed_files"].append(

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "owner_repo": "NIBARGERB-HLDPRO/hldpro-governance",
-  "updated_at": "2026-04-21",
+  "updated_at": "2026-04-29",
   "consumer_record_path": ".hldpro/governance-tooling.json",
   "pinning": {
     "governance_ref": "required_exact_git_sha",
@@ -59,24 +59,135 @@
       }
     },
     "ai-integration-services": {
-      "package_version": "0.2.0-ssot-bootstrap",
+      "package_version": "0.3.0-hard-gated-som",
       "managed_files": [
-        ".hldpro/local-ci.sh",
-        ".hldpro/governance-tooling.json"
+        {
+          "path": ".hldpro/local-ci.sh",
+          "type": "local_ci_shim"
+        },
+        {
+          "path": ".hldpro/governance-tooling.json",
+          "type": "consumer_record"
+        },
+        {
+          "path": "CLAUDE.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "STANDARDS.md"
+          ]
+        },
+        {
+          "path": "CODEX.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "supervisor/orchestrator"
+          ]
+        },
+        {
+          "path": "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "EXTERNAL_SERVICES_RUNBOOK.md"
+          ]
+        },
+        {
+          "path": "scripts/codex-review.sh",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "claude"
+          ]
+        }
       ]
     },
     "knocktracker": {
-      "package_version": "0.2.0-ssot-bootstrap",
+      "package_version": "0.3.0-hard-gated-som",
       "managed_files": [
-        ".hldpro/local-ci.sh",
-        ".hldpro/governance-tooling.json"
+        {
+          "path": ".hldpro/local-ci.sh",
+          "type": "local_ci_shim"
+        },
+        {
+          "path": ".hldpro/governance-tooling.json",
+          "type": "consumer_record"
+        },
+        {
+          "path": "CLAUDE.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "STANDARDS.md"
+          ]
+        },
+        {
+          "path": "CODEX.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "supervisor/orchestrator"
+          ]
+        },
+        {
+          "path": "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "EXTERNAL_SERVICES_RUNBOOK.md"
+          ]
+        },
+        {
+          "path": "scripts/codex-review.sh",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "claude"
+          ]
+        }
       ]
     },
     "local-ai-machine": {
-      "package_version": "0.2.0-ssot-bootstrap",
+      "package_version": "0.3.0-hard-gated-som",
       "managed_files": [
-        ".hldpro/local-ci.sh",
-        ".hldpro/governance-tooling.json"
+        {
+          "path": ".hldpro/local-ci.sh",
+          "type": "local_ci_shim"
+        },
+        {
+          "path": ".hldpro/governance-tooling.json",
+          "type": "consumer_record"
+        },
+        {
+          "path": "CLAUDE.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "STANDARDS.md"
+          ]
+        },
+        {
+          "path": "CODEX.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "supervisor/orchestrator"
+          ]
+        },
+        {
+          "path": "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "EXTERNAL_SERVICES_RUNBOOK.md"
+          ]
+        },
+        {
+          "path": "scripts/codex-review.sh",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "claude"
+          ]
+        }
       ],
       "profile_constraints": [
         "local model runtime routing",
@@ -86,10 +197,47 @@
       ]
     },
     "healthcareplatform": {
-      "package_version": "0.2.0-ssot-bootstrap",
+      "package_version": "0.3.0-hard-gated-som",
       "managed_files": [
-        ".hldpro/local-ci.sh",
-        ".hldpro/governance-tooling.json"
+        {
+          "path": ".hldpro/local-ci.sh",
+          "type": "local_ci_shim"
+        },
+        {
+          "path": ".hldpro/governance-tooling.json",
+          "type": "consumer_record"
+        },
+        {
+          "path": "CLAUDE.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "STANDARDS.md"
+          ]
+        },
+        {
+          "path": "CODEX.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "supervisor/orchestrator"
+          ]
+        },
+        {
+          "path": "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "EXTERNAL_SERVICES_RUNBOOK.md"
+          ]
+        },
+        {
+          "path": "scripts/codex-review.sh",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "claude"
+          ]
+        }
       ],
       "profile_constraints": [
         "HIPAA and PHI controls must not be weakened",
@@ -99,10 +247,47 @@
       ]
     },
     "seek-and-ponder": {
-      "package_version": "0.2.0-ssot-bootstrap",
+      "package_version": "0.3.0-hard-gated-som",
       "managed_files": [
-        ".hldpro/local-ci.sh",
-        ".hldpro/governance-tooling.json"
+        {
+          "path": ".hldpro/local-ci.sh",
+          "type": "local_ci_shim"
+        },
+        {
+          "path": ".hldpro/governance-tooling.json",
+          "type": "consumer_record"
+        },
+        {
+          "path": "CLAUDE.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "STANDARDS.md"
+          ]
+        },
+        {
+          "path": "CODEX.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "supervisor/orchestrator"
+          ]
+        },
+        {
+          "path": "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "EXTERNAL_SERVICES_RUNBOOK.md"
+          ]
+        },
+        {
+          "path": "scripts/codex-review.sh",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "claude"
+          ]
+        }
       ],
       "profile_constraints": [
         "plan-mode gate before code writes",
@@ -111,10 +296,47 @@
       ]
     },
     "stampede": {
-      "package_version": "0.2.0-ssot-bootstrap",
+      "package_version": "0.3.0-hard-gated-som",
       "managed_files": [
-        ".hldpro/local-ci.sh",
-        ".hldpro/governance-tooling.json"
+        {
+          "path": ".hldpro/local-ci.sh",
+          "type": "local_ci_shim"
+        },
+        {
+          "path": ".hldpro/governance-tooling.json",
+          "type": "consumer_record"
+        },
+        {
+          "path": "CLAUDE.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "STANDARDS.md"
+          ]
+        },
+        {
+          "path": "CODEX.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "supervisor/orchestrator"
+          ]
+        },
+        {
+          "path": "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "EXTERNAL_SERVICES_RUNBOOK.md"
+          ]
+        },
+        {
+          "path": "scripts/codex-review.sh",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "claude"
+          ]
+        }
       ],
       "profile_constraints": [
         "trading/product runtime safety",
@@ -122,10 +344,47 @@
       ]
     },
     "asc-evaluator": {
-      "package_version": "0.2.0-ssot-bootstrap",
+      "package_version": "0.3.0-hard-gated-som",
       "managed_files": [
-        ".hldpro/local-ci.sh",
-        ".hldpro/governance-tooling.json"
+        {
+          "path": ".hldpro/local-ci.sh",
+          "type": "local_ci_shim"
+        },
+        {
+          "path": ".hldpro/governance-tooling.json",
+          "type": "consumer_record"
+        },
+        {
+          "path": "CLAUDE.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "STANDARDS.md"
+          ]
+        },
+        {
+          "path": "CODEX.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "supervisor/orchestrator"
+          ]
+        },
+        {
+          "path": "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "EXTERNAL_SERVICES_RUNBOOK.md"
+          ]
+        },
+        {
+          "path": "scripts/codex-review.sh",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "claude"
+          ]
+        }
       ],
       "profile_constraints": [
         "knowledge-repo exemption",
