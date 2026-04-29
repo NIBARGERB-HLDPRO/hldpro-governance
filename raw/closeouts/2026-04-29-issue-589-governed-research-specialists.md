@@ -44,6 +44,8 @@ package-managed versus repo-specific adoption contract.
 - `docs/governance-consumer-pull-state.json`
 - `docs/hldpro-sim-consumer-pull-state.json`
 - `docs/schemas/governance-specialist-output.schema.json`
+- `graphify-out/GRAPH_REPORT.md`
+- `graphify-out/graph.json`
 - `packages/hldpro-sim/personas/gov-specialist-local-repo-researcher.json`
 - `packages/hldpro-sim/personas/gov-specialist-web-researcher.json`
 - `agents/gov-specialist-local-repo-researcher.md`

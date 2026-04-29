@@ -19,6 +19,8 @@
     "docs/codex-reviews/2026-04-29-claude.md",
     "docs/codex-reviews/2026-04-29-issue-589-claude.md",
     "docs/schemas/",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
     "raw/execution-scopes/2026-04-29-issue-589-governed-research-specialists-planning.json",
     "raw/execution-scopes/2026-04-29-issue-589-governed-research-specialists-implementation.json",
     "raw/handoffs/2026-04-29-issue-589-governed-research-specialists.json",
