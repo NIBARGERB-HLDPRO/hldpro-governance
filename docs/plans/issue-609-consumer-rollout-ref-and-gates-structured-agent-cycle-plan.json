@@ -1,0 +1,159 @@
+{
+  "session_id": "session-20260429-issue-609-consumer-rollout-ref-and-gates",
+  "issue_number": 609,
+  "objective": "Repair the governed consumer rollout procedure so it uses remote-reachable governance refs and satisfies repo-local publish gates before more product-repo propagation.",
+  "plan_author": {
+    "role": "codex-orchestrator",
+    "model_id": "gpt-5.4",
+    "model_family": "openai"
+  },
+  "tier": 1,
+  "scope_boundary": [
+    "Issue-609 work in hldpro-governance only.",
+    "Replay and classify already-merged AIS and knocktracker lanes.",
+    "No new consumer adoption lane until the governance repair is resolved."
+  ],
+  "out_of_scope": [
+    "Starting another consumer rollout lane before issue #609 resolves.",
+    "Ad hoc consumer fixes without issue-backed follow-up.",
+    "Reopening governance-source specialist design from issue #589."
+  ],
+  "research_summary": "Post-merge audit showed the active governance checkout was on local branch issue-385 while remote origin/main was at a different commit. Consumer lanes used governance ref da888a5bd09a40105d550658b58489cd96d3ff5e, which was present locally but not fetchable by GitHub from the remote repo. Knocktracker PR #190 also missed repo-local publish gates: file-index refresh, runner-status doc update for workflow changes, and PR-body required sections.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/609",
+    "https://github.com/NIBARGERB-HLDPRO/knocktracker/pull/190",
+    "https://github.com/NIBARGERB-HLDPRO/ai-integration-services/pull/1411",
+    "scripts/overlord/verify_governance_consumer.py",
+    "scripts/overlord/deploy_governance_tooling.py",
+    "docs/governance-tooling-package.json",
+    "docs/governance-consumer-pull-state.json",
+    "docs/runbooks/org-governance-tooling-distribution.md",
+    "docs/runbooks/local-ci-gate-toolkit.md"
+  ],
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-29-issue-609-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "sprints": [
+    {
+      "name": "Planning packet and replay audit",
+      "goal": "Capture the rollout defect, pause downstream propagation, incorporate the replay and Claude review follow-up, and define the hard-gated governance repair boundary.",
+      "tasks": [
+        "Write the issue-609 PDCAR, structured plan, and planning handoff.",
+        "Replay the merged AIS and knocktracker lanes against remote governance state, including workflow-ref scope.",
+        "Document the rollout hard gates for remote refs and repo-local publish checks.",
+        "Specify the concrete remote-reachability mechanism and replay checklist.",
+        "Route the planning packet through governed alternate-family review."
+      ],
+      "acceptance_criteria": [
+        "Issue #609 remains governance-only until the replay evidence and review follow-up are complete.",
+        "The packet names the remote-ref and repo-local publish-gate defects explicitly.",
+        "Governance tracker #591 records the blocked rollout state and links issue #609.",
+        "Alternate-family review is recorded before implementation promotion.",
+        "The packet defines a concrete remote-reachability mechanism and replay checklist."
+      ],
+      "file_paths": [
+        "docs/plans/issue-609-consumer-rollout-ref-and-gates-pdcar.md",
+        "docs/plans/issue-609-consumer-rollout-ref-and-gates-structured-agent-cycle-plan.json",
+        "raw/handoffs/2026-04-29-issue-609-consumer-rollout-ref-and-gates.json",
+        "raw/cross-review/2026-04-29-issue-609-consumer-rollout-ref-and-gates.md",
+        "raw/validation/2026-04-29-issue-609-consumer-rollout-ref-and-gates.md",
+        "raw/execution-scopes/2026-04-29-issue-609-consumer-rollout-ref-and-gates-implementation.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "consumer-rollout audit specialist",
+      "reviewer_model_id": "gpt-5.4-mini",
+      "reviewer_model_family": "openai",
+      "role": "post-merge audit",
+      "focus": "Classify whether the merged consumer lanes are complete or need corrective follow-up.",
+      "status": "mixed",
+      "summary": "Post-merge replay audit completed. AIS needs a corrective repin follow-up because the merged lane pinned an unreachable governance SHA, but no repo-local publish-gate miss was proven on the original PR path. Knocktracker needs a corrective consumer PR for the unreachable governance SHA plus missed repo-local publish gates: file-index refresh, runner-status doc update for workflow changes, and required PR-body sections.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/knocktracker/pull/190",
+        "https://github.com/NIBARGERB-HLDPRO/ai-integration-services/pull/1411",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591#issuecomment-4347870019",
+        "https://github.com/NIBARGERB-HLDPRO/knocktracker/issues/189#issuecomment-4347871026"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude specialist review via scripts/codex-review.sh claude",
+    "reviewer_model_id": "claude-opus-4-6",
+    "reviewer_model_family": "anthropic",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Accepted with required follow-up: implementation must specify the remote-reachability mechanism, define a concrete replay checklist, and include workflow-ref scope in merged-lane audits.",
+    "evidence": [
+      "docs/codex-reviews/2026-04-29-issue-609-claude.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement governance-source hard gates so consumer rollout fails before PR publication when governance refs are local-only or when required repo-local publish gates are missing, while downstream rollout remains paused until this repair merges.",
+    "next_execution_step": "Patch deploy/verify/runbook and rollout-checklist surfaces to enforce remote-reachable governance refs, concrete replay commands, workflow-ref scope, and repo-local publish-gate checks.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-29-issue-609-consumer-rollout-ref-and-gates.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-609-consumer-rollout-ref-and-gates-implementation.json",
+    "packet_ref": "raw/packets/2026-04-29-issue-609-claude-review-packet.md",
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-29-issue-609-consumer-rollout-ref-and-gates.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-29-issue-609-consumer-rollout-ref-and-gates.md"
+    ],
+    "gate_artifact_refs": [
+      "raw/validation/2026-04-29-issue-609-consumer-rollout-ref-and-gates.md",
+      "docs/codex-reviews/2026-04-29-issue-609-claude.md"
+    ],
+    "closeout_ref": null,
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Issue #609 remains governance-only in this branch.",
+      "The implementation defines and enforces a concrete remote-reachability mechanism.",
+      "The implementation defines and enforces a concrete replay checklist including workflow-ref scope.",
+      "The implementation enforces repo-local publish-gate checks before further consumer rollout."
+    ]
+  },
+  "material_deviation_rules": [
+    "Do not start another consumer rollout lane before issue #609 resolves.",
+    "Do not treat merged consumer PRs as complete when required GitHub checks failed.",
+    "Do not pin governance refs from a local-only branch."
+  ],
+  "approved": true,
+  "approved_by": [
+    "codex-orchestrator"
+  ],
+  "approved_at": "2026-04-29T22:05:00Z"
+}

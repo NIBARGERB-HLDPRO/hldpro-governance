@@ -254,7 +254,7 @@ Use this checklist for each consumer repo:
 python3 scripts/overlord/deploy_local_ci_gate.py dry-run \
   --target-repo /path/to/consumer-repo \
   --profile <profile-name> \
-  --governance-ref "$(git rev-parse HEAD)"
+  --governance-ref "$(git rev-parse origin/main)"
 ```
 
 5. Install or refresh only the managed shim path, normally `.hldpro/local-ci.sh`:
@@ -263,7 +263,7 @@ python3 scripts/overlord/deploy_local_ci_gate.py dry-run \
 python3 scripts/overlord/deploy_local_ci_gate.py install \
   --target-repo /path/to/consumer-repo \
   --profile <profile-name> \
-  --governance-ref "$(git rev-parse HEAD)"
+  --governance-ref "$(git rev-parse origin/main)"
 ```
 
 6. Add `cache/local-ci-gate/reports/` to the consumer repo `.gitignore` if it is not already ignored.
@@ -283,4 +283,14 @@ python3 /path/to/hldpro-governance/tools/local-ci-gate/bin/hldpro-local-ci run \
 ```
 
 9. Open a consumer-repo PR that includes only the shim, ignore-rule, and any repo-local usage note required by that repo.
-10. Merge only after required CI is green; CI remains authoritative.
+10. Before PR creation, run the governance-owned publish gate checker:
+
+```bash
+python3 scripts/overlord/check_consumer_rollout_publish_gate.py \
+  --target-repo /path/to/consumer-repo \
+  --base-ref origin/main \
+  --pr-title "[Issue #<number>] <scope summary>" \
+  --pr-body-file /path/to/pr-body.md
+```
+
+11. Merge only after required CI is green; CI remains authoritative.

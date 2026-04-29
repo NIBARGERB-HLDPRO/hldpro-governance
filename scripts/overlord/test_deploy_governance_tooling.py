@@ -10,6 +10,7 @@ import tempfile
 import unittest
 from pathlib import Path
 import sys
+from unittest import mock
 
 
 MODULE_PATH = Path(__file__).with_name("deploy_governance_tooling.py")
@@ -43,7 +44,11 @@ class TestDeployGovernanceTooling(unittest.TestCase):
     def _invoke(self, *args: str) -> tuple[int, str, str]:
         stdout = io.StringIO()
         stderr = io.StringIO()
-        with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+        with (
+            contextlib.redirect_stdout(stdout),
+            contextlib.redirect_stderr(stderr),
+            mock.patch.object(deploy_governance_tooling, "_ensure_remote_reachable_governance_ref", return_value=None),
+        ):
             code = deploy_governance_tooling.main(list(args))
         return code, stdout.getvalue(), stderr.getvalue()
 
@@ -254,11 +259,82 @@ class TestDeployGovernanceTooling(unittest.TestCase):
         self.assertEqual(verify_code, 0, verify_err)
         self.assertEqual(json.loads(verify_stdout)["status"], "verified")
 
+    def test_apply_fails_when_remote_governance_ref_is_not_reachable(self) -> None:
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+        with (
+            contextlib.redirect_stdout(stdout),
+            contextlib.redirect_stderr(stderr),
+            mock.patch.object(
+                deploy_governance_tooling,
+                "_ensure_remote_reachable_governance_ref",
+                side_effect=deploy_governance_tooling.GovernanceDeployError("unreachable sha"),
+            ),
+        ):
+            code = deploy_governance_tooling.main(["apply", *self._base_args()])
+        self.assertEqual(code, 1)
+        self.assertEqual(stdout.getvalue(), "")
+        self.assertIn("unreachable sha", stderr.getvalue())
+
+    def test_dry_run_does_not_require_remote_governance_ref_reachability(self) -> None:
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+        with (
+            contextlib.redirect_stdout(stdout),
+            contextlib.redirect_stderr(stderr),
+            mock.patch.object(
+                deploy_governance_tooling,
+                "_ensure_remote_reachable_governance_ref",
+                side_effect=deploy_governance_tooling.GovernanceDeployError("unreachable sha"),
+            ),
+        ):
+            code = deploy_governance_tooling.main(["dry-run", *self._base_args()])
+        self.assertEqual(code, 0, stderr.getvalue())
+        payload = json.loads(stdout.getvalue())
+        self.assertEqual(payload["status"], "planned")
+
+    def test_rollback_does_not_require_remote_governance_ref_reachability(self) -> None:
+        apply_code, _, apply_err = self._invoke("apply", *self._base_args())
+        self.assertEqual(apply_code, 0, apply_err)
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+        with (
+            contextlib.redirect_stdout(stdout),
+            contextlib.redirect_stderr(stderr),
+            mock.patch.object(
+                deploy_governance_tooling,
+                "_ensure_remote_reachable_governance_ref",
+                side_effect=deploy_governance_tooling.GovernanceDeployError("unreachable sha"),
+            ),
+        ):
+            code = deploy_governance_tooling.main(["rollback", *self._base_args(), "--allow-dirty-target"])
+        self.assertEqual(code, 0, stderr.getvalue())
+        payload = json.loads(stdout.getvalue())
+        self.assertEqual(payload["status"], "rolled_back")
+
         rollback_code, rollback_stdout, rollback_err = self._invoke("rollback", *self._base_args(), "--allow-dirty-target")
         self.assertEqual(rollback_code, 0, rollback_err)
         self.assertEqual(json.loads(rollback_stdout)["status"], "rolled_back")
         self.assertFalse(self._shim().exists())
         self.assertFalse(self._record().exists())
+
+    def test_apply_fails_when_governance_ref_is_not_remote_reachable(self) -> None:
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+        with (
+            contextlib.redirect_stdout(stdout),
+            contextlib.redirect_stderr(stderr),
+            mock.patch.object(
+                deploy_governance_tooling,
+                "_ensure_remote_reachable_governance_ref",
+                side_effect=deploy_governance_tooling.GovernanceDeployError("governance_ref must be reachable"),
+            ),
+        ):
+            code = deploy_governance_tooling.main(["apply", *self._base_args()])
+
+        self.assertEqual(code, 1)
+        self.assertEqual(stdout.getvalue(), "")
+        self.assertIn("governance_ref must be reachable", stderr.getvalue())
 
 
 if __name__ == "__main__":
