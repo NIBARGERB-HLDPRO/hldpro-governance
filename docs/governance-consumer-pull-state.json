@@ -41,6 +41,22 @@
       "mutation_policy": "issue-backed governance apply only"
     }
   ],
+  "rollout_policy": {
+    "package_managed": [
+      ".hldpro/local-ci.sh",
+      ".hldpro/governance-tooling.json",
+      ".hldpro/hldpro-sim.json",
+      "shared specialist persona availability declared through governance-managed manifests"
+    ],
+    "repo_specific_issue_backed": [
+      "consumer repo CLAUDE.md / CODEX.md / runbook stubs and local wrapper adoption",
+      "consumer repo scripts/codex-review.sh and hook-settings adoption",
+      "consumer repo enablement of governed research specialist lanes in repo-native workflows and plans"
+    ],
+    "report_only": [
+      "central GitHub org/repo settings observed by consumer verification but mutated only by issue-backed governance apply work"
+    ]
+  },
   "profiles": {
     "hldpro-governance": {
       "package_version": "0.1.0-contract",

@@ -1,0 +1,224 @@
+{
+  "session_id": "session-20260429-issue-589-governed-research-specialists",
+  "issue_number": 589,
+  "objective": "Define governed local-repo and web/external research specialist lanes at governance source and define the safest downstream rollout model for pushing those org-level governance changes into consumer repos.",
+  "plan_author": {
+    "role": "codex-orchestrator",
+    "model_id": "gpt-5.4",
+    "model_family": "openai"
+  },
+  "tier": 1,
+  "scope_boundary": [
+    "Issue-589 work in hldpro-governance only.",
+    "Issue-backed plan, scope, handoff, review, and validation artifacts for the governance-source research-specialist and downstream-rollout contract work.",
+    "Governance personas, agents, packet/output schemas, standards/runbook text, validator surfaces, and deployer/verifier contract changes needed to add research specialists and define their downstream rollout path.",
+    "No direct product-repo mutation in this branch; downstream rollout remains a separate repo-specific step."
+  ],
+  "out_of_scope": [
+    "Direct edits to Stampede, HealthcarePlatform, local-ai-machine, seek-and-ponder, knocktracker, ai-integration-services, or ASC-Evaluator in this branch.",
+    "Ad hoc web-search behavior that bypasses the governed packet/output contract.",
+    "Warning-only or documentation-only treatment of research specialist behavior.",
+    "Central GitHub setting mutation outside issue-backed governance apply work."
+  ],
+  "research_summary": "Specialist research confirmed governance source already has packet-backed planner, auditor, QA, and sim-runner surfaces, but still lacks first-class governed specialists for local-repo discovery and web/external discovery. The same research confirmed the current downstream consumer package model is still a thin bootstrap path and needs an explicit package-managed versus repo-specific rollout model before these new specialist surfaces can be pushed safely into product repos.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/589",
+    "STANDARDS.md",
+    "CODEX.md",
+    "CLAUDE.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/governance-tooling-package.json",
+    "docs/governance-consumer-pull-state.json",
+    "docs/hldpro-sim-consumer-pull-state.json",
+    "AGENT_REGISTRY.md",
+    "agents/sim-runner.md",
+    "scripts/overlord/deploy_governance_tooling.py",
+    "scripts/overlord/verify_governance_consumer.py"
+  ],
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-29-issue-589-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "sprints": [
+    {
+      "name": "Packet and review",
+      "goal": "Capture the bounded governance-source research-specialist and downstream-rollout scope before implementation-ready promotion.",
+      "tasks": [
+        "Write the issue-589 PDCAR, structured plan, planning execution scope, and planning handoff.",
+        "Record specialist research findings on local/web research lanes and the downstream rollout model.",
+        "Run the governed Claude review path against the packet before implementation."
+      ],
+      "acceptance_criteria": [
+        "The issue-589 packet validates locally as planning_only.",
+        "The packet names both the governance-source specialist-lane gap and the downstream rollout-model gap.",
+        "Alternate-family review is recorded through the governed wrapper path before implementation-ready promotion.",
+        "If the governed wrapper fails closed, the packet records the failure evidence and blocking governance dependency, and the lane remains planning_only until the dependency is resolved."
+      ],
+      "file_paths": [
+        "docs/plans/issue-589-governed-research-specialists-pdcar.md",
+        "docs/plans/issue-589-governed-research-specialists-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-29-issue-589-governed-research-specialists-planning.json",
+        "raw/handoffs/2026-04-29-issue-589-governed-research-specialists.json",
+        "raw/cross-review/2026-04-29-issue-589-governed-research-specialists.md",
+        "raw/packets/2026-04-29-issue-589-claude-review-packet.md",
+        "docs/codex-reviews/2026-04-29-issue-589-claude.md",
+        "raw/validation/2026-04-29-issue-589-governed-research-specialists.md"
+      ]
+    },
+    {
+      "name": "Research specialist and rollout contract",
+      "goal": "Land the minimum governance-source changes needed to add governed research specialists and define their downstream propagation model safely.",
+      "tasks": [
+        "Add tracked local-repo and web/external research specialist personas and agent definitions backed by hldpro-sim.",
+        "Add packet/output contract surfaces so both research specialists accept only file-backed structured packets and return structured outputs.",
+        "Add machine-checkable source-attribution requirements for the web/external research lane.",
+        "Extend plan/handoff validation so research-lane usage and evidence refs can be proven structurally.",
+        "Update the governance package/deployer/verifier contract to distinguish package-managed consumer changes from repo-specific rollout PR work for these new specialist surfaces.",
+        "Add regression tests and local proof."
+      ],
+      "acceptance_criteria": [
+        "A governed local-repo research specialist exists as a tracked, packet-backed, read-only governance lane.",
+        "A governed web/external research specialist exists as a tracked, packet-backed, read-only governance lane with hard-gated source attribution.",
+        "Plans and handoffs can declare which research specialist lane was used and validators can prove the packet/output artifact path.",
+        "The downstream rollout model is explicit about what is package-managed, what must remain repo-specific and issue-backed, and what remains report-only from the consumer side.",
+        "The strengthened specialist and rollout checks are covered by regression tests and local proof."
+      ],
+      "file_paths": [
+        "AGENT_REGISTRY.md",
+        "agents/",
+        "docs/agents/",
+        "packages/hldpro-sim/personas/",
+        "docs/hldpro-sim-consumer-pull-state.json",
+        "docs/governance-tooling-package.json",
+        "docs/governance-consumer-pull-state.json",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "STANDARDS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "docs/schemas/",
+        "scripts/packet/",
+        "raw/execution-scopes/2026-04-29-issue-589-governed-research-specialists-implementation.json",
+        "raw/closeouts/2026-04-29-issue-589-governed-research-specialists.md",
+        "scripts/overlord/deploy_governance_tooling.py",
+        "scripts/overlord/verify_governance_consumer.py",
+        "scripts/overlord/test_deploy_governance_tooling.py",
+        "scripts/overlord/test_verify_governance_consumer.py",
+        "scripts/overlord/validate_session_contract_surfaces.py",
+        "scripts/overlord/test_validate_session_contract_surfaces.py",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/validate_handoff_package.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_handoff_package.py",
+        "scripts/packet/test_run_specialist_packet.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "current-capability researcher",
+      "reviewer_model_id": "gpt-5.4-mini",
+      "reviewer_model_family": "openai",
+      "role": "deployment-capability review",
+      "focus": "Confirm what the current governance package can already deploy/verify into consumer repos and where the current limits are.",
+      "status": "mixed",
+      "summary": "The current deployer/verifier path remains a thin bootstrap model and does not yet perform true org-wide propagation. It can support safe downstream rollout only when the package manifest, desired-state contract, deployer, verifier, and rollback behavior are updated together.",
+      "evidence": [
+        "scripts/overlord/deploy_governance_tooling.py",
+        "scripts/overlord/verify_governance_consumer.py",
+        "docs/governance-consumer-pull-state.json",
+        "docs/governance-tooling-package.json"
+      ]
+    },
+    {
+      "reviewer": "governance-constraint researcher",
+      "reviewer_model_id": "gpt-5.4-mini",
+      "reviewer_model_family": "openai",
+      "role": "policy review",
+      "focus": "Confirm the governance constraints for adding local-repo and web/external research specialists and pushing those changes into consumer repos.",
+      "status": "mixed",
+      "summary": "Two research specialists fit the current SoM model only as bounded, read-only lanes under Codex orchestration. Web/external research should remain an exception lane with explicit source attribution. Downstream adoption must stay repo-specific and issue-backed even when package-managed consumer surfaces are extended.",
+      "evidence": [
+        "STANDARDS.md",
+        "CODEX.md",
+        "CLAUDE.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "docs/governance-tooling-package.json",
+        "docs/governance-consumer-pull-state.json"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude specialist review via scripts/codex-review.sh claude",
+    "reviewer_model_id": "claude-opus-4-6",
+    "reviewer_model_family": "anthropic",
+    "model_family": "anthropic",
+    "status": "accepted",
+    "summary": "Governed alternate-family review completed through scripts/codex-review.sh claude after refreshing this lane from merged origin/main. Verdict: accepted_with_followup. No blocking findings; duplicate next_execution_step metadata cleanup and final diff-hygiene rerun were the only follow-ups.",
+    "evidence": [
+      "docs/codex-reviews/2026-04-29-issue-589-claude.md",
+      "raw/packets/2026-04-29-issue-589-claude-review-packet.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implementation-ready governance-source lane. Research-specialist and downstream rollout contract changes are now approved within this repo only; direct consumer-repo mutation remains out of scope.",
+    "next_execution_step": "Implement the governed local-repo and web/external research specialist lanes, their packet/output contracts, and the downstream consumer rollout model surfaces defined in Sprint 2.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-29-issue-589-governed-research-specialists.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-589-governed-research-specialists-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-29-issue-589-governed-research-specialists.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-29-issue-589-governed-research-specialists.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": null,
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Issue-589 implementation stays bounded to governance-source surfaces only.",
+      "Direct product-repo changes stay out of scope for this branch.",
+      "The downstream rollout model must stay explicit about package-managed versus repo-specific issue-backed work."
+    ]
+  },
+  "material_deviation_rules": [
+    "Do not implement the new research specialists by prose only; packet/output and validation surfaces must be part of the same slice.",
+    "Do not widen this branch into direct consumer-repo mutation work.",
+    "Do not treat consumer-side verification as equivalent to central GitHub setting application."
+  ],
+  "approved": true,
+  "approved_by": [
+    "codex-orchestrator",
+    "claude-opus-4-6 alternate-family review"
+  ],
+  "approved_at": "2026-04-29T19:24:00Z"
+}

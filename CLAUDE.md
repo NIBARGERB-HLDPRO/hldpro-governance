@@ -33,6 +33,10 @@ not improvise review-packet shell transport.
 If Claude is primary and a lane requires a Codex-side governance specialist,
 dispatch it through `python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>`
 using the tracked `hldpro-sim` personas and registry surfaces.
+Repo-local discovery should route to `gov-specialist-local-repo-researcher`.
+External or temporally unstable discovery should route to
+`gov-specialist-web-researcher` only when the packet justifies external lookup
+and requires source-attributed output.
 
 ## Society of Minds — SoT pointer
 

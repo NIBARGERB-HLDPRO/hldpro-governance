@@ -391,7 +391,9 @@ Contract:
 - Codex-primary lanes dispatch Claude-owned pinned roles through this governed Claude path; Claude-primary lanes must dispatch Codex-owned pinned roles through the governed Codex path instead of absorbing those roles
 - every governed code/doc/config change must end with a distinct pinned auditor or QA specialist review before merge or closeout
 - specialist-agent lanes must preserve packet input/output artifacts and tracked availability evidence so structured-plan and handoff validators can bind the request packet to the returned output
-- Codex-side governance specialist planner / auditor / QA lanes run only through `python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>` with tracked `hldpro-sim` personas and registry-backed availability
+- Codex-side governance specialist planner / auditor / QA / local-repo-researcher / web-researcher lanes run only through `python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>` with tracked `hldpro-sim` personas and registry-backed availability
+- `gov-specialist-local-repo-researcher` is the default research lane when repo-local governed sources are sufficient
+- `gov-specialist-web-researcher` is an exception lane for external or temporally unstable facts and must return source-attributed structured output
 - bounded packet reviews default to `claude-opus-4-6`; callers may raise `CLAUDE_REVIEW_MAX_TURNS` or override `CLAUDE_REVIEW_MODEL` only when the execution scope explicitly permits a larger packet or a different reviewer lane
 - `scripts/cli_session_supervisor.py` remains an implementation detail behind the wrapper
 

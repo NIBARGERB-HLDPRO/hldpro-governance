@@ -240,7 +240,9 @@ Both Claude and Codex sessions can invoke each other as specialist reviewers:
 - Every governed code/doc/config change must end with a distinct pinned auditor or QA specialist review before merge or closeout.
 - Declared specialist-agent lanes are packet-backed contracts. Structured plans and package handoffs must bind agent identity, packet input, packet output, transport mode, and availability evidence; validators remain authoritative over acceptance.
 - `sim-runner` availability is governed by tracked agent surfaces plus `docs/hldpro-sim-consumer-pull-state.json`; do not treat ad hoc local installs or undeclared personas as validator-legal availability evidence.
-- Governance specialist planner, auditor, and QA lanes must run through `python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>`. They are Codex-side specialist lanes backed by tracked `hldpro-sim` personas and do not replace the pinned Claude alternate-family review lane.
+- Governance specialist planner, auditor, QA, local-repo researcher, and web/external researcher lanes must run through `python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>`. They are Codex-side specialist lanes backed by tracked `hldpro-sim` personas and do not replace the pinned Claude alternate-family review lane.
+- `gov-specialist-local-repo-researcher` is the default research lane for repo-local discovery. It is read-only, packet-backed, and restricted to governed local sources.
+- `gov-specialist-web-researcher` is an exception lane for temporally unstable or non-local questions. It is read-only, packet-backed, and must return machine-checkable source attribution for each external claim.
 
 **Script contract:** Every code repo must have `scripts/codex-review.sh` with at minimum the `review` and `claude` modes. `scripts/codex-review.sh` is the only operator-facing path. Use `hldpro-governance/scripts/codex-review-template.sh` only as the shared implementation source behind that wrapper. `claude` mode must consume a packet file path, not ad hoc shell-built prompt text.
 

@@ -40,6 +40,9 @@ distinct pinned auditor or QA specialist review before merge or closeout.
 Declared Codex-side governance specialist lanes are packet-backed only: use
 `python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>`
 with tracked `hldpro-sim` personas and registry evidence.
+Use `gov-specialist-local-repo-researcher` for repo-local discovery by default.
+Use `gov-specialist-web-researcher` only when the packet explicitly justifies
+external lookup and the returned output carries source attribution.
 
 ## Waterfall
 

@@ -18,6 +18,8 @@ REQUIRED_FILES = (
     Path("agents/gov-specialist-planner.md"),
     Path("agents/gov-specialist-auditor.md"),
     Path("agents/gov-specialist-qa.md"),
+    Path("agents/gov-specialist-local-repo-researcher.md"),
+    Path("agents/gov-specialist-web-researcher.md"),
     Path("hooks/pre-session-context.sh"),
     Path(".claude/hooks/pre-session-context.sh"),
     Path(".claude/settings.json"),
@@ -32,17 +34,21 @@ CLAUDE_ROUTE_NEEDLE = "Every governed code/doc/config change must end with a dis
 STANDARDS_ROUTE_NEEDLE = "Primary-session dispatch is hard-gated in both directions."
 RUNBOOK_PACKET_NEEDLE = "bash scripts/codex-review.sh claude <packet-file>"
 RUNBOOK_SPECIALIST_NEEDLE = "python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>"
-STANDARDS_SPECIALIST_NEEDLE = "Governance specialist planner, auditor, and QA lanes must run through `python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>`."
+STANDARDS_SPECIALIST_NEEDLE = "Governance specialist planner, auditor, QA, local-repo researcher, and web/external researcher lanes must run through `python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>`."
 CODEX_SPECIALIST_NEEDLE = "Declared Codex-side governance specialist lanes are packet-backed only"
 AGENT_REGISTRY_NEEDLES = (
     "| gov-specialist-planner | hldpro-governance |",
     "| gov-specialist-auditor | hldpro-governance |",
     "| gov-specialist-qa | hldpro-governance |",
+    "| gov-specialist-local-repo-researcher | hldpro-governance |",
+    "| gov-specialist-web-researcher | hldpro-governance |",
 )
 SIM_PULL_STATE_NEEDLES = (
     "gov-specialist-planner.json",
     "gov-specialist-auditor.json",
     "gov-specialist-qa.json",
+    "gov-specialist-local-repo-researcher.json",
+    "gov-specialist-web-researcher.json",
 )
 RUNNER_NEEDLES = (
     "OUTPUT_SCHEMA_PATH",
