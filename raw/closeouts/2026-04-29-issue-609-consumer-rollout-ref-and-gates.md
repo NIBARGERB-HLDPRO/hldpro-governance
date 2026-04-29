@@ -36,6 +36,8 @@ check.
 - `docs/plans/issue-609-consumer-rollout-ref-and-gates-structured-agent-cycle-plan.json`
 - `docs/runbooks/local-ci-gate-toolkit.md`
 - `docs/runbooks/org-governance-tooling-distribution.md`
+- `graphify-out/GRAPH_REPORT.md`
+- `graphify-out/graph.json`
 - `raw/cli-session-events/2026-04-29.jsonl`
 - `raw/cli-session-events/2026-04-29/cli_20260429T221048Z_cab1fcd6b2e8.stderr`
 - `raw/cli-session-events/2026-04-29/cli_20260429T221048Z_cab1fcd6b2e8.stdout`
