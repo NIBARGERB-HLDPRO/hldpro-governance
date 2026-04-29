@@ -44,5 +44,5 @@ promotion.
 - `python3 scripts/overlord/validate_session_contract_surfaces.py --root .`
   - Result: `PASS governance session contract surfaces present`
 - `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json`
-  - Result: pass
+  - Result: pass after implementation scope admitted hook-generated `graphify-out/` writeback
   - Report: `cache/local-ci-gate/reports/20260429T165517Z-hldpro-governance-git`

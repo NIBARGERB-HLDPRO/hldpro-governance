@@ -45,6 +45,8 @@ review-identity, evidence, and session-contract bypasses.
 - `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - `docs/plans/issue-585-residual-som-enforcement-pdcar.md`
 - `docs/plans/issue-585-residual-som-enforcement-structured-agent-cycle-plan.json`
+- `graphify-out/GRAPH_REPORT.md`
+- `graphify-out/graph.json`
 - `raw/execution-scopes/2026-04-29-issue-585-residual-som-enforcement-planning.json`
 - `raw/execution-scopes/2026-04-29-issue-585-residual-som-enforcement-implementation.json`
 - `raw/handoffs/2026-04-29-issue-585-residual-som-enforcement.json`
