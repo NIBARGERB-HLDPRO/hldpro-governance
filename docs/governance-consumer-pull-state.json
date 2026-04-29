@@ -70,6 +70,10 @@
           "type": "consumer_record"
         },
         {
+          "path": ".hldpro/hldpro-sim.json",
+          "type": "consumer_record"
+        },
+        {
           "path": "CLAUDE.md",
           "type": "tracked_session_contract",
           "required_strings": [
@@ -98,6 +102,16 @@
           "type": "tracked_session_contract",
           "required_strings": [
             "claude"
+          ]
+        },
+        {
+          "path": ".claude/settings.json",
+          "type": "hook_settings_contract",
+          "required_pre_tool_use_matchers": [
+            "Bash"
+          ],
+          "required_post_tool_use_matchers": [
+            "*"
           ]
         }
       ]
@@ -114,47 +128,7 @@
           "type": "consumer_record"
         },
         {
-          "path": "CLAUDE.md",
-          "type": "tracked_session_contract",
-          "required_strings": [
-            "hldpro-governance",
-            "STANDARDS.md"
-          ]
-        },
-        {
-          "path": "CODEX.md",
-          "type": "tracked_session_contract",
-          "required_strings": [
-            "hldpro-governance",
-            "supervisor/orchestrator"
-          ]
-        },
-        {
-          "path": "docs/EXTERNAL_SERVICES_RUNBOOK.md",
-          "type": "tracked_session_contract",
-          "required_strings": [
-            "hldpro-governance",
-            "EXTERNAL_SERVICES_RUNBOOK.md"
-          ]
-        },
-        {
-          "path": "scripts/codex-review.sh",
-          "type": "tracked_session_contract",
-          "required_strings": [
-            "claude"
-          ]
-        }
-      ]
-    },
-    "local-ai-machine": {
-      "package_version": "0.3.0-hard-gated-som",
-      "managed_files": [
-        {
-          "path": ".hldpro/local-ci.sh",
-          "type": "local_ci_shim"
-        },
-        {
-          "path": ".hldpro/governance-tooling.json",
+          "path": ".hldpro/hldpro-sim.json",
           "type": "consumer_record"
         },
         {
@@ -186,6 +160,74 @@
           "type": "tracked_session_contract",
           "required_strings": [
             "claude"
+          ]
+        },
+        {
+          "path": ".claude/settings.json",
+          "type": "hook_settings_contract",
+          "required_pre_tool_use_matchers": [
+            "Bash"
+          ],
+          "required_post_tool_use_matchers": [
+            "*"
+          ]
+        }
+      ]
+    },
+    "local-ai-machine": {
+      "package_version": "0.3.0-hard-gated-som",
+      "managed_files": [
+        {
+          "path": ".hldpro/local-ci.sh",
+          "type": "local_ci_shim"
+        },
+        {
+          "path": ".hldpro/governance-tooling.json",
+          "type": "consumer_record"
+        },
+        {
+          "path": ".hldpro/hldpro-sim.json",
+          "type": "consumer_record"
+        },
+        {
+          "path": "CLAUDE.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "STANDARDS.md"
+          ]
+        },
+        {
+          "path": "CODEX.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "supervisor/orchestrator"
+          ]
+        },
+        {
+          "path": "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "EXTERNAL_SERVICES_RUNBOOK.md"
+          ]
+        },
+        {
+          "path": "scripts/codex-review.sh",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "claude"
+          ]
+        },
+        {
+          "path": ".claude/settings.json",
+          "type": "hook_settings_contract",
+          "required_pre_tool_use_matchers": [
+            "Bash"
+          ],
+          "required_post_tool_use_matchers": [
+            "*"
           ]
         }
       ],
@@ -208,6 +250,10 @@
           "type": "consumer_record"
         },
         {
+          "path": ".hldpro/hldpro-sim.json",
+          "type": "consumer_record"
+        },
+        {
           "path": "CLAUDE.md",
           "type": "tracked_session_contract",
           "required_strings": [
@@ -236,6 +282,16 @@
           "type": "tracked_session_contract",
           "required_strings": [
             "claude"
+          ]
+        },
+        {
+          "path": ".claude/settings.json",
+          "type": "hook_settings_contract",
+          "required_pre_tool_use_matchers": [
+            "Bash"
+          ],
+          "required_post_tool_use_matchers": [
+            "*"
           ]
         }
       ],
@@ -258,6 +314,10 @@
           "type": "consumer_record"
         },
         {
+          "path": ".hldpro/hldpro-sim.json",
+          "type": "consumer_record"
+        },
+        {
           "path": "CLAUDE.md",
           "type": "tracked_session_contract",
           "required_strings": [
@@ -286,6 +346,16 @@
           "type": "tracked_session_contract",
           "required_strings": [
             "claude"
+          ]
+        },
+        {
+          "path": ".claude/settings.json",
+          "type": "hook_settings_contract",
+          "required_pre_tool_use_matchers": [
+            "Bash"
+          ],
+          "required_post_tool_use_matchers": [
+            "*"
           ]
         }
       ],
@@ -307,51 +377,7 @@
           "type": "consumer_record"
         },
         {
-          "path": "CLAUDE.md",
-          "type": "tracked_session_contract",
-          "required_strings": [
-            "hldpro-governance",
-            "STANDARDS.md"
-          ]
-        },
-        {
-          "path": "CODEX.md",
-          "type": "tracked_session_contract",
-          "required_strings": [
-            "hldpro-governance",
-            "supervisor/orchestrator"
-          ]
-        },
-        {
-          "path": "docs/EXTERNAL_SERVICES_RUNBOOK.md",
-          "type": "tracked_session_contract",
-          "required_strings": [
-            "hldpro-governance",
-            "EXTERNAL_SERVICES_RUNBOOK.md"
-          ]
-        },
-        {
-          "path": "scripts/codex-review.sh",
-          "type": "tracked_session_contract",
-          "required_strings": [
-            "claude"
-          ]
-        }
-      ],
-      "profile_constraints": [
-        "trading/product runtime safety",
-        "solo-maintainer or product-baseline overrides where issue-backed"
-      ]
-    },
-    "asc-evaluator": {
-      "package_version": "0.3.0-hard-gated-som",
-      "managed_files": [
-        {
-          "path": ".hldpro/local-ci.sh",
-          "type": "local_ci_shim"
-        },
-        {
-          "path": ".hldpro/governance-tooling.json",
+          "path": ".hldpro/hldpro-sim.json",
           "type": "consumer_record"
         },
         {
@@ -383,6 +409,78 @@
           "type": "tracked_session_contract",
           "required_strings": [
             "claude"
+          ]
+        },
+        {
+          "path": ".claude/settings.json",
+          "type": "hook_settings_contract",
+          "required_pre_tool_use_matchers": [
+            "Bash"
+          ],
+          "required_post_tool_use_matchers": [
+            "*"
+          ]
+        }
+      ],
+      "profile_constraints": [
+        "trading/product runtime safety",
+        "solo-maintainer or product-baseline overrides where issue-backed"
+      ]
+    },
+    "asc-evaluator": {
+      "package_version": "0.3.0-hard-gated-som",
+      "managed_files": [
+        {
+          "path": ".hldpro/local-ci.sh",
+          "type": "local_ci_shim"
+        },
+        {
+          "path": ".hldpro/governance-tooling.json",
+          "type": "consumer_record"
+        },
+        {
+          "path": ".hldpro/hldpro-sim.json",
+          "type": "consumer_record"
+        },
+        {
+          "path": "CLAUDE.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "STANDARDS.md"
+          ]
+        },
+        {
+          "path": "CODEX.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "supervisor/orchestrator"
+          ]
+        },
+        {
+          "path": "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "hldpro-governance",
+            "EXTERNAL_SERVICES_RUNBOOK.md"
+          ]
+        },
+        {
+          "path": "scripts/codex-review.sh",
+          "type": "tracked_session_contract",
+          "required_strings": [
+            "claude"
+          ]
+        },
+        {
+          "path": ".claude/settings.json",
+          "type": "hook_settings_contract",
+          "required_pre_tool_use_matchers": [
+            "Bash"
+          ],
+          "required_post_tool_use_matchers": [
+            "*"
           ]
         }
       ],

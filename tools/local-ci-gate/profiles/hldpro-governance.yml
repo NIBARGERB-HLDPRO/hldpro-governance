@@ -43,13 +43,18 @@ profile:
       severity: blocker
       scope: changed
       paths:
+        - AGENT_REGISTRY.md
         - .claude/
         - .github/workflows/governance-check.yml
         - CODEX.md
         - CLAUDE.md
         - STANDARDS.md
         - docs/EXTERNAL_SERVICES_RUNBOOK.md
+        - docs/hldpro-sim-consumer-pull-state.json
+        - docs/schemas/governance-specialist-output.schema.json
         - hooks/
+        - agents/gov-specialist-*.md
+        - scripts/packet/run_specialist_packet.py
         - scripts/session_bootstrap_contract.py
         - scripts/overlord/validate_session_contract_surfaces.py
       command:

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "docs/schemas/governance-specialist-output.schema.json",
+  "title": "Governance Specialist Output",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "specialist_role",
+    "packet_id",
+    "verdict",
+    "summary",
+    "artifact_refs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "governance-specialist-output.v1"
+    },
+    "specialist_role": {
+      "type": "string",
+      "enum": [
+        "gov-specialist-planner",
+        "gov-specialist-auditor",
+        "gov-specialist-qa"
+      ]
+    },
+    "packet_id": {
+      "type": "string"
+    },
+    "issue_number": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "accepted_with_changes",
+        "blocked"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "artifact_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validation_commands": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

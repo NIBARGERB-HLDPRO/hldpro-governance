@@ -37,6 +37,7 @@ VALID_LIFECYCLE_STATES = {
     "draft",
     "planned",
     "implementation_ready",
+    "implementation_complete",
     "in_progress",
     "validation_ready",
     "accepted",
@@ -51,6 +52,7 @@ VALID_DECISIONS = {"draft", "accepted", "rejected", "blocked"}
 HANDOFF_ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
 SCOPE_REQUIRED_STATES = {
     "implementation_ready",
+    "implementation_complete",
     "in_progress",
     "validation_ready",
     "accepted",
@@ -59,8 +61,30 @@ SCOPE_REQUIRED_STATES = {
 }
 PACKET_REQUIRED_STATES = {"validation_ready", "accepted", "released", "consumed"}
 CLOSEOUT_REQUIRED_STATES = {"accepted", "released", "consumed", "deprecated", "rolled_back", "archived"}
-EVIDENCE_REQUIRED_STATES = {"implementation_ready", "in_progress", "validation_ready", "accepted"}
+EVIDENCE_REQUIRED_STATES = {
+    "implementation_ready",
+    "implementation_complete",
+    "in_progress",
+    "validation_ready",
+    "accepted",
+}
 EVIDENCE_REFS_GATE_CREATED_AT = "2026-04-28T20:45:00Z"
+DISPATCH_CONTRACT_GATE_CREATED_AT = "2026-04-29T17:15:00Z"
+DISPATCH_WRAPPER_PATH = "scripts/codex-review.sh"
+DISPATCH_WRAPPER_IDS = {
+    "openai": "claude",
+    "anthropic": "codex",
+}
+FALLBACK_MODEL_ORDER = {
+    "openai": [
+        "gpt-5.3-codex-spark",
+        "gpt-5.4",
+    ],
+    "anthropic": [
+        "claude-sonnet-4-6",
+        "claude-opus-4-6",
+    ],
+}
 CONSUMER_VERIFIER_COMMAND = "verify_governance_consumer.py"
 CONSUMER_VERIFIER_ACCEPTANCE_GATE_CREATED_AT = "2026-04-21T22:33:23Z"
 CONSUMER_MANAGED_PATH_PREFIXES = (
@@ -73,6 +97,13 @@ CONSUMER_MANAGED_PATHS = {
     "scripts/overlord/verify_governance_consumer.py",
     "scripts/overlord/test_verify_governance_consumer.py",
 }
+SPECIALIST_OUTPUT_PREFIXES = (
+    "docs/codex-reviews/",
+    "raw/cross-review/",
+    "raw/packets/outbound/",
+    "raw/validation/",
+)
+DISPATCH_OUTPUT_PREFIXES = SPECIALIST_OUTPUT_PREFIXES
 
 
 def _is_url(value: str) -> bool:
@@ -95,6 +126,10 @@ def _repo_file_exists(root: Path, ref: str) -> bool:
     if _is_url(ref):
         return True
     return (root / ref).is_file()
+
+
+def _repo_file_exists_with_prefix(root: Path, ref: str, prefixes: tuple[str, ...]) -> bool:
+    return _repo_file_exists(root, ref) and any(ref.startswith(prefix) for prefix in prefixes)
 
 
 def _load_json(path: Path) -> Any:
@@ -158,6 +193,13 @@ def _evidence_ref_gate_applies(payload: dict[str, Any]) -> bool:
     return created_at >= EVIDENCE_REFS_GATE_CREATED_AT
 
 
+def _dispatch_contract_gate_applies(payload: dict[str, Any]) -> bool:
+    created_at = payload.get("created_at")
+    if not isinstance(created_at, str) or not created_at:
+        return False
+    return created_at >= DISPATCH_CONTRACT_GATE_CREATED_AT
+
+
 def _validate_acceptance_criteria(
     root: Path,
     package_path: Path,
@@ -201,6 +243,137 @@ def _validate_acceptance_criteria(
                 )
 
 
+def _validate_dispatch_contract(
+    root: Path,
+    package_path: Path,
+    payload: dict[str, Any],
+    failures: list[str],
+) -> None:
+    dispatch_contract = payload.get("dispatch_contract")
+    if not isinstance(dispatch_contract, dict):
+        failures.append(f"{package_path}: `dispatch_contract` must be an object")
+        return
+
+    primary_session_family = dispatch_contract.get("primary_session_family")
+    if primary_session_family not in {"openai", "anthropic"}:
+        failures.append(f"{package_path}: `dispatch_contract.primary_session_family` must be one of ['anthropic', 'openai']")
+        return
+
+    expected_wrapper_id = DISPATCH_WRAPPER_IDS[str(primary_session_family)]
+    wrapper_path = dispatch_contract.get("wrapper_path")
+    if wrapper_path != DISPATCH_WRAPPER_PATH:
+        failures.append(f"{package_path}: `dispatch_contract.wrapper_path` must be `{DISPATCH_WRAPPER_PATH}`")
+    elif not _repo_file_exists(root, wrapper_path):
+        failures.append(f"{package_path}: `dispatch_contract.wrapper_path` does not exist: {wrapper_path}")
+
+    wrapper_id = dispatch_contract.get("wrapper_id")
+    if not isinstance(wrapper_id, str) or not wrapper_id.strip():
+        failures.append(f"{package_path}: `dispatch_contract.wrapper_id` must be a non-empty string")
+    elif wrapper_id != expected_wrapper_id:
+        failures.append(
+            f"{package_path}: `dispatch_contract.wrapper_id` must be `{expected_wrapper_id}` for primary session family `{primary_session_family}`"
+        )
+
+    if dispatch_contract.get("packet_transport_mode") != "file":
+        failures.append(f"{package_path}: `dispatch_contract.packet_transport_mode` must be 'file'")
+
+    owned_roles = dispatch_contract.get("owned_roles")
+    if not isinstance(owned_roles, list) or not owned_roles:
+        failures.append(f"{package_path}: `dispatch_contract.owned_roles` must be a non-empty array")
+    else:
+        for index, item in enumerate(owned_roles, start=1):
+            if not isinstance(item, dict):
+                failures.append(f"{package_path}: `dispatch_contract.owned_roles[{index}]` must be an object")
+                continue
+            role = item.get("role")
+            model_family = item.get("model_family")
+            if not isinstance(role, str) or not role.strip():
+                failures.append(f"{package_path}: `dispatch_contract.owned_roles[{index}].role` must be a non-empty string")
+            if model_family not in {"openai", "anthropic"}:
+                failures.append(
+                    f"{package_path}: `dispatch_contract.owned_roles[{index}].model_family` must be one of ['anthropic', 'openai']"
+                )
+                continue
+            if model_family == primary_session_family:
+                failures.append(
+                    f"{package_path}: `dispatch_contract.owned_roles[{index}]` cannot be absorbed by the primary session family"
+                )
+
+    output_artifact_refs = dispatch_contract.get("output_artifact_refs")
+    if not isinstance(output_artifact_refs, list) or not output_artifact_refs:
+        failures.append(f"{package_path}: `dispatch_contract.output_artifact_refs` must be a non-empty array")
+        return
+    for index, item in enumerate(output_artifact_refs, start=1):
+        if not isinstance(item, str) or not item.strip():
+            failures.append(f"{package_path}: `dispatch_contract.output_artifact_refs[{index}]` must be a non-empty string")
+            continue
+        normalized = _normalize_repo_path(item, f"dispatch_contract.output_artifact_refs[{index}]", package_path)
+        if not _repo_file_exists(root, normalized):
+            failures.append(
+                f"{package_path}: `dispatch_contract.output_artifact_refs[{index}]` does not exist: {normalized}"
+            )
+        if not any(normalized.startswith(prefix) for prefix in DISPATCH_OUTPUT_PREFIXES):
+            failures.append(
+                f"{package_path}: `dispatch_contract.output_artifact_refs[{index}]` must reference a governed output artifact, got {normalized}"
+            )
+
+    packet_output_ref = payload.get("packet_output_ref")
+    if isinstance(packet_output_ref, str) and packet_output_ref and packet_output_ref not in output_artifact_refs:
+        failures.append(f"{package_path}: `packet_output_ref` must be included in `dispatch_contract.output_artifact_refs`")
+
+    fallback_policy = dispatch_contract.get("fallback_policy")
+    if not isinstance(fallback_policy, dict):
+        failures.append(f"{package_path}: `dispatch_contract.fallback_policy` must be an object")
+        return
+    if fallback_policy.get("same_family_only") is not True:
+        failures.append(f"{package_path}: `dispatch_contract.fallback_policy.same_family_only` must be true")
+    ordered_models = fallback_policy.get("ordered_models")
+    if not isinstance(ordered_models, list) or not ordered_models:
+        failures.append(f"{package_path}: `dispatch_contract.fallback_policy.ordered_models` must be a non-empty array")
+        return
+    expected_order = FALLBACK_MODEL_ORDER[str(primary_session_family)]
+    last_rank = -1
+    for index, item in enumerate(ordered_models, start=1):
+        if not isinstance(item, dict):
+            failures.append(f"{package_path}: `dispatch_contract.fallback_policy.ordered_models[{index}]` must be an object")
+            continue
+        family = item.get("family")
+        model_id = item.get("model_id")
+        if family != primary_session_family:
+            failures.append(
+                f"{package_path}: `dispatch_contract.fallback_policy.ordered_models[{index}].family` must match `{primary_session_family}`"
+            )
+            continue
+        if not isinstance(model_id, str) or not model_id.strip():
+            failures.append(
+                f"{package_path}: `dispatch_contract.fallback_policy.ordered_models[{index}].model_id` must be a non-empty string"
+            )
+            continue
+        try:
+            model_rank = expected_order.index(model_id)
+        except ValueError:
+            failures.append(
+                f"{package_path}: `dispatch_contract.fallback_policy.ordered_models[{index}].model_id` must be an approved model for `{primary_session_family}`"
+            )
+            continue
+        if model_rank <= last_rank:
+            failures.append(
+                f"{package_path}: `dispatch_contract.fallback_policy.ordered_models[{index}]` must be in strictly increasing quality order"
+            )
+            continue
+        last_rank = model_rank
+
+    owned_families = {
+        str(item.get("model_family"))
+        for item in owned_roles
+        if isinstance(item, dict) and isinstance(item.get("model_family"), str)
+    }
+    if primary_session_family == "openai" and "anthropic" not in owned_families:
+        failures.append(f"{package_path}: `dispatch_contract.owned_roles` must declare opposite-family ownership for `anthropic`")
+    if primary_session_family == "anthropic" and "openai" not in owned_families:
+        failures.append(f"{package_path}: `dispatch_contract.owned_roles` must declare opposite-family ownership for `openai`")
+
+
 def _consumer_managed_paths(scope_payload: dict[str, Any]) -> list[str]:
     allowed_write_paths = scope_payload.get("allowed_write_paths")
     if not isinstance(allowed_write_paths, list):
@@ -229,6 +402,78 @@ def _criteria_verification_refs(payload: dict[str, Any]) -> list[str]:
         if isinstance(raw_refs, list):
             refs.extend(str(item) for item in raw_refs if str(item))
     return refs
+
+
+def _agent_registry_has_agent(root: Path, agent_id: str) -> bool:
+    registry = root / "AGENT_REGISTRY.md"
+    return registry.is_file() and f"| {agent_id} |" in registry.read_text(encoding="utf-8")
+
+
+def _agent_surface_exists(root: Path, agent_id: str) -> bool:
+    return any(
+        (root / relpath).is_file()
+        for relpath in (
+            f"agents/{agent_id}.md",
+            f"docs/agents/{agent_id}.md",
+        )
+    )
+
+
+def _validate_specialist_agent_contract(
+    root: Path,
+    package_path: Path,
+    payload: dict[str, Any],
+    failures: list[str],
+) -> None:
+    specialist_agent = payload.get("specialist_agent")
+    packet_transport = payload.get("packet_transport")
+    packet_output_ref = payload.get("packet_output_ref")
+    availability_ref = payload.get("availability_ref")
+    packet_ref = payload.get("packet_ref")
+    package_manifest_ref = payload.get("package_manifest_ref")
+
+    if specialist_agent is None and packet_transport is None and packet_output_ref is None and availability_ref is None:
+        return
+
+    if not isinstance(specialist_agent, str) or not specialist_agent.strip():
+        failures.append(f"{package_path}: `specialist_agent` must be a non-empty string when specialist packet contract fields are present")
+        return
+    agent_id = specialist_agent.strip()
+    if packet_transport != "file":
+        failures.append(f"{package_path}: `packet_transport` must be 'file' for specialist-agent handoffs")
+    if not isinstance(packet_ref, str) or not _repo_file_exists_with_prefix(root, packet_ref, ("raw/packets/",)):
+        failures.append(f"{package_path}: specialist-agent handoffs require `packet_ref` under `raw/packets/`")
+    if not isinstance(packet_output_ref, str) or not _repo_file_exists_with_prefix(root, packet_output_ref, SPECIALIST_OUTPUT_PREFIXES):
+        failures.append(
+            f"{package_path}: `packet_output_ref` must exist under one of {list(SPECIALIST_OUTPUT_PREFIXES)}"
+        )
+    valid_availability_ref = availability_ref in {
+        "AGENT_REGISTRY.md",
+        f"agents/{agent_id}.md",
+        f"docs/agents/{agent_id}.md",
+    }
+    if not isinstance(availability_ref, str) or not valid_availability_ref or not _repo_file_exists(root, availability_ref):
+        failures.append(
+            f"{package_path}: `availability_ref` must be AGENT_REGISTRY.md or an agent definition for `{agent_id}`"
+        )
+    if not (_agent_registry_has_agent(root, agent_id) or _agent_surface_exists(root, agent_id)):
+        failures.append(f"{package_path}: `specialist_agent` does not resolve to a tracked specialist agent: {agent_id}")
+
+    if agent_id == "sim-runner":
+        if not isinstance(package_manifest_ref, str) or not package_manifest_ref.strip():
+            failures.append(f"{package_path}: sim-runner specialist handoffs require non-null `package_manifest_ref`")
+            return
+        manifest_payload = _read_json_ref(root, package_manifest_ref, "package_manifest_ref", package_path, failures)
+        if not isinstance(manifest_payload, dict):
+            return
+        if manifest_payload.get("package") != "hldpro-sim":
+            failures.append(f"{package_path}: `package_manifest_ref` must reference hldpro-sim package state for sim-runner")
+        managed_personas = manifest_payload.get("managed_personas")
+        personas = managed_personas.get("personas") if isinstance(managed_personas, dict) else None
+        if not isinstance(personas, list) or not personas:
+            failures.append(f"{package_path}: sim-runner package state must expose non-empty managed personas")
+        if isinstance(packet_output_ref, str) and not packet_output_ref.startswith("raw/packets/outbound/"):
+            failures.append(f"{package_path}: sim-runner `packet_output_ref` must resolve under `raw/packets/outbound/`")
 
 
 def _consumer_verifier_acceptance_gate_applies(payload: dict[str, Any]) -> bool:
@@ -367,6 +612,14 @@ def validate_package(root: Path, package_path: Path) -> list[str]:
             _validate_non_empty_ref_array_for_state(package_path, payload, field_name, lifecycle_state, failures)
 
     _validate_acceptance_criteria(root, package_path, payload, failures)
+    if _dispatch_contract_gate_applies(payload) or payload.get("dispatch_contract") is not None:
+        if payload.get("dispatch_contract") is None:
+            failures.append(
+                f"{package_path}: handoffs created on or after {DISPATCH_CONTRACT_GATE_CREATED_AT} require `dispatch_contract`"
+            )
+        else:
+            _validate_dispatch_contract(root, package_path, payload, failures)
+    _validate_specialist_agent_contract(root, package_path, payload, failures)
     _validate_consumer_verifier_acceptance(package_path, payload, scope_payload, failures)
     for field_name in ["review_artifact_refs", "gate_artifact_refs", "artifact_refs", "audit_refs"]:
         _validate_ref_array(root, package_path, payload, field_name, failures)

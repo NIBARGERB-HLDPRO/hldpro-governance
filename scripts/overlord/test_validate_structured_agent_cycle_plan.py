@@ -12,6 +12,36 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 VALIDATOR = REPO_ROOT / "scripts" / "overlord" / "validate_structured_agent_cycle_plan.py"
 
 
+def _dispatch_contract(*, primary_session_family: str = "openai") -> dict[str, object]:
+    return {
+        "primary_session_family": primary_session_family,
+        "owned_roles": [
+            {
+                "role": "alternate_model_review",
+                "model_family": "anthropic" if primary_session_family == "openai" else "openai",
+            }
+        ],
+        "wrapper_path": "scripts/codex-review.sh",
+        "wrapper_id": "claude" if primary_session_family == "openai" else "codex",
+        "packet_transport_mode": "file",
+        "output_artifact_refs": ["raw/cross-review/example.md"],
+        "fallback_policy": {
+            "same_family_only": True,
+            "ordered_models": (
+                [
+                    {"family": "openai", "model_id": "gpt-5.3-codex-spark"},
+                    {"family": "openai", "model_id": "gpt-5.4"},
+                ]
+                if primary_session_family == "openai"
+                else [
+                    {"family": "anthropic", "model_id": "claude-sonnet-4-6"},
+                    {"family": "anthropic", "model_id": "claude-opus-4-6"},
+                ]
+            ),
+        },
+    }
+
+
 def _plan(
     issue_number: int,
     *,
@@ -26,6 +56,8 @@ def _plan(
     include_review_artifact_refs: bool = True,
     include_handoff_package_ref: bool = True,
     review_exemption: dict | None = None,
+    include_packet_contract: bool = False,
+    packet_contract_agent_id: str = "codex-reviewer",
 ) -> dict:
     review: dict[str, object] = {
         "reviewer": "test",
@@ -38,6 +70,22 @@ def _plan(
     if include_reviewer_identity:
         review["reviewer_model_id"] = "gpt-5.4" if same_model_self_review else "claude-opus-4-6"
         review["reviewer_model_family"] = "openai" if same_model_self_review else "anthropic"
+    if include_packet_contract:
+        review["reviewer"] = packet_contract_agent_id
+        review["packet_contract"] = {
+            "agent_id": packet_contract_agent_id,
+            "packet_ref": f"raw/packets/issue-{issue_number}-{packet_contract_agent_id}.md",
+            "packet_transport": "file",
+            "response_ref": (
+                f"raw/packets/outbound/issue-{issue_number}-{packet_contract_agent_id}-manifest.json"
+                if packet_contract_agent_id == "sim-runner"
+                else f"docs/codex-reviews/issue-{issue_number}-{packet_contract_agent_id}.md"
+            ),
+            "availability_ref": "AGENT_REGISTRY.md",
+            "package_manifest_ref": (
+                "docs/hldpro-sim-consumer-pull-state.json" if packet_contract_agent_id == "sim-runner" else None
+            ),
+        }
 
     execution_handoff: dict[str, object] = {
         "session_agent": "codex",
@@ -87,6 +135,7 @@ def _plan(
             "evidence": ["test"],
             **({"exemption": review_exemption} if review_exemption is not None else {}),
         },
+        "dispatch_contract": _dispatch_contract(),
         "execution_handoff": execution_handoff,
         "material_deviation_rules": ["test"],
         "approved": approved,
@@ -167,6 +216,35 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
         review = root / "raw" / "cross-review" / "example.md"
         review.parent.mkdir(parents=True, exist_ok=True)
         review.write_text("review\n", encoding="utf-8")
+        packet = root / "raw" / "packets" / f"issue-{issue_number}-codex-reviewer.md"
+        packet.parent.mkdir(parents=True, exist_ok=True)
+        packet.write_text("packet\n", encoding="utf-8")
+        packet_review = root / "docs" / "codex-reviews" / f"issue-{issue_number}-codex-reviewer.md"
+        packet_review.parent.mkdir(parents=True, exist_ok=True)
+        packet_review.write_text("review output\n", encoding="utf-8")
+        sim_packet = root / "raw" / "packets" / f"issue-{issue_number}-sim-runner.md"
+        sim_packet.parent.mkdir(parents=True, exist_ok=True)
+        sim_packet.write_text("sim packet\n", encoding="utf-8")
+        sim_output = root / "raw" / "packets" / "outbound" / f"issue-{issue_number}-sim-runner-manifest.json"
+        sim_output.parent.mkdir(parents=True, exist_ok=True)
+        sim_output.write_text("{}", encoding="utf-8")
+        wrapper = root / "scripts" / "codex-review.sh"
+        wrapper.parent.mkdir(parents=True, exist_ok=True)
+        wrapper.write_text("#!/usr/bin/env bash\n# claude\n", encoding="utf-8")
+        (root / "agents").mkdir(parents=True, exist_ok=True)
+        (root / "agents" / "sim-runner.md").write_text("sim runner\n", encoding="utf-8")
+        (root / "docs" / "hldpro-sim-consumer-pull-state.json").parent.mkdir(parents=True, exist_ok=True)
+        (root / "docs" / "hldpro-sim-consumer-pull-state.json").write_text(
+            json.dumps({"package": "hldpro-sim", "managed_personas": {"personas": ["asc-medical-director.json"]}}),
+            encoding="utf-8",
+        )
+        (root / "AGENT_REGISTRY.md").write_text(
+            "| Agent | Repo | Tier | Role | Model | Max Loops | Write Paths |\n"
+            "|-------|------|------|------|-------|-----------|-------------|\n"
+            "| codex-reviewer | hldpro-governance | 2 | worker | gpt-5.4 | 1 | docs/codex-reviews/ |\n"
+            "| sim-runner | hldpro-governance | 2 | worker | claude-sonnet-4-6 | 1 | raw/packets/outbound/ |\n",
+            encoding="utf-8",
+        )
 
     def test_non_issue_branch_with_governance_surface_change_fails(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -325,6 +403,40 @@ class TestActiveIssueBranchContract(unittest.TestCase):
         review = root / "raw" / "cross-review" / "example.md"
         review.parent.mkdir(parents=True, exist_ok=True)
         review.write_text("review\n", encoding="utf-8")
+        packet = root / "raw" / "packets" / f"issue-{issue_number}-codex-reviewer.md"
+        packet.parent.mkdir(parents=True, exist_ok=True)
+        packet.write_text("packet\n", encoding="utf-8")
+        packet_review = root / "docs" / "codex-reviews" / f"issue-{issue_number}-codex-reviewer.md"
+        packet_review.parent.mkdir(parents=True, exist_ok=True)
+        packet_review.write_text("review output\n", encoding="utf-8")
+        sim_packet = root / "raw" / "packets" / f"issue-{issue_number}-sim-runner.md"
+        sim_packet.parent.mkdir(parents=True, exist_ok=True)
+        sim_packet.write_text("sim packet\n", encoding="utf-8")
+        sim_output = root / "raw" / "packets" / "outbound" / f"issue-{issue_number}-sim-runner-manifest.json"
+        sim_output.parent.mkdir(parents=True, exist_ok=True)
+        sim_output.write_text("{}", encoding="utf-8")
+        wrapper = root / "scripts" / "codex-review.sh"
+        wrapper.parent.mkdir(parents=True, exist_ok=True)
+        wrapper.write_text("#!/usr/bin/env bash\n# claude\n", encoding="utf-8")
+        (root / "agents").mkdir(parents=True, exist_ok=True)
+        (root / "agents" / "sim-runner.md").write_text("sim runner\n", encoding="utf-8")
+        (root / "docs" / "hldpro-sim-consumer-pull-state.json").parent.mkdir(parents=True, exist_ok=True)
+        (root / "docs" / "hldpro-sim-consumer-pull-state.json").write_text(
+            json.dumps(
+                {
+                    "package": "hldpro-sim",
+                    "managed_personas": {"personas": ["asc-medical-director.json"]},
+                }
+            ),
+            encoding="utf-8",
+        )
+        (root / "AGENT_REGISTRY.md").write_text(
+            "| Agent | Repo | Tier | Role | Model | Max Loops | Write Paths |\n"
+            "|-------|------|------|------|-------|-----------|-------------|\n"
+            "| codex-reviewer | hldpro-governance | 2 | worker | gpt-5.4 | 1 | docs/codex-reviews/ |\n"
+            "| sim-runner | hldpro-governance | 2 | worker | claude-sonnet-4-6 | 1 | raw/packets/outbound/ |\n",
+            encoding="utf-8",
+        )
 
     def test_same_family_alternate_review_fails_after_identity_gate(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -390,6 +502,53 @@ class TestActiveIssueBranchContract(unittest.TestCase):
             result = self._run(root, "issue-226-test")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("`execution_handoff.review_artifact_refs` entry does not exist", result.stdout)
+
+    def test_named_specialist_agent_requires_packet_contract(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            issue_number = 226
+            self._write_supporting_refs(root, issue_number)
+            payload = _plan(issue_number)
+            payload["specialist_reviews"][0]["reviewer"] = "codex-reviewer"
+            self._write_plan(root, payload, issue_number, create_refs=False)
+            result = self._run(root, "issue-226-test")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("`specialist_reviews[1].packet_contract` must be an object", result.stdout)
+
+    def test_dispatch_contract_rejects_cross_family_fallback(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            issue_number = 226
+            self._write_supporting_refs(root, issue_number)
+            payload = _plan(issue_number)
+            payload["dispatch_contract"]["fallback_policy"]["ordered_models"] = [
+                {"family": "openai", "model_id": "gpt-5.3-codex-spark"},
+                {"family": "anthropic", "model_id": "claude-opus-4-6"},
+            ]
+            self._write_plan(root, payload, issue_number)
+            result = self._run(root, "issue-226-test")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("must match `openai`", result.stdout)
+
+    def test_sim_runner_packet_contract_requires_hldpro_sim_manifest(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            issue_number = 226
+            payload = _plan(issue_number, include_packet_contract=True, packet_contract_agent_id="sim-runner")
+            payload["specialist_reviews"][0]["packet_contract"]["package_manifest_ref"] = None
+            self._write_plan(root, payload, issue_number)
+            result = self._run(root, "issue-226-test")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("package_manifest_ref` is required for sim-runner", result.stdout)
+
+    def test_specialist_packet_contract_passes_for_registered_agent(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            issue_number = 226
+            payload = _plan(issue_number, include_packet_contract=True)
+            self._write_plan(root, payload, issue_number)
+            result = self._run(root, "issue-226-test")
+        self.assertEqual(result.returncode, 0, result.stdout)
 
     def test_github_workflows_with_leading_dot_are_governance_surface(self) -> None:
         with tempfile.TemporaryDirectory() as raw:

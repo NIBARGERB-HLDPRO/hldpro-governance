@@ -47,12 +47,21 @@ def _settings(pre_session_command: str, post_tool_command: str) -> str:
 
 class ValidateSessionContractSurfacesTests(unittest.TestCase):
     def _write_required_files(self, root: Path) -> None:
-        _write(root, "CODEX.md", "contract\n")
+        _write(root, "AGENT_REGISTRY.md", "| gov-specialist-planner | hldpro-governance |\n| gov-specialist-auditor | hldpro-governance |\n| gov-specialist-qa | hldpro-governance |\n")
+        _write(root, "CODEX.md", "neither side may absorb the other side's pinned role\nDeclared Codex-side governance specialist lanes are packet-backed only\n")
+        _write(root, "CLAUDE.md", "Every governed code/doc/config change must end with a distinct pinned auditor or QA specialist review before merge or closeout.\n")
         _write(
             root,
             "docs/EXTERNAL_SERVICES_RUNBOOK.md",
-            "Session-start contract note: governance sessions must surface this runbook via\npython3 scripts/session_bootstrap_contract.py --emit-hook-note before implementation-ready work.\n\nbash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh <repo>\n",
+            "Session-start contract note: governance sessions must surface this runbook via\npython3 scripts/session_bootstrap_contract.py --emit-hook-note before implementation-ready work.\n\nbash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh <repo>\n\nbash scripts/codex-review.sh claude <packet-file>\n\npython3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>\n",
         )
+        _write(root, "STANDARDS.md", "Primary-session dispatch is hard-gated in both directions.\nGovernance specialist planner, auditor, and QA lanes must run through `python3 scripts/packet/run_specialist_packet.py --packet <packet-file> --persona-id <persona-id>`.\n")
+        _write(root, "docs/hldpro-sim-consumer-pull-state.json", "{\"managed_personas\":{\"personas\":[\"gov-specialist-planner.json\",\"gov-specialist-auditor.json\",\"gov-specialist-qa.json\"]}}\n")
+        _write(root, "docs/schemas/governance-specialist-output.schema.json", "{\"type\":\"object\"}\n")
+        _write(root, "agents/gov-specialist-planner.md", "planner\n")
+        _write(root, "agents/gov-specialist-auditor.md", "auditor\n")
+        _write(root, "agents/gov-specialist-qa.md", "qa\n")
+        _write(root, "scripts/packet/run_specialist_packet.py", "OUTPUT_SCHEMA_PATH\nPersonaLoader.from_package\nemit_dispatch_packet\n")
         _write(
             root,
             "scripts/session_bootstrap_contract.py",
@@ -130,6 +139,22 @@ class ValidateSessionContractSurfacesTests(unittest.TestCase):
             failures = validate(root)
         self.assertTrue(any("canonical session bootstrap hook note path" in failure for failure in failures))
 
+    def test_missing_bidirectional_dispatch_gate_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            self._write_required_files(root)
+            _write(root, "CODEX.md", "contract only\n")
+            _write(
+                root,
+                ".claude/settings.json",
+                _settings(
+                    "bash /tmp/repo/hooks/pre-session-context.sh",
+                    "bash /tmp/repo/hooks/check-errors.sh",
+                ),
+            )
+            failures = validate(root)
+        self.assertTrue(any("CODEX.md must hard-gate bidirectional" in failure for failure in failures))
+
     def test_missing_helper_contract_fails(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
@@ -145,6 +170,22 @@ class ValidateSessionContractSurfacesTests(unittest.TestCase):
             )
             failures = validate(root)
         self.assertTrue(any("scripts/session_bootstrap_contract.py must include" in failure for failure in failures))
+
+    def test_missing_specialist_runner_contract_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            self._write_required_files(root)
+            _write(root, "docs/EXTERNAL_SERVICES_RUNBOOK.md", "bootstrap only\n")
+            _write(
+                root,
+                ".claude/settings.json",
+                _settings(
+                    "bash /tmp/repo/hooks/pre-session-context.sh",
+                    "bash /tmp/repo/hooks/check-errors.sh",
+                ),
+            )
+            failures = validate(root)
+        self.assertTrue(any("specialist packet runner path" in failure for failure in failures))
 
 
 if __name__ == "__main__":

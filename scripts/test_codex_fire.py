@@ -279,6 +279,8 @@ def test_review_template_propagates_wrapper_failure(tmp_path: Path) -> None:
 def test_review_template_claude_dry_run_uses_self_contained_packet_contract(tmp_path: Path) -> None:
     persona = tmp_path / "codex-reviewer.md"
     persona.write_text("Return concise review findings.\n", encoding="utf-8")
+    packet = tmp_path / "packet.md"
+    packet.write_text("Review this packet only.\n", encoding="utf-8")
     env = os.environ.copy()
     env.update(
         {
@@ -294,7 +296,7 @@ def test_review_template_claude_dry_run_uses_self_contained_packet_contract(tmp_
             "bash",
             str(REPO_ROOT / "scripts" / "codex-review-template.sh"),
             "claude",
-            "Review this packet only.",
+            str(packet),
         ],
         text=True,
         capture_output=True,
@@ -310,3 +312,34 @@ def test_review_template_claude_dry_run_uses_self_contained_packet_contract(tmp_
     assert "max_turns=8" in result.stdout
     assert "allowed_tools=none" in result.stdout
     assert "review_contract=self_contained_packet" in result.stdout
+    assert "packet_source=file" in result.stdout
+    assert f"packet_path={packet}" in result.stdout
+
+
+def test_review_template_claude_requires_packet_file(tmp_path: Path) -> None:
+    persona = tmp_path / "codex-reviewer.md"
+    persona.write_text("Return concise review findings.\n", encoding="utf-8")
+    env = os.environ.copy()
+    env.update(
+        {
+            "HOME": str(tmp_path),
+            "XDG_CONFIG_HOME": str(tmp_path / ".config"),
+            "CODEX_REVIEW_DRY_RUN": "1",
+            "CLAUDE_CODE_OAUTH_TOKEN": "test-token",
+        }
+    )
+    result = subprocess.run(
+        [
+            "bash",
+            str(REPO_ROOT / "scripts" / "codex-review-template.sh"),
+            "claude",
+            "Review this packet only.",
+        ],
+        text=True,
+        capture_output=True,
+        cwd=tmp_path,
+        env=env,
+        check=False,
+    )
+    assert result.returncode == 1
+    assert "requires a packet file path" in result.stderr

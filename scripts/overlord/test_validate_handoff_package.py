@@ -72,6 +72,36 @@ def _plan(issue_number: int) -> dict[str, Any]:
     }
 
 
+def _dispatch_contract(primary_session_family: str = "openai") -> dict[str, Any]:
+    return {
+        "primary_session_family": primary_session_family,
+        "owned_roles": [
+            {
+                "role": "alternate_model_review",
+                "model_family": "anthropic" if primary_session_family == "openai" else "openai",
+            }
+        ],
+        "wrapper_path": "scripts/codex-review.sh",
+        "wrapper_id": "claude" if primary_session_family == "openai" else "codex",
+        "packet_transport_mode": "file",
+        "output_artifact_refs": ["raw/cross-review/example.md"],
+        "fallback_policy": {
+            "same_family_only": True,
+            "ordered_models": (
+                [
+                    {"family": "openai", "model_id": "gpt-5.3-codex-spark"},
+                    {"family": "openai", "model_id": "gpt-5.4"},
+                ]
+                if primary_session_family == "openai"
+                else [
+                    {"family": "anthropic", "model_id": "claude-sonnet-4-6"},
+                    {"family": "anthropic", "model_id": "claude-opus-4-6"},
+                ]
+            ),
+        },
+    }
+
+
 def _scope(issue_number: int) -> dict[str, Any]:
     return {
         "expected_execution_root": ".",
@@ -119,6 +149,11 @@ def _handoff(issue_number: int, *, created_at: str = "2026-04-28T20:45:00Z") -> 
         "execution_scope_ref": f"raw/execution-scopes/2026-04-21-issue-{issue_number}-implementation.json",
         "packet_ref": None,
         "package_manifest_ref": None,
+        "dispatch_contract": _dispatch_contract(),
+        "specialist_agent": None,
+        "packet_transport": None,
+        "packet_output_ref": None,
+        "availability_ref": None,
         "acceptance_criteria": [
             {
                 "id": "AC1",
@@ -153,10 +188,32 @@ def _write_supporting_files(root: Path, issue_number: int = 438) -> Path:
         "raw/cross-review/example.md",
         "raw/gate/example.md",
         "scripts/overlord/test_validate_handoff_package.py",
+        "scripts/codex-review.sh",
     ]:
         path = root / relative_path
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text("test\n", encoding="utf-8")
+    (root / "AGENT_REGISTRY.md").write_text(
+        "| Agent | Repo | Tier | Role | Model | Max Loops | Write Paths |\n"
+        "|-------|------|------|------|-------|-----------|-------------|\n"
+        "| codex-reviewer | hldpro-governance | 2 | worker | gpt-5.4 | 1 | docs/codex-reviews/ |\n"
+        "| sim-runner | hldpro-governance | 2 | worker | claude-sonnet-4-6 | 1 | raw/packets/outbound/ |\n",
+        encoding="utf-8",
+    )
+    agents_dir = root / "agents"
+    agents_dir.mkdir(parents=True, exist_ok=True)
+    (agents_dir / "sim-runner.md").write_text("sim runner\n", encoding="utf-8")
+    hldpro_state = root / "docs" / "hldpro-sim-consumer-pull-state.json"
+    hldpro_state.parent.mkdir(parents=True, exist_ok=True)
+    hldpro_state.write_text(
+        json.dumps(
+            {
+                "package": "hldpro-sim",
+                "managed_personas": {"personas": ["asc-medical-director.json"]},
+            }
+        ),
+        encoding="utf-8",
+    )
     return _write_json(root, f"raw/handoffs/2026-04-21-issue-{issue_number}.json", _handoff(issue_number))
 
 
@@ -175,6 +232,27 @@ class TestValidateHandoffPackage(unittest.TestCase):
             code, output = self._run_main(root)
         self.assertEqual(code, 0, output)
         self.assertIn("PASS validated 1 package handoff file", output)
+
+    def test_historical_package_without_dispatch_contract_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            payload = _handoff(438, created_at="2026-04-28T20:45:00Z")
+            payload.pop("dispatch_contract", None)
+            _write_json(root, str(package.relative_to(root)), payload)
+            code, output = self._run_main(root, str(package))
+        self.assertEqual(code, 0, output)
+
+    def test_current_package_without_dispatch_contract_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            payload = _handoff(438, created_at="2026-04-29T17:15:00Z")
+            payload.pop("dispatch_contract", None)
+            _write_json(root, str(package.relative_to(root)), payload)
+            code, output = self._run_main(root, str(package))
+        self.assertNotEqual(code, 0)
+        self.assertIn("require `dispatch_contract`", output)
 
     def test_missing_execution_scope_fails_for_implementation_ready(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -237,6 +315,16 @@ class TestValidateHandoffPackage(unittest.TestCase):
             code, output = self._run_main(root, str(package))
         self.assertNotEqual(code, 0)
         self.assertIn("requires non-empty `review_artifact_refs`", output)
+
+    def test_implementation_complete_package_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            payload = _handoff(438)
+            payload["lifecycle_state"] = "implementation_complete"
+            _write_json(root, str(package.relative_to(root)), payload)
+            code, output = self._run_main(root, str(package))
+        self.assertEqual(code, 0, output)
 
     def test_in_progress_requires_non_empty_gate_artifact_refs(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -404,6 +492,87 @@ class TestValidateHandoffPackage(unittest.TestCase):
             code, output = self._run_main(root, str(package))
 
         self.assertEqual(code, 0, output)
+
+    def test_specialist_agent_handoff_requires_packet_contract_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            payload = _handoff(438)
+            payload["specialist_agent"] = "codex-reviewer"
+            _write_json(root, str(package.relative_to(root)), payload)
+
+            code, output = self._run_main(root, str(package))
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("`packet_transport` must be 'file'", output)
+        self.assertIn("require `packet_ref` under `raw/packets/`", output)
+
+    def test_sim_runner_handoff_requires_hldpro_sim_manifest(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            packet = root / "raw/packets/issue-438-sim-runner.md"
+            packet.parent.mkdir(parents=True, exist_ok=True)
+            packet.write_text("sim packet\n", encoding="utf-8")
+            output_ref = root / "raw/packets/outbound/issue-438-sim-runner-manifest.json"
+            output_ref.parent.mkdir(parents=True, exist_ok=True)
+            output_ref.write_text("{}", encoding="utf-8")
+            payload = _handoff(438)
+            payload["specialist_agent"] = "sim-runner"
+            payload["packet_transport"] = "file"
+            payload["packet_ref"] = "raw/packets/issue-438-sim-runner.md"
+            payload["packet_output_ref"] = "raw/packets/outbound/issue-438-sim-runner-manifest.json"
+            payload["dispatch_contract"]["output_artifact_refs"] = [
+                "raw/cross-review/example.md",
+                "raw/packets/outbound/issue-438-sim-runner-manifest.json",
+            ]
+            payload["availability_ref"] = "AGENT_REGISTRY.md"
+            _write_json(root, str(package.relative_to(root)), payload)
+
+            code, output = self._run_main(root, str(package))
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("require non-null `package_manifest_ref`", output)
+
+    def test_specialist_agent_handoff_passes_with_registered_agent_packet_contract(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            packet = root / "raw/packets/issue-438-codex-reviewer.md"
+            packet.parent.mkdir(parents=True, exist_ok=True)
+            packet.write_text("review packet\n", encoding="utf-8")
+            review = root / "docs/codex-reviews/issue-438-codex-reviewer.md"
+            review.parent.mkdir(parents=True, exist_ok=True)
+            review.write_text("review output\n", encoding="utf-8")
+            payload = _handoff(438)
+            payload["specialist_agent"] = "codex-reviewer"
+            payload["packet_transport"] = "file"
+            payload["packet_ref"] = "raw/packets/issue-438-codex-reviewer.md"
+            payload["packet_output_ref"] = "docs/codex-reviews/issue-438-codex-reviewer.md"
+            payload["dispatch_contract"]["output_artifact_refs"] = [
+                "raw/cross-review/example.md",
+                "docs/codex-reviews/issue-438-codex-reviewer.md",
+            ]
+            payload["availability_ref"] = "AGENT_REGISTRY.md"
+            _write_json(root, str(package.relative_to(root)), payload)
+
+            code, output = self._run_main(root, str(package))
+
+        self.assertEqual(code, 0, output)
+
+    def test_dispatch_contract_rejects_cross_family_fallback(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            package = _write_supporting_files(root)
+            payload = _handoff(438)
+            payload["dispatch_contract"]["fallback_policy"]["ordered_models"] = [
+                {"family": "openai", "model_id": "gpt-5.3-codex-spark"},
+                {"family": "anthropic", "model_id": "claude-opus-4-6"},
+            ]
+            _write_json(root, str(package.relative_to(root)), payload)
+            code, output = self._run_main(root, str(package))
+        self.assertNotEqual(code, 0)
+        self.assertIn("must match `openai`", output)
 
 
 if __name__ == "__main__":

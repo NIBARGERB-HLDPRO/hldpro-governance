@@ -17,6 +17,10 @@
     "execution_scope_ref",
     "packet_ref",
     "package_manifest_ref",
+    "specialist_agent",
+    "packet_transport",
+    "packet_output_ref",
+    "availability_ref",
     "acceptance_criteria",
     "validation_commands",
     "review_artifact_refs",
@@ -52,6 +56,7 @@
         "draft",
         "planned",
         "implementation_ready",
+        "implementation_complete",
         "in_progress",
         "validation_ready",
         "accepted",
@@ -86,6 +91,29 @@
       ]
     },
     "package_manifest_ref": {
+      "anyOf": [
+        {"$ref": "#/$defs/repoPath"},
+        {"type": "null"}
+      ]
+    },
+    "dispatch_contract": {
+      "$ref": "#/$defs/dispatchContract"
+    },
+    "specialist_agent": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "packet_transport": {
+      "type": ["string", "null"],
+      "enum": ["file", null]
+    },
+    "packet_output_ref": {
+      "anyOf": [
+        {"$ref": "#/$defs/repoPath"},
+        {"type": "null"}
+      ]
+    },
+    "availability_ref": {
       "anyOf": [
         {"$ref": "#/$defs/repoPath"},
         {"type": "null"}
@@ -182,6 +210,117 @@
         },
         "verification_refs": {
           "$ref": "#/$defs/refArray"
+        }
+      }
+    },
+    "dispatchContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_session_family",
+        "owned_roles",
+        "wrapper_path",
+        "wrapper_id",
+        "packet_transport_mode",
+        "output_artifact_refs",
+        "fallback_policy"
+      ],
+      "properties": {
+        "primary_session_family": {
+          "type": "string",
+          "enum": [
+            "openai",
+            "anthropic"
+          ]
+        },
+        "owned_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "role",
+              "model_family"
+            ],
+            "properties": {
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "model_family": {
+                "type": "string",
+                "enum": [
+                  "openai",
+                  "anthropic"
+                ]
+              }
+            }
+          }
+        },
+        "wrapper_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "wrapper_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packet_transport_mode": {
+          "type": "string",
+          "enum": [
+            "file"
+          ]
+        },
+        "output_artifact_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fallback_policy": {
+          "$ref": "#/$defs/fallbackPolicy"
+        }
+      }
+    },
+    "fallbackPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "same_family_only",
+        "ordered_models"
+      ],
+      "properties": {
+        "same_family_only": {
+          "type": "boolean",
+          "const": true
+        },
+        "ordered_models": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "family",
+              "model_id"
+            ],
+            "properties": {
+              "family": {
+                "type": "string",
+                "enum": [
+                  "openai",
+                  "anthropic"
+                ]
+              },
+              "model_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
         }
       }
     }
