@@ -69,7 +69,7 @@ contract.
   - `raw/cross-review/2026-04-29-issue-583-hard-gated-som-enforcement.md`
   - `docs/codex-reviews/2026-04-29-claude.md`
 - Gate artifact refs:
-  - `cache/local-ci-gate/reports/20260429T160159Z-hldpro-governance-git/local-ci-20260429T160205Z.json`
+  - command result PASS from `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json`
 - Handoff lifecycle: accepted
 
 ## Wired Checks Run
