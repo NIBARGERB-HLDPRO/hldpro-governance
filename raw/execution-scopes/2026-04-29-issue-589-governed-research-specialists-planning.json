@@ -1,0 +1,36 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-589-research-specialists",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "docs/PROGRESS.md",
+    "docs/plans/issue-589-governed-research-specialists-pdcar.md",
+    "docs/plans/issue-589-governed-research-specialists-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-29-issue-589-governed-research-specialists-planning.json",
+    "raw/handoffs/2026-04-29-issue-589-governed-research-specialists.json",
+    "raw/cross-review/2026-04-29-issue-589-governed-research-specialists.md",
+    "raw/packets/2026-04-29-issue-589-claude-review-packet.md",
+    "raw/validation/2026-04-29-issue-589-governed-research-specialists.md",
+    "docs/codex-reviews/2026-04-29-issue-589-claude.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout remains on an unrelated dirty branch; issue-589 planning stays isolated in this clean worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Stampede remains downstream context only; no consumer-repo mutation is allowed in this lane."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 589,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/589",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-29T19:15:00Z"
+  }
+}

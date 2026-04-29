@@ -67,6 +67,21 @@ class RunSpecialistPacketTests(unittest.TestCase):
             passed, failures = validate_packet(outbound)
             self.assertTrue(passed, failures)
 
+    def test_dry_run_supports_research_specialist_roles(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            packet_path = root / "packet.yml"
+            packet_path.write_text(yaml.safe_dump(_packet(), sort_keys=False), encoding="utf-8")
+            out_dir = root / "outbound"
+            result_path, _ = run_specialist_packet(
+                packet_path=packet_path,
+                persona_id="gov-specialist-local-repo-researcher",
+                output_root=out_dir,
+                dry_run=True,
+            )
+            result = json.loads(result_path.read_text(encoding="utf-8"))
+            self.assertEqual(result["specialist_role"], "gov-specialist-local-repo-researcher")
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

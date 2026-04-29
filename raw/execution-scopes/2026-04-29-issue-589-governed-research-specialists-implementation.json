@@ -1,0 +1,77 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-589-research-specialists",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "AGENT_REGISTRY.md",
+    "CLAUDE.md",
+    "CODEX.md",
+    "STANDARDS.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/agents/",
+    "agents/",
+    "packages/hldpro-sim/personas/",
+    "docs/hldpro-sim-consumer-pull-state.json",
+    "docs/governance-tooling-package.json",
+    "docs/governance-consumer-pull-state.json",
+    "docs/plans/issue-589-governed-research-specialists-pdcar.md",
+    "docs/plans/issue-589-governed-research-specialists-structured-agent-cycle-plan.json",
+    "docs/codex-reviews/2026-04-29-claude.md",
+    "docs/codex-reviews/2026-04-29-issue-589-claude.md",
+    "docs/schemas/",
+    "raw/execution-scopes/2026-04-29-issue-589-governed-research-specialists-planning.json",
+    "raw/execution-scopes/2026-04-29-issue-589-governed-research-specialists-implementation.json",
+    "raw/handoffs/2026-04-29-issue-589-governed-research-specialists.json",
+    "raw/cli-session-events/",
+    "raw/closeouts/2026-04-29-issue-589-governed-research-specialists.md",
+    "raw/cross-review/2026-04-29-issue-589-governed-research-specialists.md",
+    "raw/validation/2026-04-29-issue-589-governed-research-specialists.md",
+    "raw/packets/2026-04-29-issue-589-claude-review-packet.md",
+    "scripts/packet/",
+    "scripts/overlord/deploy_governance_tooling.py",
+    "scripts/overlord/verify_governance_consumer.py",
+    "scripts/overlord/validate_session_contract_surfaces.py",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/validate_handoff_package.py",
+    "scripts/overlord/test_deploy_governance_tooling.py",
+    "scripts/overlord/test_verify_governance_consumer.py",
+    "scripts/overlord/test_validate_session_contract_surfaces.py",
+    "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/test_validate_handoff_package.py",
+    "scripts/packet/test_run_specialist_packet.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout remains on an unrelated dirty branch; issue-589 implementation stays isolated in this clean worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Stampede remains consumer-level replay context only; no direct product-repo mutation is allowed in this governance-source lane."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 589,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/589",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-29T19:25:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-29T19:24:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-589-governed-research-specialists-structured-agent-cycle-plan.json",
+      "docs/plans/issue-589-governed-research-specialists-pdcar.md",
+      "raw/cross-review/2026-04-29-issue-589-governed-research-specialists.md",
+      "docs/codex-reviews/2026-04-29-issue-589-claude.md"
+    ],
+    "active_exception_ref": "docs/plans/issue-589-governed-research-specialists-pdcar.md",
+    "active_exception_expires_at": "2026-04-30T19:24:00Z"
+  }
+}

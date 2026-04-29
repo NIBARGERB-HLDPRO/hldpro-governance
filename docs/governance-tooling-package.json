@@ -227,6 +227,28 @@
       "notes": "Hook behavior may be stricter in consumer repos, but stricter local behavior must be declared with owner, reason, and review cadence. Consumer records may represent managed shell hooks, tracked session-contract files such as CLAUDE.md, CODEX.md, docs/EXTERNAL_SERVICES_RUNBOOK.md, and scripts/codex-review.sh, plus hook-settings contracts such as `.claude/settings.json` matcher requirements."
     },
     {
+      "id": "governed-research-specialist-personas",
+      "classification": "package_core_with_shared_personas",
+      "owner": "hldpro-governance",
+      "paths": [
+        "packages/hldpro-sim/personas/gov-specialist-local-repo-researcher.json",
+        "packages/hldpro-sim/personas/gov-specialist-web-researcher.json",
+        "agents/gov-specialist-local-repo-researcher.md",
+        "agents/gov-specialist-web-researcher.md",
+        "docs/agents/gov-specialist-local-repo-researcher.md",
+        "docs/agents/gov-specialist-web-researcher.md",
+        "docs/schemas/governance-specialist-output.schema.json",
+        "scripts/packet/run_specialist_packet.py"
+      ],
+      "consumer_mode": "package_managed_persona_availability_plus_repo_specific_issue_backed_adoption",
+      "version_rule": "pin by governance git SHA; downstream repos adopt the shared persona package via .hldpro/hldpro-sim.json and then perform repo-specific issue-backed rollout work",
+      "verification": [
+        "python3 scripts/overlord/verify_governance_consumer.py --target-repo <consumer> --profile <profile> --governance-ref <sha>",
+        "python3 -m unittest scripts.packet.test_run_specialist_packet"
+      ],
+      "notes": "Governance source owns the shared research-specialist personas and packet/output contracts. Consumer repos do not receive functional rollout automatically; each repo still requires its own issue-backed adoption slice even after the shared persona state is available."
+    },
+    {
       "id": "reusable-workflow-refs",
       "classification": "package_core",
       "owner": "hldpro-governance",

@@ -1,0 +1,117 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-589-governed-research-specialists",
+  "issue_number": 589,
+  "parent_epic_number": 579,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-589-governed-research-specialists-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-589-governed-research-specialists-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-29-issue-589-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "specialist_agent": null,
+  "packet_transport": null,
+  "packet_output_ref": null,
+  "availability_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "A governed local-repo research specialist must be defined as a tracked, packet-backed, read-only governance lane.",
+      "verification_refs": [
+        "docs/plans/issue-589-governed-research-specialists-pdcar.md",
+        "docs/plans/issue-589-governed-research-specialists-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "A governed web/external research specialist must be defined as a tracked, packet-backed, read-only governance lane with hard-gated source attribution.",
+      "verification_refs": [
+        "docs/plans/issue-589-governed-research-specialists-pdcar.md",
+        "docs/plans/issue-589-governed-research-specialists-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "The downstream rollout model for these org-level changes must explicitly separate package-managed consumer surfaces from repo-specific issue-backed rollout work.",
+      "verification_refs": [
+        "docs/plans/issue-589-governed-research-specialists-pdcar.md",
+        "docs/plans/issue-589-governed-research-specialists-structured-agent-cycle-plan.json",
+        "docs/governance-tooling-package.json",
+        "docs/governance-consumer-pull-state.json"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Issue-589 must not promote to implementation-ready until the governed alternate-family review is recorded.",
+      "verification_refs": [
+        "docs/plans/issue-589-governed-research-specialists-structured-agent-cycle-plan.json",
+        "raw/validation/2026-04-29-issue-589-governed-research-specialists.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "If the governed Claude wrapper fails closed, the lane must record the failed invocation evidence and the blocking governance dependency, and it must not promote past planning_only.",
+      "verification_refs": [
+        "docs/plans/issue-589-governed-research-specialists-pdcar.md",
+        "docs/plans/issue-589-governed-research-specialists-structured-agent-cycle-plan.json",
+        "docs/codex-reviews/2026-04-29-issue-589-claude.md",
+        "raw/validation/2026-04-29-issue-589-governed-research-specialists.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-589-research-specialists --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-29-issue-589-governed-research-specialists.json",
+    "python3 scripts/overlord/verify_governance_consumer.py --governance-root . --target-repo /Users/bennibarger/Developer/HLDPRO/Stampede",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-29-issue-589-governed-research-specialists.md",
+    "docs/codex-reviews/2026-04-29-issue-589-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-29-issue-589-governed-research-specialists.md"
+  ],
+  "artifact_refs": [
+    "docs/plans/issue-589-governed-research-specialists-pdcar.md",
+    "docs/plans/issue-589-governed-research-specialists-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-29-issue-589-governed-research-specialists-planning.json"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [
+    "Implementation verification and closeout proof"
+  ],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-29T19:15:00Z",
+  "notes": "Implementation-ready handoff for the governed research specialist lane and downstream propagation model. No direct consumer-repo mutation is allowed in this branch."
+}
