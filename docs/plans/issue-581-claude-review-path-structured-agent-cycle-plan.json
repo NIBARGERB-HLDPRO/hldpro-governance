@@ -1,0 +1,135 @@
+{
+  "session_id": "session-20260429-issue-581-claude-review-path",
+  "issue_number": 581,
+  "objective": "Repair the governed Claude specialist-review path so bounded alternate-family packet reviews reliably return a verdict through the approved codex-review wrapper contract.",
+  "tier": 1,
+  "scope_boundary": [
+    "Issue-581 work in hldpro-governance only.",
+    "Issue-backed plan, implementation execution scope, handoff, review, validation, and closeout evidence for the review-path defect.",
+    "Bounded reproduction and repair of the approved wrapper/template/supervisor path using deterministic prompts and governed token/bootstrap surfaces.",
+    "Governance-owned packet-review contract updates only; no downstream consumer repo changes in this slice."
+  ],
+  "out_of_scope": [
+    "Direct downstream consumer-repo edits in ASC-Evaluator or other rollout repos.",
+    "Creating any parallel operator-facing review path outside scripts/codex-review.sh claude.",
+    "Changing unrelated governance bootstrap, graphify, or Stage 6 behavior unless root cause evidence requires it.",
+    "Reintroducing repo-exploration defaults or a second operator-facing Claude review path."
+  ],
+  "research_summary": "ASC-Evaluator issue #15 is blocked because the approved governed Claude review path does not return a verdict for bounded packet reviews even though base Claude CLI preflight succeeds. Initial evidence points to wrapper/supervisor contract behavior rather than auth failure: claude -p \"say ok\" returns ok with the governed token, but repeated wrapper invocations terminate with max-turn or idle-timeout outcomes and no usable review artifact. The issue-581 slice must reproduce that deterministically and fix the governance-owned path without adding an ad hoc fallback.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/581",
+    "https://github.com/NIBARGERB-HLDPRO/ASC-Evaluator/issues/15",
+    "https://github.com/NIBARGERB-HLDPRO/ASC-Evaluator/pull/16",
+    "scripts/codex-review-template.sh",
+    "scripts/cli_session_supervisor.py",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/ENV_REGISTRY.md",
+    "raw/cli-session-events/",
+    "ASC-Evaluator issue-15 blocked review evidence"
+  ],
+  "sprints": [
+    {
+      "name": "Planning and reproduction",
+      "goal": "Create the issue-backed governance packet and capture deterministic evidence for the failing review path.",
+      "tasks": [
+        "Create PDCAR, structured plan, planning execution scope, and handoff for issue #581.",
+        "Reproduce the wrapper failure through the approved codex-review claude path in a clean governance worktree.",
+        "Record the separation between healthy Claude CLI auth and failing wrapper/supervisor behavior."
+      ],
+      "acceptance_criteria": [
+        "The issue-581 packet validates and stays in planning mode.",
+        "Reproduction evidence shows the failure through the approved review path, not an ad hoc path.",
+        "The recorded evidence distinguishes base Claude CLI health from governed wrapper failure."
+      ],
+      "file_paths": [
+        "docs/plans/issue-581-claude-review-path-pdcar.md",
+        "docs/plans/issue-581-claude-review-path-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-29-issue-581-claude-review-path-planning.json",
+        "raw/handoffs/2026-04-29-issue-581-claude-review-path.json",
+        "raw/validation/2026-04-29-issue-581-claude-review-path.md"
+      ]
+    },
+    {
+      "name": "Implementation and proof",
+      "goal": "Land the minimal governance-owned fix so the approved wrapper returns a bounded markdown review artifact.",
+      "tasks": [
+        "Keep scripts/codex-review.sh claude as the only operator-facing entrypoint while changing the shared Claude template to self-contained packet review semantics.",
+        "Default the governed Claude packet-review lane to claude-opus-4-6, bypassPermissions, no tool access, max_turns=8, and a longer silence timeout.",
+        "Document the rationale and override mechanism for model, turns, and tools in STANDARDS.md and docs/EXTERNAL_SERVICES_RUNBOOK.md.",
+        "Add dry-run regression coverage and replay the approved wrapper path until it returns a usable review artifact."
+      ],
+      "acceptance_criteria": [
+        "The fix remains inside governance-owned wrapper, documentation, and regression-test surfaces.",
+        "The governed wrapper returns a markdown review artifact for a bounded packet prompt without repo exploration defaults.",
+        "The documented override path for larger packets or explicit tool access is singular and SSOT-backed."
+      ],
+      "file_paths": [
+        "scripts/codex-review-template.sh",
+        "scripts/test_codex_fire.py",
+        "STANDARDS.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex orchestrator/QA",
+      "role": "governance reproduction gate",
+      "focus": "Issue-backed reproduction, approved-path discipline, and no-ad-hoc-fallback enforcement.",
+      "status": "accepted",
+      "summary": "Issue #581 may proceed as a planning and reproduction lane because the defect exists inside the approved review path itself, but implementation remains blocked until alternate-family review can be satisfied or an explicit exception is granted.",
+      "evidence": [
+        "hldpro-governance issue #581",
+        "ASC-Evaluator issue #15",
+        "ASC-Evaluator PR #16"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude specialist review via scripts/codex-review.sh claude",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "The governed wrapper path now returns a usable markdown review artifact for a bounded packet prompt. Review requested two follow-ups: document the read-only rationale for bypassPermissions when no tools are enabled, and document the explicit override path for larger packets or different reviewer pins. Both are folded into the implementation slice.",
+    "evidence": [
+      "docs/codex-reviews/2026-04-29-claude.md",
+      "raw/cross-review/2026-04-29-issue-581-claude-review-path.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #581 is approved to repair the governance-owned Claude packet-review contract and record proof in this worktree only.",
+    "next_execution_step": "Complete implementation, refresh the issue-backed packet and validation artifacts, then push the reviewed fix for PR and auto-merge.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-29-issue-581-claude-review-path.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-581-claude-review-path-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-29-issue-581-claude-review-path.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-29-issue-581-claude-review-path.md"
+    ],
+    "gate_artifact_refs": [],
+    "closeout_ref": "raw/closeouts/2026-04-29-issue-581-claude-review-path.md",
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "The governed wrapper returns a usable markdown review artifact for a bounded packet prompt.",
+      "The wrapper defaults are self-contained and no-tools by default, with SSOT-documented overrides only.",
+      "The issue-backed review, validation, and closeout evidence all reflect the repaired contract."
+    ]
+  },
+  "material_deviation_rules": [
+    "Do not introduce a new operator-facing review path as a workaround.",
+    "Do not widen issue #581 into downstream consumer changes.",
+    "Do not reintroduce repo-exploration wording or default tool access for the packet-review path."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Codex orchestrator/QA"
+  ],
+  "approved_at": "2026-04-29T14:35:00Z"
+}

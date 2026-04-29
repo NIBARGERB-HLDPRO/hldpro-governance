@@ -230,6 +230,7 @@ Both Claude and Codex sessions can invoke each other as specialist reviewers:
 **Auth requirements:**
 - Codex sessions: `OPENAI_API_KEY` or `~/.codex/auth.json` (ChatGPT account, `gpt-5.4` default)
 - Claude calls from Codex: use the canonical bootstrap command `bash ~/Developer/HLDPRO/hldpro-governance/scripts/bootstrap-repo-env.sh <repo>` so the repo wrapper's generated env surface contains `CLAUDE_CODE_OAUTH_TOKEN`; do not hand-source tokens
+- `scripts/codex-review.sh claude` is the SSOT packet-review path. The prompt must be self-contained review scope, and the governance wrapper runs Claude in `bypassPermissions` mode by default with no tool access unless the execution scope explicitly enables `CLAUDE_REVIEW_ALLOWED_TOOLS`. This keeps the default path read-only in practice while avoiding plan-mode turn churn. Bounded packet reviews default to `claude-opus-4-6`; execution scopes may override `CLAUDE_REVIEW_MODEL` and `CLAUDE_REVIEW_MAX_TURNS` when a different Claude reviewer or a larger packet is explicitly approved.
 - Codex config must inherit the token: `shell_environment_policy.inherit = "all"` in `~/.codex/config.toml`
 
 **Script contract:** Every code repo must have `scripts/codex-review.sh` with at minimum the `review` and `claude` modes. `scripts/codex-review.sh` is the only operator-facing path. Use `hldpro-governance/scripts/codex-review-template.sh` only as the shared implementation source behind that wrapper.

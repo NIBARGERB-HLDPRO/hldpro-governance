@@ -5,6 +5,7 @@
 #   bash scripts/codex-review.sh review [branch]    # PR/diff review against branch (default: main)
 #   bash scripts/codex-review.sh audit [target]      # Security-focused audit of target file/dir
 #   bash scripts/codex-review.sh critique [system]   # Architecture critique of a named system
+#   bash scripts/codex-review.sh claude "<prompt>"   # Self-contained Claude packet review
 #
 # Output: docs/codex-reviews/YYYY-MM-DD-<mode>.md
 # All writes constrained to docs/codex-reviews/ via --sandbox workspace-write
@@ -159,13 +160,16 @@ Write your findings to docs/codex-reviews/${DATE}-critique.md using the format d
       exit 1
     fi
 
-    PROMPT="You are performing specialist review in the governed HLD Pro repo.
+    PROMPT="You are the alternate-family specialist reviewer for a governed HLD Pro packet.
 
 ${PERSONA_CONTENT}
 
-${TARGET}
+Use the caller-supplied review packet below as the full review scope.
+Do not explore the repository or request additional tool-driven context unless
+the caller explicitly embedded that material in the review packet.
+Return concise markdown using the persona output format.
 
-Read the relevant files, then provide your findings in markdown format."
+${TARGET}"
 
     prompt_file="$(mktemp "${TMPDIR:-/tmp}/claude-review-prompt.XXXXXX")" || exit 1
     printf '%s\n' "$PROMPT" >"$prompt_file"
@@ -173,15 +177,21 @@ Read the relevant files, then provide your findings in markdown format."
     if [ "${CODEX_REVIEW_DRY_RUN:-0}" = "1" ]; then
       echo "DRY_RUN claude mode ready"
       echo "env_surface=${CLAUDE_REVIEW_ENV_FILE:-auto}"
+      echo "model=${CLAUDE_REVIEW_MODEL:-claude-opus-4-6}"
+      echo "permission_mode=${CLAUDE_REVIEW_PERMISSION_MODE:-bypassPermissions}"
+      echo "max_turns=${CLAUDE_REVIEW_MAX_TURNS:-8}"
+      echo "allowed_tools=${CLAUDE_REVIEW_ALLOWED_TOOLS:-none}"
+      echo "review_contract=self_contained_packet"
       echo "prompt_file=${prompt_file}"
       rm -f "$prompt_file"
       exit 0
     fi
 
-    if ! python3 "$REPO_ROOT/scripts/cli_session_supervisor.py" \
+    supervisor_cmd=(
+      python3 "$REPO_ROOT/scripts/cli_session_supervisor.py"
       --tool claude \
       --role specialist-reviewer \
-      --model "${CLAUDE_REVIEW_MODEL:-claude-sonnet-4-6}" \
+      --model "${CLAUDE_REVIEW_MODEL:-claude-opus-4-6}" \
       --cwd "$REPO_ROOT" \
       --prompt-file "$prompt_file" \
       --scope-slug "codex-review-template-claude-${DATE}" \
@@ -189,13 +199,21 @@ Read the relevant files, then provide your findings in markdown format."
       --event-root "$REPO_ROOT/raw/cli-session-events" \
       --stdout-copy "$OUTPUT_FILE" \
       --wall-timeout-sec "${CLAUDE_REVIEW_WALL_TIMEOUT_SECONDS:-900}" \
-      --silence-timeout-sec "${CLAUDE_REVIEW_SILENCE_TIMEOUT_SECONDS:-120}" \
+      --silence-timeout-sec "${CLAUDE_REVIEW_SILENCE_TIMEOUT_SECONDS:-300}" \
       --terminate-grace-sec "${CLAUDE_REVIEW_TERMINATE_GRACE_SECONDS:-5}" \
       --permission-mode "${CLAUDE_REVIEW_PERMISSION_MODE:-bypassPermissions}" \
-      --allowed-tools "Read Grep Glob" \
-      --max-turns "${CLAUDE_REVIEW_MAX_TURNS:-5}" \
+      --max-turns "${CLAUDE_REVIEW_MAX_TURNS:-8}" \
       --max-budget-usd "${CLAUDE_REVIEW_MAX_BUDGET_USD:-1.00}" \
-      --no-session-persistence; then
+      --no-session-persistence
+    )
+    if [ -n "${CLAUDE_REVIEW_ALLOWED_TOOLS:-}" ]; then
+      supervisor_cmd+=(--allowed-tools "${CLAUDE_REVIEW_ALLOWED_TOOLS}")
+    fi
+    if [ -n "${CLAUDE_REVIEW_OUTPUT_FORMAT:-}" ]; then
+      supervisor_cmd+=(--output-format "${CLAUDE_REVIEW_OUTPUT_FORMAT}")
+    fi
+
+    if ! "${supervisor_cmd[@]}"; then
       echo "Claude review failed; see raw/cli-session-events for session evidence." >&2
       exit 1
     fi
