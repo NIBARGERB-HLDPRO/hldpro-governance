@@ -274,3 +274,39 @@ def test_review_template_propagates_wrapper_failure(tmp_path: Path) -> None:
     assert "Audit saved to:" not in result.stdout
     assert "Audit failed; see CODEX_FAIL output above." in result.stderr
     assert "Codex brief retained at:" in result.stderr
+
+
+def test_review_template_claude_dry_run_uses_self_contained_packet_contract(tmp_path: Path) -> None:
+    persona = tmp_path / "codex-reviewer.md"
+    persona.write_text("Return concise review findings.\n", encoding="utf-8")
+    env = os.environ.copy()
+    env.update(
+        {
+            "CODEX_REVIEW_DRY_RUN": "1",
+            "CODEX_REVIEW_PERSONA": str(persona),
+            "CLAUDE_CODE_OAUTH_TOKEN": "test-token",
+            "CLAUDE_REVIEW_ENV_FILE": str(tmp_path / ".env.local"),
+        }
+    )
+
+    result = subprocess.run(
+        [
+            "bash",
+            str(REPO_ROOT / "scripts" / "codex-review-template.sh"),
+            "claude",
+            "Review this packet only.",
+        ],
+        text=True,
+        capture_output=True,
+        env=env,
+        cwd=REPO_ROOT,
+        check=False,
+    )
+
+    assert result.returncode == 0
+    assert "DRY_RUN claude mode ready" in result.stdout
+    assert "model=claude-opus-4-6" in result.stdout
+    assert "permission_mode=bypassPermissions" in result.stdout
+    assert "max_turns=8" in result.stdout
+    assert "allowed_tools=none" in result.stdout
+    assert "review_contract=self_contained_packet" in result.stdout

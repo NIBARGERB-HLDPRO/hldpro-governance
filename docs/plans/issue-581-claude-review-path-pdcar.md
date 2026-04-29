@@ -5,49 +5,59 @@ Branch: `issue-581-claude-review-path`
 
 ## Plan
 
-Reproduce and fix the governed Claude specialist-review path so bounded
-alternate-family packet reviews reliably return a verdict through the approved
-`scripts/codex-review.sh claude` operator path.
+Repair the governed Claude specialist-review path so bounded
+alternate-family packet reviews reliably return a markdown verdict through the
+approved `scripts/codex-review.sh claude` operator path, without reintroducing
+repo-exploration defaults or alternate entrypoints.
 
 ## Do
 
-Planning scope for issue #581:
+Implementation scope for issue #581:
 
-- capture the issue-backed packet, planning execution scope, and handoff
-- reproduce the failure in a clean governance worktree using the approved
-  wrapper/template/supervisor path
-- distinguish token/auth health from wrapper/supervisor contract defects
-- define the minimal implementation slice needed to make the review path
-  deterministic without introducing a parallel operator-facing path
-
-Implementation stays blocked until alternate-family review can be completed or
-an explicit repo-rule exception is documented.
+- preserve the issue-backed planning packet while promoting the lane to a
+  bounded implementation scope after governed Claude review succeeded
+- keep `scripts/codex-review.sh claude` as the only operator-facing path
+- make the shared Claude review template treat the caller prompt as the full
+  packet scope instead of asking Claude to explore the repo
+- default the reviewer lane to `claude-opus-4-6`, `bypassPermissions`, no tool
+  access, `max_turns=8`, and a longer silence timeout so bounded packet review
+  returns markdown instead of max-turn or idle-timeout failures
+- document the rationale and override mechanism in `STANDARDS.md` and
+  `docs/EXTERNAL_SERVICES_RUNBOOK.md`
+- add a dry-run regression check for the revised contract
 
 ## Check
 
 Before implementation:
 
-- structured plan, planning scope, and handoff validate
-- reproduction evidence proves the failure mode through the approved path
-- base Claude CLI preflight is recorded separately so auth health is not
-  conflated with wrapper defects
+- the issue-581 packet and reproduction evidence validate
+- base Claude CLI preflight proves token/bootstrap health separately from the
+  governed wrapper defect
+- alternate-family review is captured through the governed wrapper path
 
 After implementation:
 
-- the governed wrapper returns a bounded review artifact for a packet-style
-  prompt
-- validation proves at least one downstream consumer replay succeeds
+- `scripts/codex-review.sh claude` returns a bounded markdown review artifact
+  for a self-contained packet prompt
+- the template defaults no longer rely on repo exploration or hidden tool-use
+  behavior
+- docs and dry-run output agree on the canonical packet-review contract
+- validation proves the original `max turns` / `idle_timeout` failure mode is
+  replaced by a successful governed review replay
 
 ## Adjust
 
-If the failure is rooted in Claude CLI behavior that cannot be corrected in the
-governance wrapper/supervisor layer, stop and document the exact CLI contract
-gap rather than introducing an ad hoc alternate review path.
+If larger packets still need more than `max_turns=8`, keep the SSOT path and
+require execution scopes to raise `CLAUDE_REVIEW_MAX_TURNS` explicitly rather
+than widening the default contract. Do not add a second operator-facing review
+path or reintroduce repo-exploration defaults.
 
 ## Review
 
-Alternate-family review remains required before governance-surface
-implementation. Issue #581 exists because the approved review path is itself
-the failing surface, so planning may proceed with documented blocked status,
-but implementation cannot be marked `implementation_ready` until the review
-path is repaired or a governed exception is approved.
+Alternate-family review is now recorded through the governed wrapper path in
+`docs/codex-reviews/2026-04-29-claude.md` and summarized in
+`raw/cross-review/2026-04-29-issue-581-claude-review-path.md`.
+Review outcome: `APPROVED_WITH_CHANGES`, requiring the repo docs to explain why
+`bypassPermissions` remains read-only in practice for this lane and to document
+the opt-in override path for larger packets or explicit tool access. Those
+follow-ups are folded into this implementation slice.

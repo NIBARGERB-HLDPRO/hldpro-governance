@@ -375,6 +375,13 @@ Canonical operator-facing path in governed repos:
 bash scripts/codex-review.sh claude "<prompt>"
 ```
 
+Contract:
+- pass a self-contained packet/diff review prompt
+- the governance wrapper defaults to Claude `bypassPermissions` mode with no tool access
+- no Claude tool access is granted unless the execution scope explicitly enables `CLAUDE_REVIEW_ALLOWED_TOOLS`
+- bounded packet reviews default to `claude-opus-4-6`; callers may raise `CLAUDE_REVIEW_MAX_TURNS` or override `CLAUDE_REVIEW_MODEL` only when the execution scope explicitly permits a larger packet or a different reviewer lane
+- `scripts/cli_session_supervisor.py` remains an implementation detail behind the wrapper
+
 Implementation detail only:
 - `scripts/codex-review-template.sh` is the shared implementation source behind repo-local wrappers
 - `scripts/cli_session_supervisor.py` is the lower-level subprocess helper and is not an operator-facing alternate path
