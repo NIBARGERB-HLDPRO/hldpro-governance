@@ -1,0 +1,99 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-591-consumer-research-rollout",
+  "issue_number": 591,
+  "parent_epic_number": 591,
+  "lifecycle_state": "planned",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-591-consumer-research-rollout-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-591-consumer-research-rollout-planning.json",
+  "packet_ref": "raw/packets/2026-04-29-issue-591-claude-review-packet.md",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-29-issue-591-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Governance issue #591 has a validated planning packet that keeps this branch governance-only and planning-only.",
+      "verification_refs": [
+        "docs/plans/issue-591-consumer-research-rollout-pdcar.md",
+        "docs/plans/issue-591-consumer-research-rollout-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-29-issue-591-consumer-research-rollout-planning.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Stampede issue #208 exists as the first consumer pilot lane with repo-specific acceptance criteria for adopting the governed research specialist surfaces.",
+      "verification_refs": [
+        "https://github.com/NIBARGERB-HLDPRO/Stampede/issues/208"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "A verifier replay against Stampede records the current stale baseline and proves consumer adoption remains a separate repo-native step.",
+      "verification_refs": [
+        "raw/validation/2026-04-29-issue-591-consumer-research-rollout.md",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Governance mirrors reflect issue #591 as the open rollout epic and identify Stampede #208 as the first pilot.",
+      "verification_refs": [
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-591-research-rollout --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-29-issue-591-consumer-research-rollout.json",
+    "python3 scripts/overlord/verify_governance_consumer.py --governance-root . --target-repo /Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-29-issue-591-consumer-research-rollout.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-29-issue-591-consumer-research-rollout.md"
+  ],
+  "artifact_refs": [
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+    "docs/plans/issue-591-consumer-research-rollout-pdcar.md",
+    "docs/plans/issue-591-consumer-research-rollout-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-29-issue-591-consumer-research-rollout-planning.json"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-29T20:00:00Z",
+  "notes": "Planning-only handoff accepted for the first governed research specialist consumer rollout lane. Direct Stampede writes remain out of scope for this branch."
+}

@@ -1,0 +1,167 @@
+{
+  "session_id": "session-20260429-issue-591-consumer-research-rollout",
+  "issue_number": 591,
+  "objective": "Open the governance rollout tracker for governed research specialist consumer adoption, bind the first pilot lane to Stampede issue #208, and keep this branch planning-only while consumer repo mutations stay separate.",
+  "plan_author": {
+    "role": "codex-orchestrator",
+    "model_id": "gpt-5.4",
+    "model_family": "openai"
+  },
+  "tier": 1,
+  "scope_boundary": [
+    "Issue-591 work in hldpro-governance only.",
+    "Issue-backed planning packet, governance mirror updates, and verifier-baseline proof for the first consumer rollout lane.",
+    "Opening the first consumer pilot issue in Stampede (#208).",
+    "No direct consumer-repo mutation in this branch."
+  ],
+  "out_of_scope": [
+    "Direct edits to Stampede or any other consumer repo in this branch.",
+    "Central GitHub settings mutation in consumer repos.",
+    "Broad multi-repo consumer rollout in this first packet.",
+    "Reopening governance-source research specialist design from issue #589."
+  ],
+  "research_summary": "Issue #589 completed the governance-source research specialist contract, but a live verifier replay against Stampede still fails on stale package/version and missing managed surfaces. Specialist QA recommended the narrowest compliant next step: keep issue #591 planning-only, open one consumer pilot issue, and use the consumer verifier replay as the hard proof boundary before any repo-native adoption work begins.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/589",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591",
+    "https://github.com/NIBARGERB-HLDPRO/Stampede/issues/208",
+    "docs/governance-tooling-package.json",
+    "docs/governance-consumer-pull-state.json",
+    "docs/hldpro-sim-consumer-pull-state.json",
+    "docs/runbooks/org-governance-tooling-distribution.md",
+    "scripts/overlord/verify_governance_consumer.py"
+  ],
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-29-issue-591-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "sprints": [
+    {
+      "name": "Planning packet and first consumer issue",
+      "goal": "Capture the bounded consumer rollout scope and open the first repo-native pilot issue without mutating the consumer repo.",
+      "tasks": [
+        "Write the issue-591 PDCAR, structured plan, planning execution scope, and planning handoff.",
+        "Open Stampede issue #208 as the first consumer pilot lane with repo-specific acceptance criteria.",
+        "Update governance mirrors to reflect issue #591 and the Stampede pilot.",
+        "Replay the governed consumer verifier against Stampede and record the expected stale-baseline result.",
+        "Run the governed Claude review path against the packet before closeout."
+      ],
+      "acceptance_criteria": [
+        "The issue-591 packet validates locally as planning_only.",
+        "Stampede issue #208 exists with repo-specific acceptance criteria for managed research-specialist surface adoption.",
+        "The verifier replay against Stampede is recorded as stale-baseline proof without mutating Stampede.",
+        "Alternate-family review is recorded through the governed wrapper path before planning closeout."
+      ],
+      "file_paths": [
+        "OVERLORD_BACKLOG.md",
+        "docs/PROGRESS.md",
+        "docs/plans/issue-591-consumer-research-rollout-pdcar.md",
+        "docs/plans/issue-591-consumer-research-rollout-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-29-issue-591-consumer-research-rollout-planning.json",
+        "raw/handoffs/2026-04-29-issue-591-consumer-research-rollout.json",
+        "raw/cross-review/2026-04-29-issue-591-consumer-research-rollout.md",
+        "raw/packets/2026-04-29-issue-591-claude-review-packet.md",
+        "docs/codex-reviews/2026-04-29-claude.md",
+        "docs/codex-reviews/2026-04-29-issue-591-claude.md",
+        "raw/cli-session-events/2026-04-29.jsonl",
+        "raw/cli-session-events/2026-04-29/cli_20260429T202028Z_e2681500e8c0.stdout",
+        "raw/cli-session-events/2026-04-29/cli_20260429T202028Z_e2681500e8c0.stderr",
+        "raw/validation/2026-04-29-issue-591-consumer-research-rollout.md",
+        "raw/closeouts/2026-04-29-issue-591-consumer-research-rollout.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "consumer-rollout QA specialist",
+      "reviewer_model_id": "gpt-5.4-mini",
+      "reviewer_model_family": "openai",
+      "role": "planning-scope review",
+      "focus": "Confirm the narrowest compliant first-consumer rollout proof boundary for issue #591.",
+      "status": "mixed",
+      "summary": "The first issue-591 packet should stay planning-only, open one consumer pilot issue, and prove the current baseline with a verifier replay. Central GitHub settings remain report-only and should not be part of this first rollout slice.",
+      "evidence": [
+        "docs/runbooks/org-governance-tooling-distribution.md",
+        "docs/governance-consumer-pull-state.json",
+        "scripts/overlord/verify_governance_consumer.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude specialist review via scripts/codex-review.sh claude",
+    "reviewer_model_id": "claude-opus-4-6",
+    "reviewer_model_family": "anthropic",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Governed alternate-family review accepted the planning packet with follow-up only: confirm Stampede issue #208 is open, record the listed validation commands, update the cross-review artifact, and remove the duplicate review_artifact_refs key from the handoff JSON.",
+    "evidence": [
+      "docs/codex-reviews/2026-04-29-claude.md",
+      "docs/codex-reviews/2026-04-29-issue-591-claude.md",
+      "raw/packets/2026-04-29-issue-591-claude-review-packet.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "planning_only",
+    "approved_scope_summary": "Create the issue-591 planning packet, open the first consumer pilot issue in Stampede, update governance mirrors, and record stale-baseline verifier proof without mutating any consumer repo.",
+    "next_execution_step": "Incorporate the accepted_with_followup Claude review notes, record the validator and verifier results, and finalize planning-only closeout for the issue-591 packet.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-29-issue-591-consumer-research-rollout.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-591-consumer-research-rollout-planning.json",
+    "packet_ref": "raw/packets/2026-04-29-issue-591-claude-review-packet.md",
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-29-issue-591-consumer-research-rollout.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-29-issue-591-consumer-research-rollout.md"
+    ],
+    "gate_artifact_refs": [
+      "raw/validation/2026-04-29-issue-591-consumer-research-rollout.md"
+    ],
+    "closeout_ref": null,
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Issue #591 remains planning-only and governance-only in this branch.",
+      "Stampede issue #208 exists with the expected repo-specific consumer rollout acceptance criteria.",
+      "The verifier replay proves the current Stampede baseline is stale against the governance contract.",
+      "Governance mirrors reflect the open rollout epic and the first pilot lane."
+    ]
+  },
+  "material_deviation_rules": [
+    "Do not widen issue #591 into direct consumer-repo mutation work.",
+    "Do not treat a stale verifier failure as proof of consumer adoption.",
+    "Do not include central GitHub settings mutation in this first rollout packet."
+  ],
+  "approved": true,
+  "approved_by": [
+    "codex-orchestrator"
+  ],
+  "approved_at": "2026-04-29T20:00:00Z"
+}
