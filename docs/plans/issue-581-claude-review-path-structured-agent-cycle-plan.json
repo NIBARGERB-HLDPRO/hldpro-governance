@@ -1,0 +1,130 @@
+{
+  "session_id": "session-20260429-issue-581-claude-review-path",
+  "issue_number": 581,
+  "objective": "Repair the governed Claude specialist-review path so bounded alternate-family packet reviews reliably return a verdict through the approved codex-review wrapper contract.",
+  "tier": 1,
+  "scope_boundary": [
+    "Issue-581 work in hldpro-governance only.",
+    "Planning packet, planning execution scope, handoff, and validation evidence for the review-path defect.",
+    "Bounded reproduction of the approved wrapper/template/supervisor path using deterministic prompts and governed token/bootstrap surfaces.",
+    "Implementation only after alternate-family review can be satisfied or an explicit governed exception is documented."
+  ],
+  "out_of_scope": [
+    "Direct downstream consumer-repo edits in ASC-Evaluator or other rollout repos.",
+    "Creating any parallel operator-facing review path outside scripts/codex-review.sh claude.",
+    "Changing unrelated governance bootstrap, graphify, or Stage 6 behavior unless root cause evidence requires it.",
+    "Claiming accepted alternate-family review before the governed path actually returns a usable verdict."
+  ],
+  "research_summary": "ASC-Evaluator issue #15 is blocked because the approved governed Claude review path does not return a verdict for bounded packet reviews even though base Claude CLI preflight succeeds. Initial evidence points to wrapper/supervisor contract behavior rather than auth failure: claude -p \"say ok\" returns ok with the governed token, but repeated wrapper invocations terminate with max-turn or idle-timeout outcomes and no usable review artifact. The issue-581 slice must reproduce that deterministically and fix the governance-owned path without adding an ad hoc fallback.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/581",
+    "https://github.com/NIBARGERB-HLDPRO/ASC-Evaluator/issues/15",
+    "https://github.com/NIBARGERB-HLDPRO/ASC-Evaluator/pull/16",
+    "scripts/codex-review-template.sh",
+    "scripts/cli_session_supervisor.py",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "docs/ENV_REGISTRY.md",
+    "raw/cli-session-events/",
+    "ASC-Evaluator issue-15 blocked review evidence"
+  ],
+  "sprints": [
+    {
+      "name": "Planning and reproduction",
+      "goal": "Create the issue-backed governance packet and capture deterministic evidence for the failing review path.",
+      "tasks": [
+        "Create PDCAR, structured plan, planning execution scope, and handoff for issue #581.",
+        "Reproduce the wrapper failure through the approved codex-review claude path in a clean governance worktree.",
+        "Record the separation between healthy Claude CLI auth and failing wrapper/supervisor behavior."
+      ],
+      "acceptance_criteria": [
+        "The issue-581 packet validates and stays in planning mode.",
+        "Reproduction evidence shows the failure through the approved review path, not an ad hoc path.",
+        "The recorded evidence distinguishes base Claude CLI health from governed wrapper failure."
+      ],
+      "file_paths": [
+        "docs/plans/issue-581-claude-review-path-pdcar.md",
+        "docs/plans/issue-581-claude-review-path-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-29-issue-581-claude-review-path-planning.json",
+        "raw/handoffs/2026-04-29-issue-581-claude-review-path.json",
+        "raw/validation/2026-04-29-issue-581-claude-review-path.md"
+      ]
+    },
+    {
+      "name": "Implementation design gate",
+      "goal": "Define the minimal governance-owned fix surface without widening into a new operator path.",
+      "tasks": [
+        "Identify whether the defect is in wrapper defaults, supervisor invocation, prompt transport, allowed-tools handling, timeout handling, or Claude CLI expectations.",
+        "Prepare the bounded implementation scope only after alternate-family review is available."
+      ],
+      "acceptance_criteria": [
+        "Implementation-ready scope is not declared until alternate-family review is accepted or a governed exception is explicitly documented.",
+        "The identified fix remains inside governance-owned wrapper/supervisor surfaces."
+      ],
+      "file_paths": [
+        "scripts/codex-review-template.sh",
+        "scripts/cli_session_supervisor.py"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Codex orchestrator/QA",
+      "role": "governance reproduction gate",
+      "focus": "Issue-backed reproduction, approved-path discipline, and no-ad-hoc-fallback enforcement.",
+      "status": "accepted",
+      "summary": "Issue #581 may proceed as a planning and reproduction lane because the defect exists inside the approved review path itself, but implementation remains blocked until alternate-family review can be satisfied or an explicit exception is granted.",
+      "evidence": [
+        "hldpro-governance issue #581",
+        "ASC-Evaluator issue #15",
+        "ASC-Evaluator PR #16"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude specialist review via scripts/codex-review.sh claude",
+    "model_family": "anthropic",
+    "status": "unavailable",
+    "summary": "The approved alternate-family review path is the failing surface under investigation. Planning may proceed with the blocker documented, but implementation cannot advance until this review path returns a usable verdict or a governed exception is approved.",
+    "evidence": [
+      "ASC-Evaluator issue #15 blocked review attempts",
+      "Base Claude CLI preflight returned ok with governed token"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "blocked",
+    "approved_scope_summary": "Issue #581 is approved only for packet creation and approved-path reproduction evidence at this stage.",
+    "next_execution_step": "Commit and publish the planning packet, then record governed reproduction evidence before requesting implementation authority.",
+    "blocked_on": [
+      "Accepted alternate-family review or explicit governed exception for governance-surface implementation"
+    ],
+    "handoff_package_ref": "raw/handoffs/2026-04-29-issue-581-claude-review-path.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-581-claude-review-path-planning.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-29-issue-581-claude-review-path.md"
+    ],
+    "review_artifact_refs": [],
+    "gate_artifact_refs": [],
+    "closeout_ref": null,
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "The planning packet validates.",
+      "The approved review path failure is reproduced and documented.",
+      "No implementation-ready claim is made before alternate-family review is actually available."
+    ]
+  },
+  "material_deviation_rules": [
+    "Do not implement governance-surface fixes under issue #581 until alternate-family review can be satisfied or an explicit exception is recorded.",
+    "Do not introduce a new operator-facing review path as a workaround.",
+    "Do not widen issue #581 into downstream consumer changes."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Codex orchestrator/QA"
+  ],
+  "approved_at": "2026-04-29T04:20:00Z"
+}

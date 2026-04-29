@@ -1,0 +1,61 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-581-claude-review-path",
+  "issue_number": 581,
+  "parent_epic_number": 579,
+  "lifecycle_state": "planned",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-581-claude-review-path-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-581-claude-review-path-planning.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "The issue-581 packet validates and keeps the lane in planning-only mode until alternate-family review is available.",
+      "verification_refs": [
+        "docs/plans/issue-581-claude-review-path-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-29-issue-581-claude-review-path-planning.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Reproduction evidence proves the failure through the approved scripts/codex-review.sh claude path and separately proves base Claude CLI auth health.",
+      "verification_refs": [
+        "raw/validation/2026-04-29-issue-581-claude-review-path.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "No implementation-ready claim is made before alternate-family review is actually available or an explicit governed exception is approved.",
+      "verification_refs": [
+        "docs/plans/issue-581-claude-review-path-structured-agent-cycle-plan.json",
+        "raw/handoffs/2026-04-29-issue-581-claude-review-path.json"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-581-claude-review-path --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-29-issue-581-claude-review-path.json",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-29-issue-581-claude-review-path.md"
+  ],
+  "artifact_refs": [
+    "docs/plans/issue-581-claude-review-path-pdcar.md",
+    "docs/plans/issue-581-claude-review-path-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-29-issue-581-claude-review-path-planning.json",
+    "raw/validation/2026-04-29-issue-581-claude-review-path.md"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [
+    "Alternate-family review path remains unavailable for governance-surface implementation"
+  ],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-29T04:20:00Z",
+  "notes": "Planning-only handoff accepted so issue-581 can capture deterministic reproduction evidence for the governed Claude review-path defect without falsely escalating to implementation-ready."
+}
