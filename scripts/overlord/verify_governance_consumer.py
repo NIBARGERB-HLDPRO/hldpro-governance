@@ -98,6 +98,21 @@ def _git_root(path: Path) -> Path:
     return Path(result.stdout.strip()).resolve(strict=False)
 
 
+def _ensure_remote_reachable_governance_ref(governance_root: Path, governance_ref: str) -> str | None:
+    if not governance_ref:
+        return None
+    if not SHA_RE.fullmatch(governance_ref):
+        return None
+    fetch = _run_git(["fetch", "--quiet", "--depth=1", "origin", governance_ref], governance_root)
+    if fetch.returncode == 0:
+        return None
+    detail = fetch.stderr.strip() or fetch.stdout.strip() or "unknown remote fetch error"
+    return (
+        "governance_ref is not reachable from remote origin and cannot be used as rollout proof: "
+        f"{governance_ref} ({detail})"
+    )
+
+
 def _load_json(path: Path, label: str) -> dict[str, Any]:
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
@@ -619,6 +634,11 @@ def verify(args: argparse.Namespace) -> dict[str, Any]:
         expected_package_version=args.package_version or None,
         allow_non_sha_ref=args.allow_non_sha_ref,
     )
+    record_governance_ref = record.payload.get("governance_ref")
+    if isinstance(record_governance_ref, str):
+        remote_ref_failure = _ensure_remote_reachable_governance_ref(governance_root, record_governance_ref)
+        if remote_ref_failure:
+            failures.append(remote_ref_failure)
     return {
         "status": "passed" if not failures else "failed",
         "target_repo": str(target_repo),

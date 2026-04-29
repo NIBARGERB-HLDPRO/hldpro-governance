@@ -1,0 +1,11 @@
+Review complete. Verdict: **`accepted_with_followup`**.
+
+The planning packet is sound — root cause is correctly attributed to the governance rollout procedure, the three proposed hard gates are the right minimum set, merged lanes are properly scoped for replay rather than silent acceptance, and governance-only boundaries are maintained.
+
+Three required follow-ups before the implementation sprint can start:
+
+1. **Specify the remote-reachability mechanism** — the deployer's silent default to `HEAD` (line 313 of `deploy_governance_tooling.py`) is the exact code path that produced the bad ref, and the plan doesn't yet say whether the fix uses `git ls-remote`, `merge-base --is-ancestor`, or GitHub API.
+2. **Define a concrete replay checklist** — "replay against remote governance state" needs to be operationalized with specific commands and expected output per merged consumer lane.
+3. **Include workflow-ref scope** in the AIS/knocktracker replay audit, since the verifier already checks those (`_workflow_ref_failures`).
+
+Review artifact written to `docs/codex-reviews/2026-04-29-issue-609-claude.md`.

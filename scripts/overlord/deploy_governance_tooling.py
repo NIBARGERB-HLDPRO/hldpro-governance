@@ -116,6 +116,20 @@ def _git_head(root: Path) -> str:
     return result.stdout.strip()
 
 
+def _ensure_remote_reachable_governance_ref(governance_root: Path, governance_ref: str) -> None:
+    if not governance_ref:
+        _fail("governance_ref is required")
+    if len(governance_ref) != 40:
+        _fail(f"governance_ref must be an exact 40-character git SHA for consumer rollout: {governance_ref}")
+    fetch = _run_git(["fetch", "--quiet", "--depth=1", "origin", governance_ref], governance_root)
+    if fetch.returncode != 0:
+        detail = fetch.stderr.strip() or fetch.stdout.strip() or "unknown remote fetch error"
+        _fail(
+            "governance_ref must be reachable from remote origin before consumer rollout: "
+            f"{governance_ref} ({detail})"
+        )
+
+
 def _load_manifest(path: Path) -> dict[str, object]:
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
@@ -311,6 +325,8 @@ def build_plan(args: argparse.Namespace) -> ToolingPlan:
 
     target_repo = _git_root(Path(args.target_repo).resolve())
     governance_ref = args.governance_ref or _git_head(governance_root)
+    if getattr(args, "command", "") in {"apply", "verify"}:
+        _ensure_remote_reachable_governance_ref(governance_root, governance_ref)
     profile = args.profile or DEFAULT_PROFILE
     package_version = _package_version(manifest, desired_state, profile, args.package_version)
 

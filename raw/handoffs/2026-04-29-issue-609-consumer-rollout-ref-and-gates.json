@@ -1,0 +1,104 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-609-consumer-rollout-ref-and-gates",
+  "issue_number": 609,
+  "parent_epic_number": 591,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-609-consumer-rollout-ref-and-gates-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-609-consumer-rollout-ref-and-gates-implementation.json",
+  "packet_ref": "raw/packets/2026-04-29-issue-609-claude-review-packet.md",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-29-issue-609-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Issue #609 has a validated planning packet for the rollout repair.",
+      "verification_refs": [
+        "docs/plans/issue-609-consumer-rollout-ref-and-gates-pdcar.md",
+        "docs/plans/issue-609-consumer-rollout-ref-and-gates-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "The packet hard-requires remote-reachable governance refs and repo-local publish gates for future consumer lanes.",
+      "verification_refs": [
+        "docs/plans/issue-609-consumer-rollout-ref-and-gates-pdcar.md",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/609"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Governance tracker #591 reflects the blocked rollout state until this repair lands.",
+      "verification_refs": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591#issuecomment-4347870019"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Merged AIS and knocktracker lanes have explicit replay disposition before more consumer rollout resumes.",
+      "verification_refs": [
+        "raw/cross-review/2026-04-29-issue-609-consumer-rollout-ref-and-gates.md",
+        "raw/validation/2026-04-29-issue-609-consumer-rollout-ref-and-gates.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-609-consumer-rollout-ref-and-gates --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-29-issue-609-consumer-rollout-ref-and-gates.json",
+    "python3 scripts/overlord/verify_governance_consumer.py --target-repo /Users/bennibarger/Developer/HLDPRO/ai-integration-services --profile ai-integration-services --governance-ref f444f34a1e28d89eef3cb6a1a8c69201e7a8e955 --package-version 0.3.0-hard-gated-som",
+    "python3 scripts/overlord/verify_governance_consumer.py --target-repo /Users/bennibarger/Developer/HLDPRO/knocktracker --profile knocktracker --governance-ref f444f34a1e28d89eef3cb6a1a8c69201e7a8e955 --package-version 0.3.0-hard-gated-som",
+    "python3 scripts/overlord/check_consumer_rollout_publish_gate.py --target-repo /Users/bennibarger/Developer/HLDPRO/knocktracker --base-ref origin/main --pr-title '[Issue #189] Adopt governed research specialist contract' --pr-body-file /tmp/knocktracker-189-pr-body.md",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-29-issue-609-consumer-rollout-ref-and-gates.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-29-issue-609-consumer-rollout-ref-and-gates.md",
+    "raw/closeouts/2026-04-29-issue-609-consumer-rollout-ref-and-gates.md"
+  ],
+  "artifact_refs": [
+    "docs/plans/issue-609-consumer-rollout-ref-and-gates-pdcar.md",
+    "docs/plans/issue-609-consumer-rollout-ref-and-gates-structured-agent-cycle-plan.json",
+    "raw/handoffs/2026-04-29-issue-609-consumer-rollout-ref-and-gates.json",
+    "raw/execution-scopes/2026-04-29-issue-609-consumer-rollout-ref-and-gates-implementation.json"
+  ],
+  "audit_refs": [
+    "https://github.com/NIBARGERB-HLDPRO/knocktracker/pull/190",
+    "https://github.com/NIBARGERB-HLDPRO/ai-integration-services/pull/1411"
+  ],
+  "closeout_ref": "raw/closeouts/2026-04-29-issue-609-consumer-rollout-ref-and-gates.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-29T22:10:00Z",
+  "notes": "Implementation-ready handoff accepted for the governance repair lane. Downstream rollout remains paused on issue #609 until this governance-source fix merges."
+}

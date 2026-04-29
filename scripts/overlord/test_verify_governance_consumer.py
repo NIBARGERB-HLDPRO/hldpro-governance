@@ -11,6 +11,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 MODULE_PATH = Path(__file__).with_name("verify_governance_consumer.py")
@@ -64,14 +65,22 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         ]
         if package_version:
             args.extend(["--package-version", package_version])
-        with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+        with (
+            contextlib.redirect_stdout(io.StringIO()),
+            contextlib.redirect_stderr(io.StringIO()),
+            mock.patch.object(deploy_governance_tooling, "_ensure_remote_reachable_governance_ref", return_value=None),
+        ):
             code = deploy_governance_tooling.main(args)
         self.assertEqual(code, 0)
 
     def _invoke(self, *args: str) -> tuple[int, str, str]:
         stdout = io.StringIO()
         stderr = io.StringIO()
-        with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+        with (
+            contextlib.redirect_stdout(stdout),
+            contextlib.redirect_stderr(stderr),
+            mock.patch.object(verify_governance_consumer, "_ensure_remote_reachable_governance_ref", return_value=None),
+        ):
             code = verify_governance_consumer.main(list(args))
         return code, stdout.getvalue(), stderr.getvalue()
 
@@ -180,6 +189,23 @@ class TestVerifyGovernanceConsumer(unittest.TestCase):
         payload = json.loads(stdout)
         self.assertEqual(payload["status"], "failed")
         self.assertIn("governance_ref must be an exact 40-character lowercase git SHA", "\n".join(payload["failures"]))
+
+    def test_verify_fails_when_governance_ref_is_not_remote_reachable(self) -> None:
+        self._deploy()
+        with mock.patch.object(
+            verify_governance_consumer,
+            "_ensure_remote_reachable_governance_ref",
+            return_value="governance_ref is not reachable from remote origin",
+        ):
+            stdout = io.StringIO()
+            stderr = io.StringIO()
+            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                code = verify_governance_consumer.main(self._base_args())
+
+        self.assertEqual(code, 1)
+        payload = json.loads(stdout.getvalue())
+        self.assertIn("governance_ref is not reachable from remote origin", "\n".join(payload["failures"]))
+        self.assertEqual(stderr.getvalue(), "")
 
     def test_verify_fails_when_shim_missing_marker(self) -> None:
         self._deploy()

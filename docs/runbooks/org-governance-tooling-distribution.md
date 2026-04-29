@@ -168,7 +168,7 @@ Example dry-run:
 python3 scripts/overlord/deploy_governance_tooling.py dry-run \
   --target-repo /path/to/consumer-repo \
   --profile <profile> \
-  --governance-ref "$(git rev-parse HEAD)"
+  --governance-ref "$(git rev-parse origin/main)"
 ```
 
 Example apply and verify:
@@ -177,13 +177,16 @@ Example apply and verify:
 python3 scripts/overlord/deploy_governance_tooling.py apply \
   --target-repo /path/to/consumer-repo \
   --profile <profile> \
-  --governance-ref "$(git rev-parse HEAD)"
+  --governance-ref "$(git rev-parse origin/main)"
 
 python3 scripts/overlord/deploy_governance_tooling.py verify \
   --target-repo /path/to/consumer-repo \
   --profile <profile> \
-  --governance-ref "$(git rev-parse HEAD)"
+  --governance-ref "$(git rev-parse origin/main)"
 ```
+
+The deployer now fails closed if the supplied governance SHA is not reachable
+from remote `origin`. A local branch-only SHA is not valid rollout proof.
 
 The deployer refuses dirty target repos and unmanaged managed-path files by default. The existing Local CI shim deployer remains the compatibility surface for rendering the managed shim body.
 
@@ -216,6 +219,26 @@ This is the boundary between repo-pulled rules and centrally applied GitHub poli
 - Centrally applied: org rulesets, repo rulesets, repository auto-merge settings, bypass actors, and required-status wiring.
 
 Consumer verification must not mutate GitHub settings. If a consumer check detects central-policy drift, open or update issue-backed governance work and use the governed apply path. Do not let downstream repos silently self-rewrite rulesets or repository settings.
+
+## Consumer Publish Gate
+
+Before opening a consumer rollout PR, run the governance-owned publish gate
+check from the governance checkout:
+
+```bash
+python3 scripts/overlord/check_consumer_rollout_publish_gate.py \
+  --target-repo /path/to/consumer-repo \
+  --base-ref origin/main \
+  --pr-title "[Issue #<number>] <scope summary>" \
+  --pr-body-file /path/to/pr-body.md
+```
+
+This check fails closed on the current repo-local rollout gates:
+
+- required PR-title format
+- required PR-body sections
+- workflow changes without `docs/sprint/runner-status.md` update
+- `npm run file-index:check` when the repo declares that check
 
 The desired-state contract for this first slice is `docs/governance-consumer-pull-state.json`.
 
