@@ -157,6 +157,11 @@ def _profile_desired_state(desired_state: dict[str, Any], profile: str) -> dict[
     return profile_state if isinstance(profile_state, dict) else {}
 
 
+def _profile_package_version(profile_state: dict[str, Any]) -> str:
+    value = profile_state.get("package_version")
+    return value if isinstance(value, str) and value else ""
+
+
 def _profile_contract(manifest: dict[str, Any]) -> dict[str, Any]:
     contract = manifest.get("profile_contract")
     return contract if isinstance(contract, dict) else {}
@@ -216,11 +221,25 @@ def _record_constraints(payload: dict[str, Any]) -> set[str]:
     return set()
 
 
-def _expected_managed_paths(profile_state: dict[str, Any]) -> set[str]:
+def _expected_managed_entries(profile_state: dict[str, Any]) -> list[dict[str, Any]]:
     raw = profile_state.get("managed_files")
-    if isinstance(raw, list) and all(isinstance(item, str) for item in raw):
-        return set(raw)
-    return {".hldpro/local-ci.sh", ".hldpro/governance-tooling.json"}
+    if not isinstance(raw, list):
+        return [
+            {"path": ".hldpro/local-ci.sh", "type": "local_ci_shim"},
+            {"path": ".hldpro/governance-tooling.json", "type": "consumer_record"},
+        ]
+    entries: list[dict[str, Any]] = []
+    for item in raw:
+        if isinstance(item, str) and item:
+            entries.append({"path": item})
+        elif isinstance(item, dict) and isinstance(item.get("path"), str) and item["path"]:
+            entries.append(dict(item))
+    if entries:
+        return entries
+    return [
+        {"path": ".hldpro/local-ci.sh", "type": "local_ci_shim"},
+        {"path": ".hldpro/governance-tooling.json", "type": "consumer_record"},
+    ]
 
 
 def _managed_paths(record: dict[str, Any]) -> set[str]:
@@ -232,6 +251,14 @@ def _managed_paths(record: dict[str, Any]) -> set[str]:
         if isinstance(item, dict) and isinstance(item.get("path"), str):
             paths.add(item["path"])
     return paths
+
+
+def _string_list_or_none(value: Any) -> list[str] | None:
+    if value is None:
+        return None
+    if isinstance(value, list) and all(isinstance(item, str) for item in value):
+        return value
+    return []
 
 
 def _managed_file_type(record: dict[str, Any], relpath: str) -> str:
@@ -252,6 +279,25 @@ def _managed_file_entry(record: dict[str, Any], relpath: str) -> dict[str, Any]:
         if isinstance(item, dict) and item.get("path") == relpath:
             return item
     return {}
+
+
+def _expected_entry_failures(expected: dict[str, Any], actual: dict[str, Any], relpath: str) -> list[str]:
+    failures: list[str] = []
+    expected_type = expected.get("type")
+    if isinstance(expected_type, str) and expected_type:
+        actual_type = actual.get("type")
+        if actual_type != expected_type:
+            failures.append(f"managed file type mismatch for {relpath}: expected {expected_type}, got {actual_type}")
+    for field in ("required_strings", "required_pre_tool_use_matchers", "required_post_tool_use_matchers"):
+        expected_values = _string_list_or_none(expected.get(field))
+        if expected_values is None:
+            continue
+        actual_values = _string_list(actual.get(field))
+        if actual_values != expected_values:
+            failures.append(
+                f"managed file metadata mismatch for {relpath}: expected {field}={expected_values}, got {actual_values}"
+            )
+    return failures
 
 
 def _string_list(value: Any) -> list[str]:
@@ -460,7 +506,8 @@ def _validate_record(
         failures.append(f"unknown profile: {profile}")
 
     package_version = payload.get("package_version")
-    expected_version = expected_package_version or _initial_package_version(manifest)
+    profile_state = _profile_desired_state(desired_state, profile)
+    expected_version = expected_package_version or _profile_package_version(profile_state) or _initial_package_version(manifest)
     if package_version != expected_version:
         failures.append(f"package_version mismatch: expected {expected_version}, got {package_version}")
 
@@ -477,12 +524,19 @@ def _validate_record(
     if isinstance(consumer_repo, str) and Path(consumer_repo).resolve(strict=False) != target_repo:
         warnings.append(f"consumer_repo path differs from target repo: {consumer_repo}")
 
-    profile_state = _profile_desired_state(desired_state, profile)
-    expected_paths = _expected_managed_paths(profile_state)
+    expected_entries = _expected_managed_entries(profile_state)
+    expected_paths = {entry["path"] for entry in expected_entries if isinstance(entry.get("path"), str)}
     actual_paths = _managed_paths(payload)
     missing_paths = sorted(expected_paths - actual_paths)
     if missing_paths:
         failures.append(f"managed_files missing expected path(s): {', '.join(missing_paths)}")
+    expected_by_path = {
+        entry["path"]: entry for entry in expected_entries if isinstance(entry.get("path"), str)
+    }
+    for relpath, expected_entry in expected_by_path.items():
+        actual_entry = _managed_file_entry(payload, relpath)
+        if actual_entry:
+            failures.extend(_expected_entry_failures(expected_entry, actual_entry, relpath))
 
     for relpath in sorted(actual_paths):
         candidate = (target_repo / relpath).resolve()

@@ -43,9 +43,12 @@
   - `alternate_model_review`
   - `execution_handoff`
   - `material_deviation_rules`
+- Active issue-lane plans must also capture machine-checkable reviewer identity and handoff/review evidence fields sufficient for validators to reject self-review and evidence-free promotion.
 - Issue-driven execution branches (`issue-*`) and risk-fix branches (`riskfix/*`) must have at least one valid `*structured-agent-cycle-plan.json` file before execution is governance-ready. Note: `riskfix/<slug>-YYYYMMDD` (with date suffix) is the **required** implementation branch pattern for `local-ai-machine`, enforced by `edge_breaker_mcp_contract.yml`. Other repos accept `riskfix/*` as an optional prefix alongside standard `feat/fix/chore/docs` conventions but do not require it.
 - Reusable governance CI validates structured plans through `scripts/overlord/validate_structured_agent_cycle_plan.py`.
 - Cross-model review results from `scripts/codex-review.sh claude` belong in `alternate_model_review`.
+- `alternate_model_review.required=false` is not a free-text bypass. New active issue-lane plans may omit alternate-family review only with a validator-legal bounded exemption.
+- Once a plan records accepted specialist or alternate-family review, `execution_handoff.review_artifact_refs` must be populated with `raw/cross-review/...` evidence before promotion continues.
 
 ### Planner Write-Boundary (Tier 1)
 - Tier 1 planner sessions may create planning, review, and handoff artifacts only.
@@ -528,6 +531,13 @@ Required lifecycle links:
 - GitHub issue number and optional parent epic number.
 - Source role and destination role.
 - Structured plan reference.
+- Lifecycle-state transitions are hard-gated:
+  - `planned` / `planning_only` may defer populated review refs only until the
+    required review actually happens.
+  - Promotion to `implementation_ready` requires accepted review evidence and
+    populated review refs.
+  - Continuing handoffs from `implementation_ready` onward require populated
+    handoff and gate evidence where the lifecycle validator expects it.
 - Execution-scope reference for implementation-ready or later states.
 - Packet reference for dispatch/validation-ready or later states.
 - Acceptance criteria with verification references.

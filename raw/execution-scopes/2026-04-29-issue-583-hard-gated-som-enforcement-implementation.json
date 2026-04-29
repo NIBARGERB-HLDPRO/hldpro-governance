@@ -1,0 +1,66 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-583-hard-gated-som-enforcement",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/PROGRESS.md",
+    "docs/governance-consumer-pull-state.json",
+    "docs/governance-tooling-package.json",
+    "docs/plans/issue-583-hard-gated-som-enforcement-pdcar.md",
+    "docs/plans/issue-583-hard-gated-som-enforcement-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-29-issue-583-hard-gated-som-enforcement-planning.json",
+    "raw/execution-scopes/2026-04-29-issue-583-hard-gated-som-enforcement-implementation.json",
+    "raw/handoffs/2026-04-29-issue-583-hard-gated-som-enforcement.json",
+    "raw/cross-review/2026-04-29-issue-583-hard-gated-som-enforcement.md",
+    "raw/validation/2026-04-29-issue-583-hard-gated-som-enforcement.md",
+    "raw/closeouts/2026-04-29-issue-583-hard-gated-som-enforcement.md",
+    "docs/codex-reviews/2026-04-29-claude.md",
+    "docs/schemas/structured-agent-cycle-plan.schema.json",
+    "docs/schemas/package-handoff.schema.json",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/validate_handoff_package.py",
+    "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/test_validate_handoff_package.py",
+    "scripts/overlord/deploy_governance_tooling.py",
+    "scripts/overlord/test_deploy_governance_tooling.py",
+    "scripts/overlord/verify_governance_consumer.py",
+    "scripts/overlord/test_verify_governance_consumer.py",
+    ".github/workflows/governance-check.yml",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "STANDARDS.md",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout remains dirty in unrelated files; issue-583 implementation stays isolated in this clean worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Stampede repair remains separate issue #197 and serves only as downstream replay proof during this source-fix lane."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 583,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/583",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-29T13:05:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-29T13:05:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-583-hard-gated-som-enforcement-structured-agent-cycle-plan.json",
+      "docs/plans/issue-583-hard-gated-som-enforcement-pdcar.md",
+      "raw/cross-review/2026-04-29-issue-583-hard-gated-som-enforcement.md"
+    ],
+    "active_exception_ref": "docs/plans/issue-583-hard-gated-som-enforcement-pdcar.md",
+    "active_exception_expires_at": "2026-04-30T13:05:00Z"
+  }
+}

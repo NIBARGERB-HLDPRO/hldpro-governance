@@ -20,8 +20,42 @@ def _plan(
     review_status: str = "accepted",
     review_required: bool = True,
     approved_at: str = "2026-04-28T19:00:00Z",
+    include_plan_author: bool = True,
+    include_reviewer_identity: bool = True,
+    same_model_self_review: bool = False,
+    include_review_artifact_refs: bool = True,
+    include_handoff_package_ref: bool = True,
+    review_exemption: dict | None = None,
 ) -> dict:
-    return {
+    review: dict[str, object] = {
+        "reviewer": "test",
+        "role": "test",
+        "focus": "test",
+        "status": "accepted",
+        "summary": "test",
+        "evidence": ["test"],
+    }
+    if include_reviewer_identity:
+        review["reviewer_model_id"] = "gpt-5.4" if same_model_self_review else "claude-opus-4-6"
+        review["reviewer_model_family"] = "openai" if same_model_self_review else "anthropic"
+
+    execution_handoff: dict[str, object] = {
+        "session_agent": "codex",
+        "execution_mode": mode,
+        "approved_scope_summary": "test",
+        "next_execution_step": "test",
+        "blocked_on": [],
+    }
+    if include_handoff_package_ref:
+        execution_handoff["handoff_package_ref"] = f"raw/handoffs/2026-04-17-issue-{issue_number}.json"
+    else:
+        execution_handoff["handoff_package_ref"] = None
+    if include_review_artifact_refs:
+        execution_handoff["review_artifact_refs"] = ["raw/cross-review/example.md"]
+    else:
+        execution_handoff["review_artifact_refs"] = []
+
+    payload = {
         "session_id": f"test-{issue_number}",
         "issue_number": issue_number,
         "objective": "test",
@@ -40,14 +74,7 @@ def _plan(
             }
         ],
         "specialist_reviews": [
-            {
-                "reviewer": "test",
-                "role": "test",
-                "focus": "test",
-                "status": "accepted",
-                "summary": "test",
-                "evidence": ["test"],
-            }
+            review
         ],
         "alternate_model_review": {
             "required": review_required,
@@ -56,19 +83,21 @@ def _plan(
             "status": review_status,
             "summary": "test",
             "evidence": ["test"],
+            **({"exemption": review_exemption} if review_exemption is not None else {}),
         },
-        "execution_handoff": {
-            "session_agent": "codex",
-            "execution_mode": mode,
-            "approved_scope_summary": "test",
-            "next_execution_step": "test",
-            "blocked_on": [],
-        },
+        "execution_handoff": execution_handoff,
         "material_deviation_rules": ["test"],
         "approved": approved,
         "approved_by": ["test"],
         "approved_at": approved_at,
     }
+    if include_plan_author:
+        payload["plan_author"] = {
+            "role": "codex-orchestrator",
+            "model_id": "gpt-5.4",
+            "model_family": "openai",
+        }
+    return payload
 
 
 class TestGovernanceSurfacePlanGate(unittest.TestCase):
@@ -361,6 +390,224 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
         self.assertEqual(result.returncode, 1)
         self.assertIn("alternate_model_review.required` to true", result.stdout)
 
+    def test_active_issue_branch_requires_plan_author_identity(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-226-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(
+                json.dumps(_plan(226, approved_at="2026-04-29T13:10:00Z", include_plan_author=False)),
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    "issue-226-test",
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("`plan_author` must be an object", result.stdout)
+
+    def test_active_issue_branch_rejects_same_model_self_review(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-226-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(
+                json.dumps(_plan(226, approved_at="2026-04-29T13:10:00Z", same_model_self_review=True)),
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    "issue-226-test",
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("cannot self-approve with the same model identity as `plan_author`", result.stdout)
+
+    def test_active_issue_branch_requires_review_refs_once_specialist_review_is_accepted(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-226-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(
+                json.dumps(_plan(226, approved_at="2026-04-29T13:10:00Z", include_review_artifact_refs=False)),
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    "issue-226-test",
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("requires non-empty `execution_handoff.review_artifact_refs`", result.stdout)
+
+    def test_active_issue_branch_requires_handoff_package_ref(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-226-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(
+                json.dumps(_plan(226, approved_at="2026-04-29T13:10:00Z", include_handoff_package_ref=False)),
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    "issue-226-test",
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("require a non-null `execution_handoff.handoff_package_ref`", result.stdout)
+
+    def test_planning_only_active_issue_branch_requires_legal_alternate_review_exemption(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-226-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(
+                json.dumps(
+                    _plan(
+                        226,
+                        mode="planning_only",
+                        review_required=False,
+                        review_status="not_requested",
+                        approved_at="2026-04-29T13:10:00Z",
+                    )
+                ),
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    "issue-226-test",
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("alternate_model_review.exemption` must be present", result.stdout)
+
+    def test_planning_only_active_issue_branch_accepts_bounded_historical_exemption(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-226-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(
+                json.dumps(
+                    _plan(
+                        226,
+                        mode="planning_only",
+                        review_required=False,
+                        review_status="not_requested",
+                        approved_at="2026-04-29T13:10:00Z",
+                        review_exemption={
+                            "exemption_type": "historical_grandfathered",
+                            "granted_by": "governance-board",
+                            "expires_at": "2026-05-01T00:00:00Z",
+                            "rationale": "historical carry-forward",
+                        },
+                    )
+                ),
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    "issue-226-test",
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def test_stampede_issue_184_failure_shape_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            plan_path = root / "docs" / "plans" / "issue-184-structured-agent-cycle-plan.json"
+            plan_path.parent.mkdir(parents=True)
+            payload = _plan(
+                184,
+                mode="planning_only",
+                review_required=False,
+                review_status="not_requested",
+                approved_at="2026-04-29T14:00:00Z",
+                include_plan_author=False,
+                include_reviewer_identity=False,
+                include_review_artifact_refs=False,
+                include_handoff_package_ref=False,
+            )
+            payload["specialist_reviews"][0]["reviewer"] = "Codex orchestrator"
+            payload["specialist_reviews"][0]["role"] = "repo-governance and Path A planning reviewer"
+            payload["execution_handoff"]["review_artifact_refs"] = []
+            payload["execution_handoff"]["handoff_package_ref"] = None
+            plan_path.write_text(json.dumps(payload), encoding="utf-8")
+            result = subprocess.run(
+                [
+                    "python3",
+                    str(VALIDATOR),
+                    "--root",
+                    str(root),
+                    "--branch-name",
+                    "feat/issue-184-offline-research-staging",
+                    "--require-if-issue-branch",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("`plan_author` must be an object", result.stdout)
+        self.assertIn("alternate_model_review.exemption` must be present", result.stdout)
+        self.assertIn("requires non-empty `execution_handoff.review_artifact_refs`", result.stdout)
+        self.assertIn("require a non-null `execution_handoff.handoff_package_ref`", result.stdout)
+
     def test_historical_implementation_ready_plan_does_not_fail_without_matching_issue_branch(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
@@ -381,7 +628,7 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("PASS validated 1 structured agent cycle plan file", result.stdout)
 
-    def test_historical_issue_branch_plan_is_grandfathered_before_review_gate_cutover(self) -> None:
+    def test_active_issue_branch_is_not_grandfathered_out_of_new_identity_gate(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             plan_path = root / "docs" / "plans" / "issue-109-structured-agent-cycle-plan.json"
@@ -393,6 +640,10 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
                         review_status="accepted_with_followup",
                         review_required=False,
                         approved_at="2026-04-19T19:25:00Z",
+                        include_plan_author=False,
+                        include_reviewer_identity=False,
+                        include_review_artifact_refs=False,
+                        include_handoff_package_ref=False,
                     )
                 ),
                 encoding="utf-8",
@@ -411,7 +662,8 @@ class TestGovernanceSurfacePlanGate(unittest.TestCase):
                 capture_output=True,
                 text=True,
             )
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("`plan_author` must be an object", result.stdout)
 
     def test_malformed_json_reports_structured_fail_without_traceback(self) -> None:
         with tempfile.TemporaryDirectory() as raw:

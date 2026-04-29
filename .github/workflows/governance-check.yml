@@ -135,6 +135,13 @@ jobs:
             --repo "${GITHUB_REPOSITORY}" \
             --progress-path docs/PROGRESS.md
 
+      - name: Verify governed consumer contract
+        if: github.repository != 'NIBARGERB-HLDPRO/hldpro-governance' && hashFiles('.hldpro/governance-tooling.json') != ''
+        run: |
+          python3 .governance/scripts/overlord/verify_governance_consumer.py \
+            --governance-root .governance \
+            --target-repo .
+
       - name: Validate structured agent cycle plans
         run: |
           set -euo pipefail
@@ -264,6 +271,7 @@ jobs:
           set -euo pipefail
 
           REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          BRANCH_NAME="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
 
           if [ "$REPO_NAME" = "hldpro-governance" ]; then
             HANDOFF_VALIDATOR="scripts/overlord/validate_handoff_package.py"
@@ -279,13 +287,17 @@ jobs:
           # Any plan update can change handoff refs or ACs, so docs/plans/ intentionally triggers this cheap validator.
           HANDOFF_REGEX='^(docs/plans/|docs/schemas/(package-handoff\.schema\.json|examples/package-handoff/)|raw/(closeouts|cross-review|execution-scopes|handoffs|packets|validation)/|scripts/overlord/(validate_handoff_package|test_validate_handoff_package)\.py$)'
           HANDOFF_CHANGES="$(grep -E "$HANDOFF_REGEX" /tmp/governance-changed-files.txt || true)"
-          if [ -z "$HANDOFF_CHANGES" ]; then
+          if [ -z "$HANDOFF_CHANGES" ] && ! echo "$BRANCH_NAME" | grep -Eq '(^|/)issue-[0-9]+'; then
             echo "✓ No handoff package paths changed; handoff integrity validation skipped"
             exit 0
           fi
 
-          echo "Handoff-relevant changes:"
-          echo "$HANDOFF_CHANGES"
+          if [ -n "$HANDOFF_CHANGES" ]; then
+            echo "Handoff-relevant changes:"
+            echo "$HANDOFF_CHANGES"
+          else
+            echo "Issue branch detected; running handoff validation even without direct handoff-path changes"
+          fi
           python3 "$HANDOFF_VALIDATOR" --root .
 
       - name: Enforce Stage 6 closeout evidence

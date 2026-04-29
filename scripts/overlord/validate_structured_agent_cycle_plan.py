@@ -49,6 +49,10 @@ GOVERNANCE_SURFACE_FILES = {
 IMPLEMENTATION_READY_MODES = {"implementation_ready", "implementation_complete"}
 ACCEPTED_REVIEW_STATES = {"accepted", "accepted_with_followup"}
 IMPLEMENTATION_READY_REVIEW_GATE_APPROVED_AT = "2026-04-28T19:00:00Z"
+ALTERNATE_REVIEW_EXEMPTION_TYPES = {
+    "historical_grandfathered",
+    "alternate_service_outage",
+}
 PLANNING_EVIDENCE_PREFIXES = (
     "docs/plans/",
     "raw/closeouts/",
@@ -138,6 +142,143 @@ def _matching_execution_scopes(root: Path, issue_number: int | None, mode: str) 
     if not scope_root.is_dir():
         return []
     return sorted(scope_root.glob(f"*issue-{issue_number}*{mode}*.json"))
+
+
+def _require_identity(
+    value: object,
+    path: Path,
+    field_name: str,
+    failures: list[str],
+) -> dict[str, str] | None:
+    if not isinstance(value, dict):
+        failures.append(f"{path}: `{field_name}` must be an object")
+        return None
+    required_keys = ("role", "model_id", "model_family")
+    for key in required_keys:
+        raw = value.get(key)
+        if not isinstance(raw, str) or not raw.strip():
+            failures.append(f"{path}: `{field_name}.{key}` must be a non-empty string")
+            return None
+    return {
+        "role": str(value["role"]).strip(),
+        "model_id": str(value["model_id"]).strip(),
+        "model_family": str(value["model_family"]).strip(),
+    }
+
+
+def _require_repo_ref_array(
+    value: object,
+    path: Path,
+    field_name: str,
+    failures: list[str],
+    *,
+    allow_empty: bool,
+    required_prefix: str | None = None,
+) -> list[str]:
+    if not isinstance(value, list):
+        failures.append(f"{path}: `{field_name}` must be an array")
+        return []
+    refs = [item for item in value if isinstance(item, str) and item.strip()]
+    if len(refs) != len(value):
+        failures.append(f"{path}: `{field_name}` entries must be non-empty strings")
+        return []
+    if not allow_empty and not refs:
+        failures.append(f"{path}: requires non-empty `{field_name}`")
+        return []
+    if required_prefix is not None:
+        invalid = [ref for ref in refs if not ref.startswith(required_prefix)]
+        if invalid:
+            failures.append(
+                f"{path}: `{field_name}` must reference `{required_prefix}...`, got {', '.join(invalid)}"
+            )
+    return refs
+
+
+def _validate_alternate_review_exemption(path: Path, review: dict[str, object], failures: list[str]) -> None:
+    exemption = review.get("exemption")
+    if not isinstance(exemption, dict):
+        failures.append(f"{path}: `alternate_model_review.exemption` must be present when `required` is false")
+        return
+    exemption_type = exemption.get("exemption_type")
+    if exemption_type not in ALTERNATE_REVIEW_EXEMPTION_TYPES:
+        failures.append(
+            f"{path}: `alternate_model_review.exemption.exemption_type` must be one of {sorted(ALTERNATE_REVIEW_EXEMPTION_TYPES)}"
+        )
+    granted_by = exemption.get("granted_by")
+    if not isinstance(granted_by, str) or not granted_by.strip():
+        failures.append(f"{path}: `alternate_model_review.exemption.granted_by` must be a non-empty string")
+    expires_at = exemption.get("expires_at")
+    if not isinstance(expires_at, str) or not expires_at.strip():
+        failures.append(f"{path}: `alternate_model_review.exemption.expires_at` must be a non-empty RFC3339 timestamp")
+    rationale = exemption.get("rationale")
+    if not isinstance(rationale, str) or not rationale.strip():
+        failures.append(f"{path}: `alternate_model_review.exemption.rationale` must be a non-empty string")
+    status = review.get("status")
+    if exemption_type == "alternate_service_outage" and status != "unavailable":
+        failures.append(
+            f"{path}: `alternate_model_review.status` must be 'unavailable' when exemption_type is 'alternate_service_outage'"
+        )
+    if exemption_type == "historical_grandfathered" and status != "not_requested":
+        failures.append(
+            f"{path}: `alternate_model_review.status` must be 'not_requested' when exemption_type is 'historical_grandfathered'"
+        )
+
+
+def _validate_active_issue_branch_contract(path: Path, payload: dict[str, object], failures: list[str]) -> None:
+    plan_author = _require_identity(payload.get("plan_author"), path, "plan_author", failures)
+
+    specialist_reviews = payload.get("specialist_reviews")
+    accepted_specialist_reviews = 0
+    if isinstance(specialist_reviews, list):
+        for index, review in enumerate(specialist_reviews, start=1):
+            if not isinstance(review, dict):
+                continue
+            if review.get("status") not in ACCEPTED_REVIEW_STATES:
+                continue
+            accepted_specialist_reviews += 1
+            identity = _require_identity(
+                {
+                    "role": review.get("role"),
+                    "model_id": review.get("reviewer_model_id"),
+                    "model_family": review.get("reviewer_model_family"),
+                },
+                path,
+                f"specialist_reviews[{index}] reviewer identity",
+                failures,
+            )
+            if plan_author and identity:
+                if (
+                    identity["model_id"] == plan_author["model_id"]
+                    and identity["model_family"] == plan_author["model_family"]
+                ):
+                    failures.append(
+                        f"{path}: specialist_reviews[{index}] cannot self-approve with the same model identity as `plan_author`"
+                    )
+
+    alternate_review = payload.get("alternate_model_review")
+    if isinstance(alternate_review, dict) and alternate_review.get("required") is False:
+        _validate_alternate_review_exemption(path, alternate_review, failures)
+
+    execution_handoff = payload.get("execution_handoff")
+    if not isinstance(execution_handoff, dict):
+        return
+    handoff_ref = execution_handoff.get("handoff_package_ref")
+    if not isinstance(handoff_ref, str) or not handoff_ref.strip():
+        failures.append(f"{path}: active issue-branch plans require a non-null `execution_handoff.handoff_package_ref`")
+
+    accepted_alternate_review = (
+        isinstance(alternate_review, dict) and alternate_review.get("status") in ACCEPTED_REVIEW_STATES
+    )
+    mode = execution_handoff.get("execution_mode")
+    review_refs_required = accepted_specialist_reviews > 0 or accepted_alternate_review or mode in IMPLEMENTATION_READY_MODES
+    _require_repo_ref_array(
+        execution_handoff.get("review_artifact_refs"),
+        path,
+        "execution_handoff.review_artifact_refs",
+        failures,
+        allow_empty=not review_refs_required,
+        required_prefix="raw/cross-review/",
+    )
 
 
 def _validate_planner_boundary_scope_presence(
@@ -382,6 +523,8 @@ def main() -> int:
             if rel_path in governance_validated_paths:
                 continue
             _validate_implementation_ready_alternate_review(rel_path, payload, failures, scope="implementation")
+            if isinstance(payload, dict):
+                _validate_active_issue_branch_contract(rel_path, payload, failures)
 
     for file_path, payload in loaded_plans:
         if payload is not None:

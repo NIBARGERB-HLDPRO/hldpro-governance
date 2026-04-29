@@ -4,11 +4,11 @@
   "package_owner_repo": "NIBARGERB-HLDPRO/hldpro-governance",
   "contract_issue": 290,
   "parent_epic": 288,
-  "updated_at": "2026-04-19",
+  "updated_at": "2026-04-29",
   "versioning": {
     "initial_version": "0.1.0-contract",
     "initial_release_tag": "governance-tooling-v0.1.0",
-    "next_contract_version": "0.2.0-ssot-bootstrap",
+    "next_contract_version": "0.3.0-hard-gated-som",
     "next_contract_issue": 453,
     "next_contract_parent_epic": 452,
     "release_issue": 332,
@@ -18,7 +18,7 @@
     "compatibility_policy": "A consumer repo must record the governance package git SHA it deploys. Release tags improve readability and rollback communication, but tags do not replace the SHA record."
   },
   "ssot_bootstrap_v2": {
-    "status": "contract_draft",
+    "status": "superseded_by_0_3_0_hard_gated_som",
     "issue": 453,
     "parent_epic": 452,
     "extends": "0.1.0-contract",
@@ -30,8 +30,7 @@
     ],
     "optional_consumer_surfaces": [
       ".hldpro/repo-governance-profile.json",
-      ".claude/settings.json pointer or managed shim",
-      "thin CLAUDE.md or AGENTS.md governance pointer"
+      ".claude/settings.json pointer or managed shim"
     ],
     "non_goals": [
       "Do not make downstream repos blind mirrors of hldpro-governance.",
@@ -173,7 +172,7 @@
       "verification": [
         "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root ."
       ],
-      "notes": "Governance-surface changes require issue-backed structured planning."
+      "notes": "Governance-surface changes require issue-backed structured planning. Active issue-lane validation enforces reviewer identity metadata, blocks same-model self-review, requires legal alternate-review exemptions only, and requires review refs once accepted review exists or implementation promotion begins."
     },
     {
       "id": "workflow-local-coverage",
@@ -224,7 +223,7 @@
       "verification": [
         "python3 scripts/overlord/verify_governance_consumer.py --target-repo <consumer> --profile <profile> --governance-ref <sha>"
       ],
-      "notes": "Hook behavior may be stricter in consumer repos, but stricter local behavior must be declared with owner, reason, and review cadence. Consumer records may represent managed shell hooks, tracked session-contract files such as CODEX.md, and hook-settings contracts such as `.claude/settings.json` matcher requirements."
+      "notes": "Hook behavior may be stricter in consumer repos, but stricter local behavior must be declared with owner, reason, and review cadence. Consumer records may represent managed shell hooks, tracked session-contract files such as CLAUDE.md, CODEX.md, docs/EXTERNAL_SERVICES_RUNBOOK.md, and scripts/codex-review.sh, plus hook-settings contracts such as `.claude/settings.json` matcher requirements."
     },
     {
       "id": "reusable-workflow-refs",
@@ -309,7 +308,7 @@
         "handoff package validation",
         "closeout and PR evidence gates"
       ],
-      "notes": "Package consumers should be able to point to lifecycle refs without copying lifecycle validation logic."
+      "notes": "Package consumers should be able to point to lifecycle refs without copying lifecycle validation logic. Lifecycle-state transitions are enforced: implementation-ready and later handoffs must carry the required review/gate refs for their state."
     }
   ],
   "artifact_classes": {

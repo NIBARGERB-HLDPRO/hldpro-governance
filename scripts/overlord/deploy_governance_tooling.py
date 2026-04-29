@@ -14,6 +14,7 @@ import deploy_local_ci_gate
 
 GOVERNANCE_ROOT = Path(__file__).resolve().parents[2]
 PACKAGE_MANIFEST = GOVERNANCE_ROOT / "docs" / "governance-tooling-package.json"
+DESIRED_STATE = GOVERNANCE_ROOT / "docs" / "governance-consumer-pull-state.json"
 CONSUMER_RECORD_PATH = ".hldpro/governance-tooling.json"
 DEFAULT_PROFILE = "hldpro-governance"
 DEFAULT_SHIM_PATH = ".hldpro/local-ci.sh"
@@ -37,19 +38,17 @@ class ToolingPlan:
     existing_shim_state: str
     existing_record_state: str
 
-    def managed_files(self) -> list[dict[str, str]]:
-        return [
-            {
-                "path": self.shim_path.relative_to(self.target_repo).as_posix(),
-                "type": "local_ci_shim",
-                "state": self.existing_shim_state,
-            },
-            {
-                "path": self.record_path.relative_to(self.target_repo).as_posix(),
-                "type": "consumer_record",
-                "state": self.existing_record_state,
-            },
-        ]
+    def managed_files(self) -> list[dict[str, object]]:
+        desired_state = _load_json(self.governance_root / "docs" / "governance-consumer-pull-state.json", "consumer pull desired state")
+        return _managed_file_contract_entries(
+            desired_state,
+            self.profile,
+            self.target_repo,
+            self.shim_path,
+            self.record_path,
+            self.existing_shim_state,
+            self.existing_record_state,
+        )
 
     def planned_write_set(self) -> list[str]:
         return [str(self.shim_path), str(self.record_path)]
@@ -115,6 +114,16 @@ def _load_manifest(path: Path) -> dict[str, object]:
     return payload
 
 
+def _load_json(path: Path, label: str) -> dict[str, object]:
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        _fail(f"could not load {label} {path}: {exc}")
+    if not isinstance(payload, dict):
+        _fail(f"{label} must be a JSON object: {path}")
+    return payload
+
+
 def _consumer_record_relpath(manifest: dict[str, object]) -> str:
     versioning = manifest.get("versioning")
     if isinstance(versioning, dict):
@@ -124,15 +133,83 @@ def _consumer_record_relpath(manifest: dict[str, object]) -> str:
     return CONSUMER_RECORD_PATH
 
 
-def _package_version(manifest: dict[str, object], override: str | None) -> str:
+def _profile_desired_state(desired_state: dict[str, object], profile: str) -> dict[str, object]:
+    profiles = desired_state.get("profiles")
+    if not isinstance(profiles, dict):
+        return {}
+    state = profiles.get(profile)
+    return state if isinstance(state, dict) else {}
+
+
+def _package_version(
+    manifest: dict[str, object],
+    desired_state: dict[str, object],
+    profile: str,
+    override: str | None,
+) -> str:
     if override:
         return override
+    profile_state = _profile_desired_state(desired_state, profile)
+    profile_version = profile_state.get("package_version")
+    if isinstance(profile_version, str) and profile_version:
+        return profile_version
     versioning = manifest.get("versioning")
     if isinstance(versioning, dict):
         raw = versioning.get("initial_version")
         if isinstance(raw, str) and raw:
             return raw
     return "0.0.0-unknown"
+
+
+def _managed_file_contract_entries(
+    desired_state: dict[str, object],
+    profile: str,
+    target_repo: Path,
+    shim_path: Path,
+    record_path: Path,
+    existing_shim_state: str,
+    existing_record_state: str,
+) -> list[dict[str, object]]:
+    profile_state = _profile_desired_state(desired_state, profile)
+    raw = profile_state.get("managed_files")
+    if not isinstance(raw, list):
+        raw = [".hldpro/local-ci.sh", ".hldpro/governance-tooling.json"]
+    shim_rel = shim_path.relative_to(target_repo).as_posix()
+    record_rel = record_path.relative_to(target_repo).as_posix()
+    entries: list[dict[str, object]] = []
+    for item in raw:
+        if isinstance(item, str):
+            relpath = item
+            entry: dict[str, object] = {"path": relpath}
+        elif isinstance(item, dict) and isinstance(item.get("path"), str) and item["path"]:
+            relpath = item["path"]
+            entry = {"path": relpath}
+            for key in ("type", "required_strings", "required_pre_tool_use_matchers", "required_post_tool_use_matchers"):
+                value = item.get(key)
+                if isinstance(value, str):
+                    entry[key] = value
+                elif isinstance(value, list) and all(isinstance(member, str) for member in value):
+                    entry[key] = list(value)
+        else:
+            continue
+        if relpath == shim_rel:
+            entry["type"] = "local_ci_shim"
+            entry["state"] = existing_shim_state
+        elif relpath == record_rel:
+            entry["type"] = "consumer_record"
+            entry["state"] = existing_record_state
+        else:
+            entry["state"] = "present" if (target_repo / relpath).exists() else "missing"
+        entries.append(entry)
+    return entries
+
+
+def _profile_constraints(desired_state: dict[str, object], profile: str) -> list[str]:
+    profile_state = _profile_desired_state(desired_state, profile)
+    raw = profile_state.get("profile_constraints")
+    if isinstance(raw, list) and all(isinstance(item, str) for item in raw):
+        return list(raw)
+    return []
 
 
 def _record_state(path: Path) -> str:
@@ -173,11 +250,12 @@ def build_plan(args: argparse.Namespace) -> ToolingPlan:
         _fail(f"governance root must exist and be a directory: {governance_root}")
     manifest_path = Path(args.manifest).resolve() if args.manifest else governance_root / "docs" / "governance-tooling-package.json"
     manifest = _load_manifest(manifest_path)
+    desired_state = _load_json(governance_root / "docs" / "governance-consumer-pull-state.json", "consumer pull desired state")
 
     target_repo = _git_root(Path(args.target_repo).resolve())
     governance_ref = args.governance_ref or _git_head(governance_root)
-    package_version = _package_version(manifest, args.package_version)
     profile = args.profile or DEFAULT_PROFILE
+    package_version = _package_version(manifest, desired_state, profile, args.package_version)
 
     shim_path = deploy_local_ci_gate._resolve_shim_path(target_repo, args.shim_path or DEFAULT_SHIM_PATH)
     record_path = (target_repo / _consumer_record_relpath(manifest)).resolve()
@@ -209,8 +287,11 @@ def _refuse_unmanaged_record(plan: ToolingPlan, force: bool) -> None:
 
 
 def _consumer_record(plan: ToolingPlan) -> dict[str, object]:
-    return {
-        "schema_version": 1,
+    desired_state = _load_json(plan.governance_root / "docs" / "governance-consumer-pull-state.json", "consumer pull desired state")
+    profile_constraints = _profile_constraints(desired_state, plan.profile)
+    schema_version = 2 if plan.package_version == "0.3.0-hard-gated-som" or profile_constraints else 1
+    record = {
+        "schema_version": schema_version,
         "consumer_repo": str(plan.target_repo),
         "governance_repo": "NIBARGERB-HLDPRO/hldpro-governance",
         "governance_root": str(plan.governance_root),
@@ -233,6 +314,9 @@ def _consumer_record(plan: ToolingPlan) -> dict[str, object]:
         ],
         "overrides": [],
     }
+    if profile_constraints:
+        record["profile_constraints"] = profile_constraints
+    return record
 
 
 def apply(plan: ToolingPlan, *, allow_dirty_target: bool, force: bool) -> dict[str, object]:

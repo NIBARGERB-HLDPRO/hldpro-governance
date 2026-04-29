@@ -1,0 +1,108 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-583-hard-gated-som-enforcement",
+  "issue_number": 583,
+  "parent_epic_number": 579,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-583-hard-gated-som-enforcement-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-583-hard-gated-som-enforcement-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Governed plans record enough identity metadata to prove reviewer independence, and self-reviewed governed plans fail the structured-plan validator.",
+      "verification_refs": [
+        "docs/plans/issue-583-hard-gated-som-enforcement-pdcar.md",
+        "docs/plans/issue-583-hard-gated-som-enforcement-structured-agent-cycle-plan.json",
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "alternate_model_review may be bypassed only with a bounded legal exemption that the validator recognizes and rejects otherwise.",
+      "verification_refs": [
+        "STANDARDS.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Lifecycle gates are explicit and enforced: planning_only lanes may defer populated review refs only until alternate-family review is complete, promotion to implementation_ready requires accepted review evidence plus non-empty review refs, and continuing governed handoffs from implementation_ready onward require non-null handoff evidence and fail closed when missing.",
+      "verification_refs": [
+        "docs/plans/issue-583-hard-gated-som-enforcement-pdcar.md",
+        "docs/schemas/package-handoff.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/validate_handoff_package.py"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Governance CI and the managed consumer-governance contract run the structured-plan and handoff validators as blocking checks, and proof shows the old Stampede issue-184 packet shape would now fail.",
+      "verification_refs": [
+        ".github/workflows/governance-check.yml",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "raw/validation/2026-04-29-issue-583-hard-gated-som-enforcement.md",
+        "https://github.com/NIBARGERB-HLDPRO/Stampede/issues/184"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "Alternate-review exemptions, if allowed at all, use a bounded schema with explicit type, grant authority, and expiry; free-text bypasses do not satisfy the validator.",
+      "verification_refs": [
+        "docs/plans/issue-583-hard-gated-som-enforcement-pdcar.md",
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "STANDARDS.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-583-hard-gated-som-enforcement --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-29-issue-583-hard-gated-som-enforcement.json",
+    "python3 scripts/overlord/verify_governance_consumer.py --governance-root . --target-repo /Users/bennibarger/Developer/HLDPRO/Stampede",
+    "bash scripts/cross-review/require-dual-signature.sh raw/cross-review/2026-04-29-issue-583-hard-gated-som-enforcement.md",
+    "python3 -m unittest scripts.overlord.test_validate_structured_agent_cycle_plan scripts.overlord.test_validate_handoff_package scripts.overlord.test_verify_governance_consumer scripts.overlord.test_deploy_governance_tooling",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-29-issue-583-hard-gated-som-enforcement.md"
+  ],
+  "validation_artifact_refs": [
+    "raw/validation/2026-04-29-issue-583-hard-gated-som-enforcement.md"
+  ],
+  "gate_artifact_refs": [
+    "cache/local-ci-gate/reports/20260429T155625Z-hldpro-governance-git/local-ci-20260429T155632Z.json"
+  ],
+  "artifact_refs": [
+    "docs/PROGRESS.md",
+    "docs/plans/issue-583-hard-gated-som-enforcement-pdcar.md",
+    "docs/plans/issue-583-hard-gated-som-enforcement-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-29-issue-583-hard-gated-som-enforcement-planning.json",
+    "raw/execution-scopes/2026-04-29-issue-583-hard-gated-som-enforcement-implementation.json",
+    "docs/codex-reviews/2026-04-29-claude.md",
+    "docs/schemas/structured-agent-cycle-plan.schema.json",
+    "docs/schemas/package-handoff.schema.json",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/validate_handoff_package.py",
+    ".github/workflows/governance-check.yml",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml",
+    "docs/governance-consumer-pull-state.json",
+    "docs/governance-tooling-package.json",
+    "scripts/overlord/verify_governance_consumer.py",
+    "scripts/overlord/test_verify_governance_consumer.py",
+    "scripts/overlord/deploy_governance_tooling.py",
+    "scripts/overlord/test_deploy_governance_tooling.py"
+  ],
+  "audit_refs": [],
+  "closeout_ref": "raw/closeouts/2026-04-29-issue-583-hard-gated-som-enforcement.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-29T12:10:00Z",
+  "notes": "Promoted to implementation-ready after the alternate-family review conditions were folded into the planning packet, the cross-review artifact was recorded, and the bounded implementation execution scope was declared."
+}

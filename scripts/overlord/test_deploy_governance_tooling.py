@@ -96,6 +96,45 @@ class TestDeployGovernanceTooling(unittest.TestCase):
         self.assertEqual(record["overrides"], [])
         self.assertEqual({item["path"] for item in record["managed_files"]}, {".hldpro/local-ci.sh", ".hldpro/governance-tooling.json"})
 
+    def test_apply_consumer_profile_records_required_session_contract_surfaces(self) -> None:
+        (self.product / "CLAUDE.md").write_text("thin pointer\n", encoding="utf-8")
+        (self.product / "CODEX.md").write_text("thin pointer\n", encoding="utf-8")
+        runbook = self.product / "docs" / "EXTERNAL_SERVICES_RUNBOOK.md"
+        runbook.parent.mkdir(parents=True, exist_ok=True)
+        runbook.write_text("governance pointer\n", encoding="utf-8")
+        review = self.product / "scripts" / "codex-review.sh"
+        review.parent.mkdir(parents=True, exist_ok=True)
+        review.write_text("#!/usr/bin/env bash\n# claude\n", encoding="utf-8")
+
+        code, stdout, stderr = self._invoke(
+            "apply",
+            "--governance-root",
+            str(REPO_ROOT),
+            "--target-repo",
+            str(self.product),
+            "--governance-ref",
+            self.ref,
+            "--profile",
+            "stampede",
+            "--allow-dirty-target",
+        )
+
+        self.assertEqual(code, 0, stderr)
+        record = json.loads(self._record().read_text(encoding="utf-8"))
+        self.assertEqual(record["schema_version"], 2)
+        self.assertEqual(record["package_version"], "0.3.0-hard-gated-som")
+        self.assertEqual(
+            {item["path"] for item in record["managed_files"]},
+            {
+                ".hldpro/local-ci.sh",
+                ".hldpro/governance-tooling.json",
+                "CLAUDE.md",
+                "CODEX.md",
+                "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+                "scripts/codex-review.sh",
+            },
+        )
+
     def test_verify_passes_after_apply(self) -> None:
         apply_code, _, apply_err = self._invoke("apply", *self._base_args())
         self.assertEqual(apply_code, 0, apply_err)

@@ -110,6 +110,11 @@ bash scripts/model-fallback-log.sh \
 
 **Purpose:** Planner (`claude-opus-4-6`), planning fallback and primary Worker (`claude-sonnet-4-6`), and completion/gate verifier (`claude-haiku-4-5-20251001` where allowed). Also serves as cross-model reviewer invoked FROM codex via the operator-facing wrapper `scripts/codex-review.sh claude`.
 
+Cross-model review artifacts returned through `scripts/codex-review.sh claude`
+are not optional narrative notes. On active governed issue lanes they are the
+machine-checkable `raw/cross-review/...` evidence that must populate plan and
+handoff review refs before promotion from planning to implementation.
+
 ### Auth
 - `CLAUDE_CODE_OAUTH_TOKEN` in the repo's bootstrap-generated env surface (governance: `.env.local`)
 - Issued via `claude setup-token` (operator Max subscription)

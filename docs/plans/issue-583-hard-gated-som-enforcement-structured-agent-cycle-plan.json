@@ -1,0 +1,154 @@
+{
+  "session_id": "session-20260429-issue-583-hard-gated-som-enforcement",
+  "issue_number": 583,
+  "objective": "Hard-gate issue-level Society of Minds enforcement so governed repos cannot merge self-reviewed packets or packets missing review and handoff evidence.",
+  "plan_author": {
+    "role": "codex-orchestrator",
+    "model_id": "gpt-5.4",
+    "model_family": "openai"
+  },
+  "tier": 1,
+  "scope_boundary": [
+    "Issue-583 work in hldpro-governance only.",
+    "Issue-backed plan, execution scope, handoff, review, validation, and closeout evidence for source-level guardrail hardening.",
+    "Schema, validator, test, standards, runbook, and governance-CI contract updates needed to fail self-review and missing review/handoff evidence.",
+    "Downstream replay proof against Stampede issue #184 without mutating Stampede in this source-fix lane."
+  ],
+  "out_of_scope": [
+    "Direct repair of Stampede issue #184 in this branch.",
+    "Reopening thin-adapter policy decisions from issues #575 and #576.",
+    "Warning-only guardrails that still allow the known bad packet shape to merge.",
+    "Unrelated changes to graphify, Stage 6 closeout, or bootstrap flows unless they are required by the validator or CI contract."
+  ],
+  "research_summary": "A fresh audit of Stampede issue #184 proved the same class of governance drift remains live after the thin-adapter rollout. On the active branch, the issue-184 structured plan records an accepted specialist review by the Codex orchestrator itself, marks alternate-model review as not requested, leaves review_artifact_refs empty, and leaves handoff_package_ref null. After fetching current main, the repo-level thin-adapter surfaces from issue #195 are present, so branch drift explains part of the missing wrapper signal but not the deeper issue: governance validators and consumer CI do not actually enforce reviewer independence, mandatory review evidence, or mandatory handoff evidence for governed issue packets.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/583",
+    "https://github.com/NIBARGERB-HLDPRO/Stampede/issues/197",
+    "https://github.com/NIBARGERB-HLDPRO/Stampede/issues/184",
+    "docs/EXTERNAL_SERVICES_RUNBOOK.md",
+    "STANDARDS.md",
+    "scripts/overlord/validate_structured_agent_cycle_plan.py",
+    "scripts/overlord/validate_handoff_package.py",
+    "Stampede docs/plans/issue-184-structured-agent-cycle-plan.json",
+    "Stampede .github/workflows/governance-check.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Planning and alternate-family gate",
+      "goal": "Create the hard-gated packet and get alternate-family acceptance before implementation-ready promotion.",
+      "tasks": [
+        "Create the PDCAR, structured plan, planning execution scope, and planned handoff for issue #583.",
+        "Write hard acceptance criteria that make reviewer independence, alternate-review exemption legality, review evidence, handoff evidence, and lifecycle-gated state transitions blocking conditions.",
+        "Send the packet through the governed scripts/codex-review.sh claude path and record the review artifact."
+      ],
+      "acceptance_criteria": [
+        "The issue-583 packet validates locally and remains planning_only before alternate-family acceptance.",
+        "The acceptance criteria are phrased as blocking gates rather than advisory reminders, including explicit lifecycle-state transition rules for when empty refs are legal versus illegal.",
+        "Alternate-family review is captured through the governed wrapper path before implementation-ready promotion."
+      ],
+      "file_paths": [
+        "docs/plans/issue-583-hard-gated-som-enforcement-pdcar.md",
+        "docs/plans/issue-583-hard-gated-som-enforcement-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-29-issue-583-hard-gated-som-enforcement-planning.json",
+        "raw/handoffs/2026-04-29-issue-583-hard-gated-som-enforcement.json",
+        "raw/cross-review/2026-04-29-issue-583-hard-gated-som-enforcement.md",
+        "docs/codex-reviews/2026-04-29-claude.md",
+        "raw/validation/2026-04-29-issue-583-hard-gated-som-enforcement.md"
+      ]
+    },
+    {
+      "name": "Implementation and proof",
+      "goal": "Land the minimal governance-source changes that fail the known bad packet shape closed.",
+      "tasks": [
+        "Patch structured-plan schema/examples and validator for reviewer/author identity metadata, self-review rejection, and legal alternate-review exemptions only.",
+        "Patch handoff schema/examples and validator for lifecycle-gated required handoff/review refs on continuing governed lanes.",
+        "Wire the hardened validators into governance CI and the managed consumer-governance contract surfaces.",
+        "Add regression tests and downstream replay proof using the old Stampede issue-184 shape."
+      ],
+      "acceptance_criteria": [
+        "Self-reviewed governed plans fail deterministically.",
+        "Illegal alternate-review bypasses fail deterministically.",
+        "Lifecycle promotion from planning_only to implementation_ready fails without accepted alternate-family review evidence and non-empty review refs.",
+        "Missing continuing handoff refs fail deterministically from implementation_ready onward.",
+        "Governance CI and the managed consumer-governance contract block the old failure shape."
+      ],
+      "file_paths": [
+        "docs/schemas/structured-agent-cycle-plan.schema.json",
+        "docs/schemas/package-handoff.schema.json",
+        "scripts/overlord/validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/validate_handoff_package.py",
+        "scripts/overlord/test_validate_structured_agent_cycle_plan.py",
+        "scripts/overlord/test_validate_handoff_package.py",
+        ".github/workflows/governance-check.yml",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "STANDARDS.md",
+        "docs/EXTERNAL_SERVICES_RUNBOOK.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Repository-state audit synthesis",
+      "reviewer_model_id": "gpt-5.4-mini",
+      "reviewer_model_family": "openai",
+      "role": "problem statement and scope confirmation",
+      "focus": "Confirm the known failure is real, bounded, and source-governance in nature before implementation begins.",
+      "status": "accepted",
+      "summary": "The issue #184 packet and current validator/CI surfaces prove a real governance gap: repo-level adapters are present on main, but issue-level role separation and evidence rules are not hard-gated.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/583",
+        "https://github.com/NIBARGERB-HLDPRO/Stampede/issues/184",
+        "https://github.com/NIBARGERB-HLDPRO/Stampede/issues/197"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude specialist review via scripts/codex-review.sh claude",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Alternate-family review accepted the direction but required two blocking packet fixes before implementation: define lifecycle-gated ref requirements and authorize the cross-review artifact path in the planning scope. It also requested explicit exemption-shape, structured identity fields, consumer-contract wording, and same-role handoff rationale before implementation-ready promotion.",
+    "evidence": [
+      "docs/codex-reviews/2026-04-29-claude.md",
+      "raw/cross-review/2026-04-29-issue-583-hard-gated-som-enforcement.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "codex-orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #583 is implementation-ready to harden the governance-source schema, validator, standards, runbook, consumer-verifier, deployer, and CI contract surfaces named in the implementation execution scope, plus the issue-backed proof artifacts for this lane.",
+    "next_execution_step": "Complete the bounded source-fix, rerun focused validator and CI proof including the old Stampede issue-184 replay and the strengthened consumer-verifier path, then record validation and closeout evidence for PR and auto-merge.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-29-issue-583-hard-gated-som-enforcement.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-29-issue-583-hard-gated-som-enforcement-implementation.json",
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-29-issue-583-hard-gated-som-enforcement.md"
+    ],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-29-issue-583-hard-gated-som-enforcement.md"
+    ],
+    "gate_artifact_refs": [
+      "cache/local-ci-gate/reports/20260429T155625Z-hldpro-governance-git/local-ci-20260429T155632Z.json"
+    ],
+    "closeout_ref": "raw/closeouts/2026-04-29-issue-583-hard-gated-som-enforcement.md",
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "The implementation remains inside the schema, validator, standards, runbook, CI, and issue-proof surfaces named in the implementation execution scope.",
+      "Alternate-family review is captured through the governed wrapper path and recorded in raw/cross-review before implementation-ready promotion.",
+      "Validation must prove the old Stampede issue-184 shape now fails under the hardened rules before this issue can be called fixed."
+    ]
+  },
+  "material_deviation_rules": [
+    "Do not call this issue fixed on the strength of adapter presence alone.",
+    "Do not implement warning-only guardrails for the known bad packet shape.",
+    "Do not widen this source-fix lane into direct Stampede product or research work."
+  ],
+  "approved": true,
+  "approved_by": [
+    "Codex orchestrator"
+  ],
+  "approved_at": "2026-04-29T12:10:00Z"
+}
