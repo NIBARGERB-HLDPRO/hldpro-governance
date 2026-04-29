@@ -49,7 +49,6 @@ artifact.
 - Gate artifact: `raw/validation/2026-04-29-issue-581-claude-review-path.md`
 - Additional review output: `docs/codex-reviews/2026-04-29-claude.md`
 - Gate: tools/local-ci command result PASS.
-- Gate report: `cache/local-ci-gate/reports/20260429T143716Z-hldpro-governance-git/`
 - Handoff lifecycle: accepted
 
 ## Validation Commands
