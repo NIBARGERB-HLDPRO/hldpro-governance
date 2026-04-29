@@ -40,6 +40,8 @@ contract.
 - `scripts/overlord/validate_structured_agent_cycle_plan.py`
 - `scripts/overlord/verify_governance_consumer.py`
 - `docs/plans/issue-583-hard-gated-som-enforcement-structured-agent-cycle-plan.json`
+- `graphify-out/GRAPH_REPORT.md`
+- `graphify-out/graph.json`
 - `raw/handoffs/2026-04-29-issue-583-hard-gated-som-enforcement.json`
 - `raw/validation/2026-04-29-issue-583-hard-gated-som-enforcement.md`
 
@@ -67,7 +69,7 @@ contract.
   - `raw/cross-review/2026-04-29-issue-583-hard-gated-som-enforcement.md`
   - `docs/codex-reviews/2026-04-29-claude.md`
 - Gate artifact refs:
-  - `cache/local-ci-gate/reports/20260429T160006Z-hldpro-governance-git/local-ci-20260429T160012Z.json`
+  - `cache/local-ci-gate/reports/20260429T160159Z-hldpro-governance-git/local-ci-20260429T160205Z.json`
 - Handoff lifecycle: accepted
 
 ## Wired Checks Run

@@ -6,6 +6,8 @@
     "docs/PROGRESS.md",
     "docs/governance-consumer-pull-state.json",
     "docs/governance-tooling-package.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
     "docs/plans/issue-583-hard-gated-som-enforcement-pdcar.md",
     "docs/plans/issue-583-hard-gated-som-enforcement-structured-agent-cycle-plan.json",
     "raw/execution-scopes/2026-04-29-issue-583-hard-gated-som-enforcement-planning.json",
