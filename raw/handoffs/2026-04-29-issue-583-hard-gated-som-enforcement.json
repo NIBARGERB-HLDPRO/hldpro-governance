@@ -77,7 +77,7 @@
     "raw/validation/2026-04-29-issue-583-hard-gated-som-enforcement.md"
   ],
   "gate_artifact_refs": [
-    "cache/local-ci-gate/reports/20260429T155625Z-hldpro-governance-git/local-ci-20260429T155632Z.json"
+    "raw/validation/2026-04-29-issue-583-hard-gated-som-enforcement.md"
   ],
   "artifact_refs": [
     "docs/PROGRESS.md",
