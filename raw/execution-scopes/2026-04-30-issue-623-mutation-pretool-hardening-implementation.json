@@ -1,0 +1,91 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-623-mutation-pretool-hardening-20260430",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    ".claude/settings.json",
+    "OVERLORD_BACKLOG.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/codex-reviews/2026-04-30-issue-623-claude.md",
+    "docs/plans/issue-623-mutation-pretool-hardening-pdcar.md",
+    "docs/plans/issue-623-mutation-pretool-hardening-structured-agent-cycle-plan.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "hooks/code-write-gate.sh",
+    "hooks/schema-guard.sh",
+    "raw/closeouts/2026-04-30-issue-623-mutation-pretool-hardening.md",
+    "raw/cross-review/2026-04-30-issue-623-mutation-pretool-hardening-plan.md",
+    "raw/cli-session-events/2026-04-30.jsonl",
+    "raw/cli-session-events/2026-04-30/cli_20260430T043840Z_2bb96e4b71ba.stderr",
+    "raw/cli-session-events/2026-04-30/cli_20260430T043840Z_2bb96e4b71ba.stdout",
+    "raw/cli-session-events/2026-04-30/cli_20260430T045744Z_504520130fc1.stderr",
+    "raw/cli-session-events/2026-04-30/cli_20260430T045744Z_504520130fc1.stdout",
+    "raw/execution-scopes/2026-04-30-issue-623-mutation-pretool-hardening-implementation.json",
+    "raw/execution-scopes/2026-04-30-issue-623-mutation-pretool-hardening-planning.json",
+    "raw/handoffs/2026-04-30-issue-623-mutation-pretool-hardening.json",
+    "raw/handoffs/2026-04-30-issue-623-plan-to-implementation.json",
+    "raw/packets/2026-04-30-issue-623-claude-review-packet.md",
+    "raw/validation/2026-04-30-issue-623-mutation-pretool-hardening.md",
+    "scripts/orchestrator/test_delegation_hook.py",
+    "scripts/overlord/check_plan_preflight.py",
+    "scripts/overlord/test_check_plan_preflight.py",
+    "scripts/overlord/test_schema_guard_hook.py"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-615-prehook-governance-failclosed",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-617-prehook-startup-failclosed",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-621-backlog-commit-parity",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-614-hldpro-sim-verifier-drift-gate"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout is a separate active root and must not be mutated from the issue-623 implementation lane."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-615-prehook-governance-failclosed",
+      "reason": "Issue #615 remains the parent routing umbrella and must not be mutated from child issue #623."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-617-prehook-startup-failclosed",
+      "reason": "Issue #617 is the closed startup/helper child and must not be reopened from issue #623."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-621-backlog-commit-parity",
+      "reason": "Issue #621 is the closed root backlog/commit-parity child and must not be reopened from issue #623."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+      "reason": "Issue #612 remains the degraded-fallback schema and CI enforcement lane and must not be mixed into issue #623."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-614-hldpro-sim-verifier-drift-gate",
+      "reason": "Issue #614 remains the downstream verifier lane and must not be mixed into issue #623."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 623,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/623",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-30T17:10:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-30T17:10:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-623-mutation-pretool-hardening-pdcar.md",
+      "docs/plans/issue-623-mutation-pretool-hardening-structured-agent-cycle-plan.json",
+      "raw/cross-review/2026-04-30-issue-623-mutation-pretool-hardening-plan.md",
+      "raw/handoffs/2026-04-30-issue-623-plan-to-implementation.json",
+      "docs/codex-reviews/2026-04-30-issue-623-claude.md"
+    ],
+    "active_exception_ref": "docs/codex-reviews/2026-04-30-issue-623-claude.md",
+    "active_exception_expires_at": "2026-05-01T17:10:00Z"
+  }
+}
