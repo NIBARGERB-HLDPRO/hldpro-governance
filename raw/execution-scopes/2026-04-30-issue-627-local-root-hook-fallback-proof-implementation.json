@@ -9,6 +9,8 @@
     "docs/codex-reviews/2026-04-30-issue-627-claude.md",
     "docs/plans/issue-627-local-root-hook-fallback-proof-pdcar.md",
     "docs/plans/issue-627-local-root-hook-fallback-proof-structured-agent-cycle-plan.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
     "hooks/governance-check.sh",
     "OVERLORD_BACKLOG.md",
     "raw/closeouts/2026-04-30-issue-627-local-root-hook-fallback-proof.md",
