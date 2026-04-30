@@ -1,0 +1,62 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-636-progress-mirror-629-hygiene-20260430",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    "docs/PROGRESS.md",
+    "docs/codex-reviews/2026-04-30-issue-636-claude.md",
+    "docs/plans/issue-636-progress-mirror-629-hygiene-pdcar.md",
+    "docs/plans/issue-636-progress-mirror-629-hygiene-structured-agent-cycle-plan.json",
+    "raw/closeouts/2026-04-30-issue-636-progress-mirror-629-hygiene.md",
+    "raw/cross-review/2026-04-30-issue-636-progress-mirror-629-hygiene-plan.md",
+    "raw/execution-scopes/2026-04-30-issue-636-progress-mirror-629-hygiene-implementation.json",
+    "raw/execution-scopes/2026-04-30-issue-636-progress-mirror-629-hygiene-planning.json",
+    "raw/handoffs/2026-04-30-issue-636-progress-mirror-629-hygiene.json",
+    "raw/handoffs/2026-04-30-issue-636-plan-to-implementation.json",
+    "raw/packets/2026-04-30-issue-636-claude-review-packet.md",
+    "raw/validation/2026-04-30-issue-636-progress-mirror-629-hygiene.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-632-planning-authority-enforcement"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout is a separate active root and must not be mutated from the issue-636 implementation lane."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+      "reason": "Issue #612 remains the wider parent enforcement lane and must not be mutated from child issue #636."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-632-planning-authority-enforcement",
+      "reason": "Issue #632 remains a separate stale-row case and must not be widened from issue #636."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 636,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/636",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-30T20:30:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-30T20:30:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-636-progress-mirror-629-hygiene-pdcar.md",
+      "docs/plans/issue-636-progress-mirror-629-hygiene-structured-agent-cycle-plan.json",
+      "raw/cross-review/2026-04-30-issue-636-progress-mirror-629-hygiene-plan.md",
+      "raw/handoffs/2026-04-30-issue-636-plan-to-implementation.json",
+      "docs/codex-reviews/2026-04-30-issue-636-claude.md"
+    ],
+    "active_exception_ref": "docs/codex-reviews/2026-04-30-issue-636-claude.md",
+    "active_exception_expires_at": "2026-05-01T20:30:00Z",
+    "cross_family_path_unavailable": true,
+    "cross_family_path_ref": "docs/codex-reviews/2026-04-30-issue-636-claude.md",
+    "fallback_log_ref": "docs/FAIL_FAST_LOG.md#execution-scope-degraded-fallback-proof-gap"
+  }
+}
