@@ -1,0 +1,197 @@
+{
+  "session_id": "session-20260430-issue-619-pretool-mutation-failclosed",
+  "issue_number": 619,
+  "plan_author": {
+    "role": "codex-orchestrator",
+    "model_id": "gpt-5.4",
+    "model_family": "openai"
+  },
+  "objective": "Bootstrap the next issue-backed child under issue #615 for local mutation-time pre-tool fail-closed hardening on the bounded local hook and preflight surfaces only.",
+  "tier": 1,
+  "scope_boundary": [
+    "Implementation child lane under issue #615.",
+    "Owns the local mutation-time pre-tool path only: .claude/settings.json, hooks/code-write-gate.sh, hooks/schema-guard.sh, scripts/overlord/check_plan_preflight.py, focused tests, and issue-local artifacts.",
+    "Must reference issue #617 as the already-closed startup/helper child rather than reopening its owned surfaces.",
+    "Keeps #607 as the planning-authority dependency, #612 as the degraded-fallback schema and CI enforcement lane, #614 as the downstream consumer verifier lane, and leaves broader hook-stack or CI rewrites for separate lanes.",
+    "Starts by producing the issue-local planning packet and validation evidence in this isolated worktree."
+  ],
+  "out_of_scope": [
+    "Reopening issue #617 startup or helper surfacing work.",
+    "Planning-authority contract rewrites that belong to issue #607.",
+    "Execution-scope schema, fallback-log schema, or CI validator changes that belong to issue #612.",
+    "Downstream hldpro-sim consumer verifier or drift-gate work that belongs to issue #614.",
+    "Broad rewrites of hooks/backlog-check.sh, hooks/governance-check.sh, or scripts/orchestrator/delegation_gate.py.",
+    "Any claim of repo-wide write blocking closure."
+  ],
+  "research_summary": "Parent issue #615 and merged child #617 leave a narrow residual slice: local mutation-time pre-tool fail-closed hardening for governance-surface writes. Live source inspection confirms the owned surfaces still have the relevant gaps: .claude/settings.json wires only Bash and Write pre-tool hooks, check_plan_preflight.py still defaults to .claude/plans rather than canonical docs/plans governed evidence, code-write-gate.sh still contains fail-open and warning-only branches on in-scope local mutation paths, and schema-guard.sh only blocks through the current narrow detection path. Specialist review confirmed #619 must stay on these local mutation surfaces only and must not reopen #617 or absorb #607, #612, or #614.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/617",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/607",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/612",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/614",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591",
+    ".claude/settings.json",
+    "hooks/code-write-gate.sh",
+    "hooks/schema-guard.sh",
+    "scripts/overlord/check_plan_preflight.py"
+  ],
+  "sprints": [
+    {
+      "name": "Packet Bootstrap",
+      "goal": "Create the issue-local planning packet and execution-scope boundaries before local mutation-path changes.",
+      "tasks": [
+        "Create the issue-local PDCAR, structured plan, execution scope, handoff, review packet, review placeholders, cross-review note, and validation artifact.",
+        "Restate the narrowed local mutation-only write surfaces confirmed by specialist review.",
+        "Keep the lane in planning_only mode until the packet is validated and alternate-family review is recorded."
+      ],
+      "acceptance_criteria": [
+        "The packet names the exact local mutation-only owned surfaces.",
+        "The packet keeps #617, #607, #612, and #614 as explicit external boundaries.",
+        "The execution scope allows only issue-local planning artifacts during bootstrap.",
+        "The packet states that implementation is blocked until planning validation and alternate-family review complete.",
+        "The packet requires a later per-surface proof matrix and bounded-write evidence rather than generic prose-only closure."
+      ],
+      "file_paths": [
+        "docs/plans/issue-619-pretool-mutation-failclosed-pdcar.md",
+        "docs/plans/issue-619-pretool-mutation-failclosed-structured-agent-cycle-plan.json",
+        "raw/closeouts/2026-04-30-issue-619-pretool-mutation-failclosed.md",
+        "raw/execution-scopes/2026-04-30-issue-619-pretool-mutation-failclosed-planning.json",
+        "raw/handoffs/2026-04-30-issue-619-pretool-mutation-failclosed.json",
+        "raw/packets/2026-04-30-issue-619-claude-review-packet.md",
+        "raw/cross-review/2026-04-30-issue-619-pretool-mutation-failclosed-plan.md",
+        "docs/codex-reviews/2026-04-30-issue-619-claude.md",
+        "raw/validation/2026-04-30-issue-619-pretool-mutation-failclosed.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "local mutation research specialist",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "routing and owned-surface confirmation",
+      "focus": "Verify the narrowest valid owned slice under issue #615 after issue #617 merged.",
+      "status": "mixed",
+      "summary": "The narrowest valid issue #619 slice is mutation-time pre-tool fail-closed hardening on .claude/settings.json, hooks/code-write-gate.sh, hooks/schema-guard.sh, scripts/overlord/check_plan_preflight.py, focused tests, and issue-local artifacts only.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/617",
+        ".claude/settings.json",
+        "hooks/code-write-gate.sh",
+        "hooks/schema-guard.sh",
+        "scripts/overlord/check_plan_preflight.py"
+      ]
+    },
+    {
+      "reviewer": "planning packet QA specialist",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "packet contract and validator hygiene",
+      "focus": "Verify the planning-only bootstrap packet shape, issue/branch alignment, and upfront AC and proof obligations.",
+      "status": "mixed",
+      "summary": "Use issue #617 as the nearest template, but keep issue #619 strictly planning_only on bootstrap with explicit owned and forbidden surfaces repeated across the PDCAR, structured plan, and handoff.",
+      "evidence": [
+        "docs/plans/issue-617-prehook-startup-failclosed-pdcar.md",
+        "docs/plans/issue-617-prehook-startup-failclosed-structured-agent-cycle-plan.json",
+        "raw/handoffs/2026-04-30-issue-617-prehook-startup-failclosed.json"
+      ]
+    },
+    {
+      "reviewer": "critical scope audit specialist",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "AC and anti-overreach review",
+      "focus": "Verify what would make the lane invalid and what proof obligations the ACs must carry if the lane is truly bounded to local mutation-time pre-tool hardening.",
+      "status": "mixed",
+      "summary": "The lane becomes invalid if it reclaims #617 startup work, absorbs #607 or #612, broadens into general hook-stack cleanup, or claims repo-wide closure. The ACs must require concrete blocked and allowed transcripts with exact local-path proof.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/617",
+        "raw/closeouts/2026-04-30-issue-617-prehook-startup-failclosed.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude alternate-family specialist review",
+    "reviewer_model_id": "claude-opus-4-6",
+    "reviewer_model_family": "anthropic",
+    "model_family": "anthropic",
+    "status": "accepted",
+    "summary": "Claude alternate-family review accepted the planning-only packet with no blocking findings and only two informational notes: specialist mixed-status resolution notes and future #614 forbidden-root alignment if that worktree is created.",
+    "evidence": [
+      "docs/codex-reviews/2026-04-30-issue-619-claude.md"
+    ]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-619-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "planning_only",
+    "approved_scope_summary": "Issue #619 is authorized only for issue-local planning artifacts in this worktree until the packet validates and alternate-family review is recorded.",
+    "next_execution_step": "Validate the planning packet, collect alternate-family review, and only then decide whether to promote issue #619 into an implementation-ready execution scope.",
+    "blocked_on": [
+      "Issue #617 remains the already-closed startup/helper child and must not be reopened here.",
+      "Issue #607 remains the planning-authority dependency for the parent governance path.",
+      "Issue #612 remains the degraded-fallback schema and CI enforcement lane.",
+      "Issue #614 remains the downstream hldpro-sim verifier or drift-gate lane.",
+      "Implementation is blocked until the issue-local planning packet validates and alternate-family review is recorded."
+    ],
+    "handoff_package_ref": "raw/handoffs/2026-04-30-issue-619-pretool-mutation-failclosed.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-619-pretool-mutation-failclosed-planning.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-30-issue-619-pretool-mutation-failclosed-plan.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-30-issue-619-pretool-mutation-failclosed.md"
+    ],
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "AC1: Issue #619 remains bounded to .claude/settings.json, hooks/code-write-gate.sh, hooks/schema-guard.sh, scripts/overlord/check_plan_preflight.py, focused tests, and issue-local artifacts only, and future implementation proof must include bounded-write evidence showing the actual diff stayed inside those owned surfaces and approved co-staging.",
+      "AC2: The planning packet explicitly preserves #617, #607, #612, and #614 as external boundaries rather than absorbing their owned surfaces or contracts.",
+      "AC3: No mutation-path implementation begins until the issue-local planning packet validates and the alternate-family review result is recorded.",
+      "AC4: Future implementation proof for issue #619 must require a per-surface proof matrix with concrete blocked and allowed local-path transcripts, including Edit or MultiEdit, named Bash mutation verbs, removed fail-open behavior, one compliant governance-surface allow case, and one read-only or out-of-scope allow case, each with exact command, tool path, exit code, and block or allow result."
+    ]
+  },
+  "material_deviation_rules": [
+    "Any edit to hooks/pre-session-context.sh or scripts/overlord/check_execution_environment.py from issue #619 is a material deviation because those surfaces were already owned by issue #617.",
+    "Any edit to assert_execution_scope.py, fallback-log schema surfaces, or CI workflow enforcement from issue #619 is a material deviation because those belong to issue #612.",
+    "Any broad rewrite of hooks/backlog-check.sh, hooks/governance-check.sh, or scripts/orchestrator/delegation_gate.py from issue #619 is a material deviation unless the issue is rerouted.",
+    "Any implementation of local mutation-path behavior before the issue-local planning packet is validated and alternate-family reviewed is a material deviation.",
+    "Any claim that issue #619 closes repo-wide write blocking or fresh-session mis-routing is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction",
+    "issue #619"
+  ],
+  "approved_at": "2026-04-30T04:20:00Z"
+}
