@@ -1,12 +1,12 @@
-# Graph Report - .  (2026-04-29)
+# Graph Report - .  (2026-04-30)
 
 ## Corpus Check
 - 152 files · ~0 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2162 nodes · 4635 edges · 97 communities detected
-- Extraction: 45% EXTRACTED · 55% INFERRED · 0% AMBIGUOUS · INFERRED: 2550 edges (avg confidence: 0.5)
+- 2173 nodes · 4691 edges · 97 communities detected
+- Extraction: 45% EXTRACTED · 55% INFERRED · 0% AMBIGUOUS · INFERRED: 2595 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -16,8 +16,8 @@
 4. `PiiDetectionError` - 44 edges
 5. `ModelNotAllowedError` - 44 edges
 6. `EndpointUnreachableError` - 44 edges
-7. `TestAssertExecutionScope` - 35 edges
-8. `RepoFixture` - 31 edges
+7. `TestAssertExecutionScope` - 42 edges
+8. `RepoFixture` - 37 edges
 9. `_tier1_packet()` - 31 edges
 10. `_write_supporting_files()` - 30 edges
 
@@ -26,11 +26,11 @@
   tests/test_codex_ingestion.py → scripts/overlord/codex_ingestion.py
 - `MockProvider` --uses--> `RunManifest`  [INFERRED]
   packages/hldpro-sim/tests/test_stampede_consumer_proof.py → packages/hldpro-sim/hldprosim/artifacts.py
+- `PentagiStatus` --uses--> `GovernedRepo`  [INFERRED]
+  scripts/overlord/pentagi_sweep.py → scripts/overlord/governed_repos.py
 - `Submit requests to Windows-Ollama endpoint with PII detection and allowlist enfo` --uses--> `AuditWriter`  [INFERRED]
   scripts/windows-ollama/submit.py → scripts/windows-ollama/audit.py
 - `Initialize the submitter.          Args:             endpoint: Windows-Ollama en` --uses--> `AuditWriter`  [INFERRED]
-  scripts/windows-ollama/submit.py → scripts/windows-ollama/audit.py
-- `Load PII patterns from pii_patterns.yml.` --uses--> `AuditWriter`  [INFERRED]
   scripts/windows-ollama/submit.py → scripts/windows-ollama/audit.py
 
 ## Communities
@@ -52,60 +52,60 @@ Cohesion: 0.05
 Nodes (25): _dispatch_packet(), _make_parent_packet(), Cross-family independence violated: both planners are anthropic., anthropic + openai is fine., Parent file absent → warn, don't refuse., Sanity: the patterns file should be present in this worktree., Non-LAM role with PII artifact path must be refused., worker-lam role is allowed to handle PII artifacts. (+17 more)
 
 ### Community 4 - "Community 4"
+Cohesion: 0.07
+Nodes (46): _expand_home(), governed_repos(), GovernedRepo, load_registry(), repo_names_enabled_for(), repos_enabled_for(), repos_root(), _artifact() (+38 more)
+
+### Community 5 - "Community 5"
 Cohesion: 0.08
 Nodes (4): _dispatch_contract(), _plan(), TestActiveIssueBranchContract, TestGovernanceSurfacePlanGate
 
-### Community 5 - "Community 5"
-Cohesion: 0.1
-Nodes (48): add_common_args(), apply(), _build_local_ci_plan(), build_plan(), _consumer_record(), _consumer_record_relpath(), _ensure_relative_to(), _ensure_remote_reachable_governance_ref() (+40 more)
-
 ### Community 6 - "Community 6"
+Cohesion: 0.08
+Nodes (48): _branch_issue_number(), _changed_paths(), _changed_paths_from_file(), check_scope(), _current_branch(), ExecutionScope, _format_path(), _git_root() (+40 more)
+
+### Community 7 - "Community 7"
 Cohesion: 0.17
 Nodes (1): TestVerifyGovernanceConsumer
 
-### Community 7 - "Community 7"
+### Community 8 - "Community 8"
 Cohesion: 0.08
 Nodes (38): build_parser(), build_payload(), _call_fixture(), _call_live(), Check, _fixture_request(), _latest_live_instruction(), main() (+30 more)
 
-### Community 8 - "Community 8"
-Cohesion: 0.09
-Nodes (44): _branch_issue_number(), _changed_paths(), _changed_paths_from_file(), check_scope(), _current_branch(), ExecutionScope, _format_path(), _git_root() (+36 more)
-
 ### Community 9 - "Community 9"
+Cohesion: 0.18
+Nodes (4): _git(), RepoFixture, TestAssertExecutionScope, _working_directory()
+
+### Community 10 - "Community 10"
 Cohesion: 0.09
 Nodes (44): build_parser(), CloseoutDecision, evaluate(), _is_governance_surface(), _is_planning_only(), _issue_number(), main(), _matching_closeouts() (+36 more)
 
-### Community 10 - "Community 10"
+### Community 11 - "Community 11"
 Cohesion: 0.06
 Nodes (20): ABC, BaseAggregator, ArtifactWriter, RunManifest, BaseAggregator, BaseModel, SimulationEngine, PersonaLoader (+12 more)
 
-### Community 11 - "Community 11"
+### Community 12 - "Community 12"
 Cohesion: 0.1
 Nodes (43): build_parser(), _consumer_record_relpath(), ConsumerRecord, ConsumerVerifyError, _contains_negated_forbidden_action(), _ensure_remote_reachable_governance_ref(), _expected_checksum(), _expected_entry_failures() (+35 more)
-
-### Community 12 - "Community 12"
-Cohesion: 0.09
-Nodes (39): _expand_home(), governed_repos(), GovernedRepo, load_registry(), repo_names_enabled_for(), repos_enabled_for(), repos_root(), build_payload() (+31 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.13
 Nodes (38): append_audit(), atomic_write_json(), _base_packet(), _build_decision_packet(), _build_instruction_packet(), build_request(), _build_response_packet(), _build_resume_packet() (+30 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.2
-Nodes (4): _git(), RepoFixture, TestAssertExecutionScope, _working_directory()
-
-### Community 15 - "Community 15"
 Cohesion: 0.1
 Nodes (34): append_fail_fast_block_entry(), append_fail_fast_candidate(), append_fail_fast_table_entry(), append_progress_candidate(), bounded_text(), build_parser(), build_review_context(), build_schema_file() (+26 more)
 
-### Community 16 - "Community 16"
+### Community 15 - "Community 15"
 Cohesion: 0.13
 Nodes (37): ArtifactStats, branch_binding_preflight(), _check_pages_limits(), count_files(), deploy(), emit_evidence(), enforce_pages_limits(), extract_deployment_url() (+29 more)
 
-### Community 17 - "Community 17"
+### Community 16 - "Community 16"
 Cohesion: 0.12
 Nodes (20): append_audit(), _audit_path(), ensure_queue(), load_packet(), _load_plan(), QueueDecision, Replay audit events into logical latest states.      `latest_states` includes ac, replay_audit() (+12 more)
+
+### Community 17 - "Community 17"
+Cohesion: 0.15
+Nodes (34): add_common_args(), apply(), _build_local_ci_plan(), build_plan(), _consumer_record(), _consumer_record_relpath(), _ensure_relative_to(), _ensure_remote_reachable_governance_ref() (+26 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.12
@@ -128,28 +128,28 @@ Cohesion: 0.23
 Nodes (8): _consumer_scope(), _dispatch_contract(), _handoff(), _plan(), _scope(), TestValidateHandoffPackage, _write_json(), _write_supporting_files()
 
 ### Community 23 - "Community 23"
-Cohesion: 0.12
-Nodes (22): build_parser(), build_report(), _count_or_none(), inspect_repo(), _load_json(), _load_record(), main(), _managed_paths() (+14 more)
+Cohesion: 0.13
+Nodes (19): add_common_args(), build_plan(), build_refresh_command(), execute_refresh(), find_target(), git_hook_paths(), HelperError, HookPlan (+11 more)
 
 ### Community 24 - "Community 24"
 Cohesion: 0.15
 Nodes (30): _branch(), build_report(), _cname_note(), _deployment_url(), _domain_label(), _domain_result(), _domains(), emit_summary() (+22 more)
 
 ### Community 25 - "Community 25"
-Cohesion: 0.13
-Nodes (19): add_common_args(), build_plan(), build_refresh_command(), execute_refresh(), find_target(), git_hook_paths(), HelperError, HookPlan (+11 more)
-
-### Community 26 - "Community 26"
 Cohesion: 0.1
 Nodes (30): _find_packet_file(), _load_packet(), load_pii_patterns(), _load_schema(), Load and compile PII patterns from pii-patterns.yml., Enforce cross-family independence for tier-1 dual-planner packets.      When pri, Refuse if any consecutive pair in the parent chain shares model_id across differ, Enforce expected handoff sequence with no tier jumps. (+22 more)
 
-### Community 27 - "Community 27"
+### Community 26 - "Community 26"
 Cohesion: 0.16
 Nodes (29): _agent_registry_has_agent(), _agent_surface_exists(), _alternate_review_identity_gate_applies(), _branch_issue_number(), _display_path(), _find_plan_files(), _is_governance_surface(), _is_planning_evidence_surface() (+21 more)
 
-### Community 28 - "Community 28"
+### Community 27 - "Community 27"
 Cohesion: 0.16
 Nodes (28): aggregate_file_scores(), augment_workflow_doc_candidates(), baseline_results(), build_summary(), build_trace(), emit_usage_events(), estimate_tokens(), evaluate_relevance() (+20 more)
+
+### Community 28 - "Community 28"
+Cohesion: 0.16
+Nodes (27): build_payload(), _candidate_paths(), evaluate_repo(), _git_commit(), _git_path_is_tracked(), _git_tracked_paths(), latest_pentagi_report(), main() (+19 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.11
@@ -196,60 +196,60 @@ Cohesion: 0.1
 Nodes (15): Modify first_hash in manifest and verify fails., Test that truncated file (missing last line) breaks manifest., Delete last line and verify detects entry_count mismatch., Test that duplicate line (replay) breaks seq monotonicity., Duplicate a line and verify detects non-monotonic seq., Test that tampering with a line breaks the chain., Tamper with line N and verify fails at line N+1., Test that replacing entry_hmac with wrong value fails verification. (+7 more)
 
 ### Community 40 - "Community 40"
+Cohesion: 0.27
+Nodes (14): add_common_args(), build_plan(), _common_preview_payload(), DeployError, DeployPlan, _existing_shim_state(), _fail(), _is_relative_to() (+6 more)
+
+### Community 41 - "Community 41"
 Cohesion: 0.37
 Nodes (4): _git(), RepoFixture, _scope(), TestWorkerHandoffRoute
 
-### Community 41 - "Community 41"
+### Community 42 - "Community 42"
 Cohesion: 0.27
 Nodes (1): TestDeployLocalCIGate
 
-### Community 42 - "Community 42"
+### Community 43 - "Community 43"
 Cohesion: 0.28
 Nodes (14): compare_inventory(), _default_branch_name(), _inventory_rows_from_payload(), InventoryDrift, load_inventory_file(), _load_json(), load_live_inventory(), main() (+6 more)
 
-### Community 43 - "Community 43"
+### Community 44 - "Community 44"
 Cohesion: 0.23
 Nodes (14): build_alert(), build_parser(), _contains_sensitive(), _load_payload(), main(), _now(), render_markdown(), _safe_text() (+6 more)
 
-### Community 44 - "Community 44"
+### Community 45 - "Community 45"
 Cohesion: 0.23
 Nodes (12): backlog_issues(), build_summary(), collect_active_issue_refs(), current_repo_slug(), fail(), gh_json(), IssueRef, main() (+4 more)
 
-### Community 45 - "Community 45"
+### Community 46 - "Community 46"
 Cohesion: 0.14
 Nodes (2): FakeResponse, TestRuntimeInventory
 
-### Community 46 - "Community 46"
+### Community 47 - "Community 47"
 Cohesion: 0.23
 Nodes (6): _check_required_checks(), evaluate(), _labels(), main(), eligible_payload(), TestAutomergePolicyCheck
 
-### Community 47 - "Community 47"
+### Community 48 - "Community 48"
 Cohesion: 0.32
 Nodes (3): _json(), TestValidateCloseout, _write()
 
-### Community 48 - "Community 48"
+### Community 49 - "Community 49"
 Cohesion: 0.27
 Nodes (14): build_report(), codex_backlog_status(), extract_runbook_paths(), extract_som_excerpt(), format_hook_note(), git_branch(), main(), parse_args() (+6 more)
 
-### Community 49 - "Community 49"
+### Community 50 - "Community 50"
 Cohesion: 0.26
 Nodes (2): _run(), TestPlanPreflight
 
-### Community 50 - "Community 50"
+### Community 51 - "Community 51"
 Cohesion: 0.35
 Nodes (3): _payload(), _run_hook(), TestSchemaGuardHook
 
-### Community 51 - "Community 51"
+### Community 52 - "Community 52"
 Cohesion: 0.26
 Nodes (1): GovernedReposValidationTests
 
-### Community 52 - "Community 52"
+### Community 53 - "Community 53"
 Cohesion: 0.19
 Nodes (8): build_governance(), emit_dispatch_packet(), emit_packet(), main(), Emit a dispatch-ready packet that includes a complete governance block., Emit a minimal or dispatch-ready packet YAML file. Returns path to written file., Build a governance block dict for inclusion in a dispatch-ready packet., TestPacketEmitter
-
-### Community 53 - "Community 53"
-Cohesion: 0.42
-Nodes (12): _registry(), _repo(), _run(), test_execute_runs_tracked_runner(), test_fresh_report_does_not_trigger(), test_markdown_records_same_source_root_for_dashboard_consumers(), test_missing_report_skips_with_missing_token(), test_missing_runner_is_explicit_when_token_exists() (+4 more)
 
 ### Community 54 - "Community 54"
 Cohesion: 0.28
@@ -438,7 +438,7 @@ Nodes (1): Build a client from well-known environment variables.
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ConsumerVerifyError` connect `Community 11` to `Community 2`?**
+- **Why does `ConsumerVerifyError` connect `Community 12` to `Community 2`?**
   _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Why does `GateError` connect `Community 18` to `Community 2`?**
   _High betweenness centrality (0.009) - this node is a cross-community bridge._
