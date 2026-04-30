@@ -26,7 +26,7 @@ This validation artifact records the bounded implementation slice for issue
 | `bash scripts/cross-review/require-dual-signature.sh raw/cross-review/2026-04-30-issue-625-execution-scope-fallback-enforcement-plan.md` | PASS | Cross-review dual-signature gate passed. |
 | `bash scripts/codex-review.sh claude raw/packets/2026-04-30-issue-625-claude-review-packet.md` | PASS | Final implementation-phase sanctioned Claude review returned `APPROVED` and was normalized into `docs/codex-reviews/2026-04-30-issue-625-claude.md`. |
 | `python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-30-issue-625-execution-scope-fallback-enforcement.md --root .` | PASS | Stage 6 closeout artifact validated cleanly. |
-| `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | PASS | Local CI Gate passed with report dir `cache/local-ci-gate/reports/20260430T061622Z-hldpro-governance-git`. |
+| `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | PASS | Local CI Gate passed with report dir `cache/local-ci-gate/reports/20260430T062023Z-hldpro-governance-git`. |
 | `git diff --check` | PASS | Diff hygiene is clean on the bounded implementation slice. |
 
 ## Findings
