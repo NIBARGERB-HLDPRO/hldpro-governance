@@ -1,0 +1,31 @@
+{
+  "issue": 640,
+  "title": "Slice B: Hook Wiring — Policy/Hook/CI Hardening",
+  "parent_epic": 638,
+  "branch": "issue-640-slice-b-remediation-20260430",
+  "date": "2026-04-30",
+  "status": "implementation",
+  "worker": "claude-sonnet-4-6",
+  "scope": [
+    ".claude/settings.json",
+    "hooks/backlog-check.sh",
+    "hooks/check-errors.sh",
+    "hooks/governance-check.sh",
+    "hooks/pre-session-context.sh",
+    "scripts/overlord/backlog_match.py",
+    "scripts/overlord/fail_fast_state.py",
+    "raw/execution-scopes/2026-04-30-issue-640-policy-hook-ci-hardening-slice-b-implementation.json",
+    "docs/plans/issue-640-slice-b-policy-hook-ci-hardening.md",
+    "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
+  ],
+  "acceptance_criteria": [
+    "AC1: settings.json has no git rev-parse or $PWD; all $HOME-anchored",
+    "AC2: PostToolUse * block points to check-errors.sh",
+    "AC3: backlog-check.sh calls backlog_match.py; exits non-zero when no match",
+    "AC4: check-errors.sh calls fail_fast_state.py check and record",
+    "AC5: scripts/overlord/backlog_match.py exists and works",
+    "AC6: scripts/overlord/fail_fast_state.py exists; state at ~/.claude/fail-fast-state.json",
+    "AC7: $HOME-anchored paths resolve correctly regardless of CWD",
+    "AC8: No unintended scope creep"
+  ]
+}

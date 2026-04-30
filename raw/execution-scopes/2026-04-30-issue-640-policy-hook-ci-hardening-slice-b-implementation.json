@@ -1,0 +1,38 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-640-slice-b-remediation-20260430",
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 640,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/640",
+    "claimed_by": "claude-sonnet-4-6 Stage 2 Worker",
+    "claimed_at": "2026-04-30T00:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "operator-dispatched-worker-brief",
+    "implementer_model": "claude-sonnet-4-6",
+    "accepted_at": "2026-04-30T00:00:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/640",
+      "docs/plans/issue-640-slice-b-policy-hook-ci-hardening.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  },
+  "allowed_write_paths": [
+    ".claude/settings.json",
+    "hooks/backlog-check.sh",
+    "hooks/check-errors.sh",
+    "hooks/governance-check.sh",
+    "hooks/pre-session-context.sh",
+    "scripts/overlord/backlog_match.py",
+    "scripts/overlord/fail_fast_state.py",
+    "docs/plans/issue-640-slice-b-policy-hook-ci-hardening.md",
+    "docs/plans/issue-640-slice-b-policy-hook-ci-hardening-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-30-issue-640-policy-hook-ci-hardening-slice-b-implementation.json",
+    "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
+  ],
+  "forbidden_roots": [],
+  "active_parallel_roots": []
+}
