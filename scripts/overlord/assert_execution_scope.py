@@ -11,6 +11,21 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
+PLANNING_ONLY_PREFIXES = (
+    "docs/plans/",
+    "docs/codex-reviews/",
+    "raw/closeouts/",
+    "raw/cross-review/",
+    "raw/execution-scopes/",
+    "raw/handoffs/",
+    "raw/packets/",
+    "raw/validation/",
+)
+PLANNING_ONLY_FILES = {
+    "OVERLORD_BACKLOG.md",
+    "docs/PROGRESS.md",
+}
+
 
 @dataclass(frozen=True)
 class LaneClaim:
@@ -392,6 +407,10 @@ def _path_allowed(path: str, allowed_write_paths: tuple[str, ...]) -> bool:
     return any(path == allowed or (allowed.endswith("/") and path.startswith(allowed)) for allowed in allowed_write_paths)
 
 
+def _is_planning_only_path(path: str) -> bool:
+    return path in PLANNING_ONLY_FILES or path.startswith(PLANNING_ONLY_PREFIXES)
+
+
 def _model_family(model: str) -> str:
     normalized = model.strip().lower().replace("_", "-")
     if "/" in normalized:
@@ -596,6 +615,13 @@ def check_scope(
                 + ", ".join(scope.allowed_write_paths)
                 + ")"
             )
+        if scope.execution_mode == "planning_only":
+            implementation_shaped = [path for path in changed_paths if not _is_planning_only_path(path)]
+            if implementation_shaped:
+                failures.append(
+                    "planning_only scope cannot authorize implementation-shaped paths: "
+                    + ", ".join(implementation_shaped)
+                )
 
     for forbidden_root in scope.forbidden_roots:
         if not forbidden_root.exists():

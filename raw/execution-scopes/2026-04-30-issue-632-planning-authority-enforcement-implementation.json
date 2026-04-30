@@ -1,0 +1,78 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-632-planning-authority-enforcement-20260430",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    ".github/workflows/governance-check.yml",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/codex-reviews/2026-04-30-issue-632-claude.md",
+    "docs/plans/issue-632-planning-authority-enforcement-pdcar.md",
+    "docs/plans/issue-632-planning-authority-enforcement-structured-agent-cycle-plan.json",
+    "raw/closeouts/2026-04-30-issue-632-planning-authority-enforcement.md",
+    "raw/cross-review/2026-04-30-issue-632-planning-authority-enforcement-plan.md",
+    "raw/execution-scopes/2026-04-30-issue-632-planning-authority-enforcement-implementation.json",
+    "raw/execution-scopes/2026-04-30-issue-632-planning-authority-enforcement-planning.json",
+    "raw/handoffs/2026-04-30-issue-632-plan-to-implementation.json",
+    "raw/handoffs/2026-04-30-issue-632-planning-authority-enforcement.json",
+    "raw/packets/2026-04-30-issue-632-claude-review-packet.md",
+    "raw/validation/2026-04-30-issue-632-planning-authority-enforcement.md",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-614-hldpro-sim-verifier-drift-gate",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-615-prehook-governance-failclosed",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-631-handoff-dispatch-fallback-parity"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout is a separate active root and must not be mutated from the issue-632 implementation lane."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+      "reason": "Issue #612 remains the degraded-fallback enforcement lane and must not be mutated from issue #632."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-614-hldpro-sim-verifier-drift-gate",
+      "reason": "Issue #614 remains the hldpro-sim verifier and drift-gate lane and must not be mutated from issue #632."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-615-prehook-governance-failclosed",
+      "reason": "Issue #615 remains the local pre-hook/startup/pretool/root-parity lane and must not be mutated from issue #632."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-631-handoff-dispatch-fallback-parity",
+      "reason": "Issue #631 remains a blocked child under #612 and must not be mixed into issue #632."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 632,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/632",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-30T16:10:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-30T16:10:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-632-planning-authority-enforcement-pdcar.md",
+      "docs/plans/issue-632-planning-authority-enforcement-structured-agent-cycle-plan.json",
+      "raw/cross-review/2026-04-30-issue-632-planning-authority-enforcement-plan.md",
+      "raw/handoffs/2026-04-30-issue-632-plan-to-implementation.json",
+      "docs/codex-reviews/2026-04-30-issue-632-claude.md"
+    ],
+    "active_exception_ref": "docs/codex-reviews/2026-04-30-issue-632-claude.md",
+    "active_exception_expires_at": "2026-05-01T16:10:00Z",
+    "cross_family_path_unavailable": true,
+    "cross_family_path_ref": "docs/codex-reviews/2026-04-30-issue-632-claude.md#implementation-slice",
+    "fallback_log_ref": "docs/FAIL_FAST_LOG.md#issue-632-planning-authority-enforcement"
+  }
+}

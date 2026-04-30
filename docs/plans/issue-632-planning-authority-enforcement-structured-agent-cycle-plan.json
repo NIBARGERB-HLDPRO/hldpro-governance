@@ -1,0 +1,208 @@
+{
+  "session_id": "session-20260430-issue-632-planning-authority-enforcement",
+  "issue_number": 632,
+  "plan_author": {
+    "role": "codex-orchestrator",
+    "model_id": "gpt-5.4",
+    "model_family": "openai"
+  },
+  "objective": "Bootstrap the next issue-backed child under issue #607 for bounded planning-first authority enforcement on governance execution validation and gate wiring only.",
+  "tier": 1,
+  "scope_boundary": [
+    "Implementation child lane under issue #607.",
+    "Owns the planning-first authority enforcement slice only: scripts/overlord/assert_execution_scope.py, .github/workflows/governance-check.yml, tools/local-ci-gate/profiles/hldpro-governance.yml, focused tests, and issue-local artifacts.",
+    "Must prove blocked-before-authority and allowed-after-authority behavior without widening into broader local-hook, fallback-propagation, or consumer-verifier lanes.",
+    "Keeps #612, #614, #615, and blocked child #631 as explicit external boundaries.",
+    "Starts by producing the issue-local planning packet and validation evidence in this isolated worktree."
+  ],
+  "out_of_scope": [
+    "Degraded-fallback propagation work under issue #612.",
+    "Local pre-hook/startup/pretool/root-parity work under issue #615.",
+    "Downstream hldpro-sim consumer verifier or drift-gate work under issue #614.",
+    "Broad standards rewrite unless strictly required for this bounded gate.",
+    "Any claim of repo-wide governance closure from this child alone."
+  ],
+  "research_summary": "Parent issue #607 is planning-complete but still lacks the bounded implementation child that machine-enforces blocked-before-authority and allowed-after-authority behavior. Specialist review concluded the next clean move is a narrow #607 child on execution-scope validation plus governance/local-ci gate wiring only, because #612 is currently blocked behind #631 and #615's remaining residual is broader. The lane must keep #612, #614, #615, and #631 as external boundaries and return independent regression/impact proof requirements rather than prose-only closure.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/607",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/612",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/614",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/631",
+    "scripts/overlord/assert_execution_scope.py",
+    ".github/workflows/governance-check.yml",
+    "tools/local-ci-gate/profiles/hldpro-governance.yml"
+  ],
+  "sprints": [
+    {
+      "name": "Packet Bootstrap",
+      "goal": "Create the issue-local planning packet and execution-scope boundaries before implementation changes.",
+      "tasks": [
+        "Create the issue-local PDCAR, structured plan, execution scope, handoff, review packet, review placeholder, cross-review note, validation artifact, and closeout placeholder.",
+        "Restate the exact owned planning-authority surfaces confirmed by specialist review.",
+        "Keep the lane in planning_only mode until the packet is validated and alternate-family review is recorded."
+      ],
+      "acceptance_criteria": [
+        "The packet names the exact planning-authority owned surfaces.",
+        "The packet keeps #612, #614, #615, and #631 as explicit external boundaries.",
+        "The execution scope allows only issue-local planning artifacts during bootstrap.",
+        "The packet states that implementation is blocked until planning validation and alternate-family review complete.",
+        "The packet requires future implementation proof of blocked-before-authority and allowed-after-authority behavior with independent evidence."
+      ],
+      "file_paths": [
+        "docs/plans/issue-632-planning-authority-enforcement-pdcar.md",
+        "docs/plans/issue-632-planning-authority-enforcement-structured-agent-cycle-plan.json",
+        "raw/closeouts/2026-04-30-issue-632-planning-authority-enforcement.md",
+        "raw/execution-scopes/2026-04-30-issue-632-planning-authority-enforcement-planning.json",
+        "raw/handoffs/2026-04-30-issue-632-planning-authority-enforcement.json",
+        "raw/packets/2026-04-30-issue-632-claude-review-packet.md",
+        "raw/cross-review/2026-04-30-issue-632-planning-authority-enforcement-plan.md",
+        "docs/codex-reviews/2026-04-30-issue-632-claude.md",
+        "raw/validation/2026-04-30-issue-632-planning-authority-enforcement.md"
+      ]
+    },
+    {
+      "name": "Implementation Slice",
+      "goal": "Implement the bounded planning-first authority enforcement path.",
+      "tasks": [
+        "Tighten scripts/overlord/assert_execution_scope.py so governance execution claims fail closed when planning authority is missing or invalid on the owned path.",
+        "Wire the bounded gate expectations into .github/workflows/governance-check.yml and tools/local-ci-gate/profiles/hldpro-governance.yml without reopening local-hook surfaces.",
+        "Return focused blocked-before-authority and allowed-after-authority tests plus independent regression/impact proof references."
+      ],
+      "acceptance_criteria": [
+        "Implementation stays inside scripts/overlord/assert_execution_scope.py, .github/workflows/governance-check.yml, tools/local-ci-gate/profiles/hldpro-governance.yml, focused tests, required governance doc co-staging, and issue-local artifacts only.",
+        "The implementation returns concrete blocked-before-authority and allowed-after-authority proof with exact commands, exit behavior, and validator or gate evidence.",
+        "The implementation requires downstream execution claims to cite independent regression/impact proof artifacts rather than prose-only attestation."
+      ],
+      "file_paths": [
+        "scripts/overlord/assert_execution_scope.py",
+        ".github/workflows/governance-check.yml",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml",
+        "scripts/overlord/test_assert_execution_scope.py",
+        "docs/PROGRESS.md",
+        "docs/FAIL_FAST_LOG.md",
+        "docs/FEATURE_REGISTRY.md",
+        "raw/closeouts/2026-04-30-issue-632-planning-authority-enforcement.md",
+        "raw/execution-scopes/2026-04-30-issue-632-planning-authority-enforcement-implementation.json",
+        "raw/handoffs/2026-04-30-issue-632-plan-to-implementation.json",
+        "raw/validation/2026-04-30-issue-632-planning-authority-enforcement.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "routing research specialist",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "next-lane and owned-surface confirmation",
+      "focus": "Verify the next clean parent graph after the #616/#631 block and confirm the narrowest valid #607 child implementation surface.",
+      "status": "mixed",
+      "summary": "The next clean move is a new #607 child, not another #612 or #615 child. The owned surfaces must stay limited to assert_execution_scope.py, governance-check.yml, local-ci-gate profile wiring, focused tests, and issue-local artifacts. Residual: #616/#631 remain blocked and should not be widened from this lane.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/607",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/612",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615",
+        "scripts/overlord/assert_execution_scope.py",
+        ".github/workflows/governance-check.yml",
+        "tools/local-ci-gate/profiles/hldpro-governance.yml"
+      ]
+    },
+    {
+      "reviewer": "planning packet QA specialist",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "packet contract and anti-overreach review",
+      "focus": "Verify the planning-only bootstrap packet shape, explicit external boundaries, and proof obligations for later implementation.",
+      "status": "mixed",
+      "summary": "The lane must not reopen #612, #614, or #615 and must not claim broader governance closure. It should require independent proof of blocked-before-authority and allowed-after-authority behavior before any future closure claim. Residual: packet review and validator replay must complete before implementation promotion.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/607",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/612",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude alternate-family specialist review",
+    "reviewer_model_id": "claude-opus-4-6",
+    "reviewer_model_family": "anthropic",
+    "model_family": "anthropic",
+    "status": "accepted_with_followup",
+    "summary": "Claude alternate-family review accepted the planning-only packet with follow-up to patch the PDCAR #631 boundary mention, replay validator results into the validation artifact, and preserve a one-line residual explanation for mixed specialist reviews before implementation promotion.",
+    "reviewer_model_id": "claude-opus-4-6",
+    "reviewer_model_family": "anthropic",
+    "evidence": [
+      "docs/codex-reviews/2026-04-30-issue-632-claude.md"
+    ]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-632-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #632 is authorized for the bounded planning-authority tightening slice only: scripts/overlord/assert_execution_scope.py, focused tests, governance gate/profile proof replay, required governance doc co-staging, and issue-local artifacts.",
+    "next_execution_step": "Implement the bounded planner-authority tightening so planning-only scopes cannot authorize implementation-shaped governance diffs, then return blocked-before-authority and allowed-after-authority proof from assert_execution_scope.py plus the wired local/CI gate path.",
+    "blocked_on": [
+      "Issue #612 remains the degraded-fallback enforcement lane and blocked child #631 remains outside this lane.",
+      "Issue #615 remains the local pre-hook/startup/pretool/root-parity enforcement lane.",
+      "Issue #614 remains the hldpro-sim verifier and drift-gate lane.",
+      "Do not widen into hooks, startup/pretool/root-parity, degraded-fallback propagation, or hldpro-sim verifier work."
+    ],
+    "handoff_package_ref": "raw/handoffs/2026-04-30-issue-632-planning-authority-enforcement.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-632-planning-authority-enforcement-planning.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-30-issue-632-planning-authority-enforcement-plan.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-30-issue-632-planning-authority-enforcement.md"
+    ],
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "AC1: Issue #632 remains bounded to scripts/overlord/assert_execution_scope.py, .github/workflows/governance-check.yml, tools/local-ci-gate/profiles/hldpro-governance.yml, focused tests, required governance doc co-staging, and issue-local artifacts only.",
+      "AC2: The lane preserves #612, #614, #615, and #631 as explicit external boundaries and does not absorb their owned enforcement surfaces.",
+      "AC3: No implementation may begin until the issue-local planning packet validates and sanctioned alternate-family review is recorded.",
+      "AC4: Future implementation proof must require concrete blocked-before-authority and allowed-after-authority evidence plus independent regression/impact proof references rather than prose-only closure."
+    ]
+  },
+  "material_deviation_rules": [
+    "Any edit to hooks/ or .claude/settings.json from issue #632 is a material deviation because those surfaces belong to issue #615 children.",
+    "Any edit to scripts/orchestrator/packet_queue.py or fallback-log schema/writer surfaces from issue #632 is a material deviation because those belong to issue #612 children.",
+    "Any edit to hldpro-sim consumer verifier surfaces from issue #632 is a material deviation because those belong to issue #614.",
+    "Any implementation of planning-authority enforcement before the issue-local planning packet validates and alternate-family review is recorded is a material deviation.",
+    "Any claim that issue #632 closes broader governance enforcement outside the bounded planning-authority slice is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction",
+    "issue #632"
+  ],
+  "approved_at": "2026-04-30T15:45:00Z"
+}

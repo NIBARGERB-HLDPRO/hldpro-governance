@@ -150,9 +150,13 @@ class TestAssertExecutionScope(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw_tmpdir:
             tmpdir = Path(raw_tmpdir)
             repo = RepoFixture(tmpdir / "repo")
-            repo.write("allowed.txt")
-            repo.write("allowed-dir/nested.txt")
-            scope = self._scope_file(tmpdir, repo.root)
+            repo.write("docs/plans/issue-242-plan.md")
+            repo.write("raw/validation/issue-242.md")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                allowed=["docs/plans/", "raw/validation/"],
+            )
 
             code, output = self._run_main(repo.root, scope)
 
@@ -163,8 +167,13 @@ class TestAssertExecutionScope(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw_tmpdir:
             tmpdir = Path(raw_tmpdir)
             repo = RepoFixture(tmpdir / "repo")
-            changed = self._changed_files_file(tmpdir, ["./allowed-dir/nested.txt"])
-            scope = self._scope_file(tmpdir, repo.root, execution_mode="planning_only")
+            changed = self._changed_files_file(tmpdir, ["./docs/plans/issue-242-plan.md"])
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="planning_only",
+                allowed=["docs/plans/"],
+            )
 
             code, output = self._run_main(repo.root, scope, changed_files_file=changed)
 
@@ -183,6 +192,24 @@ class TestAssertExecutionScope(unittest.TestCase):
         self.assertNotEqual(code, 0)
         self.assertIn("changed paths outside allowed_write_paths", output)
         self.assertIn("not-allowed.txt", output)
+
+    def test_planning_only_diff_in_allowed_implementation_path_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["./scripts/overlord/assert_execution_scope.py"])
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="planning_only",
+                allowed=["scripts/overlord/"],
+            )
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("planning_only scope cannot authorize implementation-shaped paths", output)
+        self.assertIn("scripts/overlord/assert_execution_scope.py", output)
 
     def test_non_planning_without_handoff_fails(self) -> None:
         with tempfile.TemporaryDirectory() as raw_tmpdir:
@@ -558,9 +585,9 @@ class TestAssertExecutionScope(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw_tmpdir:
             tmpdir = Path(raw_tmpdir)
             repo = RepoFixture(tmpdir / "repo")
-            repo.write("allowed-dir/nested.txt")
-            changed = self._changed_files_file(tmpdir, ["./allowed-dir/nested.txt"])
-            scope = self._scope_file(tmpdir, repo.root)
+            repo.write("docs/plans/issue-242-plan.md")
+            changed = self._changed_files_file(tmpdir, ["./docs/plans/issue-242-plan.md"])
+            scope = self._scope_file(tmpdir, repo.root, allowed=["docs/plans/"])
 
             dirty_code, dirty_output = self._run_main(repo.root, scope)
             diff_code, diff_output = self._run_main(repo.root, scope, changed_files_file=changed)
@@ -608,11 +635,12 @@ class TestAssertExecutionScope(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw_tmpdir:
             tmpdir = Path(raw_tmpdir)
             repo = RepoFixture(tmpdir / "repo", branch="issue-393-lane-claim-gate-20260420")
-            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            changed = self._changed_files_file(tmpdir, ["docs/plans/issue-393-plan.md"])
             scope = self._scope_file(
                 tmpdir,
                 repo.root,
                 branch="issue-393-lane-claim-gate-20260420",
+                allowed=["docs/plans/"],
                 lane_claim=self._lane_claim(393),
             )
 
@@ -670,8 +698,13 @@ class TestAssertExecutionScope(unittest.TestCase):
             repo = RepoFixture(tmpdir / "repo", branch="issue-324-detached-source")
             head = _git(repo.root, "rev-parse", "HEAD").stdout.strip()
             _git(repo.root, "checkout", "--detach", head)
-            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
-            scope = self._scope_file(tmpdir, repo.root, branch="issue-324-detached-source")
+            changed = self._changed_files_file(tmpdir, ["docs/plans/issue-324-plan.md"])
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                branch="issue-324-detached-source",
+                allowed=["docs/plans/"],
+            )
 
             with mock.patch.dict(
                 "os.environ",
