@@ -13,8 +13,8 @@
 - `.gitignore` covering: `.env`, `node_modules/`, `dist/`, `.DS_Store`
 
 ## Required Governance
-- `.claude/hooks/governance-check.sh` — blocks commits missing doc co-staging
-- `.claude/hooks/backlog-check.sh` — **hard gate**: blocks branch creation unless a matching `PLANNED` or `IN_PROGRESS` entry exists in `docs/PROGRESS.md` Plans table. Enforces backlog-first workflow (plan with AC before code).
+- `hooks/governance-check.sh` — blocks governed root commits missing required planning, backlog, and doc co-staging evidence
+- `hooks/backlog-check.sh` — **hard gate**: for `hldpro-governance`, blocks issue-branch progression unless the branch issue is represented in active `OVERLORD_BACKLOG.md` tracker rows backed by open GitHub issues. In governed product repos, the equivalent backlog-first gate remains repo-local `docs/PROGRESS.md` planning/active tracker coverage.
 - `.claude/hooks/check-errors.sh` — PostToolUse hard gate: auto-grep FAIL_FAST_LOG on errors, 3-attempt max, then STOP and ask user
 - `check-backlog-gh-sync.yml` — **hard gate**: every `OVERLORD_BACKLOG.md` Planned entry must reference an open GitHub issue (`#NNN` in the `Issue` column). GitHub is canonical — create the issue before adding to Planned. CI validates all refs are open on every push.
 - `check-pr-commit-scope.yml` — **scope guard**: PRs to main must contain ≤ 10 commits. Excess commits indicate stale-worktree base contamination (2026-04-15 incident). Threshold configurable via `MAX_COMMITS` env var.
@@ -107,6 +107,7 @@ These files must be consistent at the contract level. They do **not** need to be
 ### `docs/PROGRESS.md`
 - Must remain the repo's single source of truth for planned work, open bugs, feature requests, and operational items
 - For governed product repos, active backlog sections in `docs/PROGRESS.md` must stay aligned with backlog-labeled GitHub issues: open backlog issues must appear there, and closed backlog issues must not remain listed as active.
+- `hldpro-governance` is the root exception: active governance issue-tracker enforcement lives in `OVERLORD_BACKLOG.md` plus open GitHub issues, while `docs/PROGRESS.md` remains the per-repo execution/status mirror and implementation-progress ledger.
 - Default required sections:
   - `## Plans`
   - `## Known Bugs`
