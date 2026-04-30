@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash $HOME/Developer/HLDPRO/hldpro-governance/hooks/pre-session-context.sh",
+            "command": "REPO_ROOT=$(git -C \"${CLAUDE_CWD:-$PWD}\" rev-parse --show-toplevel 2>/dev/null) && bash \"$REPO_ROOT/hooks/pre-session-context.sh\"",
             "timeout": 5000
           }
         ]

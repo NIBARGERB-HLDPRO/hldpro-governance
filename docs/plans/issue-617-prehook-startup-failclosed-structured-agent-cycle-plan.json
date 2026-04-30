@@ -1,0 +1,207 @@
+{
+  "session_id": "session-20260430-issue-617-prehook-startup-failclosed",
+  "issue_number": 617,
+  "plan_author": {
+    "role": "codex-orchestrator",
+    "model_id": "gpt-5.4",
+    "model_family": "openai"
+  },
+  "objective": "Implement the first local source-repo startup slice under issue #615 by surfacing lane-state at fresh-session start and failing closed when unique claimed-scope discovery cannot be resolved for an execution-capable session.",
+  "tier": 1,
+  "scope_boundary": [
+    "Implementation child lane under issue #615.",
+    "Owns the local startup/helper surfacing path and fail-closed unique-scope discovery only.",
+    "Keeps #607 as the planning-authority dependency, #612 as the schema/CI degraded-fallback enforcement lane, #614 as the downstream consumer verifier lane, and leaves broader pre-hook write blocking for a later child under #615.",
+    "Starts by producing the issue-local bootstrap packet and validation evidence in this isolated worktree."
+  ],
+  "out_of_scope": [
+    "Planning-authority contract rewrites that belong to issue #607.",
+    "Execution-scope schema or CI validator changes that belong to issue #612.",
+    "Downstream hldpro-sim consumer drift verifier work that belongs to issue #614.",
+    "Broader pre-hook write-blocking implementation.",
+    "Any claim of repo-wide fresh-session impossibility."
+  ],
+  "research_summary": "The pending mainline action before the Claude wrapper failure was to leave issue #610 honestly blocked and move into the first implementation child under issue #615. Specialist review then narrowed the smallest valid first slice further: startup-only lane-state surfacing plus fail-closed unique-scope discovery on the local canonical startup/helper path. Live source inspection confirms the first-slice surfaces are .claude/settings.json, hooks/pre-session-context.sh, and scripts/overlord/check_execution_environment.py with focused startup tests. The lane therefore begins with an issue-local implementation packet before startup-surface changes proceed.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/607",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/612",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/617",
+    "docs/PROGRESS.md",
+    ".claude/settings.json",
+    "hooks/pre-session-context.sh",
+    "scripts/overlord/check_execution_environment.py"
+  ],
+  "sprints": [
+    {
+      "name": "Packet Bootstrap",
+      "goal": "Create the issue-local implementation packet and execution-scope boundaries before startup/helper changes.",
+      "tasks": [
+        "Create the issue-local PDCAR, structured plan, execution scope, handoff, review packet, review placeholders, and validation artifact.",
+        "Restate the narrowed startup-only write surfaces confirmed by specialist review.",
+        "Keep the lane in planning_only mode until the packet is validated."
+      ],
+      "acceptance_criteria": [
+        "The packet names the exact startup/helper owned surfaces.",
+        "The packet keeps #607, #612, and #614 as explicit external boundaries.",
+        "The execution scope allows only the issue-local packet files during bootstrap."
+      ],
+      "file_paths": [
+        "docs/plans/issue-617-prehook-startup-failclosed-pdcar.md",
+        "docs/plans/issue-617-prehook-startup-failclosed-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-planning.json",
+        "raw/handoffs/2026-04-30-issue-617-prehook-startup-failclosed.json",
+        "raw/packets/2026-04-30-issue-617-claude-review-packet.md",
+        "raw/cross-review/2026-04-30-issue-617-prehook-startup-failclosed-plan.md",
+        "docs/codex-reviews/2026-04-30-issue-617-claude.md",
+        "raw/validation/2026-04-30-issue-617-prehook-startup-failclosed.md"
+      ]
+    },
+    {
+      "name": "Startup Implementation",
+      "goal": "Surface active lane-state at startup and fail closed when unique claimed-scope discovery cannot be resolved for the current execution-capable session.",
+      "tasks": [
+        "Promote issue #617 into an implementation-ready execution scope bounded to the startup/helper surfaces and focused tests.",
+        "Update .claude/settings.json so UserPromptSubmit invokes the repo-local startup hook path instead of a hardcoded home-root governance checkout path.",
+        "Extend scripts/overlord/check_execution_environment.py with startup discovery and summary mode for unique claimed-scope resolution, lane-claim enforcement, and compact output.",
+        "Update hooks/pre-session-context.sh to emit the canonical bootstrap contract note and then append PASS or BLOCKED startup execution-context output from the startup discovery mode.",
+        "Co-stage docs/PROGRESS.md, docs/FEATURE_REGISTRY.md, and the relevant docs/FAIL_FAST_LOG.md entry required for governance-surface implementation changes.",
+        "Create the issue-local Stage 6 closeout artifact for the bounded startup/helper implementation slice.",
+        "Allow only the graph/wiki write-back emitted by the governed Stage 6 closeout helper under graphify-out/ and wiki/.",
+        "Add focused tests and validation artifacts for startup success and expected-fail transcripts only."
+      ],
+      "acceptance_criteria": [
+        "Startup hook output includes a deterministic PASS or BLOCKED execution-context summary after the bootstrap contract note.",
+        "The startup summary names the resolved scope path, issue number, execution_mode, next_role or next_execution_step, and required specialist signals when a unique claimed scope is found.",
+        "Startup blocks clearly when no unique claimed scope is resolved or the resolved scope fails branch or lane-claim validation.",
+        "The bounded implementation co-stages docs/PROGRESS.md, docs/FEATURE_REGISTRY.md, and the relevant docs/FAIL_FAST_LOG.md entry.",
+        "The bounded implementation includes a valid Stage 6 closeout artifact.",
+        "Any graphify-out/ and wiki/ changes are limited to governed Stage 6 closeout-helper write-back for issue #617.",
+        "No broader pre-hook write-blocking surfaces are changed."
+      ],
+      "file_paths": [
+        ".claude/settings.json",
+        "docs/FAIL_FAST_LOG.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "graphify-out/",
+        "hooks/pre-session-context.sh",
+        "scripts/overlord/check_execution_environment.py",
+        "scripts/overlord/test_check_execution_environment.py",
+        "scripts/test_session_bootstrap_contract.py",
+        "raw/closeouts/2026-04-30-issue-617-prehook-startup-failclosed.md",
+        "raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-implementation.json",
+        "raw/handoffs/2026-04-30-issue-617-plan-to-implementation.json",
+        "raw/validation/2026-04-30-issue-617-prehook-startup-failclosed.md",
+        "wiki/"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "startup-scope research specialist",
+      "reviewer_model_id": "gpt-5.4-mini",
+      "reviewer_model_family": "openai",
+      "role": "routing and write-scope reduction",
+      "focus": "Verify the narrowest valid first implementation slice under issue #615.",
+      "status": "mixed",
+      "summary": "The smallest valid first child is startup-only lane-state surfacing and fail-closed unique-scope discovery on the local canonical startup/helper path. Broader pre-hook write-blocking remains a later child under #615.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/617"
+      ]
+    },
+    {
+      "reviewer": "startup-scope QA specialist",
+      "reviewer_model_id": "gpt-5.4-mini",
+      "reviewer_model_family": "openai",
+      "role": "closeout-contract review",
+      "focus": "Verify the startup child keeps #607, #612, and #614 explicit as separate lanes and carries the startup proof bullets from issue #615.",
+      "status": "mixed",
+      "summary": "The startup child may own startup/helper fail-closed surfacing and unique-scope discovery on the local canonical startup path, but it must keep #607 as the planning-authority dependency, #612 as the schema/CI degraded-fallback lane, and #614 as the downstream verifier lane.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude alternate-family specialist review",
+    "reviewer_model_id": "claude-opus-4-6",
+    "reviewer_model_family": "anthropic",
+    "model_family": "anthropic",
+    "status": "accepted",
+    "summary": "Claude alternate-family review accepted the bounded startup/helper implementation slice with no blocking findings and one residual design-only follow-up about planning-only startup warnings.",
+    "evidence": [
+      "docs/codex-reviews/2026-04-30-issue-617-claude.md"
+    ]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-617-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #617 is authorized for the bounded startup/helper implementation slice on the repo-local startup hook, execution-environment helper, and focused startup tests only.",
+    "next_execution_step": "Implementation is complete for the bounded startup/helper slice. Use the implementation-ready handoff and validation artifacts for closeout, audit, and issue-state reconciliation only.",
+    "blocked_on": [
+      "Issue #607 remains the planning-authority dependency for startup and fresh-session proof.",
+      "Issue #612 remains the schema/CI degraded-fallback enforcement lane.",
+      "Issue #614 remains the downstream hldpro-sim verifier/drift-gate lane.",
+      "Broader pre-hook write-blocking remains a later child under issue #615."
+    ],
+    "handoff_package_ref": "raw/handoffs/2026-04-30-issue-617-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-implementation.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-30-issue-617-prehook-startup-failclosed-plan.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-30-issue-617-prehook-startup-failclosed.md"
+    ],
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Startup hook output appends a deterministic PASS or BLOCKED execution-context summary after the canonical bootstrap contract note.",
+      "The startup summary resolves the unique claimed scope for the current issue branch and surfaces scope path, issue number, execution_mode, next_role or next_execution_step, and required specialist signals.",
+      "Startup blocks clearly when no unique claimed scope is resolved for the current issue branch, including missing-scope and conflicting-scope conditions.",
+      "Issue #617 remains bounded to startup/helper surfacing only and does not edit broader pre-hook write-blocking or sibling-lane contracts."
+    ]
+  },
+  "material_deviation_rules": [
+    "Any change to #607, #612, or #614 owned surfaces from issue #617 is a material deviation.",
+    "Any claim that issue #617 closes repo-wide fresh-session mis-routing is a material deviation.",
+    "Any broader pre-hook write-blocking implementation in issue #617 is a material deviation.",
+    "Any hook/helper implementation before the issue-local packet is validated is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction",
+    "issue #617"
+  ],
+  "approved_at": "2026-04-30T02:12:00Z"
+}

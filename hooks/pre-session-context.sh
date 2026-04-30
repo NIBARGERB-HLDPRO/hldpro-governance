@@ -25,4 +25,9 @@ fi
 touch "$SENTINEL"
 
 python3 "$REPO_ROOT/scripts/session_bootstrap_contract.py" --emit-hook-note
+echo ""
+(
+  cd "$REPO_ROOT" || exit 0
+  python3 "$REPO_ROOT/scripts/overlord/check_execution_environment.py" --startup-preflight
+)
 exit 0

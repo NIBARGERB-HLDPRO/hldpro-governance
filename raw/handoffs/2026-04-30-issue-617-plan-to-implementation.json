@@ -1,0 +1,129 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-617-plan-to-implementation",
+  "issue_number": 617,
+  "parent_epic_number": 615,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-617-prehook-startup-failclosed-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-617-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Startup hook output appends a deterministic PASS or BLOCKED execution-context summary after the canonical bootstrap contract note.",
+      "verification_refs": [
+        "hooks/pre-session-context.sh",
+        "scripts/test_session_bootstrap_contract.py"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "The startup summary resolves the unique claimed scope for the current issue branch and surfaces scope path, issue number, execution_mode, next_role or next_execution_step, and required specialist signals.",
+      "verification_refs": [
+        "scripts/overlord/check_execution_environment.py",
+        "scripts/overlord/test_check_execution_environment.py",
+        "raw/validation/2026-04-30-issue-617-prehook-startup-failclosed.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Startup blocks clearly when no unique claimed scope is resolved for the current issue branch, including missing-scope and conflicting-scope conditions.",
+      "verification_refs": [
+        "scripts/overlord/check_execution_environment.py",
+        "scripts/overlord/test_check_execution_environment.py",
+        "raw/validation/2026-04-30-issue-617-prehook-startup-failclosed.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Issue #617 remains bounded to startup/helper surfacing only and does not edit broader pre-hook write-blocking or sibling-lane contracts.",
+      "verification_refs": [
+        "docs/plans/issue-617-prehook-startup-failclosed-pdcar.md",
+        "docs/plans/issue-617-prehook-startup-failclosed-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-implementation.json"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_check_execution_environment.py",
+    "python3 -m unittest scripts.test_session_bootstrap_contract",
+    "bash -n hooks/pre-session-context.sh",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-implementation.json --require-lane-claim",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-617-prehook-startup-failclosed-20260430 --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-30-issue-617-plan-to-implementation.json",
+    "bash hooks/closeout-hook.sh raw/closeouts/2026-04-30-issue-617-prehook-startup-failclosed.md",
+    "python3 scripts/overlord/check_stage6_closeout.py --root . --branch-name issue-617-prehook-startup-failclosed-20260430 --changed-files-file <changed-files.txt>",
+    "python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-30-issue-617-prehook-startup-failclosed-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-617-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-30-issue-617-prehook-startup-failclosed.md"
+  ],
+  "artifact_refs": [
+    ".claude/settings.json",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "graphify-out/hldpro-governance/GRAPH_REPORT.md",
+    "graphify-out/hldpro-governance/graph.json",
+    "hooks/pre-session-context.sh",
+    "scripts/overlord/check_execution_environment.py",
+    "scripts/overlord/test_check_execution_environment.py",
+    "scripts/test_session_bootstrap_contract.py",
+    "docs/plans/issue-617-prehook-startup-failclosed-pdcar.md",
+    "docs/plans/issue-617-prehook-startup-failclosed-structured-agent-cycle-plan.json",
+    "raw/closeouts/2026-04-30-issue-617-prehook-startup-failclosed.md",
+    "raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-implementation.json",
+    "raw/validation/2026-04-30-issue-617-prehook-startup-failclosed.md",
+    "wiki/index.md",
+    "wiki/hldpro/index.md"
+  ],
+  "audit_refs": [],
+  "closeout_ref": "raw/closeouts/2026-04-30-issue-617-prehook-startup-failclosed.md",
+  "blocked_on": [
+    "Issue #607 remains the planning-authority dependency for startup and fresh-session proof.",
+    "Issue #612 remains the schema/CI degraded-fallback enforcement lane.",
+    "Issue #614 remains the downstream hldpro-sim verifier/drift-gate lane.",
+    "Broader pre-hook write-blocking remains a later child under issue #615."
+  ],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-30T03:35:00Z",
+  "notes": "Implementation-ready handoff for issue #617. Scope is limited to the repo-local startup/helper surfacing path, unique claimed-scope discovery, required governance doc co-staging, Stage 6 closeout evidence, and the helper-owned graph/wiki write-back emitted under graphify-out/ and wiki/."
+}

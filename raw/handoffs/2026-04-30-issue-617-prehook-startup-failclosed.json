@@ -1,0 +1,98 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-617-prehook-startup-failclosed",
+  "issue_number": 617,
+  "parent_epic_number": 615,
+  "lifecycle_state": "planned",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-617-prehook-startup-failclosed-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-planning.json",
+  "packet_ref": "raw/packets/2026-04-30-issue-617-claude-review-packet.md",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-617-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Issue #617 must remain bounded to the local startup/helper surfacing path and fail-closed unique-scope discovery only.",
+      "verification_refs": [
+        "docs/plans/issue-617-prehook-startup-failclosed-pdcar.md",
+        "docs/plans/issue-617-prehook-startup-failclosed-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Issue #617 must keep #607, #612, and #614 explicit as external dependency or follow-on lanes instead of absorbing their owned contracts.",
+      "verification_refs": [
+        "docs/plans/issue-617-prehook-startup-failclosed-pdcar.md",
+        "raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-planning.json"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Issue #617 must not begin startup/helper implementation until the issue-local packet is validated.",
+      "verification_refs": [
+        "raw/validation/2026-04-30-issue-617-prehook-startup-failclosed.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool docs/plans/issue-617-prehook-startup-failclosed-structured-agent-cycle-plan.json",
+    "python3 -m json.tool raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-planning.json",
+    "python3 -m json.tool raw/handoffs/2026-04-30-issue-617-prehook-startup-failclosed.json",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-617-prehook-startup-failclosed-20260430 --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-30-issue-617-prehook-startup-failclosed.json",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-30-issue-617-prehook-startup-failclosed-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-617-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-30-issue-617-prehook-startup-failclosed.md"
+  ],
+  "artifact_refs": [
+    "docs/plans/issue-617-prehook-startup-failclosed-pdcar.md",
+    "docs/plans/issue-617-prehook-startup-failclosed-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-planning.json",
+    "raw/packets/2026-04-30-issue-617-claude-review-packet.md"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [
+    "Issue #607 remains the planning-authority dependency for startup and fresh-session proof.",
+    "Issue #612 remains the schema/CI degraded-fallback enforcement lane.",
+    "Issue #614 remains the downstream hldpro-sim verifier/drift-gate lane.",
+    "Broader pre-hook write-blocking remains a later child under issue #615."
+  ],
+  "handoff_decision": "draft",
+  "created_at": "2026-04-30T02:12:00Z",
+  "notes": "Planning-only handoff for issue #617 bootstrap. This implementation child is narrowed to startup/helper surfacing and fail-closed unique-scope discovery only. It must validate its issue-local packet before any startup/helper code changes proceed."
+}

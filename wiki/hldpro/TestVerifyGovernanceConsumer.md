@@ -1,6 +1,6 @@
 # TestVerifyGovernanceConsumer
 
-> God node · 46 connections · `scripts/overlord/test_verify_governance_consumer.py`
+> God node · 49 connections · `scripts/overlord/test_verify_governance_consumer.py`
 
 ## Connections by Relation
 
@@ -25,9 +25,9 @@
 - [[.test_verify_fails_when_healthcareplatform_v2_profile_weakens_constraints()]] `EXTRACTED`
 - [[.test_verify_passes_for_valid_v2_managed_consumer()]] `EXTRACTED`
 - [[.test_verify_passes_for_session_contract_and_hook_settings_contract_entries()]] `EXTRACTED`
+- [[._next_package_version()]] `EXTRACTED`
 - [[.test_verify_fails_when_profile_is_missing()]] `EXTRACTED`
 - [[.test_verify_fails_for_managed_hook_checksum_drift()]] `EXTRACTED`
-- [[.test_verify_fails_for_managed_hook_missing_marker()]] `EXTRACTED`
 
 ---
 
