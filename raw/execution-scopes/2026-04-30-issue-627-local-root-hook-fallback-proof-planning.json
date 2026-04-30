@@ -1,0 +1,58 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-627-local-root-hook-fallback-proof",
+  "allowed_write_paths": [
+    "docs/plans/issue-627-local-root-hook-fallback-proof-pdcar.md",
+    "docs/plans/issue-627-local-root-hook-fallback-proof-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-30-issue-627-local-root-hook-fallback-proof-planning.json",
+    "raw/handoffs/2026-04-30-issue-627-local-root-hook-fallback-proof.json",
+    "raw/packets/2026-04-30-issue-627-claude-review-packet.md",
+    "raw/cross-review/2026-04-30-issue-627-local-root-hook-fallback-proof-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-627-claude.md",
+    "raw/validation/2026-04-30-issue-627-local-root-hook-fallback-proof.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-614-hldpro-sim-verifier-drift-gate",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-625-execution-scope-fallback-enforcement"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout remains dirty and unrelated, so issue-627 planning stays isolated in this clean worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+      "reason": "Issue #612 remains the wider validator/workflow parent lane and must not be mutated from issue #627."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-614-hldpro-sim-verifier-drift-gate",
+      "reason": "Issue #614 remains a separate downstream verifier lane and must not be mixed into issue #627."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-625-execution-scope-fallback-enforcement",
+      "reason": "Issue #625 is already merged and serves only as a dependency boundary for the proof contract consumed here."
+    }
+  ],
+  "execution_mode": "planning_only",
+  "lane_claim": {
+    "issue_number": 627,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/627",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-30T13:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-30T13:00:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-627-local-root-hook-fallback-proof-pdcar.md",
+      "docs/plans/issue-627-local-root-hook-fallback-proof-structured-agent-cycle-plan.json",
+      "raw/handoffs/2026-04-30-issue-627-local-root-hook-fallback-proof.json"
+    ],
+    "active_exception_ref": "docs/plans/issue-627-local-root-hook-fallback-proof-pdcar.md",
+    "active_exception_expires_at": "2026-05-01T13:00:00Z"
+  }
+}

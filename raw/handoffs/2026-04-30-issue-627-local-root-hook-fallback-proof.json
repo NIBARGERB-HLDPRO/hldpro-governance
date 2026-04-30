@@ -1,0 +1,93 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-627-local-root-hook-fallback-proof",
+  "issue_number": 627,
+  "parent_epic_number": 615,
+  "lifecycle_state": "planned",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-627-local-root-hook-fallback-proof-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-627-local-root-hook-fallback-proof-planning.json",
+  "packet_ref": "raw/packets/2026-04-30-issue-627-claude-review-packet.md",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-627-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Issue #627 must remain bounded to local root-hook degraded-fallback proof consumption and issue-local planning artifacts only.",
+      "verification_refs": [
+        "docs/plans/issue-627-local-root-hook-fallback-proof-pdcar.md",
+        "docs/plans/issue-627-local-root-hook-fallback-proof-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Issue #627 must state that later implementation consumes the merged #625 proof contract rather than redefining degraded-fallback semantics.",
+      "verification_refs": [
+        "docs/plans/issue-627-local-root-hook-fallback-proof-pdcar.md",
+        "docs/plans/issue-627-local-root-hook-fallback-proof-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Issue #627 must preserve explicit out-of-scope boundaries for #612 fallback-log parity, #607 planning-authority work, and #614 downstream verifier work.",
+      "verification_refs": [
+        "docs/plans/issue-627-local-root-hook-fallback-proof-pdcar.md",
+        "docs/plans/issue-627-local-root-hook-fallback-proof-structured-agent-cycle-plan.json"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool docs/plans/issue-627-local-root-hook-fallback-proof-structured-agent-cycle-plan.json",
+    "python3 -m json.tool raw/execution-scopes/2026-04-30-issue-627-local-root-hook-fallback-proof-planning.json",
+    "python3 -m json.tool raw/handoffs/2026-04-30-issue-627-local-root-hook-fallback-proof.json",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-627-local-root-hook-fallback-proof --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-30-issue-627-local-root-hook-fallback-proof.json",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-30-issue-627-local-root-hook-fallback-proof-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-627-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-30-issue-627-local-root-hook-fallback-proof.md"
+  ],
+  "artifact_refs": [
+    "docs/plans/issue-627-local-root-hook-fallback-proof-pdcar.md",
+    "docs/plans/issue-627-local-root-hook-fallback-proof-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-30-issue-627-local-root-hook-fallback-proof-planning.json"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-30T13:00:00Z",
+  "notes": "Planning-only handoff for issue #627. This child narrows issue #615 to the local root-hook consumer path for the merged issue #625 degraded-fallback proof contract."
+}

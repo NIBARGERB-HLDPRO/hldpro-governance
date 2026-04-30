@@ -230,6 +230,7 @@
 | GOV-016 | Future SoM closeouts must identify the wired checks actually run, schema/artifact version, model identities, reviewer and gate identity, issue links, validation commands, and residual risks or deferrals. The closeout contract lives in `raw/closeouts/TEMPLATE.md`, with the current Slice 6 record under `raw/closeouts/2026-04-17-som-enforcement-drift-closeout-loop.md`. |
 | GOV-016 | Issue #432 revises the governance waterfall SSOT: Codex orchestrates and integrates, Opus 4.6 plans, GPT-5.4 high reviews the plan with Spark only as a logged fallback/specialist critique, Sonnet 4.6 is the primary Worker, Codex performs QA, Qwen local models handle bounded implementation chunks, Gemma is A/B shadow-only, and Windows Ollama is off the active fallback ladder. |
 | GOV-016 | Issue #573 adds the governance session-start contract: tracked `CODEX.md`, canonical bootstrap helper `scripts/session_bootstrap_contract.py`, machine-checkable bootstrap sentinel output, external-services runbook path surfacing, unconditional implementation-ready alternate-review enforcement, and non-empty handoff review/gate evidence requirements. |
+| GOV-016 | Issue #627 adds local root-hook consumption of the merged #625 degraded-fallback proof contract by replaying the active implementation-capable execution scope from `hooks/governance-check.sh` through a mechanical helper, while keeping `backlog-check.sh` backlog/parity-only and preserving #612/#607/#614 boundaries. |
 
 ### CONSUMER_WORKER_ACCEPTANCE
 

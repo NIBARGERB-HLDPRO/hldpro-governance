@@ -21,6 +21,7 @@
 | Governed research specialist consumer rollout | [#591](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591) | HIGH | 4-6 | Governance planning lane for downstream adoption of the research-specialist package. First pilot: Stampede issue [#208](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/208). |
 | Downstream thin session-contract adapter rollout epic | [#579](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/579) | HIGH | 6-10 | Governance execution epic opened from approved plan #575 after SSOT reconciliation #576; child issues opened in LAM, AIS, Seek, Knocktracker, Stampede, HealthcarePlatform, and ASC-Evaluator. |
 | Mutation-time pre-tool fail-closed hardening | [#623](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/623) | HIGH | 4-6 | Child lane under #615 hardening local mutation-time pre-tool enforcement for `Write` / `Edit` / `MultiEdit` plus governed Bash write detection, fail-closed helper behavior, and focused proof artifacts. |
+| Local root-hook degraded-fallback proof consumption | [#627](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/627) | HIGH | 3-5 | Child lane under #615 wiring `hooks/governance-check.sh` to replay the merged #625 execution-scope degraded-fallback proof contract locally without reopening #612 or widening backlog-check beyond backlog/parity behavior. |
 
 ## Done
 

@@ -1,0 +1,193 @@
+{
+  "session_id": "session-20260430-issue-627-local-root-hook-fallback-proof",
+  "issue_number": 627,
+  "objective": "Implement the next narrow child under issue #615, bounded to local governance-hook consumption of the merged #625 degraded-fallback proof contract.",
+  "tier": 1,
+  "plan_author": {
+    "role": "codex-orchestrator",
+    "model_id": "gpt-5.4",
+    "model_family": "openai"
+  },
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-627-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "scope_boundary": [
+    "Governance child lane for issue #627.",
+    "Owns the bounded local governance-hook degraded-fallback proof consumer slice.",
+    "Keeps fallback-log schema/workflow parity under #612, planning-authority work under #607, and downstream verifier work under #614 out of scope.",
+    "Keeps the dirty primary checkout isolated by working only inside the issue-627 worktree."
+  ],
+  "out_of_scope": [
+    "Fallback-log schema or workflow parity surfaces under issue #612.",
+    "Execution-scope schema/assert/test surfaces already merged through issue #625.",
+    "Issue #607 planning-authority enforcement.",
+    "Issue #614 downstream verifier or drift-gate work.",
+    "Broad hook rewrites beyond the smallest root-hook/helper path needed for this child."
+  ],
+  "research_summary": "Post-merge review of issues #612, #615, #607, #614, and #625 showed the next narrow residual was the local governance-hook consumer path that must honor the merged #625 degraded-fallback proof contract. This child therefore stays under #615 and owns only hooks/governance-check.sh, the smallest shared helper path needed to consume that proof locally, focused tests, and required issue-local governance artifacts.",
+  "research_links": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/627",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/625",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/612"
+  ],
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/625",
+    "hooks/governance-check.sh",
+    "scripts/overlord/check_governance_hook_execution_scope.py",
+    "scripts/overlord/test_check_governance_hook_execution_scope.py"
+  ],
+  "file_inventory": [
+    "hooks/governance-check.sh",
+    "scripts/overlord/check_governance_hook_execution_scope.py",
+    "scripts/overlord/test_check_governance_hook_execution_scope.py"
+  ],
+  "sprints": [
+    {
+      "name": "Intake And Ownership Boundary",
+      "goal": "Keep issue #627 narrower than the remaining parent surfaces while promoting it into a bounded implementation slice.",
+      "tasks": [
+        "Review docs/PROGRESS.md, issue #615, issue #625, and the current governance-hook surfaces.",
+        "Record the exact owned governance-hook/helper surfaces and the explicit out-of-scope #612, #607, and #614 surfaces."
+      ],
+      "deliverables": [
+        "State the exact owned governance-hook/helper surfaces.",
+        "State the explicit out-of-scope fallback-log parity, planning-authority, and downstream verifier surfaces."
+      ],
+      "acceptance_criteria": [
+        "The implementation artifacts state that issue #627 is the next narrow child under issue #615 after merged issue #625.",
+        "The implementation artifacts name only hooks/governance-check.sh, the smallest required helper path, focused tests, and required issue-local governance artifacts as the owned surface.",
+        "The implementation artifacts explicitly exclude fallback-log schema/workflow parity and broader validator/workflow work under issue #612."
+      ],
+      "file_paths": [
+        "docs/plans/issue-627-local-root-hook-fallback-proof-pdcar.md",
+        "docs/plans/issue-627-local-root-hook-fallback-proof-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-30-issue-627-local-root-hook-fallback-proof-implementation.json",
+        "raw/handoffs/2026-04-30-issue-627-plan-to-implementation.json"
+      ]
+    },
+    {
+      "name": "Local Hook Proof Contract",
+      "goal": "Return the exact local fail-closed proof for the bounded implementation slice.",
+      "tasks": [
+        "Require local root-hook fail-closed behavior when the merged #625 proof is missing, blank, unsafe, or malformed.",
+        "Require at least one allowed path proof showing compliant local governance changes still pass.",
+        "Keep the proof contract local-hook specific and avoid redefining issue #625 execution-scope semantics."
+      ],
+      "deliverables": [
+        "Define the local negative fail-closed classes.",
+        "Define the local positive allowed-path proof requirement.",
+        "Require parity with the merged #625 proof contract rather than a new contract."
+      ],
+      "acceptance_criteria": [
+        "The implementation artifacts name exact negative local governance-hook failure classes tied to the merged #625 proof contract.",
+        "The implementation artifacts require at least one positive allowed-path proof.",
+        "The implementation artifacts do not widen into fallback-log schema/workflow or broader packet-routing enforcement."
+      ],
+      "file_paths": [
+        "docs/plans/issue-627-local-root-hook-fallback-proof-pdcar.md",
+        "docs/plans/issue-627-local-root-hook-fallback-proof-structured-agent-cycle-plan.json",
+        "raw/packets/2026-04-30-issue-627-claude-review-packet.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "governance residual routing research specialist",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "owned-surface and parent-routing confirmation",
+      "focus": "Verify the next valid child after issue #625 merge and keep parent boundaries explicit.",
+      "status": "pass",
+      "summary": "The next child should remain under issue #615 and own only the local root-hook consumer path for the merged issue #625 degraded-fallback proof contract.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/625"
+      ]
+    },
+    {
+      "reviewer": "planning packet QA specialist",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "packet contract and validator hygiene",
+      "focus": "Verify the minimum planning packet, handoff, and execution-scope fields required before issue #627 implementation can start.",
+      "status": "pass",
+      "summary": "The planning packet needs the canonical structured plan, planning execution scope, accepted handoff, issue/branch alignment, and standard packet validators before implementation can start.",
+      "evidence": [
+        "raw/execution-scopes/2026-04-30-issue-627-local-root-hook-fallback-proof-implementation.json",
+        "raw/handoffs/2026-04-30-issue-627-plan-to-implementation.json"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude alternate-family specialist review",
+    "reviewer_model_id": "claude-opus-4-6",
+    "reviewer_model_family": "anthropic",
+    "model_family": "anthropic",
+    "status": "accepted",
+    "summary": "Sanctioned alternate-family implementation review approved the bounded issue-627 code slice. Non-blocking notes were limited to adding a focused nonexistent-file regression and keeping the helper as a pure discovery-and-replay shim.",
+    "evidence": [
+      "raw/packets/2026-04-30-issue-627-claude-review-packet.md",
+      "docs/codex-reviews/2026-04-30-issue-627-claude.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #627 may implement only the local governance-check consumer path for the merged #625 degraded-fallback proof contract under issue #615.",
+    "next_execution_step": "Finalize issue-local validation, closeout, local-ci proof, and publish the bounded implementation slice without widening into #612/#607/#614.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-04-30-issue-627-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-627-local-root-hook-fallback-proof-implementation.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-30-issue-627-local-root-hook-fallback-proof-plan.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-30-issue-627-local-root-hook-fallback-proof.md"
+    ],
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Issue #627 remains bounded to the local root-hook degraded-fallback proof consumer path only.",
+      "Issue #627 consumes the merged #625 proof contract rather than redefining it.",
+      "Issue #627 does not claim #612, #615, #607, or #614 closure by itself."
+    ]
+  },
+  "material_deviation_rules": [
+    "Any patch outside hooks/governance-check.sh, scripts/overlord/check_governance_hook_execution_scope.py, focused tests, required governance mirror/doc co-staging, hook-generated graphify writeback, or issue-local artifacts is a material deviation from issue #627 scope.",
+    "Any edit to fallback-log schema/workflow parity surfaces is a material deviation from issue #627 scope.",
+    "Any claim that issue #627 closes issue #615 or issue #612 by itself is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "issue #627"
+  ],
+  "approved_at": "2026-04-30T13:00:00Z"
+}
