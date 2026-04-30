@@ -38,6 +38,7 @@
 | GOV-011 | ISSUE_BACKLOG_ALIGNMENT | Governance backlog must remain GitHub-issue-backed | COMPLETE | REQUIRED |
 | GOV-012 | CODEX_INGESTION | Codex second-opinion ingestion and backlog surfacing loop | COMPLETE | OPS_READY |
 | GOV-013 | EFFECTIVENESS_BASELINE | Reproducible weekly effectiveness metrics snapshots in `metrics/effectiveness-baseline/` | COMPLETE | OPS_READY |
+| GOV-014 | PRETOOL_FAILCLOSED | Local mutation-time pre-tool fail-closed enforcement for `Write`/`Edit`/`MultiEdit` and Bash write detection | IN_PROGRESS | REQUIRED |
 | GOV-014 | STRUCTURED_PLAN_SCHEMA | Governance-owned structured plan schema and validator for issue execution | COMPLETE | REQUIRED |
 | GOV-015 | GRAPHIFY_MEASUREMENT | Graphify retrieval measurement and usage-event telemetry | IN_PROGRESS | OPS_READY |
 | GOV-016 | SOM_ENFORCEMENT | Society of Minds routing, review, packet, and closeout enforcement | IN_PROGRESS | REQUIRED |

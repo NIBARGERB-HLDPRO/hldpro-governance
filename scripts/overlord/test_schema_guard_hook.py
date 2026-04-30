@@ -17,13 +17,18 @@ def _payload(command: str) -> str:
     return json.dumps({"tool_name": "Bash", "tool_input": {"command": command}})
 
 
-def _run_hook(payload: str, *, env: dict[str, str] | None = None) -> subprocess.CompletedProcess[str]:
+def _run_hook(
+    payload: str,
+    *,
+    env: dict[str, str] | None = None,
+    cwd: Path | None = None,
+) -> subprocess.CompletedProcess[str]:
     merged_env = dict(os.environ)
     if env:
         merged_env.update(env)
     return subprocess.run(
         ["bash", str(HOOK)],
-        cwd=REPO_ROOT,
+        cwd=cwd or REPO_ROOT,
         input=payload,
         text=True,
         capture_output=True,
@@ -38,10 +43,9 @@ class TestSchemaGuardHook(unittest.TestCase):
 
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(result.stdout, "")
-        self.assertIn("schema-guard: PLAN_GATE_BLOCKED: missing_recent_plan", result.stderr)
-        self.assertIn("NEXT_ACTION: create_plan", result.stderr)
-        self.assertIn("TARGET_FILE: scripts/new_file.py", result.stderr)
-        self.assertIn("BYPASS_ALLOWED: trivial_single_line_only", result.stderr)
+        self.assertIn("schema-guard: BLOCKED: Bash file write detected for scripts/new_file.py", result.stderr)
+        self.assertIn("SoM write-boundary", result.stderr)
+        self.assertIn("Worker handoff", result.stderr)
 
     def test_trivial_plan_bypass_still_reaches_som_write_block(self) -> None:
         result = _run_hook(
@@ -128,6 +132,36 @@ class TestSchemaGuardHook(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("schema-guard: PLAN_GATE_BLOCKED", result.stderr)
         self.assertIn("<python file write>", result.stderr)
+
+    def test_missing_helper_fails_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            subprocess.run(["git", "init", "-q"], cwd=root, check=True)
+
+            result = _run_hook(_payload("cat > scripts/new_file.py <<'PY'\nprint('x')\nPY"), cwd=root)
+
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("schema-guard: FAIL: missing helper scripts/overlord/check_plan_preflight.py", result.stderr)
+
+    def test_unknown_helper_decision_fails_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            subprocess.run(["git", "init", "-q"], cwd=root, check=True)
+            helper_dir = root / "scripts" / "overlord"
+            helper_dir.mkdir(parents=True)
+            helper = helper_dir / "check_plan_preflight.py"
+            helper.write_text(
+                "#!/usr/bin/env python3\n"
+                "import json\n"
+                "print(json.dumps({'decision': 'warn', 'target_path': 'scripts/new_file.py'}))\n",
+                encoding="utf-8",
+            )
+            helper.chmod(0o755)
+
+            result = _run_hook(_payload("cat > scripts/new_file.py <<'PY'\nprint('x')\nPY"), cwd=root)
+
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("schema-guard: FAIL: unknown check_plan_preflight.py decision 'warn'", result.stderr)
 
 
 if __name__ == "__main__":

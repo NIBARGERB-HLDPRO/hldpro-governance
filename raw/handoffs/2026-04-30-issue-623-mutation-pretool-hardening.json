@@ -1,0 +1,112 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-623-mutation-pretool-hardening",
+  "issue_number": 623,
+  "parent_epic_number": 615,
+  "lifecycle_state": "planned",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-623-mutation-pretool-hardening-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-623-mutation-pretool-hardening-planning.json",
+  "packet_ref": "raw/packets/2026-04-30-issue-623-claude-review-packet.md",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-623-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Issue #623 must remain bounded to the local mutation-time pre-tool surfaces only, must not reopen issue #617 startup/helper ownership or issue #621 root backlog/commit-parity ownership, and must later return bounded-write evidence proving the implementation diff stayed inside the owned surfaces and approved co-staging.",
+      "verification_refs": [
+        "docs/plans/issue-623-mutation-pretool-hardening-pdcar.md",
+        "docs/plans/issue-623-mutation-pretool-hardening-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-30-issue-623-mutation-pretool-hardening-planning.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Issue #623 must keep issues #607, #612, and #614 explicit as dependency or follow-on lanes and must preserve issues #617 and #621 as already-closed sibling boundaries instead of absorbing their owned contracts or enforcement surfaces.",
+      "verification_refs": [
+        "docs/plans/issue-623-mutation-pretool-hardening-pdcar.md",
+        "raw/handoffs/2026-04-30-issue-623-mutation-pretool-hardening.json"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "No mutation-path implementation may begin until the issue-local planning packet validates and alternate-family review is recorded.",
+      "verification_refs": [
+        "raw/validation/2026-04-30-issue-623-mutation-pretool-hardening.md",
+        "docs/codex-reviews/2026-04-30-issue-623-claude.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Future issue-623 implementation proof must require a per-surface proof matrix with concrete blocked and allowed local-path transcripts, including Edit or MultiEdit, named Bash mutation verbs, removed fail-open behavior, one compliant governance-surface allow case, and one read-only or out-of-scope allow case, each with exact command, tool path, exit code, and block or allow result, rather than prose-only attestation.",
+      "verification_refs": [
+        "docs/plans/issue-623-mutation-pretool-hardening-pdcar.md",
+        "docs/plans/issue-623-mutation-pretool-hardening-structured-agent-cycle-plan.json"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool docs/plans/issue-623-mutation-pretool-hardening-structured-agent-cycle-plan.json",
+    "python3 -m json.tool raw/execution-scopes/2026-04-30-issue-623-mutation-pretool-hardening-planning.json",
+    "python3 -m json.tool raw/handoffs/2026-04-30-issue-623-mutation-pretool-hardening.json",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-623-mutation-pretool-hardening-20260430 --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-30-issue-623-mutation-pretool-hardening.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-30-issue-623-mutation-pretool-hardening.md --root .",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-30-issue-623-mutation-pretool-hardening-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-623-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-30-issue-623-mutation-pretool-hardening.md"
+  ],
+  "artifact_refs": [
+    "docs/plans/issue-623-mutation-pretool-hardening-pdcar.md",
+    "docs/plans/issue-623-mutation-pretool-hardening-structured-agent-cycle-plan.json",
+    "raw/closeouts/2026-04-30-issue-623-mutation-pretool-hardening.md",
+    "raw/execution-scopes/2026-04-30-issue-623-mutation-pretool-hardening-planning.json",
+    "raw/packets/2026-04-30-issue-623-claude-review-packet.md"
+  ],
+  "audit_refs": [],
+  "closeout_ref": "raw/closeouts/2026-04-30-issue-623-mutation-pretool-hardening.md",
+  "blocked_on": [
+    "Issue #617 remains the already-closed startup/helper child and must not be reopened here.",
+    "Issue #621 remains the already-closed root backlog/commit-parity child and must not be reopened here.",
+    "Issue #607 remains the planning-authority dependency.",
+    "Issue #612 remains the degraded-fallback schema and CI enforcement lane.",
+    "Issue #614 remains the downstream hldpro-sim verifier or drift-gate lane.",
+    "Implementation is blocked until the issue-local planning packet validates and alternate-family review is recorded."
+  ],
+  "handoff_decision": "draft",
+  "created_at": "2026-04-30T16:20:00Z",
+  "notes": "Planning-only handoff for issue #623 bootstrap. This child is narrowed to local mutation-time pre-tool fail-closed hardening only. It must validate its issue-local packet and record alternate-family review before any implementation is promoted. Future implementation closure must include both a per-surface proof matrix and bounded-write evidence."
+}

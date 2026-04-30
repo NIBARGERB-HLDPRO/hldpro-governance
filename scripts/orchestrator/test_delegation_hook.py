@@ -143,5 +143,91 @@ def test_hook_preserves_new_code_file_block_for_common_extensions() -> None:
             assert result.returncode == 2
             output = json.loads(result.stdout)
             assert output["decision"] == "block"
-            assert "approved Worker" in output["reason"]
-            assert "raw/execution-scopes/<date>-issue-<n>-worker-implementation.json" in output["reason"]
+            assert "unable to resolve repository root for mutation target" in output["reason"]
+
+
+def test_hook_allows_edit_on_owned_in_scope_file() -> None:
+    result = _run_hook(
+        {
+            "tool_name": "Edit",
+            "tool_input": {
+                "file_path": str(REPO_ROOT / "hooks" / "code-write-gate.sh"),
+            },
+        }
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert result.stdout == ""
+
+
+def test_hook_allows_multiedit_on_owned_in_scope_file() -> None:
+    result = _run_hook(
+        {
+            "tool_name": "MultiEdit",
+            "tool_input": {
+                "file_path": str(REPO_ROOT / "scripts" / "overlord" / "check_plan_preflight.py"),
+            },
+        }
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert result.stdout == ""
+
+
+def test_hook_missing_file_path_blocks_hard() -> None:
+    result = _run_hook(
+        {
+            "tool_name": "Edit",
+            "tool_input": {},
+        }
+    )
+
+    assert result.returncode == 2
+    output = json.loads(result.stdout)
+    assert output["decision"] == "block"
+    assert "missing file_path" in output["reason"]
+
+
+def test_hook_malformed_mutation_payload_blocks_hard() -> None:
+    result = subprocess.run(
+        ["bash", str(HOOK)],
+        cwd=REPO_ROOT,
+        input="{not-json",
+        text=True,
+        capture_output=True,
+        env=dict(os.environ),
+        check=False,
+    )
+
+    assert result.returncode == 2
+    output = json.loads(result.stdout)
+    assert output["decision"] == "block"
+    assert "malformed mutation hook payload" in output["reason"]
+
+
+def test_hook_missing_plan_helper_blocks_hard() -> None:
+    with tempfile.TemporaryDirectory() as raw:
+        root = Path(raw)
+        subprocess.run(["git", "init", "-q"], cwd=root, check=True)
+        (root / "hooks").mkdir(parents=True)
+        target = root / "hooks" / "code-write-gate.sh"
+        target.write_text("# test target\n", encoding="utf-8")
+        (root / "scripts" / "overlord").mkdir(parents=True)
+        validator = root / "scripts" / "overlord" / "validate_structured_agent_cycle_plan.py"
+        validator.write_text("#!/usr/bin/env python3\nimport sys\nsys.exit(0)\n", encoding="utf-8")
+        validator.chmod(0o755)
+
+        result = subprocess.run(
+            ["bash", str(HOOK)],
+            cwd=root,
+            input=json.dumps({"tool_name": "Edit", "tool_input": {"file_path": str(target)}}),
+            text=True,
+            capture_output=True,
+            env=dict(os.environ),
+            check=False,
+        )
+
+    assert result.returncode == 2
+    output = json.loads(result.stdout)
+    assert output["decision"] == "block"
+    assert "missing plan preflight helper" in output["reason"]
