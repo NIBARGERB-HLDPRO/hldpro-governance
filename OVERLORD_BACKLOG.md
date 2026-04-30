@@ -26,6 +26,7 @@
 
 | Item | Date | Notes |
 |------|------|-------|
+| Local root-hook degraded-fallback proof consumption | 2026-04-30 | Issue [#627](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/627). Merged via PR [#628](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/628) after wiring `hooks/governance-check.sh` to consume the merged `#625` degraded-fallback proof contract locally with focused helper/test evidence. |
 | Mutation-time pre-tool fail-closed hardening | 2026-04-30 | Issue [#623](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/623). Merged via PR [#624](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/624) after hardening the local mutation-time pre-tool enforcement path for governed edits and Bash write detection. |
 | Root backlog/commit-progression parity fail-closed enforcement | 2026-04-30 | Issue [#621](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/621). Merged via PR [#622](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/622) and closed after making `backlog-check.sh` and `governance-check.sh` fail closed on governance issue-branch parity. |
 | Add 5 governance agents + cross-repo adoption guide | 2026-04-22 | Issue [#559](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/559). Added codex-brief, som-worker-triage, issue-lane-bootstrap, sim-runner, backlog-promoter agents to agents/; updated CLAUDE.md routing table; added docs/agents-adoption-guide.md for cross-repo adoption. |
