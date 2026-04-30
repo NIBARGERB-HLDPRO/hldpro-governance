@@ -5,8 +5,8 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2213 nodes · 4798 edges · 98 communities detected
-- Extraction: 45% EXTRACTED · 55% INFERRED · 0% AMBIGUOUS · INFERRED: 2662 edges (avg confidence: 0.5)
+- 2216 nodes · 4822 edges · 98 communities detected
+- Extraction: 44% EXTRACTED · 56% INFERRED · 0% AMBIGUOUS · INFERRED: 2683 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## God Nodes (most connected - your core abstractions)
@@ -196,16 +196,16 @@ Cohesion: 0.1
 Nodes (15): Modify first_hash in manifest and verify fails., Test that truncated file (missing last line) breaks manifest., Delete last line and verify detects entry_count mismatch., Test that duplicate line (replay) breaks seq monotonicity., Duplicate a line and verify detects non-monotonic seq., Test that tampering with a line breaks the chain., Tamper with line N and verify fails at line N+1., Test that replacing entry_hmac with wrong value fails verification. (+7 more)
 
 ### Community 40 - "Community 40"
+Cohesion: 0.43
+Nodes (3): _git(), RepoFixture, TestCheckGovernanceHookExecutionScope
+
+### Community 41 - "Community 41"
 Cohesion: 0.19
 Nodes (2): _run(), TestPlanPreflight
 
-### Community 41 - "Community 41"
+### Community 42 - "Community 42"
 Cohesion: 0.27
 Nodes (14): add_common_args(), build_plan(), _common_preview_payload(), DeployError, DeployPlan, _existing_shim_state(), _fail(), _is_relative_to() (+6 more)
-
-### Community 42 - "Community 42"
-Cohesion: 0.42
-Nodes (3): _git(), RepoFixture, TestCheckGovernanceHookExecutionScope
 
 ### Community 43 - "Community 43"
 Cohesion: 0.37
@@ -321,7 +321,7 @@ Nodes (8): run_fire(), test_exec_failure_after_successful_preflight_logs_and_sig
 
 ### Community 71 - "Community 71"
 Cohesion: 0.2
-Nodes (0):
+Nodes (0): 
 
 ### Community 72 - "Community 72"
 Cohesion: 0.38
@@ -397,7 +397,7 @@ Nodes (3): main(), replace_section(), summary_line()
 
 ### Community 90 - "Community 90"
 Cohesion: 0.5
-Nodes (0):
+Nodes (0): 
 
 ### Community 91 - "Community 91"
 Cohesion: 0.67
@@ -413,11 +413,11 @@ Nodes (2): main(), render_issue()
 
 ### Community 94 - "Community 94"
 Cohesion: 1.0
-Nodes (0):
+Nodes (0): 
 
 ### Community 95 - "Community 95"
 Cohesion: 1.0
-Nodes (0):
+Nodes (0): 
 
 ### Community 96 - "Community 96"
 Cohesion: 1.0

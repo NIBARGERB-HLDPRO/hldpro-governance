@@ -5297,7 +5297,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L1",
       "id": "deploy_local_ci_gate",
-      "community": 41
+      "community": 42
     },
     {
       "label": "DeployError",
@@ -5305,7 +5305,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L23",
       "id": "deploy_local_ci_gate_deployerror",
-      "community": 41
+      "community": 42
     },
     {
       "label": "DeployPlan",
@@ -5313,7 +5313,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L28",
       "id": "deploy_local_ci_gate_deployplan",
-      "community": 41
+      "community": 42
     },
     {
       "label": ".planned_write_set()",
@@ -5321,7 +5321,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L38",
       "id": "deploy_local_ci_gate_deployplan_planned_write_set",
-      "community": 41
+      "community": 42
     },
     {
       "label": ".to_json()",
@@ -5329,7 +5329,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L45",
       "id": "deploy_local_ci_gate_deployplan_to_json",
-      "community": 41
+      "community": 42
     },
     {
       "label": "_fail()",
@@ -5337,7 +5337,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L62",
       "id": "deploy_local_ci_gate_fail",
-      "community": 41
+      "community": 42
     },
     {
       "label": "_is_relative_to()",
@@ -5345,7 +5345,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L66",
       "id": "deploy_local_ci_gate_is_relative_to",
-      "community": 41
+      "community": 42
     },
     {
       "label": "_existing_shim_state()",
@@ -5353,7 +5353,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L74",
       "id": "deploy_local_ci_gate_existing_shim_state",
-      "community": 41
+      "community": 42
     },
     {
       "label": "_resolve_shim_path()",
@@ -5361,7 +5361,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L83",
       "id": "deploy_local_ci_gate_resolve_shim_path",
-      "community": 41
+      "community": 42
     },
     {
       "label": "build_plan()",
@@ -5369,7 +5369,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L98",
       "id": "deploy_local_ci_gate_build_plan",
-      "community": 41
+      "community": 42
     },
     {
       "label": "managed_shim_body()",
@@ -5377,7 +5377,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L121",
       "id": "deploy_local_ci_gate_managed_shim_body",
-      "community": 41
+      "community": 42
     },
     {
       "label": "_refuse_unmanaged_overwrite()",
@@ -5385,7 +5385,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L150",
       "id": "deploy_local_ci_gate_refuse_unmanaged_overwrite",
-      "community": 41
+      "community": 42
     },
     {
       "label": "_write_managed_shim()",
@@ -5393,7 +5393,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L160",
       "id": "deploy_local_ci_gate_write_managed_shim",
-      "community": 41
+      "community": 42
     },
     {
       "label": "print_json()",
@@ -5401,7 +5401,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L171",
       "id": "deploy_local_ci_gate_print_json",
-      "community": 41
+      "community": 42
     },
     {
       "label": "add_common_args()",
@@ -5409,7 +5409,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L176",
       "id": "deploy_local_ci_gate_add_common_args",
-      "community": 41
+      "community": 42
     },
     {
       "label": "_common_preview_payload()",
@@ -5417,7 +5417,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L184",
       "id": "deploy_local_ci_gate_common_preview_payload",
-      "community": 41
+      "community": 42
     },
     {
       "label": "main()",
@@ -5425,7 +5425,7 @@
       "source_file": "scripts/overlord/deploy_local_ci_gate.py",
       "source_location": "L204",
       "id": "deploy_local_ci_gate_main",
-      "community": 41
+      "community": 42
     },
     {
       "label": "governed_repos.py",
@@ -6809,7 +6809,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L1",
       "id": "test_check_governance_hook_execution_scope",
-      "community": 42
+      "community": 40
     },
     {
       "label": "_git()",
@@ -6817,7 +6817,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L25",
       "id": "test_check_governance_hook_execution_scope_git",
-      "community": 42
+      "community": 40
     },
     {
       "label": "RepoFixture",
@@ -6825,7 +6825,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L35",
       "id": "test_check_governance_hook_execution_scope_repofixture",
-      "community": 42
+      "community": 40
     },
     {
       "label": ".__init__()",
@@ -6833,7 +6833,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L36",
       "id": "test_check_governance_hook_execution_scope_repofixture_init",
-      "community": 42
+      "community": 40
     },
     {
       "label": ".write()",
@@ -6841,7 +6841,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L48",
       "id": "test_check_governance_hook_execution_scope_repofixture_write",
-      "community": 42
+      "community": 40
     },
     {
       "label": "TestCheckGovernanceHookExecutionScope",
@@ -6849,7 +6849,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L54",
       "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope",
-      "community": 42
+      "community": 40
     },
     {
       "label": "._changed_files()",
@@ -6857,7 +6857,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L57",
       "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_changed_files",
-      "community": 42
+      "community": 40
     },
     {
       "label": "._scope_payload()",
@@ -6865,7 +6865,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L62",
       "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_scope_payload",
-      "community": 42
+      "community": 40
     },
     {
       "label": "._handoff()",
@@ -6873,7 +6873,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L85",
       "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_handoff",
-      "community": 42
+      "community": 40
     },
     {
       "label": "._write_scope()",
@@ -6881,7 +6881,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L107",
       "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_write_scope",
-      "community": 42
+      "community": 40
     },
     {
       "label": "._run()",
@@ -6889,7 +6889,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L113",
       "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_run",
-      "community": 42
+      "community": 40
     },
     {
       "label": ".test_planning_only_scope_passes_without_replay()",
@@ -6897,7 +6897,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L129",
       "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_planning_only_scope_passes_without_replay",
-      "community": 42
+      "community": 40
     },
     {
       "label": ".test_same_family_with_valid_proof_passes()",
@@ -6905,7 +6905,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L141",
       "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_with_valid_proof_passes",
-      "community": 42
+      "community": 40
     },
     {
       "label": ".test_same_family_missing_proof_field_fails_closed()",
@@ -6913,7 +6913,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L163",
       "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_missing_proof_field_fails_closed",
-      "community": 42
+      "community": 40
     },
     {
       "label": ".test_same_family_unsafe_fallback_ref_fails_closed()",
@@ -6921,7 +6921,7 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L185",
       "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_unsafe_fallback_ref_fails_closed",
-      "community": 42
+      "community": 40
     },
     {
       "label": ".test_same_family_nonexistent_proof_ref_fails_closed()",
@@ -6929,15 +6929,39 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L206",
       "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_proof_ref_fails_closed",
-      "community": 42
+      "community": 40
+    },
+    {
+      "label": ".test_same_family_blank_proof_ref_fails_closed()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L228",
+      "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "community": 40
+    },
+    {
+      "label": ".test_same_family_placeholder_proof_ref_fails_closed()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L250",
+      "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "community": 40
+    },
+    {
+      "label": ".test_same_family_nonexistent_fallback_log_ref_fails_closed()",
+      "file_type": "code",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L272",
+      "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "community": 40
     },
     {
       "label": ".test_cross_family_implementation_path_still_passes()",
       "file_type": "code",
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
-      "source_location": "L228",
+      "source_location": "L294",
       "id": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_cross_family_implementation_path_still_passes",
-      "community": 42
+      "community": 40
     },
     {
       "label": "test_check_governance_issue_branch_parity.py",
@@ -7161,7 +7185,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L1",
       "id": "test_check_plan_preflight",
-      "community": 40
+      "community": 41
     },
     {
       "label": "_run()",
@@ -7169,7 +7193,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L17",
       "id": "test_check_plan_preflight_run",
-      "community": 40
+      "community": 41
     },
     {
       "label": "TestPlanPreflight",
@@ -7177,7 +7201,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L27",
       "id": "test_check_plan_preflight_testplanpreflight",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_code_file_without_recent_plan_blocks_with_route_tokens()",
@@ -7185,7 +7209,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L28",
       "id": "test_check_plan_preflight_testplanpreflight_test_code_file_without_recent_plan_blocks_with_route_tokens",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_read_only_intent_is_allowed()",
@@ -7193,7 +7217,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L40",
       "id": "test_check_plan_preflight_testplanpreflight_test_read_only_intent_is_allowed",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_trivial_single_line_bypass_is_explicitly_bounded()",
@@ -7201,7 +7225,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L48",
       "id": "test_check_plan_preflight_testplanpreflight_test_trivial_single_line_bypass_is_explicitly_bounded",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_general_bypass_without_trivial_marker_still_blocks()",
@@ -7209,7 +7233,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L62",
       "id": "test_check_plan_preflight_testplanpreflight_test_general_bypass_without_trivial_marker_still_blocks",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_recent_plan_allows_governed_write()",
@@ -7217,7 +7241,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L69",
       "id": "test_check_plan_preflight_testplanpreflight_test_recent_plan_allows_governed_write",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_stale_plan_does_not_clear_preflight()",
@@ -7225,7 +7249,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L82",
       "id": "test_check_plan_preflight_testplanpreflight_test_stale_plan_does_not_clear_preflight",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_bash_write_command_detects_target()",
@@ -7233,7 +7257,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L97",
       "id": "test_check_plan_preflight_testplanpreflight_test_bash_write_command_detects_target",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_quoted_awk_comparison_is_read_only()",
@@ -7241,7 +7265,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L109",
       "id": "test_check_plan_preflight_testplanpreflight_test_quoted_awk_comparison_is_read_only",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_quoted_jq_comparison_is_read_only()",
@@ -7249,7 +7273,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L122",
       "id": "test_check_plan_preflight_testplanpreflight_test_quoted_jq_comparison_is_read_only",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_common_read_only_analysis_pipelines_are_allowed()",
@@ -7257,7 +7281,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L135",
       "id": "test_check_plan_preflight_testplanpreflight_test_common_read_only_analysis_pipelines_are_allowed",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_python_write_command_is_refused_with_routing_signal()",
@@ -7265,7 +7289,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L152",
       "id": "test_check_plan_preflight_testplanpreflight_test_python_write_command_is_refused_with_routing_signal",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_sed_in_place_write_command_is_refused()",
@@ -7273,7 +7297,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L164",
       "id": "test_check_plan_preflight_testplanpreflight_test_sed_in_place_write_command_is_refused",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_perl_in_place_write_command_is_refused()",
@@ -7281,7 +7305,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L176",
       "id": "test_check_plan_preflight_testplanpreflight_test_perl_in_place_write_command_is_refused",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_copy_into_governed_target_is_hard_blocked()",
@@ -7289,7 +7313,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L188",
       "id": "test_check_plan_preflight_testplanpreflight_test_copy_into_governed_target_is_hard_blocked",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_indeterminate_in_place_write_is_hard_blocked()",
@@ -7297,7 +7321,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L200",
       "id": "test_check_plan_preflight_testplanpreflight_test_indeterminate_in_place_write_is_hard_blocked",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_read_only_sed_analysis_is_allowed()",
@@ -7305,7 +7329,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L212",
       "id": "test_check_plan_preflight_testplanpreflight_test_read_only_sed_analysis_is_allowed",
-      "community": 40
+      "community": 41
     },
     {
       "label": ".test_read_only_perl_analysis_is_allowed()",
@@ -7313,7 +7337,7 @@
       "source_file": "scripts/overlord/test_check_plan_preflight.py",
       "source_location": "L224",
       "id": "test_check_plan_preflight_testplanpreflight_test_read_only_perl_analysis_is_allowed",
-      "community": 40
+      "community": 41
     },
     {
       "label": "test_check_stage6_closeout.py",
@@ -39531,6 +39555,42 @@
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L230",
       "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_repofixture",
+      "source": "test_check_governance_hook_execution_scope_repofixture",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L252",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_repofixture",
+      "source": "test_check_governance_hook_execution_scope_repofixture",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L274",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_repofixture",
+      "source": "test_check_governance_hook_execution_scope_repofixture",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L296",
+      "weight": 0.8,
       "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_cross_family_implementation_path_still_passes",
       "_tgt": "test_check_governance_hook_execution_scope_repofixture",
       "source": "test_check_governance_hook_execution_scope_repofixture",
@@ -39590,6 +39650,42 @@
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
       "source_location": "L231",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_repofixture_write",
+      "source": "test_check_governance_hook_execution_scope_repofixture_write",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L253",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_repofixture_write",
+      "source": "test_check_governance_hook_execution_scope_repofixture_write",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L275",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_repofixture_write",
+      "source": "test_check_governance_hook_execution_scope_repofixture_write",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L297",
       "weight": 0.8,
       "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_cross_family_implementation_path_still_passes",
       "_tgt": "test_check_governance_hook_execution_scope_repofixture_write",
@@ -39724,6 +39820,42 @@
       "source_location": "L228",
       "weight": 1.0,
       "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L250",
+      "weight": 1.0,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L272",
+      "weight": 1.0,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L294",
+      "weight": 1.0,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope",
       "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_cross_family_implementation_path_still_passes",
       "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope",
       "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_cross_family_implementation_path_still_passes",
@@ -39793,7 +39925,43 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
-      "source_location": "L233",
+      "source_location": "L234",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_changed_files",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_changed_files",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L256",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_changed_files",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_changed_files",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L278",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_changed_files",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_changed_files",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L299",
       "weight": 0.8,
       "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_cross_family_implementation_path_still_passes",
       "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_changed_files",
@@ -39865,7 +40033,43 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
-      "source_location": "L238",
+      "source_location": "L242",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_scope_payload",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_scope_payload",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L264",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_scope_payload",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_scope_payload",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L286",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_scope_payload",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_scope_payload",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L304",
       "weight": 0.8,
       "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_cross_family_implementation_path_still_passes",
       "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_scope_payload",
@@ -39925,7 +40129,43 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
-      "source_location": "L234",
+      "source_location": "L235",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_handoff",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_handoff",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L257",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_handoff",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_handoff",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L279",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_handoff",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_handoff",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L300",
       "weight": 0.8,
       "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_cross_family_implementation_path_still_passes",
       "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_handoff",
@@ -39997,7 +40237,43 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
-      "source_location": "L239",
+      "source_location": "L243",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_write_scope",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_write_scope",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L265",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_write_scope",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_write_scope",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L287",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_write_scope",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_write_scope",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L305",
       "weight": 0.8,
       "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_cross_family_implementation_path_still_passes",
       "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_write_scope",
@@ -40069,7 +40345,43 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
-      "source_location": "L241",
+      "source_location": "L245",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_run",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_run",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_blank_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L267",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_run",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_run",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_placeholder_proof_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L289",
+      "weight": 0.8,
+      "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_run",
+      "source": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_run",
+      "target": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_same_family_nonexistent_fallback_log_ref_fails_closed",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "scripts/overlord/test_check_governance_hook_execution_scope.py",
+      "source_location": "L307",
       "weight": 0.8,
       "_src": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_test_cross_family_implementation_path_still_passes",
       "_tgt": "test_check_governance_hook_execution_scope_testcheckgovernancehookexecutionscope_run",
