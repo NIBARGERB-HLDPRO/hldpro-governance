@@ -55,6 +55,7 @@
       "file_paths": [
         "docs/plans/issue-619-pretool-mutation-failclosed-pdcar.md",
         "docs/plans/issue-619-pretool-mutation-failclosed-structured-agent-cycle-plan.json",
+        "raw/closeouts/2026-04-30-issue-619-pretool-mutation-failclosed.md",
         "raw/execution-scopes/2026-04-30-issue-619-pretool-mutation-failclosed-planning.json",
         "raw/handoffs/2026-04-30-issue-619-pretool-mutation-failclosed.json",
         "raw/packets/2026-04-30-issue-619-claude-review-packet.md",
