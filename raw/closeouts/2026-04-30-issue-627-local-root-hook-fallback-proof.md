@@ -85,7 +85,7 @@ Review artifact refs:
 
 Gate artifact refs:
 - `raw/validation/2026-04-30-issue-627-local-root-hook-fallback-proof.md`
-- `cache/local-ci-gate/reports/20260430T134302Z-hldpro-governance-git`
+- `cache/local-ci-gate/reports/changed-files.txt`
 - command result: PASS `python3 scripts/overlord/test_check_governance_hook_execution_scope.py`
 - command result: PASS `bash -n hooks/governance-check.sh`
 - command result: PASS `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-30-issue-627-local-root-hook-fallback-proof-implementation.json --require-lane-claim`
@@ -130,7 +130,7 @@ Validation artifact:
 - PASS `bash hooks/governance-check.sh` with temporary removal of `cross_family_path_ref` from the issue-627 implementation scope, followed by immediate scope restoration; expected fail-closed exit `1`
 - PASS `bash scripts/codex-review.sh claude raw/packets/2026-04-30-issue-627-claude-review-packet.md`
 - PASS `python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-30-issue-627-local-root-hook-fallback-proof.md --root .`
-- PASS `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` with report dir `cache/local-ci-gate/reports/20260430T134302Z-hldpro-governance-git`
+- PASS `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --report-dir cache/local-ci-gate/reports --json` with stable CI artifact path `cache/local-ci-gate/reports/changed-files.txt`
 - PASS `git diff --check`
 
 ## Tier Evidence Used

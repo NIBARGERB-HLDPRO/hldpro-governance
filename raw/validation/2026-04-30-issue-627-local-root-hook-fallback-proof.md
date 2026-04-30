@@ -29,7 +29,7 @@ focused tests.
 | `bash hooks/governance-check.sh` with `cross_family_path_ref` temporarily removed from the issue-627 implementation scope, then restored immediately | PASS (expected fail-closed, exit 1) | Live negative root-hook proof: the local governance hook blocked with `planner/implementer same model or family requires handoff_evidence.cross_family_path_ref`, proving local consumption of the merged `#625` contract. |
 | `bash scripts/codex-review.sh claude raw/packets/2026-04-30-issue-627-claude-review-packet.md` | PASS | Implementation-phase alternate-family review returned `APPROVED` and was normalized into `docs/codex-reviews/2026-04-30-issue-627-claude.md`. |
 | `python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-30-issue-627-local-root-hook-fallback-proof.md --root .` | PASS | Stage 6 closeout validated cleanly after the implementation-phase artifacts were normalized. |
-| `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | PASS | Local CI Gate passed on the issue-627 implementation slice with report dir `cache/local-ci-gate/reports/20260430T134302Z-hldpro-governance-git`. |
+| `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --report-dir cache/local-ci-gate/reports --json` | PASS | Local CI Gate passed on the issue-627 implementation slice with stable CI artifact path `cache/local-ci-gate/reports/changed-files.txt`. |
 | `git diff --check` | PASS | Diff hygiene is clean on the bounded implementation slice so far. |
 
 ## Findings
