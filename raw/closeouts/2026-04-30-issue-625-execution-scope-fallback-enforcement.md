@@ -83,7 +83,7 @@ Review artifact refs:
 
 Gate artifact refs:
 - `raw/validation/2026-04-30-issue-625-execution-scope-fallback-enforcement.md`
-- `cache/local-ci-gate/reports/20260430T122820Z-hldpro-governance-git`
+- `cache/local-ci-gate/reports/changed-files.txt`
 
 ## Wired Checks Run
 
