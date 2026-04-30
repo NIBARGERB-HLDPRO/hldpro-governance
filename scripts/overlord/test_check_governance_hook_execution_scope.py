@@ -225,6 +225,72 @@ class TestCheckGovernanceHookExecutionScope(unittest.TestCase):
         self.assertEqual(code, 1, output)
         self.assertIn("cross_family_path_ref must reference an existing repo file path", output)
 
+    def test_same_family_blank_proof_ref_fails_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            repo = RepoFixture(Path(raw) / "repo", self.BRANCH)
+            repo.write("hooks/governance-check.sh")
+            repo.write("docs/codex-reviews/2026-04-30-issue-627-claude.md")
+            repo.write("docs/FAIL_FAST_LOG.md", "## issue-627-local-root-hook-fallback-proof\n")
+            changed = self._changed_files(repo.root, "hooks/governance-check.sh")
+            handoff = self._handoff(
+                planner_model="gpt-5.4",
+                implementer_model="gpt-5.4",
+                cross_family_path_unavailable=True,
+                cross_family_path_ref="",
+                fallback_log_ref="docs/FAIL_FAST_LOG.md#issue-627-local-root-hook-fallback-proof",
+            )
+            payload = self._scope_payload(repo.root, mode="implementation_ready", handoff_evidence=handoff)
+            self._write_scope(repo.root, payload, "2026-04-30-issue-627-implementation.json")
+
+            code, output = self._run(repo.root, changed)
+
+        self.assertEqual(code, 1, output)
+        self.assertIn("must be null or a non-empty string", output)
+
+    def test_same_family_placeholder_proof_ref_fails_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            repo = RepoFixture(Path(raw) / "repo", self.BRANCH)
+            repo.write("hooks/governance-check.sh")
+            repo.write("docs/codex-reviews/2026-04-30-issue-627-claude.md")
+            repo.write("docs/FAIL_FAST_LOG.md", "## issue-627-local-root-hook-fallback-proof\n")
+            changed = self._changed_files(repo.root, "hooks/governance-check.sh")
+            handoff = self._handoff(
+                planner_model="gpt-5.4",
+                implementer_model="gpt-5.4",
+                cross_family_path_unavailable=True,
+                cross_family_path_ref="TODO",
+                fallback_log_ref="docs/FAIL_FAST_LOG.md#issue-627-local-root-hook-fallback-proof",
+            )
+            payload = self._scope_payload(repo.root, mode="implementation_ready", handoff_evidence=handoff)
+            self._write_scope(repo.root, payload, "2026-04-30-issue-627-implementation.json")
+
+            code, output = self._run(repo.root, changed)
+
+        self.assertEqual(code, 1, output)
+        self.assertIn("must not use placeholder text", output)
+
+    def test_same_family_nonexistent_fallback_log_ref_fails_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            repo = RepoFixture(Path(raw) / "repo", self.BRANCH)
+            repo.write("hooks/governance-check.sh")
+            repo.write("docs/codex-reviews/2026-04-30-issue-627-claude.md")
+            repo.write("docs/FAIL_FAST_LOG.md", "## issue-627-local-root-hook-fallback-proof\n")
+            changed = self._changed_files(repo.root, "hooks/governance-check.sh")
+            handoff = self._handoff(
+                planner_model="gpt-5.4",
+                implementer_model="gpt-5.4",
+                cross_family_path_unavailable=True,
+                cross_family_path_ref="docs/codex-reviews/2026-04-30-issue-627-claude.md#implementation-review",
+                fallback_log_ref="docs/missing-log.md#issue-627-local-root-hook-fallback-proof",
+            )
+            payload = self._scope_payload(repo.root, mode="implementation_ready", handoff_evidence=handoff)
+            self._write_scope(repo.root, payload, "2026-04-30-issue-627-implementation.json")
+
+            code, output = self._run(repo.root, changed)
+
+        self.assertEqual(code, 1, output)
+        self.assertIn("fallback_log_ref must reference an existing repo file path", output)
+
     def test_cross_family_implementation_path_still_passes(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             repo = RepoFixture(Path(raw) / "repo", self.BRANCH)
