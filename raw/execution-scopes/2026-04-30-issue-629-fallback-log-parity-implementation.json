@@ -1,0 +1,77 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-629-fallback-log-parity-20260430",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    ".github/scripts/check_fallback_log_schema.py",
+    ".github/scripts/test_check_fallback_log_schema.py",
+    ".github/workflows/check-fallback-log-schema.yml",
+    "OVERLORD_BACKLOG.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/codex-reviews/2026-04-30-issue-629-claude.md",
+    "docs/plans/issue-629-fallback-log-parity-pdcar.md",
+    "docs/plans/issue-629-fallback-log-parity-structured-agent-cycle-plan.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "raw/closeouts/2026-04-30-issue-629-fallback-log-parity.md",
+    "raw/cross-review/2026-04-30-issue-629-fallback-log-parity-plan.md",
+    "raw/execution-scopes/2026-04-30-issue-629-fallback-log-parity-implementation.json",
+    "raw/execution-scopes/2026-04-30-issue-629-fallback-log-parity-planning.json",
+    "raw/handoffs/2026-04-30-issue-629-fallback-log-parity.json",
+    "raw/handoffs/2026-04-30-issue-629-plan-to-implementation.json",
+    "raw/packets/2026-04-30-issue-629-claude-review-packet.md",
+    "raw/validation/2026-04-30-issue-629-fallback-log-parity.md",
+    "scripts/model-fallback-log.sh",
+    "scripts/test_model_fallback_log.sh"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-614-hldpro-sim-verifier-drift-gate",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-615-prehook-governance-failclosed"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout is a separate active root and must not be mutated from the issue-629 implementation lane."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+      "reason": "Issue #612 remains the wider parent enforcement lane and must not be mutated from child issue #629."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-614-hldpro-sim-verifier-drift-gate",
+      "reason": "Issue #614 remains the downstream verifier lane and must not be mixed into issue #629."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-615-prehook-governance-failclosed",
+      "reason": "Issue #615 owns the broader local-hook fail-closed program and must stay out of the fallback-log parity child lane."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 629,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/629",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-30T14:18:30Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-30T14:18:30Z",
+    "evidence_paths": [
+      "docs/plans/issue-629-fallback-log-parity-pdcar.md",
+      "docs/plans/issue-629-fallback-log-parity-structured-agent-cycle-plan.json",
+      "raw/cross-review/2026-04-30-issue-629-fallback-log-parity-plan.md",
+      "raw/handoffs/2026-04-30-issue-629-plan-to-implementation.json",
+      "docs/codex-reviews/2026-04-30-issue-629-claude.md"
+    ],
+    "active_exception_ref": "docs/codex-reviews/2026-04-30-issue-629-claude.md",
+    "active_exception_expires_at": "2026-05-01T14:18:30Z",
+    "cross_family_path_unavailable": true,
+    "cross_family_path_ref": "docs/codex-reviews/2026-04-30-issue-629-claude.md",
+    "fallback_log_ref": "docs/FAIL_FAST_LOG.md#execution-scope-degraded-fallback-proof-gap"
+  }
+}
