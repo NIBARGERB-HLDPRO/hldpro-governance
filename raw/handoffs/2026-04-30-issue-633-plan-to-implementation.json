@@ -1,0 +1,107 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-633-plan-to-implementation",
+  "issue_number": 633,
+  "parent_epic_number": 612,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-633-backlog-mirror-629-hygiene-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-633-backlog-mirror-629-hygiene-implementation.json",
+  "packet_ref": "raw/packets/2026-04-30-issue-633-claude-review-packet.md",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-633-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Issue #633 remains bounded to OVERLORD_BACKLOG.md closed-child #629 mirror hygiene and issue-local artifacts only.",
+      "verification_refs": [
+        "OVERLORD_BACKLOG.md",
+        "raw/execution-scopes/2026-04-30-issue-633-backlog-mirror-629-hygiene-implementation.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "OVERLORD_BACKLOG.md no longer lists closed issue #629 as active In Progress work and preserves completed-history visibility in Done.",
+      "verification_refs": [
+        "OVERLORD_BACKLOG.md",
+        "raw/validation/2026-04-30-issue-633-backlog-mirror-629-hygiene.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "check_overlord_backlog_github_alignment.py no longer fails on the closed-#629 active-row defect.",
+      "verification_refs": [
+        "raw/validation/2026-04-30-issue-633-backlog-mirror-629-hygiene.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Issue #633 preserves #612, #629, and #632 substantive implementation surfaces as external boundaries and does not claim broader #612 closure.",
+      "verification_refs": [
+        "docs/plans/issue-633-backlog-mirror-629-hygiene-pdcar.md",
+        "raw/validation/2026-04-30-issue-633-backlog-mirror-629-hygiene.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/check_overlord_backlog_github_alignment.py",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-30-issue-633-backlog-mirror-629-hygiene-implementation.json --require-lane-claim",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-633-backlog-mirror-629-hygiene-20260430 --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-30-issue-633-plan-to-implementation.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-30-issue-633-backlog-mirror-629-hygiene.md --root .",
+    "python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-30-issue-633-backlog-mirror-629-hygiene-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-633-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-30-issue-633-backlog-mirror-629-hygiene.md"
+  ],
+  "artifact_refs": [
+    "OVERLORD_BACKLOG.md",
+    "docs/codex-reviews/2026-04-30-issue-633-claude.md",
+    "docs/plans/issue-633-backlog-mirror-629-hygiene-pdcar.md",
+    "docs/plans/issue-633-backlog-mirror-629-hygiene-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-30-issue-633-backlog-mirror-629-hygiene-implementation.json",
+    "raw/validation/2026-04-30-issue-633-backlog-mirror-629-hygiene.md"
+  ],
+  "audit_refs": [],
+  "closeout_ref": "raw/closeouts/2026-04-30-issue-633-backlog-mirror-629-hygiene.md",
+  "blocked_on": [
+    "Issue #612 remains the parent fallback-enforcement lane and is not closed by #633 alone.",
+    "Issue #632 remains a bounded implementation child and must not be widened here."
+  ],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-30T16:42:00Z",
+  "notes": "Implementation-ready handoff for issue #633. Scope is limited to the stale closed-child #629 backlog mirror reconciliation in OVERLORD_BACKLOG.md and issue-local artifacts only."
+}
