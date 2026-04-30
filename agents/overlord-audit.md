@@ -3,6 +3,7 @@ name: overlord-audit
 description: Deep cross-repo pattern analysis. Identifies proven practices in one repo missing from others. Generates PR-ready governance content (CLAUDE.md, hooks, CI workflows).
 model: sonnet
 tools: Read, Glob, Grep, Bash
+# write-prohibited: no filesystem writes permitted
 ---
 
 # Overlord Audit — Deep Cross-Repo Analysis

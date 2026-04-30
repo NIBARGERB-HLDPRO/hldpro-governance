@@ -830,33 +830,6 @@ jobs:
           fi
 
           CROSS_FILE="$(printf '%s\n' "${RAW_CROSS_REVIEW}" | head -n 1)"
-          BOOTSTRAP_FILE="raw/cross-review/2026-04-14-society-of-minds-charter.md"
-          BOOTSTRAP_ONLY=false
-          APPLY_EXCEPTION=false
-          if echo "${RAW_CROSS_REVIEW}" | grep -Fxq "${BOOTSTRAP_FILE}"; then
-            COUNT_CROSS_FILES="$(printf '%s\n' "${RAW_CROSS_REVIEW}" | sed '/^$/d' | wc -l | tr -d ' ')"
-            if [ "${COUNT_CROSS_FILES}" -eq 1 ]; then
-              BOOTSTRAP_ONLY=true
-            else
-              echo "::error file=raw/cross-review/::[require-cross-review] BOOTSTRAP artifact cannot co-exist with non-bootstrap cross-review artifacts."
-              echo "::error file=raw/cross-review/::[require-cross-review] Update PR to reference a new standards/architecture cross-review artifact (schema v2+), or isolate bootstrap artifact-only changes."
-              exit 1
-            fi
-          fi
-
-          if [ "${BOOTSTRAP_ONLY}" = true ]; then
-            if [ -f "docs/exception-register.md" ]; then
-              EXCEPTION_ACTIVE="$(python3 "$GOVSCRIPTS/check_som_exception.py")"
-              if [ "${EXCEPTION_ACTIVE}" = "active" ]; then
-                APPLY_EXCEPTION=true
-              fi
-            fi
-          fi
-
-          if [ "${APPLY_EXCEPTION}" = "true" ]; then
-            echo "::warning file=${BOOTSTRAP_FILE}::[require-cross-review] SOM-BOOTSTRAP-001 active; skipping REJECTED-blocks-merge check."
-            exit 0
-          fi
 
           bash "$GOVROOT/scripts/cross-review/require-dual-signature.sh" "${CROSS_FILE}"
 

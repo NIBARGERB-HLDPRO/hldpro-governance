@@ -34,7 +34,8 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **approval_date:** 2026-04-14
 - **expiry_date:** 2026-04-21 (expires on merge of the introducing PR — short expiry because the exception evaporates the moment the workflow it supersedes is live)
 - **review_cadence:** monthly
-- **status:** `active`
+- **status:** `expired`
+- **expired_on:** 2026-04-14
 
 ### `SOM-EXEMPT-ASC-001` — ASC-Evaluator knowledge repo exempt from code governance CI
 
@@ -111,6 +112,10 @@ Track approved deferrals of the Society of Minds routing standard per rule, repo
 - **follow-up:** Post-merge, restore strict dual-signature protocol for subsequent epics; this waiver is one-off.
 
 ## Expired or closed exceptions
+
+### `SOM-BOOTSTRAP-001` — EXPIRED
+
+Status: expired 2026-04-14 (charter PR merge date). The Society of Minds bootstrap PR introduced the `require-cross-review.yml` workflow; once live, the self-enforcement exception became moot. Exception gate logic removed from CI workflows via issue #639 Slice A.
 
 ### `SOM-LAM-BRANCH-001` — RESOLVED
 
