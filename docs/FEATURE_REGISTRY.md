@@ -159,6 +159,7 @@
 | GOV-019 | `scripts/overlord/check_governance_issue_branch_parity.py` is the governance-root branch tracker parity helper. `hooks/backlog-check.sh` and `hooks/governance-check.sh` both require current `issue-*` branches to map to active `OVERLORD_BACKLOG.md` issue rows backed by open GitHub issues before progression succeeds. |
 | GOV-019 | Planner write-boundary enforcement now treats Tier 1 sessions as planning-only by default (`execution_mode: planning_only`), with `allowed_write_paths` as the planning artifact allowlist. |
 | GOV-019 | Non-planning diffs now require accepted pinned-agent handoff evidence, and same-model or same-family planner/implementer pairs require an active exception reference with expiry. |
+| GOV-019 | For same-family degraded fallback on non-planning execution scopes, `scripts/overlord/assert_execution_scope.py` now requires `handoff_evidence.cross_family_path_unavailable == true` plus repo-safe, existing `cross_family_path_ref` and `fallback_log_ref`, with focused tests covering pass, fail-closed, and regression cases. |
 | GOV-019 | For planner-boundary enforcement, CI in `.github/workflows/governance-check.yml` is authoritative while local `hooks/code-write-gate.sh` output is warning/early-signal only. |
 
 ### PAGES_DEPLOYMENT_PARITY

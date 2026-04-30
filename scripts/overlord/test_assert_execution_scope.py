@@ -110,6 +110,9 @@ class TestAssertExecutionScope(unittest.TestCase):
     def _write_exception_file(self, repo: RepoFixture, relative_path: str) -> None:
         repo.write(relative_path, "approved exception\n")
 
+    def _write_evidence_file(self, repo: RepoFixture, relative_path: str, content: str = "evidence\n") -> None:
+        repo.write(relative_path, content)
+
     def _handoff(
         self,
         *,
@@ -118,6 +121,9 @@ class TestAssertExecutionScope(unittest.TestCase):
         status: str = "accepted",
         active_exception_ref: str | None = None,
         active_exception_expires_at: str | None = None,
+        cross_family_path_unavailable: bool = False,
+        cross_family_path_ref: str | None = None,
+        fallback_log_ref: str | None = None,
     ) -> dict[str, Any]:
         return {
             "status": status,
@@ -127,6 +133,9 @@ class TestAssertExecutionScope(unittest.TestCase):
             "evidence_paths": ["raw/closeouts/issue-242-handoff.md"],
             "active_exception_ref": active_exception_ref,
             "active_exception_expires_at": active_exception_expires_at,
+            "cross_family_path_unavailable": cross_family_path_unavailable,
+            "cross_family_path_ref": cross_family_path_ref,
+            "fallback_log_ref": fallback_log_ref,
         }
 
     def _lane_claim(self, issue_number: int = 393) -> dict[str, Any]:
@@ -275,6 +284,8 @@ class TestAssertExecutionScope(unittest.TestCase):
             repo = RepoFixture(tmpdir / "repo")
             changed = self._changed_files_file(tmpdir, ["allowed.txt"])
             self._write_exception_file(repo, "raw/exceptions/issue-242-gpt5-major-line.md")
+            self._write_evidence_file(repo, "raw/reviews/issue-242-cross-family-unavailable.md")
+            self._write_evidence_file(repo, "raw/model-fallbacks/issue-242-gpt5-major-line.md")
             scope = self._scope_file(
                 tmpdir,
                 repo.root,
@@ -284,6 +295,9 @@ class TestAssertExecutionScope(unittest.TestCase):
                     implementer_model="openai/gpt-5.4",
                     active_exception_ref="raw/exceptions/issue-242-gpt5-major-line.md",
                     active_exception_expires_at="2999-01-01T00:00:00Z",
+                    cross_family_path_unavailable=True,
+                    cross_family_path_ref="raw/reviews/issue-242-cross-family-unavailable.md",
+                    fallback_log_ref="raw/model-fallbacks/issue-242-gpt5-major-line.md",
                 ),
             )
 
@@ -298,6 +312,8 @@ class TestAssertExecutionScope(unittest.TestCase):
             repo = RepoFixture(tmpdir / "repo")
             changed = self._changed_files_file(tmpdir, ["allowed.txt"])
             self._write_exception_file(repo, "raw/exceptions/issue-242-gpt5-exception.md")
+            self._write_evidence_file(repo, "raw/reviews/issue-242-cross-family-unavailable.md")
+            self._write_evidence_file(repo, "raw/model-fallbacks/issue-242-gpt5-exception.md")
             scope = self._scope_file(
                 tmpdir,
                 repo.root,
@@ -307,6 +323,9 @@ class TestAssertExecutionScope(unittest.TestCase):
                     implementer_model="gpt-5-mini",
                     active_exception_ref="raw/exceptions/issue-242-gpt5-exception.md",
                     active_exception_expires_at="2999-01-01T00:00:00Z",
+                    cross_family_path_unavailable=True,
+                    cross_family_path_ref="raw/reviews/issue-242-cross-family-unavailable.md",
+                    fallback_log_ref="raw/model-fallbacks/issue-242-gpt5-exception.md",
                 ),
             )
 
@@ -344,6 +363,8 @@ class TestAssertExecutionScope(unittest.TestCase):
             repo = RepoFixture(tmpdir / "repo")
             changed = self._changed_files_file(tmpdir, ["allowed.txt"])
             self._write_exception_file(repo, "raw/exceptions/issue-242-anchor.md")
+            self._write_evidence_file(repo, "raw/reviews/issue-242-cross-family-unavailable.md")
+            self._write_evidence_file(repo, "raw/model-fallbacks/issue-242-anchor.md")
             scope = self._scope_file(
                 tmpdir,
                 repo.root,
@@ -353,6 +374,178 @@ class TestAssertExecutionScope(unittest.TestCase):
                     implementer_model="gpt-5-mini",
                     active_exception_ref="raw/exceptions/issue-242-anchor.md#issue-242",
                     active_exception_expires_at="2999-01-01T00:00:00Z",
+                    cross_family_path_unavailable=True,
+                    cross_family_path_ref="raw/reviews/issue-242-cross-family-unavailable.md#ticket",
+                    fallback_log_ref="raw/model-fallbacks/issue-242-anchor.md#fallback",
+                ),
+            )
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertEqual(code, 0, output)
+        self.assertIn("PASS execution scope", output)
+
+    def test_same_family_degraded_fallback_requires_all_fixed_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            self._write_exception_file(repo, "raw/exceptions/issue-242.md")
+            base = self._handoff(
+                planner_model="gpt-5",
+                implementer_model="gpt-5-mini",
+                active_exception_ref="raw/exceptions/issue-242.md",
+                active_exception_expires_at="2999-01-01T00:00:00Z",
+                cross_family_path_unavailable=True,
+                cross_family_path_ref="raw/reviews/cross-family-unavailable.md",
+                fallback_log_ref="raw/model-fallbacks/fallback.md",
+            )
+
+            for field_name in (
+                "cross_family_path_unavailable",
+                "cross_family_path_ref",
+                "fallback_log_ref",
+            ):
+                handoff = dict(base)
+                handoff.pop(field_name)
+                scope = self._scope_file(
+                    tmpdir,
+                    repo.root,
+                    execution_mode="implementation_ready",
+                    handoff_evidence=handoff,
+                )
+                code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+                self.assertNotEqual(code, 0, f"{field_name} should fail")
+                self.assertIn(field_name, output)
+
+    def test_same_family_degraded_fallback_requires_unavailable_true(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            self._write_exception_file(repo, "raw/exceptions/issue-242.md")
+            self._write_evidence_file(repo, "raw/reviews/cross-family-unavailable.md")
+            self._write_evidence_file(repo, "raw/model-fallbacks/fallback.md")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="implementation_ready",
+                handoff_evidence=self._handoff(
+                    planner_model="gpt-5",
+                    implementer_model="gpt-5-mini",
+                    active_exception_ref="raw/exceptions/issue-242.md",
+                    active_exception_expires_at="2999-01-01T00:00:00Z",
+                    cross_family_path_unavailable=False,
+                    cross_family_path_ref="raw/reviews/cross-family-unavailable.md",
+                    fallback_log_ref="raw/model-fallbacks/fallback.md",
+                ),
+            )
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("cross_family_path_unavailable", output)
+
+    def test_same_family_degraded_fallback_blank_or_placeholder_ref_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            self._write_exception_file(repo, "raw/exceptions/issue-242.md")
+            base = self._handoff(
+                planner_model="gpt-5",
+                implementer_model="gpt-5-mini",
+                active_exception_ref="raw/exceptions/issue-242.md",
+                active_exception_expires_at="2999-01-01T00:00:00Z",
+                cross_family_path_unavailable=True,
+                cross_family_path_ref="raw/reviews/cross-family-unavailable.md",
+                fallback_log_ref="raw/model-fallbacks/fallback.md",
+            )
+            cases = [
+                ("cross_family_path_ref", "", "must be null or a non-empty string"),
+                ("cross_family_path_ref", "TODO", "must not use placeholder text"),
+                ("fallback_log_ref", "placeholder", "must not use placeholder text"),
+            ]
+
+            for field_name, value, expected in cases:
+                handoff = dict(base)
+                handoff[field_name] = value
+                scope = self._scope_file(
+                    tmpdir,
+                    repo.root,
+                    execution_mode="implementation_ready",
+                    handoff_evidence=handoff,
+                )
+                code, output = self._run_main(repo.root, scope)
+                self.assertEqual(code, 2, f"{field_name}={value!r} should fail load")
+                self.assertIn(expected, output)
+
+    def test_same_family_degraded_fallback_unsafe_ref_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            self._write_exception_file(repo, "raw/exceptions/issue-242.md")
+            base = self._handoff(
+                planner_model="gpt-5",
+                implementer_model="gpt-5-mini",
+                active_exception_ref="raw/exceptions/issue-242.md",
+                active_exception_expires_at="2999-01-01T00:00:00Z",
+                cross_family_path_unavailable=True,
+                cross_family_path_ref="raw/reviews/cross-family-unavailable.md",
+                fallback_log_ref="raw/model-fallbacks/fallback.md",
+            )
+
+            for field_name in ("cross_family_path_ref", "fallback_log_ref"):
+                handoff = dict(base)
+                handoff[field_name] = "../outside.md"
+                scope = self._scope_file(
+                    tmpdir,
+                    repo.root,
+                    execution_mode="implementation_ready",
+                    handoff_evidence=handoff,
+                )
+                code, output = self._run_main(repo.root, scope)
+                self.assertEqual(code, 2, f"{field_name} unsafe path should fail load")
+                self.assertIn("must not traverse parent directories", output)
+
+    def test_same_family_degraded_fallback_nonexistent_ref_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            self._write_exception_file(repo, "raw/exceptions/issue-242.md")
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="implementation_ready",
+                handoff_evidence=self._handoff(
+                    planner_model="gpt-5",
+                    implementer_model="gpt-5-mini",
+                    active_exception_ref="raw/exceptions/issue-242.md",
+                    active_exception_expires_at="2999-01-01T00:00:00Z",
+                    cross_family_path_unavailable=True,
+                    cross_family_path_ref="raw/reviews/missing.md",
+                    fallback_log_ref="raw/model-fallbacks/missing.md",
+                ),
+            )
+
+            code, output = self._run_main(repo.root, scope, changed_files_file=changed)
+
+        self.assertNotEqual(code, 0)
+        self.assertIn("handoff_evidence.cross_family_path_ref must reference an existing repo file path", output)
+        self.assertIn("handoff_evidence.fallback_log_ref must reference an existing repo file path", output)
+
+    def test_cross_family_non_degraded_path_still_passes_without_fixed_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_tmpdir:
+            tmpdir = Path(raw_tmpdir)
+            repo = RepoFixture(tmpdir / "repo")
+            changed = self._changed_files_file(tmpdir, ["allowed.txt"])
+            scope = self._scope_file(
+                tmpdir,
+                repo.root,
+                execution_mode="implementation_ready",
+                handoff_evidence=self._handoff(
+                    planner_model="gpt-5",
+                    implementer_model="claude-3-7-sonnet",
                 ),
             )
 

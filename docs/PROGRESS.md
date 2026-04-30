@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| Execution-scope degraded fallback enforcement | #625 | IN PROGRESS | HIGH | 3-5 | Execution-scope schema/assert/test enforcement, focused proof matrix, required governance doc co-staging, Stage 6 closeout | Child lane under #612; bounded to execution-scope-only same-family degraded fallback evidence and keeps fallback-log parity plus #614 separate |
 | Root backlog/commit-progression parity fail-closed enforcement | #621 | IN PROGRESS | HIGH | 3-5 | Branch-issue parity helper, root-hook blocked/allowed proof, standards/progress reconciliation, focused tests, Stage 6 closeout | Child lane under #615; bounded to backlog-check/governance-check parity and keeps #617, #619, #607, #612, and #614 separate |
 | Pre-session startup fail-closed lane-state surfacing | #617 | IN PROGRESS | HIGH | 4-6 | Repo-local startup hook summary, unique-scope startup preflight, focused tests, implementation packet and review evidence | Child lane under #615; bounded to startup/helper surfacing only and keeps #607, #612, and #614 separate |
 | Governed research specialist consumer rollout | #591 | IN PROGRESS | HIGH | 4-6 | Governance rollout tracker, first consumer pilot issue, stale-baseline verifier proof, planning packet | Follows merged governance-source work in #589; Stampede #208 is the first pilot lane |

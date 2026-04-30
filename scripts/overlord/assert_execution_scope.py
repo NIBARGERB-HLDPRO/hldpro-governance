@@ -29,6 +29,9 @@ class HandoffEvidence:
     evidence_paths: tuple[str, ...]
     active_exception_ref: str | None
     active_exception_expires_at: datetime | None
+    cross_family_path_unavailable: bool = False
+    cross_family_path_ref: str | None = None
+    fallback_log_ref: str | None = None
 
 
 @dataclass(frozen=True)
@@ -100,6 +103,12 @@ def _normalize_evidence_ref(raw_ref: str, field_name: str, scope_path: Path) -> 
     return normalized_path
 
 
+def _normalize_degraded_fallback_ref(raw_ref: str, field_name: str, scope_path: Path) -> str:
+    if raw_ref.strip().lower() in {"todo", "tbd", "n/a", "na", "placeholder"}:
+        raise ValueError(f"{scope_path}: `{field_name}` must not use placeholder text")
+    return _normalize_evidence_ref(raw_ref, field_name, scope_path)
+
+
 def _parse_iso8601_timestamp(raw_value: str, field_name: str, path: Path) -> datetime:
     if not isinstance(raw_value, str) or not raw_value:
         raise ValueError(f"{path}: `{field_name}` must be a non-empty string")
@@ -136,6 +145,9 @@ def _load_handoff_evidence(payload: dict[str, object], scope_path: Path) -> Hand
     evidence_paths = payload["evidence_paths"]
     active_exception_ref = payload["active_exception_ref"]
     active_exception_expires_at_raw = payload["active_exception_expires_at"]
+    cross_family_path_unavailable = payload.get("cross_family_path_unavailable", False)
+    cross_family_path_ref = payload.get("cross_family_path_ref")
+    fallback_log_ref = payload.get("fallback_log_ref")
 
     if not isinstance(status, str) or not status:
         raise ValueError(f"{scope_path}: `handoff_evidence.status` must be a non-empty string")
@@ -153,6 +165,16 @@ def _load_handoff_evidence(payload: dict[str, object], scope_path: Path) -> Hand
         raise ValueError(
             f"{scope_path}: `handoff_evidence.active_exception_expires_at` must be null or a non-empty string"
         )
+    if not isinstance(cross_family_path_unavailable, bool):
+        raise ValueError(f"{scope_path}: `handoff_evidence.cross_family_path_unavailable` must be a boolean")
+    if cross_family_path_ref is not None and (
+        not isinstance(cross_family_path_ref, str) or not cross_family_path_ref
+    ):
+        raise ValueError(f"{scope_path}: `handoff_evidence.cross_family_path_ref` must be null or a non-empty string")
+    if fallback_log_ref is not None and (
+        not isinstance(fallback_log_ref, str) or not fallback_log_ref
+    ):
+        raise ValueError(f"{scope_path}: `handoff_evidence.fallback_log_ref` must be null or a non-empty string")
 
     accepted_at = _parse_iso8601_timestamp(accepted_at_raw, "handoff_evidence.accepted_at", scope_path)
     active_exception_expires_at = None
@@ -166,6 +188,20 @@ def _load_handoff_evidence(payload: dict[str, object], scope_path: Path) -> Hand
     normalized_exception_ref = None
     if isinstance(active_exception_ref, str):
         normalized_exception_ref = _normalize_active_exception_ref(active_exception_ref, scope_path)
+    normalized_cross_family_path_ref = None
+    if isinstance(cross_family_path_ref, str):
+        normalized_cross_family_path_ref = _normalize_degraded_fallback_ref(
+            cross_family_path_ref,
+            "handoff_evidence.cross_family_path_ref",
+            scope_path,
+        )
+    normalized_fallback_log_ref = None
+    if isinstance(fallback_log_ref, str):
+        normalized_fallback_log_ref = _normalize_degraded_fallback_ref(
+            fallback_log_ref,
+            "handoff_evidence.fallback_log_ref",
+            scope_path,
+        )
 
     return HandoffEvidence(
         status=status,
@@ -178,6 +214,9 @@ def _load_handoff_evidence(payload: dict[str, object], scope_path: Path) -> Hand
         ),
         active_exception_ref=normalized_exception_ref,
         active_exception_expires_at=active_exception_expires_at,
+        cross_family_path_unavailable=cross_family_path_unavailable,
+        cross_family_path_ref=normalized_cross_family_path_ref,
+        fallback_log_ref=normalized_fallback_log_ref,
     )
 
 
@@ -406,6 +445,19 @@ def _validate_execution_mode(scope: ExecutionScope, now_utc: datetime) -> list[s
                 "planner/implementer same model or family requires non-expired "
                 "`handoff_evidence.active_exception_expires_at`"
             )
+        if not handoff.cross_family_path_unavailable:
+            failures.append(
+                "planner/implementer same model or family requires "
+                "`handoff_evidence.cross_family_path_unavailable` == true"
+            )
+        if not handoff.cross_family_path_ref:
+            failures.append(
+                "planner/implementer same model or family requires `handoff_evidence.cross_family_path_ref`"
+            )
+        if not handoff.fallback_log_ref:
+            failures.append(
+                "planner/implementer same model or family requires `handoff_evidence.fallback_log_ref`"
+            )
 
     return failures
 
@@ -425,14 +477,37 @@ def _validate_active_exception_ref(scope: ExecutionScope, actual_root: Path) -> 
     if handoff is None or handoff.active_exception_ref is None:
         return []
 
-    exception_path = handoff.active_exception_ref.split("#", 1)[0]
-    repo_file = actual_root / exception_path
+    return _validate_repo_file_ref(handoff.active_exception_ref, "handoff_evidence.active_exception_ref", actual_root)
+
+
+def _validate_repo_file_ref(ref_value: str, field_name: str, actual_root: Path) -> list[str]:
+    repo_path = ref_value.split("#", 1)[0]
+    repo_file = actual_root / repo_path
     if not repo_file.is_file():
-        return [
-            "handoff_evidence.active_exception_ref must reference an existing repo file path: "
-            f"{exception_path}"
-        ]
+        return [f"{field_name} must reference an existing repo file path: {repo_path}"]
     return []
+
+
+def _validate_cross_family_path_ref(scope: ExecutionScope, actual_root: Path) -> list[str]:
+    handoff = scope.handoff_evidence
+    if handoff is None or handoff.cross_family_path_ref is None:
+        return []
+    return _validate_repo_file_ref(
+        handoff.cross_family_path_ref,
+        "handoff_evidence.cross_family_path_ref",
+        actual_root,
+    )
+
+
+def _validate_fallback_log_ref(scope: ExecutionScope, actual_root: Path) -> list[str]:
+    handoff = scope.handoff_evidence
+    if handoff is None or handoff.fallback_log_ref is None:
+        return []
+    return _validate_repo_file_ref(
+        handoff.fallback_log_ref,
+        "handoff_evidence.fallback_log_ref",
+        actual_root,
+    )
 
 
 def _validate_lane_claim(scope: ExecutionScope, actual_branch: str | None, require_lane_claim: bool) -> list[str]:
@@ -497,6 +572,8 @@ def check_scope(
     failures.extend(_validate_lane_claim(scope, actual_branch, require_lane_claim))
     failures.extend(_validate_execution_mode(scope, now_utc))
     failures.extend(_validate_active_exception_ref(scope, actual_root))
+    failures.extend(_validate_cross_family_path_ref(scope, actual_root))
+    failures.extend(_validate_fallback_log_ref(scope, actual_root))
 
     changed_paths: list[str] | None = None
     if changed_files_file is None:
