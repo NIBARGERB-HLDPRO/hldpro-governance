@@ -20,6 +20,7 @@
 |------|-------|----------|-----------|-------|
 | Governed research specialist consumer rollout | [#591](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591) | HIGH | 4-6 | Governance planning lane for downstream adoption of the research-specialist package. First pilot: Stampede issue [#208](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/208). |
 | Downstream thin session-contract adapter rollout epic | [#579](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/579) | HIGH | 6-10 | Governance execution epic opened from approved plan #575 after SSOT reconciliation #576; child issues opened in LAM, AIS, Seek, Knocktracker, Stampede, HealthcarePlatform, and ASC-Evaluator. |
+| Root backlog/commit-progression parity fail-closed enforcement | [#621](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/621) | HIGH | 3-5 | Child lane under #615 to make backlog-check and governance-check fail closed on issue branches that are not represented in the active governance tracker, while reconciling root standards/progress wording to the same canonical authority source. |
 
 ## Done
 

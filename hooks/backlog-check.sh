@@ -16,8 +16,11 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo "  HLD Pro - Backlog Check"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-echo "[1/1] Checking OVERLORD_BACKLOG issue alignment..."
+echo "[1/2] Checking OVERLORD_BACKLOG issue alignment..."
 python3 scripts/overlord/check_overlord_backlog_github_alignment.py
+
+echo "[2/2] Checking current issue branch parity..."
+python3 scripts/overlord/check_governance_issue_branch_parity.py
 
 echo ""
 echo "Backlog check PASS"

@@ -16,7 +16,7 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo "  HLD Pro - Governance Check"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-echo "[1/4] Validating structured agent cycle plans..."
+echo "[1/5] Validating structured agent cycle plans..."
 BRANCH_NAME="$(git branch --show-current 2>/dev/null || true)"
 python3 scripts/overlord/validate_structured_agent_cycle_plan.py \
   --root . \
@@ -24,7 +24,7 @@ python3 scripts/overlord/validate_structured_agent_cycle_plan.py \
   --require-if-issue-branch
 echo "  PASS structured plan validation"
 
-echo "[2/4] Checking governance-surface changed files..."
+echo "[2/5] Checking governance-surface changed files..."
 CHANGED_FILE="$(mktemp "${TMPDIR:-/tmp}/hldpro-governance-changed.XXXXXX")"
 trap 'rm -f "$CHANGED_FILE"' EXIT
 {
@@ -44,11 +44,15 @@ else
   echo "  PASS no local changed files"
 fi
 
-echo "[3/4] Checking OVERLORD_BACKLOG issue alignment..."
+echo "[3/5] Checking OVERLORD_BACKLOG issue alignment..."
 python3 scripts/overlord/check_overlord_backlog_github_alignment.py
 echo "  PASS backlog alignment"
 
-echo "[4/4] Checking whitespace errors..."
+echo "[4/5] Checking current issue branch parity..."
+python3 scripts/overlord/check_governance_issue_branch_parity.py
+echo "  PASS branch parity"
+
+echo "[5/5] Checking whitespace errors..."
 git diff --check
 if ! git diff --cached --quiet --exit-code; then
   git diff --cached --check
