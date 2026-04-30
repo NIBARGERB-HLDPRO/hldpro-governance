@@ -69,23 +69,23 @@ class TestPlanPreflight(unittest.TestCase):
     def test_recent_plan_allows_governed_write(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
-            plans = root / ".claude" / "plans"
+            plans = root / "docs" / "plans"
             plans.mkdir(parents=True)
-            (plans / "issue-449.md").write_text("plan\n", encoding="utf-8")
+            (plans / "issue-449-structured-agent-cycle-plan.json").write_text("{}", encoding="utf-8")
 
             code, payload = _run(root, "--target-path", "scripts/ingest.ts")
 
         self.assertEqual(code, 0, payload)
         self.assertEqual(payload["reason"], "recent_plan_found")
-        self.assertEqual(payload["plan_ref"], ".claude/plans/issue-449.md")
+        self.assertEqual(payload["plan_ref"], "docs/plans/issue-449-structured-agent-cycle-plan.json")
 
     def test_stale_plan_does_not_clear_preflight(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
-            plans = root / ".claude" / "plans"
+            plans = root / "docs" / "plans"
             plans.mkdir(parents=True)
-            plan = plans / "issue-449.md"
-            plan.write_text("plan\n", encoding="utf-8")
+            plan = plans / "issue-449-structured-agent-cycle-plan.json"
+            plan.write_text("{}", encoding="utf-8")
             stale = time.time() - 4 * 3600
             os.utime(plan, (stale, stale))
 
@@ -160,6 +160,78 @@ class TestPlanPreflight(unittest.TestCase):
         self.assertNotEqual(code, 0)
         self.assertEqual(payload["target_path"], "<python file write>")
         self.assertIn("PLAN_GATE_BLOCKED: missing_recent_plan", payload["reason"])
+
+    def test_sed_in_place_write_command_is_refused(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            code, payload = _run(
+                Path(raw),
+                "--command",
+                "sed -i -e 's/old/new/' scripts/ingest.ts",
+            )
+
+        self.assertNotEqual(code, 0)
+        self.assertEqual(payload["target_path"], "scripts/ingest.ts")
+        self.assertIn("PLAN_GATE_BLOCKED: missing_recent_plan", payload["reason"])
+
+    def test_perl_in_place_write_command_is_refused(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            code, payload = _run(
+                Path(raw),
+                "--command",
+                "perl -pi -e 's/old/new/' scripts/ingest.ts",
+            )
+
+        self.assertNotEqual(code, 0)
+        self.assertEqual(payload["target_path"], "scripts/ingest.ts")
+        self.assertIn("PLAN_GATE_BLOCKED: missing_recent_plan", payload["reason"])
+
+    def test_copy_into_governed_target_is_hard_blocked(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            code, payload = _run(
+                Path(raw),
+                "--command",
+                "cp source.txt scripts/ingest.ts",
+            )
+
+        self.assertNotEqual(code, 0)
+        self.assertEqual(payload["target_path"], "scripts/ingest.ts")
+        self.assertEqual(payload["decision"], "block")
+
+    def test_indeterminate_in_place_write_is_hard_blocked(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            code, payload = _run(
+                Path(raw),
+                "--command",
+                "sed -i -e 's/old/new/'",
+            )
+
+        self.assertNotEqual(code, 0)
+        self.assertEqual(payload["target_path"], "<indeterminate bash write: sed -i>")
+        self.assertEqual(payload["decision"], "block")
+
+    def test_read_only_sed_analysis_is_allowed(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            code, payload = _run(
+                Path(raw),
+                "--command",
+                "sed -n '1,20p' scripts/ingest.ts",
+            )
+
+        self.assertEqual(code, 0, payload)
+        self.assertEqual(payload["decision"], "allow")
+        self.assertEqual(payload["reason"], "no_write_target_detected")
+
+    def test_read_only_perl_analysis_is_allowed(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            code, payload = _run(
+                Path(raw),
+                "--command",
+                "perl -ne 'print if /needle/' scripts/ingest.ts",
+            )
+
+        self.assertEqual(code, 0, payload)
+        self.assertEqual(payload["decision"], "allow")
+        self.assertEqual(payload["reason"], "no_write_target_detected")
 
 
 if __name__ == "__main__":
