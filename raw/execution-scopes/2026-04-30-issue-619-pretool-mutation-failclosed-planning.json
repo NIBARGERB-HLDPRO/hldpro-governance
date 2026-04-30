@@ -1,0 +1,45 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-619-pretool-mutation-failclosed-20260430",
+  "execution_mode": "planning_only",
+  "allowed_write_paths": [
+    "docs/plans/issue-619-pretool-mutation-failclosed-pdcar.md",
+    "docs/plans/issue-619-pretool-mutation-failclosed-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-30-issue-619-pretool-mutation-failclosed-planning.json",
+    "raw/handoffs/2026-04-30-issue-619-pretool-mutation-failclosed.json",
+    "raw/packets/2026-04-30-issue-619-claude-review-packet.md",
+    "raw/cross-review/2026-04-30-issue-619-pretool-mutation-failclosed-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-619-claude.md",
+    "raw/validation/2026-04-30-issue-619-pretool-mutation-failclosed.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-615-prehook-governance-failclosed",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-617-prehook-startup-failclosed",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout is a separate active root and must not be mutated from the issue-619 planning lane."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-615-prehook-governance-failclosed",
+      "reason": "Issue #615 remains the planning parent and must not be mutated from child issue #619."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-617-prehook-startup-failclosed",
+      "reason": "Issue #617 is the already-closed startup/helper child and must not be reopened from issue #619."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+      "reason": "Issue #612 remains the degraded-fallback schema and CI enforcement lane and must not be mixed into issue #619."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 619,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/619",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-30T04:20:00Z"
+  }
+}
