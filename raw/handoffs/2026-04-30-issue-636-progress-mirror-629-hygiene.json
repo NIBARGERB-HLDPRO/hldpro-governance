@@ -1,0 +1,108 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-636-progress-mirror-629-hygiene",
+  "issue_number": 636,
+  "parent_epic_number": 612,
+  "lifecycle_state": "planned",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-636-progress-mirror-629-hygiene-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-636-progress-mirror-629-hygiene-planning.json",
+  "packet_ref": "raw/packets/2026-04-30-issue-636-claude-review-packet.md",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-636-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Issue #636 must remain bounded to docs/PROGRESS.md stale-#629 mirror hygiene and issue-local artifacts only.",
+      "verification_refs": [
+        "docs/plans/issue-636-progress-mirror-629-hygiene-pdcar.md",
+        "docs/plans/issue-636-progress-mirror-629-hygiene-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-30-issue-636-progress-mirror-629-hygiene-planning.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "The packet must explicitly encode that #629 is closed on GitHub and cannot remain represented as active IN PROGRESS work in docs/PROGRESS.md.",
+      "verification_refs": [
+        "docs/plans/issue-636-progress-mirror-629-hygiene-pdcar.md",
+        "raw/validation/2026-04-30-issue-636-progress-mirror-629-hygiene.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "The packet must preserve OVERLORD_BACKLOG.md, #612, #629, and #632 substantive surfaces as external boundaries.",
+      "verification_refs": [
+        "docs/plans/issue-636-progress-mirror-629-hygiene-pdcar.md",
+        "raw/execution-scopes/2026-04-30-issue-636-progress-mirror-629-hygiene-planning.json"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "No docs/PROGRESS.md implementation may begin until the planning packet validates and alternate-family review is recorded.",
+      "verification_refs": [
+        "raw/validation/2026-04-30-issue-636-progress-mirror-629-hygiene.md",
+        "docs/codex-reviews/2026-04-30-issue-636-claude.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool docs/plans/issue-636-progress-mirror-629-hygiene-structured-agent-cycle-plan.json",
+    "python3 -m json.tool raw/execution-scopes/2026-04-30-issue-636-progress-mirror-629-hygiene-planning.json",
+    "python3 -m json.tool raw/handoffs/2026-04-30-issue-636-progress-mirror-629-hygiene.json",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-636-progress-mirror-629-hygiene-20260430 --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-30-issue-636-progress-mirror-629-hygiene.json",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-30-issue-636-progress-mirror-629-hygiene-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-636-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-30-issue-636-progress-mirror-629-hygiene.md"
+  ],
+  "artifact_refs": [
+    "docs/plans/issue-636-progress-mirror-629-hygiene-pdcar.md",
+    "docs/plans/issue-636-progress-mirror-629-hygiene-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-30-issue-636-progress-mirror-629-hygiene-planning.json",
+    "raw/packets/2026-04-30-issue-636-claude-review-packet.md"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [
+    "Implementation is blocked until the issue-local planning packet validates and alternate-family review is recorded.",
+    "Issue #612 remains the parent fallback-enforcement lane.",
+    "Issue #633 remains the separate OVERLORD_BACKLOG.md hygiene child and must not be widened here.",
+    "Issue #632 remains a separate stale-row case and must not be absorbed by #636."
+  ],
+  "handoff_decision": "draft",
+  "created_at": "2026-04-30T20:20:00Z",
+  "notes": "Planning-only handoff for issue #636 bootstrap. This lane is narrowed to stale #629 docs/PROGRESS.md mirror hygiene under parent #612 and must validate its issue-local packet and alternate-family review before any docs/PROGRESS.md implementation is promoted."
+}

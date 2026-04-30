@@ -1,0 +1,173 @@
+{
+  "session_id": "session-20260430-issue-636-progress-mirror-629-hygiene",
+  "issue_number": 636,
+  "objective": "Bootstrap the narrow parent-owned #612 hygiene child that reconciles closed child #629 out of active docs/PROGRESS.md state while preserving honest completed-history visibility.",
+  "tier": 1,
+  "plan_author": {
+    "role": "codex-orchestrator",
+    "model_id": "gpt-5.4",
+    "model_family": "openai"
+  },
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-636-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "scope_boundary": [
+    "Planning-only hygiene child lane under issue #612.",
+    "Owns docs/PROGRESS.md reconciliation for closed child #629 only, plus issue-local artifacts.",
+    "Must preserve honest completed-history visibility for #629 while removing its active IN PROGRESS representation.",
+    "Must not widen into OVERLORD_BACKLOG.md, #629 implementation surfaces, #632 drift, or broader #612 enforcement work unless scope is explicitly widened first."
+  ],
+  "out_of_scope": [
+    "Edits to OVERLORD_BACKLOG.md.",
+    "Reopening issue #629 fallback-log schema or workflow implementation.",
+    "Reopening issue #632 planning-authority implementation or mirror drift.",
+    "Broader #612 validator, workflow, or routing enforcement.",
+    "Edits to docs/FAIL_FAST_LOG.md or docs/FEATURE_REGISTRY.md unless matching stale #629 drift is concretely proven and the lane is widened.",
+    "Any claim of broader #612 closure."
+  ],
+  "research_summary": "Parent-lane audit and specialist review confirmed that OVERLORD_BACKLOG.md was already reconciled by issue #633, but docs/PROGRESS.md still lists closed child #629 as active IN PROGRESS work. The narrowest honest owner is a new parent-owned #612 hygiene child limited to docs/PROGRESS.md reconciliation for #629 only, preserving completed-history visibility without widening into the separate stale #632 row or broader #612 enforcement surfaces.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/612",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/629",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/633",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/636",
+    "docs/PROGRESS.md",
+    "OVERLORD_BACKLOG.md"
+  ],
+  "sprints": [
+    {
+      "name": "Packet Bootstrap",
+      "goal": "Create the issue-local planning packet and keep #636 bounded to the single stale #629 docs/PROGRESS.md row.",
+      "tasks": [
+        "Create the issue-local PDCAR, structured plan, planning execution scope, handoff, review packet, cross-review note, validation artifact, and issue-scoped review artifact.",
+        "Record the exact stale #629 row and the requirement to preserve honest completed-history visibility while removing active state.",
+        "Keep the lane in planning_only mode until the packet validates and alternate-family review is recorded."
+      ],
+      "acceptance_criteria": [
+        "The packet names docs/PROGRESS.md and issue-local artifacts as the only owned surfaces.",
+        "The packet states that #629 must leave IN PROGRESS and remain visible honestly as completed history.",
+        "The packet preserves OVERLORD_BACKLOG.md, #612, #629, and #632 substantive surfaces as external boundaries.",
+        "The execution scope allows only issue-local planning artifacts during bootstrap.",
+        "Implementation remains blocked until planning validation and alternate-family review complete."
+      ],
+      "file_paths": [
+        "docs/plans/issue-636-progress-mirror-629-hygiene-pdcar.md",
+        "docs/plans/issue-636-progress-mirror-629-hygiene-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-30-issue-636-progress-mirror-629-hygiene-planning.json",
+        "raw/handoffs/2026-04-30-issue-636-progress-mirror-629-hygiene.json",
+        "raw/packets/2026-04-30-issue-636-claude-review-packet.md",
+        "raw/cross-review/2026-04-30-issue-636-progress-mirror-629-hygiene-plan.md",
+        "docs/codex-reviews/2026-04-30-issue-636-claude.md",
+        "raw/validation/2026-04-30-issue-636-progress-mirror-629-hygiene.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "parent-graph routing research specialist",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "owner and surface confirmation",
+      "focus": "Verify whether the stale closed-#629 mirror row belongs to a new parent-owned #612 hygiene child and confirm the narrowest valid write surface.",
+      "status": "pass",
+      "summary": "The stale #629 row is real in docs/PROGRESS.md, while OVERLORD_BACKLOG.md was already corrected by #633, so the narrowest honest owner is a new parent-owned #612 hygiene child limited to docs/PROGRESS.md only.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/612",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/629",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/633",
+        "docs/PROGRESS.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    },
+    {
+      "reviewer": "planning packet QA specialist",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "boundary and artifact honesty",
+      "focus": "Verify the lane stays limited to stale #629 docs/PROGRESS.md mirror hygiene and does not reopen broader #612 work or absorb other stale rows.",
+      "status": "pass",
+      "summary": "The acceptable boundary is docs/PROGRESS.md plus issue-local artifacts only, preserving honest completed-history visibility for #629 and excluding OVERLORD_BACKLOG.md, #629 implementation, #632 drift, and broader #612 enforcement work.",
+      "evidence": [
+        "docs/PROGRESS.md",
+        "docs/plans/issue-636-progress-mirror-629-hygiene-pdcar.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude alternate-family specialist review",
+    "reviewer_model_id": "claude-opus-4-6",
+    "reviewer_model_family": "anthropic",
+    "model_family": "anthropic",
+    "status": "accepted",
+    "summary": "Sanctioned alternate-family review passed for the planning-only #636 packet with no blocking findings; the only residual note is that implementation should choose an explicit completed-history presentation for the #629 row when editing docs/PROGRESS.md.",
+    "evidence": [
+      "raw/packets/2026-04-30-issue-636-claude-review-packet.md",
+      "docs/codex-reviews/2026-04-30-issue-636-claude.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #636 is authorized for the bounded docs/PROGRESS.md hygiene slice only: reconcile closed child #629 out of active IN PROGRESS state while preserving honest completed-history visibility, plus issue-local artifacts.",
+    "next_execution_step": "Implement the single-row docs/PROGRESS.md reconciliation for closed child #629, prove the bounded mirror-hygiene change, and close the slice without widening into OVERLORD_BACKLOG.md, #632, or broader #612 surfaces.",
+    "blocked_on": [
+      "Issue #612 remains the parent fallback-enforcement lane and is not closed by #636 alone.",
+      "Issue #633 already owns OVERLORD_BACKLOG.md hygiene and must not be reopened here.",
+      "Issue #632 drift remains out of scope for this bounded lane."
+    ],
+    "handoff_package_ref": "raw/handoffs/2026-04-30-issue-636-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-636-progress-mirror-629-hygiene-implementation.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-30-issue-636-progress-mirror-629-hygiene-plan.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-30-issue-636-progress-mirror-629-hygiene.md"
+    ],
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "AC1: Issue #636 remains bounded to docs/PROGRESS.md stale-#629 mirror hygiene and issue-local artifacts only.",
+      "AC2: docs/PROGRESS.md no longer lists closed issue #629 as active IN PROGRESS work and preserves honest completed-history visibility.",
+      "AC3: Issue #636 preserves OVERLORD_BACKLOG.md, #612, #629, and #632 substantive surfaces as external boundaries and does not claim broader #612 closure.",
+      "AC4: The bounded implementation proof chain is reconciled through the issue-local validation and closeout artifacts."
+    ]
+  },
+  "material_deviation_rules": [
+    "Any edit outside docs/PROGRESS.md and issue-local artifacts is a material deviation unless matching stale #629 mirror drift is first proven and scope is widened explicitly.",
+    "Any edit to OVERLORD_BACKLOG.md is a material deviation from issue #636 scope.",
+    "Any edit to #629 implementation surfaces is a material deviation.",
+    "Any edit to #632 mirror drift or implementation surfaces is a material deviation.",
+    "Any claim that #636 closes broader #612 enforcement is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "issue #636"
+  ],
+  "approved_at": "2026-04-30T20:20:00Z"
+}

@@ -1,0 +1,29 @@
+{
+  "issue_number": 636,
+  "branch_name": "issue-636-progress-mirror-629-hygiene-20260430",
+  "execution_mode": "planning_only",
+  "lane_claim": {
+    "issue_number": 636,
+    "branch_name": "issue-636-progress-mirror-629-hygiene-20260430"
+  },
+  "scope_summary": "Planning-only bootstrap for the narrow parent-owned #612 hygiene child that will reconcile closed child #629 out of active docs/PROGRESS.md state.",
+  "allowed_write_paths": [
+    "docs/plans/issue-636-progress-mirror-629-hygiene-pdcar.md",
+    "docs/plans/issue-636-progress-mirror-629-hygiene-structured-agent-cycle-plan.json",
+    "docs/codex-reviews/2026-04-30-issue-636-claude.md",
+    "raw/execution-scopes/2026-04-30-issue-636-progress-mirror-629-hygiene-planning.json",
+    "raw/handoffs/2026-04-30-issue-636-progress-mirror-629-hygiene.json",
+    "raw/packets/2026-04-30-issue-636-claude-review-packet.md",
+    "raw/cross-review/2026-04-30-issue-636-progress-mirror-629-hygiene-plan.md",
+    "raw/validation/2026-04-30-issue-636-progress-mirror-629-hygiene.md"
+  ],
+  "blocked_paths": [
+    "docs/PROGRESS.md",
+    "OVERLORD_BACKLOG.md"
+  ],
+  "notes": [
+    "Planning-only lane; implementation remains blocked pending review and later handoff.",
+    "Issue #636 owns stale closed-child #629 docs/PROGRESS.md mirror hygiene only.",
+    "Broader #612 enforcement, #633 backlog-hygiene, and #632 drift remain out of scope."
+  ]
+}
