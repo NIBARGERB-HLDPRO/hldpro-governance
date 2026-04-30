@@ -1,6 +1,6 @@
 # hldpro-governance — Progress & Backlog
 
-**Last Updated:** 2026-04-28
+**Last Updated:** 2026-04-30
 **Scope:** Cross-repo governance standards, CI enforcement, audit agents, and knowledge base infrastructure.
 
 > This file is the single source of truth for planned work, open bugs, feature requests, and operational items in hldpro-governance.
@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| Pre-session startup fail-closed lane-state surfacing | #617 | IN PROGRESS | HIGH | 4-6 | Repo-local startup hook summary, unique-scope startup preflight, focused tests, implementation packet and review evidence | Child lane under #615; bounded to startup/helper surfacing only and keeps #607, #612, and #614 separate |
 | Governed research specialist consumer rollout | #591 | IN PROGRESS | HIGH | 4-6 | Governance rollout tracker, first consumer pilot issue, stale-baseline verifier proof, planning packet | Follows merged governance-source work in #589; Stampede #208 is the first pilot lane |
 | Hard-gate issue-level SoM enforcement against self-review and missing handoff evidence | #583 | IN PROGRESS | HIGH | 4-6 | Schema/validator/CI hard gates, replay proof against Stampede #184, alternate-family review evidence | Source-governance fix after third revisit of false-complete session-wiring claims; downstream Stampede repair is separate issue #197 |
 | Downstream thin session-contract adapter rollout epic | #579 | IN PROGRESS | HIGH | 6-10 | Governance epic, downstream child issue map, thin-adapter rollout across LAM/AIS/Seek/KT/Stampede/HP/ASC | Opened from approved plan #575 after governance-source SSOT reconciliation #576 merged |

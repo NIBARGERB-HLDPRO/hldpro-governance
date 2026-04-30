@@ -1,6 +1,6 @@
 # hldpro-governance — Feature Registry
 
-**Last Updated:** 2026-04-28
+**Last Updated:** 2026-04-30
 **Scope:** Shared governance standards, reusable CI enforcement, and cross-repo audit agents.
 
 ---
@@ -154,6 +154,8 @@
 | GOV-019 | `scripts/overlord/assert_execution_scope.py --require-lane-claim` requires the current branch issue, expected branch issue, and execution-scope `lane_claim.issue_number` to match before implementation work is authorized. |
 | GOV-019 | `hooks/branch-switch-guard.sh` blocks unmarked `git worktree add -b issue-*` commands before filesystem side effects; issue-lane worktree creation must use explicit planning bootstrap or a matching claimed execution scope. |
 | GOV-019 | `scripts/overlord/assert_execution_scope.py` resolves detached PR checkouts through `GITHUB_HEAD_REF`/`GITHUB_REF_NAME` so reusable governance checks can validate trusted scopes while preserving local wrong-branch failures. |
+| GOV-019 | `scripts/overlord/check_execution_environment.py --startup-preflight` now resolves the current issue branch to a unique claimed execution scope and emits deterministic `PASS startup execution context` or `BLOCKED startup execution context` summaries with scope path, issue number, execution mode, next role/step, and required specialist signals. |
+| GOV-019 | `hooks/pre-session-context.sh` now appends the startup execution-context summary after the canonical bootstrap note, and `.claude/settings.json` resolves the repo-local startup hook from the current checkout root so nested-directory sessions surface the same lane-state contract before implementation-capable work begins. |
 | GOV-019 | Planner write-boundary enforcement now treats Tier 1 sessions as planning-only by default (`execution_mode: planning_only`), with `allowed_write_paths` as the planning artifact allowlist. |
 | GOV-019 | Non-planning diffs now require accepted pinned-agent handoff evidence, and same-model or same-family planner/implementer pairs require an active exception reference with expiry. |
 | GOV-019 | For planner-boundary enforcement, CI in `.github/workflows/governance-check.yml` is authoritative while local `hooks/code-write-gate.sh` output is warning/early-signal only. |
