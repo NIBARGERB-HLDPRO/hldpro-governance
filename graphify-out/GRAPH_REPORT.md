@@ -321,7 +321,7 @@ Nodes (8): run_fire(), test_exec_failure_after_successful_preflight_logs_and_sig
 
 ### Community 71 - "Community 71"
 Cohesion: 0.2
-Nodes (0): 
+Nodes (0):
 
 ### Community 72 - "Community 72"
 Cohesion: 0.38
@@ -397,11 +397,11 @@ Nodes (3): main(), replace_section(), summary_line()
 
 ### Community 90 - "Community 90"
 Cohesion: 0.5
-Nodes (0): 
+Nodes (0):
 
 ### Community 91 - "Community 91"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (0):
 
 ### Community 92 - "Community 92"
 Cohesion: 1.0
@@ -413,7 +413,7 @@ Nodes (2): main(), render_issue()
 
 ### Community 94 - "Community 94"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (0):
 
 ### Community 95 - "Community 95"
 Cohesion: 1.0
