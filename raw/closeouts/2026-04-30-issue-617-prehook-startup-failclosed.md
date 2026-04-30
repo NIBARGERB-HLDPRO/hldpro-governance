@@ -39,8 +39,7 @@ search, especially from nested-directory session starts.
 - `hooks/pre-session-context.sh`
 - `raw/closeouts/2026-04-30-issue-617-prehook-startup-failclosed.md`
 - `raw/cross-review/2026-04-30-issue-617-prehook-startup-failclosed-plan.md`
-- `raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-implementation.json`
-- `raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-planning.json`
+- issue `#617` execution-scope artifacts (planning bootstrap + implementation-ready)
 - `raw/handoffs/2026-04-30-issue-617-plan-to-implementation.json`
 - `raw/handoffs/2026-04-30-issue-617-prehook-startup-failclosed.json`
 - `raw/packets/2026-04-30-issue-617-claude-review-packet.md`

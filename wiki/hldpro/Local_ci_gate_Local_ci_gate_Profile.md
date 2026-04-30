@@ -1,10 +1,10 @@
 # Local ci gate Local ci gate Profile
 
-> 26 nodes · cohesion 0.08
+> 28 nodes · cohesion 0.07
 
 ## Key Concepts
 
-- **TestLocalCiGate** (25 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
+- **TestLocalCiGate** (27 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **test_local_ci_gate.py** (2 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.setUp()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.tearDown()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
@@ -20,6 +20,8 @@
 - **.test_governance_profile_runs_handoff_validator_for_handoff_paths()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_runs_handoff_validator_for_unrelated_paths()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_runs_provisioning_evidence_validator_for_runbooks()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
+- **.test_governance_profile_runs_session_contract_surfaces_for_bootstrap_helper_changes()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
+- **.test_governance_profile_runs_session_contract_surfaces_for_runbook_changes()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_runs_sql_schema_drift_probe_contract_for_contract_surfaces()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_skips_provisioning_evidence_validator_for_unrelated_paths()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_governance_profile_uses_active_execution_scope_placeholder()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
@@ -27,9 +29,7 @@
 - **.test_local_ai_machine_profile_scopes_contract_checks()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_noop_profile_supports_dry_run_without_side_effects()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
 - **.test_profile_rejects_duplicate_check_ids()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
-- **.test_profile_rejects_malformed_dependency_metadata()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
-- **.test_report_json_is_machine_readable()** (1 connections) — `tools/local-ci-gate/tests/test_local_ci_gate.py`
-- *... and 1 more nodes in this community*
+- *... and 3 more nodes in this community*
 
 ## Relationships
 
@@ -41,7 +41,7 @@
 
 ## Audit Trail
 
-- EXTRACTED: 51 (100%)
+- EXTRACTED: 55 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

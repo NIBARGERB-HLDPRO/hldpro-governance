@@ -1,35 +1,35 @@
 # Overlord Assert execution scope
 
-> 38 nodes · cohesion 0.11
+> 41 nodes · cohesion 0.20
 
 ## Key Concepts
 
-- **assert_execution_scope.py** (29 connections) — `scripts/overlord/assert_execution_scope.py`
-- **check_scope()** (12 connections) — `scripts/overlord/assert_execution_scope.py`
-- **check_worker_handoff_route.py** (8 connections) — `scripts/overlord/check_worker_handoff_route.py`
-- **_load_handoff_evidence()** (6 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_load_scope()** (6 connections) — `scripts/overlord/assert_execution_scope.py`
-- **check_route()** (6 connections) — `scripts/overlord/check_worker_handoff_route.py`
-- **_normalize_repo_path()** (5 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_changed_paths()** (4 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_load_lane_claim()** (4 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_normalize_repo_relative_file_path()** (4 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_run_git()** (4 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_changed_paths_from_file()** (3 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_current_branch()** (3 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_git_root()** (3 connections) — `scripts/overlord/assert_execution_scope.py`
-- **main()** (3 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_normalize_active_exception_ref()** (3 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_normalize_evidence_ref()** (3 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_parse_iso8601_timestamp()** (3 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_same_model_or_family()** (3 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_validate_execution_mode()** (3 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_validate_lane_claim()** (3 connections) — `scripts/overlord/assert_execution_scope.py`
-- **main()** (3 connections) — `scripts/overlord/check_worker_handoff_route.py`
-- **_branch_issue_number()** (2 connections) — `scripts/overlord/assert_execution_scope.py`
-- **ExecutionScope** (2 connections) — `scripts/overlord/assert_execution_scope.py`
-- **_format_path()** (2 connections) — `scripts/overlord/assert_execution_scope.py`
-- *... and 13 more nodes in this community*
+- **TestAssertExecutionScope** (35 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **RepoFixture** (31 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **._run_main()** (30 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **._scope_file()** (29 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **._changed_files_file()** (14 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **._handoff()** (9 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.write()** (8 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_active_exception_ref_existing_file_with_anchor_passes()** (7 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_active_exception_with_expiry_passes()** (7 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_gpt_major_decimal_variants_with_active_exception_pass()** (7 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_active_exception_ref_nonexistent_file_fails()** (6 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_detached_checkout_uses_github_head_ref()** (6 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_diff_mode_and_dirty_tree_mode_share_path_normalization()** (6 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_gpt_major_decimal_variants_without_active_exception_fail()** (6 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_non_planning_with_accepted_handoff_passes()** (6 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_require_lane_claim_passes_when_issue_matches_branch_and_scope()** (6 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_same_model_or_family_without_active_exception_fails()** (6 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_active_parallel_root_does_not_hide_inactive_dirty_root()** (5 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_allows_changes_in_allowed_paths_dirty_tree_mode()** (5 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_declared_active_parallel_root_warns_instead_of_failing()** (5 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_non_planning_rejects_unsafe_handoff_evidence_ref()** (5 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_non_planning_without_handoff_fails()** (5 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_planning_only_diff_inside_allowed_paths_passes()** (5 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_planning_only_diff_outside_allowed_paths_fails()** (5 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- **.test_refuses_dirty_forbidden_root()** (5 connections) — `scripts/overlord/test_assert_execution_scope.py`
+- *... and 16 more nodes in this community*
 
 ## Relationships
 
@@ -37,14 +37,12 @@
 
 ## Source Files
 
-- `scripts/overlord/assert_execution_scope.py`
-- `scripts/overlord/check_execution_environment.py`
-- `scripts/overlord/check_worker_handoff_route.py`
+- `scripts/overlord/test_assert_execution_scope.py`
 
 ## Audit Trail
 
-- EXTRACTED: 74 (49%)
-- INFERRED: 78 (51%)
+- EXTRACTED: 80 (25%)
+- INFERRED: 242 (75%)
 - AMBIGUOUS: 0 (0%)
 
 ---
