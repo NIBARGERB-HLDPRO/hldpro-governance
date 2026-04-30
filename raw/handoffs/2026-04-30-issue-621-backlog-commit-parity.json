@@ -1,0 +1,118 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-621-backlog-commit-parity",
+  "issue_number": 621,
+  "parent_epic_number": 615,
+  "lifecycle_state": "planned",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-621-backlog-commit-parity-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-621-backlog-commit-parity-planning.json",
+  "packet_ref": "raw/packets/2026-04-30-issue-621-claude-review-packet.md",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-621-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Issue #621 must remain bounded to hooks/backlog-check.sh, hooks/governance-check.sh, the smallest parity helper if needed, focused tests, required governance doc co-staging, and issue-local artifacts only.",
+      "verification_refs": [
+        "docs/plans/issue-621-backlog-commit-parity-pdcar.md",
+        "docs/plans/issue-621-backlog-commit-parity-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-30-issue-621-backlog-commit-parity-planning.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Issue #621 must explicitly encode the live contradiction it is fixing so repo wording and root-hook behavior converge on one canonical authority source instead of leaving split authority.",
+      "verification_refs": [
+        "docs/plans/issue-621-backlog-commit-parity-pdcar.md",
+        "raw/handoffs/2026-04-30-issue-621-backlog-commit-parity.json"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Issue #621 must preserve #617, #619, #607, #612, and #614 as explicit external boundaries instead of absorbing their owned contracts or surfaces.",
+      "verification_refs": [
+        "docs/plans/issue-621-backlog-commit-parity-pdcar.md",
+        "raw/execution-scopes/2026-04-30-issue-621-backlog-commit-parity-planning.json"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "No root-hook implementation may begin until the issue-local planning packet validates and alternate-family review is recorded.",
+      "verification_refs": [
+        "raw/validation/2026-04-30-issue-621-backlog-commit-parity.md",
+        "docs/codex-reviews/2026-04-30-issue-621-claude.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "Future issue-621 implementation proof must require blocked and allowed root-hook branch or commit-progression transcripts plus one parity proof showing standards wording, hook behavior, and helper lookup agree on the same canonical authority source.",
+      "verification_refs": [
+        "docs/plans/issue-621-backlog-commit-parity-pdcar.md",
+        "docs/plans/issue-621-backlog-commit-parity-structured-agent-cycle-plan.json"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool docs/plans/issue-621-backlog-commit-parity-structured-agent-cycle-plan.json",
+    "python3 -m json.tool raw/execution-scopes/2026-04-30-issue-621-backlog-commit-parity-planning.json",
+    "python3 -m json.tool raw/handoffs/2026-04-30-issue-621-backlog-commit-parity.json",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-621-backlog-commit-parity-20260430 --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-30-issue-621-backlog-commit-parity.json",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-30-issue-621-backlog-commit-parity-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-621-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-30-issue-621-backlog-commit-parity.md"
+  ],
+  "artifact_refs": [
+    "docs/plans/issue-621-backlog-commit-parity-pdcar.md",
+    "docs/plans/issue-621-backlog-commit-parity-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-30-issue-621-backlog-commit-parity-planning.json",
+    "raw/packets/2026-04-30-issue-621-claude-review-packet.md"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [
+    "Issue #617 remains the already-closed startup/helper child and must not be reopened here.",
+    "Issue #619 remains the separate mutation-time pre-tool lane and must not be absorbed here.",
+    "Issue #607 remains the planning-authority dependency.",
+    "Issue #612 remains the degraded-fallback schema and CI enforcement lane.",
+    "Issue #614 remains the downstream hldpro-sim verifier or drift-gate lane.",
+    "Implementation is blocked until the issue-local planning packet validates and alternate-family review is recorded."
+  ],
+  "handoff_decision": "draft",
+  "created_at": "2026-04-30T03:55:00Z",
+  "notes": "Planning-only handoff for issue #621 bootstrap. This child is narrowed to root backlog/commit-progression parity only. It must validate its issue-local packet and record alternate-family review before any implementation is promoted."
+}

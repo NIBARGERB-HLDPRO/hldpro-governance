@@ -1,0 +1,187 @@
+{
+  "session_id": "session-20260430-issue-621-backlog-commit-parity",
+  "issue_number": 621,
+  "plan_author": {
+    "role": "codex-orchestrator",
+    "model_id": "gpt-5.4",
+    "model_family": "openai"
+  },
+  "objective": "Bootstrap the next issue-backed child under issue #615 for fail-closed parity on the root backlog and commit-progression hook path only.",
+  "tier": 1,
+  "scope_boundary": [
+    "Implementation child lane under issue #615.",
+    "Owns hooks/backlog-check.sh, hooks/governance-check.sh, the smallest shared helper required for issue-branch backlog/commit-progression parity, focused tests, required governance doc co-staging, and issue-local artifacts only.",
+    "Must preserve issue #617 as the closed startup/helper child and issue #619 as the separate mutation-time pre-tool lane.",
+    "Keeps #607 as the planning-authority dependency, #612 as the degraded-fallback schema and CI enforcement lane, #614 as the downstream consumer verifier lane, and leaves broader hook-stack or CI rewrites for separate lanes.",
+    "Starts by producing the issue-local planning packet and validation evidence in this isolated worktree."
+  ],
+  "out_of_scope": [
+    "Reopening issue #617 startup or helper surfacing work.",
+    "Reopening issue #619 mutation-time PreToolUse work.",
+    "Planning-authority contract rewrites that belong to issue #607.",
+    "Execution-scope schema, fallback-log schema, or CI validator changes that belong to issue #612.",
+    "Downstream hldpro-sim consumer verifier or drift-gate work that belongs to issue #614.",
+    "Broad rewrites of all local hooks or GitHub workflows.",
+    "Any claim of repo-wide governance closure."
+  ],
+  "research_summary": "Parent issue #615 and merged children #617 and #619 leave a narrow residual root-hook gap: fail-closed parity between backlog-first authority and commit/branch progression on issue branches. Live source inspection shows backlog-check.sh only runs check_overlord_backlog_github_alignment.py, governance-check.sh validates structured plans, changed-file governance surfaces, backlog alignment, and whitespace, and existing progress staleness tooling explicitly skips hldpro-governance. Specialist review confirmed the next child should stay on hooks/backlog-check.sh, hooks/governance-check.sh, and only the smallest helper required to make standards wording, root-hook behavior, and issue-branch authority lookup agree on one canonical contract.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/617",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/619",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/621",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/607",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/612",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/614",
+    "STANDARDS.md",
+    "docs/PROGRESS.md",
+    "hooks/backlog-check.sh",
+    "hooks/governance-check.sh",
+    "scripts/overlord/check_progress_github_issue_staleness.py"
+  ],
+  "sprints": [
+    {
+      "name": "Packet Bootstrap",
+      "goal": "Create the issue-local planning packet and execution-scope boundaries before root-hook parity changes.",
+      "tasks": [
+        "Create the issue-local PDCAR, structured plan, execution scope, handoff, review packet, review placeholders, cross-review note, and validation artifact.",
+        "Restate the narrowed root-hook parity surfaces and the live authority contradiction confirmed by specialist review.",
+        "Keep the lane in planning_only mode until the packet is validated and alternate-family review is recorded."
+      ],
+      "acceptance_criteria": [
+        "The packet names the exact root-hook and helper owned surfaces.",
+        "The packet explicitly states the root authority mismatch it must reconcile.",
+        "The packet keeps #617, #619, #607, #612, and #614 as explicit external boundaries.",
+        "The execution scope allows only issue-local planning artifacts during bootstrap.",
+        "The packet states that implementation is blocked until planning validation and alternate-family review complete.",
+        "The packet requires a later parity proof matrix rather than generic prose-only closure."
+      ],
+      "file_paths": [
+        "docs/plans/issue-621-backlog-commit-parity-pdcar.md",
+        "docs/plans/issue-621-backlog-commit-parity-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-04-30-issue-621-backlog-commit-parity-planning.json",
+        "raw/handoffs/2026-04-30-issue-621-backlog-commit-parity.json",
+        "raw/packets/2026-04-30-issue-621-claude-review-packet.md",
+        "raw/cross-review/2026-04-30-issue-621-backlog-commit-parity-plan.md",
+        "docs/codex-reviews/2026-04-30-issue-621-claude.md",
+        "raw/validation/2026-04-30-issue-621-backlog-commit-parity.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "root-hook parity research specialist",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "routing and owned-surface confirmation",
+      "focus": "Verify the narrowest valid owned slice under issue #615 after issues #617 and #619 merged.",
+      "status": "mixed",
+      "summary": "The narrowest valid issue #621 slice is hooks/backlog-check.sh, hooks/governance-check.sh, and only the smallest shared parity helper required for issue-branch backlog/commit-progression parity.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/615",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/617",
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/619",
+        "hooks/backlog-check.sh",
+        "hooks/governance-check.sh"
+      ]
+    },
+    {
+      "reviewer": "planning packet QA specialist",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "packet contract and parity-proof hygiene",
+      "focus": "Verify the planning-only bootstrap packet shape and ensure the parity contradiction is explicitly encoded up front.",
+      "status": "mixed",
+      "summary": "Use issue #619 as the nearest planning-only template, but make issue #621 explicitly prove one canonical authority source instead of leaving split authority between policy wording and root-hook behavior.",
+      "evidence": [
+        "docs/plans/issue-619-pretool-mutation-failclosed-pdcar.md",
+        "STANDARDS.md",
+        "docs/PROGRESS.md",
+        "hooks/backlog-check.sh"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "Claude alternate-family specialist review",
+    "reviewer_model_id": "claude-opus-4-6",
+    "reviewer_model_family": "anthropic",
+    "model_family": "anthropic",
+    "status": "accepted",
+    "summary": "Claude alternate-family review approved the bounded implementation slice with no blocking findings. Residual risk is limited to minor evidence-formatting cleanup around the changed-files placeholder path.",
+    "evidence": [
+      "docs/codex-reviews/2026-04-30-issue-621-claude.md"
+    ]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-621-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "Codex orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #621 is authorized for the bounded root backlog/commit-progression parity implementation slice on the two root hooks, one smallest branch-issue parity helper, focused tests, required governance doc co-staging, and issue-local artifacts only.",
+    "next_execution_step": "Implement the bounded root-hook parity fix, return exact blocked and allowed transcripts, co-stage the required governance docs, and close the slice with Stage 6 evidence without widening into #617, #619, #607, #612, or #614.",
+    "blocked_on": [
+      "Issue #617 remains the already-closed startup/helper child and must not be reopened here.",
+      "Issue #619 remains the separate mutation-time pre-tool lane and must not be absorbed here.",
+      "Issue #607 remains the planning-authority dependency for the parent governance path.",
+      "Issue #612 remains the degraded-fallback schema and CI enforcement lane.",
+      "Issue #614 remains the downstream hldpro-sim verifier or drift-gate lane."
+    ],
+    "handoff_package_ref": "raw/handoffs/2026-04-30-issue-621-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-621-backlog-commit-parity-implementation.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-04-30-issue-621-backlog-commit-parity-plan.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-04-30-issue-621-backlog-commit-parity.md"
+    ],
+    "next_role": "codex-orchestrator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "AC1: Issue #621 remains bounded to hooks/backlog-check.sh, hooks/governance-check.sh, the smallest parity helper if needed, focused tests, required governance doc co-staging, and issue-local artifacts only.",
+      "AC2: Standards wording, docs/PROGRESS guidance, root-hook behavior, and helper lookup converge on one canonical governance authority source for this repo.",
+      "AC3: Both root hooks fail closed when the current issue branch is missing from the active governance tracker and allow the current issue branch when it is represented there.",
+      "AC4: Issue #621 preserves #617, #619, #607, #612, and #614 as external boundaries rather than absorbing their owned surfaces or contracts.",
+      "AC5: Implementation proof returns exact blocked and allowed transcripts, focused test evidence, required governance doc co-staging, Stage 6 closeout evidence, and no broader #615 closure claim."
+    ]
+  },
+  "material_deviation_rules": [
+    "Any edit to .claude/settings.json, hooks/pre-session-context.sh, or scripts/overlord/check_execution_environment.py from issue #621 is a material deviation because those surfaces were already owned by issue #617.",
+    "Any edit to hooks/code-write-gate.sh, hooks/schema-guard.sh, or scripts/overlord/check_plan_preflight.py from issue #621 is a material deviation because those belong to the issue #619 mutation-time lane.",
+    "Any edit to assert_execution_scope.py, fallback-log schema surfaces, or CI workflow enforcement from issue #621 is a material deviation because those belong to issue #612.",
+    "Any implementation of root-hook parity behavior before the issue-local planning packet is validated and alternate-family reviewed is a material deviation.",
+    "Any claim that issue #621 closes repo-wide governance enforcement is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction",
+    "issue #621"
+  ],
+  "approved_at": "2026-04-30T03:55:00Z"
+}
