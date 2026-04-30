@@ -10,6 +10,7 @@
 
 | Plan | Issue | Status | Priority | Est. Hours | Deliverables | Notes |
 |------|-------|--------|----------|------------|--------------|-------|
+| Execution-scope degraded fallback enforcement | #625 | IN PROGRESS | HIGH | 3-5 | Execution-scope schema/assert/test enforcement, focused proof matrix, required governance doc co-staging, Stage 6 closeout | Child lane under #612; bounded to execution-scope-only same-family degraded fallback evidence and keeps fallback-log parity plus #614 separate |
 | Mutation-time pre-tool fail-closed hardening | #623 | IN PROGRESS | HIGH | 4-6 | Edit/MultiEdit hook wiring, canonical docs/plans preflight, expanded Bash mutation detection, fail-closed helper/validator behavior, focused tests, Stage 6 closeout | Child lane under #615; bounded to `.claude/settings.json`, `hooks/code-write-gate.sh`, `hooks/schema-guard.sh`, `scripts/overlord/check_plan_preflight.py`, focused tests, and required doc co-staging only |
 | Root backlog/commit-progression parity fail-closed enforcement | #621 | DONE | HIGH | 3-5 | Branch-issue parity helper, root-hook blocked/allowed proof, standards/progress reconciliation, focused tests, Stage 6 closeout | Child lane under #615; merged via PR #622 and keeps #617, #619, #607, #612, and #614 separate |
 | Pre-session startup fail-closed lane-state surfacing | #617 | DONE | HIGH | 4-6 | Repo-local startup hook summary, unique-scope startup preflight, focused tests, implementation packet and review evidence | Child lane under #615; merged via PR #618 and bounded to startup/helper surfacing only |

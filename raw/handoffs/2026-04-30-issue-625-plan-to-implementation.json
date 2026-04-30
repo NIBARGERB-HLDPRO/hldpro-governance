@@ -1,0 +1,133 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-625-plan-to-implementation",
+  "issue_number": 625,
+  "parent_epic_number": 612,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-625-execution-scope-fallback-enforcement-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-625-execution-scope-fallback-enforcement-implementation.json",
+  "packet_ref": "raw/packets/2026-04-30-issue-625-claude-review-packet.md",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-625-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Issue #625 remains bounded to docs/schemas/execution-scope.schema.json, scripts/overlord/assert_execution_scope.py, scripts/overlord/test_assert_execution_scope.py, required governance doc co-staging, and issue-local artifacts only.",
+      "verification_refs": [
+        "docs/schemas/execution-scope.schema.json",
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py",
+        "raw/execution-scopes/2026-04-30-issue-625-execution-scope-fallback-enforcement-implementation.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Same-family degraded fallback passes only when cross_family_path_unavailable is true and cross_family_path_ref plus fallback_log_ref are present, repo-safe, and resolve to existing repo files.",
+      "verification_refs": [
+        "docs/schemas/execution-scope.schema.json",
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py",
+        "raw/validation/2026-04-30-issue-625-execution-scope-fallback-enforcement.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "The implementation fails closed for the negative degraded-fallback classes: missing field, false or blank field where applicable, unsafe or non-local ref, and non-existent artifact ref.",
+      "verification_refs": [
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py",
+        "raw/validation/2026-04-30-issue-625-execution-scope-fallback-enforcement.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Ordinary cross-family non-degraded paths still pass unchanged and existing same-family exception rules still apply alongside the new degraded-fallback enforcement.",
+      "verification_refs": [
+        "scripts/overlord/assert_execution_scope.py",
+        "scripts/overlord/test_assert_execution_scope.py",
+        "raw/validation/2026-04-30-issue-625-execution-scope-fallback-enforcement.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "Implementation proof includes focused tests, validator replay, required governance doc co-staging, Stage 6 closeout evidence, and no broader #612 closure claim.",
+      "verification_refs": [
+        "docs/FAIL_FAST_LOG.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "raw/closeouts/2026-04-30-issue-625-execution-scope-fallback-enforcement.md",
+        "raw/validation/2026-04-30-issue-625-execution-scope-fallback-enforcement.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/test_assert_execution_scope.py",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-30-issue-625-execution-scope-fallback-enforcement-implementation.json --require-lane-claim",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-625-execution-scope-fallback-enforcement-20260430 --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-30-issue-625-plan-to-implementation.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-30-issue-625-execution-scope-fallback-enforcement.md --root .",
+    "python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-30-issue-625-execution-scope-fallback-enforcement-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-625-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-30-issue-625-execution-scope-fallback-enforcement.md"
+  ],
+  "artifact_refs": [
+    "OVERLORD_BACKLOG.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/codex-reviews/2026-04-30-issue-625-claude.md",
+    "docs/schemas/execution-scope.schema.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "docs/plans/issue-625-execution-scope-fallback-enforcement-pdcar.md",
+    "docs/plans/issue-625-execution-scope-fallback-enforcement-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-30-issue-625-execution-scope-fallback-enforcement-implementation.json",
+    "raw/validation/2026-04-30-issue-625-execution-scope-fallback-enforcement.md"
+  ],
+  "audit_refs": [],
+  "closeout_ref": "raw/closeouts/2026-04-30-issue-625-execution-scope-fallback-enforcement.md",
+  "blocked_on": [
+    "Issue #612 remains the wider parent enforcement lane and must not be closed by issue #625 alone.",
+    "Issue #614 remains the downstream verifier lane and must not be mixed into this implementation slice."
+  ],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-30T18:25:00Z",
+  "notes": "Implementation-ready handoff for issue #625. Scope is limited to execution-scope schema/assertion/test enforcement for degraded same-family fallback evidence, required governance doc co-staging, and issue-local validation/closeout artifacts only."
+}

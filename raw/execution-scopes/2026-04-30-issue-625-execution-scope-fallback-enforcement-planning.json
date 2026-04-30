@@ -1,0 +1,54 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-625-execution-scope-fallback-enforcement-20260430",
+  "allowed_write_paths": [
+    "docs/plans/issue-625-execution-scope-fallback-enforcement-pdcar.md",
+    "docs/plans/issue-625-execution-scope-fallback-enforcement-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-30-issue-625-execution-scope-fallback-enforcement-planning.json",
+    "raw/handoffs/2026-04-30-issue-625-execution-scope-fallback-enforcement.json",
+    "raw/packets/2026-04-30-issue-625-claude-review-packet.md",
+    "raw/cross-review/2026-04-30-issue-625-execution-scope-fallback-enforcement-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-625-claude.md",
+    "raw/validation/2026-04-30-issue-625-execution-scope-fallback-enforcement.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-614-hldpro-sim-verifier-drift-gate"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout is dirty and on an unrelated active branch, so issue-625 planning stays isolated in this clean worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-612-cross-family-fallback-enforcement",
+      "reason": "Issue #612 remains the wider parent enforcement lane and must not be mutated from issue #625."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/var/worktrees/issue-614-hldpro-sim-verifier-drift-gate",
+      "reason": "Issue #614 remains a separate downstream verifier lane and must not be mixed into issue #625."
+    }
+  ],
+  "execution_mode": "planning_only",
+  "lane_claim": {
+    "issue_number": 625,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/625",
+    "claimed_by": "codex",
+    "claimed_at": "2026-04-30T05:20:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "gpt-5.4",
+    "accepted_at": "2026-04-30T05:20:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-625-execution-scope-fallback-enforcement-pdcar.md",
+      "docs/plans/issue-625-execution-scope-fallback-enforcement-structured-agent-cycle-plan.json",
+      "raw/cross-review/2026-04-30-issue-625-execution-scope-fallback-enforcement-plan.md",
+      "raw/handoffs/2026-04-30-issue-625-execution-scope-fallback-enforcement.json"
+    ],
+    "active_exception_ref": "raw/cross-review/2026-04-30-issue-625-execution-scope-fallback-enforcement-plan.md",
+    "active_exception_expires_at": "2026-05-01T05:20:00Z"
+  }
+}
