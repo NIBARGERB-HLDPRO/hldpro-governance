@@ -161,6 +161,7 @@
 | GOV-019 | Planner write-boundary enforcement now treats Tier 1 sessions as planning-only by default (`execution_mode: planning_only`), with `allowed_write_paths` as the planning artifact allowlist. |
 | GOV-019 | Non-planning diffs now require accepted pinned-agent handoff evidence, and same-model or same-family planner/implementer pairs require an active exception reference with expiry. |
 | GOV-019 | For same-family degraded fallback on non-planning execution scopes, `scripts/overlord/assert_execution_scope.py` now requires `handoff_evidence.cross_family_path_unavailable == true` plus repo-safe, existing `cross_family_path_ref` and `fallback_log_ref`, with focused tests covering pass, fail-closed, and regression cases. |
+| GOV-019 | `.github/scripts/check_fallback_log_schema.py` now preserves generic fallback-log compatibility while treating `fallback_scope: alternate_model_review` as a stricter degraded path that requires `cross_family_path_unavailable: true`, a repo-safe `cross_family_path_ref`, and a non-generic reason; `scripts/model-fallback-log.sh` can emit those fields directly and the reusable schema workflow continues to gate only changed fallback files. |
 | GOV-019 | For planner-boundary enforcement, CI in `.github/workflows/governance-check.yml` is authoritative while local `hooks/code-write-gate.sh` output is warning/early-signal only. |
 
 ### PAGES_DEPLOYMENT_PARITY

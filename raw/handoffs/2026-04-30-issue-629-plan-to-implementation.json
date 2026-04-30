@@ -1,0 +1,134 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-629-plan-to-implementation",
+  "issue_number": 629,
+  "parent_epic_number": 612,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-629-fallback-log-parity-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-629-fallback-log-parity-implementation.json",
+  "packet_ref": "raw/packets/2026-04-30-issue-629-claude-review-packet.md",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-629-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Issue #629 remains bounded to .github/scripts/check_fallback_log_schema.py, scripts/model-fallback-log.sh, .github/workflows/check-fallback-log-schema.yml, focused tests for those surfaces, required governance doc co-staging, and issue-local artifacts only.",
+      "verification_refs": [
+        ".github/scripts/check_fallback_log_schema.py",
+        ".github/workflows/check-fallback-log-schema.yml",
+        "scripts/model-fallback-log.sh",
+        "raw/execution-scopes/2026-04-30-issue-629-fallback-log-parity-implementation.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "The implementation makes an explicit writer/checker parity decision for fallback-log reason semantics, keeps the degraded same-family contract machine-checkable, and states whether historical fallback logs outside the PR diff remain grandfathered.",
+      "verification_refs": [
+        ".github/scripts/check_fallback_log_schema.py",
+        "scripts/model-fallback-log.sh",
+        ".github/workflows/check-fallback-log-schema.yml",
+        "raw/validation/2026-04-30-issue-629-fallback-log-parity.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Implementation proof includes the positive classes: writer pass, checker pass on a valid changed fallback file, and append or multi-block pass without regressing valid existing behavior.",
+      "verification_refs": [
+        ".github/scripts/check_fallback_log_schema.py",
+        "scripts/model-fallback-log.sh",
+        "raw/validation/2026-04-30-issue-629-fallback-log-parity.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "The implementation fails closed for the negative classes: missing required field, blank required field, generic placeholder, semantically inconsistent degraded-fallback metadata, malformed or invalid reason or value combinations, plus workflow gate fail behavior for an invalid changed fallback file.",
+      "verification_refs": [
+        ".github/scripts/check_fallback_log_schema.py",
+        ".github/workflows/check-fallback-log-schema.yml",
+        "raw/validation/2026-04-30-issue-629-fallback-log-parity.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "Implementation proof includes workflow skip behavior when PR context is absent, downstream regression proof that hardened fallback logs still work for packet or PR consumers, validator replay, Stage 6 closeout evidence, and no broader #612 closure claim.",
+      "verification_refs": [
+        "docs/FAIL_FAST_LOG.md",
+        "docs/FEATURE_REGISTRY.md",
+        "docs/PROGRESS.md",
+        "raw/closeouts/2026-04-30-issue-629-fallback-log-parity.md",
+        "raw/validation/2026-04-30-issue-629-fallback-log-parity.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 .github/scripts/test_check_fallback_log_schema.py",
+    "bash scripts/test_model_fallback_log.sh",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-629-fallback-log-parity-20260430 --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-30-issue-629-plan-to-implementation.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-30-issue-629-fallback-log-parity.md --root .",
+    "python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-30-issue-629-fallback-log-parity-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-629-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-30-issue-629-fallback-log-parity.md"
+  ],
+  "artifact_refs": [
+    ".github/scripts/check_fallback_log_schema.py",
+    ".github/workflows/check-fallback-log-schema.yml",
+    "OVERLORD_BACKLOG.md",
+    "docs/FAIL_FAST_LOG.md",
+    "docs/FEATURE_REGISTRY.md",
+    "docs/PROGRESS.md",
+    "docs/codex-reviews/2026-04-30-issue-629-claude.md",
+    "docs/plans/issue-629-fallback-log-parity-pdcar.md",
+    "docs/plans/issue-629-fallback-log-parity-structured-agent-cycle-plan.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "raw/execution-scopes/2026-04-30-issue-629-fallback-log-parity-implementation.json",
+    "raw/validation/2026-04-30-issue-629-fallback-log-parity.md",
+    "scripts/model-fallback-log.sh"
+  ],
+  "audit_refs": [],
+  "closeout_ref": "raw/closeouts/2026-04-30-issue-629-fallback-log-parity.md",
+  "blocked_on": [
+    "Issue #612 remains the wider parent enforcement lane and must not be closed by issue #629 alone.",
+    "Issue #614 remains the downstream verifier lane and must not be mixed into this implementation slice.",
+    "Issue #615 local-hook enforcement children remain out of scope for fallback-log parity."
+  ],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-30T14:18:30Z",
+  "notes": "Implementation-ready handoff for issue #629. Scope is limited to fallback-log schema, writer, and workflow parity for degraded same-family fallback evidence, focused tests, required governance doc co-staging, and issue-local validation and closeout artifacts only."
+}

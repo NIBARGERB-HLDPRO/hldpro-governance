@@ -1,0 +1,34 @@
+{
+  "issue_number": 629,
+  "branch_name": "issue-629-fallback-log-parity-20260430",
+  "execution_mode": "planning_only",
+  "lane_claim": {
+    "issue_number": 629,
+    "branch_name": "issue-629-fallback-log-parity-20260430"
+  },
+  "scope_summary": "Planning-only packet for the bounded fallback-log schema/workflow parity child under issue #612.",
+  "allowed_write_paths": [
+    "docs/plans/issue-629-fallback-log-parity-pdcar.md",
+    "docs/plans/issue-629-fallback-log-parity-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-30-issue-629-fallback-log-parity-planning.json",
+    "raw/handoffs/2026-04-30-issue-629-fallback-log-parity.json",
+    "raw/packets/2026-04-30-issue-629-claude-review-packet.md",
+    "raw/cross-review/2026-04-30-issue-629-fallback-log-parity-plan.md",
+    "raw/validation/2026-04-30-issue-629-fallback-log-parity.md",
+    "docs/codex-reviews/2026-04-30-issue-629-claude.md"
+  ],
+  "blocked_paths": [
+    ".github/scripts/check_fallback_log_schema.py",
+    ".github/workflows/check-fallback-log-schema.yml",
+    "scripts/model-fallback-log.sh",
+    "scripts/overlord/assert_execution_scope.py",
+    "scripts/overlord/test_assert_execution_scope.py",
+    "hooks/",
+    ".claude/settings.json"
+  ],
+  "notes": [
+    "Planning-only lane; implementation remains blocked pending review and later handoff.",
+    "Issue #629 owns fallback-log schema/workflow parity only.",
+    "Execution-scope, local-hook, #607, and #614 surfaces remain out of scope."
+  ]
+}

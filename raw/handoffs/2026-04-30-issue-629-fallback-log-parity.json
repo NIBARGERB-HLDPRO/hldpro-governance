@@ -1,0 +1,105 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-629-fallback-log-parity",
+  "issue_number": 629,
+  "parent_epic_number": 612,
+  "lifecycle_state": "planned",
+  "from_role": "codex-orchestrator",
+  "to_role": "codex-orchestrator",
+  "structured_plan_ref": "docs/plans/issue-629-fallback-log-parity-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-04-30-issue-629-fallback-log-parity-planning.json",
+  "packet_ref": "raw/packets/2026-04-30-issue-629-claude-review-packet.md",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-04-30-issue-629-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Issue #629 must remain bounded to .github/scripts/check_fallback_log_schema.py, scripts/model-fallback-log.sh, .github/workflows/check-fallback-log-schema.yml, focused tests, and issue-local artifacts only.",
+      "verification_refs": [
+        "docs/plans/issue-629-fallback-log-parity-pdcar.md",
+        "docs/plans/issue-629-fallback-log-parity-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Issue #629 must define the fallback-log parity contract, resolve the writer/checker reason mismatch explicitly, and state whether historical logs outside the PR diff are grandfathered.",
+      "verification_refs": [
+        "docs/plans/issue-629-fallback-log-parity-pdcar.md",
+        "docs/plans/issue-629-fallback-log-parity-structured-agent-cycle-plan.json",
+        "raw/packets/2026-04-30-issue-629-claude-review-packet.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Issue #629 must define explicit positive, negative, workflow, and downstream-regression proof classes for the later implementation lane.",
+      "verification_refs": [
+        "docs/plans/issue-629-fallback-log-parity-pdcar.md",
+        "docs/plans/issue-629-fallback-log-parity-structured-agent-cycle-plan.json",
+        "raw/validation/2026-04-30-issue-629-fallback-log-parity.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Issue #629 must record a real cross-family review artifact or an explicit unavailable state without substituting same-family helper reviews.",
+      "verification_refs": [
+        "docs/codex-reviews/2026-04-30-issue-629-claude.md",
+        "raw/validation/2026-04-30-issue-629-fallback-log-parity.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 -m json.tool docs/plans/issue-629-fallback-log-parity-structured-agent-cycle-plan.json",
+    "python3 -m json.tool raw/execution-scopes/2026-04-30-issue-629-fallback-log-parity-planning.json",
+    "python3 -m json.tool raw/handoffs/2026-04-30-issue-629-fallback-log-parity.json",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-629-fallback-log-parity-20260430 --require-if-issue-branch",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-30-issue-629-fallback-log-parity.json",
+    "bash scripts/cross-review/require-dual-signature.sh raw/cross-review/2026-04-30-issue-629-fallback-log-parity-plan.md",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-04-30-issue-629-fallback-log-parity-plan.md",
+    "docs/codex-reviews/2026-04-30-issue-629-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-30-issue-629-fallback-log-parity.md"
+  ],
+  "artifact_refs": [
+    "docs/plans/issue-629-fallback-log-parity-pdcar.md",
+    "docs/plans/issue-629-fallback-log-parity-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-04-30-issue-629-fallback-log-parity-planning.json",
+    "raw/packets/2026-04-30-issue-629-claude-review-packet.md"
+  ],
+  "audit_refs": [],
+  "closeout_ref": null,
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-04-30T14:15:00Z",
+  "notes": "Planning-only handoff for issue #629. This child narrows issue #612 to fallback-log schema/workflow parity only and keeps execution-scope rework, local-hook children, #607, and #614 out of scope."
+}
