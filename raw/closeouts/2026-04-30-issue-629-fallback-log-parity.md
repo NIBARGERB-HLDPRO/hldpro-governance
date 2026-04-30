@@ -61,7 +61,7 @@ to support the stronger proof contract introduced under parent issue `#612`.
   - https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/625
   - https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/607
   - https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/614
-- PR: pre-PR
+- PR: https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/630
 
 ## Schema / Artifact Version
 
