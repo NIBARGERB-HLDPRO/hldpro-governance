@@ -43,6 +43,8 @@ Implementation scope for issue `#617`:
   `docs/FAIL_FAST_LOG.md` pattern entry
 - produce the issue-local Stage 6 closeout artifact for the bounded
   governance-surface implementation slice
+- allow the bounded graph/wiki write-back emitted by the governed Stage 6
+  closeout helper under `graphify-out/` and `wiki/`
 - add focused startup helper/hook tests and validation artifacts for the
   startup success/fail transcripts only
 
@@ -61,6 +63,8 @@ The lane is acceptable only if it:
 - co-stages the required governance docs for the bounded implementation slice
 - carries a valid Stage 6 closeout artifact for the issue-local implementation
   slice
+- treats `graphify-out/` and `wiki/` updates as closeout-helper output only,
+  not as an excuse to absorb unrelated knowledge-base work
 - keeps any broader code-write/pre-hook blocking work for a later child under
   `#615`
 

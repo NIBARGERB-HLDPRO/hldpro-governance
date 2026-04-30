@@ -78,7 +78,9 @@ Review artifact refs:
 
 Gate artifact refs:
 - `raw/validation/2026-04-30-issue-617-prehook-startup-failclosed.md`
-- `cache/local-ci-gate/reports/20260430T024758Z-hldpro-governance-git/local-ci-20260430T024801Z.json`
+
+Gate command result:
+- `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` => `PASS`
 
 Handoff lifecycle: accepted
 

@@ -82,6 +82,7 @@
     "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-implementation.json --require-lane-claim",
     "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-617-prehook-startup-failclosed-20260430 --require-if-issue-branch",
     "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-30-issue-617-plan-to-implementation.json",
+    "bash hooks/closeout-hook.sh raw/closeouts/2026-04-30-issue-617-prehook-startup-failclosed.md",
     "python3 scripts/overlord/check_stage6_closeout.py --root . --branch-name issue-617-prehook-startup-failclosed-20260430 --changed-files-file <changed-files.txt>",
     "python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json",
     "git diff --check"
@@ -98,6 +99,10 @@
     "docs/FAIL_FAST_LOG.md",
     "docs/FEATURE_REGISTRY.md",
     "docs/PROGRESS.md",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "graphify-out/hldpro-governance/GRAPH_REPORT.md",
+    "graphify-out/hldpro-governance/graph.json",
     "hooks/pre-session-context.sh",
     "scripts/overlord/check_execution_environment.py",
     "scripts/overlord/test_check_execution_environment.py",
@@ -106,7 +111,9 @@
     "docs/plans/issue-617-prehook-startup-failclosed-structured-agent-cycle-plan.json",
     "raw/closeouts/2026-04-30-issue-617-prehook-startup-failclosed.md",
     "raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-implementation.json",
-    "raw/validation/2026-04-30-issue-617-prehook-startup-failclosed.md"
+    "raw/validation/2026-04-30-issue-617-prehook-startup-failclosed.md",
+    "wiki/index.md",
+    "wiki/hldpro/index.md"
   ],
   "audit_refs": [],
   "closeout_ref": "raw/closeouts/2026-04-30-issue-617-prehook-startup-failclosed.md",
@@ -118,5 +125,5 @@
   ],
   "handoff_decision": "accepted",
   "created_at": "2026-04-30T03:35:00Z",
-  "notes": "Implementation-ready handoff for issue #617. Scope is limited to the repo-local startup/helper surfacing path, unique claimed-scope discovery, required governance doc co-staging, Stage 6 closeout evidence, and is backed by an implementation-phase alternate-family review."
+  "notes": "Implementation-ready handoff for issue #617. Scope is limited to the repo-local startup/helper surfacing path, unique claimed-scope discovery, required governance doc co-staging, Stage 6 closeout evidence, and the helper-owned graph/wiki write-back emitted under graphify-out/ and wiki/."
 }

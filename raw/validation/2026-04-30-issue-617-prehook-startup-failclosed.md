@@ -26,7 +26,7 @@ for the first startup-only child under issue `#615`.
 | `python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-04-30-issue-617-prehook-startup-failclosed-implementation.json --require-lane-claim` | PASS with warnings | Implementation scope validates; warnings only reflect declared dirty parallel roots and pre-existing unreadable sibling scope files. |
 | `python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-04-30-issue-617-plan-to-implementation.json` | PASS | Implementation-ready handoff validates with bounded startup-only artifact refs. |
 | `python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-04-30-issue-617-prehook-startup-failclosed.md --root .` | PASS | Stage 6 closeout validates for the bounded governance-surface implementation slice. |
-| `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | PASS | Local CI Gate report `cache/local-ci-gate/reports/20260430T024758Z-hldpro-governance-git/local-ci-20260430T024801Z.json` passed with zero blockers. |
+| `python3 tools/local-ci-gate/bin/hldpro-local-ci run --profile hldpro-governance --json` | PASS | Local CI Gate report `cache/local-ci-gate/reports/20260430T025354Z-hldpro-governance-git/local-ci-20260430T025356Z.json` passed with zero blockers across the final metadata-aligned and closeout-writeback branch state. |
 
 ## Findings
 
@@ -44,6 +44,9 @@ for the first startup-only child under issue `#615`.
   `docs/FEATURE_REGISTRY.md`, and `docs/FAIL_FAST_LOG.md`.
 - The issue-local Stage 6 closeout artifact now validates and the
   `hldpro-governance` Local CI Gate profile passes for the full bounded slice.
+- The governed Stage 6 helper-owned write-back under `graphify-out/` and
+  `wiki/` is now explicitly covered by the implementation scope and passes the
+  final planner-boundary replay.
 - `.claude/settings.json` now resolves the active worktree root before invoking
   `hooks/pre-session-context.sh`, so the startup hook runs from the current
   issue worktree rather than a hardcoded home-root governance checkout.
