@@ -1,0 +1,69 @@
+All five files read. Producing the alternate-family specialist review now.
+
+---
+
+# Alternate-Family Specialist Review — Issue #623 Planning Packet
+
+**Reviewer:** Claude Opus 4.6 (Anthropic)
+**Review scope:** Planning-only packet for issue #623, mutation-time pre-tool fail-closed hardening
+**Date:** 2026-04-30
+**Execution mode:** `planning_only`
+
+---
+
+## Findings
+
+**No blocking findings.**
+
+### Q1 — Narrow bounding to local mutation-time pre-tool surfaces
+
+**Pass.** The owned surface set is consistently enumerated across all five artifacts: `.claude/settings.json`, `hooks/code-write-gate.sh`, `hooks/schema-guard.sh`, `scripts/overlord/check_plan_preflight.py`, focused tests, and issue-local artifacts. The execution scope's `allowed_write_paths` is correctly restricted to planning-only artifacts for this phase. The `forbidden_roots` and `active_parallel_roots` arrays fence off the primary checkout and all sibling worktrees by absolute path.
+
+**Minor observation (non-blocking):** The PDCAR §Do (lines 57–59) names co-staging targets `docs/PROGRESS.md`, `docs/FEATURE_REGISTRY.md`, and `docs/FAIL_FAST_LOG.md`, but these do not appear in the execution scope's `allowed_write_paths` or the structured plan's sprint `file_paths`. This is correct for the current `planning_only` phase — but when the implementation execution scope is created, those paths must be added or the write gate will block them. Recommend that the future implementation sprint's `file_paths` and execution scope explicitly enumerate these co-staging targets.
+
+### Q2 — Sibling and dependency lane preservation
+
+**Pass.** Issues #617 and #621 are explicitly named as "Closed sibling boundaries" in the PDCAR header (lines 12–13), restated as non-reopening constraints in the PDCAR §Plan (lines 24–26), listed in the structured plan's `out_of_scope` array, the execution scope's `active_parallel_roots`, the handoff's `blocked_on` list, and acceptance criterion AC2. Issues #607, #612, and #614 receive symmetric treatment as dependency or follow-on lanes. The six material-deviation rules in the structured plan independently guard against each absorption vector. This is thorough and redundant in a good way — no single artifact omission would silently drop a boundary.
+
+### Q3 — Implementation gate
+
+**Pass.** The implementation block is stated in at least six independent locations:
+
+1. Structured plan `execution_mode: "planning_only"`
+2. Structured plan `execution_handoff.blocked_on[5]`
+3. Structured plan sprint AC (sprint 0, criterion 4)
+4. Structured plan material-deviation rule 5
+5. Handoff `blocked_on[5]`
+6. Handoff AC3
+
+The alternate-family review status is correctly `"pending"` and the validation artifact shows all commands as `PENDING`. The handoff decision is `"draft"`, consistent with pre-validation state.
+
+### Q4 — AC and proof-obligation specificity
+
+**Pass.** The proof obligations are concrete and enumerated rather than prose-only. The PDCAR §Check (lines 86–109) requires a per-surface proof matrix with five distinct case types (blocked Edit/MultiEdit, blocked Bash write verb, blocked fail-open removal, allowed governance-surface mutation, allowed read-only/out-of-scope), each requiring exact command, exit code, and block/allow message. AC4 in both the structured plan and handoff mirrors this. The bounded-write proof requirement (PDCAR lines 100–108) demands a touched-file list and explicit no-touch evidence for named sibling surfaces (`hooks/pre-session-context.sh`, `scripts/overlord/check_execution_environment.py`, `assert_execution_scope.py`, `hooks/backlog-check.sh`, `hooks/governance-check.sh`, CI workflows). This is specific enough to prevent drift into CI/schema or broader hook rewrites.
+
+---
+
+## Open Questions
+
+1. **Co-staging path enumeration for implementation phase.** When the implementation execution scope is authored, will the co-staging targets (`docs/PROGRESS.md`, `docs/FEATURE_REGISTRY.md`, `docs/FAIL_FAST_LOG.md`) be added to `allowed_write_paths` explicitly, or will they rely on a broader governance-doc exception? The current packet is silent on the mechanism.
+
+2. **Handoff `handoff_decision: "draft"` vs. structured plan `approved: true`.** These are not contradictory in context (approved for planning, draft for implementation promotion), but future validators that check `handoff_decision` may interpret `"draft"` as not yet approved. Worth a clarifying note if the handoff schema enforces state transitions.
+
+---
+
+## Validation Gaps
+
+- All eight validation commands in the validation artifact are `PENDING`. This is expected for a planning bootstrap, but none should be marked `PASS` until they are actually executed. The review packet dispatch (`scripts/codex-review.sh claude`) is correctly sequenced after local validation.
+
+- No implementation sprint exists yet in the structured plan (only "Packet Bootstrap"). This is correct for `planning_only` mode. The implementation sprint(s), their `file_paths`, and a revised execution scope with implementation write paths must be authored as a separate promotion step after this review completes.
+
+---
+
+## Summary
+
+The planning-only packet for issue #623 is well-constructed and passes all four required review criteria. Scope is narrowly bounded to the four named local mutation surfaces. All five sibling/dependency issues are explicitly preserved as external boundaries with redundant guards across artifacts. Implementation is blocked by a multi-layered gate requiring both planning validation and this alternate-family review. The acceptance criteria and proof obligations are concrete, enumerated, and require machine-verifiable evidence rather than prose attestation.
+
+**Residual risk:** Low. The only substantive gap is the absence of co-staging paths in the current execution scope, which is expected at the planning phase but must be addressed before implementation promotion. The `handoff_decision`/`approved` state asymmetry is cosmetic.
+
+**Verdict: Approved for planning-phase promotion.** The packet may proceed to validation command execution and, once those pass, to implementation sprint authoring. No blocking issues found.

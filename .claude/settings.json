@@ -31,6 +31,26 @@
             "timeout": 5000
           }
         ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $HOME/Developer/HLDPRO/hldpro-governance/hooks/code-write-gate.sh",
+            "timeout": 5000
+          }
+        ]
+      },
+      {
+        "matcher": "MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $HOME/Developer/HLDPRO/hldpro-governance/hooks/code-write-gate.sh",
+            "timeout": 5000
+          }
+        ]
       }
     ],
     "PostToolUse": [

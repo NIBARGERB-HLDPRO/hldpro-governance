@@ -1,6 +1,6 @@
 #!/bin/bash
 # code-write-gate.sh — PreToolUse hook enforcing SoM division of labor
-# Fires on Write tool; blocks Claude from creating new code files directly.
+# Fires on mutation-capable file tools; blocks Claude from creating new code files directly.
 # Claude Code hook contract: exit 0 = allow, exit 2 = hard block.
 # NOTE: set -e is intentionally omitted — silent non-zero exits would block all commands.
 
@@ -11,6 +11,14 @@ input="$(cat 2>/dev/null)"
 if [ -z "$input" ]; then
   exit 0
 fi
+
+block_hook() {
+  local reason="$1"
+  local escaped_reason
+  escaped_reason="$(printf '%s' "$reason" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read())[1:-1])')"
+  printf '%s' "{\"decision\":\"block\",\"reason\":\"${escaped_reason}\"}"
+  exit 2
+}
 
 repo_root_from_cwd="$(git rev-parse --show-toplevel 2>/dev/null || true)"
 if [ -n "$repo_root_from_cwd" ]; then
@@ -98,19 +106,37 @@ PY
   fi
 fi
 
-# Extract file_path from tool_input
-file_path="$(printf '%s' "$input" | python3 -c "
-import sys, json
+# Extract mutation target from tool_input
+mutation_payload="$(printf '%s' "$input" | python3 -c "
+import json, sys
 try:
     data = json.load(sys.stdin)
-    print(data.get('tool_input', {}).get('file_path', ''))
-except Exception:
-    print('')
-" 2>/dev/null)"
+except Exception as exc:
+    print(json.dumps({'error': f'malformed mutation hook payload: {exc}', 'tool_name': '', 'file_path': ''}))
+    raise SystemExit(0)
+tool_name = str(data.get('tool_name') or data.get('tool') or '')
+tool_input = data.get('tool_input') if isinstance(data.get('tool_input'), dict) else {}
+file_path = str(tool_input.get('file_path') or '')
+print(json.dumps({'error': '', 'tool_name': tool_name, 'file_path': file_path}))
+" 2>/dev/null || printf '%s' '{"error":"failed to parse mutation hook payload","tool_name":"","file_path":""}')"
+mutation_error="$(printf '%s' "$mutation_payload" | python3 -c "import json,sys; print(json.load(sys.stdin).get('error',''))" 2>/dev/null || printf 'failed to parse mutation hook payload')"
+mutation_tool_name="$(printf '%s' "$mutation_payload" | python3 -c "import json,sys; print(json.load(sys.stdin).get('tool_name',''))" 2>/dev/null || true)"
+file_path="$(printf '%s' "$mutation_payload" | python3 -c "import json,sys; print(json.load(sys.stdin).get('file_path',''))" 2>/dev/null || true)"
 
-# No path → allow
+case "$mutation_tool_name" in
+  ""|Write|Edit|MultiEdit)
+    ;;
+  *)
+    exit 0
+    ;;
+esac
+
+if [ -n "$mutation_error" ]; then
+  block_hook "FAIL: ${mutation_error}"
+fi
+
 if [ -z "$file_path" ]; then
-  exit 0
+  block_hook "FAIL: missing file_path for mutation tool '${mutation_tool_name:-unknown}'"
 fi
 
 file_dir="$(dirname "$file_path")"
@@ -120,9 +146,10 @@ done
 repo_root="$(git -C "$file_dir" rev-parse --show-toplevel 2>/dev/null || true)"
 if [ -n "$repo_root" ]; then
   validator="$repo_root/scripts/overlord/validate_structured_agent_cycle_plan.py"
-  if [ -f "$validator" ]; then
-    # If relpath calculation fails for an unusual hook payload, keep the hook's historical graceful-degradation behavior.
-    rel_path="$(python3 - "$repo_root" "$file_path" <<'PY' 2>/dev/null || true
+  if [ ! -f "$validator" ]; then
+    block_hook "FAIL: missing governance-surface validator scripts/overlord/validate_structured_agent_cycle_plan.py"
+  fi
+  rel_path="$(python3 - "$repo_root" "$file_path" <<'PY' 2>/dev/null || true
 import os
 import sys
 
@@ -130,94 +157,123 @@ root, path = sys.argv[1], sys.argv[2]
 print(os.path.relpath(path, root))
 PY
 )"
-    if [ -n "$rel_path" ]; then
-      branch_name="$(git -C "$repo_root" branch --show-current 2>/dev/null || true)"
-      plan_preflight="$repo_root/scripts/overlord/check_plan_preflight.py"
-      if [ -f "$plan_preflight" ]; then
-        trivial_flag=""
-        if [ "${PLAN_GATE_TRIVIAL_SINGLE_LINE:-}" = "true" ]; then
-          trivial_flag="--trivial-single-line"
-        fi
-        plan_result="$(python3 "$plan_preflight" \
-          --repo-root "$repo_root" \
-          --target-path "$rel_path" \
-          --intent write \
-          $trivial_flag \
-          --json 2>/dev/null || true)"
-        plan_decision="$(printf '%s' "$plan_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('decision','allow'))" 2>/dev/null || printf 'allow')"
-        if [ "$plan_decision" = "block" ]; then
-          plan_reason="$(printf '%s' "$plan_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('reason',''))" 2>/dev/null || true)"
-          escaped_reason="$(printf '%s' "$plan_reason" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read())[1:-1])')"
-          printf '%s' "{\"decision\":\"block\",\"reason\":\"${escaped_reason}\"}"
-          exit 2
-        fi
+  if [ -z "$rel_path" ]; then
+    block_hook "FAIL: unable to resolve mutation target relative to repository root"
+  fi
+
+  branch_name="$(git -C "$repo_root" branch --show-current 2>/dev/null || true)"
+  plan_preflight="$repo_root/scripts/overlord/check_plan_preflight.py"
+  if [ ! -f "$plan_preflight" ]; then
+    block_hook "FAIL: missing plan preflight helper scripts/overlord/check_plan_preflight.py"
+  fi
+  trivial_flag=""
+  if [ "${PLAN_GATE_TRIVIAL_SINGLE_LINE:-}" = "true" ]; then
+    trivial_flag="--trivial-single-line"
+  fi
+  plan_result="$(python3 "$plan_preflight" \
+    --repo-root "$repo_root" \
+    --target-path "$rel_path" \
+    --intent write \
+    $trivial_flag \
+    --json 2>/dev/null || true)"
+  plan_decision="$(printf '%s' "$plan_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('decision',''))" 2>/dev/null || true)"
+  case "$plan_decision" in
+    block)
+      plan_reason="$(printf '%s' "$plan_result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('reason',''))" 2>/dev/null || true)"
+      if [ -z "$plan_reason" ]; then
+        plan_reason="PLAN_GATE_BLOCKED: mutation write denied with no reason from check_plan_preflight.py"
       fi
+      block_hook "$plan_reason"
+      ;;
+    allow)
+      ;;
+    "")
+      block_hook "FAIL: unable to parse plan preflight decision for ${rel_path}"
+      ;;
+    *)
+      block_hook "FAIL: unknown plan preflight decision '${plan_decision}' for ${rel_path}"
+      ;;
+  esac
 
-      changed_file="$(mktemp "${TMPDIR:-/tmp}/governance-surface-change.XXXXXX")"
-      printf '%s\n' "$rel_path" > "$changed_file"
-      gate_output="$(python3 "$validator" \
-        --root "$repo_root" \
-        --branch-name "$branch_name" \
-        --changed-files-file "$changed_file" \
-        --enforce-governance-surface 2>&1)"
-      gate_status=$?
-      rm -f "$changed_file"
-      if [ "$gate_status" -ne 0 ]; then
-        reason="$(printf '%s' "$gate_output" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read())[1:-1])')"
-        printf '%s' "{\"decision\":\"block\",\"reason\":\"BLOCKED: Governance-surface writes require an issue-backed structured JSON plan, accepted review status, and implementation-ready execution handoff.\\n\\n${reason}\"}"
-        exit 2
+  changed_file="$(mktemp "${TMPDIR:-/tmp}/governance-surface-change.XXXXXX")"
+  printf '%s\n' "$rel_path" > "$changed_file"
+  gate_output="$(python3 "$validator" \
+    --root "$repo_root" \
+    --branch-name "$branch_name" \
+    --changed-files-file "$changed_file" \
+    --enforce-governance-surface 2>&1)"
+  gate_status=$?
+  rm -f "$changed_file"
+  if [ "$gate_status" -ne 0 ]; then
+    block_hook "BLOCKED: Governance-surface writes require an issue-backed structured JSON plan, accepted review status, and implementation-ready execution handoff.
+
+${gate_output}"
+  fi
+
+  boundary_scope_candidate=false
+  case "$rel_path" in
+    CLAUDE.md|README.md|STANDARDS.md|OVERLORD_BACKLOG.md|docs/DATA_DICTIONARY.md|docs/FEATURE_REGISTRY.md|docs/PROGRESS.md|docs/SERVICE_REGISTRY.md|\
+    .github/workflows/*|.github/scripts/*|agents/*|docs/schemas/*|hooks/*|launchd/*|raw/closeouts/*|raw/cross-review/*|raw/execution-scopes/*|\
+    raw/gate/*|raw/model-fallbacks/*|raw/operator-context/*|raw/packets/*|metrics/*|scripts/knowledge_base/*|scripts/lam/*|scripts/orchestrator/*|\
+    scripts/overlord/*|scripts/packet/*|wiki/*|docs/plans/*)
+      boundary_scope_candidate=true
+      ;;
+  esac
+
+  if [ "$boundary_scope_candidate" = true ]; then
+    scope_validator="$repo_root/scripts/overlord/assert_execution_scope.py"
+    issue_token="$(printf '%s\n' "$branch_name" | grep -oE 'issue-[0-9]+' | head -n 1 || true)"
+    issue_number="${issue_token#issue-}"
+
+    if [ ! -f "$scope_validator" ]; then
+      block_hook "FAIL: missing execution-scope validator scripts/overlord/assert_execution_scope.py"
+    fi
+    if [ -z "$issue_number" ]; then
+      block_hook "FAIL: unable to derive issue number from branch '${branch_name}' for execution-scope enforcement"
+    fi
+    if [ ! -d "$repo_root/raw/execution-scopes" ]; then
+      block_hook "FAIL: missing raw/execution-scopes directory for issue-${issue_number} execution-scope enforcement"
+    fi
+
+    implementation_scopes=()
+    while IFS= read -r scope_path; do
+      implementation_scopes+=("$scope_path")
+    done < <(find "$repo_root/raw/execution-scopes" -maxdepth 1 -type f -name "*issue-${issue_number}*implementation*.json" | sort)
+
+    planning_scopes=()
+    while IFS= read -r scope_path; do
+      planning_scopes+=("$scope_path")
+    done < <(find "$repo_root/raw/execution-scopes" -maxdepth 1 -type f -name "*issue-${issue_number}*planning*.json" | sort)
+
+    selected_scope=""
+    if [ "${#implementation_scopes[@]}" -eq 1 ]; then
+      selected_scope="${implementation_scopes[0]}"
+    elif [ "${#planning_scopes[@]}" -eq 1 ]; then
+      selected_scope="${planning_scopes[0]}"
+    fi
+
+    if [ -z "$selected_scope" ]; then
+      if [ "${#implementation_scopes[@]}" -gt 1 ] || [ "${#planning_scopes[@]}" -gt 1 ]; then
+        block_hook "BLOCKED: execution-scope enforcement found multiple matching scope files for issue-${issue_number}"
       fi
+      block_hook "BLOCKED: execution-scope enforcement found no matching scope file for issue-${issue_number}"
+    fi
 
-      # Planner-boundary execution-scope enforcement is warning-only in local hooks.
-      boundary_scope_candidate=false
-      case "$rel_path" in
-        CLAUDE.md|README.md|STANDARDS.md|OVERLORD_BACKLOG.md|docs/DATA_DICTIONARY.md|docs/FEATURE_REGISTRY.md|docs/PROGRESS.md|docs/SERVICE_REGISTRY.md|\
-        .github/workflows/*|.github/scripts/*|agents/*|docs/schemas/*|hooks/*|launchd/*|raw/closeouts/*|raw/cross-review/*|raw/execution-scopes/*|\
-        raw/gate/*|raw/model-fallbacks/*|raw/operator-context/*|raw/packets/*|metrics/*|scripts/knowledge_base/*|scripts/lam/*|scripts/orchestrator/*|\
-        scripts/overlord/*|scripts/packet/*|wiki/*|docs/plans/*)
-          boundary_scope_candidate=true
-          ;;
-      esac
+    scope_changed_file="$(mktemp "${TMPDIR:-/tmp}/planner-boundary-change.XXXXXX")"
+    printf '%s\n' "$rel_path" > "$scope_changed_file"
+    scope_output="$(python3 "$scope_validator" \
+      --scope "$selected_scope" \
+      --changed-files-file "$scope_changed_file" 2>&1)"
+    scope_status=$?
+    rm -f "$scope_changed_file"
+    if [ "$scope_status" -ne 0 ]; then
+      block_hook "BLOCKED: execution-scope enforcement rejected '${rel_path}' for ${selected_scope}
 
-      if [ "$boundary_scope_candidate" = true ]; then
-        scope_validator="$repo_root/scripts/overlord/assert_execution_scope.py"
-        issue_token="$(printf '%s\n' "$branch_name" | grep -oE 'issue-[0-9]+' | head -n 1 || true)"
-        issue_number="${issue_token#issue-}"
-
-        if [ -f "$scope_validator" ] && [ -n "$issue_number" ] && [ -d "$repo_root/raw/execution-scopes" ]; then
-          mapfile -t implementation_scopes < <(find "$repo_root/raw/execution-scopes" -maxdepth 1 -type f -name "*issue-${issue_number}*implementation*.json" | sort)
-          mapfile -t planning_scopes < <(find "$repo_root/raw/execution-scopes" -maxdepth 1 -type f -name "*issue-${issue_number}*planning*.json" | sort)
-
-          selected_scope=""
-          if [ "${#implementation_scopes[@]}" -eq 1 ]; then
-            selected_scope="${implementation_scopes[0]}"
-          elif [ "${#planning_scopes[@]}" -eq 1 ]; then
-            selected_scope="${planning_scopes[0]}"
-          fi
-
-          if [ -z "$selected_scope" ]; then
-            if [ "${#implementation_scopes[@]}" -gt 1 ] || [ "${#planning_scopes[@]}" -gt 1 ]; then
-              echo "WARN planner-boundary execution-scope check skipped: multiple matching scope files for issue-${issue_number}" >&2
-            else
-              echo "WARN planner-boundary execution-scope check skipped: no scope file matched issue-${issue_number}" >&2
-            fi
-          else
-            scope_changed_file="$(mktemp "${TMPDIR:-/tmp}/planner-boundary-change.XXXXXX")"
-            printf '%s\n' "$rel_path" > "$scope_changed_file"
-            scope_output="$(python3 "$scope_validator" \
-              --scope "$selected_scope" \
-              --changed-files-file "$scope_changed_file" 2>&1)"
-            scope_status=$?
-            rm -f "$scope_changed_file"
-            if [ "$scope_status" -ne 0 ]; then
-              echo "WARN planner-boundary drift detected (warning-only in local hook):" >&2
-              echo "$scope_output" >&2
-            fi
-          fi
-        fi
-      fi
+${scope_output}"
     fi
   fi
+else
+  block_hook "FAIL: unable to resolve repository root for mutation target '${file_path}'"
 fi
 
 # Bootstrapping exemption: paths inside /.claude/ are always allowed

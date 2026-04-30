@@ -29,6 +29,12 @@ GOVERNED_EXTENSIONS = {
     ".yml",
 }
 
+PLAN_GLOB = "*structured-agent-cycle-plan.json"
+
+
+def _clean_token(token: str) -> str:
+    return token.strip("'\"")
+
 
 def is_governed_path(path: str) -> bool:
     suffix = Path(path).suffix.lower()
@@ -39,15 +45,98 @@ def recent_plan(plans_dir: Path, freshness_hours: float) -> Path | None:
     if not plans_dir.is_dir():
         return None
     cutoff = time.time() - freshness_hours * 3600
-    candidates = [path for path in plans_dir.glob("*.md") if path.is_file() and path.stat().st_mtime >= cutoff]
+    candidates = [
+        path for path in plans_dir.glob(PLAN_GLOB) if path.is_file() and path.stat().st_mtime >= cutoff
+    ]
     if not candidates:
         return None
     return max(candidates, key=lambda path: path.stat().st_mtime)
 
 
-def detect_bash_write_target(command: str) -> str:
+def _extract_dd_target(tokens: list[str], index: int) -> str:
+    token = _clean_token(tokens[index])
+    if token.startswith("of="):
+        target = token.partition("=")[2]
+        return "" if target in {"", "/dev/null", "-"} else target
+    if token == "of" and index + 1 < len(tokens):
+        target = _clean_token(tokens[index + 1])
+        return "" if target in {"", "/dev/null", "-"} else target
+    return ""
+
+
+def _extract_redirect_target(tokens: list[str], index: int) -> str:
+    if index + 1 >= len(tokens):
+        return ""
+    target = _clean_token(tokens[index + 1])
+    if target and target not in {"/dev/null", "-", "&"}:
+        return target
+    return ""
+
+
+def _extract_positional_target(tokens: list[str], start_index: int) -> str:
+    for token in tokens[start_index:]:
+        cleaned = _clean_token(token)
+        if not cleaned or cleaned == "--":
+            continue
+        if cleaned.startswith("-"):
+            continue
+        return cleaned
+    return ""
+
+
+def _extract_mutation_file_after_options(
+    tokens: list[str],
+    start_index: int,
+    *,
+    option_value_flags: set[str] | None = None,
+) -> str:
+    option_value_flags = option_value_flags or set()
+    expect_option_value = False
+    seen_separator = False
+    for token in tokens[start_index:]:
+        cleaned = _clean_token(token)
+        if not cleaned:
+            continue
+        if expect_option_value:
+            expect_option_value = False
+            continue
+        if cleaned == "--":
+            seen_separator = True
+            continue
+        if not seen_separator and cleaned.startswith("-"):
+            if cleaned in option_value_flags:
+                expect_option_value = True
+            continue
+        return cleaned
+    return ""
+
+
+def _extract_cp_mv_install_target(tokens: list[str], index: int) -> str:
+    positional: list[str] = []
+    expect_option_value = False
+    for offset, token in enumerate(tokens[index + 1 :], start=index + 1):
+        cleaned = _clean_token(token)
+        if not cleaned:
+            continue
+        if expect_option_value:
+            expect_option_value = False
+            continue
+        if cleaned == "--":
+            positional.extend(_clean_token(value) for value in tokens[offset + 1 :])
+            break
+        if cleaned.startswith("-"):
+            if cleaned in {"-t", "--target-directory", "-S", "--suffix", "-T", "-m", "-o", "-g"}:
+                expect_option_value = True
+            continue
+        positional.append(cleaned)
+    if len(positional) >= 2:
+        return positional[-1]
+    return ""
+
+
+def detect_bash_write_target(command: str) -> tuple[str, bool]:
     if re.search(r"\b(?:python|python3)\b.*(?:open\(|write_text\()", command, re.S):
-        return "<python file write>"
+        return "<python file write>", True
 
     lexer = shlex.shlex(command, posix=True, punctuation_chars=True)
     lexer.whitespace_split = True
@@ -59,21 +148,44 @@ def detect_bash_write_target(command: str) -> str:
 
     index = 0
     while index < len(tokens):
-        token = tokens[index]
+        token = _clean_token(tokens[index])
         if token == "tee":
             target_index = index + 1
-            while target_index < len(tokens) and tokens[target_index].startswith("-"):
+            while target_index < len(tokens) and _clean_token(tokens[target_index]).startswith("-"):
                 target_index += 1
             if target_index < len(tokens):
-                target = tokens[target_index].strip("'\"")
+                target = _clean_token(tokens[target_index])
                 if target and target not in {"/dev/null", "-"}:
-                    return target
-        if token in {">", ">>"} and index + 1 < len(tokens):
-            target = tokens[index + 1].strip("'\"")
-            if target and target not in {"/dev/null", "-", "&"}:
-                return target
+                    return target, False
+        if token in {">", ">>"}:
+            target = _extract_redirect_target(tokens, index)
+            if target:
+                return target, False
+        if token == "touch":
+            target = _extract_positional_target(tokens, index + 1)
+            return (target or "<indeterminate bash write: touch>", True)
+        if token == "truncate":
+            target = _extract_positional_target(tokens, index + 1)
+            return (target or "<indeterminate bash write: truncate>", True)
+        if token == "dd":
+            for dd_index in range(index + 1, len(tokens)):
+                target = _extract_dd_target(tokens, dd_index)
+                if target:
+                    return target, False
+            return "<indeterminate bash write: dd>", True
+        if token in {"cp", "mv", "install"}:
+            target = _extract_cp_mv_install_target(tokens, index)
+            return (target or f"<indeterminate bash write: {token}>", True)
+        if token == "sed":
+            if any(_clean_token(value).startswith("-i") for value in tokens[index + 1 :]):
+                target = _extract_mutation_file_after_options(tokens, index + 1, option_value_flags={"-e", "-f"})
+                return (target or "<indeterminate bash write: sed -i>", True)
+        if token == "perl":
+            if any(re.match(r"-p[i0-9A-Za-z-]*$", _clean_token(value)) for value in tokens[index + 1 :]):
+                target = _extract_mutation_file_after_options(tokens, index + 1, option_value_flags={"-e", "-M"})
+                return (target or "<indeterminate bash write: perl -pi>", True)
         index += 1
-    return ""
+    return "", False
 
 
 def block_reason(*, target: str, plans_dir: str, freshness_hours: float) -> str:
@@ -97,19 +209,29 @@ def evaluate(args: argparse.Namespace) -> dict[str, Any]:
         plans_dir = repo_root / plans_dir
 
     target = args.target_path or ""
+    indeterminate = False
     if args.command:
-        target = detect_bash_write_target(args.command)
+        target, indeterminate = detect_bash_write_target(args.command)
 
     if args.intent == "read":
         return {"decision": "allow", "reason": "read_only_intent", "target_path": target}
     if not target:
         return {"decision": "allow", "reason": "no_write_target_detected", "target_path": target}
-    if target == "<python file write>" or is_governed_path(target):
+    if target.startswith("<python file write>") or target.startswith("<indeterminate bash write:"):
+        governed = True
+    elif is_governed_path(target):
         governed = True
     else:
         governed = False
     if not governed:
         return {"decision": "allow", "reason": "ungoverned_target", "target_path": target}
+    if indeterminate:
+        return {
+            "decision": "block",
+            "reason": block_reason(target=target, plans_dir=str(plans_dir), freshness_hours=args.freshness_hours),
+            "target_path": target,
+            "next_action": "create_plan",
+        }
 
     if args.plan_gate_bypass:
         if args.trivial_single_line:
@@ -149,7 +271,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--target-path")
     parser.add_argument("--command")
     parser.add_argument("--intent", choices=["read", "write"], default="write")
-    parser.add_argument("--plans-dir", default=".claude/plans")
+    parser.add_argument("--plans-dir", default="docs/plans")
     parser.add_argument("--freshness-hours", type=float, default=3.0)
     parser.add_argument("--plan-gate-bypass", action="store_true", default=os.environ.get("PLAN_GATE_BYPASS") == "true")
     parser.add_argument("--trivial-single-line", action="store_true")

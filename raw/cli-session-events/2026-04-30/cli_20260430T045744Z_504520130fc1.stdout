@@ -1,0 +1,49 @@
+All files reviewed. Producing the alternate-family specialist review.
+
+---
+
+# Alternate-Family Specialist Review: Issue #623 Implementation Slice
+
+**Reviewer:** Claude Opus 4.6 (alternate-family specialist)
+**Review scope:** Bounded implementation slice for issue #623 — mutation-time pre-tool fail-closed hardening
+**Date:** 2026-04-30
+**Status:** `accepted`
+
+---
+
+## Findings
+
+**No blocking issues found.**
+
+### Confirmed Correct Behavior
+
+1. **Scope boundedness (Q1):** The modified file set matches the declared execution scope exactly: `.claude/settings.json`, `hooks/code-write-gate.sh`, `hooks/schema-guard.sh`, `scripts/overlord/check_plan_preflight.py`, three focused test files, three governance doc co-staging files (`PROGRESS.md`, `FEATURE_REGISTRY.md`, `FAIL_FAST_LOG.md`), and issue-local artifacts under `raw/`, `docs/plans/`, and `docs/codex-reviews/`. No modifications to `hooks/pre-session-context.sh`, `check_execution_environment.py`, `assert_execution_scope.py`, `backlog-check.sh`, `governance-check.sh`, CI workflows, or `delegation_gate.py`.
+
+2. **Edit/MultiEdit/Bash fail-closed enforcement (Q2):** `.claude/settings.json` now wires `PreToolUse` matchers for `Edit` and `MultiEdit` (in addition to existing `Write`) to `code-write-gate.sh`. The hook enforces the full governance chain — plan preflight via `check_plan_preflight.py` (now using canonical `docs/plans/*structured-agent-cycle-plan.json`), structured plan validator, and execution-scope validator — before allowing any mutation. `schema-guard.sh` enforces the same plan preflight for Bash commands and hard-blocks detected file writes. Bash mutation detection in `check_plan_preflight.py` now covers `sed -i`, `perl -pi`, `cp`, `mv`, `install`, `touch`, `truncate`, `dd of=`, redirects, `tee`, heredocs, and Python `open()`/`write_text()` — with indeterminate targets (e.g., `sed -i` without a filename) also hard-blocked. Read-only pipelines (`grep`, `rg`, `git status`, `find`, `awk`, `jq`, `sed -n`, `perl -ne`) confirmed allowed by tests.
+
+3. **Fail-closed on error conditions (Q3):** Both hooks now hard-block (exit 2) on every named failure mode:
+   - `code-write-gate.sh`: malformed payload (line 134), missing `file_path` (line 139), missing validator (line 150), missing plan preflight helper (line 168), empty preflight decision (line 192), unknown preflight decision (line 194), validator non-zero exit (line 207), unresolvable repo root (line 276).
+   - `schema-guard.sh`: malformed input payload (line 46), missing helper (line 83), empty decision (line 110), unknown decision (line 112), validator failure (line 76).
+   - All confirmed by dedicated test cases in `test_delegation_hook.py` and `test_schema_guard_hook.py`.
+
+4. **Boundary preservation (Q4):** The PDCAR, structured plan, execution scope, and handoff all explicitly list #617, #621, #607, #612, and #614 as external boundaries. The execution scope's `forbidden_roots` and `active_parallel_roots` enumerate the sibling worktree paths. The `material_deviation_rules` define six specific violation conditions. The actual implementation diff stays entirely within the declared owned surfaces.
+
+5. **Proof specificity without overclaim (Q5):** The validation artifact contains a commands table (8 PASS, 4 PENDING) and a per-surface proof matrix with exact transcripts. The PDCAR's Review section explicitly states: "Issue #623 may close source-repo local mutation-time pre-tool fail-closed hardening only. It cannot be cited as proof that #607, #612, or #614 are closed, and it does not close the broader pre-hook fail-closed program still owned by #615." The `FEATURE_REGISTRY.md` entry correctly keeps GOV-014 at `IN_PROGRESS` rather than `COMPLETE`.
+
+## Open Questions
+
+None blocking.
+
+## Validation Gaps
+
+1. **PENDING validation commands (non-blocking, expected):** Four validation commands remain PENDING in the validation artifact: `codex-review.sh claude` (this review), `local-ci-gate`, `validate_closeout.py`, and `git diff --check`. These are expected to complete after the implementation proof chain is finalized — they must pass before closeout.
+
+2. **Empty-input graceful degradation vs. strict fail-closed (non-blocking, residual risk):** Both `code-write-gate.sh` (line 11) and `schema-guard.sh` (line 23) exit 0 when stdin is empty, treating it as graceful degradation. This is defensible since the hook runner may legitimately provide no payload for non-applicable invocations, but it means a hypothetical hook-runner bug that drops the payload would silently allow. This is consistent between both hooks and does not represent a regression.
+
+3. **Integration test coupling to governance state (non-blocking, observation):** `test_delegation_hook.py::test_hook_allows_edit_on_owned_in_scope_file` and `test_hook_allows_multiedit_on_owned_in_scope_file` run against the live repository's governance state (plan evidence, execution scope). If run on a branch without proper #623 plan evidence, these tests would fail. This is a known trade-off for integration tests over the governed mutation path.
+
+## Summary
+
+The implementation slice is well-bounded, correct, and properly scoped to the local mutation-time pre-tool path. The fail-closed behavior is comprehensive across all named error conditions. Edit, MultiEdit, and expanded Bash mutation verbs are now enforced through the canonical plan-evidence and governance-surface chain. Sibling-lane boundaries (#617, #621, #607, #612, #614) are preserved with no surface violations. The proof chain is specific to AC1–AC5 without overclaiming broader #615 closure.
+
+**Review decision: accepted — no blocking findings.** Residual items: complete the four PENDING validation commands before closeout.
