@@ -1,0 +1,28 @@
+{
+  "issue_number": 633,
+  "branch_name": "issue-633-backlog-mirror-629-hygiene-20260430",
+  "execution_mode": "planning_only",
+  "lane_claim": {
+    "issue_number": 633,
+    "branch_name": "issue-633-backlog-mirror-629-hygiene-20260430"
+  },
+  "scope_summary": "Planning-only bootstrap for the narrow parent-owned #612 hygiene child that will reconcile closed child #629 out of active OVERLORD_BACKLOG.md state.",
+  "allowed_write_paths": [
+    "docs/plans/issue-633-backlog-mirror-629-hygiene-pdcar.md",
+    "docs/plans/issue-633-backlog-mirror-629-hygiene-structured-agent-cycle-plan.json",
+    "docs/codex-reviews/2026-04-30-issue-633-claude.md",
+    "raw/execution-scopes/2026-04-30-issue-633-backlog-mirror-629-hygiene-planning.json",
+    "raw/handoffs/2026-04-30-issue-633-backlog-mirror-629-hygiene.json",
+    "raw/packets/2026-04-30-issue-633-claude-review-packet.md",
+    "raw/cross-review/2026-04-30-issue-633-backlog-mirror-629-hygiene-plan.md",
+    "raw/validation/2026-04-30-issue-633-backlog-mirror-629-hygiene.md"
+  ],
+  "blocked_paths": [
+    "OVERLORD_BACKLOG.md"
+  ],
+  "notes": [
+    "Planning-only lane; implementation remains blocked pending review and later handoff.",
+    "Issue #633 owns stale closed-child #629 backlog mirror hygiene only.",
+    "Broader #612 enforcement and #632 implementation surfaces remain out of scope."
+  ]
+}
