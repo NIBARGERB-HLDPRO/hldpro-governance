@@ -1,0 +1,47 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-641-slice-c-ci-fail-closed-20260430",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    ".github/workflows/governance-check.yml",
+    "docs/codex-reviews/2026-05-01-issue-641-claude.md",
+    "docs/plans/issue-641-slice-c-ci-sha-rework-structured-agent-cycle-plan.json",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "raw/cross-review/2026-05-01-issue-641-slice-c-ci-sha-rework-plan.md",
+    "raw/execution-scopes/2026-05-01-issue-641-slice-c-r1-implementation.json",
+    "raw/handoffs/2026-05-01-issue-641-slice-c-r1-plan-to-implementation.json",
+    "raw/packets/2026-05-01-issue-641-slice-c-r1-review-packet.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout is a separate active root and must not be mutated from the issue-641 implementation lane."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 641,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/641",
+    "claimed_by": "claude-sonnet-4-6",
+    "claimed_at": "2026-05-01T00:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-sonnet-4-6",
+    "implementer_model": "claude-sonnet-4-6",
+    "accepted_at": "2026-05-01T00:00:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-641-slice-c-ci-sha-rework-structured-agent-cycle-plan.json",
+      "raw/cross-review/2026-05-01-issue-641-slice-c-ci-sha-rework-plan.md",
+      "docs/codex-reviews/2026-05-01-issue-641-claude.md"
+    ],
+    "active_exception_ref": "docs/codex-reviews/2026-05-01-issue-641-claude.md",
+    "active_exception_expires_at": "2026-05-02T00:00:00Z",
+    "cross_family_path_unavailable": true,
+    "cross_family_path_ref": "docs/codex-reviews/2026-05-01-issue-641-claude.md",
+    "fallback_log_ref": "docs/FAIL_FAST_LOG.md"
+  }
+}

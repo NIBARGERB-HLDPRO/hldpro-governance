@@ -172,7 +172,7 @@ jobs:
 
           if [ -z "$BASE_SHA" ]; then
             if [ "${{ github.event_name }}" = "pull_request" ]; then
-              BASE_SHA="${{ github.event.pull_request.base.sha }}"
+              BASE_SHA="${{ inputs.base_sha || github.event.pull_request.base.sha }}"
             elif [ -n "${{ github.event.before }}" ] && [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
               BASE_SHA="${{ github.event.before }}"
             else
@@ -402,7 +402,7 @@ jobs:
 
           BASE="${{ steps.diff_base.outputs.base_sha }}"
           if [ -z "$BASE" ]; then
-            BASE="${{ github.event.pull_request.base.sha }}"
+            BASE="${{ inputs.base_sha || github.event.pull_request.base.sha }}"
           fi
           if [ -z "$BASE" ]; then
             echo "::error::GOVERNANCE GATE FAILED: unable to resolve base commit for trusted execution-scope validation."
@@ -689,8 +689,8 @@ jobs:
 
       - name: Validate model fallback log schema
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ inputs.base_sha || github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ inputs.head_sha || github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
           GOVSCRIPTS=".governance/.github/scripts"
@@ -699,8 +699,8 @@ jobs:
 
       - name: Validate cross-review model separation
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ inputs.base_sha || github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ inputs.head_sha || github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
           GOVSCRIPTS=".governance/.github/scripts"
@@ -709,8 +709,8 @@ jobs:
 
       - name: Validate PII routing and audit evidence
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ inputs.base_sha || github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ inputs.head_sha || github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
           GOVSCRIPTS=".governance/.github/scripts"
@@ -727,8 +727,8 @@ jobs:
       - name: Validate LAM health endpoint when required
         env:
           LAM_PROBE_URL: "http://host.docker.internal:8080/health"
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ inputs.base_sha || github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ inputs.head_sha || github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
           GOVSCRIPTS=".governance/.github/scripts"
@@ -785,8 +785,8 @@ jobs:
           GOVROOT=".governance"
           [ -d "$GOVROOT" ] || GOVROOT="."
 
-          BASE_SHA="${{ github.event.pull_request.base.sha }}"
-          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+          BASE_SHA="${{ inputs.base_sha || github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ inputs.head_sha || github.event.pull_request.head.sha }}"
 
           if [ -z "${BASE_SHA}" ] || [ -z "${HEAD_SHA}" ]; then
             echo "::error::[require-cross-review] Missing PR context — this gate requires BASE_SHA and HEAD_SHA. Ensure this workflow is called from a pull_request event or with explicit sha inputs."

@@ -1,0 +1,18 @@
+{
+  "handoff_id": "2026-05-01-issue-641-slice-c-r1-plan-to-implementation",
+  "issue_number": 641,
+  "slice": "C",
+  "rework_item": "R1",
+  "handoff_type": "plan_to_implementation",
+  "created_at": "2026-05-01T00:00:00Z",
+  "planner_model": "claude-sonnet-4-6",
+  "implementer_model": "claude-sonnet-4-6",
+  "status": "accepted",
+  "scope": ".github/workflows/governance-check.yml — SHA env block propagation",
+  "accepted_at": "2026-05-01T00:00:00Z",
+  "evidence_paths": [
+    "docs/plans/issue-641-slice-c-ci-sha-rework-structured-agent-cycle-plan.json",
+    "raw/cross-review/2026-05-01-issue-641-slice-c-ci-sha-rework-plan.md",
+    "docs/codex-reviews/2026-05-01-issue-641-claude.md"
+  ]
+}
