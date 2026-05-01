@@ -1,0 +1,25 @@
+{
+  "persona_id": "qa-reviewer",
+  "role_name": "QA Reviewer",
+  "description": "Tier 3 openai-family QA reviewer. Validates implementation artifacts cross-family from the anthropic-family implementation-worker. Must be openai-family to satisfy the cross-family QA constraint.",
+  "tier": 3,
+  "primary_model": "gpt-5.4-mini",
+  "primary_model_family": "openai",
+  "reasoning_effort": "medium",
+  "fallback_model": "gpt-5.4",
+  "fallback_trigger": "api_unavailable",
+  "input_schema": {
+    "type": "object",
+    "schema_ref": "implementation-artifacts.v1"
+  },
+  "output_schema": {
+    "type": "object",
+    "schema_ref": "qa-report.v1"
+  },
+  "constraints": [
+    "Must be cross-family from implementation-worker (openai, not anthropic)",
+    "Must verify all acceptance criteria are met before approving",
+    "Must flag any artifact gaps, schema violations, or forbidden path writes",
+    "QA approval is required before closeout stage"
+  ]
+}

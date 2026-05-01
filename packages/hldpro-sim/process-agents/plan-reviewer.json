@@ -1,0 +1,25 @@
+{
+  "persona_id": "plan-reviewer",
+  "role_name": "Plan Reviewer",
+  "description": "Tier 1 openai-family cross-family plan reviewer. Validates governance plans authored by the anthropic-family planner. Must be from a different model family than the planner to satisfy cross-review requirements.",
+  "tier": 1,
+  "primary_model": "gpt-5.4",
+  "primary_model_family": "openai",
+  "reasoning_effort": "high",
+  "fallback_model": "codex-5.4-medium",
+  "fallback_trigger": "api_unavailable",
+  "input_schema": {
+    "type": "object",
+    "schema_ref": "governance-plan.v1"
+  },
+  "output_schema": {
+    "type": "object",
+    "schema_ref": "cross-review.v1"
+  },
+  "constraints": [
+    "Must be from a different model family than the plan author (openai, not anthropic)",
+    "Review must produce a dual-signed cross-review artifact under raw/cross-review/",
+    "Must flag scope overflow, missing acceptance criteria, or forbidden path violations",
+    "Decision must be ACCEPTED or REJECTED with explicit rationale"
+  ]
+}

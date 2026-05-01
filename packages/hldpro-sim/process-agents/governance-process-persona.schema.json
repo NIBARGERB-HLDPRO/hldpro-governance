@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "governance-process-persona.schema.json",
+  "title": "Governance Process Persona",
+  "description": "Schema for hldpro-sim governance process-agent persona definitions",
+  "type": "object",
+  "required": [
+    "persona_id",
+    "role_name",
+    "description",
+    "tier",
+    "primary_model",
+    "primary_model_family",
+    "reasoning_effort",
+    "fallback_model",
+    "fallback_trigger",
+    "input_schema",
+    "output_schema",
+    "constraints"
+  ],
+  "properties": {
+    "persona_id": {
+      "type": "string"
+    },
+    "role_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "tier": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
+    "primary_model": {
+      "type": "string"
+    },
+    "primary_model_family": {
+      "type": "string",
+      "enum": ["anthropic", "openai"]
+    },
+    "reasoning_effort": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "fallback_model": {
+      "type": "string"
+    },
+    "fallback_trigger": {
+      "type": "string",
+      "enum": ["api_unavailable", "rate_limit", "cost_threshold", "operator_override", "manual_request"]
+    },
+    "input_schema": {
+      "type": "object",
+      "required": ["type", "schema_ref"],
+      "properties": {
+        "type": {"type": "string"},
+        "schema_ref": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "output_schema": {
+      "type": "object",
+      "required": ["type", "schema_ref"],
+      "properties": {
+        "type": {"type": "string"},
+        "schema_ref": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "constraints": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false
+}

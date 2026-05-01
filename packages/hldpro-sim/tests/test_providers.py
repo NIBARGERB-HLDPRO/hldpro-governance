@@ -65,15 +65,14 @@ def test_codex_provider_passes_prompt_as_positional_arg_only():
 
 
 def test_anthropic_provider_not_implemented():
-    provider = AnthropicApiProvider()
-    with patch("hldprosim.providers.subprocess.run") as mock_run:
-        with MagicMock():
-            try:
-                provider.complete("system", "user", {})
-            except NotImplementedError as err:
-                assert "Cloud stub — set ANTHROPIC_API_KEY and implement" in str(err)
-            else:
-                assert False, "expected NotImplementedError"
+    with patch.dict("os.environ", {"ANTHROPIC_API_KEY": "dummy-test-key"}):
+        provider = AnthropicApiProvider()
+    try:
+        provider.complete("system", "user", {})
+    except NotImplementedError as err:
+        assert "not yet implemented" in str(err)
+    else:
+        assert False, "expected NotImplementedError"
 
 
 def test_codex_provider_raises_on_nonzero_exit_code():

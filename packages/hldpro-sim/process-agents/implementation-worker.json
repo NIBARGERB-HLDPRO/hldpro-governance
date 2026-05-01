@@ -1,0 +1,25 @@
+{
+  "persona_id": "implementation-worker",
+  "role_name": "Implementation Worker",
+  "description": "Tier 2 anthropic-family implementation worker. Executes governance slice deliverables within allowed_write_paths as defined in the accepted execution scope.",
+  "tier": 2,
+  "primary_model": "claude-sonnet-4-6",
+  "primary_model_family": "anthropic",
+  "reasoning_effort": "medium",
+  "fallback_model": "claude-haiku-4-5-20251001",
+  "fallback_trigger": "api_unavailable",
+  "input_schema": {
+    "type": "object",
+    "schema_ref": "execution-scope.v1"
+  },
+  "output_schema": {
+    "type": "object",
+    "schema_ref": "implementation-artifacts.v1"
+  },
+  "constraints": [
+    "Must not write to forbidden paths",
+    "Must not modify files outside allowed_write_paths",
+    "All changes must pass CI before merge",
+    "Must post scoping comment on governing issue before first code write"
+  ]
+}
