@@ -1,0 +1,150 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-653-slice-h-plan-to-implementation",
+  "issue_number": 653,
+  "parent_epic_number": 650,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "claude-supervisor",
+  "to_role": "operator",
+  "structured_plan_ref": "docs/plans/issue-653-slice-h-functional-auditor-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-653-slice-h-functional-auditor-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "qa_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-01-slice-h-functional-auditor.md",
+      "raw/validation/2026-05-01-issue-653-slice-h-functional-auditor.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC-H1",
+      "statement": "Agent definition exists with required frontmatter.",
+      "verification_refs": [
+        "agents/functional-acceptance-auditor.md"
+      ]
+    },
+    {
+      "id": "AC-H2",
+      "statement": "Acceptance audit schema exists and is a valid draft 2020-12 schema.",
+      "verification_refs": [
+        "docs/schemas/functional-acceptance-audit.schema.json",
+        "tests/test_functional_acceptance_auditor.py"
+      ]
+    },
+    {
+      "id": "AC-H3",
+      "statement": "Schema validates a sample PASS audit JSON without errors.",
+      "verification_refs": [
+        "tests/test_functional_acceptance_auditor.py",
+        "raw/acceptance-audits/2026-05-01-653-functional-audit.json"
+      ]
+    },
+    {
+      "id": "AC-H4",
+      "statement": "Schema rejects a report missing overall_verdict.",
+      "verification_refs": [
+        "tests/test_functional_acceptance_auditor.py"
+      ]
+    },
+    {
+      "id": "AC-H5",
+      "statement": "raw/acceptance-audits/.gitkeep exists.",
+      "verification_refs": [
+        "raw/acceptance-audits/.gitkeep"
+      ]
+    },
+    {
+      "id": "AC-H6",
+      "statement": "AGENT_REGISTRY.md contains the functional-acceptance-auditor row with model pin and authority scope.",
+      "verification_refs": [
+        "AGENT_REGISTRY.md"
+      ]
+    },
+    {
+      "id": "AC-H7",
+      "statement": "tests/test_functional_acceptance_auditor.py passes under pytest.",
+      "verification_refs": [
+        "tests/test_functional_acceptance_auditor.py",
+        "raw/validation/2026-05-01-issue-653-slice-h-functional-auditor.md"
+      ]
+    },
+    {
+      "id": "AC-H8",
+      "statement": "STANDARDS.md section PDCAR already references functional-acceptance-auditor.",
+      "verification_refs": [
+        "STANDARDS.md"
+      ]
+    },
+    {
+      "id": "AC-H9",
+      "statement": "Cross-review artifact is present with worker signature and anthropic QA pending.",
+      "verification_refs": [
+        "raw/cross-review/2026-05-01-slice-h-functional-auditor.md"
+      ]
+    },
+    {
+      "id": "AC-H10",
+      "statement": "Self-audit artifact exists with overall_verdict PASS.",
+      "verification_refs": [
+        "raw/acceptance-audits/2026-05-01-653-functional-audit.json"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "/opt/homebrew/bin/python3.11 -m pytest tests/test_functional_acceptance_auditor.py",
+    "/opt/homebrew/bin/python3.11 - <<'PY'\nimport json\nfrom jsonschema import Draft202012Validator\nfrom pathlib import Path\nschema = json.loads(Path('docs/schemas/functional-acceptance-audit.schema.json').read_text())\nDraft202012Validator.check_schema(schema)\nvalidator = Draft202012Validator(schema)\naudit = json.loads(Path('raw/acceptance-audits/2026-05-01-653-functional-audit.json').read_text())\nerrors = list(validator.iter_errors(audit))\nif errors:\n    raise SystemExit('\\n'.join(error.message for error in errors))\nprint('PASS')\nPY"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-05-01-slice-h-functional-auditor.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-05-01-issue-653-slice-h-functional-auditor.md",
+    "raw/acceptance-audits/2026-05-01-653-functional-audit.json"
+  ],
+  "artifact_refs": [
+    "agents/functional-acceptance-auditor.md",
+    "docs/schemas/functional-acceptance-audit.schema.json",
+    "raw/acceptance-audits/.gitkeep",
+    "AGENT_REGISTRY.md",
+    "tests/test_functional_acceptance_auditor.py",
+    "raw/cross-review/2026-05-01-slice-h-functional-auditor.md",
+    "raw/acceptance-audits/2026-05-01-653-functional-audit.json",
+    "docs/plans/issue-653-slice-h-functional-auditor-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-05-01-issue-653-slice-h-functional-auditor-implementation.json",
+    "raw/handoffs/2026-05-01-issue-653-slice-h-plan-to-implementation.json",
+    "raw/validation/2026-05-01-issue-653-slice-h-functional-auditor.md",
+    "raw/closeouts/2026-05-01-issue-653-slice-h-functional-auditor.md"
+  ],
+  "audit_refs": [
+    "raw/acceptance-audits/2026-05-01-653-functional-audit.json"
+  ],
+  "closeout_ref": "raw/closeouts/2026-05-01-issue-653-slice-h-functional-auditor.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-05-01T00:00:00Z",
+  "notes": "Implementation-ready handoff for issue #653 Slice H functional acceptance auditor. Planner family anthropic, implementer family openai, QA reviewer family anthropic."
+}
