@@ -72,7 +72,7 @@
       "reviewer_model_family": "anthropic",
       "role": "policy gap identification and alignment",
       "focus": "Identify G1.1-G1.4 policy and language gaps in governance surface files and scope the bounded Slice A fix.",
-      "status": "accepted",
+      "status": "complete",
       "summary": "G1.1-G1.4 gaps identified in AGENT_REGISTRY.md model pins, agents/*.md frontmatter, CLAUDE.md and README.md routing table language, and CI workflow alignment. Fix is bounded to those surfaces only.",
       "evidence": [
         "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/639",
@@ -85,14 +85,15 @@
     }
   ],
   "alternate_model_review": {
-    "required": false,
-    "reviewer": "N/A - policy/language alignment only, no architecture change",
-    "reviewer_model_id": "claude-sonnet-4-6",
-    "reviewer_model_family": "anthropic",
-    "model_family": "anthropic",
+    "required": true,
+    "reviewer": "codex",
+    "reviewer_model_id": "gpt-5.3-codex-spark",
+    "reviewer_model_family": "openai",
+    "model_family": "openai",
     "status": "accepted",
-    "summary": "Policy/language alignment slice. No architecture or standards change requiring alternate-family cross-review per STANDARDS.md. Bounded fix only.",
+    "summary": "Alternate-family (openai/codex) review of Slice A policy/language alignment. G1.1-G1.4 gaps addressed within bounded scope. Stage 6 artifacts present and validated. No architecture changes detected.",
     "evidence": [
+      "docs/codex-reviews/2026-05-01-issue-639-slice-a-claude.md",
       "raw/cross-review/2026-05-01-issue-639-slice-a-policy-language-plan.md"
     ]
   },
