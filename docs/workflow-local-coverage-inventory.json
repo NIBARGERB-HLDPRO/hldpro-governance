@@ -487,6 +487,25 @@
         "require-dual-signature.sh"
       ],
       "rationale": "Dual-signature script is local-runnable; label and diff selection remain PR-context dependent."
+    },
+    {
+      "path": ".github/workflows/ci-workflow-lint.yml",
+      "risk": "contract-workflow",
+      "coverage": [
+        {
+          "type": "workflow_contract",
+          "command": [
+            "python3",
+            "scripts/overlord/test_workflow_local_coverage.py"
+          ]
+        }
+      ],
+      "required_snippets": [
+        "Lint workflow_call coverage",
+        "workflow_consumers.json",
+        "workflow_call-only but has no internal caller"
+      ],
+      "rationale": "Workflow lint runs locally via scripts/overlord/workflow_consumers.json; the new ci-workflow-lint.yml contract tests in tests/ cover the detection logic."
     }
   ]
 }
