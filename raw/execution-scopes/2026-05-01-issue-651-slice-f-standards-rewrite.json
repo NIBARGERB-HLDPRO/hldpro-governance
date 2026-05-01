@@ -1,0 +1,53 @@
+{
+  "expected_execution_root": "~/Developer/HLDPRO/hldpro-governance",
+  "expected_branch": "issue-651-slice-f-standards-rewrite-20260501",
+  "allowed_write_paths": [
+    "STANDARDS.md",
+    "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md",
+    "raw/acceptance-audits/2026-05-01-651-functional-audit.json",
+    "docs/plans/issue-651-slice-f-standards-rewrite-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite.json",
+    "raw/handoffs/2026-05-01-issue-651-slice-f-plan-to-implementation.json",
+    "raw/validation/2026-05-01-issue-651-slice-f-standards-rewrite.md",
+    "raw/closeouts/2026-05-01-issue-651-slice-f-standards-rewrite.md",
+    "OVERLORD_BACKLOG.md"
+  ],
+  "forbidden_roots": [
+    ".github/workflows/",
+    ".claude/hooks/",
+    "hooks/",
+    "scripts/",
+    "packages/",
+    "agents/",
+    "docs/schemas/",
+    "issue-652-slice-g-hldpro-sim-personas-20260501"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "issue-652-slice-g-hldpro-sim-personas-20260501",
+      "reason": "Slice G runs in parallel; non-overlapping file paths"
+    }
+  ],
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 651,
+    "claim_ref": "docs/plans/issue-650-governance-policy-refresh-structured-agent-cycle-plan.json",
+    "claimed_by": "claude-sonnet-4.X or codex-spark (Tier 2 worker)",
+    "claimed_at": "2026-05-01T00:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-opus-4.7",
+    "implementer_model": "claude-sonnet-4.X or codex-spark",
+    "accepted_at": "2026-05-01T00:00:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-650-governance-policy-refresh-structured-agent-cycle-plan.json",
+      "raw/cross-review/2026-05-01-issue-650-plan-review.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null,
+    "cross_family_path_unavailable": false,
+    "cross_family_path_ref": "raw/cross-review/2026-05-01-issue-650-plan-review.md",
+    "fallback_log_ref": null
+  }
+}

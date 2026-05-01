@@ -1,0 +1,166 @@
+{
+  "session_id": "session-20260501-issue-651-slice-f-standards-rewrite",
+  "issue_number": 651,
+  "plan_author": {
+    "role": "Tier-2-worker",
+    "model_id": "claude-sonnet-4-6",
+    "model_family": "anthropic"
+  },
+  "objective": "Rewrite STANDARDS.md §Society of Minds to be session-agnostic, add fallup ladder, enforce dual-family Tier 1 planning authority, prohibit same-family QA, and add functional-acceptance-auditor as required final gate.",
+  "tier": 2,
+  "scope_boundary": [
+    "Implementation child slice under Epic #650 (Governance Policy Refresh).",
+    "Owns STANDARDS.md §Society of Minds and §PDCAR sections only.",
+    "Must add: session-agnostic routing prose, fallup ladder, dual-family Tier 1, same-family QA prohibition, functional-acceptance-auditor Tier 4 gate.",
+    "Cross-family QA required: openai-family reviewer must sign cross-review artifact before closeout."
+  ],
+  "out_of_scope": [
+    "Slice G (hldpro-sim personas) — owned by issue #652.",
+    "Slice H (CI hardening) — owned by issue #653, blocked until this slice merges.",
+    "Any changes to .github/workflows/, .claude/hooks/, hooks/, scripts/.",
+    "Any changes to packages/ or agents/."
+  ],
+  "research_summary": "Epic #650 plan (gpt-5.4 ACCEPTED on 2026-05-01) authorizes STANDARDS.md SoM rewrite. Key requirements: session-agnostic routing, fallup direction explicit, Tier 1 dual-family, cross-family QA prohibition, functional-acceptance-auditor as mandatory Tier 4 final gate. Execution scope at raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite.json.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/651",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/650",
+    "docs/plans/issue-650-governance-policy-refresh-structured-agent-cycle-plan.json",
+    "raw/cross-review/2026-05-01-issue-650-plan-review.md",
+    "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite.json"
+  ],
+  "sprints": [
+    {
+      "name": "STANDARDS.md SoM Rewrite",
+      "goal": "Rewrite §Society of Minds and §PDCAR to encode all new governance routing constraints.",
+      "tasks": [
+        "Rewrite §Society of Minds routing table with Tier 1-4 definitions and fallup ladder.",
+        "Add session-agnostic routing prose (no session-specific orchestrator references).",
+        "Add explicit same-family QA prohibition.",
+        "Add functional-acceptance-auditor as required Tier 4 final gate.",
+        "Update §PDCAR to reference functional-acceptance-auditor.",
+        "Produce dual-signed cross-review artifact (anthropic worker + openai QA)."
+      ],
+      "acceptance_criteria": [
+        "AC-F1: functional-acceptance-auditor appears 2+ times in STANDARDS.md",
+        "AC-F2: fallup appears 4+ times in STANDARDS.md",
+        "AC-F3: same-family QA prohibition present",
+        "AC-F4: session-agnostic routing prose present",
+        "AC-F5: dual-family Tier 1 requirement present",
+        "AC-F6: cross-family QA requirement present",
+        "AC-F7: PDCAR section references functional-acceptance-auditor as final gate",
+        "AC-F8: gpt-5.4 QA reviewer signs cross-review artifact as APPROVED",
+        "AC-F9: functional-acceptance-auditor post-merge audit returns PASS"
+      ],
+      "file_paths": [
+        "STANDARDS.md",
+        "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md",
+        "docs/plans/issue-651-slice-f-standards-rewrite-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite.json",
+        "raw/closeouts/2026-05-01-issue-651-slice-f-standards-rewrite.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "Tier-2-worker",
+      "reviewer_model_id": "claude-sonnet-4-6",
+      "reviewer_model_family": "anthropic",
+      "role": "implementation review and artifact validation",
+      "focus": "Verify all AC-F1 through AC-F7 are met in STANDARDS.md.",
+      "status": "complete",
+      "summary": "All AC-F1 through AC-F7 verified. functional-acceptance-auditor=2, fallup=4, session-agnostic=1, dual-family=4, cross-family=3, PDCAR references auditor gate.",
+      "evidence": [
+        "STANDARDS.md",
+        "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md"
+      ]
+    },
+    {
+      "reviewer": "gpt-5.4",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "Tier 3 cross-family QA reviewer",
+      "focus": "Verify AC-F1 through AC-F7 against actual STANDARDS.md content.",
+      "status": "complete",
+      "summary": "APPROVED. All required terms verified: functional-acceptance-auditor=2, fallup=4, session-agnostic=1, dual-family=4, cross-family=3, Same-family QA=1, PDCAR=3.",
+      "evidence": [
+        "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.4",
+    "reviewer_model_id": "gpt-5.4",
+    "reviewer_model_family": "openai",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "gpt-5.4 cross-family QA review completed 2026-05-01 via codex exec --ephemeral --skip-git-repo-check --sandbox read-only -C /tmp/wt-651-slice-f -m gpt-5.4 -c model_reasoning_effort=medium. Verdict: APPROVED. All AC-F1..AC-F7 pass.",
+    "evidence": [
+      "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md"
+    ]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "Claude Sonnet 4.6 (Tier 2 worker)",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #651 Slice F is authorized for STANDARDS.md §Society of Minds rewrite: session-agnostic routing, fallup ladder, dual-family Tier 1, same-family QA prohibition, functional-acceptance-auditor Tier 4 gate.",
+    "next_execution_step": "Merge PR #656; run functional-acceptance-auditor post-merge (AC-F9).",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-05-01-issue-651-slice-f-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md"
+    ],
+    "next_role": "operator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "AC-F1: functional-acceptance-auditor 2+ times in STANDARDS.md",
+      "AC-F2: fallup 4+ times in STANDARDS.md",
+      "AC-F3: same-family QA prohibition present",
+      "AC-F4: session-agnostic routing prose present",
+      "AC-F5: dual-family Tier 1 requirement present",
+      "AC-F6: cross-family QA requirement present",
+      "AC-F7: PDCAR references functional-acceptance-auditor as final gate",
+      "AC-F8: gpt-5.4 QA APPROVED in cross-review artifact",
+      "AC-F9: functional-acceptance-auditor post-merge PASS"
+    ]
+  },
+  "material_deviation_rules": [
+    "HARD STOP if any write touches .github/workflows/, .claude/hooks/, hooks/, scripts/, packages/, agents/, docs/schemas/.",
+    "HARD STOP if same-family QA is used (worker=anthropic, QA must be openai).",
+    "If functional-acceptance-auditor is not available post-merge, document in FAIL_FAST_LOG.md and open follow-up issue."
+  ],
+  "approved": true,
+  "approved_by": ["gpt-5.4 (cross-family QA review, 2026-05-01)"],
+  "approved_at": "2026-05-01T00:00:00Z"
+}
