@@ -9,6 +9,10 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Governance policy refresh — STANDARDS rewrite, hldpro-sim persona suite, and acceptance-auditor gate | [#650](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/650) | HIGH | 10-14 | Umbrella epic. 3 child slices: F (#651), G (#652), H (#653). Requires cross-review artifact before any slice merges. |
+| Slice F: STANDARDS.md agent-agnostic rules, fallback ladder corrections, model routing alignment | [#651](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/651) | HIGH | 3-4 | Architecture-tier change. Upstream dependency for Slice H (#653). Fallup ladder, session-agnostic language, QA cross-family mandate. |
+| Slice G: hldpro-sim governance process personas + AnthropicApiProvider implementation | [#652](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/652) | HIGH | 4-5 | 5 process-agent persona JSONs in new process-agents/ dir, PersonaLoader update, AnthropicApiProvider implementation. Verify overlap with #614 before branch cut. |
+| Slice H: Functional acceptance auditor — agent definition, schema, CI gate integration | [#653](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/653) | HIGH | 3-4 | Depends on Slice F (#651). New final AC gate for all PDCAR slices. agents/functional-acceptance-auditor.md + schema + AGENT_REGISTRY row + contract tests. |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | [#177](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/177) | LOW-MEDIUM | 2-3 | Post-outage code review. Gate: live-fallback rate < 2% for 2 weeks post-merge (window now passed). |
 | Qwen-Coder MLX driver stub-emission bug | [#105](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/105) | LOW | 1-2 | Qwen2.5-Coder-7B throws truncated output on edge cases (>200 lines). Workarounds in `docs/runbooks/qwen-coder-driver.md`. |
 | SoM Stage 5: som-worker daemon (always-warm Qwen-Coder + packet queue pipeline) | [#178](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/178) | LOW | 6-8 | Qwen watches raw/packets/inbound/, processes to raw/packets/outbound/, Sonnet reviews async. |
@@ -18,7 +22,6 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| PDCAR Slice E: 8 session-friction patches + Epic #638 closeout | [#648](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/648) | HIGH | 3-4 | 8 PDCAR friction patches from 2026-05-01 audit. Epic #638 Stage 6 closeout. Branch: issue-648-pdcar-slice-e-friction-patches-20260501. |
 | Governed research specialist consumer rollout | [#591](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591) | HIGH | 4-6 | Governance planning lane for downstream adoption of the research-specialist package. First pilot: Stampede issue [#208](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/208). |
 | Downstream thin session-contract adapter rollout epic | [#579](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/579) | HIGH | 6-10 | Governance execution epic opened from approved plan #575 after SSOT reconciliation #576; child issues opened in LAM, AIS, Seek, Knocktracker, Stampede, HealthcarePlatform, and ASC-Evaluator. |
 
@@ -26,6 +29,7 @@
 
 | Item | Date | Notes |
 |------|------|-------|
+| PDCAR Slice E: 8 session-friction patches + Epic #638 closeout | 2026-05-01 | Issue [#648](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/648). Merged at commit `9d570b8`. 8 PDCAR friction patches from 2026-05-01 audit. Epic #638 Stage 6 closeout completed. |
 | Slice B: Hook Wiring | 2026-05-01 | Issue [#640](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/640). Merged and closed 2026-05-01T16:54:42Z. Wired all required hooks with $HOME-anchored paths; added PostToolUse "*" gate; backlog_match.py + fail_fast_state.py shared helpers. |
 | Fallback-log schema/workflow parity | 2026-04-30 | Issue [#629](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/629). Merged via PR [#630](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/630) and closed after reconciling degraded same-family fallback-log checker, writer, and workflow parity under parent #612 without reopening execution-scope, local-hook, #607, or #614 surfaces. |
 | Local root-hook degraded-fallback proof consumption | 2026-04-30 | Issue [#627](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/627). Merged via PR [#628](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/628) after wiring `hooks/governance-check.sh` to consume the merged `#625` degraded-fallback proof contract locally with focused helper/test evidence. |
