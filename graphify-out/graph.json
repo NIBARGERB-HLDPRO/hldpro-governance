@@ -9,7 +9,7 @@
       "source_file": "scripts/windows-ollama/tests/__init__.py",
       "source_location": "L1",
       "id": "init",
-      "community": 11
+      "community": 10
     },
     {
       "label": "aggregator.py",
@@ -17,7 +17,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/aggregator.py",
       "source_location": "L1",
       "id": "aggregator",
-      "community": 11
+      "community": 10
     },
     {
       "label": "BaseAggregator",
@@ -25,7 +25,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/aggregator.py",
       "source_location": "L8",
       "id": "aggregator_baseaggregator",
-      "community": 11
+      "community": 10
     },
     {
       "label": "ABC",
@@ -33,7 +33,7 @@
       "source_file": "",
       "source_location": "",
       "id": "abc",
-      "community": 11
+      "community": 10
     },
     {
       "label": "aggregate()",
@@ -41,7 +41,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/aggregator.py",
       "source_location": "L10",
       "id": "aggregator_aggregate",
-      "community": 11
+      "community": 10
     },
     {
       "label": "artifacts.py",
@@ -49,7 +49,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
       "source_location": "L1",
       "id": "artifacts",
-      "community": 11
+      "community": 10
     },
     {
       "label": "RunManifest",
@@ -57,7 +57,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
       "source_location": "L10",
       "id": "artifacts_runmanifest",
-      "community": 11
+      "community": 10
     },
     {
       "label": "_git_commit()",
@@ -65,7 +65,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
       "source_location": "L21",
       "id": "artifacts_git_commit",
-      "community": 11
+      "community": 10
     },
     {
       "label": "ArtifactWriter",
@@ -73,7 +73,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
       "source_location": "L33",
       "id": "artifacts_artifactwriter",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".__init__()",
@@ -81,7 +81,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
       "source_location": "L34",
       "id": "artifacts_artifactwriter_init",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".write()",
@@ -89,7 +89,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/artifacts.py",
       "source_location": "L37",
       "id": "artifacts_artifactwriter_write",
-      "community": 11
+      "community": 10
     },
     {
       "label": "engine.py",
@@ -97,7 +97,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/engine.py",
       "source_location": "L1",
       "id": "engine",
-      "community": 11
+      "community": 10
     },
     {
       "label": "SimulationEngine",
@@ -105,7 +105,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/engine.py",
       "source_location": "L7",
       "id": "engine_simulationengine",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".__init__()",
@@ -113,7 +113,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/engine.py",
       "source_location": "L8",
       "id": "engine_simulationengine_init",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".run()",
@@ -121,7 +121,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/engine.py",
       "source_location": "L20",
       "id": "engine_simulationengine_run",
-      "community": 11
+      "community": 10
     },
     {
       "label": "personas.py",
@@ -129,7 +129,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/personas.py",
       "source_location": "L1",
       "id": "personas",
-      "community": 11
+      "community": 10
     },
     {
       "label": "PersonaLoader",
@@ -137,7 +137,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/personas.py",
       "source_location": "L6",
       "id": "personas_personaloader",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".__init__()",
@@ -145,7 +145,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/personas.py",
       "source_location": "L9",
       "id": "personas_personaloader_init",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".load()",
@@ -153,7 +153,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/personas.py",
       "source_location": "L13",
       "id": "personas_personaloader_load",
-      "community": 11
+      "community": 10
     },
     {
       "label": "from_package()",
@@ -161,7 +161,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/personas.py",
       "source_location": "L23",
       "id": "personas_from_package",
-      "community": 11
+      "community": 10
     },
     {
       "label": "Load persona JSON files. Resolves local-first, shared fallback.",
@@ -169,7 +169,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/personas.py",
       "source_location": "L7",
       "id": "personas_rationale_7",
-      "community": 11
+      "community": 10
     },
     {
       "label": "Convenience: load shared dir from bundled package personas/.",
@@ -185,7 +185,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/providers.py",
       "source_location": "L1",
       "id": "providers",
-      "community": 11
+      "community": 10
     },
     {
       "label": "BaseProvider",
@@ -193,7 +193,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/providers.py",
       "source_location": "L10",
       "id": "providers_baseprovider",
-      "community": 11
+      "community": 10
     },
     {
       "label": "Protocol",
@@ -201,7 +201,7 @@
       "source_file": "",
       "source_location": "",
       "id": "protocol",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".complete()",
@@ -209,7 +209,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/providers.py",
       "source_location": "L11",
       "id": "providers_baseprovider_complete",
-      "community": 11
+      "community": 10
     },
     {
       "label": "CodexCliProvider",
@@ -217,7 +217,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/providers.py",
       "source_location": "L14",
       "id": "providers_codexcliprovider",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".__init__()",
@@ -225,7 +225,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/providers.py",
       "source_location": "L17",
       "id": "providers_codexcliprovider_init",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".complete()",
@@ -233,7 +233,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/providers.py",
       "source_location": "L21",
       "id": "providers_codexcliprovider_complete",
-      "community": 11
+      "community": 10
     },
     {
       "label": "AnthropicApiProvider",
@@ -241,7 +241,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/providers.py",
       "source_location": "L71",
       "id": "providers_anthropicapiprovider",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".complete()",
@@ -249,7 +249,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/providers.py",
       "source_location": "L74",
       "id": "providers_anthropicapiprovider_complete",
-      "community": 11
+      "community": 10
     },
     {
       "label": "Subprocess-backed provider using codex exec --ephemeral.",
@@ -257,7 +257,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/providers.py",
       "source_location": "L15",
       "id": "providers_rationale_15",
-      "community": 11
+      "community": 10
     },
     {
       "label": "Cloud stub \u2014 not implemented until API keys are provisioned.",
@@ -265,7 +265,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/providers.py",
       "source_location": "L72",
       "id": "providers_rationale_72",
-      "community": 11
+      "community": 10
     },
     {
       "label": "runner.py",
@@ -273,7 +273,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/runner.py",
       "source_location": "L1",
       "id": "runner",
-      "community": 11
+      "community": 10
     },
     {
       "label": "Runner",
@@ -281,7 +281,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/runner.py",
       "source_location": "L6",
       "id": "runner_runner",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".__init__()",
@@ -289,7 +289,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/runner.py",
       "source_location": "L7",
       "id": "runner_runner_init",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".run_n()",
@@ -297,7 +297,7 @@
       "source_file": "packages/hldpro-sim/hldprosim/runner.py",
       "source_location": "L10",
       "id": "runner_runner_run_n",
-      "community": 11
+      "community": 10
     },
     {
       "label": "stampede_consumer.py",
@@ -305,7 +305,7 @@
       "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
       "source_location": "L1",
       "id": "stampede_consumer",
-      "community": 11
+      "community": 10
     },
     {
       "label": "NarrativeOutcome",
@@ -313,7 +313,7 @@
       "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
       "source_location": "L8",
       "id": "stampede_consumer_narrativeoutcome",
-      "community": 11
+      "community": 10
     },
     {
       "label": "BaseModel",
@@ -321,7 +321,7 @@
       "source_file": "",
       "source_location": "",
       "id": "basemodel",
-      "community": 11
+      "community": 10
     },
     {
       "label": "NarrativeAggregator",
@@ -329,7 +329,7 @@
       "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
       "source_location": "L17",
       "id": "stampede_consumer_narrativeaggregator",
-      "community": 11
+      "community": 10
     },
     {
       "label": "BaseAggregator",
@@ -337,7 +337,7 @@
       "source_file": "",
       "source_location": "",
       "id": "baseaggregator",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".aggregate()",
@@ -345,7 +345,7 @@
       "source_file": "packages/hldpro-sim/tests/fixtures/stampede_consumer.py",
       "source_location": "L18",
       "id": "stampede_consumer_narrativeaggregator_aggregate",
-      "community": 11
+      "community": 10
     },
     {
       "label": "test_artifacts.py",
@@ -489,7 +489,7 @@
       "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
       "source_location": "L1",
       "id": "test_stampede_consumer_proof",
-      "community": 11
+      "community": 10
     },
     {
       "label": "MockProvider",
@@ -497,7 +497,7 @@
       "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
       "source_location": "L37",
       "id": "test_stampede_consumer_proof_mockprovider",
-      "community": 11
+      "community": 10
     },
     {
       "label": ".complete()",
@@ -505,7 +505,7 @@
       "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
       "source_location": "L38",
       "id": "test_stampede_consumer_proof_mockprovider_complete",
-      "community": 11
+      "community": 10
     },
     {
       "label": "test_stampede_e2e()",
@@ -513,7 +513,7 @@
       "source_file": "packages/hldpro-sim/tests/test_stampede_consumer_proof.py",
       "source_location": "L42",
       "id": "test_stampede_consumer_proof_test_stampede_e2e",
-      "community": 11
+      "community": 10
     },
     {
       "label": "cli_session_supervisor.py",
@@ -4473,7 +4473,7 @@
       "source_file": "scripts/overlord/check_stage6_closeout.py",
       "source_location": "L1",
       "id": "check_stage6_closeout",
-      "community": 10
+      "community": 9
     },
     {
       "label": "CloseoutDecision",
@@ -4481,7 +4481,7 @@
       "source_file": "scripts/overlord/check_stage6_closeout.py",
       "source_location": "L53",
       "id": "check_stage6_closeout_closeoutdecision",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_normalize()",
@@ -4489,7 +4489,7 @@
       "source_file": "scripts/overlord/check_stage6_closeout.py",
       "source_location": "L61",
       "id": "check_stage6_closeout_normalize",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_read_changed_files()",
@@ -4497,7 +4497,7 @@
       "source_file": "scripts/overlord/check_stage6_closeout.py",
       "source_location": "L67",
       "id": "check_stage6_closeout_read_changed_files",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_issue_number()",
@@ -4505,7 +4505,7 @@
       "source_file": "scripts/overlord/check_stage6_closeout.py",
       "source_location": "L71",
       "id": "check_stage6_closeout_issue_number",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_is_governance_surface()",
@@ -4513,7 +4513,7 @@
       "source_file": "scripts/overlord/check_stage6_closeout.py",
       "source_location": "L76",
       "id": "check_stage6_closeout_is_governance_surface",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_is_planning_only()",
@@ -4521,7 +4521,7 @@
       "source_file": "scripts/overlord/check_stage6_closeout.py",
       "source_location": "L80",
       "id": "check_stage6_closeout_is_planning_only",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_matching_closeouts()",
@@ -4529,7 +4529,7 @@
       "source_file": "scripts/overlord/check_stage6_closeout.py",
       "source_location": "L84",
       "id": "check_stage6_closeout_matching_closeouts",
-      "community": 10
+      "community": 9
     },
     {
       "label": "evaluate()",
@@ -4537,7 +4537,7 @@
       "source_file": "scripts/overlord/check_stage6_closeout.py",
       "source_location": "L93",
       "id": "check_stage6_closeout_evaluate",
-      "community": 10
+      "community": 9
     },
     {
       "label": "build_parser()",
@@ -4545,7 +4545,7 @@
       "source_file": "scripts/overlord/check_stage6_closeout.py",
       "source_location": "L139",
       "id": "check_stage6_closeout_build_parser",
-      "community": 10
+      "community": 9
     },
     {
       "label": "main()",
@@ -4553,7 +4553,7 @@
       "source_file": "scripts/overlord/check_stage6_closeout.py",
       "source_location": "L147",
       "id": "check_stage6_closeout_main",
-      "community": 10
+      "community": 9
     },
     {
       "label": "check_worker_handoff_route.py",
@@ -9377,7 +9377,7 @@
       "source_file": "scripts/overlord/test_validate_sql_schema_probe_contract.py",
       "source_location": "L1",
       "id": "test_validate_sql_schema_probe_contract",
-      "community": 32
+      "community": 31
     },
     {
       "label": "valid_contract()",
@@ -9385,7 +9385,7 @@
       "source_file": "scripts/overlord/test_validate_sql_schema_probe_contract.py",
       "source_location": "L18",
       "id": "test_validate_sql_schema_probe_contract_valid_contract",
-      "community": 32
+      "community": 31
     },
     {
       "label": "TestValidateSqlSchemaProbeContract",
@@ -9393,7 +9393,7 @@
       "source_file": "scripts/overlord/test_validate_sql_schema_probe_contract.py",
       "source_location": "L79",
       "id": "test_validate_sql_schema_probe_contract_testvalidatesqlschemaprobecontract",
-      "community": 32
+      "community": 31
     },
     {
       "label": ".test_valid_contract_passes()",
@@ -9401,7 +9401,7 @@
       "source_file": "scripts/overlord/test_validate_sql_schema_probe_contract.py",
       "source_location": "L80",
       "id": "test_validate_sql_schema_probe_contract_testvalidatesqlschemaprobecontract_test_valid_contract_passes",
-      "community": 32
+      "community": 31
     },
     {
       "label": ".test_negative_control_stale_column_present_in_fixture_fails()",
@@ -9409,7 +9409,7 @@
       "source_file": "scripts/overlord/test_validate_sql_schema_probe_contract.py",
       "source_location": "L83",
       "id": "test_validate_sql_schema_probe_contract_testvalidatesqlschemaprobecontract_test_negative_control_stale_column_present_in_fixture_fails",
-      "community": 32
+      "community": 31
     },
     {
       "label": ".test_required_column_missing_from_fixture_fails()",
@@ -9417,7 +9417,7 @@
       "source_file": "scripts/overlord/test_validate_sql_schema_probe_contract.py",
       "source_location": "L91",
       "id": "test_validate_sql_schema_probe_contract_testvalidatesqlschemaprobecontract_test_required_column_missing_from_fixture_fails",
-      "community": 32
+      "community": 31
     },
     {
       "label": ".test_metadata_query_must_use_metadata_source()",
@@ -9425,7 +9425,7 @@
       "source_file": "scripts/overlord/test_validate_sql_schema_probe_contract.py",
       "source_location": "L102",
       "id": "test_validate_sql_schema_probe_contract_testvalidatesqlschemaprobecontract_test_metadata_query_must_use_metadata_source",
-      "community": 32
+      "community": 31
     },
     {
       "label": ".test_destructive_operation_requires_preflight_before_mutation()",
@@ -9433,7 +9433,7 @@
       "source_file": "scripts/overlord/test_validate_sql_schema_probe_contract.py",
       "source_location": "L110",
       "id": "test_validate_sql_schema_probe_contract_testvalidatesqlschemaprobecontract_test_destructive_operation_requires_preflight_before_mutation",
-      "community": 32
+      "community": 31
     },
     {
       "label": ".test_sql_surface_false_deferral_passes_with_residual_risk()",
@@ -9441,7 +9441,7 @@
       "source_file": "scripts/overlord/test_validate_sql_schema_probe_contract.py",
       "source_location": "L118",
       "id": "test_validate_sql_schema_probe_contract_testvalidatesqlschemaprobecontract_test_sql_surface_false_deferral_passes_with_residual_risk",
-      "community": 32
+      "community": 31
     },
     {
       "label": ".test_default_cli_discovers_governance_example()",
@@ -9449,7 +9449,7 @@
       "source_file": "scripts/overlord/test_validate_sql_schema_probe_contract.py",
       "source_location": "L130",
       "id": "test_validate_sql_schema_probe_contract_testvalidatesqlschemaprobecontract_test_default_cli_discovers_governance_example",
-      "community": 32
+      "community": 31
     },
     {
       "label": ".test_cli_reports_invalid_contract()",
@@ -9457,7 +9457,7 @@
       "source_file": "scripts/overlord/test_validate_sql_schema_probe_contract.py",
       "source_location": "L141",
       "id": "test_validate_sql_schema_probe_contract_testvalidatesqlschemaprobecontract_test_cli_reports_invalid_contract",
-      "community": 32
+      "community": 31
     },
     {
       "label": "test_validate_structured_agent_cycle_plan.py",
@@ -9921,7 +9921,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L1",
       "id": "test_verify_governance_consumer",
-      "community": 7
+      "community": 6
     },
     {
       "label": "TestVerifyGovernanceConsumer",
@@ -9929,7 +9929,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L37",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".setUp()",
@@ -9937,7 +9937,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L38",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_setup",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".tearDown()",
@@ -9945,7 +9945,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L51",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_teardown",
-      "community": 7
+      "community": 6
     },
     {
       "label": "._deploy()",
@@ -9953,7 +9953,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L54",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_deploy",
-      "community": 7
+      "community": 6
     },
     {
       "label": "._invoke()",
@@ -9961,7 +9961,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L76",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_invoke",
-      "community": 7
+      "community": 6
     },
     {
       "label": "._base_args()",
@@ -9969,7 +9969,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L87",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_base_args",
-      "community": 7
+      "community": 6
     },
     {
       "label": "._record()",
@@ -9977,7 +9977,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L99",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_record",
-      "community": 7
+      "community": 6
     },
     {
       "label": "._shim()",
@@ -9985,7 +9985,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L102",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_shim",
-      "community": 7
+      "community": 6
     },
     {
       "label": "._read_record()",
@@ -9993,7 +9993,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L105",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_read_record",
-      "community": 7
+      "community": 6
     },
     {
       "label": "._write_record()",
@@ -10001,7 +10001,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L108",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_write_record",
-      "community": 7
+      "community": 6
     },
     {
       "label": "._valid_override()",
@@ -10009,7 +10009,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L111",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_valid_override",
-      "community": 7
+      "community": 6
     },
     {
       "label": "._next_package_version()",
@@ -10017,7 +10017,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L119",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_next_package_version",
-      "community": 7
+      "community": 6
     },
     {
       "label": "._required_constraints()",
@@ -10025,7 +10025,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L123",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_required_constraints",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_passes_for_deployed_pinned_consumer_record()",
@@ -10033,7 +10033,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L127",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_passes_for_deployed_pinned_consumer_record",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_record_missing()",
@@ -10041,7 +10041,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L139",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_record_missing",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_governance_root_is_typoed()",
@@ -10049,7 +10049,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L146",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_governance_root_is_typoed",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_record_is_malformed_shape()",
@@ -10057,7 +10057,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L165",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_record_is_malformed_shape",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_governance_ref_is_not_sha()",
@@ -10065,7 +10065,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L176",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_governance_ref_is_not_sha",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_governance_ref_is_not_remote_reachable()",
@@ -10073,7 +10073,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L193",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_governance_ref_is_not_remote_reachable",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_shim_missing_marker()",
@@ -10081,7 +10081,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L210",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_shim_missing_marker",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_expected_profile_mismatches()",
@@ -10089,7 +10089,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L220",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_expected_profile_mismatches",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_managed_file_record_omits_expected_path()",
@@ -10097,7 +10097,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L236",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_managed_file_record_omits_expected_path",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_profile_is_unknown()",
@@ -10105,7 +10105,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L248",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_profile_is_unknown",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_profile_is_missing()",
@@ -10113,7 +10113,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L265",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_profile_is_missing",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_for_mutable_governance_workflow_ref()",
@@ -10121,7 +10121,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L278",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_for_mutable_governance_workflow_ref",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_workflow_ref_is_tag()",
@@ -10129,7 +10129,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L293",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_workflow_ref_is_tag",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_workflow_ref_is_short_sha()",
@@ -10137,7 +10137,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L310",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_workflow_ref_is_short_sha",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_workflow_ref_sha_mismatch()",
@@ -10145,7 +10145,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L327",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_workflow_ref_sha_mismatch",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_stale_workflow_ref_before_acceptance()",
@@ -10153,7 +10153,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L345",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_stale_workflow_ref_before_acceptance",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_for_managed_hook_checksum_drift()",
@@ -10161,7 +10161,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L366",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_for_managed_hook_checksum_drift",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_for_managed_hook_missing_marker()",
@@ -10169,7 +10169,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L387",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_for_managed_hook_missing_marker",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_for_invalid_override_metadata_and_reports_observed_override()",
@@ -10177,7 +10177,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L402",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_for_invalid_override_metadata_and_reports_observed_override",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_for_malformed_local_overrides()",
@@ -10185,7 +10185,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L416",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_for_malformed_local_overrides",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_override_empty_owner()",
@@ -10193,7 +10193,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L431",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_override_empty_owner",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_override_non_string_reason()",
@@ -10201,7 +10201,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L446",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_override_non_string_reason",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_override_empty_expires_at()",
@@ -10209,7 +10209,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L461",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_override_empty_expires_at",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_override_weakens_healthcareplatform_hipaa()",
@@ -10217,7 +10217,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L480",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_override_weakens_healthcareplatform_hipaa",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_override_disables_seek_plan_mode()",
@@ -10225,7 +10225,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L494",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_override_disables_seek_plan_mode",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_override_routes_pii_away_from_lam()",
@@ -10233,7 +10233,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L508",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_override_routes_pii_away_from_lam",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_override_core_fork_without_exception()",
@@ -10241,7 +10241,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L522",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_override_core_fork_without_exception",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_override_disables_ci_required_gate()",
@@ -10249,7 +10249,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L536",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_override_disables_ci_required_gate",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_override_dry_run_as_live_evidence()",
@@ -10257,7 +10257,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L550",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_override_dry_run_as_live_evidence",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_healthcareplatform_v2_profile_weakens_constraints()",
@@ -10265,7 +10265,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L564",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_healthcareplatform_v2_profile_weakens_constraints",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_passes_for_valid_v2_managed_consumer()",
@@ -10273,7 +10273,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L590",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_passes_for_valid_v2_managed_consumer",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_consumer_profile_omits_required_session_contract_entries()",
@@ -10281,7 +10281,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L671",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_consumer_profile_omits_required_session_contract_entries",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_when_consumer_profile_session_contract_content_is_stale()",
@@ -10289,7 +10289,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L694",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_when_consumer_profile_session_contract_content_is_stale",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_for_tracked_session_contract_missing_required_content()",
@@ -10297,7 +10297,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L725",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_for_tracked_session_contract_missing_required_content",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_fails_for_hook_settings_contract_missing_post_tool_use_matcher()",
@@ -10305,7 +10305,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L747",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_fails_for_hook_settings_contract_missing_post_tool_use_matcher",
-      "community": 7
+      "community": 6
     },
     {
       "label": ".test_verify_passes_for_session_contract_and_hook_settings_contract_entries()",
@@ -10313,7 +10313,7 @@
       "source_file": "scripts/overlord/test_verify_governance_consumer.py",
       "source_location": "L780",
       "id": "test_verify_governance_consumer_testverifygovernanceconsumer_test_verify_passes_for_session_contract_and_hook_settings_contract_entries",
-      "community": 7
+      "community": 6
     },
     {
       "label": "test_workflow_local_coverage.py",
@@ -10433,7 +10433,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L1",
       "id": "validate_closeout",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_repo_rel()",
@@ -10441,7 +10441,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L44",
       "id": "validate_closeout_repo_rel",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_sections()",
@@ -10449,7 +10449,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L51",
       "id": "validate_closeout_sections",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_extract_repo_refs()",
@@ -10457,7 +10457,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L64",
       "id": "validate_closeout_extract_repo_refs",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_load_json()",
@@ -10465,7 +10465,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L75",
       "id": "validate_closeout_load_json",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_execution_scope_refs()",
@@ -10473,7 +10473,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L83",
       "id": "validate_closeout_execution_scope_refs",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_validate_residuals()",
@@ -10481,7 +10481,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L87",
       "id": "validate_closeout_validate_residuals",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_validate_refs()",
@@ -10489,7 +10489,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L102",
       "id": "validate_closeout_validate_refs",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_validate_handoff_refs()",
@@ -10497,7 +10497,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L129",
       "id": "validate_closeout_validate_handoff_refs",
-      "community": 10
+      "community": 9
     },
     {
       "label": "resolve_closeout_execution_mode()",
@@ -10505,7 +10505,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L158",
       "id": "validate_closeout_resolve_closeout_execution_mode",
-      "community": 10
+      "community": 9
     },
     {
       "label": "validate_closeout()",
@@ -10513,7 +10513,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L180",
       "id": "validate_closeout_validate_closeout",
-      "community": 10
+      "community": 9
     },
     {
       "label": "build_parser()",
@@ -10521,7 +10521,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L203",
       "id": "validate_closeout_build_parser",
-      "community": 10
+      "community": 9
     },
     {
       "label": "main()",
@@ -10529,7 +10529,7 @@
       "source_file": "scripts/overlord/validate_closeout.py",
       "source_location": "L210",
       "id": "validate_closeout_main",
-      "community": 10
+      "community": 9
     },
     {
       "label": "validate_cross_review_evidence.py",
@@ -10673,7 +10673,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L1",
       "id": "validate_handoff_package",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_is_url()",
@@ -10681,7 +10681,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L109",
       "id": "validate_handoff_package_is_url",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_normalize_repo_path()",
@@ -10689,7 +10689,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L113",
       "id": "validate_handoff_package_normalize_repo_path",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_repo_file_exists()",
@@ -10697,7 +10697,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L125",
       "id": "validate_handoff_package_repo_file_exists",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_repo_file_exists_with_prefix()",
@@ -10705,7 +10705,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L131",
       "id": "validate_handoff_package_repo_file_exists_with_prefix",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_load_json()",
@@ -10713,7 +10713,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L135",
       "id": "validate_handoff_package_load_json",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_read_json_ref()",
@@ -10721,7 +10721,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L139",
       "id": "validate_handoff_package_read_json_ref",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_validate_ref_array()",
@@ -10729,7 +10729,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L154",
       "id": "validate_handoff_package_validate_ref_array",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_validate_non_empty_ref_array_for_state()",
@@ -10737,7 +10737,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L175",
       "id": "validate_handoff_package_validate_non_empty_ref_array_for_state",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_evidence_ref_gate_applies()",
@@ -10745,7 +10745,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L189",
       "id": "validate_handoff_package_evidence_ref_gate_applies",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_dispatch_contract_gate_applies()",
@@ -10753,7 +10753,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L196",
       "id": "validate_handoff_package_dispatch_contract_gate_applies",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_validate_acceptance_criteria()",
@@ -10761,7 +10761,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L203",
       "id": "validate_handoff_package_validate_acceptance_criteria",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_validate_dispatch_contract()",
@@ -10769,7 +10769,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L246",
       "id": "validate_handoff_package_validate_dispatch_contract",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_consumer_managed_paths()",
@@ -10777,7 +10777,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L377",
       "id": "validate_handoff_package_consumer_managed_paths",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_criteria_verification_refs()",
@@ -10785,7 +10785,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L393",
       "id": "validate_handoff_package_criteria_verification_refs",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_agent_registry_has_agent()",
@@ -10793,7 +10793,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L407",
       "id": "validate_handoff_package_agent_registry_has_agent",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_agent_surface_exists()",
@@ -10801,7 +10801,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L412",
       "id": "validate_handoff_package_agent_surface_exists",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_validate_specialist_agent_contract()",
@@ -10809,7 +10809,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L422",
       "id": "validate_handoff_package_validate_specialist_agent_contract",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_consumer_verifier_acceptance_gate_applies()",
@@ -10817,7 +10817,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L479",
       "id": "validate_handoff_package_consumer_verifier_acceptance_gate_applies",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_validate_consumer_verifier_acceptance()",
@@ -10825,7 +10825,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L486",
       "id": "validate_handoff_package_validate_consumer_verifier_acceptance",
-      "community": 10
+      "community": 9
     },
     {
       "label": "validate_package()",
@@ -10833,7 +10833,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L522",
       "id": "validate_handoff_package_validate_package",
-      "community": 10
+      "community": 9
     },
     {
       "label": "_discover_package_files()",
@@ -10841,7 +10841,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L630",
       "id": "validate_handoff_package_discover_package_files",
-      "community": 10
+      "community": 9
     },
     {
       "label": "main()",
@@ -10849,7 +10849,7 @@
       "source_file": "scripts/overlord/validate_handoff_package.py",
       "source_location": "L639",
       "id": "validate_handoff_package_main",
-      "community": 10
+      "community": 9
     },
     {
       "label": "validate_provisioning_evidence.py",
@@ -11121,7 +11121,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L1",
       "id": "validate_sql_schema_probe_contract",
-      "community": 32
+      "community": 31
     },
     {
       "label": "_display()",
@@ -11129,7 +11129,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L28",
       "id": "validate_sql_schema_probe_contract_display",
-      "community": 32
+      "community": 31
     },
     {
       "label": "_require()",
@@ -11137,7 +11137,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L35",
       "id": "validate_sql_schema_probe_contract_require",
-      "community": 32
+      "community": 31
     },
     {
       "label": "_load_contract()",
@@ -11145,7 +11145,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L40",
       "id": "validate_sql_schema_probe_contract_load_contract",
-      "community": 32
+      "community": 31
     },
     {
       "label": "_safe_non_empty_string()",
@@ -11153,7 +11153,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L47",
       "id": "validate_sql_schema_probe_contract_safe_non_empty_string",
-      "community": 32
+      "community": 31
     },
     {
       "label": "_column_key()",
@@ -11161,7 +11161,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L57",
       "id": "validate_sql_schema_probe_contract_column_key",
-      "community": 32
+      "community": 31
     },
     {
       "label": "_fixture_columns()",
@@ -11169,7 +11169,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L69",
       "id": "validate_sql_schema_probe_contract_fixture_columns",
-      "community": 32
+      "community": 31
     },
     {
       "label": "_validate_metadata_probe()",
@@ -11177,7 +11177,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L103",
       "id": "validate_sql_schema_probe_contract_validate_metadata_probe",
-      "community": 32
+      "community": 31
     },
     {
       "label": "_validate_destructive_operations()",
@@ -11185,7 +11185,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L138",
       "id": "validate_sql_schema_probe_contract_validate_destructive_operations",
-      "community": 32
+      "community": 31
     },
     {
       "label": "_validate_negative_controls()",
@@ -11193,7 +11193,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L159",
       "id": "validate_sql_schema_probe_contract_validate_negative_controls",
-      "community": 32
+      "community": 31
     },
     {
       "label": "_validate_local_ci_hook()",
@@ -11201,7 +11201,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L187",
       "id": "validate_sql_schema_probe_contract_validate_local_ci_hook",
-      "community": 32
+      "community": 31
     },
     {
       "label": "validate_contract()",
@@ -11209,7 +11209,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L206",
       "id": "validate_sql_schema_probe_contract_validate_contract",
-      "community": 32
+      "community": 31
     },
     {
       "label": "_contract_paths()",
@@ -11217,7 +11217,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L244",
       "id": "validate_sql_schema_probe_contract_contract_paths",
-      "community": 32
+      "community": 31
     },
     {
       "label": "run()",
@@ -11225,7 +11225,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L250",
       "id": "validate_sql_schema_probe_contract_run",
-      "community": 32
+      "community": 31
     },
     {
       "label": "build_parser()",
@@ -11233,7 +11233,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L272",
       "id": "validate_sql_schema_probe_contract_build_parser",
-      "community": 32
+      "community": 31
     },
     {
       "label": "main()",
@@ -11241,7 +11241,7 @@
       "source_file": "scripts/overlord/validate_sql_schema_probe_contract.py",
       "source_location": "L279",
       "id": "validate_sql_schema_probe_contract_main",
-      "community": 32
+      "community": 31
     },
     {
       "label": "validate_structured_agent_cycle_plan.py",
@@ -11489,7 +11489,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L1",
       "id": "verify_governance_consumer",
-      "community": 12
+      "community": 11
     },
     {
       "label": "ConsumerVerifyError",
@@ -11497,7 +11497,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L76",
       "id": "verify_governance_consumer_consumerverifyerror",
-      "community": 12
+      "community": 11
     },
     {
       "label": "ConsumerRecord",
@@ -11505,7 +11505,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L81",
       "id": "verify_governance_consumer_consumerrecord",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_fail()",
@@ -11513,7 +11513,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L86",
       "id": "verify_governance_consumer_fail",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_run_git()",
@@ -11521,7 +11521,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L90",
       "id": "verify_governance_consumer_run_git",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_git_root()",
@@ -11529,7 +11529,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L94",
       "id": "verify_governance_consumer_git_root",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_ensure_remote_reachable_governance_ref()",
@@ -11537,7 +11537,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L101",
       "id": "verify_governance_consumer_ensure_remote_reachable_governance_ref",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_load_json()",
@@ -11545,7 +11545,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L116",
       "id": "verify_governance_consumer_load_json",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_consumer_record_relpath()",
@@ -11553,7 +11553,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L128",
       "id": "verify_governance_consumer_consumer_record_relpath",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_required_record_fields()",
@@ -11561,7 +11561,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L137",
       "id": "verify_governance_consumer_required_record_fields",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_initial_package_version()",
@@ -11569,7 +11569,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L158",
       "id": "verify_governance_consumer_initial_package_version",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_profile_desired_state()",
@@ -11577,7 +11577,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L167",
       "id": "verify_governance_consumer_profile_desired_state",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_profile_package_version()",
@@ -11585,7 +11585,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L175",
       "id": "verify_governance_consumer_profile_package_version",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_profile_contract()",
@@ -11593,7 +11593,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L180",
       "id": "verify_governance_consumer_profile_contract",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_manifest_profiles()",
@@ -11601,7 +11601,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L185",
       "id": "verify_governance_consumer_manifest_profiles",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_known_profiles()",
@@ -11609,7 +11609,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L190",
       "id": "verify_governance_consumer_known_profiles",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_next_package_version()",
@@ -11617,7 +11617,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L198",
       "id": "verify_governance_consumer_next_package_version",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_is_v2_record()",
@@ -11625,7 +11625,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L207",
       "id": "verify_governance_consumer_is_v2_record",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_profile_required_constraints()",
@@ -11633,7 +11633,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L217",
       "id": "verify_governance_consumer_profile_required_constraints",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_record_constraints()",
@@ -11641,7 +11641,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L227",
       "id": "verify_governance_consumer_record_constraints",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_expected_managed_entries()",
@@ -11649,7 +11649,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L239",
       "id": "verify_governance_consumer_expected_managed_entries",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_managed_paths()",
@@ -11657,7 +11657,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L260",
       "id": "verify_governance_consumer_managed_paths",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_string_list_or_none()",
@@ -11665,7 +11665,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L271",
       "id": "verify_governance_consumer_string_list_or_none",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_managed_file_type()",
@@ -11673,7 +11673,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L279",
       "id": "verify_governance_consumer_managed_file_type",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_managed_file_entry()",
@@ -11681,7 +11681,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L289",
       "id": "verify_governance_consumer_managed_file_entry",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_expected_entry_failures()",
@@ -11689,7 +11689,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L299",
       "id": "verify_governance_consumer_expected_entry_failures",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_string_list()",
@@ -11697,7 +11697,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L318",
       "id": "verify_governance_consumer_string_list",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_managed_markers()",
@@ -11705,7 +11705,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L324",
       "id": "verify_governance_consumer_managed_markers",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_managed_settings_matchers()",
@@ -11713,7 +11713,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L333",
       "id": "verify_governance_consumer_managed_settings_matchers",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_managed_file_content_failures()",
@@ -11721,7 +11721,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L349",
       "id": "verify_governance_consumer_managed_file_content_failures",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_expected_checksum()",
@@ -11729,7 +11729,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L378",
       "id": "verify_governance_consumer_expected_checksum",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_non_empty_string()",
@@ -11737,7 +11737,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L386",
       "id": "verify_governance_consumer_non_empty_string",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_override_text()",
@@ -11745,7 +11745,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L390",
       "id": "verify_governance_consumer_override_text",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_contains_negated_forbidden_action()",
@@ -11753,7 +11753,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L394",
       "id": "verify_governance_consumer_contains_negated_forbidden_action",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_forbidden_override_failures()",
@@ -11761,7 +11761,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L406",
       "id": "verify_governance_consumer_forbidden_override_failures",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_is_relative_to()",
@@ -11769,7 +11769,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L421",
       "id": "verify_governance_consumer_is_relative_to",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_load_consumer_record()",
@@ -11777,7 +11777,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L429",
       "id": "verify_governance_consumer_load_consumer_record",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_override_records()",
@@ -11785,7 +11785,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L438",
       "id": "verify_governance_consumer_override_records",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_workflow_ref_failures()",
@@ -11793,7 +11793,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L469",
       "id": "verify_governance_consumer_workflow_ref_failures",
-      "community": 12
+      "community": 11
     },
     {
       "label": "_validate_record()",
@@ -11801,7 +11801,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L489",
       "id": "verify_governance_consumer_validate_record",
-      "community": 12
+      "community": 11
     },
     {
       "label": "verify()",
@@ -11809,7 +11809,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L607",
       "id": "verify_governance_consumer_verify",
-      "community": 12
+      "community": 11
     },
     {
       "label": "print_json()",
@@ -11817,7 +11817,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L658",
       "id": "verify_governance_consumer_print_json",
-      "community": 12
+      "community": 11
     },
     {
       "label": "build_parser()",
@@ -11825,7 +11825,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L663",
       "id": "verify_governance_consumer_build_parser",
-      "community": 12
+      "community": 11
     },
     {
       "label": "main()",
@@ -11833,7 +11833,7 @@
       "source_file": "scripts/overlord/verify_governance_consumer.py",
       "source_location": "L677",
       "id": "verify_governance_consumer_main",
-      "community": 12
+      "community": 11
     },
     {
       "label": "emit.py",

@@ -3,6 +3,7 @@ name: verify-completion
 description: Hard-gate verification agent. Checks all repos against STANDARDS.md before any cross-repo work can be marked complete. Fails loudly on missing artifacts.
 model: haiku
 tools: Read, Glob, Grep, Bash
+# write-prohibited: no filesystem writes permitted
 ---
 
 # Verify Completion — Hard Gate

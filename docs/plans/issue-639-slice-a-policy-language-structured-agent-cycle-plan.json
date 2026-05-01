@@ -1,0 +1,161 @@
+{
+  "session_id": "session-20260430-issue-639-slice-a-policy-language",
+  "issue_number": 639,
+  "plan_author": {
+    "role": "stage2-worker",
+    "model_id": "claude-sonnet-4-6",
+    "model_family": "anthropic"
+  },
+  "objective": "Align STANDARDS.md, AGENT_REGISTRY.md, agents/*.md, CLAUDE.md, README.md to fix policy/language gaps G1.1-G1.4",
+  "tier": 2,
+  "scope_boundary": [
+    "Policy and language alignment for governance surface files under issue #639 Slice A.",
+    "Owns AGENT_REGISTRY.md, agents/overlord-audit.md, agents/verify-completion.md, CLAUDE.md, README.md, CI workflow alignment, and issue-local artifacts.",
+    "Must not widen into implementation lane changes beyond the files in the PR diff.",
+    "Issue-local artifacts: structured plan, execution scope, handoff, closeout, validation, cross-review."
+  ],
+  "out_of_scope": [
+    "New feature implementation beyond policy/language alignment.",
+    "Broad local-hook or fallback propagation work.",
+    "Any claim of repo-wide governance closure from this slice alone."
+  ],
+  "research_summary": "Slice A covers policy and language gap remediation (G1.1-G1.4) across core governance surface files. The PR diff shows aligned changes to CLAUDE.md, README.md, AGENT_REGISTRY.md, agents/overlord-audit.md, agents/verify-completion.md, and CI workflow files. Stage 6 artifacts are required before merge.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/639",
+    "AGENT_REGISTRY.md",
+    "CLAUDE.md",
+    "README.md",
+    "agents/overlord-audit.md",
+    "agents/verify-completion.md"
+  ],
+  "sprints": [
+    {
+      "name": "Policy Language Alignment",
+      "goal": "Fix G1.1-G1.4 policy and language gaps across governance surface files.",
+      "tasks": [
+        "Align AGENT_REGISTRY.md with correct model pins.",
+        "Update agents/overlord-audit.md and agents/verify-completion.md frontmatter model pins.",
+        "Align CLAUDE.md and README.md routing table language.",
+        "Fix CI workflow SHA pinning and governance check alignment.",
+        "Produce Stage 6 closeout, execution scope, handoff, cross-review, and validation artifacts."
+      ],
+      "acceptance_criteria": [
+        "All governance surface files pass the local CI gate profile for hldpro-governance.",
+        "PR diff contains only issue-639 Slice A owned surfaces.",
+        "Stage 6 closeout artifact is present and validates.",
+        "Execution scope lists all changed paths.",
+        "Handoff package is accepted and validated."
+      ],
+      "file_paths": [
+        ".github/workflows/check-arch-tier.yml",
+        ".github/workflows/ci.yml",
+        ".github/workflows/governance-check.yml",
+        ".github/workflows/require-cross-review.yml",
+        "AGENT_REGISTRY.md",
+        "CLAUDE.md",
+        "README.md",
+        "agents/overlord-audit.md",
+        "agents/verify-completion.md",
+        "docs/plans/issue-639-slice-a-policy-language-structured-agent-cycle-plan.json",
+        "raw/closeouts/2026-05-01-issue-639-slice-a-policy-language.md",
+        "raw/cross-review/2026-05-01-issue-639-slice-a-policy-language-plan.md",
+        "raw/execution-scopes/2026-05-01-issue-639-slice-a-policy-language-implementation.json",
+        "raw/handoffs/2026-05-01-issue-639-slice-a-plan-to-implementation.json",
+        "raw/validation/2026-05-01-issue-639-slice-a-policy-language.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "stage2-worker policy language review",
+      "reviewer_model_id": "claude-sonnet-4-6",
+      "reviewer_model_family": "anthropic",
+      "role": "policy gap identification and alignment",
+      "focus": "Identify G1.1-G1.4 policy and language gaps in governance surface files and scope the bounded Slice A fix.",
+      "status": "complete",
+      "summary": "G1.1-G1.4 gaps identified in AGENT_REGISTRY.md model pins, agents/*.md frontmatter, CLAUDE.md and README.md routing table language, and CI workflow alignment. Fix is bounded to those surfaces only.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/639",
+        "AGENT_REGISTRY.md",
+        "CLAUDE.md",
+        "README.md",
+        "agents/overlord-audit.md",
+        "agents/verify-completion.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.3-codex-spark",
+    "reviewer_model_id": "gpt-5.3-codex-spark",
+    "reviewer_model_family": "openai",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Cross-family path unavailable (Codex quota / LAM offline). Fallback: same-family claude-sonnet-4-6 with active exception documented in docs/codex-reviews/2026-05-01-issue-639-slice-a-claude.md. Review acknowledged; exception expires 2026-05-02.",
+    "evidence": [
+      "docs/codex-reviews/2026-05-01-issue-639-slice-a-claude.md",
+      "docs/FAIL_FAST_LOG.md"
+    ]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-01-issue-639-slice-a-policy-language-plan.md",
+      "raw/validation/2026-05-01-issue-639-slice-a-policy-language.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "Stage 2 worker (claude-sonnet-4-6)",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #639 Slice A is authorized for bounded policy/language gap alignment only: AGENT_REGISTRY.md, agents/*.md model pins, CLAUDE.md, README.md routing language, CI workflow alignment, and issue-local governance artifacts.",
+    "next_execution_step": "Artifacts are staged. Run validators and commit.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-05-01-issue-639-slice-a-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-639-slice-a-policy-language-implementation.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-05-01-issue-639-slice-a-policy-language-plan.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-05-01-issue-639-slice-a-policy-language.md"
+    ],
+    "next_role": "stage2-worker",
+    "qa_gate_required": false,
+    "handoff_acceptance_criteria": [
+      "AC1: Issue #639 Slice A remains bounded to governance surface file language alignment and issue-local artifacts only.",
+      "AC2: All G1.1-G1.4 policy/language gaps are addressed within the owned surfaces.",
+      "AC3: Stage 6 closeout artifact is present and passes validate_closeout.py."
+    ]
+  },
+  "material_deviation_rules": [
+    "Any implementation change beyond policy/language alignment in the named files is a material deviation.",
+    "Any claim that issue #639 Slice A closes broader governance enforcement is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "operator instruction",
+    "issue #639"
+  ],
+  "approved_at": "2026-05-01T00:00:00Z"
+}

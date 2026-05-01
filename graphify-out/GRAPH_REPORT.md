@@ -63,9 +63,13 @@ Nodes (52): _branch_issue_number(), _changed_paths(), _changed_paths_from_file()
 Cohesion: 0.06
 Nodes (23): BaseHTTPRequestHandler, build_parser(), build_payload(), _call_fixture(), _call_live(), Check, _fixture_server(), _FixtureMcpHandler (+15 more)
 
-### Community 7 - "Community 7"
+### Community 6 - "Community 6"
 Cohesion: 0.17
 Nodes (1): TestVerifyGovernanceConsumer
+
+### Community 7 - "Community 7"
+Cohesion: 0.18
+Nodes (4): _git(), RepoFixture, TestAssertExecutionScope, _working_directory()
 
 ### Community 8 - "Community 8"
 Cohesion: 0.18
@@ -79,13 +83,17 @@ Nodes (38): build_parser(), build_payload(), _call_fixture(), _call_live(), Chec
 Cohesion: 0.09
 Nodes (44): build_parser(), CloseoutDecision, evaluate(), _is_governance_surface(), _is_planning_only(), _issue_number(), main(), _matching_closeouts() (+36 more)
 
-### Community 11 - "Community 11"
+### Community 10 - "Community 10"
 Cohesion: 0.06
 Nodes (20): ABC, BaseAggregator, ArtifactWriter, RunManifest, BaseAggregator, BaseModel, SimulationEngine, PersonaLoader (+12 more)
 
-### Community 12 - "Community 12"
+### Community 11 - "Community 11"
 Cohesion: 0.1
 Nodes (43): build_parser(), _consumer_record_relpath(), ConsumerRecord, ConsumerVerifyError, _contains_negated_forbidden_action(), _ensure_remote_reachable_governance_ref(), _expected_checksum(), _expected_entry_failures() (+35 more)
+
+### Community 12 - "Community 12"
+Cohesion: 0.09
+Nodes (39): _expand_home(), governed_repos(), GovernedRepo, load_registry(), repo_names_enabled_for(), repos_enabled_for(), repos_root(), build_payload() (+31 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.09
@@ -166,6 +174,10 @@ Nodes (14): _all_executable_lines(), _all_run_commands(), check_contract(), _con
 ### Community 32 - "Community 32"
 Cohesion: 0.15
 Nodes (17): TestValidateSqlSchemaProbeContract, valid_contract(), build_parser(), _column_key(), _contract_paths(), _display(), _fixture_columns(), _load_contract() (+9 more)
+
+### Community 32 - "Community 32"
+Cohesion: 0.16
+Nodes (21): append_jsonl(), AttemptResult, build_command(), event_paths(), kill_group(), main(), parse_args(), session_id() (+13 more)
 
 ### Community 33 - "Community 33"
 Cohesion: 0.16

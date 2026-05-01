@@ -122,7 +122,7 @@ Four agents in [`agents/`](agents/) automate governance:
 | **overlord-audit** | Sonnet | On-demand | Deep cross-repo pattern analysis, PR-ready recommendations |
 | **verify-completion** | Haiku | Before marking work "done" | Hard gate — verifies artifacts exist in git tree via isolated worktrees |
 
-All agents are **read-only** — they report findings but do not modify repositories.
+`overlord` and `overlord-audit` are **read-only** — they report findings but do not modify repositories. `overlord-sweep` has **bounded write authority** to governance artifacts (`wiki/index.md`, `OVERLORD_BACKLOG.md`, `raw/`). See `AGENT_REGISTRY.md` for the full authority column.
 
 ### CI Workflows
 
