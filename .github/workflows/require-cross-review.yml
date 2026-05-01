@@ -1,6 +1,13 @@
 name: require-cross-review
 on:
   workflow_call:
+    inputs:
+      base_sha:
+        required: false
+        type: string
+      head_sha:
+        required: false
+        type: string
 
 jobs:
   require-cross-review:
