@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  governance-check:
+    uses: ./.github/workflows/governance-check.yml
+    with:
+      base_sha: ${{ github.event.pull_request.base.sha || github.event.before }}
+      head_sha: ${{ github.event.pull_request.head.sha || github.sha }}
+    secrets: inherit
+
+  require-cross-review:
+    uses: ./.github/workflows/require-cross-review.yml
+    with:
+      base_sha: ${{ github.event.pull_request.base.sha || github.event.before }}
+      head_sha: ${{ github.event.pull_request.head.sha || github.sha }}
+    secrets: inherit
+
+  check-arch-tier:
+    uses: ./.github/workflows/check-arch-tier.yml
+    with:
+      base_sha: ${{ github.event.pull_request.base.sha || github.event.before }}
+      head_sha: ${{ github.event.pull_request.head.sha || github.sha }}
+    secrets: inherit
+
+  check-no-self-approval:
+    uses: ./.github/workflows/check-no-self-approval.yml
+    secrets: inherit
