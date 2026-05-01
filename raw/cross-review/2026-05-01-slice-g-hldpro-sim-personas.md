@@ -15,5 +15,8 @@
 
 ## Signatures
 
-- Anthropic reviewer: Signed, 2026-05-01
-- OpenAI reviewer: PENDING external cross-family review
+- Anthropic reviewer: claude-sonnet-4-6 / 2026-05-01 / IMPLEMENTED
+- OpenAI reviewer: gpt-5.4 / 2026-05-01 / APPROVED
+  - Lane: codex exec --ephemeral --skip-git-repo-check --sandbox read-only -C /tmp/wt-652-slice-g -m gpt-5.4 -c model_reasoning_effort=medium
+  - AC-G1 PASS, AC-G2 PASS, AC-G3 PASS, AC-G5 PASS
+  - Notes: Verified 5 persona JSON files + schema in process-agents/; PersonaLoader prefers process-agents/; AnthropicApiProvider raises ValueError at __init__ when key unset.
