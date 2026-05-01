@@ -1,0 +1,148 @@
+{
+  "session_id": "session-20260501-issue-652-slice-g-hldpro-sim-personas",
+  "issue_number": 652,
+  "plan_author": {
+    "role": "Tier 2 implementation worker",
+    "model_id": "claude-sonnet-4-6",
+    "model_family": "anthropic"
+  },
+  "objective": "Implement Slice G of Epic #650 by adding 5 governance process-agent persona JSON files with a validated schema, updating PersonaLoader to prefer process-agents/, and implementing AnthropicApiProvider with early API key enforcement.",
+  "tier": 2,
+  "scope_boundary": [
+    "Create packages/hldpro-sim/process-agents/ with governance-process-persona.schema.json and 5 persona files.",
+    "Update packages/hldpro-sim/hldprosim/personas.py so PersonaLoader prefers process-agents/ over bundled legacy personas.",
+    "Update packages/hldpro-sim/hldprosim/providers.py so AnthropicApiProvider raises ValueError at __init__ when ANTHROPIC_API_KEY is unset.",
+    "Update test suite for the new behaviors.",
+    "Create all required issue-local governance artifacts."
+  ],
+  "out_of_scope": [
+    "Editing STANDARDS.md, workflow files, hooks, scripts outside packages/hldpro-sim.",
+    "Changing agents/ or docs/schemas/ paths.",
+    "Closing the parent epic or changing non-slice governance policy."
+  ],
+  "research_summary": "Slice G extends hldpro-sim with five governance process-agent persona definitions (governance-planner, implementation-worker, plan-reviewer, qa-reviewer, functional-acceptance-auditor) and a JSON Schema contract. PersonaLoader is updated to prefer the new process-agents/ directory over the legacy bundled registry. AnthropicApiProvider is hardened to raise ValueError at __init__ time when ANTHROPIC_API_KEY is unset, matching the fail-fast policy established in STANDARDS.md §PDCAR.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/652",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/650",
+    "packages/hldpro-sim/hldprosim/personas.py",
+    "packages/hldpro-sim/hldprosim/providers.py",
+    "STANDARDS.md"
+  ],
+  "sprints": [
+    {
+      "name": "Governance Personas + Provider Hardening",
+      "goal": "Add 5 governance process-agent persona files with schema, update PersonaLoader, harden AnthropicApiProvider, and file all governance evidence.",
+      "tasks": [
+        "Create packages/hldpro-sim/process-agents/governance-process-persona.schema.json",
+        "Create 5 persona JSON files under process-agents/",
+        "Update PersonaLoader to prefer process-agents/ directory",
+        "Update AnthropicApiProvider to raise ValueError at __init__ when ANTHROPIC_API_KEY unset",
+        "Update and add tests for all new behaviors",
+        "Create all governance artifacts (plan, scope, handoff, validation, closeout, cross-review)"
+      ],
+      "acceptance_criteria": [
+        "AC-G1: process-agents/ has 5+ governance persona JSON files",
+        "AC-G2: governance-process-persona.schema.json validates all persona files",
+        "AC-G3: PersonaLoader prefers process-agents/ over bundled personas",
+        "AC-G5: AnthropicApiProvider raises ValueError at __init__ when ANTHROPIC_API_KEY unset"
+      ],
+      "file_paths": [
+        "packages/hldpro-sim/process-agents/",
+        "packages/hldpro-sim/hldprosim/personas.py",
+        "packages/hldpro-sim/hldprosim/providers.py",
+        "packages/hldpro-sim/tests/",
+        "raw/cross-review/2026-05-01-slice-g-hldpro-sim-personas.md",
+        "docs/plans/issue-652-slice-g-hldpro-sim-personas-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-05-01-issue-652-slice-g-hldpro-sim-personas-implementation.json",
+        "raw/handoffs/2026-05-01-issue-652-slice-g-plan-to-implementation.json",
+        "raw/validation/2026-05-01-issue-652-slice-g-hldpro-sim-personas.md",
+        "raw/closeouts/2026-05-01-issue-652-slice-g-hldpro-sim-personas.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "gpt-5.4 cross-family QA",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "Tier 3 QA reviewer",
+      "focus": "Verify AC-G1 through AC-G5 against implementation artifacts",
+      "status": "accepted",
+      "summary": "gpt-5.4 QA APPROVED. AC-G1 PASS (5 persona files), AC-G2 PASS (schema validates), AC-G3 PASS (PersonaLoader prefers process-agents/), AC-G5 PASS (ValueError at __init__).",
+      "evidence": [
+        "raw/cross-review/2026-05-01-slice-g-hldpro-sim-personas.md"
+      ]
+    }
+  ],
+  "material_deviation_rules": [
+    "Any edit outside the allowed_write_paths is a material deviation.",
+    "Any change to STANDARDS.md, hooks, workflows, scripts, agents/, or docs/schemas/ is a material deviation.",
+    "Any persona JSON file that does not validate against governance-process-persona.schema.json is a material deviation.",
+    "Any AnthropicApiProvider that does not raise ValueError at __init__ when key unset is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "gpt-5.4 (cross-family QA, 2026-05-01)"
+  ],
+  "approved_at": "2026-05-01T00:00:00Z",
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.4 cross-family reviewer",
+    "model_family": "openai",
+    "reviewer_model_id": "gpt-5.4",
+    "reviewer_model_family": "openai",
+    "status": "accepted",
+    "summary": "OpenAI-family QA reviewed implementation. AC-G1, AC-G2, AC-G3, AC-G5 all PASS. PersonaLoader prefers process-agents/; AnthropicApiProvider raises ValueError at __init__.",
+    "evidence": [
+      "raw/cross-review/2026-05-01-slice-g-hldpro-sim-personas.md"
+    ]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-01-slice-g-hldpro-sim-personas.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "Tier 2 implementation worker (claude-sonnet-4-6)",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement hldpro-sim process-agent personas, schema, PersonaLoader update, AnthropicApiProvider early key enforcement, and governance artifacts.",
+    "next_execution_step": "Create process-agents/ files, update providers.py and personas.py, run pytest, file governance artifacts.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-05-01-issue-652-slice-g-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-652-slice-g-hldpro-sim-personas-implementation.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-05-01-slice-g-hldpro-sim-personas.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-05-01-issue-652-slice-g-hldpro-sim-personas.md"
+    ],
+    "next_role": "operator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "AC-G1 through AC-G5"
+    ]
+  }
+}
