@@ -18,7 +18,7 @@ None. All changes strengthen existing routing rules without conflicts.
 - `STANDARDS.md` — §Society of Minds rewritten, §PDCAR updated with functional-acceptance-auditor gate
 - `raw/cross-review/2026-05-01-slice-f-standards-rewrite.md` — dual-signed (anthropic worker + openai QA)
 - `docs/plans/issue-651-slice-f-standards-rewrite-structured-agent-cycle-plan.json`
-- `raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite.json`
+- `raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite-implementation.json`
 - `raw/handoffs/2026-05-01-issue-651-slice-f-plan-to-implementation.json`
 - `raw/validation/2026-05-01-issue-651-slice-f-standards-rewrite.md`
 - `raw/closeouts/2026-05-01-issue-651-slice-f-standards-rewrite.md` (this file)
@@ -57,7 +57,7 @@ Structured plan:
 - `docs/plans/issue-651-slice-f-standards-rewrite-structured-agent-cycle-plan.json`
 
 Execution scope:
-- `raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite.json`
+- `raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite-implementation.json`
 
 Handoff package:
 - `raw/handoffs/2026-05-01-issue-651-slice-f-plan-to-implementation.json`

@@ -20,13 +20,13 @@
     "Any changes to .github/workflows/, .claude/hooks/, hooks/, scripts/.",
     "Any changes to packages/ or agents/."
   ],
-  "research_summary": "Epic #650 plan (gpt-5.4 ACCEPTED on 2026-05-01) authorizes STANDARDS.md SoM rewrite. Key requirements: session-agnostic routing, fallup direction explicit, Tier 1 dual-family, cross-family QA prohibition, functional-acceptance-auditor as mandatory Tier 4 final gate. Execution scope at raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite.json.",
+  "research_summary": "Epic #650 plan (gpt-5.4 ACCEPTED on 2026-05-01) authorizes STANDARDS.md SoM rewrite. Key requirements: session-agnostic routing, fallup direction explicit, Tier 1 dual-family, cross-family QA prohibition, functional-acceptance-auditor as mandatory Tier 4 final gate. Execution scope at raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite-implementation.json.",
   "research_artifacts": [
     "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/651",
     "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/650",
     "docs/plans/issue-650-governance-policy-refresh-structured-agent-cycle-plan.json",
     "raw/cross-review/2026-05-01-issue-650-plan-review.md",
-    "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite.json"
+    "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite-implementation.json"
   ],
   "sprints": [
     {
@@ -55,7 +55,7 @@
         "STANDARDS.md",
         "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md",
         "docs/plans/issue-651-slice-f-standards-rewrite-structured-agent-cycle-plan.json",
-        "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite.json",
+        "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite-implementation.json",
         "raw/closeouts/2026-05-01-issue-651-slice-f-standards-rewrite.md"
       ]
     }
@@ -134,7 +134,7 @@
     "next_execution_step": "Merge PR #656; run functional-acceptance-auditor post-merge (AC-F9).",
     "blocked_on": [],
     "handoff_package_ref": "raw/handoffs/2026-05-01-issue-651-slice-f-plan-to-implementation.json",
-    "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite-implementation.json",
     "review_artifact_refs": [
       "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md"
     ],
