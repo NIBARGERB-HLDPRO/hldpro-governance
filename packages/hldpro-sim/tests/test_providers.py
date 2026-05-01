@@ -64,15 +64,22 @@ def test_codex_provider_passes_prompt_as_positional_arg_only():
     assert "input" not in call_kwargs or call_kwargs["input"] is None
 
 
-def test_anthropic_provider_not_implemented():
+def test_anthropic_provider_complete_calls_api():
     with patch.dict("os.environ", {"ANTHROPIC_API_KEY": "dummy-test-key"}):
         provider = AnthropicApiProvider()
-    try:
-        provider.complete("system", "user", {})
-    except NotImplementedError as err:
-        assert "not yet implemented" in str(err)
-    else:
-        assert False, "expected NotImplementedError"
+    mock_block = MagicMock()
+    mock_block.type = "tool_use"
+    mock_block.name = "structured_output"
+    mock_block.input = {"result": "ok"}
+    mock_response = MagicMock()
+    mock_response.content = [mock_block]
+    with patch.object(provider, "_get_client") as mock_client:
+        mock_client.return_value.messages.create.return_value = mock_response
+        result = provider.complete("sys", "usr", {"type": "object", "properties": {}})
+    assert result == {"result": "ok"}
+    call_kwargs = mock_client.return_value.messages.create.call_args[1]
+    assert call_kwargs["thinking"]["type"] == "enabled"
+    assert call_kwargs["tool_choice"] == {"type": "tool", "name": "structured_output"}
 
 
 def test_codex_provider_raises_on_nonzero_exit_code():

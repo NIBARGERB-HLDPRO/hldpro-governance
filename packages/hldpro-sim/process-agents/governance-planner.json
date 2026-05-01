@@ -6,8 +6,8 @@
   "primary_model": "claude-opus-4-7",
   "primary_model_family": "anthropic",
   "reasoning_effort": "high",
-  "fallback_model": "claude-sonnet-4-6",
-  "fallback_trigger": "operator_override",
+  "fallback_model": "gpt-5.4",
+  "fallback_trigger": "api_unavailable",
   "input_schema": {
     "type": "object",
     "schema_ref": "som-packet.v1"

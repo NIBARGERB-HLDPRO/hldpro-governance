@@ -106,7 +106,24 @@ class AnthropicApiProvider:
         return self._client
 
     def complete(self, system: str, user: str, outcome_schema: dict) -> dict:
-        self._strict_schema(outcome_schema)
-        raise NotImplementedError(
-            "AnthropicApiProvider.complete() not yet implemented — stub for Slice G with extended thinking placeholder"
-        )
+        strict_schema = self._strict_schema(outcome_schema)
+        client = self._get_client()
+        try:
+            from anthropic import APIError
+
+            response = client.messages.create(
+                model=self.model,
+                max_tokens=self.thinking_budget_tokens + 8192,
+                thinking={"type": "enabled", "budget_tokens": self.thinking_budget_tokens},
+                system=system,
+                messages=[{"role": "user", "content": f"{user}\n\nRespond using the 'structured_output' tool only."}],
+                tools=[{"name": "structured_output", "description": "Emit the result conforming to the required schema", "input_schema": strict_schema}],
+                tool_choice={"type": "tool", "name": "structured_output"},
+            )
+        except APIError as e:
+            raise RuntimeError(f"Anthropic API error: {e}") from e
+
+        for block in response.content:
+            if block.type == "tool_use" and block.name == "structured_output":
+                return block.input
+        raise RuntimeError("AnthropicApiProvider: no structured_output tool_use block in response")
