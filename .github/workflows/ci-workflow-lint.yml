@@ -1,0 +1,91 @@
+name: ci-workflow-lint
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  ci-workflow-lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Lint workflow_call coverage
+        run: |
+          set -euo pipefail
+
+          WORKFLOWS_DIR=".github/workflows"
+          CONSUMER_REGISTRY="scripts/overlord/workflow_consumers.json"
+          VIOLATIONS=()
+
+          # Load consumer registry if present
+          REGISTERED_CONSUMERS="{}"
+          if [ -f "${CONSUMER_REGISTRY}" ]; then
+            REGISTERED_CONSUMERS="$(cat "${CONSUMER_REGISTRY}")"
+          fi
+
+          # Find all workflow_call-only workflows
+          for wf in "${WORKFLOWS_DIR}"/*.yml; do
+            wf_name="$(basename "${wf}")"
+
+            # Check if this workflow has ONLY workflow_call as a trigger
+            # A workflow_call-only workflow has "workflow_call" in its on: block
+            # and no pull_request, push, schedule, or workflow_dispatch trigger
+            if ! grep -qE "^  workflow_call:" "${wf}" 2>/dev/null; then
+              continue
+            fi
+
+            HAS_OTHER_TRIGGER=0
+            if grep -qE "^  (pull_request|push|schedule|workflow_dispatch):" "${wf}" 2>/dev/null; then
+              HAS_OTHER_TRIGGER=1
+            fi
+
+            if [ "${HAS_OTHER_TRIGGER}" -eq 1 ]; then
+              continue
+            fi
+
+            # This is a workflow_call-only workflow. Check for internal callers.
+            INTERNAL_CALLER_COUNT=$(grep -rl "uses: ./.github/workflows/${wf_name}" "${WORKFLOWS_DIR}" 2>/dev/null | wc -l | tr -d " ")
+
+            if [ "${INTERNAL_CALLER_COUNT}" -gt 0 ]; then
+              echo "::notice file=${wf}::[ci-workflow-lint] ${wf_name}: has ${INTERNAL_CALLER_COUNT} internal caller(s)"
+              continue
+            fi
+
+            # Check the consumer registry
+            REGISTERED=$(python3 -c "
+import json, sys
+data = json.loads(sys.argv[1])
+wf = sys.argv[2]
+consumers = data.get(wf, [])
+print(len(consumers))
+" "${REGISTERED_CONSUMERS}" "${wf_name}" 2>/dev/null || echo "0")
+
+            if [ "${REGISTERED}" -gt 0 ]; then
+              echo "::notice file=${wf}::[ci-workflow-lint] ${wf_name}: registered with ${REGISTERED} known external consumer(s)"
+              continue
+            fi
+
+            # No caller found — violation
+            VIOLATIONS+=("${wf_name}")
+            echo "::error file=${wf}::[ci-workflow-lint] ${wf_name} is workflow_call-only but has no internal caller and is not in the consumer registry (scripts/overlord/workflow_consumers.json)"
+          done
+
+          if [ "${#VIOLATIONS[@]}" -gt 0 ]; then
+            echo ""
+            echo "::error::[ci-workflow-lint] ${#VIOLATIONS[@]} uncalled workflow_call-only workflow(s) detected:"
+            for v in "${VIOLATIONS[@]}"; do
+              echo "  - ${v}"
+            done
+            echo ""
+            echo "Fix: either add a caller workflow (e.g. local-ci-gate.yml) or register external consumers in scripts/overlord/workflow_consumers.json"
+            exit 1
+          fi
+
+          echo "[ci-workflow-lint] All workflow_call-only workflows have at least one caller or registered consumer."
