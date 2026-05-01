@@ -716,6 +716,34 @@ def _validate_planning_evidence_plan(path: Path, payload: object, failures: list
         )
 
 
+
+
+def _preflight_approved_at_threshold_check(
+    path: object,
+    payload: dict[str, object],
+    warnings: list[str],
+) -> None:
+    """Emit a warning if approved_at >= gate threshold but alternate_model_review.required is not True.
+
+    This is a non-blocking pre-flight check to catch plans that need alternate_model_review.required
+    set before they reach the implementation dispatch validation stage.
+    """
+    approved_at = payload.get("approved_at")
+    if not isinstance(approved_at, str) or not approved_at:
+        return
+    if approved_at < IMPLEMENTATION_READY_REVIEW_GATE_APPROVED_AT:
+        return  # Pre-dates the gate; no warning needed
+    review = payload.get("alternate_model_review")
+    if not isinstance(review, dict):
+        return  # Will be caught by downstream validation
+    if review.get("required") is True:
+        return  # Already set correctly
+    warnings.append(
+        f"{path}: PRE-FLIGHT WARNING: approved_at ({approved_at}) is on or after the gate threshold "
+        f"({IMPLEMENTATION_READY_REVIEW_GATE_APPROVED_AT}) but alternate_model_review.required is not True. "
+        f"Set alternate_model_review.required=true before implementation dispatch to satisfy the gate."
+    )
+
 def _validate_implementation_ready_alternate_review(
     path: Path,
     payload: dict[str, object],

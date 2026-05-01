@@ -953,6 +953,18 @@ Rules: bridge is append-only; must write to dedicated branch and open/reuse PR i
 
 ---
 
+
+
+## Worktree CWD Discipline
+
+`hooks/schema-guard.sh` and `hooks/code-write-gate.sh` read plan mtime from the **git root of the current session's worktree**, not from a `cd` target within the same shell.
+
+**Rule**: Never write to a different worktree than the session root. If you `cd` into a worktree path to run commands, the hooks still fire against the original session worktree's plan files — not the target worktree's.
+
+**Correct pattern**: Open a new session with the target worktree as root, or use GitHub Contents API for cross-worktree writes.
+
+**Symptom**: `schema-guard.sh` blocks a write even though a valid plan exists at the target path — the plan exists in the target worktree but not in the session worktree.
+
 ## Changelog
 
 | Date | Change |

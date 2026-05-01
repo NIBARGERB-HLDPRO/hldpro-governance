@@ -18,7 +18,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Slice B: Hook Wiring | [#640](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/640) | HIGH | 3-4 | Wire all required hooks with $HOME-anchored paths; add PostToolUse "*" gate; backlog_match.py + fail_fast_state.py shared helpers. |
+| PDCAR Slice E: 8 session-friction patches + Epic #638 closeout | [#648](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/648) | HIGH | 3-4 | 8 PDCAR friction patches from 2026-05-01 audit. Epic #638 Stage 6 closeout. Branch: issue-648-pdcar-slice-e-friction-patches-20260501. |
 | Governed research specialist consumer rollout | [#591](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591) | HIGH | 4-6 | Governance planning lane for downstream adoption of the research-specialist package. First pilot: Stampede issue [#208](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/208). |
 | Downstream thin session-contract adapter rollout epic | [#579](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/579) | HIGH | 6-10 | Governance execution epic opened from approved plan #575 after SSOT reconciliation #576; child issues opened in LAM, AIS, Seek, Knocktracker, Stampede, HealthcarePlatform, and ASC-Evaluator. |
 
@@ -26,6 +26,7 @@
 
 | Item | Date | Notes |
 |------|------|-------|
+| Slice B: Hook Wiring | 2026-05-01 | Issue [#640](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/640). Merged and closed 2026-05-01T16:54:42Z. Wired all required hooks with $HOME-anchored paths; added PostToolUse "*" gate; backlog_match.py + fail_fast_state.py shared helpers. |
 | Fallback-log schema/workflow parity | 2026-04-30 | Issue [#629](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/629). Merged via PR [#630](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/630) and closed after reconciling degraded same-family fallback-log checker, writer, and workflow parity under parent #612 without reopening execution-scope, local-hook, #607, or #614 surfaces. |
 | Local root-hook degraded-fallback proof consumption | 2026-04-30 | Issue [#627](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/627). Merged via PR [#628](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/628) after wiring `hooks/governance-check.sh` to consume the merged `#625` degraded-fallback proof contract locally with focused helper/test evidence. |
 | Mutation-time pre-tool fail-closed hardening | 2026-04-30 | Issue [#623](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/623). Merged via PR [#624](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/624) after hardening the local mutation-time pre-tool enforcement path for governed edits and Bash write detection. |
