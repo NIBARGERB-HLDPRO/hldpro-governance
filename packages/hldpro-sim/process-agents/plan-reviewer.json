@@ -6,7 +6,7 @@
   "primary_model": "gpt-5.4",
   "primary_model_family": "openai",
   "reasoning_effort": "high",
-  "fallback_model": "codex-5.4-medium",
+  "fallback_model": "claude-opus-4-7",
   "fallback_trigger": "api_unavailable",
   "input_schema": {
     "type": "object",
