@@ -22,14 +22,14 @@ jobs:
 
       - name: Enforce architecture/standards tier evidence
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ inputs.base_sha || github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ inputs.head_sha || github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
 
           if [ -z "${BASE_SHA}" ] || [ -z "${HEAD_SHA}" ]; then
-            echo "::warning::[check-arch-tier] Missing pull request context; skipping."
-            exit 0
+            echo "::error::[check-arch-tier] Missing PR context — this gate requires BASE_SHA and HEAD_SHA. Ensure this workflow is called from a pull_request event or with explicit sha inputs."
+            exit 1
           fi
 
           DIFF_FILES="$(git diff --name-only "${BASE_SHA}...${HEAD_SHA}" || true)"
@@ -39,7 +39,7 @@ jobs:
           fi
 
           ARCH_SCOPE=0
-          if printf '%s\n' "${DIFF_FILES}" | grep -Eq '^STANDARDS\.md$|^raw/closeouts/TEMPLATE\.md$|^\.github/workflows/check-arch-tier\.yml$|^docs/.*/[^/]*charter[^/]*\.md$|^docs/[^/]*charter[^/]*\.md$'; then
+          if printf '%s\n' "${DIFF_FILES}" | grep -Eq '^agents/.*\.md$|^hooks/.*\.sh$|^\.github/workflows/check-.*\.yml$|^scripts/cross-review/|^AGENT_REGISTRY\.md$|^STANDARDS\.md$|^raw/closeouts/TEMPLATE\.md$|^docs/.*/[^/]*charter[^/]*\.md$|^docs/[^/]*charter[^/]*\.md$'; then
             ARCH_SCOPE=1
           fi
 

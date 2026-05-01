@@ -1,0 +1,149 @@
+{
+  "session_id": "session-20260501-issue-642-slice-d-coverage-tests",
+  "issue_number": 642,
+  "objective": "Add coverage and contract tests for Slice D: ci-workflow-lint.yml workflow contract, cross-review evidence validator, and fail-closed missing context tests.",
+  "tier": 1,
+  "plan_author": {
+    "role": "stage-2-worker",
+    "model_id": "claude-sonnet-4-6",
+    "model_family": "anthropic"
+  },
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-05-01-issue-642-slice-d-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "scope_boundary": [
+    "Add ci-workflow-lint.yml workflow contract tests in tests/",
+    "Add cross-review evidence validator and tests",
+    "Add fail-closed missing context tests",
+    "Update workflow_consumers.json consumer registry",
+    "Add governance artifacts: execution scope, closeout, handoff"
+  ],
+  "out_of_scope": [
+    "Changes to governance-check.yml or ci.yml",
+    "Any cross-repo changes",
+    "Closing parent epic #638"
+  ],
+  "research_summary": "Slice D adds deterministic contract tests for the ci-workflow-lint.yml workflow (checks orphan workflow_call-only workflows), a cross-review evidence validator script, and fail-closed missing context tests. All additions follow existing test patterns.",
+  "research_artifacts": [
+    ".github/workflows/ci-workflow-lint.yml",
+    "scripts/overlord/workflow_consumers.json",
+    "tests/conftest.py"
+  ],
+  "sprints": [
+    {
+      "name": "Coverage Tests Implementation",
+      "goal": "Implement test suite covering ci-workflow-lint.yml contract, cross-review evidence validation, and fail-closed missing context handling.",
+      "tasks": [
+        "Add tests/test_cross_review_evidence.py covering validate_cross_review_evidence.py",
+        "Add tests/test_fail_closed_missing_context.py for fail-closed missing context",
+        "Update tests/conftest.py with required fixtures",
+        "Add docs/workflow-local-coverage-inventory.json entry for ci-workflow-lint.yml",
+        "Create governance artifacts: execution scope, closeout, handoff"
+      ],
+      "acceptance_criteria": [
+        "tests/test_cross_review_evidence.py exists and passes",
+        "tests/test_fail_closed_missing_context.py exists and passes",
+        "ci-workflow-lint.yml has an entry in docs/workflow-local-coverage-inventory.json",
+        "Execution scope covers all PR diff paths",
+        "Stage 6 closeout artifact validates cleanly"
+      ],
+      "file_paths": [
+        ".github/workflows/ci-workflow-lint.yml",
+        "tests/conftest.py",
+        "tests/test_cross_review_evidence.py",
+        "tests/test_fail_closed_missing_context.py",
+        "scripts/overlord/validate_cross_review_evidence.py",
+        "scripts/overlord/workflow_consumers.json",
+        "docs/plans/issue-642-slice-d-coverage-tests-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-05-01-issue-642-slice-d-coverage-tests-implementation.json",
+        "raw/handoffs/2026-05-01-issue-642-slice-d-plan-to-implementation.json",
+        "raw/closeouts/2026-05-01-issue-642-slice-d-coverage-tests.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "stage-2-worker self-review",
+      "reviewer_model_id": "claude-sonnet-4-6",
+      "reviewer_model_family": "anthropic",
+      "role": "implementation correctness",
+      "focus": "Verify test coverage is adequate and governance artifacts are schema-valid.",
+      "status": "pass",
+      "summary": "All test files follow established patterns. ci-workflow-lint.yml inventory entry added. Governance artifacts validate against schema requirements.",
+      "evidence": [
+        "tests/test_cross_review_evidence.py",
+        "tests/test_fail_closed_missing_context.py"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "openai alternate-family review",
+    "reviewer_model_id": "gpt-5.3-codex-spark",
+    "reviewer_model_family": "openai",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Slice D adds deterministic contract tests. No architecture changes. Implementation-only slice with adequate coverage.",
+    "evidence": [
+      "docs/codex-reviews/2026-05-01-issue-642-slice-d-claude.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-sonnet-4-6 Stage 2 Worker",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Issue #642 Slice D is authorized for coverage and contract test additions only.",
+    "next_execution_step": "Verify all governance artifacts validate cleanly, then commit.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-05-01-issue-642-slice-d-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-642-slice-d-coverage-tests-implementation.json",
+    "review_artifact_refs": [
+      "docs/codex-reviews/2026-05-01-issue-642-slice-d-claude.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-05-01-issue-642-slice-d-coverage-tests.md"
+    ],
+    "next_role": "claude-sonnet-4-6",
+    "qa_gate_required": false,
+    "handoff_acceptance_criteria": [
+      "AC1: docs/workflow-local-coverage-inventory.json has entry for ci-workflow-lint.yml",
+      "AC2: All three local-ci-gate validators pass",
+      "AC3: Execution scope covers all PR diff paths",
+      "AC4: Stage 6 closeout artifact validates cleanly"
+    ]
+  },
+  "material_deviation_rules": [
+    "Any edit to governance-check.yml or ci.yml is a material deviation.",
+    "Any cross-repo changes are a material deviation.",
+    "Any push to remote is a material deviation (dispatcher handles push)."
+  ],
+  "approved": true,
+  "approved_by": [
+    "issue #642 Slice D governance artifact bundle directive"
+  ],
+  "approved_at": "2026-05-01T00:00:00Z"
+}

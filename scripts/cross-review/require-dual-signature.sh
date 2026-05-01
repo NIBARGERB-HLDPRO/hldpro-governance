@@ -143,6 +143,15 @@ reviewer = data.get("reviewer")
 validate_identity("drafter", drafter)
 validate_identity("reviewer", reviewer, require_verdict=True)
 
+# AC8: same-login check — drafter and reviewer GitHub login strings must differ
+drafter_login = str(drafter.get("github_login", drafter.get("login", "")) or "").strip().lower()
+reviewer_login = str(reviewer.get("github_login", reviewer.get("login", "")) or "").strip().lower()
+if drafter_login and reviewer_login and drafter_login == reviewer_login:
+    print(
+        f"::error file={path},line=1::[require-dual-signature] drafter and reviewer must be different GitHub logins; both are '{drafter_login}'"
+    )
+    sys.exit(1)
+
 gate_identity = data.get("gate_identity")
 if schema_version_num >= 2:
     validate_identity("gate_identity", gate_identity)
