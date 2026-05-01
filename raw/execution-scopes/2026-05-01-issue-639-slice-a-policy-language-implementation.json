@@ -1,6 +1,6 @@
 {
   "expected_execution_root": ".",
-  "expected_branch": "worktree-agent-a72bd93b",
+  "expected_branch": "issue-639-slice-a-policy-language-20260501",
   "execution_mode": "implementation_ready",
   "allowed_write_paths": [
     ".github/workflows/check-arch-tier.yml",
