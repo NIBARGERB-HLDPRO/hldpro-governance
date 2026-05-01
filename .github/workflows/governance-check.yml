@@ -6,6 +6,9 @@ on:
       base_sha:
         required: false
         type: string
+      head_sha:
+        required: false
+        type: string
     secrets:
       SUPABASE_ANON_KEY:
         required: false
