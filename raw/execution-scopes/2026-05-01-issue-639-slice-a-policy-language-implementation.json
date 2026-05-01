@@ -1,0 +1,62 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "worktree-agent-a72bd93b",
+  "execution_mode": "implementation_ready",
+  "allowed_write_paths": [
+    ".github/workflows/check-arch-tier.yml",
+    ".github/workflows/ci.yml",
+    ".github/workflows/governance-check.yml",
+    ".github/workflows/require-cross-review.yml",
+    "AGENT_REGISTRY.md",
+    "CLAUDE.md",
+    "README.md",
+    "agents/overlord-audit.md",
+    "agents/verify-completion.md",
+    "docs/codex-reviews/2026-05-01-issue-641-claude.md",
+    "docs/exception-register.md",
+    "docs/plans/issue-641-slice-c-ci-sha-rework-structured-agent-cycle-plan.json",
+    "docs/plans/issue-639-slice-a-policy-language-structured-agent-cycle-plan.json",
+    "docs/workflow-local-coverage-inventory.json",
+    "raw/closeouts/2026-05-01-issue-641-slice-c-ci-fail-closed.md",
+    "raw/closeouts/2026-05-01-issue-639-slice-a-policy-language.md",
+    "raw/cross-review/2026-05-01-issue-641-slice-c-ci-sha-rework-plan.md",
+    "raw/cross-review/2026-05-01-issue-639-slice-a-policy-language-plan.md",
+    "raw/execution-scopes/2026-05-01-issue-639-slice-a-policy-language-implementation.json",
+    "raw/execution-scopes/2026-05-01-issue-641-slice-c-r1-implementation.json",
+    "raw/handoffs/2026-05-01-issue-639-slice-a-plan-to-implementation.json",
+    "raw/handoffs/2026-05-01-issue-641-slice-c-r1-plan-to-implementation.json",
+    "raw/packets/2026-05-01-issue-641-slice-c-r1-review-packet.md",
+    "raw/validation/2026-04-30-slice-a-worker-output.md",
+    "raw/validation/2026-04-30-slice-c-worker-output.md",
+    "raw/validation/2026-05-01-issue-639-slice-a-policy-language.md",
+    "scripts/cross-review/require-dual-signature.sh"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary governance checkout is a separate active root and must not be mutated from the issue-639 Slice A implementation lane."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 639,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/639",
+    "claimed_by": "claude-sonnet-4-6",
+    "claimed_at": "2026-05-01T00:00:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-sonnet-4-6",
+    "implementer_model": "claude-sonnet-4-6",
+    "accepted_at": "2026-05-01T00:00:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-639-slice-a-policy-language-structured-agent-cycle-plan.json",
+      "raw/handoffs/2026-05-01-issue-639-slice-a-plan-to-implementation.json",
+      "raw/closeouts/2026-05-01-issue-639-slice-a-policy-language.md",
+      "raw/cross-review/2026-05-01-issue-639-slice-a-policy-language-plan.md"
+    ],
+    "cross_family_path_unavailable": false
+  }
+}

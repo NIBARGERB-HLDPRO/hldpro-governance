@@ -1,0 +1,96 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-639-slice-a-plan-to-implementation",
+  "issue_number": 639,
+  "parent_epic_number": null,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "stage2-worker",
+  "to_role": "stage2-worker",
+  "structured_plan_ref": "docs/plans/issue-639-slice-a-policy-language-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-639-slice-a-policy-language-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-01-issue-639-slice-a-policy-language-plan.md",
+      "raw/validation/2026-05-01-issue-639-slice-a-policy-language.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "Issue #639 Slice A is bounded to STANDARDS.md, AGENT_REGISTRY.md, agents/*.md, CLAUDE.md, README.md, CI workflow alignment, and issue-local artifacts only.",
+      "verification_refs": [
+        "raw/execution-scopes/2026-05-01-issue-639-slice-a-policy-language-implementation.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "All governance surface policy and language gaps G1.1-G1.4 are addressed in the PR diff.",
+      "verification_refs": [
+        "raw/validation/2026-05-01-issue-639-slice-a-policy-language.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Stage 6 closeout artifact is present and passes validate_closeout.py.",
+      "verification_refs": [
+        "raw/closeouts/2026-05-01-issue-639-slice-a-policy-language.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-05-01-issue-639-slice-a-plan-to-implementation.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-05-01-issue-639-slice-a-policy-language.md --root .",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-05-01-issue-639-slice-a-policy-language-plan.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-05-01-issue-639-slice-a-policy-language.md"
+  ],
+  "artifact_refs": [
+    "AGENT_REGISTRY.md",
+    "CLAUDE.md",
+    "README.md",
+    "agents/overlord-audit.md",
+    "agents/verify-completion.md",
+    "docs/plans/issue-639-slice-a-policy-language-structured-agent-cycle-plan.json",
+    "raw/closeouts/2026-05-01-issue-639-slice-a-policy-language.md",
+    "raw/cross-review/2026-05-01-issue-639-slice-a-policy-language-plan.md",
+    "raw/execution-scopes/2026-05-01-issue-639-slice-a-policy-language-implementation.json",
+    "raw/handoffs/2026-05-01-issue-639-slice-a-plan-to-implementation.json",
+    "raw/validation/2026-05-01-issue-639-slice-a-policy-language.md"
+  ],
+  "audit_refs": [],
+  "closeout_ref": "raw/closeouts/2026-05-01-issue-639-slice-a-policy-language.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-05-01T00:00:00Z",
+  "notes": "Implementation-ready handoff for issue #639 Slice A policy/language alignment. Scope is limited to governance surface file language alignment (G1.1-G1.4), CI workflow fixes, and issue-local governance artifacts."
+}
