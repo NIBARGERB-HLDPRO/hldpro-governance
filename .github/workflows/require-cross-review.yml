@@ -1,6 +1,17 @@
 name: require-cross-review
 on:
   workflow_call:
+    inputs:
+      base_sha:
+        required: false
+        type: string
+      head_sha:
+        required: false
+        type: string
+      PLANNING_ONLY:
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   require-cross-review:
@@ -22,6 +33,8 @@ jobs:
           fetch-depth: 1
 
       - name: Require cross-review artifact
+        env:
+          PLANNING_ONLY: ${{ inputs.PLANNING_ONLY }}
         run: |
           set -euo pipefail
 
@@ -32,12 +45,12 @@ jobs:
             GOV_ROOT="${GITHUB_WORKSPACE}/.governance"
           fi
 
-          BASE_SHA="${{ github.event.pull_request.base.sha }}"
-          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+          BASE_SHA="${{ inputs.base_sha || github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ inputs.head_sha || github.event.pull_request.head.sha }}"
 
           if [ -z "${BASE_SHA}" ] || [ -z "${HEAD_SHA}" ]; then
-            echo "::warning::[require-cross-review] Missing pull request context; skipping."
-            exit 0
+            echo "::error::[require-cross-review] Missing PR context — this gate requires BASE_SHA and HEAD_SHA. Ensure this workflow is called from a pull_request event or with explicit sha inputs."
+            exit 1
           fi
 
           DIFF_FILES="$(git diff --name-only "${BASE_SHA}...${HEAD_SHA}")"
@@ -46,11 +59,29 @@ jobs:
             exit 0
           fi
 
+          # ── Trusted-base evidence rule: newly added governance artifact files ──
+          NEWLY_ADDED="$(git diff --diff-filter=A --name-only "${BASE_SHA}...${HEAD_SHA}" || true)"
+          TRUSTED_BASE_VIOLATIONS=""
+          while IFS= read -r f; do
+            case "$f" in
+              raw/cross-review/*|raw/execution-scopes/*|docs/exception-register.md)
+                TRUSTED_BASE_VIOLATIONS="${TRUSTED_BASE_VIOLATIONS}\n  - ${f}"
+                ;;
+            esac
+          done <<< "${NEWLY_ADDED}"
+
+          if [ -n "${TRUSTED_BASE_VIOLATIONS}" ] && [ "${PLANNING_ONLY}" != "true" ]; then
+            echo "::error::[require-cross-review] Newly added trusted-base evidence files require PLANNING_ONLY=true when introduced in the same PR as implementation changes."
+            echo "Files that must land in a planning-only PR first:${TRUSTED_BASE_VIOLATIONS}"
+            echo "Either set PLANNING_ONLY: true on the workflow_call, or split these files into a separate planning PR."
+            exit 1
+          fi
+
           TOUCH=0
           REASONS=()
-          if printf '%s\n' "${DIFF_FILES}" | grep -Eq '^STANDARDS\.md$|^docs/.*/[^/]*charter[^/]*\.md$|^docs/[^/]*charter[^/]*\.md$'; then
+          if printf '%s\n' "${DIFF_FILES}" | grep -Eq '^agents/.*\.md$|^hooks/.*\.sh$|^\.github/workflows/check-.*\.yml$|^scripts/cross-review/|^AGENT_REGISTRY\.md$|^STANDARDS\.md$|^docs/.*/[^/]*charter[^/]*\.md$|^docs/[^/]*charter[^/]*\.md$'; then
             TOUCH=1
-            REASONS+=("STANDARDS.md or charter document changed")
+            REASONS+=("Architecture/standards-owned file changed (agents, hooks, workflows, cross-review scripts, AGENT_REGISTRY, STANDARDS, or charter)")
           fi
           LABELS="$(python3 "${SCRIPTS_DIR}/get_pr_labels.py")"
 
@@ -80,32 +111,5 @@ jobs:
           fi
 
           CROSS_FILE="$(printf '%s\n' "${RAW_CROSS_REVIEW}" | head -n 1)"
-          BOOTSTRAP_FILE="raw/cross-review/2026-04-14-society-of-minds-charter.md"
-          BOOTSTRAP_ONLY=false
-          APPLY_EXCEPTION=false
-          if echo "${RAW_CROSS_REVIEW}" | grep -Fxq "${BOOTSTRAP_FILE}"; then
-            COUNT_CROSS_FILES="$(printf '%s\n' "${RAW_CROSS_REVIEW}" | sed '/^$/d' | wc -l | tr -d ' ')"
-            if [ "${COUNT_CROSS_FILES}" -eq 1 ]; then
-              BOOTSTRAP_ONLY=true
-            else
-              echo "::error file=raw/cross-review/::[require-cross-review] BOOTSTRAP artifact cannot co-exist with non-bootstrap cross-review artifacts."
-              echo "::error file=raw/cross-review/::[require-cross-review] Update PR to reference a new standards/architecture cross-review artifact (schema v2+), or isolate bootstrap artifact-only changes."
-              exit 1
-            fi
-          fi
-
-          if [ "${BOOTSTRAP_ONLY}" = true ]; then
-            if [ -f "docs/exception-register.md" ]; then
-              EXCEPTION_ACTIVE="$(python3 "${SCRIPTS_DIR}/check_som_exception.py")"
-              if [ "${EXCEPTION_ACTIVE}" = "active" ]; then
-                APPLY_EXCEPTION=true
-              fi
-            fi
-          fi
-
-          if [ "${APPLY_EXCEPTION}" = "true" ]; then
-            echo "::warning file=${BOOTSTRAP_FILE}::[require-cross-review] SOM-BOOTSTRAP-001 active; skipping REJECTED-blocks-merge check."
-            exit 0
-          fi
 
           bash "${GOV_ROOT}/scripts/cross-review/require-dual-signature.sh" "${CROSS_FILE}"
