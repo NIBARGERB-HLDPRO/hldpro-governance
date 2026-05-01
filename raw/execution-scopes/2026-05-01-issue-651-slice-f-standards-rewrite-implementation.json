@@ -1,5 +1,5 @@
 {
-  "expected_execution_root": "~/Developer/HLDPRO/hldpro-governance",
+  "expected_execution_root": ".",
   "expected_branch": "issue-651-slice-f-standards-rewrite-20260501",
   "allowed_write_paths": [
     "STANDARDS.md",
