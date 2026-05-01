@@ -26,6 +26,7 @@
 
 | Item | Date | Notes |
 |------|------|-------|
+| PDCAR Slice E: 8 session-friction patches + Epic #638 closeout | 2026-05-01 | Issue [#648](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/648). Closed 2026-05-01. All 8 friction patches applied; Epic #638 Stage 6 closeout filed. |
 | Slice B: Hook Wiring | 2026-05-01 | Issue [#640](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/640). Merged and closed 2026-05-01T16:54:42Z. Wired all required hooks with $HOME-anchored paths; added PostToolUse "*" gate; backlog_match.py + fail_fast_state.py shared helpers. |
 | Fallback-log schema/workflow parity | 2026-04-30 | Issue [#629](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/629). Merged via PR [#630](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/630) and closed after reconciling degraded same-family fallback-log checker, writer, and workflow parity under parent #612 without reopening execution-scope, local-hook, #607, or #614 surfaces. |
 | Local root-hook degraded-fallback proof consumption | 2026-04-30 | Issue [#627](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/627). Merged via PR [#628](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/628) after wiring `hooks/governance-check.sh` to consume the merged `#625` degraded-fallback proof contract locally with focused helper/test evidence. |

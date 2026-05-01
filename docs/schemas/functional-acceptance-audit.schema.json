@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "docs/schemas/functional-acceptance-audit.schema.json",
+  "title": "Functional Acceptance Audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "audit_id",
+    "issue_number",
+    "slice_branch",
+    "audited_at",
+    "acceptance_criteria",
+    "hook_results",
+    "smoke_test_results",
+    "evidence_artifacts",
+    "overall_verdict",
+    "auditor_model",
+    "auditor_signature"
+  ],
+  "properties": {
+    "audit_id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}-\\d+-functional-audit$"
+    },
+    "issue_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "slice_branch": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audited_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/acceptanceCriterion"
+      }
+    },
+    "hook_results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hookResult"
+      }
+    },
+    "smoke_test_results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/smokeTestResult"
+      }
+    },
+    "evidence_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "overall_verdict": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "BLOCKED"
+      ]
+    },
+    "auditor_model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "auditor_signature": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$defs": {
+    "verificationMethod": {
+      "type": "string",
+      "enum": [
+        "hook",
+        "smoke_test",
+        "playwright",
+        "manual",
+        "derived"
+      ]
+    },
+    "criterionStatus": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "SKIP"
+      ]
+    },
+    "acceptanceCriterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "statement",
+        "verification_method",
+        "status",
+        "evidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verification_method": {
+          "$ref": "#/$defs/verificationMethod"
+        },
+        "status": {
+          "$ref": "#/$defs/criterionStatus"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "hookResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hook_name",
+        "command",
+        "exit_code",
+        "status",
+        "stdout_excerpt",
+        "stderr_excerpt"
+      ],
+      "properties": {
+        "hook_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "command": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exit_code": {
+          "type": "integer"
+        },
+        "status": {
+          "$ref": "#/$defs/criterionStatus"
+        },
+        "stdout_excerpt": {
+          "type": "string"
+        },
+        "stderr_excerpt": {
+          "type": "string"
+        }
+      }
+    },
+    "smokeTestResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "test_suite",
+        "exit_code",
+        "status",
+        "passed_count",
+        "failed_count"
+      ],
+      "properties": {
+        "test_suite": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exit_code": {
+          "type": "integer"
+        },
+        "status": {
+          "$ref": "#/$defs/criterionStatus"
+        },
+        "passed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "coverage_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    }
+  }
+}

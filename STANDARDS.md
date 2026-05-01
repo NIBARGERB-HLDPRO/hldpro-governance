@@ -334,7 +334,7 @@ They route, gate, and report. They do not replace SoM workers for code execution
 
 ### Relationship to §Society of Minds
 
-SoM defines the **execution** worker ladder in §Society of Minds (Tier 2). The Worker fallback chain is defined there; `gpt-5.4` is not a Worker fallback model and is used only outside Worker execution.
+SoM defines the **execution** worker ladder in §Society of Minds (Tier 2). The Worker fallback chain is defined there; Tier 1 planning or review models are not Worker fallback authority outside the declared routing table.
 
 Claude-native Tier 2 agents define the **quality gate** layer:
 ```
@@ -420,299 +420,82 @@ Cross-repo CI reporting requires `gh api` write to governance repo.
 Worker and supervisor agents may read it, but may not create or modify it.
 Schema: `hldpro-governance/schemas/approved_scope_paths.schema.json`
 
-## Society of Minds — Model Routing Charter (2026-04-14)
+## Society of Minds — Model Routing Charter (2026-05-01)
 
-Activity → model routing is codified as a society-of-minds role charter with enforced handoff protocols. Every intent has a CI-verifiable enforcement artifact — no orphan rules.
+Activity routing is session-agnostic. The active session orchestrator coordinates handoffs, integrates accepted artifacts, and records evidence, but it is never approval authority for the same work.
 
-### Governance waterfall
+Session-start enforcement must surface this routing charter before implementation authority is exercised. The minimum governance session contract is:
 
-Codex is the primary local orchestrator for governance work. The orchestrator
-coordinates handoffs, integrates approved plans, updates local docs and GitHub
-issues, and records evidence. Orchestration is not approval authority: the
-orchestrator cannot plan, implement, review, and gate the same work.
-
-Session-start enforcement must surface this waterfall before implementation
-authority is exercised. The minimum governance session contract is:
-
-1. Load repo `CODEX.md`.
-2. Load repo `CLAUDE.md`.
+1. Load the repo's primary session contract document.
+2. Load the repo's alternate-session contract document.
 3. Load `docs/PROGRESS.md`.
 4. Load `docs/FAIL_FAST_LOG.md`.
 5. Load `STANDARDS.md §Society of Minds`.
 6. Load `docs/EXTERNAL_SERVICES_RUNBOOK.md`.
-7. Surface pending Codex backlog findings if any exist.
+7. Surface pending backlog findings if any exist.
 8. Record a bootstrap sentinel proving steps 1, 5, and 6 were loaded or surfaced.
 
-| Stage | Role | Primary | Fallback / Constraint |
-|---|---|---|---|
-| 0 | Orchestrator | Codex session | Coordinates and integrates only; no self-approval. |
-| 1A | Planner | `claude-opus-4-6` | `claude-sonnet-4-6` only when Opus is unavailable; fallback must be logged. |
-| 1B | Plan reviewer | `gpt-5.4` @ `model_reasoning_effort=high` | `gpt-5.3-codex-spark` may run same-family critical/specialist plan review only when `gpt-5.4` is unavailable; degraded independence must be logged and operator-visible before implementation. |
-| 1C | Plan integrator | Codex orchestrator | Combines the accepted plan and review into issue/docs/artifacts; no independent approval authority. |
-| 2 | Worker (substantial implementation) | `claude-sonnet-4-6` | Local Qwen worker sublane for bounded low/medium-risk chunks; otherwise halt or escalate intentionally. |
-| 2L | Local bounded worker | Qwen local ladder below | Implementation only; never planning, final review, or gate authority. |
-| 3 | QA / code review | Appropriate Codex QA model with explicit `-m` and `model_reasoning_effort` | Must be distinct from the Worker. For standards/architecture changes, preserve the Tier 1 cross-review artifact. |
-| 3B | Shadow local critic | `mlx-community/gemma-4-26b-a4b-4bit` | A/B measurement only against Codex/Claude QA; non-blocking and cannot approve or reject. |
-| 4 | Gate / verifier | deterministic checks + completion verification | Gate identity must be distinct from planner, worker, and QA reviewer. |
+### Governance waterfall
 
-### Local worker ladder
+| Tier | Role | Family | Authorized responsibilities | Primary roster and fallup ladder |
+|---|---|---|---|---|
+| 0 | Orchestrator | session-native | Coordinate issue/docs/artifact flow only; no self-approval. | Current session lead only. |
+| 1 | Planner and plan reviewer | anthropic + openai | Tier 1 planning authority is dual-family. Both families are authorized for plan creation and plan review, and accepted planning evidence must include one planner/reviewer signature from each family before implementation starts. | `claude-opus-4-6`, `gpt-5.4`, fallup to `claude-sonnet-4-6` or `gpt-5.3-codex-spark` when the higher-capability primary is unavailable. |
+| 1I | Plan integrator | session-native | Integrate accepted plan and review into issue/docs/handoff artifacts; no independent approval authority. | Current session lead only. |
+| 2 | Worker | anthropic + openai | Implementation only within the accepted execution scope. | `claude-sonnet-4-6`, `gpt-5.4` at `medium`, `gpt-5.3-codex-spark`, plus the bounded local worker ladder below when the scope explicitly permits it. |
+| 3 | QA reviewer | opposite of Tier 2 worker family | Review implementation and standards changes after Tier 2 completes. Preserve the Tier 1 cross-review artifact for architecture or standards work. | Cross-family reviewer only; never the same family as the Tier 2 worker. |
+| 4 | Gate and verifier | deterministic + auditor | Final validation, acceptance evidence, and closeout gating. | Deterministic checks plus `functional-acceptance-auditor` at the final acceptance gate. |
 
-Local workers conserve paid token usage on bounded implementation work. They do
-not replace the planning, QA, or gate roles.
+Unavailable primary escalates UP (fallup) to a more capable model in the same or alternate family; routing never degrades down automatically. Every degraded fallback decision must be logged to `raw/model-fallbacks/`.
 
-| Order | Model | Role | Constraints |
-|---|---|---|---|
-| 1 | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` | Micro-worker | Tiny patches, tests, mechanical edits. Do not use for full-file regeneration above the issue #105 safe limit. |
-| 2 | `mlx-community/Qwen3-14B-4bit` | Standard local worker | Moderate bounded implementation and structured-output work. |
-| 3 | `mlx-community/Qwen3.6-35B-A3B-4bit` | Large local worker | On-demand only; one large local model loaded at a time; use when memory headroom is available. |
-| 4 | Halt or deliberate cloud escalation | `claude-sonnet-4-6` | Escalation is an explicit routing decision, not an automatic fallback. |
+Tier 1 planner review requires anthropic|openai dual-family review evidence.
 
-### LAM lane (local, Apple M5 — MLX runtime)
+Same-family QA is prohibited; Tier 3 QA reviewer must be cross-family from the Tier 2 worker.
 
-LAM is lateral to the tier chain. Never plans (Tier 1), never cross-reviews (independence requires non-local). Used for PII / bulk / embeddings / offline.
+### Local bounded worker ladder
 
-| Mind | Model ID | Role | Token cap |
-|---|---|---|---|
-| M7 Guardrail-LAM | `mlx-community/Qwen3-8B-4bit` | Pre-exec PASS/BLOCK | 64 |
-| M4 Worker-LAM | `mlx-community/Qwen3-14B-4bit` | Implementation on local lanes (PII/bulk/offline) | 400 |
-| M5 Large Worker-LAM | `mlx-community/Qwen3.6-35B-A3B-4bit` | On-demand larger local implementation | 512 |
-| M6 Shadow-Critic-LAM | `mlx-community/gemma-4-26b-a4b-4bit` (outlines) | A/B shadow critique only | 256 |
-| MCP daemon | `mlx-community/Qwen3-1.7B-4bit` (primary) / `mlx-community/Phi-4-mini-instruct-4bit` (reserve) | Intent parsing + packet routing; always-warm, evictable under pressure | 128 |
-| Qwen-Coder micro-worker | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` | Bounded local implementation chunks | 512 |
-| Auditor-Claude | `claude-sonnet-4-6` | Manifest-only review for PII, content review for non-PII | — |
+Local workers conserve paid token usage on bounded implementation work. They do not replace Tier 1 planning, Tier 3 QA, or Tier 4 gate authority.
 
-Reference runtime: `local-ai-machine/src/inference/mlx_runtime.py`, `LOCAL_LLM_RUNTIME_STRATEGY.md`, `SOCIETY_OF_MINDS_INTEGRATION.md`. No LAM rewrite — the canonical protocol lives in `local-ai-machine`; this standard references it.
+| Order | Family | Model | Role | Constraints |
+|---|---|---|---|---|
+| 1 | local | `mlx-community/Qwen2.5-Coder-7B-Instruct-4bit` | Micro-worker | Tiny patches, tests, and mechanical edits only. |
+| 2 | local | `mlx-community/Qwen3-14B-4bit` | Standard local worker | Moderate bounded implementation work with explicit scope. |
+| 3 | local | `mlx-community/Qwen3.6-35B-A3B-4bit` | Large local worker | On-demand only; one large local worker at a time. |
+| 4 | anthropic + openai | `claude-sonnet-4-6`, `gpt-5.4` at `medium`, `gpt-5.3-codex-spark` | Cloud worker fallup | Explicit escalation only; never a silent downgrade. |
 
-### MCP daemon (always-warm local orchestrator)
+### LAM lane
 
-Hosted in `local-ai-machine/services/som-mcp/`. Single long-running process (boot-start via launchd) that exposes the MCP protocol over stdio to all local Claude / Codex sessions.
+LAM is lateral to the tier chain. It never owns Tier 1 planning, Tier 3 cross-family QA, or Tier 4 acceptance gates. Use it for bounded local implementation, PII handling, bulk processing, embeddings, or offline work.
 
-**Responsibilities:**
-- Intent parsing (fuzzy NL → structured routing decisions)
-- Packet handoff (receives, validates structurally against STANDARDS, dispatches next tier)
-- Deterministic validator sits behind MCP tools — LLM is used for intent parsing only, never as rule engine
-- Local capability endpoints: `lam.probe`, `lam.embed`, `lam.scrub_pii`, `som.log_fallback`, `som.chain`
+| Mind | Family | Model ID | Role | Token cap |
+|---|---|---|---|---|
+| M7 Guardrail-LAM | local | `mlx-community/Qwen3-8B-4bit` | Pre-exec PASS/BLOCK | 64 |
+| M4 Worker-LAM | local | `mlx-community/Qwen3-14B-4bit` | Local implementation lane | 400 |
+| M5 Large Worker-LAM | local | `mlx-community/Qwen3.6-35B-A3B-4bit` | Larger local implementation lane | 512 |
+| M6 Shadow-Critic-LAM | local | `mlx-community/gemma-4-26b-a4b-4bit` | A/B shadow critique only | 256 |
+| MCP daemon | local | `mlx-community/Qwen3-1.7B-4bit` / `mlx-community/Phi-4-mini-instruct-4bit` | Intent parsing and packet routing | 128 |
 
-**Eviction policy (resident-memory budget):**
-- M7 Guardrail-LAM: **privileged, always resident** (4.67 GB)
-- MCP daemon model: **warm, evictable** — evicted first under memory pressure; reloaded after M6 unloads
-- M4 / M5 / M6 / Qwen-Coder: on-demand load, unload after work
+### Handoff and artifact rules
 
-**Model upgrade stub:** `active` key in `.lam-config.yml mcp` block controls which MCP model loads. Primary `qwen3-1.7b`; flip to `phi-4-mini` when role_scope expands to include reviewer-lam-fallback or routing-error-rate > 5% over 1 week.
+Every planning, implementation, QA, and gate handoff must preserve a structured package view that binds the plan, execution scope, packet, review evidence, validation commands, and closeout references. Promotion from `planned` or `planning_only` to `implementation_ready` requires accepted review evidence and populated review refs.
 
-**Fallback semantics:**
-- Daemon unavailable → halt for arch / standards / PII work
-- Daemon unavailable → degraded-mode allowed for implementation work (logged to `raw/model-fallbacks/`)
-
-### Handoff chain (every architecture/standards slice)
-
-```
-Codex orchestrator                                 →  issue/docs/artifact coordination
-                        ↓
-Planner-Claude (opus-4-6)                          →  plan
-                        ↓
-Plan reviewer-Codex (gpt-5.4 high)                →  raw/cross-review/YYYY-MM-DD-*.md
-                        ↓
-Codex orchestrator                                 →  integrated plan + GH issue/docs
-                        ↓
-Worker-Claude (sonnet-4-6) or bounded Qwen worker  →  diff on PR
-                        ↓
-Codex QA                                           →  approve / changes
-                        ↓
-Gate / deterministic verifier                      →  PASS / FAIL
-```
-
-LAM runs out-of-band for its lanes; feeds sanitized outputs into any tier that needs them.
-
-### Handoff package artifacts
-
-Every model/agent handoff that crosses planning, implementation, QA, or gate
-authority must have a structured package view. The package does not replace
-the existing plan, execution scope, packet, validation, review, or closeout
-artifacts; it binds them so the receiver can verify the exact acceptance
-criteria and evidence before accepting the handoff.
-
-Canonical schema: `docs/schemas/package-handoff.schema.json`
-
-Canonical location: `raw/handoffs/YYYY-MM-DD-issue-<n>-<stage>.json`
-
-Required lifecycle links:
-- GitHub issue number and optional parent epic number.
-- Source role and destination role.
-- Structured plan reference.
-- Lifecycle-state transitions are hard-gated:
-  - `planned` / `planning_only` may defer populated review refs only until the
-    required review actually happens.
-  - Promotion to `implementation_ready` requires accepted review evidence and
-    populated review refs.
-  - Continuing handoffs from `implementation_ready` onward require populated
-    handoff and gate evidence where the lifecycle validator expects it.
-- Execution-scope reference for implementation-ready or later states.
-- Packet reference for dispatch/validation-ready or later states.
-- Acceptance criteria with verification references.
-- Validation commands.
-- Review and gate artifact references when required by risk/surface.
-- Closeout reference for accepted/released/archived states.
-
-Execution scopes are schema-backed by
-`docs/schemas/execution-scope.schema.json` and remain enforced by
-`scripts/overlord/assert_execution_scope.py`.
-
-### Claude-as-Primary Dispatcher Rule
-
-When Claude is the primary agent in a session, it MUST operate in dispatcher/supervisor role only. Claude may:
-- Read files and gather context
-- Spawn and coordinate specialist agents
-- Write governance artifacts to `raw/` in its Supervisor capacity
-- Route implementation work via Codex dispatch briefs
-
-Claude must NOT:
-- Edit source files, hooks, scripts, or workflow files directly
-- Run validation commands or git operations as a substitute for Worker agents
-- Occupy planner + worker + orchestrator roles simultaneously
-
-Direct implementation by Claude in a session requires `HLDPRO_LANE_ROLE=worker` to be explicitly set in the environment, which signals the session is operating as a bounded Worker lane (not Supervisor).
-
-Violation: if Claude finds itself editing files or running git commands directly during a Supervisor session, it must STOP, create a Worker brief, and dispatch the work.
+Architecture and standards slices require a dual-family cross-review artifact at `raw/cross-review/YYYY-MM-DD-{slug}.md`. The drafter and reviewer must be different identities and different families, and the artifact remains pending until both signatures are present.
 
 ### Hard-rule invariants
 
-1. **No self-approval.** No mind reviews its own output. Drafter, reviewer, and gate identities must be distinct.
-2. **No tier skipping.** No merge without Planner → Plan Review → Worker → QA → Gate.
-3. **Planning floor.** Planning never drops below `claude-sonnet-4-6` on the Claude side or `gpt-5.3-codex-spark` on the OpenAI side. `gpt-5.3-codex-spark` is a plan-review fallback/specialist critic only when `gpt-5.4` is unavailable, and the degraded same-family review state must be logged. Both planning families unavailable → halt.
-4. **PII floor.** Content tagged or detected as PII routes through LAM only. Never sent to cloud reviewers. Violation = security incident.
-5. **Cross-family independence.** Tier 1 Planner-Claude and Planner-Codex MUST be different model families (Anthropic + OpenAI). Never both same family.
-6. **Local family diversity.** Local Qwen workers and Gemma shadow critique must remain separate roles. Gemma output is A/B evidence only until a later issue explicitly promotes it.
-7. **Fallback is logged.** Every fallback to a lower tier writes a schema-validated entry under `raw/model-fallbacks/YYYY-MM-DD.md`.
-8. **Windows-Ollama off-ladder.** Windows Ollama is not an active governance waterfall fallback. Historical Windows tooling may remain for archived validation or separately approved experiments, but it is not a Worker fallback and must not be selected by SoM routing.
-9. **Gemma non-authority.** `mlx-community/gemma-4-26b-a4b-4bit` may produce A/B shadow critique only. Its findings can inform follow-up work but cannot block, approve, or satisfy QA/gate requirements.
-10. **Local worker bounded scope.** Qwen local workers may write only within an approved execution scope, with explicit file/task bounds and downstream QA/gate evidence.
-11. **Remote MCP stdio-only boundary.** Remote-origin packets MUST NOT invoke stdio-only tools. `lam.scrub_pii` remains stdio-only; remote bridge dispatchers must refuse it and any future stdio-only tool before local MCP execution.
-12. **Remote MCP server-authoritative origin.** Remote HTTP transport MUST overwrite client-supplied `origin` after Cloudflare Access and inner-token validation. Client-supplied local origins are ignored and audited as spoof attempts.
-13. **Remote MCP PII middleware.** Every remote-exposed tool call MUST pass application-layer PII middleware before dispatch. PII matches, missing PII patterns, malformed PII patterns, schema violations, and payload-size violations fail closed.
-14. **Remote MCP Cloudflare Access identity.** Remote calls require Cloudflare Access outer identity plus an inner bridge token. Anonymous principals and unauthenticated tunnel access are forbidden.
-15. **Remote MCP audit.** Every accepted or rejected remote MCP call appends to `raw/remote-mcp-audit/YYYY-MM-DD.jsonl` with sequence, prev-hash, args HMAC, entry HMAC, and daily manifest. Chain or manifest failure disables the remote endpoint until operator trust is rebuilt.
+1. No self-approval. Drafter, reviewer, and gate identities must be distinct.
+2. No tier skipping. No merge without Planner -> Plan Review -> Worker -> QA -> Gate.
+3. Planning authority is dual-family. Tier 1 cannot proceed with same-family-only creation and review evidence.
+4. PII routes through LAM-only handling before any non-local review path.
+5. Fallback is logged. Every degraded route writes a schema-valid record under `raw/model-fallbacks/YYYY-MM-DD.md`.
+6. Local workers remain bounded. They may write only within an approved execution scope with downstream QA and gate evidence.
+7. Remote bridge boundaries remain fail-closed. Remote-origin packets cannot invoke stdio-only tools, and remote transport must stamp authoritative origin and identity.
 
-### Remote MCP Bridge
+## PDCAR
 
-Issue [#109](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/109) governs the Cloud -> Local MCP Bridge. The bridge may expose only a bounded remote subset of the local Society-of-Minds MCP daemon through authenticated HTTPS. It is operator-CLI infrastructure, not a SaaS surface.
+PDCAR is the required execution loop for governed slices: Plan the accepted scope and evidence path, Do the bounded implementation, Check with deterministic validation and cross-family QA, Adjust by folding required corrections into the active slice or opening an issue-backed follow-up, and Review with the final acceptance gate before closeout.
 
-**Transport and identity**
-
-- Cloudflare Tunnel (`cloudflared`) is the only approved off-LAN transport.
-- Cloudflare Access is mandatory. Requests without verified Access identity are rejected before bridge-token evaluation.
-- The bridge also requires an inner bearer/JWT token with issuer, audience, subject, expiry, not-before, jti, kid, rotation version, and explicit tool scope.
-- Token rotation bumps `rotation_version`; lower-version tokens are refused on the next validation.
-- If `cloudflared` or the HTTP bridge is down, remote access fails closed. The local stdio MCP path continues without unauthenticated network fallback.
-
-**Remote tool allowlist**
-
-| Tool | Remote | Boundary |
-|---|---:|---|
-| `som.ping` | yes | Health only; no user payload. |
-| `som.handoff` | yes | PII middleware scans all string fields; server stamps origin. |
-| `som.chain` | yes | Packet-id lookups only; no free text. |
-| `som.log_fallback` | yes | Structured fields only; PII middleware and rate limit apply. |
-| `lam.probe` | yes | Runtime status only; no prompt payload. |
-| `lam.embed` | yes | PII middleware, schema allowlist, size limit, and rate limit apply. |
-| `lam.scrub_pii` | no | Stdio-only because it necessarily accepts PII-bearing input. |
-
-**Application-layer controls**
-
-- Remote dispatchers validate strict JSON schema per tool and reject unexpected fields.
-- PII scanning uses the shared LAM PII pattern set before dispatch. Missing or malformed patterns reject all remote calls.
-- Rate limits are keyed by stable principal (`sub`), not token material, and run before tool dispatch.
-- HTTP transport overwrites `origin` after authentication. Client origin values are never authoritative.
-- Error responses must not echo user payloads.
-
-**Audit contract**
-
-Remote MCP audit files live under `raw/remote-mcp-audit/`. Each JSONL entry contains `ts`, `seq`, `prev_hash`, `principal`, `session_jti`, `tool`, `args_hmac`, `status`, `reject_reason`, `latency_ms`, and `entry_hmac`. Daily manifests record first hash, last hash, entry count, and file SHA-256. `scripts/remote-mcp/verify_audit.py` and `.github/workflows/check-remote-mcp-audit-schema.yml` are the governance-owned verifier surfaces for this contract.
-
-**Stage boundaries**
-
-- Stage A (`hldpro-governance`): standards, runbook, thin client contract, audit verifier, CI workflow, local tests, validation, and closeout.
-- Stage B+C (`local-ai-machine`): HTTP server, auth, PII middleware, rate limit, audit writer, launchd/tunnel scripts, and negative security tests.
-- Stage D: remote smoke and security tests from a second machine.
-- Issue #109 remains open until downstream implementation and remote e2e proof complete.
-
-### Cross-review artifact schema (required for arch/standards PRs)
-
-`raw/cross-review/YYYY-MM-DD-{pr-slug}.md` must begin with YAML frontmatter validated by `require-cross-review.yml`:
-
-```yaml
----
-pr_number: <int>
-pr_scope: architecture | standards | implementation
-drafter:
-  role: architect-claude | architect-codex
-  model_id: <exact model string>
-  model_family: anthropic | openai | local
-  signature_date: YYYY-MM-DD
-reviewer:
-  role: architect-claude | architect-codex
-  model_id: <exact model string>
-  model_family: anthropic | openai | local
-  signature_date: YYYY-MM-DD
-  verdict: APPROVED | APPROVED_WITH_CHANGES | REJECTED
-invariants_checked:
-  dual_planner_pairing: true
-  no_self_approval: true
-  planning_floor: true
-  pii_floor: true
-  cross_family_independence: true
----
-```
-
-Validator rejects if: any required field missing, `drafter.model_family` == `reviewer.model_family`, `drafter.model_id` == `reviewer.model_id`, `reviewer.verdict` == `REJECTED`, any `invariants_checked` value is false, and for `schema_version: v2+`, `gate_identity` must be present with a distinct non-empty `model_id`.
-
-### Enforcement index (CI-verifiable — no orphan rules)
-
-| # | Intent | Enforcement | Halt on fail |
-|---|---|---|---|
-| 1 | Agent `model:` pin | `check-agent-model-pins.yml` parses frontmatter | PR blocked |
-| 2 | Codex calls specify `-m` + reasoning | `check-codex-model-pins.yml` scans scripts/workflows | PR blocked |
-| 3 | Cross-review artifact validates schema + invariants | `require-cross-review.yml` schema validator | PR blocked |
-| 4 | No-self-approval (distinct identities) | `check-no-self-approval.yml` | PR blocked |
-| 5 | Fallback auto-logged + schema-valid | `scripts/model-fallback-log.sh` + `check-fallback-log-schema.yml` | PR blocked if malformed |
-| 6 | Fallback rate + Gemma-vs-Codex/Claude A/B agreement metrics | `overlord-sweep` weekly | Auto-issue on threshold |
-| 7 | Arch on Haiku blocked | `check-arch-tier.yml` checks PR-scoped raw `raw/cross-review/` artifacts and rejects schema v2+ gates using Haiku | PR + closeout blocked |
-| 8 | PII never leaves machine | `check-pii-routing.yml` + `require-lam-dual-signature.sh` | PR + closeout blocked |
-| 9 | LAM family diversity | `check-lam-family-diversity.yml` reads `.lam-config.yml` | PR blocked |
-| 10 | LAM availability for PII PRs | `check-lam-availability.yml` runtime probe | PR blocked |
-| 11 | CLAUDE.md points to SoT | `check-claude-md-pointer.yml` | PR blocked |
-| 12 | Exception register covers deferrals with expiry ≤ 90d | `overlord-sweep` validates; past-expiry auto-opens issue | Sweep issue on breach |
-| 13 | Windows-Ollama remains off active SoM routing | `STANDARDS.md` + runtime inventory tests assert Windows is deprecated/off-ladder | PR blocked if active Worker fallback language returns |
-| 14 | Local Qwen worker ladder present | `.lam-config.yml` + `scripts/lam/runtime_inventory.py` tests | PR blocked if Qwen2.5/Qwen3-14B/Qwen3.6 worker roles drift |
-| 15 | Gemma shadow-only status | `.lam-config.yml` + `scripts/lam/runtime_inventory.py` tests | PR blocked if Gemma is promoted to authoritative reviewer without a new issue |
-| 16 | Codex plan-review fallback floor | `check-codex-model-pins.yml` and cross-review schema | PR blocked if Codex calls omit `-m` or `model_reasoning_effort` |
-| 17 | Worker/QA separation | PR template, execution scope, and no-self-approval checks | PR blocked when evidence collapses worker, reviewer, and gate identities |
-| 18 | Remote MCP stdio-only boundary | `STANDARDS.md` allowlist + downstream `local-ai-machine` bridge tests; Stage A client exposes no `lam.scrub_pii` helper | PR blocked once downstream bridge lands |
-| 19 | Remote MCP server-authoritative origin | Stage A client omits origin authority; downstream HTTP bridge must overwrite origin and test spoofed local origin | PR blocked once downstream bridge lands |
-| 20 | Remote MCP PII middleware | `docs/runbooks/remote-mcp-bridge.md` + downstream PII middleware tests using shared patterns | PR blocked once downstream bridge lands |
-| 21 | Remote MCP Access identity | `docs/runbooks/remote-mcp-bridge.md` requires Cloudflare Access + inner token; downstream auth tests must reject anonymous calls | PR blocked once downstream bridge lands |
-| 22 | Remote MCP audit validation | `scripts/remote-mcp/verify_audit.py` + `check-remote-mcp-audit-schema.yml` validate hash chain, HMAC, and daily manifest | PR blocked if malformed |
-
-### Exception register schema
-
-`hldpro-governance/docs/exception-register.md` entries require:
-- `rule_id` (e.g., `SOM-PII-001`)
-- `repo` (repo where exception applies)
-- `deferral_reason` (cites missing artifact or repo-specific blocker)
-- `approver` (human, named)
-- `expiry_date` (max 90 days from entry)
-- `review_cadence` (monthly minimum)
-
-Overlord-sweep auto-opens issues for past-expiry entries.
-
-### Gemma A/B shadow protocol
-
-Gemma is being measured against Codex/Claude QA before any authority decision:
-- Gemma runs in **shadow (A/B)** mode only.
-- Authoritative QA remains Codex or Claude per the approved waterfall.
-- Verdicts are logged to `raw/ab-review/YYYY-MM-DD-{slug}.md` with `agreement: match | gemma_only_findings | cloud_only_findings | both | conflict`.
-- Conservative gate: cloud QA and deterministic gates win every conflict.
-- Overlord-sweep reports weekly Gemma agreement/usefulness rates. Promotion requires a separate issue, explicit acceptance criteria, and updated enforcement.
+Every slice final acceptance criterion requires spawning `functional-acceptance-auditor`, which must return `overall_verdict=PASS` before closeout proceeds. If that auditor has not run yet, the slice remains pending final acceptance even if implementation and QA are otherwise complete.
 
 ## Windows Host Inference (deprecated / off-ladder)
 
@@ -761,4 +544,3 @@ Operator may pull additional models (e.g. `qwen3:14b-q4_K_M`) — runbook docume
 - Repos may have ADDITIONAL governance beyond this baseline
 - HIPAA agents must never be weakened or consolidated away
 - Codex subagents/personas may stand in for repo-required Claude agents only when they preserve the same separation of duties and approval boundaries
-- Bootstrap exception (`SOM-BOOTSTRAP-001`): the PR introducing the Society of Minds standard cannot self-enforce `require-cross-review.yml` since the workflow is being added in the same PR. Tier 1 cross-review was completed out-of-band via `raw/cross-review/2026-04-14-society-of-minds-charter.md`. Expires on merge of this PR.

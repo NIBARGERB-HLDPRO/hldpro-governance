@@ -22,6 +22,7 @@ Self-approval prohibited. Orchestrator may not perform tasks owned by Tier 2 age
 | gov-specialist-qa | hldpro-governance | 2 | worker | gpt-5.4-mini | 1 | raw/packets/outbound/ | bounded: raw/packets/outbound/ |
 | gov-specialist-local-repo-researcher | hldpro-governance | 2 | worker | gpt-5.4-mini | 1 | raw/packets/outbound/ | bounded: raw/packets/outbound/ |
 | gov-specialist-web-researcher | hldpro-governance | 2 | worker | gpt-5.4 | 1 | raw/packets/outbound/ | bounded: raw/packets/outbound/ |
+| functional-acceptance-auditor | hldpro-governance | 4 | auditor | claude-haiku-4-5 (fallback: claude-sonnet-4-6) | 1 | raw/acceptance-audits/ cache/test-reports/ | slice-validation-read + acceptance-audit-write |
 | hldpro-watcher | ai-integration-services | 1 | supervisor | sonnet | 3 | .claude/agents/output/ + ../hldpro-governance/reports/ai-integration-services/ | bounded: .claude/agents/output/, reports/ |
 | migration-validator | ai-integration-services | 2 | worker | sonnet | 1 | .claude/agents/output/migration-validator/ | bounded: .claude/agents/output/migration-validator/ |
 | edge-fn-reviewer | ai-integration-services | 2 | worker | sonnet | 1 | .claude/agents/output/edge-fn-reviewer/ | bounded: .claude/agents/output/edge-fn-reviewer/ |
