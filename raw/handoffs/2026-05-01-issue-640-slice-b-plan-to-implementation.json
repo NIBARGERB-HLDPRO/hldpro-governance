@@ -1,0 +1,145 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-640-slice-b-plan-to-implementation",
+  "issue_number": 640,
+  "parent_epic_number": 638,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "claude-stage2-worker",
+  "to_role": "operator",
+  "structured_plan_ref": "docs/plans/issue-640-slice-b-policy-hook-ci-hardening-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-640-slice-b-hook-wiring-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "settings.json has no git rev-parse or $PWD; all $HOME-anchored.",
+      "verification_refs": [
+        ".claude/settings.json",
+        "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "PostToolUse * block points to check-errors.sh.",
+      "verification_refs": [
+        ".claude/settings.json",
+        "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "backlog-check.sh calls backlog_match.py; exits non-zero when no match.",
+      "verification_refs": [
+        "hooks/backlog-check.sh",
+        "scripts/overlord/backlog_match.py",
+        "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "check-errors.sh calls fail_fast_state.py check and record.",
+      "verification_refs": [
+        "hooks/check-errors.sh",
+        "scripts/overlord/fail_fast_state.py",
+        "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "scripts/overlord/backlog_match.py exists and works.",
+      "verification_refs": [
+        "scripts/overlord/backlog_match.py",
+        "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
+      ]
+    },
+    {
+      "id": "AC6",
+      "statement": "scripts/overlord/fail_fast_state.py exists; state at ~/.claude/fail-fast-state.json.",
+      "verification_refs": [
+        "scripts/overlord/fail_fast_state.py",
+        "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
+      ]
+    },
+    {
+      "id": "AC7",
+      "statement": "$HOME-anchored paths resolve correctly regardless of CWD.",
+      "verification_refs": [
+        ".claude/settings.json",
+        "hooks/backlog-check.sh",
+        "hooks/check-errors.sh",
+        "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
+      ]
+    },
+    {
+      "id": "AC8",
+      "statement": "No unintended scope creep.",
+      "verification_refs": [
+        "raw/execution-scopes/2026-05-01-issue-640-slice-b-hook-wiring-implementation.json",
+        "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .",
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-05-01-issue-640-slice-b-plan-to-implementation.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-05-01-issue-640-slice-b-hook-wiring.md --root .",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "raw/validation/2026-04-30-slice-b-worker-output-v2.md",
+    "raw/validation/2026-05-01-issue-640-slice-b-governance-artifacts.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-04-30-slice-b-worker-output-v2.md",
+    "raw/validation/2026-05-01-issue-640-slice-b-governance-artifacts.md"
+  ],
+  "artifact_refs": [
+    ".claude/settings.json",
+    "hooks/backlog-check.sh",
+    "hooks/check-errors.sh",
+    "hooks/governance-check.sh",
+    "hooks/pre-session-context.sh",
+    "scripts/overlord/backlog_match.py",
+    "scripts/overlord/fail_fast_state.py",
+    "docs/plans/issue-640-slice-b-policy-hook-ci-hardening-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-05-01-issue-640-slice-b-hook-wiring-implementation.json",
+    "raw/validation/2026-04-30-slice-b-worker-output-v2.md",
+    "raw/validation/2026-05-01-issue-640-slice-b-governance-artifacts.md",
+    "raw/handoffs/2026-05-01-issue-640-slice-b-plan-to-implementation.json"
+  ],
+  "audit_refs": [],
+  "closeout_ref": "raw/closeouts/2026-05-01-issue-640-slice-b-hook-wiring.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-05-01T00:00:00Z",
+  "notes": "Implementation-ready handoff for issue #640 Slice B. All AC1-AC8 items implemented. Worker: claude-sonnet-4-6 Stage 2 Worker. lifecycle_state is implementation_ready; closeout is staged in raw/closeouts/2026-05-01-issue-640-slice-b-hook-wiring.md and will be promoted on operator merge."
+}
