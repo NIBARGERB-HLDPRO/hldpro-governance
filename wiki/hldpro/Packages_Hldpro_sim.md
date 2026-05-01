@@ -1,9 +1,10 @@
 # Packages Hldpro sim
 
-> 36 nodes · cohesion 0.06
+> 40 nodes · cohesion 0.06
 
 ## Key Concepts
 
+- **AnthropicApiProvider** (7 connections) — `packages/hldpro-sim/hldprosim/providers.py`
 - **__init__.py** (6 connections) — `packages/hldpro-sim/hldprosim/__init__.py`
 - **engine.py** (5 connections) — `packages/hldpro-sim/hldprosim/engine.py`
 - **providers.py** (5 connections) — `packages/hldpro-sim/hldprosim/providers.py`
@@ -14,22 +15,21 @@
 - **CodexCliProvider** (4 connections) — `packages/hldpro-sim/hldprosim/providers.py`
 - **ArtifactWriter** (3 connections) — `packages/hldpro-sim/hldprosim/artifacts.py`
 - **SimulationEngine** (3 connections) — `packages/hldpro-sim/hldprosim/engine.py`
-- **AnthropicApiProvider** (3 connections) — `packages/hldpro-sim/hldprosim/providers.py`
 - **BaseProvider** (3 connections) — `packages/hldpro-sim/hldprosim/providers.py`
 - **runner.py** (3 connections) — `packages/hldpro-sim/hldprosim/runner.py`
 - **Runner** (3 connections) — `packages/hldpro-sim/hldprosim/runner.py`
 - **ABC** (2 connections)
 - **BaseAggregator** (2 connections) — `packages/hldpro-sim/hldprosim/aggregator.py`
+- **.complete()** (2 connections) — `packages/hldpro-sim/hldprosim/providers.py`
+- **._get_client()** (2 connections) — `packages/hldpro-sim/hldprosim/providers.py`
+- **._require_api_key()** (2 connections) — `packages/hldpro-sim/hldprosim/providers.py`
+- **._strict_schema()** (2 connections) — `packages/hldpro-sim/hldprosim/providers.py`
 - **aggregate()** (1 connections) — `packages/hldpro-sim/hldprosim/aggregator.py`
 - **.__init__()** (1 connections) — `packages/hldpro-sim/hldprosim/artifacts.py`
 - **.write()** (1 connections) — `packages/hldpro-sim/hldprosim/artifacts.py`
 - **_git_commit()** (1 connections) — `packages/hldpro-sim/hldprosim/artifacts.py`
 - **RunManifest** (1 connections) — `packages/hldpro-sim/hldprosim/artifacts.py`
-- **.__init__()** (1 connections) — `packages/hldpro-sim/hldprosim/engine.py`
-- **.run()** (1 connections) — `packages/hldpro-sim/hldprosim/engine.py`
-- **from_package()** (1 connections) — `packages/hldpro-sim/hldprosim/personas.py`
-- **.__init__()** (1 connections) — `packages/hldpro-sim/hldprosim/personas.py`
-- *... and 11 more nodes in this community*
+- *... and 15 more nodes in this community*
 
 ## Relationships
 
@@ -47,8 +47,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 78 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 86 (96%)
+- INFERRED: 4 (4%)
 - AMBIGUOUS: 0 (0%)
 
 ---
