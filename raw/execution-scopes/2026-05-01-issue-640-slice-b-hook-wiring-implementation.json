@@ -18,10 +18,10 @@
       "docs/plans/issue-640-slice-b-policy-hook-ci-hardening-structured-agent-cycle-plan.json",
       "raw/handoffs/2026-05-01-issue-640-slice-b-plan-to-implementation.json"
     ],
-    "active_exception_ref": "docs/codex-reviews/2026-05-01-issue-641-claude.md",
+    "active_exception_ref": "docs/codex-reviews/2026-05-01-issue-640-claude.md",
     "active_exception_expires_at": "2026-05-02T00:00:00Z",
     "cross_family_path_unavailable": true,
-    "cross_family_path_ref": "docs/codex-reviews/2026-05-01-issue-641-claude.md",
+    "cross_family_path_ref": "docs/codex-reviews/2026-05-01-issue-640-claude.md",
     "fallback_log_ref": "docs/FAIL_FAST_LOG.md"
   },
   "allowed_write_paths": [
@@ -31,7 +31,7 @@
     ".github/workflows/governance-check.yml",
     ".github/workflows/require-cross-review.yml",
     "OVERLORD_BACKLOG.md",
-    "docs/codex-reviews/2026-05-01-issue-641-claude.md",
+    "docs/codex-reviews/2026-05-01-issue-640-claude.md",
     "docs/codex-reviews/2026-05-01-issue-640-claude.md",
     "docs/plans/issue-640-slice-b-policy-hook-ci-hardening-structured-agent-cycle-plan.json",
     "docs/plans/issue-640-slice-b-policy-hook-ci-hardening.md",

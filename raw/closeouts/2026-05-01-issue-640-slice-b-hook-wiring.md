@@ -31,6 +31,9 @@ None. This closes the Slice B hook wiring gap without widening into Slice A (CI/
 - `raw/handoffs/2026-05-01-issue-640-slice-b-plan-to-implementation.json`
 - `raw/validation/2026-04-30-slice-b-worker-output-v2.md`
 - `raw/validation/2026-05-01-issue-640-slice-b-governance-artifacts.md`
+- `OVERLORD_BACKLOG.md`
+- `raw/cross-review/2026-05-01-issue-640-slice-b-hook-wiring-plan.md`
+- `docs/codex-reviews/2026-05-01-issue-640-claude.md`
 
 ## Issue Links
 
@@ -119,4 +122,3 @@ None. This bounded implementation slice does not require manual wiki edits.
 - `raw/execution-scopes/2026-05-01-issue-640-slice-b-hook-wiring-implementation.json`
 - `raw/validation/2026-04-30-slice-b-worker-output-v2.md`
 - `raw/validation/2026-05-01-issue-640-slice-b-governance-artifacts.md`
-

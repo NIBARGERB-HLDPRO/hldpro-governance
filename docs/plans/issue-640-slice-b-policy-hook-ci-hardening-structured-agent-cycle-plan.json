@@ -16,8 +16,8 @@
     "backlog-check.sh must call backlog_match.py and exit non-zero when no match."
   ],
   "out_of_scope": [
-    "Slice A (CI/SHA rework) — owned by issue #641.",
-    "Slice C and beyond — separate lanes.",
+    "Slice A (CI/SHA rework) \u2014 owned by issue #641.",
+    "Slice C and beyond \u2014 separate lanes.",
     "Any changes to scripts outside scripts/overlord/backlog_match.py and scripts/overlord/fail_fast_state.py.",
     "Broad standards rewrite or governance epic closure.",
     "Any changes to .github/workflows/ beyond what is already in the branch diff."
@@ -100,9 +100,9 @@
     "reviewer_model_family": "openai",
     "model_family": "openai",
     "status": "accepted",
-    "summary": "Cross-family path unavailable (Codex quota / LAM offline). Fallback: same-family claude-sonnet-4-6 with active exception documented in docs/codex-reviews/2026-05-01-issue-641-claude.md. Review acknowledged; exception expires 2026-05-02.",
+    "summary": "Cross-family path unavailable (Codex quota / LAM offline). Fallback: same-family claude-sonnet-4-6 with active exception documented in docs/codex-reviews/2026-05-01-issue-640-claude.md. Review acknowledged; exception expires 2026-05-02.",
     "evidence": [
-      "docs/codex-reviews/2026-05-01-issue-641-claude.md",
+      "docs/codex-reviews/2026-05-01-issue-640-claude.md",
       "docs/FAIL_FAST_LOG.md",
       "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
     ]
