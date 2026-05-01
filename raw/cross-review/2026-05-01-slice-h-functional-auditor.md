@@ -26,9 +26,17 @@ Worker signature: `IMPLEMENTED - openai/gpt-5.4 - 2026-05-01`
 ## QA Review
 
 Reviewer model: `claude-sonnet-4-6`
-Reviewer status: `PENDING`
-Reviewer signature: `PENDING - anthropic/claude-sonnet-4-6`
+Reviewer status: `APPROVED`
+Reviewer signature: `APPROVED - anthropic/claude-sonnet-4-6 - 2026-05-01`
+
+AC-H1 through AC-H10 all verified:
+- Agent frontmatter correct (name, model, fallback_model, tools, tier, authority_scope, write_paths)
+- Schema valid draft 2020-12; schema tests 3/3 passing (pytest)
+- AGENT_REGISTRY.md row present with model pin and authority scope
+- raw/acceptance-audits/.gitkeep committed; self-audit overall_verdict=PASS
+- STANDARDS.md §PDCAR references functional-acceptance-auditor (Slice F, merged)
+- No writes outside allowed_write_paths; forbidden roots clean
 
 ## Notes
 
-Cross-family requirement is satisfied by planner `claude-opus-4.7` and worker `gpt-5.4`. Tier 3 QA signature remains pending for the anthropic reviewer to add separately.
+Cross-family requirement satisfied: planner `claude-opus-4.7` (anthropic) → worker `gpt-5.4` (openai) → QA `claude-sonnet-4-6` (anthropic). Tier 3 QA APPROVED 2026-05-01.
