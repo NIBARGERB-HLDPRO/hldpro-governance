@@ -186,7 +186,9 @@
       "focus": "Verify AC-F1..AC-F9; grep checks for hardcoded model names, fallup verbiage, dual-family planner, cross-family QA prohibition, worker roster, auditor §PDCAR reference, SOM-BOOTSTRAP-001 absence, dual signatures, PASS verdict.",
       "status": "accepted_with_followup",
       "summary": "Pending QA after worker PR.",
-      "evidence": []
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/651"
+      ]
     },
     {
       "reviewer": "Slice G worker (claude-sonnet-4.X or codex-spark)",
@@ -204,7 +206,9 @@
       "focus": "Verify AC-G1..AC-G9.",
       "status": "accepted_with_followup",
       "summary": "Pending QA.",
-      "evidence": []
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/652"
+      ]
     },
     {
       "reviewer": "Slice H worker (claude-sonnet-4.X or codex-spark) — BLOCKED on Slice F merge",
@@ -222,7 +226,9 @@
       "focus": "Verify AC-H1..AC-H10.",
       "status": "accepted_with_followup",
       "summary": "Pending QA.",
-      "evidence": []
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/653"
+      ]
     },
     {
       "reviewer": "functional-acceptance-auditor (claude-haiku-4-5; fallup claude-sonnet-4)",
@@ -230,7 +236,9 @@
       "focus": "Execute hooks referenced in each slice's ACs, verify exit codes, run smoke tests, assert intended behavior, produce raw/acceptance-audits/YYYY-MM-DD-<issue>-functional-audit.json with overall_verdict=PASS before closeout. On Slice H, performs self-audit.",
       "status": "accepted_with_followup",
       "summary": "Required PASS gate on all three slices. For F and G, if Slice H has not yet merged, invoke as one-shot subagent from the Slice H working branch content.",
-      "evidence": []
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/650"
+      ]
     }
   ],
   "alternate_model_review": {
