@@ -1,0 +1,300 @@
+{
+  "session_id": "session-20260501-issue-650-governance-policy-refresh",
+  "issue_number": 650,
+  "objective": "Refresh governance policy across STANDARDS.md, hldpro-sim process personas, and the new functional acceptance auditor agent so that model-routing rules are session-agnostic (Claude CLI and Codex CLI both compliant), Tier 1 planning authority is dual-family (claude-opus-4.X OR Codex 5.X high), QA cross-family is mandatory, the fallback ladder explicitly fails up (not down), and every slice terminates in a structured PASS/FAIL functional acceptance audit artifact. Delivered as three atomic slices: F (#651 STANDARDS.md rewrite), G (#652 hldpro-sim governance process personas + AnthropicApiProvider), H (#653 functional-acceptance-auditor agent + schema + CI integration). Slice H depends on Slice F.",
+  "tier": 1,
+  "scope_boundary": [
+    "STANDARDS.md sections SoM (Society of Minds / model routing) and PDCAR (Plan-Do-Check-Act-Review) — Slice F only.",
+    "packages/hldpro-sim/process-agents/ subtree (new schema and 5 persona JSON files) and hldprosim/{personas.py,providers.py} — Slice G only.",
+    "agents/functional-acceptance-auditor.md, docs/schemas/functional-acceptance-audit.schema.json, raw/acceptance-audits/.gitkeep, AGENT_REGISTRY.md, tests/test_functional_acceptance_auditor.py — Slice H only.",
+    "Cross-review artifacts under raw/cross-review/ (one per slice; dual-signed Anthropic + OpenAI).",
+    "Functional acceptance audit artifacts under raw/acceptance-audits/ (one per slice).",
+    "Model-fallback degradation logs under raw/model-fallbacks/ when primary models are unavailable."
+  ],
+  "out_of_scope": [
+    "Workflow file changes (.github/workflows/) — no edits in any slice; cross-review trigger regex from Slice C is already authoritative.",
+    "Hook script changes (.claude/hooks/, hooks/) — no edits in any slice.",
+    "Downstream consumer repos (ai-integration-services, HealthcarePlatform, knocktracker, local-ai-machine, seek-and-ponder) — no writes; downstream adoption tracked separately.",
+    "Retiring or modifying agents/verify-completion.md — the new functional-acceptance-auditor is additive (post-implementation behavioral gate), not a replacement for verify-completion (pre-session structural gate).",
+    "Issue #614 implementation work — Slice G must verify non-overlap before branch cut but does not subsume #614.",
+    "Refactor of existing process personas in packages/hldpro-sim/personas/ — Slice G adds process-agents/ as a new sibling directory; existing personas untouched.",
+    "Cost-threshold or rate-limit fallback policy beyond logging the trigger — fallback executors and budget gates are out of scope."
+  ],
+  "research_summary": "Epic #650 codifies governance rules that must hold across BOTH Claude CLI and Codex CLI sessions (session-agnostic). Three orthogonal concerns require atomic slicing: (1) the policy text itself in STANDARDS.md (Slice F) must drop hardcoded model-family pins from rule text, add an explicit family column to the routing table, document fallup direction, list dual Tier 1 planners, prohibit same-family QA, expand the worker table to include codex-spark and codex-5.4-medium, and reference the new auditor gate in §PDCAR; (2) hldpro-sim must be able to simulate the governance loop end-to-end (Slice G) by introducing a process-persona schema distinct from the existing role-personas, five concrete personas (Tier 1 planner, Tier 1 plan reviewer cross-family, Tier 2 worker, Tier 3 QA cross-family, Tier 4 functional acceptance auditor), and an AnthropicApiProvider that mirrors the existing OpenAiApiProvider for live-API tests gated by ANTHROPIC_API_KEY; (3) the functional acceptance auditor (Slice H) is a Tier 2 quality-gate agent (haiku, fallup to sonnet) that EXECUTES hooks and smoke tests referenced by each slice's AC, asserts intended behavior (not absence of error), and emits a strict-schema PASS/FAIL artifact. Slice H depends on F because STANDARDS.md §PDCAR must reference the auditor by name (AC-H8) and that reference is added in F (AC-F6). F and G are independent and may run in parallel. Cross-review trigger regex from Slice C will fire automatically on F (STANDARDS.md) and H (agents/, schema/).",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/650",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/651",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/652",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/653",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/614",
+    "STANDARDS.md",
+    "AGENT_REGISTRY.md",
+    "agents/verify-completion.md",
+    "docs/schemas/structured-agent-cycle-plan.schema.json",
+    "packages/hldpro-sim/personas/",
+    "packages/hldpro-sim/hldprosim/personas.py",
+    "packages/hldpro-sim/hldprosim/providers.py"
+  ],
+  "sprints": [
+    {
+      "name": "Slice F - Issue #651 - STANDARDS.md policy rewrite",
+      "goal": "Rewrite STANDARDS.md §SoM and §PDCAR so that model routing is session-agnostic, fallback direction is fail-up (not down), Tier 1 planning authority is dual-family, QA cross-family is mandatory, the worker roster includes codex-spark and codex-5.4-medium, and the functional acceptance auditor is documented as the required final AC gate on every slice. No workflow, hook, or script changes.",
+      "tasks": [
+        "Cut branch issue-651-slice-f-standards-rewrite-20260501 from origin/main@9d570b8.",
+        "Rewrite STANDARDS.md §SoM rule text to eliminate hardcoded model family names; move all model pins into the routing table with an explicit Family column (anthropic|openai).",
+        "Update routing table Tier 1 row to list both claude-opus-4.X (anthropic) and Codex 5.X high (openai) as valid planners for creation AND review.",
+        "Update routing table Tier 2 worker row to include codex-spark and codex-5.4-medium alongside claude-sonnet-4.X.",
+        "Add explicit fallup rule to the fallback ladder: unavailable primary escalates UP to a more capable model; codex-spark unavailable -> gpt-5.4 medium; claude-opus-4 unavailable -> log degraded independence, require operator acknowledgment before falling to sonnet for Tier 1; all degraded fallbacks logged to raw/model-fallbacks/.",
+        "Add explicit rule: same-family QA is prohibited; Tier 3 QA must be cross-family from the Tier 2 worker.",
+        "Add explicit text to §PDCAR: every slice final acceptance criterion is spawning functional-acceptance-auditor which must return overall_verdict=PASS before closeout proceeds; reference agent by name.",
+        "Confirm SOM-BOOTSTRAP-001 string absent from STANDARDS.md and all .github/workflows/*.yml via grep (read-only; no workflow edits).",
+        "Produce dual-signed cross-review artifact at raw/cross-review/2026-05-01-slice-f-standards-rewrite.md.",
+        "Spawn functional-acceptance-auditor on the Slice F branch; require PASS at raw/acceptance-audits/2026-05-01-651-functional-audit.json before closeout.",
+        "Open PR for Slice F; Stage 6 closeout."
+      ],
+      "acceptance_criteria": [
+        "AC-F1: STANDARDS.md §SoM rule text contains no hardcoded model family names outside the routing table; verified by grep for claude|opus|sonnet|haiku|gpt|codex in §SoM narrative paragraphs returning only routing-table or family-column references.",
+        "AC-F2: STANDARDS.md §SoM fallback ladder explicitly contains fallup direction: unavailable primary escalates to more capable, log degraded independence.",
+        "AC-F3: STANDARDS.md routing table Tier 1 row lists both claude-opus-4.X and Codex 5.X high as valid planners with explicit create AND review authority.",
+        "AC-F4: STANDARDS.md contains an explicit sentence prohibiting same-family QA.",
+        "AC-F5: STANDARDS.md routing table Tier 2 worker row contains codex-spark and codex-5.4-medium alongside claude-sonnet-4.X.",
+        "AC-F6: STANDARDS.md §PDCAR documents the functional acceptance auditor as required final step on all slices, referencing agent by name functional-acceptance-auditor.",
+        "AC-F7: grep SOM-BOOTSTRAP-001 across STANDARDS.md and .github/workflows/ returns zero matches.",
+        "AC-F8: raw/cross-review/2026-05-01-slice-f-standards-rewrite.md exists and contains two distinct signatures (one anthropic-family, one openai-family).",
+        "AC-F9: raw/acceptance-audits/2026-05-01-651-functional-audit.json exists with overall_verdict=PASS produced by functional-acceptance-auditor."
+      ],
+      "file_paths": [
+        "STANDARDS.md",
+        "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md",
+        "raw/acceptance-audits/2026-05-01-651-functional-audit.json"
+      ]
+    },
+    {
+      "name": "Slice G - Issue #652 - hldpro-sim governance process personas + AnthropicApiProvider",
+      "goal": "Introduce a process-persona schema and five concrete process-persona JSON files in packages/hldpro-sim/process-agents/ for the governance loop roles; update PersonaLoader to search process-agents/ first; implement AnthropicApiProvider with extended thinking, strict JSON schema, and ANTHROPIC_API_KEY enforcement. Independent of Slice F; runs in parallel.",
+      "tasks": [
+        "Verify non-overlap with open issue #614 via gh issue view 614; cross-comment on #652 confirming scope separation BEFORE cutting the branch.",
+        "Cut branch issue-652-slice-g-hldpro-sim-personas-20260501 from origin/main@9d570b8.",
+        "Author packages/hldpro-sim/process-agents/governance-process-persona.schema.json (JSON Schema draft 2020-12) with required fields: persona_id, role_name, description, tier (1-4 integer), primary_model, primary_model_family (anthropic|openai), reasoning_effort (low|medium|high), fallback_model, fallback_trigger (api_unavailable|rate_limit|cost_threshold|operator_override|manual_request), input_schema (object: type + schema_ref), output_schema (object: type + schema_ref), constraints (array of string).",
+        "Author governance-planner.json (Tier 1, claude-opus-4, high, anthropic; fallback claude-sonnet-4 on operator_override).",
+        "Author plan-reviewer.json (Tier 1, gpt-5.4, high, openai; fallback codex-5.4-medium on api_unavailable).",
+        "Author implementation-worker.json (Tier 2, claude-sonnet-4, medium, anthropic; fallback codex-spark on api_unavailable).",
+        "Author qa-reviewer.json (Tier 3, gpt-5.4, medium, openai; fallback codex-5.4-medium on api_unavailable; constraint: must be cross-family from implementation-worker).",
+        "Author functional-acceptance-auditor.json (Tier 4, claude-haiku-4-5, low, anthropic; fallback claude-sonnet-4 on api_unavailable).",
+        "Update PersonaLoader in hldprosim/personas.py to search process-agents/ first, then personas/ as fallback.",
+        "Implement AnthropicApiProvider in hldprosim/providers.py: reads ANTHROPIC_API_KEY, raises ValueError if unset; uses anthropic SDK with extended thinking; enforces strict JSON schema in response.",
+        "Author tests with @pytest.mark.skipif for live-API tests and unconditional tests for ValueError path and all 5 persona JSON schema validations.",
+        "Run pytest packages/hldpro-sim/ — 0 failures.",
+        "Run python3 -m jsonschema --instance <each persona> governance-process-persona.schema.json — all 5 validate.",
+        "Smoke test: python3 -c \"from hldprosim import PersonaLoader; PersonaLoader().load('governance-planner')\" — no error.",
+        "Comment on issue #614 confirming non-overlap before merge.",
+        "Produce dual-signed cross-review artifact at raw/cross-review/2026-05-01-slice-g-hldpro-sim-personas.md.",
+        "Spawn functional-acceptance-auditor; require PASS at raw/acceptance-audits/2026-05-01-652-functional-audit.json.",
+        "Open PR for Slice G; Stage 6 closeout."
+      ],
+      "acceptance_criteria": [
+        "AC-G1: governance-process-persona.schema.json validates all 5 persona JSON files with zero errors via python3 -m jsonschema.",
+        "AC-G2: All 5 persona JSON files exist at packages/hldpro-sim/process-agents/ with correct primary_model, primary_model_family, reasoning_effort, fallback_model, fallback_trigger, and non-empty constraints array.",
+        "AC-G3: PersonaLoader().load('governance-planner') returns a persona object without raising; verified by Bash smoke test.",
+        "AC-G4: AnthropicApiProvider instantiates without error when ANTHROPIC_API_KEY is set (live test, gated by pytest.mark.skipif).",
+        "AC-G5: AnthropicApiProvider raises ValueError naming ANTHROPIC_API_KEY when env var is unset (unconditional unit test).",
+        "AC-G6: pytest packages/hldpro-sim/ exits 0 with 0 failures.",
+        "AC-G7: Issue #614 has a cross-reference comment from this slice confirming non-overlap; gh issue view 614 shows the comment before merge.",
+        "AC-G8: raw/cross-review/2026-05-01-slice-g-hldpro-sim-personas.md exists and is dual-signed.",
+        "AC-G9: raw/acceptance-audits/2026-05-01-652-functional-audit.json exists with overall_verdict=PASS."
+      ],
+      "file_paths": [
+        "packages/hldpro-sim/process-agents/governance-process-persona.schema.json",
+        "packages/hldpro-sim/process-agents/governance-planner.json",
+        "packages/hldpro-sim/process-agents/plan-reviewer.json",
+        "packages/hldpro-sim/process-agents/implementation-worker.json",
+        "packages/hldpro-sim/process-agents/qa-reviewer.json",
+        "packages/hldpro-sim/process-agents/functional-acceptance-auditor.json",
+        "packages/hldpro-sim/hldprosim/personas.py",
+        "packages/hldpro-sim/hldprosim/providers.py",
+        "packages/hldpro-sim/tests/test_process_personas.py",
+        "packages/hldpro-sim/tests/test_anthropic_api_provider.py",
+        "raw/cross-review/2026-05-01-slice-g-hldpro-sim-personas.md",
+        "raw/acceptance-audits/2026-05-01-652-functional-audit.json"
+      ]
+    },
+    {
+      "name": "Slice H - Issue #653 - functional-acceptance-auditor agent + schema + CI integration",
+      "goal": "Wire the post-implementation behavioral gate referenced by Slice F. Author the agent file, the audit-artifact JSON Schema, the AGENT_REGISTRY.md row, the output directory keep file, and schema-contract tests. Self-audit on this slice. BLOCKED until Slice F (#651) merges.",
+      "tasks": [
+        "BLOCK until Slice F (#651) is merged to origin/main; verify via gh pr view and gh api repos/.../commits/main.",
+        "Cut branch issue-653-slice-h-functional-auditor-20260501 from origin/main@<post-slice-F-sha>.",
+        "Author agents/functional-acceptance-auditor.md with frontmatter: name=functional-acceptance-auditor, model=haiku (claude-haiku-4-5; fallup claude-sonnet-4 on api_unavailable), tools='Read, Glob, Grep, Bash', tier=2, authority-scope='slice-validation-read + acceptance-audit-write', write-paths='raw/acceptance-audits/, cache/test-reports/'. Body documents the protocol for executing AC-referenced hooks, asserting exit codes and intended behavior, and emitting the audit JSON.",
+        "Author docs/schemas/functional-acceptance-audit.schema.json (JSON Schema draft 2020-12) with required: audit_id (pattern YYYY-MM-DD-<issue>-functional-audit), issue_number (integer), slice_branch (string), audited_at (date-time), acceptance_criteria (array: ac_id, description, verification_command, exit_code, actual_output_excerpt, verdict PASS|FAIL), hook_results (array: hook_path, exit_code, stdout_excerpt, stderr_excerpt), smoke_test_results (array: test_id, command, expected_outcome, actual_outcome, verdict), evidence_artifacts (array of string), overall_verdict (enum PASS|FAIL|BLOCKED), auditor_model (string), auditor_signature (string).",
+        "Create raw/acceptance-audits/.gitkeep.",
+        "Append row to AGENT_REGISTRY.md: functional-acceptance-auditor | hldpro-governance | 2 | quality-gate | haiku | 1 | raw/acceptance-audits/ cache/test-reports/.",
+        "Author tests/test_functional_acceptance_auditor.py: (a) meta-validate schema; (b) positive: sample PASS dict validates; (c) negative: missing overall_verdict fails; (d) negative: invalid overall_verdict enum fails.",
+        "Run python3 -m jsonschema --check-schema docs/schemas/functional-acceptance-audit.schema.json — exit 0.",
+        "Run pytest tests/test_functional_acceptance_auditor.py — exit 0.",
+        "Grep STANDARDS.md for functional-acceptance-auditor — at least one match in §PDCAR.",
+        "Produce dual-signed cross-review artifact at raw/cross-review/2026-05-01-slice-h-functional-auditor.md.",
+        "Self-audit: spawn functional-acceptance-auditor on this branch; require PASS at raw/acceptance-audits/2026-05-01-653-functional-audit.json.",
+        "Open PR for Slice H; Stage 6 closeout."
+      ],
+      "acceptance_criteria": [
+        "AC-H1: agents/functional-acceptance-auditor.md exists with frontmatter fields name, model, tools, tier, authority-scope, write-paths matching spec.",
+        "AC-H2: docs/schemas/functional-acceptance-audit.schema.json exists and passes python3 -m jsonschema --check-schema (valid draft 2020-12).",
+        "AC-H3: Sample PASS audit JSON validates against schema with zero errors.",
+        "AC-H4: Sample audit JSON with overall_verdict removed fails schema validation with error naming overall_verdict.",
+        "AC-H5: raw/acceptance-audits/.gitkeep exists in the git tree.",
+        "AC-H6: AGENT_REGISTRY.md contains row for functional-acceptance-auditor with Tier=2, Model=haiku, Write Paths including raw/acceptance-audits/.",
+        "AC-H7: pytest tests/test_functional_acceptance_auditor.py exits 0.",
+        "AC-H8: grep -n 'functional-acceptance-auditor' STANDARDS.md returns at least one match inside §PDCAR.",
+        "AC-H9: raw/cross-review/2026-05-01-slice-h-functional-auditor.md exists and is dual-signed.",
+        "AC-H10: raw/acceptance-audits/2026-05-01-653-functional-audit.json exists with overall_verdict=PASS produced by self-audit."
+      ],
+      "file_paths": [
+        "agents/functional-acceptance-auditor.md",
+        "docs/schemas/functional-acceptance-audit.schema.json",
+        "raw/acceptance-audits/.gitkeep",
+        "AGENT_REGISTRY.md",
+        "tests/test_functional_acceptance_auditor.py",
+        "raw/cross-review/2026-05-01-slice-h-functional-auditor.md",
+        "raw/acceptance-audits/2026-05-01-653-functional-audit.json"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "claude-opus-4.7 (Tier 1 planner, anthropic family)",
+      "role": "Tier 1 plan author",
+      "focus": "Scope decomposition into three atomic slices, dependency graph, per-slice ACs independently verifiable in Bash/pytest, functional-acceptance-auditor gate on every slice, dual-signed cross-review requirement.",
+      "status": "accepted",
+      "summary": "Plan authored 2026-05-01. Three slices defined with non-overlapping file_paths; H gated on F merge; G gated on #614 non-overlap confirmation; auditor gate on all three slices.",
+      "evidence": [
+        "docs/plans/issue-650-governance-policy-refresh-structured-agent-cycle-plan.json"
+      ]
+    },
+    {
+      "reviewer": "Slice F worker (claude-sonnet-4.X or codex-spark — cross-family from QA)",
+      "role": "Slice F implementer",
+      "focus": "STANDARDS.md §SoM and §PDCAR rewrite; dual-signed cross-review artifact; functional-acceptance-auditor invocation for AC-F9.",
+      "status": "accepted_with_followup",
+      "summary": "Pending implementation.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/651"
+      ]
+    },
+    {
+      "reviewer": "Slice F QA (cross-family from worker — prohibited if same family)",
+      "role": "Slice F Tier 3 QA reviewer",
+      "focus": "Verify AC-F1..AC-F9; grep checks for hardcoded model names, fallup verbiage, dual-family planner, cross-family QA prohibition, worker roster, auditor §PDCAR reference, SOM-BOOTSTRAP-001 absence, dual signatures, PASS verdict.",
+      "status": "accepted_with_followup",
+      "summary": "Pending QA after worker PR.",
+      "evidence": []
+    },
+    {
+      "reviewer": "Slice G worker (claude-sonnet-4.X or codex-spark)",
+      "role": "Slice G implementer",
+      "focus": "process-personas schema, 5 persona JSONs, PersonaLoader update, AnthropicApiProvider, pytest, #614 overlap resolution.",
+      "status": "accepted_with_followup",
+      "summary": "Pending. Pre-work: non-overlap with #614 confirmed before branch cut.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/652"
+      ]
+    },
+    {
+      "reviewer": "Slice G QA (cross-family from Slice G worker)",
+      "role": "Slice G Tier 3 QA reviewer",
+      "focus": "Verify AC-G1..AC-G9.",
+      "status": "accepted_with_followup",
+      "summary": "Pending QA.",
+      "evidence": []
+    },
+    {
+      "reviewer": "Slice H worker (claude-sonnet-4.X or codex-spark) — BLOCKED on Slice F merge",
+      "role": "Slice H implementer",
+      "focus": "functional-acceptance-auditor agent file, JSON Schema, AGENT_REGISTRY row, .gitkeep, schema-contract tests, self-audit.",
+      "status": "accepted_with_followup",
+      "summary": "BLOCKED until Slice F (#651) merges to origin/main.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/653"
+      ]
+    },
+    {
+      "reviewer": "Slice H QA (cross-family from Slice H worker)",
+      "role": "Slice H Tier 3 QA reviewer",
+      "focus": "Verify AC-H1..AC-H10.",
+      "status": "accepted_with_followup",
+      "summary": "Pending QA.",
+      "evidence": []
+    },
+    {
+      "reviewer": "functional-acceptance-auditor (claude-haiku-4-5; fallup claude-sonnet-4)",
+      "role": "Final acceptance gate on every slice (F, G, H)",
+      "focus": "Execute hooks referenced in each slice's ACs, verify exit codes, run smoke tests, assert intended behavior, produce raw/acceptance-audits/YYYY-MM-DD-<issue>-functional-audit.json with overall_verdict=PASS before closeout. On Slice H, performs self-audit.",
+      "status": "accepted_with_followup",
+      "summary": "Required PASS gate on all three slices. For F and G, if Slice H has not yet merged, invoke as one-shot subagent from the Slice H working branch content.",
+      "evidence": []
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.4 high (Tier 1 plan reviewer, openai family — cross-family from claude-opus-4.7 planner)",
+    "model_family": "openai",
+    "status": "not_requested",
+    "summary": "Cross-family Tier 1 plan review required. Reviewer focus: (a) verify three slices are atomic with non-overlapping file_paths; (b) verify Slice H → Slice F dependency is enforceable via AC-H8 grep; (c) verify all ACs independently verifiable in Bash or pytest; (d) verify functional-acceptance-auditor gate wired on all three slices; (e) verify cross-review artifact paths are dual-signed; (f) flag any session-leakage of model-family pins into rule text. Output: raw/cross-review/2026-05-01-issue-650-plan-review.md, dual-signed.",
+    "evidence": [
+      "raw/cross-review/2026-05-01-issue-650-plan-review.md (to be produced)"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-opus-4.7 (Tier 1 planner, anthropic family)",
+    "execution_mode": "planning_only",
+    "approved_scope_summary": "Three atomic slices: F (#651 STANDARDS.md rewrite — independent), G (#652 hldpro-sim process personas + AnthropicApiProvider — independent, gated on #614 non-overlap), H (#653 functional-acceptance-auditor — depends on F). Every slice ends with dual-signed cross-review and PASS-verdict functional acceptance audit.",
+    "next_execution_step": "Cross-family plan review by gpt-5.4 high produces raw/cross-review/2026-05-01-issue-650-plan-review.md. On accepted status, orchestrator creates per-slice execution scopes and dispatches F and G in parallel, holding H until F merges.",
+    "blocked_on": [
+      "gpt-5.4 high cross-family plan review — alternate_model_review status currently not_requested.",
+      "Slice G dispatch held until #614 non-overlap is documented on issue #652.",
+      "Slice H is BLOCKED on Slice F merge (#651 → origin/main) before branch may be cut."
+    ],
+    "execution_scope_ref": null,
+    "handoff_package_ref": null,
+    "packet_ref": null,
+    "package_manifest_ref": null,
+    "validation_artifact_refs": [],
+    "review_artifact_refs": [
+      "raw/cross-review/2026-05-01-issue-650-plan-review.md (to be produced)",
+      "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md (to be produced)",
+      "raw/cross-review/2026-05-01-slice-g-hldpro-sim-personas.md (to be produced)",
+      "raw/cross-review/2026-05-01-slice-h-functional-auditor.md (to be produced)"
+    ],
+    "gate_artifact_refs": [
+      "raw/acceptance-audits/2026-05-01-651-functional-audit.json (to be produced)",
+      "raw/acceptance-audits/2026-05-01-652-functional-audit.json (to be produced)",
+      "raw/acceptance-audits/2026-05-01-653-functional-audit.json (to be produced)"
+    ],
+    "closeout_ref": null,
+    "next_role": "tier-1-plan-reviewer-cross-family",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "Plan validates against docs/schemas/structured-agent-cycle-plan.schema.json with zero errors.",
+      "Cross-family Tier 1 plan review (gpt-5.4 high) returns accepted or accepted_with_followup at raw/cross-review/2026-05-01-issue-650-plan-review.md.",
+      "Per-slice execution scopes created under raw/execution-scopes/2026-05-01-issue-65{1,2,3}-*.json before worker dispatch.",
+      "Slice dependency honored at dispatch: F and G fan out in parallel; H held until F merges.",
+      "All three slices produce dual-signed cross-review artifacts AND PASS-verdict functional acceptance audits before closeout.",
+      "Worker selection at dispatch honors fallup direction; degraded fallbacks logged to raw/model-fallbacks/.",
+      "QA reviewer for each slice is cross-family from that slice's worker."
+    ]
+  },
+  "material_deviation_rules": [
+    "Any change to file_paths beyond scope_boundary requires opening a new governance issue and re-approval; mid-slice scope creep into workflows/, hooks/, or scripts/ is a HARD STOP.",
+    "If Slice F lands without the explicit string 'functional-acceptance-auditor' in §PDCAR, Slice H is BLOCKED — AC-H8 cannot pass; remediate before Slice H may proceed.",
+    "If Slice G discovers genuine overlap with #614, halt the slice, reconcile via comment chain on both issues, and re-plan; do NOT silently merge overlapping work.",
+    "If the functional-acceptance-auditor returns overall_verdict=FAIL or BLOCKED on any slice, do NOT close the slice; remediate the failing AC and re-run the auditor.",
+    "Same-family QA is a HARD STOP — if no cross-family QA reviewer is available, log under raw/model-fallbacks/ and HALT until operator acknowledgment.",
+    "Fallback direction violations (falling DOWN instead of UP) are material deviations; record under raw/model-fallbacks/ and require operator override before continuing.",
+    "Cross-review artifact missing or singly-signed is a HARD STOP at AC-{F8,G8,H9}.",
+    "Plan must itself comply with the rules it encodes: rule text in this plan naming a specific model family outside an explicit routing/family-column context is a self-violation and a material deviation."
+  ],
+  "approved": false,
+  "approved_by": [
+    "claude-opus-4.7 (Tier 1 planner; awaiting cross-family approval from gpt-5.4 high)"
+  ],
+  "approved_at": "2026-05-01T00:00:00Z"
+}
