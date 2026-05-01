@@ -63,6 +63,7 @@ For architecture or standards PRs, a dual-signed cross-review artifact under `ra
 | Codex finding promotion | `backlog-promoter` | "promote codex findings", "review ingestion", "promote to progress", "process backlog findings" |
 
 ## Delegation Rules
+- CRITICAL: If you catch yourself editing files, running git commands, or executing validation scripts directly in a Supervisor session -- STOP immediately. Create a Worker brief and dispatch it to the appropriate specialist agent. The only direct writes permitted in Supervisor capacity are governance artifacts to `raw/` (closeouts, cross-reviews, execution scopes). Everything else goes through agents.
 - DO NOT answer governance questions yourself — route to overlord
 - DO NOT run audits yourself — route to overlord-sweep
 - DO NOT verify completion yourself — route to verify-completion

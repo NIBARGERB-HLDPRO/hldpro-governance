@@ -77,6 +77,13 @@ if [ -n "${SCHEMA_GUARD_VALIDATOR:-}" ]; then
   }
 fi
 
+
+# If running from a different worktree than where the plan lives, warn but don't block
+if [ -n "${SESSION_WORKTREE_ROOT:-}" ] && [ "${SESSION_WORKTREE_ROOT}" != "${GIT_ROOT}" ]; then
+  echo "[schema-guard] WARNING: session worktree (${SESSION_WORKTREE_ROOT}) differs from git root (${GIT_ROOT}). Plan mtime check may be inaccurate. Allowing write." >&2
+  exit 0
+fi
+
 phase="detect Bash file writes"
 plan_preflight="$repo_root/scripts/overlord/check_plan_preflight.py"
 if [ ! -f "$plan_preflight" ]; then

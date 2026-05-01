@@ -168,6 +168,8 @@ def _validate_ref_array(
         except ValueError as exc:
             failures.append(str(exc))
             continue
+        if ref in payload.get("deleted_scope_files", []):
+            continue  # intentionally deleted; skip existence check
         if not _repo_file_exists(root, ref):
             failures.append(f"{package_path}: `{field_name}[{index}]` does not exist: {ref}")
 

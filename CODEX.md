@@ -67,3 +67,10 @@ documented in `docs/EXTERNAL_SERVICES_RUNBOOK.md`:
 
 If the runbook path is unavailable or stale, stop and update the issue-backed
 governance artifact chain instead of improvising.
+
+## PR Branch Preparation — workflow_call Input Check
+
+**Before pushing any branch as a PR**: verify that all `workflow_call` input declarations in reusable workflows match what `ci.yml` passes as inputs. Branches created before a `ci.yml` update that adds new inputs must cherry-pick or rebase to pick up the updated declarations. Failure to do this causes `CI: startup_failure` on all PR checks with no job-level logs.
+
+Check: for each reusable workflow called by `ci.yml`, confirm its `on.workflow_call.inputs` block declares every input that `ci.yml` passes in the `with:` block.
+

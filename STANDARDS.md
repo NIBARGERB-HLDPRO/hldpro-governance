@@ -558,6 +558,23 @@ Execution scopes are schema-backed by
 `docs/schemas/execution-scope.schema.json` and remain enforced by
 `scripts/overlord/assert_execution_scope.py`.
 
+### Claude-as-Primary Dispatcher Rule
+
+When Claude is the primary agent in a session, it MUST operate in dispatcher/supervisor role only. Claude may:
+- Read files and gather context
+- Spawn and coordinate specialist agents
+- Write governance artifacts to `raw/` in its Supervisor capacity
+- Route implementation work via Codex dispatch briefs
+
+Claude must NOT:
+- Edit source files, hooks, scripts, or workflow files directly
+- Run validation commands or git operations as a substitute for Worker agents
+- Occupy planner + worker + orchestrator roles simultaneously
+
+Direct implementation by Claude in a session requires `HLDPRO_LANE_ROLE=worker` to be explicitly set in the environment, which signals the session is operating as a bounded Worker lane (not Supervisor).
+
+Violation: if Claude finds itself editing files or running git commands directly during a Supervisor session, it must STOP, create a Worker brief, and dispatch the work.
+
 ### Hard-rule invariants
 
 1. **No self-approval.** No mind reviews its own output. Drafter, reviewer, and gate identities must be distinct.
