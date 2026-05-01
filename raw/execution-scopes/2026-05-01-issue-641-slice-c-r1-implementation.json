@@ -3,15 +3,22 @@
   "expected_branch": "issue-641-slice-c-ci-fail-closed-20260430",
   "execution_mode": "implementation_ready",
   "allowed_write_paths": [
+    ".github/workflows/check-arch-tier.yml",
+    ".github/workflows/ci.yml",
     ".github/workflows/governance-check.yml",
+    ".github/workflows/require-cross-review.yml",
     "docs/codex-reviews/2026-05-01-issue-641-claude.md",
     "docs/plans/issue-641-slice-c-ci-sha-rework-structured-agent-cycle-plan.json",
+    "docs/workflow-local-coverage-inventory.json",
     "graphify-out/GRAPH_REPORT.md",
     "graphify-out/graph.json",
+    "raw/closeouts/2026-05-01-issue-641-slice-c-ci-fail-closed.md",
     "raw/cross-review/2026-05-01-issue-641-slice-c-ci-sha-rework-plan.md",
     "raw/execution-scopes/2026-05-01-issue-641-slice-c-r1-implementation.json",
     "raw/handoffs/2026-05-01-issue-641-slice-c-r1-plan-to-implementation.json",
-    "raw/packets/2026-05-01-issue-641-slice-c-r1-review-packet.md"
+    "raw/packets/2026-05-01-issue-641-slice-c-r1-review-packet.md",
+    "raw/validation/2026-04-30-slice-c-worker-output.md",
+    "scripts/cross-review/require-dual-signature.sh"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/hldpro-governance"

@@ -15,10 +15,15 @@
       "coverage": [
         {
           "type": "local_command",
-          "command": ["python3", ".github/scripts/check_agent_model_pins.py"]
+          "command": [
+            "python3",
+            ".github/scripts/check_agent_model_pins.py"
+          ]
         }
       ],
-      "required_snippets": ["python3 \"${SCRIPTS_DIR}/check_agent_model_pins.py\""],
+      "required_snippets": [
+        "python3 \"${SCRIPTS_DIR}/check_agent_model_pins.py\""
+      ],
       "rationale": "Python validator is deterministic and can run locally with PyYAML installed."
     },
     {
@@ -27,10 +32,19 @@
       "coverage": [
         {
           "type": "workflow_contract",
-          "command": ["python3", "scripts/overlord/check_workflow_local_coverage.py", "--root", "."]
+          "command": [
+            "python3",
+            "scripts/overlord/check_workflow_local_coverage.py",
+            "--root",
+            "."
+          ]
         }
       ],
-      "required_snippets": ["Enforce architecture/standards tier evidence", "raw/cross-review", "python3 - <<'PY'"],
+      "required_snippets": [
+        "Enforce architecture/standards tier evidence",
+        "raw/cross-review",
+        "python3 - <<'PY'"
+      ],
       "rationale": "Inline PR-context policy is pinned by workflow contract first; deeper fixture extraction is a follow-up."
     },
     {
@@ -39,10 +53,15 @@
       "coverage": [
         {
           "type": "script_dry_run",
-          "command": ["bash", ".github/scripts/validate_backlog_gh_sync.sh"]
+          "command": [
+            "bash",
+            ".github/scripts/validate_backlog_gh_sync.sh"
+          ]
         }
       ],
-      "required_snippets": ["bash .github/scripts/validate_backlog_gh_sync.sh"],
+      "required_snippets": [
+        "bash .github/scripts/validate_backlog_gh_sync.sh"
+      ],
       "rationale": "The shell entrypoint is local-runnable but live issue validation depends on `gh` auth and network."
     },
     {
@@ -51,10 +70,18 @@
       "coverage": [
         {
           "type": "workflow_contract",
-          "command": ["python3", "scripts/overlord/check_workflow_local_coverage.py", "--root", "."]
+          "command": [
+            "python3",
+            "scripts/overlord/check_workflow_local_coverage.py",
+            "--root",
+            "."
+          ]
         }
       ],
-      "required_snippets": ["Validate CLAUDE.md pointer", "STANDARDS.md"],
+      "required_snippets": [
+        "Validate CLAUDE.md pointer",
+        "STANDARDS.md"
+      ],
       "rationale": "Inline deterministic pointer check is pinned by workflow contract."
     },
     {
@@ -63,10 +90,15 @@
       "coverage": [
         {
           "type": "local_command",
-          "command": ["python3", ".github/scripts/check_codex_model_pins.py"]
+          "command": [
+            "python3",
+            ".github/scripts/check_codex_model_pins.py"
+          ]
         }
       ],
-      "required_snippets": ["python3 \"${SCRIPTS_DIR}/check_codex_model_pins.py\""],
+      "required_snippets": [
+        "python3 \"${SCRIPTS_DIR}/check_codex_model_pins.py\""
+      ],
       "rationale": "Python validator is deterministic and can run locally."
     },
     {
@@ -75,10 +107,17 @@
       "coverage": [
         {
           "type": "workflow_contract",
-          "command": ["python3", "scripts/overlord/check_workflow_local_coverage.py", "--root", "."]
+          "command": [
+            "python3",
+            "scripts/overlord/check_workflow_local_coverage.py",
+            "--root",
+            "."
+          ]
         }
       ],
-      "required_snippets": ["uses: ./.github/workflows/check-fail-fast-schema.yml"],
+      "required_snippets": [
+        "uses: ./.github/workflows/check-fail-fast-schema.yml"
+      ],
       "rationale": "Thin caller workflow must keep delegating to the reusable schema workflow."
     },
     {
@@ -87,10 +126,18 @@
       "coverage": [
         {
           "type": "workflow_contract",
-          "command": ["python3", "scripts/overlord/check_workflow_local_coverage.py", "--root", "."]
+          "command": [
+            "python3",
+            "scripts/overlord/check_workflow_local_coverage.py",
+            "--root",
+            "."
+          ]
         }
       ],
-      "required_snippets": ["Validate FAIL_FAST_LOG.md schema", "Validate ERROR_PATTERNS.md schema"],
+      "required_snippets": [
+        "Validate FAIL_FAST_LOG.md schema",
+        "Validate ERROR_PATTERNS.md schema"
+      ],
       "rationale": "The reusable workflow currently embeds validators inline; contract coverage pins the expected validation steps until extraction."
     },
     {
@@ -99,10 +146,15 @@
       "coverage": [
         {
           "type": "local_command",
-          "command": ["python3", ".github/scripts/check_fallback_log_schema.py"]
+          "command": [
+            "python3",
+            ".github/scripts/check_fallback_log_schema.py"
+          ]
         }
       ],
-      "required_snippets": ["python3 \"${SCRIPTS_DIR}/check_fallback_log_schema.py\""],
+      "required_snippets": [
+        "python3 \"${SCRIPTS_DIR}/check_fallback_log_schema.py\""
+      ],
       "rationale": "Python validator is deterministic with PR diff environment variables supplied by the caller."
     },
     {
@@ -111,10 +163,16 @@
       "coverage": [
         {
           "type": "script_dry_run",
-          "command": ["python3", ".github/scripts/check_lam_availability_labels.py"]
+          "command": [
+            "python3",
+            ".github/scripts/check_lam_availability_labels.py"
+          ]
         }
       ],
-      "required_snippets": ["check_lam_availability_labels.py", "LAM_PROBE_URL"],
+      "required_snippets": [
+        "check_lam_availability_labels.py",
+        "LAM_PROBE_URL"
+      ],
       "rationale": "Label/env decision is deterministic; live LAM health is environment-dependent and should not hardgate every local run."
     },
     {
@@ -123,10 +181,15 @@
       "coverage": [
         {
           "type": "local_command",
-          "command": ["python3", ".github/scripts/check_lam_family_diversity.py"]
+          "command": [
+            "python3",
+            ".github/scripts/check_lam_family_diversity.py"
+          ]
         }
       ],
-      "required_snippets": ["python3 .github/scripts/check_lam_family_diversity.py"],
+      "required_snippets": [
+        "python3 .github/scripts/check_lam_family_diversity.py"
+      ],
       "rationale": "Python validator is deterministic and can run locally."
     },
     {
@@ -135,10 +198,15 @@
       "coverage": [
         {
           "type": "local_command",
-          "command": ["python3", ".github/scripts/check_no_self_approval.py"]
+          "command": [
+            "python3",
+            ".github/scripts/check_no_self_approval.py"
+          ]
         }
       ],
-      "required_snippets": ["python3 \"${SCRIPTS_DIR}/check_no_self_approval.py\""],
+      "required_snippets": [
+        "python3 \"${SCRIPTS_DIR}/check_no_self_approval.py\""
+      ],
       "rationale": "Python validator is deterministic with PR diff environment variables supplied by the caller."
     },
     {
@@ -147,10 +215,15 @@
       "coverage": [
         {
           "type": "local_command",
-          "command": ["python3", ".github/scripts/check_pii_routing.py"]
+          "command": [
+            "python3",
+            ".github/scripts/check_pii_routing.py"
+          ]
         }
       ],
-      "required_snippets": ["python3 \"${SCRIPTS_DIR}/check_pii_routing.py\""],
+      "required_snippets": [
+        "python3 \"${SCRIPTS_DIR}/check_pii_routing.py\""
+      ],
       "rationale": "Python validator is deterministic with PR diff environment variables supplied by the caller."
     },
     {
@@ -159,10 +232,17 @@
       "coverage": [
         {
           "type": "script_dry_run",
-          "command": ["bash", ".github/scripts/check_pr_commit_scope.sh"]
+          "command": [
+            "bash",
+            ".github/scripts/check_pr_commit_scope.sh"
+          ]
         }
       ],
-      "required_snippets": ["fetch-depth: 0", "PR_BASE: ${{ github.event.pull_request.base.sha }}", "bash .github/scripts/check_pr_commit_scope.sh"],
+      "required_snippets": [
+        "fetch-depth: 0",
+        "PR_BASE: ${{ github.event.pull_request.base.sha }}",
+        "bash .github/scripts/check_pr_commit_scope.sh"
+      ],
       "rationale": "Shell validator is local-runnable when `PR_BASE` or `origin/main` is available."
     },
     {
@@ -171,10 +251,16 @@
       "coverage": [
         {
           "type": "local_command",
-          "command": ["python3", "scripts/windows-ollama/verify_audit.py", "raw/remote-windows-audit/"]
+          "command": [
+            "python3",
+            "scripts/windows-ollama/verify_audit.py",
+            "raw/remote-windows-audit/"
+          ]
         }
       ],
-      "required_snippets": ["python3 scripts/windows-ollama/verify_audit.py raw/remote-windows-audit/"],
+      "required_snippets": [
+        "python3 scripts/windows-ollama/verify_audit.py raw/remote-windows-audit/"
+      ],
       "rationale": "Audit-chain verifier is deterministic and no-ops when the audit directory is absent."
     },
     {
@@ -183,10 +269,15 @@
       "coverage": [
         {
           "type": "local_command",
-          "command": ["python3", "scripts/remote-mcp/verify_audit.py"]
+          "command": [
+            "python3",
+            "scripts/remote-mcp/verify_audit.py"
+          ]
         }
       ],
-      "required_snippets": ["python3 scripts/remote-mcp/verify_audit.py raw/remote-mcp-audit --require-hmac-key"],
+      "required_snippets": [
+        "python3 scripts/remote-mcp/verify_audit.py raw/remote-mcp-audit --require-hmac-key"
+      ],
       "rationale": "Remote MCP audit-chain verifier is deterministic and no-ops when the audit directory is absent; strict HMAC mode is required once audit files exist."
     },
     {
@@ -195,11 +286,34 @@
       "coverage": [
         {
           "type": "workflow_contract",
-          "command": ["python3", "scripts/overlord/check_workflow_local_coverage.py", "--root", "."]
+          "command": [
+            "python3",
+            "scripts/overlord/check_workflow_local_coverage.py",
+            "--root",
+            "."
+          ]
         }
       ],
-      "required_snippets": ["Check Windows-Ollama exposure invariants", "172.17.227.49:11434"],
+      "required_snippets": [
+        "Check Windows-Ollama exposure invariants",
+        "172.17.227.49:11434"
+      ],
       "rationale": "Inline deterministic exposure invariant is pinned by workflow contract."
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "risk": "github-only-side-effecting",
+      "coverage": [
+        {
+          "type": "github_only",
+          "rationale": "Dispatcher workflow calling all reusable workflows; local coverage belongs to the called workflows."
+        }
+      ],
+      "required_snippets": [
+        "uses: ./.github/workflows/governance-check.yml",
+        "uses: ./.github/workflows/require-cross-review.yml"
+      ],
+      "rationale": "CI dispatcher; callee workflows have their own inventory entries."
     },
     {
       "path": ".github/workflows/governance-check.yml",
@@ -207,18 +321,45 @@
       "coverage": [
         {
           "type": "workflow_contract",
-          "command": ["python3", "scripts/overlord/check_workflow_local_coverage.py", "--root", "."]
+          "command": [
+            "python3",
+            "scripts/overlord/check_workflow_local_coverage.py",
+            "--root",
+            "."
+          ]
         },
         {
           "type": "local_command",
-          "command": ["python3", "scripts/overlord/validate_structured_agent_cycle_plan.py", "--root", "."]
+          "command": [
+            "python3",
+            "scripts/overlord/validate_structured_agent_cycle_plan.py",
+            "--root",
+            "."
+          ]
         },
         {
           "type": "local_command",
-          "command": ["python3", "scripts/overlord/assert_execution_scope.py", "--scope", "raw/execution-scopes/2026-04-18-issue-284-local-first-workflow-coverage-implementation.json"]
+          "command": [
+            "python3",
+            "scripts/overlord/assert_execution_scope.py",
+            "--scope",
+            "raw/execution-scopes/2026-04-18-issue-284-local-first-workflow-coverage-implementation.json"
+          ]
         }
       ],
-      "required_snippets": ["Check OVERLORD_BACKLOG issue alignment", "Validate structured agent cycle plans", "Enforce governance-surface planning gate", "Validate handoff package integrity", "validate_handoff_package.py", "Enforce Stage 6 closeout evidence", "check_stage6_closeout.py", "--require-lane-claim", "Enforce issue execution scope for planner boundary", "Require cross-review artifact", "Report governance failure to operator_context"],
+      "required_snippets": [
+        "Check OVERLORD_BACKLOG issue alignment",
+        "Validate structured agent cycle plans",
+        "Enforce governance-surface planning gate",
+        "Validate handoff package integrity",
+        "validate_handoff_package.py",
+        "Enforce Stage 6 closeout evidence",
+        "check_stage6_closeout.py",
+        "--require-lane-claim",
+        "Enforce issue execution scope for planner boundary",
+        "Require cross-review artifact",
+        "Report governance failure to operator_context"
+      ],
       "rationale": "Reusable workflow has local-testable deterministic checks plus GitHub-only PR/reporting context; contract coverage pins the broad runner surface."
     },
     {
@@ -227,10 +368,15 @@
       "coverage": [
         {
           "type": "workflow_contract",
-          "command": ["python3", "scripts/overlord/test_workflow_local_coverage.py"]
+          "command": [
+            "python3",
+            "scripts/overlord/test_workflow_local_coverage.py"
+          ]
         }
       ],
-      "required_snippets": ["python3 scripts/overlord/test_workflow_local_coverage.py"],
+      "required_snippets": [
+        "python3 scripts/overlord/test_workflow_local_coverage.py"
+      ],
       "rationale": "Independent contract workflow runs the workflow coverage tests."
     },
     {
@@ -239,10 +385,16 @@
       "coverage": [
         {
           "type": "workflow_contract",
-          "command": ["python3", "scripts/overlord/test_local_ci_gate_workflow_contract.py"]
+          "command": [
+            "python3",
+            "scripts/overlord/test_local_ci_gate_workflow_contract.py"
+          ]
         }
       ],
-      "required_snippets": ["python3 scripts/overlord/test_local_ci_gate_workflow_contract.py", "python3 tools/local-ci-gate/bin/hldpro-local-ci run"],
+      "required_snippets": [
+        "python3 scripts/overlord/test_local_ci_gate_workflow_contract.py",
+        "python3 tools/local-ci-gate/bin/hldpro-local-ci run"
+      ],
       "rationale": "Local CI Gate workflow already has a dedicated contract test and required status enforcement."
     },
     {
@@ -254,7 +406,10 @@
           "rationale": "Nightly multi-repo cleanup deletes Actions artifacts and creates/edits issues through `gh`; local full replay would be side-effecting."
         }
       ],
-      "required_snippets": ["gh api -X DELETE", "Create or update nightly cleanup issue"],
+      "required_snippets": [
+        "gh api -X DELETE",
+        "Create or update nightly cleanup issue"
+      ],
       "rationale": "Only non-destructive subcomponents should be tested locally; the workflow itself remains GitHub-only."
     },
     {
@@ -266,7 +421,11 @@
           "rationale": "Weekly cross-repo sweep uses multiple checkouts, `gh`, Codex, graph refresh, issue updates, commits, and pushes."
         }
       ],
-      "required_snippets": ["Run overlord sweep audit", "Commit updated graph", "Create or update overlord report issue"],
+      "required_snippets": [
+        "Run overlord sweep audit",
+        "Commit updated graph",
+        "Create or update overlord report issue"
+      ],
       "rationale": "Local coverage belongs to the scripts it invokes, not full scheduled workflow replay."
     },
     {
@@ -278,7 +437,11 @@
           "rationale": "Scheduled raw feed sync reads remote issues and commits/pushes generated feed updates."
         }
       ],
-      "required_snippets": ["gh issue list", "render_github_issue_feed.py", "git push"],
+      "required_snippets": [
+        "gh issue list",
+        "render_github_issue_feed.py",
+        "git push"
+      ],
       "rationale": "Renderer can be tested locally; scheduled fetch and push remain GitHub-only."
     },
     {
@@ -287,10 +450,22 @@
       "coverage": [
         {
           "type": "local_command",
-          "command": ["python3", "scripts/remote-mcp/live_health_monitor.py", "--mode", "fixture", "--json"]
+          "command": [
+            "python3",
+            "scripts/remote-mcp/live_health_monitor.py",
+            "--mode",
+            "fixture",
+            "--json"
+          ]
         }
       ],
-      "required_snippets": ["live_health_monitor.py", "monitor_alert.py", "GITHUB_STEP_SUMMARY", "--mode fixture", "--mode live"],
+      "required_snippets": [
+        "live_health_monitor.py",
+        "monitor_alert.py",
+        "GITHUB_STEP_SUMMARY",
+        "--mode fixture",
+        "--mode live"
+      ],
       "rationale": "Fixture mode deterministically proves the monitor harness and alert formatter locally; live mode depends on Cloudflare Access, bridge, audit-copy, and stdio-proof secrets."
     },
     {
@@ -299,10 +474,18 @@
       "coverage": [
         {
           "type": "script_dry_run",
-          "command": ["bash", "scripts/cross-review/require-dual-signature.sh", "raw/cross-review/2026-04-18-issue-284-local-first-workflow-coverage-plan.md"]
+          "command": [
+            "bash",
+            "scripts/cross-review/require-dual-signature.sh",
+            "raw/cross-review/2026-04-18-issue-284-local-first-workflow-coverage-plan.md"
+          ]
         }
       ],
-      "required_snippets": ["Require cross-review artifact", "get_pr_labels.py", "require-dual-signature.sh"],
+      "required_snippets": [
+        "Require cross-review artifact",
+        "get_pr_labels.py",
+        "require-dual-signature.sh"
+      ],
       "rationale": "Dual-signature script is local-runnable; label and diff selection remain PR-context dependent."
     }
   ]
