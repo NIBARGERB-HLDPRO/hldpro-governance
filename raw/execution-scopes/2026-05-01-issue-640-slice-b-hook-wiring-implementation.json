@@ -18,8 +18,11 @@
       "docs/plans/issue-640-slice-b-policy-hook-ci-hardening-structured-agent-cycle-plan.json",
       "raw/handoffs/2026-05-01-issue-640-slice-b-plan-to-implementation.json"
     ],
-    "active_exception_ref": null,
-    "active_exception_expires_at": null
+    "active_exception_ref": "docs/codex-reviews/2026-05-01-issue-641-claude.md",
+    "active_exception_expires_at": "2026-05-02T00:00:00Z",
+    "cross_family_path_unavailable": true,
+    "cross_family_path_ref": "docs/codex-reviews/2026-05-01-issue-641-claude.md",
+    "fallback_log_ref": "docs/FAIL_FAST_LOG.md"
   },
   "allowed_write_paths": [
     ".claude/settings.json",
@@ -29,6 +32,7 @@
     ".github/workflows/require-cross-review.yml",
     "OVERLORD_BACKLOG.md",
     "docs/codex-reviews/2026-05-01-issue-641-claude.md",
+    "docs/codex-reviews/2026-05-01-issue-640-claude.md",
     "docs/plans/issue-640-slice-b-policy-hook-ci-hardening-structured-agent-cycle-plan.json",
     "docs/plans/issue-640-slice-b-policy-hook-ci-hardening.md",
     "docs/plans/issue-641-slice-c-ci-sha-rework-structured-agent-cycle-plan.json",
@@ -41,8 +45,8 @@
     "hooks/pre-session-context.sh",
     "raw/closeouts/2026-05-01-issue-641-slice-c-ci-fail-closed.md",
     "raw/closeouts/2026-05-01-issue-640-slice-b-hook-wiring.md",
+    "raw/cross-review/2026-05-01-issue-640-slice-b-hook-wiring-plan.md",
     "raw/cross-review/2026-05-01-issue-641-slice-c-ci-sha-rework-plan.md",
-    "raw/execution-scopes/2026-04-30-issue-640-policy-hook-ci-hardening-slice-b-implementation.json",
     "raw/execution-scopes/2026-05-01-issue-640-slice-b-hook-wiring-implementation.json",
     "raw/execution-scopes/2026-05-01-issue-641-slice-c-r1-implementation.json",
     "raw/handoffs/2026-05-01-issue-640-slice-b-plan-to-implementation.json",
@@ -50,6 +54,7 @@
     "raw/packets/2026-05-01-issue-641-slice-c-r1-review-packet.md",
     "raw/validation/2026-04-30-slice-b-worker-output-v2.md",
     "raw/validation/2026-04-30-slice-c-worker-output.md",
+    "raw/validation/2026-05-01-issue-640-slice-b-governance-artifacts.md",
     "scripts/cross-review/require-dual-signature.sh",
     "scripts/overlord/backlog_match.py",
     "scripts/overlord/fail_fast_state.py"

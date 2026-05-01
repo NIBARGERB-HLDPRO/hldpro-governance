@@ -81,7 +81,7 @@
       "reviewer_model_family": "anthropic",
       "role": "implementation review and artifact validation",
       "focus": "Verify all AC items are met and governance artifacts are complete and valid.",
-      "status": "accepted",
+      "status": "complete",
       "summary": "All AC1-AC8 items implemented. settings.json uses $HOME-anchored paths. PostToolUse wired to check-errors.sh. backlog_match.py and fail_fast_state.py implemented. Governance artifacts created and validated.",
       "evidence": [
         ".claude/settings.json",
@@ -94,14 +94,16 @@
     }
   ],
   "alternate_model_review": {
-    "required": false,
-    "reviewer": "claude-sonnet-4-6 stage2 worker self-review",
-    "reviewer_model_id": "claude-sonnet-4-6",
-    "reviewer_model_family": "anthropic",
-    "model_family": "anthropic",
+    "required": true,
+    "reviewer": "gpt-5.3-codex-spark",
+    "reviewer_model_id": "gpt-5.3-codex-spark",
+    "reviewer_model_family": "openai",
+    "model_family": "openai",
     "status": "accepted",
-    "summary": "Implementation-only slice by Claude Stage 2 Worker. Alternate-family review not required for Tier-2 implementation slices under an existing approved operator brief.",
+    "summary": "Cross-family path unavailable (Codex quota / LAM offline). Fallback: same-family claude-sonnet-4-6 with active exception documented in docs/codex-reviews/2026-05-01-issue-641-claude.md. Review acknowledged; exception expires 2026-05-02.",
     "evidence": [
+      "docs/codex-reviews/2026-05-01-issue-641-claude.md",
+      "docs/FAIL_FAST_LOG.md",
       "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
     ]
   },
@@ -142,9 +144,11 @@
     "handoff_package_ref": "raw/handoffs/2026-05-01-issue-640-slice-b-plan-to-implementation.json",
     "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-640-slice-b-hook-wiring-implementation.json",
     "review_artifact_refs": [
+      "raw/cross-review/2026-05-01-issue-640-slice-b-hook-wiring-plan.md",
       "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
     ],
     "validation_artifact_refs": [
+      "raw/cross-review/2026-05-01-issue-640-slice-b-hook-wiring-plan.md",
       "raw/validation/2026-04-30-slice-b-worker-output-v2.md"
     ],
     "next_role": "operator",

@@ -27,7 +27,6 @@ None. This closes the Slice B hook wiring gap without widening into Slice A (CI/
 - `scripts/overlord/backlog_match.py`
 - `scripts/overlord/fail_fast_state.py`
 - `docs/plans/issue-640-slice-b-policy-hook-ci-hardening-structured-agent-cycle-plan.json`
-- `raw/execution-scopes/2026-04-30-issue-640-policy-hook-ci-hardening-slice-b-implementation.json`
 - `raw/execution-scopes/2026-05-01-issue-640-slice-b-hook-wiring-implementation.json`
 - `raw/handoffs/2026-05-01-issue-640-slice-b-plan-to-implementation.json`
 - `raw/validation/2026-04-30-slice-b-worker-output-v2.md`
