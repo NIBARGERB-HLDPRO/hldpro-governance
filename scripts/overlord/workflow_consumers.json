@@ -1,0 +1,14 @@
+{
+  "_comment": "External callers of workflow_call-only workflows in this repo. Each entry lists repos that call the named workflow externally.",
+  "check-agent-model-pins.yml": ["NIBARGERB-HLDPRO/hldpro-pages", "NIBARGERB-HLDPRO/hldpro-sim"],
+  "check-arch-tier.yml": ["NIBARGERB-HLDPRO/hldpro-pages", "NIBARGERB-HLDPRO/hldpro-sim"],
+  "check-claude-md-pointer.yml": ["NIBARGERB-HLDPRO/hldpro-pages", "NIBARGERB-HLDPRO/hldpro-sim"],
+  "check-codex-model-pins.yml": ["NIBARGERB-HLDPRO/hldpro-pages", "NIBARGERB-HLDPRO/hldpro-sim"],
+  "check-fallback-log-schema.yml": ["NIBARGERB-HLDPRO/hldpro-pages"],
+  "check-lam-availability.yml": ["NIBARGERB-HLDPRO/hldpro-pages", "NIBARGERB-HLDPRO/hldpro-sim"],
+  "check-lam-family-diversity.yml": ["NIBARGERB-HLDPRO/hldpro-pages", "NIBARGERB-HLDPRO/hldpro-sim"],
+  "check-no-self-approval.yml": ["NIBARGERB-HLDPRO/hldpro-pages", "NIBARGERB-HLDPRO/hldpro-sim"],
+  "check-pii-routing.yml": ["NIBARGERB-HLDPRO/hldpro-pages", "NIBARGERB-HLDPRO/hldpro-sim"],
+  "governance-check.yml": ["NIBARGERB-HLDPRO/hldpro-pages", "NIBARGERB-HLDPRO/hldpro-sim"],
+  "require-cross-review.yml": ["NIBARGERB-HLDPRO/hldpro-pages", "NIBARGERB-HLDPRO/hldpro-sim"]
+}

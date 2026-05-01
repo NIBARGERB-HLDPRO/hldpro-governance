@@ -1,0 +1,105 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "2026-05-01-issue-642-slice-d-plan-to-implementation",
+  "issue_number": 642,
+  "parent_epic_number": 638,
+  "lifecycle_state": "implementation_ready",
+  "from_role": "claude-sonnet-4-6-planner",
+  "to_role": "claude-sonnet-4-6-worker",
+  "structured_plan_ref": "docs/plans/issue-642-slice-d-coverage-tests-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-642-slice-d-coverage-tests-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "docs/codex-reviews/2026-05-01-issue-642-slice-d-claude.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "docs/workflow-local-coverage-inventory.json has an entry for .github/workflows/ci-workflow-lint.yml.",
+      "verification_refs": [
+        "docs/workflow-local-coverage-inventory.json"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "validate_handoff_package.py, test_workflow_local_coverage.py, and validate_closeout.py all pass.",
+      "verification_refs": [
+        "raw/validation/2026-05-01-issue-642-slice-d-coverage-tests.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Execution scope covers all files in the PR diff.",
+      "verification_refs": [
+        "raw/execution-scopes/2026-05-01-issue-642-slice-d-coverage-tests-implementation.json"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Stage 6 closeout artifact is created and validates cleanly.",
+      "verification_refs": [
+        "raw/closeouts/2026-05-01-issue-642-slice-d-coverage-tests.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_handoff_package.py --root . raw/handoffs/2026-05-01-issue-642-slice-d-plan-to-implementation.json",
+    "python3 scripts/overlord/test_workflow_local_coverage.py",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-05-01-issue-642-slice-d-coverage-tests.md --root .",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-05-01-issue-642-slice-d-coverage-tests-implementation.json --require-lane-claim",
+    "git diff --check"
+  ],
+  "review_artifact_refs": [
+    "docs/codex-reviews/2026-05-01-issue-642-slice-d-claude.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-05-01-issue-642-slice-d-coverage-tests.md"
+  ],
+  "artifact_refs": [
+    ".github/workflows/ci-workflow-lint.yml",
+    "docs/codex-reviews/2026-05-01-issue-642-slice-d-claude.md",
+    "docs/plans/issue-642-slice-d-coverage-tests-structured-agent-cycle-plan.json",
+    "docs/workflow-local-coverage-inventory.json",
+    "raw/closeouts/2026-05-01-issue-642-slice-d-coverage-tests.md",
+    "raw/execution-scopes/2026-05-01-issue-642-slice-d-coverage-tests-implementation.json",
+    "raw/handoffs/2026-05-01-issue-642-slice-d-plan-to-implementation.json",
+    "raw/validation/2026-05-01-issue-642-slice-d-coverage-tests.md",
+    "scripts/overlord/validate_cross_review_evidence.py",
+    "scripts/overlord/workflow_consumers.json",
+    "tests/conftest.py",
+    "tests/test_cross_review_evidence.py",
+    "tests/test_fail_closed_missing_context.py"
+  ],
+  "audit_refs": [],
+  "closeout_ref": "raw/closeouts/2026-05-01-issue-642-slice-d-coverage-tests.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-05-01T00:00:00Z",
+  "notes": "Stage 2 Worker governance artifact bundle for Slice D (#642). Resolves local-ci-gate blockers: workflow-local-coverage (ci-workflow-lint.yml inventory entry), handoff-package-integrity, stage6-closeout-evidence, and planner-boundary (execution scope)."
+}
