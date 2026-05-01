@@ -1,0 +1,142 @@
+{
+  "audit_id": "2026-05-01-653-functional-audit",
+  "issue_number": 653,
+  "slice_branch": "issue-653-slice-h-functional-auditor-20260501",
+  "audited_at": "2026-05-01T00:00:00Z",
+  "acceptance_criteria": [
+    {
+      "id": "AC-H1",
+      "statement": "agents/functional-acceptance-auditor.md exists with correct frontmatter.",
+      "verification_method": "derived",
+      "status": "PASS",
+      "evidence": [
+        "agents/functional-acceptance-auditor.md"
+      ]
+    },
+    {
+      "id": "AC-H2",
+      "statement": "docs/schemas/functional-acceptance-audit.schema.json exists and is valid draft 2020-12 JSON Schema.",
+      "verification_method": "smoke_test",
+      "status": "PASS",
+      "evidence": [
+        "docs/schemas/functional-acceptance-audit.schema.json",
+        "tests/test_functional_acceptance_auditor.py"
+      ]
+    },
+    {
+      "id": "AC-H3",
+      "statement": "Schema validates a sample PASS audit JSON without errors.",
+      "verification_method": "smoke_test",
+      "status": "PASS",
+      "evidence": [
+        "tests/test_functional_acceptance_auditor.py::test_schema_accepts_sample_pass_audit"
+      ]
+    },
+    {
+      "id": "AC-H4",
+      "statement": "Schema rejects a report missing overall_verdict.",
+      "verification_method": "smoke_test",
+      "status": "PASS",
+      "evidence": [
+        "tests/test_functional_acceptance_auditor.py::test_schema_rejects_missing_overall_verdict"
+      ]
+    },
+    {
+      "id": "AC-H5",
+      "statement": "raw/acceptance-audits/.gitkeep exists.",
+      "verification_method": "derived",
+      "status": "PASS",
+      "evidence": [
+        "raw/acceptance-audits/.gitkeep"
+      ]
+    },
+    {
+      "id": "AC-H6",
+      "statement": "AGENT_REGISTRY.md contains the functional-acceptance-auditor row with model pin and authority scope.",
+      "verification_method": "derived",
+      "status": "PASS",
+      "evidence": [
+        "AGENT_REGISTRY.md"
+      ]
+    },
+    {
+      "id": "AC-H7",
+      "statement": "tests/test_functional_acceptance_auditor.py passes under pytest.",
+      "verification_method": "smoke_test",
+      "status": "PASS",
+      "evidence": [
+        "tests/test_functional_acceptance_auditor.py",
+        "raw/validation/2026-05-01-issue-653-slice-h-functional-auditor.md"
+      ]
+    },
+    {
+      "id": "AC-H8",
+      "statement": "STANDARDS.md section PDCAR already references functional-acceptance-auditor.",
+      "verification_method": "derived",
+      "status": "PASS",
+      "evidence": [
+        "STANDARDS.md"
+      ]
+    },
+    {
+      "id": "AC-H9",
+      "statement": "raw/cross-review/2026-05-01-slice-h-functional-auditor.md is dual-signed with worker implemented and QA pending.",
+      "verification_method": "manual",
+      "status": "PASS",
+      "evidence": [
+        "raw/cross-review/2026-05-01-slice-h-functional-auditor.md"
+      ]
+    },
+    {
+      "id": "AC-H10",
+      "statement": "Self-audit artifact exists with overall_verdict PASS.",
+      "verification_method": "derived",
+      "status": "PASS",
+      "evidence": [
+        "raw/acceptance-audits/2026-05-01-653-functional-audit.json"
+      ]
+    }
+  ],
+  "hook_results": [
+    {
+      "hook_name": "governance-check",
+      "command": "/opt/homebrew/bin/python3.11 -m pytest tests/test_functional_acceptance_auditor.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout_excerpt": "3 passed",
+      "stderr_excerpt": ""
+    }
+  ],
+  "smoke_test_results": [
+    {
+      "test_suite": "tests/test_functional_acceptance_auditor.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "passed_count": 3,
+      "failed_count": 0
+    },
+    {
+      "test_suite": "functional-acceptance-audit schema manual validation",
+      "exit_code": 0,
+      "status": "PASS",
+      "passed_count": 2,
+      "failed_count": 0
+    }
+  ],
+  "evidence_artifacts": [
+    "agents/functional-acceptance-auditor.md",
+    "docs/schemas/functional-acceptance-audit.schema.json",
+    "raw/acceptance-audits/.gitkeep",
+    "AGENT_REGISTRY.md",
+    "tests/test_functional_acceptance_auditor.py",
+    "docs/plans/issue-653-slice-h-functional-auditor-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-05-01-issue-653-slice-h-functional-auditor-implementation.json",
+    "raw/handoffs/2026-05-01-issue-653-slice-h-plan-to-implementation.json",
+    "raw/validation/2026-05-01-issue-653-slice-h-functional-auditor.md",
+    "raw/closeouts/2026-05-01-issue-653-slice-h-functional-auditor.md",
+    "raw/cross-review/2026-05-01-slice-h-functional-auditor.md"
+  ],
+  "overall_verdict": "PASS",
+  "auditor_model": "claude-haiku-4-5",
+  "auditor_signature": "functional-acceptance-auditor"
+}

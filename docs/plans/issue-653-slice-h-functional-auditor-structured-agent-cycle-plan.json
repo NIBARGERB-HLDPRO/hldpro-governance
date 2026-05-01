@@ -1,0 +1,161 @@
+{
+  "session_id": "session-20260501-issue-653-slice-h-functional-auditor",
+  "issue_number": 653,
+  "plan_author": {
+    "role": "gpt-5.4 implementation packet author",
+    "model_id": "gpt-5.4",
+    "model_family": "openai"
+  },
+  "objective": "Implement Slice H of Epic #650 by adding the functional-acceptance-auditor agent, its acceptance-audit schema, schema validation tests, a PASS self-audit artifact, and the required implementation governance artifacts.",
+  "tier": 2,
+  "scope_boundary": [
+    "Create agents/functional-acceptance-auditor.md with the required frontmatter and bounded acceptance-audit behavior.",
+    "Create docs/schemas/functional-acceptance-audit.schema.json as a draft 2020-12 JSON Schema for acceptance audit artifacts.",
+    "Create raw/acceptance-audits/.gitkeep and raw/acceptance-audits/2026-05-01-653-functional-audit.json.",
+    "Add the functional-acceptance-auditor row to AGENT_REGISTRY.md.",
+    "Create tests/test_functional_acceptance_auditor.py covering schema validity and required failure behavior.",
+    "Create issue-local governance artifacts: plan, execution scope, handoff, validation, closeout, and cross-review."
+  ],
+  "out_of_scope": [
+    "Editing STANDARDS.md or any workflow, hook, script, package, or wiki path.",
+    "Changing any agent other than adding the new functional-acceptance-auditor definition.",
+    "Adding CI wiring beyond the issue-local test artifact and audit schema.",
+    "Closing the parent epic or changing non-slice governance policy."
+  ],
+  "research_summary": "Slice F already updated STANDARDS.md section PDCAR to require the functional-acceptance-auditor at final acceptance. Slice H supplies the concrete agent definition, schema, tests, storage path, and governance evidence package so downstream slices can emit acceptance audit artifacts and close out against a stable contract.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/653",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/650",
+    "STANDARDS.md",
+    "AGENT_REGISTRY.md",
+    "raw/closeouts/2026-05-01-issue-648-pdcar-slice-e-friction-patches.md",
+    "raw/handoffs/2026-05-01-issue-651-slice-f-plan-to-implementation.json"
+  ],
+  "sprints": [
+    {
+      "name": "Functional Auditor Contract",
+      "goal": "Create the functional-acceptance-auditor definition, JSON Schema contract, tests, and issue-local evidence artifacts needed for final acceptance auditing.",
+      "tasks": [
+        "Author the new agent definition with exact frontmatter, authority scope, and write-path bounds.",
+        "Author the draft 2020-12 acceptance audit schema with required enumerations and object contracts.",
+        "Add schema validation tests for PASS and missing-overall_verdict failure paths.",
+        "Create the acceptance audit storage directory marker and PASS self-audit artifact.",
+        "Add the agent registry row and write all required governance artifacts for implementation, validation, and closeout."
+      ],
+      "acceptance_criteria": [
+        "AC-H1: agents/functional-acceptance-auditor.md exists with correct frontmatter.",
+        "AC-H2: docs/schemas/functional-acceptance-audit.schema.json exists and is a valid draft 2020-12 JSON Schema.",
+        "AC-H3: Schema validates a sample PASS audit JSON without errors.",
+        "AC-H4: Schema rejects a report missing overall_verdict.",
+        "AC-H5: raw/acceptance-audits/.gitkeep exists.",
+        "AC-H6: AGENT_REGISTRY.md contains the functional-acceptance-auditor row with model pin and authority scope.",
+        "AC-H7: tests/test_functional_acceptance_auditor.py passes under pytest.",
+        "AC-H8: STANDARDS.md section PDCAR already references functional-acceptance-auditor.",
+        "AC-H9: raw/cross-review/2026-05-01-slice-h-functional-auditor.md is dual-signed with worker implemented and QA pending.",
+        "AC-H10: raw/acceptance-audits/2026-05-01-653-functional-audit.json exists with overall_verdict PASS."
+      ],
+      "file_paths": [
+        "agents/functional-acceptance-auditor.md",
+        "docs/schemas/functional-acceptance-audit.schema.json",
+        "raw/acceptance-audits/.gitkeep",
+        "AGENT_REGISTRY.md",
+        "tests/test_functional_acceptance_auditor.py",
+        "raw/cross-review/2026-05-01-slice-h-functional-auditor.md",
+        "raw/acceptance-audits/2026-05-01-653-functional-audit.json",
+        "docs/plans/issue-653-slice-h-functional-auditor-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-05-01-issue-653-slice-h-functional-auditor-implementation.json",
+        "raw/handoffs/2026-05-01-issue-653-slice-h-plan-to-implementation.json",
+        "raw/validation/2026-05-01-issue-653-slice-h-functional-auditor.md",
+        "raw/closeouts/2026-05-01-issue-653-slice-h-functional-auditor.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "claude-opus-4.7 planner review",
+      "reviewer_model_id": "claude-opus-4.7",
+      "reviewer_model_family": "anthropic",
+      "role": "scope and acceptance definition review",
+      "focus": "Confirm the implementation-ready package is bounded to the Slice H write list and that AC-H1 through AC-H10 are fully represented.",
+      "status": "accepted",
+      "summary": "Anthropic planner review accepted the Slice H implementation package as bounded, implementation-ready, and correctly mapped to the functional acceptance auditor rollout.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/653",
+        "raw/cross-review/2026-05-01-slice-h-functional-auditor.md",
+        "raw/handoffs/2026-05-01-issue-653-slice-h-plan-to-implementation.json"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "claude-sonnet-4-6 alternate-family reviewer",
+    "model_family": "anthropic",
+    "reviewer_model_id": "claude-sonnet-4-6",
+    "reviewer_model_family": "anthropic",
+    "status": "accepted",
+    "summary": "Anthropic-family planner review accepted the implementation-ready package and assigned OpenAI-family worker execution for cross-family delivery.",
+    "evidence": [
+      "raw/cross-review/2026-05-01-slice-h-functional-auditor.md"
+    ]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "openai",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "anthropic"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "claude",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-01-slice-h-functional-auditor.md",
+      "raw/validation/2026-05-01-issue-653-slice-h-functional-auditor.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "openai",
+          "model_id": "gpt-5.3-codex-spark"
+        },
+        {
+          "family": "openai",
+          "model_id": "gpt-5.4"
+        }
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "Tier 2 implementation worker (gpt-5.4)",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement the functional-acceptance-auditor agent, schema, tests, PASS self-audit, registry entry, and issue-local governance artifacts under the named write boundary only.",
+    "next_execution_step": "Create the bounded files, run python3.11 pytest plus manual schema validation, then file validation and closeout artifacts.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-05-01-issue-653-slice-h-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-653-slice-h-functional-auditor-implementation.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-05-01-slice-h-functional-auditor.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-05-01-issue-653-slice-h-functional-auditor.md"
+    ],
+    "next_role": "operator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "AC-H1 through AC-H10"
+    ]
+  },
+  "material_deviation_rules": [
+    "Any edit outside the user-provided allowed write paths is a material deviation.",
+    "Any change to STANDARDS.md, hooks, workflows, scripts, packages, or wiki paths is a material deviation.",
+    "Any self-audit artifact that does not validate against the acceptance audit schema is a material deviation.",
+    "Any closeout that omits the required validation or cross-review references is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "gpt-5.4 (cross-family QA, 2026-05-01)"
+  ],
+  "approved_at": "2026-05-01T00:00:00Z"
+}
