@@ -1,0 +1,41 @@
+packet_id: "9e760820-4257-4f86-81cb-555d9d91bc0e"
+parent_packet_id: null
+
+prior:
+  tier: 1
+  role: "architect-claude"
+  model_id: "claude-opus-4-6"
+  model_family: "anthropic"
+  timestamp: "2026-05-01T00:00:00Z"
+
+next_tier: 2
+
+artifacts:
+  - "docs/plans/issue-650-governance-policy-refresh-structured-agent-cycle-plan.json"
+  - "raw/cross-review/2026-05-01-issue-650-plan-review.md"
+
+standards_ref: "STANDARDS.md §Society of Minds"
+runbook_ref: "docs/EXTERNAL_SERVICES_RUNBOOK.md §1 Codex CLI"
+fallback_ladder_ref: null
+
+governance:
+  issue_number: 650
+  structured_plan_ref: "docs/plans/issue-650-governance-policy-refresh-structured-agent-cycle-plan.json"
+  execution_scope_ref: null
+  validation_commands:
+    - "python3 scripts/validate_structured_agent_cycle_plan.py docs/plans/issue-650-governance-policy-refresh-structured-agent-cycle-plan.json"
+  review_artifacts:
+    - "raw/cross-review/2026-05-01-issue-650-plan-review.md"
+  fallback_log_ref: null
+  pii_mode: "none"
+  dispatch_authorized: false
+  dry_run_authorized: false
+
+metadata:
+  review_purpose: "cross-family plan review — gpt-5.4 reviewing claude-opus-4-6 authored plan for epic #650 (Governance Policy Refresh)"
+  review_scope: "structured agent cycle plan approval gate; must approve before worker dispatch for Slices F (#651) and G (#652)"
+  plan_author_model: "claude-opus-4-6"
+  plan_author_family: "anthropic"
+  reviewer_family: "openai"
+  cross_family_required: true
+  slices_blocked: ["#651 (Slice F)", "#652 (Slice G)", "#653 (Slice H — additionally blocked on Slice F merge)"]

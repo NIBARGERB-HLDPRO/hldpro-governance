@@ -1,7 +1,7 @@
 {
   "session_id": "session-20260501-issue-650-governance-policy-refresh",
   "issue_number": 650,
-  "objective": "Refresh governance policy across STANDARDS.md, hldpro-sim process personas, and the new functional acceptance auditor agent so that model-routing rules are session-agnostic (Claude CLI and Codex CLI both compliant), Tier 1 planning authority is dual-family (claude-opus-4.X OR Codex 5.X high), QA cross-family is mandatory, the fallback ladder explicitly fails up (not down), and every slice terminates in a structured PASS/FAIL functional acceptance audit artifact. Delivered as three atomic slices: F (#651 STANDARDS.md rewrite), G (#652 hldpro-sim governance process personas + AnthropicApiProvider), H (#653 functional-acceptance-auditor agent + schema + CI integration). Slice H depends on Slice F.",
+  "objective": "Refresh governance policy across STANDARDS.md, hldpro-sim process personas, and the new functional acceptance auditor agent so that model-routing rules are session-agnostic (Claude CLI and Codex CLI both compliant), Tier 1 planning authority is dual-family (both anthropic and openai families authorized for creation AND review), QA cross-family is mandatory, the fallback ladder explicitly fails up (not down), and every slice terminates in a structured PASS/FAIL functional acceptance audit artifact produced by functional-acceptance-auditor. Delivered as three atomic slices: F (#651 STANDARDS.md rewrite), G (#652 hldpro-sim governance process personas + AnthropicApiProvider), H (#653 functional-acceptance-auditor agent + schema + CI integration). Slice H depends on Slice F.",
   "tier": 1,
   "scope_boundary": [
     "STANDARDS.md sections SoM (Society of Minds / model routing) and PDCAR (Plan-Do-Check-Act-Review) — Slice F only.",
@@ -55,13 +55,13 @@
       "acceptance_criteria": [
         "AC-F1: STANDARDS.md §SoM rule text contains no hardcoded model family names outside the routing table; verified by grep for claude|opus|sonnet|haiku|gpt|codex in §SoM narrative paragraphs returning only routing-table or family-column references.",
         "AC-F2: STANDARDS.md §SoM fallback ladder explicitly contains fallup direction: unavailable primary escalates to more capable, log degraded independence.",
-        "AC-F3: STANDARDS.md routing table Tier 1 row lists both claude-opus-4.X and Codex 5.X high as valid planners with explicit create AND review authority.",
+        "AC-F3: STANDARDS.md routing table Tier 1 row lists both anthropic-family and openai-family Tier 1 planners with explicit create AND review authority; verified by: grep -E 'Tier 1|planner' STANDARDS.md | grep -i 'anthropic\\|openai' | grep -c 'review' returning >= 1.",
         "AC-F4: STANDARDS.md contains an explicit sentence prohibiting same-family QA.",
-        "AC-F5: STANDARDS.md routing table Tier 2 worker row contains codex-spark and codex-5.4-medium alongside claude-sonnet-4.X.",
+        "AC-F5: STANDARDS.md routing table Tier 2 worker row contains at least three worker entries spanning both anthropic and openai model families; verified by: grep -A5 'Tier 2\\|worker' STANDARDS.md | grep -cE 'spark|sonnet|medium' returning >= 2.",
         "AC-F6: STANDARDS.md §PDCAR documents the functional acceptance auditor as required final step on all slices, referencing agent by name functional-acceptance-auditor.",
         "AC-F7: grep SOM-BOOTSTRAP-001 across STANDARDS.md and .github/workflows/ returns zero matches.",
-        "AC-F8: raw/cross-review/2026-05-01-slice-f-standards-rewrite.md exists and contains two distinct signatures (one anthropic-family, one openai-family).",
-        "AC-F9: raw/acceptance-audits/2026-05-01-651-functional-audit.json exists with overall_verdict=PASS produced by functional-acceptance-auditor."
+        "AC-F8: raw/cross-review/2026-05-01-slice-f-standards-rewrite.md exists and is dual-signed; verified by: grep -c 'Signature:' raw/cross-review/2026-05-01-slice-f-standards-rewrite.md returning >= 2, and grep -c 'anthropic' raw/cross-review/2026-05-01-slice-f-standards-rewrite.md returning >= 1, and grep -c 'openai' raw/cross-review/2026-05-01-slice-f-standards-rewrite.md returning >= 1.",
+        "AC-F9: raw/acceptance-audits/2026-05-01-651-functional-audit.json exists with overall_verdict=PASS produced by functional-acceptance-auditor per agents/functional-acceptance-auditor.md protocol; verified by: python3 -c \"import json; d=json.load(open('raw/acceptance-audits/2026-05-01-651-functional-audit.json')); assert d['overall_verdict']=='PASS' and 'functional-acceptance-auditor' in d.get('auditor_model','') + d.get('auditor_signature','')\" exiting 0."
       ],
       "file_paths": [
         "STANDARDS.md",
@@ -99,9 +99,9 @@
         "AC-G4: AnthropicApiProvider instantiates without error when ANTHROPIC_API_KEY is set (live test, gated by pytest.mark.skipif).",
         "AC-G5: AnthropicApiProvider raises ValueError naming ANTHROPIC_API_KEY when env var is unset (unconditional unit test).",
         "AC-G6: pytest packages/hldpro-sim/ exits 0 with 0 failures.",
-        "AC-G7: Issue #614 has a cross-reference comment from this slice confirming non-overlap; gh issue view 614 shows the comment before merge.",
-        "AC-G8: raw/cross-review/2026-05-01-slice-g-hldpro-sim-personas.md exists and is dual-signed.",
-        "AC-G9: raw/acceptance-audits/2026-05-01-652-functional-audit.json exists with overall_verdict=PASS."
+        "AC-G7: Issue #614 has a cross-reference comment from this slice confirming non-overlap; verified by: gh issue view 614 --json comments --jq '[.comments[].body | select(contains(\"652\"))] | length' returning >= 1.",
+        "AC-G8: raw/cross-review/2026-05-01-slice-g-hldpro-sim-personas.md exists and is dual-signed; verified by: grep -c 'Signature:' raw/cross-review/2026-05-01-slice-g-hldpro-sim-personas.md returning >= 2, and grep -c 'anthropic' returning >= 1, and grep -c 'openai' returning >= 1.",
+        "AC-G9: raw/acceptance-audits/2026-05-01-652-functional-audit.json exists with overall_verdict=PASS produced by functional-acceptance-auditor per agents/functional-acceptance-auditor.md protocol; verified by: python3 -c \"import json; d=json.load(open('raw/acceptance-audits/2026-05-01-652-functional-audit.json')); assert d['overall_verdict']=='PASS' and 'functional-acceptance-auditor' in d.get('auditor_model','') + d.get('auditor_signature','')\" exiting 0."
       ],
       "file_paths": [
         "packages/hldpro-sim/process-agents/governance-process-persona.schema.json",
@@ -137,16 +137,16 @@
         "Open PR for Slice H; Stage 6 closeout."
       ],
       "acceptance_criteria": [
-        "AC-H1: agents/functional-acceptance-auditor.md exists with frontmatter fields name, model, tools, tier, authority-scope, write-paths matching spec.",
+        "AC-H1: agents/functional-acceptance-auditor.md exists with required frontmatter fields; verified by: grep -cE '^(name|model|tools|tier|authority-scope|write-paths):' agents/functional-acceptance-auditor.md returning >= 6.",
         "AC-H2: docs/schemas/functional-acceptance-audit.schema.json exists and passes python3 -m jsonschema --check-schema (valid draft 2020-12).",
         "AC-H3: Sample PASS audit JSON validates against schema with zero errors.",
         "AC-H4: Sample audit JSON with overall_verdict removed fails schema validation with error naming overall_verdict.",
         "AC-H5: raw/acceptance-audits/.gitkeep exists in the git tree.",
         "AC-H6: AGENT_REGISTRY.md contains row for functional-acceptance-auditor with Tier=2, Model=haiku, Write Paths including raw/acceptance-audits/.",
         "AC-H7: pytest tests/test_functional_acceptance_auditor.py exits 0.",
-        "AC-H8: grep -n 'functional-acceptance-auditor' STANDARDS.md returns at least one match inside §PDCAR.",
-        "AC-H9: raw/cross-review/2026-05-01-slice-h-functional-auditor.md exists and is dual-signed.",
-        "AC-H10: raw/acceptance-audits/2026-05-01-653-functional-audit.json exists with overall_verdict=PASS produced by self-audit."
+        "AC-H8: Slice F (#651) is merged to origin/main AND STANDARDS.md contains functional-acceptance-auditor in §PDCAR; verified by: (1) gh api repos/NIBARGERB-HLDPRO/hldpro-governance/pulls?state=closed --jq '.[] | select(.head.ref | startswith(\"issue-651\")) | .merged_at' returning non-null, AND (2) awk '/PDCAR/,/^##/' STANDARDS.md | grep -c 'functional-acceptance-auditor' returning >= 1.",
+        "AC-H9: raw/cross-review/2026-05-01-slice-h-functional-auditor.md exists and is dual-signed; verified by: grep -c 'Signature:' raw/cross-review/2026-05-01-slice-h-functional-auditor.md returning >= 2, and grep -c 'anthropic' returning >= 1, and grep -c 'openai' returning >= 1.",
+        "AC-H10: raw/acceptance-audits/2026-05-01-653-functional-audit.json exists with overall_verdict=PASS produced by functional-acceptance-auditor (self-audit) per agents/functional-acceptance-auditor.md protocol; verified by: python3 -c \"import json; d=json.load(open('raw/acceptance-audits/2026-05-01-653-functional-audit.json')); assert d['overall_verdict']=='PASS' and 'functional-acceptance-auditor' in d.get('auditor_model','') + d.get('auditor_signature','')\" exiting 0."
       ],
       "file_paths": [
         "agents/functional-acceptance-auditor.md",
@@ -245,10 +245,12 @@
     "required": true,
     "reviewer": "gpt-5.4 high (Tier 1 plan reviewer, openai family — cross-family from claude-opus-4.7 planner)",
     "model_family": "openai",
-    "status": "not_requested",
-    "summary": "Cross-family Tier 1 plan review required. Reviewer focus: (a) verify three slices are atomic with non-overlapping file_paths; (b) verify Slice H → Slice F dependency is enforceable via AC-H8 grep; (c) verify all ACs independently verifiable in Bash or pytest; (d) verify functional-acceptance-auditor gate wired on all three slices; (e) verify cross-review artifact paths are dual-signed; (f) flag any session-leakage of model-family pins into rule text. Output: raw/cross-review/2026-05-01-issue-650-plan-review.md, dual-signed.",
+    "reviewer_model_id": "gpt-5.4",
+    "reviewer_model_family": "openai",
+    "status": "accepted",
+    "summary": "gpt-5.4 @ high accepted plan on iteration 2 (2026-05-01). Iteration 1 returned BLOCKED with 4 findings; plan patched and re-reviewed. All 8 checklist items pass: slices atomic, H->F dependency enforceable, all ACs machine-verifiable, functional-acceptance-auditor gate explicit on F/G/H, dual-signature pattern correct, no family leakage, fallup documented, same-family QA prohibition documented.",
     "evidence": [
-      "raw/cross-review/2026-05-01-issue-650-plan-review.md (to be produced)"
+      "raw/cross-review/2026-05-01-issue-650-plan-review.md"
     ]
   },
   "execution_handoff": {
@@ -300,9 +302,10 @@
     "Cross-review artifact missing or singly-signed is a HARD STOP at AC-{F8,G8,H9}.",
     "Plan must itself comply with the rules it encodes: rule text in this plan naming a specific model family outside an explicit routing/family-column context is a self-violation and a material deviation."
   ],
-  "approved": false,
+  "approved": true,
   "approved_by": [
-    "claude-opus-4.7 (Tier 1 planner; awaiting cross-family approval from gpt-5.4 high)"
+    "claude-opus-4.7 (Tier 1 planner, anthropic family)",
+    "gpt-5.4 high (Tier 1 plan reviewer, openai family; accepted iteration 2 after plan patch)"
   ],
   "approved_at": "2026-05-01T00:00:00Z"
 }
