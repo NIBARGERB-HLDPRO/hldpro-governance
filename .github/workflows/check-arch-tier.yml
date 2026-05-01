@@ -1,6 +1,13 @@
 name: check-arch-tier
 on:
   workflow_call:
+    inputs:
+      base_sha:
+        required: false
+        type: string
+      head_sha:
+        required: false
+        type: string
 
 jobs:
   check-arch-tier:
