@@ -31,3 +31,12 @@ jobs:
   check-no-self-approval:
     uses: ./.github/workflows/check-no-self-approval.yml
     secrets: inherit
+
+  check-acceptance-audit:
+    uses: ./.github/workflows/check-acceptance-audit.yml
+    with:
+      head_ref: ${{ github.head_ref || github.ref_name }}
+      base_sha: ${{ github.event.pull_request.base.sha || github.event.before }}
+      head_sha: ${{ github.event.pull_request.head.sha || github.sha }}
+      planning_only: false
+    secrets: inherit

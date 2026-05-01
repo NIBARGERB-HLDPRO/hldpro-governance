@@ -1,0 +1,47 @@
+name: check-acceptance-audit
+on:
+  workflow_call:
+    inputs:
+      head_ref:
+        required: false
+        type: string
+      base_sha:
+        required: false
+        type: string
+      head_sha:
+        required: false
+        type: string
+      planning_only:
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  check-acceptance-audit:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Checkout governance scripts
+        if: github.repository != 'NIBARGERB-HLDPRO/hldpro-governance'
+        uses: actions/checkout@v6
+        with:
+          repository: NIBARGERB-HLDPRO/hldpro-governance
+          path: .governance
+          fetch-depth: 1
+
+      - name: Validate functional-acceptance-audit PASS artifact
+        env:
+          HEAD_REF: ${{ inputs.head_ref || github.head_ref || github.ref_name }}
+          PLANNING_ONLY: ${{ inputs.planning_only }}
+        run: |
+          set -euo pipefail
+          SCRIPTS_DIR="${GITHUB_WORKSPACE}/.github/scripts"
+          if [ -d "${GITHUB_WORKSPACE}/.governance" ]; then
+            SCRIPTS_DIR="${GITHUB_WORKSPACE}/.governance/.github/scripts"
+          fi
+          python3 "${SCRIPTS_DIR}/check_acceptance_audit.py"
