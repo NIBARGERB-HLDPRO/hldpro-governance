@@ -3,7 +3,7 @@ import os
 import subprocess
 import tempfile
 from pathlib import Path
-from typing import Protocol, runtime_checkable
+from typing import Any, Protocol, runtime_checkable
 
 
 @runtime_checkable
@@ -69,7 +69,44 @@ class CodexCliProvider:
 
 
 class AnthropicApiProvider:
-    """Cloud stub — not implemented until API keys are provisioned."""
+    """Anthropic API provider with extended thinking + strict JSON schema enforcement."""
+
+    def __init__(self, model: str = "claude-sonnet-4-6", thinking_budget_tokens: int = 2048):
+        self.model = model
+        self.thinking_budget_tokens = thinking_budget_tokens
+        self._api_key = os.environ.get("ANTHROPIC_API_KEY")
+        if not self._api_key:
+            raise ValueError("ANTHROPIC_API_KEY environment variable is required but not set")
+        self._client: Any | None = None
+
+    def _require_api_key(self) -> str:
+        if not self._api_key:
+            raise ValueError("ANTHROPIC_API_KEY environment variable is required but not set")
+        return self._api_key
+
+    def _strict_schema(self, outcome_schema: dict) -> dict:
+        schema = dict(outcome_schema)
+        schema.setdefault("type", "object")
+        schema["additionalProperties"] = False
+        return schema
+
+    def _get_client(self) -> Any:
+        self._require_api_key()
+        if self._client is not None:
+            return self._client
+
+        try:
+            from anthropic import Anthropic
+        except ImportError as err:
+            raise RuntimeError(
+                "AnthropicApiProvider requires the optional 'anthropic' package to execute completions"
+            ) from err
+
+        self._client = Anthropic(api_key=self._api_key)
+        return self._client
 
     def complete(self, system: str, user: str, outcome_schema: dict) -> dict:
-        raise NotImplementedError("Cloud stub — set ANTHROPIC_API_KEY and implement")
+        self._strict_schema(outcome_schema)
+        raise NotImplementedError(
+            "AnthropicApiProvider.complete() not yet implemented — stub for Slice G with extended thinking placeholder"
+        )

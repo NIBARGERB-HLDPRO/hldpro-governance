@@ -1,0 +1,25 @@
+{
+  "persona_id": "functional-acceptance-auditor",
+  "role_name": "Functional Acceptance Auditor",
+  "description": "Tier 4 anthropic-family (haiku) functional acceptance auditor. Produces deterministic pass/fail verdict for slice acceptance criteria. Designed for low-cost, fast gate checks at end of each slice.",
+  "tier": 4,
+  "primary_model": "claude-haiku-4-5-20251001",
+  "primary_model_family": "anthropic",
+  "reasoning_effort": "low",
+  "fallback_model": "claude-sonnet-4-6",
+  "fallback_trigger": "api_unavailable",
+  "input_schema": {
+    "type": "object",
+    "schema_ref": "acceptance-criteria.v1"
+  },
+  "output_schema": {
+    "type": "object",
+    "schema_ref": "acceptance-audit.v1"
+  },
+  "constraints": [
+    "Must produce overall_verdict of PASS or FAIL — no partial verdicts",
+    "Must check each acceptance criterion individually with per-item pass/fail",
+    "Output must be valid JSON matching acceptance-audit.v1 schema",
+    "Must not introduce new requirements not present in the governing execution scope"
+  ]
+}
