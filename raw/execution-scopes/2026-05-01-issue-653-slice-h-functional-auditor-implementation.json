@@ -19,7 +19,9 @@
       "raw/cross-review/2026-05-01-slice-h-functional-auditor.md"
     ],
     "cross_family_path_unavailable": false,
-    "cross_family_path_ref": "raw/cross-review/2026-05-01-slice-h-functional-auditor.md"
+    "cross_family_path_ref": "raw/cross-review/2026-05-01-slice-h-functional-auditor.md",
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
   },
   "allowed_write_paths": [
     "agents/functional-acceptance-auditor.md",
@@ -42,7 +44,6 @@
     "hooks/",
     "scripts/",
     "packages/",
-    "STANDARDS.md",
     "wiki/"
   ],
   "active_parallel_roots": []

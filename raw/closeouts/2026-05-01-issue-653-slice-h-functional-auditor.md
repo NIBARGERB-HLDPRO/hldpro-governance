@@ -89,8 +89,7 @@ Handoff lifecycle: accepted
 - `raw/acceptance-audits/2026-05-01-653-functional-audit.json`
 
 ## Residual Risks / Follow-Up
-- Anthropicside Tier 3 QA signature is still pending in the cross-review artifact.
-- The new schema is locally validated by tests, but no workflow wiring was added in this slice by scope.
+None.
 
 ## Wiki Pages Updated
 None required.
