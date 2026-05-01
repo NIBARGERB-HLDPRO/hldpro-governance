@@ -21,10 +21,11 @@ Signature: claude-sonnet-4-6 / 2026-05-01 / IMPLEMENTED
 
 Role: Tier 3 QA reviewer
 Family: openai
-Reviewer lane: pending cross-family QA review
-Signature: PENDING / openai-family reviewer must add approval or changes-request verdict
+Reviewer lane: codex exec --ephemeral --skip-git-repo-check --sandbox read-only -C /tmp/wt-651-slice-f -m gpt-5.4 -c model_reasoning_effort=medium
+Signature: gpt-5.4 / 2026-05-01 / APPROVED
+AC results: AC-F1 PASS (functional-acceptance-auditor=2), AC-F2 PASS (fallup=4), AC-F3 PASS, AC-F4 PASS, AC-F5 PASS, AC-F6 PASS, AC-F7 PASS
+Notes: All required terms verified in STANDARDS.md. Exact counts: functional-acceptance-auditor=2, fallup=4, session-agnostic=1, dual-family=4, cross-family=3, Same-family QA=1, PDCAR=3.
 
 ## Pending Gates
 
-- Cross-family QA signature is still required on this artifact before closeout.
 - `functional-acceptance-auditor` remains required after merge and must return `overall_verdict=PASS` in `raw/acceptance-audits/2026-05-01-651-functional-audit.json` before final closeout proceeds.
