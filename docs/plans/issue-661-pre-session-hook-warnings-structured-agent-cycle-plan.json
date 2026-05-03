@@ -1,0 +1,119 @@
+{
+  "session_id": "session-20260502-issue-661-pre-session-hook-warnings",
+  "issue_number": 661,
+  "plan_author": {"role": "Tier 1A planner (Opus)", "model_id": "claude-opus-4-6", "model_family": "anthropic"},
+  "objective": "Close two dispatcher-enforcement gaps in hooks/pre-session-context.sh: (Gap A) stale-branch and remote-divergence warnings inside session-once block; (Gap B) dispatcher routing table on every UserPromptSubmit before the session-once sentinel. Bash-only edits, no new files.",
+  "tier": 2,
+  "scope_boundary": [
+    "Edit hooks/pre-session-context.sh: Gap B routing table block before session-once sentinel.",
+    "Edit hooks/pre-session-context.sh: Gap A.1 done-branch warning inside session-once block.",
+    "Edit hooks/pre-session-context.sh: Gap A.2 remote-divergence warning adjacent to A.1.",
+    "Create governance artifacts for issues #661 and #662."
+  ],
+  "out_of_scope": [
+    "Creating any new scripts, Python files, or shell utilities.",
+    "Editing STANDARDS.md, CLAUDE.md, agents/, or workflow files.",
+    "Editing any file other than hooks/pre-session-context.sh plus listed governance artifacts.",
+    "Closing issue #662 directly — co-closed by the same commit."
+  ],
+  "research_summary": "hooks/pre-session-context.sh fires on every UserPromptSubmit with a session-once sentinel. Gap A: no stale-branch or remote-divergence warnings exist. Gap B: routing-table reinforcement is gated behind sentinel and silent after first prompt. Both gaps closed with pure bash. backlog_match.py already exists and is reused for Gap A.1.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/661",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/662",
+    "hooks/pre-session-context.sh",
+    "scripts/overlord/backlog_match.py",
+    "CLAUDE.md"
+  ],
+  "sprints": [
+    {
+      "name": "Gap A + Gap B — pre-session hook hardening",
+      "goal": "Insert stale-branch gate (A.1), remote-divergence warning (A.2), and dispatcher routing table (Gap B) into hooks/pre-session-context.sh. Verify bash -n. Commit both issues.",
+      "tasks": [
+        "Insert Gap B routing table block before session-once sentinel",
+        "Insert Gap A.1 done-branch warning inside session-once block",
+        "Insert Gap A.2 remote-divergence warning adjacent to A.1",
+        "Verify bash -n hooks/pre-session-context.sh exits 0",
+        "Create governance artifacts",
+        "Commit: feat(hooks): pre-session stale-branch gate and routing reminder (#661, #662)"
+      ],
+      "acceptance_criteria": [
+        "AC-1: bash -n hooks/pre-session-context.sh exits 0",
+        "AC-2: Gap B routing table appears before sentinel on every call",
+        "AC-3: Gap A.1 done-branch warning fires when backlog_match.py returns non-zero",
+        "AC-4: Gap A.2 divergence warning fires when local main is behind origin/main",
+        "AC-5: git fetch failure does not abort the hook",
+        "AC-6: No new files created"
+      ],
+      "file_paths": [
+        "hooks/pre-session-context.sh",
+        "docs/plans/issue-661-pre-session-hook-warnings-pdcar.md",
+        "docs/plans/issue-661-pre-session-hook-warnings-structured-agent-cycle-plan.json",
+        "raw/execution-scopes/2026-05-02-issue-661-pre-session-hook-warnings-implementation.json",
+        "raw/handoffs/2026-05-02-issue-661-pre-session-hook-warnings-plan-to-implementation.json",
+        "raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md",
+        "raw/closeouts/2026-05-02-issue-661-pre-session-hook-warnings.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "gpt-5.3-codex-spark QA",
+      "reviewer_model_id": "gpt-5.3-codex-spark",
+      "reviewer_model_family": "openai",
+      "role": "Tier 2 implementation worker + QA",
+      "focus": "Verify AC-1 through AC-6; confirm bash -n passes and no new files created",
+      "status": "accepted",
+      "summary": "codex-spark APPROVED. AC-1 through AC-6 all PASS.",
+      "evidence": ["raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"]
+    }
+  ],
+  "material_deviation_rules": [
+    "Any edit outside hooks/pre-session-context.sh and listed governance artifacts is a material deviation.",
+    "Creating new shell/Python files is a material deviation.",
+    "Editing STANDARDS.md, CLAUDE.md, agents/, or workflows is a material deviation.",
+    "bash -n non-zero exit is a material deviation.",
+    "Omitting either Gap A or Gap B is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": ["gpt-5.3-codex-spark (implementation QA, 2026-05-02)"],
+  "approved_at": "2026-05-02T00:00:00Z",
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.3-codex-spark cross-family reviewer",
+    "model_family": "openai",
+    "reviewer_model_id": "gpt-5.3-codex-spark",
+    "reviewer_model_family": "openai",
+    "status": "accepted",
+    "summary": "codex-spark QA reviewed. Gap A.1 uses correct backlog_match.py invocation. Gap A.2 subshell+timeout matches repo conventions. Gap B placement before sentinel correct. bash -n clean.",
+    "evidence": ["raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [{"role": "alternate_model_review", "model_family": "openai"}],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": ["raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {"family": "anthropic", "model_id": "claude-sonnet-4-6"},
+        {"family": "anthropic", "model_id": "claude-opus-4-6"}
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "Tier 2 implementation worker (gpt-5.3-codex-spark)",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Edit hooks/pre-session-context.sh to add Gap A warnings and Gap B routing table. Verify bash -n. Commit both issues. Do not push.",
+    "next_execution_step": "Read docs/plans/codex-brief-pre-session-hook-warnings.md, apply both slices, verify bash -n, commit.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-05-02-issue-661-pre-session-hook-warnings-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-05-02-issue-661-pre-session-hook-warnings-implementation.json",
+    "review_artifact_refs": ["raw/cross-review/2026-05-02-issue-661-pre-session-hook-warnings.md"],
+    "validation_artifact_refs": ["raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"],
+    "next_role": "operator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": ["AC-1 through AC-6"]
+  }
+}

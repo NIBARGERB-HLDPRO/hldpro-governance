@@ -1,0 +1,115 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-661-pre-session-hook-warnings-plan-to-implementation",
+  "issue_number": 661,
+  "parent_epic_number": null,
+  "lifecycle_state": "released",
+  "from_role": "dispatcher (claude-sonnet-4-6 Orchestrator)",
+  "to_role": "claude-sonnet-4-6 Stage 2 Worker",
+  "structured_plan_ref": "docs/plans/issue-661-pre-session-hook-warnings-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-05-02-issue-661-pre-session-hook-warnings-implementation.json",
+  "packet_ref": "raw/packets/2026-05-02-issue-661-pre-session-hook-warnings.json",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-02-issue-661-662-pre-session-hook-warnings.md",
+      "raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": "bash -n hooks/pre-session-context.sh exits 0 (syntax clean).",
+      "verification_refs": [
+        "raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "Gap B: dispatcher routing table is emitted before the session-once sentinel on every UserPromptSubmit.",
+      "verification_refs": [
+        "raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "Gap A.1: done-branch warning fires when backlog_match.py returns non-zero; guard is inside the session-once block.",
+      "verification_refs": [
+        "raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "Gap A.2: remote-divergence warning fires when local main is behind origin/main; uses subshell + timeout 5 + fail-open.",
+      "verification_refs": [
+        "raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "git fetch failure is silent and does not abort the hook (fail-open contract preserved).",
+      "verification_refs": [
+        "raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"
+      ]
+    },
+    {
+      "id": "AC6",
+      "statement": "No new files created; only hooks/pre-session-context.sh and OVERLORD_BACKLOG.md modified.",
+      "verification_refs": [
+        "raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "bash -n hooks/pre-session-context.sh",
+    "python3 scripts/overlord/validate_handoff_package.py --root .",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-05-02-issue-661-pre-session-hook-warnings.md --root ."
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-05-02-issue-661-662-pre-session-hook-warnings.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"
+  ],
+  "artifact_refs": [
+    "hooks/pre-session-context.sh",
+    "OVERLORD_BACKLOG.md",
+    "docs/plans/issue-661-pre-session-hook-warnings-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-05-02-issue-661-pre-session-hook-warnings-implementation.json",
+    "raw/packets/2026-05-02-issue-661-pre-session-hook-warnings.json",
+    "raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md",
+    "raw/cross-review/2026-05-02-issue-661-662-pre-session-hook-warnings.md"
+  ],
+  "audit_refs": [
+    "raw/validation/2026-05-02-issue-661-pre-session-hook-warnings.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-05-02-issue-661-pre-session-hook-warnings.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-05-02T00:00:00Z",
+  "notes": "Dispatcher-to-worker handoff for issues #661 and #662: two bash-only edits to hooks/pre-session-context.sh closing Gap A (stale-branch + remote-divergence warnings) and Gap B (routing table on every prompt). Implementation complete; cross-review APPROVED by gpt-5.3-codex-spark @ high."
+}
