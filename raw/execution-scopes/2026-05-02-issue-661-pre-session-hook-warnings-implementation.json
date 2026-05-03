@@ -1,6 +1,6 @@
 {
   "expected_execution_root": ".",
-  "expected_branch": "issue-661-pre-session-hook-warnings-20260502",
+  "expected_branch": "issue-661-backlog-mark-done",
   "execution_mode": "implementation_complete",
   "lane_claim": {
     "issue_number": 661,
