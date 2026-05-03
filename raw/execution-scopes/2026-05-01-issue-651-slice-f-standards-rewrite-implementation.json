@@ -9,7 +9,8 @@
     "docs/plans/issue-651-slice-f-standards-policy-structured-agent-cycle-plan.json",
     "docs/exception-register.md",
     "OVERLORD_BACKLOG.md",
-    "raw/model-fallbacks/2026-05-03-issue-651-slice-f-implementation-fallback.md"
+    "raw/model-fallbacks/2026-05-03-issue-651-slice-f-implementation-fallback.md",
+    "raw/closeouts/2026-05-03-issue-651-slice-f-standards-policy.md"
   ],
   "forbidden_roots": [
     ".github/workflows/",
