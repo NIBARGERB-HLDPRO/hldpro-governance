@@ -18,12 +18,12 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| Slice G (hldpro-sim): 5 governance process personas + AnthropicApiProvider | [#652](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/652) | HIGH | 2-3 | Governance process-agent personas JSON + schema + PersonaLoader update + AnthropicApiProvider fail-fast. Branch: issue-652-slice-g-hldpro-sim-personas-20260501. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Slice G (hldpro-sim): 5 governance process personas + AnthropicApiProvider | 2026-05-03 | Issue [#652](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/652). Merged via PR #655. All AC passed. |
 | Downstream thin session-contract adapter rollout epic | 2026-05-03 | Issue [#579](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/579). All 7 child issues closed with merged downstream PRs between 2026-04-28 and 2026-04-29. Closeout: `raw/closeouts/2026-05-03-issue-579-epic-completion.md`. |
 | Governed research specialist consumer rollout | 2026-05-03 | Issue [#591](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591). All 7 consumer repos adopted 0.3.0-hard-gated-som (6 PASS + 1 EXEMPT). Closeout: `raw/closeouts/2026-05-03-issue-591-consumer-rollout-slice2.md`. Residuals: #673, #674. |
 | hook: stale-branch and remote-divergence gate + routing-table emission | 2026-05-03 | Issues [#661](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/661) and [#662](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/662). Merged via PR [#663](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/663) (squash commit `0786c447eb5cbfdd066ca3c7a37e19e3a9c09b35`). Warn-only stale-branch + behind-main divergence check and CLAUDE.md routing-table injection wired into pre-session-context.sh; fail-open; bash-only; no new files. |
