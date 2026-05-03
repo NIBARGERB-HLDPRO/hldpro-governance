@@ -9,8 +9,6 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
-| hook: stale-branch and remote-divergence gate | [#661](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/661) | HIGH | 1 | Warn-only done-branch check and behind-main divergence check in pre-session-context.sh; fail-open; bash-only. |
-| hook: emit dispatcher routing table every prompt | [#662](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/662) | HIGH | 1 | Inject CLAUDE.md routing table before session-once sentinel; 8 lines; no new files. |
 | Codex-spark refinement pass on Stage 3b MCP tools + Stage 4 validator | [#177](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/177) | LOW-MEDIUM | 2-3 | Post-outage code review. Gate: live-fallback rate < 2% for 2 weeks post-merge (window now passed). |
 | Qwen-Coder MLX driver stub-emission bug | [#105](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/105) | LOW | 1-2 | Qwen2.5-Coder-7B throws truncated output on edge cases (>200 lines). Workarounds in `docs/runbooks/qwen-coder-driver.md`. |
 | SoM Stage 5: som-worker daemon (always-warm Qwen-Coder + packet queue pipeline) | [#178](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/178) | LOW | 6-8 | Qwen watches raw/packets/inbound/, processes to raw/packets/outbound/, Sonnet reviews async. |
@@ -28,6 +26,7 @@
 
 | Item | Date | Notes |
 |------|------|-------|
+| hook: stale-branch and remote-divergence gate + routing-table emission | 2026-05-03 | Issues [#661](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/661) and [#662](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/662). Merged via PR [#663](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/663) (squash commit `0786c447eb5cbfdd066ca3c7a37e19e3a9c09b35`). Warn-only stale-branch + behind-main divergence check and CLAUDE.md routing-table injection wired into pre-session-context.sh; fail-open; bash-only; no new files. |
 | PDCAR Slice E: 8 session-friction patches + Epic #638 closeout | 2026-05-01 | Issue [#648](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/648). Closed 2026-05-01. All 8 friction patches applied; Epic #638 Stage 6 closeout filed. |
 | Slice B: Hook Wiring | 2026-05-01 | Issue [#640](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/640). Merged and closed 2026-05-01T16:54:42Z. Wired all required hooks with $HOME-anchored paths; added PostToolUse "*" gate; backlog_match.py + fail_fast_state.py shared helpers. |
 | Fallback-log schema/workflow parity | 2026-04-30 | Issue [#629](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/629). Merged via PR [#630](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/630) and closed after reconciling degraded same-family fallback-log checker, writer, and workflow parity under parent #612 without reopening execution-scope, local-hook, #607, or #614 surfaces. |
