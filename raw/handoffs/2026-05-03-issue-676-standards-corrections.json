@@ -1,17 +1,114 @@
 {
+  "schema_version": "v1",
   "handoff_id": "issue-676-standards-corrections-20260503",
   "issue_number": 676,
-  "handoff_type": "plan-to-implementation",
-  "from_role": "planner",
-  "to_role": "implementer",
-  "created_at": "2026-05-03T23:00:00Z",
-  "plan_ref": "docs/plans/issue-676-standards-corrections-structured-agent-cycle-plan.json",
+  "parent_epic_number": null,
+  "lifecycle_state": "implementation_complete",
+  "from_role": "gpt-5.4 Tier 1 Planner",
+  "to_role": "claude-sonnet-4-6 Tier 2 Worker",
+  "structured_plan_ref": "docs/plans/issue-676-standards-corrections-structured-agent-cycle-plan.json",
   "execution_scope_ref": "raw/execution-scopes/2026-05-03-issue-676-standards-corrections-implementation.json",
-  "scope_summary": "6 targeted corrections to STANDARDS.md: Stampede schema exceptions, branch naming, stale review row, baseline security scope, hook gate qualifier, structured plan scope note.",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-03-issue-676-standards-corrections.md",
+      "raw/validation/2026-05-03-issue-676-standards-corrections.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
   "acceptance_criteria": [
-    "All 6 STANDARDS.md corrections present.",
-    "No files outside allowed_write_paths changed.",
-    "Governance validator passes."
+    {
+      "id": "AC1",
+      "statement": "STANDARDS.md contains Stampede PROGRESS.md and FEATURE_REGISTRY.md schema exceptions in the Governance Doc Contract section.",
+      "verification_refs": [
+        "raw/validation/2026-05-03-issue-676-standards-corrections.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "STANDARDS.md branch naming section accepts feat/<slug> as an alias for feature/<slug> and merge guidance references origin/main.",
+      "verification_refs": [
+        "raw/validation/2026-05-03-issue-676-standards-corrections.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "STANDARDS.md Baseline Security heading includes Stampede.",
+      "verification_refs": [
+        "raw/validation/2026-05-03-issue-676-standards-corrections.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "STANDARDS.md hook gate scope qualifier bullet is present in the hook gate section.",
+      "verification_refs": [
+        "raw/validation/2026-05-03-issue-676-standards-corrections.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "STANDARDS.md Structured Agent Cycle Plans section has scope blockquote at top.",
+      "verification_refs": [
+        "raw/validation/2026-05-03-issue-676-standards-corrections.md"
+      ]
+    },
+    {
+      "id": "AC6",
+      "statement": "No files outside allowed_write_paths are changed; governance validators pass.",
+      "verification_refs": [
+        "raw/validation/2026-05-03-issue-676-standards-corrections.md"
+      ]
+    }
   ],
-  "status": "accepted"
+  "validation_commands": [
+    "git diff --check HEAD STANDARDS.md",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-05-03-issue-676-standards-corrections-implementation.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-05-03-issue-676-standards-corrections.md --root .",
+    "python3 scripts/overlord/validate_handoff_package.py --root ."
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-05-03-issue-676-standards-corrections.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-05-03-issue-676-standards-corrections.md"
+  ],
+  "artifact_refs": [
+    "STANDARDS.md",
+    "docs/plans/issue-676-standards-corrections-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-05-03-issue-676-standards-corrections-implementation.json",
+    "raw/validation/2026-05-03-issue-676-standards-corrections.md",
+    "raw/cross-review/2026-05-03-issue-676-standards-corrections.md"
+  ],
+  "audit_refs": [
+    "raw/cross-review/2026-05-03-issue-676-standards-corrections.md",
+    "raw/validation/2026-05-03-issue-676-standards-corrections.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-05-03-issue-676-standards-corrections.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-05-03T23:00:00Z",
+  "notes": "6 additive STANDARDS.md corrections (doc schema exceptions, branch alias, merge guidance, baseline security scope, hook gate qualifier, structured plan scope note). No code changes. Cross-review APPROVED by gpt-5.4."
 }

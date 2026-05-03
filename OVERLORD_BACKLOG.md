@@ -26,6 +26,7 @@
 
 | Item | Date | Notes |
 |------|------|-------|
+| STANDARDS.md drift corrections (6 additive fixes) | 2026-05-03 | Issue [#676](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/676). Closed 2026-05-03. Stampede doc schema exceptions, feat/ branch alias, origin/develop→origin/main, Baseline Security heading scope, hook gate scope qualifier, structured-plan scope note. |
 | hook: stale-branch and remote-divergence gate + routing-table emission | 2026-05-03 | Issues [#661](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/661) and [#662](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/662). Merged via PR [#663](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/663) (squash commit `0786c447eb5cbfdd066ca3c7a37e19e3a9c09b35`). Warn-only stale-branch + behind-main divergence check and CLAUDE.md routing-table injection wired into pre-session-context.sh; fail-open; bash-only; no new files. |
 | PDCAR Slice E: 8 session-friction patches + Epic #638 closeout | 2026-05-01 | Issue [#648](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/648). Closed 2026-05-01. All 8 friction patches applied; Epic #638 Stage 6 closeout filed. |
 | Slice B: Hook Wiring | 2026-05-01 | Issue [#640](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/640). Merged and closed 2026-05-01T16:54:42Z. Wired all required hooks with $HOME-anchored paths; added PostToolUse "*" gate; backlog_match.py + fail_fast_state.py shared helpers. |
