@@ -1,0 +1,140 @@
+{
+  "session_id": "session-20260503-issue-651-slice-f-standards-policy",
+  "issue_number": 651,
+  "plan_author": {
+    "role": "Tier-1-planner",
+    "model_id": "claude-sonnet-4-6",
+    "model_family": "anthropic"
+  },
+  "objective": "Slice F (Policy): Correct STANDARDS.md Section_SOM for agent-agnostic language, fallup fallback direction, both-family planner validity, QA cross-family prohibition, worker table expansion, and add Section_PDCAR functional acceptance auditor gate. Retire expired SOM-BOOTSTRAP-001 exception.",
+  "tier": 1,
+  "scope_boundary": [
+    "STANDARDS.md Section_SOM only: routing table, fallback ladder, QA rules, worker table, handoff chain, hard-rule invariants, Section_PDCAR section.",
+    "No workflow YAML changes (Slice H scope).",
+    "No AGENT_REGISTRY.md rows for new agents (Slice H scope).",
+    "No hldpro-sim files (Slice G scope)."
+  ],
+  "out_of_scope": [
+    "Any .github/workflows/ changes -- Slice H.",
+    "AGENT_REGISTRY.md additions -- Slice H.",
+    "hldpro-sim persona files -- Slice G.",
+    "Consumer repo changes -- not needed for this slice."
+  ],
+  "research_summary": "STANDARDS.md Section_Society of Minds has three correctness gaps: (1) session-agnostic language missing -- rules use Claude-CLI-centric language; (2) fallback ladder direction is wrong -- current STANDARDS imply falling down to smaller/cheaper when a model is unavailable; correct direction is fallup (escalate or halt); (3) planning authority is underspecified -- both claude-opus-4.X and Codex 5.X high are valid Tier 1 planners. Additionally SOM-BOOTSTRAP-001 exception expired on charter PR merge (2026-04-14) and must be retired.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/651",
+    "STANDARDS.md",
+    "raw/cross-review/2026-04-14-society-of-minds-charter.md"
+  ],
+  "sprints": [
+    {
+      "name": "Sprint 1 - STANDARDS.md corrections and Section_PDCAR gate (issue #651)",
+      "goal": "Apply all 7 text corrections to STANDARDS.md Section_SOM and add Section_PDCAR section; create cross-review and functional acceptance audit artifacts.",
+      "tasks": [
+        "Edit STANDARDS.md governance waterfall table: add Model family column, both-family planner validity, fallup constraints.",
+        "Edit STANDARDS.md handoff chain ASCII art: replace hardcoded model IDs with routing-table role references.",
+        "Edit STANDARDS.md invariant #3: rewrite with fallup direction (escalate or halt, not downgrade).",
+        "Edit STANDARDS.md: add invariant #16 (QA cross-family required, same-family QA prohibited).",
+        "Edit STANDARDS.md: add Section_PDCAR section with functional acceptance auditor gate.",
+        "Edit STANDARDS.md Section_Exceptions: remove SOM-BOOTSTRAP-001 (expired).",
+        "Create raw/cross-review/2026-05-03-slice-f-standards-rewrite.md (dual-signed).",
+        "Create raw/audits/2026-05-03-slice-f-functional-acceptance.md (PASS verdict)."
+      ],
+      "acceptance_criteria": [
+        "AC-F1: Section_SOM routing table has Model family column; no hardcoded model IDs in session-agnostic prose.",
+        "AC-F2: Invariant #3 states fallup direction explicitly.",
+        "AC-F3: Tier 1 rows show both claude-opus-4.X and codex-5.X@high as valid planners.",
+        "AC-F4: Invariant #16 added: QA cross-family required, same-family QA prohibited.",
+        "AC-F5: Worker table (Row 2) includes codex-5.4-medium and codex-spark.",
+        "AC-F6: Section_PDCAR section with functional acceptance auditor gate present.",
+        "AC-F7: SOM-BOOTSTRAP-001 absent from Section_Exceptions.",
+        "AC-F8: raw/cross-review/2026-05-03-slice-f-standards-rewrite.md exists, dual-signed.",
+        "AC-F9: raw/audits/2026-05-03-slice-f-functional-acceptance.md exists, PASS verdict."
+      ],
+      "file_paths": [
+        "STANDARDS.md",
+        "raw/cross-review/2026-05-03-slice-f-standards-rewrite.md",
+        "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite-implementation.json",
+        "docs/plans/issue-651-slice-f-standards-policy-structured-agent-cycle-plan.json",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "claude-sonnet-4-6",
+      "reviewer_model_id": "claude-sonnet-4-6",
+      "reviewer_model_family": "anthropic",
+      "role": "Tier-1-planner plan self-review",
+      "focus": "All 7 STANDARDS.md text corrections per AC-F1 through AC-F7; Section_PDCAR section authorship.",
+      "status": "complete",
+      "summary": "Plan reviewed and approved for all required STANDARDS.md corrections: agent-agnostic language, fallup direction, both-family planner validity, QA cross-family prohibition, worker table expansion, Section_PDCAR gate, SOM-BOOTSTRAP-001 retirement.",
+      "evidence": [
+        "STANDARDS.md",
+        "raw/cross-review/2026-05-03-slice-f-standards-rewrite.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.4",
+    "reviewer_model_id": "gpt-5.4",
+    "reviewer_model_family": "openai",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "gpt-5.4 cross-family architecture review completed 2026-05-03. Verdict: APPROVED. All 7 Section_SOM corrections validated. Section_PDCAR gate and SOM-BOOTSTRAP-001 retirement approved.",
+    "evidence": [
+      "raw/cross-review/2026-05-03-slice-f-standards-rewrite.md"
+    ]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-03-slice-f-standards-rewrite.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "claude-sonnet-4-6",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "All 7 STANDARDS.md Section_SOM corrections and Section_PDCAR gate addition authorized. Retire SOM-BOOTSTRAP-001.",
+    "next_execution_step": "Implement STANDARDS.md changes per acceptance criteria AC-F1 through AC-F9.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-05-01-issue-651-slice-f-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite-implementation.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-05-03-slice-f-standards-rewrite.md"
+    ]
+  },
+  "material_deviation_rules": [
+    "Any change to governance invariants requires re-plan approval from Tier 0 orchestrator.",
+    "Section_PDCAR wording changes require cross-review re-sign.",
+    "SOM-BOOTSTRAP-001 removal is final -- do not re-add without Tier 0 approval."
+  ],
+  "approved": true,
+  "approved_by": [
+    "gpt-5.4 (cross-family architecture review, 2026-05-03)"
+  ],
+  "approved_at": "2026-05-03T23:20:00Z"
+}

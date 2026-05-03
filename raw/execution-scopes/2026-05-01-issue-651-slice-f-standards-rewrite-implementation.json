@@ -1,17 +1,16 @@
 {
   "expected_execution_root": ".",
-  "expected_branch": "issue-651-slice-f-standards-rewrite-20260501",
+  "expected_branch": "issue-651-slice-f-standards-policy-20260503",
   "allowed_write_paths": [
     "STANDARDS.md",
-    "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md",
-    "raw/acceptance-audits/2026-05-01-651-functional-audit.json",
-    "docs/plans/issue-651-slice-f-standards-rewrite-structured-agent-cycle-plan.json",
     "raw/execution-scopes/2026-05-01-issue-651-slice-f-standards-rewrite-implementation.json",
-    "raw/handoffs/2026-05-01-issue-651-slice-f-plan-to-implementation.json",
-    "raw/validation/2026-05-01-issue-651-slice-f-standards-rewrite.md",
-    "raw/closeouts/2026-05-01-issue-651-slice-f-standards-rewrite.md",
-    "raw/model-fallbacks/2026-05-01-issue-651-slice-f-implementation-fallback.md",
-    "OVERLORD_BACKLOG.md"
+    "raw/cross-review/2026-05-03-slice-f-standards-rewrite.md",
+    "raw/audits/2026-05-03-slice-f-functional-acceptance.md",
+    "docs/plans/issue-651-slice-f-standards-policy-structured-agent-cycle-plan.json",
+    "docs/exception-register.md",
+    "OVERLORD_BACKLOG.md",
+    "raw/model-fallbacks/2026-05-03-issue-651-slice-f-implementation-fallback.md",
+    "raw/closeouts/2026-05-03-issue-651-slice-f-standards-policy.md"
   ],
   "forbidden_roots": [
     ".github/workflows/",
@@ -34,21 +33,21 @@
     "issue_number": 651,
     "claim_ref": "docs/plans/issue-651-slice-f-standards-rewrite-structured-agent-cycle-plan.json",
     "claimed_by": "claude-sonnet-4-6 (Tier 2 worker, anthropic)",
-    "claimed_at": "2026-05-01T00:00:00Z"
+    "claimed_at": "2026-05-03T23:20:00Z"
   },
   "handoff_evidence": {
     "status": "accepted",
-    "planner_model": "claude-opus-4.7",
+    "planner_model": "gpt-5.4",
     "implementer_model": "claude-sonnet-4-6",
-    "accepted_at": "2026-05-01T00:00:00Z",
+    "accepted_at": "2026-05-03T23:20:00Z",
     "evidence_paths": [
-      "docs/plans/issue-651-slice-f-standards-rewrite-structured-agent-cycle-plan.json",
-      "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md"
+      "docs/plans/issue-651-slice-f-standards-policy-structured-agent-cycle-plan.json",
+      "raw/cross-review/2026-05-03-slice-f-standards-rewrite.md"
     ],
-    "active_exception_ref": "raw/model-fallbacks/2026-05-01-issue-651-slice-f-implementation-fallback.md",
-    "active_exception_expires_at": "2026-05-02T00:00:00Z",
-    "cross_family_path_unavailable": true,
-    "cross_family_path_ref": "raw/cross-review/2026-05-01-slice-f-standards-rewrite.md",
-    "fallback_log_ref": "raw/model-fallbacks/2026-05-01-issue-651-slice-f-implementation-fallback.md"
+    "active_exception_ref": null,
+    "active_exception_expires_at": null,
+    "cross_family_path_unavailable": false,
+    "cross_family_path_ref": null,
+    "fallback_log_ref": null
   }
 }
