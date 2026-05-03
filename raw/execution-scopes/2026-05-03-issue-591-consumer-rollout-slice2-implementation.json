@@ -1,7 +1,7 @@
 {
   "expected_execution_root": ".",
   "expected_branch": "issue-591-consumer-rollout-slice2-20260503",
-  "execution_mode": "implementation",
+  "execution_mode": "implementation_ready",
   "allowed_write_paths": [
     "OVERLORD_BACKLOG.md",
     "raw/closeouts/2026-05-03-issue-591-consumer-rollout-slice2.md",
@@ -19,11 +19,44 @@
     "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
     "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder"
   ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #591."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #591."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #591."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #591."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Pre-existing dirty sibling checkout; not part of issue #591."
+    }
+  ],
   "consumer_repo_policy": "reads_only — consumer repo repairs require their own repo-specific PRs opened by the dispatcher",
   "lane_claim": {
     "issue_number": 591,
     "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591",
     "claimed_by": "claude-sonnet-4-6",
     "claimed_at": "2026-05-03T22:30:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-opus-4-6",
+    "implementer_model": "gpt-5.4-codex",
+    "accepted_at": "2026-05-03T22:30:00Z",
+    "evidence_paths": [
+      "docs/plans/issue-591-consumer-rollout-slice2-pdcar.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
   }
 }
