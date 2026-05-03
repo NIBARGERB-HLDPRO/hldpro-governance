@@ -1,0 +1,76 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-579-epic-completion-20260503",
+  "execution_mode": "implementation",
+  "allowed_write_paths": [
+    "OVERLORD_BACKLOG.md",
+    "raw/closeouts/2026-05-03-issue-579-epic-completion.md",
+    "raw/execution-scopes/2026-05-03-issue-579-epic-completion-implementation.json",
+    "raw/validation/2026-05-03-issue-579-epic-completion.md",
+    "docs/plans/issue-579-epic-completion-pdcar.md"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/Stampede"
+  ],
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance",
+      "reason": "Primary on stale branch; completion isolated in this worktree."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Consumer; child #1405 closed."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Consumer; child #1513 closed."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+      "reason": "Consumer; child #515 closed."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Consumer; child #187 closed."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator",
+      "reason": "Consumer; child #15 closed."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Consumer; child #190 closed."
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/Stampede",
+      "reason": "Consumer; child #195 closed."
+    }
+  ],
+  "lane_claim": {
+    "issue_number": 579,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/579",
+    "claimed_by": "issue-lane-bootstrap",
+    "claimed_at": "2026-05-03T21:30:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-sonnet-4-6",
+    "implementer_model": "claude-sonnet-4-6",
+    "accepted_at": "2026-05-03T21:30:00Z",
+    "evidence_paths": [
+      "raw/closeouts/2026-05-03-issue-579-epic-completion.md"
+    ],
+    "active_exception_ref": "raw/closeouts/2026-05-03-issue-579-epic-completion.md#model-identity",
+    "active_exception_expires_at": "2026-05-10T21:30:00Z",
+    "cross_family_path_unavailable": true,
+    "cross_family_path_ref": "raw/closeouts/2026-05-03-issue-579-epic-completion.md#review-and-gate-identity",
+    "fallback_log_ref": "docs/FAIL_FAST_LOG.md#issue-579-epic-closeout-same-model-exception"
+  }
+}
