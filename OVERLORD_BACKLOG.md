@@ -19,13 +19,13 @@
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
 | Slice G (hldpro-sim): 5 governance process personas + AnthropicApiProvider | [#652](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/652) | HIGH | 2-3 | Governance process-agent personas JSON + schema + PersonaLoader update + AnthropicApiProvider fail-fast. Branch: issue-652-slice-g-hldpro-sim-personas-20260501. |
-| Governed research specialist consumer rollout | [#591](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591) | HIGH | 4-6 | Governance planning lane for downstream adoption of the research-specialist package. First pilot: Stampede issue [#208](https://github.com/NIBARGERB-HLDPRO/Stampede/issues/208). |
-| Downstream thin session-contract adapter rollout epic | [#579](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/579) | HIGH | 6-10 | Governance execution epic opened from approved plan #575 after SSOT reconciliation #576; child issues opened in LAM, AIS, Seek, Knocktracker, Stampede, HealthcarePlatform, and ASC-Evaluator. |
 
 ## Done
 
 | Item | Date | Notes |
 |------|------|-------|
+| Downstream thin session-contract adapter rollout epic | 2026-05-03 | Issue [#579](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/579). All 7 child issues closed with merged downstream PRs between 2026-04-28 and 2026-04-29. Closeout: `raw/closeouts/2026-05-03-issue-579-epic-completion.md`. |
+| Governed research specialist consumer rollout | 2026-05-03 | Issue [#591](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/591). All 7 consumer repos adopted 0.3.0-hard-gated-som (6 PASS + 1 EXEMPT). Closeout: `raw/closeouts/2026-05-03-issue-591-consumer-rollout-slice2.md`. Residuals: #673, #674. |
 | hook: stale-branch and remote-divergence gate + routing-table emission | 2026-05-03 | Issues [#661](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/661) and [#662](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/662). Merged via PR [#663](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/pull/663) (squash commit `0786c447eb5cbfdd066ca3c7a37e19e3a9c09b35`). Warn-only stale-branch + behind-main divergence check and CLAUDE.md routing-table injection wired into pre-session-context.sh; fail-open; bash-only; no new files. |
 | PDCAR Slice E: 8 session-friction patches + Epic #638 closeout | 2026-05-01 | Issue [#648](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/648). Closed 2026-05-01. All 8 friction patches applied; Epic #638 Stage 6 closeout filed. |
 | Slice B: Hook Wiring | 2026-05-01 | Issue [#640](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/640). Merged and closed 2026-05-01T16:54:42Z. Wired all required hooks with $HOME-anchored paths; added PostToolUse "*" gate; backlog_match.py + fail_fast_state.py shared helpers. |
