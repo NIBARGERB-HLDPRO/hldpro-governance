@@ -1,10 +1,10 @@
 # Overlord Validate structured agent cycle plan
 
-> 30 nodes · cohesion 0.16
+> 32 nodes · cohesion 0.14
 
 ## Key Concepts
 
-- **validate_structured_agent_cycle_plan.py** (29 connections) — `scripts/overlord/validate_structured_agent_cycle_plan.py`
+- **validate_structured_agent_cycle_plan.py** (30 connections) — `scripts/overlord/validate_structured_agent_cycle_plan.py`
 - **main()** (14 connections) — `scripts/overlord/validate_structured_agent_cycle_plan.py`
 - **_validate_active_issue_branch_contract()** (10 connections) — `scripts/overlord/validate_structured_agent_cycle_plan.py`
 - **_validate_specialist_packet_contract()** (7 connections) — `scripts/overlord/validate_structured_agent_cycle_plan.py`
@@ -29,7 +29,7 @@
 - **_find_plan_files()** (2 connections) — `scripts/overlord/validate_structured_agent_cycle_plan.py`
 - **_is_planning_evidence_surface()** (2 connections) — `scripts/overlord/validate_structured_agent_cycle_plan.py`
 - **_matching_execution_scopes()** (2 connections) — `scripts/overlord/validate_structured_agent_cycle_plan.py`
-- *... and 5 more nodes in this community*
+- *... and 7 more nodes in this community*
 
 ## Relationships
 
@@ -41,8 +41,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 58 (43%)
-- INFERRED: 78 (57%)
+- EXTRACTED: 62 (44%)
+- INFERRED: 78 (56%)
 - AMBIGUOUS: 0 (0%)
 
 ---
