@@ -437,13 +437,13 @@ Session-start enforcement must surface this routing charter before implementatio
 
 ### Governance waterfall
 
-| Tier | Role | Family | Authorized responsibilities | Primary roster and fallup ladder |
+| Tier | Role | Model family | Authorized responsibilities | Primary roster and fallup ladder |
 |---|---|---|---|---|
 | 0 | Orchestrator | session-native | Coordinate issue/docs/artifact flow only; no self-approval. | Current session lead only. |
-| 1 | Planner and plan reviewer | anthropic + openai | Tier 1 planning authority is dual-family. Both families are authorized for plan creation and plan review, and accepted planning evidence must include one planner/reviewer signature from each family before implementation starts. | `claude-opus-4-6`, `gpt-5.4`, fallup to `claude-sonnet-4-6` or `gpt-5.3-codex-spark` when the higher-capability primary is unavailable. |
+| 1 | Planner and plan reviewer | anthropic **and** openai (dual-family required) | Tier 1 planning authority is dual-family. Both families are authorized for plan creation and plan review, and accepted planning evidence must include one planner/reviewer signature from each family before implementation starts. | `claude-opus-4.X` (e.g. `claude-opus-4-6`) **or** `codex-5.X` at `model_reasoning_effort=high`. Halt if the required family is unavailable; do not downgrade to a less capable model. Fallup to a more capable model in the same or alternate family if the primary is unavailable. |
 | 1I | Plan integrator | session-native | Integrate accepted plan and review into issue/docs/handoff artifacts; no independent approval authority. | Current session lead only. |
-| 2 | Worker | anthropic + openai | Implementation only within the accepted execution scope. | `claude-sonnet-4-6`, `gpt-5.4` at `medium`, `gpt-5.3-codex-spark`, plus the bounded local worker ladder below when the scope explicitly permits it. |
-| 3 | QA reviewer | opposite of Tier 2 worker family | Review implementation and standards changes after Tier 2 completes. Preserve the Tier 1 cross-review artifact for architecture or standards work. | Cross-family reviewer only; never the same family as the Tier 2 worker. |
+| 2 | Worker | anthropic or openai | Implementation only within the accepted execution scope. | `claude-sonnet-4.X` (e.g. `claude-sonnet-4-6`), `codex-5.4-medium`, `codex-spark`, `gpt-5.4` at `medium`, plus the bounded local worker ladder below when the scope explicitly permits it. |
+| 3 | QA reviewer | opposite family from Tier 2 worker (see invariant #16) | Review implementation and standards changes after Tier 2 completes. Preserve the Tier 1 cross-review artifact for architecture or standards work. | Cross-family reviewer only; never the same family as the Tier 2 worker. Same-family QA is prohibited — see invariant #16. |
 | 4 | Gate and verifier | deterministic + auditor | Final validation, acceptance evidence, and closeout gating. | Deterministic checks plus `functional-acceptance-auditor` at the final acceptance gate. |
 
 Unavailable primary escalates UP (fallup) to a more capable model in the same or alternate family; routing never degrades down automatically. Every degraded fallback decision must be logged to `raw/model-fallbacks/`.
@@ -485,17 +485,28 @@ Architecture and standards slices require a dual-family cross-review artifact at
 
 1. No self-approval. Drafter, reviewer, and gate identities must be distinct.
 2. No tier skipping. No merge without Planner -> Plan Review -> Worker -> QA -> Gate.
-3. Planning authority is dual-family. Tier 1 cannot proceed with same-family-only creation and review evidence.
+3. **Planning floor and fallup rule.** Planning authority is dual-family: Tier 1 cannot proceed with same-family-only creation and review evidence. **Fallup direction:** if the primary planning model is unavailable, escalate to a more capable model or halt; do not silently downgrade to a less capable model. Both planning families unavailable → halt.
 4. PII routes through LAM-only handling before any non-local review path.
 5. Fallback is logged. Every degraded route writes a schema-valid record under `raw/model-fallbacks/YYYY-MM-DD.md`.
 6. Local workers remain bounded. They may write only within an approved execution scope with downstream QA and gate evidence.
 7. Remote bridge boundaries remain fail-closed. Remote-origin packets cannot invoke stdio-only tools, and remote transport must stamp authoritative origin and identity.
+16. **QA cross-family required.** The Tier 3 QA reviewer and the Tier 2 worker that produced the artifact under review must be different model families. Same-family QA (e.g., a Claude worker reviewed by a Claude QA reviewer, or a Codex worker reviewed by a Codex QA reviewer) is explicitly prohibited. This applies to all QA stages: code review, standards review, and architecture review.
 
 ## PDCAR
 
 PDCAR is the required execution loop for governed slices: Plan the accepted scope and evidence path, Do the bounded implementation, Check with deterministic validation and cross-family QA, Adjust by folding required corrections into the active slice or opening an issue-backed follow-up, and Review with the final acceptance gate before closeout.
 
 Every slice final acceptance criterion requires spawning `functional-acceptance-auditor`, which must return `overall_verdict=PASS` before closeout proceeds. If that auditor has not run yet, the slice remains pending final acceptance even if implementation and QA are otherwise complete.
+
+### Functional acceptance auditor gate (required on all slices)
+
+- The functional acceptance auditor is the **required final step** on every implementation slice before the slice may be marked closed.
+- The auditor must be an architecture-tier agent of a **different model family** from the worker that implemented the slice.
+- The auditor's report must explicitly state `PASS` or `FAIL` against the slice acceptance criteria.
+- A `FAIL` report blocks merge. The worker must address all findings and re-submit for auditor review before proceeding.
+- Auditor report artifact path convention: `raw/audits/YYYY-MM-DD-slice-<id>-functional-acceptance.md`
+- Evidence of the auditor gate (artifact path + PASS verdict) must appear in the slice closeout artifact.
+- This gate cannot be waived. Any exception requires Tier 0 orchestrator sign-off and a bounded expiry (≤30 days) recorded in `docs/exception-register.md`.
 
 ## Windows Host Inference (deprecated / off-ladder)
 

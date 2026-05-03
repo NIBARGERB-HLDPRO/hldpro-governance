@@ -18,6 +18,7 @@
 
 | Item | Issue | Priority | Est. Hours | Notes |
 |------|-------|----------|-----------|-------|
+| Slice F STANDARDS.md policy corrections (agent-agnostic rules, fallup ladder, QA cross-family, PDCAR gate) | [#651](https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/651) | priority:now | 2 | In progress 2026-05-03 |
 
 ## Done
 

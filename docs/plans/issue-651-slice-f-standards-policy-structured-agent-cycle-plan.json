@@ -1,0 +1,51 @@
+{
+  "schema_version": "v1",
+  "issue_number": 651,
+  "issue_title": "Slice F (Policy): STANDARDS.md agent-agnostic rules, fallback ladder corrections, and model routing alignment",
+  "plan_date": "2026-05-03",
+  "planner_model": "claude-sonnet-4-6",
+  "planner_family": "anthropic",
+  "execution_mode": "implementation",
+  "acceptance_criteria": [
+    "AC-F1: STANDARDS.md routing table has explicit Model family column; session-agnostic rule text uses role tier references not model IDs",
+    "AC-F2: Fallback ladder invariant #3 explicitly states fallup direction with halt-or-escalate constraint",
+    "AC-F3: Planning authority table lists both claude-opus-4.X and codex-5.X high as valid Tier 1 planners",
+    "AC-F4: QA cross-family rule explicit as invariant #16: same-family QA prohibited",
+    "AC-F5: Worker row lists codex-spark and codex-5.4-medium as valid workers",
+    "AC-F6: STANDARDS.md §PDCAR documents functional acceptance auditor gate with formal requirements",
+    "AC-F7: SOM-BOOTSTRAP-001 confirmed absent from STANDARDS.md §Exceptions",
+    "AC-F8: Cross-review artifact dual-signed at raw/cross-review/2026-05-03-slice-f-standards-rewrite.md",
+    "AC-F9: Functional acceptance auditor PASS at raw/audits/2026-05-03-slice-f-functional-acceptance.md"
+  ],
+  "implementation_steps": [
+    "1. Update execution scope for 2026-05-03 branch — DONE",
+    "2. Edit STANDARDS.md governance waterfall table: add Model family column, both-family planner rows, fallup constraint",
+    "3. Edit STANDARDS.md invariant #3: add explicit fallup direction",
+    "4. Edit STANDARDS.md: add invariant #16 QA cross-family prohibition",
+    "5. Edit STANDARDS.md §PDCAR: add functional acceptance auditor gate formal requirements",
+    "6. Verify SOM-BOOTSTRAP-001 absent from §Exceptions",
+    "7. Create cross-review artifact",
+    "8. Create functional acceptance audit artifact",
+    "9. Update OVERLORD_BACKLOG.md with #651 In Progress entry",
+    "10. Commit, push, open PR"
+  ],
+  "specialist_reviews": [],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer_model_id": "gpt-5.4",
+    "reviewer_model_family": "openai",
+    "status": "approved",
+    "artifact_ref": "raw/cross-review/2026-05-03-slice-f-standards-rewrite.md"
+  },
+  "execution_handoff": {
+    "status": "accepted",
+    "handoff_to": "claude-sonnet-4-6",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-05-03-slice-f-standards-rewrite.md"
+    ]
+  },
+  "material_deviation_rules": [
+    "No changes to CI workflows, hooks, or scripts in this slice",
+    "STANDARDS.md edits confined to §SoM waterfall table, §SoM invariants, §PDCAR section, and §Exceptions"
+  ]
+}
