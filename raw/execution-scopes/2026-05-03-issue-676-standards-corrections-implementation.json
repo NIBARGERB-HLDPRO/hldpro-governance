@@ -26,8 +26,12 @@
     "raw/execution-scopes/2026-05-03-issue-676-standards-corrections-implementation.json",
     "raw/closeouts/2026-05-03-issue-676-standards-corrections.md",
     "raw/validation/2026-05-03-issue-676-standards-corrections.md",
+    "raw/cross-review/2026-05-03-issue-676-standards-corrections.md",
+    "raw/handoffs/2026-05-03-issue-676-standards-corrections.json",
     "docs/plans/issue-676-standards-corrections-pdcar.md",
-    "docs/plans/issue-676-standards-corrections-structured-agent-cycle-plan.json"
+    "docs/plans/issue-676-standards-corrections-structured-agent-cycle-plan.json",
+    "graphify-out/hldpro-governance/",
+    "wiki/"
   ],
   "forbidden_roots": [
     "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
