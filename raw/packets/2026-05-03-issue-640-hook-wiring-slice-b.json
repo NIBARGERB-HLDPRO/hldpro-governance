@@ -1,0 +1,13 @@
+{
+  "packet_id": "2026-05-03-issue-640-hook-wiring-slice-b",
+  "issue_number": 640,
+  "packet_type": "implementation",
+  "created_at": "2026-05-03T00:00:00Z",
+  "source_issue": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/640",
+  "parent_epic": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/638",
+  "structured_plan_ref": "docs/plans/issue-640-hook-wiring-slice-b-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-05-03-issue-640-hook-wiring-slice-b-implementation.json",
+  "handoff_ref": "raw/handoffs/2026-05-03-issue-640-hook-wiring-slice-b-plan-to-implementation.json",
+  "closeout_ref": "raw/closeouts/2026-05-03-issue-640-hook-wiring-slice-b.md",
+  "summary": "Slice B Hook Wiring: rewrite check-errors.sh as PostToolUse fail-fast gate, wire PostToolUse[\"*\"] in settings.json, extend backlog-check.sh with backlog_match.py enforcement, commit backlog_match.py and fail_fast_state.py helpers."
+}

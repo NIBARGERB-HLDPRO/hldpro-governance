@@ -1,0 +1,121 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-640-hook-wiring-slice-b-plan-to-implementation",
+  "issue_number": 640,
+  "parent_epic_number": 638,
+  "lifecycle_state": "released",
+  "from_role": "dispatcher (claude-sonnet-4-6 Orchestrator)",
+  "to_role": "claude-sonnet-4-6 Stage 2 Worker",
+  "structured_plan_ref": "docs/plans/issue-640-hook-wiring-slice-b-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-05-03-issue-640-hook-wiring-slice-b-implementation.json",
+  "packet_ref": "raw/packets/2026-05-03-issue-640-hook-wiring-slice-b.json",
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-03-issue-640-hook-wiring-slice-b.md",
+      "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "statement": ".claude/settings.json contains PostToolUse[\"*\"] block with HOME-anchored path to hooks/check-errors.sh; no git rev-parse or PWD in hooks section.",
+      "verification_refs": [
+        "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md"
+      ]
+    },
+    {
+      "id": "AC2",
+      "statement": "hooks/check-errors.sh exits 1 when fail_fast_state.py check reports >= 2 recurrences; exits 0 on first occurrence; exits 0 when fail_fast_state.py absent (fail-open).",
+      "verification_refs": [
+        "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md"
+      ]
+    },
+    {
+      "id": "AC3",
+      "statement": "hooks/backlog-check.sh exits 1 when branch issue number has no open entry in PROGRESS.md or OVERLORD_BACKLOG.md; exits 0 on open entry found; exits 0 on no parseable issue number.",
+      "verification_refs": [
+        "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md"
+      ]
+    },
+    {
+      "id": "AC4",
+      "statement": "scripts/overlord/backlog_match.py is committed and not untracked.",
+      "verification_refs": [
+        "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md"
+      ]
+    },
+    {
+      "id": "AC5",
+      "statement": "scripts/overlord/fail_fast_state.py is committed and not untracked.",
+      "verification_refs": [
+        "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md"
+      ]
+    },
+    {
+      "id": "AC6",
+      "statement": "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . reports PASS.",
+      "verification_refs": [
+        "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "bash -n hooks/check-errors.sh",
+    "bash -n hooks/backlog-check.sh",
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-05-03-issue-640-hook-wiring-slice-b.md --root .",
+    "python3 scripts/overlord/validate_handoff_package.py --root .",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-05-03-issue-640-hook-wiring-slice-b-implementation.json --require-lane-claim"
+  ],
+  "review_artifact_refs": [
+    "raw/cross-review/2026-05-03-issue-640-hook-wiring-slice-b.md"
+  ],
+  "gate_artifact_refs": [
+    "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md"
+  ],
+  "artifact_refs": [
+    ".claude/settings.json",
+    "hooks/check-errors.sh",
+    "hooks/backlog-check.sh",
+    "scripts/overlord/backlog_match.py",
+    "scripts/overlord/fail_fast_state.py",
+    "docs/plans/issue-640-hook-wiring-slice-b-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-05-03-issue-640-hook-wiring-slice-b-implementation.json",
+    "raw/packets/2026-05-03-issue-640-hook-wiring-slice-b.json",
+    "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md",
+    "raw/cross-review/2026-05-03-issue-640-hook-wiring-slice-b.md"
+  ],
+  "audit_refs": [
+    "raw/cross-review/2026-05-03-issue-640-hook-wiring-slice-b.md",
+    "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-05-03-issue-640-hook-wiring-slice-b.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-05-03T00:00:00Z",
+  "notes": "Stage 2 Worker implementation. All four Slice B hook wiring items delivered. Cross-review APPROVED by gpt-5.3-codex-spark @ high."
+}
