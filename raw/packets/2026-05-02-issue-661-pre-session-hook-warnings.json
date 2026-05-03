@@ -1,0 +1,13 @@
+{
+  "packet_id": "2026-05-02-issue-661-pre-session-hook-warnings",
+  "issue_number": 661,
+  "co_issue_numbers": [662],
+  "packet_type": "implementation",
+  "created_at": "2026-05-02T00:00:00Z",
+  "source_issue": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/661",
+  "co_issue": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/662",
+  "parent_epic": null,
+  "handoff_ref": "raw/handoffs/2026-05-02-issue-661-pre-session-hook-warnings-plan-to-implementation.json",
+  "closeout_ref": "raw/closeouts/2026-05-02-issue-661-pre-session-hook-warnings.md",
+  "summary": "Implementation packet for issues #661 and #662: bash-only edits to hooks/pre-session-context.sh adding Gap A stale-branch + remote-divergence warnings and Gap B dispatcher routing table. Cross-review APPROVED by gpt-5.3-codex-spark @ high."
+}
