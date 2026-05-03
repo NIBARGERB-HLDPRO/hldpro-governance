@@ -16,6 +16,18 @@ if [ "$REPO_NAME" != "hldpro-governance" ]; then
   exit 0
 fi
 
+# ── Gap B: Dispatcher routing table — emit on EVERY prompt ───────────────────
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "  Dispatcher Routing Table (CLAUDE.md §CRITICAL RULE)"
+echo "  NEVER RESPOND DIRECTLY IF AN AGENT EXISTS FOR THE TASK"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "  Standards drift / session start  --> overlord"
+echo "  Weekly audit / metrics           --> overlord-sweep"
+echo "  Deep pattern analysis            --> overlord-audit"
+echo "  Completion verification          --> verify-completion"
+echo "  (full table: CLAUDE.md §Routing Table)"
+echo ""
 # Session-once guard: only inject on first prompt per session.
 SESSION_KEY="${CLAUDE_SESSION_ID:-$$}"
 SENTINEL="/tmp/hldpro-gov-pre-session-${SESSION_KEY}"
@@ -30,13 +42,12 @@ echo ""
   cd "$REPO_ROOT" || exit 0
   python3 "$REPO_ROOT/scripts/overlord/check_execution_environment.py" --startup-preflight
 )
-
 # Backlog status for current branch
 BRANCH_NAME="$(git -C "$REPO_ROOT" branch --show-current 2>/dev/null || true)"
 ISSUE_NUMBER=$(printf "%s" "$BRANCH_NAME" | grep -oE "^issue-([0-9]+)-" | grep -oE "[0-9]+" | head -1)
+BACKLOG_MATCH="$REPO_ROOT/scripts/overlord/backlog_match.py"
 
 if [ -n "$ISSUE_NUMBER" ]; then
-  BACKLOG_MATCH="$REPO_ROOT/scripts/overlord/backlog_match.py"
   echo ""
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   echo "  Backlog Status — Branch: $BRANCH_NAME"
@@ -46,6 +57,34 @@ if [ -n "$ISSUE_NUMBER" ]; then
   else
     echo "  WARN: backlog_match.py not found at $BACKLOG_MATCH"
   fi
+fi
+
+# ── Gap A.1: Done-branch warning ─────────────────────────────────────────────
+if [ -n "$ISSUE_NUMBER" ] && [ -f "$BACKLOG_MATCH" ]; then
+  if ! python3 "$BACKLOG_MATCH" "$ISSUE_NUMBER" >/dev/null 2>&1; then
+    echo ""
+    echo "WARNING: Branch '$BRANCH_NAME' references issue #$ISSUE_NUMBER,"
+    echo "  which is NOT in the active backlog (likely Done or closed)."
+    echo "  Files on this branch (OVERLORD_BACKLOG.md, docs/PROGRESS.md) may be STALE."
+    echo "  Recommended: switch to a fresh origin/main worktree before continuing."
+    echo ""
+  fi
+fi
+# ── Gap A.2: Remote-divergence warning ───────────────────────────────────────
+if [ -n "$BRANCH_NAME" ] && [ "$BRANCH_NAME" != "HEAD" ]; then
+  (
+    cd "$REPO_ROOT" || exit 0
+    timeout 5 git fetch --quiet origin main 2>/dev/null || exit 0
+    LOCAL_MAIN=$(git rev-parse main 2>/dev/null || true)
+    REMOTE_MAIN=$(git rev-parse origin/main 2>/dev/null || true)
+    if [ -n "$LOCAL_MAIN" ] && [ -n "$REMOTE_MAIN" ] && [ "$LOCAL_MAIN" != "$REMOTE_MAIN" ]; then
+      BEHIND=$(git rev-list --count "$LOCAL_MAIN..$REMOTE_MAIN" 2>/dev/null || echo "?")
+      echo ""
+      echo "WARNING: local 'main' is $BEHIND commit(s) behind 'origin/main'."
+      echo "  Pre-session reads may reflect stale state. Run 'git pull' on main."
+      echo ""
+    fi
+  )
 fi
 
 exit 0
