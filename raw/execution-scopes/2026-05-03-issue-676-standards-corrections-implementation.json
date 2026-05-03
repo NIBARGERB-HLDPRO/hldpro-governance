@@ -1,0 +1,30 @@
+{
+  "expected_execution_root": "{repo_root}",
+  "expected_branch": "issue-676-standards-corrections-20260503",
+  "execution_mode": "implementation",
+  "lane_claim": {
+    "issue_number": 676,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/676",
+    "claimed_by": "claude-sonnet-4-6",
+    "claimed_at": "2026-05-03T23:00:00Z"
+  },
+  "allowed_write_paths": [
+    "STANDARDS.md",
+    "OVERLORD_BACKLOG.md",
+    "raw/execution-scopes/2026-05-03-issue-676-standards-corrections-implementation.json",
+    "raw/closeouts/2026-05-03-issue-676-standards-corrections.md",
+    "raw/validation/2026-05-03-issue-676-standards-corrections.md",
+    "docs/plans/issue-676-standards-corrections-pdcar.md",
+    "docs/plans/issue-676-standards-corrections-structured-agent-cycle-plan.json"
+  ],
+  "forbidden_roots": [
+    "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+    "/Users/bennibarger/Developer/HLDPRO/EmailAssistant",
+    "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+    "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+    "/Users/bennibarger/Developer/HLDPRO/local-ai-machine",
+    "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+    "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
+  ],
+  "active_parallel_roots": []
+}

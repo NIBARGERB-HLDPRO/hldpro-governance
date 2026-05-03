@@ -1,0 +1,17 @@
+{
+  "handoff_id": "issue-676-standards-corrections-20260503",
+  "issue_number": 676,
+  "handoff_type": "plan-to-implementation",
+  "from_role": "planner",
+  "to_role": "implementer",
+  "created_at": "2026-05-03T23:00:00Z",
+  "plan_ref": "docs/plans/issue-676-standards-corrections-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-05-03-issue-676-standards-corrections-implementation.json",
+  "scope_summary": "6 targeted corrections to STANDARDS.md: Stampede schema exceptions, branch naming, stale review row, baseline security scope, hook gate qualifier, structured plan scope note.",
+  "acceptance_criteria": [
+    "All 6 STANDARDS.md corrections present.",
+    "No files outside allowed_write_paths changed.",
+    "Governance validator passes."
+  ],
+  "status": "accepted"
+}
