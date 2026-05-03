@@ -1,0 +1,158 @@
+{
+  "session_id": "session-20260503-issue-640-hook-wiring-slice-b",
+  "issue_number": 640,
+  "plan_author": {
+    "role": "stage2-worker",
+    "model_id": "claude-sonnet-4-6",
+    "model_family": "anthropic"
+  },
+  "objective": "Wire Slice B (Hook Wiring) of Epic #638: rewrite hooks/check-errors.sh as a 3-attempt PostToolUse fail-fast gate using fail_fast_state.py, add PostToolUse[\"*\"] to .claude/settings.json with HOME-anchored absolute paths, update hooks/backlog-check.sh to enforce PROGRESS.md backlog-first rule via backlog_match.py, and commit scripts/overlord/backlog_match.py + scripts/overlord/fail_fast_state.py.",
+  "tier": 2,
+  "scope_boundary": [
+    "hooks/check-errors.sh: rewrite as 3-attempt PostToolUse fail-fast gate using fail_fast_state.py record + check subcommands; block after 3 recurrences.",
+    ".claude/settings.json: add PostToolUse[\"*\"] hook with HOME-anchored absolute path to hooks/check-errors.sh; remove all git rev-parse / PWD path resolution.",
+    "hooks/backlog-check.sh: extend to enforce backlog-first against docs/PROGRESS.md via backlog_match.py.",
+    "scripts/overlord/backlog_match.py: commit the fully-implemented untracked file.",
+    "scripts/overlord/fail_fast_state.py: commit the fully-implemented untracked file."
+  ],
+  "out_of_scope": [
+    "hooks/pre-session-context.sh handled in issues #661/#662.",
+    "CI workflows (.github/workflows/) Slice C issue #641.",
+    "Contract tests Slice D issue #642.",
+    "Any changes to hooks/code-write-gate.sh or hooks/schema-guard.sh.",
+    "hooks/governance-check.sh beyond HOME-path fix."
+  ],
+  "research_summary": "PDCAR at docs/plans/issue-385-policy-hook-ci-hardening-pdcar.md (Slice 2) documents all four Slice B work items. Current .claude/settings.json has no PostToolUse hook. hooks/check-errors.sh (97 lines) is a doc-validation script, not a fail-fast gate. scripts/overlord/backlog_match.py and scripts/overlord/fail_fast_state.py are fully implemented and untracked. STANDARDS.md lines 14-35 mandate PostToolUse * and HOME-anchored paths.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/640",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/638",
+    "docs/plans/issue-385-policy-hook-ci-hardening-pdcar.md",
+    "raw/validation/2026-04-30-slice-b-qa-review.md"
+  ],
+  "sprints": [
+    {
+      "name": "Hook wiring and fail-fast gate",
+      "goal": "Deliver all four Slice B changes: rewrite check-errors.sh as a 3-attempt fail-fast gate, wire PostToolUse[\"*\"] in settings.json, extend backlog-check.sh to enforce PROGRESS.md backlog-first via backlog_match.py, and commit the two untracked overlord helper scripts.",
+      "tasks": [
+        "Rewrite hooks/check-errors.sh as 3-attempt PostToolUse fail-fast gate using fail_fast_state.py.",
+        "Update .claude/settings.json: add PostToolUse block with matcher [\"*\"] pointing to hooks/check-errors.sh via HOME-anchored path.",
+        "Update hooks/backlog-check.sh: extract branch issue number, call backlog_match.py; exit 1 with actionable error when no open entry found.",
+        "Commit scripts/overlord/backlog_match.py (untracked, 103 lines).",
+        "Commit scripts/overlord/fail_fast_state.py (untracked, 190 lines)."
+      ],
+      "acceptance_criteria": [
+        ".claude/settings.json contains PostToolUse[\"*\"] block with HOME-anchored path to hooks/check-errors.sh; no git rev-parse or PWD in hooks section.",
+        "hooks/check-errors.sh exits 1 when fail_fast_state.py check reports >= 2 recurrences; exits 0 on first occurrence; exits 0 when fail_fast_state.py absent.",
+        "hooks/backlog-check.sh exits 1 when branch issue number has no open entry in PROGRESS.md or OVERLORD_BACKLOG.md.",
+        "scripts/overlord/backlog_match.py is committed and not untracked.",
+        "scripts/overlord/fail_fast_state.py is committed and not untracked.",
+        "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . reports PASS."
+      ],
+      "file_paths": [
+        ".claude/settings.json",
+        "hooks/check-errors.sh",
+        "hooks/backlog-check.sh",
+        "scripts/overlord/backlog_match.py",
+        "scripts/overlord/fail_fast_state.py",
+        "docs/plans/issue-640-hook-wiring-slice-b-structured-agent-cycle-plan.json",
+        "raw/cross-review/2026-05-03-issue-640-hook-wiring-slice-b.md",
+        "raw/execution-scopes/2026-05-03-issue-640-hook-wiring-slice-b-implementation.json",
+        "raw/handoffs/2026-05-03-issue-640-hook-wiring-slice-b-plan-to-implementation.json",
+        "raw/packets/2026-05-03-issue-640-hook-wiring-slice-b.json",
+        "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md",
+        "raw/closeouts/2026-05-03-issue-640-hook-wiring-slice-b.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "gpt-5.3-codex-spark @ high",
+      "reviewer_model_id": "gpt-5.3-codex-spark",
+      "reviewer_model_family": "openai",
+      "role": "cross-family alternate model reviewer",
+      "focus": "hook wiring correctness and fail-fast gate logic",
+      "status": "accepted",
+      "summary": "Cross-family review confirmed the four Slice B items are scoped correctly. fail_fast_state.py RECURRENCE_THRESHOLD=2, fail-open on infrastructure errors, and HOME-anchored path pattern all satisfy STANDARDS.md requirements.",
+      "evidence": [
+        "raw/cross-review/2026-05-03-issue-640-hook-wiring-slice-b.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.3-codex-spark",
+    "reviewer_model_id": "gpt-5.3-codex-spark",
+    "reviewer_model_family": "openai",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "gpt-5.3-codex-spark reviewed the four Slice B work items against STANDARDS.md. PostToolUse [\"*\"] matcher is correct; fail_fast_state.py 3-attempt gate with fail-open on infrastructure error matches documented intent; backlog_match.py dual-source search correctly implements backlog-first enforcement; HOME-anchored absolute paths are correct for this single-operator governance repo.",
+    "evidence": [
+      "raw/cross-review/2026-05-03-issue-640-hook-wiring-slice-b.md"
+    ]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-03-issue-640-hook-wiring-slice-b.md",
+      "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "claude-sonnet-4-6 Orchestrator",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Authorized to modify .claude/settings.json, hooks/check-errors.sh, hooks/backlog-check.sh, and commit scripts/overlord/backlog_match.py and scripts/overlord/fail_fast_state.py only.",
+    "next_execution_step": "Rewrite hooks/check-errors.sh, add PostToolUse[\"*\"] to .claude/settings.json, extend hooks/backlog-check.sh, commit the two untracked overlord scripts.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-05-03-issue-640-hook-wiring-slice-b-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-05-03-issue-640-hook-wiring-slice-b-implementation.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-05-03-issue-640-hook-wiring-slice-b.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-05-03-issue-640-hook-wiring-slice-b.md"
+    ],
+    "next_role": "stage2-worker",
+    "qa_gate_required": false,
+    "handoff_acceptance_criteria": [
+      "AC1: .claude/settings.json contains PostToolUse[\"*\"] block with HOME-anchored path.",
+      "AC2: hooks/check-errors.sh is a 3-attempt fail-fast gate using fail_fast_state.py.",
+      "AC3: hooks/backlog-check.sh enforces backlog-first via backlog_match.py.",
+      "AC4: scripts/overlord/backlog_match.py committed.",
+      "AC5: scripts/overlord/fail_fast_state.py committed.",
+      "AC6: validate_structured_agent_cycle_plan.py --root . passes."
+    ]
+  },
+  "material_deviation_rules": [
+    "Any edit to .github/workflows/ is a material deviation CI changes belong to Slice C (#641).",
+    "Any edit to hooks/code-write-gate.sh or hooks/schema-guard.sh is a material deviation.",
+    "Using git rev-parse or PWD in any hook command is a material deviation HOME-anchored absolute paths are mandatory.",
+    "Hardcoding PostToolUse matcher to a specific tool is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "claude-sonnet-4-6 Orchestrator"
+  ],
+  "approved_at": "2026-05-03T00:00:00Z"
+}
