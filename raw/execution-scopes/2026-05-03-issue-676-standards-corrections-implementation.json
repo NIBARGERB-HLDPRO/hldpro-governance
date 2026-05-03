@@ -2,6 +2,18 @@
   "expected_execution_root": "{repo_root}",
   "expected_branch": "issue-676-standards-corrections-20260503",
   "execution_mode": "implementation",
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "gpt-5.4",
+    "implementer_model": "claude-sonnet-4-6",
+    "accepted_at": "2026-05-03T23:00:00Z",
+    "evidence_paths": [
+      "raw/handoffs/2026-05-03-issue-676-standards-corrections.json",
+      "raw/cross-review/2026-05-03-issue-676-standards-corrections.md"
+    ],
+    "active_exception_ref": null,
+    "active_exception_expires_at": null
+  },
   "lane_claim": {
     "issue_number": 676,
     "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/676",
@@ -26,5 +38,22 @@
     "/Users/bennibarger/Developer/HLDPRO/knocktracker",
     "/Users/bennibarger/Developer/HLDPRO/ASC-Evaluator"
   ],
-  "active_parallel_roots": []
+  "active_parallel_roots": [
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/seek-and-ponder",
+      "reason": "Pre-existing worktree activity from other issue lanes; not related to issue-676 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/ai-integration-services",
+      "reason": "Pre-existing worktree activity from other issue lanes; not related to issue-676 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/HealthcarePlatform",
+      "reason": "Pre-existing worktree activity from other issue lanes; not related to issue-676 scope"
+    },
+    {
+      "path": "/Users/bennibarger/Developer/HLDPRO/knocktracker",
+      "reason": "Pre-existing worktree activity from other issue lanes; not related to issue-676 scope"
+    }
+  ]
 }
