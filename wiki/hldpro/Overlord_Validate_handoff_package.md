@@ -1,32 +1,35 @@
 # Overlord Validate handoff package
 
-> 23 nodes · cohesion 0.22
+> 35 nodes · cohesion 0.23
 
 ## Key Concepts
 
-- **validate_handoff_package.py** (23 connections) — `scripts/overlord/validate_handoff_package.py`
-- **validate_package()** (14 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_repo_file_exists()** (8 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_validate_specialist_agent_contract()** (7 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_is_url()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_normalize_repo_path()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_read_json_ref()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_validate_acceptance_criteria()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_validate_consumer_verifier_acceptance()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_validate_ref_array()** (5 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_validate_dispatch_contract()** (4 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_load_json()** (3 connections) — `scripts/overlord/validate_handoff_package.py`
-- **main()** (3 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_repo_file_exists_with_prefix()** (3 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_agent_registry_has_agent()** (2 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_agent_surface_exists()** (2 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_consumer_managed_paths()** (2 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_consumer_verifier_acceptance_gate_applies()** (2 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_criteria_verification_refs()** (2 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_discover_package_files()** (2 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_dispatch_contract_gate_applies()** (2 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_evidence_ref_gate_applies()** (2 connections) — `scripts/overlord/validate_handoff_package.py`
-- **_validate_non_empty_ref_array_for_state()** (2 connections) — `scripts/overlord/validate_handoff_package.py`
+- **_write_supporting_files()** (30 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **TestValidateHandoffPackage** (27 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **._run_main()** (26 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **_write_json()** (24 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **_handoff()** (23 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **test_validate_handoff_package.py** (8 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_accepted_consumer_managed_handoff_passes_with_verifier_command_and_evidence()** (6 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_accepted_consumer_managed_handoff_requires_consumer_verifier_command()** (6 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_accepted_consumer_managed_handoff_requires_verifier_evidence_refs()** (6 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **_consumer_scope()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_accepted_package_requires_closeout_ref()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_accepted_requires_non_empty_review_and_gate_artifact_refs()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_current_package_without_dispatch_contract_fails()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_dispatch_contract_rejects_cross_family_fallback()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_empty_acceptance_criteria_fails()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_execution_scope_lane_claim_mismatch_fails()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_historical_implementation_ready_package_is_grandfathered_without_new_evidence_refs()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_historical_package_without_dispatch_contract_passes()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_implementation_complete_package_passes()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_implementation_ready_requires_non_empty_review_artifact_refs()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_in_progress_requires_non_empty_gate_artifact_refs()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_invalid_handoff_id_fails()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_sim_runner_handoff_requires_hldpro_sim_manifest()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_specialist_agent_handoff_passes_with_registered_agent_packet_contract()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- **.test_specialist_agent_handoff_requires_packet_contract_fields()** (5 connections) — `scripts/overlord/test_validate_handoff_package.py`
+- *... and 10 more nodes in this community*
 
 ## Relationships
 
@@ -34,12 +37,12 @@
 
 ## Source Files
 
-- `scripts/overlord/validate_handoff_package.py`
+- `scripts/overlord/test_validate_handoff_package.py`
 
 ## Audit Trail
 
-- EXTRACTED: 45 (40%)
-- INFERRED: 68 (60%)
+- EXTRACTED: 68 (25%)
+- INFERRED: 206 (75%)
 - AMBIGUOUS: 0 (0%)
 
 ---

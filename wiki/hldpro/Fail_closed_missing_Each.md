@@ -1,10 +1,10 @@
-# Packages Hldpro sim Personas
+# Fail closed missing Each
 
 > 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- **Convenience: prefer process-agents/ with bundled personas/ fallback.** (0 connections) — `packages/hldpro-sim/hldprosim/personas.py`
+- **Each workflow must contain a step whose run: block exits 1 on empty BASE_SHA.** (0 connections) — `tests/test_fail_closed_missing_context.py`
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- `packages/hldpro-sim/hldprosim/personas.py`
+- `tests/test_fail_closed_missing_context.py`
 
 ## Audit Trail
 

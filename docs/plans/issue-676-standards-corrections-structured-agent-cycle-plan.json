@@ -1,0 +1,135 @@
+{
+  "session_id": "session-20260503-issue-676-standards-corrections",
+  "issue_number": 676,
+  "objective": "Apply 6 targeted drift/conflict corrections to STANDARDS.md: Stampede doc schema exceptions, branch naming feat/ alias and origin/develop to origin/main, stale review contract row, Baseline Security heading missing Stampede, hook gate scope qualifier, and structured plan scope note.",
+  "plan_author": {
+    "role": "orchestrator",
+    "model_id": "claude-sonnet-4-6",
+    "model_family": "anthropic"
+  },
+  "tier": 1,
+  "scope_boundary": [
+    "STANDARDS.md corrections in hldpro-governance only.",
+    "6 targeted fixes to resolve drift and conflicts identified in issue #676.",
+    "No consumer-repo mutations in this branch.",
+    "No new policy introductions - corrections and clarifications only."
+  ],
+  "out_of_scope": [
+    "New policy additions beyond the 6 enumerated fixes.",
+    "Changes to any consumer repo.",
+    "Restructuring of STANDARDS.md sections not related to the 6 fixes.",
+    "Changes to CI workflows or hook scripts."
+  ],
+  "research_summary": "Issue #676 was filed to address 6 concrete drift/conflict items in STANDARDS.md: (1) missing Stampede schema exception doc, (2) branch naming has stale origin/develop ref and missing feat/ alias, (3) a stale review contract table row referencing a superseded model, (4) Baseline Security heading omits Stampede from scope, (5) hook gate rule lacks scope qualifier for consumer repos, (6) structured plan requirement lacks scope note. All 6 are surgical corrections to existing text.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/676",
+    "STANDARDS.md"
+  ],
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-03-issue-676-standards-corrections.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "sprints": [
+    {
+      "name": "Sprint 1 - Apply 6 STANDARDS.md corrections",
+      "goal": "Write all 6 targeted fixes to STANDARDS.md in a single focused pass.",
+      "tasks": [
+        "Fix 1: Add Stampede schema exception note to schema-guard section.",
+        "Fix 2: Correct branch naming section: add feat/ alias, change origin/develop to origin/main.",
+        "Fix 3: Remove or update stale review contract table row.",
+        "Fix 4: Add Stampede to Baseline Security heading scope.",
+        "Fix 5: Add scope qualifier to hook gate rule.",
+        "Fix 6: Add scope note to structured plan requirement."
+      ],
+      "acceptance_criteria": [
+        "STANDARDS.md contains all 6 corrections.",
+        "No other STANDARDS.md content is altered.",
+        "JSON lint and governance surface validator pass."
+      ],
+      "file_paths": [
+        "STANDARDS.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "gpt-5.4",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "standards-corrections-reviewer",
+      "focus": "Correctness and completeness of the 6 STANDARDS.md corrections",
+      "status": "accepted",
+      "summary": "All 6 fixes are surgical and non-conflicting. Corrections address real drift without introducing new policy.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/676"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.4",
+    "reviewer_model_id": "gpt-5.4",
+    "reviewer_model_family": "openai",
+    "model_family": "openai",
+    "status": "accepted",
+    "summary": "Alternate-family review accepted. All 6 STANDARDS.md corrections are bounded, non-architectural, and correct. No policy additions present.",
+    "evidence": [
+      "raw/cross-review/2026-05-03-issue-676-standards-corrections.md"
+    ]
+  },
+  "execution_handoff": {
+    "session_agent": "claude-sonnet-4-6",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "6 targeted corrections to STANDARDS.md as enumerated in issue #676.",
+    "next_execution_step": "Apply all 6 STANDARDS.md text corrections then commit.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-05-03-issue-676-standards-corrections.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-05-03-issue-676-standards-corrections-implementation.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-05-03-issue-676-standards-corrections.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-05-03-issue-676-standards-corrections.md"
+    ],
+    "next_role": "claude-sonnet-4-6",
+    "qa_gate_required": false,
+    "handoff_acceptance_criteria": [
+      "All 6 STANDARDS.md corrections are applied.",
+      "No other files changed beyond the allowed_write_paths in the execution scope.",
+      "Governance validator passes on the final commit."
+    ]
+  },
+  "material_deviation_rules": [
+    "Any change outside the 6 enumerated fixes requires a new issue and plan.",
+    "No policy additions - corrections only."
+  ],
+  "approved": true,
+  "approved_by": [
+    "claude-sonnet-4-6"
+  ],
+  "approved_at": "2026-05-03T23:00:00Z"
+}

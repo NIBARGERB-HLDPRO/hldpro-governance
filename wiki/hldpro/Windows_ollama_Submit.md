@@ -1,35 +1,35 @@
 # Windows ollama Submit
 
-> 60 nodes · cohesion 0.03
+> 40 nodes · cohesion 0.07
 
 ## Key Concepts
 
-- **test_submit.py** (11 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **TestAuditIntegration** (7 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **TestPiiDetection** (6 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **TestEndpointReachability** (5 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **TestErrorStructure** (5 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **TestEmptyRationale** (4 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **TestMalformedResponse** (4 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **TestModelAllowlist** (4 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **submitter()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_audit_entry_on_endpoint_unreachable()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_audit_entry_on_explicit_pii_flag()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_audit_entry_on_model_not_allowed()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_audit_entry_on_pii_detection()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_audit_entry_on_success()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_response_with_empty_field()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_response_with_empty_response_field()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_endpoint_reachable()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_endpoint_timeout()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_endpoint_unreachable()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_endpoint_unreachable_error_structure()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_model_not_allowed_error_structure()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_pii_error_structure()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_empty_response()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_invalid_json_response()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- **.test_model_allowed_in_allowlist()** (2 connections) — `scripts/windows-ollama/tests/test_submit.py`
-- *... and 35 more nodes in this community*
+- **WindowsOllamaSubmitter** (10 connections) — `scripts/windows-ollama/submit.py`
+- **.submit()** (9 connections) — `scripts/windows-ollama/submit.py`
+- **submit.py** (8 connections) — `scripts/windows-ollama/submit.py`
+- **EndpointUnreachableError** (6 connections) — `scripts/windows-ollama/submit.py`
+- **ModelNotAllowedError** (6 connections) — `scripts/windows-ollama/submit.py`
+- **PiiDetectionError** (6 connections) — `scripts/windows-ollama/submit.py`
+- **Exception** (4 connections)
+- **_pii.py** (4 connections) — `scripts/windows-ollama/_pii.py`
+- **main()** (4 connections) — `scripts/windows-ollama/submit.py`
+- **.__init__()** (4 connections) — `scripts/windows-ollama/submit.py`
+- **detect_pii()** (3 connections) — `scripts/windows-ollama/_pii.py`
+- **.__init__()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **.to_dict()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **.check_allowlist()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **.detect_pii()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **._load_allowlist()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **._load_pii_patterns()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **._post_generate()** (3 connections) — `scripts/windows-ollama/submit.py`
+- **_iter_patterns()** (2 connections) — `scripts/windows-ollama/_pii.py`
+- **load_pii_patterns()** (2 connections) — `scripts/windows-ollama/_pii.py`
+- **.__init__()** (2 connections) — `scripts/windows-ollama/submit.py`
+- **.to_dict()** (2 connections) — `scripts/windows-ollama/submit.py`
+- **.__init__()** (2 connections) — `scripts/windows-ollama/submit.py`
+- **.to_dict()** (2 connections) — `scripts/windows-ollama/submit.py`
+- **Load and validate pii patterns from pii_patterns.yml.** (1 connections) — `scripts/windows-ollama/_pii.py`
+- *... and 15 more nodes in this community*
 
 ## Relationships
 
@@ -37,12 +37,13 @@
 
 ## Source Files
 
-- `scripts/windows-ollama/tests/test_submit.py`
+- `scripts/windows-ollama/_pii.py`
+- `scripts/windows-ollama/submit.py`
 
 ## Audit Trail
 
-- EXTRACTED: 120 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 85 (75%)
+- INFERRED: 28 (25%)
 - AMBIGUOUS: 0 (0%)
 
 ---
