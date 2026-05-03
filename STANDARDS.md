@@ -20,20 +20,24 @@
 - `check-pr-commit-scope.yml` — **scope guard**: PRs to main must contain ≤ 10 commits. Excess commits indicate stale-worktree base contamination (2026-04-15 incident). Threshold configurable via `MAX_COMMITS` env var.
 - `.claude/settings.json` PostToolUse matcher must be `"*"` (all tools), NOT `"Bash"` — errors from MCP, Agent, Read, etc. must also trigger the 3-attempt gate
 - **Hook commands in `.claude/settings.json` must use absolute paths** (e.g. `bash $HOME/Developer/HLDPRO/<repo>/.claude/hooks/<hook>.sh`) — relative paths break silently when the session CWD shifts to a subdirectory, causing the hook to no-op without a hard error
+- **Hook gate scope:** `.claude/hooks/` gates are session-local only — enforced in developer Claude Code sessions where `.claude/settings.json` has been configured (gitignored, per-developer setup). They are not enforced in CI or unconfigured sessions. The CI-enforced equivalents are the `.github/workflows/` check workflows. Treat local hooks as early-signal gates that front-run CI, not as hard guarantees.
 - Session start must check `~/Developer/hldpro/.codex-ingestion/{repo}/backlog-*.md` for pending Codex findings — surface to user if any exist
 - If repo governance requires specialist agents/subagents, the session must use them. Codex sessions may satisfy this by spawning equivalent Codex subagents and loading the repo's persona definitions from `CODEX.md`, `AGENTS.md`, `.agents/`, or repo-local standards instead of relying on Claude-only agent files.
 - Governance repos and governed session-contract repos must use one canonical bootstrap helper path for session start, not duplicate checklist logic across multiple hook implementations.
 - The canonical session-start helper must emit a machine-checkable sentinel proving that the repo session contract, `docs/EXTERNAL_SERVICES_RUNBOOK.md`, and `STANDARDS.md §Society of Minds` were loaded or surfaced for the current session. Missing files must be recorded as warnings in the sentinel output.
 - Conventional commits: `feat/fix/docs/chore` with scope
-- **Branch naming (all repos):** Use standard SoM prefixes: `feature/<slug>`, `fix/<slug>`, `docs/<slug>`, `chore/<slug>`. Optional `-YYYYMMDD` date suffix is allowed on any prefix.
+- **Branch naming (all repos):** Use standard SoM prefixes: `feature/<slug>` (alias `feat/<slug>` accepted), `fix/<slug>`, `docs/<slug>`, `chore/<slug>`. Optional `-YYYYMMDD` date suffix is allowed on any prefix.
   - **LAM high-risk lane exception:** `riskfix/<slug>-YYYYMMDD` is the designated prefix for LAM high-risk fixes in `local-ai-machine`. The date suffix is **mandatory** and one PR per lane family is enforced by `breaker-mcp-contract`. This prefix is complementary to, not conflicting with, the standard SoM prefixes — it applies only to the `riskfix/` lane. All other work in LAM (and all work in every other repo) uses the standard SoM prefixes above. See `docs/exception-register.md §SOM-LAM-BRANCH-001` (resolved).
 - **Never push to main/master** — always branch → staging → test → deploy
-- **Never force-push** (`--force`, `--force-with-lease`) — if a branch has a merge conflict, resolve via `git merge origin/develop` into the branch (merge commit), never via rebase + force-push
+- **Never force-push** (`--force`, `--force-with-lease`) — if a branch has a merge conflict, resolve via `git merge origin/main` into the branch (merge commit), never via rebase + force-push
 - **Stagger parallel PR merges** — when merging 2+ PRs that touch the same files, add a 10-second pause (`sleep 10`) between merges to avoid race conditions
 - `.github/workflows/ci-workflow-lint.yml` — actionlint CI: install + run on PRs/pushes (all code repos)
 - **CI runners:** All workflows must use `ubuntu-latest`. The `sase-microvm` self-hosted runner was decommissioned 2026-04-02. Do NOT add `self-hosted` runner refs.
 
 ### Structured Agent Cycle Plans
+
+> **Scope:** Structured agent cycle plans, planner write-boundaries, and lane claim gates apply to **hldpro-governance sessions** — sessions that modify governance artifacts, CI workflows, STANDARDS.md, or cross-repo standards. Consumer repos (ai-integration-services, HealthcarePlatform, local-ai-machine, knocktracker, Stampede, seek-and-ponder, ASC-Evaluator) operating in their own product lanes are not required to create governance-repo structured plans, execution scopes, or lane claims for their own feature branches.
+
 - Canonical plan artifacts are structured JSON, not freeform Markdown.
 - The canonical org-wide schema lives in `hldpro-governance/docs/schemas/structured-agent-cycle-plan.schema.json`.
 - Human-readable Markdown plan notes are optional companion material, not the source of truth.
@@ -116,6 +120,7 @@ These files must be consistent at the contract level. They do **not** need to be
 - Default backlog table header:
   - `| Plan | Status | Priority | Est. Hours | Deliverables | Notes |`
 - **AIS exception:** `ai-integration-services` may satisfy the backlog contract with its existing backlog model (`# Backlog` / `## Backlog — Open Plans & Action Items`) plus `## Known Bugs`
+- **Stampede exception:** `Stampede` satisfies the backlog contract with its existing `## Active Backlog` section (columns: Work, Issue, Status, Priority, Notes); the default Plans/Known Bugs/Feature Requests/Operational Items split is not required. An optional `## Completed` section is permitted alongside `## Active Backlog`.
 
 ### `docs/FEATURE_REGISTRY.md`
 - Must contain:
@@ -124,6 +129,7 @@ These files must be consistent at the contract level. They do **not** need to be
   - `## Summary Table`
   - a summary table whose leading columns are `Feature ID`, `Domain`, `Feature`, `Status`, `Readiness`
 - Extra columns (for example test coverage) and appendices are allowed
+- **Stampede exception:** `Stampede` satisfies the Feature Registry contract without a `## Summary Table` heading, provided the file contains a top-level title, `Last Updated` metadata, and a summary table whose leading columns are `Feature ID`, `Domain`, `Feature`, `Status`, `Readiness`.
 
 ### `docs/DATA_DICTIONARY.md`
 - Must contain a top-level `# Data Dictionary` title
@@ -189,7 +195,7 @@ Each repo has a security tier that determines which security artifacts the overl
 - `docs/security-reports/` directory with ≥1 PentAGI report; freshest report < 30 days old
 - PentAGI scope includes Caddy proxy layer and DO droplet surface (not just Supabase)
 
-### Baseline Security (knocktracker, local-ai-machine)
+### Baseline Security (knocktracker, local-ai-machine, Stampede)
 - `.gitleaks.toml` at repo root
 - `.gitignore` covers `.env` (already required under general standards)
 - Dependency audit in CI (`npm audit --audit-level=high`)
