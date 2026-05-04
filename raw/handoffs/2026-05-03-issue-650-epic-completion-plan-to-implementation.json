@@ -1,0 +1,75 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-650-epic-completion-plan-to-implementation",
+  "issue_number": 650,
+  "parent_epic_number": 650,
+  "lifecycle_state": "implementation_complete",
+  "from_role": "dispatcher (claude-sonnet-4-6 Orchestrator)",
+  "to_role": "claude-sonnet-4-6 Stage 2 Worker",
+  "structured_plan_ref": "docs/plans/issue-650-epic-completion-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-05-03-issue-650-epic-completion-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md",
+      "raw/validation/2026-05-03-issue-650-epic-completion.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {"id": "AC-1", "statement": "raw/cross-review artifact exists and is dual-signed.", "verification_refs": ["raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md"]},
+    {"id": "AC-2", "statement": "raw/closeouts artifact passes validate_closeout.py.", "verification_refs": ["raw/validation/2026-05-03-issue-650-epic-completion.md"]},
+    {"id": "AC-3", "statement": "OVERLORD_BACKLOG.md contains #650 in Done table.", "verification_refs": ["OVERLORD_BACKLOG.md"]},
+    {"id": "AC-4", "statement": "closeout hook exits 0.", "verification_refs": ["raw/validation/2026-05-03-issue-650-epic-completion.md"]},
+    {"id": "AC-5", "statement": "PR opened and URL returned.", "verification_refs": ["raw/validation/2026-05-03-issue-650-epic-completion.md"]}
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root . --branch-name issue-650-epic-completion-20260503",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-05-03-issue-650-epic-completion-implementation.json",
+    "python3 scripts/overlord/validate_closeout.py raw/closeouts/2026-05-03-issue-650-governance-policy-refresh-epic.md --root .",
+    "bash hooks/closeout-hook.sh raw/closeouts/2026-05-03-issue-650-governance-policy-refresh-epic.md"
+  ],
+  "review_artifact_refs": ["raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md"],
+  "gate_artifact_refs": ["raw/validation/2026-05-03-issue-650-epic-completion.md"],
+  "artifact_refs": [
+    "docs/plans/issue-650-epic-completion-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-05-03-issue-650-epic-completion-implementation.json",
+    "raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md",
+    "raw/handoffs/2026-05-03-issue-650-epic-completion-plan-to-implementation.json",
+    "raw/validation/2026-05-03-issue-650-epic-completion.md",
+    "raw/closeouts/2026-05-03-issue-650-governance-policy-refresh-epic.md",
+    "OVERLORD_BACKLOG.md"
+  ],
+  "audit_refs": [
+    "raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md",
+    "raw/validation/2026-05-03-issue-650-epic-completion.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-05-03-issue-650-governance-policy-refresh-epic.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-05-03T23:55:00Z",
+  "notes": "Stage 6 closeout for epic #650. All three child slices (F #651 PR #679, G #652 previously merged, H #659 PR #680) merged with green CI. Cross-review APPROVED by gpt-5.4."
+}

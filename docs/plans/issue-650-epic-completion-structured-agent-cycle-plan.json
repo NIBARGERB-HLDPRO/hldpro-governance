@@ -1,0 +1,154 @@
+{
+  "session_id": "session-20260503-issue-650-epic-completion",
+  "issue_number": 650,
+  "plan_author": {
+    "role": "claude-sonnet-4-6 architect planner",
+    "model_id": "claude-sonnet-4-6",
+    "model_family": "anthropic"
+  },
+  "objective": "Stage 6 closeout for epic #650 governance policy refresh. All three child slices (F #651 STANDARDS.md corrections PR #679, G #652 hldpro-sim personas + AnthropicApiProvider previously merged, H #659 functional acceptance auditor CI gate PR #680) have merged with green CI. This plan records the epic-level closeout artifacts.",
+  "tier": 1,
+  "scope_boundary": [
+    "Create raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md — dual-signed epic cross-review.",
+    "Create raw/execution-scopes/2026-05-03-issue-650-epic-completion-implementation.json — execution scope.",
+    "Create raw/handoffs/2026-05-03-issue-650-epic-completion-plan-to-implementation.json — handoff package.",
+    "Create raw/validation/2026-05-03-issue-650-epic-completion.md — validation artifact.",
+    "Create raw/closeouts/2026-05-03-issue-650-governance-policy-refresh-epic.md — Stage 6 closeout.",
+    "Create docs/plans/issue-650-epic-completion-structured-agent-cycle-plan.json — this structured plan.",
+    "Update OVERLORD_BACKLOG.md to add #650 to the Done table."
+  ],
+  "out_of_scope": [
+    "Any changes to STANDARDS.md, hooks, existing workflows, scripts, or packages.",
+    "Re-opening or modifying any child slice (F #651, G #652, H #659) artifacts.",
+    "Any new CI workflows or test files.",
+    "Any changes to agent definitions or agent registry."
+  ],
+  "research_summary": "Epic #650 governed a three-slice governance policy refresh: Slice F (#651) corrected STANDARDS.md §SoM (fallup direction, agent-agnostic language, QA cross-family prohibition, §PDCAR functional acceptance auditor gate, SOM-BOOTSTRAP-001 retirement) merged via PR #679; Slice G (#652) delivered hldpro-sim governance personas and AnthropicApiProvider, previously merged; Slice H (#659) wired the CI enforcement gate for the functional acceptance auditor PASS requirement via PR #680. All child slice CI gates passed before merge.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/650",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/651",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/652",
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/659",
+    "raw/closeouts/2026-05-03-issue-651-slice-f-standards-policy.md",
+    "raw/closeouts/2026-05-03-issue-659-acceptance-audit-ci.md"
+  ],
+  "sprints": [
+    {
+      "name": "Epic #650 Stage 6 closeout artifacts",
+      "goal": "File all Stage 6 closeout artifacts for epic #650: cross-review, execution scope, handoff, validation, closeout, and OVERLORD_BACKLOG update.",
+      "tasks": [
+        "Create raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md.",
+        "Create raw/execution-scopes/2026-05-03-issue-650-epic-completion-implementation.json.",
+        "Create raw/handoffs/2026-05-03-issue-650-epic-completion-plan-to-implementation.json.",
+        "Create raw/validation/2026-05-03-issue-650-epic-completion.md.",
+        "Create raw/closeouts/2026-05-03-issue-650-governance-policy-refresh-epic.md.",
+        "Update OVERLORD_BACKLOG.md.",
+        "Run hooks/closeout-hook.sh and verify PASS.",
+        "Commit, push, and open PR."
+      ],
+      "acceptance_criteria": [
+        "AC-1: raw/cross-review artifact exists and is dual-signed.",
+        "AC-2: raw/closeouts artifact passes validate_closeout.py.",
+        "AC-3: OVERLORD_BACKLOG.md contains #650 in Done table.",
+        "AC-4: closeout hook exits 0.",
+        "AC-5: PR opened and URL returned."
+      ],
+      "file_paths": [
+        "docs/plans/issue-650-epic-completion-structured-agent-cycle-plan.json",
+        "raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md",
+        "raw/execution-scopes/2026-05-03-issue-650-epic-completion-implementation.json",
+        "raw/handoffs/2026-05-03-issue-650-epic-completion-plan-to-implementation.json",
+        "raw/validation/2026-05-03-issue-650-epic-completion.md",
+        "raw/closeouts/2026-05-03-issue-650-governance-policy-refresh-epic.md",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "gpt-5.4 architecture review",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "architecture and scope review",
+      "focus": "Confirm the epic closeout package is bounded to the write list, that all child slice AC evidence exists, and that no governance policy is being changed.",
+      "status": "accepted",
+      "summary": "OpenAI-family architecture review accepted the epic closeout package as bounded, additive, and correctly mapped to the PDCAR Stage 6 requirement.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/650",
+        "raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.4 alternate-family reviewer",
+    "model_family": "openai",
+    "reviewer_model_id": "gpt-5.4",
+    "reviewer_model_family": "openai",
+    "status": "accepted",
+    "summary": "OpenAI-family cross-review accepted the implementation-ready epic closeout package. Anthropic-family worker executes bounded delivery.",
+    "evidence": [
+      "raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md"
+    ]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md",
+      "raw/validation/2026-05-03-issue-650-epic-completion.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "Tier 1 implementation worker (claude-sonnet-4-6)",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "File all Stage 6 closeout artifacts for epic #650 under the named write boundary only. No code changes.",
+    "next_execution_step": "Create all bounded governance artifact files, run closeout hook, commit, push, and open PR.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-05-03-issue-650-epic-completion-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-05-03-issue-650-epic-completion-implementation.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-05-03-issue-650-epic-completion.md"
+    ],
+    "next_role": "operator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "AC-1 through AC-5"
+    ]
+  },
+  "material_deviation_rules": [
+    "Any edit outside the user-provided allowed write paths is a material deviation.",
+    "Any change to STANDARDS.md, hooks, existing workflows, scripts, packages, or wiki paths is a material deviation.",
+    "Any closeout that omits the required validation or cross-review references is a material deviation.",
+    "Any modification to child slice artifacts (F #651, G #652, H #659) is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "gpt-5.4 (cross-family QA, 2026-05-03)"
+  ],
+  "approved_at": "2026-05-03T23:55:00Z"
+}
