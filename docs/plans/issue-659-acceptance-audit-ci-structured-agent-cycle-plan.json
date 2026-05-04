@@ -1,0 +1,158 @@
+{
+  "session_id": "session-20260503-issue-659-acceptance-audit-ci",
+  "issue_number": 659,
+  "plan_author": {
+    "role": "claude-sonnet-4-6 architect planner",
+    "model_id": "claude-sonnet-4-6",
+    "model_family": "anthropic"
+  },
+  "objective": "Add CI enforcement for the STANDARDS.md §PDCAR functional acceptance auditor gate: reusable check-acceptance-audit.yml workflow, Python check script, caller workflow, pytest tests, and governance artifacts.",
+  "tier": 2,
+  "scope_boundary": [
+    "Create .github/scripts/check_acceptance_audit.py — deterministic Python check script.",
+    "Create .github/workflows/check-acceptance-audit.yml — reusable workflow.",
+    "Create .github/workflows/check-acceptance-audit-caller.yml — pull_request caller.",
+    "Create tests/test_check_acceptance_audit.py — pytest coverage for all exemption paths.",
+    "Create governance artifacts: execution scope, cross-review, acceptance audit, closeout, structured plan, handoff.",
+    "Update OVERLORD_BACKLOG.md to reflect completion."
+  ],
+  "out_of_scope": [
+    "Editing STANDARDS.md, existing hooks, or existing workflows beyond adding the new check to ci.yml.",
+    "Changing any agent definitions or agent registry.",
+    "Any schema changes to existing governance schemas.",
+    "Closing parent epics or changing non-slice governance policy."
+  ],
+  "research_summary": "STANDARDS.md §PDCAR requires a functional-acceptance-auditor PASS artifact before slice merge. Issue #653 Slice H added the auditor agent and schema. Issue #659 wires the CI enforcement gate so PRs without a matching PASS artifact in raw/acceptance-audits/ are blocked.",
+  "research_artifacts": [
+    "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/659",
+    "STANDARDS.md",
+    "agents/functional-acceptance-auditor.md",
+    "docs/schemas/functional-acceptance-audit.schema.json",
+    "raw/acceptance-audits/2026-05-01-653-functional-audit.json",
+    ".github/workflows/ci.yml"
+  ],
+  "sprints": [
+    {
+      "name": "CI acceptance audit gate",
+      "goal": "Wire the functional-acceptance-auditor PASS check into GitHub Actions CI so every governed implementation slice PR must have a matching PASS artifact before merge.",
+      "tasks": [
+        "Create .github/scripts/check_acceptance_audit.py with branch issue extraction, audit-dir scan, PASS match, and exemption paths.",
+        "Create .github/workflows/check-acceptance-audit.yml as a reusable workflow_call workflow.",
+        "Create .github/workflows/check-acceptance-audit-caller.yml as the pull_request caller.",
+        "Create tests/test_check_acceptance_audit.py with pytest coverage for all code paths.",
+        "Create governance artifacts: execution scope, cross-review, acceptance audit, closeout, handoff.",
+        "Update OVERLORD_BACKLOG.md."
+      ],
+      "acceptance_criteria": [
+        "AC1: check-acceptance-audit.yml exists and is a valid reusable workflow.",
+        "AC2: On a PR with no acceptance audit artifact: check fails with ::error:: and exit 1.",
+        "AC3: On a PR with a PASS artifact matching the issue number: check passes.",
+        "AC4: On a non-issue branch: check passes (exempt).",
+        "AC5: On a planning-only PR: check passes (exempt).",
+        "AC6: All tests pass.",
+        "AC7: Cross-review artifact dual-signed.",
+        "AC8: Functional acceptance auditor PASS artifact present."
+      ],
+      "file_paths": [
+        ".github/scripts/check_acceptance_audit.py",
+        ".github/workflows/check-acceptance-audit.yml",
+        ".github/workflows/check-acceptance-audit-caller.yml",
+        "tests/test_check_acceptance_audit.py",
+        "raw/execution-scopes/2026-05-03-issue-659-acceptance-audit-ci-implementation.json",
+        "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md",
+        "raw/acceptance-audits/2026-05-03-issue-659-acceptance-audit-ci.json",
+        "raw/closeouts/2026-05-03-issue-659-acceptance-audit-ci.md",
+        "docs/plans/issue-659-acceptance-audit-ci-structured-agent-cycle-plan.json",
+        "raw/handoffs/2026-05-03-issue-659-acceptance-audit-ci-plan-to-implementation.json",
+        "OVERLORD_BACKLOG.md"
+      ]
+    }
+  ],
+  "specialist_reviews": [
+    {
+      "reviewer": "gpt-5.4 architecture review",
+      "reviewer_model_id": "gpt-5.4",
+      "reviewer_model_family": "openai",
+      "role": "architecture and scope review",
+      "focus": "Confirm the CI gate implementation is bounded to the write list, that acceptance criteria AC1-AC8 are fully represented, and that no existing workflows are mutated.",
+      "status": "accepted",
+      "summary": "OpenAI-family architecture review accepted the CI gate package as bounded, additive, and correctly mapped to the PDCAR acceptance audit enforcement requirement.",
+      "evidence": [
+        "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/659",
+        "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md"
+      ]
+    }
+  ],
+  "alternate_model_review": {
+    "required": true,
+    "reviewer": "gpt-5.4 alternate-family reviewer",
+    "model_family": "openai",
+    "reviewer_model_id": "gpt-5.4",
+    "reviewer_model_family": "openai",
+    "status": "accepted",
+    "summary": "OpenAI-family cross-review accepted the implementation-ready package. Anthropic-family worker executes bounded delivery.",
+    "evidence": [
+      "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md"
+    ]
+  },
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md",
+      "raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "execution_handoff": {
+    "session_agent": "Tier 2 implementation worker (claude-sonnet-4-6)",
+    "execution_mode": "implementation_ready",
+    "approved_scope_summary": "Implement CI acceptance audit gate: check script, reusable workflow, caller, tests, and governance artifacts under the named write boundary only.",
+    "next_execution_step": "Create all bounded files, run pytest, file validation and closeout artifacts.",
+    "blocked_on": [],
+    "handoff_package_ref": "raw/handoffs/2026-05-03-issue-659-acceptance-audit-ci-plan-to-implementation.json",
+    "execution_scope_ref": "raw/execution-scopes/2026-05-03-issue-659-acceptance-audit-ci-implementation.json",
+    "review_artifact_refs": [
+      "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md"
+    ],
+    "validation_artifact_refs": [
+      "raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md"
+    ],
+    "next_role": "operator",
+    "qa_gate_required": true,
+    "handoff_acceptance_criteria": [
+      "AC1 through AC8"
+    ]
+  },
+  "material_deviation_rules": [
+    "Any edit outside the user-provided allowed write paths is a material deviation.",
+    "Any change to STANDARDS.md, hooks, existing workflows, scripts, packages, or wiki paths is a material deviation.",
+    "Any self-audit artifact that does not validate against the acceptance audit schema is a material deviation.",
+    "Any closeout that omits the required validation or cross-review references is a material deviation."
+  ],
+  "approved": true,
+  "approved_by": [
+    "gpt-5.4 (cross-family QA, 2026-05-03)"
+  ],
+  "approved_at": "2026-05-03T23:55:00Z"
+}

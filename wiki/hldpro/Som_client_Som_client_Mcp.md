@@ -1,6 +1,6 @@
 # Som client Som client Mcp
 
-> 56 nodes · cohesion 0.06
+> 55 nodes · cohesion 0.06
 
 ## Key Concepts
 
@@ -11,7 +11,6 @@
 - **SomClientError** (8 connections) — `scripts/som-client/som_client.py`
 - **test_som_client.py** (8 connections) — `scripts/som-client/tests/test_som_client.py`
 - **build_payload()** (7 connections) — `scripts/remote-mcp/operator_connectivity.py`
-- **RuntimeError** (7 connections)
 - **_call_live()** (5 connections) — `scripts/remote-mcp/operator_connectivity.py`
 - **Check** (5 connections) — `scripts/remote-mcp/operator_connectivity.py`
 - **_FixtureMcpHandler** (5 connections) — `scripts/remote-mcp/operator_connectivity.py`
@@ -29,7 +28,8 @@
 - **._headers()** (3 connections) — `scripts/som-client/som_client.py`
 - **.ping()** (3 connections) — `scripts/som-client/som_client.py`
 - **build_parser()** (2 connections) — `scripts/remote-mcp/operator_connectivity.py`
-- *... and 31 more nodes in this community*
+- **_fixture_server()** (2 connections) — `scripts/remote-mcp/operator_connectivity.py`
+- *... and 30 more nodes in this community*
 
 ## Relationships
 
@@ -44,8 +44,8 @@
 
 ## Audit Trail
 
-- EXTRACTED: 116 (63%)
-- INFERRED: 68 (37%)
+- EXTRACTED: 109 (62%)
+- INFERRED: 68 (38%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -1,0 +1,31 @@
+name: Check Acceptance Audit
+
+on:
+  workflow_call:
+    inputs:
+      branch_name:
+        required: true
+        type: string
+      planning_only:
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  check-acceptance-audit:
+    name: Verify functional acceptance audit PASS artifact
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check acceptance audit artifact
+        run: |
+          PLANNING_FLAG=""
+          if [ "${{ inputs.planning_only }}" = "true" ]; then
+            PLANNING_FLAG="--planning-only"
+          fi
+          python3 .github/scripts/check_acceptance_audit.py \
+            --branch "${{ inputs.branch_name }}" \
+            $PLANNING_FLAG

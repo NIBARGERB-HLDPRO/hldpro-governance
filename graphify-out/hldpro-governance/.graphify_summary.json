@@ -1,12 +1,12 @@
 {
   "repo_slug": "hldpro-governance",
   "source": "hldpro-governance",
-  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-676-standards-corrections-20260503/graphify-out/hldpro-governance",
-  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-676-standards-corrections-20260503/wiki/hldpro",
-  "nodes": 2346,
-  "edges": 4808,
-  "communities": 114,
-  "articles": 124,
+  "output": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/graphify-out/hldpro-governance",
+  "wiki_dir": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/wiki/hldpro",
+  "nodes": 2360,
+  "edges": 4826,
+  "communities": 113,
+  "articles": 123,
   "html_status": "skipped",
-  "code_files": 163
+  "code_files": 164
 }

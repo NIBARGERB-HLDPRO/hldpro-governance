@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-05-01",
+  "updated_at": "2026-05-03",
   "principle": "CI remains authoritative. Local-first coverage is an upstream filter and workflow contract guard, not a full GitHub Actions replay.",
   "coverage_types": [
     "local_command",
@@ -506,6 +506,39 @@
         "workflow_call-only but has no internal caller"
       ],
       "rationale": "Workflow lint runs locally via scripts/overlord/workflow_consumers.json; the new ci-workflow-lint.yml contract tests in tests/ cover the detection logic."
+    },
+    {
+      "path": ".github/workflows/check-acceptance-audit.yml",
+      "risk": "deterministic",
+      "coverage": [
+        {
+          "type": "local_command",
+          "command": [
+            "python3",
+            ".github/scripts/check_acceptance_audit.py",
+            "--branch",
+            "issue-659-test"
+          ]
+        }
+      ],
+      "required_snippets": [
+        "python3 .github/scripts/check_acceptance_audit.py"
+      ],
+      "rationale": "Python script is deterministic and can run locally without GitHub context."
+    },
+    {
+      "path": ".github/workflows/check-acceptance-audit-caller.yml",
+      "risk": "github-only-side-effecting",
+      "coverage": [
+        {
+          "type": "github_only",
+          "rationale": "Pure caller workflow that delegates to the reusable check-acceptance-audit.yml; no local equivalent exists."
+        }
+      ],
+      "required_snippets": [
+        "uses: ./.github/workflows/check-acceptance-audit.yml"
+      ],
+      "rationale": "Pure caller workflow that delegates to check-acceptance-audit.yml reusable workflow; no local equivalent."
     }
   ]
 }

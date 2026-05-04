@@ -1,0 +1,35 @@
+{
+  "audit_id": "2026-05-03-659-acceptance-audit-ci",
+  "issue_number": 659,
+  "slice_branch": "issue-659-acceptance-audit-ci-20260503",
+  "audited_at": "2026-05-03T23:55:00Z",
+  "acceptance_criteria": [
+    {"id": "AC1", "statement": "check-acceptance-audit.yml exists and is a valid reusable workflow.", "verification_method": "derived", "status": "PASS", "evidence": [".github/workflows/check-acceptance-audit.yml"]},
+    {"id": "AC2", "statement": "On a PR with no acceptance audit artifact: check fails with ::error:: and exit 1.", "verification_method": "smoke_test", "status": "PASS", "evidence": ["tests/test_check_acceptance_audit.py"]},
+    {"id": "AC3", "statement": "On a PR with a PASS artifact matching the issue number: check passes.", "verification_method": "smoke_test", "status": "PASS", "evidence": ["tests/test_check_acceptance_audit.py"]},
+    {"id": "AC4", "statement": "On a non-issue branch: check passes (exempt).", "verification_method": "smoke_test", "status": "PASS", "evidence": ["tests/test_check_acceptance_audit.py"]},
+    {"id": "AC5", "statement": "On a planning-only PR: check passes (exempt).", "verification_method": "smoke_test", "status": "PASS", "evidence": ["tests/test_check_acceptance_audit.py"]},
+    {"id": "AC6", "statement": "All tests pass.", "verification_method": "smoke_test", "status": "PASS", "evidence": ["tests/test_check_acceptance_audit.py"]},
+    {"id": "AC7", "statement": "Cross-review artifact dual-signed.", "verification_method": "derived", "status": "PASS", "evidence": ["raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md"]},
+    {"id": "AC8", "statement": "Functional acceptance auditor PASS artifact present.", "verification_method": "derived", "status": "PASS", "evidence": ["raw/acceptance-audits/2026-05-03-issue-659-acceptance-audit-ci.json"]}
+  ],
+  "hook_results": [
+    {"hook_name": "pytest", "command": "python3 -m pytest tests/test_check_acceptance_audit.py -v", "exit_code": 0, "status": "PASS", "stdout_excerpt": "5 passed", "stderr_excerpt": ""}
+  ],
+  "smoke_test_results": [
+    {"test_suite": "tests/test_check_acceptance_audit.py", "exit_code": 0, "status": "PASS", "passed_count": 5, "failed_count": 0}
+  ],
+  "evidence_artifacts": [
+    ".github/scripts/check_acceptance_audit.py",
+    ".github/workflows/check-acceptance-audit.yml",
+    ".github/workflows/check-acceptance-audit-caller.yml",
+    "tests/test_check_acceptance_audit.py",
+    "docs/plans/issue-659-acceptance-audit-ci-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-05-03-issue-659-acceptance-audit-ci-implementation.json",
+    "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md",
+    "raw/closeouts/2026-05-03-issue-659-acceptance-audit-ci.md"
+  ],
+  "overall_verdict": "PASS",
+  "auditor_model": "claude-sonnet-4-6",
+  "auditor_signature": "functional-acceptance-auditor"
+}
