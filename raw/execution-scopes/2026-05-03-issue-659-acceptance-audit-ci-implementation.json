@@ -37,7 +37,10 @@
     "docs/plans/issue-659-acceptance-audit-ci-structured-agent-cycle-plan.json",
     "raw/handoffs/2026-05-03-issue-659-acceptance-audit-ci-plan-to-implementation.json",
     "raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md",
-    "OVERLORD_BACKLOG.md"
+    "OVERLORD_BACKLOG.md",
+    "docs/workflow-local-coverage-inventory.json",
+    "graphify-out/",
+    "wiki/"
   ],
   "forbidden_roots": [],
   "active_parallel_roots": []
