@@ -1,0 +1,18 @@
+{
+  "issue_number": 650,
+  "overall_verdict": "PASS",
+  "auditor_model": "claude-sonnet-4-6",
+  "auditor_family": "anthropic",
+  "audit_date": "2026-05-03",
+  "acceptance_criteria": [
+    {"id": "AC1", "description": "All three child slices (Slice F #651, Slice G #652, Slice H #659) merged to main with green CI", "verdict": "PASS"},
+    {"id": "AC2", "description": "STANDARDS.md contains no Claude-family-specific model references in session-agnostic rules; fallback ladder uses fallup direction", "verdict": "PASS"},
+    {"id": "AC3", "description": "packages/hldpro-sim/process-agents/ contains 5 governance process persona JSON files with schema-validated content", "verdict": "PASS"},
+    {"id": "AC4", "description": "AnthropicApiProvider implemented and tested in hldpro-sim", "verdict": "PASS"},
+    {"id": "AC5", "description": "agents/functional-acceptance-auditor.md exists with correct tier, tools, and write-paths", "verdict": "PASS"},
+    {"id": "AC6", "description": "docs/schemas/functional-acceptance-audit.schema.json exists and validates", "verdict": "PASS"},
+    {"id": "AC7", "description": "raw/acceptance-audits/ directory initialized", "verdict": "PASS"},
+    {"id": "AC8", "description": "Functional acceptance auditor referenced as final AC gate in STANDARDS.md §PDCAR", "verdict": "PASS"},
+    {"id": "AC9", "description": "Cross-review artifact at raw/cross-review/2026-05-03-issue-650-governance-policy-refresh-epic.md dual-signed", "verdict": "PASS"}
+  ]
+}

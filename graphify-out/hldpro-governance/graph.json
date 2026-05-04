@@ -1270,7 +1270,7 @@
     {
       "label": "test_check_acceptance_audit.py",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L1",
       "id": "test_check_acceptance_audit",
       "community": 57
@@ -1278,7 +1278,7 @@
     {
       "label": "run_check()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L12",
       "id": "test_check_acceptance_audit_run_check",
       "community": 57
@@ -1286,7 +1286,7 @@
     {
       "label": "test_pass_artifact_present_and_matching()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L27",
       "id": "test_check_acceptance_audit_test_pass_artifact_present_and_matching",
       "community": 57
@@ -1294,7 +1294,7 @@
     {
       "label": "test_no_audit_dir_exits_1()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L38",
       "id": "test_check_acceptance_audit_test_no_audit_dir_exits_1",
       "community": 57
@@ -1302,7 +1302,7 @@
     {
       "label": "test_audit_dir_exists_but_no_matching_issue()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L46",
       "id": "test_check_acceptance_audit_test_audit_dir_exists_but_no_matching_issue",
       "community": 57
@@ -1310,7 +1310,7 @@
     {
       "label": "test_non_issue_branch_exempt()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L57",
       "id": "test_check_acceptance_audit_test_non_issue_branch_exempt",
       "community": 57
@@ -1318,7 +1318,7 @@
     {
       "label": "test_planning_only_flag_exempt()",
       "file_type": "code",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L64",
       "id": "test_check_acceptance_audit_test_planning_only_flag_exempt",
       "community": 57
@@ -1326,7 +1326,7 @@
     {
       "label": "Tests for check_acceptance_audit.py \u2014 functional acceptance audit CI gate.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L1",
       "id": "test_check_acceptance_audit_rationale_1",
       "community": 57
@@ -1334,7 +1334,7 @@
     {
       "label": "Helper: run check_acceptance_audit.py with given args against a temp audit dir.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L13",
       "id": "test_check_acceptance_audit_rationale_13",
       "community": 57
@@ -1342,7 +1342,7 @@
     {
       "label": "PASS artifact with matching issue_number and overall_verdict=PASS \u2192 exits 0.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L28",
       "id": "test_check_acceptance_audit_rationale_28",
       "community": 57
@@ -1350,7 +1350,7 @@
     {
       "label": "Non-existent audit dir \u2192 exits 1.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L39",
       "id": "test_check_acceptance_audit_rationale_39",
       "community": 57
@@ -1358,7 +1358,7 @@
     {
       "label": "Audit dir exists but no artifact for the branch issue \u2192 exits 1.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L47",
       "id": "test_check_acceptance_audit_rationale_47",
       "community": 57
@@ -1366,7 +1366,7 @@
     {
       "label": "Non-issue branch (e.g. chore/foo) \u2192 exits 0 (exempt).",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L58",
       "id": "test_check_acceptance_audit_rationale_58",
       "community": 57
@@ -1374,7 +1374,7 @@
     {
       "label": "planning_only flag \u2192 exits 0 regardless of audit artifacts.",
       "file_type": "rationale",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L65",
       "id": "test_check_acceptance_audit_rationale_65",
       "community": 57
@@ -21672,7 +21672,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L12",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit",
@@ -21684,7 +21684,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L27",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit",
@@ -21696,7 +21696,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L38",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit",
@@ -21708,7 +21708,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L46",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit",
@@ -21720,7 +21720,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L57",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit",
@@ -21732,7 +21732,7 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L64",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit",
@@ -21744,7 +21744,7 @@
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L1",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit_rationale_1",
@@ -21756,7 +21756,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L29",
       "weight": 0.8,
       "_src": "test_check_acceptance_audit_test_pass_artifact_present_and_matching",
@@ -21768,7 +21768,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L41",
       "weight": 0.8,
       "_src": "test_check_acceptance_audit_test_no_audit_dir_exits_1",
@@ -21780,7 +21780,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L48",
       "weight": 0.8,
       "_src": "test_check_acceptance_audit_test_audit_dir_exists_but_no_matching_issue",
@@ -21792,7 +21792,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L59",
       "weight": 0.8,
       "_src": "test_check_acceptance_audit_test_non_issue_branch_exempt",
@@ -21804,7 +21804,7 @@
     {
       "relation": "calls",
       "confidence": "INFERRED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L66",
       "weight": 0.8,
       "_src": "test_check_acceptance_audit_test_planning_only_flag_exempt",
@@ -21816,7 +21816,7 @@
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L13",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit_rationale_13",
@@ -21828,7 +21828,7 @@
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L28",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit_rationale_28",
@@ -21840,7 +21840,7 @@
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L39",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit_rationale_39",
@@ -21852,7 +21852,7 @@
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L47",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit_rationale_47",
@@ -21864,7 +21864,7 @@
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L58",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit_rationale_58",
@@ -21876,7 +21876,7 @@
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/bennibarger/Developer/HLDPRO/hldpro-governance/.claude/worktrees/issue-659-acceptance-audit-ci-20260503/tests/test_check_acceptance_audit.py",
+      "source_file": "tests/test_check_acceptance_audit.py",
       "source_location": "L65",
       "weight": 1.0,
       "_src": "test_check_acceptance_audit_rationale_65",
