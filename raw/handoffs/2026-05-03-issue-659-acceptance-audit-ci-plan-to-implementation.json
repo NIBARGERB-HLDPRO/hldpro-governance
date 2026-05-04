@@ -1,0 +1,80 @@
+{
+  "schema_version": "v1",
+  "handoff_id": "issue-659-acceptance-audit-ci-plan-to-implementation",
+  "issue_number": 659,
+  "parent_epic_number": 650,
+  "lifecycle_state": "implementation_complete",
+  "from_role": "dispatcher (claude-sonnet-4-6 Orchestrator)",
+  "to_role": "claude-sonnet-4-6 Stage 2 Worker",
+  "structured_plan_ref": "docs/plans/issue-659-acceptance-audit-ci-structured-agent-cycle-plan.json",
+  "execution_scope_ref": "raw/execution-scopes/2026-05-03-issue-659-acceptance-audit-ci-implementation.json",
+  "packet_ref": null,
+  "package_manifest_ref": null,
+  "dispatch_contract": {
+    "primary_session_family": "anthropic",
+    "owned_roles": [
+      {
+        "role": "alternate_model_review",
+        "model_family": "openai"
+      }
+    ],
+    "wrapper_path": "scripts/codex-review.sh",
+    "wrapper_id": "codex",
+    "packet_transport_mode": "file",
+    "output_artifact_refs": [
+      "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md",
+      "raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md"
+    ],
+    "fallback_policy": {
+      "same_family_only": true,
+      "ordered_models": [
+        {
+          "family": "anthropic",
+          "model_id": "claude-sonnet-4-6"
+        },
+        {
+          "family": "anthropic",
+          "model_id": "claude-opus-4-6"
+        }
+      ]
+    }
+  },
+  "acceptance_criteria": [
+    {"id": "AC1", "statement": "check-acceptance-audit.yml exists as valid reusable workflow.", "verification_refs": ["raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md"]},
+    {"id": "AC2", "statement": "Missing audit dir yields exit 1.", "verification_refs": ["raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md"]},
+    {"id": "AC3", "statement": "PASS artifact matching issue number yields exit 0.", "verification_refs": ["raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md"]},
+    {"id": "AC4", "statement": "Non-issue branch yields exit 0 (exempt).", "verification_refs": ["raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md"]},
+    {"id": "AC5", "statement": "planning_only flag yields exit 0 (exempt).", "verification_refs": ["raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md"]},
+    {"id": "AC6", "statement": "All pytest tests pass.", "verification_refs": ["raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md"]},
+    {"id": "AC7", "statement": "Cross-review artifact dual-signed.", "verification_refs": ["raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md"]},
+    {"id": "AC8", "statement": "Acceptance audit PASS artifact present.", "verification_refs": ["raw/acceptance-audits/2026-05-03-issue-659-acceptance-audit-ci.json"]}
+  ],
+  "validation_commands": [
+    "python3 scripts/overlord/validate_structured_agent_cycle_plan.py --root .",
+    "python3 -m pytest tests/test_check_acceptance_audit.py -v",
+    "bash hooks/closeout-hook.sh raw/closeouts/2026-05-03-issue-659-acceptance-audit-ci.md",
+    "python3 scripts/overlord/assert_execution_scope.py --scope raw/execution-scopes/2026-05-03-issue-659-acceptance-audit-ci-implementation.json --require-lane-claim"
+  ],
+  "review_artifact_refs": ["raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md"],
+  "gate_artifact_refs": ["raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md"],
+  "artifact_refs": [
+    ".github/scripts/check_acceptance_audit.py",
+    ".github/workflows/check-acceptance-audit.yml",
+    ".github/workflows/check-acceptance-audit-caller.yml",
+    "tests/test_check_acceptance_audit.py",
+    "docs/plans/issue-659-acceptance-audit-ci-structured-agent-cycle-plan.json",
+    "raw/execution-scopes/2026-05-03-issue-659-acceptance-audit-ci-implementation.json",
+    "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md",
+    "raw/acceptance-audits/2026-05-03-issue-659-acceptance-audit-ci.json",
+    "raw/closeouts/2026-05-03-issue-659-acceptance-audit-ci.md"
+  ],
+  "audit_refs": [
+    "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md",
+    "raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md"
+  ],
+  "closeout_ref": "raw/closeouts/2026-05-03-issue-659-acceptance-audit-ci.md",
+  "blocked_on": [],
+  "handoff_decision": "accepted",
+  "created_at": "2026-05-03T23:55:00Z",
+  "notes": "Stage 2 Worker implementation complete. CI acceptance audit gate delivered. Cross-review APPROVED by gpt-5.4. 5 pytest tests pass."
+}

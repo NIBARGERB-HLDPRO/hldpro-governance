@@ -1,0 +1,44 @@
+{
+  "expected_execution_root": ".",
+  "expected_branch": "issue-659-acceptance-audit-ci-20260503",
+  "execution_mode": "implementation_ready",
+  "lane_claim": {
+    "issue_number": 659,
+    "claim_ref": "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/659",
+    "claimed_by": "claude-sonnet-4-6 Stage 2 Worker",
+    "claimed_at": "2026-05-03T23:55:00Z"
+  },
+  "handoff_evidence": {
+    "status": "accepted",
+    "planner_model": "claude-sonnet-4-6 Orchestrator",
+    "implementer_model": "claude-sonnet-4-6",
+    "accepted_at": "2026-05-03T23:55:00Z",
+    "evidence_paths": [
+      "https://github.com/NIBARGERB-HLDPRO/hldpro-governance/issues/659",
+      "docs/plans/issue-659-acceptance-audit-ci-structured-agent-cycle-plan.json",
+      "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md"
+    ],
+    "cross_family_path_unavailable": true,
+    "cross_family_path_ref": "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md",
+    "active_exception_ref": "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md",
+    "active_exception_expires_at": "2026-05-10T00:00:00Z",
+    "fallback_log_ref": "docs/FAIL_FAST_LOG.md"
+  },
+  "allowed_write_paths": [
+    ".github/scripts/check_acceptance_audit.py",
+    ".github/workflows/check-acceptance-audit.yml",
+    ".github/workflows/check-acceptance-audit-caller.yml",
+    "tests/test_check_acceptance_audit.py",
+    "docs/schemas/functional-acceptance-audit.schema.json",
+    "raw/execution-scopes/2026-05-03-issue-659-acceptance-audit-ci-implementation.json",
+    "raw/cross-review/2026-05-03-issue-659-acceptance-audit-ci.md",
+    "raw/acceptance-audits/2026-05-03-issue-659-acceptance-audit-ci.json",
+    "raw/closeouts/2026-05-03-issue-659-acceptance-audit-ci.md",
+    "docs/plans/issue-659-acceptance-audit-ci-structured-agent-cycle-plan.json",
+    "raw/handoffs/2026-05-03-issue-659-acceptance-audit-ci-plan-to-implementation.json",
+    "raw/validation/2026-05-03-issue-659-acceptance-audit-ci.md",
+    "OVERLORD_BACKLOG.md"
+  ],
+  "forbidden_roots": [],
+  "active_parallel_roots": []
+}
